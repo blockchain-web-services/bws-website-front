@@ -3,7 +3,7 @@
 /* Dynamic item transitions */
 .w-dyn-item {
   opacity: 1;
-  transition: opacity 0.5s; 
+  transition: opacity 0.5s;
 }
 
 .w-dyn-item.fade {
@@ -12,7 +12,7 @@
 
 /* Additional custom styles */
 body {
-  font-family: 'DM Sans', 'Montserrat', sans-serif;
+  font-family: "DM Sans", "Montserrat", sans-serif;
   margin: 0;
   padding: 0;
 }
