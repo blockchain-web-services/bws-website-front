@@ -1,0 +1,106 @@
+{% extends "layouts/base.njk" %}
+
+{% block content %}
+<section class="page-header">
+  <div class="container">
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <ol>
+        {% for crumb in breadcrumbs %}
+          <li>
+            {% if loop.last %}
+              <span aria-current="page">{{ crumb.title }}</span>
+            {% else %}
+              <a href="{{ crumb.url }}">{{ crumb.title }}</a>
+            {% endif %}
+          </li>
+        {% endfor %}
+      </ol>
+    </nav>
+    
+    <h1 class="page-title">{{ industry.name }}</h1>
+    <p class="page-description">{{ industry.description }}</p>
+  </div>
+</section>
+
+<section class="industry-content">
+  <div class="container">
+    <div class="content-grid">
+      <div class="main-content">
+        <h2>Blockchain Solutions for {{ industry.name }}</h2>
+        
+        <div class="content-block">
+          <h3>Transform Your Industry</h3>
+          <p>
+            Leverage the power of blockchain technology to revolutionize your 
+            {{ industry.name | lower }} operations. Our solutions provide transparency, 
+            security, and efficiency that traditional systems cannot match.
+          </p>
+        </div>
+        
+        <div class="content-block">
+          <h3>Key Benefits</h3>
+          <ul class="benefits-list">
+            <li>Enhanced Security and Data Protection</li>
+            <li>Improved Transparency and Traceability</li>
+            <li>Reduced Operational Costs</li>
+            <li>Faster Transaction Processing</li>
+            <li>Regulatory Compliance</li>
+          </ul>
+        </div>
+        
+        <div class="content-block">
+          <h3>Use Cases</h3>
+          <div class="use-cases-grid">
+            <div class="use-case-card">
+              <h4>Smart Contracts</h4>
+              <p>Automate agreements and transactions with self-executing contracts</p>
+            </div>
+            <div class="use-case-card">
+              <h4>Supply Chain</h4>
+              <p>Track products from origin to delivery with complete transparency</p>
+            </div>
+            <div class="use-case-card">
+              <h4>Digital Identity</h4>
+              <p>Secure and verifiable identity management solutions</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <aside class="sidebar">
+        <div class="sidebar-widget">
+          <h3>Related Solutions</h3>
+          <ul class="related-links">
+            {% for solution in navigation.footer.solutions | slice(0, 3) %}
+              <li><a href="{{ solution.url }}">{{ solution.title }}</a></li>
+            {% endfor %}
+          </ul>
+        </div>
+        
+        <div class="sidebar-widget">
+          <h3>Get Started</h3>
+          <p>Ready to implement blockchain in your {{ industry.name | lower }} business?</p>
+          <a href="/contact-us?industry={{ industry.slug }}" class="btn btn-primary btn-block">
+            Contact Our Experts
+          </a>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section class="related-articles">
+  <div class="container">
+    <h2 class="section-title">Latest Insights</h2>
+    
+    <div class="articles-grid">
+      {% for article in navigation.footer.articles | slice(0, 3) %}
+        <article class="article-card">
+          <h3><a href="{{ article.url }}">{{ article.title }}</a></h3>
+          <a href="{{ article.url }}" class="read-more">Read More →</a>
+        </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endblock %}

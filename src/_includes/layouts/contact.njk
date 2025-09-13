@@ -1,0 +1,261 @@
+{% extends "layouts/base.njk" %}
+
+{% block content %}
+<section class="contact-page">
+  <div class="container">
+    <div class="contact-header">
+      <h1 class="page-title">{{ title | default('Contact Us') }}</h1>
+      <p class="page-description">
+        {{ description | default('Get in touch with our team to learn how BWS can transform your business with blockchain technology') }}
+      </p>
+    </div>
+    
+    <div class="contact-content">
+      <div class="contact-form-wrapper">
+        <form class="contact-form" id="contactForm" action="https://hooks.zapier.com/hooks/catch/{{ zapierWebhookId }}" method="POST">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="firstName">First Name *</label>
+              <input type="text" id="firstName" name="firstName" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="lastName">Last Name *</label>
+              <input type="text" id="lastName" name="lastName" required>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label for="email">Email Address *</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="company">Company</label>
+            <input type="text" id="company" name="company">
+          </div>
+          
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone">
+          </div>
+          
+          <div class="form-group">
+            <label for="subject">Subject *</label>
+            <select id="subject" name="subject" required>
+              <option value="">Select a subject</option>
+              <option value="general">General Inquiry</option>
+              <option value="sales">Sales</option>
+              <option value="support">Technical Support</option>
+              <option value="partnership">Partnership</option>
+              <option value="media">Media Inquiry</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label for="solution">Solution of Interest</label>
+            <select id="solution" name="solution">
+              <option value="">Select a solution</option>
+              {% for solution in navigation.footer.solutions %}
+                <option value="{{ solution.title | slug }}">{{ solution.title }}</option>
+              {% endfor %}
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label for="message">Message *</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+          </div>
+          
+          <div class="form-group">
+            <label class="checkbox-label">
+              <input type="checkbox" name="newsletter" value="yes">
+              <span>I would like to receive updates and newsletters from BWS</span>
+            </label>
+          </div>
+          
+          <div class="form-group">
+            <label class="checkbox-label">
+              <input type="checkbox" name="privacy" value="accepted" required>
+              <span>I agree to the <a href="/privacy-policy.html" target="_blank">Privacy Policy</a> and <a href="/legal-notice.html" target="_blank">Terms of Service</a> *</span>
+            </label>
+          </div>
+          
+          <input type="hidden" name="source" value="website-contact-form">
+          <input type="hidden" name="timestamp" value="">
+          <input type="hidden" name="pageUrl" value="{{ page.url }}">
+          
+          <button type="submit" class="btn btn-primary btn-large">
+            Send Message
+          </button>
+        </form>
+        
+        <div class="form-success" id="formSuccess" style="display: none;">
+          <div class="success-icon">
+            <i class="icon-check-circle"></i>
+          </div>
+          <h2>Thank You!</h2>
+          <p>Your message has been sent successfully. Our team will get back to you within 24 hours.</p>
+        </div>
+        
+        <div class="form-error" id="formError" style="display: none;">
+          <div class="error-icon">
+            <i class="icon-alert-circle"></i>
+          </div>
+          <h2>Oops!</h2>
+          <p>Something went wrong. Please try again or email us directly at <a href="mailto:contact@bws.ninja">contact@bws.ninja</a></p>
+        </div>
+      </div>
+      
+      <aside class="contact-sidebar">
+        <div class="contact-info">
+          <h3>Get in Touch</h3>
+          
+          <div class="info-item">
+            <i class="icon-mail"></i>
+            <div>
+              <h4>Email</h4>
+              <a href="mailto:contact@bws.ninja">contact@bws.ninja</a>
+            </div>
+          </div>
+          
+          <div class="info-item">
+            <i class="icon-phone"></i>
+            <div>
+              <h4>Phone</h4>
+              <a href="tel:+1234567890">+1 (234) 567-890</a>
+            </div>
+          </div>
+          
+          <div class="info-item">
+            <i class="icon-map-pin"></i>
+            <div>
+              <h4>Office</h4>
+              <address>
+                123 Blockchain Street<br>
+                Suite 100<br>
+                Tech City, TC 12345
+              </address>
+            </div>
+          </div>
+          
+          <div class="info-item">
+            <i class="icon-clock"></i>
+            <div>
+              <h4>Business Hours</h4>
+              <p>Monday - Friday: 9:00 AM - 6:00 PM<br>
+              Saturday - Sunday: Closed</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="social-links">
+          <h3>Follow Us</h3>
+          <div class="social-icons">
+            {% for social in navigation.footer.social %}
+              <a href="{{ social.url }}" target="_blank" rel="noopener noreferrer" 
+                 aria-label="{{ social.title }}" class="social-link">
+                <i class="icon-{{ social.icon }}"></i>
+              </a>
+            {% endfor %}
+          </div>
+        </div>
+        
+        <div class="quick-links">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="/faq">Frequently Asked Questions</a></li>
+            <li><a href="/support">Support Center</a></li>
+            <li><a href="/documentation">Documentation</a></li>
+            <li><a href="/blog">Blog</a></li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section class="contact-map">
+  <div class="container">
+    <h2 class="section-title">Find Us</h2>
+    <div class="map-wrapper">
+      <iframe 
+        src="https://maps.google.com/maps?q=123%20Blockchain%20Street&t=&z=13&ie=UTF8&iwloc=&output=embed" 
+        width="100%" 
+        height="400" 
+        frameborder="0" 
+        style="border:0" 
+        allowfullscreen="" 
+        aria-label="Office location map">
+      </iframe>
+    </div>
+  </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('contactForm');
+    const formSuccess = document.getElementById('formSuccess');
+    const formError = document.getElementById('formError');
+    
+    // Set timestamp
+    const timestampField = form.querySelector('input[name="timestamp"]');
+    if (timestampField) {
+      timestampField.value = new Date().toISOString();
+    }
+    
+    // Handle form submission
+    form.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      
+      const formData = new FormData(form);
+      const data = Object.fromEntries(formData);
+      
+      try {
+        const response = await fetch(form.action, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data)
+        });
+        
+        if (response.ok) {
+          form.style.display = 'none';
+          formSuccess.style.display = 'block';
+          
+          // Track conversion
+          if (typeof gtag !== 'undefined') {
+            gtag('event', 'form_submit', {
+              'event_category': 'Contact',
+              'event_label': data.subject
+            });
+          }
+        } else {
+          throw new Error('Form submission failed');
+        }
+      } catch (error) {
+        console.error('Error submitting form:', error);
+        formError.style.display = 'block';
+      }
+    });
+    
+    // Pre-fill fields from URL parameters
+    const urlParams = new URLSearchParams(window.location.search);
+    const fields = ['subject', 'solution', 'industry'];
+    
+    fields.forEach(field => {
+      const value = urlParams.get(field);
+      if (value) {
+        const element = form.querySelector(`[name="${field}"]`);
+        if (element) {
+          element.value = value;
+        }
+      }
+    });
+  });
+</script>
+{% endblock %}

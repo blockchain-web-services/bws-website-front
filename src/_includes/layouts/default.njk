@@ -1,0 +1,22 @@
+---
+layout: layouts/base.njk
+---
+
+{# Default page template for standard content pages #}
+
+{% block content %}
+  <article class="page-content">
+    {% if title %}
+      <header class="page-header">
+        <h1 class="page-title">{{ title }}</h1>
+        {% if subtitle %}
+          <p class="page-subtitle">{{ subtitle }}</p>
+        {% endif %}
+      </header>
+    {% endif %}
+
+    <div class="page-body">
+      {{ content | safe }}
+    </div>
+  </article>
+{% endblock %}

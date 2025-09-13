@@ -1,0 +1,104 @@
+{% extends "layouts/base.njk" %}
+
+{% block content %}
+<section class="legal-page">
+  <div class="container">
+    <div class="legal-header">
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="/">Home</a></li>
+          <li><a href="/legal">Legal</a></li>
+          <li><span aria-current="page">{{ title }}</span></li>
+        </ol>
+      </nav>
+      
+      <h1 class="page-title">{{ title }}</h1>
+      
+      {% if lastUpdated %}
+        <p class="last-updated">
+          Last updated: <time datetime="{{ lastUpdated | date: '%Y-%m-%d' }}">{{ lastUpdated | date: '%B %d, %Y' }}</time>
+        </p>
+      {% endif %}
+    </div>
+    
+    <div class="legal-layout">
+      <aside class="legal-sidebar">
+        <nav class="legal-nav" aria-label="Legal pages navigation">
+          <h2>Legal Information</h2>
+          <ul>
+            <li {% if page.url == '/privacy-policy/' %}class="active"{% endif %}>
+              <a href="/privacy-policy">Privacy Policy</a>
+            </li>
+            <li {% if page.url == '/terms-of-service/' %}class="active"{% endif %}>
+              <a href="/terms-of-service">Terms of Service</a>
+            </li>
+            <li {% if page.url == '/cookie-policy/' %}class="active"{% endif %}>
+              <a href="/cookie-policy">Cookie Policy</a>
+            </li>
+            <li {% if page.url == '/gdpr/' %}class="active"{% endif %}>
+              <a href="/gdpr">GDPR Compliance</a>
+            </li>
+            <li {% if page.url == '/ccpa/' %}class="active"{% endif %}>
+              <a href="/ccpa">CCPA Compliance</a>
+            </li>
+            <li {% if page.url == '/disclaimer/' %}class="active"{% endif %}>
+              <a href="/disclaimer">Disclaimer</a>
+            </li>
+          </ul>
+        </nav>
+        
+        <div class="legal-contact">
+          <h3>Legal Questions?</h3>
+          <p>For legal inquiries, please contact:</p>
+          <a href="mailto:legal@bws.ninja" class="contact-email">legal@bws.ninja</a>
+        </div>
+      </aside>
+      
+      <main class="legal-content">
+        <div class="content-wrapper">
+          {{ content | safe }}
+          
+          {% if sections %}
+            {% for section in sections %}
+              <section class="legal-section" id="{{ section.id }}">
+                <h2>{{ section.title }}</h2>
+                {{ section.content | safe }}
+              </section>
+            {% endfor %}
+          {% endif %}
+        </div>
+        
+        <div class="legal-footer">
+          <p>
+            By using our services, you acknowledge that you have read and understood this 
+            {{ title | lower }} and agree to be bound by its terms.
+          </p>
+          
+          {% if effectiveDate %}
+            <p class="effective-date">
+              Effective Date: <time datetime="{{ effectiveDate | date: '%Y-%m-%d' }}">{{ effectiveDate | date: '%B %d, %Y' }}</time>
+            </p>
+          {% endif %}
+        </div>
+      </main>
+    </div>
+  </div>
+</section>
+
+<section class="legal-actions">
+  <div class="container">
+    <div class="actions-content">
+      <h2>Need More Information?</h2>
+      <p>If you have questions about our legal policies, please don't hesitate to contact us.</p>
+      <div class="action-buttons">
+        <a href="/contact-us?subject=legal" class="btn btn-primary">
+          Contact Legal Team
+        </a>
+        <a href="/faq#legal" class="btn btn-secondary">
+          View Legal FAQ
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,38 @@
+{# Feature Card Component #}
+<div class="feature-card {% if feature.highlight %}feature-card--highlight{% endif %}">
+  {% if feature.icon %}
+    <div class="feature-card__icon">
+      <i class="icon-{{ feature.icon }}"></i>
+    </div>
+  {% endif %}
+
+  {% if feature.image %}
+    <div class="feature-card__image">
+      <img src="{{ feature.image.src }}"
+           alt="{{ feature.image.alt or feature.title }}"
+           loading="lazy">
+    </div>
+  {% endif %}
+
+  <div class="feature-card__content">
+    <h3 class="feature-card__title">{{ feature.title }}</h3>
+
+    {% if feature.description %}
+      <p class="feature-card__description">{{ feature.description }}</p>
+    {% endif %}
+
+    {% if feature.list %}
+      <ul class="feature-card__list">
+        {% for item in feature.list %}
+          <li>{{ item }}</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+
+    {% if feature.link %}
+      <a href="{{ feature.link.url }}" class="feature-card__link">
+        {{ feature.link.text }} →
+      </a>
+    {% endif %}
+  </div>
+</div>

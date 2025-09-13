@@ -1,0 +1,147 @@
+{% extends "layouts/base.njk" %}
+
+{% block content %}
+<article class="article-page">
+  <header class="article-header">
+    <div class="container">
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="/">Home</a></li>
+          <li><a href="/blog">Blog</a></li>
+          <li><span aria-current="page">{{ title }}</span></li>
+        </ol>
+      </nav>
+      
+      <h1 class="article-title">{{ title }}</h1>
+      
+      <div class="article-meta">
+        {% if author %}
+          <span class="author">
+            By <strong>{{ author }}</strong>
+          </span>
+        {% endif %}
+        
+        {% if date %}
+          <time datetime="{{ date | date: '%Y-%m-%d' }}" class="publish-date">
+            {{ date | date: '%B %d, %Y' }}
+          </time>
+        {% endif %}
+        
+        {% if readTime %}
+          <span class="read-time">
+            {{ readTime }} min read
+          </span>
+        {% endif %}
+      </div>
+      
+      {% if tags %}
+      <div class="article-tags">
+        {% for tag in tags %}
+          <a href="/blog/tag/{{ tag | slug }}" class="tag">{{ tag }}</a>
+        {% endfor %}
+      </div>
+      {% endif %}
+    </div>
+  </header>
+  
+  <div class="article-content">
+    <div class="container">
+      <div class="content-wrapper">
+        <div class="article-body">
+          {{ content | safe }}
+        </div>
+        
+        <aside class="article-sidebar">
+          <div class="sidebar-widget">
+            <h3>Share This Article</h3>
+            <div class="share-buttons">
+              <a href="https://twitter.com/intent/tweet?url={{ page.url | url | urlencode }}&text={{ title | urlencode }}" 
+                 target="_blank" rel="noopener" class="share-button share-twitter">
+                <i class="icon-twitter"></i>
+              </a>
+              <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ page.url | url | urlencode }}" 
+                 target="_blank" rel="noopener" class="share-button share-linkedin">
+                <i class="icon-linkedin"></i>
+              </a>
+              <a href="https://www.facebook.com/sharer/sharer.php?u={{ page.url | url | urlencode }}" 
+                 target="_blank" rel="noopener" class="share-button share-facebook">
+                <i class="icon-facebook"></i>
+              </a>
+            </div>
+          </div>
+          
+          {% if relatedArticles %}
+          <div class="sidebar-widget">
+            <h3>Related Articles</h3>
+            <ul class="related-articles">
+              {% for article in relatedArticles %}
+                <li>
+                  <a href="{{ article.url }}">
+                    <h4>{{ article.title }}</h4>
+                    <time>{{ article.date | date: '%B %d, %Y' }}</time>
+                  </a>
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+          {% endif %}
+          
+          <div class="sidebar-widget">
+            <h3>Newsletter</h3>
+            <p>Get the latest blockchain insights delivered to your inbox</p>
+            <form class="newsletter-form" action="/api/newsletter" method="POST">
+              <input type="email" name="email" placeholder="Your email" required>
+              <button type="submit" class="btn btn-primary">Subscribe</button>
+            </form>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </div>
+  
+  {% if authorBio %}
+  <section class="author-bio">
+    <div class="container">
+      <div class="bio-card">
+        {% if authorBio.avatar %}
+          <img src="{{ authorBio.avatar }}" alt="{{ author }}" class="author-avatar">
+        {% endif %}
+        <div class="bio-content">
+          <h3>About {{ author }}</h3>
+          <p>{{ authorBio.description }}</p>
+          {% if authorBio.social %}
+            <div class="author-social">
+              {% for link in authorBio.social %}
+                <a href="{{ link.url }}" target="_blank" rel="noopener">
+                  <i class="icon-{{ link.platform }}"></i>
+                </a>
+              {% endfor %}
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </section>
+  {% endif %}
+  
+  <section class="article-navigation">
+    <div class="container">
+      <div class="nav-links">
+        {% if previousArticle %}
+          <a href="{{ previousArticle.url }}" class="prev-article">
+            <span class="nav-label">Previous Article</span>
+            <span class="nav-title">{{ previousArticle.title }}</span>
+          </a>
+        {% endif %}
+        
+        {% if nextArticle %}
+          <a href="{{ nextArticle.url }}" class="next-article">
+            <span class="nav-label">Next Article</span>
+            <span class="nav-title">{{ nextArticle.title }}</span>
+          </a>
+        {% endif %}
+      </div>
+    </div>
+  </section>
+</article>
+{% endblock %}

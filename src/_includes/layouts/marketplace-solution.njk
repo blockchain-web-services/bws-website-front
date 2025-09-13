@@ -1,0 +1,157 @@
+{% extends "layouts/base.njk" %}
+
+{% block content %}
+<section class="hero hero-{{ heroStyle | default('standard') }}">
+  <div class="container">
+    <div class="hero-content">
+      <h1 class="hero-title">{{ title }}</h1>
+      <p class="hero-description">{{ description }}</p>
+      
+      <div class="hero-actions">
+        {% if ctaPrimary %}
+          {% ctaPrimary ctaPrimary.text, ctaPrimary.href, ctaPrimary.icon | default("arrow-right"), "large" %}
+        {% endif %}
+        
+        {% if ctaSecondary %}
+          {% ctaSecondary ctaSecondary.text, ctaSecondary.href, "large" %}
+        {% endif %}
+      </div>
+    </div>
+    
+    {% if heroImage %}
+    <div class="hero-image">
+      <img src="{{ heroImage }}" alt="{{ title }}" loading="lazy">
+    </div>
+    {% endif %}
+  </div>
+</section>
+
+{% if features %}
+<section class="features-section">
+  <div class="container">
+    <h2 class="section-title">{{ featuresTitle | default("Key Features") }}</h2>
+    
+    <div class="features-grid">
+      {% for feature in features %}
+      <div class="feature-card">
+        {% if feature.icon %}
+        <div class="feature-icon">
+          <i class="icon-{{ feature.icon }}"></i>
+        </div>
+        {% endif %}
+        
+        <h3 class="feature-title">{{ feature.title }}</h3>
+        <p class="feature-description">{{ feature.description }}</p>
+        
+        {% if feature.link %}
+        <a href="{{ feature.link }}" class="feature-link">
+          {{ feature.linkText | default("Learn more") }}
+          <i class="icon-arrow-right"></i>
+        </a>
+        {% endif %}
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+{% if benefits %}
+<section class="benefits-section">
+  <div class="container">
+    <h2 class="section-title">{{ benefitsTitle | default("Benefits") }}</h2>
+    
+    <div class="benefits-list">
+      {% for benefit in benefits %}
+      <div class="benefit-item">
+        <div class="benefit-icon">
+          <i class="icon-check-circle"></i>
+        </div>
+        <div class="benefit-content">
+          <h4>{{ benefit.title }}</h4>
+          <p>{{ benefit.description }}</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+{% if howItWorks %}
+<section class="how-it-works-section">
+  <div class="container">
+    <h2 class="section-title">{{ howItWorksTitle | default("How It Works") }}</h2>
+    
+    <div class="steps-grid">
+      {% for step in howItWorks %}
+      <div class="step-item">
+        <div class="step-number">{{ loop.index }}</div>
+        <h3>{{ step.title }}</h3>
+        <p>{{ step.description }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+{% if pricing %}
+<section class="pricing-section">
+  <div class="container">
+    <h2 class="section-title">{{ pricingTitle | default("Pricing") }}</h2>
+    
+    <div class="pricing-grid">
+      {% for plan in pricing %}
+      <div class="pricing-card {% if plan.featured %}pricing-card-featured{% endif %}">
+        <h3 class="plan-name">{{ plan.name }}</h3>
+        <div class="plan-price">
+          <span class="currency">{{ plan.currency | default("$") }}</span>
+          <span class="amount">{{ plan.price }}</span>
+          <span class="period">{{ plan.period | default("/month") }}</span>
+        </div>
+        
+        <ul class="plan-features">
+          {% for feature in plan.features %}
+          <li>
+            <i class="icon-check"></i>
+            {{ feature }}
+          </li>
+          {% endfor %}
+        </ul>
+        
+        {% if plan.cta %}
+          {% ctaPrimary plan.cta.text, plan.cta.href, "", "medium" %}
+        {% endif %}
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-content">
+      <h2>{{ ctaTitle | default("Ready to Get Started?") }}</h2>
+      <p>{{ ctaDescription | default("Join thousands of developers building on BWS") }}</p>
+      
+      <div class="cta-actions">
+        {% if apiDocLink %}
+        <a href="{{ apiDocLink }}" class="btn btn-primary btn-large">
+          <i class="icon-book"></i>
+          View API Documentation
+        </a>
+        {% endif %}
+        
+        {% if contactLink %}
+        <a href="{{ contactLink }}" class="btn btn-secondary btn-large">
+          <i class="icon-message"></i>
+          Contact Sales
+        </a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

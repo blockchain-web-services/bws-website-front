@@ -1,0 +1,192 @@
+{
+  "main": [
+    {
+      "title": "Home",
+      "url": "/"
+    },
+    {
+      "title": "Solutions",
+      "url": "/#solutions",
+      "children": [
+        {
+          "title": "Immutable Database",
+          "url": "/marketplace/database-immutable.html",
+          "description": "Secure blockchain-based immutable data storage"
+        },
+        {
+          "title": "Mutable Database",
+          "url": "/marketplace/database-mutable.html",
+          "description": "Flexible blockchain data solutions"
+        },
+        {
+          "title": "IPFS Upload",
+          "url": "/marketplace/ipfs-upload.html",
+          "description": "Distributed file storage and content delivery"
+        },
+        {
+          "title": "NFT Zero Knowledge",
+          "url": "/marketplace/nft-zeroknowledge.html",
+          "description": "Privacy-preserving NFT solutions"
+        },
+        {
+          "title": "NFT GameCube",
+          "url": "/marketplace/nft-gamecube.html",
+          "description": "Gaming NFT platform for sports clubs"
+        },
+        {
+          "title": "Blockchain Badges",
+          "url": "/marketplace/blockchain-badges.html",
+          "description": "Digital achievement and certification system"
+        },
+        {
+          "title": "ESG Credits",
+          "url": "/marketplace/esg-credits.html",
+          "description": "Environmental, Social, and Governance credit platform"
+        },
+        {
+          "title": "Telegram X Bot",
+          "url": "/marketplace/telegram-xbot.html",
+          "description": "Community engagement bot for X/Twitter"
+        }
+      ]
+    },
+    {
+      "title": "Industries",
+      "url": "/industries.html",
+      "children": [
+        {
+          "title": "Financial Services",
+          "url": "/industry-content/financial-services.html",
+          "description": "Blockchain solutions for finance"
+        },
+        {
+          "title": "Supply Chain",
+          "url": "/industry-content/supply-chain.html",
+          "description": "Track and verify supply chain data"
+        },
+        {
+          "title": "Legal",
+          "url": "/industry-content/legal.html",
+          "description": "Smart contracts and legal documentation"
+        },
+        {
+          "title": "Retail",
+          "url": "/industry-content/retail.html",
+          "description": "Customer loyalty and inventory management"
+        },
+        {
+          "title": "Content Creation",
+          "url": "/industry-content/content-creation.html",
+          "description": "Digital rights and content monetization"
+        },
+        {
+          "title": "ESG",
+          "url": "/industry-content/esg.html",
+          "description": "Sustainability and impact tracking"
+        }
+      ]
+    },
+    {
+      "title": "Resources",
+      "url": "/resources.html",
+      "children": [
+        {
+          "title": "Articles",
+          "url": "/articles/",
+          "description": "Latest insights and updates"
+        },
+        {
+          "title": "White Paper",
+          "url": "/white-paper.html",
+          "description": "Technical documentation"
+        },
+        {
+          "title": "Documentation",
+          "url": "/docs/",
+          "description": "Developer guides and API docs"
+        }
+      ]
+    },
+    {
+      "title": "About",
+      "url": "/about.html"
+    },
+    {
+      "title": "Contact",
+      "url": "/contact-us.html"
+    }
+  ],
+  "footer": {
+    "solutions": [
+      {
+        "title": "Immutable Database",
+        "url": "/marketplace/database-immutable.html"
+      },
+      {
+        "title": "IPFS Upload",
+        "url": "/marketplace/ipfs-upload.html"
+      },
+      {
+        "title": "NFT Platform",
+        "url": "/marketplace/nft-gamecube.html"
+      },
+      {
+        "title": "ESG Credits",
+        "url": "/marketplace/esg-credits.html"
+      },
+      {
+        "title": "Blockchain Badges",
+        "url": "/marketplace/blockchain-badges.html"
+      }
+    ],
+    "company": [
+      {
+        "title": "About Us",
+        "url": "/about.html"
+      },
+      {
+        "title": "Industries",
+        "url": "/industries.html"
+      },
+      {
+        "title": "Resources",
+        "url": "/resources.html"
+      },
+      {
+        "title": "Contact",
+        "url": "/contact-us.html"
+      }
+    ],
+    "legal": [
+      {
+        "title": "Privacy Policy",
+        "url": "/privacy-policy.html"
+      },
+      {
+        "title": "Legal Notice",
+        "url": "/legal-notice.html"
+      },
+      {
+        "title": "Terms of Service",
+        "url": "/terms.html"
+      }
+    ],
+    "social": [
+      {
+        "title": "Twitter",
+        "url": "https://twitter.com/bwsninja",
+        "icon": "twitter"
+      },
+      {
+        "title": "LinkedIn",
+        "url": "https://linkedin.com/company/bws-ninja",
+        "icon": "linkedin"
+      },
+      {
+        "title": "GitHub",
+        "url": "https://github.com/bws-ninja",
+        "icon": "github"
+      }
+    ]
+  }
+}
