@@ -70,7 +70,7 @@ export class BasePage {
    * Check for console errors
    */
   async checkForConsoleErrors() {
-    const errors[] = [];
+    const errors = [];
     this.page.on('console', msg => {
       if (msg.type() === 'error') {
         errors.push(msg.text());
@@ -83,7 +83,7 @@ export class BasePage {
    * Check for 404 errors in network requests
    */
   async check404Errors() {
-    const failed404s[] = [];
+    const failed404s = [];
     this.page.on('response', response => {
       if (response.status() === 404) {
         failed404s.push(response.url());

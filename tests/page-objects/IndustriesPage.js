@@ -43,7 +43,7 @@ export class IndustriesPage extends BasePage {
   async checkIndustryCardBackgrounds() {
     await this.hoverOverSolutions();
     const count = await this.industryCards.count();
-    const results[] = [];
+    const results = [];
 
     for (let i = 0; i < count; i++) {
       const card = this.industryCards.nth(i);
