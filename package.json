@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
+    "prebuild": "node scripts/clean-build.js",
     "build": "astro build && npm run postbuild",
     "build:only": "astro build",
     "postbuild": "npm run pretty-print && npm run validate",
