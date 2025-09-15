@@ -1,4 +1,4 @@
-import { Page, Locator, expect } from '@playwright/test';
+import { expect } from '@playwright/test';
 
 /**
  * Base page object containing common functionality for all pages
