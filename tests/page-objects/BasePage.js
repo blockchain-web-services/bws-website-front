@@ -35,7 +35,7 @@ export class BasePage {
   /**
    * Check if the page is responsive at a given viewport size
    */
-  async checkResponsiveness(width: number, height: number) {
+  async checkResponsiveness(width, height) {
     await this.page.setViewportSize({ width, height });
     const bodyWidth = await this.page.evaluate(() => document.body.scrollWidth);
     return bodyWidth <= width + 20; // Allow small margin for scrollbar

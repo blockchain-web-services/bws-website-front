@@ -51,8 +51,8 @@ test.describe('Core Web Vitals Tests', () => {
         let clsScore = 0;
         new PerformanceObserver((list) => {
           for (const entry of list.getEntries()) {
-            if (!(entry as any).hadRecentInput) {
-              clsScore += (entry as any).value;
+            if (!entry.hadRecentInput) {
+              clsScore += entry.value;
             }
           }
         }).observe({ type: 'layout-shift', buffered: true });
@@ -86,7 +86,7 @@ test.describe('Core Web Vitals Tests', () => {
   });
 
   test('Resource loading performance', async ({ page }) => {
-    const resourceTimings: any[] = [];
+    const resourceTimings = [];
 
     page.on('response', response => {
       const url = response.url();
@@ -108,7 +108,7 @@ test.describe('Core Web Vitals Tests', () => {
   });
 
   test('Bundle size check', async ({ page }) => {
-    const bundleSizes: { [key: string]: number } = {};
+    const bundleSizes = {};
 
     page.on('response', async response => {
       const url = response.url();

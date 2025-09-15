@@ -89,7 +89,7 @@ export class HomePage extends BasePage {
    * Get tokenomics image dimensions
    */
   async getTokenomicsImageDimensions() {
-    return await this.tokenomicsImage.evaluate((img: HTMLImageElement) => ({
+    return await this.tokenomicsImage.evaluate((img) => ({
       naturalWidth: img.naturalWidth,
       naturalHeight: img.naturalHeight,
       displayWidth: img.clientWidth,
@@ -148,7 +148,7 @@ export class HomePage extends BasePage {
     const video = this.page.locator('video').first();
     if (await video.count() === 0) return false;
 
-    return await video.evaluate((vid: HTMLVideoElement) =>
+    return await video.evaluate((vid) =>
       !vid.paused && !vid.ended && vid.readyState > 2
     );
   }
@@ -167,7 +167,7 @@ export class HomePage extends BasePage {
     const img = this.page.locator(`img[src*="${imageName}"]`).first();
     if (await img.count() === 0) return false;
 
-    return await img.evaluate((image: HTMLImageElement) =>
+    return await img.evaluate((image) =>
       image.complete && image.naturalWidth > 0
     );
   }

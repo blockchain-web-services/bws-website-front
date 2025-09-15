@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 import { HomePage } from '../page-objects/HomePage';
 
 test.describe('Image Visual Tests', () => {
-  let homePage: HomePage;
+  let homePage;
 
   test.beforeEach(async ({ page }) => {
     homePage = new HomePage(page);
