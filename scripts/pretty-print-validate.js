@@ -1,6 +1,6 @@
-const fs = require('fs').promises;
-const path = require('path');
-const prettier = require('prettier');
+import { promises as fs } from 'fs';
+import path from 'path';
+import prettier from 'prettier';
 
 async function findFiles(dir, extensions) {
   const files = [];

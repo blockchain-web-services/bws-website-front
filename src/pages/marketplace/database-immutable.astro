@@ -1,0 +1,20 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Navigation from '../../components/Navigation.astro';
+import Footer from '../../components/Footer.astro';
+import Scripts from '../../components/Scripts.astro';
+import MarketplacedatabaseimmutableMainContent from '../../components/marketplacedatabaseimmutableMainContent.astro';
+
+const pageTitle = 'Blockchain Web Services - database immutable';
+const pageDescription = 'Blockchain Web Services - Enterprise blockchain solutions';
+---
+
+<BaseLayout title={pageTitle} description={pageDescription}>
+  <Navigation />
+  <MarketplacedatabaseimmutableMainContent />
+  <Footer />
+
+  <Fragment slot="scripts">
+    <Scripts />
+  </Fragment>
+</BaseLayout>

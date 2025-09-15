@@ -3,9 +3,9 @@
  * Pretty print and validate all HTML files in _site directory
  */
 
-const fs = require('fs').promises;
-const path = require('path');
-const prettier = require('prettier');
+import { promises as fs } from 'fs';
+import path from 'path';
+import prettier from 'prettier';
 
 // Color codes for terminal output
 const colors = {

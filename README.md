@@ -1,6 +1,60 @@
-# BWS Website - Static Site Generator
+# BWS Website
 
-A production-ready static website for Blockchain Web Services (www.bws.ninja), migrated from Webflow to GitHub Pages using Eleventy.
+Production website for Blockchain Web Services, deployed at [www.bws.ninja](https://www.bws.ninja)
+
+## 🏗️ Architecture
+
+### Technology Stack
+- **[Astro](https://astro.build)** - Static site generator
+- **Astro Components** - Component-based templating system
+- **GitHub Pages** - Hosting via `gh-pages` branch
+- **GitHub Actions** - CI/CD pipeline
+- **Playwright** - E2E testing framework
+
+### Template System
+The website uses Astro's component-based architecture:
+- **Pages** (`src/pages/`) - Astro pages that define routes
+- **Components** (`src/components/`) - Reusable Astro components for content sections
+- **Layouts** (`src/layouts/`) - Base layouts that wrap pages
+- **Public Assets** (`public/`) - Static files served directly (CSS, images, fonts)
+
+## 📁 Project Structure
+
+```
+bws-website-front/
+├── src/
+│   ├── pages/                 # Astro pages (routes)
+│   │   ├── index.astro        # Homepage
+│   │   ├── about.astro        # About page
+│   │   ├── industries.astro   # Industries page
+│   │   ├── marketplace/       # Marketplace product pages
+│   │   └── industry-content/  # Industry-specific pages
+│   ├── components/            # Astro components
+│   │   ├── Navigation.astro   # Main navigation
+│   │   ├── Footer.astro       # Footer component
+│   │   ├── Scripts.astro      # JavaScript includes
+│   │   └── *MainContent.astro # Page-specific content components
+│   └── layouts/               # Layout templates
+│       └── BaseLayout.astro   # Main layout wrapper
+├── public/                    # Static assets
+│   ├── styles.css            # Consolidated CSS (from Webflow)
+│   ├── CNAME                 # Custom domain configuration
+│   └── assets/               # Images, fonts, JS files
+├── tests/                    # Playwright test suite
+│   ├── e2e/                  # End-to-end tests
+│   ├── smoke/                # Production smoke tests
+│   ├── visual/               # Visual regression tests
+│   ├── performance/          # Performance tests
+│   ├── accessibility/        # WCAG compliance tests
+│   └── page-objects/         # Page Object Model classes
+├── .github/workflows/        # GitHub Actions
+│   ├── deploy.yml           # Main deployment pipeline
+│   ├── rollback.yml         # Rollback workflow
+│   └── monitor.yml          # Production monitoring
+├── docs/                     # Documentation
+│   └── GITHUB_PAGES_DEPLOYMENT.md
+└── _site/                    # Build output (git-ignored)
+```
 
 ## 🚀 Quick Start
 
@@ -10,8 +64,8 @@ A production-ready static website for Blockchain Web Services (www.bws.ninja), m
 
 ### Installation
 ```bash
-# Clone the repository
-git clone git@github.com:blockchain-web-services/bws-website-front.git
+# Clone repository
+git clone [repository-url]
 cd bws-website-front
 
 # Install dependencies
@@ -23,206 +77,213 @@ npx playwright install chromium
 
 ### Development
 ```bash
-# Start development server (http://localhost:8081)
-npm start
+# Start development server (http://localhost:8087)
+npm run dev
 
-# Watch for changes
-npm run watch
+# Build the site
+npm run build
+
+# Preview production build
+npm run preview
 ```
 
-## 🏗️ Architecture
+## ✏️ Modifying the Website
 
-Built with:
-- **Eleventy (11ty)** - Static site generator
-- **Nunjucks** - Templating engine
-- **Playwright** - End-to-end testing
-- **GitHub Pages** - Hosting platform
+### Important Rules (from CLAUDE.md)
+1. **ALWAYS modify source templates** in `src/`, never edit `_site/` directly
+2. **CSS is consolidated** in `/public/styles.css`
+3. **Run build after changes**: `npm run build`
+4. **Test before committing**: `npm test`
 
-## 📁 Project Structure
+### Common Modifications
+
+#### 1. Updating Page Content
+Edit the corresponding component in `src/components/`:
+```astro
+<!-- src/components/IndexMainContent.astro -->
+<section class="hero-section">
+  <h1>Your New Content Here</h1>
+</section>
 ```
-bws-website-front/
-├── src/                      # Source files
-│   ├── _data/                # Global data files
-│   │   ├── navigation.json   # Navigation structure
-│   │   ├── site.json         # Site metadata
-│   │   └── pages/            # Page-specific data
-│   ├── _includes/            # Templates and partials
-│   │   ├── layouts/          # Page layouts
-│   │   └── partials/         # Reusable components
-│   ├── assets/               # Static assets
-│   │   ├── css/              # Stylesheets
-│   │   ├── js/               # JavaScript files
-│   │   └── images/           # Images and icons
-│   └── pages/                # Content pages
-├── scripts/                  # Build and utility scripts
-│   ├── crawler/              # Web crawler tools
-│   ├── data-generation/      # Data generation scripts
-│   └── validation/           # Validation tools
-├── tests/                    # Test suites
-├── data/                     # Crawled data (git-ignored)
-└── _site/                    # Generated output (git-ignored)
+
+#### 2. Adding a New Page
+Create a new file in `src/pages/`:
+```astro
+---
+// src/pages/new-page.astro
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navigation from '../components/Navigation.astro';
+---
+
+<BaseLayout title="New Page">
+  <Navigation />
+  <main>
+    <h1>New Page Content</h1>
+  </main>
+</BaseLayout>
+```
+
+#### 3. Modifying Navigation
+Edit `src/components/Navigation.astro` to update menu items.
+
+#### 4. Updating Styles
+Edit `/public/styles.css` - all styles are consolidated here.
+
+## 🏗️ Build Process
+
+### Local Build
+```bash
+# Build site to _site/ directory
+npm run build
+
+# This runs:
+# 1. Astro build
+# 2. HTML prettification
+# 3. HTML/CSS validation
+```
+
+### Build Output
+- Built files are generated in `_site/`
+- CNAME file is automatically copied for custom domain
+- All assets are optimized and bundled
+
+## 🚢 Deployment
+
+### Automatic Deployment (CI/CD)
+
+The site automatically deploys via GitHub Actions when:
+1. Code is pushed to `main` or `master` branch
+2. Pull request is merged
+
+#### Deployment Pipeline
+1. **Test Phase** - Run all Playwright tests
+2. **Build Phase** - Build Astro site
+3. **Deploy Phase** - Push to `gh-pages` branch
+4. **Validate Phase** - Run smoke tests on production
+
+### Manual Deployment
+```bash
+# Trigger deployment manually via GitHub Actions
+# Go to Actions tab → "Build, Test, and Deploy" → Run workflow
+```
+
+### Rollback Procedure
+```bash
+# Via GitHub Actions
+# Go to Actions tab → "Rollback Deployment" → Run workflow
+# Enter commit SHA or leave empty for previous version
 ```
 
 ## 🧪 Testing
 
-### Run Tests
+### Test Structure
+Tests use Playwright with Page Object Model pattern:
+- **E2E Tests** - User journeys and workflows
+- **Smoke Tests** - Critical path verification
+- **Visual Tests** - Screenshot comparisons
+- **Performance Tests** - Core Web Vitals
+- **Accessibility Tests** - WCAG compliance
+
+### Running Tests
 ```bash
 # Run all tests
 npm test
 
 # Run specific test suites
-npm run test:links      # Test link integrity
-npm run test:seo        # Test SEO requirements
-npm run test:a11y       # Test accessibility
-npm run test:content    # Test content validation
+npm run test:smoke      # Quick smoke tests
+npm run test:e2e        # End-to-end tests
+npm run test:visual     # Visual regression
+npm run test:a11y       # Accessibility
+npm run test:perf       # Performance
 
-# Run tests with UI
-npm run test:headed
+# Interactive UI mode
+npm run test:ui
 
-# Debug tests
+# Debug mode
 npm run test:debug
 ```
 
-### Test Coverage
-- Link integrity (no broken links or orphan pages)
-- SEO validation (meta tags, structured data)
-- Accessibility (WCAG 2.1 AA compliance)
-- Content validation (required elements)
+## 📊 Monitoring
 
-## 🚢 Deployment
+### Production Monitoring
+- **Automated checks** run every 6 hours
+- **Health checks** verify site availability
+- **Performance monitoring** tracks Core Web Vitals
+- **SSL certificate** validation
 
-### Automatic Deployment (Recommended)
-The site automatically deploys to GitHub Pages when you push to the `main` or `master` branch.
+### View Status
+- Check GitHub Actions for monitoring results
+- Automated issues created on failures
 
-### Manual Deployment
-```bash
-# Deploy to GitHub Pages
-npm run deploy
-```
+## 🌐 GitHub Pages Configuration
 
-### Build Process
-```bash
-# Build the site
-npm run build
+### Setup (One-time)
+1. Go to **Settings** → **Pages**
+2. Source: **Deploy from a branch**
+3. Branch: **gh-pages** / **root**
+4. Custom domain: **www.bws.ninja**
+5. Enable **Enforce HTTPS**
 
-# Test the production build locally
-npm run deploy:test
-```
+### Custom Domain
+- CNAME record points to GitHub Pages
+- Automatically configured via `public/CNAME` file
+- SSL certificate provided by GitHub
 
 ## 📜 Available Scripts
 
 | Command | Description |
 |---------|-------------|
-| `npm start` | Start development server on port 8081 |
+| `npm run dev` | Start development server |
 | `npm run build` | Build production site |
-| `npm run serve` | Serve site locally |
-| `npm test` | Run all Playwright tests |
-| `npm run crawl` | Crawl www.bws.ninja for content |
-| `npm run generate-data` | Generate page data from crawl results |
-| `npm run validate` | Validate crawled data |
-| `npm run deploy` | Deploy to GitHub Pages |
-| `npm run clean` | Clean build artifacts |
+| `npm run preview` | Preview built site |
+| `npm test` | Run all tests |
+| `npm run test:smoke` | Run smoke tests only |
+| `npm run test:ui` | Open Playwright UI |
+| `npm run validate` | Validate HTML syntax |
+| `npm run pretty-print` | Format HTML/CSS files |
 
-## 🔧 Configuration
+## 🔧 Configuration Files
 
-### Site Configuration
-Edit `src/_data/site.json`:
-```json
-{
-  "name": "BWS",
-  "url": "https://www.bws.ninja",
-  "description": "Cutting-Edge Blockchain Solutions"
-}
-```
+| File | Purpose |
+|------|---------|
+| `astro.config.mjs` | Astro configuration |
+| `tests/playwright.config.cjs` | Test configuration |
+| `.github/workflows/deploy.yml` | Deployment pipeline |
+| `public/CNAME` | Custom domain |
+| `CLAUDE.md` | AI assistant guidelines |
 
-### Navigation
-Edit `src/_data/navigation.json` to update menus.
+## 📚 Documentation
 
-### Environment Variables
-Create `.env` for local development:
-```env
-ZAPIER_WEBHOOK_ID=your_webhook_id
-GOOGLE_ANALYTICS_ID=your_ga_id
-```
-
-## 📝 Content Management
-
-### Adding New Pages
-1. Create a new `.njk` file in `src/pages/`
-2. Add front matter with page metadata
-3. Use an existing layout or create a new one
-4. Update navigation in `src/_data/navigation.json`
-
-### Templates
-The site uses Nunjucks templates with these layouts:
-- `base.njk` - Base layout with header/footer
-- `homepage.njk` - Landing page layout
-- `marketplace-solution.njk` - Product/solution pages
-- `industry-content.njk` - Industry-specific pages
-- `article.njk` - Blog/article pages
-- `legal.njk` - Legal document pages
-- `contact.njk` - Contact form page
-
-### Content Migration
-The crawler was used to migrate content from Webflow:
-```bash
-# Re-crawl the live site
-npm run crawl
-
-# Generate page data
-npm run generate-data
-
-# Validate results
-npm run validate
-```
-
-## 🔌 Third-Party Integrations
-
-### Active Integrations
-- **Google Analytics** - Tracking code: `G-TKTH70X52B`
-- **Google Tag Manager** - Container: `GTM-PVB2TL4X`
-- **Zapier Webhooks** - For contact forms (when implemented)
-
-### Removed Integrations
-- **Pipedrive** - No longer in use, all code removed
-
-## 🛠️ Troubleshooting
-
-### Local Server Issues
-```bash
-# If port 8080 is in use, change it in package.json
-"serve": "npx http-server . -p 3000 -c-1"
-```
-
-### Test Failures
-```bash
-# Clear test cache
-rm -rf test-results/ playwright-report/
-
-# Re-run tests
-npm test
-```
-
-### Visual Test Updates
-```bash
-# Update snapshots after intentional changes
-npm run test:update-snapshots
-```
-
-## 📚 Additional Resources
-- [Playwright Documentation](https://playwright.dev)
-- [GitHub Pages Documentation](https://docs.github.com/en/pages)
-- [Original Site](https://www.bws.ninja)
-
-## 📄 License
-MIT License - See LICENSE file for details
+- [Testing Guide](tests/README.md) - Complete testing documentation
+- [Deployment Guide](docs/GITHUB_PAGES_DEPLOYMENT.md) - GitHub Pages setup
+- [Astro Documentation](https://docs.astro.build) - Framework docs
+- [Playwright Documentation](https://playwright.dev) - Testing framework
 
 ## 🤝 Contributing
-1. Create a feature branch
-2. Make your changes
-3. Run tests: `npm test`
-4. Submit a pull request
-5. Tests will run automatically via GitHub Actions
+
+1. Create feature branch from `main`
+2. Make changes in `src/` files
+3. Test locally: `npm test`
+4. Build and verify: `npm run build`
+5. Commit and push
+6. Create pull request
+7. Tests run automatically in CI
+8. Merge after review and tests pass
+
+## ⚠️ Important Notes
+
+- **Never edit `_site/` directly** - changes will be lost on rebuild
+- **Always test before pushing** - broken builds block deployment
+- **Use pull requests** - direct pushes to main trigger deployment
+- **Monitor after deployment** - check Actions tab for status
 
 ## 📞 Support
-For issues or questions, please open an issue in this repository.
+
+For issues or questions:
+- Create an issue in this repository
+- Check GitHub Actions for deployment status
+- Review monitoring alerts for production issues
+
+## 📄 License
+
+MIT License - See LICENSE file for details

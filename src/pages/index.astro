@@ -1,0 +1,20 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navigation from '../components/Navigation.astro';
+import IndexMainContent from '../components/IndexMainContent.astro';
+import Footer from '../components/Footer.astro';
+import Scripts from '../components/Scripts.astro';
+
+const pageTitle = 'Cutting-Edge Blockchain Solutions';
+const pageDescription = 'A Blockchain Solutions Marketplace for mass-market users to find innovative and easy-to-use blockchain solutions and a platform for builders to bring those solutions to life.';
+---
+
+<BaseLayout title={pageTitle} description={pageDescription}>
+  <Navigation />
+  <IndexMainContent />
+  <Footer />
+
+  <Fragment slot="scripts">
+    <Scripts />
+  </Fragment>
+</BaseLayout>

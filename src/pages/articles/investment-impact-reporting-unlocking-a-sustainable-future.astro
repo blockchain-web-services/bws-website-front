@@ -1,0 +1,20 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Navigation from '../../components/Navigation.astro';
+import Footer from '../../components/Footer.astro';
+import Scripts from '../../components/Scripts.astro';
+import ArticlesInvestmentImpactReportingUnlockingASustainableFutureMainContent from '../../components/articlesinvestmentimpactreportingunlockingasustainablefutureMainContent.astro';
+
+const pageTitle = 'Investment Impact Reporting: Unlocking a Sustainable Future';
+const pageDescription = 'Blockchain Web Services - Enterprise blockchain solutions';
+---
+
+<BaseLayout title={pageTitle} description={pageDescription}>
+  <Navigation />
+  <ArticlesInvestmentImpactReportingUnlockingASustainableFutureMainContent />
+  <Footer />
+
+  <Fragment slot="scripts">
+    <Scripts />
+  </Fragment>
+</BaseLayout>

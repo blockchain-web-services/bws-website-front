@@ -1,13 +1,34 @@
 node_modules/
-test-results/
-playwright-report/
-playwright/.cache/
 .env
 .env.local
 .DS_Store
 *.log
-tests/screenshots/*.png.actual
-tests/screenshots/*.png.diff
 validation-output.txt
 htmlhint-output.txt
 prettier-output.txt
+
+# Playwright test outputs
+tests/playwright-report/
+tests/test-results/
+tests/playwright/.cache/
+tests/visual/**/*.png.actual
+tests/visual/**/*.png.diff
+tests/screenshots/
+test-results.json
+junit.xml
+
+# Old test locations (to be removed)
+test-results/
+playwright-report/
+playwright/.cache/
+
+# Keep visual baselines
+!tests/visual/baselines/
+
+# Build output
+_site/
+dist/
+
+# IDE
+.vscode/
+.idea/
