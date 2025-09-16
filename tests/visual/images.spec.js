@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import { HomePage } from '../page-objects/HomePage';
+import { HomePage } from '../page-objects/HomePage.js';
 
 test.describe('Image Visual Tests', () => {
   let homePage;

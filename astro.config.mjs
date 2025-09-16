@@ -16,7 +16,13 @@ export default defineConfig({
 
   // Server settings for development
   server: {
-    port: 8081,
+    port: process.env.PORT ? parseInt(process.env.PORT) : 4321,
+    host: true
+  },
+
+  // Preview server settings
+  preview: {
+    port: process.env.PORT ? parseInt(process.env.PORT) : 4321,
     host: true
   },
 

@@ -47,6 +47,9 @@ jobs:
         run: npx playwright install --with-deps ${{ matrix.browser }}
 
       - name: Run Playwright tests
+        env:
+          PORT: 4321
+          PLAYWRIGHT_BASE_URL: http://localhost:4321
         run: npx playwright test --config=tests/playwright.config.cjs --project=${{ matrix.browser }}
 
       - name: Upload test results

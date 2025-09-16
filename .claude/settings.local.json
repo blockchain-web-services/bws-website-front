@@ -10,7 +10,10 @@
       "Bash(done)",
       "Bash(sed:*)",
       "Bash(curl:*)",
-      "Bash(cat:*)"
+      "Bash(cat:*)",
+      "Bash(npm run build:*)",
+      "Bash(npx astro build:*)",
+      "Bash(npx astro check:*)"
     ],
     "deny": [],
     "ask": []

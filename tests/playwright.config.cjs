@@ -1,5 +1,9 @@
 const { defineConfig, devices } = require('@playwright/test');
 
+// Define port consistently for both CI and local
+const PORT = process.env.PORT || '4321';
+const BASE_URL = process.env.PLAYWRIGHT_BASE_URL || `http://localhost:${PORT}`;
+
 module.exports = defineConfig({
   testDir: '.',
   testMatch: '**/*.spec.{js,ts}',
@@ -14,7 +18,7 @@ module.exports = defineConfig({
   ],
 
   use: {
-    baseURL: process.env.PLAYWRIGHT_BASE_URL || 'http://localhost:8081',
+    baseURL: BASE_URL,
     trace: 'on-first-retry',
     screenshot: 'only-on-failure',
     video: 'retain-on-failure',
@@ -39,10 +43,10 @@ module.exports = defineConfig({
     },
   ],
 
-  webServer: process.env.CI ? undefined : {
+  webServer: (process.env.CI || process.env.NO_WEBSERVER) ? undefined : {
     command: 'npm run preview',
-    url: 'http://localhost:8081',
-    reuseExistingServer: true,
+    port: parseInt(PORT),
+    reuseExistingServer: !process.env.CI,
     stdout: 'pipe',
     stderr: 'pipe',
   },

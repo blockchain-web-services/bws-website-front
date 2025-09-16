@@ -34,15 +34,18 @@
   "author": "Blockchain Web Services",
   "license": "MIT",
   "devDependencies": {
+    "@axe-core/playwright": "^4.8.0",
+    "@lhci/cli": "^0.13.0",
     "@playwright/test": "^1.45.0",
     "@types/node": "^20.0.0",
-    "@axe-core/playwright": "^4.8.0",
-    "typescript": "^5.0.0",
     "astro": "^4.16.18",
     "cheerio": "^1.1.2",
+    "linkinator": "^6.0.0",
     "node-fetch": "^3.3.2",
     "prettier": "^3.6.2",
-    "@lhci/cli": "^0.13.0",
-    "linkinator": "^6.0.0"
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@rollup/rollup-linux-x64-gnu": "^4.50.2"
   }
 }

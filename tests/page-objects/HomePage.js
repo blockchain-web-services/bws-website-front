@@ -1,5 +1,5 @@
 
-import { BasePage } from './BasePage';
+import { BasePage } from './BasePage.js';
 
 /**
  * Page object for the homepage

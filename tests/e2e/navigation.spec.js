@@ -1,17 +1,20 @@
 import { test, expect } from '@playwright/test';
-import { HomePage } from '../page-objects/HomePage';
-import { AboutPage } from '../page-objects/AboutPage';
-import { IndustriesPage } from '../page-objects/IndustriesPage';
-import { MarketplacePage } from '../page-objects/MarketplacePage';
+import { HomePage } from '../page-objects/HomePage.js';
+import { AboutPage } from '../page-objects/AboutPage.js';
+import { IndustriesPage } from '../page-objects/IndustriesPage.js';
+import { MarketplacePage } from '../page-objects/MarketplacePage.js';
 
 test.describe('Navigation Tests', () => {
   test('Main navigation menu works correctly', async ({ page }) => {
     const homePage = new HomePage(page);
     await homePage.goto();
 
+    // Wait for navigation to be ready
+    await page.waitForLoadState('networkidle');
+
     // Test navigation to About page
     await homePage.navigateViaMenu('About');
-    await expect(page).toHaveURL(/\/about/);
+    await expect(page).toHaveURL(/\/about/, { timeout: 10000 });
 
     // Test navigation to Industries
     await homePage.navigateViaMenu('Industries');

@@ -1,32 +1,20 @@
-
-import { BasePage } from './BasePage';
+import { BasePage } from './BasePage.js';
 
 /**
  * Page object for the About page
  */
 export class AboutPage extends BasePage {
-  pageTitle;
-  teamSection;
-  missionSection;
-  visionSection;
-
   constructor(page) {
     super(page);
     this.pageTitle = page.locator('h1').first();
-    this.teamSection = page.locator('.team-section');
-    this.missionSection = page.locator('.mission-section');
-    this.visionSection = page.locator('.vision-section');
+    this.contentSection = page.locator('.main-content');
   }
 
   async goto() {
-    await this.navigateTo('/about');
+    await this.navigateTo('/about.html');
   }
 
-  async getPageHeading() {
+  async getPageTitleText() {
     return await this.pageTitle.textContent() || '';
-  }
-
-  async isTeamSectionVisible() {
-    return await this.teamSection.isVisible();
   }
 }
