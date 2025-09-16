@@ -43,12 +43,13 @@ module.exports = defineConfig({
     },
   ],
 
-  webServer: (process.env.CI || process.env.NO_WEBSERVER) ? undefined : {
+  webServer: process.env.NO_WEBSERVER ? undefined : {
     command: 'npm run preview',
     port: parseInt(PORT),
     reuseExistingServer: !process.env.CI,
     stdout: 'pipe',
     stderr: 'pipe',
+    timeout: 120 * 1000, // 2 minutes
   },
 
   outputDir: 'test-results/',

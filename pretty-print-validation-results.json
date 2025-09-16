@@ -1,0 +1,273 @@
+{
+  "html": [
+    {
+      "file": "_site/about.html",
+      "originalSize": 63108,
+      "newSize": 63108,
+      "sizeDiff": 0,
+      "prettyPrinted": true,
+      "errors": []
+    },
+    {
+      "file": "_site/articles/discover-the-power-of-blockchain-bwss-data-management-solutions.html",
+      "originalSize": 82632,
+      "newSize": 82632,
+      "sizeDiff": 0,
+      "prettyPrinted": true,
+      "errors": [
+        "Duplicate IDs found: 58db7844-5919-d71b-dd74-2323ed8dfff9"
+      ]
+    },
+    {
+      "file": "_site/articles/embrace-sustainability-with-esg-credits-bws-solution.html",
+      "originalSize": 81321,
+      "newSize": 81321,
+      "sizeDiff": 0,
+      "prettyPrinted": true,
+      "errors": [
+        "Duplicate IDs found: 58db7844-5919-d71b-dd74-2323ed8dfff9"
+      ]
+    },
+    {
+      "file": "_site/articles/investment-impact-reporting-unlocking-a-sustainable-future.html",
+      "originalSize": 81118,
+      "newSize": 81118,
+      "sizeDiff": 0,
+      "prettyPrinted": true,
+      "errors": [
+        "Duplicate IDs found: 58db7844-5919-d71b-dd74-2323ed8dfff9"
+      ]
+    },
+    {
+      "file": "_site/contact-us.html",
+      "originalSize": 77508,
+      "newSize": 77508,
+      "sizeDiff": 0,
+      "prettyPrinted": true,
+      "errors": [
+        "Duplicate IDs found: 58db7844-5919-d71b-dd74-2323ed8dfff9"
+      ]
+    },
+    {
+      "file": "_site/index.html",
+      "originalSize": 130594,
+      "newSize": 130594,
+      "sizeDiff": 0,
+      "prettyPrinted": true,
+      "errors": [
+        "Duplicate IDs found: 05427ed1-27ed-d69d-326f-3d96834c8218"
+      ]
+    },
+    {
+      "file": "_site/industries.html",
+      "originalSize": 62970,
+      "newSize": 62970,
+      "sizeDiff": 0,
+      "prettyPrinted": true,
+      "errors": []
+    },
+    {
+      "file": "_site/industry-content/content-creation.html",
+      "originalSize": 80673,
+      "newSize": 80673,
+      "sizeDiff": 0,
+      "prettyPrinted": true,
+      "errors": []
+    },
+    {
+      "file": "_site/industry-content/esg.html",
+      "originalSize": 80695,
+      "newSize": 80695,
+      "sizeDiff": 0,
+      "prettyPrinted": true,
+      "errors": []
+    },
+    {
+      "file": "_site/industry-content/financial-services.html",
+      "originalSize": 80687,
+      "newSize": 80687,
+      "sizeDiff": 0,
+      "prettyPrinted": true,
+      "errors": []
+    },
+    {
+      "file": "_site/industry-content/legal.html",
+      "originalSize": 81017,
+      "newSize": 81017,
+      "sizeDiff": 0,
+      "prettyPrinted": true,
+      "errors": []
+    },
+    {
+      "file": "_site/industry-content/retail.html",
+      "originalSize": 80624,
+      "newSize": 80624,
+      "sizeDiff": 0,
+      "prettyPrinted": true,
+      "errors": []
+    },
+    {
+      "file": "_site/industry-content/supply-chain.html",
+      "originalSize": 81218,
+      "newSize": 81218,
+      "sizeDiff": 0,
+      "prettyPrinted": true,
+      "errors": []
+    },
+    {
+      "file": "_site/legal-notice.html",
+      "originalSize": 79738,
+      "newSize": 79738,
+      "sizeDiff": 0,
+      "prettyPrinted": true,
+      "errors": [
+        "Duplicate IDs found: 58db7844-5919-d71b-dd74-2323ed8dfff9"
+      ]
+    },
+    {
+      "file": "_site/marketplace/blockchain-badges.html",
+      "originalSize": 84404,
+      "newSize": 84404,
+      "sizeDiff": 0,
+      "prettyPrinted": true,
+      "errors": []
+    },
+    {
+      "file": "_site/marketplace/database-immutable.html",
+      "originalSize": 83113,
+      "newSize": 83113,
+      "sizeDiff": 0,
+      "prettyPrinted": true,
+      "errors": []
+    },
+    {
+      "file": "_site/marketplace/database-mutable.html",
+      "originalSize": 82517,
+      "newSize": 82517,
+      "sizeDiff": 0,
+      "prettyPrinted": true,
+      "errors": []
+    },
+    {
+      "file": "_site/marketplace/esg-credits.html",
+      "originalSize": 83971,
+      "newSize": 83971,
+      "sizeDiff": 0,
+      "prettyPrinted": true,
+      "errors": []
+    },
+    {
+      "file": "_site/marketplace/ipfs-upload.html",
+      "originalSize": 81771,
+      "newSize": 81771,
+      "sizeDiff": 0,
+      "prettyPrinted": true,
+      "errors": []
+    },
+    {
+      "file": "_site/marketplace/nft-gamecube.html",
+      "originalSize": 82218,
+      "newSize": 82218,
+      "sizeDiff": 0,
+      "prettyPrinted": true,
+      "errors": []
+    },
+    {
+      "file": "_site/marketplace/nft-zeroknwoledge.html",
+      "originalSize": 83171,
+      "newSize": 83171,
+      "sizeDiff": 0,
+      "prettyPrinted": true,
+      "errors": []
+    },
+    {
+      "file": "_site/marketplace/telegram-xbot.html",
+      "originalSize": 81151,
+      "newSize": 81151,
+      "sizeDiff": 0,
+      "prettyPrinted": true,
+      "errors": []
+    },
+    {
+      "file": "_site/privacy-policy.html",
+      "originalSize": 80662,
+      "newSize": 80662,
+      "sizeDiff": 0,
+      "prettyPrinted": true,
+      "errors": [
+        "Duplicate IDs found: 58db7844-5919-d71b-dd74-2323ed8dfff9"
+      ]
+    },
+    {
+      "file": "_site/resources.html",
+      "originalSize": 63000,
+      "newSize": 63000,
+      "sizeDiff": 0,
+      "prettyPrinted": true,
+      "errors": []
+    },
+    {
+      "file": "_site/test-images.html",
+      "originalSize": 1653,
+      "newSize": 1653,
+      "sizeDiff": 0,
+      "prettyPrinted": true,
+      "errors": []
+    }
+  ],
+  "css": [
+    {
+      "file": "_site/assets/css/bws-21ce3b.webflow.shared.9162577b1.min.css",
+      "originalSize": 345097,
+      "newSize": 345097,
+      "sizeDiff": 0,
+      "prettyPrinted": false,
+      "skippedMinified": true,
+      "errors": []
+    },
+    {
+      "file": "_site/assets/css/main.css",
+      "originalSize": 535,
+      "newSize": 535,
+      "sizeDiff": 0,
+      "prettyPrinted": true,
+      "skippedMinified": false,
+      "errors": []
+    },
+    {
+      "file": "_site/assets/css/webflow.css",
+      "originalSize": 346786,
+      "newSize": 346786,
+      "sizeDiff": 0,
+      "prettyPrinted": true,
+      "skippedMinified": false,
+      "errors": []
+    },
+    {
+      "file": "_site/fix-images.css",
+      "originalSize": 1221,
+      "newSize": 1221,
+      "sizeDiff": 0,
+      "prettyPrinted": true,
+      "skippedMinified": false,
+      "errors": []
+    },
+    {
+      "file": "_site/styles.css",
+      "originalSize": 696915,
+      "newSize": 696915,
+      "sizeDiff": 0,
+      "prettyPrinted": true,
+      "skippedMinified": false,
+      "errors": []
+    }
+  ],
+  "summary": {
+    "totalHtml": 25,
+    "totalCss": 5,
+    "htmlPrettyPrinted": 25,
+    "cssPrettyPrinted": 4,
+    "htmlErrors": 7,
+    "cssErrors": 0
+  }
+}
