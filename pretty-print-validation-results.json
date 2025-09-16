@@ -2,16 +2,16 @@
   "html": [
     {
       "file": "_site/about.html",
-      "originalSize": 63108,
-      "newSize": 63108,
+      "originalSize": 63039,
+      "newSize": 63039,
       "sizeDiff": 0,
       "prettyPrinted": true,
       "errors": []
     },
     {
       "file": "_site/articles/discover-the-power-of-blockchain-bwss-data-management-solutions.html",
-      "originalSize": 82632,
-      "newSize": 82632,
+      "originalSize": 82563,
+      "newSize": 82563,
       "sizeDiff": 0,
       "prettyPrinted": true,
       "errors": [
@@ -20,8 +20,8 @@
     },
     {
       "file": "_site/articles/embrace-sustainability-with-esg-credits-bws-solution.html",
-      "originalSize": 81321,
-      "newSize": 81321,
+      "originalSize": 81252,
+      "newSize": 81252,
       "sizeDiff": 0,
       "prettyPrinted": true,
       "errors": [
@@ -30,8 +30,8 @@
     },
     {
       "file": "_site/articles/investment-impact-reporting-unlocking-a-sustainable-future.html",
-      "originalSize": 81118,
-      "newSize": 81118,
+      "originalSize": 81049,
+      "newSize": 81049,
       "sizeDiff": 0,
       "prettyPrinted": true,
       "errors": [
@@ -40,8 +40,8 @@
     },
     {
       "file": "_site/contact-us.html",
-      "originalSize": 77508,
-      "newSize": 77508,
+      "originalSize": 77439,
+      "newSize": 77439,
       "sizeDiff": 0,
       "prettyPrinted": true,
       "errors": [
@@ -50,8 +50,8 @@
     },
     {
       "file": "_site/index.html",
-      "originalSize": 130594,
-      "newSize": 130594,
+      "originalSize": 130481,
+      "newSize": 130481,
       "sizeDiff": 0,
       "prettyPrinted": true,
       "errors": [
@@ -60,64 +60,64 @@
     },
     {
       "file": "_site/industries.html",
-      "originalSize": 62970,
-      "newSize": 62970,
+      "originalSize": 62901,
+      "newSize": 62901,
       "sizeDiff": 0,
       "prettyPrinted": true,
       "errors": []
     },
     {
       "file": "_site/industry-content/content-creation.html",
-      "originalSize": 80673,
-      "newSize": 80673,
+      "originalSize": 80604,
+      "newSize": 80604,
       "sizeDiff": 0,
       "prettyPrinted": true,
       "errors": []
     },
     {
       "file": "_site/industry-content/esg.html",
-      "originalSize": 80695,
-      "newSize": 80695,
+      "originalSize": 80626,
+      "newSize": 80626,
       "sizeDiff": 0,
       "prettyPrinted": true,
       "errors": []
     },
     {
       "file": "_site/industry-content/financial-services.html",
-      "originalSize": 80687,
-      "newSize": 80687,
+      "originalSize": 80618,
+      "newSize": 80618,
       "sizeDiff": 0,
       "prettyPrinted": true,
       "errors": []
     },
     {
       "file": "_site/industry-content/legal.html",
-      "originalSize": 81017,
-      "newSize": 81017,
+      "originalSize": 80948,
+      "newSize": 80948,
       "sizeDiff": 0,
       "prettyPrinted": true,
       "errors": []
     },
     {
       "file": "_site/industry-content/retail.html",
-      "originalSize": 80624,
-      "newSize": 80624,
+      "originalSize": 80555,
+      "newSize": 80555,
       "sizeDiff": 0,
       "prettyPrinted": true,
       "errors": []
     },
     {
       "file": "_site/industry-content/supply-chain.html",
-      "originalSize": 81218,
-      "newSize": 81218,
+      "originalSize": 81149,
+      "newSize": 81149,
       "sizeDiff": 0,
       "prettyPrinted": true,
       "errors": []
     },
     {
       "file": "_site/legal-notice.html",
-      "originalSize": 79738,
-      "newSize": 79738,
+      "originalSize": 79669,
+      "newSize": 79669,
       "sizeDiff": 0,
       "prettyPrinted": true,
       "errors": [
@@ -126,72 +126,72 @@
     },
     {
       "file": "_site/marketplace/blockchain-badges.html",
-      "originalSize": 84404,
-      "newSize": 84404,
+      "originalSize": 84335,
+      "newSize": 84335,
       "sizeDiff": 0,
       "prettyPrinted": true,
       "errors": []
     },
     {
       "file": "_site/marketplace/database-immutable.html",
-      "originalSize": 83113,
-      "newSize": 83113,
+      "originalSize": 83044,
+      "newSize": 83044,
       "sizeDiff": 0,
       "prettyPrinted": true,
       "errors": []
     },
     {
       "file": "_site/marketplace/database-mutable.html",
-      "originalSize": 82517,
-      "newSize": 82517,
+      "originalSize": 82448,
+      "newSize": 82448,
       "sizeDiff": 0,
       "prettyPrinted": true,
       "errors": []
     },
     {
       "file": "_site/marketplace/esg-credits.html",
-      "originalSize": 83971,
-      "newSize": 83971,
+      "originalSize": 83902,
+      "newSize": 83902,
       "sizeDiff": 0,
       "prettyPrinted": true,
       "errors": []
     },
     {
       "file": "_site/marketplace/ipfs-upload.html",
-      "originalSize": 81771,
-      "newSize": 81771,
+      "originalSize": 81702,
+      "newSize": 81702,
       "sizeDiff": 0,
       "prettyPrinted": true,
       "errors": []
     },
     {
       "file": "_site/marketplace/nft-gamecube.html",
-      "originalSize": 82218,
-      "newSize": 82218,
+      "originalSize": 82149,
+      "newSize": 82149,
       "sizeDiff": 0,
       "prettyPrinted": true,
       "errors": []
     },
     {
       "file": "_site/marketplace/nft-zeroknwoledge.html",
-      "originalSize": 83171,
-      "newSize": 83171,
+      "originalSize": 83102,
+      "newSize": 83102,
       "sizeDiff": 0,
       "prettyPrinted": true,
       "errors": []
     },
     {
       "file": "_site/marketplace/telegram-xbot.html",
-      "originalSize": 81151,
-      "newSize": 81151,
+      "originalSize": 81082,
+      "newSize": 81082,
       "sizeDiff": 0,
       "prettyPrinted": true,
       "errors": []
     },
     {
       "file": "_site/privacy-policy.html",
-      "originalSize": 80662,
-      "newSize": 80662,
+      "originalSize": 80593,
+      "newSize": 80593,
       "sizeDiff": 0,
       "prettyPrinted": true,
       "errors": [
@@ -200,8 +200,8 @@
     },
     {
       "file": "_site/resources.html",
-      "originalSize": 63000,
-      "newSize": 63000,
+      "originalSize": 62931,
+      "newSize": 62931,
       "sizeDiff": 0,
       "prettyPrinted": true,
       "errors": []
