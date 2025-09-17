@@ -49,15 +49,13 @@ jobs:
 
       - name: Run Playwright tests
         id: test-run
-        continue-on-error: true
         env:
           PORT: 4321
           PLAYWRIGHT_BASE_URL: http://localhost:4321
         run: |
-          npx playwright test --reporter=json --config=tests/playwright.config.cjs --project=${{ matrix.browser }} > test-results.json 2> test-output.txt || echo "TESTS_FAILED=true" >> $GITHUB_ENV
-
-          # Also run with list reporter for console output
-          npx playwright test --reporter=list --config=tests/playwright.config.cjs --project=${{ matrix.browser }} || true
+          # Run tests with reporters configured in playwright.config.cjs
+          # In CI, this will use JSON reporter outputting to test-results.json
+          npx playwright test --config=tests/playwright.config.cjs --project=${{ matrix.browser }} 2>&1 | tee test-output.txt
 
       - name: Upload test results
         if: always()
@@ -68,13 +66,18 @@ jobs:
           retention-days: 30
 
       - name: Collect and format test errors
-        if: env.TESTS_FAILED == 'true'
+        if: failure()
         run: |
           echo "Collecting test errors..."
-          node scripts/collect-test-errors.js test-results.json test-output.txt issue-content.md
+          # Debug: Check what files exist
+          ls -la test-*.* || true
+          echo "Contents of test-results.json:"
+          cat test-results.json || echo "File not found"
+          # Run error collector
+          node scripts/collect-test-errors.js test-results.json test-output.txt issue-content.md || echo "Error collection failed"
 
       - name: Create GitHub Issue for failures
-        if: env.TESTS_FAILED == 'true' && (github.ref == 'refs/heads/master' || github.ref == 'refs/heads/main')
+        if: failure() && (github.ref == 'refs/heads/master' || github.ref == 'refs/heads/main')
         uses: actions/github-script@v7
         with:
           script: |
@@ -223,8 +226,17 @@ jobs:
           PLAYWRIGHT_BASE_URL: "https://www.bws.ninja"
           NO_WEBSERVER: "true"
         run: |
-          npx playwright test tests/smoke/ --reporter=json --config=tests/playwright.config.cjs --project=chromium > smoke-test-results.json 2> smoke-test-output.txt || echo "SMOKE_TESTS_FAILED=true" >> $GITHUB_ENV
-          npx playwright test tests/smoke/ --reporter=list --config=tests/playwright.config.cjs --project=chromium || echo "Smoke tests completed with warnings"
+          # Run smoke tests (will output to test-results.json due to CI env)
+          npx playwright test tests/smoke/ --config=tests/playwright.config.cjs --project=chromium 2>&1 | tee smoke-test-output.txt
+          TEST_EXIT_CODE=${PIPESTATUS[0]}
+
+          # Rename the output for smoke tests
+          mv test-results.json smoke-test-results.json 2>/dev/null || echo "No test results to move"
+
+          if [ $TEST_EXIT_CODE -ne 0 ]; then
+            echo "SMOKE_TESTS_FAILED=true" >> $GITHUB_ENV
+            echo "⚠️ Production smoke tests failed"
+          fi
 
       - name: Check deployment health
         run: |
