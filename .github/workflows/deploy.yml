@@ -12,6 +12,7 @@ permissions:
   pages: write
   id-token: write
   pull-requests: write
+  issues: write
 
 concurrency:
   group: "pages-${{ github.ref }}"
@@ -47,10 +48,16 @@ jobs:
         run: npx playwright install --with-deps ${{ matrix.browser }}
 
       - name: Run Playwright tests
+        id: test-run
+        continue-on-error: true
         env:
           PORT: 4321
           PLAYWRIGHT_BASE_URL: http://localhost:4321
-        run: npx playwright test --config=tests/playwright.config.cjs --project=${{ matrix.browser }}
+        run: |
+          npx playwright test --reporter=json --config=tests/playwright.config.cjs --project=${{ matrix.browser }} > test-results.json 2> test-output.txt || echo "TESTS_FAILED=true" >> $GITHUB_ENV
+
+          # Also run with list reporter for console output
+          npx playwright test --reporter=list --config=tests/playwright.config.cjs --project=${{ matrix.browser }} || true
 
       - name: Upload test results
         if: always()
@@ -59,6 +66,75 @@ jobs:
           name: test-results-${{ matrix.browser }}
           path: tests/playwright-report/
           retention-days: 30
+
+      - name: Collect and format test errors
+        if: env.TESTS_FAILED == 'true'
+        run: |
+          echo "Collecting test errors..."
+          node scripts/collect-test-errors.js test-results.json test-output.txt issue-content.md
+
+      - name: Create GitHub Issue for failures
+        if: env.TESTS_FAILED == 'true' && (github.ref == 'refs/heads/master' || github.ref == 'refs/heads/main')
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const path = require('path');
+
+            // Read the issue content
+            let issueBody;
+            try {
+              issueBody = fs.readFileSync('issue-content.md', 'utf8');
+            } catch (error) {
+              console.log('No issue content file found, using default');
+              issueBody = `## Test Failure Report\n\nTests failed in workflow run: [View Run](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})\n\nPlease check the workflow logs for details.`;
+            }
+
+            // Check if similar issue already exists
+            const existingIssues = await github.rest.issues.listForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              labels: ['test-failure', 'automated'],
+              state: 'open'
+            });
+
+            const today = new Date().toISOString().split('T')[0];
+            const existingToday = existingIssues.data.find(issue =>
+              issue.title.includes(today) && issue.title.includes('Test Failures')
+            );
+
+            if (!existingToday) {
+              // Create new issue
+              const issue = await github.rest.issues.create({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                title: `🔴 Test Failures - ${today} - ${context.sha.substring(0, 7)}`,
+                body: issueBody,
+                labels: ['test-failure', 'automated', 'urgent']
+              });
+              console.log(`Created issue #${issue.data.number}`);
+
+              // Try to assign to claude (will silently fail if user doesn't exist)
+              try {
+                await github.rest.issues.addAssignees({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  issue_number: issue.data.number,
+                  assignees: ['claude']
+                });
+              } catch (assignError) {
+                console.log('Could not assign to claude:', assignError.message);
+              }
+            } else {
+              // Add comment to existing issue
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: existingToday.number,
+                body: `## 🔄 Additional Test Failure\n\n${issueBody}`
+              });
+              console.log(`Added comment to existing issue #${existingToday.number}`);
+            }
 
   # Job 2: Build for production
   build:
@@ -141,11 +217,14 @@ jobs:
         run: npx playwright install --with-deps chromium
 
       - name: Run smoke tests against production
+        id: smoke-test
+        continue-on-error: true
         env:
           PLAYWRIGHT_BASE_URL: "https://www.bws.ninja"
           NO_WEBSERVER: "true"
         run: |
-          npx playwright test tests/smoke/ --config=tests/playwright.config.cjs --project=chromium || echo "Smoke tests completed with warnings"
+          npx playwright test tests/smoke/ --reporter=json --config=tests/playwright.config.cjs --project=chromium > smoke-test-results.json 2> smoke-test-output.txt || echo "SMOKE_TESTS_FAILED=true" >> $GITHUB_ENV
+          npx playwright test tests/smoke/ --reporter=list --config=tests/playwright.config.cjs --project=chromium || echo "Smoke tests completed with warnings"
 
       - name: Check deployment health
         run: |
@@ -153,3 +232,47 @@ jobs:
           response=$(curl -s -o /dev/null -w "%{http_code}" https://www.bws.ninja/ || echo "000")
           echo "Homepage status: $response"
           [ "$response" = "200" ] || [ "$response" = "000" ] || exit 0
+
+      - name: Collect smoke test errors
+        if: env.SMOKE_TESTS_FAILED == 'true'
+        run: |
+          echo "Collecting smoke test errors..."
+          node scripts/collect-test-errors.js smoke-test-results.json smoke-test-output.txt smoke-issue-content.md
+
+      - name: Create Issue for production failures
+        if: env.SMOKE_TESTS_FAILED == 'true'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+
+            // Read the issue content
+            let issueBody;
+            try {
+              issueBody = fs.readFileSync('smoke-issue-content.md', 'utf8');
+            } catch (error) {
+              issueBody = `## Production Smoke Test Failure\n\nSmoke tests failed against production: https://www.bws.ninja\n\nWorkflow: [View Run](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})`;
+            }
+
+            // Create high-priority issue for production failures
+            const issue = await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: `😨 PRODUCTION FAILURE - Smoke Tests - ${new Date().toISOString().split('T')[0]}`,
+              body: issueBody,
+              labels: ['test-failure', 'production', 'automated', 'critical']
+            });
+
+            console.log(`Created critical production issue #${issue.data.number}`);
+
+            // Try to assign to claude
+            try {
+              await github.rest.issues.addAssignees({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: issue.data.number,
+                assignees: ['claude']
+              });
+            } catch (error) {
+              console.log('Could not assign to claude');
+            }
