@@ -36,9 +36,10 @@ graph TD
 
 **Jobs:**
 1. **Test** (matrix: chromium)
-   - Runs Playwright tests
-   - Captures test results in JSON format
-   - Creates GitHub issues on failure with detailed error reports
+   - Runs Playwright tests with JSON and list reporters
+   - Captures complete test results and console output
+   - Downloads job logs for failed jobs
+   - Creates enhanced GitHub issues on failure
 
 2. **Build** (depends on: test)
    - Builds production site with Astro
@@ -58,12 +59,18 @@ graph TD
 - ✅ Deployment is validated with smoke tests
 
 **On Failure:**
-- ❌ Workflow stops at failed stage
-- ❌ Automated GitHub issue created with:
-  - Detailed test failure logs
-  - Stack traces and error messages
-  - Environment information
-  - Assigned to @claude for investigation
+- ❌ Workflow stops at failed stage (`set -o pipefail` ensures proper failure propagation)
+- ❌ Job logs downloaded via GitHub API for all failed jobs
+- ❌ Enhanced GitHub issue created with:
+  - `/fix-ci` command structure for Claude
+  - Complete test failure details with stack traces
+  - Extracted errors from job logs (TypeScript, npm, build errors)
+  - PR context when applicable (PR number, branches, author)
+  - Suggested fix branch naming
+  - Allowed tools specification for auto-fix
+  - Fix checklist for tracking progress
+  - Direct links to workflow run and artifacts
+- ❌ Issue assigned to @claude with `test-failure`, `automated`, `urgent`, `needs-fix` labels
 - ❌ Subsequent jobs (build/deploy) are skipped
 
 **Permissions Required:**
@@ -129,12 +136,44 @@ graph TD
 
 ### ✅ Active and Working Workflows
 1. **deploy.yml** - Main CI/CD pipeline with testing, building, and deployment
+   - Enhanced with Claude auto-fix support
+   - Job logs collection for comprehensive error reporting
+   - PR-aware issue creation
 2. **monitor.yml** - Production health monitoring (fixed to use existing smoke tests)
 3. **rollback.yml** - Emergency rollback capability
 
 ### 🗑️ Removed Workflows
 1. **html-validate.yml** - Removed (referenced non-existent npm scripts)
 2. **test.yml** - Removed (duplicate of deploy.yml test job)
+
+### 🤖 Claude Auto-Fix Integration
+
+**Enhanced Issue Creation:**
+When tests fail, the system creates issues optimized for Claude to automatically fix:
+
+```markdown
+## 🔴 CI Failure - Auto-Fix Request
+
+### Command for Claude
+/fix-ci
+
+### Failure Context
+- Failed Run: #42
+- PR: #99 (feature-branch → main)
+- Triggered by: @user
+- Job: test
+
+[Complete test failures with error details]
+[Job logs with extracted errors]
+[Allowed tools and fix checklist]
+```
+
+**Features:**
+- Structured format for Claude parsing
+- Complete error context from multiple sources
+- PR-aware with branch information
+- Suggested fix branch naming convention
+- Tool permissions specified for auto-fix
 
 ---
 
@@ -165,14 +204,33 @@ PR Merge → deploy.yml (full pipeline) → Production
 
 ## Environment Variables
 
+### Standard GitHub Actions Variables (Automatically Provided)
+
 | Variable | Used In | Purpose |
 |----------|---------|---------|
 | `CI` | All workflows | Indicates CI environment |
 | `NODE_ENV` | deploy, rollback | Build environment (production) |
-| `PLAYWRIGHT_BASE_URL` | deploy, test, monitor | Test target URL |
+| `PLAYWRIGHT_BASE_URL` | deploy, monitor | Test target URL |
 | `NO_WEBSERVER` | deploy | Skip test server startup |
 | `PORT` | deploy | Test server port (4321) |
 | `PRODUCTION_URL` | monitor | Production site URL |
+| `GITHUB_PR_NUMBER` | deploy | PR number (set in workflow) |
+| `GITHUB_HEAD_REF` | deploy | PR source branch |
+| `GITHUB_BASE_REF` | deploy | PR target branch |
+
+### GitHub Context Variables (Used for Enhanced Issue Creation)
+
+| Variable | Purpose | Available When |
+|----------|---------|---------------|
+| `GITHUB_RUN_ID` | Unique workflow run ID | Always |
+| `GITHUB_RUN_NUMBER` | Sequential run number | Always |
+| `GITHUB_ACTOR` | User who triggered run | Always |
+| `GITHUB_WORKFLOW` | Workflow name | Always |
+| `GITHUB_JOB` | Current job name | Always |
+| `GITHUB_EVENT_NAME` | Triggering event | Always |
+| `GITHUB_SHA` | Commit SHA | Always |
+| `GITHUB_REF` | Git ref | Always |
+| `github.event.pull_request.*` | PR details | On pull_request events |
 
 ---
 
@@ -188,17 +246,25 @@ PR Merge → deploy.yml (full pipeline) → Production
 
 ## Maintenance Tasks
 
-### Recently Completed Actions
+### Recently Completed Improvements
 1. ✅ Removed broken `html-validate.yml` workflow
 2. ✅ Fixed `monitor.yml` to use existing smoke tests
 3. ✅ Removed duplicate `test.yml` workflow
+4. ✅ Enhanced issue creation with Claude auto-fix support
+5. ✅ Added job logs collection for comprehensive error reporting
+6. ✅ Implemented PR-aware issue creation with branch context
+7. ✅ Fixed test failure propagation with `set -o pipefail`
+8. ✅ Added detailed test error extraction and formatting
 
 ### Best Practices
-- ✅ Automated issue creation on failures (implemented)
-- ✅ Test failure details in issues (implemented)
-- ✅ Rollback capability (implemented)
-- ✅ Production monitoring (partially working)
-- ⚠️ Fix broken workflows before they cause confusion
+- ✅ Automated issue creation on failures with Claude auto-fix support
+- ✅ Comprehensive test failure details including job logs
+- ✅ PR-aware context in issues for better debugging
+- ✅ Rollback capability for emergency recovery
+- ✅ Production monitoring with smoke tests
+- ✅ Proper error propagation in shell commands
+- ✅ Job logs collection for non-test failures
+- ✅ Structured issue format for automated fixing
 
 ---
 
@@ -230,3 +296,80 @@ gh run view <run-id>
 # Watch workflow in progress
 gh run watch
 ```
+
+---
+
+## Error Collection System
+
+### Overview
+The repository includes an advanced error collection system (`scripts/collect-test-errors.js`) that parses multiple sources of failure data and generates comprehensive GitHub issues.
+
+### Data Sources
+1. **Playwright JSON Reporter** - Test results with pass/fail status
+2. **Console Output** - Test execution logs and errors
+3. **Job Logs** - Downloaded via GitHub API for build/TypeScript/npm errors
+4. **WebServer Errors** - Astro preview server issues
+
+### Error Collection Features
+
+#### Test Failure Details
+- Full test name and file location with line numbers
+- Complete error messages with actual vs expected values
+- Stack traces pointing to exact failure points
+- Code snippets showing the failing test
+- Test duration and status
+
+#### Job Logs Analysis
+Automatically extracts and categorizes errors:
+- TypeScript compilation errors (`error TS****`)
+- JavaScript syntax errors
+- npm installation/build failures
+- Generic ERROR/FAILED patterns
+- WebServer startup issues
+
+#### Smart Suggestions
+Context-aware action items based on error patterns:
+- **Timeout errors** → Suggests increasing timeouts, checking selectors
+- **Connection refused** → Points to server configuration issues
+- **Element not found** → Recommends selector verification
+- **File URL errors** → Identifies encoding problems
+
+### Issue Format Structure
+
+```markdown
+## 🔴 CI Failure - Auto-Fix Request
+
+### Command for Claude
+/fix-ci
+
+### Failure Context
+[PR info, workflow details, trigger info]
+
+### Test Results Summary
+[Pass/fail statistics]
+
+### Detailed Test Failures
+[Numbered failures with full context]
+
+### Job Logs Summary
+[Extracted errors from CI logs]
+
+### Suggested Fix Branch
+git checkout -b claude-fix-ci-{date}-{run-id}
+
+### Allowed Tools
+[Specified tools for auto-fix]
+
+### Fix Checklist
+- [ ] Fix all test failures
+- [ ] Update configurations
+- [ ] Follow conventions
+```
+
+### Configuration
+The error collector accepts up to 4 arguments:
+```bash
+node scripts/collect-test-errors.js [json-results] [console-output] [output-file] [job-logs]
+```
+
+All arguments are optional with sensible defaults.
