@@ -35,38 +35,97 @@ class TestErrorCollector {
         return;
       }
 
-      const data = JSON.parse(fs.readFileSync(jsonPath, 'utf8'));
+      const content = fs.readFileSync(jsonPath, 'utf8');
 
-      // Update summary
-      this.errors.summary.total = data.stats?.total || 0;
-      this.errors.summary.failed = data.stats?.failed || 0;
-      this.errors.summary.passed = data.stats?.passed || 0;
-      this.errors.summary.skipped = data.stats?.skipped || 0;
+      // Handle empty or invalid JSON
+      if (!content || content.trim() === '' || content === '{}') {
+        console.log('JSON file is empty or invalid');
+        return;
+      }
 
-      // Extract failed tests
+      const data = JSON.parse(content);
+
+      // Debug: Log the structure
+      console.log('JSON structure keys:', Object.keys(data));
+
+      // Update summary from stats
+      if (data.stats) {
+        this.errors.summary.total = data.stats.total || 0;
+        this.errors.summary.failed = data.stats.failed || 0;
+        this.errors.summary.passed = data.stats.passed || 0;
+        this.errors.summary.skipped = data.stats.skipped || 0;
+        console.log(`Test summary: ${this.errors.summary.failed} failed out of ${this.errors.summary.total}`);
+      }
+
+      // Extract failed tests from suites
       if (data.suites) {
         this.extractFailedTests(data.suites);
       }
+
+      // Also check for errors array (common in Playwright JSON output)
+      if (data.errors && Array.isArray(data.errors)) {
+        for (const error of data.errors) {
+          if (error.message) {
+            this.errors.webServerErrors.push(error.message);
+            if (error.stack) {
+              this.errors.webServerErrors.push(error.stack);
+            }
+          }
+        }
+      }
     } catch (error) {
       console.error('Error parsing Playwright results:', error);
+      console.error('JSON content preview:', fs.readFileSync(jsonPath, 'utf8').substring(0, 500));
     }
   }
 
   /**
    * Recursively extract failed tests from test suites
    */
-  extractFailedTests(suites, parentTitle = '') {
-    for (const suite of suites) {
-      const suiteTitle = parentTitle ? `${parentTitle} > ${suite.title}` : suite.title;
+  extractFailedTests(suites, parentTitle = '', parentFile = '') {
+    if (!Array.isArray(suites)) {
+      console.log('Suites is not an array:', typeof suites);
+      return;
+    }
 
-      // Process tests in this suite
-      if (suite.tests) {
+    for (const suite of suites) {
+      if (!suite) continue;
+
+      const suiteTitle = parentTitle ? `${parentTitle} > ${suite.title}` : suite.title;
+      const suiteFile = suite.file || parentFile;
+
+      // Process specs array (Playwright v1.40+ format)
+      if (suite.specs && Array.isArray(suite.specs)) {
+        for (const spec of suite.specs) {
+          if (spec.tests && Array.isArray(spec.tests)) {
+            for (const test of spec.tests) {
+              if (test.status === 'failed' || test.status === 'timedOut' || test.status === 'unexpected') {
+                console.log(`Found failed test: ${spec.title || test.title}`);
+                this.errors.testFailures.push({
+                  title: spec.title || test.title || 'Unknown test',
+                  fullTitle: `${suiteTitle} > ${spec.title || test.title}`,
+                  file: spec.file || suiteFile || 'unknown',
+                  line: spec.line || test.line || 0,
+                  column: spec.column || test.column || 0,
+                  status: test.status,
+                  duration: test.duration || 0,
+                  error: this.formatTestError(test.results)
+                });
+              }
+            }
+          }
+        }
+      }
+
+      // Process tests array (older format)
+      if (suite.tests && Array.isArray(suite.tests)) {
         for (const test of suite.tests) {
-          if (test.status === 'failed' || test.status === 'timedOut') {
+          if (test.status === 'failed' || test.status === 'timedOut' || test.status === 'unexpected') {
+            console.log(`Found failed test (old format): ${test.title}`);
             this.errors.testFailures.push({
-              title: test.title,
+              title: test.title || 'Unknown test',
               fullTitle: `${suiteTitle} > ${test.title}`,
-              file: suite.file || 'unknown',
+              file: suiteFile || 'unknown',
               line: test.line || 0,
               column: test.column || 0,
               status: test.status,
@@ -78,8 +137,8 @@ class TestErrorCollector {
       }
 
       // Process nested suites
-      if (suite.suites) {
-        this.extractFailedTests(suite.suites, suiteTitle);
+      if (suite.suites && Array.isArray(suite.suites)) {
+        this.extractFailedTests(suite.suites, suiteTitle, suiteFile);
       }
     }
   }
@@ -88,20 +147,44 @@ class TestErrorCollector {
    * Format test error from results
    */
   formatTestError(results) {
-    if (!results || results.length === 0) {
-      return { message: 'No error details available', stack: '' };
+    if (!results || !Array.isArray(results) || results.length === 0) {
+      return { message: 'No error details available', stack: '', snippet: '' };
     }
 
-    const failedResult = results.find(r => r.status === 'failed') || results[0];
+    // Find the failed result with the most detail
+    const failedResult = results.find(r => r.status === 'failed' || r.status === 'timedOut') || results[0];
 
-    if (!failedResult.error) {
-      return { message: 'Test failed without error details', stack: '' };
+    if (!failedResult) {
+      return { message: 'Test failed without result details', stack: '', snippet: '' };
+    }
+
+    // Extract error information
+    const error = failedResult.error || {};
+
+    // Try to extract more context from the error
+    let message = error.message || 'Unknown error';
+    let stack = error.stack || '';
+    let snippet = error.snippet || '';
+
+    // If we have attachments, mention them
+    if (failedResult.attachments && failedResult.attachments.length > 0) {
+      const attachmentTypes = failedResult.attachments.map(a => a.name || a.contentType).join(', ');
+      message += `\n\nAttachments: ${attachmentTypes}`;
+    }
+
+    // Extract actual vs expected if available
+    if (error.matcherResult) {
+      const mr = error.matcherResult;
+      if (mr.expected !== undefined && mr.actual !== undefined) {
+        message += `\n\nExpected: ${JSON.stringify(mr.expected, null, 2)}\nActual: ${JSON.stringify(mr.actual, null, 2)}`;
+      }
     }
 
     return {
-      message: failedResult.error.message || 'Unknown error',
-      stack: failedResult.error.stack || '',
-      snippet: failedResult.error.snippet || ''
+      message,
+      stack,
+      snippet,
+      location: error.location || null
     };
   }
 
@@ -272,44 +355,75 @@ class TestErrorCollector {
       content += '\n';
     }
 
-    // Add detailed error logs
+    // Add detailed error logs with complete context
     if (this.errors.testFailures.length > 0) {
-      content += `### 🔍 Detailed Error Logs\n\n`;
+      content += `### 🔍 Detailed Test Failures\n\n`;
+      content += `Found ${this.errors.testFailures.length} failed test(s) with the following details:\n\n`;
 
-      for (const test of this.errors.testFailures) {
-        content += `<details>
-<summary><strong>❌ ${test.fullTitle}</strong></summary>
+      for (let i = 0; i < this.errors.testFailures.length; i++) {
+        const test = this.errors.testFailures[i];
+        const testNumber = i + 1;
 
-**File:** \`${test.file}:${test.line}:${test.column}\`
-**Duration:** ${test.duration}ms
-**Status:** ${test.status}
+        // Create a clear header for each failure
+        content += `---\n\n`;
+        content += `#### Test Failure #${testNumber}: ${test.title}\n\n`;
 
-**Error Message:**
-\`\`\`
-${test.error.message}
-\`\`\`
+        // Basic test information
+        content += `**Full Test Path:** \`${test.fullTitle}\`\n`;
+        content += `**File Location:** \`${test.file}:${test.line}:${test.column}\`\n`;
+        content += `**Test Status:** \`${test.status}\`\n`;
+        content += `**Duration:** ${test.duration}ms\n\n`;
 
-`;
+        // Error details in expandable section
+        content += `<details>\n`;
+        content += `<summary><strong>📝 Error Details (click to expand)</strong></summary>\n\n`;
+
+        // Primary error message
+        content += `**Error Message:**\n`;
+        content += `\`\`\`\n`;
+        content += `${test.error.message || 'No error message available'}\n`;
+        content += `\`\`\`\n\n`;
+
+        // Stack trace if available
         if (test.error.stack) {
-          content += `**Stack Trace:**
-\`\`\`javascript
-${test.error.stack}
-\`\`\`
-
-`;
+          content += `**Stack Trace:**\n`;
+          content += `\`\`\`javascript\n`;
+          content += `${test.error.stack}\n`;
+          content += `\`\`\`\n\n`;
         }
 
+        // Code snippet if available
         if (test.error.snippet) {
-          content += `**Code Snippet:**
-\`\`\`javascript
-${test.error.snippet}
-\`\`\`
+          content += `**Failing Code:**\n`;
+          content += `\`\`\`javascript\n`;
+          content += `${test.error.snippet}\n`;
+          content += `\`\`\`\n\n`;
+        }
 
-`;
+        // Location information if available
+        if (test.error.location) {
+          content += `**Error Location:**\n`;
+          content += `- File: ${test.error.location.file || 'unknown'}\n`;
+          content += `- Line: ${test.error.location.line || 'unknown'}\n`;
+          content += `- Column: ${test.error.location.column || 'unknown'}\n\n`;
         }
 
         content += `</details>\n\n`;
+
+        // Action items for this specific test
+        content += `**🔧 Suggested Actions:**\n`;
+        content += this.generateSuggestedActions(test);
+        content += `\n\n`;
       }
+    } else if (this.errors.summary.failed > 0) {
+      // No detailed test failures but summary shows failures
+      content += `### ⚠️ Test Failures Without Details\n\n`;
+      content += `The test summary reports ${this.errors.summary.failed} failed tests, but detailed error information was not captured.\n\n`;
+      content += `**Possible Reasons:**\n`;
+      content += `- JSON reporter output was incomplete\n`;
+      content += `- Tests failed before reporter could capture details\n`;
+      content += `- WebServer or build errors prevented test execution\n\n`;
+      content += `Please check the console output below for more information.\n\n`;
     }
 
     // Add WebServer errors
@@ -368,6 +482,46 @@ ${test.error.snippet}
 `;
 
     return content;
+  }
+
+  /**
+   * Generate suggested actions based on the test failure
+   */
+  generateSuggestedActions(test) {
+    const suggestions = [];
+    const errorMsg = test.error.message.toLowerCase();
+
+    // Analyze error message for common patterns
+    if (errorMsg.includes('timeout')) {
+      suggestions.push('- Increase timeout in test or config');
+      suggestions.push('- Check if element selectors are correct');
+      suggestions.push('- Verify page is loading completely');
+    } else if (errorMsg.includes('net::err_connection_refused')) {
+      suggestions.push('- Ensure web server is running');
+      suggestions.push('- Check PORT configuration');
+      suggestions.push('- Verify baseURL in playwright.config.js');
+    } else if (errorMsg.includes('element not found') || errorMsg.includes('no element matches')) {
+      suggestions.push('- Verify element selector is correct');
+      suggestions.push('- Check if element exists in the current page state');
+      suggestions.push('- Add appropriate wait conditions');
+    } else if (errorMsg.includes('navigation')) {
+      suggestions.push('- Check URL is correct');
+      suggestions.push('- Verify page route exists');
+      suggestions.push('- Check for redirect issues');
+    } else if (errorMsg.includes('err_invalid_file_url_path')) {
+      suggestions.push('- Check for URL-encoded characters in file paths');
+      suggestions.push('- Verify all asset file names');
+      suggestions.push('- Review recent file renames');
+    } else {
+      suggestions.push('- Review the error message and stack trace');
+      suggestions.push('- Check recent code changes in the failing area');
+      suggestions.push('- Run test locally to reproduce');
+    }
+
+    // Add file-specific suggestion
+    suggestions.push(`- Check test file: ${test.file}:${test.line}`);
+
+    return suggestions.join('\n');
   }
 
   /**
