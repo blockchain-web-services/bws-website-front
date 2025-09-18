@@ -301,8 +301,9 @@ class TestErrorCollector {
 
   /**
    * Generate markdown content for GitHub issue
+   * GitHub has a 65536 character limit for issue bodies
    */
-  generateIssueContent(metadata = {}) {
+  generateIssueContent(metadata = {}, maxLength = 65000) {
     const {
       runId = '',
       runNumber = '',
@@ -364,29 +365,43 @@ ${prNumber ? `**Pull Request:** #${prNumber} (${prBranch} → ${baseBranch})` : 
 
 `;
 
-    // Add failed tests table
+    // Add failed tests table (limit to prevent huge tables)
     if (this.errors.testFailures.length > 0) {
-      content += `### 📊 Failed Tests
+      const maxTableRows = 10; // Limit table size
+      const testsToShow = this.errors.testFailures.slice(0, maxTableRows);
+      const remaining = this.errors.testFailures.length - maxTableRows;
+
+      content += `### 📊 Failed Tests${remaining > 0 ? ` (First ${maxTableRows} of ${this.errors.testFailures.length})` : ''}
 
 | Test | File | Error Type | Status |
 |------|------|------------|--------|
 `;
-      for (const test of this.errors.testFailures) {
-        const errorType = test.error.message.split(':')[0] || 'Unknown';
+      for (const test of testsToShow) {
+        const errorType = (test.error.message.split(':')[0] || 'Unknown').substring(0, 30);
         const fileName = path.basename(test.file);
         const fileLink = `${test.file}:${test.line}`;
-        content += `| ${test.title} | \`${fileLink}\` | ${errorType} | ${test.status} |\n`;
+        const shortTitle = test.title.length > 40 ? test.title.substring(0, 40) + '...' : test.title;
+        content += `| ${shortTitle} | \`${fileLink}\` | ${errorType} | ${test.status} |\n`;
+      }
+
+      if (remaining > 0) {
+        content += `\n**⚠️ ${remaining} additional test failures not shown in table**\n`;
       }
       content += '\n';
     }
 
-    // Add detailed error logs with complete context
+    // Add detailed error logs (limit to prevent exceeding GitHub's limit)
     if (this.errors.testFailures.length > 0) {
-      content += `### 🔍 Detailed Test Failures\n\n`;
-      content += `Found ${this.errors.testFailures.length} failed test(s) with the following details:\n\n`;
+      // Limit detailed failures to prevent huge issue bodies
+      const maxDetailedFailures = 5; // Only show details for first 5 failures
+      const failuresToDetail = this.errors.testFailures.slice(0, maxDetailedFailures);
+      const remainingFailures = this.errors.testFailures.length - maxDetailedFailures;
 
-      for (let i = 0; i < this.errors.testFailures.length; i++) {
-        const test = this.errors.testFailures[i];
+      content += `### 🔍 Detailed Test Failures\n\n`;
+      content += `Showing detailed information for ${Math.min(maxDetailedFailures, this.errors.testFailures.length)} of ${this.errors.testFailures.length} failed test(s):\n\n`;
+
+      for (let i = 0; i < failuresToDetail.length; i++) {
+        const test = failuresToDetail[i];
         const testNumber = i + 1;
 
         // Create a clear header for each failure
@@ -403,25 +418,38 @@ ${prNumber ? `**Pull Request:** #${prNumber} (${prBranch} → ${baseBranch})` : 
         content += `<details>\n`;
         content += `<summary><strong>📝 Error Details (click to expand)</strong></summary>\n\n`;
 
-        // Primary error message
+        // Primary error message (truncate if too long)
+        const errorMsg = test.error.message || 'No error message available';
+        const maxErrorLength = 500; // Limit error message length
+        const truncatedError = errorMsg.length > maxErrorLength ?
+          errorMsg.substring(0, maxErrorLength) + '\n...truncated (full error: ' + errorMsg.length + ' chars)...' : errorMsg;
+
         content += `**Error Message:**\n`;
         content += `\`\`\`\n`;
-        content += `${test.error.message || 'No error message available'}\n`;
+        content += `${truncatedError}\n`;
         content += `\`\`\`\n\n`;
 
-        // Stack trace if available
+        // Stack trace if available (truncate if too long)
         if (test.error.stack) {
+          const maxStackLength = 300; // Limit stack trace length
+          const truncatedStack = test.error.stack.length > maxStackLength ?
+            test.error.stack.substring(0, maxStackLength) + '\n...truncated...' : test.error.stack;
+
           content += `**Stack Trace:**\n`;
           content += `\`\`\`javascript\n`;
-          content += `${test.error.stack}\n`;
+          content += `${truncatedStack}\n`;
           content += `\`\`\`\n\n`;
         }
 
-        // Code snippet if available
+        // Code snippet if available (limit size)
         if (test.error.snippet) {
+          const maxSnippetLength = 200;
+          const truncatedSnippet = test.error.snippet.length > maxSnippetLength ?
+            test.error.snippet.substring(0, maxSnippetLength) + '\n...' : test.error.snippet;
+
           content += `**Failing Code:**\n`;
           content += `\`\`\`javascript\n`;
-          content += `${test.error.snippet}\n`;
+          content += `${truncatedSnippet}\n`;
           content += `\`\`\`\n\n`;
         }
 
@@ -440,6 +468,17 @@ ${prNumber ? `**Pull Request:** #${prNumber} (${prBranch} → ${baseBranch})` : 
         content += this.generateSuggestedActions(test);
         content += `\n\n`;
       }
+
+      // Add notice about remaining failures
+      if (remainingFailures > 0) {
+        content += `### ⚠️ Additional Failures Not Shown\n\n`;
+        content += `There are **${remainingFailures} additional test failures** not shown in detail above.\n\n`;
+        content += `**To manage the large number of failures:**\n`;
+        content += `1. Focus on fixing the first ${maxDetailedFailures} detailed failures\n`;
+        content += `2. These often have common root causes that fix multiple tests\n`;
+        content += `3. Re-run tests after fixing to see remaining failures\n`;
+        content += `4. Iterate until all tests pass\n\n`;
+      }
     } else if (this.errors.summary.failed > 0) {
       // No detailed test failures but summary shows failures
       content += `### ⚠️ Test Failures Without Details\n\n`;
@@ -451,19 +490,29 @@ ${prNumber ? `**Pull Request:** #${prNumber} (${prBranch} → ${baseBranch})` : 
       content += `Please check the console output below for more information.\n\n`;
     }
 
-    // Add WebServer errors
+    // Add WebServer errors (limit size)
     if (this.errors.webServerErrors.length > 0) {
-      content += `### 🖥️ WebServer Errors\n\n`;
+      const maxWebServerErrors = 5;
+      const webServerErrorsToShow = this.errors.webServerErrors.slice(0, maxWebServerErrors);
+
+      content += `### 🖥️ WebServer Errors${this.errors.webServerErrors.length > maxWebServerErrors ? ` (First ${maxWebServerErrors} of ${this.errors.webServerErrors.length})` : ''}\n\n`;
       content += `\`\`\`\n`;
-      content += this.errors.webServerErrors.join('\n');
+      content += webServerErrorsToShow
+        .map(err => err.length > 150 ? err.substring(0, 150) + '...' : err)
+        .join('\n');
       content += `\n\`\`\`\n\n`;
     }
 
-    // Add build errors
+    // Add build errors (limit size)
     if (this.errors.buildErrors.length > 0) {
-      content += `### 🔨 Build Errors\n\n`;
+      const maxBuildErrors = 5;
+      const buildErrorsToShow = this.errors.buildErrors.slice(0, maxBuildErrors);
+
+      content += `### 🔨 Build Errors${this.errors.buildErrors.length > maxBuildErrors ? ` (First ${maxBuildErrors} of ${this.errors.buildErrors.length})` : ''}\n\n`;
       content += `\`\`\`\n`;
-      content += this.errors.buildErrors.join('\n');
+      content += buildErrorsToShow
+        .map(err => err.length > 150 ? err.substring(0, 150) + '...' : err)
+        .join('\n');
       content += `\n\`\`\`\n\n`;
     }
 
@@ -495,12 +544,19 @@ git checkout -b claude-fix-ci-${new Date().toISOString().split('T')[0]}-${runId 
 
 ### 🎯 Auto-Fix Instructions for Claude
 
-@claude Please analyze and fix these CI failures using the following approach:
+@claude This issue contains a large number of test failures (${this.errors.summary.failed} failures). To manage this effectively:
 
-1. **Analyze Errors:** Review all test failures and error patterns
-2. **Identify Root Cause:** Determine if issues are code, config, or environment related
-3. **Apply Fixes:** Make necessary code changes to resolve failures
-4. **Verify Changes:** Ensure fixes are correct and don't break other tests
+**Priority Approach:**
+1. **Start with the ${Math.min(5, this.errors.testFailures.length)} detailed failures above** - These are shown with full error context
+2. **Look for common root causes** - Many failures often share the same underlying issue
+3. **Focus on configuration/setup issues first** - WebServer errors, connection issues, etc.
+4. **Fix and re-run** - After fixing initial issues, re-run tests to see remaining failures
+
+**Analysis Steps:**
+1. Review the detailed test failures and error patterns
+2. Check WebServer/build errors if present (these often cause cascade failures)
+3. Identify if issues are code, config, or environment related
+4. Apply targeted fixes to address root causes
 
 ### 🛠️ Allowed Tools for Auto-Fix
 
@@ -544,6 +600,18 @@ Edit, MultiEdit, Write, Read, Glob, Grep, Bash(git:*), Bash(npm:*), Bash(npx:*)
 *This issue was automatically created by the test failure detection system.*
 `;
 
+    // Check if content exceeds GitHub's limit and truncate if needed
+    if (content.length > maxLength) {
+      console.log(`Warning: Issue content is ${content.length} characters, truncating to ${maxLength}`);
+
+      // Add truncation notice
+      const truncationNotice = `\n\n---\n## ⚠️ Content Truncated\n\nThis issue was truncated from ${content.length} to ${maxLength} characters due to GitHub's 65KB limit.\n\nFocus on fixing the issues shown above first, then re-run tests to see remaining failures.`;
+      const availableLength = maxLength - truncationNotice.length - 100; // Leave buffer
+
+      content = content.substring(0, availableLength) + truncationNotice;
+    }
+
+    console.log(`Issue content size: ${content.length} characters`);
     return content;
   }
 
@@ -634,8 +702,12 @@ Edit, MultiEdit, Write, Read, Glob, Grep, Bash(git:*), Bash(npm:*), Bash(npx:*)
         }
       }
 
-      // Store unique errors
-      this.errors.jobLogs = [...new Set(extractedErrors)].slice(0, 20); // Limit to 20 errors
+      // Store unique errors (limit and truncate each line)
+      const maxLogErrors = 10; // Reduce from 20 to 10
+      const maxLineLength = 100; // Truncate long lines
+      this.errors.jobLogs = [...new Set(extractedErrors)]
+        .slice(0, maxLogErrors)
+        .map(line => line.length > maxLineLength ? line.substring(0, maxLineLength) + '...' : line);
     } catch (error) {
       console.error('Error parsing job logs:', error);
     }
