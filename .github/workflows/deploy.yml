@@ -86,14 +86,55 @@ jobs:
             test-output.txt
           retention-days: 30
 
+      - name: Download job logs
+        if: failure()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+
+            // Get failed jobs
+            const jobs = await github.rest.actions.listJobsForWorkflowRun({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              run_id: context.runId
+            });
+
+            const failedJobs = jobs.data.jobs.filter(job => job.conclusion === 'failure');
+            console.log(`Found ${failedJobs.length} failed job(s)`);
+
+            // Download logs for each failed job
+            for (const job of failedJobs) {
+              try {
+                console.log(`Downloading logs for job: ${job.name}`);
+                const logs = await github.rest.actions.downloadJobLogsForWorkflowRun({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  job_id: job.id
+                });
+
+                // Save job logs to file
+                const fileName = `job-logs-${job.name.replace(/[^a-z0-9]/gi, '-')}.txt`;
+                fs.writeFileSync(fileName, logs.data.substring(0, 50000)); // Limit to 50KB
+                console.log(`Saved logs to ${fileName}`);
+              } catch (error) {
+                console.log(`Failed to download logs for ${job.name}: ${error.message}`);
+              }
+            }
+
       - name: Collect and format test errors
         if: failure()
+        env:
+          GITHUB_PR_NUMBER: ${{ github.event.pull_request.number }}
+          GITHUB_HEAD_REF: ${{ github.head_ref }}
+          GITHUB_BASE_REF: ${{ github.base_ref }}
         run: |
           echo "Collecting test errors..."
 
           # Debug: Check what files exist
           echo "Files in current directory:"
           ls -la test-*.* 2>/dev/null || true
+          ls -la job-logs-*.txt 2>/dev/null || true
           echo "Files in tests directory:"
           ls -la tests/test-*.* 2>/dev/null || true
 
@@ -113,8 +154,18 @@ jobs:
           echo "Contents of JSON file:"
           cat "$JSON_FILE" | head -50 || echo "File not found"
 
-          # Run error collector
-          node scripts/collect-test-errors.js "$JSON_FILE" test-output.txt issue-content.md || echo "Error collection failed"
+          # Combine job logs if they exist
+          if ls job-logs-*.txt 1> /dev/null 2>&1; then
+            echo "Combining job logs..."
+            cat job-logs-*.txt > combined-job-logs.txt 2>/dev/null || true
+          fi
+
+          # Run error collector with job logs
+          if [ -f "combined-job-logs.txt" ]; then
+            node scripts/collect-test-errors.js "$JSON_FILE" test-output.txt issue-content.md combined-job-logs.txt || echo "Error collection failed"
+          else
+            node scripts/collect-test-errors.js "$JSON_FILE" test-output.txt issue-content.md || echo "Error collection failed"
+          fi
 
       - name: Create GitHub Issue for failures
         if: failure() && (github.ref == 'refs/heads/master' || github.ref == 'refs/heads/main')
@@ -133,6 +184,14 @@ jobs:
               issueBody = `## Test Failure Report\n\nTests failed in workflow run: [View Run](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})\n\nPlease check the workflow logs for details.`;
             }
 
+            // Add PR context to issue if available
+            const prContext = context.payload.pull_request ?
+              `\n\n### Pull Request Context\n- PR: #${context.payload.pull_request.number}\n- Title: ${context.payload.pull_request.title}\n- Author: @${context.payload.pull_request.user.login}` : '';
+
+            if (prContext) {
+              issueBody = issueBody.replace('### Failure Context', '### Failure Context' + prContext);
+            }
+
             // Check if similar issue already exists
             const existingIssues = await github.rest.issues.listForRepo({
               owner: context.repo.owner,
@@ -143,17 +202,22 @@ jobs:
 
             const today = new Date().toISOString().split('T')[0];
             const existingToday = existingIssues.data.find(issue =>
-              issue.title.includes(today) && issue.title.includes('Test Failures')
+              issue.title.includes(today) && issue.title.includes('CI Failure')
             );
 
             if (!existingToday) {
               // Create new issue
+              // Create issue with enhanced title
+              const issueTitle = context.payload.pull_request ?
+                `🔴 CI Failure - PR #${context.payload.pull_request.number} - ${today}` :
+                `🔴 CI Failure - ${context.eventName} - ${today} - ${context.sha.substring(0, 7)}`;
+
               const issue = await github.rest.issues.create({
                 owner: context.repo.owner,
                 repo: context.repo.repo,
-                title: `🔴 Test Failures - ${today} - ${context.sha.substring(0, 7)}`,
+                title: issueTitle,
                 body: issueBody,
-                labels: ['test-failure', 'automated', 'urgent']
+                labels: ['test-failure', 'automated', 'urgent', 'needs-fix']
               });
               console.log(`Created issue #${issue.data.number}`);
 

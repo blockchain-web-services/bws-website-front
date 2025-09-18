@@ -16,6 +16,7 @@ class TestErrorCollector {
       testFailures: [],
       webServerErrors: [],
       buildErrors: [],
+      jobLogs: [],
       summary: {
         total: 0,
         failed: 0,
@@ -303,22 +304,46 @@ class TestErrorCollector {
    */
   generateIssueContent(metadata = {}) {
     const {
-      workflowRun = '',
+      runId = '',
+      runNumber = '',
+      runAttempt = '1',
       commit = '',
       branch = '',
-      timestamp = new Date().toISOString(),
-      runId = '',
       repo = 'blockchain-web-services/bws-website-front',
+      actor = '',
+      workflow = '',
+      job = '',
+      eventName = '',
+      prNumber = '',
+      prBranch = '',
+      baseBranch = '',
+      timestamp = new Date().toISOString(),
       nodeVersion = process.version,
       os = process.platform
     } = metadata;
 
-    let content = `## 🔴 Automated Test Failure Report
+    const runUrl = runId ? `https://github.com/${repo}/actions/runs/${runId}` : 'N/A';
 
-**Workflow Run:** ${runId ? `[View Run](https://github.com/${repo}/actions/runs/${runId})` : 'N/A'}
-**Commit:** \`${commit || 'unknown'}\`
+    // Start with Claude command structure
+    let content = `## 🔴 CI Failure - Auto-Fix Request
+
+### Command for Claude
+\`\`\`
+/fix-ci
+\`\`\`
+
+### Failure Context
+
+**Failed Run:** [View Run #${runNumber}](${runUrl})
+**Workflow:** ${workflow || 'CI/CD Pipeline'}
+**Job:** ${job || 'test'}
+**Triggered by:** @${actor || 'unknown'}
+**Event:** ${eventName || 'push'}
+${prNumber ? `**Pull Request:** #${prNumber} (${prBranch} → ${baseBranch})` : ''}
+**Commit:** \`${commit ? commit.substring(0, 7) : 'unknown'}\`
 **Branch:** \`${branch || 'unknown'}\`
 **Time:** ${timestamp}
+**Attempt:** ${runAttempt}
 
 ### 📋 Project Context
 
@@ -442,6 +467,17 @@ class TestErrorCollector {
       content += `\n\`\`\`\n\n`;
     }
 
+    // Add job logs summary
+    if (this.errors.jobLogs && this.errors.jobLogs.length > 0) {
+      content += `### 📋 Job Logs Summary\n\n`;
+      content += `<details>\n`;
+      content += `<summary>Key errors extracted from job logs (${this.errors.jobLogs.length} found)</summary>\n\n`;
+      content += `\`\`\`\n`;
+      content += this.errors.jobLogs.join('\n');
+      content += `\n\`\`\`\n\n`;
+      content += `</details>\n\n`;
+    }
+
     // Add environment details
     content += `### 🛠️ Environment
 
@@ -450,24 +486,51 @@ class TestErrorCollector {
 - **Playwright Version:** Check package.json
 - **Browser:** Chromium
 
-### 🎯 Action Required
+### 🌿 Suggested Fix Branch
 
-@claude Please investigate and fix these test failures. Key areas to check:
+Create a new branch for the fixes:
+\`\`\`bash
+git checkout -b claude-fix-ci-${new Date().toISOString().split('T')[0]}-${runId || 'local'}
+\`\`\`
 
-1. **WebServer Configuration:** Review \`playwright.config.cjs\` for server setup issues
-2. **File URL Encoding:** Check for encoded characters in file paths and URLs
-3. **CI Environment:** Verify GitHub Actions environment variables and configuration
-4. **Build Process:** Ensure static files are correctly generated and served
-5. **Test Stability:** Review flaky tests and add appropriate wait conditions
+### 🎯 Auto-Fix Instructions for Claude
 
-### 📚 Relevant Files
+@claude Please analyze and fix these CI failures using the following approach:
 
+1. **Analyze Errors:** Review all test failures and error patterns
+2. **Identify Root Cause:** Determine if issues are code, config, or environment related
+3. **Apply Fixes:** Make necessary code changes to resolve failures
+4. **Verify Changes:** Ensure fixes are correct and don't break other tests
+
+### 🛠️ Allowed Tools for Auto-Fix
+
+\`\`\`
+Edit, MultiEdit, Write, Read, Glob, Grep, Bash(git:*), Bash(npm:*), Bash(npx:*)
+\`\`\`
+
+### 📋 Fix Checklist
+
+- [ ] Fix all test failures
+- [ ] Update configurations if needed
+- [ ] Ensure code follows project conventions
+- [ ] Verify no new issues introduced
+- [ ] Document any significant changes
+
+### 📚 Repository Context
+
+**Repository:** \`${repo}\`
+**Main Files:**
 - \`/tests/playwright.config.cjs\` - Test configuration
 - \`/.github/workflows/deploy.yml\` - CI/CD workflow
 - \`/package.json\` - Scripts and dependencies
 - \`/CLAUDE.md\` - Project-specific instructions
 - \`/src/components/\` - Astro components
 - \`/public/assets/\` - Static assets
+
+### 📎 Artifacts
+
+- [Test Results](${runUrl}/artifacts) - Download test reports and screenshots
+- [Job Logs](${runUrl}) - View complete job execution logs
 
 ### 💡 Debugging Tips
 
@@ -539,6 +602,46 @@ class TestErrorCollector {
   }
 
   /**
+   * Parse job logs for additional error context
+   */
+  parseJobLogs(jobLogsPath) {
+    try {
+      if (!fs.existsSync(jobLogsPath)) {
+        console.log(`No job logs found at ${jobLogsPath}`);
+        return;
+      }
+
+      const logs = fs.readFileSync(jobLogsPath, 'utf8');
+      const lines = logs.split('\n');
+
+      // Extract key error patterns from job logs
+      const errorPatterns = [
+        /error TS\d+:/i,  // TypeScript errors
+        /SyntaxError:/,   // JavaScript syntax errors
+        /npm ERR!/,       // NPM errors
+        /ERROR:/,         // Generic errors
+        /FAILED:/,        // Failed steps
+        /\[ERROR\]/,     // Bracketed errors
+      ];
+
+      const extractedErrors = [];
+      for (const line of lines) {
+        for (const pattern of errorPatterns) {
+          if (pattern.test(line)) {
+            extractedErrors.push(line.trim());
+            break;
+          }
+        }
+      }
+
+      // Store unique errors
+      this.errors.jobLogs = [...new Set(extractedErrors)].slice(0, 20); // Limit to 20 errors
+    } catch (error) {
+      console.error('Error parsing job logs:', error);
+    }
+  }
+
+  /**
    * Main execution
    */
   async run() {
@@ -547,6 +650,7 @@ class TestErrorCollector {
     const jsonResultsPath = args[0] || 'test-results.json';
     const consoleOutputPath = args[1] || 'test-output.txt';
     const outputPath = args[2] || 'issue-content.md';
+    const jobLogsPath = args[3] || null;
 
     console.log('Collecting test errors...');
 
@@ -556,12 +660,26 @@ class TestErrorCollector {
     // Parse console output
     this.parseConsoleOutput(consoleOutputPath);
 
-    // Get metadata from environment variables
+    // Parse job logs if available
+    if (jobLogsPath) {
+      this.parseJobLogs(jobLogsPath);
+    }
+
+    // Get enhanced metadata from environment variables
     const metadata = {
       runId: process.env.GITHUB_RUN_ID || '',
+      runNumber: process.env.GITHUB_RUN_NUMBER || '',
+      runAttempt: process.env.GITHUB_RUN_ATTEMPT || '1',
       commit: process.env.GITHUB_SHA || '',
       branch: process.env.GITHUB_REF || '',
       repo: process.env.GITHUB_REPOSITORY || 'blockchain-web-services/bws-website-front',
+      actor: process.env.GITHUB_ACTOR || '',
+      workflow: process.env.GITHUB_WORKFLOW || '',
+      job: process.env.GITHUB_JOB || '',
+      eventName: process.env.GITHUB_EVENT_NAME || '',
+      prNumber: process.env.GITHUB_PR_NUMBER || '',
+      prBranch: process.env.GITHUB_HEAD_REF || '',
+      baseBranch: process.env.GITHUB_BASE_REF || '',
       nodeVersion: process.version,
       os: process.platform
     };
