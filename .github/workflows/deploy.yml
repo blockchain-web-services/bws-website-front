@@ -59,6 +59,20 @@ jobs:
           set -o pipefail
           npx playwright test --config=tests/playwright.config.cjs --project=${{ matrix.browser }} 2>&1 | tee test-output.txt
 
+          # Debug: Find where the JSON output was created
+          echo "Looking for test-results.json files..."
+          find . -name "test-results.json" -type f 2>/dev/null || true
+          find . -name "*.json" -path "*/test-results/*" -type f 2>/dev/null || true
+
+          # Copy JSON results to expected location
+          if [ -f "tests/test-results.json" ]; then
+            cp tests/test-results.json test-results.json
+          elif [ -f "test-results.json" ]; then
+            echo "JSON results already in correct location"
+          else
+            echo "Warning: No test-results.json found"
+          fi
+
       - name: Upload test results
         if: always()
         uses: actions/upload-artifact@v4
@@ -76,12 +90,31 @@ jobs:
         if: failure()
         run: |
           echo "Collecting test errors..."
+
           # Debug: Check what files exist
-          ls -la test-*.* || true
-          echo "Contents of test-results.json:"
-          cat test-results.json || echo "File not found"
+          echo "Files in current directory:"
+          ls -la test-*.* 2>/dev/null || true
+          echo "Files in tests directory:"
+          ls -la tests/test-*.* 2>/dev/null || true
+
+          # Find the JSON results file
+          JSON_FILE=""
+          if [ -f "test-results.json" ]; then
+            JSON_FILE="test-results.json"
+          elif [ -f "tests/test-results.json" ]; then
+            JSON_FILE="tests/test-results.json"
+          else
+            echo "No JSON results found, creating placeholder"
+            echo '{"stats": {"total": 0, "failed": 0}, "errors": []}' > test-results.json
+            JSON_FILE="test-results.json"
+          fi
+
+          echo "Using JSON file: $JSON_FILE"
+          echo "Contents of JSON file:"
+          cat "$JSON_FILE" | head -50 || echo "File not found"
+
           # Run error collector
-          node scripts/collect-test-errors.js test-results.json test-output.txt issue-content.md || echo "Error collection failed"
+          node scripts/collect-test-errors.js "$JSON_FILE" test-output.txt issue-content.md || echo "Error collection failed"
 
       - name: Create GitHub Issue for failures
         if: failure() && (github.ref == 'refs/heads/master' || github.ref == 'refs/heads/main')
@@ -234,11 +267,19 @@ jobs:
           NO_WEBSERVER: "true"
         run: |
           # Run smoke tests (will output to test-results.json due to CI env)
+          set -o pipefail
           npx playwright test tests/smoke/ --config=tests/playwright.config.cjs --project=chromium 2>&1 | tee smoke-test-output.txt
           TEST_EXIT_CODE=${PIPESTATUS[0]}
 
-          # Rename the output for smoke tests
-          mv test-results.json smoke-test-results.json 2>/dev/null || echo "No test results to move"
+          # Find and rename JSON output for smoke tests
+          if [ -f "test-results.json" ]; then
+            mv test-results.json smoke-test-results.json
+          elif [ -f "tests/test-results.json" ]; then
+            mv tests/test-results.json smoke-test-results.json
+          else
+            echo "No JSON results found for smoke tests"
+            echo '{"stats": {"total": 0, "failed": 0}}' > smoke-test-results.json
+          fi
 
           if [ $TEST_EXIT_CODE -ne 0 ]; then
             echo "SMOKE_TESTS_FAILED=true" >> $GITHUB_ENV
@@ -256,6 +297,17 @@ jobs:
         if: env.SMOKE_TESTS_FAILED == 'true'
         run: |
           echo "Collecting smoke test errors..."
+
+          # Debug output
+          echo "Smoke test files:"
+          ls -la smoke-* 2>/dev/null || true
+
+          # Ensure we have the JSON file
+          if [ ! -f "smoke-test-results.json" ]; then
+            echo "Creating placeholder JSON for smoke tests"
+            echo '{"stats": {"total": 0, "failed": 0}}' > smoke-test-results.json
+          fi
+
           node scripts/collect-test-errors.js smoke-test-results.json smoke-test-output.txt smoke-issue-content.md
 
       - name: Create Issue for production failures

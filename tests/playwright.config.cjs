@@ -13,8 +13,9 @@ module.exports = defineConfig({
   workers: process.env.CI ? 2 : undefined,
 
   reporter: process.env.CI ? [
-    ['json', { outputFile: 'test-results.json' }],
-    ['list']
+    ['json', { outputFile: './test-results.json' }],
+    ['list'],
+    ['line']
   ] : [
     ['html', { outputFolder: 'playwright-report', open: 'never' }],
     ['list']

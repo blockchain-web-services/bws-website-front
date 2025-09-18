@@ -118,6 +118,11 @@ class TestErrorCollector {
       const output = fs.readFileSync(outputPath, 'utf8');
       const lines = output.split('\n');
 
+      // Parse test failures from console output if JSON is not available
+      let inFailureSection = false;
+      let currentTest = null;
+      let failureBuffer = [];
+
       for (const line of lines) {
         // Detect WebServer errors
         if (line.includes('[WebServer]') && line.includes('Error')) {
@@ -137,6 +142,73 @@ class TestErrorCollector {
         if (line.includes('Build failed') || line.includes('npm ERR!')) {
           this.errors.buildErrors.push(line);
         }
+
+        // Parse Playwright test failures from console output
+        if (line.includes('✓') || line.includes('✔')) {
+          // Test passed
+          this.errors.summary.passed++;
+          this.errors.summary.total++;
+        } else if (line.includes('✕') || line.includes('✗') || line.includes('failed')) {
+          // Test failed
+          inFailureSection = true;
+          this.errors.summary.failed++;
+          this.errors.summary.total++;
+
+          // Extract test name
+          const match = line.match(/\d+\)\s+(.+?)\s+\(/);
+          if (match) {
+            currentTest = {
+              title: match[1],
+              fullTitle: match[1],
+              file: 'unknown',
+              line: 0,
+              column: 0,
+              status: 'failed',
+              duration: 0,
+              error: { message: '', stack: '' }
+            };
+            failureBuffer = [];
+          }
+        }
+
+        // Collect failure details
+        if (inFailureSection && currentTest) {
+          failureBuffer.push(line);
+
+          // Look for end of failure section
+          if (line.includes('at ') || line.includes('Error:')) {
+            currentTest.error.message = failureBuffer.join('\n');
+          }
+
+          // Save test when we hit the next test or end
+          if ((line.includes('✓') || line.includes('✕') || line.trim() === '') && failureBuffer.length > 1) {
+            if (!this.errors.testFailures.find(t => t.title === currentTest.title)) {
+              this.errors.testFailures.push(currentTest);
+            }
+            inFailureSection = false;
+            currentTest = null;
+            failureBuffer = [];
+          }
+        }
+
+        // Parse summary line
+        if (line.includes('passed') && line.includes('failed')) {
+          const passMatch = line.match(/(\d+)\s+passed/);
+          const failMatch = line.match(/(\d+)\s+failed/);
+          const skipMatch = line.match(/(\d+)\s+skipped/);
+
+          if (passMatch) this.errors.summary.passed = parseInt(passMatch[1]);
+          if (failMatch) this.errors.summary.failed = parseInt(failMatch[1]);
+          if (skipMatch) this.errors.summary.skipped = parseInt(skipMatch[1]);
+
+          this.errors.summary.total = this.errors.summary.passed + this.errors.summary.failed + this.errors.summary.skipped;
+        }
+      }
+
+      // Save any pending test failure
+      if (currentTest && !this.errors.testFailures.find(t => t.title === currentTest.title)) {
+        currentTest.error.message = failureBuffer.join('\n');
+        this.errors.testFailures.push(currentTest);
       }
     } catch (error) {
       console.error('Error parsing console output:', error);
