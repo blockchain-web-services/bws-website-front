@@ -328,6 +328,8 @@ class TestErrorCollector {
     // Start with Claude command structure
     let content = `## 🔴 CI Failure - Auto-Fix Request
 
+@claude - Please fix these test failures using the command below.
+
 ### Command for Claude
 \`\`\`
 /fix-ci

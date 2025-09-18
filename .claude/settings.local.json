@@ -14,7 +14,8 @@
       "Bash(npm run build:*)",
       "Bash(npx astro build:*)",
       "Bash(npx astro check:*)",
-      "Bash(npx playwright test:*)"
+      "Bash(npx playwright test:*)",
+      "WebSearch"
     ],
     "deny": [],
     "ask": []

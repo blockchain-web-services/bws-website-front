@@ -148,11 +148,16 @@ graph TD
 
 ### 🤖 Claude Auto-Fix Integration
 
+**Automatic Triggering with PAT:**
+The repository uses a Personal Access Token (`PAT_REPOS_AND_WORKFLOW`) to enable automatic Claude triggering when tests fail. This overcomes GitHub's built-in limitation where actions using GITHUB_TOKEN cannot trigger other workflows.
+
 **Enhanced Issue Creation:**
 When tests fail, the system creates issues optimized for Claude to automatically fix:
 
 ```markdown
 ## 🔴 CI Failure - Auto-Fix Request
+
+@claude - Please fix these test failures using the command below.
 
 ### Command for Claude
 /fix-ci
@@ -169,11 +174,20 @@ When tests fail, the system creates issues optimized for Claude to automatically
 ```
 
 **Features:**
+- Automatic Claude triggering via PAT (no manual intervention needed)
+- @claude mention in issue body triggers claude.yml workflow
 - Structured format for Claude parsing
 - Complete error context from multiple sources
 - PR-aware with branch information
 - Suggested fix branch naming convention
 - Tool permissions specified for auto-fix
+
+**Required Setup:**
+1. Create a Personal Access Token with `repo` and `workflow` scopes
+2. Add it as secret `PAT_REPOS_AND_WORKFLOW` in repository settings
+3. Claude will auto-trigger when issues are created with @claude mention
+
+See `.github/workflows/CLAUDE_SETUP.md` for detailed PAT setup instructions.
 
 ---
 
