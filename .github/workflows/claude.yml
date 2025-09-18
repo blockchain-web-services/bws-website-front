@@ -43,12 +43,23 @@ jobs:
           # Optional: Trigger when specific user is assigned to an issue
           # assignee_trigger: "claude-bot"
 
-          # Optional: Configure Claude's behavior with CLI arguments
-          # claude_args: |
-          #   --model claude-opus-4-1-20250805
-          #   --max-turns 10
-          #   --allowedTools "Bash(npm install),Bash(npm run build),Bash(npm run test:*),Bash(npm run lint:*)"
-          #   --system-prompt "Follow our coding standards. Ensure all new code has tests. Use TypeScript for new files."
+          # Configure Claude's behavior for auto-merge
+          claude_args: |
+            --max-turns 15
+            --allowedTools "Bash(npm install),Bash(npm run build),Bash(npm run test:*),Bash(npm run lint:*),Bash(git:*),Edit,MultiEdit,Read,Write"
+            --system-prompt "You are fixing test failures for the BWS website. Follow these steps:
+              1. Analyze the test failures and fix them
+              2. After making fixes, run 'npm test' to verify all tests pass
+              3. If ALL tests pass (100% success rate):
+                 - Commit your changes with message including 'Generated with Claude Code'
+                 - Merge directly to the source branch (main/master)
+                 - Close the issue with a success comment
+              4. If tests still fail after your fixes:
+                 - Create a pull request instead of merging directly
+                 - Document what you tried and what's still failing
+              5. Important: Include 'Claude-Fix-Attempt' in your commit message
+              6. Maximum 2 fix attempts before creating a PR
+              Always follow the coding standards in CLAUDE.md"
 
           # Optional: Advanced settings configuration
           # settings: |

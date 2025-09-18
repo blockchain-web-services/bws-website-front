@@ -215,6 +215,32 @@ jobs:
               return;
             }
 
+            // Check for recent Claude fix attempts to prevent infinite loops
+            const oneDayAgo = new Date(Date.now() - 24 * 60 * 60 * 1000).toISOString();
+            const recentClaudeFixIssues = existingIssues.data.filter(issue =>
+              issue.body && issue.body.includes('claude-fix-ci') &&
+              issue.created_at > oneDayAgo
+            );
+
+            // Check if this push is from a Claude fix
+            const commitMessage = context.payload.head_commit?.message || '';
+            const isClaudeFix = commitMessage.includes('Generated with Claude Code') ||
+                               commitMessage.includes('Co-Authored-By: Claude');
+
+            const maxClaudeAttempts = 10;
+            const claudeAttemptCount = recentClaudeFixIssues.length;
+
+            // If Claude has already tried multiple times, don't trigger again
+            if (isClaudeFix && claudeAttemptCount >= maxClaudeAttempts) {
+              console.log(`Claude has attempted ${claudeAttemptCount} fixes in the last 24 hours. Manual intervention required.`);
+
+              // Modify issue body to NOT mention @claude
+              issueBody = issueBody.replace('@claude - Please fix these test failures using the command below.',
+                                          '⚠️ **MANUAL FIX REQUIRED** - Claude auto-fix limit reached (10 attempts in 24h).');
+              issueBody = issueBody.replace('**Claude Fix Attempt:** 1 of 10',
+                                          `**Claude Fix Attempt:** ${claudeAttemptCount + 1} of ${maxClaudeAttempts} (LIMIT EXCEEDED)`);
+            }
+
             // Always create a new issue for each failed run (no more comments on existing issues)
             // This prevents Claude from being triggered multiple times for different failures
             // Create new issue

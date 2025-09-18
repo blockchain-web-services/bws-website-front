@@ -348,6 +348,12 @@ ${prNumber ? `**Pull Request:** #${prNumber} (${prBranch} → ${baseBranch})` : 
 **Time:** ${timestamp}
 **Attempt:** ${runAttempt}
 
+### 🔄 Fix Attempt Tracking
+
+**Claude Fix Attempt:** 1 of 10 (maximum)
+**Auto-Merge:** Enabled if all tests pass
+**Fallback:** Create PR if tests still fail after fixes
+
 ### 📋 Project Context
 
 **Project:** BWS Website - Static site for Blockchain Web Services
