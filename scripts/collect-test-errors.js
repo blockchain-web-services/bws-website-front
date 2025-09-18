@@ -541,7 +541,7 @@ ${prNumber ? `**Pull Request:** #${prNumber} (${prBranch} → ${baseBranch})` : 
 
 Create a new branch for the fixes:
 \`\`\`bash
-git checkout -b claude-fix-ci-${new Date().toISOString().split('T')[0]}-${runId || 'local'}
+git checkout -b claude-fix-ci-${new Date().toISOString().split('T')[0]}-${runId || Date.now()}
 \`\`\`
 
 ### 🎯 Auto-Fix Instructions for Claude
