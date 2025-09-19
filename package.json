@@ -12,6 +12,7 @@
     "postbuild": "npm run pretty-print && npm run validate",
     "preview": "astro preview",
     "preview:sirv": "sirv _site --port 4321 --host",
+    "test:setup": "npx playwright install chromium",
     "test": "playwright test --config=tests/playwright.config.cjs",
     "test:ui": "playwright test --config=tests/playwright.config.cjs --ui",
     "test:smoke": "playwright test tests/smoke/ --config=tests/playwright.config.cjs",

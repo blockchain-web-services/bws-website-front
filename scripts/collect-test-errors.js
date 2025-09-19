@@ -552,19 +552,40 @@ git checkout -b claude-fix-ci-${new Date().toISOString().split('T')[0]}-${runId 
 
 ### 🎯 Auto-Fix Instructions for Claude
 
-@claude This issue contains a large number of test failures (${this.errors.summary.failed} failures). To manage this effectively:
+@claude This issue contains test failures. **IMPORTANT: Check CLAUDE.md for critical testing setup instructions!**
+
+**⚠️ CRITICAL SETUP STEPS (Must do FIRST):**
+\`\`\`bash
+# 1. Install dependencies
+npm install
+
+# 2. Install Playwright browsers - THIS IS REQUIRED!
+npx playwright install chromium
+# If that fails, try:
+npx playwright install --with-deps chromium
+
+# 3. Build the site
+npm run build
+
+# 4. Then run tests
+npm test
+\`\`\`
+
+**Common Error: "Executable doesn't exist at /home/runner/.cache/ms-playwright/"**
+This means Playwright browsers are NOT installed. You MUST run \`npx playwright install chromium\` first!
 
 **Priority Approach:**
-1. **Start with the ${Math.min(5, this.errors.testFailures.length)} detailed failures above** - These are shown with full error context
-2. **Look for common root causes** - Many failures often share the same underlying issue
-3. **Focus on configuration/setup issues first** - WebServer errors, connection issues, etc.
+1. **First ensure test environment is set up** - Install Playwright browsers!
+2. **Start with the ${Math.min(5, this.errors.testFailures.length)} detailed failures above** - These are shown with full error context
+3. **Look for common root causes** - Many failures often share the same underlying issue
 4. **Fix and re-run** - After fixing initial issues, re-run tests to see remaining failures
 
-**Analysis Steps:**
-1. Review the detailed test failures and error patterns
-2. Check WebServer/build errors if present (these often cause cascade failures)
-3. Identify if issues are code, config, or environment related
-4. Apply targeted fixes to address root causes
+**Test Execution Steps:**
+1. Install dependencies and Playwright browsers (see above)
+2. Review the detailed test failures and error patterns
+3. Fix issues in source files (\`src/\` directory only!)
+4. Run \`npm run build\` after making changes
+5. Run \`npm test\` to verify fixes
 
 ### 🛠️ Allowed Tools for Auto-Fix
 
