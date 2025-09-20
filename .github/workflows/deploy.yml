@@ -129,6 +129,7 @@ jobs:
           GITHUB_PR_NUMBER: ${{ github.event.pull_request.number }}
           GITHUB_HEAD_REF: ${{ github.head_ref }}
           GITHUB_BASE_REF: ${{ github.base_ref }}
+          SINGLE_ISSUE_MODE: true
         run: |
           echo "Collecting test errors..."
 
@@ -245,16 +246,17 @@ jobs:
             // This prevents Claude from being triggered multiple times for different failures
             // Create new issue
             // Create issue with enhanced title including run number for uniqueness
+              // Single test mode - create focused issue title
               const issueTitle = context.payload.pull_request ?
-                `🔴 CI Failure - PR #${context.payload.pull_request.number} - Run #${runNumber} - ${today}` :
-                `🔴 CI Failure - ${context.eventName} - Run #${runNumber} - ${today}`;
+                `🎯 Fix Single Test - PR #${context.payload.pull_request.number} - Run #${runNumber}` :
+                `🎯 Fix Single Test - Run #${runNumber} - ${today}`;
 
               const issue = await github.rest.issues.create({
                 owner: context.repo.owner,
                 repo: context.repo.repo,
                 title: issueTitle,
                 body: issueBody,
-                labels: ['test-failure', 'automated', 'urgent', 'needs-fix']
+                labels: ['single-test', 'automated', 'claude-fix', 'focused']
               });
               console.log(`Created issue #${issue.data.number}`);
 

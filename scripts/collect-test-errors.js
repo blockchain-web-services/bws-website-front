@@ -300,6 +300,112 @@ class TestErrorCollector {
   }
 
   /**
+   * Generate markdown content for a SINGLE test failure
+   * This creates a focused issue for Claude to fix one specific problem
+   */
+  generateSingleIssueContent(testFailure, metadata = {}) {
+    const {
+      runId = '',
+      runNumber = '',
+      runAttempt = '1',
+      commit = '',
+      branch = '',
+      repo = 'blockchain-web-services/bws-website-front',
+      actor = '',
+      workflow = '',
+      job = '',
+      eventName = '',
+      prNumber = '',
+      prBranch = '',
+      baseBranch = '',
+      timestamp = new Date().toISOString(),
+      nodeVersion = process.version,
+      os = process.platform
+    } = metadata;
+
+    const runUrl = runId ? `https://github.com/${repo}/actions/runs/${runId}` : 'N/A';
+
+    // Create a focused issue for a single test
+    let content = `## 🎯 Fix Single Test Failure
+
+@claude - Please fix this ONE specific test failure.
+
+### Command for Claude
+\`\`\`
+/fix-ci
+\`\`\`
+
+### 📌 Single Test to Fix
+
+**Test Name:** \`${testFailure.title}\`
+**File:** \`${testFailure.file}:${testFailure.line}\`
+**Status:** Failed
+
+### ⚠️ CRITICAL SETUP (Do this FIRST):
+\`\`\`bash
+# 1. Install dependencies
+npm install
+
+# 2. Install test browsers (REQUIRED!)
+npm run test:setup
+
+# 3. Build the site
+npm run build
+
+# 4. Run THIS specific test to reproduce
+npx playwright test ${testFailure.file} -g "${testFailure.title}"
+\`\`\`
+
+### 🔍 Error Details
+
+**Error Message:**
+\`\`\`
+${testFailure.error.message || 'No error message available'}
+\`\`\`
+
+${testFailure.error.stack ? `**Stack Trace:**
+\`\`\`javascript
+${testFailure.error.stack.substring(0, 500)}
+\`\`\`
+` : ''}
+
+### 📋 Test Code
+<details>
+<summary>Click to see the failing test code</summary>
+
+\`\`\`javascript
+// Test location: ${testFailure.file}:${testFailure.line}
+// You should check this file to understand what the test expects
+\`\`\`
+</details>
+
+### ✅ Success Criteria
+- Fix ONLY this specific test
+- Make it pass consistently
+- Don't break other tests
+- Follow CLAUDE.md guidelines
+
+### 🔧 Suggested Fix Approach
+1. Run the setup commands above
+2. Run the specific test to reproduce the failure
+3. Read the test file to understand what it's testing
+4. Fix the issue in the source files (\`src/\` directory)
+5. Run \`npm run build\` after changes
+6. Run the test again to verify it passes
+7. Run \`npm test\` to ensure no other tests broke
+
+### 📚 Context
+**Repository:** \`${repo}\`
+**Failed Run:** [View Run #${runNumber}](${runUrl})
+**Total Tests:** ${this.errors.summary.total} (${this.errors.summary.failed} failing, ${this.errors.summary.passed} passing)
+
+---
+*This is a focused single-test issue. Fix this one test before moving to others.*`;
+
+    return content;
+  }
+
+  /**
    * Generate markdown content for GitHub issue
    * GitHub has a 65536 character limit for issue bodies
    */
@@ -753,7 +859,10 @@ Edit, MultiEdit, Write, Read, Glob, Grep, Bash(git:*), Bash(npm:*), Bash(npx:*)
     const outputPath = args[2] || 'issue-content.md';
     const jobLogsPath = args[3] || null;
 
-    console.log('Collecting test errors...');
+    // Check for single-issue mode flag
+    const singleIssueMode = process.env.SINGLE_ISSUE_MODE === 'true' || args.includes('--single');
+
+    console.log(`Collecting test errors... (Mode: ${singleIssueMode ? 'SINGLE issue' : 'bulk'})`);
 
     // Parse test results
     this.parsePlaywrightResults(jsonResultsPath);
@@ -785,8 +894,21 @@ Edit, MultiEdit, Write, Read, Glob, Grep, Bash(git:*), Bash(npm:*), Bash(npx:*)
       os: process.platform
     };
 
-    // Generate issue content
-    const issueContent = this.generateIssueContent(metadata);
+    let issueContent;
+
+    if (singleIssueMode && this.errors.testFailures.length > 0) {
+      // In single-issue mode, create an issue for just the FIRST failure
+      console.log(`Creating single-issue for 1 of ${this.errors.testFailures.length} failures`);
+      const firstFailure = this.errors.testFailures[0];
+      issueContent = this.generateSingleIssueContent(firstFailure, metadata);
+
+      // Save the test name to a file so we can track which ones have been addressed
+      const addressedTestsFile = 'addressed-tests.txt';
+      fs.appendFileSync(addressedTestsFile, `${firstFailure.file}:${firstFailure.title}\n`);
+    } else {
+      // Original bulk mode
+      issueContent = this.generateIssueContent(metadata);
+    }
 
     // Save to file
     const saved = this.saveIssueContent(issueContent, outputPath);
