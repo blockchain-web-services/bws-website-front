@@ -325,82 +325,47 @@ class TestErrorCollector {
 
     const runUrl = runId ? `https://github.com/${repo}/actions/runs/${runId}` : 'N/A';
 
-    // Create a focused issue for a single test
-    let content = `## 🎯 Fix Single Test Failure
+    // Create a VERY concise issue for a single test
+    // Truncate error message to avoid GitHub's 65KB limit
+    const maxErrorLength = 200;
+    const errorMessage = testFailure.error?.message || 'No error message';
+    const truncatedError = errorMessage.length > maxErrorLength ?
+      errorMessage.substring(0, maxErrorLength) + '...' : errorMessage;
 
-@claude - Please fix this ONE specific test failure.
+    let content = `## 🎯 Fix One Test
 
-### Command for Claude
+@claude - Fix this specific test.
+
+### Command
 \`\`\`
 /fix-ci
 \`\`\`
 
-### 📌 Single Test to Fix
-
-**Test Name:** \`${testFailure.title}\`
+### Test to Fix
+**Name:** \`${testFailure.title.substring(0, 100)}\`
 **File:** \`${testFailure.file}:${testFailure.line}\`
-**Status:** Failed
 
-### ⚠️ CRITICAL SETUP (Do this FIRST):
+### Setup Steps
 \`\`\`bash
-# 1. Install dependencies
 npm install
-
-# 2. Install test browsers (REQUIRED!)
-npm run test:setup
-
-# 3. Build the site
+npm run test:setup  # Install Playwright browsers
 npm run build
-
-# 4. Run THIS specific test to reproduce
-npx playwright test ${testFailure.file} -g "${testFailure.title}"
+npx playwright test ${testFailure.file} -g "${testFailure.title.substring(0, 50)}"
 \`\`\`
 
-### 🔍 Error Details
-
-**Error Message:**
+### Error
 \`\`\`
-${testFailure.error.message || 'No error message available'}
+${truncatedError}
 \`\`\`
 
-${testFailure.error.stack ? `**Stack Trace:**
-\`\`\`javascript
-${testFailure.error.stack.substring(0, 500)}
-\`\`\`
-` : ''}
+### Instructions
+1. Check CLAUDE.md for setup details
+2. Run the test to reproduce
+3. Fix in \`src/\` files only
+4. Verify test passes
+5. Commit with "Fixed: ${testFailure.title.substring(0, 50)}"
 
-### 📋 Test Code
-<details>
-<summary>Click to see the failing test code</summary>
-
-\`\`\`javascript
-// Test location: ${testFailure.file}:${testFailure.line}
-// You should check this file to understand what the test expects
-\`\`\`
-</details>
-
-### ✅ Success Criteria
-- Fix ONLY this specific test
-- Make it pass consistently
-- Don't break other tests
-- Follow CLAUDE.md guidelines
-
-### 🔧 Suggested Fix Approach
-1. Run the setup commands above
-2. Run the specific test to reproduce the failure
-3. Read the test file to understand what it's testing
-4. Fix the issue in the source files (\`src/\` directory)
-5. Run \`npm run build\` after changes
-6. Run the test again to verify it passes
-7. Run \`npm test\` to ensure no other tests broke
-
-### 📚 Context
-**Repository:** \`${repo}\`
-**Failed Run:** [View Run #${runNumber}](${runUrl})
-**Total Tests:** ${this.errors.summary.total} (${this.errors.summary.failed} failing, ${this.errors.summary.passed} passing)
-
----
-*This is a focused single-test issue. Fix this one test before moving to others.*`;
+**Run:** [#${runNumber}](${runUrl})`;
 
     return content;
   }
