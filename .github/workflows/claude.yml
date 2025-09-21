@@ -46,27 +46,29 @@ jobs:
           # Configure Claude's behavior for auto-merge
           claude_args: |
             --max-turns 15
-            --allowedTools "Bash(npm install),Bash(npm run build),Bash(npm run test:*),Bash(npm run lint:*),Bash(npx playwright install*),Bash(git:*),Edit,MultiEdit,Read,Write"
-            --system-prompt "You are fixing ONE SPECIFIC test failure for the BWS website. Follow these steps:
-              CRITICAL: First check CLAUDE.md for testing setup instructions!
-              1. Run 'npm install' to install dependencies
-              2. Run 'npm run test:setup' or 'npx playwright install chromium' to install test browsers
-              3. Run 'npm run build' to build the site
-              4. Focus on the SINGLE test failure described in the issue
-              5. Run the specific test with: npx playwright test [file] -g '[test name]'
-              6. Fix ONLY that test - don't try to fix other failures
-              7. After fixing, verify the specific test passes
-              8. If the test passes:
-                 - Commit your changes with message including 'Generated with Claude Code'
-                 - Include which specific test was fixed
-                 - Merge directly to the source branch (main/master)
-                 - Close the issue with a success comment
-              9. If the test still fails after your fixes:
-                 - Create a pull request instead of merging directly
-                 - Document what you tried and what's still failing
-              10. Important: Include 'Claude-Fix-Attempt' and the test name in your commit message
-              11. Maximum 2 fix attempts before creating a PR
-              Always follow the coding standards in CLAUDE.md"
+            --allowedTools "Bash(grep:*),Bash(find:*),Bash(ls:*),Bash(cat:*),Bash(git:*),Edit,MultiEdit,Read,Write,Glob,Grep"
+            --system-prompt "You are fixing a test that ALREADY FAILED. DO NOT RE-RUN TESTS!
+
+              CRITICAL RULES:
+              - The test already ran in CI and failed
+              - You have the error details in the issue
+              - DO NOT install dependencies or Playwright
+              - DO NOT run npm install, build, or test commands
+              - ONLY read files and fix the issues
+
+              STEPS TO FOLLOW:
+              1. Read the error/violations in the issue
+              2. Find the relevant source files (usually in src/)
+              3. Fix the specific issue:
+                 - For 'link-name': Add aria-label to links
+                 - For 'image-alt': Add alt text to images
+                 - For 'color-contrast': Adjust CSS colors
+              4. Use Edit/MultiEdit to fix files
+              5. Commit with: 'Fixed: [test name]'
+              6. If confident: merge to main
+              7. If unsure: create PR
+
+              Remember: The test ALREADY ran. Just fix the code!"
 
           # Optional: Advanced settings configuration
           # settings: |

@@ -300,6 +300,62 @@ class TestErrorCollector {
   }
 
   /**
+   * Parse accessibility violations from test error
+   */
+  parseAccessibilityViolations(testFailure) {
+    if (!testFailure.file?.includes('accessibility')) {
+      return null;
+    }
+
+    const errorMsg = testFailure.error?.message || '';
+    const violations = [];
+
+    // Try to extract violation details from error message
+    // Look for patterns like "link-name", "image-alt", etc.
+    const violationPatterns = [
+      /\bid:\s*"([^"]+)"/g,
+      /\bhelp:\s*"([^"]+)"/g,
+      /\btarget:\s*\[?\s*"([^"]+)"/g,
+      /\bimpact:\s*"([^"]+)"/g
+    ];
+
+    // Extract key violation info if present
+    if (errorMsg.includes('violations')) {
+      // Try to parse common accessibility issues
+      if (errorMsg.includes('link-name')) {
+        violations.push({
+          id: 'link-name',
+          help: 'Links must have discernible text',
+          fix: 'Add text content or aria-label to links'
+        });
+      }
+      if (errorMsg.includes('image-alt')) {
+        violations.push({
+          id: 'image-alt',
+          help: 'Images must have alternate text',
+          fix: 'Add alt attribute to img elements'
+        });
+      }
+      if (errorMsg.includes('color-contrast')) {
+        violations.push({
+          id: 'color-contrast',
+          help: 'Elements must have sufficient color contrast',
+          fix: 'Adjust foreground/background colors for WCAG compliance'
+        });
+      }
+      if (errorMsg.includes('heading-order')) {
+        violations.push({
+          id: 'heading-order',
+          help: 'Heading levels should only increase by one',
+          fix: 'Fix heading hierarchy (h1 → h2 → h3, etc.)'
+        });
+      }
+    }
+
+    return violations.length > 0 ? violations : null;
+  }
+
+  /**
    * Generate markdown content for a SINGLE test failure
    * This creates a focused issue for Claude to fix one specific problem
    */
@@ -325,47 +381,78 @@ class TestErrorCollector {
 
     const runUrl = runId ? `https://github.com/${repo}/actions/runs/${runId}` : 'N/A';
 
-    // Create a VERY concise issue for a single test
-    // Truncate error message to avoid GitHub's 65KB limit
-    const maxErrorLength = 200;
-    const errorMessage = testFailure.error?.message || 'No error message';
-    const truncatedError = errorMessage.length > maxErrorLength ?
-      errorMessage.substring(0, maxErrorLength) + '...' : errorMessage;
+    // Check if this is an accessibility test and parse violations
+    const violations = this.parseAccessibilityViolations(testFailure);
+    const isAccessibilityTest = testFailure.file?.includes('accessibility');
 
-    let content = `## 🎯 Fix One Test
+    // For accessibility tests, create a focused fix-only issue
+    if (isAccessibilityTest && violations) {
+      let content = `## 🎯 Fix Accessibility Issue
 
-@claude - Fix this specific test.
+@claude - Fix this accessibility violation. DO NOT run tests.
 
 ### Command
 \`\`\`
 /fix-ci
 \`\`\`
 
-### Test to Fix
-**Name:** \`${testFailure.title.substring(0, 100)}\`
-**File:** \`${testFailure.file}:${testFailure.line}\`
+### Test That Failed
+**Test:** \`${testFailure.title}\`
+**Location:** \`${testFailure.file}:${testFailure.line}\`
 
-### Setup Steps
-\`\`\`bash
-npm install
-npm run test:setup  # Install Playwright browsers
-npm run build
-npx playwright test ${testFailure.file} -g "${testFailure.title.substring(0, 50)}"
+### ❌ Violations to Fix
+${violations.map((v, i) => `
+**${i + 1}. ${v.id}**
+- Issue: ${v.help}
+- Fix: ${v.fix}`).join('\n')}
+
+### 📝 Instructions (NO TEST RUNNING!)
+1. **DO NOT** install dependencies or run tests
+2. **DO NOT** run npm install, npm build, or playwright
+3. **ONLY** fix the violations listed above
+4. Common fixes:
+   - \`link-name\`: Add aria-label="Description" to links
+   - \`image-alt\`: Add alt="Description" to images
+   - \`color-contrast\`: Adjust CSS colors in /public/styles.css
+5. Edit files in \`src/\` directory only
+6. Commit with: "Fixed accessibility: ${violations[0].id}"
+
+**The test already ran. Just fix the code!**`;
+
+      return content;
+    }
+
+    // For other tests, create a simpler issue
+    const maxErrorLength = 200;
+    const errorMessage = testFailure.error?.message || 'No error message';
+    const truncatedError = errorMessage.length > maxErrorLength ?
+      errorMessage.substring(0, maxErrorLength) + '...' : errorMessage;
+
+    let content = `## 🎯 Fix Test Failure
+
+@claude - Fix this test. DO NOT re-run it.
+
+### Command
+\`\`\`
+/fix-ci
 \`\`\`
 
-### Error
+### Failed Test
+**Name:** \`${testFailure.title}\`
+**File:** \`${testFailure.file}:${testFailure.line}\`
+
+### Error (from CI run)
 \`\`\`
 ${truncatedError}
 \`\`\`
 
-### Instructions
-1. Check CLAUDE.md for setup details
-2. Run the test to reproduce
-3. Fix in \`src/\` files only
-4. Verify test passes
-5. Commit with "Fixed: ${testFailure.title.substring(0, 50)}"
+### 📝 Fix Instructions
+1. **DO NOT** run the test (it already failed)
+2. Read the error message above
+3. Find and fix the issue in \`src/\` files
+4. Commit with: "Fixed: ${testFailure.title.substring(0, 50)}"
 
-**Run:** [#${runNumber}](${runUrl})`;
+**Skip setup. Just fix the code!**`;
 
     return content;
   }
