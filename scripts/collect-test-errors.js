@@ -427,11 +427,23 @@ ${violations.map((v, i) => `
 5. Edit files in \`src/\` directory only (except styles.css in public/)
 6. Commit with: "Fixed accessibility: ${violations[0].id}"
 7. Merge to main/master
-8. **ALWAYS** update this issue:
-   - If successful: Comment what was fixed, then close
-   - If failed: Comment the error and what needs manual help
 
-**The test already ran. Just fix the code and close this issue!**`;
+### ⚠️ MANDATORY FINAL STEP
+**YOU MUST UPDATE THIS ISSUE BEFORE FINISHING:**
+
+**If successful:**
+\`\`\`bash
+gh issue comment \${{ github.event.issue.number }} --body "✅ Fixed: ${violations[0].id}"
+gh issue close \${{ github.event.issue.number }}
+\`\`\`
+
+**If failed:**
+\`\`\`bash
+gh issue comment \${{ github.event.issue.number }} --body "❌ Failed: [describe the error]"
+gh issue edit \${{ github.event.issue.number }} --add-label needs-manual-fix
+\`\`\`
+
+**NEVER end without running one of the above commands!**`;
 
       return content;
     }
@@ -466,12 +478,23 @@ ${truncatedError}
 3. Find and fix the issue in \`src/\` files
 4. Commit with: "Fixed: ${testFailure.title.substring(0, 50)}"
 5. Merge to main/master
-6. **ALWAYS** update this issue:
-   - If successful: Comment what was fixed, then close
-   - If failed: Comment the error and what needs manual help
-   - NEVER leave issue without status update
 
-**Skip setup. Just fix the code and report status!**`;
+### ⚠️ MANDATORY FINAL STEP
+**YOU MUST UPDATE THIS ISSUE BEFORE FINISHING:**
+
+**If successful:**
+\`\`\`bash
+gh issue comment \${{ github.event.issue.number }} --body "✅ Fixed test: ${testFailure.title.substring(0, 50)}"
+gh issue close \${{ github.event.issue.number }}
+\`\`\`
+
+**If failed:**
+\`\`\`bash
+gh issue comment \${{ github.event.issue.number }} --body "❌ Failed to fix: [describe the error]"
+gh issue edit \${{ github.event.issue.number }} --add-label needs-manual-fix
+\`\`\`
+
+**NEVER end without running one of the above commands!**`;
 
     return content;
   }

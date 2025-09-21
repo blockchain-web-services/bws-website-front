@@ -46,7 +46,7 @@ jobs:
           # Configure Claude's behavior for auto-merge
           claude_args: |
             --max-turns 15
-            --allowedTools "Bash(grep:*),Bash(find:*),Bash(ls:*),Bash(cat:*),Bash(git:*),Edit,MultiEdit,Read,Write,Glob,Grep"
+            --allowedTools "Bash(grep:*),Bash(find:*),Bash(ls:*),Bash(cat:*),Bash(git:*),Bash(gh:*),Edit,MultiEdit,Read,Write,Glob,Grep"
             --system-prompt "You are fixing a test that ALREADY FAILED. DO NOT RE-RUN TESTS!
 
               CRITICAL RULES:
@@ -56,32 +56,35 @@ jobs:
               - DO NOT run npm install, build, or test commands
               - ONLY read files and fix the issues
 
-              STEPS TO FOLLOW:
+              WORKFLOW (FOLLOW IN ORDER):
               1. Read the error/violations in the issue
               2. Find the relevant source files (usually in src/)
               3. Fix the specific issue:
                  - For 'link-name': Add aria-label to links
                  - For 'image-alt': Add alt text to images
-                 - For 'color-contrast': Adjust CSS colors
+                 - For 'color-contrast': Adjust CSS colors (use replace_all: true if needed)
               4. Use Edit/MultiEdit to fix files
                  - If MultiEdit fails with 'Found X matches', use replace_all: true
                  - Or provide more context to make the string unique
               5. Commit with: 'Fixed: [test name]' and 'Claude-Fix-Attempt'
               6. Merge directly to main/master branch
-              7. CRITICAL: ALWAYS update the issue before finishing:
-                 - If successful: Comment what was fixed, then close issue
-                 - If failed: Comment what error occurred and what needs manual intervention
-                 - NEVER leave the issue without a final status comment
-              8. A new issue will be created if there are more failures
 
-              ERROR HANDLING:
-              - If you encounter ANY error (edit fails, git fails, etc), you MUST:
-                1. Comment on the issue explaining the error
-                2. Suggest what manual intervention is needed
-                3. Still attempt to close the issue or mark it as blocked
+              ⚠️ MANDATORY FINAL STEP (ALWAYS DO THIS LAST):
+              7. UPDATE THE GITHUB ISSUE STATUS - THIS IS REQUIRED!
+                 The issue number is in the GitHub context. Use these exact commands:
 
-              Remember: The test ALREADY ran. Just fix the code!
-              ALWAYS report your final status to the issue (success or failure)!"
+                 SUCCESS PATH (after successful fix and merge):
+                 gh issue comment ${{ github.event.issue.number }} --body '✅ Successfully fixed the issue'
+                 gh issue close ${{ github.event.issue.number }}
+
+                 FAILURE PATH (if anything goes wrong):
+                 gh issue comment ${{ github.event.issue.number }} --body '❌ Failed to fix. Error: [describe error]'
+                 gh issue edit ${{ github.event.issue.number }} --add-label 'needs-manual-fix'
+
+              YOU MUST COMPLETE STEP 7! This is MANDATORY!
+              Before you finish, ask yourself: 'Did I update the issue?' If not, DO IT NOW!
+
+              The test ALREADY ran. Just fix the code and UPDATE THE ISSUE!"
 
           # Optional: Advanced settings configuration
           # settings: |
