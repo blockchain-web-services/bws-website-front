@@ -67,9 +67,9 @@ class TestErrorCollector {
       if (data.errors && Array.isArray(data.errors)) {
         for (const error of data.errors) {
           if (error.message) {
-            this.errors.webServerErrors.push(error.message);
+            this.errors.webServerErrors.push(this.stripAnsiCodes(error.message));
             if (error.stack) {
-              this.errors.webServerErrors.push(error.stack);
+              this.errors.webServerErrors.push(this.stripAnsiCodes(error.stack));
             }
           }
         }
@@ -163,9 +163,9 @@ class TestErrorCollector {
     const error = failedResult.error || {};
 
     // Try to extract more context from the error
-    let message = error.message || 'Unknown error';
-    let stack = error.stack || '';
-    let snippet = error.snippet || '';
+    let message = this.stripAnsiCodes(error.message) || 'Unknown error';
+    let stack = this.stripAnsiCodes(error.stack) || '';
+    let snippet = this.stripAnsiCodes(error.snippet) || '';
 
     // If we have attachments, mention them
     if (failedResult.attachments && failedResult.attachments.length > 0) {
@@ -210,21 +210,21 @@ class TestErrorCollector {
       for (const line of lines) {
         // Detect WebServer errors
         if (line.includes('[WebServer]') && line.includes('Error')) {
-          this.errors.webServerErrors.push(line);
+          this.errors.webServerErrors.push(this.stripAnsiCodes(line));
         }
 
         // Detect specific error types
         if (line.includes('ERR_INVALID_FILE_URL_PATH')) {
-          this.errors.webServerErrors.push(line);
+          this.errors.webServerErrors.push(this.stripAnsiCodes(line));
         }
 
         if (line.includes('ERR_CONNECTION_REFUSED')) {
-          this.errors.webServerErrors.push(line);
+          this.errors.webServerErrors.push(this.stripAnsiCodes(line));
         }
 
         // Detect build errors
         if (line.includes('Build failed') || line.includes('npm ERR!')) {
-          this.errors.buildErrors.push(line);
+          this.errors.buildErrors.push(this.stripAnsiCodes(line));
         }
 
         // Parse Playwright test failures from console output
@@ -300,6 +300,15 @@ class TestErrorCollector {
   }
 
   /**
+   * Strip ANSI color codes from text
+   */
+  stripAnsiCodes(text) {
+    if (!text) return text;
+    // Remove ANSI escape sequences (color codes, cursor movements, etc.)
+    return text.replace(/\x1b\[[0-9;]*m/g, '');
+  }
+
+  /**
    * Parse accessibility violations from test error
    */
   parseAccessibilityViolations(testFailure) {
@@ -307,7 +316,7 @@ class TestErrorCollector {
       return null;
     }
 
-    const errorMsg = testFailure.error?.message || '';
+    const errorMsg = this.stripAnsiCodes(testFailure.error?.message) || '';
     const violations = [];
 
     // Try to extract violation details from error message
@@ -416,15 +425,17 @@ ${violations.map((v, i) => `
    - \`color-contrast\`: Adjust CSS colors in /public/styles.css
 5. Edit files in \`src/\` directory only
 6. Commit with: "Fixed accessibility: ${violations[0].id}"
+7. Merge to main/master
+8. **CLOSE THIS ISSUE** after merging (add success comment)
 
-**The test already ran. Just fix the code!**`;
+**The test already ran. Just fix the code and close this issue!**`;
 
       return content;
     }
 
     // For other tests, create a simpler issue
     const maxErrorLength = 200;
-    const errorMessage = testFailure.error?.message || 'No error message';
+    const errorMessage = this.stripAnsiCodes(testFailure.error?.message) || 'No error message';
     const truncatedError = errorMessage.length > maxErrorLength ?
       errorMessage.substring(0, maxErrorLength) + '...' : errorMessage;
 
@@ -451,8 +462,10 @@ ${truncatedError}
 2. Read the error message above
 3. Find and fix the issue in \`src/\` files
 4. Commit with: "Fixed: ${testFailure.title.substring(0, 50)}"
+5. Merge to main/master
+6. **CLOSE THIS ISSUE** after merging
 
-**Skip setup. Just fix the code!**`;
+**Skip setup. Just fix the code and close this issue!**`;
 
     return content;
   }
@@ -883,7 +896,7 @@ Edit, MultiEdit, Write, Read, Glob, Grep, Bash(git:*), Bash(npm:*), Bash(npx:*)
       for (const line of lines) {
         for (const pattern of errorPatterns) {
           if (pattern.test(line)) {
-            extractedErrors.push(line.trim());
+            extractedErrors.push(this.stripAnsiCodes(line.trim()));
             break;
           }
         }

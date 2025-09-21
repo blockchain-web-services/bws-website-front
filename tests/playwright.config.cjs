@@ -12,6 +12,9 @@ module.exports = defineConfig({
   retries: process.env.CI ? 2 : 1,
   workers: process.env.CI ? 2 : undefined,
 
+  // Stop on first failure when in single-issue mode
+  maxFailures: process.env.SINGLE_ISSUE_MODE === 'true' ? 1 : undefined,
+
   reporter: process.env.CI ? [
     ['json', { outputFile: './test-results.json' }],
     ['list'],

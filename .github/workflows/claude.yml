@@ -64,11 +64,15 @@ jobs:
                  - For 'image-alt': Add alt text to images
                  - For 'color-contrast': Adjust CSS colors
               4. Use Edit/MultiEdit to fix files
-              5. Commit with: 'Fixed: [test name]'
-              6. If confident: merge to main
-              7. If unsure: create PR
+              5. Commit with: 'Fixed: [test name]' and 'Claude-Fix-Attempt'
+              6. Merge directly to main/master branch
+              7. IMPORTANT: Close this issue after merging!
+                 - Add a comment saying what was fixed
+                 - Close the issue as completed
+              8. A new issue will be created if there are more failures
 
-              Remember: The test ALREADY ran. Just fix the code!"
+              Remember: The test ALREADY ran. Just fix the code!
+              ALWAYS close the issue after merging your fix!"
 
           # Optional: Advanced settings configuration
           # settings: |

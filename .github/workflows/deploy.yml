@@ -25,6 +25,8 @@ jobs:
   # Job 1: Run test suite
   test:
     runs-on: ubuntu-latest
+    env:
+      SINGLE_ISSUE_MODE: true  # Enable single-issue mode by default
     strategy:
       matrix:
         browser: [chromium]
@@ -56,8 +58,17 @@ jobs:
           # Run tests with reporters configured in playwright.config.cjs
           # In CI, this will use JSON reporter outputting to test-results.json
           # Use set -o pipefail to preserve exit code through pipe
+          # Add --max-failures=1 to stop on first failure (saves CI time)
           set -o pipefail
-          npx playwright test --config=tests/playwright.config.cjs --project=${{ matrix.browser }} 2>&1 | tee test-output.txt
+
+          # Check if we're in single-issue mode
+          if [ "${{ env.SINGLE_ISSUE_MODE }}" = "true" ]; then
+            echo "Running tests with --max-failures=1 (stop on first failure)"
+            npx playwright test --config=tests/playwright.config.cjs --project=${{ matrix.browser }} --max-failures=1 2>&1 | tee test-output.txt
+          else
+            echo "Running all tests"
+            npx playwright test --config=tests/playwright.config.cjs --project=${{ matrix.browser }} 2>&1 | tee test-output.txt
+          fi
 
           # Debug: Find where the JSON output was created
           echo "Looking for test-results.json files..."
