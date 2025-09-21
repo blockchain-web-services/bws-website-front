@@ -9,16 +9,13 @@ on:
 
 jobs:
   handle-claude-success:
-    # Only run if the commit is from Claude and tests passed
+    # Only run for automated CI fix attempts (not regular Claude commits)
     if: |
       (github.event_name == 'push' &&
-       (contains(github.event.head_commit.message, 'Generated with Claude Code') ||
-        contains(github.event.head_commit.message, 'Co-Authored-By: Claude') ||
-        contains(github.event.head_commit.message, 'Claude-Fix-Attempt'))) ||
+       contains(github.event.head_commit.message, 'Claude-Fix-Attempt')) ||
       (github.event_name == 'workflow_run' &&
        github.event.workflow_run.conclusion == 'success' &&
-       (contains(github.event.workflow_run.head_commit.message, 'Generated with Claude Code') ||
-        contains(github.event.workflow_run.head_commit.message, 'Claude-Fix-Attempt')))
+       contains(github.event.workflow_run.head_commit.message, 'Claude-Fix-Attempt'))
 
     runs-on: ubuntu-latest
     permissions:
@@ -26,97 +23,53 @@ jobs:
       contents: read
 
     steps:
-      - name: Close Claude-fixed issues
+      - name: Log Claude Fix Success
         uses: actions/github-script@v7
         with:
           github-token: ${{ secrets.PAT_REPOS_AND_WORKFLOW }}
           script: |
-            console.log('Claude fix detected, checking for issues to close...');
+            console.log('Claude automated fix attempt detected');
 
             // Get commit info
             const commitSha = context.sha || context.payload.workflow_run?.head_sha;
             const commitMessage = context.payload.head_commit?.message ||
                                 context.payload.workflow_run?.head_commit?.message || '';
 
-            // Find open test failure issues (both old and new label formats)
-            const testFailureIssues = await github.rest.issues.listForRepo({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              labels: ['test-failure', 'automated'],
-              state: 'open'
-            });
+            console.log(`Commit: ${commitSha.substring(0, 7)}`);
+            console.log(`Message: ${commitMessage.split('\n')[0]}`);
 
-            const singleTestIssues = await github.rest.issues.listForRepo({
+            // Check recently closed issues to verify fix
+            const recentlyClosedIssues = await github.rest.issues.listForRepo({
               owner: context.repo.owner,
               repo: context.repo.repo,
               labels: ['single-test', 'automated'],
-              state: 'open'
+              state: 'closed',
+              sort: 'updated',
+              direction: 'desc',
+              per_page: 5
             });
 
-            // Combine both types of issues
-            const issues = {
-              data: [...testFailureIssues.data, ...singleTestIssues.data]
-            };
+            console.log(`Found ${recentlyClosedIssues.data.length} recently closed automated issues`);
 
-            console.log(`Found ${issues.data.length} open test failure issues`);
+            // Find if any were closed by this commit
+            const fixedIssues = recentlyClosedIssues.data.filter(issue => {
+              // Check if closed within last hour
+              const closedAt = new Date(issue.closed_at).getTime();
+              const oneHourAgo = Date.now() - (60 * 60 * 1000);
+              return closedAt > oneHourAgo;
+            });
 
-            // Look for issues that Claude was working on
-            const claudeIssues = issues.data.filter(issue =>
-              issue.body && (
-                issue.body.includes('claude-fix-ci') ||
-                issue.body.includes('@claude') ||
-                issue.assignees?.some(a => a.login === 'claude')
-              )
-            );
-
-            console.log(`Found ${claudeIssues.length} Claude-assigned issues`);
-
-            // Close Claude's issues if this was a successful fix
-            for (const issue of claudeIssues) {
-              // Check if issue was created recently (within 24 hours)
-              const issueAge = Date.now() - new Date(issue.created_at).getTime();
-              const oneDayMs = 24 * 60 * 60 * 1000;
-
-              if (issueAge < oneDayMs) {
-                // Close the issue
-                await github.rest.issues.update({
-                  owner: context.repo.owner,
-                  repo: context.repo.repo,
-                  issue_number: issue.number,
-                  state: 'closed'
-                });
-
-                // Add success comment
-                await github.rest.issues.createComment({
-                  owner: context.repo.owner,
-                  repo: context.repo.repo,
-                  issue_number: issue.number,
-                  body: '✅ **Fixed by Claude!**\n\n' +
-                    'Tests are now passing after Claude\'s fix in commit ' + commitSha.substring(0, 7) + '.\n\n' +
-                    '**Commit Message:**\n' +
-                    '```\n' +
-                    commitMessage + '\n' +
-                    '```\n\n' +
-                    '[View Successful Workflow Run](https://github.com/' + context.repo.owner + '/' + context.repo.repo + '/actions/runs/' + context.runId + ')\n\n' +
-                    'Issue automatically closed by claude-success workflow.'
-                });
-
-                // Add label to indicate it was fixed by Claude
-                await github.rest.issues.addLabels({
-                  owner: context.repo.owner,
-                  repo: context.repo.repo,
-                  issue_number: issue.number,
-                  labels: ['fixed-by-claude']
-                });
-
-                console.log(`Closed issue #${issue.number} as fixed by Claude`);
-              }
+            if (fixedIssues.length > 0) {
+              console.log(`✅ Claude successfully fixed ${fixedIssues.length} issue(s):`);
+              fixedIssues.forEach(issue => {
+                console.log(`  - #${issue.number}: ${issue.title}`);
+              });
+            } else {
+              console.log('ℹ️ No recently closed issues found - Claude may have already closed them');
             }
 
-            // If no issues were closed but this was a Claude commit, log it
-            if (claudeIssues.length === 0 && commitMessage.includes('Claude')) {
-              console.log('Claude commit detected but no related issues found to close');
-            }
+            // Log workflow completion
+            console.log('Claude-Fix-Attempt workflow check completed');
 
       - name: Report success metrics
         if: success()
