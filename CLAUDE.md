@@ -1,5 +1,15 @@
 # Claude Code Guidelines for BWS Website
 
+## Special Instructions for Automated CI Fixes
+
+**WHEN WORKING ON AUTOMATED CI FIX ISSUES (labeled 'single-test' or 'automated'):**
+
+1. **DO NOT BUILD**: The site will automatically build after merge. Never run `npm run build`.
+2. **DO NOT TEST**: Tests already ran in CI. You have the failure details in the issue.
+3. **DO NOT INSTALL**: Dependencies are not needed. Skip all npm install commands.
+4. **PUSH DIRECTLY TO MASTER**: Use `git push origin HEAD:master` (no branches, no PRs).
+5. **ALWAYS UPDATE THE ISSUE**: Comment success/failure status before finishing.
+
 ## Important Rules
 
 ### 1. Always Modify Templates, Never Generated Files
@@ -18,7 +28,9 @@ All CSS styles are consolidated in `/public/styles.css`. This unified file:
 - Is served directly from the root path as `/styles.css`
 
 ### 3. Build Process
-**IMPORTANT**: After making any changes as a result of a user request, always rebuild the website by running `npm run build` to ensure changes are applied to the generated files.
+**FOR NORMAL DEVELOPMENT** (not for automated CI fixes): After making changes as a result of a user request, rebuild the website by running `npm run build` to ensure changes are applied to the generated files.
+
+**EXCEPTION**: Do NOT build when working on automated CI fix issues. The site builds automatically after merge.
 
 The build process includes automatic prettification and validation:
 - `npm run build` - Build site, prettify HTML/CSS, and validate syntax
