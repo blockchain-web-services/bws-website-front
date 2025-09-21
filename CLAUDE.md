@@ -1,16 +1,41 @@
 # Claude Code Guidelines for BWS Website
 
-## Special Instructions for Automated CI Fixes
+## ⚠️ PRIORITY: Check Issue Type First!
 
-**WHEN WORKING ON AUTOMATED CI FIX ISSUES (labeled 'single-test' or 'automated'):**
+**Quick Check**: Does the issue have labels `single-test`, `automated`, or `Claude-Fix-Attempt` in the title?
+- **YES** → Follow the CI FIX section below only (5 steps)
+- **NO** → Skip to Normal Development Instructions
 
-1. **DO NOT BUILD**: The site will automatically build after merge. Never run `npm run build`.
-2. **DO NOT TEST**: Tests already ran in CI. You have the failure details in the issue.
-3. **DO NOT INSTALL**: Dependencies are not needed. Skip all npm install commands.
-4. **PUSH DIRECTLY TO MASTER**: Use `git push origin HEAD:master` (no branches, no PRs).
-5. **ALWAYS UPDATE THE ISSUE**: Comment success/failure status before finishing.
+### IF THIS IS AN AUTOMATED CI FIX (Issue has 'single-test' or 'automated' label):
 
-## Important Rules
+**FOLLOW THESE SPECIAL RULES - IGNORE ALL OTHER SECTIONS:**
+
+1. **SKIP ALL SETUP**: No npm install, no build, no test commands needed
+2. **FIX ONLY**: Read the error in the issue and fix the specific file
+3. **COMMIT DIRECTLY**:
+   ```bash
+   git add -A
+   git commit -m "Fixed: [issue description]
+
+   Claude-Fix-Attempt
+
+   Co-Authored-By: Claude <noreply@anthropic.com>"
+   ```
+4. **PUSH TO MASTER**:
+   ```bash
+   git push origin HEAD:master
+   ```
+5. **UPDATE ISSUE**:
+   ```bash
+   gh issue comment [issue-number] --body "✅ Fixed and pushed to master"
+   gh issue close [issue-number]
+   ```
+
+**DO NOT follow the normal development instructions below for CI fixes!**
+
+---
+
+## Normal Development Instructions (NOT for automated CI fixes)
 
 ### 1. Always Modify Templates, Never Generated Files
 **CRITICAL**: When fixing issues with HTML or content, ALWAYS modify the source template files in the `src/` directory (e.g., `src/components/IndexMainContent.astro`, `src/layouts/BaseLayout.astro`), NEVER modify the generated HTML files in `_site/` or built output.
@@ -27,10 +52,10 @@ All CSS styles are consolidated in `/public/styles.css`. This unified file:
 - Removes conflicting and redundant definitions
 - Is served directly from the root path as `/styles.css`
 
-### 3. Build Process
-**FOR NORMAL DEVELOPMENT** (not for automated CI fixes): After making changes as a result of a user request, rebuild the website by running `npm run build` to ensure changes are applied to the generated files.
+### 3. Build Process (Normal Development Only)
+**Only for regular development work**: After making changes, rebuild the website by running `npm run build` to ensure changes are applied to the generated files.
 
-**EXCEPTION**: Do NOT build when working on automated CI fix issues. The site builds automatically after merge.
+⚠️ **NEVER run build for automated CI fix issues** - the site builds automatically after merge.
 
 The build process includes automatic prettification and validation:
 - `npm run build` - Build site, prettify HTML/CSS, and validate syntax
@@ -46,9 +71,11 @@ Build workflow:
 4. HTML and CSS are validated for syntax errors
 5. Results are saved to `pretty-print-validation-results.json`
 
-### 4. Testing Environment Setup
+### 4. Testing Environment Setup (Normal Development Only)
 
-**CRITICAL**: Before running any tests, you MUST set up the Playwright environment properly:
+⚠️ **SKIP THIS ENTIRE SECTION FOR AUTOMATED CI FIXES** - tests already ran!
+
+**For normal development**: Before running any tests, you MUST set up the Playwright environment properly:
 
 #### Initial Setup (REQUIRED FIRST TIME):
 ```bash
