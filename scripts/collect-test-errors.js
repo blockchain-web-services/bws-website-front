@@ -423,10 +423,13 @@ ${violations.map((v, i) => `
    - \`link-name\`: Add aria-label="Description" to links
    - \`image-alt\`: Add alt="Description" to images
    - \`color-contrast\`: Adjust CSS colors in /public/styles.css
-5. Edit files in \`src/\` directory only
+     - If MultiEdit says "Found X matches", add \`"replace_all": true\` to edit
+5. Edit files in \`src/\` directory only (except styles.css in public/)
 6. Commit with: "Fixed accessibility: ${violations[0].id}"
 7. Merge to main/master
-8. **CLOSE THIS ISSUE** after merging (add success comment)
+8. **ALWAYS** update this issue:
+   - If successful: Comment what was fixed, then close
+   - If failed: Comment the error and what needs manual help
 
 **The test already ran. Just fix the code and close this issue!**`;
 
@@ -463,9 +466,12 @@ ${truncatedError}
 3. Find and fix the issue in \`src/\` files
 4. Commit with: "Fixed: ${testFailure.title.substring(0, 50)}"
 5. Merge to main/master
-6. **CLOSE THIS ISSUE** after merging
+6. **ALWAYS** update this issue:
+   - If successful: Comment what was fixed, then close
+   - If failed: Comment the error and what needs manual help
+   - NEVER leave issue without status update
 
-**Skip setup. Just fix the code and close this issue!**`;
+**Skip setup. Just fix the code and report status!**`;
 
     return content;
   }

@@ -64,15 +64,24 @@ jobs:
                  - For 'image-alt': Add alt text to images
                  - For 'color-contrast': Adjust CSS colors
               4. Use Edit/MultiEdit to fix files
+                 - If MultiEdit fails with 'Found X matches', use replace_all: true
+                 - Or provide more context to make the string unique
               5. Commit with: 'Fixed: [test name]' and 'Claude-Fix-Attempt'
               6. Merge directly to main/master branch
-              7. IMPORTANT: Close this issue after merging!
-                 - Add a comment saying what was fixed
-                 - Close the issue as completed
+              7. CRITICAL: ALWAYS update the issue before finishing:
+                 - If successful: Comment what was fixed, then close issue
+                 - If failed: Comment what error occurred and what needs manual intervention
+                 - NEVER leave the issue without a final status comment
               8. A new issue will be created if there are more failures
 
+              ERROR HANDLING:
+              - If you encounter ANY error (edit fails, git fails, etc), you MUST:
+                1. Comment on the issue explaining the error
+                2. Suggest what manual intervention is needed
+                3. Still attempt to close the issue or mark it as blocked
+
               Remember: The test ALREADY ran. Just fix the code!
-              ALWAYS close the issue after merging your fix!"
+              ALWAYS report your final status to the issue (success or failure)!"
 
           # Optional: Advanced settings configuration
           # settings: |
