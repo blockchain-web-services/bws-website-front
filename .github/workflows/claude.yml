@@ -57,41 +57,48 @@ jobs:
               - DO NOT run 'npm run build' - the site will build on merge
               - ONLY read files and fix the issues
 
-              WORKFLOW (FOLLOW IN ORDER):
-              1. Read the error/violations in the issue
-              2. Find the relevant source files (usually in src/)
-              3. Fix the specific issue:
+              WORKFLOW - ALL STEPS ARE MANDATORY:
+
+              STEP 1: Read the error/violations in the issue
+
+              STEP 2: Find and fix the source files (usually in src/)
                  - For 'link-name': Add aria-label to links
                  - For 'image-alt': Add alt text to images
                  - For 'color-contrast': Adjust CSS colors (use replace_all: true if needed)
-              4. Use Edit/MultiEdit to fix files
                  - If MultiEdit fails with 'Found X matches', use replace_all: true
-                 - Or provide more context to make the string unique
-              5. Commit and push DIRECTLY to master:
+
+              STEP 3: MANDATORY - Commit ALL changes:
+                 Run these EXACT commands:
                  git add -A
-                 git commit -m 'Fixed: [test name]
+                 git commit -m 'Fixed: [describe what you fixed]
 
                  Claude-Fix-Attempt
 
                  Co-Authored-By: Claude <noreply@anthropic.com>'
+
+                 If commit fails, you MUST report error in issue!
+
+              STEP 4: MANDATORY - Push to master:
+                 Run this EXACT command:
                  git push origin HEAD:master
 
-                 DO NOT create a branch. DO NOT create a PR. Push directly to master!
+                 CRITICAL: You MUST push! Just committing is NOT enough!
+                 DO NOT create branches! DO NOT create PRs! Push directly to master!
+                 If push fails, you MUST report error in issue!
 
-              ⚠️ MANDATORY FINAL STEP (ALWAYS DO THIS LAST):
-              7. UPDATE THE GITHUB ISSUE STATUS - THIS IS REQUIRED!
-                 The issue number is in the GitHub context. Use these exact commands:
+              STEP 5: MANDATORY - Update issue BEFORE finishing:
+                 You MUST run ONE of these commands:
 
-                 SUCCESS PATH (after successful fix and merge):
-                 gh issue comment ${{ github.event.issue.number }} --body '✅ Successfully fixed the issue'
+                 If everything worked:
+                 gh issue comment ${{ github.event.issue.number }} --body '✅ Fixed and pushed to master: [what you fixed]'
                  gh issue close ${{ github.event.issue.number }}
 
-                 FAILURE PATH (if anything goes wrong):
-                 gh issue comment ${{ github.event.issue.number }} --body '❌ Failed to fix. Error: [describe error]'
-                 gh issue edit ${{ github.event.issue.number }} --add-label 'needs-manual-fix'
+                 If something failed:
+                 gh issue comment ${{ github.event.issue.number }} --body '❌ Error: [what went wrong]'
 
-              YOU MUST COMPLETE STEP 7! This is MANDATORY!
-              Before you finish, ask yourself: 'Did I update the issue?' If not, DO IT NOW!
+              NEVER end without completing ALL 5 STEPS!
+              Step 3 (commit), Step 4 (push), and Step 5 (update issue) are MANDATORY!
+              If you skip any step, the automation FAILS!
 
               The test ALREADY ran. Just fix the code and UPDATE THE ISSUE!"
 

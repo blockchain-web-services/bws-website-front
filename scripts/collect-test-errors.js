@@ -425,10 +425,25 @@ ${violations.map((v, i) => `
    - \`color-contrast\`: Adjust CSS colors in /public/styles.css
      - If MultiEdit says "Found X matches", add \`"replace_all": true\` to edit
 5. Edit files in \`src/\` directory only (except styles.css in public/)
-6. Commit with: "Fixed accessibility: ${violations[0].id}"
-7. Merge to main/master
 
-### ⚠️ MANDATORY FINAL STEP
+### ⚠️ ALL THESE STEPS ARE MANDATORY:
+
+**STEP 1: Commit** (REQUIRED)
+\`\`\`bash
+git add -A
+git commit -m "Fixed accessibility: ${violations[0].id}
+
+Claude-Fix-Attempt
+
+Co-Authored-By: Claude <noreply@anthropic.com>"
+\`\`\`
+
+**STEP 2: Push to master** (REQUIRED - NOT OPTIONAL!)
+\`\`\`bash
+git push origin HEAD:master
+\`\`\`
+
+**STEP 3: Update this issue** (REQUIRED BEFORE ENDING)
 **YOU MUST UPDATE THIS ISSUE BEFORE FINISHING:**
 
 **If successful:**
@@ -443,7 +458,12 @@ gh issue comment \${{ github.event.issue.number }} --body "❌ Failed: [describe
 gh issue edit \${{ github.event.issue.number }} --add-label needs-manual-fix
 \`\`\`
 
-**NEVER end without running one of the above commands!**`;
+**CHECKLIST BEFORE ENDING:**
+☐ Did you commit? (git commit)
+☐ Did you push to master? (git push origin HEAD:master)
+☐ Did you update this issue? (gh issue comment/close)
+
+**If ANY box is unchecked, DO IT NOW!**`;
 
       return content;
     }
@@ -476,10 +496,25 @@ ${truncatedError}
 1. **DO NOT** run the test (it already failed)
 2. Read the error message above
 3. Find and fix the issue in \`src/\` files
-4. Commit with: "Fixed: ${testFailure.title.substring(0, 50)}"
-5. Merge to main/master
 
-### ⚠️ MANDATORY FINAL STEP
+### ⚠️ ALL THESE STEPS ARE MANDATORY:
+
+**STEP 1: Commit** (REQUIRED)
+\`\`\`bash
+git add -A
+git commit -m "Fixed: ${testFailure.title.substring(0, 50)}
+
+Claude-Fix-Attempt
+
+Co-Authored-By: Claude <noreply@anthropic.com>"
+\`\`\`
+
+**STEP 2: Push to master** (REQUIRED - NOT OPTIONAL!)
+\`\`\`bash
+git push origin HEAD:master
+\`\`\`
+
+**STEP 3: Update this issue** (REQUIRED BEFORE ENDING)
 **YOU MUST UPDATE THIS ISSUE BEFORE FINISHING:**
 
 **If successful:**
@@ -494,7 +529,12 @@ gh issue comment \${{ github.event.issue.number }} --body "❌ Failed to fix: [d
 gh issue edit \${{ github.event.issue.number }} --add-label needs-manual-fix
 \`\`\`
 
-**NEVER end without running one of the above commands!**`;
+**CHECKLIST BEFORE ENDING:**
+☐ Did you commit? (git commit)
+☐ Did you push to master? (git push origin HEAD:master)
+☐ Did you update this issue? (gh issue comment/close)
+
+**If ANY box is unchecked, DO IT NOW!**`;
 
     return content;
   }
