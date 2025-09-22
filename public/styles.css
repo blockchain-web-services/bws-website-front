@@ -33983,3 +33983,120 @@ a:hover {
 .transparent {
   opacity: 0.95 !important; /* Slightly reduce transparency for better visibility */
 }
+
+/* ==============================================
+   ACCESSIBILITY AND COLOR CONTRAST FIXES
+   ============================================== */
+
+/* Fix color contrast violations for WCAG compliance */
+
+/* Ensure all white text has sufficient dark backgrounds */
+.industries-top-menu-text-wrapper {
+  background-color: rgba(0, 0, 0, 0.8) !important;
+  padding: 4px 8px !important;
+  border-radius: 4px !important;
+}
+
+.industries-top-menu-option-tittle {
+  color: #ffffff !important;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.9) !important;
+}
+
+.industries-menu-option-text {
+  color: #ffffffe6 !important;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8) !important;
+}
+
+/* Fix any light gray text that fails contrast */
+.text-light-gray, .text-muted {
+  color: #666666 !important; /* Darker gray for better contrast */
+}
+
+/* Ensure dropdown menu text has proper contrast */
+.dropdown-menu-wrapper {
+  color: #333333 !important;
+  background-color: #ffffff !important;
+}
+
+/* Fix low contrast text in navigation */
+.menu-option-text {
+  color: #555555 !important; /* Darker for better contrast */
+}
+
+/* Fix footer text contrast */
+.footer-link {
+  color: #0066cc !important; /* Darker blue for better contrast */
+}
+
+.footer-text {
+  color: #333333 !important;
+}
+
+/* Ensure form input text has proper contrast */
+.w-input, .w-select {
+  color: #333333 !important;
+  background-color: #ffffff !important;
+  border: 1px solid #cccccc !important;
+}
+
+/* Fix button contrast */
+.w-button {
+  background-color: #0066cc !important; /* Darker blue for better contrast */
+  color: #ffffff !important;
+  border: 1px solid #0066cc !important;
+}
+
+.w-button:hover {
+  background-color: #0052a3 !important;
+  border-color: #0052a3 !important;
+}
+
+/* Fix specific problem elements identified in tests */
+.indutries-top-menu-item {
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.4) 70%) !important;
+}
+
+/* Make sure all announcement text has proper backgrounds */
+.announcement-title {
+  color: #333333 !important;
+  background-color: rgba(255, 255, 255, 0.95) !important;
+  padding: 8px 16px !important;
+  border-radius: 6px !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Fix any remaining low contrast text */
+.text-block, .text-block-2, .text-block-3, .text-block-4 {
+  color: #333333 !important;
+}
+
+/* Ensure link colors meet contrast requirements */
+a {
+  color: #0066cc !important;
+}
+
+a:hover {
+  color: #0052a3 !important;
+}
+
+/* Fix contrast for any overlaid text */
+.text-overlay {
+  color: #ffffff !important;
+  background-color: rgba(0, 0, 0, 0.8) !important;
+  padding: 8px 12px !important;
+  border-radius: 4px !important;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.9) !important;
+}
+
+/* Specific fix for elements that might be causing test failures */
+.top-menu-company-news-image {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.image-bfg {
+  opacity: 1 !important;
+  visibility: visible !important;
+  max-width: 150px !important;
+  height: auto !important;
+}
