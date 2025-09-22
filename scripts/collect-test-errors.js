@@ -796,7 +796,7 @@ git checkout -b copilot-fix-ci-${new Date().toISOString().split('T')[0]}-${runId
 
 ### 🎯 Auto-Fix Instructions for Copilot
 
-@copilot This issue contains test failures. **IMPORTANT: Check CLAUDE.md for critical testing setup instructions!**
+@copilot This issue contains test failures. Please follow the testing setup instructions in .github/copilot-instructions.md.
 
 **⚠️ CRITICAL SETUP STEPS (Must do FIRST):**
 \`\`\`bash
@@ -852,7 +852,7 @@ Edit, MultiEdit, Write, Read, Glob, Grep, Bash(git:*), Bash(npm:*), Bash(npx:*)
 - \`/tests/playwright.config.cjs\` - Test configuration
 - \`/.github/workflows/deploy.yml\` - CI/CD workflow
 - \`/package.json\` - Scripts and dependencies
-- \`/CLAUDE.md\` - Project-specific instructions
+- \`/.github/copilot-instructions.md\` - Project-specific Copilot instructions
 - \`/src/components/\` - Astro components
 - \`/public/assets/\` - Static assets
 
