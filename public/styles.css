@@ -33734,3 +33734,103 @@ img {
   margin: 0 !important;
   padding: 8px 16px !important;
 }
+
+/* ===========================================
+   ACCESSIBILITY AND COLOR CONTRAST FIXES
+   Addressing WCAG 2.1 AA compliance issues
+   =========================================== */
+
+/* Improve color contrast for navigation elements */
+.nav-link-dropdown-text,
+.nav-link {
+  color: #1a1a1a !important; /* Darker text for better contrast */
+}
+
+/* Improve button contrast */
+.button-secondary {
+  color: #1a1a1a !important; /* Dark text on light background */
+  border: 2px solid #333 !important; /* Stronger border for visibility */
+}
+
+.button-secondary:hover {
+  background-color: #333 !important;
+  color: #ffffff !important;
+}
+
+/* Improve form element contrast */
+.w-input, .w-select {
+  border: 2px solid #666 !important; /* Stronger border */
+  color: #1a1a1a !important;
+}
+
+.w-input:focus, .w-select:focus {
+  border-color: #2563eb !important; /* Blue focus border */
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2) !important;
+}
+
+/* Improve link contrast */
+a {
+  color: #1d4ed8 !important; /* Darker blue for better contrast */
+}
+
+a:hover {
+  color: #1e40af !important; /* Even darker on hover */
+}
+
+/* Improve heading contrast */
+h1, h2, h3, h4, h5, h6 {
+  color: #1a1a1a !important; /* Very dark text */
+}
+
+/* Improve footer text contrast */
+.footer-nav-item,
+.footer-paragraph {
+  color: #1a1a1a !important;
+}
+
+/* Improve placeholder text contrast */
+.w-input::placeholder,
+.w-select::placeholder {
+  color: #4a5568 !important; /* Darker placeholder text */
+}
+
+/* Make sure text over colored backgrounds has sufficient contrast */
+.div-solution-network .text-block-8 {
+  color: #ffffff !important;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.8) !important; /* Add shadow for readability */
+}
+
+/* Improve contrast for industry menu items */
+.industries-top-menu-option-tittle {
+  color: #1a1a1a !important;
+  font-weight: 700 !important;
+}
+
+.industries-menu-option-text {
+  color: #374151 !important;
+}
+
+/* Improve error and success message contrast */
+.error-message {
+  color: #991b1b !important; /* Darker red */
+  background-color: #fef2f2 !important;
+}
+
+.success-message {
+  color: #065f46 !important; /* Darker green */
+  background-color: #f0fdf4 !important;
+}
+
+/* Ensure dropdown menu items have good contrast */
+.dropdown-menu-link,
+.top-menu-article-link,
+.small-top-menu-item {
+  color: #1a1a1a !important;
+}
+
+.dropdown-menu-link:hover,
+.top-menu-article-link:hover,
+.small-top-menu-item:hover {
+  color: #1d4ed8 !important;
+  background-color: #f8fafc !important;
+}
