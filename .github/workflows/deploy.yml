@@ -270,18 +270,7 @@ jobs:
                 labels: ['single-test', 'automated', 'claude-fix', 'focused']
               });
               console.log(`Created issue #${issue.data.number}`);
-
-              // Try to assign to Copilot (will silently fail if user doesn't exist)
-              try {
-                await github.rest.issues.addAssignees({
-                  owner: context.repo.owner,
-                  repo: context.repo.repo,
-                  issue_number: issue.data.number,
-                  assignees: ['Copilot']
-                });
-              } catch (assignError) {
-                console.log('Could not assign to Copilot:', assignError.message);
-              }
+              console.log('Issue mentions @copilot for automatic assignment');
 
   # Job 2: Build for production
   build:
@@ -440,15 +429,4 @@ jobs:
             });
 
             console.log(`Created critical production issue #${issue.data.number}`);
-
-            // Try to assign to Copilot
-            try {
-              await github.rest.issues.addAssignees({
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                issue_number: issue.data.number,
-                assignees: ['Copilot']
-              });
-            } catch (error) {
-              console.log('Could not assign to Copilot');
-            }
+            console.log('Issue mentions @copilot for automatic assignment');

@@ -398,7 +398,7 @@ class TestErrorCollector {
     if (isAccessibilityTest && violations) {
       let content = `## 🎯 Fix Accessibility Issue
 
-Fix this accessibility violation. DO NOT run tests.
+@copilot Fix this accessibility violation. DO NOT run tests.
 
 ### Command
 \`\`\`
@@ -476,7 +476,7 @@ gh issue edit \${{ github.event.issue.number }} --add-label needs-manual-fix
 
     let content = `## 🎯 Fix Test Failure
 
-Fix this test. DO NOT re-run it.
+@copilot Fix this test. DO NOT re-run it.
 
 ### Command
 \`\`\`
@@ -568,7 +568,7 @@ gh issue edit \${{ github.event.issue.number }} --add-label needs-manual-fix
     // Start with Claude command structure
     let content = `## 🔴 CI Failure - Auto-Fix Request
 
-Please fix these test failures using the command below.
+@copilot Please fix these test failures using the command below.
 
 ### Command for Claude
 \`\`\`
@@ -792,7 +792,7 @@ git checkout -b claude-fix-ci-${new Date().toISOString().split('T')[0]}-${runId 
 
 ### 🎯 Auto-Fix Instructions for Claude
 
-This issue contains test failures. **IMPORTANT: Check CLAUDE.md for critical testing setup instructions!**
+@copilot This issue contains test failures. **IMPORTANT: Check CLAUDE.md for critical testing setup instructions!**
 
 **⚠️ CRITICAL SETUP STEPS (Must do FIRST):**
 \`\`\`bash
