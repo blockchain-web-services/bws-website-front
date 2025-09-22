@@ -2,24 +2,24 @@
   "html": [
     {
       "file": "_site/404.html",
-      "originalSize": 7777,
-      "newSize": 7777,
+      "originalSize": 7725,
+      "newSize": 7725,
       "sizeDiff": 0,
       "prettyPrinted": true,
       "errors": []
     },
     {
       "file": "_site/about.html",
-      "originalSize": 64833,
-      "newSize": 64833,
+      "originalSize": 64843,
+      "newSize": 64843,
       "sizeDiff": 0,
       "prettyPrinted": true,
       "errors": []
     },
     {
       "file": "_site/articles/discover-the-power-of-blockchain-bwss-data-management-solutions.html",
-      "originalSize": 82782,
-      "newSize": 82782,
+      "originalSize": 82792,
+      "newSize": 82792,
       "sizeDiff": 0,
       "prettyPrinted": true,
       "errors": [
@@ -28,8 +28,8 @@
     },
     {
       "file": "_site/articles/embrace-sustainability-with-esg-credits-bws-solution.html",
-      "originalSize": 81471,
-      "newSize": 81471,
+      "originalSize": 81481,
+      "newSize": 81481,
       "sizeDiff": 0,
       "prettyPrinted": true,
       "errors": [
@@ -38,8 +38,8 @@
     },
     {
       "file": "_site/articles/investment-impact-reporting-unlocking-a-sustainable-future.html",
-      "originalSize": 81268,
-      "newSize": 81268,
+      "originalSize": 81278,
+      "newSize": 81278,
       "sizeDiff": 0,
       "prettyPrinted": true,
       "errors": [
@@ -48,8 +48,8 @@
     },
     {
       "file": "_site/contact-us.html",
-      "originalSize": 77658,
-      "newSize": 77658,
+      "originalSize": 77668,
+      "newSize": 77668,
       "sizeDiff": 0,
       "prettyPrinted": true,
       "errors": [
@@ -58,8 +58,8 @@
     },
     {
       "file": "_site/index.html",
-      "originalSize": 131442,
-      "newSize": 131442,
+      "originalSize": 131452,
+      "newSize": 131452,
       "sizeDiff": 0,
       "prettyPrinted": true,
       "errors": [
@@ -68,64 +68,64 @@
     },
     {
       "file": "_site/industries.html",
-      "originalSize": 63006,
-      "newSize": 63006,
+      "originalSize": 63016,
+      "newSize": 63016,
       "sizeDiff": 0,
       "prettyPrinted": true,
       "errors": []
     },
     {
       "file": "_site/industry-content/content-creation.html",
-      "originalSize": 80767,
-      "newSize": 80767,
+      "originalSize": 80777,
+      "newSize": 80777,
       "sizeDiff": 0,
       "prettyPrinted": true,
       "errors": []
     },
     {
       "file": "_site/industry-content/esg.html",
-      "originalSize": 80789,
-      "newSize": 80789,
+      "originalSize": 80799,
+      "newSize": 80799,
       "sizeDiff": 0,
       "prettyPrinted": true,
       "errors": []
     },
     {
       "file": "_site/industry-content/financial-services.html",
-      "originalSize": 80781,
-      "newSize": 80781,
+      "originalSize": 80791,
+      "newSize": 80791,
       "sizeDiff": 0,
       "prettyPrinted": true,
       "errors": []
     },
     {
       "file": "_site/industry-content/legal.html",
-      "originalSize": 81111,
-      "newSize": 81111,
+      "originalSize": 81121,
+      "newSize": 81121,
       "sizeDiff": 0,
       "prettyPrinted": true,
       "errors": []
     },
     {
       "file": "_site/industry-content/retail.html",
-      "originalSize": 80718,
-      "newSize": 80718,
+      "originalSize": 80728,
+      "newSize": 80728,
       "sizeDiff": 0,
       "prettyPrinted": true,
       "errors": []
     },
     {
       "file": "_site/industry-content/supply-chain.html",
-      "originalSize": 81312,
-      "newSize": 81312,
+      "originalSize": 81322,
+      "newSize": 81322,
       "sizeDiff": 0,
       "prettyPrinted": true,
       "errors": []
     },
     {
       "file": "_site/legal-notice.html",
-      "originalSize": 79888,
-      "newSize": 79888,
+      "originalSize": 79898,
+      "newSize": 79898,
       "sizeDiff": 0,
       "prettyPrinted": true,
       "errors": [
@@ -134,72 +134,72 @@
     },
     {
       "file": "_site/marketplace/blockchain-badges.html",
-      "originalSize": 84498,
-      "newSize": 84498,
+      "originalSize": 84508,
+      "newSize": 84508,
       "sizeDiff": 0,
       "prettyPrinted": true,
       "errors": []
     },
     {
       "file": "_site/marketplace/database-immutable.html",
-      "originalSize": 83207,
-      "newSize": 83207,
+      "originalSize": 83217,
+      "newSize": 83217,
       "sizeDiff": 0,
       "prettyPrinted": true,
       "errors": []
     },
     {
       "file": "_site/marketplace/database-mutable.html",
-      "originalSize": 82611,
-      "newSize": 82611,
+      "originalSize": 82621,
+      "newSize": 82621,
       "sizeDiff": 0,
       "prettyPrinted": true,
       "errors": []
     },
     {
       "file": "_site/marketplace/esg-credits.html",
-      "originalSize": 84065,
-      "newSize": 84065,
+      "originalSize": 84075,
+      "newSize": 84075,
       "sizeDiff": 0,
       "prettyPrinted": true,
       "errors": []
     },
     {
       "file": "_site/marketplace/ipfs-upload.html",
-      "originalSize": 81865,
-      "newSize": 81865,
+      "originalSize": 81875,
+      "newSize": 81875,
       "sizeDiff": 0,
       "prettyPrinted": true,
       "errors": []
     },
     {
       "file": "_site/marketplace/nft-gamecube.html",
-      "originalSize": 82312,
-      "newSize": 82312,
+      "originalSize": 82322,
+      "newSize": 82322,
       "sizeDiff": 0,
       "prettyPrinted": true,
       "errors": []
     },
     {
       "file": "_site/marketplace/nft-zeroknwoledge.html",
-      "originalSize": 83265,
-      "newSize": 83265,
+      "originalSize": 83275,
+      "newSize": 83275,
       "sizeDiff": 0,
       "prettyPrinted": true,
       "errors": []
     },
     {
       "file": "_site/marketplace/telegram-xbot.html",
-      "originalSize": 81245,
-      "newSize": 81245,
+      "originalSize": 81255,
+      "newSize": 81255,
       "sizeDiff": 0,
       "prettyPrinted": true,
       "errors": []
     },
     {
       "file": "_site/privacy-policy.html",
-      "originalSize": 80812,
-      "newSize": 80812,
+      "originalSize": 80822,
+      "newSize": 80822,
       "sizeDiff": 0,
       "prettyPrinted": true,
       "errors": [
@@ -208,8 +208,8 @@
     },
     {
       "file": "_site/resources.html",
-      "originalSize": 63036,
-      "newSize": 63036,
+      "originalSize": 63046,
+      "newSize": 63046,
       "sizeDiff": 0,
       "prettyPrinted": true,
       "errors": []
@@ -253,8 +253,8 @@
     },
     {
       "file": "_site/fix-images.css",
-      "originalSize": 3963,
-      "newSize": 3963,
+      "originalSize": 5013,
+      "newSize": 5013,
       "sizeDiff": 0,
       "prettyPrinted": true,
       "skippedMinified": false,
