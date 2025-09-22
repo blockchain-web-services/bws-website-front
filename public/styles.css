@@ -33534,6 +33534,12 @@ figcaption {
   opacity: 0;
 }
 
+/* Fix color contrast issues */
+.div-solution-network .text-block-8 {
+  color: #ffffff !important;
+  font-weight: 600;
+}
+
 /* Additional custom styles */
 body {
   font-family: "DM Sans", "Montserrat", sans-serif;
