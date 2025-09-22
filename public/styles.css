@@ -33719,6 +33719,17 @@ img {
   width: 150px !important;
   height: auto !important;
   max-height: 80px !important;
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* Ensure top menu BFG image is also visible */
+.top-menu-company-news-image {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  max-width: 150px !important;
 }
 
 /* Reduce gap between network buttons in marketplace pages */
