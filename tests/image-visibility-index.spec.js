@@ -230,7 +230,7 @@ test.describe('Image Visibility on Index Page', () => {
         imageLoadTimes.push({
           url: url.substring(url.lastIndexOf('/') + 1),
           status: response.status(),
-          timing: response.timing()
+          size: response.headers()['content-length'] || 0
         });
       }
     });
@@ -240,7 +240,7 @@ test.describe('Image Visibility on Index Page', () => {
     // Check that all image responses are successful
     for (const img of imageLoadTimes) {
       expect(img.status).toBe(200);
-      console.log(`Image ${img.url}: ${img.status} - Load time: ${img.timing?.responseEnd}ms`);
+      console.log(`Image ${img.url}: ${img.status} - Size: ${img.size}`);
     }
   });
 });
