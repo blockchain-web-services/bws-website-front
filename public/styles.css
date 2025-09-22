@@ -28818,7 +28818,7 @@ figcaption {
     left: -145px;
   }
   .image.blob-opacity.h-6.bottom {
-    opacity: 0.3.11;
+    opacity: 0.3;
     margin-bottom: 600px;
     margin-left: auto;
     margin-right: 300px;
@@ -31305,7 +31305,7 @@ figcaption {
     margin-left: 340px;
   }
   .image.blob-opacity.h-6 {
-    opacity: 0.3.79;
+    opacity: 0.3;
     max-width: 150%;
     top: 291px;
     left: -265px;
@@ -33844,4 +33844,142 @@ h1, h2, h3, h4, h5, h6 {
 .small-top-menu-item:hover {
   color: #1d4ed8 !important;
   background-color: #f8fafc !important;
+}
+
+/* ===========================================
+   BWS WEBSITE - ACCESSIBILITY & IMAGE FIXES
+   Critical fixes for test failures
+   =========================================== */
+
+/* Ensure all partner logos are visible and properly sized */
+.image-proof, 
+.image-assure, 
+.image-bfg {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  object-fit: contain !important;
+  background-color: transparent !important;
+}
+
+/* WCAG Color Contrast Improvements */
+/* Fix low contrast text on light backgrounds */
+.w-button:not(.button-primary):not(.button-secondary) {
+  background-color: #2563eb !important; /* Darker blue for better contrast */
+  color: #ffffff !important;
+}
+
+/* Improve contrast for gray text */
+.text-color-gray,
+.text-gray {
+  color: #374151 !important; /* Darker gray for better contrast ratio */
+}
+
+/* Fix light text on light backgrounds */
+.text-light {
+  color: #1f2937 !important; /* Dark text for better contrast */
+}
+
+/* Improve contrast for disabled/muted text */
+.text-muted,
+.muted {
+  color: #4b5563 !important; /* Ensure minimum 4.5:1 contrast ratio */
+}
+
+/* Fix navigation text contrast */
+.nav-link,
+.navigation-link {
+  color: #1f2937 !important;
+}
+
+/* Footer text contrast improvements */
+.footer-link {
+  color: #1f2937 !important;
+  text-decoration: underline !important;
+}
+
+.footer-link:hover {
+  color: #2563eb !important;
+}
+
+/* Form element contrast improvements */
+.form-input,
+.w-input {
+  border: 2px solid #6b7280 !important; /* Darker border for visibility */
+  color: #1f2937 !important;
+}
+
+/* Button contrast improvements */
+.w-button {
+  min-height: 44px !important; /* Ensure WCAG minimum touch target size */
+  border: 2px solid transparent !important;
+}
+
+/* Focus indicators for accessibility */
+.w-button:focus,
+.w-input:focus,
+.nav-link:focus,
+a:focus {
+  outline: 2px solid #2563eb !important;
+  outline-offset: 2px !important;
+}
+
+/* Image loading state improvements */
+img[loading="lazy"] {
+  min-height: 1px !important; /* Prevent layout shift */
+}
+
+/* Ensure announcement logos are always visible */
+.announcement-flex-logos img {
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: inline-block !important;
+}
+
+/* Fix any remaining image visibility issues */
+img.image-bfg,
+img.image-proof,
+img.image-assure {
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: block !important;
+  max-height: none !important;
+  filter: none !important;
+}
+
+/* Fix text that might be invisible */
+.w-richtext * {
+  color: inherit !important;
+}
+
+/* Ensure sufficient contrast for all text elements */
+body, p, div, span {
+  color: #1f2937; /* Dark text for good contrast on white background */
+}
+
+/* Override any rules that might make text too light */
+.text-white {
+  color: #ffffff !important; /* Only use white text on dark backgrounds */
+}
+
+/* Dark background elements */
+.bg-dark, .dark-section {
+  background-color: #1f2937 !important;
+  color: #ffffff !important;
+}
+
+/* Ensure links are distinguishable */
+a {
+  color: #2563eb !important;
+  text-decoration: none !important;
+}
+
+a:hover {
+  color: #1d4ed8 !important;
+  text-decoration: underline !important;
+}
+
+/* Fix any transparency that might cause visibility issues */
+.transparent {
+  opacity: 0.95 !important; /* Slightly reduce transparency for better visibility */
 }
