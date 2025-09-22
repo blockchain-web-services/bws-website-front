@@ -40,8 +40,8 @@ jobs:
           # Optional: Customize the trigger phrase (default: @claude)
           # trigger_phrase: "/claude"
 
-          # Trigger when Copilot is assigned to an issue
-          assignee_trigger: "Copilot"
+          # Optional: Trigger when specific user is assigned to an issue
+          # assignee_trigger: "claude-bot"
 
           # Configure Claude's behavior for auto-merge
           claude_args: |
