@@ -366,7 +366,7 @@ class TestErrorCollector {
 
   /**
    * Generate markdown content for a SINGLE test failure
-   * This creates a focused issue for Claude to fix one specific problem
+   * This creates a focused issue for Copilot to fix one specific problem
    */
   generateSingleIssueContent(testFailure, metadata = {}) {
     const {
@@ -433,9 +433,9 @@ ${violations.map((v, i) => `
 git add -A
 git commit -m "Fixed accessibility: ${violations[0].id}
 
-Claude-Fix-Attempt
+Copilot-Fix-Attempt
 
-Co-Authored-By: Claude <noreply@anthropic.com>"
+Co-Authored-By: Copilot <noreply@github.com>"
 \`\`\`
 
 **STEP 2: Push to master** (REQUIRED - NOT OPTIONAL!)
@@ -504,9 +504,9 @@ ${truncatedError}
 git add -A
 git commit -m "Fixed: ${testFailure.title.substring(0, 50)}
 
-Claude-Fix-Attempt
+Copilot-Fix-Attempt
 
-Co-Authored-By: Claude <noreply@anthropic.com>"
+Co-Authored-By: Copilot <noreply@github.com>"
 \`\`\`
 
 **STEP 2: Push to master** (REQUIRED - NOT OPTIONAL!)
@@ -565,12 +565,16 @@ gh issue edit \${{ github.event.issue.number }} --add-label needs-manual-fix
 
     const runUrl = runId ? `https://github.com/${repo}/actions/runs/${runId}` : 'N/A';
 
-    // Start with Claude command structure
+    // Start with Copilot instructions
     let content = `## 🔴 CI Failure - Auto-Fix Request
 
-@copilot Please fix these test failures using the command below.
+@copilot Please fix these test failures.
 
-### Command for Claude
+### Important: Check for existing open issues first
+
+Before making any changes, please check if there are other open issues with the 'test-failure' label that might be related to these failures. If similar issues exist, consider if they should be addressed together.
+
+### Command for Copilot
 \`\`\`
 /fix-ci
 \`\`\`
@@ -590,7 +594,7 @@ ${prNumber ? `**Pull Request:** #${prNumber} (${prBranch} → ${baseBranch})` : 
 
 ### 🔄 Fix Attempt Tracking
 
-**Claude Fix Attempt:** 1 of 10 (maximum)
+**Copilot Fix Attempt:** 1 of 10 (maximum)
 **Auto-Merge:** Enabled if all tests pass
 **Fallback:** Create PR if tests still fail after fixes
 
@@ -787,10 +791,10 @@ ${prNumber ? `**Pull Request:** #${prNumber} (${prBranch} → ${baseBranch})` : 
 
 Create a new branch for the fixes:
 \`\`\`bash
-git checkout -b claude-fix-ci-${new Date().toISOString().split('T')[0]}-${runId || Date.now()}
+git checkout -b copilot-fix-ci-${new Date().toISOString().split('T')[0]}-${runId || Date.now()}
 \`\`\`
 
-### 🎯 Auto-Fix Instructions for Claude
+### 🎯 Auto-Fix Instructions for Copilot
 
 @copilot This issue contains test failures. **IMPORTANT: Check CLAUDE.md for critical testing setup instructions!**
 

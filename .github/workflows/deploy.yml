@@ -238,30 +238,31 @@ jobs:
               return;
             }
 
-            // Check for recent Claude fix attempts to prevent infinite loops
+            // Check for recent Copilot fix attempts to prevent infinite loops
             const oneDayAgo = new Date(Date.now() - 24 * 60 * 60 * 1000).toISOString();
-            const recentClaudeFixIssues = existingIssues.data.filter(issue =>
-              issue.body && issue.body.includes('claude-fix-ci') &&
+            const recentCopilotFixIssues = existingIssues.data.filter(issue =>
+              issue.body && issue.body.includes('copilot-fix-ci') &&
               issue.created_at > oneDayAgo
             );
 
-            // Check if this push is from a Claude fix
+            // Check if this push is from a Copilot fix
             const commitMessage = context.payload.head_commit?.message || '';
-            const isClaudeFix = commitMessage.includes('Generated with Claude Code') ||
-                               commitMessage.includes('Co-Authored-By: Claude');
+            const isCopilotFix = commitMessage.includes('Generated with Copilot') ||
+                               commitMessage.includes('Co-Authored-By: Copilot') ||
+                               commitMessage.includes('copilot[bot]');
 
-            const maxClaudeAttempts = 10;
-            const claudeAttemptCount = recentClaudeFixIssues.length;
+            const maxCopilotAttempts = 10;
+            const copilotAttemptCount = recentCopilotFixIssues.length;
 
-            // If Claude has already tried multiple times, don't trigger again
-            if (isClaudeFix && claudeAttemptCount >= maxClaudeAttempts) {
-              console.log(`Claude has attempted ${claudeAttemptCount} fixes in the last 24 hours. Manual intervention required.`);
+            // If Copilot has already tried multiple times, don't trigger again
+            if (isCopilotFix && copilotAttemptCount >= maxCopilotAttempts) {
+              console.log(`Copilot has attempted ${copilotAttemptCount} fixes in the last 24 hours. Manual intervention required.`);
 
-              // Modify issue body to NOT mention @claude
-              issueBody = issueBody.replace('@claude - Please fix these test failures using the command below.',
-                                          '⚠️ **MANUAL FIX REQUIRED** - Claude auto-fix limit reached (10 attempts in 24h).');
-              issueBody = issueBody.replace('**Claude Fix Attempt:** 1 of 10',
-                                          `**Claude Fix Attempt:** ${claudeAttemptCount + 1} of ${maxClaudeAttempts} (LIMIT EXCEEDED)`);
+              // Modify issue body to NOT assign to Copilot
+              issueBody = issueBody.replace('@copilot - Please fix these test failures.',
+                                          '⚠️ **MANUAL FIX REQUIRED** - Copilot auto-fix limit reached (10 attempts in 24h).');
+              issueBody = issueBody.replace('**Copilot Fix Attempt:** 1 of 10',
+                                          `**Copilot Fix Attempt:** ${copilotAttemptCount + 1} of ${maxCopilotAttempts} (LIMIT EXCEEDED)`);
             }
 
             // Read additional comment files if they exist
