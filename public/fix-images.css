@@ -1,18 +1,26 @@
 /* Fix for partner logo images that are being overridden by webflow CSS */
 
 /* Force AssureDefi logo to proper size */
-.image-assure {
+.image-assure,
+img[src*="AssureDefi"] {
     max-width: 80px !important;
     width: auto !important;
     height: 40px !important;
     object-fit: contain !important;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
 }
 
 /* Force PROOF logo to reasonable size */
-.image-proof {
+.image-proof,
+img[src*="PROOF"] {
     max-width: 120px !important;
     height: 30px !important;
     object-fit: contain !important;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
 }
 
 /* Make sure tokenomics image is visible and sized properly */
@@ -23,6 +31,7 @@ img[src*="Tokenomics"] {
     display: block !important;
     visibility: visible !important;
     opacity: 1 !important;
+    min-height: 50px !important;
 }
 
 /* Ensure BFG logo is visible - multiple variations */
@@ -35,6 +44,8 @@ img[src*="BFG"],
     visibility: visible !important;
     opacity: 1 !important;
     transform: none !important; /* Remove any transforms that might hide it */
+    min-height: 30px !important;
+    min-width: 50px !important;
 }
 
 /* Industry cards - make sure background images are visible */
@@ -50,12 +61,21 @@ img {
     display: block !important;
     visibility: visible !important;
     opacity: 1 !important;
+    max-width: none !important; /* Override any restrictive max-width */
 }
 
 /* Fix for images that might be hidden by webflow animations */
 .w-inline-block img {
     visibility: visible !important;
     opacity: 1 !important;
+}
+
+/* Specific fix for partner logos container */
+.announcement-flex-logos img,
+.announcement-flex-logos .w-inline-block {
+    visibility: visible !important;
+    opacity: 1 !important;
+    display: inline-block !important;
 }
 
 /* Color contrast fixes for WCAG compliance */
@@ -139,4 +159,17 @@ footer a:hover, footer a:focus {
 a:focus, button:focus, input:focus, textarea:focus, select:focus {
     outline: 2px solid #0066cc !important;
     outline-offset: 2px !important;
+}
+
+/* Additional image loading fixes */
+img[loading="lazy"] {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+/* Override any CSS that might be setting dimensions to 0 */
+img {
+    min-width: 1px !important;
+    min-height: 1px !important;
 }
