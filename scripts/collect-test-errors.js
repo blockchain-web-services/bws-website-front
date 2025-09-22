@@ -885,6 +885,58 @@ Edit, MultiEdit, Write, Read, Glob, Grep, Bash(git:*), Bash(npm:*), Bash(npx:*)
   }
 
   /**
+   * Split issue content into chunks for GitHub issue body and comments
+   * First chunk for issue body, rest for comments
+   */
+  splitIntoChunks(fullContent, maxChunkSize = 65000) {
+    const chunks = [];
+
+    // If content fits in one chunk, return as-is
+    if (fullContent.length <= maxChunkSize) {
+      return [fullContent];
+    }
+
+    // Split into sections by headers
+    const sections = fullContent.split(/(?=\n###\s)/);
+
+    // First chunk - issue body with summary
+    let currentChunk = sections[0]; // Keep the main header and summary
+    let chunkNumber = 1;
+
+    for (let i = 1; i < sections.length; i++) {
+      const section = sections[i];
+
+      // If adding this section would exceed limit, save current chunk and start new one
+      if (currentChunk.length + section.length > maxChunkSize) {
+        // Add continuation notice to current chunk
+        if (chunks.length === 0) {
+          currentChunk += `\n\n---\n## ⚠️ Content Continued in Comments\n\nThis issue contains extensive test failure information that exceeds GitHub's 65KB limit.\n**Please see the comments below for additional failure details (Part ${chunkNumber + 1} onwards).**`;
+        }
+
+        chunks.push(currentChunk);
+        chunkNumber++;
+
+        // Start new chunk with continuation header
+        currentChunk = `## 📋 Continued Test Failures - Part ${chunkNumber}\n\n` + section;
+      } else {
+        currentChunk += section;
+      }
+    }
+
+    // Add the last chunk
+    if (currentChunk.length > 0) {
+      chunks.push(currentChunk);
+    }
+
+    // Add summary to the last chunk
+    if (chunks.length > 1) {
+      chunks[chunks.length - 1] += `\n\n---\n## 📊 Summary\n\nThis issue has been split into **${chunks.length} parts** due to size constraints:\n- Part 1: Issue body with summary and initial failures\n${chunks.slice(1).map((_, i) => `- Part ${i + 2}: Additional test failure details`).join('\n')}`;
+    }
+
+    return chunks;
+  }
+
+  /**
    * Generate suggested actions based on the test failure
    */
   generateSuggestedActions(test) {
@@ -993,10 +1045,8 @@ Edit, MultiEdit, Write, Read, Glob, Grep, Bash(git:*), Bash(npm:*), Bash(npx:*)
     const outputPath = args[2] || 'issue-content.md';
     const jobLogsPath = args[3] || null;
 
-    // Check for single-issue mode flag
-    const singleIssueMode = process.env.SINGLE_ISSUE_MODE === 'true' || args.includes('--single');
-
-    console.log(`Collecting test errors... (Mode: ${singleIssueMode ? 'SINGLE issue' : 'bulk'})`);
+    // Always collect all test errors
+    console.log(`Collecting all test errors...`);
 
     // Parse test results
     this.parsePlaywrightResults(jsonResultsPath);
@@ -1028,24 +1078,23 @@ Edit, MultiEdit, Write, Read, Glob, Grep, Bash(git:*), Bash(npm:*), Bash(npx:*)
       os: process.platform
     };
 
-    let issueContent;
+    // Always generate full issue content with all failures
+    console.log(`Creating issue for ${this.errors.testFailures.length} test failures`);
+    const fullContent = this.generateIssueContent(metadata);
 
-    if (singleIssueMode && this.errors.testFailures.length > 0) {
-      // In single-issue mode, create an issue for just the FIRST failure
-      console.log(`Creating single-issue for 1 of ${this.errors.testFailures.length} failures`);
-      const firstFailure = this.errors.testFailures[0];
-      issueContent = this.generateSingleIssueContent(firstFailure, metadata);
+    // Split into chunks if needed
+    const contentChunks = this.splitIntoChunks(fullContent);
+    console.log(`Issue content split into ${contentChunks.length} chunk(s)`);
 
-      // Save the test name to a file so we can track which ones have been addressed
-      const addressedTestsFile = 'addressed-tests.txt';
-      fs.appendFileSync(addressedTestsFile, `${firstFailure.file}:${firstFailure.title}\n`);
-    } else {
-      // Original bulk mode
-      issueContent = this.generateIssueContent(metadata);
+    // Save the main issue content (first chunk)
+    const saved = this.saveIssueContent(contentChunks[0], outputPath);
+
+    // Save additional chunks as separate files for comments
+    for (let i = 1; i < contentChunks.length; i++) {
+      const commentPath = outputPath.replace('.md', `-comment-${i}.md`);
+      this.saveIssueContent(contentChunks[i], commentPath);
+      console.log(`Additional comment content saved to ${commentPath}`);
     }
-
-    // Save to file
-    const saved = this.saveIssueContent(issueContent, outputPath);
 
     if (saved) {
       console.log('Test error collection completed successfully');

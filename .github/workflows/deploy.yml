@@ -26,7 +26,7 @@ jobs:
   test:
     runs-on: ubuntu-latest
     env:
-      SINGLE_ISSUE_MODE: true  # Enable single-issue mode by default
+      # Run all tests and collect all failures (no single-issue mode)
     strategy:
       matrix:
         browser: [chromium]
@@ -58,17 +58,11 @@ jobs:
           # Run tests with reporters configured in playwright.config.cjs
           # In CI, this will use JSON reporter outputting to test-results.json
           # Use set -o pipefail to preserve exit code through pipe
-          # Add --max-failures=1 to stop on first failure (saves CI time)
+          # Run all tests without stopping on failures
           set -o pipefail
 
-          # Check if we're in single-issue mode
-          if [ "${{ env.SINGLE_ISSUE_MODE }}" = "true" ]; then
-            echo "Running tests with --max-failures=1 (stop on first failure)"
-            npx playwright test --config=tests/playwright.config.cjs --project=${{ matrix.browser }} --max-failures=1 2>&1 | tee test-output.txt
-          else
-            echo "Running all tests"
-            npx playwright test --config=tests/playwright.config.cjs --project=${{ matrix.browser }} 2>&1 | tee test-output.txt
-          fi
+          echo "Running all tests (collecting all failures)"
+          npx playwright test --config=tests/playwright.config.cjs --project=${{ matrix.browser }} 2>&1 | tee test-output.txt
 
           # Debug: Find where the JSON output was created
           echo "Looking for test-results.json files..."
@@ -140,7 +134,7 @@ jobs:
           GITHUB_PR_NUMBER: ${{ github.event.pull_request.number }}
           GITHUB_HEAD_REF: ${{ github.head_ref }}
           GITHUB_BASE_REF: ${{ github.base_ref }}
-          SINGLE_ISSUE_MODE: true
+          # Run all tests and collect all failures
         run: |
           echo "Collecting test errors..."
 
@@ -253,14 +247,24 @@ jobs:
                                           `**Claude Fix Attempt:** ${claudeAttemptCount + 1} of ${maxClaudeAttempts} (LIMIT EXCEEDED)`);
             }
 
-            // Always create a new issue for each failed run (no more comments on existing issues)
-            // This prevents Claude from being triggered multiple times for different failures
-            // Create new issue
-            // Create issue with enhanced title including run number for uniqueness
-              // Single test mode - create focused issue title
-              const issueTitle = context.payload.pull_request ?
-                `🎯 Fix Single Test - PR #${context.payload.pull_request.number} - Run #${runNumber}` :
-                `🎯 Fix Single Test - Run #${runNumber} - ${today}`;
+            // Read additional comment files if they exist
+            const commentFiles = [];
+            for (let i = 1; i <= 10; i++) {
+              const commentPath = `issue-content-comment-${i}.md`;
+              if (fs.existsSync(commentPath)) {
+                commentFiles.push(fs.readFileSync(commentPath, 'utf8'));
+              } else {
+                break;
+              }
+            }
+
+            // Count total failures from issue body
+            const failureCount = (issueBody.match(/Failed:/g) || []).length;
+
+            // Create issue title with failure count
+            const issueTitle = context.payload.pull_request ?
+              `🔴 Fix ${failureCount} Test Failures - PR #${context.payload.pull_request.number} - Run #${runNumber}` :
+              `🔴 Fix ${failureCount} Test Failures - Run #${runNumber} - ${today}`;
 
               // First, get Copilot bot ID if available
               let copilotBotId = null;
@@ -332,15 +336,27 @@ jobs:
                 `;
 
                 const issueResult = await github.graphql(createIssueMutation);
-                console.log(`Created issue #${issueResult.createIssue.issue.number} with Copilot assigned`);
+                const issueNumber = issueResult.createIssue.issue.number;
+                console.log(`Created issue #${issueNumber} with Copilot assigned`);
 
                 // Add labels using REST API (GraphQL doesn't support labels in createIssue)
                 await github.rest.issues.addLabels({
                   owner: context.repo.owner,
                   repo: context.repo.repo,
-                  issue_number: issueResult.createIssue.issue.number,
-                  labels: ['single-test', 'automated', 'copilot-assigned', 'focused']
+                  issue_number: issueNumber,
+                  labels: ['test-failures', 'automated', 'copilot-assigned']
                 });
+
+                // Add additional comments if content was split
+                for (let i = 0; i < commentFiles.length; i++) {
+                  await github.rest.issues.createComment({
+                    owner: context.repo.owner,
+                    repo: context.repo.repo,
+                    issue_number: issueNumber,
+                    body: commentFiles[i]
+                  });
+                  console.log(`Added comment part ${i + 2} to issue #${issueNumber}`);
+                }
               } else {
                 // Fall back to REST API with @copilot mention
                 const issue = await github.rest.issues.create({
@@ -348,9 +364,21 @@ jobs:
                   repo: context.repo.repo,
                   title: issueTitle,
                   body: issueBody,
-                  labels: ['single-test', 'automated', 'focused']
+                  labels: ['test-failures', 'automated']
                 });
-                console.log(`Created issue #${issue.data.number} with @copilot mention`);
+                const issueNumber = issue.data.number;
+                console.log(`Created issue #${issueNumber} with @copilot mention`);
+
+                // Add additional comments if content was split
+                for (let i = 0; i < commentFiles.length; i++) {
+                  await github.rest.issues.createComment({
+                    owner: context.repo.owner,
+                    repo: context.repo.repo,
+                    issue_number: issueNumber,
+                    body: commentFiles[i]
+                  });
+                  console.log(`Added comment part ${i + 2} to issue #${issueNumber}`);
+                }
               }
 
   # Job 2: Build for production
