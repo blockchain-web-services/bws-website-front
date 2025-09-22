@@ -201,6 +201,30 @@ When assigned to a test failure issue:
 
 ### Fixing Test Failures
 
+#### Understanding Test Failure Issues
+
+When you are assigned an issue labeled 'test-failure':
+
+**What the issue contains:**
+- Comprehensive test failure data from the CI/CD pipeline
+- Detailed error messages, stack traces, and failure locations
+- May span multiple comments if there are many failures (check ALL comments!)
+- All failures have ALREADY occurred - this is historical data from a completed test run
+
+**IMPORTANT - Test Execution Timing:**
+- **DO NOT** run tests immediately when you start working on the issue
+- The tests have ALREADY been run and the failures are documented in the issue
+- Focus FIRST on understanding and fixing the reported failures
+- Only run tests AFTER you've made fixes to verify they work
+
+**Recommended Workflow:**
+1. **Read the ENTIRE issue** including ALL comments (failures may be split across multiple comments)
+2. **Identify patterns** in the failures (common root causes often fix multiple tests)
+3. **Fix issues** in the source files (`src/` directory, NEVER `_site/`)
+4. **Build the site**: Run `npm run build` to regenerate output
+5. **NOW run tests**: Run `npm test` to verify your fixes
+6. **Iterate if needed** until achieving 100% pass rate
+
 **CRITICAL REQUIREMENT**: When fixing test failures from GitHub issues, you MUST:
 1. Fix the reported issues in `src/` files (never `_site/`)
 2. Run `npm run build` to rebuild the site
@@ -210,7 +234,7 @@ When assigned to a test failure issue:
 
 **Step-by-step process**:
 1. Install browsers: `npx playwright install chromium`
-2. Understand the failure: Read error messages carefully
+2. Understand the failure: Read error messages carefully from the issue
 3. Fix issues in `src/` files (templates, components, layouts)
 4. Rebuild: `npm run build`
 5. **MANDATORY**: Run full test suite: `npm test`

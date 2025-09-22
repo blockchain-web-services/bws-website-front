@@ -617,9 +617,9 @@ ${prNumber ? `**Pull Request:** #${prNumber} (${prBranch} → ${baseBranch})` : 
 
 `;
 
-    // Add failed tests table (limit to prevent huge tables)
+    // Add failed tests table (configurable limit)
     if (this.errors.testFailures.length > 0) {
-      const maxTableRows = 10; // Limit table size
+      const maxTableRows = parseInt(process.env.MAX_TABLE_ROWS) || 50; // Increased default from 10 to 50
       const testsToShow = this.errors.testFailures.slice(0, maxTableRows);
       const remaining = this.errors.testFailures.length - maxTableRows;
 
@@ -642,10 +642,10 @@ ${prNumber ? `**Pull Request:** #${prNumber} (${prBranch} → ${baseBranch})` : 
       content += '\n';
     }
 
-    // Add detailed error logs (limit to prevent exceeding GitHub's limit)
+    // Add detailed error logs (configurable limit)
     if (this.errors.testFailures.length > 0) {
-      // Limit detailed failures to prevent huge issue bodies
-      const maxDetailedFailures = 5; // Only show details for first 5 failures
+      // Show more detailed failures for better debugging
+      const maxDetailedFailures = parseInt(process.env.MAX_DETAILED_FAILURES) || 25; // Increased default from 5 to 25
       const failuresToDetail = this.errors.testFailures.slice(0, maxDetailedFailures);
       const remainingFailures = this.errors.testFailures.length - maxDetailedFailures;
 
@@ -672,7 +672,7 @@ ${prNumber ? `**Pull Request:** #${prNumber} (${prBranch} → ${baseBranch})` : 
 
         // Primary error message (truncate if too long)
         const errorMsg = test.error.message || 'No error message available';
-        const maxErrorLength = 500; // Limit error message length
+        const maxErrorLength = parseInt(process.env.MAX_ERROR_LENGTH) || 1000; // Increased default from 500 to 1000
         const truncatedError = errorMsg.length > maxErrorLength ?
           errorMsg.substring(0, maxErrorLength) + '\n...truncated (full error: ' + errorMsg.length + ' chars)...' : errorMsg;
 
