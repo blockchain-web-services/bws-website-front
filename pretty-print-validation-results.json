@@ -254,17 +254,26 @@
     },
     {
       "file": "_site/styles.css",
-      "originalSize": 697041,
-      "newSize": 697041,
+      "originalSize": 697137,
+      "newSize": 697137,
       "sizeDiff": 0,
       "prettyPrinted": true,
       "skippedMinified": false,
+      "errors": []
+    },
+    {
+      "file": "_site/styles.min.css",
+      "originalSize": 283938,
+      "newSize": 283938,
+      "sizeDiff": 0,
+      "prettyPrinted": false,
+      "skippedMinified": true,
       "errors": []
     }
   ],
   "summary": {
     "totalHtml": 25,
-    "totalCss": 5,
+    "totalCss": 6,
     "htmlPrettyPrinted": 25,
     "cssPrettyPrinted": 4,
     "htmlErrors": 7,
