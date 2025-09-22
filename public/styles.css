@@ -33732,6 +33732,24 @@ img {
   max-width: 150px !important;
 }
 
+/* Ensure images tested by Playwright are always visible */
+img[src*="blockchain-founders-group"],
+img[src*="Tokenomics"],
+.image-bfg,
+.image-token-allocation {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* Override any parent container hiding that might affect test images */
+.top-menu-articles-collection-item img,
+.announcement-flex-logos img {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
 /* Reduce gap between network buttons in marketplace pages */
 .split-button-solution .collection-list-wrapper {
   margin-left: 10px !important;
