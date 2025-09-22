@@ -253,8 +253,8 @@
     },
     {
       "file": "_site/fix-images.css",
-      "originalSize": 3546,
-      "newSize": 3546,
+      "originalSize": 3963,
+      "newSize": 3963,
       "sizeDiff": 0,
       "prettyPrinted": true,
       "skippedMinified": false,
@@ -262,8 +262,8 @@
     },
     {
       "file": "_site/styles.css",
-      "originalSize": 703852,
-      "newSize": 703852,
+      "originalSize": 703978,
+      "newSize": 703978,
       "sizeDiff": 0,
       "prettyPrinted": true,
       "skippedMinified": false,
