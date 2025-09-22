@@ -1,10 +1,16 @@
 {
-  "totalFiles": 25,
-  "prettyPrinted": 25,
-  "validationPassed": 25,
+  "totalFiles": 26,
+  "prettyPrinted": 26,
+  "validationPassed": 26,
   "filesWithErrors": 0,
   "filesWithWarnings": 0,
   "files": [
+    {
+      "path": "404.html",
+      "prettyPrint": true,
+      "errors": [],
+      "warnings": []
+    },
     {
       "path": "about.html",
       "prettyPrint": true,
