@@ -25,13 +25,16 @@ img[src*="Tokenomics"] {
     opacity: 1 !important;
 }
 
-/* Ensure BFG logo is visible */
-img[src*="blockchain-founders-group"] {
+/* Ensure BFG logo is visible - multiple variations */
+img[src*="blockchain-founders-group"],
+img[src*="BFG"],
+.top-menu-company-news-image {
     max-width: 150px !important;
     height: auto !important;
     display: block !important;
     visibility: visible !important;
     opacity: 1 !important;
+    transform: none !important; /* Remove any transforms that might hide it */
 }
 
 /* Industry cards - make sure background images are visible */
@@ -42,8 +45,98 @@ img[src*="blockchain-founders-group"] {
     background-position: center !important;
 }
 
-/* General image fixes */
+/* General image fixes - ensure all images are visible */
 img {
     display: block !important;
     visibility: visible !important;
+    opacity: 1 !important;
+}
+
+/* Fix for images that might be hidden by webflow animations */
+.w-inline-block img {
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+/* Color contrast fixes for WCAG compliance */
+/* Ensure sufficient contrast ratios for text */
+a {
+    color: #0066cc !important; /* Better contrast than default */
+}
+
+a:hover, a:focus {
+    color: #004499 !important; /* Even higher contrast on hover/focus */
+    outline: 2px solid #0066cc !important; /* Visible focus indicator */
+}
+
+/* Button text contrast */
+.button-primary, .w-button {
+    color: #ffffff !important;
+    background-color: #0066cc !important;
+    border: 1px solid #004499 !important;
+}
+
+.button-secondary {
+    color: #ffffff !important;
+    background-color: #333333 !important;
+    border: 1px solid #222222 !important;
+}
+
+/* Navigation text contrast */
+.nav-link-dropdown-text {
+    color: #333333 !important;
+}
+
+/* Menu text contrast */
+.menu-option-tittle {
+    color: #333333 !important;
+}
+
+.menu-option-text {
+    color: #555555 !important;
+}
+
+/* Footer text contrast */
+footer {
+    background-color: #222222 !important;
+    color: #ffffff !important;
+}
+
+footer a {
+    color: #66ccff !important;
+}
+
+footer a:hover, footer a:focus {
+    color: #99ddff !important;
+    outline: 2px solid #66ccff !important;
+}
+
+/* Industry menu text contrast fixes with shadow for better readability */
+.industries-top-menu-option-tittle {
+    color: #ffffff !important;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8) !important;
+}
+
+.industries-menu-option-text {
+    color: #f0f0f0 !important;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.8) !important;
+}
+
+/* Fix any elements that might be made invisible by webflow CSS */
+.hidden, .hide, [style*="display: none"] {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+/* Ensure dropdown menus and navigation elements are accessible */
+.w-dropdown-list {
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+/* Focus improvements for keyboard navigation */
+a:focus, button:focus, input:focus, textarea:focus, select:focus {
+    outline: 2px solid #0066cc !important;
+    outline-offset: 2px !important;
 }
