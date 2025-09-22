@@ -1989,7 +1989,7 @@ textarea.w-select {
   --neutral-200: #f5f9ff;
   --neutral-600: #66666e;
   --neutral-800: #1a1b1e;
-  --primary-1: #758bff;
+  --primary-1: #4c6aff;
   --neutral-100: white;
   --neutral-700: #3b3f44;
   --neutral-500: #8a8a92;
@@ -8946,7 +8946,7 @@ figcaption {
   line-height: 1.4em;
 }
 .div-block-13 {
-  background-color: #758bff;
+  background-color: #4c6aff;
   background-image: linear-gradient(136deg, var(--primary-1), #9eaeff 1%, #e3e7ff 89%, white);
   -webkit-text-fill-color: inherit;
   background-clip: border-box;
@@ -10942,7 +10942,7 @@ figcaption {
   font-family: "Font Awesome 6 Pro 300", sans-serif;
 }
 .solutions-landing-page-button {
-  background-color: #758bff;
+  background-color: #4c6aff;
   background-image: url(https://d3e54v103j8qbb.cloudfront.net/img/background-image.svg);
   background-position: 0 0;
   background-size: auto;
@@ -18672,7 +18672,7 @@ textarea.w-select {
   --neutral-200: #f5f9ff;
   --neutral-600: #66666e;
   --neutral-800: #1a1b1e;
-  --primary-1: #758bff;
+  --primary-1: #4c6aff;
   --neutral-100: white;
   --neutral-700: #3b3f44;
   --neutral-500: #8a8a92;
@@ -25629,7 +25629,7 @@ figcaption {
   line-height: 1.4em;
 }
 .div-block-13 {
-  background-color: #758bff;
+  background-color: #4c6aff;
   background-image: linear-gradient(136deg, var(--primary-1), #9eaeff 1%, #e3e7ff 89%, white);
   -webkit-text-fill-color: inherit;
   background-clip: border-box;
@@ -27625,7 +27625,7 @@ figcaption {
   font-family: "Font Awesome 6 Pro 300", sans-serif;
 }
 .solutions-landing-page-button {
-  background-color: #758bff;
+  background-color: #4c6aff;
   background-image: url(https://d3e54v103j8qbb.cloudfront.net/img/background-image.svg);
   background-position: 0 0;
   background-size: auto;
@@ -33957,12 +33957,16 @@ img[loading="lazy"] {
 /* Fix any remaining image visibility issues */
 img.image-bfg,
 img.image-proof,
-img.image-assure {
+img.image-assure,
+img.image-token-allocation,
+.top-menu-company-news-image {
   opacity: 1 !important;
   visibility: visible !important;
-  display: block !important;
+  display: inline-block !important;
   max-height: none !important;
   filter: none !important;
+  transform: none !important;
+  position: static !important;
 }
 
 /* Fix text that might be invisible */

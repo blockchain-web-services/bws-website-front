@@ -17,24 +17,31 @@
 
 /* Make sure tokenomics image is visible and sized properly */
 .token-allocation-image img,
-img[src*="Tokenomics"] {
+img[src*="Tokenomics"],
+.image-token-allocation {
     max-width: 100% !important;
     height: auto !important;
-    display: block !important;
+    display: inline-block !important;
     visibility: visible !important;
     opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    position: static !important;
 }
 
 /* Ensure BFG logo is visible - multiple variations */
 img[src*="blockchain-founders-group"],
 img[src*="BFG"],
-.top-menu-company-news-image {
+.top-menu-company-news-image,
+.image-bfg {
     max-width: 150px !important;
     height: auto !important;
-    display: block !important;
+    display: inline-block !important;
     visibility: visible !important;
     opacity: 1 !important;
     transform: none !important; /* Remove any transforms that might hide it */
+    filter: none !important; /* Remove any filters */
+    position: static !important; /* Ensure not positioned off-screen */
 }
 
 /* Industry cards - make sure background images are visible */
@@ -47,15 +54,20 @@ img[src*="BFG"],
 
 /* General image fixes - ensure all images are visible */
 img {
-    display: block !important;
+    display: inline-block !important;
     visibility: visible !important;
     opacity: 1 !important;
+    max-width: 100% !important;
+    height: auto !important;
 }
 
-/* Fix for images that might be hidden by webflow animations */
-.w-inline-block img {
+/* Fix for images that might be hidden by webflow animations or transforms */
+.w-inline-block img,
+img[loading="lazy"] {
     visibility: visible !important;
     opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
 }
 
 /* Color contrast fixes for WCAG compliance */
