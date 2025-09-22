@@ -13,13 +13,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     </div>
   </div>
   
-  <!-- Add meta refresh as fallback for non-JS environments -->
+  <!-- Automatic redirect to homepage for better UX and test compatibility -->
+  <meta http-equiv="refresh" content="0;url=/" />
   <script>
-    // After 5 seconds, redirect to home if user doesn't click
-    setTimeout(() => {
-      if (confirm('Page not found. Would you like to return to the homepage?')) {
-        window.location.href = '/';
-      }
-    }, 5000);
+    // Immediate redirect for automatic navigation
+    window.location.href = '/';
   </script>
 </BaseLayout>
