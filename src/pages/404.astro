@@ -12,13 +12,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       </div>
     </div>
   </div>
-  
-  <script>
-    // For static hosting compatibility, redirect after a brief delay for SEO/testing
-    setTimeout(() => {
-      if (window.location.pathname !== '/') {
-        window.location.href = '/';
-      }
-    }, 100);
-  </script>
 </BaseLayout>
+
+<script>
+  // For static hosting compatibility, redirect after a brief delay for SEO/testing
+  setTimeout(() => {
+    if (window.location.pathname !== '/' && window.location.pathname !== '/404.html') {
+      window.location.href = '/';
+    }
+  }, 100);
+</script>
