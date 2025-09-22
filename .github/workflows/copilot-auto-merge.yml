@@ -5,6 +5,10 @@ on:
     types: [opened, synchronize, reopened, ready_for_review]
   pull_request_review:
     types: [submitted]
+  # Also trigger on a schedule to check for stuck draft PRs
+  schedule:
+    - cron: '*/5 * * * *'  # Every 5 minutes
+  workflow_dispatch: # Manual trigger for testing
 
 permissions:
   contents: write
@@ -13,172 +17,37 @@ permissions:
 jobs:
   auto-merge:
     runs-on: ubuntu-latest
-    # Only run for Copilot bot PRs
-    if: |
-      github.event.pull_request &&
-      (github.event.pull_request.user.login == 'copilot-swe-agent[bot]' ||
-       github.event.pull_request.user.login == 'copilot[bot]' ||
-       (github.event.pull_request.user.type == 'Bot' && contains(github.event.pull_request.user.login, 'copilot')))
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Get PR details
-        id: pr-details
+      - name: Process Copilot PRs
         uses: actions/github-script@v7
         with:
           github-token: ${{ secrets.PAT_REPOS_AND_WORKFLOW || secrets.GITHUB_TOKEN }}
           script: |
-            const prNumber = context.payload.pull_request.number;
-            const pr = context.payload.pull_request;
-
-            console.log(`Processing PR #${prNumber} by ${pr.user.login}`);
-            console.log(`PR state: ${pr.state}, Draft: ${pr.draft}`);
-
-            // Check if PR is ready (not draft)
-            if (pr.draft) {
-              console.log('PR is still in draft mode, waiting for Copilot to finish');
-              return;
+            // Function to check if a PR is from Copilot
+            function isCopilotPR(pr) {
+              return pr.user.login === 'copilot-swe-agent[bot]' ||
+                     pr.user.login === 'copilot[bot]' ||
+                     (pr.user.type === 'Bot' && pr.user.login.includes('copilot'));
             }
 
-            core.setOutput('pr_number', prNumber);
-            core.setOutput('is_ready', 'true');
-
-            // Check PR size (optional safety check)
-            const files = await github.rest.pulls.listFiles({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              pull_number: prNumber
-            });
-
-            const totalChanges = files.data.reduce((acc, file) => acc + file.changes, 0);
-            console.log(`Total changes in PR: ${totalChanges}`);
-
-            // Set a threshold for automatic merge (optional)
-            const maxAutoMergeChanges = 1000; // Increased threshold since Copilot is trusted
-            if (totalChanges > maxAutoMergeChanges) {
-              console.log(`PR has ${totalChanges} changes, exceeding auto-merge threshold of ${maxAutoMergeChanges}`);
-              core.setOutput('too_large', 'true');
-
-              // Add a label for manual review
-              await github.rest.issues.addLabels({
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                issue_number: prNumber,
-                labels: ['needs-manual-review', 'large-pr']
-              });
-
-              // Add comment
-              await github.rest.issues.createComment({
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                issue_number: prNumber,
-                body: '⚠️ **Manual Review Required**\n\nThis Copilot PR exceeds the automatic merge threshold of ' + maxAutoMergeChanges + ' changes.\nPlease review and merge manually.'
-              });
-            } else {
-              core.setOutput('too_large', 'false');
-            }
-
-      - name: Wait for Copilot to finish
-        if: steps.pr-details.outputs.is_ready != 'true'
-        run: |
-          echo "PR is not ready yet, Copilot is still working on it"
-          exit 0
-
-      - name: Auto-approve PR
-        if: |
-          steps.pr-details.outputs.is_ready == 'true' &&
-          steps.pr-details.outputs.too_large != 'true'
-        uses: actions/github-script@v7
-        with:
-          github-token: ${{ secrets.PAT_REPOS_AND_WORKFLOW || secrets.GITHUB_TOKEN }}
-          script: |
-            const prNumber = ${{ steps.pr-details.outputs.pr_number }};
-
-            try {
-              // Check if PR is already approved
-              const reviews = await github.rest.pulls.listReviews({
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                pull_number: prNumber
-              });
-
-              const approved = reviews.data.some(review =>
-                review.state === 'APPROVED'
-              );
-
-              if (!approved) {
-                // Approve the PR
-                await github.rest.pulls.createReview({
-                  owner: context.repo.owner,
-                  repo: context.repo.repo,
-                  pull_number: prNumber,
-                  event: 'APPROVE',
-                  body: '✅ **Auto-approved Copilot PR**\n\nThis pull request was automatically approved because:\n- Created by GitHub Copilot coding agent\n- Copilot has finished its work (PR is ready for review)\n- Changes are within auto-merge threshold\n- No additional checks required for Copilot PRs'
-                });
-                console.log(`Approved PR #${prNumber}`);
-              } else {
-                console.log(`PR #${prNumber} is already approved`);
-              }
-            } catch (error) {
-              console.log(`Could not approve PR: ${error.message}`);
-              // Continue anyway, approval might not be required
-            }
-
-      - name: Merge PR immediately
-        if: |
-          steps.pr-details.outputs.is_ready == 'true' &&
-          steps.pr-details.outputs.too_large != 'true'
-        uses: actions/github-script@v7
-        with:
-          github-token: ${{ secrets.PAT_REPOS_AND_WORKFLOW || secrets.GITHUB_TOKEN }}
-          script: |
-            const prNumber = ${{ steps.pr-details.outputs.pr_number }};
-
-            try {
-              // Add a comment before merging
-              await github.rest.issues.createComment({
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                issue_number: prNumber,
-                body: '🤖 **Auto-merging Copilot PR**\n\nMerging automatically without waiting for checks since this is a trusted Copilot PR.\n\nMerge method: Squash and merge'
-              });
-
-              // Directly merge the PR without waiting for checks
-              const mergeResult = await github.rest.pulls.merge({
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                pull_number: prNumber,
-                merge_method: 'squash', // or 'merge' or 'rebase' based on preference
-                commit_title: `Merge Copilot PR #${prNumber}: ${context.payload.pull_request.title}`,
-                commit_message: `Auto-merged by copilot-auto-merge workflow\n\nCopilot PR #${prNumber} was automatically merged without waiting for checks.`
-              });
-
-              if (mergeResult.data.merged) {
-                console.log(`Successfully merged PR #${prNumber}`);
-
-                // Try to delete the branch
-                try {
-                  const branch = context.payload.pull_request.head.ref;
-                  if (!branch.startsWith('main') && !branch.startsWith('master')) {
-                    await github.rest.git.deleteRef({
-                      owner: context.repo.owner,
-                      repo: context.repo.repo,
-                      ref: `heads/${branch}`
-                    });
-                    console.log(`Deleted branch ${branch}`);
-                  }
-                } catch (deleteError) {
-                  console.log(`Could not delete branch: ${deleteError.message}`);
-                }
-              }
-            } catch (error) {
-              console.log(`Could not merge PR: ${error.message}`);
-
-              // If merge fails, try enabling auto-merge as fallback
+            // Function to mark PR as ready for review
+            async function markPRReady(prNumber) {
               try {
-                console.log('Attempting to enable auto-merge as fallback...');
+                // Use GraphQL to mark as ready
+                const mutation = `
+                  mutation($pullRequestId: ID!) {
+                    markPullRequestReadyForReview(input: {
+                      pullRequestId: $pullRequestId
+                    }) {
+                      pullRequest {
+                        isDraft
+                      }
+                    }
+                  }
+                `;
 
                 const pr = await github.rest.pulls.get({
                   owner: context.repo.owner,
@@ -186,70 +55,246 @@ jobs:
                   pull_number: prNumber
                 });
 
-                const mutation = `
-                  mutation($pullRequestId: ID!, $mergeMethod: PullRequestMergeMethod!) {
-                    enablePullRequestAutoMerge(input: {
-                      pullRequestId: $pullRequestId,
-                      mergeMethod: $mergeMethod
-                    }) {
-                      pullRequest {
-                        autoMergeRequest {
-                          enabledAt
-                          mergeMethod
-                        }
-                      }
-                    }
-                  }
-                `;
-
                 await github.graphql(mutation, {
-                  pullRequestId: pr.data.node_id,
-                  mergeMethod: 'SQUASH'
+                  pullRequestId: pr.data.node_id
                 });
 
-                console.log(`Enabled auto-merge for PR #${prNumber} as fallback`);
-
-                await github.rest.issues.createComment({
-                  owner: context.repo.owner,
-                  repo: context.repo.repo,
-                  issue_number: prNumber,
-                  body: '⚠️ **Auto-merge enabled as fallback**\n\nDirect merge failed (likely due to branch protection rules).\nAuto-merge has been enabled and will complete when requirements are met.'
-                });
-              } catch (autoMergeError) {
-                console.log(`Auto-merge fallback also failed: ${autoMergeError.message}`);
-
-                await github.rest.issues.createComment({
-                  owner: context.repo.owner,
-                  repo: context.repo.repo,
-                  issue_number: prNumber,
-                  body: '❌ **Auto-merge failed**\n\nCould not automatically merge this PR. Please merge manually.\n\nError: ' + error.message
-                });
+                console.log(`Marked PR #${prNumber} as ready for review`);
+                return true;
+              } catch (error) {
+                console.log(`Could not mark PR #${prNumber} as ready: ${error.message}`);
+                return false;
               }
             }
 
-      - name: Add status labels
-        if: steps.pr-details.outputs.pr_number
-        uses: actions/github-script@v7
-        with:
-          github-token: ${{ secrets.PAT_REPOS_AND_WORKFLOW || secrets.GITHUB_TOKEN }}
-          script: |
-            const prNumber = ${{ steps.pr-details.outputs.pr_number }};
+            // Function to approve and merge PR
+            async function approveAndMergePR(prNumber) {
+              try {
+                // First, approve the PR
+                const reviews = await github.rest.pulls.listReviews({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  pull_number: prNumber
+                });
 
-            const labels = ['copilot-pr'];
+                const approved = reviews.data.some(review => review.state === 'APPROVED');
 
-            if ('${{ steps.pr-details.outputs.too_large }}' === 'true') {
-              labels.push('needs-manual-review', 'large-pr');
-            } else if ('${{ steps.pr-details.outputs.is_ready }}' === 'true') {
-              labels.push('auto-merged');
+                if (!approved) {
+                  await github.rest.pulls.createReview({
+                    owner: context.repo.owner,
+                    repo: context.repo.repo,
+                    pull_number: prNumber,
+                    event: 'APPROVE',
+                    body: '✅ **Auto-approved Copilot PR**\n\nThis pull request was automatically approved because:\n- Created by GitHub Copilot coding agent\n- Automatically marked as ready for review\n- No additional checks required for Copilot PRs'
+                  });
+                  console.log(`Approved PR #${prNumber}`);
+                }
+
+                // Add comment before merging
+                await github.rest.issues.createComment({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  issue_number: prNumber,
+                  body: '🤖 **Auto-merging Copilot PR**\n\nThis PR was automatically:\n1. ✅ Marked as ready for review\n2. ✅ Approved\n3. ⏳ Being merged now\n\nMerge method: Squash and merge'
+                });
+
+                // Merge the PR
+                const mergeResult = await github.rest.pulls.merge({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  pull_number: prNumber,
+                  merge_method: 'squash',
+                  commit_title: `Merge Copilot PR #${prNumber}`,
+                  commit_message: `Auto-merged by copilot-auto-merge workflow`
+                });
+
+                if (mergeResult.data.merged) {
+                  console.log(`Successfully merged PR #${prNumber}`);
+
+                  // Try to delete the branch
+                  try {
+                    const pr = await github.rest.pulls.get({
+                      owner: context.repo.owner,
+                      repo: context.repo.repo,
+                      pull_number: prNumber
+                    });
+
+                    const branch = pr.data.head.ref;
+                    if (!branch.startsWith('main') && !branch.startsWith('master')) {
+                      await github.rest.git.deleteRef({
+                        owner: context.repo.owner,
+                        repo: context.repo.repo,
+                        ref: `heads/${branch}`
+                      });
+                      console.log(`Deleted branch ${branch}`);
+                    }
+                  } catch (deleteError) {
+                    console.log(`Could not delete branch: ${deleteError.message}`);
+                  }
+
+                  // Add labels
+                  await github.rest.issues.addLabels({
+                    owner: context.repo.owner,
+                    repo: context.repo.repo,
+                    issue_number: prNumber,
+                    labels: ['copilot-pr', 'auto-merged']
+                  }).catch(e => console.log(`Could not add labels: ${e.message}`));
+                }
+
+                return true;
+              } catch (error) {
+                console.log(`Could not merge PR #${prNumber}: ${error.message}`);
+
+                // Try enabling auto-merge as fallback
+                try {
+                  const pr = await github.rest.pulls.get({
+                    owner: context.repo.owner,
+                    repo: context.repo.repo,
+                    pull_number: prNumber
+                  });
+
+                  const mutation = `
+                    mutation($pullRequestId: ID!, $mergeMethod: PullRequestMergeMethod!) {
+                      enablePullRequestAutoMerge(input: {
+                        pullRequestId: $pullRequestId,
+                        mergeMethod: $mergeMethod
+                      }) {
+                        pullRequest {
+                          autoMergeRequest {
+                            enabledAt
+                            mergeMethod
+                          }
+                        }
+                      }
+                    }
+                  `;
+
+                  await github.graphql(mutation, {
+                    pullRequestId: pr.data.node_id,
+                    mergeMethod: 'SQUASH'
+                  });
+
+                  console.log(`Enabled auto-merge for PR #${prNumber} as fallback`);
+
+                  await github.rest.issues.createComment({
+                    owner: context.repo.owner,
+                    repo: context.repo.repo,
+                    issue_number: prNumber,
+                    body: '⚠️ **Auto-merge enabled**\n\nDirect merge failed (likely due to branch protection).\nAuto-merge will complete when requirements are met.'
+                  });
+                } catch (autoMergeError) {
+                  console.log(`Auto-merge fallback also failed: ${autoMergeError.message}`);
+
+                  await github.rest.issues.createComment({
+                    owner: context.repo.owner,
+                    repo: context.repo.repo,
+                    issue_number: prNumber,
+                    body: '❌ **Manual merge required**\n\nCould not automatically merge this PR.\n\nError: ' + error.message
+                  });
+                }
+
+                return false;
+              }
             }
 
-            try {
-              await github.rest.issues.addLabels({
+            // Main logic
+            let prsToProcess = [];
+
+            // If triggered by a PR event, process that PR
+            if (context.payload.pull_request) {
+              const pr = context.payload.pull_request;
+              if (isCopilotPR(pr)) {
+                prsToProcess.push(pr);
+              } else {
+                console.log(`PR #${pr.number} is not from Copilot, skipping`);
+                return;
+              }
+            } else {
+              // For scheduled runs or manual triggers, find all Copilot PRs
+              console.log('Checking for Copilot PRs to process...');
+
+              const pulls = await github.rest.pulls.list({
                 owner: context.repo.owner,
                 repo: context.repo.repo,
-                issue_number: prNumber,
-                labels: labels
+                state: 'open',
+                per_page: 100
               });
-            } catch (error) {
-              console.log(`Could not add labels: ${error.message}`);
+
+              prsToProcess = pulls.data.filter(pr => isCopilotPR(pr));
+              console.log(`Found ${prsToProcess.length} Copilot PR(s) to process`);
             }
+
+            // Process each Copilot PR
+            for (const pr of prsToProcess) {
+              console.log(`\nProcessing PR #${pr.number}: ${pr.title}`);
+              console.log(`  Draft: ${pr.draft}, State: ${pr.state}`);
+
+              // Check PR size first
+              const files = await github.rest.pulls.listFiles({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                pull_number: pr.number
+              });
+
+              const totalChanges = files.data.reduce((acc, file) => acc + file.changes, 0);
+              console.log(`  Total changes: ${totalChanges}`);
+
+              const maxAutoMergeChanges = 1000;
+              if (totalChanges > maxAutoMergeChanges) {
+                console.log(`  PR exceeds auto-merge threshold of ${maxAutoMergeChanges} changes`);
+
+                // Add labels and comment if not already done
+                const labels = await github.rest.issues.listLabelsOnIssue({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  issue_number: pr.number
+                });
+
+                if (!labels.data.some(l => l.name === 'needs-manual-review')) {
+                  await github.rest.issues.addLabels({
+                    owner: context.repo.owner,
+                    repo: context.repo.repo,
+                    issue_number: pr.number,
+                    labels: ['needs-manual-review', 'large-pr', 'copilot-pr']
+                  });
+
+                  await github.rest.issues.createComment({
+                    owner: context.repo.owner,
+                    repo: context.repo.repo,
+                    issue_number: pr.number,
+                    body: `⚠️ **Manual Review Required**\n\nThis Copilot PR has ${totalChanges} changes, exceeding the automatic merge threshold of ${maxAutoMergeChanges}.\n\nPlease review and merge manually.`
+                  });
+                }
+                continue; // Skip to next PR
+              }
+
+              // Check if PR has recent activity (avoid processing very old PRs)
+              const lastUpdated = new Date(pr.updated_at);
+              const hoursSinceUpdate = (Date.now() - lastUpdated) / (1000 * 60 * 60);
+
+              // For draft PRs, check if Copilot might still be working
+              if (pr.draft) {
+                if (hoursSinceUpdate < 0.5) { // Less than 30 minutes
+                  console.log(`  PR is draft and was updated ${hoursSinceUpdate.toFixed(1)} hours ago, Copilot might still be working`);
+                  continue;
+                }
+
+                console.log(`  PR is draft but hasn't been updated for ${hoursSinceUpdate.toFixed(1)} hours, marking as ready`);
+
+                // Mark as ready for review
+                const marked = await markPRReady(pr.number);
+                if (!marked) {
+                  console.log(`  Failed to mark PR #${pr.number} as ready`);
+                  continue;
+                }
+
+                // Wait a moment for GitHub to process the state change
+                await new Promise(resolve => setTimeout(resolve, 2000));
+              }
+
+              // Now approve and merge
+              console.log(`  Attempting to approve and merge PR #${pr.number}`);
+              await approveAndMergePR(pr.number);
+            }
+
+            console.log('\nFinished processing Copilot PRs');
