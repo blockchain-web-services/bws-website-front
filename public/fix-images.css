@@ -27,6 +27,16 @@ img[src*="Tokenomics"],
     transform: none !important;
     filter: none !important;
     position: static !important;
+    z-index: 1 !important; /* Ensure it's above other elements */
+}
+
+/* Ensure parent containers of tokenomics image are visible */
+.token-allocation,
+.token-allocation-image,
+.w-layout-blockcontainer:has(img[src*="Tokenomics"]) {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
 }
 
 /* Ensure BFG logo is visible - multiple variations */
@@ -42,6 +52,15 @@ img[src*="BFG"],
     transform: none !important; /* Remove any transforms that might hide it */
     filter: none !important; /* Remove any filters */
     position: static !important; /* Ensure not positioned off-screen */
+    z-index: 1 !important; /* Ensure it's above other elements */
+}
+
+/* Ensure parent containers of BFG image are visible */
+.top-menu-company-news,
+.w-layout-blockcontainer:has(img[src*="blockchain-founders-group"]) {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
 }
 
 /* Industry cards - make sure background images are visible */
@@ -132,6 +151,21 @@ footer a:hover, footer a:focus {
 .industries-menu-option-text {
     color: #f0f0f0 !important;
     text-shadow: 1px 1px 3px rgba(0,0,0,0.8) !important;
+}
+
+/* Fix color contrast for roadmap text spans - WCAG compliance */
+.text-span-11 {
+    color: #ffffff !important; /* White text for high contrast */
+}
+
+/* Ensure roadmap section has proper background contrast */
+.section-blockchain-radically-simple {
+    background-color: #1a1b1e !important;
+}
+
+/* Fix heading contrast in roadmap */
+.heading-roadmap {
+    color: #ffffff !important; /* Ensure heading text is also high contrast */
 }
 
 /* Fix any elements that might be made invisible by webflow CSS */

@@ -13,10 +13,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     </div>
   </div>
   
-  <!-- Automatic redirect to homepage for better UX and test compatibility -->
-  <meta http-equiv="refresh" content="0;url=/" />
   <script>
-    // Immediate redirect for automatic navigation
-    window.location.href = '/';
+    // For static hosting compatibility, redirect after a brief delay for SEO/testing
+    setTimeout(() => {
+      if (window.location.pathname !== '/') {
+        window.location.href = '/';
+      }
+    }, 100);
   </script>
 </BaseLayout>
