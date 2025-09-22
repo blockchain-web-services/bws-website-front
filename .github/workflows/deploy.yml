@@ -330,13 +330,26 @@ jobs:
 
               // Create issue with Copilot assigned if available, otherwise just create issue
               if (copilotBotId) {
+                // Properly escape content for GraphQL
+                const escapeForGraphQL = (str) => {
+                  return str
+                    .replace(/\\/g, '\\\\')  // Escape backslashes first
+                    .replace(/"/g, '\\"')   // Escape quotes
+                    .replace(/\n/g, '\\n')   // Escape newlines
+                    .replace(/\r/g, '\\r')   // Escape carriage returns
+                    .replace(/\t/g, '\\t');  // Escape tabs
+                };
+
+                const escapedTitle = escapeForGraphQL(issueTitle);
+                const escapedBody = escapeForGraphQL(issueBody);
+
                 // Use GraphQL to create issue with Copilot assigned
                 const createIssueMutation = `
                   mutation {
                     createIssue(input: {
                       repositoryId: "${repositoryId}",
-                      title: "${issueTitle.replace(/"/g, '\\"')}",
-                      body: "${issueBody.replace(/"/g, '\\"').replace(/\n/g, '\\n')}",
+                      title: "${escapedTitle}",
+                      body: "${escapedBody}",
                       assigneeIds: ["${copilotBotId}"]
                     }) {
                       issue {
@@ -613,13 +626,26 @@ jobs:
 
             // Create issue with Copilot assigned if available
             if (copilotBotId) {
+              // Properly escape content for GraphQL
+              const escapeForGraphQL = (str) => {
+                return str
+                  .replace(/\\/g, '\\\\')  // Escape backslashes first
+                  .replace(/"/g, '\\"')   // Escape quotes
+                  .replace(/\n/g, '\\n')   // Escape newlines
+                  .replace(/\r/g, '\\r')   // Escape carriage returns
+                  .replace(/\t/g, '\\t');  // Escape tabs
+              };
+
+              const escapedTitle = escapeForGraphQL(issueTitle);
+              const escapedBody = escapeForGraphQL(issueBody);
+
               // Use GraphQL to create issue with Copilot assigned
               const createIssueMutation = `
                 mutation {
                   createIssue(input: {
                     repositoryId: "${repositoryId}",
-                    title: "${issueTitle.replace(/"/g, '\\"')}",
-                    body: "${issueBody.replace(/"/g, '\\"').replace(/\n/g, '\\n')}",
+                    title: "${escapedTitle}",
+                    body: "${escapedBody}",
                     assigneeIds: ["${copilotBotId}"]
                   }) {
                     issue {
