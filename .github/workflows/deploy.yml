@@ -40,11 +40,31 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Get Playwright version
+        id: playwright-version
+        run: echo "version=$(node -e "console.log(require('./package-lock.json').devDependencies['@playwright/test'].version)")" >> $GITHUB_OUTPUT
+
+      - name: Cache Playwright browsers
+        uses: actions/cache@v4
+        id: playwright-cache
+        with:
+          path: ~/.cache/ms-playwright
+          key: ${{ runner.os }}-playwright-${{ steps.playwright-version.outputs.version }}
+          restore-keys: |
+            ${{ runner.os }}-playwright-
+
       - name: Build site
         run: npm run build
 
       - name: Install Playwright browsers
-        run: npx playwright install --with-deps ${{ matrix.browser }}
+        run: |
+          if [[ "${{ steps.playwright-cache.outputs.cache-hit }}" != "true" ]]; then
+            echo "Cache miss - installing Playwright browsers and dependencies"
+            npx playwright install --with-deps ${{ matrix.browser }}
+          else
+            echo "Cache hit - installing only OS dependencies"
+            npx playwright install-deps ${{ matrix.browser }}
+          fi
 
       - name: Run Playwright tests
         id: test-run
@@ -455,8 +475,28 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Get Playwright version
+        id: playwright-version-smoke
+        run: echo "version=$(node -e "console.log(require('./package-lock.json').devDependencies['@playwright/test'].version)")" >> $GITHUB_OUTPUT
+
+      - name: Cache Playwright browsers for smoke tests
+        uses: actions/cache@v4
+        id: playwright-cache-smoke
+        with:
+          path: ~/.cache/ms-playwright
+          key: ${{ runner.os }}-playwright-${{ steps.playwright-version-smoke.outputs.version }}
+          restore-keys: |
+            ${{ runner.os }}-playwright-
+
       - name: Install Playwright
-        run: npx playwright install --with-deps chromium
+        run: |
+          if [[ "${{ steps.playwright-cache-smoke.outputs.cache-hit }}" != "true" ]]; then
+            echo "Cache miss - installing Playwright browsers and dependencies"
+            npx playwright install --with-deps chromium
+          else
+            echo "Cache hit - installing only OS dependencies"
+            npx playwright install-deps chromium
+          fi
 
       - name: Run smoke tests against production
         id: smoke-test
