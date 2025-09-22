@@ -24,13 +24,49 @@ jobs:
       - name: Process Copilot PRs
         uses: actions/github-script@v7
         with:
-          github-token: ${{ secrets.PAT_REPOS_AND_WORKFLOW || secrets.GITHUB_TOKEN }}
+          github-token: ${{ secrets.PAT_REPOS_AND_WORKFLOW }}
           script: |
             // Function to check if a PR is from Copilot
             function isCopilotPR(pr) {
-              return pr.user.login === 'copilot-swe-agent[bot]' ||
-                     pr.user.login === 'copilot[bot]' ||
-                     (pr.user.type === 'Bot' && pr.user.login.includes('copilot'));
+              // Debug logging to identify actual bot username
+              console.log(`PR #${pr.number} - User: ${pr.user.login}, Type: ${pr.user.type}`);
+
+              // Check various possible Copilot usernames
+              const copilotUsernames = [
+                'copilot-swe-agent[bot]',
+                'copilot[bot]',
+                'github-actions[bot]', // Sometimes Copilot uses this
+                'copilot-workspace[bot]',
+                'copilot-workspace',
+                'copilot'
+              ];
+
+              // Check if PR is from any known Copilot username
+              if (copilotUsernames.includes(pr.user.login)) {
+                return true;
+              }
+
+              // Check if it's a bot with copilot in the name
+              if (pr.user.type === 'Bot' && pr.user.login.toLowerCase().includes('copilot')) {
+                return true;
+              }
+
+              // Check if the PR title or body mentions it's from Copilot
+              if (pr.title && (pr.title.includes('Copilot') || pr.title.includes('copilot'))) {
+                console.log(`  PR #${pr.number} has 'Copilot' in title, considering it a Copilot PR`);
+                return true;
+              }
+
+              // Check if PR has copilot-related labels
+              if (pr.labels && pr.labels.some(label =>
+                label.name.toLowerCase().includes('copilot') ||
+                label.name === 'copilot-assigned'
+              )) {
+                console.log(`  PR #${pr.number} has Copilot-related labels`);
+                return true;
+              }
+
+              return false;
             }
 
             // Function to mark PR as ready for review
@@ -212,6 +248,7 @@ jobs:
             } else {
               // For scheduled runs or manual triggers, find all Copilot PRs
               console.log('Checking for Copilot PRs to process...');
+              console.log(`Using PAT: ${!!('${{ secrets.PAT_REPOS_AND_WORKFLOW }}') ? 'Yes' : 'No'}`);
 
               const pulls = await github.rest.pulls.list({
                 owner: context.repo.owner,
@@ -220,8 +257,18 @@ jobs:
                 per_page: 100
               });
 
+              console.log(`Total open PRs found: ${pulls.data.length}`);
+
+              // Log all PR authors for debugging
+              if (pulls.data.length > 0) {
+                console.log('\nAll PR authors:');
+                pulls.data.forEach(pr => {
+                  console.log(`  PR #${pr.number}: ${pr.user.login} (${pr.user.type})`);
+                });
+              }
+
               prsToProcess = pulls.data.filter(pr => isCopilotPR(pr));
-              console.log(`Found ${prsToProcess.length} Copilot PR(s) to process`);
+              console.log(`\nFound ${prsToProcess.length} Copilot PR(s) to process`);
             }
 
             // Process each Copilot PR
