@@ -262,15 +262,96 @@ jobs:
                 `🎯 Fix Single Test - PR #${context.payload.pull_request.number} - Run #${runNumber}` :
                 `🎯 Fix Single Test - Run #${runNumber} - ${today}`;
 
-              const issue = await github.rest.issues.create({
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                title: issueTitle,
-                body: issueBody,
-                labels: ['single-test', 'automated', 'claude-fix', 'focused']
-              });
-              console.log(`Created issue #${issue.data.number}`);
-              console.log('Issue mentions @copilot for automatic assignment');
+              // First, get Copilot bot ID if available
+              let copilotBotId = null;
+              try {
+                const suggestedActorsQuery = `
+                  query {
+                    repository(owner: "${context.repo.owner}", name: "${context.repo.repo}") {
+                      suggestedActors(capabilities: [CAN_BE_ASSIGNED], first: 100) {
+                        nodes {
+                          login
+                          __typename
+                          ... on Bot { id }
+                          ... on User { id }
+                        }
+                      }
+                    }
+                  }
+                `;
+
+                const suggestedActorsResult = await github.graphql(suggestedActorsQuery);
+                const copilotBot = suggestedActorsResult.repository.suggestedActors.nodes.find(
+                  actor => actor.login === 'copilot-swe-agent'
+                );
+
+                if (copilotBot) {
+                  copilotBotId = copilotBot.id;
+                  console.log('Found Copilot bot ID:', copilotBotId);
+                } else {
+                  console.log('Copilot coding agent not available in this repository');
+                }
+              } catch (error) {
+                console.log('Could not fetch Copilot bot ID:', error.message);
+              }
+
+              // Get repository ID for GraphQL
+              const repoQuery = `
+                query {
+                  repository(owner: "${context.repo.owner}", name: "${context.repo.repo}") {
+                    id
+                  }
+                }
+              `;
+              const repoResult = await github.graphql(repoQuery);
+              const repositoryId = repoResult.repository.id;
+
+              // Create issue with Copilot assigned if available, otherwise just create issue
+              if (copilotBotId) {
+                // Use GraphQL to create issue with Copilot assigned
+                const createIssueMutation = `
+                  mutation {
+                    createIssue(input: {
+                      repositoryId: "${repositoryId}",
+                      title: "${issueTitle.replace(/"/g, '\\"')}",
+                      body: "${issueBody.replace(/"/g, '\\"').replace(/\n/g, '\\n')}",
+                      assigneeIds: ["${copilotBotId}"]
+                    }) {
+                      issue {
+                        number
+                        id
+                        title
+                        assignees(first: 10) {
+                          nodes {
+                            login
+                          }
+                        }
+                      }
+                    }
+                  }
+                `;
+
+                const issueResult = await github.graphql(createIssueMutation);
+                console.log(`Created issue #${issueResult.createIssue.issue.number} with Copilot assigned`);
+
+                // Add labels using REST API (GraphQL doesn't support labels in createIssue)
+                await github.rest.issues.addLabels({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  issue_number: issueResult.createIssue.issue.number,
+                  labels: ['single-test', 'automated', 'copilot-assigned', 'focused']
+                });
+              } else {
+                // Fall back to REST API with @copilot mention
+                const issue = await github.rest.issues.create({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  title: issueTitle,
+                  body: issueBody,
+                  labels: ['single-test', 'automated', 'focused']
+                });
+                console.log(`Created issue #${issue.data.number} with @copilot mention`);
+              }
 
   # Job 2: Build for production
   build:
@@ -419,14 +500,94 @@ jobs:
               issueBody = `## Production Smoke Test Failure\n\nSmoke tests failed against production: https://www.bws.ninja\n\nWorkflow: [View Run](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})`;
             }
 
-            // Create high-priority issue for production failures
-            const issue = await github.rest.issues.create({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              title: `😨 PRODUCTION FAILURE - Smoke Tests - ${new Date().toISOString().split('T')[0]}`,
-              body: issueBody,
-              labels: ['test-failure', 'production', 'automated', 'critical']
-            });
+            // Create high-priority issue for production failures with Copilot assigned
+            // First, get Copilot bot ID if available
+            let copilotBotId = null;
+            try {
+              const suggestedActorsQuery = `
+                query {
+                  repository(owner: "${context.repo.owner}", name: "${context.repo.repo}") {
+                    suggestedActors(capabilities: [CAN_BE_ASSIGNED], first: 100) {
+                      nodes {
+                        login
+                        __typename
+                        ... on Bot { id }
+                        ... on User { id }
+                      }
+                    }
+                  }
+                }
+              `;
 
-            console.log(`Created critical production issue #${issue.data.number}`);
-            console.log('Issue mentions @copilot for automatic assignment');
+              const suggestedActorsResult = await github.graphql(suggestedActorsQuery);
+              const copilotBot = suggestedActorsResult.repository.suggestedActors.nodes.find(
+                actor => actor.login === 'copilot-swe-agent'
+              );
+
+              if (copilotBot) {
+                copilotBotId = copilotBot.id;
+                console.log('Found Copilot bot ID for production issue');
+              }
+            } catch (error) {
+              console.log('Could not fetch Copilot bot ID:', error.message);
+            }
+
+            // Get repository ID for GraphQL
+            const repoQuery = `
+              query {
+                repository(owner: "${context.repo.owner}", name: "${context.repo.repo}") {
+                  id
+                }
+              }
+            `;
+            const repoResult = await github.graphql(repoQuery);
+            const repositoryId = repoResult.repository.id;
+
+            const issueTitle = `😨 PRODUCTION FAILURE - Smoke Tests - ${new Date().toISOString().split('T')[0]}`;
+
+            // Create issue with Copilot assigned if available
+            if (copilotBotId) {
+              // Use GraphQL to create issue with Copilot assigned
+              const createIssueMutation = `
+                mutation {
+                  createIssue(input: {
+                    repositoryId: "${repositoryId}",
+                    title: "${issueTitle.replace(/"/g, '\\"')}",
+                    body: "${issueBody.replace(/"/g, '\\"').replace(/\n/g, '\\n')}",
+                    assigneeIds: ["${copilotBotId}"]
+                  }) {
+                    issue {
+                      number
+                      id
+                      title
+                      assignees(first: 10) {
+                        nodes {
+                          login
+                        }
+                      }
+                    }
+                  }
+                }
+              `;
+
+              const issueResult = await github.graphql(createIssueMutation);
+              console.log(`Created critical production issue #${issueResult.createIssue.issue.number} with Copilot assigned`);
+
+              // Add labels using REST API
+              await github.rest.issues.addLabels({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: issueResult.createIssue.issue.number,
+                labels: ['test-failure', 'production', 'automated', 'critical', 'copilot-assigned']
+              });
+            } else {
+              // Fall back to REST API with @copilot mention
+              const issue = await github.rest.issues.create({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                title: issueTitle,
+                body: issueBody,
+                labels: ['test-failure', 'production', 'automated', 'critical']
+              });
+              console.log(`Created critical production issue #${issue.data.number} with @copilot mention`);
+            }
