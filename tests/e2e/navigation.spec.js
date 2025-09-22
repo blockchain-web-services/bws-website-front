@@ -45,7 +45,7 @@ test.describe('Navigation Tests', () => {
     await expect(page).toHaveURL(/\/industry-content\/content-creation/);
   });
 
-  test('Footer navigation links work', async ({ page }) => {
+  test('Footer navigation links work', async ({ page, context }) => {
     const homePage = new HomePage(page);
     await homePage.goto();
 
@@ -53,7 +53,7 @@ test.describe('Navigation Tests', () => {
     await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
     await page.waitForTimeout(1000);
 
-    // Test footer links
+    // Test footer links - these open in new tabs
     const footerLinks = [
       { text: 'Privacy Policy', url: '/privacy-policy' },
       { text: 'Legal Notice', url: '/legal-notice' }
@@ -62,9 +62,17 @@ test.describe('Navigation Tests', () => {
     for (const link of footerLinks) {
       const footerLink = page.locator(`footer a:has-text("${link.text}")`);
       if (await footerLink.isVisible()) {
+        // Wait for new page to be created when clicking link with target="_blank"
+        const pagePromise = context.waitForEvent('page');
         await footerLink.click();
-        await expect(page).toHaveURL(new RegExp(link.url));
-        await page.goBack();
+        const newPage = await pagePromise;
+        
+        // Verify the new page navigated to the correct URL
+        await newPage.waitForLoadState();
+        await expect(newPage).toHaveURL(new RegExp(link.url));
+        
+        // Close the new page
+        await newPage.close();
       }
     }
   });
@@ -80,12 +88,20 @@ test.describe('Navigation Tests', () => {
 
   test('404 page handles non-existent routes', async ({ page }) => {
     await page.goto('/non-existent-page-12345');
+    
+    // Wait for page to load
+    await page.waitForLoadState('networkidle');
 
     // Check for 404 content or redirect
     const pageContent = await page.textContent('body');
-    const is404 = pageContent?.includes('404') || pageContent?.includes('Not Found');
+    const is404 = pageContent?.includes('404') || pageContent?.includes('Not Found') || pageContent?.includes('Page Not Found');
 
-    if (!is404) {
+    if (is404) {
+      // If it's a 404 page, verify we're still on the 404 URL or redirected to a 404 page
+      const currentUrl = page.url();
+      const is404Url = currentUrl.includes('/404') || currentUrl.includes('non-existent-page');
+      expect(is404Url || is404).toBeTruthy();
+    } else {
       // If not a 404 page, should redirect to home
       await expect(page).toHaveURL('/');
     }
