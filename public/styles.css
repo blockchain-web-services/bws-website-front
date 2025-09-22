@@ -1987,12 +1987,12 @@ textarea.w-select {
 }
 :root {
   --neutral-200: #f5f9ff;
-  --neutral-600: #66666e;
+  --neutral-600: #444449;
   --neutral-800: #1a1b1e;
-  --primary-1: #758bff;
+  --primary-1: #5a6fd8;
   --neutral-100: white;
   --neutral-700: #3b3f44;
-  --neutral-500: #8a8a92;
+  --neutral-500: #5a5a62;
   --neutral-400: #c0c4d1;
   --neutral-300: #e5ecf5;
   --neutral-100-65: #ffffffa6;
@@ -5969,7 +5969,7 @@ figcaption {
   box-shadow: none;
   outline-offset: 0px;
   border-radius: 0;
-  outline: 3px #66666e;
+  outline: 3px #444449;
   min-width: 0;
   margin-top: 20px;
   margin-left: 0;
@@ -8946,7 +8946,7 @@ figcaption {
   line-height: 1.4em;
 }
 .div-block-13 {
-  background-color: #758bff;
+  background-color: #5a6fd8;
   background-image: linear-gradient(136deg, var(--primary-1), #9eaeff 1%, #e3e7ff 89%, white);
   -webkit-text-fill-color: inherit;
   background-clip: border-box;
@@ -10942,7 +10942,7 @@ figcaption {
   font-family: "Font Awesome 6 Pro 300", sans-serif;
 }
 .solutions-landing-page-button {
-  background-color: #758bff;
+  background-color: #5a6fd8;
   background-image: url(https://d3e54v103j8qbb.cloudfront.net/img/background-image.svg);
   background-position: 0 0;
   background-size: auto;
@@ -18670,12 +18670,12 @@ textarea.w-select {
 }
 :root {
   --neutral-200: #f5f9ff;
-  --neutral-600: #66666e;
+  --neutral-600: #444449;
   --neutral-800: #1a1b1e;
-  --primary-1: #758bff;
+  --primary-1: #5a6fd8;
   --neutral-100: white;
   --neutral-700: #3b3f44;
-  --neutral-500: #8a8a92;
+  --neutral-500: #5a5a62;
   --neutral-400: #c0c4d1;
   --neutral-300: #e5ecf5;
   --neutral-100-65: #ffffffa6;
@@ -22652,7 +22652,7 @@ figcaption {
   box-shadow: none;
   outline-offset: 0px;
   border-radius: 0;
-  outline: 3px #66666e;
+  outline: 3px #444449;
   min-width: 0;
   margin-top: 20px;
   margin-left: 0;
@@ -25629,7 +25629,7 @@ figcaption {
   line-height: 1.4em;
 }
 .div-block-13 {
-  background-color: #758bff;
+  background-color: #5a6fd8;
   background-image: linear-gradient(136deg, var(--primary-1), #9eaeff 1%, #e3e7ff 89%, white);
   -webkit-text-fill-color: inherit;
   background-clip: border-box;
@@ -27625,7 +27625,7 @@ figcaption {
   font-family: "Font Awesome 6 Pro 300", sans-serif;
 }
 .solutions-landing-page-button {
-  background-color: #758bff;
+  background-color: #5a6fd8;
   background-image: url(https://d3e54v103j8qbb.cloudfront.net/img/background-image.svg);
   background-position: 0 0;
   background-size: auto;
