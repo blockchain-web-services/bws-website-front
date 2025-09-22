@@ -271,16 +271,16 @@ jobs:
               });
               console.log(`Created issue #${issue.data.number}`);
 
-              // Try to assign to claude (will silently fail if user doesn't exist)
+              // Try to assign to Copilot (will silently fail if user doesn't exist)
               try {
                 await github.rest.issues.addAssignees({
                   owner: context.repo.owner,
                   repo: context.repo.repo,
                   issue_number: issue.data.number,
-                  assignees: ['claude']
+                  assignees: ['Copilot']
                 });
               } catch (assignError) {
-                console.log('Could not assign to claude:', assignError.message);
+                console.log('Could not assign to Copilot:', assignError.message);
               }
 
   # Job 2: Build for production
@@ -441,14 +441,14 @@ jobs:
 
             console.log(`Created critical production issue #${issue.data.number}`);
 
-            // Try to assign to claude
+            // Try to assign to Copilot
             try {
               await github.rest.issues.addAssignees({
                 owner: context.repo.owner,
                 repo: context.repo.repo,
                 issue_number: issue.data.number,
-                assignees: ['claude']
+                assignees: ['Copilot']
               });
             } catch (error) {
-              console.log('Could not assign to claude');
+              console.log('Could not assign to Copilot');
             }
