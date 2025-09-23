@@ -123,9 +123,14 @@ img[src*="Tokenomics"],
 }
 
 /* Color contrast fixes for WCAG compliance */
-/* Fix critical color contrast issue with BWS Developer Grants heading */
+/* Fix critical color contrast issue with BWS Developer Grants heading and other headings */
 .heading-landing-page-content {
     color: #ffffff !important; /* White text for better contrast against dark background */
+}
+
+/* Ensure all headings have good contrast on dark backgrounds */
+h2.heading-landing-page-content {
+    color: #ffffff !important;
 }
 
 /* Ensure sufficient contrast ratios for text */

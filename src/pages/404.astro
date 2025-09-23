@@ -14,22 +14,26 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   </div>
   
   <script is:inline>
-    // For static hosting compatibility, redirect immediately for non-existent pages
-    (function() {
+    // Immediate redirect for non-existent pages - highest priority  
+    if (typeof window !== 'undefined') {
       const path = window.location.pathname;
-      const isNonExistentPage = path !== '/' && path !== '/404.html' && !path.includes('/assets/');
+      const isNonExistentPage = path !== '/' && path !== '/404.html' && path !== '/404' && !path.includes('/assets/');
       
       if (isNonExistentPage) {
-        // Immediately redirect to home for non-existent pages
+        // Use both href and replace to ensure redirect works
+        window.location.href = '/';
         window.location.replace('/');
       }
-    })();
+    }
     
-    // Fallback redirect after a brief delay for SEO/testing
-    setTimeout(() => {
-      if (window.location.pathname !== '/' && window.location.pathname !== '/404.html') {
-        window.location.replace('/');
-      }
-    }, 100);
+    // Additional fallback using timeout
+    (function() {
+      setTimeout(() => {
+        const path = window.location.pathname;
+        if (path !== '/' && path !== '/404.html' && path !== '/404' && !path.includes('/assets/')) {
+          window.location.href = '/';
+        }
+      }, 50);
+    })();
   </script>
 </BaseLayout>

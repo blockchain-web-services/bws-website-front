@@ -1,4 +1,23 @@
-// Webflow-style scroll animations
+/* Override any webflow animations or opacity settings immediately on page load */
+document.addEventListener('DOMContentLoaded', function() {
+  // Immediately show all critical images and elements
+  const criticalElements = document.querySelectorAll('img[src*="blockchain-founders-group"], img[src*="BFG"], img[src*="Tokenomics"], .image-bfg, .image-token-allocation, .heading-landing-page-content');
+  criticalElements.forEach(element => {
+    element.style.visibility = 'visible';
+    element.style.opacity = '1';
+    element.style.transform = 'none';
+    element.style.display = element.tagName === 'IMG' ? 'inline-block' : 'block';
+  });
+  
+  // Also ensure parent containers are visible
+  const containers = document.querySelectorAll('.top-menu-company-news, .token-allocation-image, .landing-page-content');
+  containers.forEach(container => {
+    container.style.visibility = 'visible';
+    container.style.opacity = '1';
+    container.style.display = 'block';
+  });
+}, { passive: true });
+
 (function() {
   'use strict';
   
