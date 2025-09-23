@@ -1987,7 +1987,7 @@ textarea.w-select {
 }
 :root {
   --neutral-200: #f5f9ff;
-  --neutral-600: #66666e;
+  --neutral-600: #636970;
   --neutral-800: #1a1b1e;
   --primary-1: #6b8fff;
   --neutral-100: white;
@@ -5969,7 +5969,7 @@ figcaption {
   box-shadow: none;
   outline-offset: 0px;
   border-radius: 0;
-  outline: 3px #66666e;
+  outline: 3px #636970;
   min-width: 0;
   margin-top: 20px;
   margin-left: 0;
@@ -18670,7 +18670,7 @@ textarea.w-select {
 }
 :root {
   --neutral-200: #f5f9ff;
-  --neutral-600: #66666e;
+  --neutral-600: #636970;
   --neutral-800: #1a1b1e;
   --primary-1: #6b8fff;
   --neutral-100: white;
@@ -22652,7 +22652,7 @@ figcaption {
   box-shadow: none;
   outline-offset: 0px;
   border-radius: 0;
-  outline: 3px #66666e;
+  outline: 3px #636970;
   min-width: 0;
   margin-top: 20px;
   margin-left: 0;

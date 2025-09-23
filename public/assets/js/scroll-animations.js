@@ -7,14 +7,24 @@ document.addEventListener('DOMContentLoaded', function() {
     element.style.opacity = '1';
     element.style.transform = 'none';
     element.style.display = element.tagName === 'IMG' ? 'inline-block' : 'block';
+    element.style.zIndex = '1000';
+    element.style.position = 'static';
+    element.style.filter = 'none';
+    element.style.clip = 'auto';
+    if (element.tagName === 'IMG') {
+      element.loading = 'eager';
+    }
   });
   
   // Also ensure parent containers are visible
-  const containers = document.querySelectorAll('.top-menu-company-news, .token-allocation-image, .landing-page-content');
+  const containers = document.querySelectorAll('.top-menu-company-news, .token-allocation-image, .landing-page-content, .w-layout-vflex, .w-layout-hflex, .w-layout-blockcontainer');
   containers.forEach(container => {
     container.style.visibility = 'visible';
     container.style.opacity = '1';
-    container.style.display = 'block';
+    container.style.display = container.classList.contains('w-layout-vflex') || container.classList.contains('w-layout-hflex') ? 'flex' : 'block';
+    container.style.transform = 'none';
+    container.style.filter = 'none';
+    container.style.overflow = 'visible';
   });
 }, { passive: true });
 
@@ -132,14 +142,25 @@ document.addEventListener('DOMContentLoaded', function() {
         img.style.opacity = '1';
         img.style.transform = 'none';
         img.style.display = 'inline-block';
+        img.style.zIndex = '1000';
+        img.style.position = 'static';
+        img.style.filter = 'none';
+        img.style.clip = 'auto';
+        img.style.overflow = 'visible';
+        img.loading = 'eager';
+        img.style.maxWidth = '100%';
+        img.style.height = 'auto';
       });
       
       // Also ensure parent containers are visible
-      const containers = document.querySelectorAll('.top-menu-company-news, .token-allocation-image');
+      const containers = document.querySelectorAll('.top-menu-company-news, .token-allocation-image, .w-layout-vflex, .w-layout-hflex, .w-layout-blockcontainer');
       containers.forEach(container => {
         container.style.visibility = 'visible';
         container.style.opacity = '1';
-        container.style.display = 'block';
+        container.style.display = container.classList.contains('w-layout-vflex') || container.classList.contains('w-layout-hflex') ? 'flex' : 'block';
+        container.style.transform = 'none';
+        container.style.filter = 'none';
+        container.style.overflow = 'visible';
       });
     }, 500);
   });

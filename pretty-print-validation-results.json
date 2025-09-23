@@ -2,8 +2,8 @@
   "html": [
     {
       "file": "_site/404.html",
-      "originalSize": 8654,
-      "newSize": 8654,
+      "originalSize": 8855,
+      "newSize": 8855,
       "sizeDiff": 0,
       "prettyPrinted": true,
       "errors": []
@@ -253,8 +253,8 @@
     },
     {
       "file": "_site/fix-images.css",
-      "originalSize": 11473,
-      "newSize": 11473,
+      "originalSize": 14393,
+      "newSize": 14393,
       "sizeDiff": 0,
       "prettyPrinted": true,
       "skippedMinified": false,
