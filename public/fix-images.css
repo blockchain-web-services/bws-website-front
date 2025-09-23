@@ -263,7 +263,7 @@ footer a:hover, footer a:focus {
     color: #ffffff !important; /* Ensure heading text is also high contrast */
 }
 
-/* Fix any elements that might be made invisible by webflow CSS */
+/* Fix any elements that might be made invisible by webflow CSS - ENHANCED */
 .hidden, .hide, [style*="display: none"] {
     display: block !important;
     visibility: visible !important;
@@ -280,4 +280,27 @@ footer a:hover, footer a:focus {
 a:focus, button:focus, input:focus, textarea:focus, select:focus {
     outline: 2px solid #0066cc !important;
     outline-offset: 2px !important;
+}
+
+/* ADDITIONAL WEBFLOW OVERRIDE - Fix webflow animations that hide elements */
+[data-w-id] {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+    /* Don't interfere with normal layout */
+    position: static !important;
+}
+
+/* Override webflow transforms that might hide content */
+.w-dyn-item, .w-dyn-items, .collection-item, .collection-list-wrapper {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+}
+
+/* Ensure critical sections are always visible */
+#tokenomics, #grants, #solutions, #roadmap {
+    visibility: visible !important;
+    opacity: 1 !important;
+    display: block !important;
 }
