@@ -11358,7 +11358,7 @@ figcaption {
   max-width: 100%;
 }
 .text-block-42 {
-  color: var(--neutral-600);
+  color: var(--neutral-200);
   text-align: center;
   margin-top: 20px;
   margin-bottom: 0;
@@ -28046,7 +28046,7 @@ figcaption {
   max-width: 100%;
 }
 .text-block-42 {
-  color: var(--neutral-600);
+  color: var(--neutral-200);
   text-align: center;
   margin-top: 20px;
   margin-bottom: 0;
@@ -33745,6 +33745,15 @@ img[src*="blockchain-founders-group"],
 img[src*="Tokenomics"],
 .image-bfg,
 .image-token-allocation {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* Force dropdown containers to be visible for testing BFG images */
+.w-dropdown-list,
+.w-dyn-items,
+.top-menu-articles-collection-item {
   display: block !important;
   visibility: visible !important;
   opacity: 1 !important;
