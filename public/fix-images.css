@@ -89,7 +89,45 @@ img[loading="lazy"] {
     filter: none !important;
 }
 
+/* Force all critical images to be visible immediately */
+img {
+    visibility: visible !important;
+    opacity: 1 !important;
+    transform: none !important;
+}
+
+/* Specifically target images that are failing in tests */
+img[src*="blockchain-founders-group"],
+img[src*="BFG"],
+img[src*="Tokenomics"],
+.top-menu-company-news-image,
+.image-bfg,
+.image-token-allocation {
+    visibility: visible !important;
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    display: inline-block !important;
+    max-width: 100% !important;
+    height: auto !important;
+}
+
+/* Force parent containers to be visible */
+.top-menu-company-news,
+.token-allocation-image,
+.w-layout-blockcontainer:has(img[src*="blockchain-founders-group"]),
+.w-layout-blockcontainer:has(img[src*="Tokenomics"]) {
+    visibility: visible !important;
+    opacity: 1 !important;
+    display: block !important;
+}
+
 /* Color contrast fixes for WCAG compliance */
+/* Fix critical color contrast issue with BWS Developer Grants heading */
+.heading-landing-page-content {
+    color: #ffffff !important; /* White text for better contrast against dark background */
+}
+
 /* Ensure sufficient contrast ratios for text */
 a {
     color: #0066cc !important; /* Better contrast than default */
