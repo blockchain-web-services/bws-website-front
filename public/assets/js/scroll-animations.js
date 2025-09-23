@@ -1,4 +1,23 @@
-// Webflow-style scroll animations
+/* Override any webflow animations or opacity settings immediately on page load */
+document.addEventListener('DOMContentLoaded', function() {
+  // Immediately show all critical images and elements
+  const criticalElements = document.querySelectorAll('img[src*="blockchain-founders-group"], img[src*="BFG"], img[src*="Tokenomics"], .image-bfg, .image-token-allocation, .heading-landing-page-content');
+  criticalElements.forEach(element => {
+    element.style.visibility = 'visible';
+    element.style.opacity = '1';
+    element.style.transform = 'none';
+    element.style.display = element.tagName === 'IMG' ? 'inline-block' : 'block';
+  });
+  
+  // Also ensure parent containers are visible
+  const containers = document.querySelectorAll('.top-menu-company-news, .token-allocation-image, .landing-page-content');
+  containers.forEach(container => {
+    container.style.visibility = 'visible';
+    container.style.opacity = '1';
+    container.style.display = 'block';
+  });
+}, { passive: true });
+
 (function() {
   'use strict';
   
@@ -102,6 +121,25 @@
           element.style.transform = 'translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)';
           element.style.webkitTransform = 'translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)';
         }
+      });
+    }, 1000); // Increased delay to ensure all elements are processed
+    
+    // Force critical images to be visible immediately
+    setTimeout(() => {
+      const criticalImages = document.querySelectorAll('img[src*="blockchain-founders-group"], img[src*="BFG"], img[src*="Tokenomics"], .image-bfg, .image-token-allocation');
+      criticalImages.forEach(img => {
+        img.style.visibility = 'visible';
+        img.style.opacity = '1';
+        img.style.transform = 'none';
+        img.style.display = 'inline-block';
+      });
+      
+      // Also ensure parent containers are visible
+      const containers = document.querySelectorAll('.top-menu-company-news, .token-allocation-image');
+      containers.forEach(container => {
+        container.style.visibility = 'visible';
+        container.style.opacity = '1';
+        container.style.display = 'block';
       });
     }, 500);
   });
