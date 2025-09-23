@@ -2,8 +2,8 @@
   "html": [
     {
       "file": "_site/404.html",
-      "originalSize": 10251,
-      "newSize": 10251,
+      "originalSize": 8654,
+      "newSize": 8654,
       "sizeDiff": 0,
       "prettyPrinted": true,
       "errors": []
@@ -58,8 +58,8 @@
     },
     {
       "file": "_site/index.html",
-      "originalSize": 131452,
-      "newSize": 131452,
+      "originalSize": 131406,
+      "newSize": 131406,
       "sizeDiff": 0,
       "prettyPrinted": true,
       "errors": [
@@ -253,8 +253,8 @@
     },
     {
       "file": "_site/fix-images.css",
-      "originalSize": 8831,
-      "newSize": 8831,
+      "originalSize": 11473,
+      "newSize": 11473,
       "sizeDiff": 0,
       "prettyPrinted": true,
       "skippedMinified": false,
