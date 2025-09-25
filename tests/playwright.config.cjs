@@ -50,6 +50,7 @@ module.exports = defineConfig({
   webServer: process.env.NO_WEBSERVER ? undefined : {
     command: 'npm run preview:sirv',
     port: parseInt(PORT),
+    cwd: __dirname,
     reuseExistingServer: !process.env.CI,
     stdout: 'pipe',
     stderr: 'pipe',

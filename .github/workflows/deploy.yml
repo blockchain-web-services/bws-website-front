@@ -2,9 +2,9 @@ name: Build, Test, and Deploy to GitHub Pages
 
 on:
   push:
-    branches: [ main, master ]
+    branches: [main, master]
   pull_request:
-    branches: [ main, master ]
+    branches: [main, master]
   workflow_dispatch:
 
 permissions:
@@ -19,7 +19,7 @@ concurrency:
   cancel-in-progress: true
 
 env:
-  NODE_VERSION: '20'
+  NODE_VERSION: "20"
 
 jobs:
   # Job 1: Run test suite
@@ -36,7 +36,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: ${{ env.NODE_VERSION }}
-          cache: 'npm'
+          cache: "npm"
 
       - name: Install dependencies
         run: npm ci
@@ -191,7 +191,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: ${{ env.NODE_VERSION }}
-          cache: 'npm'
+          cache: "npm"
 
       - name: Install dependencies
         run: npm ci
@@ -234,9 +234,9 @@ jobs:
           publish_dir: ./_site
           publish_branch: gh-pages
           force_orphan: true
-          user_name: 'github-actions[bot]'
-          user_email: 'github-actions[bot]@users.noreply.github.com'
-          commit_message: 'Deploy ${{ github.sha }} to GitHub Pages'
+          user_name: "github-actions[bot]"
+          user_email: "github-actions[bot]@users.noreply.github.com"
+          commit_message: "Deploy ${{ github.sha }} to GitHub Pages"
           cname: www.bws.ninja
 
   # Job 4: Post-deployment smoke tests
@@ -251,7 +251,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: ${{ env.NODE_VERSION }}
-          cache: 'npm'
+          cache: "npm"
 
       - name: Install dependencies
         run: npm ci
@@ -292,58 +292,3 @@ jobs:
           response=$(curl -s -o /dev/null -w "%{http_code}" https://www.bws.ninja/ || echo "000")
           echo "Homepage status: $response"
           [ "$response" = "200" ] || [ "$response" = "000" ] || exit 0
-
-      - name: Collect smoke test errors
-        if: env.SMOKE_TESTS_FAILED == 'true'
-        run: |
-          echo "Collecting smoke test errors..."
-
-          # Debug output
-          echo "Smoke test files:"
-          ls -la smoke-* 2>/dev/null || true
-
-          # Ensure we have the JSON file
-          if [ ! -f "smoke-test-results.json" ]; then
-            echo "Creating placeholder JSON for smoke tests"
-            echo '{"stats": {"total": 0, "failed": 0}}' > smoke-test-results.json
-          fi
-
-          node scripts/collect-test-errors.js smoke-test-results.json smoke-test-output.txt smoke-issue-content.md
-
-      - name: Create Issue for production failures
-        if: env.SMOKE_TESTS_FAILED == 'true'
-        uses: actions/github-script@v7
-        with:
-          script: |
-            const fs = require('fs');
-
-            // Read the issue content
-            let issueBody;
-            try {
-              issueBody = fs.readFileSync('smoke-issue-content.md', 'utf8');
-            } catch (error) {
-              issueBody = `## Production Smoke Test Failure\n\nSmoke tests failed against production: https://www.bws.ninja\n\nWorkflow: [View Run](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})`;
-            }
-
-            // Create high-priority issue for production failures
-            const issue = await github.rest.issues.create({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              title: `😨 PRODUCTION FAILURE - Smoke Tests - ${new Date().toISOString().split('T')[0]}`,
-              body: issueBody,
-              labels: ['test-failure', 'production', 'automated', 'critical']
-            });
-
-            console.log(`Created critical production issue #${issue.data.number}`);
-
-            // Try to assign to claude
-            try {
-              await github.rest.issues.addAssignees({
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                issue_number: issue.data.number,
-                assignees: ['claude']
-              });
-            } catch (error) {
-              console.log('Could not assign to claude');
-            }

@@ -7,6 +7,9 @@ validation-output.txt
 htmlhint-output.txt
 prettier-output.txt
 
+# Astro generated files
+.astro/
+
 # Playwright test outputs
 tests/playwright-report/
 tests/test-results/

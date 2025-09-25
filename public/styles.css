@@ -5,7 +5,8 @@
 
 /* ===========================================
    WEBFLOW BASE STYLES (from webflow.css)
-   =========================================== */html {
+   =========================================== */
+html {
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   font-family: sans-serif;
@@ -11291,12 +11292,12 @@ figcaption {
   max-width: none;
   min-height: 200px;
 }
-  height: 800px;
-  margin-top: auto;
-  margin-bottom: 1000px;
-  position: absolute;
-  inset: auto 0% 0%;
-  transform: rotateX(7deg) rotateY(-4deg) rotate(-20deg) scale(1.3);
+height: 800px;
+margin-top: auto;
+margin-bottom: 1000px;
+position: absolute;
+inset: auto 0% 0%;
+transform: rotateX(7deg) rotateY(-4deg) rotate(-20deg) scale(1.3);
 .container-7 {
   width: 150px;
 }
@@ -16684,7 +16685,6 @@ figcaption {
   grid-area: span 1 / span 1 / span 1 / span 1;
 }
 
-
 /* ===========================================
    WEBFLOW MINIFIED STYLES (from bws-21ce3b.webflow.shared.9162577b1.min.css)
    =========================================== */
@@ -18506,16 +18506,11 @@ textarea.w-select {
 @font-face {
   font-family: Icons techplus x template;
   src:
-    url(/assets/fonts/icons-techplus-x-template.woff2)
-      format("woff2"),
-    url(/assets/fonts/icons-techplus-x-template.eot)
-      format("embedded-opentype"),
-    url(/assets/fonts/icons-techplus-x-template.woff)
-      format("woff"),
-    url(/assets/fonts/icons-techplus-x-template.ttf)
-      format("truetype"),
-    url(/assets/fonts/icons-techplus-x-template.svg)
-      format("svg");
+    url(/assets/fonts/icons-techplus-x-template.woff2) format("woff2"),
+    url(/assets/fonts/icons-techplus-x-template.eot) format("embedded-opentype"),
+    url(/assets/fonts/icons-techplus-x-template.woff) format("woff"),
+    url(/assets/fonts/icons-techplus-x-template.ttf) format("truetype"),
+    url(/assets/fonts/icons-techplus-x-template.svg) format("svg");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -18523,16 +18518,11 @@ textarea.w-select {
 @font-face {
   font-family: Filled Icons;
   src:
-    url(/assets/fonts/filled-icon-font.woff2)
-      format("woff2"),
-    url(/assets/fonts/filled-icon-font.eot)
-      format("embedded-opentype"),
-    url(/assets/fonts/filled-icon-font.woff)
-      format("woff"),
-    url(/assets/fonts/filled-icon-font.ttf)
-      format("truetype"),
-    url(/assets/fonts/filled-icon-font.svg)
-      format("svg");
+    url(/assets/fonts/filled-icon-font.woff2) format("woff2"),
+    url(/assets/fonts/filled-icon-font.eot) format("embedded-opentype"),
+    url(/assets/fonts/filled-icon-font.woff) format("woff"),
+    url(/assets/fonts/filled-icon-font.ttf) format("truetype"),
+    url(/assets/fonts/filled-icon-font.svg) format("svg");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -18540,16 +18530,11 @@ textarea.w-select {
 @font-face {
   font-family: Line Rounded Icons;
   src:
-    url(/assets/fonts/line-rounded-icons.woff2)
-      format("woff2"),
-    url(/assets/fonts/line-rounded-icons.eot)
-      format("embedded-opentype"),
-    url(/assets/fonts/line-rounded-icons.woff)
-      format("woff"),
-    url(/assets/fonts/line-rounded-icons.ttf)
-      format("truetype"),
-    url(/assets/fonts/line-rounded-icons.svg)
-      format("svg");
+    url(/assets/fonts/line-rounded-icons.woff2) format("woff2"),
+    url(/assets/fonts/line-rounded-icons.eot) format("embedded-opentype"),
+    url(/assets/fonts/line-rounded-icons.woff) format("woff"),
+    url(/assets/fonts/line-rounded-icons.ttf) format("truetype"),
+    url(/assets/fonts/line-rounded-icons.svg) format("svg");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -18557,16 +18542,11 @@ textarea.w-select {
 @font-face {
   font-family: Line Square Icons;
   src:
-    url(/assets/fonts/line-square-icons.woff2)
-      format("woff2"),
-    url(/assets/fonts/line-square-icons.eot)
-      format("embedded-opentype"),
-    url(/assets/fonts/line-square-icons.woff)
-      format("woff"),
-    url(/assets/fonts/line-square-icons.ttf)
-      format("truetype"),
-    url(/assets/fonts/line-square-icons.svg)
-      format("svg");
+    url(/assets/fonts/line-square-icons.woff2) format("woff2"),
+    url(/assets/fonts/line-square-icons.eot) format("embedded-opentype"),
+    url(/assets/fonts/line-square-icons.woff) format("woff"),
+    url(/assets/fonts/line-square-icons.ttf) format("truetype"),
+    url(/assets/fonts/line-square-icons.svg) format("svg");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -18574,96 +18554,81 @@ textarea.w-select {
 @font-face {
   font-family: Social Icons Font;
   src:
-    url(/assets/fonts/social-icon-font.woff2)
-      format("woff2"),
-    url(/assets/fonts/social-icon-font.eot)
-      format("embedded-opentype"),
-    url(/assets/fonts/social-icon-font.woff)
-      format("woff"),
-    url(/assets/fonts/social-icon-font.ttf)
-      format("truetype"),
-    url(/assets/fonts/social-icon-font.svg)
-      format("svg");
+    url(/assets/fonts/social-icon-font.woff2) format("woff2"),
+    url(/assets/fonts/social-icon-font.eot) format("embedded-opentype"),
+    url(/assets/fonts/social-icon-font.woff) format("woff"),
+    url(/assets/fonts/social-icon-font.ttf) format("truetype"),
+    url(/assets/fonts/social-icon-font.svg) format("svg");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "Fa V 4 Compatibility";
-  src: url(/assets/fonts/fa-v4compatibility.woff2)
-    format("woff2");
+  src: url(/assets/fonts/fa-v4compatibility.woff2) format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: Nohemi Semi;
-  src: url(/assets/fonts/Nohemi-Semi.woff2)
-    format("woff2");
+  src: url(/assets/fonts/Nohemi-Semi.woff2) format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: Nohemi;
-  src: url(/assets/fonts/Nohemi-Medium.woff2)
-    format("woff2");
+  src: url(/assets/fonts/Nohemi-Medium.woff2) format("woff2");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: Nohemi;
-  src: url(/assets/fonts/Nohemi-Regular.woff2)
-    format("woff2");
+  src: url(/assets/fonts/Nohemi-Regular.woff2) format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "Fa Solid 900";
-  src: url(/assets/fonts/fa-solid-900.woff)
-    format("woff");
+  src: url(/assets/fonts/fa-solid-900.woff) format("woff");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: Thicccboi;
-  src: url(/assets/fonts/THICCCBOI-Medium.ttf)
-    format("truetype");
+  src: url(/assets/fonts/THICCCBOI-Medium.ttf) format("truetype");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: Thicccboi;
-  src: url(/assets/fonts/THICCCBOI-Bold.ttf)
-    format("truetype");
+  src: url(/assets/fonts/THICCCBOI-Bold.ttf) format("truetype");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: Thicccboi;
-  src: url(/assets/fonts/THICCCBOI-Regular.ttf)
-    format("truetype");
+  src: url(/assets/fonts/THICCCBOI-Regular.ttf) format("truetype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "Font Awesome 6 Pro Solid 900";
-  src: url(/assets/fonts/font-awesome-6-pro-solid-900.otf)
-    format("opentype");
+  src: url(/assets/fonts/font-awesome-6-pro-solid-900.otf) format("opentype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "Font Awesome 6 Pro 300";
-  src: url(/assets/fonts/font-awesome-6-pro-light-300.otf)
-    format("opentype");
+  src: url(/assets/fonts/font-awesome-6-pro-light-300.otf) format("opentype");
   font-weight: 300;
   font-style: normal;
   font-display: swap;
@@ -33372,7 +33337,6 @@ figcaption {
   grid-area: span 1 / span 1 / span 1 / span 1;
 }
 
-
 /* Final CSS Fixes */
 
 /* Fix AssureDefi image overflow */
@@ -33424,7 +33388,7 @@ figcaption {
   position: relative;
   height: 100%;
   padding: 5px 10px;
-  background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,0.95) 60%);
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.95) 60%);
 }
 
 /* Ensure industry text is visible */
@@ -33518,7 +33482,6 @@ figcaption {
   }
 }
 
-
 /* ===========================================
    MAIN STYLES (from main.css)
    =========================================== */
@@ -33558,7 +33521,6 @@ body {
   z-index: 1;
 }
 
-
 /* ===========================================
    CUSTOM FIXES AND OVERRIDES
    Final overrides to fix image visibility and conflicts
@@ -33566,108 +33528,107 @@ body {
 
 /* Fix for partner logo images */
 .image-assure {
-    max-width: 80px !important;
-    width: auto !important;
-    height: 40px !important;
-    object-fit: contain !important;
-    display: inline-block !important;
-    visibility: visible !important;
-    opacity: 1 !important;
+  max-width: 80px !important;
+  width: auto !important;
+  height: 40px !important;
+  object-fit: contain !important;
+  display: inline-block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
 }
 
 .image-proof {
-    max-width: 120px !important;
-    height: 30px !important;
-    object-fit: contain !important;
-    display: inline-block !important;
-    visibility: visible !important;
-    opacity: 1 !important;
+  max-width: 120px !important;
+  height: 30px !important;
+  object-fit: contain !important;
+  display: inline-block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
 }
 
 .image-bfg {
-    max-width: 150px !important;
-    width: auto !important;
-    height: auto !important;
-    min-height: 40px !important;
-    object-fit: contain !important;
-    display: inline-block !important;
-    visibility: visible !important;
-    opacity: 1 !important;
+  max-width: 150px !important;
+  width: auto !important;
+  height: auto !important;
+  min-height: 40px !important;
+  object-fit: contain !important;
+  display: inline-block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
 }
 
 /* Tokenomics image fixes */
 .token-allocation-image img,
 img[src*="Tokenomics"] {
-    max-width: 100% !important;
-    height: auto !important;
-    display: block !important;
-    visibility: visible !important;
-    opacity: 1 !important;
+  max-width: 100% !important;
+  height: auto !important;
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
 }
 
 /* Industry cards styles removed - now handled in Navigation.astro component */
 
 /* Partner logo image fixes */
 .image-assure {
-    max-width: 120px !important;
-    width: auto !important;
-    height: auto !important;
-    object-fit: contain !important;
-    display: inline-block !important;
-    visibility: visible !important;
-    opacity: 1 !important;
+  max-width: 120px !important;
+  width: auto !important;
+  height: auto !important;
+  object-fit: contain !important;
+  display: inline-block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
 }
 
 .image-proof {
-    max-width: 120px !important;
-    height: auto !important;
-    object-fit: contain !important;
-    display: inline-block !important;
-    visibility: visible !important;
-    opacity: 1 !important;
+  max-width: 120px !important;
+  height: auto !important;
+  object-fit: contain !important;
+  display: inline-block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
 }
 
-
 .image-token-allocation {
-    max-width: 100% !important;
-    height: auto !important;
-    display: inline-block !important;
-    visibility: visible !important;
-    opacity: 1 !important;
+  max-width: 100% !important;
+  height: auto !important;
+  display: inline-block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
 }
 
 /* General image visibility fixes */
 img {
-    display: inline-block !important;
-    visibility: visible !important;
-    opacity: 1 !important;
+  display: inline-block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
 }
 
 /* Marketplace container fixes */
 .container-solution {
-    padding-top: 80px !important;
-    padding-bottom: 80px !important;
+  padding-top: 80px !important;
+  padding-bottom: 80px !important;
 }
 
 @media screen and (max-width: 991px) {
-    .container-solution {
-        padding-top: 60px !important;
-        padding-bottom: 60px !important;
-    }
+  .container-solution {
+    padding-top: 60px !important;
+    padding-bottom: 60px !important;
+  }
 }
 
 @media screen and (max-width: 767px) {
-    .container-solution {
-        padding-top: 40px !important;
-        padding-bottom: 40px !important;
-    }
+  .container-solution {
+    padding-top: 40px !important;
+    padding-bottom: 40px !important;
+  }
 }
 
 @media screen and (max-width: 479px) {
-    .container-solution {
-        padding-top: 30px !important;
-        padding-bottom: 30px !important;
-    }
+  .container-solution {
+    padding-top: 30px !important;
+    padding-bottom: 30px !important;
+  }
 }
 
 /* Button Text Wrapping Fixes */
