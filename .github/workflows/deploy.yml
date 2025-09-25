@@ -60,29 +60,15 @@ jobs:
       - name: Run Playwright tests
         id: test-run
         working-directory: tests
+        continue-on-error: true
         env:
           PORT: 4321
           PLAYWRIGHT_BASE_URL: http://localhost:4321
         run: |
           # Run tests with reporters configured in playwright.config.cjs
           # In CI, this will use JSON reporter outputting to test-results.json
-          # Use set -o pipefail to preserve exit code through pipe
-          set -o pipefail
           npx playwright test --config=playwright.config.cjs --project=${{ matrix.browser }} 2>&1 | tee test-output.txt
-
-          # Debug: Find where the JSON output was created
-          echo "Looking for test-results.json files..."
-          find . -name "test-results.json" -type f 2>/dev/null || true
-          find . -name "*.json" -path "*/test-results/*" -type f 2>/dev/null || true
-
-          # Copy JSON results to expected location
-          if [ -f "tests/test-results.json" ]; then
-            cp tests/test-results.json test-results.json
-          elif [ -f "test-results.json" ]; then
-            echo "JSON results already in correct location"
-          else
-            echo "Warning: No test-results.json found"
-          fi
+          echo "TEST_EXIT_CODE=$?" >> $GITHUB_ENV
 
       - name: Upload test results
         if: always()
@@ -93,9 +79,16 @@ jobs:
             tests/test-results/
             tests/test-results.json
             tests/test-output.txt
-            test-results.json
-            test-output.txt
+          if-no-files-found: warn
           retention-days: 30
+
+      - name: Check test results
+        if: always()
+        run: |
+          if [ "${{ env.TEST_EXIT_CODE }}" != "0" ]; then
+            echo "Tests failed with exit code ${{ env.TEST_EXIT_CODE }}"
+            exit 1
+          fi
 
       - name: Collect and format test errors
         if: failure()
@@ -103,29 +96,30 @@ jobs:
         run: |
           echo "Collecting test errors..."
 
-          # Debug: Check what files exist
-          echo "Files in current directory:"
+          # Check what test output files exist
+          echo "Test output files:"
           ls -la test-*.* 2>/dev/null || true
+          ls -la test-results/ 2>/dev/null || true
 
-          # Find the JSON results file
-          JSON_FILE=""
+          # Create issue content from test output
+          echo "## Test Failure Report" > issue-content.md
+          echo "" >> issue-content.md
+          echo "Tests failed in workflow run: [View Run](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})" >> issue-content.md
+          echo "" >> issue-content.md
+
           if [ -f "test-results.json" ]; then
-            JSON_FILE="test-results.json"
-          else
-            echo "No JSON results found, creating placeholder"
-            echo '{"stats": {"total": 0, "failed": 0}, "errors": []}' > test-results.json
-            JSON_FILE="test-results.json"
+            echo "### Test Results Summary" >> issue-content.md
+            echo '```json' >> issue-content.md
+            cat test-results.json | jq '.stats' 2>/dev/null || cat test-results.json | head -20
+            echo '```' >> issue-content.md
+            echo "" >> issue-content.md
           fi
 
-          echo "Using JSON file: $JSON_FILE"
-          echo "Contents of JSON file:"
-          cat "$JSON_FILE" | head -50 || echo "File not found"
-
-          # Run error collector if script exists
-          if [ -f "../scripts/collect-test-errors.js" ]; then
-            node ../scripts/collect-test-errors.js "$JSON_FILE" test-output.txt issue-content.md || echo "Error collection failed"
-          else
-            echo "Error collector script not found"
+          if [ -f "test-output.txt" ]; then
+            echo "### Failed Test Output" >> issue-content.md
+            echo '```' >> issue-content.md
+            grep -A 5 -B 5 "✗\|Error:\|Failed:\|expected\|received" test-output.txt | head -100 || true
+            echo '```' >> issue-content.md
           fi
 
       - name: Create GitHub Issue for failures
@@ -290,19 +284,11 @@ jobs:
           npx playwright test smoke/ --config=playwright.config.cjs --project=chromium 2>&1 | tee smoke-test-output.txt
           TEST_EXIT_CODE=${PIPESTATUS[0]}
 
-          # Find and rename JSON output for smoke tests
-          if [ -f "test-results.json" ]; then
-            mv test-results.json smoke-test-results.json
-          elif [ -f "tests/test-results.json" ]; then
-            mv tests/test-results.json smoke-test-results.json
-          else
-            echo "No JSON results found for smoke tests"
-            echo '{"stats": {"total": 0, "failed": 0}}' > smoke-test-results.json
-          fi
-
           if [ $TEST_EXIT_CODE -ne 0 ]; then
             echo "SMOKE_TESTS_FAILED=true" >> $GITHUB_ENV
             echo "⚠️ Production smoke tests failed"
+          else
+            echo "✅ Production smoke tests passed"
           fi
 
       - name: Check deployment health
