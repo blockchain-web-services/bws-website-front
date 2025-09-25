@@ -38,12 +38,17 @@ jobs:
           node-version: ${{ env.NODE_VERSION }}
           cache: "npm"
           cache-dependency-path: |
-            build/package-lock.json
-            tests/package-lock.json
+            build/package.json
+            tests/package.json
 
       - name: Install build dependencies
         working-directory: build
-        run: npm ci
+        run: |
+          if [ -f "package-lock.json" ]; then
+            npm ci
+          else
+            npm install
+          fi
 
       - name: Build site
         working-directory: build
@@ -51,7 +56,12 @@ jobs:
 
       - name: Install test dependencies
         working-directory: tests
-        run: npm ci
+        run: |
+          if [ -f "package-lock.json" ]; then
+            npm ci
+          else
+            npm install
+          fi
 
       - name: Install Playwright browsers
         working-directory: tests
@@ -199,7 +209,12 @@ jobs:
 
       - name: Install dependencies
         working-directory: build
-        run: npm ci
+        run: |
+          if [ -f "package-lock.json" ]; then
+            npm ci
+          else
+            npm install
+          fi
 
       - name: Build production site
         working-directory: build

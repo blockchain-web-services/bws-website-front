@@ -42,13 +42,22 @@ jobs:
         with:
           node-version: '20'
           cache: 'npm'
+          cache-dependency-path: build/package.json
 
       - name: Install dependencies
-        run: npm ci
+        working-directory: build
+        run: |
+          if [ -f "package-lock.json" ]; then
+            npm ci
+          else
+            npm install
+          fi
 
       - name: Build site
+        working-directory: build
         run: |
           npm run build
+          cd ..
           echo "ROLLBACK: ${{ steps.target.outputs.commit }}" > _site/deployment-sha.txt
           echo "Rollback timestamp: $(date)" >> _site/deployment-sha.txt
         env:
