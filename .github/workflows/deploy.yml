@@ -37,18 +37,29 @@ jobs:
         with:
           node-version: ${{ env.NODE_VERSION }}
           cache: "npm"
+          cache-dependency-path: |
+            build/package-lock.json
+            tests/package-lock.json
 
-      - name: Install dependencies
+      - name: Install build dependencies
+        working-directory: build
         run: npm ci
 
       - name: Build site
+        working-directory: build
         run: npm run build
 
+      - name: Install test dependencies
+        working-directory: tests
+        run: npm ci
+
       - name: Install Playwright browsers
+        working-directory: tests
         run: npx playwright install --with-deps ${{ matrix.browser }}
 
       - name: Run Playwright tests
         id: test-run
+        working-directory: tests
         env:
           PORT: 4321
           PLAYWRIGHT_BASE_URL: http://localhost:4321
@@ -57,7 +68,7 @@ jobs:
           # In CI, this will use JSON reporter outputting to test-results.json
           # Use set -o pipefail to preserve exit code through pipe
           set -o pipefail
-          npx playwright test --config=tests/playwright.config.cjs --project=${{ matrix.browser }} 2>&1 | tee test-output.txt
+          npx playwright test --config=playwright.config.cjs --project=${{ matrix.browser }} 2>&1 | tee test-output.txt
 
           # Debug: Find where the JSON output was created
           echo "Looking for test-results.json files..."
@@ -88,21 +99,18 @@ jobs:
 
       - name: Collect and format test errors
         if: failure()
+        working-directory: tests
         run: |
           echo "Collecting test errors..."
 
           # Debug: Check what files exist
           echo "Files in current directory:"
           ls -la test-*.* 2>/dev/null || true
-          echo "Files in tests directory:"
-          ls -la tests/test-*.* 2>/dev/null || true
 
           # Find the JSON results file
           JSON_FILE=""
           if [ -f "test-results.json" ]; then
             JSON_FILE="test-results.json"
-          elif [ -f "tests/test-results.json" ]; then
-            JSON_FILE="tests/test-results.json"
           else
             echo "No JSON results found, creating placeholder"
             echo '{"stats": {"total": 0, "failed": 0}, "errors": []}' > test-results.json
@@ -113,8 +121,12 @@ jobs:
           echo "Contents of JSON file:"
           cat "$JSON_FILE" | head -50 || echo "File not found"
 
-          # Run error collector
-          node scripts/collect-test-errors.js "$JSON_FILE" test-output.txt issue-content.md || echo "Error collection failed"
+          # Run error collector if script exists
+          if [ -f "../scripts/collect-test-errors.js" ]; then
+            node ../scripts/collect-test-errors.js "$JSON_FILE" test-output.txt issue-content.md || echo "Error collection failed"
+          else
+            echo "Error collector script not found"
+          fi
 
       - name: Create GitHub Issue for failures
         if: failure() && (github.ref == 'refs/heads/master' || github.ref == 'refs/heads/main')
@@ -127,7 +139,7 @@ jobs:
             // Read the issue content
             let issueBody;
             try {
-              issueBody = fs.readFileSync('issue-content.md', 'utf8');
+              issueBody = fs.readFileSync('tests/issue-content.md', 'utf8');
             } catch (error) {
               console.log('No issue content file found, using default');
               issueBody = `## Test Failure Report\n\nTests failed in workflow run: [View Run](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})\n\nPlease check the workflow logs for details.`;
@@ -192,14 +204,17 @@ jobs:
         with:
           node-version: ${{ env.NODE_VERSION }}
           cache: "npm"
+          cache-dependency-path: build/package-lock.json
 
       - name: Install dependencies
+        working-directory: build
         run: npm ci
 
       - name: Build production site
+        working-directory: build
         run: |
           npm run build
-          echo "${{ github.sha }}" > _site/deployment-sha.txt
+          echo "${{ github.sha }}" > ../_site/deployment-sha.txt
         env:
           NODE_ENV: production
 
@@ -252,15 +267,19 @@ jobs:
         with:
           node-version: ${{ env.NODE_VERSION }}
           cache: "npm"
+          cache-dependency-path: tests/package-lock.json
 
       - name: Install dependencies
+        working-directory: tests
         run: npm ci
 
       - name: Install Playwright
+        working-directory: tests
         run: npx playwright install --with-deps chromium
 
       - name: Run smoke tests against production
         id: smoke-test
+        working-directory: tests
         continue-on-error: true
         env:
           PLAYWRIGHT_BASE_URL: "https://www.bws.ninja"
@@ -268,7 +287,7 @@ jobs:
         run: |
           # Run smoke tests (will output to test-results.json due to CI env)
           set -o pipefail
-          npx playwright test tests/smoke/ --config=tests/playwright.config.cjs --project=chromium 2>&1 | tee smoke-test-output.txt
+          npx playwright test smoke/ --config=playwright.config.cjs --project=chromium 2>&1 | tee smoke-test-output.txt
           TEST_EXIT_CODE=${PIPESTATUS[0]}
 
           # Find and rename JSON output for smoke tests
