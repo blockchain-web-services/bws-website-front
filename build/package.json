@@ -6,7 +6,7 @@
     "dev": "cd .. && node build/node_modules/.bin/astro dev",
     "start": "cd .. && node build/node_modules/.bin/astro dev",
     "prebuild": "node clean-build.js",
-    "build": "npm run prebuild && cd .. && npx --no-install astro build",
+    "build": "npm run prebuild && cd .. && node build/node_modules/.bin/astro build",
     "build:validate": "node build-with-validation.js",
     "build:old": "npm run prebuild && cd .. && node build/node_modules/.bin/astro build && cd build && npm run postbuild",
     "build:only": "cd .. && node build/node_modules/.bin/astro build",
