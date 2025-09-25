@@ -129,9 +129,9 @@ async function runBuildWithValidation() {
     await fs.ensureDir(SITE_DIR);
 
     // Step 3: Run Astro build
-    // Use npx with --no-install to prevent auto-installation
+    // Run astro from the build directory's node_modules
     buildSuccess = execCommand(
-      'cd .. && npx --no-install astro build',
+      'cd .. && ./build/node_modules/.bin/astro build',
       '🔨 Building with Astro'
     );
 
