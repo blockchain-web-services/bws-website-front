@@ -137,7 +137,7 @@ async function runBuildWithValidation() {
     // Step 3: Run Astro build
     // Use npx astro to find the locally installed astro
     buildSuccess = execCommand(
-      'cd build && npx astro build --root ..',
+      'npx astro build',
       '🔨 Building with Astro'
     );
 

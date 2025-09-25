@@ -15,7 +15,8 @@
       "Bash(npx astro build:*)",
       "Bash(npx astro check:*)",
       "Bash(npx playwright test:*)",
-      "WebSearch"
+      "WebSearch",
+      "Read(//mnt/x/Git/blockchain-web-services/bws/bws-front/**)"
     ],
     "deny": [],
     "ask": []

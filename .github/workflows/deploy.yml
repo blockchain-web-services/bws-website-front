@@ -38,11 +38,10 @@ jobs:
           node-version: ${{ env.NODE_VERSION }}
           cache: "npm"
           cache-dependency-path: |
-            build/package.json
+            package.json
             tests/package.json
 
       - name: Install build dependencies
-        working-directory: build
         run: |
           if [ -f "package-lock.json" ]; then
             npm ci
@@ -51,7 +50,6 @@ jobs:
           fi
 
       - name: Build site
-        working-directory: build
         run: npm run build
 
       - name: Install test dependencies
@@ -205,10 +203,9 @@ jobs:
         with:
           node-version: ${{ env.NODE_VERSION }}
           cache: "npm"
-          cache-dependency-path: build/package-lock.json
+          cache-dependency-path: package.json
 
       - name: Install dependencies
-        working-directory: build
         run: |
           if [ -f "package-lock.json" ]; then
             npm ci
@@ -217,10 +214,9 @@ jobs:
           fi
 
       - name: Build production site
-        working-directory: build
         run: |
           npm run build
-          echo "${{ github.sha }}" > ../_site/deployment-sha.txt
+          echo "${{ github.sha }}" > _site/deployment-sha.txt
         env:
           NODE_ENV: production
 

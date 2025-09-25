@@ -1,0 +1,37 @@
+{
+  "name": "bws-website",
+  "version": "1.0.0",
+  "description": "BWS Website - Blockchain Web Services static site built with Astro",
+  "scripts": {
+    "dev": "astro dev --port 8087",
+    "start": "astro dev --port 8087",
+    "prebuild": "node scripts/clean-build.js",
+    "build": "npm run prebuild && astro build",
+    "build:validate": "node scripts/build-with-validation.js",
+    "build:only": "astro build",
+    "build:fast": "npm run prebuild && astro build",
+    "postbuild": "npm run pretty-print && npm run validate",
+    "preview": "astro preview",
+    "crawl": "node scripts/crawler/crawl-standalone.js",
+    "redownload": "node scripts/redownload-all-pages.js",
+    "validate": "node scripts/html-validator.js",
+    "validate:old": "node scripts/validate-html.js",
+    "prettify": "node scripts/html-prettifier.js",
+    "pretty-print": "node scripts/pretty-print-validate.js"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "astro": "^4.16.18",
+    "cheerio": "^1.1.2",
+    "fs-extra": "^11.2.0",
+    "glob": "^10.3.10",
+    "html-validator": "^6.0.0",
+    "linkinator": "^6.0.0",
+    "node-fetch": "^3.3.2",
+    "prettier": "^3.6.2",
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@rollup/rollup-linux-x64-gnu": "^4.50.2"
+  }
+}

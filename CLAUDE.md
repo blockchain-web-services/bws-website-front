@@ -4,32 +4,32 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-BWS Website is a static site for Blockchain Web Services (www.bws.ninja) built with Astro. The project uses a unique folder structure where build tools and test suites are isolated in their own directories with separate dependencies.
+BWS Website is a static site for Blockchain Web Services (www.bws.ninja) built with Astro. The project follows standard Astro structure with scripts in a dedicated scripts/ directory and tests isolated in their own directory.
 
 ## Critical Rules
 
 1. **NEVER edit files in `_site/`** - This is build output. Always edit source files in `src/`
 2. **All CSS is in `/public/styles.css`** - Single consolidated CSS file from Webflow migration
-3. **No package.json in root** - Build tools in `build/`, tests in `tests/`
+3. **Scripts in `scripts/`** - Build and utility scripts are in the scripts/ directory
 
 ## Essential Commands
 
 ### Development
 ```bash
 # Start dev server (http://localhost:8087)
-cd build && npm run dev
+npm run dev
 ```
 
 ### Building
 ```bash
 # Full production build with validation
-cd build && npm run build
+npm run build
 
 # Build without validation (faster)
-cd build && npm run build:only
+npm run build:only
 
 # Clean build directory
-cd build && node clean-build.js
+npm run prebuild
 ```
 
 ### Testing
@@ -75,10 +75,11 @@ cd tests && npx playwright test -g "Homepage loads"
 ├── public/                # Static assets (served as-is)
 │   ├── styles.css        # ALL styles (consolidated from Webflow)
 │   └── assets/           # Images at /assets/images/[webflow-ids]/
-├── build/                 # Build tools (separate npm ecosystem)
-│   └── node_modules/     # Build-only dependencies
+├── scripts/               # Build and utility scripts
 ├── tests/                 # Test suite (separate npm ecosystem)
 │   └── node_modules/     # Test-only dependencies
+├── node_modules/          # Project dependencies
+├── package.json          # Project configuration
 └── _site/                 # Build output (NEVER EDIT)
 ```
 
@@ -128,15 +129,14 @@ Edit `src/components/Navigation.astro` - shared across all pages
 
 ### Build Failures
 ```bash
-cd build
 rm -rf node_modules
 npm install
-node clean-build.js
+npm run prebuild
 npm run build
 ```
 
 ### Test Failures
-- Ensure site is built first: `cd build && npm run build`
+- Ensure site is built first: `npm run build`
 - Check preview server: `cd tests && npm run preview:sirv`
 - Install Playwright browsers: `cd tests && npx playwright install chromium`
 
