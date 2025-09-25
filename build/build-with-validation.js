@@ -12,15 +12,20 @@
  * 6. On failure: Restores backup and exits with error
  */
 
-const { execSync } = require('child_process');
-const fs = require('fs-extra');
-const path = require('path');
-const { prettifyHTML } = require('./html-prettifier');
-const { validateHTML } = require('./html-validator');
+import { execSync } from 'child_process';
+import { promises as fs, existsSync, readdirSync } from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
+import { prettifyHTML } from './html-prettifier.js';
+import { validateHTML } from './html-validator.js';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const SITE_DIR = path.join(__dirname, '..', '_site');
 const BACKUP_DIR = path.join(__dirname, '..', '_site_backup');
 const ROOT_DIR = path.join(__dirname, '..');
+const BUILD_DIR = __dirname;
 
 // Colors for console output
 const colors = {
@@ -55,7 +60,7 @@ function execCommand(command, description) {
       return false;
     }
     // If status is undefined, check if _site was created
-    if (fs.existsSync(SITE_DIR) && fs.readdirSync(SITE_DIR).length > 0) {
+    if (existsSync(SITE_DIR) && readdirSync(SITE_DIR).length > 0) {
       return true;
     }
     log(`❌ Failed: ${description}`, 'red');
@@ -64,16 +69,17 @@ function execCommand(command, description) {
 }
 
 async function backupCurrentBuild() {
-  if (fs.existsSync(SITE_DIR)) {
+  if (existsSync(SITE_DIR)) {
     log('\n📦 Backing up current build...', 'yellow');
 
     // Remove old backup if exists
-    if (fs.existsSync(BACKUP_DIR)) {
-      await fs.remove(BACKUP_DIR);
+    if (existsSync(BACKUP_DIR)) {
+      await fs.rm(BACKUP_DIR, { recursive: true, force: true });
     }
 
-    // Create new backup
-    await fs.copy(SITE_DIR, BACKUP_DIR, {
+    // Create new backup using cp (available in Node 16+)
+    await fs.cp(SITE_DIR, BACKUP_DIR, {
+      recursive: true,
       preserveTimestamps: true
     });
 
@@ -84,16 +90,16 @@ async function backupCurrentBuild() {
 }
 
 async function restoreBackup() {
-  if (fs.existsSync(BACKUP_DIR)) {
+  if (existsSync(BACKUP_DIR)) {
     log('\n🔄 Restoring backup...', 'yellow');
 
     // Remove failed build
-    if (fs.existsSync(SITE_DIR)) {
-      await fs.remove(SITE_DIR);
+    if (existsSync(SITE_DIR)) {
+      await fs.rm(SITE_DIR, { recursive: true, force: true });
     }
 
     // Restore backup
-    await fs.move(BACKUP_DIR, SITE_DIR);
+    await fs.rename(BACKUP_DIR, SITE_DIR);
 
     log('✅ Backup restored successfully', 'green');
     return true;
@@ -102,9 +108,9 @@ async function restoreBackup() {
 }
 
 async function cleanupBackup() {
-  if (fs.existsSync(BACKUP_DIR)) {
+  if (existsSync(BACKUP_DIR)) {
     log('\n🧹 Cleaning up backup...', 'cyan');
-    await fs.remove(BACKUP_DIR);
+    await fs.rm(BACKUP_DIR, { recursive: true, force: true });
     log('✅ Backup cleaned up', 'green');
   }
 }
@@ -123,21 +129,21 @@ async function runBuildWithValidation() {
 
     // Step 2: Clean build directory
     log('\n🧹 Cleaning build directory...', 'cyan');
-    if (fs.existsSync(SITE_DIR)) {
-      await fs.remove(SITE_DIR);
+    if (existsSync(SITE_DIR)) {
+      await fs.rm(SITE_DIR, { recursive: true, force: true });
     }
-    await fs.ensureDir(SITE_DIR);
+    await fs.mkdir(SITE_DIR, { recursive: true });
 
     // Step 3: Run Astro build
-    // Run astro from the build directory's node_modules
+    // Use npx astro to find the locally installed astro
     buildSuccess = execCommand(
-      'cd .. && ./build/node_modules/.bin/astro build',
+      'cd build && npx astro build --root ..',
       '🔨 Building with Astro'
     );
 
     // Verify build succeeded by checking if files were generated
     const indexPath = path.join(SITE_DIR, 'index.html');
-    if (!buildSuccess && !fs.existsSync(indexPath)) {
+    if (!buildSuccess && !existsSync(indexPath)) {
       throw new Error('Astro build failed - no output generated');
     }
 
@@ -161,13 +167,13 @@ async function runBuildWithValidation() {
     log('\n🔍 Running additional checks...', 'cyan');
 
     // Check for missing assets
-    const assetsExist = fs.existsSync(path.join(SITE_DIR, 'assets'));
+    const assetsExist = existsSync(path.join(SITE_DIR, 'assets'));
     if (!assetsExist) {
       throw new Error('Assets directory missing in build output');
     }
 
     // Check for index.html
-    const indexExists = fs.existsSync(path.join(SITE_DIR, 'index.html'));
+    const indexExists = existsSync(path.join(SITE_DIR, 'index.html'));
     if (!indexExists) {
       throw new Error('index.html missing in build output');
     }
@@ -208,14 +214,14 @@ async function runBuildWithValidation() {
   }
 }
 
-// Check for dependencies
+// Check for dependencies using dynamic import
 async function checkDependencies() {
-  const requiredPackages = ['glob', 'prettier', 'cheerio', 'fs-extra'];
+  const requiredPackages = ['glob', 'prettier', 'cheerio'];
   const missingPackages = [];
 
   for (const pkg of requiredPackages) {
     try {
-      require.resolve(pkg);
+      await import(pkg);
     } catch (e) {
       missingPackages.push(pkg);
     }
@@ -231,10 +237,8 @@ async function checkDependencies() {
 }
 
 // Main execution
-if (require.main === module) {
-  checkDependencies().then(() => {
-    runBuildWithValidation();
-  });
-}
+checkDependencies().then(() => {
+  runBuildWithValidation();
+});
 
-module.exports = { runBuildWithValidation };
+export { runBuildWithValidation };

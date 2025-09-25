@@ -5,10 +5,14 @@
  * Formats all HTML files in the build output for better readability
  */
 
-const fs = require('fs');
-const path = require('path');
-const { glob } = require('glob');
-const prettier = require('prettier');
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
+import { glob } from 'glob';
+import * as prettier from 'prettier';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const SITE_DIR = path.join(__dirname, '..', '_site');
 
@@ -48,42 +52,35 @@ async function prettifyHTML() {
         // Write the formatted content back
         fs.writeFileSync(file, formatted, 'utf-8');
         successCount++;
-
-        // Show progress
-        process.stdout.write(`\r  ✓ Formatted ${successCount}/${htmlFiles.length} files`);
       } catch (error) {
         errorCount++;
-        errors.push({
-          file: path.relative(SITE_DIR, file),
-          error: error.message
-        });
+        const relativePath = path.relative(SITE_DIR, file);
+        errors.push(`${relativePath}: ${error.message}`);
+        console.error(`❌ Error prettifying ${relativePath}:`, error.message);
       }
     }
 
-    console.log(''); // New line after progress
-
+    console.log(`\n✅ Prettified ${successCount} HTML files`);
     if (errorCount > 0) {
-      console.error(`\n❌ Failed to prettify ${errorCount} files:`);
-      errors.forEach(({ file, error }) => {
-        console.error(`  - ${file}: ${error}`);
-      });
+      console.log(`⚠️ Failed to prettify ${errorCount} files`);
+      errors.forEach(err => console.log(`   - ${err}`));
       return false;
     }
 
-    console.log(`✅ Successfully prettified all ${successCount} HTML files`);
     return true;
-
   } catch (error) {
-    console.error('❌ Error during prettification:', error);
+    console.error('❌ Failed to prettify HTML files:', error.message);
     return false;
   }
 }
 
 // Run if called directly
-if (require.main === module) {
+if (import.meta.url === `file://${process.argv[1]}`) {
   prettifyHTML().then(success => {
-    process.exit(success ? 0 : 1);
+    if (!success) {
+      process.exit(1);
+    }
   });
 }
 
-module.exports = { prettifyHTML };
+export { prettifyHTML };
