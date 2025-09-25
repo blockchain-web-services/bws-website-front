@@ -83,6 +83,7 @@ jobs:
             tests/test-results/
             tests/test-results.json
             tests/test-output.txt
+            tests/playwright-report/
           if-no-files-found: warn
           retention-days: 30
 
