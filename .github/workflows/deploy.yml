@@ -82,18 +82,16 @@ jobs:
           # Exit with the test exit code to fail the job if tests failed
           exit ${TEST_EXIT_CODE}
 
-      - name: Upload test results
-        if: always()
+      - name: Upload test summary only
+        if: failure()
         uses: actions/upload-artifact@v4
         with:
-          name: test-results-${{ matrix.browser }}
+          name: test-summary-${{ matrix.browser }}
           path: |
-            tests/test-results/
             tests/test-results.json
             tests/test-output.txt
-            tests/playwright-report/
           if-no-files-found: warn
-          retention-days: 30
+          retention-days: 7
 
       - name: Collect and format test errors
         if: failure()
@@ -160,6 +158,7 @@ jobs:
         if: failure() && (github.ref == 'refs/heads/master' || github.ref == 'refs/heads/main')
         uses: actions/github-script@v7
         with:
+          github-token: ${{ secrets.PAT_REPOS_AND_WORKFLOW }}
           script: |
             const fs = require('fs');
             const path = require('path');
@@ -173,26 +172,50 @@ jobs:
             console.log(`Creating branch: ${branchName}`);
 
             try {
-              // Configure git
+              // Configure git with PAT for authentication
               execSync('git config user.name "github-actions[bot]"');
               execSync('git config user.email "github-actions[bot]@users.noreply.github.com"');
 
-              // Create and checkout new branch
+              // Set up authentication with PAT
+              const token = '${{ secrets.PAT_REPOS_AND_WORKFLOW }}';
+              const remoteUrl = `https://x-access-token:${token}@github.com/${{ github.repository }}.git`;
+              execSync(`git remote set-url origin ${remoteUrl}`);
+
+              // Create and checkout new branch from current HEAD
               execSync(`git checkout -b ${branchName}`);
 
-              // Add BRANCH_ISSUES.md if it exists
+              // Check if BRANCH_ISSUES.md exists and add it
               if (fs.existsSync('BRANCH_ISSUES.md')) {
+                console.log('Adding BRANCH_ISSUES.md to branch');
                 execSync('git add BRANCH_ISSUES.md');
                 execSync('git commit -m "Add test failure details in BRANCH_ISSUES.md"');
 
                 // Push the branch
-                execSync(`git push origin ${branchName}`);
+                execSync(`git push -u origin ${branchName}`);
                 console.log(`Branch ${branchName} pushed successfully`);
               } else {
-                console.log('BRANCH_ISSUES.md not found, skipping branch creation');
+                console.error('BRANCH_ISSUES.md not found!');
+                // Try to create it from available test outputs
+                let content = '# Test Failure Report\n\n';
+                content += `Generated: ${new Date().toISOString()}\n\n`;
+                content += `Workflow Run: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}\n\n`;
+
+                if (fs.existsSync('tests/test-output.txt')) {
+                  content += '## Test Output\n```\n';
+                  content += fs.readFileSync('tests/test-output.txt', 'utf8');
+                  content += '\n```\n';
+                }
+
+                fs.writeFileSync('BRANCH_ISSUES.md', content);
+                execSync('git add BRANCH_ISSUES.md');
+                execSync('git commit -m "Add test failure details in BRANCH_ISSUES.md"');
+                execSync(`git push -u origin ${branchName}`);
+                console.log(`Branch ${branchName} pushed with generated BRANCH_ISSUES.md`);
               }
             } catch (gitError) {
               console.error('Error creating branch:', gitError.message);
+              console.error('Git error output:', gitError.stdout?.toString() || 'No stdout');
+              console.error('Git error stderr:', gitError.stderr?.toString() || 'No stderr');
             }
 
             // Read the issue content
