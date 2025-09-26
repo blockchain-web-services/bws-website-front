@@ -114,8 +114,15 @@ jobs:
 
           echo "## Test Results Summary" >> ../BRANCH_ISSUES.md
           if [ -f "test-results.json" ]; then
+            # Extract only relevant stats and failures from test-results.json
             echo '```json' >> ../BRANCH_ISSUES.md
-            cat test-results.json >> ../BRANCH_ISSUES.md
+            # Use jq if available, otherwise use grep to extract key information
+            if command -v jq >/dev/null 2>&1; then
+              jq '{stats: .stats, failures: [.suites[].specs[] | select(.tests[].status == "failed" or .tests[].status == "timedOut") | {title: .title, file: .file, tests: [.tests[] | select(.status == "failed" or .status == "timedOut") | {title: .title, status: .status, error: .error}]}] | select(length > 0)}' test-results.json 2>/dev/null || echo "Could not parse test-results.json"
+            else
+              # Fallback: just show first 50 lines if jq is not available
+              head -50 test-results.json
+            fi
             echo '```' >> ../BRANCH_ISSUES.md
           else
             echo "No test-results.json file found" >> ../BRANCH_ISSUES.md
@@ -145,11 +152,28 @@ jobs:
           echo "- **Node Version:** ${{ env.NODE_VERSION }}" >> ../BRANCH_ISSUES.md
           echo "- **Browser:** ${{ matrix.browser }}" >> ../BRANCH_ISSUES.md
 
-          # Create simple issue content
+          # Create simple issue content with summary stats
           echo "## Test Failure Report" > issue-content.md
           echo "" >> issue-content.md
           echo "Tests failed for commit ${{ github.sha }}" >> issue-content.md
           echo "" >> issue-content.md
+
+          # Add summary stats if available
+          if [ -f "test-results.json" ] && command -v jq >/dev/null 2>&1; then
+            echo "### Summary" >> issue-content.md
+            echo '```' >> issue-content.md
+            jq -r '.stats | "Total: \(.expected) | Passed: \(.passed) | Failed: \(.failed) | Skipped: \(.skipped)"' test-results.json 2>/dev/null || echo "Could not extract stats"
+            echo '```' >> issue-content.md
+            echo "" >> issue-content.md
+
+            # Extract just the failed test names
+            echo "### Failed Tests" >> issue-content.md
+            echo '```' >> issue-content.md
+            jq -r '.suites[].specs[].tests[] | select(.status == "failed") | "- \(.title)"' test-results.json 2>/dev/null | head -10 || echo "Could not extract failed tests"
+            echo '```' >> issue-content.md
+            echo "" >> issue-content.md
+          fi
+
           echo "A new branch has been created with detailed error information." >> issue-content.md
           echo "" >> issue-content.md
           echo "**Workflow Run:** [View Run](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})" >> issue-content.md
