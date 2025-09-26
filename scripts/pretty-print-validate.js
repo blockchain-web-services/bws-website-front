@@ -85,7 +85,7 @@ async function validateCSS(content, filePath) {
 async function processFiles() {
   console.log('Starting HTML and CSS pretty printing and validation...\n');
 
-  const siteDir = path.join(process.cwd(), '..', '_site');
+  const siteDir = path.join(process.cwd(), '_site');
 
   // Find all HTML and CSS files
   const htmlFiles = await findFiles(siteDir, ['.html']);

@@ -1,6 +1,7 @@
 {
   "name": "bws-website",
   "version": "1.0.0",
+  "type": "module",
   "description": "BWS Website - Blockchain Web Services static site built with Astro",
   "scripts": {
     "dev": "astro dev --port 8087",
