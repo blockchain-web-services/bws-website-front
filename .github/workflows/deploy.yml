@@ -106,34 +106,94 @@ jobs:
           ls -la test-*.* 2>/dev/null || true
           ls -la test-results/ 2>/dev/null || true
 
-          # Create issue content from test output
+          # Create detailed error report for BRANCH_ISSUES.md
+          echo "# Test Failure Report" > ../BRANCH_ISSUES.md
+          echo "" >> ../BRANCH_ISSUES.md
+          echo "**Generated:** $(date -u '+%Y-%m-%d %H:%M:%S UTC')" >> ../BRANCH_ISSUES.md
+          echo "**Workflow Run:** [View Run](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})" >> ../BRANCH_ISSUES.md
+          echo "**Commit:** ${{ github.sha }}" >> ../BRANCH_ISSUES.md
+          echo "" >> ../BRANCH_ISSUES.md
+
+          echo "## Test Results Summary" >> ../BRANCH_ISSUES.md
+          if [ -f "test-results.json" ]; then
+            echo '```json' >> ../BRANCH_ISSUES.md
+            cat test-results.json >> ../BRANCH_ISSUES.md
+            echo '```' >> ../BRANCH_ISSUES.md
+          else
+            echo "No test-results.json file found" >> ../BRANCH_ISSUES.md
+          fi
+          echo "" >> ../BRANCH_ISSUES.md
+
+          echo "## Full Test Output" >> ../BRANCH_ISSUES.md
+          if [ -f "test-output.txt" ]; then
+            echo '```' >> ../BRANCH_ISSUES.md
+            cat test-output.txt >> ../BRANCH_ISSUES.md
+            echo '```' >> ../BRANCH_ISSUES.md
+          else
+            echo "No test-output.txt file found" >> ../BRANCH_ISSUES.md
+          fi
+          echo "" >> ../BRANCH_ISSUES.md
+
+          echo "## Failed Tests Details" >> ../BRANCH_ISSUES.md
+          if [ -f "test-output.txt" ]; then
+            echo '```' >> ../BRANCH_ISSUES.md
+            grep -E "✗|Error:|Failed:|AssertionError|expected.*received|at .*\.spec\.(js|ts)" test-output.txt || echo "No specific failures found in output"
+            echo '```' >> ../BRANCH_ISSUES.md
+          fi
+          echo "" >> ../BRANCH_ISSUES.md
+
+          echo "## Environment Information" >> ../BRANCH_ISSUES.md
+          echo "- **Runner OS:** ${{ runner.os }}" >> ../BRANCH_ISSUES.md
+          echo "- **Node Version:** ${{ env.NODE_VERSION }}" >> ../BRANCH_ISSUES.md
+          echo "- **Browser:** ${{ matrix.browser }}" >> ../BRANCH_ISSUES.md
+
+          # Create simple issue content
           echo "## Test Failure Report" > issue-content.md
           echo "" >> issue-content.md
-          echo "Tests failed in workflow run: [View Run](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})" >> issue-content.md
+          echo "Tests failed for commit ${{ github.sha }}" >> issue-content.md
           echo "" >> issue-content.md
+          echo "A new branch has been created with detailed error information." >> issue-content.md
+          echo "" >> issue-content.md
+          echo "**Workflow Run:** [View Run](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})" >> issue-content.md
 
-          if [ -f "test-results.json" ]; then
-            echo "### Test Results Summary" >> issue-content.md
-            echo '```json' >> issue-content.md
-            cat test-results.json | jq '.stats' 2>/dev/null || cat test-results.json | head -20
-            echo '```' >> issue-content.md
-            echo "" >> issue-content.md
-          fi
-
-          if [ -f "test-output.txt" ]; then
-            echo "### Failed Test Output" >> issue-content.md
-            echo '```' >> issue-content.md
-            grep -A 5 -B 5 "✗\|Error:\|Failed:\|expected\|received" test-output.txt | head -100 || true
-            echo '```' >> issue-content.md
-          fi
-
-      - name: Create GitHub Issue for failures
+      - name: Create branch and issue for failures
         if: failure() && (github.ref == 'refs/heads/master' || github.ref == 'refs/heads/main')
         uses: actions/github-script@v7
         with:
           script: |
             const fs = require('fs');
             const path = require('path');
+            const { execSync } = require('child_process');
+
+            // Generate branch name
+            const timestamp = new Date().toISOString().replace(/[:.]/g, '-').substring(0, 19);
+            const shortSha = context.sha.substring(0, 7);
+            const branchName = `fix/test-failures-${timestamp}-${shortSha}`;
+
+            console.log(`Creating branch: ${branchName}`);
+
+            try {
+              // Configure git
+              execSync('git config user.name "github-actions[bot]"');
+              execSync('git config user.email "github-actions[bot]@users.noreply.github.com"');
+
+              // Create and checkout new branch
+              execSync(`git checkout -b ${branchName}`);
+
+              // Add BRANCH_ISSUES.md if it exists
+              if (fs.existsSync('BRANCH_ISSUES.md')) {
+                execSync('git add BRANCH_ISSUES.md');
+                execSync('git commit -m "Add test failure details in BRANCH_ISSUES.md"');
+
+                // Push the branch
+                execSync(`git push origin ${branchName}`);
+                console.log(`Branch ${branchName} pushed successfully`);
+              } else {
+                console.log('BRANCH_ISSUES.md not found, skipping branch creation');
+              }
+            } catch (gitError) {
+              console.error('Error creating branch:', gitError.message);
+            }
 
             // Read the issue content
             let issueBody;
@@ -143,6 +203,17 @@ jobs:
               console.log('No issue content file found, using default');
               issueBody = `## Test Failure Report\n\nTests failed in workflow run: [View Run](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})\n\nPlease check the workflow logs for details.`;
             }
+
+            // Add branch information to issue body
+            issueBody += `\n\n## 📁 Error Details Branch\n\n`;
+            issueBody += `A branch has been created with detailed error information:\n`;
+            issueBody += `- **Branch:** [\`${branchName}\`](https://github.com/${{ github.repository }}/tree/${branchName})\n`;
+            issueBody += `- **Error Details File:** [\`BRANCH_ISSUES.md\`](https://github.com/${{ github.repository }}/blob/${branchName}/BRANCH_ISSUES.md)\n\n`;
+            issueBody += `To fix these issues:\n`;
+            issueBody += `1. Check out the branch: \`git checkout ${branchName}\`\n`;
+            issueBody += `2. Review the errors in \`BRANCH_ISSUES.md\`\n`;
+            issueBody += `3. Fix the failing tests\n`;
+            issueBody += `4. Push your fixes and create a PR\n`;
 
             // Check if similar issue already exists
             const existingIssues = await github.rest.issues.listForRepo({
