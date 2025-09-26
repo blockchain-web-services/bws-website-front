@@ -114,36 +114,71 @@ jobs:
 
           echo "## Test Results Summary" >> ../BRANCH_ISSUES.md
           if [ -f "test-results.json" ]; then
-            # Extract only relevant stats and failures from test-results.json
-            echo '```json' >> ../BRANCH_ISSUES.md
-            # Use jq if available, otherwise use grep to extract key information
+            # Extract test results and format as clean markdown
             if command -v jq >/dev/null 2>&1; then
-              jq '{stats: .stats, failures: [.suites[].specs[] | select(.tests[].status == "failed" or .tests[].status == "timedOut") | {title: .title, file: .file, tests: [.tests[] | select(.status == "failed" or .status == "timedOut") | {title: .title, status: .status, error: .error}]}] | select(length > 0)}' test-results.json 2>/dev/null || echo "Could not parse test-results.json"
+              # Extract stats
+              echo "### Statistics" >> ../BRANCH_ISSUES.md
+              jq -r '.stats | "- **Total Tests:** \(.expected)\n- **Passed:** ✅ \(.passed)\n- **Failed:** ❌ \(.failed)\n- **Skipped:** ⏭️ \(.skipped)\n- **Duration:** \(.duration)ms"' test-results.json 2>/dev/null >> ../BRANCH_ISSUES.md || echo "Could not extract stats" >> ../BRANCH_ISSUES.md
+              echo "" >> ../BRANCH_ISSUES.md
+
+              # Extract failed tests grouped by suite
+              echo "### Failed Tests" >> ../BRANCH_ISSUES.md
+              echo "" >> ../BRANCH_ISSUES.md
+
+              # Process each suite and its failed tests
+              jq -r '
+                .suites[] |
+                select(.specs[].tests[].status == "failed") |
+                "#### Suite: \(.title)\n**File:** `\(.file)`\n" +
+                (.specs[] |
+                  select(.tests[].status == "failed") |
+                  "\n##### Test: \(.title)\n" +
+                  (.tests[] |
+                    select(.status == "failed") |
+                    "- **Status:** ❌ Failed\n" +
+                    "- **Duration:** \(.duration)ms\n" +
+                    if .error then
+                      "- **Error Message:**\n```\n\(.error.message | gsub("\\u001b\\[[0-9;]*m"; "") | gsub("\\\\n"; "\n") | gsub("\\\\t"; "  "))\n```\n" +
+                      if .error.snippet then
+                        "- **Code Snippet:**\n```javascript\n\(.error.snippet | gsub("\\u001b\\[[0-9;]*m"; ""))\n```\n"
+                      else "" end
+                    else
+                      ""
+                    end
+                  )
+                )
+              ' test-results.json 2>/dev/null >> ../BRANCH_ISSUES.md || {
+                echo "Could not parse test details, showing raw summary:" >> ../BRANCH_ISSUES.md
+                echo '```' >> ../BRANCH_ISSUES.md
+                jq '.stats' test-results.json 2>/dev/null | head -20 >> ../BRANCH_ISSUES.md
+                echo '```' >> ../BRANCH_ISSUES.md
+              }
             else
-              # Fallback: just show first 50 lines if jq is not available
-              head -50 test-results.json
+              echo "jq not available, cannot parse test-results.json" >> ../BRANCH_ISSUES.md
             fi
-            echo '```' >> ../BRANCH_ISSUES.md
           else
             echo "No test-results.json file found" >> ../BRANCH_ISSUES.md
           fi
           echo "" >> ../BRANCH_ISSUES.md
 
-          echo "## Full Test Output" >> ../BRANCH_ISSUES.md
+          echo "## Test Execution Log (Cleaned)" >> ../BRANCH_ISSUES.md
           if [ -f "test-output.txt" ]; then
+            echo "### Failed Test Output Only" >> ../BRANCH_ISSUES.md
             echo '```' >> ../BRANCH_ISSUES.md
-            cat test-output.txt >> ../BRANCH_ISSUES.md
+            # Extract only failed test output and clean ANSI codes
+            grep -A 10 -B 2 -E "✗|✘|FAILED|Error:|AssertionError|expected.*received" test-output.txt 2>/dev/null | \
+              sed 's/\x1b\[[0-9;]*m//g' | \
+              sed 's/\x1b\[[0-9;]*[a-zA-Z]//g' | \
+              sed 's/\\u001b\[[0-9;]*m//g' | \
+              sed 's/\[39m//g' | \
+              sed 's/\[31m//g' | \
+              sed 's/\[32m//g' | \
+              sed 's/\[90m//g' | \
+              sed 's/\[2m//g' | \
+              head -200 >> ../BRANCH_ISSUES.md || echo "No specific failures found in output" >> ../BRANCH_ISSUES.md
             echo '```' >> ../BRANCH_ISSUES.md
           else
             echo "No test-output.txt file found" >> ../BRANCH_ISSUES.md
-          fi
-          echo "" >> ../BRANCH_ISSUES.md
-
-          echo "## Failed Tests Details" >> ../BRANCH_ISSUES.md
-          if [ -f "test-output.txt" ]; then
-            echo '```' >> ../BRANCH_ISSUES.md
-            grep -E "✗|Error:|Failed:|AssertionError|expected.*received|at .*\.spec\.(js|ts)" test-output.txt || echo "No specific failures found in output"
-            echo '```' >> ../BRANCH_ISSUES.md
           fi
           echo "" >> ../BRANCH_ISSUES.md
 
@@ -152,31 +187,46 @@ jobs:
           echo "- **Node Version:** ${{ env.NODE_VERSION }}" >> ../BRANCH_ISSUES.md
           echo "- **Browser:** ${{ matrix.browser }}" >> ../BRANCH_ISSUES.md
 
-          # Create simple issue content with summary stats
-          echo "## Test Failure Report" > issue-content.md
+          # Create clean markdown issue content
+          echo "## 🔴 Test Failure Report" > issue-content.md
           echo "" >> issue-content.md
-          echo "Tests failed for commit ${{ github.sha }}" >> issue-content.md
+          echo "**Commit:** \`${{ github.sha }}\`" >> issue-content.md
+          echo "**Branch:** ${{ github.ref_name }}" >> issue-content.md
+          echo "**Time:** $(date -u '+%Y-%m-%d %H:%M:%S UTC')" >> issue-content.md
           echo "" >> issue-content.md
 
           # Add summary stats if available
           if [ -f "test-results.json" ] && command -v jq >/dev/null 2>&1; then
-            echo "### Summary" >> issue-content.md
-            echo '```' >> issue-content.md
-            jq -r '.stats | "Total: \(.expected) | Passed: \(.passed) | Failed: \(.failed) | Skipped: \(.skipped)"' test-results.json 2>/dev/null || echo "Could not extract stats"
-            echo '```' >> issue-content.md
+            echo "### 📊 Summary" >> issue-content.md
+            jq -r '.stats | "- Total Tests: **\(.expected)**\n- ✅ Passed: **\(.passed)**\n- ❌ Failed: **\(.failed)**\n- ⏭️ Skipped: **\(.skipped)**"' test-results.json 2>/dev/null >> issue-content.md || echo "- Could not extract stats" >> issue-content.md
             echo "" >> issue-content.md
 
-            # Extract just the failed test names
-            echo "### Failed Tests" >> issue-content.md
-            echo '```' >> issue-content.md
-            jq -r '.suites[].specs[].tests[] | select(.status == "failed") | "- \(.title)"' test-results.json 2>/dev/null | head -10 || echo "Could not extract failed tests"
-            echo '```' >> issue-content.md
+            # Extract failed test details in clean format
+            echo "### 🚨 Failed Tests" >> issue-content.md
+            echo "" >> issue-content.md
+            jq -r '
+              .suites[] |
+              select(.specs[].tests[].status == "failed") |
+              .specs[] |
+              select(.tests[].status == "failed") |
+              "**\(.title)**\n" +
+              (.tests[] |
+                select(.status == "failed") |
+                "- Test: \(.title)\n" +
+                if .error.message then
+                  "  - Error: `\(.error.message | gsub("\\u001b\\[[0-9;]*m"; "") | split("\n")[0] | .[0:100])`\n"
+                else "" end
+              )
+            ' test-results.json 2>/dev/null | head -20 >> issue-content.md || echo "Could not extract failed test details" >> issue-content.md
             echo "" >> issue-content.md
           fi
 
-          echo "A new branch has been created with detailed error information." >> issue-content.md
+          echo "### 📝 Next Steps" >> issue-content.md
+          echo "1. A branch with detailed error logs has been created" >> issue-content.md
+          echo "2. Review the BRANCH_ISSUES.md file in that branch" >> issue-content.md
+          echo "3. Fix the failing tests and create a PR" >> issue-content.md
           echo "" >> issue-content.md
-          echo "**Workflow Run:** [View Run](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})" >> issue-content.md
+          echo "**Workflow Run:** [View Full Logs](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})" >> issue-content.md
 
       - name: Create branch and issue for failures
         if: failure() && (github.ref == 'refs/heads/master' || github.ref == 'refs/heads/main')
