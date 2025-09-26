@@ -99,10 +99,25 @@ jobs:
         run: |
           echo "Collecting test errors..."
 
+          # Debug: Check current directory and files
+          echo "Current directory: $(pwd)"
+          echo "Files in current directory:"
+          ls -la . | head -20
+
           # Check what test output files exist
           echo "Test output files:"
-          ls -la test-*.* 2>/dev/null || true
-          ls -la test-results/ 2>/dev/null || true
+          ls -la test-*.* 2>/dev/null || echo "No test-*.* files found"
+          ls -la test-results/ 2>/dev/null || echo "No test-results/ directory found"
+
+          # Check if test-results.json exists
+          if [ -f "test-results.json" ]; then
+            echo "Found test-results.json ($(wc -l < test-results.json) lines)"
+          else
+            echo "WARNING: test-results.json not found in $(pwd)"
+            # Try to find it
+            echo "Searching for test-results.json:"
+            find . -name "test-results.json" -type f 2>/dev/null || echo "Not found anywhere"
+          fi
 
           # Create detailed error report for BRANCH_ISSUES.md
           echo "# Test Failure Report" > ../BRANCH_ISSUES.md
@@ -113,12 +128,26 @@ jobs:
           echo "" >> ../BRANCH_ISSUES.md
 
           echo "## Test Results Summary" >> ../BRANCH_ISSUES.md
+
+          # Try multiple possible locations for test-results.json
+          TEST_RESULTS_FILE=""
           if [ -f "test-results.json" ]; then
+            TEST_RESULTS_FILE="test-results.json"
+          elif [ -f "./test-results.json" ]; then
+            TEST_RESULTS_FILE="./test-results.json"
+          elif [ -f "../test-results.json" ]; then
+            TEST_RESULTS_FILE="../test-results.json"
+          elif [ -f "playwright-report/test-results.json" ]; then
+            TEST_RESULTS_FILE="playwright-report/test-results.json"
+          fi
+
+          if [ -n "$TEST_RESULTS_FILE" ]; then
+            echo "Processing test results from: $TEST_RESULTS_FILE" >> ../BRANCH_ISSUES.md
             # Extract test results and format as clean markdown
             if command -v jq >/dev/null 2>&1; then
               # Extract stats
               echo "### Statistics" >> ../BRANCH_ISSUES.md
-              jq -r '.stats | "- **Total Tests:** \(.expected)\n- **Passed:** ✅ \(.passed)\n- **Failed:** ❌ \(.failed)\n- **Skipped:** ⏭️ \(.skipped)\n- **Duration:** \(.duration)ms"' test-results.json 2>/dev/null >> ../BRANCH_ISSUES.md || echo "Could not extract stats" >> ../BRANCH_ISSUES.md
+              jq -r '.stats | "- **Total Tests:** \(.expected)\n- **Passed:** ✅ \(.passed)\n- **Failed:** ❌ \(.failed)\n- **Skipped:** ⏭️ \(.skipped)\n- **Duration:** \(.duration)ms"' "$TEST_RESULTS_FILE" 2>/dev/null >> ../BRANCH_ISSUES.md || echo "Could not extract stats" >> ../BRANCH_ISSUES.md
               echo "" >> ../BRANCH_ISSUES.md
 
               # Extract failed tests grouped by suite
@@ -147,17 +176,38 @@ jobs:
                     end
                   )
                 )
-              ' test-results.json 2>/dev/null >> ../BRANCH_ISSUES.md || {
+              ' "$TEST_RESULTS_FILE" 2>/dev/null >> ../BRANCH_ISSUES.md || {
                 echo "Could not parse test details, showing raw summary:" >> ../BRANCH_ISSUES.md
                 echo '```' >> ../BRANCH_ISSUES.md
-                jq '.stats' test-results.json 2>/dev/null | head -20 >> ../BRANCH_ISSUES.md
+                jq '.stats' "$TEST_RESULTS_FILE" 2>/dev/null | head -20 >> ../BRANCH_ISSUES.md
                 echo '```' >> ../BRANCH_ISSUES.md
               }
             else
               echo "jq not available, cannot parse test-results.json" >> ../BRANCH_ISSUES.md
             fi
           else
-            echo "No test-results.json file found" >> ../BRANCH_ISSUES.md
+            echo "### ⚠️ test-results.json not found" >> ../BRANCH_ISSUES.md
+            echo "" >> ../BRANCH_ISSUES.md
+            echo "Test results file could not be located. Attempting to extract information from test output..." >> ../BRANCH_ISSUES.md
+            echo "" >> ../BRANCH_ISSUES.md
+
+            # Try to extract summary from test-output.txt if it exists
+            if [ -f "test-output.txt" ]; then
+              echo "### Test Summary (from output)" >> ../BRANCH_ISSUES.md
+              echo '```' >> ../BRANCH_ISSUES.md
+              # Extract summary lines containing pass/fail counts
+              grep -E "passed|failed|skipped|flaky" test-output.txt | tail -5 | sed 's/\x1b\[[0-9;]*m//g' >> ../BRANCH_ISSUES.md || echo "No summary found"
+              echo '```' >> ../BRANCH_ISSUES.md
+              echo "" >> ../BRANCH_ISSUES.md
+
+              echo "### Failed Tests (from output)" >> ../BRANCH_ISSUES.md
+              echo '```' >> ../BRANCH_ISSUES.md
+              # Extract lines with ✗ or ✘ (failed test indicators)
+              grep -E "✗|✘|× " test-output.txt | head -20 | sed 's/\x1b\[[0-9;]*m//g' >> ../BRANCH_ISSUES.md || echo "No failed tests found in output"
+              echo '```' >> ../BRANCH_ISSUES.md
+            else
+              echo "test-output.txt also not found. Please check the workflow logs directly." >> ../BRANCH_ISSUES.md
+            fi
           fi
           echo "" >> ../BRANCH_ISSUES.md
 
@@ -196,9 +246,18 @@ jobs:
           echo "" >> issue-content.md
 
           # Add summary stats if available
-          if [ -f "test-results.json" ] && command -v jq >/dev/null 2>&1; then
+          # Use same file detection logic as above
+          TEST_RESULTS=""
+          for file in test-results.json ./test-results.json ../test-results.json playwright-report/test-results.json; do
+            if [ -f "$file" ]; then
+              TEST_RESULTS="$file"
+              break
+            fi
+          done
+
+          if [ -n "$TEST_RESULTS" ] && command -v jq >/dev/null 2>&1; then
             echo "### 📊 Summary" >> issue-content.md
-            jq -r '.stats | "- Total Tests: **\(.expected)**\n- ✅ Passed: **\(.passed)**\n- ❌ Failed: **\(.failed)**\n- ⏭️ Skipped: **\(.skipped)**"' test-results.json 2>/dev/null >> issue-content.md || echo "- Could not extract stats" >> issue-content.md
+            jq -r '.stats | "- Total Tests: **\(.expected)**\n- ✅ Passed: **\(.passed)**\n- ❌ Failed: **\(.failed)**\n- ⏭️ Skipped: **\(.skipped)**"' "$TEST_RESULTS" 2>/dev/null >> issue-content.md || echo "- Could not extract stats" >> issue-content.md
             echo "" >> issue-content.md
 
             # Extract failed test details in clean format
@@ -217,7 +276,14 @@ jobs:
                   "  - Error: `\(.error.message | gsub("\\u001b\\[[0-9;]*m"; "") | split("\n")[0] | .[0:100])`\n"
                 else "" end
               )
-            ' test-results.json 2>/dev/null | head -20 >> issue-content.md || echo "Could not extract failed test details" >> issue-content.md
+            ' "$TEST_RESULTS" 2>/dev/null | head -20 >> issue-content.md || echo "Could not extract failed test details" >> issue-content.md
+            echo "" >> issue-content.md
+          elif [ -f "test-output.txt" ]; then
+            echo "### 📊 Summary" >> issue-content.md
+            echo "Test results JSON not found. Extracting from output:" >> issue-content.md
+            echo '```' >> issue-content.md
+            grep -E "passed|failed|skipped" test-output.txt | tail -3 | sed 's/\x1b\[[0-9;]*m//g' >> issue-content.md
+            echo '```' >> issue-content.md
             echo "" >> issue-content.md
           fi
 
