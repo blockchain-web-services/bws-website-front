@@ -332,6 +332,7 @@ jobs:
         if: failure() && startsWith(github.ref, 'refs/heads/fix/')
         run: |
           echo "Committing BRANCH_ISSUES file to current fix branch..."
+          echo "Note: This step only runs for fix/* branches, not for PR merge branches"
 
           # Get current branch
           CURRENT_BRANCH="${{ github.ref_name }}"
@@ -371,7 +372,7 @@ jobs:
           fi
 
       - name: Create branch and issue for failures
-        if: failure() && (github.ref == 'refs/heads/master' || github.ref == 'refs/heads/main' || startsWith(github.ref, 'refs/heads/fix/'))
+        if: failure() && (github.ref == 'refs/heads/master' || github.ref == 'refs/heads/main' || startsWith(github.ref, 'refs/heads/fix/') || github.event_name == 'pull_request')
         uses: actions/github-script@v7
         with:
           github-token: ${{ secrets.PAT_REPOS_AND_WORKFLOW }}
@@ -387,9 +388,12 @@ jobs:
               console.log('Fixes directory contents:', fs.readdirSync('fixes'));
             }
 
-            // Check if current branch is a fix branch
+            // Check if current branch is a fix branch or PR
             const currentBranch = '${{ github.ref_name }}';
             const isFixBranch = currentBranch.startsWith('fix/');
+            const isPullRequest = '${{ github.event_name }}' === 'pull_request';
+
+            console.log(`Branch: ${currentBranch}, Is Fix: ${isFixBranch}, Is PR: ${isPullRequest}`);
 
             // Generate timestamp for the report in DD-MM-HH format
             const now = new Date();
@@ -419,6 +423,26 @@ jobs:
               }
 
               // No need to create a new branch for fix branches
+              return;
+            } else if (isPullRequest) {
+              // For PR branches, log the information but don't create a new branch
+              console.log(`This is a PR branch (${currentBranch})`);
+              console.log(`BRANCH_ISSUES files created in fixes/pending-${currentBranch.replace(/\//g, '-')}/`);
+              console.log('PR branches do not create new fix branches or commit changes');
+
+              // Check if the files were created
+              const pendingDir = `fixes/pending-${currentBranch.replace(/\//g, '-')}`;
+              if (fs.existsSync(pendingDir)) {
+                const files = fs.readdirSync(pendingDir);
+                console.log(`Files in ${pendingDir}:`, files.filter(f => f.startsWith('BRANCH_ISSUES')));
+              }
+
+              // Log the failure information for the PR
+              console.log('Test failures have been recorded for this PR');
+              console.log('The BRANCH_ISSUES file can be reviewed but will not be committed to the PR branch');
+
+              // Still create an issue comment on the PR if tests fail
+              // But don't create a new branch
               return;
             } else {
               // Original behavior for non-fix branches - use full timestamp for uniqueness
