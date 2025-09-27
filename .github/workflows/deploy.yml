@@ -304,6 +304,11 @@ jobs:
             const path = require('path');
             const { execSync } = require('child_process');
 
+            // Debug: Check current directory and BRANCH_ISSUES.md location
+            console.log('Current working directory:', process.cwd());
+            console.log('Checking for BRANCH_ISSUES.md in root:', fs.existsSync('BRANCH_ISSUES.md'));
+            console.log('Directory contents:', fs.readdirSync('.').filter(f => f.includes('BRANCH') || f === 'tests'));
+
             // Check if current branch is a fix branch
             const currentBranch = '${{ github.ref_name }}';
             const isFixBranch = currentBranch.startsWith('fix/');
@@ -311,6 +316,10 @@ jobs:
             // Generate timestamp for the report
             const timestamp = new Date().toISOString().replace(/[:.]/g, '-').substring(0, 19);
             const shortSha = context.sha.substring(0, 7);
+
+            // Variable to track branch name for issue creation
+            let branchNameForIssue = currentBranch;
+            let branchCreated = false;
 
             if (isFixBranch) {
               // For fix branches, just add a timestamped BRANCH_ISSUES file
@@ -320,30 +329,51 @@ jobs:
               const fixesDir = `fixes/${currentBranch.replace(/\//g, '-')}`;
               execSync(`mkdir -p ${fixesDir}`);
 
-              // Move or copy BRANCH_ISSUES.md with timestamp
+              // Check for BRANCH_ISSUES.md and handle it
               if (fs.existsSync('BRANCH_ISSUES.md')) {
                 const timestampedFile = `${fixesDir}/BRANCH_ISSUES_${timestamp}.md`;
                 execSync(`cp BRANCH_ISSUES.md ${timestampedFile}`);
                 console.log(`Created timestamped issue file: ${timestampedFile}`);
 
-                // Commit and push the timestamped file
-                execSync('git config user.name "github-actions[bot]"');
-                execSync('git config user.email "github-actions[bot]@users.noreply.github.com"');
-                const token = '${{ secrets.PAT_REPOS_AND_WORKFLOW }}';
-                const remoteUrl = `https://x-access-token:${token}@github.com/${{ github.repository }}.git`;
-                execSync(`git remote set-url origin ${remoteUrl}`);
-                execSync(`git add ${timestampedFile}`);
-                execSync(`git commit -m "Add test failure report ${timestamp}"`);
-                execSync(`git push origin HEAD:${currentBranch}`);
-                console.log(`Pushed timestamped BRANCH_ISSUES to ${currentBranch}`);
-              }
-              // Skip creating a new branch for fix branches
-              return;
-            }
+                // Configure git and push
+                try {
+                  execSync('git config user.name "github-actions[bot]"');
+                  execSync('git config user.email "github-actions[bot]@users.noreply.github.com"');
+                  const token = '${{ secrets.PAT_REPOS_AND_WORKFLOW }}';
+                  const remoteUrl = `https://x-access-token:${token}@github.com/${{ github.repository }}.git`;
+                  execSync(`git remote set-url origin ${remoteUrl}`);
+                  execSync(`git add ${timestampedFile}`);
+                  execSync(`git commit -m "Add test failure report ${timestamp}"`);
+                  execSync(`git push origin HEAD:${currentBranch}`);
+                  console.log(`Pushed timestamped BRANCH_ISSUES to ${currentBranch}`);
+                } catch (gitError) {
+                  console.error('Error pushing timestamped file:', gitError.message);
+                }
+              } else {
+                console.error('BRANCH_ISSUES.md not found for fix branch!');
+                // Try to create one from test output if available
+                let content = '# Test Failure Report\n\n';
+                content += `Generated: ${new Date().toISOString()}\n\n`;
+                content += `Branch: ${currentBranch}\n\n`;
+                content += `Workflow Run: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}\n\n`;
 
-            // Original behavior for non-fix branches
-            const branchName = `fix/test-failures-${timestamp}-${shortSha}`;
-            console.log(`Creating branch: ${branchName}`);
+                if (fs.existsSync('tests/test-output.txt')) {
+                  content += '## Test Output\n```\n';
+                  content += fs.readFileSync('tests/test-output.txt', 'utf8').substring(0, 10000);
+                  content += '\n```\n';
+                }
+
+                const timestampedFile = `${fixesDir}/BRANCH_ISSUES_${timestamp}.md`;
+                fs.writeFileSync(timestampedFile, content);
+                execSync(`git add ${timestampedFile}`);
+                execSync(`git commit -m "Add generated test failure report ${timestamp}"`);
+                execSync(`git push origin HEAD:${currentBranch}`);
+              }
+            } else {
+              // Original behavior for non-fix branches
+              const branchName = `fix/test-failures-${timestamp}-${shortSha}`;
+              branchNameForIssue = branchName;
+              console.log(`Creating new fix branch: ${branchName}`);
 
             try {
               // Configure git with PAT for authentication
@@ -392,6 +422,10 @@ jobs:
               console.error('Git error stderr:', gitError.stderr?.toString() || 'No stderr');
             }
 
+              branchCreated = true;
+            }
+
+            // Create issue for both fix and non-fix branches
             // Read the issue content
             let issueBody;
             try {
@@ -402,15 +436,23 @@ jobs:
             }
 
             // Add branch information to issue body
-            issueBody += `\n\n## 📁 Error Details Branch\n\n`;
-            issueBody += `A branch has been created with detailed error information:\n`;
-            issueBody += `- **Branch:** [\`${branchName}\`](https://github.com/${{ github.repository }}/tree/${branchName})\n`;
-            issueBody += `- **Error Details File:** [\`BRANCH_ISSUES.md\`](https://github.com/${{ github.repository }}/blob/${branchName}/BRANCH_ISSUES.md)\n\n`;
-            issueBody += `To fix these issues:\n`;
-            issueBody += `1. Check out the branch: \`git checkout ${branchName}\`\n`;
-            issueBody += `2. Review the errors in \`BRANCH_ISSUES.md\`\n`;
-            issueBody += `3. Fix the failing tests\n`;
-            issueBody += `4. Push your fixes and create a PR\n`;
+            issueBody += `\n\n## 📁 Error Details\n\n`;
+            if (isFixBranch) {
+              const fixesDir = `fixes/${currentBranch.replace(/\//g, '-')}`;
+              issueBody += `Test failure detected on fix branch:\n`;
+              issueBody += `- **Branch:** [\`${currentBranch}\`](https://github.com/${{ github.repository }}/tree/${currentBranch})\n`;
+              issueBody += `- **Error Details Folder:** [\`${fixesDir}\`](https://github.com/${{ github.repository }}/tree/${currentBranch}/${fixesDir})\n\n`;
+              issueBody += `Additional test failures have been recorded in the fixes folder.\n`;
+            } else if (branchCreated) {
+              issueBody += `A new branch has been created with detailed error information:\n`;
+              issueBody += `- **Branch:** [\`${branchNameForIssue}\`](https://github.com/${{ github.repository }}/tree/${branchNameForIssue})\n`;
+              issueBody += `- **Error Details File:** [\`BRANCH_ISSUES.md\`](https://github.com/${{ github.repository }}/blob/${branchNameForIssue}/BRANCH_ISSUES.md)\n\n`;
+              issueBody += `To fix these issues:\n`;
+              issueBody += `1. Check out the branch: \`git checkout ${branchNameForIssue}\`\n`;
+              issueBody += `2. Review the errors in \`BRANCH_ISSUES.md\`\n`;
+              issueBody += `3. Fix the failing tests\n`;
+              issueBody += `4. Push your fixes and create a PR\n`;
+            }
 
             // Check if similar issue already exists
             const existingIssues = await github.rest.issues.listForRepo({
