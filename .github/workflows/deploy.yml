@@ -215,17 +215,10 @@ jobs:
           if [ -f "test-output.txt" ]; then
             echo "### Failed Test Output Only" >> ../BRANCH_ISSUES.md
             echo '```' >> ../BRANCH_ISSUES.md
-            # Extract only failed test output and clean ANSI codes
-            grep -A 10 -B 2 -E "✗|✘|FAILED|Error:|AssertionError|expected.*received" test-output.txt 2>/dev/null | \
-              sed 's/\x1b\[[0-9;]*m//g' | \
-              sed 's/\x1b\[[0-9;]*[a-zA-Z]//g' | \
-              sed 's/\\u001b\[[0-9;]*m//g' | \
-              sed 's/\[39m//g' | \
-              sed 's/\[31m//g' | \
-              sed 's/\[32m//g' | \
-              sed 's/\[90m//g' | \
-              sed 's/\[2m//g' | \
-              head -200 >> ../BRANCH_ISSUES.md || echo "No specific failures found in output" >> ../BRANCH_ISSUES.md
+            # Extract only failed test output and clean ANSI codes - simplified to avoid broken pipe
+            grep -E "✗|✘|FAILED|Error:|AssertionError|expected.*received" test-output.txt 2>/dev/null | \
+              head -200 | \
+              sed 's/\x1b\[[0-9;]*m//g;s/\x1b\[[0-9;]*[a-zA-Z]//g;s/\\u001b\[[0-9;]*m//g;s/\[39m//g;s/\[31m//g;s/\[32m//g;s/\[90m//g;s/\[2m//g' >> ../BRANCH_ISSUES.md || echo "No specific failures found in output" >> ../BRANCH_ISSUES.md
             echo '```' >> ../BRANCH_ISSUES.md
           else
             echo "No test-output.txt file found" >> ../BRANCH_ISSUES.md
@@ -236,6 +229,20 @@ jobs:
           echo "- **Runner OS:** ${{ runner.os }}" >> ../BRANCH_ISSUES.md
           echo "- **Node Version:** ${{ env.NODE_VERSION }}" >> ../BRANCH_ISSUES.md
           echo "- **Browser:** ${{ matrix.browser }}" >> ../BRANCH_ISSUES.md
+          echo "" >> ../BRANCH_ISSUES.md
+
+          # Verify BRANCH_ISSUES.md was created
+          echo "Checking if BRANCH_ISSUES.md was created..."
+          if [ -f "../BRANCH_ISSUES.md" ]; then
+            echo "✅ BRANCH_ISSUES.md created successfully at: $(realpath ../BRANCH_ISSUES.md)"
+            echo "File size: $(wc -c < ../BRANCH_ISSUES.md) bytes"
+            echo "Line count: $(wc -l < ../BRANCH_ISSUES.md) lines"
+          else
+            echo "❌ ERROR: BRANCH_ISSUES.md was NOT created!"
+            echo "Current directory: $(pwd)"
+            echo "Parent directory contents:"
+            ls -la ../ | head -20
+          fi
 
           # Create clean markdown issue content
           echo "## 🔴 Test Failure Report" > issue-content.md
