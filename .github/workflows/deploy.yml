@@ -320,8 +320,13 @@ jobs:
             const currentBranch = '${{ github.ref_name }}';
             const isFixBranch = currentBranch.startsWith('fix/');
 
-            // Generate timestamp for the report
-            const timestamp = new Date().toISOString().replace(/[:.]/g, '-').substring(0, 19);
+            // Generate timestamp for the report in DD-MM-HH format
+            const now = new Date();
+            const dd = String(now.getUTCDate()).padStart(2, '0');
+            const mm = String(now.getUTCMonth() + 1).padStart(2, '0');
+            const hh = String(now.getUTCHours()).padStart(2, '0');
+            const timestamp = `${dd}-${mm}-${hh}`;
+            const fullTimestamp = new Date().toISOString().replace(/[:.]/g, '-').substring(0, 19);
             const shortSha = context.sha.substring(0, 7);
 
             // Variable to track branch name for issue creation
@@ -377,8 +382,8 @@ jobs:
                 execSync(`git push origin HEAD:${currentBranch}`);
               }
             } else {
-              // Original behavior for non-fix branches
-              const branchName = `fix/test-failures-${timestamp}-${shortSha}`;
+              // Original behavior for non-fix branches - use full timestamp for uniqueness
+              const branchName = `fix/test-failures-${fullTimestamp}-${shortSha}`;
               branchNameForIssue = branchName;
               console.log(`Creating new fix branch: ${branchName}`);
 
