@@ -119,15 +119,24 @@ jobs:
             find . -name "test-results.json" -type f 2>/dev/null || echo "Not found anywhere"
           fi
 
-          # Create detailed error report for BRANCH_ISSUES.md
-          echo "# Test Failure Report" > ../BRANCH_ISSUES.md
-          echo "" >> ../BRANCH_ISSUES.md
-          echo "**Generated:** $(date -u '+%Y-%m-%d %H:%M:%S UTC')" >> ../BRANCH_ISSUES.md
-          echo "**Workflow Run:** [View Run](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})" >> ../BRANCH_ISSUES.md
-          echo "**Commit:** ${{ github.sha }}" >> ../BRANCH_ISSUES.md
-          echo "" >> ../BRANCH_ISSUES.md
+          # Generate DD-MM-HH timestamp for the filename
+          DD=$(date -u '+%d')
+          MM=$(date -u '+%m')
+          HH=$(date -u '+%H')
+          TIMESTAMP="${DD}-${MM}-${HH}"
 
-          echo "## Test Results Summary" >> ../BRANCH_ISSUES.md
+          # Create detailed error report with timestamped filename
+          ISSUES_FILE="../BRANCH_ISSUES_${TIMESTAMP}.md"
+          echo "Creating issues file: $ISSUES_FILE"
+
+          echo "# Test Failure Report" > "$ISSUES_FILE"
+          echo "" >> "$ISSUES_FILE"
+          echo "**Generated:** $(date -u '+%Y-%m-%d %H:%M:%S UTC')" >> "$ISSUES_FILE"
+          echo "**Workflow Run:** [View Run](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})" >> "$ISSUES_FILE"
+          echo "**Commit:** ${{ github.sha }}" >> "$ISSUES_FILE"
+          echo "" >> "$ISSUES_FILE"
+
+          echo "## Test Results Summary" >> "$ISSUES_FILE"
 
           # Try multiple possible locations for test-results.json
           TEST_RESULTS_FILE=""
@@ -142,17 +151,17 @@ jobs:
           fi
 
           if [ -n "$TEST_RESULTS_FILE" ]; then
-            echo "Processing test results from: $TEST_RESULTS_FILE" >> ../BRANCH_ISSUES.md
+            echo "Processing test results from: $TEST_RESULTS_FILE" >> "$ISSUES_FILE"
             # Extract test results and format as clean markdown
             if command -v jq >/dev/null 2>&1; then
               # Extract stats
-              echo "### Statistics" >> ../BRANCH_ISSUES.md
-              jq -r '.stats | "- **Total Tests:** \(.expected)\n- **Passed:** ✅ \(.passed)\n- **Failed:** ❌ \(.failed)\n- **Skipped:** ⏭️ \(.skipped)\n- **Duration:** \(.duration)ms"' "$TEST_RESULTS_FILE" 2>/dev/null >> ../BRANCH_ISSUES.md || echo "Could not extract stats" >> ../BRANCH_ISSUES.md
-              echo "" >> ../BRANCH_ISSUES.md
+              echo "### Statistics" >> "$ISSUES_FILE"
+              jq -r '.stats | "- **Total Tests:** \(.expected)\n- **Passed:** ✅ \(.passed)\n- **Failed:** ❌ \(.failed)\n- **Skipped:** ⏭️ \(.skipped)\n- **Duration:** \(.duration)ms"' "$TEST_RESULTS_FILE" 2>/dev/null >> "$ISSUES_FILE" || echo "Could not extract stats" >> "$ISSUES_FILE"
+              echo "" >> "$ISSUES_FILE"
 
               # Extract failed tests grouped by suite
-              echo "### Failed Tests" >> ../BRANCH_ISSUES.md
-              echo "" >> ../BRANCH_ISSUES.md
+              echo "### Failed Tests" >> "$ISSUES_FILE"
+              echo "" >> "$ISSUES_FILE"
 
               # Process each suite and its failed tests
               jq -r '
@@ -176,69 +185,72 @@ jobs:
                     end
                   )
                 )
-              ' "$TEST_RESULTS_FILE" 2>/dev/null >> ../BRANCH_ISSUES.md || {
-                echo "Could not parse test details, showing raw summary:" >> ../BRANCH_ISSUES.md
-                echo '```' >> ../BRANCH_ISSUES.md
-                jq '.stats' "$TEST_RESULTS_FILE" 2>/dev/null | head -20 >> ../BRANCH_ISSUES.md
-                echo '```' >> ../BRANCH_ISSUES.md
+              ' "$TEST_RESULTS_FILE" 2>/dev/null >> "$ISSUES_FILE" || {
+                echo "Could not parse test details, showing raw summary:" >> "$ISSUES_FILE"
+                echo '```' >> "$ISSUES_FILE"
+                jq '.stats' "$TEST_RESULTS_FILE" 2>/dev/null | head -20 >> "$ISSUES_FILE"
+                echo '```' >> "$ISSUES_FILE"
               }
             else
-              echo "jq not available, cannot parse test-results.json" >> ../BRANCH_ISSUES.md
+              echo "jq not available, cannot parse test-results.json" >> "$ISSUES_FILE"
             fi
           else
-            echo "### ⚠️ test-results.json not found" >> ../BRANCH_ISSUES.md
-            echo "" >> ../BRANCH_ISSUES.md
-            echo "Test results file could not be located. Attempting to extract information from test output..." >> ../BRANCH_ISSUES.md
-            echo "" >> ../BRANCH_ISSUES.md
+            echo "### ⚠️ test-results.json not found" >> "$ISSUES_FILE"
+            echo "" >> "$ISSUES_FILE"
+            echo "Test results file could not be located. Attempting to extract information from test output..." >> "$ISSUES_FILE"
+            echo "" >> "$ISSUES_FILE"
 
             # Try to extract summary from test-output.txt if it exists
             if [ -f "test-output.txt" ]; then
-              echo "### Test Summary (from output)" >> ../BRANCH_ISSUES.md
-              echo '```' >> ../BRANCH_ISSUES.md
+              echo "### Test Summary (from output)" >> "$ISSUES_FILE"
+              echo '```' >> "$ISSUES_FILE"
               # Extract summary lines containing pass/fail counts
-              grep -E "passed|failed|skipped|flaky" test-output.txt | tail -5 | sed 's/\x1b\[[0-9;]*m//g' >> ../BRANCH_ISSUES.md || echo "No summary found"
-              echo '```' >> ../BRANCH_ISSUES.md
-              echo "" >> ../BRANCH_ISSUES.md
+              grep -E "passed|failed|skipped|flaky" test-output.txt | tail -5 | sed 's/\x1b\[[0-9;]*m//g' >> "$ISSUES_FILE" || echo "No summary found"
+              echo '```' >> "$ISSUES_FILE"
+              echo "" >> "$ISSUES_FILE"
 
-              echo "### Failed Tests (from output)" >> ../BRANCH_ISSUES.md
-              echo '```' >> ../BRANCH_ISSUES.md
+              echo "### Failed Tests (from output)" >> "$ISSUES_FILE"
+              echo '```' >> "$ISSUES_FILE"
               # Extract lines with ✗ or ✘ (failed test indicators)
-              grep -E "✗|✘|× " test-output.txt | head -20 | sed 's/\x1b\[[0-9;]*m//g' >> ../BRANCH_ISSUES.md || echo "No failed tests found in output"
-              echo '```' >> ../BRANCH_ISSUES.md
+              grep -E "✗|✘|× " test-output.txt | head -20 | sed 's/\x1b\[[0-9;]*m//g' >> "$ISSUES_FILE" || echo "No failed tests found in output"
+              echo '```' >> "$ISSUES_FILE"
             else
-              echo "test-output.txt also not found. Please check the workflow logs directly." >> ../BRANCH_ISSUES.md
+              echo "test-output.txt also not found. Please check the workflow logs directly." >> "$ISSUES_FILE"
             fi
           fi
-          echo "" >> ../BRANCH_ISSUES.md
+          echo "" >> "$ISSUES_FILE"
 
-          echo "## Test Execution Log (Cleaned)" >> ../BRANCH_ISSUES.md
+          echo "## Test Execution Log (Cleaned)" >> "$ISSUES_FILE"
           if [ -f "test-output.txt" ]; then
-            echo "### Failed Test Output Only" >> ../BRANCH_ISSUES.md
-            echo '```' >> ../BRANCH_ISSUES.md
+            echo "### Failed Test Output Only" >> "$ISSUES_FILE"
+            echo '```' >> "$ISSUES_FILE"
             # Extract only failed test output and clean ANSI codes - simplified to avoid broken pipe
             grep -E "✗|✘|FAILED|Error:|AssertionError|expected.*received" test-output.txt 2>/dev/null | \
               head -200 | \
-              sed 's/\x1b\[[0-9;]*m//g;s/\x1b\[[0-9;]*[a-zA-Z]//g;s/\\u001b\[[0-9;]*m//g;s/\[39m//g;s/\[31m//g;s/\[32m//g;s/\[90m//g;s/\[2m//g' >> ../BRANCH_ISSUES.md || echo "No specific failures found in output" >> ../BRANCH_ISSUES.md
-            echo '```' >> ../BRANCH_ISSUES.md
+              sed 's/\x1b\[[0-9;]*m//g;s/\x1b\[[0-9;]*[a-zA-Z]//g;s/\\u001b\[[0-9;]*m//g;s/\[39m//g;s/\[31m//g;s/\[32m//g;s/\[90m//g;s/\[2m//g' >> "$ISSUES_FILE" || echo "No specific failures found in output" >> "$ISSUES_FILE"
+            echo '```' >> "$ISSUES_FILE"
           else
-            echo "No test-output.txt file found" >> ../BRANCH_ISSUES.md
+            echo "No test-output.txt file found" >> "$ISSUES_FILE"
           fi
-          echo "" >> ../BRANCH_ISSUES.md
+          echo "" >> "$ISSUES_FILE"
 
-          echo "## Environment Information" >> ../BRANCH_ISSUES.md
-          echo "- **Runner OS:** ${{ runner.os }}" >> ../BRANCH_ISSUES.md
-          echo "- **Node Version:** ${{ env.NODE_VERSION }}" >> ../BRANCH_ISSUES.md
-          echo "- **Browser:** ${{ matrix.browser }}" >> ../BRANCH_ISSUES.md
-          echo "" >> ../BRANCH_ISSUES.md
+          echo "## Environment Information" >> "$ISSUES_FILE"
+          echo "- **Runner OS:** ${{ runner.os }}" >> "$ISSUES_FILE"
+          echo "- **Node Version:** ${{ env.NODE_VERSION }}" >> "$ISSUES_FILE"
+          echo "- **Browser:** ${{ matrix.browser }}" >> "$ISSUES_FILE"
+          echo "" >> "$ISSUES_FILE"
 
-          # Verify BRANCH_ISSUES.md was created
-          echo "Checking if BRANCH_ISSUES.md was created..."
-          if [ -f "../BRANCH_ISSUES.md" ]; then
-            echo "✅ BRANCH_ISSUES.md created successfully at: $(realpath ../BRANCH_ISSUES.md)"
-            echo "File size: $(wc -c < ../BRANCH_ISSUES.md) bytes"
-            echo "Line count: $(wc -l < ../BRANCH_ISSUES.md) lines"
+          # Verify BRANCH_ISSUES file was created
+          echo "Checking if BRANCH_ISSUES file was created..."
+          if [ -f "$ISSUES_FILE" ]; then
+            echo "✅ BRANCH_ISSUES file created successfully at: $(realpath $ISSUES_FILE)"
+            echo "File size: $(wc -c < $ISSUES_FILE) bytes"
+            echo "Line count: $(wc -l < $ISSUES_FILE) lines"
+            # Also create a copy without timestamp for backward compatibility
+            cp "$ISSUES_FILE" "../BRANCH_ISSUES.md"
+            echo "Created backward compatible copy: BRANCH_ISSUES.md"
           else
-            echo "❌ ERROR: BRANCH_ISSUES.md was NOT created!"
+            echo "❌ ERROR: BRANCH_ISSUES file was NOT created!"
             echo "Current directory: $(pwd)"
             echo "Parent directory contents:"
             ls -la ../ | head -20
@@ -341,10 +353,20 @@ jobs:
               const fixesDir = `fixes/${currentBranch.replace(/\//g, '-')}`;
               execSync(`mkdir -p ${fixesDir}`);
 
-              // Check for BRANCH_ISSUES.md and handle it
-              if (fs.existsSync('BRANCH_ISSUES.md')) {
+              // Check for BRANCH_ISSUES files (both timestamped and backward-compatible)
+              // First check for the timestamped file pattern
+              const branchIssuesFiles = fs.readdirSync('.').filter(f => f.startsWith('BRANCH_ISSUES'));
+              let sourceFile = 'BRANCH_ISSUES.md'; // default to backward-compatible name
+
+              if (branchIssuesFiles.length > 0) {
+                // Use the first matching file (could be timestamped or not)
+                sourceFile = branchIssuesFiles[0];
+                console.log(`Found BRANCH_ISSUES file: ${sourceFile}`);
+              }
+
+              if (fs.existsSync(sourceFile)) {
                 const timestampedFile = `${fixesDir}/BRANCH_ISSUES_${timestamp}.md`;
-                execSync(`cp BRANCH_ISSUES.md ${timestampedFile}`);
+                execSync(`cp ${sourceFile} ${timestampedFile}`);
                 console.log(`Created timestamped issue file: ${timestampedFile}`);
 
                 // Configure git and push
