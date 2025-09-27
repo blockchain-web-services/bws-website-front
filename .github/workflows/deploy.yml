@@ -295,7 +295,7 @@ jobs:
           echo "**Workflow Run:** [View Full Logs](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})" >> issue-content.md
 
       - name: Create branch and issue for failures
-        if: failure() && (github.ref == 'refs/heads/master' || github.ref == 'refs/heads/main')
+        if: failure() && (github.ref == 'refs/heads/master' || github.ref == 'refs/heads/main' || startsWith(github.ref, 'refs/heads/fix/'))
         uses: actions/github-script@v7
         with:
           github-token: ${{ secrets.PAT_REPOS_AND_WORKFLOW }}
@@ -304,11 +304,45 @@ jobs:
             const path = require('path');
             const { execSync } = require('child_process');
 
-            // Generate branch name
+            // Check if current branch is a fix branch
+            const currentBranch = '${{ github.ref_name }}';
+            const isFixBranch = currentBranch.startsWith('fix/');
+
+            // Generate timestamp for the report
             const timestamp = new Date().toISOString().replace(/[:.]/g, '-').substring(0, 19);
             const shortSha = context.sha.substring(0, 7);
-            const branchName = `fix/test-failures-${timestamp}-${shortSha}`;
 
+            if (isFixBranch) {
+              // For fix branches, just add a timestamped BRANCH_ISSUES file
+              console.log(`Current branch is a fix branch (${currentBranch}), adding timestamped BRANCH_ISSUES file`);
+
+              // Create fixes directory structure if it doesn't exist
+              const fixesDir = `fixes/${currentBranch.replace(/\//g, '-')}`;
+              execSync(`mkdir -p ${fixesDir}`);
+
+              // Move or copy BRANCH_ISSUES.md with timestamp
+              if (fs.existsSync('BRANCH_ISSUES.md')) {
+                const timestampedFile = `${fixesDir}/BRANCH_ISSUES_${timestamp}.md`;
+                execSync(`cp BRANCH_ISSUES.md ${timestampedFile}`);
+                console.log(`Created timestamped issue file: ${timestampedFile}`);
+
+                // Commit and push the timestamped file
+                execSync('git config user.name "github-actions[bot]"');
+                execSync('git config user.email "github-actions[bot]@users.noreply.github.com"');
+                const token = '${{ secrets.PAT_REPOS_AND_WORKFLOW }}';
+                const remoteUrl = `https://x-access-token:${token}@github.com/${{ github.repository }}.git`;
+                execSync(`git remote set-url origin ${remoteUrl}`);
+                execSync(`git add ${timestampedFile}`);
+                execSync(`git commit -m "Add test failure report ${timestamp}"`);
+                execSync(`git push origin HEAD:${currentBranch}`);
+                console.log(`Pushed timestamped BRANCH_ISSUES to ${currentBranch}`);
+              }
+              // Skip creating a new branch for fix branches
+              return;
+            }
+
+            // Original behavior for non-fix branches
+            const branchName = `fix/test-failures-${timestamp}-${shortSha}`;
             console.log(`Creating branch: ${branchName}`);
 
             try {
