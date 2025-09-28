@@ -92,6 +92,7 @@ jobs:
           # Always exit 0 to allow subsequent jobs to run
           exit 0
 
+
       - name: Collect test failures if any
         if: steps.test-run.outputs.tests_passed == 'false'
         working-directory: tests
@@ -160,6 +161,7 @@ jobs:
         run: |
           echo "Test output value: '${{ needs.test.outputs.tests_passed }}'"
           echo "Condition evaluated: needs.test.outputs.tests_passed == 'false'"
+
       - uses: actions/checkout@v4
         with:
           token: ${{ secrets.PAT_REPOS_AND_WORKFLOW || secrets.GITHUB_TOKEN }}
@@ -249,10 +251,12 @@ jobs:
     runs-on: ubuntu-latest
     if: needs.test.outputs.tests_passed == 'true'
     steps:
+
       - name: Debug test output
         run: |
           echo "Test output value: '${{ needs.test.outputs.tests_passed }}'"
           echo "Condition evaluated: needs.test.outputs.tests_passed == 'true'"
+
       - uses: actions/checkout@v4
 
       - name: Find and update PR
