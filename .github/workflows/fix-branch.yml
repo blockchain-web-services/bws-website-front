@@ -26,6 +26,9 @@ jobs:
       tests_passed: ${{ steps.test-run.outputs.tests_passed }}
     steps:
       - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.PAT_REPOS_AND_WORKFLOW || secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -99,9 +102,8 @@ jobs:
           exit 0
 
 
-      - name: Collect test failures if any
+      - name: Collect test failures and commit if any
         if: steps.test-run.outputs.tests_passed == 'false'
-        working-directory: tests
         run: |
           echo "Collecting test failures for fix branch..."
 
@@ -113,7 +115,7 @@ jobs:
 
           # Get branch name
           BRANCH_NAME="${{ github.ref_name }}"
-          FIXES_DIR="../fixes/${BRANCH_NAME//\//-}"
+          FIXES_DIR="fixes/${BRANCH_NAME//\//-}"
 
           # Ensure fixes directory exists
           mkdir -p "$FIXES_DIR"
@@ -131,79 +133,50 @@ jobs:
 
           echo "## Test Results" >> "$ISSUES_FILE"
 
+          # Navigate to tests directory to access test results
+          cd tests
           if [ -f "test-results.json" ] && command -v jq >/dev/null 2>&1; then
-            echo "### Statistics" >> "$ISSUES_FILE"
-            jq -r '.stats | "- **Total:** \(.expected)\n- **Passed:** \(.passed)\n- **Failed:** \(.failed)"' test-results.json >> "$ISSUES_FILE" 2>/dev/null || echo "Stats not available" >> "$ISSUES_FILE"
-            echo "" >> "$ISSUES_FILE"
+            echo "### Statistics" >> "../$ISSUES_FILE"
+            jq -r '.stats | "- **Total:** \(.expected)\n- **Passed:** \(.passed)\n- **Failed:** \(.failed)"' test-results.json >> "../$ISSUES_FILE" 2>/dev/null || echo "Stats not available" >> "../$ISSUES_FILE"
+            echo "" >> "../$ISSUES_FILE"
 
-            echo "### Failed Tests" >> "$ISSUES_FILE"
-            jq -r '.suites[] | select(.specs[].tests[].status == "failed") | .specs[] | "- \(.title)"' test-results.json >> "$ISSUES_FILE" 2>/dev/null || echo "Could not extract test names" >> "$ISSUES_FILE"
+            echo "### Failed Tests" >> "../$ISSUES_FILE"
+            jq -r '.suites[] | select(.specs[].tests[].status == "failed") | .specs[] | "- \(.title)"' test-results.json >> "../$ISSUES_FILE" 2>/dev/null || echo "Could not extract test names" >> "../$ISSUES_FILE"
           fi
 
-          echo "" >> "$ISSUES_FILE"
-          echo "## Test Output" >> "$ISSUES_FILE"
-          echo '```' >> "$ISSUES_FILE"
+          echo "" >> "../$ISSUES_FILE"
+          echo "## Test Output" >> "../$ISSUES_FILE"
+          echo '```' >> "../$ISSUES_FILE"
           # Use filtered output to avoid broken pipe
           if [ -f "test-output.txt" ]; then
-            grep -E "(✗|✘|×|FAILED|Error:|failed)" test-output.txt 2>/dev/null | head -50 >> "$ISSUES_FILE" || echo "No failure output captured" >> "$ISSUES_FILE"
+            grep -E "(✗|✘|×|FAILED|Error:|failed)" test-output.txt 2>/dev/null | head -50 >> "../$ISSUES_FILE" || echo "No failure output captured" >> "../$ISSUES_FILE"
           else
-            echo "No test output file found" >> "$ISSUES_FILE"
+            echo "No test output file found" >> "../$ISSUES_FILE"
           fi
-          echo '```' >> "$ISSUES_FILE"
+          echo '```' >> "../$ISSUES_FILE"
+          cd ..
 
           echo "Created: $ISSUES_FILE"
 
-      - name: Upload test results
-        if: steps.test-run.outputs.tests_passed == 'false'
-        uses: actions/upload-artifact@v4
-        with:
-          name: test-failures-${{ github.sha }}
-          path: fixes/
-          if-no-files-found: warn
-          retention-days: 30
-
-  # Job 2: Handle test failures - commit to branch and update PR
-  update-on-failure:
-    needs: test
-    runs-on: ubuntu-latest
-    if: needs.test.outputs.tests_passed == 'false'
-    steps:
-      - name: Debug test output
-        run: |
-          echo "Test output value: '${{ needs.test.outputs.tests_passed }}'"
-          echo "Condition evaluated: needs.test.outputs.tests_passed == 'false'"
-
-      - uses: actions/checkout@v4
-        with:
-          token: ${{ secrets.PAT_REPOS_AND_WORKFLOW || secrets.GITHUB_TOKEN }}
-
-      - name: Download test failures
-        uses: actions/download-artifact@v4
-        with:
-          name: test-failures-${{ github.sha }}
-
-      - name: Commit test failure report
-        run: |
           # Configure git
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-          # Add and commit the new test failure report
-          git add fixes/
+          # Add and commit the test failure report
+          git add "$ISSUES_FILE"
+          git commit -m "Add test failure report: BRANCH_ISSUES_${TIMESTAMP}.md" -m "Test failures detected on commit ${{ github.sha }}" -m "See fixes folder for details."
 
-          # Generate timestamp
-          TIMESTAMP=$(date -u '+%d-%m-%H')
+          # Push to current branch
+          git push origin HEAD:${{ github.ref_name }}
+          echo "✅ Pushed test failure report to branch"
 
-          if git diff --staged --quiet; then
-            echo "No new test failure files to commit"
-          else
-            git commit -m "Add test failure report: BRANCH_ISSUES_${TIMESTAMP}.md\n\nTest failures detected on commit ${{ github.sha }}\nSee fixes folder for details."
 
-            # Push to current branch
-            git push origin HEAD:${{ github.ref_name }}
-            echo "✅ Pushed test failure report to branch"
-          fi
-
+  # Job 2: Update PR with test failure info
+  update-pr-on-failure:
+    needs: test
+    runs-on: ubuntu-latest
+    if: needs.test.outputs.tests_passed == 'false'
+    steps:
       - name: Update PR with failure info
         uses: actions/github-script@v7
         with:
@@ -386,7 +359,7 @@ jobs:
 
   # Job 4: Final status check - ensures workflow fails when tests fail
   final-status:
-    needs: [test, update-on-failure, auto-merge-on-success]
+    needs: [test, update-pr-on-failure, auto-merge-on-success]
     if: always()
     runs-on: ubuntu-latest
     steps:
