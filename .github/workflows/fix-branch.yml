@@ -67,15 +67,31 @@ jobs:
           PORT: 4321
           PLAYWRIGHT_BASE_URL: http://localhost:4321
         run: |
-          if npx playwright test --config=playwright.config.cjs --project=${{ matrix.browser }} 2>&1 | tee test-output.txt; then
+          echo "Starting Playwright tests..."
+          npx playwright test --config=playwright.config.cjs --project=${{ matrix.browser }} 2>&1 | tee test-output.txt
+          TEST_EXIT_CODE=${PIPESTATUS[0]}
+
+          echo "Test exit code: ${TEST_EXIT_CODE}"
+
+          if [ ${TEST_EXIT_CODE} -eq 0 ]; then
             echo "✅ All tests passed!"
             echo "tests_passed=true" >> $GITHUB_OUTPUT
-            exit 0
+            echo "Output set: tests_passed=true"
           else
-            echo "❌ Tests failed"
+            echo "❌ Tests failed with exit code ${TEST_EXIT_CODE}"
             echo "tests_passed=false" >> $GITHUB_OUTPUT
-            # Don't exit with error - we handle this in the next step
+            echo "Output set: tests_passed=false"
           fi
+
+          # Show test summary if available
+          if [ -f "test-results.json" ]; then
+            echo "Test results summary:"
+            grep -E '"passed"|"failed"|"skipped"' test-results.json || true
+          fi
+
+          # Always exit 0 to allow subsequent jobs to run
+          exit 0
+
 
       - name: Collect test failures if any
         if: steps.test-run.outputs.tests_passed == 'false'
@@ -141,6 +157,11 @@ jobs:
     runs-on: ubuntu-latest
     if: needs.test.outputs.tests_passed == 'false'
     steps:
+      - name: Debug test output
+        run: |
+          echo "Test output value: '${{ needs.test.outputs.tests_passed }}'"
+          echo "Condition evaluated: needs.test.outputs.tests_passed == 'false'"
+
       - uses: actions/checkout@v4
         with:
           token: ${{ secrets.PAT_REPOS_AND_WORKFLOW || secrets.GITHUB_TOKEN }}
@@ -230,6 +251,12 @@ jobs:
     runs-on: ubuntu-latest
     if: needs.test.outputs.tests_passed == 'true'
     steps:
+
+      - name: Debug test output
+        run: |
+          echo "Test output value: '${{ needs.test.outputs.tests_passed }}'"
+          echo "Condition evaluated: needs.test.outputs.tests_passed == 'true'"
+
       - uses: actions/checkout@v4
 
       - name: Find and update PR
