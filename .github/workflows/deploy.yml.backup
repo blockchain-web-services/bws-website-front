@@ -119,15 +119,40 @@ jobs:
             find . -name "test-results.json" -type f 2>/dev/null || echo "Not found anywhere"
           fi
 
-          # Create detailed error report for BRANCH_ISSUES.md
-          echo "# Test Failure Report" > ../BRANCH_ISSUES.md
-          echo "" >> ../BRANCH_ISSUES.md
-          echo "**Generated:** $(date -u '+%Y-%m-%d %H:%M:%S UTC')" >> ../BRANCH_ISSUES.md
-          echo "**Workflow Run:** [View Run](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})" >> ../BRANCH_ISSUES.md
-          echo "**Commit:** ${{ github.sha }}" >> ../BRANCH_ISSUES.md
-          echo "" >> ../BRANCH_ISSUES.md
+          # Generate DD-MM-HH timestamp for the filename
+          DD=$(date -u '+%d')
+          MM=$(date -u '+%m')
+          HH=$(date -u '+%H')
+          TIMESTAMP="${DD}-${MM}-${HH}"
 
-          echo "## Test Results Summary" >> ../BRANCH_ISSUES.md
+          # Get current branch name and check if it's a fix branch
+          CURRENT_BRANCH="${{ github.ref_name }}"
+          echo "Current branch: $CURRENT_BRANCH"
+
+          # Create fixes directory structure for the current branch
+          if [[ "$CURRENT_BRANCH" == fix/* ]]; then
+            # For fix branches, use the existing fixes folder structure
+            FIXES_DIR="../fixes/${CURRENT_BRANCH//\//-}"
+          else
+            # For other branches (main/master), create a fixes folder for potential future fix branch
+            FIXES_DIR="../fixes/pending-${CURRENT_BRANCH//\//-}"
+          fi
+
+          mkdir -p "$FIXES_DIR"
+          echo "Created fixes directory: $FIXES_DIR"
+
+          # Create detailed error report with timestamped filename in fixes folder
+          ISSUES_FILE="${FIXES_DIR}/BRANCH_ISSUES_${TIMESTAMP}.md"
+          echo "Creating issues file: $ISSUES_FILE"
+
+          echo "# Test Failure Report" > "$ISSUES_FILE"
+          echo "" >> "$ISSUES_FILE"
+          echo "**Generated:** $(date -u '+%Y-%m-%d %H:%M:%S UTC')" >> "$ISSUES_FILE"
+          echo "**Workflow Run:** [View Run](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})" >> "$ISSUES_FILE"
+          echo "**Commit:** ${{ github.sha }}" >> "$ISSUES_FILE"
+          echo "" >> "$ISSUES_FILE"
+
+          echo "## Test Results Summary" >> "$ISSUES_FILE"
 
           # Try multiple possible locations for test-results.json
           TEST_RESULTS_FILE=""
@@ -142,17 +167,17 @@ jobs:
           fi
 
           if [ -n "$TEST_RESULTS_FILE" ]; then
-            echo "Processing test results from: $TEST_RESULTS_FILE" >> ../BRANCH_ISSUES.md
+            echo "Processing test results from: $TEST_RESULTS_FILE" >> "$ISSUES_FILE"
             # Extract test results and format as clean markdown
             if command -v jq >/dev/null 2>&1; then
               # Extract stats
-              echo "### Statistics" >> ../BRANCH_ISSUES.md
-              jq -r '.stats | "- **Total Tests:** \(.expected)\n- **Passed:** ✅ \(.passed)\n- **Failed:** ❌ \(.failed)\n- **Skipped:** ⏭️ \(.skipped)\n- **Duration:** \(.duration)ms"' "$TEST_RESULTS_FILE" 2>/dev/null >> ../BRANCH_ISSUES.md || echo "Could not extract stats" >> ../BRANCH_ISSUES.md
-              echo "" >> ../BRANCH_ISSUES.md
+              echo "### Statistics" >> "$ISSUES_FILE"
+              jq -r '.stats | "- **Total Tests:** \(.expected)\n- **Passed:** ✅ \(.passed)\n- **Failed:** ❌ \(.failed)\n- **Skipped:** ⏭️ \(.skipped)\n- **Duration:** \(.duration)ms"' "$TEST_RESULTS_FILE" 2>/dev/null >> "$ISSUES_FILE" || echo "Could not extract stats" >> "$ISSUES_FILE"
+              echo "" >> "$ISSUES_FILE"
 
               # Extract failed tests grouped by suite
-              echo "### Failed Tests" >> ../BRANCH_ISSUES.md
-              echo "" >> ../BRANCH_ISSUES.md
+              echo "### Failed Tests" >> "$ISSUES_FILE"
+              echo "" >> "$ISSUES_FILE"
 
               # Process each suite and its failed tests
               jq -r '
@@ -176,66 +201,75 @@ jobs:
                     end
                   )
                 )
-              ' "$TEST_RESULTS_FILE" 2>/dev/null >> ../BRANCH_ISSUES.md || {
-                echo "Could not parse test details, showing raw summary:" >> ../BRANCH_ISSUES.md
-                echo '```' >> ../BRANCH_ISSUES.md
-                jq '.stats' "$TEST_RESULTS_FILE" 2>/dev/null | head -20 >> ../BRANCH_ISSUES.md
-                echo '```' >> ../BRANCH_ISSUES.md
+              ' "$TEST_RESULTS_FILE" 2>/dev/null >> "$ISSUES_FILE" || {
+                echo "Could not parse test details, showing raw summary:" >> "$ISSUES_FILE"
+                echo '```' >> "$ISSUES_FILE"
+                jq '.stats' "$TEST_RESULTS_FILE" 2>/dev/null | head -20 >> "$ISSUES_FILE"
+                echo '```' >> "$ISSUES_FILE"
               }
             else
-              echo "jq not available, cannot parse test-results.json" >> ../BRANCH_ISSUES.md
+              echo "jq not available, cannot parse test-results.json" >> "$ISSUES_FILE"
             fi
           else
-            echo "### ⚠️ test-results.json not found" >> ../BRANCH_ISSUES.md
-            echo "" >> ../BRANCH_ISSUES.md
-            echo "Test results file could not be located. Attempting to extract information from test output..." >> ../BRANCH_ISSUES.md
-            echo "" >> ../BRANCH_ISSUES.md
+            echo "### ⚠️ test-results.json not found" >> "$ISSUES_FILE"
+            echo "" >> "$ISSUES_FILE"
+            echo "Test results file could not be located. Attempting to extract information from test output..." >> "$ISSUES_FILE"
+            echo "" >> "$ISSUES_FILE"
 
             # Try to extract summary from test-output.txt if it exists
             if [ -f "test-output.txt" ]; then
-              echo "### Test Summary (from output)" >> ../BRANCH_ISSUES.md
-              echo '```' >> ../BRANCH_ISSUES.md
+              echo "### Test Summary (from output)" >> "$ISSUES_FILE"
+              echo '```' >> "$ISSUES_FILE"
               # Extract summary lines containing pass/fail counts
-              grep -E "passed|failed|skipped|flaky" test-output.txt | tail -5 | sed 's/\x1b\[[0-9;]*m//g' >> ../BRANCH_ISSUES.md || echo "No summary found"
-              echo '```' >> ../BRANCH_ISSUES.md
-              echo "" >> ../BRANCH_ISSUES.md
+              grep -E "passed|failed|skipped|flaky" test-output.txt | tail -5 | sed 's/\x1b\[[0-9;]*m//g' >> "$ISSUES_FILE" || echo "No summary found"
+              echo '```' >> "$ISSUES_FILE"
+              echo "" >> "$ISSUES_FILE"
 
-              echo "### Failed Tests (from output)" >> ../BRANCH_ISSUES.md
-              echo '```' >> ../BRANCH_ISSUES.md
+              echo "### Failed Tests (from output)" >> "$ISSUES_FILE"
+              echo '```' >> "$ISSUES_FILE"
               # Extract lines with ✗ or ✘ (failed test indicators)
-              grep -E "✗|✘|× " test-output.txt | head -20 | sed 's/\x1b\[[0-9;]*m//g' >> ../BRANCH_ISSUES.md || echo "No failed tests found in output"
-              echo '```' >> ../BRANCH_ISSUES.md
+              grep -E "✗|✘|× " test-output.txt | head -20 | sed 's/\x1b\[[0-9;]*m//g' >> "$ISSUES_FILE" || echo "No failed tests found in output"
+              echo '```' >> "$ISSUES_FILE"
             else
-              echo "test-output.txt also not found. Please check the workflow logs directly." >> ../BRANCH_ISSUES.md
+              echo "test-output.txt also not found. Please check the workflow logs directly." >> "$ISSUES_FILE"
             fi
           fi
-          echo "" >> ../BRANCH_ISSUES.md
+          echo "" >> "$ISSUES_FILE"
 
-          echo "## Test Execution Log (Cleaned)" >> ../BRANCH_ISSUES.md
+          echo "## Test Execution Log (Cleaned)" >> "$ISSUES_FILE"
           if [ -f "test-output.txt" ]; then
-            echo "### Failed Test Output Only" >> ../BRANCH_ISSUES.md
-            echo '```' >> ../BRANCH_ISSUES.md
-            # Extract only failed test output and clean ANSI codes
-            grep -A 10 -B 2 -E "✗|✘|FAILED|Error:|AssertionError|expected.*received" test-output.txt 2>/dev/null | \
-              sed 's/\x1b\[[0-9;]*m//g' | \
-              sed 's/\x1b\[[0-9;]*[a-zA-Z]//g' | \
-              sed 's/\\u001b\[[0-9;]*m//g' | \
-              sed 's/\[39m//g' | \
-              sed 's/\[31m//g' | \
-              sed 's/\[32m//g' | \
-              sed 's/\[90m//g' | \
-              sed 's/\[2m//g' | \
-              head -200 >> ../BRANCH_ISSUES.md || echo "No specific failures found in output" >> ../BRANCH_ISSUES.md
-            echo '```' >> ../BRANCH_ISSUES.md
+            echo "### Failed Test Output Only" >> "$ISSUES_FILE"
+            echo '```' >> "$ISSUES_FILE"
+            # Extract only failed test output and clean ANSI codes - simplified to avoid broken pipe
+            grep -E "✗|✘|FAILED|Error:|AssertionError|expected.*received" test-output.txt 2>/dev/null | \
+              head -200 | \
+              sed 's/\x1b\[[0-9;]*m//g;s/\x1b\[[0-9;]*[a-zA-Z]//g;s/\\u001b\[[0-9;]*m//g;s/\[39m//g;s/\[31m//g;s/\[32m//g;s/\[90m//g;s/\[2m//g' >> "$ISSUES_FILE" || echo "No specific failures found in output" >> "$ISSUES_FILE"
+            echo '```' >> "$ISSUES_FILE"
           else
-            echo "No test-output.txt file found" >> ../BRANCH_ISSUES.md
+            echo "No test-output.txt file found" >> "$ISSUES_FILE"
           fi
-          echo "" >> ../BRANCH_ISSUES.md
+          echo "" >> "$ISSUES_FILE"
 
-          echo "## Environment Information" >> ../BRANCH_ISSUES.md
-          echo "- **Runner OS:** ${{ runner.os }}" >> ../BRANCH_ISSUES.md
-          echo "- **Node Version:** ${{ env.NODE_VERSION }}" >> ../BRANCH_ISSUES.md
-          echo "- **Browser:** ${{ matrix.browser }}" >> ../BRANCH_ISSUES.md
+          echo "## Environment Information" >> "$ISSUES_FILE"
+          echo "- **Runner OS:** ${{ runner.os }}" >> "$ISSUES_FILE"
+          echo "- **Node Version:** ${{ env.NODE_VERSION }}" >> "$ISSUES_FILE"
+          echo "- **Browser:** ${{ matrix.browser }}" >> "$ISSUES_FILE"
+          echo "" >> "$ISSUES_FILE"
+
+          # Verify BRANCH_ISSUES file was created
+          echo "Checking if BRANCH_ISSUES file was created..."
+          if [ -f "$ISSUES_FILE" ]; then
+            echo "✅ BRANCH_ISSUES file created successfully at: $(realpath $ISSUES_FILE)"
+            echo "File size: $(wc -c < $ISSUES_FILE) bytes"
+            echo "Line count: $(wc -l < $ISSUES_FILE) lines"
+            echo "File location: $ISSUES_FILE"
+          else
+            echo "❌ ERROR: BRANCH_ISSUES file was NOT created!"
+            echo "Current directory: $(pwd)"
+            echo "Expected location: $ISSUES_FILE"
+            echo "Fixes directory contents:"
+            ls -la "$FIXES_DIR" 2>/dev/null || echo "Fixes directory not found"
+          fi
 
           # Create clean markdown issue content
           echo "## 🔴 Test Failure Report" > issue-content.md
@@ -294,8 +328,51 @@ jobs:
           echo "" >> issue-content.md
           echo "**Workflow Run:** [View Full Logs](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})" >> issue-content.md
 
+      - name: Commit and push BRANCH_ISSUES to current branch
+        if: failure() && startsWith(github.ref, 'refs/heads/fix/')
+        run: |
+          echo "Committing BRANCH_ISSUES file to current fix branch..."
+          echo "Note: This step only runs for fix/* branches, not for PR merge branches"
+
+          # Get current branch
+          CURRENT_BRANCH="${{ github.ref_name }}"
+          echo "Current branch: $CURRENT_BRANCH"
+
+          # Configure git
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          # Check what files we have
+          echo "Checking for BRANCH_ISSUES files..."
+          ls -la fixes/ 2>/dev/null || echo "No fixes directory yet"
+
+          # Add and commit the BRANCH_ISSUES file if it exists
+          if [ -d "fixes/${CURRENT_BRANCH//\//-}" ]; then
+            echo "Found fixes directory for current branch"
+            git add "fixes/${CURRENT_BRANCH//\//-}/BRANCH_ISSUES_*.md"
+
+            # Check if there are changes to commit
+            if git diff --staged --quiet; then
+              echo "No changes to commit"
+            else
+              TIMESTAMP=$(date -u '+%d-%m-%H')
+              git commit -m "Add test failure report BRANCH_ISSUES_${TIMESTAMP}.md - Test failures detected by GitHub Actions. See fixes/${CURRENT_BRANCH//\//-}/ for details."
+
+              # Push to current branch
+              git push origin HEAD:"$CURRENT_BRANCH" || {
+                echo "Failed to push with regular token, trying with PAT..."
+                # If regular push fails, try with PAT
+                git remote set-url origin https://x-access-token:${{ secrets.PAT_REPOS_AND_WORKFLOW }}@github.com/${{ github.repository }}.git
+                git push origin HEAD:"$CURRENT_BRANCH"
+              }
+              echo "✅ Successfully pushed BRANCH_ISSUES to $CURRENT_BRANCH"
+            fi
+          else
+            echo "Warning: No fixes directory found for current branch"
+          fi
+
       - name: Create branch and issue for failures
-        if: failure() && (github.ref == 'refs/heads/master' || github.ref == 'refs/heads/main')
+        if: failure() && (github.ref == 'refs/heads/master' || github.ref == 'refs/heads/main' || startsWith(github.ref, 'refs/heads/fix/') || github.event_name == 'pull_request')
         uses: actions/github-script@v7
         with:
           github-token: ${{ secrets.PAT_REPOS_AND_WORKFLOW }}
@@ -304,12 +381,74 @@ jobs:
             const path = require('path');
             const { execSync } = require('child_process');
 
-            // Generate branch name
-            const timestamp = new Date().toISOString().replace(/[:.]/g, '-').substring(0, 19);
-            const shortSha = context.sha.substring(0, 7);
-            const branchName = `fix/test-failures-${timestamp}-${shortSha}`;
+            // Debug: Check current directory and fixes folder
+            console.log('Current working directory:', process.cwd());
+            console.log('Checking for fixes directory:', fs.existsSync('fixes'));
+            if (fs.existsSync('fixes')) {
+              console.log('Fixes directory contents:', fs.readdirSync('fixes'));
+            }
 
-            console.log(`Creating branch: ${branchName}`);
+            // Check if current branch is a fix branch or PR
+            const currentBranch = '${{ github.ref_name }}';
+            const isFixBranch = currentBranch.startsWith('fix/');
+            const isPullRequest = '${{ github.event_name }}' === 'pull_request';
+
+            console.log(`Branch: ${currentBranch}, Is Fix: ${isFixBranch}, Is PR: ${isPullRequest}`);
+
+            // Generate timestamp for the report in DD-MM-HH format
+            const now = new Date();
+            const dd = String(now.getUTCDate()).padStart(2, '0');
+            const mm = String(now.getUTCMonth() + 1).padStart(2, '0');
+            const hh = String(now.getUTCHours()).padStart(2, '0');
+            const timestamp = `${dd}-${mm}-${hh}`;
+            const fullTimestamp = new Date().toISOString().replace(/[:.]/g, '-').substring(0, 19);
+            const shortSha = context.sha.substring(0, 7);
+
+            // Variable to track branch name for issue creation
+            let branchNameForIssue = currentBranch;
+            let branchCreated = false;
+
+            if (isFixBranch) {
+              // For fix branches, the BRANCH_ISSUES file is already handled by the shell script
+              console.log(`Current branch is a fix branch (${currentBranch})`);
+              console.log(`BRANCH_ISSUES files should already be in fixes/${currentBranch.replace(/\//g, '-')}/`);
+
+              // Check if the files were created by the previous step
+              const fixesDir = `fixes/${currentBranch.replace(/\//g, '-')}`;
+              if (fs.existsSync(fixesDir)) {
+                const files = fs.readdirSync(fixesDir);
+                console.log(`Files in ${fixesDir}:`, files.filter(f => f.startsWith('BRANCH_ISSUES')));
+              } else {
+                console.log(`Warning: ${fixesDir} directory not found`);
+              }
+
+              // No need to create a new branch for fix branches
+              return;
+            } else if (isPullRequest) {
+              // For PR branches, log the information but don't create a new branch
+              console.log(`This is a PR branch (${currentBranch})`);
+              console.log(`BRANCH_ISSUES files created in fixes/pending-${currentBranch.replace(/\//g, '-')}/`);
+              console.log('PR branches do not create new fix branches or commit changes');
+
+              // Check if the files were created
+              const pendingDir = `fixes/pending-${currentBranch.replace(/\//g, '-')}`;
+              if (fs.existsSync(pendingDir)) {
+                const files = fs.readdirSync(pendingDir);
+                console.log(`Files in ${pendingDir}:`, files.filter(f => f.startsWith('BRANCH_ISSUES')));
+              }
+
+              // Log the failure information for the PR
+              console.log('Test failures have been recorded for this PR');
+              console.log('The BRANCH_ISSUES file can be reviewed but will not be committed to the PR branch');
+
+              // Still create an issue comment on the PR if tests fail
+              // But don't create a new branch
+              return;
+            } else {
+              // Original behavior for non-fix branches - use full timestamp for uniqueness
+              const branchName = `fix/test-failures-${fullTimestamp}-${shortSha}`;
+              branchNameForIssue = branchName;
+              console.log(`Creating new fix branch: ${branchName}`);
 
             try {
               // Configure git with PAT for authentication
@@ -324,40 +463,55 @@ jobs:
               // Create and checkout new branch from current HEAD
               execSync(`git checkout -b ${branchName}`);
 
-              // Check if BRANCH_ISSUES.md exists and add it
-              if (fs.existsSync('BRANCH_ISSUES.md')) {
-                console.log('Adding BRANCH_ISSUES.md to branch');
-                execSync('git add BRANCH_ISSUES.md');
-                execSync('git commit -m "Add test failure details in BRANCH_ISSUES.md"');
+              // Look for the fixes folder created by the shell script
+              const pendingFixesDir = `fixes/pending-${currentBranch.replace(/\//g, '-')}`;
+              const newFixesDir = `fixes/${branchName.replace(/\//g, '-')}`;
+
+              // Check if pending fixes folder exists and move it to the new branch name
+              if (fs.existsSync(pendingFixesDir)) {
+                console.log(`Found pending fixes folder: ${pendingFixesDir}`);
+                execSync(`mv ${pendingFixesDir} ${newFixesDir}`);
+                console.log(`Renamed to: ${newFixesDir}`);
+
+                // Add the fixes folder
+                execSync(`git add ${newFixesDir}`);
+                execSync(`git commit -m "Add test failure report to fixes folder"`);
 
                 // Push the branch
                 execSync(`git push -u origin ${branchName}`);
-                console.log(`Branch ${branchName} pushed successfully`);
+                console.log(`Branch ${branchName} pushed successfully with fixes folder`);
               } else {
-                console.error('BRANCH_ISSUES.md not found!');
-                // Try to create it from available test outputs
+                console.error('No pending fixes folder found!');
+                // Create a minimal BRANCH_ISSUES file in fixes folder
+                execSync(`mkdir -p ${newFixesDir}`);
+
                 let content = '# Test Failure Report\n\n';
                 content += `Generated: ${new Date().toISOString()}\n\n`;
                 content += `Workflow Run: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}\n\n`;
 
                 if (fs.existsSync('tests/test-output.txt')) {
                   content += '## Test Output\n```\n';
-                  content += fs.readFileSync('tests/test-output.txt', 'utf8');
+                  content += fs.readFileSync('tests/test-output.txt', 'utf8').substring(0, 10000);
                   content += '\n```\n';
                 }
 
-                fs.writeFileSync('BRANCH_ISSUES.md', content);
-                execSync('git add BRANCH_ISSUES.md');
-                execSync('git commit -m "Add test failure details in BRANCH_ISSUES.md"');
+                const issuesFile = `${newFixesDir}/BRANCH_ISSUES_${timestamp}.md`;
+                fs.writeFileSync(issuesFile, content);
+                execSync(`git add ${newFixesDir}`);
+                execSync(`git commit -m "Add test failure report to fixes folder"`);
                 execSync(`git push -u origin ${branchName}`);
                 console.log(`Branch ${branchName} pushed with generated BRANCH_ISSUES.md`);
               }
+
+              branchCreated = true;
             } catch (gitError) {
               console.error('Error creating branch:', gitError.message);
               console.error('Git error output:', gitError.stdout?.toString() || 'No stdout');
               console.error('Git error stderr:', gitError.stderr?.toString() || 'No stderr');
             }
+            }
 
+            // Create issue for both fix and non-fix branches
             // Read the issue content
             let issueBody;
             try {
@@ -368,15 +522,23 @@ jobs:
             }
 
             // Add branch information to issue body
-            issueBody += `\n\n## 📁 Error Details Branch\n\n`;
-            issueBody += `A branch has been created with detailed error information:\n`;
-            issueBody += `- **Branch:** [\`${branchName}\`](https://github.com/${{ github.repository }}/tree/${branchName})\n`;
-            issueBody += `- **Error Details File:** [\`BRANCH_ISSUES.md\`](https://github.com/${{ github.repository }}/blob/${branchName}/BRANCH_ISSUES.md)\n\n`;
-            issueBody += `To fix these issues:\n`;
-            issueBody += `1. Check out the branch: \`git checkout ${branchName}\`\n`;
-            issueBody += `2. Review the errors in \`BRANCH_ISSUES.md\`\n`;
-            issueBody += `3. Fix the failing tests\n`;
-            issueBody += `4. Push your fixes and create a PR\n`;
+            issueBody += `\n\n## 📁 Error Details\n\n`;
+            if (isFixBranch) {
+              const fixesDir = `fixes/${currentBranch.replace(/\//g, '-')}`;
+              issueBody += `Test failure detected on fix branch:\n`;
+              issueBody += `- **Branch:** [\`${currentBranch}\`](https://github.com/${{ github.repository }}/tree/${currentBranch})\n`;
+              issueBody += `- **Error Details Folder:** [\`${fixesDir}\`](https://github.com/${{ github.repository }}/tree/${currentBranch}/${fixesDir})\n\n`;
+              issueBody += `Additional test failures have been recorded in the fixes folder.\n`;
+            } else if (branchCreated) {
+              issueBody += `A new branch has been created with detailed error information:\n`;
+              issueBody += `- **Branch:** [\`${branchNameForIssue}\`](https://github.com/${{ github.repository }}/tree/${branchNameForIssue})\n`;
+              issueBody += `- **Error Details File:** [\`BRANCH_ISSUES.md\`](https://github.com/${{ github.repository }}/blob/${branchNameForIssue}/BRANCH_ISSUES.md)\n\n`;
+              issueBody += `To fix these issues:\n`;
+              issueBody += `1. Check out the branch: \`git checkout ${branchNameForIssue}\`\n`;
+              issueBody += `2. Review the errors in \`BRANCH_ISSUES.md\`\n`;
+              issueBody += `3. Fix the failing tests\n`;
+              issueBody += `4. Push your fixes and create a PR\n`;
+            }
 
             // Check if similar issue already exists
             const existingIssues = await github.rest.issues.listForRepo({

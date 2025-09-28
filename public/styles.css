@@ -496,7 +496,7 @@ label {
 }
 .w-input::placeholder,
 .w-select::placeholder {
-  color: #999;
+  color: #666;
 }
 .w-input:focus,
 .w-select:focus {
@@ -930,7 +930,7 @@ textarea.w-select {
 }
 .w-widget-twitter-count-shim .w-widget-twitter-count-inner {
   text-align: center;
-  color: #999;
+  color: #666;
   font-family: serif;
   font-size: 15px;
   line-height: 12px;
@@ -2059,7 +2059,7 @@ textarea.w-select {
   display: block;
 }
 .w-commerce-commercecheckoutemailinput::placeholder {
-  color: #999;
+  color: #666;
 }
 .w-commerce-commercecheckoutemailinput:focus {
   border-color: #3898ec;
@@ -2082,7 +2082,7 @@ textarea.w-select {
   display: block;
 }
 .w-commerce-commercecheckoutshippingfullname::placeholder {
-  color: #999;
+  color: #666;
 }
 .w-commerce-commercecheckoutshippingfullname:focus {
   border-color: #3898ec;
@@ -2102,7 +2102,7 @@ textarea.w-select {
   display: block;
 }
 .w-commerce-commercecheckoutshippingstreetaddress::placeholder {
-  color: #999;
+  color: #666;
 }
 .w-commerce-commercecheckoutshippingstreetaddress:focus {
   border-color: #3898ec;
@@ -2122,7 +2122,7 @@ textarea.w-select {
   display: block;
 }
 .w-commerce-commercecheckoutshippingstreetaddressoptional::placeholder {
-  color: #999;
+  color: #666;
 }
 .w-commerce-commercecheckoutshippingstreetaddressoptional:focus {
   border-color: #3898ec;
@@ -2152,7 +2152,7 @@ textarea.w-select {
   display: block;
 }
 .w-commerce-commercecheckoutshippingcity::placeholder {
-  color: #999;
+  color: #666;
 }
 .w-commerce-commercecheckoutshippingcity:focus {
   border-color: #3898ec;
@@ -2172,7 +2172,7 @@ textarea.w-select {
   display: block;
 }
 .w-commerce-commercecheckoutshippingstateprovince::placeholder {
-  color: #999;
+  color: #666;
 }
 .w-commerce-commercecheckoutshippingstateprovince:focus {
   border-color: #3898ec;
@@ -2192,7 +2192,7 @@ textarea.w-select {
   display: block;
 }
 .w-commerce-commercecheckoutshippingzippostalcode::placeholder {
-  color: #999;
+  color: #666;
 }
 .w-commerce-commercecheckoutshippingzippostalcode:focus {
   border-color: #3898ec;
@@ -2212,7 +2212,7 @@ textarea.w-select {
   display: block;
 }
 .w-commerce-commercecheckoutshippingcountryselector::placeholder {
-  color: #999;
+  color: #666;
 }
 .w-commerce-commercecheckoutshippingcountryselector:focus {
   border-color: #3898ec;
@@ -2271,7 +2271,7 @@ textarea.w-select {
   display: block;
 }
 .w-commerce-commercecheckoutcardnumber::placeholder {
-  color: #999;
+  color: #666;
 }
 .w-commerce-commercecheckoutcardnumber:focus,
 .w-commerce-commercecheckoutcardnumber.-wfp-focus {
@@ -2293,7 +2293,7 @@ textarea.w-select {
   display: block;
 }
 .w-commerce-commercecheckoutcardexpirationdate::placeholder {
-  color: #999;
+  color: #666;
 }
 .w-commerce-commercecheckoutcardexpirationdate:focus,
 .w-commerce-commercecheckoutcardexpirationdate.-wfp-focus {
@@ -2315,7 +2315,7 @@ textarea.w-select {
   display: block;
 }
 .w-commerce-commercecheckoutcardsecuritycode::placeholder {
-  color: #999;
+  color: #666;
 }
 .w-commerce-commercecheckoutcardsecuritycode:focus,
 .w-commerce-commercecheckoutcardsecuritycode.-wfp-focus {
@@ -2351,7 +2351,7 @@ textarea.w-select {
   display: block;
 }
 .w-commerce-commercecheckoutbillingfullname::placeholder {
-  color: #999;
+  color: #666;
 }
 .w-commerce-commercecheckoutbillingfullname:focus {
   border-color: #3898ec;
@@ -2371,7 +2371,7 @@ textarea.w-select {
   display: block;
 }
 .w-commerce-commercecheckoutbillingstreetaddress::placeholder {
-  color: #999;
+  color: #666;
 }
 .w-commerce-commercecheckoutbillingstreetaddress:focus {
   border-color: #3898ec;
@@ -2391,7 +2391,7 @@ textarea.w-select {
   display: block;
 }
 .w-commerce-commercecheckoutbillingstreetaddressoptional::placeholder {
-  color: #999;
+  color: #666;
 }
 .w-commerce-commercecheckoutbillingstreetaddressoptional:focus {
   border-color: #3898ec;
@@ -2411,7 +2411,7 @@ textarea.w-select {
   display: block;
 }
 .w-commerce-commercecheckoutbillingcity::placeholder {
-  color: #999;
+  color: #666;
 }
 .w-commerce-commercecheckoutbillingcity:focus {
   border-color: #3898ec;
@@ -2431,7 +2431,7 @@ textarea.w-select {
   display: block;
 }
 .w-commerce-commercecheckoutbillingstateprovince::placeholder {
-  color: #999;
+  color: #666;
 }
 .w-commerce-commercecheckoutbillingstateprovince:focus {
   border-color: #3898ec;
@@ -2451,7 +2451,7 @@ textarea.w-select {
   display: block;
 }
 .w-commerce-commercecheckoutbillingzippostalcode::placeholder {
-  color: #999;
+  color: #666;
 }
 .w-commerce-commercecheckoutbillingzippostalcode:focus {
   border-color: #3898ec;
@@ -2471,7 +2471,7 @@ textarea.w-select {
   display: block;
 }
 .w-commerce-commercecheckoutbillingcountryselector::placeholder {
-  color: #999;
+  color: #666;
 }
 .w-commerce-commercecheckoutbillingcountryselector:focus {
   border-color: #3898ec;
@@ -2559,7 +2559,7 @@ textarea.w-select {
   display: block;
 }
 .w-commerce-commercecheckoutdiscountsinput::placeholder {
-  color: #999;
+  color: #666;
 }
 .w-commerce-commercecheckoutdiscountsinput:focus {
   border-color: #3898ec;
@@ -17178,7 +17178,7 @@ label {
 }
 .w-input::placeholder,
 .w-select::placeholder {
-  color: #999;
+  color: #666;
 }
 .w-input:focus,
 .w-select:focus {
@@ -17612,7 +17612,7 @@ textarea.w-select {
 }
 .w-widget-twitter-count-shim .w-widget-twitter-count-inner {
   text-align: center;
-  color: #999;
+  color: #666;
   font-family: serif;
   font-size: 15px;
   line-height: 12px;
@@ -18706,7 +18706,7 @@ textarea.w-select {
   display: block;
 }
 .w-commerce-commercecheckoutemailinput::placeholder {
-  color: #999;
+  color: #666;
 }
 .w-commerce-commercecheckoutemailinput:focus {
   border-color: #3898ec;
@@ -18729,7 +18729,7 @@ textarea.w-select {
   display: block;
 }
 .w-commerce-commercecheckoutshippingfullname::placeholder {
-  color: #999;
+  color: #666;
 }
 .w-commerce-commercecheckoutshippingfullname:focus {
   border-color: #3898ec;
@@ -18749,7 +18749,7 @@ textarea.w-select {
   display: block;
 }
 .w-commerce-commercecheckoutshippingstreetaddress::placeholder {
-  color: #999;
+  color: #666;
 }
 .w-commerce-commercecheckoutshippingstreetaddress:focus {
   border-color: #3898ec;
@@ -18769,7 +18769,7 @@ textarea.w-select {
   display: block;
 }
 .w-commerce-commercecheckoutshippingstreetaddressoptional::placeholder {
-  color: #999;
+  color: #666;
 }
 .w-commerce-commercecheckoutshippingstreetaddressoptional:focus {
   border-color: #3898ec;
@@ -18799,7 +18799,7 @@ textarea.w-select {
   display: block;
 }
 .w-commerce-commercecheckoutshippingcity::placeholder {
-  color: #999;
+  color: #666;
 }
 .w-commerce-commercecheckoutshippingcity:focus {
   border-color: #3898ec;
@@ -18819,7 +18819,7 @@ textarea.w-select {
   display: block;
 }
 .w-commerce-commercecheckoutshippingstateprovince::placeholder {
-  color: #999;
+  color: #666;
 }
 .w-commerce-commercecheckoutshippingstateprovince:focus {
   border-color: #3898ec;
@@ -18839,7 +18839,7 @@ textarea.w-select {
   display: block;
 }
 .w-commerce-commercecheckoutshippingzippostalcode::placeholder {
-  color: #999;
+  color: #666;
 }
 .w-commerce-commercecheckoutshippingzippostalcode:focus {
   border-color: #3898ec;
@@ -18859,7 +18859,7 @@ textarea.w-select {
   display: block;
 }
 .w-commerce-commercecheckoutshippingcountryselector::placeholder {
-  color: #999;
+  color: #666;
 }
 .w-commerce-commercecheckoutshippingcountryselector:focus {
   border-color: #3898ec;
@@ -18918,7 +18918,7 @@ textarea.w-select {
   display: block;
 }
 .w-commerce-commercecheckoutcardnumber::placeholder {
-  color: #999;
+  color: #666;
 }
 .w-commerce-commercecheckoutcardnumber:focus,
 .w-commerce-commercecheckoutcardnumber.-wfp-focus {
@@ -18940,7 +18940,7 @@ textarea.w-select {
   display: block;
 }
 .w-commerce-commercecheckoutcardexpirationdate::placeholder {
-  color: #999;
+  color: #666;
 }
 .w-commerce-commercecheckoutcardexpirationdate:focus,
 .w-commerce-commercecheckoutcardexpirationdate.-wfp-focus {
@@ -18962,7 +18962,7 @@ textarea.w-select {
   display: block;
 }
 .w-commerce-commercecheckoutcardsecuritycode::placeholder {
-  color: #999;
+  color: #666;
 }
 .w-commerce-commercecheckoutcardsecuritycode:focus,
 .w-commerce-commercecheckoutcardsecuritycode.-wfp-focus {
@@ -18998,7 +18998,7 @@ textarea.w-select {
   display: block;
 }
 .w-commerce-commercecheckoutbillingfullname::placeholder {
-  color: #999;
+  color: #666;
 }
 .w-commerce-commercecheckoutbillingfullname:focus {
   border-color: #3898ec;
@@ -19018,7 +19018,7 @@ textarea.w-select {
   display: block;
 }
 .w-commerce-commercecheckoutbillingstreetaddress::placeholder {
-  color: #999;
+  color: #666;
 }
 .w-commerce-commercecheckoutbillingstreetaddress:focus {
   border-color: #3898ec;
@@ -19038,7 +19038,7 @@ textarea.w-select {
   display: block;
 }
 .w-commerce-commercecheckoutbillingstreetaddressoptional::placeholder {
-  color: #999;
+  color: #666;
 }
 .w-commerce-commercecheckoutbillingstreetaddressoptional:focus {
   border-color: #3898ec;
@@ -19058,7 +19058,7 @@ textarea.w-select {
   display: block;
 }
 .w-commerce-commercecheckoutbillingcity::placeholder {
-  color: #999;
+  color: #666;
 }
 .w-commerce-commercecheckoutbillingcity:focus {
   border-color: #3898ec;
@@ -19078,7 +19078,7 @@ textarea.w-select {
   display: block;
 }
 .w-commerce-commercecheckoutbillingstateprovince::placeholder {
-  color: #999;
+  color: #666;
 }
 .w-commerce-commercecheckoutbillingstateprovince:focus {
   border-color: #3898ec;
@@ -19098,7 +19098,7 @@ textarea.w-select {
   display: block;
 }
 .w-commerce-commercecheckoutbillingzippostalcode::placeholder {
-  color: #999;
+  color: #666;
 }
 .w-commerce-commercecheckoutbillingzippostalcode:focus {
   border-color: #3898ec;
@@ -19118,7 +19118,7 @@ textarea.w-select {
   display: block;
 }
 .w-commerce-commercecheckoutbillingcountryselector::placeholder {
-  color: #999;
+  color: #666;
 }
 .w-commerce-commercecheckoutbillingcountryselector:focus {
   border-color: #3898ec;
@@ -19206,7 +19206,7 @@ textarea.w-select {
   display: block;
 }
 .w-commerce-commercecheckoutdiscountsinput::placeholder {
-  color: #999;
+  color: #666;
 }
 .w-commerce-commercecheckoutdiscountsinput:focus {
   border-color: #3898ec;
