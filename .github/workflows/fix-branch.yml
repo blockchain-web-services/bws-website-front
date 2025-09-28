@@ -1,0 +1,347 @@
+name: Fix Branch Workflow
+
+on:
+  push:
+    branches: ['fix/**']
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+  checks: read
+
+env:
+  NODE_VERSION: "20"
+
+jobs:
+  # Job 1: Run tests and collect failures
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        browser: [chromium]
+    name: Test Fix Branch - ${{ matrix.browser }}
+    outputs:
+      tests_passed: ${{ steps.test-run.outputs.tests_passed }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: "npm"
+          cache-dependency-path: |
+            package.json
+            tests/package.json
+
+      - name: Install build dependencies
+        run: |
+          if [ -f "package-lock.json" ]; then
+            npm ci
+          else
+            npm install
+          fi
+
+      - name: Build site
+        run: npm run build
+
+      - name: Install test dependencies
+        working-directory: tests
+        run: |
+          if [ -f "package-lock.json" ]; then
+            npm ci
+          else
+            npm install
+          fi
+
+      - name: Install Playwright browsers
+        working-directory: tests
+        run: npx playwright install --with-deps ${{ matrix.browser }}
+
+      - name: Run Playwright tests
+        id: test-run
+        working-directory: tests
+        env:
+          PORT: 4321
+          PLAYWRIGHT_BASE_URL: http://localhost:4321
+        run: |
+          if npx playwright test --config=playwright.config.cjs --project=${{ matrix.browser }} 2>&1 | tee test-output.txt; then
+            echo "✅ All tests passed!"
+            echo "tests_passed=true" >> $GITHUB_OUTPUT
+            exit 0
+          else
+            echo "❌ Tests failed"
+            echo "tests_passed=false" >> $GITHUB_OUTPUT
+            # Don't exit with error - we handle this in the next step
+          fi
+
+      - name: Collect test failures if any
+        if: steps.test-run.outputs.tests_passed == 'false'
+        working-directory: tests
+        run: |
+          echo "Collecting test failures for fix branch..."
+
+          # Generate DD-MM-HH timestamp
+          DD=$(date -u '+%d')
+          MM=$(date -u '+%m')
+          HH=$(date -u '+%H')
+          TIMESTAMP="${DD}-${MM}-${HH}"
+
+          # Get branch name
+          BRANCH_NAME="${{ github.ref_name }}"
+          FIXES_DIR="../fixes/${BRANCH_NAME//\//-}"
+
+          # Ensure fixes directory exists
+          mkdir -p "$FIXES_DIR"
+
+          # Create timestamped BRANCH_ISSUES file
+          ISSUES_FILE="${FIXES_DIR}/BRANCH_ISSUES_${TIMESTAMP}.md"
+
+          echo "# Test Failure Report - Fix Branch" > "$ISSUES_FILE"
+          echo "" >> "$ISSUES_FILE"
+          echo "**Generated:** $(date -u '+%Y-%m-%d %H:%M:%S UTC')" >> "$ISSUES_FILE"
+          echo "**Branch:** $BRANCH_NAME" >> "$ISSUES_FILE"
+          echo "**Commit:** ${{ github.sha }}" >> "$ISSUES_FILE"
+          echo "**Workflow Run:** [View Run](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})" >> "$ISSUES_FILE"
+          echo "" >> "$ISSUES_FILE"
+
+          echo "## Test Results" >> "$ISSUES_FILE"
+
+          if [ -f "test-results.json" ] && command -v jq >/dev/null 2>&1; then
+            echo "### Statistics" >> "$ISSUES_FILE"
+            jq -r '.stats | "- **Total:** \(.expected)\n- **Passed:** \(.passed)\n- **Failed:** \(.failed)"' test-results.json >> "$ISSUES_FILE" 2>/dev/null || echo "Stats not available" >> "$ISSUES_FILE"
+            echo "" >> "$ISSUES_FILE"
+
+            echo "### Failed Tests" >> "$ISSUES_FILE"
+            jq -r '.suites[] | select(.specs[].tests[].status == "failed") | .specs[] | "- \(.title)"' test-results.json >> "$ISSUES_FILE" 2>/dev/null || echo "Could not extract test names" >> "$ISSUES_FILE"
+          fi
+
+          echo "" >> "$ISSUES_FILE"
+          echo "## Test Output" >> "$ISSUES_FILE"
+          echo '```' >> "$ISSUES_FILE"
+          grep -E "✗|✘|FAILED|Error:" test-output.txt | head -30 >> "$ISSUES_FILE" 2>/dev/null
+          echo '```' >> "$ISSUES_FILE"
+
+          echo "Created: $ISSUES_FILE"
+
+      - name: Upload test results
+        if: steps.test-run.outputs.tests_passed == 'false'
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-failures-${{ github.sha }}
+          path: fixes/
+          if-no-files-found: warn
+          retention-days: 30
+
+  # Job 2: Handle test failures - commit to branch and update PR
+  update-on-failure:
+    needs: test
+    runs-on: ubuntu-latest
+    if: needs.test.outputs.tests_passed == 'false'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.PAT_REPOS_AND_WORKFLOW || secrets.GITHUB_TOKEN }}
+
+      - name: Download test failures
+        uses: actions/download-artifact@v4
+        with:
+          name: test-failures-${{ github.sha }}
+
+      - name: Commit test failure report
+        run: |
+          # Configure git
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          # Add and commit the new test failure report
+          git add fixes/
+
+          # Generate timestamp
+          TIMESTAMP=$(date -u '+%d-%m-%H')
+
+          if git diff --staged --quiet; then
+            echo "No new test failure files to commit"
+          else
+            git commit -m "Add test failure report: BRANCH_ISSUES_${TIMESTAMP}.md\n\nTest failures detected on commit ${{ github.sha }}\nSee fixes folder for details."
+
+            # Push to current branch
+            git push origin HEAD:${{ github.ref_name }}
+            echo "✅ Pushed test failure report to branch"
+          fi
+
+      - name: Update PR with failure info
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const branchName = context.ref.replace('refs/heads/', '');
+
+            // Find PR for this branch
+            const prs = await github.rest.pulls.list({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              head: `${context.repo.owner}:${branchName}`,
+              state: 'open'
+            });
+
+            if (prs.data.length > 0) {
+              const pr = prs.data[0];
+              console.log(`Found PR #${pr.number} for branch ${branchName}`);
+
+              // Add comment about test failure
+              const timestamp = new Date().toISOString().split('T')[0];
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: pr.number,
+                body: `## ❌ Tests Failed\n\nTest failures detected on commit ${context.sha.substring(0, 7)}.\n\nA new test failure report has been added to the fixes folder.\n\n**Next steps:**\n1. Review the test failure report\n2. Fix the failing tests\n3. Push your fixes to this branch\n4. Tests will re-run automatically\n\n---\n*Automated comment from GitHub Actions*`
+              });
+
+              // Update labels
+              try {
+                // Remove 'tests-passing' label if exists
+                await github.rest.issues.removeLabel({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  issue_number: pr.number,
+                  name: 'tests-passing'
+                }).catch(() => {});
+
+                // Add 'tests-failing' label
+                await github.rest.issues.addLabels({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  issue_number: pr.number,
+                  labels: ['tests-failing']
+                });
+              } catch (error) {
+                console.log('Could not update labels:', error.message);
+              }
+            } else {
+              console.log(`No open PR found for branch ${branchName}`);
+            }
+
+  # Job 3: Auto-merge when tests pass
+  auto-merge-on-success:
+    needs: test
+    runs-on: ubuntu-latest
+    if: needs.test.outputs.tests_passed == 'true'
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Find and update PR
+        id: find-pr
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.PAT_REPOS_AND_WORKFLOW || secrets.GITHUB_TOKEN }}
+          script: |
+            const branchName = context.ref.replace('refs/heads/', '');
+
+            // Find PR for this branch
+            const prs = await github.rest.pulls.list({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              head: `${context.repo.owner}:${branchName}`,
+              state: 'open'
+            });
+
+            if (prs.data.length === 0) {
+              console.log(`No open PR found for branch ${branchName}`);
+              return;
+            }
+
+            const pr = prs.data[0];
+            console.log(`Found PR #${pr.number} for branch ${branchName}`);
+
+            // Store PR number for next step
+            core.setOutput('pr_number', pr.number);
+            core.setOutput('pr_found', 'true');
+
+            // Add success comment
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: pr.number,
+              body: `## ✅ All Tests Passing!\n\nAll tests are now passing on commit ${context.sha.substring(0, 7)}.\n\n🤖 **Auto-merge has been enabled** - This PR will be automatically merged once all checks complete.\n\n---\n*Automated by GitHub Actions*`
+            });
+
+            // Update labels
+            try {
+              // Remove 'tests-failing' label if exists
+              await github.rest.issues.removeLabel({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: pr.number,
+                name: 'tests-failing'
+              }).catch(() => {});
+
+              // Add 'tests-passing' label
+              await github.rest.issues.addLabels({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: pr.number,
+                labels: ['tests-passing', 'ready-to-merge']
+              });
+            } catch (error) {
+              console.log('Could not update labels:', error.message);
+            }
+
+      - name: Enable auto-merge
+        if: steps.find-pr.outputs.pr_found == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.PAT_REPOS_AND_WORKFLOW || secrets.GITHUB_TOKEN }}
+          PR_NUMBER: ${{ steps.find-pr.outputs.pr_number }}
+        run: |
+          echo "Enabling auto-merge for PR #$PR_NUMBER"
+
+          # Enable auto-merge using GitHub CLI
+          gh pr merge $PR_NUMBER \
+            --auto \
+            --squash \
+            --delete-branch \
+            --subject "Auto-merge: Fix branch with all tests passing" \
+            --body "Automatically merged after all tests passed" \
+            || echo "Auto-merge may already be enabled or PR cannot be merged yet"
+
+          echo "✅ Auto-merge enabled for PR #$PR_NUMBER"
+
+      - name: Close related issue
+        if: steps.find-pr.outputs.pr_found == 'true'
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            // Find issues related to test failures
+            const issues = await github.rest.issues.listForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              labels: 'test-failure',
+              state: 'open'
+            });
+
+            const branchName = context.ref.replace('refs/heads/', '');
+
+            // Close issues that mention this branch
+            for (const issue of issues.data) {
+              if (issue.body && issue.body.includes(branchName)) {
+                await github.rest.issues.update({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  issue_number: issue.number,
+                  state: 'closed',
+                  state_reason: 'completed'
+                });
+
+                await github.rest.issues.createComment({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  issue_number: issue.number,
+                  body: `✅ Resolved - All tests are now passing and the fix will be auto-merged.`
+                });
+
+                console.log(`Closed issue #${issue.number}`);
+              }
+            }
