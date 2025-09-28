@@ -1,0 +1,215 @@
+{
+  "html": [
+    {
+      "file": "_site/about.html",
+      "originalSize": 35460,
+      "newSize": 65535,
+      "sizeDiff": 30075,
+      "prettyPrinted": true,
+      "errors": []
+    },
+    {
+      "file": "_site/articles/discover-the-power-of-blockchain-bwss-data-management-solutions.html",
+      "originalSize": 50878,
+      "newSize": 85210,
+      "sizeDiff": 34332,
+      "prettyPrinted": true,
+      "errors": []
+    },
+    {
+      "file": "_site/articles/embrace-sustainability-with-esg-credits-bws-solution.html",
+      "originalSize": 49649,
+      "newSize": 83899,
+      "sizeDiff": 34250,
+      "prettyPrinted": true,
+      "errors": []
+    },
+    {
+      "file": "_site/articles/investment-impact-reporting-unlocking-a-sustainable-future.html",
+      "originalSize": 49560,
+      "newSize": 83696,
+      "sizeDiff": 34136,
+      "prettyPrinted": true,
+      "errors": []
+    },
+    {
+      "file": "_site/contact-us.html",
+      "originalSize": 46382,
+      "newSize": 81465,
+      "sizeDiff": 35083,
+      "prettyPrinted": true,
+      "errors": []
+    },
+    {
+      "file": "_site/index.html",
+      "originalSize": 82241,
+      "newSize": 132882,
+      "sizeDiff": 50641,
+      "prettyPrinted": true,
+      "errors": []
+    },
+    {
+      "file": "_site/industries.html",
+      "originalSize": 35370,
+      "newSize": 65397,
+      "sizeDiff": 30027,
+      "prettyPrinted": true,
+      "errors": []
+    },
+    {
+      "file": "_site/industry-content/content-creation.html",
+      "originalSize": 48763,
+      "newSize": 83508,
+      "sizeDiff": 34745,
+      "prettyPrinted": true,
+      "errors": []
+    },
+    {
+      "file": "_site/industry-content/esg.html",
+      "originalSize": 48779,
+      "newSize": 83576,
+      "sizeDiff": 34797,
+      "prettyPrinted": true,
+      "errors": []
+    },
+    {
+      "file": "_site/industry-content/financial-services.html",
+      "originalSize": 48785,
+      "newSize": 83534,
+      "sizeDiff": 34749,
+      "prettyPrinted": true,
+      "errors": []
+    },
+    {
+      "file": "_site/industry-content/legal.html",
+      "originalSize": 49066,
+      "newSize": 83853,
+      "sizeDiff": 34787,
+      "prettyPrinted": true,
+      "errors": []
+    },
+    {
+      "file": "_site/industry-content/retail.html",
+      "originalSize": 48666,
+      "newSize": 83459,
+      "sizeDiff": 34793,
+      "prettyPrinted": true,
+      "errors": []
+    },
+    {
+      "file": "_site/industry-content/supply-chain.html",
+      "originalSize": 49230,
+      "newSize": 84029,
+      "sizeDiff": 34799,
+      "prettyPrinted": true,
+      "errors": []
+    },
+    {
+      "file": "_site/legal-notice.html",
+      "originalSize": 48876,
+      "newSize": 84547,
+      "sizeDiff": 35671,
+      "prettyPrinted": true,
+      "errors": []
+    },
+    {
+      "file": "_site/marketplace/blockchain-badges.html",
+      "originalSize": 50796,
+      "newSize": 86982,
+      "sizeDiff": 36186,
+      "prettyPrinted": true,
+      "errors": []
+    },
+    {
+      "file": "_site/marketplace/database-immutable.html",
+      "originalSize": 49769,
+      "newSize": 85691,
+      "sizeDiff": 35922,
+      "prettyPrinted": true,
+      "errors": []
+    },
+    {
+      "file": "_site/marketplace/database-mutable.html",
+      "originalSize": 48977,
+      "newSize": 85095,
+      "sizeDiff": 36118,
+      "prettyPrinted": true,
+      "errors": []
+    },
+    {
+      "file": "_site/marketplace/esg-credits.html",
+      "originalSize": 50169,
+      "newSize": 86549,
+      "sizeDiff": 36380,
+      "prettyPrinted": true,
+      "errors": []
+    },
+    {
+      "file": "_site/marketplace/ipfs-upload.html",
+      "originalSize": 48477,
+      "newSize": 84349,
+      "sizeDiff": 35872,
+      "prettyPrinted": true,
+      "errors": []
+    },
+    {
+      "file": "_site/marketplace/nft-gamecube.html",
+      "originalSize": 48942,
+      "newSize": 84796,
+      "sizeDiff": 35854,
+      "prettyPrinted": true,
+      "errors": []
+    },
+    {
+      "file": "_site/marketplace/nft-zeroknwoledge.html",
+      "originalSize": 49619,
+      "newSize": 85749,
+      "sizeDiff": 36130,
+      "prettyPrinted": true,
+      "errors": []
+    },
+    {
+      "file": "_site/marketplace/telegram-xbot.html",
+      "originalSize": 48223,
+      "newSize": 83729,
+      "sizeDiff": 35506,
+      "prettyPrinted": true,
+      "errors": []
+    },
+    {
+      "file": "_site/privacy-policy.html",
+      "originalSize": 49031,
+      "newSize": 83240,
+      "sizeDiff": 34209,
+      "prettyPrinted": true,
+      "errors": []
+    },
+    {
+      "file": "_site/resources.html",
+      "originalSize": 35400,
+      "newSize": 65427,
+      "sizeDiff": 30027,
+      "prettyPrinted": true,
+      "errors": []
+    }
+  ],
+  "css": [
+    {
+      "file": "_site/styles.css",
+      "originalSize": 696921,
+      "newSize": 696921,
+      "sizeDiff": 0,
+      "prettyPrinted": true,
+      "skippedMinified": false,
+      "errors": []
+    }
+  ],
+  "summary": {
+    "totalHtml": 24,
+    "totalCss": 1,
+    "htmlPrettyPrinted": 24,
+    "cssPrettyPrinted": 1,
+    "htmlErrors": 0,
+    "cssErrors": 0
+  }
+}

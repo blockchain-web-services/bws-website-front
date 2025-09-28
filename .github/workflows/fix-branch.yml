@@ -66,9 +66,12 @@ jobs:
         env:
           PORT: 4321
           PLAYWRIGHT_BASE_URL: http://localhost:4321
+          CI: true
         run: |
           echo "Starting Playwright tests..."
-          npx playwright test --config=playwright.config.cjs --project=${{ matrix.browser }} 2>&1 | tee test-output.txt
+
+          # Run tests with reduced output verbosity
+          npx playwright test --config=playwright.config.cjs --project=${{ matrix.browser }} --reporter=json,line 2>&1 | tee test-output-full.txt | grep -E '^(\[|✓|✗|✘|×|\s+[0-9]+\)|Running|failed|passed|skipped|Test|Error:|\s+at )' > test-output.txt || true
           TEST_EXIT_CODE=${PIPESTATUS[0]}
 
           echo "Test exit code: ${TEST_EXIT_CODE}"
@@ -86,8 +89,11 @@ jobs:
           # Show test summary if available
           if [ -f "test-results.json" ]; then
             echo "Test results summary:"
-            grep -E '"passed"|"failed"|"skipped"' test-results.json || true
+            jq -r '.stats | "Total: \(.expected), Passed: \(.passed), Failed: \(.failed), Skipped: \(.skipped // 0)"' test-results.json 2>/dev/null || echo "Could not parse test results"
           fi
+
+          # Store the actual exit code for the workflow
+          echo "test_exit_code=${TEST_EXIT_CODE}" >> $GITHUB_OUTPUT
 
           # Always exit 0 to allow subsequent jobs to run
           exit 0
@@ -137,7 +143,12 @@ jobs:
           echo "" >> "$ISSUES_FILE"
           echo "## Test Output" >> "$ISSUES_FILE"
           echo '```' >> "$ISSUES_FILE"
-          grep -E "✗|✘|FAILED|Error:" test-output.txt | head -30 >> "$ISSUES_FILE" 2>/dev/null
+          # Use filtered output to avoid broken pipe
+          if [ -f "test-output.txt" ]; then
+            grep -E "(✗|✘|×|FAILED|Error:|failed)" test-output.txt 2>/dev/null | head -50 >> "$ISSUES_FILE" || echo "No failure output captured" >> "$ISSUES_FILE"
+          else
+            echo "No test output file found" >> "$ISSUES_FILE"
+          fi
           echo '```' >> "$ISSUES_FILE"
 
           echo "Created: $ISSUES_FILE"
@@ -372,3 +383,24 @@ jobs:
                 console.log(`Closed issue #${issue.number}`);
               }
             }
+
+  # Job 4: Final status check - ensures workflow fails when tests fail
+  final-status:
+    needs: [test, update-on-failure, auto-merge-on-success]
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check test results and fail workflow if needed
+        run: |
+          echo "Test results: ${{ needs.test.outputs.tests_passed }}"
+
+          if [ "${{ needs.test.outputs.tests_passed }}" == "false" ]; then
+            echo "❌ Workflow failed: Tests did not pass"
+            exit 1
+          elif [ "${{ needs.test.outputs.tests_passed }}" == "true" ]; then
+            echo "✅ Workflow succeeded: All tests passed"
+            exit 0
+          else
+            echo "⚠️ Unable to determine test status"
+            exit 1
+          fi
