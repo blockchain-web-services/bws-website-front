@@ -75,13 +75,17 @@ jobs:
         run: |
           echo "Starting Playwright tests..."
 
-          # Run tests and capture output
-          npx playwright test --config=playwright.config.cjs --project=${{ matrix.browser }} --reporter=json,line 2>&1 | tee test-output-full.txt
+          # Run tests and capture output with ANSI color codes
+          npx playwright test --config=playwright.config.cjs --project=${{ matrix.browser }} --reporter=json,line 2>&1 | tee test-output-raw.txt
           TEST_EXIT_CODE=${PIPESTATUS[0]}
 
-          # Create a filtered version for the report (less strict filtering)
-          if [ -f "test-output-full.txt" ]; then
-            grep -E "(✓|✗|✘|×|FAIL|fail|Error|error|expected|received|Test timeout|\s+at\s+|Running|\d+\)|\[\d+:\d+\])" test-output-full.txt > test-output.txt 2>/dev/null || cp test-output-full.txt test-output.txt
+          # Strip ANSI escape codes and create clean output
+          if [ -f "test-output-raw.txt" ]; then
+            # Remove ANSI color codes and control sequences
+            sed -E 's/\x1B\[[0-9;]*[mGKH]//g' test-output-raw.txt | sed -E 's/\[([0-9]+)m//g' > test-output-full.txt
+
+            # Create a filtered version for the report without failureSummary noise
+            grep -E "(✓|✗|✘|×|FAIL|fail|Error|error|expected|received|Test timeout|\s+at\s+|Running|\d+\)|test-results/)" test-output-full.txt | grep -v "failureSummary" > test-output.txt 2>/dev/null || cp test-output-full.txt test-output.txt
           fi
 
           echo "Test exit code: ${TEST_EXIT_CODE}"
@@ -146,46 +150,88 @@ jobs:
 
           # Add test statistics if available
           if [ -f "test-results.json" ] && command -v jq >/dev/null 2>&1; then
-            echo "### Statistics" >> "../$ISSUES_FILE"
-            jq -r '.stats | "- **Total:** \(.expected)\n- **Passed:** \(.passed)\n- **Failed:** \(.failed)"' test-results.json >> "../$ISSUES_FILE" 2>/dev/null || echo "Stats not available" >> "../$ISSUES_FILE"
+            echo "### 📊 Test Statistics" >> "../$ISSUES_FILE"
+            jq -r '.stats | "- **Total Tests:** \(.expected)\n- **✅ Passed:** \(.passed)\n- **❌ Failed:** \(.failed)\n- **⏱ Duration:** \(.duration // "N/A")ms"' test-results.json >> "../$ISSUES_FILE" 2>/dev/null || echo "Stats not available" >> "../$ISSUES_FILE"
             echo "" >> "../$ISSUES_FILE"
 
-            echo "### Failed Tests" >> "../$ISSUES_FILE"
-            # Try to extract failed test names with better error handling
-            jq -r '.suites[]?.specs[]? | select(.tests[]?.status == "failed") | "- \(.title)"' test-results.json >> "../$ISSUES_FILE" 2>/dev/null || {
+            echo "### 🔴 Failed Tests Summary" >> "../$ISSUES_FILE"
+            # Extract failed test names and format them nicely
+            jq -r '.suites[]?.specs[]? | select(.tests[]?.status == "failed") | "- **\(.title)**"' test-results.json >> "../$ISSUES_FILE" 2>/dev/null || {
               # Fallback: try simpler extraction
               jq -r '.suites[]? | .title' test-results.json >> "../$ISSUES_FILE" 2>/dev/null || echo "Could not extract test details"
             }
+            echo "" >> "../$ISSUES_FILE"
           else
-            echo "### Test Results File Not Found" >> "../$ISSUES_FILE"
+            echo "### ⚠️ Test Results File Not Found" >> "../$ISSUES_FILE"
             echo "test-results.json was not generated or is not accessible" >> "../$ISSUES_FILE"
+            echo "" >> "../$ISSUES_FILE"
           fi
 
+          echo "## 📋 Detailed Test Failures" >> "../$ISSUES_FILE"
           echo "" >> "../$ISSUES_FILE"
-          echo "## Test Output" >> "../$ISSUES_FILE"
-          echo '```' >> "../$ISSUES_FILE"
 
-          # Check which files exist for debugging
-          if [ ! -f "test-output.txt" ] && [ ! -f "test-output-full.txt" ]; then
-            echo "No test output files found in $(pwd)" >> "../$ISSUES_FILE"
+          # Process test output to create structured failure reports
+          if [ -f "test-output.txt" ]; then
+            # Extract and structure individual test failures
+            FAILURE_NUM=1
+
+            # Process error messages and create sections
+            while IFS= read -r line; do
+              if [[ "$line" =~ ^[[:space:]]*Error:|expect\(|Test.timeout ]]; then
+                if [ $FAILURE_NUM -gt 1 ]; then
+                  echo "" >> "../$ISSUES_FILE"
+                  echo "---" >> "../$ISSUES_FILE"
+                  echo "" >> "../$ISSUES_FILE"
+                fi
+
+                echo "### Failure #$FAILURE_NUM" >> "../$ISSUES_FILE"
+                echo "" >> "../$ISSUES_FILE"
+
+                # Extract test name from previous context if available
+                TEST_NAME=$(grep -B2 "$line" test-output.txt | head -1 | sed 's/.*\/\([^\/]*\)-chromium.*/\1/' | sed 's/test-results\///' | sed 's/-[a-f0-9]\{5\}$//')
+                if [ ! -z "$TEST_NAME" ] && [ "$TEST_NAME" != "$line" ]; then
+                  echo "**Test:** \`$TEST_NAME\`" >> "../$ISSUES_FILE"
+                  echo "" >> "../$ISSUES_FILE"
+                fi
+
+                echo "**Error Details:**" >> "../$ISSUES_FILE"
+                echo '```' >> "../$ISSUES_FILE"
+                echo "$line" | sed 's/^[[:space:]]*//' >> "../$ISSUES_FILE"
+
+                # Get next few lines for context (but skip failureSummary lines)
+                grep -A3 -F "$line" test-output.txt | tail -n +2 | grep -v "failureSummary" | head -3 >> "../$ISSUES_FILE" 2>/dev/null
+                echo '```' >> "../$ISSUES_FILE"
+
+                # Check for screenshot references
+                SCREENSHOT=$(grep -A1 -F "$line" test-output.txt | grep "test-results/" | head -1)
+                if [ ! -z "$SCREENSHOT" ]; then
+                  echo "" >> "../$ISSUES_FILE"
+                  echo "**Screenshot:** \`$SCREENSHOT\`" >> "../$ISSUES_FILE"
+                fi
+
+                ((FAILURE_NUM++))
+              fi
+            done < <(grep -E "Error:|expect\(|Test.timeout" test-output.txt | head -20)
+
+            # Add collapsible raw output section
+            echo "" >> "../$ISSUES_FILE"
+            echo "## 📄 Raw Test Output" >> "../$ISSUES_FILE"
+            echo "" >> "../$ISSUES_FILE"
+            echo "<details>" >> "../$ISSUES_FILE"
+            echo "<summary>Click to expand full test output (cleaned)</summary>" >> "../$ISSUES_FILE"
+            echo "" >> "../$ISSUES_FILE"
+            echo '```' >> "../$ISSUES_FILE"
+            # Show cleaned output without failureSummary noise
+            grep -v "failureSummary\|Fix any of the following" test-output.txt | head -150 >> "../$ISSUES_FILE" 2>/dev/null || echo "No test output available" >> "../$ISSUES_FILE"
+            echo '```' >> "../$ISSUES_FILE"
+            echo "</details>" >> "../$ISSUES_FILE"
+          else
+            echo "### ⚠️ No Test Output Found" >> "../$ISSUES_FILE"
+            echo "Test output files not found in $(pwd)" >> "../$ISSUES_FILE"
             echo "Available files:" >> "../$ISSUES_FILE"
-            ls -la *.txt *.json 2>/dev/null >> "../$ISSUES_FILE" || echo "Could not list files" >> "../$ISSUES_FILE"
-          elif [ -f "test-output.txt" ]; then
-            # Use the filtered output, show first 100 lines of failures
-            grep -E "(✗|✘|×|FAIL|fail|Error|error)" test-output.txt 2>/dev/null | head -100 >> "../$ISSUES_FILE" || {
-              # If grep finds nothing, show some context
-              echo "No explicit failures found. Showing last 50 lines of test output:" >> "../$ISSUES_FILE"
-              tail -50 test-output.txt >> "../$ISSUES_FILE" 2>/dev/null || echo "Could not read test output" >> "../$ISSUES_FILE"
-            }
-          elif [ -f "test-output-full.txt" ]; then
-            # Fallback to full output if filtered doesn't exist
-            echo "Using full test output (filtered version not available):" >> "../$ISSUES_FILE"
-            grep -E "(✗|✘|×|FAIL|fail|Error|error)" test-output-full.txt 2>/dev/null | head -100 >> "../$ISSUES_FILE" || {
-              tail -50 test-output-full.txt >> "../$ISSUES_FILE" 2>/dev/null || echo "Could not read test output" >> "../$ISSUES_FILE"
-            }
+            ls -la *.txt *.json 2>/dev/null | head -20 >> "../$ISSUES_FILE" || echo "Could not list files" >> "../$ISSUES_FILE"
           fi
 
-          echo '```' >> "../$ISSUES_FILE"
           cd ..
 
           echo "Created: $ISSUES_FILE"
