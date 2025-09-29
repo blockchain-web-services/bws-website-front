@@ -2,7 +2,7 @@ name: Fix Branch Workflow
 
 on:
   push:
-    branches: ['fix/**']
+    branches: ["fix/**"]
   workflow_dispatch:
 
 permissions:
@@ -17,7 +17,7 @@ env:
 jobs:
   # Job 1: Run tests and collect failures
   test:
-    # Skip if the last commit was from github-actions bot to prevent infinite loops
+    # Skip if the last commit was from github-actions bot or contains [skip ci] to prevent infinite loops
     if: github.actor != 'github-actions[bot]' && !contains(github.event.head_commit.message, '[skip ci]') && !contains(github.event.head_commit.message, '[ci skip]')
     runs-on: ubuntu-latest
     strategy:
@@ -102,7 +102,6 @@ jobs:
 
           # Always exit 0 to allow subsequent jobs to run
           exit 0
-
 
       - name: Collect test failures and commit if any
         if: steps.test-run.outputs.tests_passed == 'false'
@@ -192,7 +191,6 @@ jobs:
 
           echo "✅ Successfully pushed test failure report to branch"
 
-
   # Job 2: Update PR with test failure info
   update-pr-on-failure:
     needs: test
@@ -257,7 +255,6 @@ jobs:
     runs-on: ubuntu-latest
     if: needs.test.outputs.tests_passed == 'true'
     steps:
-
       - name: Debug test output
         run: |
           echo "Test output value: '${{ needs.test.outputs.tests_passed }}'"
