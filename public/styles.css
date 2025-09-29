@@ -1994,11 +1994,11 @@ textarea.w-select {
   --neutral-100: white;
   --neutral-700: #3b3f44;
   --neutral-500: #8a8a92;
-  --neutral-400: #6b6f7a; /* Updated for WCAG compliance - was #c0c4d1 */
+  --neutral-400: #c0c4d1;
   --neutral-300: #e5ecf5;
   --neutral-100-65: #ffffffa6;
   --shadow-small-2: #a3a6ff21;
-  --rose: #d91e52; /* Updated for WCAG compliance - was #ee265f */
+  --rose: #ee265f;
   --shadow-small-1: #0c0c0c0a;
   --mini-card-shadow: #448cfc1a;
   --icon-shadow: #448cfc14;
@@ -2914,6 +2914,7 @@ figcaption {
 }
 .bg-neutral-400 {
   background-color: var(--neutral-400);
+  color: var(--neutral-800); /* Dark text for WCAG contrast on light bg */
 }
 .bg-neutral-300 {
   background-color: var(--neutral-300);
@@ -3251,6 +3252,7 @@ figcaption {
 .button-primary._2-buttons {
   border-color: var(--rose);
   background-color: var(--rose);
+  color: var(--neutral-100); /* White text for WCAG contrast */
   margin-right: 24px;
   padding: 16px 30px;
   font-weight: 500;
@@ -11543,6 +11545,7 @@ figcaption {
 }
 .container-head-roadmap-25-1st {
   background-color: var(--rose);
+  color: var(--neutral-100); /* White text for WCAG contrast */
   border-radius: 13px;
   align-self: stretch;
   min-width: 100%;
@@ -11553,6 +11556,7 @@ figcaption {
 }
 .container-head-roadmap-25-2nd {
   background-color: var(--neutral-500);
+  color: var(--neutral-100); /* White text for WCAG contrast */
   border-radius: 13px;
   align-self: stretch;
   min-width: 100%;
@@ -18635,11 +18639,11 @@ textarea.w-select {
   --neutral-100: white;
   --neutral-700: #3b3f44;
   --neutral-500: #8a8a92;
-  --neutral-400: #6b6f7a; /* Updated for WCAG compliance - was #c0c4d1 */
+  --neutral-400: #c0c4d1;
   --neutral-300: #e5ecf5;
   --neutral-100-65: #ffffffa6;
   --shadow-small-2: #a3a6ff21;
-  --rose: #d91e52; /* Updated for WCAG compliance - was #ee265f */
+  --rose: #ee265f;
   --shadow-small-1: #0c0c0c0a;
   --mini-card-shadow: #448cfc1a;
   --icon-shadow: #448cfc14;
@@ -19555,6 +19559,7 @@ figcaption {
 }
 .bg-neutral-400 {
   background-color: var(--neutral-400);
+  color: var(--neutral-800); /* Dark text for WCAG contrast on light bg */
 }
 .bg-neutral-300 {
   background-color: var(--neutral-300);
@@ -19892,6 +19897,7 @@ figcaption {
 .button-primary._2-buttons {
   border-color: var(--rose);
   background-color: var(--rose);
+  color: var(--neutral-100); /* White text for WCAG contrast */
   margin-right: 24px;
   padding: 16px 30px;
   font-weight: 500;
@@ -28195,6 +28201,7 @@ figcaption {
 }
 .container-head-roadmap-25-1st {
   background-color: var(--rose);
+  color: var(--neutral-100); /* White text for WCAG contrast */
   border-radius: 13px;
   align-self: stretch;
   min-width: 100%;
@@ -28205,6 +28212,7 @@ figcaption {
 }
 .container-head-roadmap-25-2nd {
   background-color: var(--neutral-500);
+  color: var(--neutral-100); /* White text for WCAG contrast */
   border-radius: 13px;
   align-self: stretch;
   min-width: 100%;
@@ -33683,4 +33691,14 @@ img {
 .split-button-solution .div-block-9 {
   margin: 0 !important;
   padding: 8px 16px !important;
+}
+
+/* WCAG fixes - ensure BFG logo is visible */
+.top-menu-company-news-image {
+  visibility: visible !important;
+  display: inline-block !important;
+}
+.image-bfg {
+  visibility: visible !important;
+  display: inline-block !important;
 }
