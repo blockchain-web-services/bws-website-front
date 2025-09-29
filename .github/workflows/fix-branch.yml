@@ -17,6 +17,8 @@ env:
 jobs:
   # Job 1: Run tests and collect failures
   test:
+    # Skip if the last commit was from github-actions bot to prevent infinite loops
+    if: github.actor != 'github-actions[bot]' && !contains(github.event.head_commit.message, '[skip ci]') && !contains(github.event.head_commit.message, '[ci skip]')
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -105,6 +107,8 @@ jobs:
       - name: Collect test failures and commit if any
         if: steps.test-run.outputs.tests_passed == 'false'
         run: |
+          set -e  # Exit on error
+
           echo "Collecting test failures for fix branch..."
 
           # Generate DD-MM-HH timestamp
@@ -162,13 +166,31 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-          # Add and commit the test failure report
-          git add "$ISSUES_FILE"
-          git commit -m "Add test failure report: BRANCH_ISSUES_${TIMESTAMP}.md" -m "Test failures detected on commit ${{ github.sha }}" -m "See fixes folder for details."
+          # Configure remote with authentication
+          # Check if PAT is available and configure accordingly
+          if [ -n "${{ secrets.PAT_REPOS_AND_WORKFLOW }}" ]; then
+            echo "Configuring git remote with PAT token..."
+            git remote set-url origin https://x-access-token:${{ secrets.PAT_REPOS_AND_WORKFLOW }}@github.com/${{ github.repository }}.git
+          else
+            echo "Warning: PAT_REPOS_AND_WORKFLOW not found, using checkout token"
+            # The checkout action should have already configured authentication
+          fi
 
-          # Push to current branch
-          git push origin HEAD:${{ github.ref_name }}
-          echo "✅ Pushed test failure report to branch"
+          # Add and commit the test failure report with [skip ci] to prevent retriggering
+          git add "$ISSUES_FILE"
+          git commit -m "[skip ci] Add test failure report: BRANCH_ISSUES_${TIMESTAMP}.md" -m "Test failures detected on commit ${{ github.sha }}" -m "See fixes folder for details." -m "This commit will not trigger workflows to prevent infinite loops."
+
+          # Push to current branch with error handling
+          echo "Pushing test failure report to branch..."
+          git push origin HEAD:${{ github.ref_name }} || {
+            echo "❌ Failed to push test failure report to branch"
+            echo "Attempting to debug the issue..."
+            git remote -v
+            git status
+            exit 1
+          }
+
+          echo "✅ Successfully pushed test failure report to branch"
 
 
   # Job 2: Update PR with test failure info
@@ -313,7 +335,7 @@ jobs:
             --auto \
             --squash \
             --delete-branch \
-            --subject "Auto-merge: Fix branch with all tests passing" \
+            --subject "[skip ci] Auto-merge: Fix branch with all tests passing" \
             --body "Automatically merged after all tests passed" \
             || echo "Auto-merge may already be enabled or PR cannot be merged yet"
 
