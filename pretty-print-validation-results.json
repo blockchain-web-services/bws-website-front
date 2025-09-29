@@ -10,24 +10,24 @@
     },
     {
       "file": "_site/articles/discover-the-power-of-blockchain-bwss-data-management-solutions.html",
-      "originalSize": 50878,
-      "newSize": 85210,
+      "originalSize": 50936,
+      "newSize": 85268,
       "sizeDiff": 34332,
       "prettyPrinted": true,
       "errors": []
     },
     {
       "file": "_site/articles/embrace-sustainability-with-esg-credits-bws-solution.html",
-      "originalSize": 49649,
-      "newSize": 83899,
+      "originalSize": 49707,
+      "newSize": 83957,
       "sizeDiff": 34250,
       "prettyPrinted": true,
       "errors": []
     },
     {
       "file": "_site/articles/investment-impact-reporting-unlocking-a-sustainable-future.html",
-      "originalSize": 49560,
-      "newSize": 83696,
+      "originalSize": 49618,
+      "newSize": 83754,
       "sizeDiff": 34136,
       "prettyPrinted": true,
       "errors": []
@@ -58,8 +58,8 @@
     },
     {
       "file": "_site/industry-content/content-creation.html",
-      "originalSize": 48763,
-      "newSize": 83508,
+      "originalSize": 48830,
+      "newSize": 83575,
       "sizeDiff": 34745,
       "prettyPrinted": true,
       "errors": []
@@ -74,32 +74,32 @@
     },
     {
       "file": "_site/industry-content/financial-services.html",
-      "originalSize": 48785,
-      "newSize": 83534,
+      "originalSize": 48853,
+      "newSize": 83602,
       "sizeDiff": 34749,
       "prettyPrinted": true,
       "errors": []
     },
     {
       "file": "_site/industry-content/legal.html",
-      "originalSize": 49066,
-      "newSize": 83853,
+      "originalSize": 49109,
+      "newSize": 83896,
       "sizeDiff": 34787,
       "prettyPrinted": true,
       "errors": []
     },
     {
       "file": "_site/industry-content/retail.html",
-      "originalSize": 48666,
-      "newSize": 83459,
+      "originalSize": 48720,
+      "newSize": 83513,
       "sizeDiff": 34793,
       "prettyPrinted": true,
       "errors": []
     },
     {
       "file": "_site/industry-content/supply-chain.html",
-      "originalSize": 49230,
-      "newSize": 84029,
+      "originalSize": 49308,
+      "newSize": 84107,
       "sizeDiff": 34799,
       "prettyPrinted": true,
       "errors": []
@@ -178,8 +178,8 @@
     },
     {
       "file": "_site/privacy-policy.html",
-      "originalSize": 49031,
-      "newSize": 83240,
+      "originalSize": 49089,
+      "newSize": 83298,
       "sizeDiff": 34209,
       "prettyPrinted": true,
       "errors": []
@@ -196,8 +196,8 @@
   "css": [
     {
       "file": "_site/styles.css",
-      "originalSize": 696921,
-      "newSize": 696921,
+      "originalSize": 697025,
+      "newSize": 697025,
       "sizeDiff": 0,
       "prettyPrinted": true,
       "skippedMinified": false,

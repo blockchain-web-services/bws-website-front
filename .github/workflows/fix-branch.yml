@@ -101,9 +101,14 @@ jobs:
           fi
 
           # Show test summary if available
+          echo "Looking for test results file..."
+          ls -la test-results* 2>/dev/null || echo "No test-results files found"
+
           if [ -f "test-results.json" ]; then
             echo "Test results summary:"
             jq -r '.stats | "Total: \(.expected), Passed: \(.passed), Failed: \(.failed), Skipped: \(.skipped // 0)"' test-results.json 2>/dev/null || echo "Could not parse test results"
+          else
+            echo "test-results.json not found in $(pwd)"
           fi
 
           # Store the actual exit code for the workflow

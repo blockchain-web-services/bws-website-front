@@ -1994,11 +1994,11 @@ textarea.w-select {
   --neutral-100: white;
   --neutral-700: #3b3f44;
   --neutral-500: #8a8a92;
-  --neutral-400: #c0c4d1;
+  --neutral-400: #6b6f7a; /* Updated for WCAG compliance - was #c0c4d1 */
   --neutral-300: #e5ecf5;
   --neutral-100-65: #ffffffa6;
   --shadow-small-2: #a3a6ff21;
-  --rose: #ee265f;
+  --rose: #d91e52; /* Updated for WCAG compliance - was #ee265f */
   --shadow-small-1: #0c0c0c0a;
   --mini-card-shadow: #448cfc1a;
   --icon-shadow: #448cfc14;
@@ -18635,11 +18635,11 @@ textarea.w-select {
   --neutral-100: white;
   --neutral-700: #3b3f44;
   --neutral-500: #8a8a92;
-  --neutral-400: #c0c4d1;
+  --neutral-400: #6b6f7a; /* Updated for WCAG compliance - was #c0c4d1 */
   --neutral-300: #e5ecf5;
   --neutral-100-65: #ffffffa6;
   --shadow-small-2: #a3a6ff21;
-  --rose: #ee265f;
+  --rose: #d91e52; /* Updated for WCAG compliance - was #ee265f */
   --shadow-small-1: #0c0c0c0a;
   --mini-card-shadow: #448cfc1a;
   --icon-shadow: #448cfc14;
@@ -33668,6 +33668,7 @@ img {
   width: 150px !important;
   height: auto !important;
   max-height: 80px !important;
+  visibility: visible !important; /* Ensure BFG logo is always visible */
 }
 
 /* Reduce gap between network buttons in marketplace pages */

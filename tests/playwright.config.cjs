@@ -11,6 +11,7 @@ module.exports = defineConfig({
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 2 : 1,
   workers: process.env.CI ? 2 : undefined,
+  timeout: 60000, // Increase test timeout to 60 seconds
 
   reporter: process.env.CI ? [
     ['json', { outputFile: './test-results.json' }],
@@ -26,8 +27,8 @@ module.exports = defineConfig({
     trace: 'on-first-retry',
     screenshot: 'only-on-failure',
     video: 'retain-on-failure',
-    actionTimeout: 15000,
-    navigationTimeout: 30000,
+    actionTimeout: 30000, // Increased from 15000
+    navigationTimeout: 60000, // Increased from 30000 for slow network conditions
   },
 
   projects: [

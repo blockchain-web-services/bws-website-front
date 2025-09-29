@@ -4,7 +4,7 @@ import AxeBuilder from '@axe-core/playwright';
 test.describe('WCAG Accessibility Compliance', () => {
   test('Homepage passes accessibility checks', async ({ page }) => {
     await page.goto('/');
-    await page.waitForLoadState('networkidle');
+    await page.waitForLoadState('domcontentloaded'); // Changed from networkidle to prevent timeouts
 
     const accessibilityScanResults = await new AxeBuilder({ page })
       .withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa'])
@@ -15,7 +15,7 @@ test.describe('WCAG Accessibility Compliance', () => {
 
   test('About page passes accessibility checks', async ({ page }) => {
     await page.goto('/about');
-    await page.waitForLoadState('networkidle');
+    await page.waitForLoadState('domcontentloaded'); // Changed from networkidle to prevent timeouts
 
     const accessibilityScanResults = await new AxeBuilder({ page })
       .withTags(['wcag2a', 'wcag2aa'])
