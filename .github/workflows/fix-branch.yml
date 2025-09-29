@@ -75,9 +75,14 @@ jobs:
         run: |
           echo "Starting Playwright tests..."
 
-          # Run tests with reduced output verbosity
-          npx playwright test --config=playwright.config.cjs --project=${{ matrix.browser }} --reporter=json,line 2>&1 | tee test-output-full.txt | grep -E '^(\[|✓|✗|✘|×|\s+[0-9]+\)|Running|failed|passed|skipped|Test|Error:|\s+at )' > test-output.txt || true
+          # Run tests and capture output
+          npx playwright test --config=playwright.config.cjs --project=${{ matrix.browser }} --reporter=json,line 2>&1 | tee test-output-full.txt
           TEST_EXIT_CODE=${PIPESTATUS[0]}
+
+          # Create a filtered version for the report (less strict filtering)
+          if [ -f "test-output-full.txt" ]; then
+            grep -E "(✓|✗|✘|×|FAIL|fail|Error|error|expected|received|Test timeout|\s+at\s+|Running|\d+\)|\[\d+:\d+\])" test-output-full.txt > test-output.txt 2>/dev/null || cp test-output-full.txt test-output.txt
+          fi
 
           echo "Test exit code: ${TEST_EXIT_CODE}"
 
@@ -118,7 +123,7 @@ jobs:
 
           # Get branch name
           BRANCH_NAME="${{ github.ref_name }}"
-          FIXES_DIR="fixes/${BRANCH_NAME//\//-}"
+          FIXES_DIR="_fixes/${BRANCH_NAME//\//-}"
 
           # Ensure fixes directory exists
           mkdir -p "$FIXES_DIR"
@@ -138,24 +143,48 @@ jobs:
 
           # Navigate to tests directory to access test results
           cd tests
+
+          # Add test statistics if available
           if [ -f "test-results.json" ] && command -v jq >/dev/null 2>&1; then
             echo "### Statistics" >> "../$ISSUES_FILE"
             jq -r '.stats | "- **Total:** \(.expected)\n- **Passed:** \(.passed)\n- **Failed:** \(.failed)"' test-results.json >> "../$ISSUES_FILE" 2>/dev/null || echo "Stats not available" >> "../$ISSUES_FILE"
             echo "" >> "../$ISSUES_FILE"
 
             echo "### Failed Tests" >> "../$ISSUES_FILE"
-            jq -r '.suites[] | select(.specs[].tests[].status == "failed") | .specs[] | "- \(.title)"' test-results.json >> "../$ISSUES_FILE" 2>/dev/null || echo "Could not extract test names" >> "../$ISSUES_FILE"
+            # Try to extract failed test names with better error handling
+            jq -r '.suites[]?.specs[]? | select(.tests[]?.status == "failed") | "- \(.title)"' test-results.json >> "../$ISSUES_FILE" 2>/dev/null || {
+              # Fallback: try simpler extraction
+              jq -r '.suites[]? | .title' test-results.json >> "../$ISSUES_FILE" 2>/dev/null || echo "Could not extract test details"
+            }
+          else
+            echo "### Test Results File Not Found" >> "../$ISSUES_FILE"
+            echo "test-results.json was not generated or is not accessible" >> "../$ISSUES_FILE"
           fi
 
           echo "" >> "../$ISSUES_FILE"
           echo "## Test Output" >> "../$ISSUES_FILE"
           echo '```' >> "../$ISSUES_FILE"
-          # Use filtered output to avoid broken pipe
-          if [ -f "test-output.txt" ]; then
-            grep -E "(✗|✘|×|FAILED|Error:|failed)" test-output.txt 2>/dev/null | head -50 >> "../$ISSUES_FILE" || echo "No failure output captured" >> "../$ISSUES_FILE"
-          else
-            echo "No test output file found" >> "../$ISSUES_FILE"
+
+          # Check which files exist for debugging
+          if [ ! -f "test-output.txt" ] && [ ! -f "test-output-full.txt" ]; then
+            echo "No test output files found in $(pwd)" >> "../$ISSUES_FILE"
+            echo "Available files:" >> "../$ISSUES_FILE"
+            ls -la *.txt *.json 2>/dev/null >> "../$ISSUES_FILE" || echo "Could not list files" >> "../$ISSUES_FILE"
+          elif [ -f "test-output.txt" ]; then
+            # Use the filtered output, show first 100 lines of failures
+            grep -E "(✗|✘|×|FAIL|fail|Error|error)" test-output.txt 2>/dev/null | head -100 >> "../$ISSUES_FILE" || {
+              # If grep finds nothing, show some context
+              echo "No explicit failures found. Showing last 50 lines of test output:" >> "../$ISSUES_FILE"
+              tail -50 test-output.txt >> "../$ISSUES_FILE" 2>/dev/null || echo "Could not read test output" >> "../$ISSUES_FILE"
+            }
+          elif [ -f "test-output-full.txt" ]; then
+            # Fallback to full output if filtered doesn't exist
+            echo "Using full test output (filtered version not available):" >> "../$ISSUES_FILE"
+            grep -E "(✗|✘|×|FAIL|fail|Error|error)" test-output-full.txt 2>/dev/null | head -100 >> "../$ISSUES_FILE" || {
+              tail -50 test-output-full.txt >> "../$ISSUES_FILE" 2>/dev/null || echo "Could not read test output" >> "../$ISSUES_FILE"
+            }
           fi
+
           echo '```' >> "../$ISSUES_FILE"
           cd ..
 
@@ -177,7 +206,7 @@ jobs:
 
           # Add and commit the test failure report with [skip ci] to prevent retriggering
           git add "$ISSUES_FILE"
-          git commit -m "[skip ci] Add test failure report: BRANCH_ISSUES_${TIMESTAMP}.md" -m "Test failures detected on commit ${{ github.sha }}" -m "See fixes folder for details." -m "This commit will not trigger workflows to prevent infinite loops."
+          git commit -m "[skip ci] Add test failure report: BRANCH_ISSUES_${TIMESTAMP}.md" -m "Test failures detected on commit ${{ github.sha }}" -m "See _fixes folder for details." -m "This commit will not trigger workflows to prevent infinite loops."
 
           # Push to current branch with error handling
           echo "Pushing test failure report to branch..."
