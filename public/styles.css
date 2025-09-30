@@ -1994,7 +1994,7 @@ textarea.w-select {
   --neutral-100: white;
   --neutral-700: #3b3f44;
   --neutral-500: #8a8a92;
-  --neutral-400: #9ca3af; /* Light gray with good contrast on both dark and light backgrounds */ /* Fixed for WCAG - dark gray for proper contrast */
+  --neutral-400: #f3f4f6; /* Very light gray for universal compatibility */ /* Fixed for WCAG - dark gray for proper contrast */
   --neutral-300: #e5ecf5;
   --neutral-100-65: #ffffffa6;
   --shadow-small-2: #a3a6ff21;
@@ -18639,7 +18639,7 @@ textarea.w-select {
   --neutral-100: white;
   --neutral-700: #3b3f44;
   --neutral-500: #8a8a92;
-  --neutral-400: #9ca3af; /* Light gray with good contrast on both dark and light backgrounds */ /* Fixed for WCAG - dark gray for proper contrast */
+  --neutral-400: #f3f4f6; /* Very light gray for universal compatibility */ /* Fixed for WCAG - dark gray for proper contrast */
   --neutral-300: #e5ecf5;
   --neutral-100-65: #ffffffa6;
   --shadow-small-2: #a3a6ff21;
@@ -33710,7 +33710,10 @@ body [style*="background: var(--rose)"],
 body [style*="background:#ee265f"],
 body [style*="background:#d91a4d"],
 body .container-head-roadmap-25-1st,
-body *[class*="rose"] {
+body *[class*="rose"],
+body .bg-rose,
+body [style*="background-color:#d91a4d"] *,
+body [style*="background:#d91a4d"] * {
   color: #ffffff !important;
 }
 
@@ -33727,7 +33730,11 @@ body *[class*="rose"] {
 /* White text for 4.5:1 contrast */
 .container-head-roadmap-25-2nd,
 [style*="background-color: var(--neutral-500)"],
-[style*="background-color:#8a8a92"] {
+[style*="background-color:#8a8a92"],
+[style*="background:#8a8a92"],
+.bg-gray,
+[style*="background-color:#8a8a92"] *,
+[style*="background:#8a8a92"] * {
   color: #ffffff !important;
 }
 
@@ -33805,18 +33812,41 @@ body [style*="background-color:#1a1b1e"] * {
   color: inherit !important;
 }
 
-/* Rose backgrounds need white text */
-body [style*="color:#9ca3af"][style*="background:#d91a4d"],
-body [style*="color: #9ca3af"][style*="background: #d91a4d"],
-body [style*="color:#c0c4d1"][style*="background:#ee265f"],
-body [style*="color: #c0c4d1"][style*="background: #ee265f"] {
+/* COMPREHENSIVE CONTRAST FIXES FOR ALL PROBLEMATIC COMBINATIONS */
+/* Rose backgrounds (#d91a4d, #ee265f) ALWAYS get white text */
+body [style*="background:#d91a4d"],
+body [style*="background-color:#d91a4d"],
+body [style*="background: #d91a4d"],
+body [style*="background-color: #d91a4d"],
+body [style*="background:#ee265f"],
+body [style*="background-color:#ee265f"],
+body [style*="background: #ee265f"],
+body [style*="background-color: #ee265f"] {
   color: #ffffff !important;
 }
 
-/* Gray backgrounds need white text */
-body [style*="color:#9ca3af"][style*="background:#8a8a92"],
-body [style*="color: #9ca3af"][style*="background: #8a8a92"],
-body [style*="color:#c0c4d1"][style*="background:#8a8a92"],
-body [style*="color: #c0c4d1"][style*="background: #8a8a92"] {
+/* Gray backgrounds (#8a8a92) ALWAYS get white text */
+body [style*="background:#8a8a92"],
+body [style*="background-color:#8a8a92"],
+body [style*="background: #8a8a92"],
+body [style*="background-color: #8a8a92"] {
+  color: #ffffff !important;
+}
+
+/* Specifically override #9ca3af text on problematic backgrounds */
+body *[style*="color:#9ca3af"],
+body *[style*="color: #9ca3af"],
+body *[style*="color:#c0c4d1"],
+body *[style*="color: #c0c4d1"],
+body *[style*="color:#2d2e33"],
+body *[style*="color: #2d2e33"] {
+  /* Check parent background and override if needed */
+  color: inherit !important;
+}
+
+/* Force override for any element with problematic color on rose/gray bg */
+[style*="background:#d91a4d"] *:not([style*="color:#ffffff"]),
+[style*="background:#ee265f"] *:not([style*="color:#ffffff"]),
+[style*="background:#8a8a92"] *:not([style*="color:#ffffff"]) {
   color: #ffffff !important;
 }
