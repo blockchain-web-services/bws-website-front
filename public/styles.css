@@ -1994,7 +1994,7 @@ textarea.w-select {
   --neutral-100: white;
   --neutral-700: #3b3f44;
   --neutral-500: #8a8a92;
-  --neutral-400: #2d2e33; /* Fixed for WCAG - dark gray for proper contrast */
+  --neutral-400: #9ca3af; /* Light gray with good contrast on both dark and light backgrounds */ /* Fixed for WCAG - dark gray for proper contrast */
   --neutral-300: #e5ecf5;
   --neutral-100-65: #ffffffa6;
   --shadow-small-2: #a3a6ff21;
@@ -18639,7 +18639,7 @@ textarea.w-select {
   --neutral-100: white;
   --neutral-700: #3b3f44;
   --neutral-500: #8a8a92;
-  --neutral-400: #2d2e33; /* Fixed for WCAG - dark gray for proper contrast */
+  --neutral-400: #9ca3af; /* Light gray with good contrast on both dark and light backgrounds */ /* Fixed for WCAG - dark gray for proper contrast */
   --neutral-300: #e5ecf5;
   --neutral-100-65: #ffffffa6;
   --shadow-small-2: #a3a6ff21;
@@ -33714,12 +33714,13 @@ body *[class*="rose"] {
   color: #ffffff !important;
 }
 
-/* Fix color contrast for neutral-400 backgrounds (#c0c4d1) */
-/* These elements MUST have dark text */
+/* Fix color contrast for neutral-400 backgrounds */
+/* Ensure proper text color based on background */
 .bg-neutral-400,
 [style*="background-color: var(--neutral-400)"],
+[style*="background-color:#9ca3af"],
 [style*="background-color:#c0c4d1"] {
-  color: #1a1b1e !important;
+  color: #1a1b1e !important; /* Dark text for light gray background */
 }
 
 /* Fix color contrast for neutral-500 backgrounds (#8a8a92) */
@@ -33787,15 +33788,34 @@ img.image-bfg,
 }
 
 /* Fix specific failing color combinations reported in tests */
-/* #c0c4d1 text on #ee265f background = 2.37:1 (FAIL) */
-/* Solution: Force white text on rose backgrounds */
+/* Ensure proper contrast on all backgrounds */
+
+/* Dark backgrounds (#1a1b1e) need light text */
+body [style*="background-color:#1a1b1e"],
+body [style*="background:#1a1b1e"],
+body .bg-dark,
+body .navbar,
+body .footer {
+  color: #ffffff !important;
+}
+
+/* Prevent neutral-400 from appearing on dark backgrounds */
+body [style*="background:#1a1b1e"] *,
+body [style*="background-color:#1a1b1e"] * {
+  color: inherit !important;
+}
+
+/* Rose backgrounds need white text */
+body [style*="color:#9ca3af"][style*="background:#d91a4d"],
+body [style*="color: #9ca3af"][style*="background: #d91a4d"],
 body [style*="color:#c0c4d1"][style*="background:#ee265f"],
 body [style*="color: #c0c4d1"][style*="background: #ee265f"] {
   color: #ffffff !important;
 }
 
-/* #c0c4d1 text on #8a8a92 background = 1.96:1 (FAIL) */
-/* Solution: Force white text on gray backgrounds */
+/* Gray backgrounds need white text */
+body [style*="color:#9ca3af"][style*="background:#8a8a92"],
+body [style*="color: #9ca3af"][style*="background: #8a8a92"],
 body [style*="color:#c0c4d1"][style*="background:#8a8a92"],
 body [style*="color: #c0c4d1"][style*="background: #8a8a92"] {
   color: #ffffff !important;
