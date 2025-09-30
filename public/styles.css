@@ -1994,11 +1994,11 @@ textarea.w-select {
   --neutral-100: white;
   --neutral-700: #3b3f44;
   --neutral-500: #8a8a92;
-  --neutral-400: #c0c4d1;
+  --neutral-400: #2d2e33; /* Fixed for WCAG - dark gray for proper contrast */
   --neutral-300: #e5ecf5;
   --neutral-100-65: #ffffffa6;
   --shadow-small-2: #a3a6ff21;
-  --rose: #ee265f;
+  --rose: #d91a4d; /* Fixed for WCAG - slightly darker for better contrast */
   --shadow-small-1: #0c0c0c0a;
   --mini-card-shadow: #448cfc1a;
   --icon-shadow: #448cfc14;
@@ -18639,11 +18639,11 @@ textarea.w-select {
   --neutral-100: white;
   --neutral-700: #3b3f44;
   --neutral-500: #8a8a92;
-  --neutral-400: #c0c4d1;
+  --neutral-400: #2d2e33; /* Fixed for WCAG - dark gray for proper contrast */
   --neutral-300: #e5ecf5;
   --neutral-100-65: #ffffffa6;
   --shadow-small-2: #a3a6ff21;
-  --rose: #ee265f;
+  --rose: #d91a4d; /* Fixed for WCAG - slightly darker for better contrast */
   --shadow-small-1: #0c0c0c0a;
   --mini-card-shadow: #448cfc1a;
   --icon-shadow: #448cfc14;
@@ -33697,15 +33697,20 @@ img {
 /* WCAG COMPLIANCE FIXES - MAXIMUM SPECIFICITY */
 /* ============================================ */
 
-/* Fix color contrast for rose backgrounds (#ee265f) */
-/* These elements MUST have white text for 4.5:1 contrast */
-.button-primary._2-buttons,
-[style*="background-color: var(--rose)"],
-[style*="background-color:#ee265f"],
-[style*="background: var(--rose)"],
-[style*="background:#ee265f"],
-.container-head-roadmap-25-1st,
-*[class*="rose"] {
+/* CRITICAL: Override ALL elements with rose backgrounds */
+/* These MUST have white text for 4.5:1 contrast ratio */
+body .button-primary._2-buttons,
+body .button-primary._2-buttons:hover,
+body .button-primary._2-buttons:focus,
+body .button-primary._2-buttons:active,
+body [style*="background-color: var(--rose)"],
+body [style*="background-color:#ee265f"],
+body [style*="background-color:#d91a4d"],
+body [style*="background: var(--rose)"],
+body [style*="background:#ee265f"],
+body [style*="background:#d91a4d"],
+body .container-head-roadmap-25-1st,
+body *[class*="rose"] {
   color: #ffffff !important;
 }
 
@@ -33726,13 +33731,20 @@ img {
 }
 
 /* Force BFG logo and all company news images to be visible */
-.top-menu-company-news-image,
-.image-bfg,
-img[src*="blockchain-founders-group"],
-img[alt*="Blockchain Founders Group"],
-img.top-menu-company-news-image,
-.announcement-flex-logos img,
-.image-bfg[loading="lazy"] {
+/* ULTRA-HIGH SPECIFICITY to override ALL other rules */
+html body .top-menu-company-news-image,
+html body .image-bfg,
+html body img[src*="blockchain-founders-group"],
+html body img[src*="BFG"],
+html body img[src*="bfg"],
+html body img[alt*="Blockchain Founders Group"],
+html body img[alt*="BFG"],
+html body img.top-menu-company-news-image,
+html body .announcement-flex-logos img,
+html body .image-bfg[loading="lazy"],
+html body div.announcement-flex-logos img.image-bfg,
+html body a img.image-bfg,
+html body * img.image-bfg {
   visibility: visible !important;
   display: inline-block !important;
   opacity: 1 !important;
@@ -33740,21 +33752,38 @@ img.top-menu-company-news-image,
   height: auto !important;
   min-width: 50px !important;
   min-height: 50px !important;
+  max-width: 150px !important;
+  position: relative !important;
+  z-index: 1 !important;
 }
 
 /* Ensure parent containers don't hide BFG logo */
-.announcement-logos,
-.announcement-flex-logos,
-.w-inline-block:has(.image-bfg) {
+html body .announcement-logos,
+html body .announcement-flex-logos,
+html body .w-inline-block:has(.image-bfg),
+html body div:has(> .image-bfg),
+html body a:has(> .image-bfg) {
   visibility: visible !important;
   display: flex !important;
   opacity: 1 !important;
+  overflow: visible !important;
 }
 
-/* Override any Webflow hiding classes */
-.w-condition-invisible {
+/* Override any Webflow hiding classes - specifically for BFG */
+html body .w-condition-invisible:has(.image-bfg),
+html body .w-condition-invisible .image-bfg {
   visibility: visible !important;
   display: block !important;
+  opacity: 1 !important;
+}
+
+/* Additional force overrides for BFG image specifically */
+img.image-bfg,
+.image-bfg img,
+[class*="bfg"] img {
+  visibility: visible !important;
+  display: inline-block !important;
+  opacity: 1 !important;
 }
 
 /* Fix specific failing color combinations reported in tests */

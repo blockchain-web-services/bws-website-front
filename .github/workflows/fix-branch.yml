@@ -54,26 +54,95 @@ jobs:
 
       - name: Verify build includes fixes
         run: |
-          echo "Verifying CSS fixes are in built site..."
+          echo "═══════════════════════════════════════════════════════════════════"
+          echo "ENHANCED BUILD VERIFICATION"
+          echo "═══════════════════════════════════════════════════════════════════"
+
+          # Check 1: CSS fixes presence
+          echo "1. Verifying CSS fixes are in built site..."
           if grep -q "WCAG COMPLIANCE FIXES" _site/styles.css; then
-            echo "✅ CSS fixes found in built styles.css"
+            echo "✅ CSS fixes section found in built styles.css"
+
+            # Check actual color values
+            echo "   Checking color variable values..."
+            NEUTRAL_400=$(grep -o '\--neutral-400:[^;]*' _site/styles.css | head -1)
+            ROSE=$(grep -o '\--rose:[^;]*' _site/styles.css | head -1)
+            echo "   Found: $NEUTRAL_400"
+            echo "   Found: $ROSE"
+
+            if echo "$NEUTRAL_400" | grep -q "#c0c4d1"; then
+              echo "   ❌ ERROR: Old problematic color #c0c4d1 still in use!"
+            else
+              echo "   ✅ Color variable --neutral-400 updated correctly"
+            fi
+
+            if echo "$ROSE" | grep -q "#ee265f"; then
+              echo "   ❌ ERROR: Old problematic color #ee265f still in use!"
+            else
+              echo "   ✅ Color variable --rose updated correctly"
+            fi
           else
             echo "❌ WARNING: CSS fixes NOT found in _site/styles.css"
             echo "Checking if styles.css was copied to _site..."
             ls -la _site/styles.css || echo "styles.css not found in _site"
           fi
 
-          echo "Checking for empty alt attributes in built HTML..."
+          # Check 2: Empty alt attributes
+          echo ""
+          echo "2. Checking for empty alt attributes in built HTML..."
           EMPTY_ALTS=$(grep -c 'alt=""' _site/index.html 2>/dev/null || echo "0")
-          echo "Found $EMPTY_ALTS empty alt attributes in index.html"
+          echo "   Found $EMPTY_ALTS empty alt attributes in index.html"
 
           if [ "$EMPTY_ALTS" -gt "0" ]; then
-            echo "❌ WARNING: Still have empty alt attributes in built HTML"
-            echo "First 3 occurrences:"
+            echo "   ❌ WARNING: Still have empty alt attributes in built HTML"
+            echo "   First 3 occurrences:"
             grep -o '<img[^>]*alt=""[^>]*>' _site/index.html | head -3
           else
-            echo "✅ No empty alt attributes found"
+            echo "   ✅ No empty alt attributes found"
           fi
+
+          # Check 3: BFG logo visibility rules
+          echo ""
+          echo "3. Checking BFG logo visibility fixes..."
+          if grep -q "\.image-bfg.*display.*block.*important" _site/styles.css; then
+            echo "   ✅ BFG logo visibility rules found"
+          else
+            echo "   ⚠️ BFG logo visibility rules may need strengthening"
+          fi
+
+          # Check 4: Compare with previous issues
+          echo ""
+          echo "4. Checking for recurring issues from previous reports..."
+          BRANCH_NAME="${{ github.ref_name }}"
+          FIXES_DIR="_fixes/${BRANCH_NAME//\//-}"
+
+          if [ -d "$FIXES_DIR" ]; then
+            PREV_REPORTS=$(ls -1 "$FIXES_DIR"/BRANCH_ISSUES_*.md 2>/dev/null | tail -3)
+            if [ ! -z "$PREV_REPORTS" ]; then
+              echo "   Previous reports found:"
+              for report in $PREV_REPORTS; do
+                echo "   - $(basename $report)"
+                # Check for specific recurring issues
+                if grep -q "#c0c4d1" "$report" 2>/dev/null; then
+                  echo "     ⚠️ Had color #c0c4d1 issue"
+                fi
+                if grep -q "#ee265f" "$report" 2>/dev/null; then
+                  echo "     ⚠️ Had color #ee265f issue"
+                fi
+                if grep -q "empty alt" "$report" 2>/dev/null; then
+                  echo "     ⚠️ Had empty alt issues"
+                fi
+                if grep -q "BFG.*hidden" "$report" 2>/dev/null; then
+                  echo "     ⚠️ Had BFG logo visibility issue"
+                fi
+              done
+            fi
+          fi
+
+          echo ""
+          echo "═══════════════════════════════════════════════════════════════════"
+          echo "BUILD VERIFICATION COMPLETE"
+          echo "═══════════════════════════════════════════════════════════════════"
 
       - name: Install test dependencies
         working-directory: tests
@@ -170,6 +239,51 @@ jobs:
           echo "**Commit:** ${{ github.sha }}" >> "$ISSUES_FILE"
           echo "**Workflow Run:** [View Run](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})" >> "$ISSUES_FILE"
           echo "" >> "$ISSUES_FILE"
+
+          # Check for recurring issues
+          echo "## 🔁 Recurring Issues Analysis" >> "$ISSUES_FILE"
+          echo "" >> "$ISSUES_FILE"
+
+          # Find previous reports and check for patterns
+          PREV_REPORTS=$(ls -1 "$FIXES_DIR"/BRANCH_ISSUES_*.md 2>/dev/null | grep -v "$TIMESTAMP" | tail -3)
+          if [ ! -z "$PREV_REPORTS" ]; then
+            echo "Comparing with previous reports:" >> "$ISSUES_FILE"
+            for report in $PREV_REPORTS; do
+              echo "- $(basename $report)" >> "$ISSUES_FILE"
+            done
+            echo "" >> "$ISSUES_FILE"
+
+            # Track recurring issues
+            echo "### Known Recurring Issues:" >> "$ISSUES_FILE"
+            HAS_RECURRING=false
+
+            # Check for color contrast issues
+            if grep -q "#c0c4d1.*#ee265f" "$PREV_REPORTS" 2>/dev/null; then
+              echo "- ⚠️ **Color contrast #c0c4d1/#ee265f (ratio 2.37:1)** - Appearing in multiple reports" >> "$ISSUES_FILE"
+              HAS_RECURRING=true
+            fi
+
+            # Check for empty alt issues
+            if grep -q "empty.*alt\|alt=\"\"" "$PREV_REPORTS" 2>/dev/null; then
+              echo "- ⚠️ **Empty alt attributes** - Recurring across reports" >> "$ISSUES_FILE"
+              HAS_RECURRING=true
+            fi
+
+            # Check for BFG logo issues
+            if grep -q "BFG.*hidden\|image-bfg.*visibility" "$PREV_REPORTS" 2>/dev/null; then
+              echo "- ⚠️ **BFG logo visibility** - Persistent issue" >> "$ISSUES_FILE"
+              HAS_RECURRING=true
+            fi
+
+            if [ "$HAS_RECURRING" = false ]; then
+              echo "No known recurring issues detected in recent reports." >> "$ISSUES_FILE"
+            fi
+
+            echo "" >> "$ISSUES_FILE"
+          else
+            echo "No previous reports to compare against." >> "$ISSUES_FILE"
+            echo "" >> "$ISSUES_FILE"
+          fi
 
           echo "## Test Results" >> "$ISSUES_FILE"
 
