@@ -52,6 +52,29 @@ jobs:
       - name: Build site
         run: npm run build
 
+      - name: Verify build includes fixes
+        run: |
+          echo "Verifying CSS fixes are in built site..."
+          if grep -q "WCAG COMPLIANCE FIXES" _site/styles.css; then
+            echo "✅ CSS fixes found in built styles.css"
+          else
+            echo "❌ WARNING: CSS fixes NOT found in _site/styles.css"
+            echo "Checking if styles.css was copied to _site..."
+            ls -la _site/styles.css || echo "styles.css not found in _site"
+          fi
+
+          echo "Checking for empty alt attributes in built HTML..."
+          EMPTY_ALTS=$(grep -c 'alt=""' _site/index.html 2>/dev/null || echo "0")
+          echo "Found $EMPTY_ALTS empty alt attributes in index.html"
+
+          if [ "$EMPTY_ALTS" -gt "0" ]; then
+            echo "❌ WARNING: Still have empty alt attributes in built HTML"
+            echo "First 3 occurrences:"
+            grep -o '<img[^>]*alt=""[^>]*>' _site/index.html | head -3
+          else
+            echo "✅ No empty alt attributes found"
+          fi
+
       - name: Install test dependencies
         working-directory: tests
         run: |
