@@ -33850,3 +33850,58 @@ body *[style*="color: #2d2e33"] {
 [style*="background:#8a8a92"] *:not([style*="color:#ffffff"]) {
   color: #ffffff !important;
 }
+
+/* ============================================ */
+/* BUTTON HOVER STATE CONTRAST FIXES */
+/* ============================================ */
+
+/* Fix primary button hover - prevent white on white/transparent */
+.button-primary:hover {
+  color: var(--neutral-800) !important; /* Dark text */
+  background-color: var(--neutral-100) !important; /* White background */
+  border: 2px solid var(--neutral-800) !important; /* Dark border for visibility */
+}
+
+/* Fix secondary button hover - ensure proper contrast */
+.button-secondary:hover {
+  border-color: var(--rose) !important;
+  background-color: var(--rose) !important;
+  color: #ffffff !important; /* Force white text on rose background */
+}
+
+/* Fix white button variants hover states */
+.button-primary.button-white:hover,
+.button-secondary.button-white:hover {
+  background-color: var(--neutral-800) !important; /* Dark background */
+  color: #ffffff !important; /* White text */
+  border-color: var(--neutral-800) !important;
+}
+
+/* Fix buttons with rose background hover */
+.button-primary._2-buttons:hover {
+  border-color: var(--rose) !important;
+  background-color: var(--rose) !important; /* Rose background instead of white */
+  color: #ffffff !important; /* White text for contrast */
+}
+
+/* Industry page button hover fixes */
+.industry-hero-main-button.button-secondary:hover,
+.industry-bottom-main-button.button-primary:hover {
+  background-color: var(--neutral-800) !important;
+  color: #ffffff !important; /* White on dark for proper contrast */
+}
+
+/* Ensure no transparent backgrounds on hover */
+a[class*="button"]:hover,
+button[class*="button"]:hover {
+  background-color: inherit !important;
+}
+
+/* Override any transparent background on hover */
+*[class*="button"]:hover[style*="background-color: transparent"],
+*[class*="button"]:hover[style*="background-color: rgba(0, 0, 0, 0)"],
+*[class*="button"]:hover[style*="background: transparent"],
+*[class*="button"]:hover[style*="background: #0000"] {
+  background-color: var(--neutral-100) !important;
+  border: 2px solid var(--neutral-800) !important;
+}
