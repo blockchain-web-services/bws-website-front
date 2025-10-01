@@ -33752,7 +33752,10 @@ html body .announcement-flex-logos img,
 html body .image-bfg[loading="lazy"],
 html body div.announcement-flex-logos img.image-bfg,
 html body a img.image-bfg,
-html body * img.image-bfg {
+html body * img.image-bfg,
+img.top-menu-company-news-image[data-astro-cid-pux6a34n],
+img[alt*="Blockchain Founders Group"][data-astro-cid-pux6a34n],
+[data-astro-cid-pux6a34n].top-menu-company-news-image {
   visibility: visible !important;
   display: inline-block !important;
   opacity: 1 !important;
@@ -33980,6 +33983,22 @@ button.button-secondary:hover {
   border: 2px solid var(--rose) !important;
 }
 
+/* CRITICAL: Force white text on gray/neutral-500 backgrounds for WCAG contrast */
+[class*="button"][style*="background"],
+[class*="button"]:hover,
+a.w-button:hover,
+.w-button:hover {
+  /* If background is gray/neutral-500, text MUST be white */
+}
+
+[class*="button"]:hover[style*="#8a8a92"],
+[class*="button"]:hover[style*="var(--neutral-500)"],
+a.w-button:hover[style*="#8a8a92"],
+.w-button:hover[style*="#8a8a92"] {
+  color: #ffffff !important;
+  background-color: #8a8a92 !important;
+}
+
 /* Fix button arrow/icon spacing - no extra margin */
 .button-arrow,
 [class*="button"] .button-arrow,
@@ -34078,17 +34097,18 @@ a.w-button:not(.w-dropdown-toggle):hover,
 }
 
 /* Specific fixes for buttons that are getting semi-transparent backgrounds */
-/* Primary buttons (rose background) on hover -> transparent bg + rose text */
+/* Primary buttons (rose background) on hover -> white bg + rose text for contrast */
 .button-primary:hover,
 .button-primary._2-buttons:hover,
 a.button-primary.w-button:hover,
 .button-primary.button-small:hover,
 .announcement-buttons .button-primary:hover {
-  background-color: transparent !important;
-  background: transparent !important;
+  background-color: #ffffff !important;
+  background: #ffffff !important;
   color: var(--rose) !important;
   border: 2px solid var(--rose) !important;
   opacity: 1 !important;
+  transition: none !important;
 }
 
 /* Secondary buttons (transparent) on hover -> rose bg + white text */
@@ -34104,11 +34124,15 @@ a.button-secondary.w-button:hover,
   color: #ffffff !important;
   border: 2px solid var(--rose) !important;
   opacity: 1 !important;
+  transition: none !important;
 }
 
 /* Override Webflow's default button transitions that may add transparency */
-.w-button {
-  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease !important;
+.w-button,
+.w-button:hover,
+[class*="button"],
+[class*="button"]:hover {
+  transition: none !important;
 }
 
 /* Prevent any rgba colors with low opacity on hover - excluding dropdowns */
