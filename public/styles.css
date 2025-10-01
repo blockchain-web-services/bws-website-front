@@ -33852,56 +33852,305 @@ body *[style*="color: #2d2e33"] {
 }
 
 /* ============================================ */
-/* BUTTON HOVER STATE CONTRAST FIXES */
+/* UNIFIED BUTTON SYSTEM - ROSE & WHITE ONLY */
 /* ============================================ */
 
-/* Fix primary button hover - prevent white on white/transparent */
-.button-primary:hover {
-  color: var(--neutral-800) !important; /* Dark text */
-  background-color: var(--neutral-100) !important; /* White background */
-  border: 2px solid var(--neutral-800) !important; /* Dark border for visibility */
-}
+/* Define two consistent button sizes */
+/* Regular size: 48px height for main CTAs */
+/* Small size: 40px height for secondary actions */
 
-/* Fix secondary button hover - ensure proper contrast */
-.button-secondary:hover {
-  border-color: var(--rose) !important;
+/* VARIANT 1: Rose Background Button (Primary Style) */
+/* Initial: Rose background, white text, rose border */
+/* Hover: Transparent background, rose text, rose border */
+
+.button-primary,
+.button-primary.large,
+.button-primary._2-buttons,
+.button-primary.password-button,
+.button-primary.header-button,
+.industry-bottom-main-button.button-primary,
+a.button-primary,
+button.button-primary {
   background-color: var(--rose) !important;
-  color: #ffffff !important; /* Force white text on rose background */
+  color: #ffffff !important;
+  border: 2px solid var(--rose) !important;
+  transition: all 0.3s ease !important;
+  height: 48px !important;
+  min-height: 48px !important;
+  padding: 0 24px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-decoration: none !important;
+  font-weight: 600 !important;
+  font-size: 16px !important;
+  line-height: 1 !important;
+  box-sizing: border-box !important;
 }
 
-/* Fix white button variants hover states */
-.button-primary.button-white:hover,
-.button-secondary.button-white:hover {
-  background-color: var(--neutral-800) !important; /* Dark background */
-  color: #ffffff !important; /* White text */
-  border-color: var(--neutral-800) !important;
+/* Small variant for primary */
+.button-primary.button-small {
+  height: 40px !important;
+  min-height: 40px !important;
+  padding: 0 20px !important;
+  font-size: 14px !important;
 }
 
-/* Fix buttons with rose background hover */
-.button-primary._2-buttons:hover {
-  border-color: var(--rose) !important;
-  background-color: var(--rose) !important; /* Rose background instead of white */
-  color: #ffffff !important; /* White text for contrast */
+.button-primary:hover,
+.button-primary.large:hover,
+.button-primary._2-buttons:hover,
+.button-primary.password-button:hover,
+.button-primary.header-button:hover,
+.button-primary.button-small:hover,
+.industry-bottom-main-button.button-primary:hover,
+a.button-primary:hover,
+button.button-primary:hover {
+  background-color: transparent !important;
+  color: var(--rose) !important;
+  border: 2px solid var(--rose) !important;
+  transform: none !important;
 }
 
-/* Industry page button hover fixes */
+/* VARIANT 2: Transparent Background Button (Secondary Style) */
+/* Initial: Transparent background, rose text, rose border */
+/* Hover: Rose background, white text, rose border */
+
+.button-secondary,
+.button-secondary.category,
+.button-secondary.white-paper,
+.button-secondary.tokenomics,
+.button-secondary.button-white,
+.industry-hero-main-button.button-secondary,
+a.button-secondary,
+button.button-secondary {
+  background-color: transparent !important;
+  color: var(--rose) !important;
+  border: 2px solid var(--rose) !important;
+  transition: all 0.3s ease !important;
+  height: 48px !important;
+  min-height: 48px !important;
+  padding: 0 24px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-decoration: none !important;
+  font-weight: 600 !important;
+  font-size: 16px !important;
+  line-height: 1 !important;
+  box-sizing: border-box !important;
+}
+
+/* Small variant for secondary */
+.button-secondary.button-small {
+  height: 40px !important;
+  min-height: 40px !important;
+  padding: 0 20px !important;
+  font-size: 14px !important;
+}
+
+.button-secondary:hover,
+.button-secondary.category:hover,
+.button-secondary.white-paper:hover,
+.button-secondary.tokenomics:hover,
+.button-secondary.button-white:hover,
+.button-secondary.button-small:hover,
 .industry-hero-main-button.button-secondary:hover,
-.industry-bottom-main-button.button-primary:hover {
-  background-color: var(--neutral-800) !important;
-  color: #ffffff !important; /* White on dark for proper contrast */
+a.button-secondary:hover,
+button.button-secondary:hover {
+  background-color: var(--rose) !important;
+  color: #ffffff !important;
+  border: 2px solid var(--rose) !important;
+  transform: none !important;
 }
 
-/* Ensure no transparent backgrounds on hover */
-a[class*="button"]:hover,
-button[class*="button"]:hover {
-  background-color: inherit !important;
+/* Special case: White variant buttons should follow Variant 2 pattern */
+.button-primary.button-white,
+.button-secondary.button-white,
+.button-secondary.category.white {
+  background-color: transparent !important;
+  color: var(--rose) !important;
+  border: 2px solid var(--rose) !important;
 }
 
-/* Override any transparent background on hover */
-*[class*="button"]:hover[style*="background-color: transparent"],
-*[class*="button"]:hover[style*="background-color: rgba(0, 0, 0, 0)"],
-*[class*="button"]:hover[style*="background: transparent"],
-*[class*="button"]:hover[style*="background: #0000"] {
-  background-color: var(--neutral-100) !important;
-  border: 2px solid var(--neutral-800) !important;
+.button-primary.button-white:hover,
+.button-secondary.button-white:hover,
+.button-secondary.category.white:hover {
+  background-color: var(--rose) !important;
+  color: #ffffff !important;
+  border: 2px solid var(--rose) !important;
+}
+
+/* Fix button arrow/icon spacing - no extra margin */
+.button-arrow,
+[class*="button"] .button-arrow,
+[class*="button"] span.button-arrow,
+[class*="button"] .icon,
+[class*="button"] svg {
+  margin: 0 !important;
+  margin-left: 8px !important; /* Small gap from text */
+  padding: 0 !important;
+  padding-top: 2px !important; /* Align arrow with text */
+  display: inline-flex !important;
+  align-items: center !important;
+  vertical-align: middle !important;
+}
+
+/* Ensure arrow inherits the correct color */
+.button-primary .button-arrow,
+.button-primary span.button-arrow {
+  color: inherit !important;
+}
+
+.button-secondary .button-arrow,
+.button-secondary span.button-arrow {
+  color: inherit !important;
+}
+
+/* Fix for buttons in flex containers to maintain consistent height */
+._2-button-wrapper,
+.announcement-buttons,
+.button-wrapper,
+[class*="button-wrapper"] {
+  display: flex !important;
+  gap: 16px !important;
+  align-items: stretch !important; /* Ensure all buttons same height */
+  flex-wrap: wrap !important;
+}
+
+/* Ensure buttons in same row have same height */
+._2-button-wrapper .button-primary,
+._2-button-wrapper .button-secondary,
+.announcement-buttons .button-primary,
+.announcement-buttons .button-secondary {
+  height: 48px !important;
+  min-height: 48px !important;
+}
+
+/* Small buttons in same container */
+.announcement-buttons .button-small {
+  height: 40px !important;
+  min-height: 40px !important;
+}
+
+/* Override problematic hero section styles that turn everything white */
+.hero-section .button-primary._2-buttons,
+.hero-section .button-secondary,
+.landing-page-hero-wrapper .button-primary._2-buttons,
+.landing-page-hero-wrapper .button-secondary {
+  /* These follow the standard variant rules above */
+}
+
+/* Ensure all button states maintain these styles */
+.button-primary:focus,
+.button-primary:active,
+.button-secondary:focus,
+.button-secondary:active {
+  border: 2px solid var(--rose) !important;
+  outline: 2px solid var(--rose) !important;
+  outline-offset: 2px !important;
+}
+
+/* Remove any conflicting transform or shadow effects - but not for dropdowns */
+[class*="button"]:not(.w-dropdown-toggle):not(.w-dropdown):hover {
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+/* Override any inline styles that might conflict */
+[class*="button"][style*="color: white"],
+[class*="button"][style*="color: #fff"],
+[class*="button"][style*="color: #ffffff"],
+[class*="button"][style*="color:white"],
+[class*="button"][style*="color:#fff"],
+[class*="button"][style*="color:#ffffff"] {
+  /* Let the variant rules above handle the colors */
+}
+
+/* ============================================= */
+/* CRITICAL FIX FOR SEMI-TRANSPARENT BACKGROUNDS */
+/* ============================================= */
+
+/* Force ALL button hovers to use solid colors, no transparency - excluding dropdowns */
+a.w-button:not(.w-dropdown-toggle):hover,
+.w-button:not(.w-dropdown-toggle):hover,
+[class*="button"]:not(.w-dropdown-toggle):not(.w-dropdown):hover {
+  opacity: 1 !important;
+}
+
+/* Specific fixes for buttons that are getting semi-transparent backgrounds */
+/* Primary buttons (rose background) on hover -> transparent bg + rose text */
+.button-primary:hover,
+.button-primary._2-buttons:hover,
+a.button-primary.w-button:hover,
+.button-primary.button-small:hover,
+.announcement-buttons .button-primary:hover {
+  background-color: transparent !important;
+  background: transparent !important;
+  color: var(--rose) !important;
+  border: 2px solid var(--rose) !important;
+  opacity: 1 !important;
+}
+
+/* Secondary buttons (transparent) on hover -> rose bg + white text */
+.button-secondary:hover,
+.button-secondary.w-button:hover,
+a.button-secondary.w-button:hover,
+.button-secondary.button-small:hover,
+.button-secondary.white-paper:hover,
+.button-secondary.tokenomics:hover,
+.announcement-buttons .button-secondary:hover {
+  background-color: var(--rose) !important;
+  background: var(--rose) !important;
+  color: #ffffff !important;
+  border: 2px solid var(--rose) !important;
+  opacity: 1 !important;
+}
+
+/* Override Webflow's default button transitions that may add transparency */
+.w-button {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease !important;
+}
+
+/* Prevent any rgba colors with low opacity on hover - excluding dropdowns */
+[class*="button"]:not(.w-dropdown-toggle):not(.w-dropdown):hover {
+  background-image: none !important;
+}
+
+/* Ensure dropdown functionality is not affected */
+.w-dropdown-toggle {
+  /* Allow normal dropdown behavior */
+}
+
+.w-dropdown-list {
+  /* Preserve dropdown list display behavior */
+}
+
+.w-dropdown-list.w--open {
+  display: block !important;
+}
+
+/* Preserve Webflow dropdown hover states and provide CSS fallback */
+.w-dropdown:hover .w-dropdown-list {
+  display: block !important;
+}
+
+/* Hero section button alignment - divide in 2 halves, center each button */
+.hero-section ._2-button-wrapper {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  width: 100%;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-section ._2-button-wrapper > a:first-child {
+  justify-self: end;
+  margin-right: 10px;
+}
+
+.hero-section ._2-button-wrapper > a:last-child {
+  justify-self: start;
+  margin-left: 10px;
 }

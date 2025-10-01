@@ -57,7 +57,7 @@ test.describe('Button Hover State Accessibility', () => {
 
           // Parse RGB values
           const parseRGB = (color) => {
-            const match = color.match(/rgba?\\((\\d+),\\s*(\\d+),\\s*(\\d+)/);
+            const match = color.match(/rgba?\((\d+),\s*(\d+),\s*(\d+)/);
             if (!match) return null;
             return {
               r: parseInt(match[1]),

@@ -42,8 +42,8 @@
     },
     {
       "file": "_site/index.html",
-      "originalSize": 82241,
-      "newSize": 132882,
+      "originalSize": 82376,
+      "newSize": 133017,
       "sizeDiff": 50641,
       "prettyPrinted": true,
       "errors": []
@@ -196,9 +196,9 @@
   "css": [
     {
       "file": "_site/styles.css",
-      "originalSize": 697025,
-      "newSize": 697025,
-      "sizeDiff": 0,
+      "originalSize": 712011,
+      "newSize": 712023,
+      "sizeDiff": 12,
       "prettyPrinted": true,
       "skippedMinified": false,
       "errors": []
