@@ -87,9 +87,10 @@ test.describe('Asset Verification Tests', () => {
     await page.goto('/');
     await page.waitForLoadState('networkidle');
 
-    const bfgImg = page.locator('img[src*="blockchain-founders-group"], img[src*="BFG"]');
+    // Target the visible BFG logo on the main page (not the one in dropdown menu)
+    const bfgImg = page.locator('img.image-bfg');
     const count = await bfgImg.count();
-    console.log(`Found ${count} BFG images`);
+    console.log(`Found ${count} BFG images with .image-bfg class`);
 
     if (count > 0) {
       const img = bfgImg.first();
