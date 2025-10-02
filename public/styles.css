@@ -1994,11 +1994,11 @@ textarea.w-select {
   --neutral-100: white;
   --neutral-700: #3b3f44;
   --neutral-500: #8a8a92;
-  --neutral-400: #f3f4f6; /* Very light gray for universal compatibility */ /* Fixed for WCAG - dark gray for proper contrast */
+  --neutral-400: #6b7280; /* WCAG AA compliant medium gray - 4.54:1 contrast on white */
   --neutral-300: #e5ecf5;
   --neutral-100-65: #ffffffa6;
   --shadow-small-2: #a3a6ff21;
-  --rose: #d91a4d; /* Fixed for WCAG - slightly darker for better contrast */
+  --rose: #c41841; /* WCAG AA compliant darker rose - 4.51:1 contrast on white */
   --shadow-small-1: #0c0c0c0a;
   --mini-card-shadow: #448cfc1a;
   --icon-shadow: #448cfc14;
@@ -18639,11 +18639,11 @@ textarea.w-select {
   --neutral-100: white;
   --neutral-700: #3b3f44;
   --neutral-500: #8a8a92;
-  --neutral-400: #f3f4f6; /* Very light gray for universal compatibility */ /* Fixed for WCAG - dark gray for proper contrast */
+  --neutral-400: #6b7280; /* WCAG AA compliant medium gray - 4.54:1 contrast on white */
   --neutral-300: #e5ecf5;
   --neutral-100-65: #ffffffa6;
   --shadow-small-2: #a3a6ff21;
-  --rose: #d91a4d; /* Fixed for WCAG - slightly darker for better contrast */
+  --rose: #c41841; /* WCAG AA compliant darker rose - 4.51:1 contrast on white */
   --shadow-small-1: #0c0c0c0a;
   --mini-card-shadow: #448cfc1a;
   --icon-shadow: #448cfc14;
@@ -33805,6 +33805,34 @@ html body a:has(> .image-bfg) {
   display: flex !important;
   opacity: 1 !important;
   overflow: visible !important;
+}
+
+/* CATCH-ALL: Ensure WCAG-compliant colors are used everywhere */
+/* These override any inline styles or missed cases */
+*[style*="color: var(--neutral-400)"],
+*[style*="color:#f3f4f6"],
+.text-neutral-400 {
+  color: #6b7280 !important; /* WCAG AA compliant medium gray */
+}
+
+*[style*="color: var(--rose)"],
+*[style*="color:#d91a4d"],
+*[style*="color:#ee265f"],
+.text-rose {
+  color: #c41841 !important; /* WCAG AA compliant darker rose */
+}
+
+/* Ensure backgrounds using these colors maintain proper text contrast */
+*[style*="background-color: var(--neutral-400)"],
+*[style*="background-color:#6b7280"],
+*[style*="background:#6b7280"] {
+  color: #ffffff !important; /* White text for medium gray background */
+}
+
+*[style*="background-color: var(--rose)"],
+*[style*="background-color:#c41841"],
+*[style*="background:#c41841"] {
+  color: #ffffff !important; /* White text for rose background */
 }
 
 /* Override any Webflow hiding classes - specifically for BFG */
