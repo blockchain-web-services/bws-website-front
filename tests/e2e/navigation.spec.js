@@ -3,6 +3,7 @@ import { HomePage } from '../page-objects/HomePage.js';
 import { AboutPage } from '../page-objects/AboutPage.js';
 import { IndustriesPage } from '../page-objects/IndustriesPage.js';
 import { MarketplacePage } from '../page-objects/MarketplacePage.js';
+import { logNavigationFailure } from '../helpers/error-reporting.js';
 
 test.describe('Navigation Tests', () => {
   // NOTE: This test is skipped because About, Industries, Resources, and Contact
@@ -43,11 +44,37 @@ test.describe('Navigation Tests', () => {
 
     // Check all industry cards are visible
     const cardCount = await industriesPage.getIndustryCardsCount();
+
+    if (cardCount === 0) {
+      console.error('\n❌ No industry cards found');
+      console.error('Expected: At least 1 industry card');
+      console.error('Found: 0 cards');
+      console.error('\nPossible causes:');
+      console.error('1. Industry cards not rendering');
+      console.error('2. Incorrect selector in IndustriesPage page object');
+      console.error('3. JavaScript not loading properly');
+      console.error('\nDebug: Check IndustriesPage.getIndustryCardsCount() selector');
+    }
     expect(cardCount).toBeGreaterThan(0);
 
     // Navigate to Content Creation
-    await industriesPage.navigateToIndustry('content-creation');
-    await expect(page).toHaveURL(/\/industry-content\/content-creation/);
+    try {
+      await industriesPage.navigateToIndustry('content-creation');
+      await expect(page).toHaveURL(/\/industry-content\/content-creation/, { timeout: 10000 });
+    } catch (error) {
+      const currentURL = page.url();
+      logNavigationFailure({
+        from: '/',
+        to: '/industry-content/content-creation',
+        actual: currentURL,
+        selector: 'content-creation industry card',
+        text: 'Content Creation',
+        href: 'UNKNOWN',
+        target: 'UNKNOWN',
+        error: error.message
+      });
+      throw error;
+    }
   });
 
   test('Footer navigation links work', async ({ page, context }) => {
@@ -79,13 +106,26 @@ test.describe('Navigation Tests', () => {
       // Check if link exists and is visible
       const count = await footerLink.count();
       if (count === 0) {
-        console.log(`⚠️ Footer link "${link.text}" not found`);
+        console.error(`\n❌ Footer link "${link.text}" not found`);
+        console.error(`Selector: footer a:has-text("${link.text}")`);
+        console.error('Check that footer contains this link in the HTML.');
+        console.error('Edit src/components/Footer.astro or similar');
         continue;
       }
 
       const isVisible = await footerLink.isVisible({ timeout: 5000 }).catch(() => false);
       if (!isVisible) {
-        console.log(`⚠️ Footer link "${link.text}" not visible`);
+        console.error(`\n⚠️ Footer link "${link.text}" not visible`);
+        console.error(`Selector: footer a:has-text("${link.text}")`);
+        const styles = await footerLink.evaluate(el => {
+          const computed = window.getComputedStyle(el);
+          return {
+            display: computed.display,
+            visibility: computed.visibility,
+            opacity: computed.opacity
+          };
+        });
+        console.error(`Computed styles: display=${styles.display}, visibility=${styles.visibility}, opacity=${styles.opacity}`);
         continue;
       }
 
@@ -109,7 +149,22 @@ test.describe('Navigation Tests', () => {
         console.log(`New tab opened with URL: ${newURL}`);
 
         // Check URL in the new tab
-        await expect(newPage).toHaveURL(new RegExp(link.url), { timeout: 5000 });
+        try {
+          await expect(newPage).toHaveURL(new RegExp(link.url), { timeout: 5000 });
+        } catch (error) {
+          logNavigationFailure({
+            from: page.url(),
+            to: link.url,
+            actual: newURL,
+            selector: `footer a:has-text("${link.text}")`,
+            text: link.text,
+            href,
+            target,
+            error: `New tab opened but URL mismatch: ${error.message}`
+          });
+          await newPage.close();
+          throw error;
+        }
 
         // Close the new tab and return to original
         await newPage.close();
@@ -126,7 +181,22 @@ test.describe('Navigation Tests', () => {
         // Check URL
         const currentURL = page.url();
         console.log(`Current URL after click: ${currentURL}`);
-        await expect(page).toHaveURL(new RegExp(link.url), { timeout: 5000 });
+
+        try {
+          await expect(page).toHaveURL(new RegExp(link.url), { timeout: 5000 });
+        } catch (error) {
+          logNavigationFailure({
+            from: '/',
+            to: link.url,
+            actual: currentURL,
+            selector: `footer a:has-text("${link.text}")`,
+            text: link.text,
+            href,
+            target,
+            error: error.message
+          });
+          throw error;
+        }
 
         await page.goBack();
         await page.waitForLoadState('domcontentloaded');
@@ -154,6 +224,19 @@ test.describe('Navigation Tests', () => {
 
     // Accept both / and /index.html as valid homepage URLs
     const isHome = currentURL.endsWith('/') || currentURL.endsWith('/index.html');
+
+    if (!isHome) {
+      logNavigationFailure({
+        from: '/about',
+        to: '/ or /index.html',
+        actual: currentURL,
+        selector: '.header-logo-wrapper, .w-nav-brand',
+        text: 'Logo',
+        href: await logoLink.getAttribute('href') || 'UNKNOWN',
+        target: await logoLink.getAttribute('target') || 'NONE',
+        error: 'Logo click did not return to homepage'
+      });
+    }
     expect(isHome).toBeTruthy();
   });
 
@@ -187,6 +270,17 @@ test.describe('Navigation Tests', () => {
                            currentURL.includes('non-existent-page-12345') ||
                            has404Content;
 
+    if (!isValidResponse) {
+      console.error('\n❌ 404 HANDLING ERROR');
+      console.error(`Expected: 404 status OR non-existent URL OR 404 content`);
+      console.error(`Actual:`);
+      console.error(`  Status code: ${statusCode || 'NONE'}`);
+      console.error(`  Current URL: ${currentURL}`);
+      console.error(`  Has 404 content: ${has404Content}`);
+      console.error('\nFor static sites, 404 handling depends on server configuration.');
+      console.error('Check that 404.html exists or server returns 404 for non-existent pages.');
+    }
+
     expect(isValidResponse).toBeTruthy();
     console.log(`✓ 404 handling is working correctly for static site`);
   });
@@ -205,10 +299,26 @@ test.describe('Navigation Tests', () => {
 
     for (const product of marketplaceProducts) {
       await page.goto(`/marketplace/${product}`);
+
+      const title = await page.title();
+      if (title.includes('404')) {
+        console.error(`\n❌ Product page shows 404: ${product}`);
+        console.error(`URL: /marketplace/${product}`);
+        console.error(`Title: ${title}`);
+        console.error('\nThis page should exist but returns 404.');
+        console.error('Check that the page exists in src/pages/marketplace/');
+      }
       await expect(page).not.toHaveTitle(/404/);
 
       // Check that page has content
       const h1 = await page.locator('h1').first().textContent();
+
+      if (!h1 || h1.trim() === '') {
+        console.error(`\n❌ Product page missing H1: ${product}`);
+        console.error(`URL: /marketplace/${product}`);
+        console.error('Page loaded but has no H1 heading.');
+        console.error('Every product page should have a main heading.');
+      }
       expect(h1).toBeTruthy();
     }
   });
