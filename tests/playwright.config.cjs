@@ -29,6 +29,7 @@ module.exports = defineConfig({
     video: 'retain-on-failure',
     actionTimeout: 30000, // Increased from 15000
     navigationTimeout: 60000, // Increased from 30000 for slow network conditions
+    viewport: { width: 1280, height: 720 }, // Explicit viewport for consistent CSS rendering
   },
 
   projects: [

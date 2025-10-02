@@ -42,9 +42,17 @@ test.describe('Image Visibility on Index Page', () => {
     expect(styles.display).not.toBe('none');
 
     // Check if max-width constraint is applied
-    expect(styles.maxWidth).toContain('120px');
-
+    // Note: In headless Chrome, CSS may not always apply instantly
     console.log('PROOF Logo:', dimensions, styles);
+
+    // Soft assertion - warn instead of failing if CSS not applied
+    if (styles.maxWidth && styles.maxWidth !== 'none') {
+      expect(styles.maxWidth).toContain('120px');
+    } else {
+      console.warn('⚠️ PROOF logo max-width not applied - CSS may not have loaded in time');
+      // Still fail but with better context
+      expect(styles.maxWidth).toContain('120px');
+    }
   });
 
   test('AssureDefi Logo visibility and CSS', async ({ page }) => {
