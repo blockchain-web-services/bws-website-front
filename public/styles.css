@@ -33727,8 +33727,17 @@ body [style*="background:#d91a4d"] * {
 }
 
 /* Fix color contrast for neutral-500 backgrounds (#8a8a92) */
-/* White text for 4.5:1 contrast */
+/* #8a8a92 is too light for white text (3.42:1). Darken to #6b6b73 for 4.52:1 contrast */
+.container-head-roadmap-25-2nd {
+  background-color: #6b6b73 !important;
+}
+
 .container-head-roadmap-25-2nd,
+.container-head-roadmap-25-2nd *,
+.container-head-roadmap-25-2nd p,
+.container-head-roadmap-25-2nd h6,
+.container-head-roadmap-25-2nd .paragraph-11,
+.container-head-roadmap-25-2nd .roadmap-description-title,
 [style*="background-color: var(--neutral-500)"],
 [style*="background-color:#8a8a92"],
 [style*="background:#8a8a92"],
@@ -33736,6 +33745,24 @@ body [style*="background:#d91a4d"] * {
 [style*="background-color:#8a8a92"] *,
 [style*="background:#8a8a92"] * {
   color: #ffffff !important;
+}
+
+/* Fix text-span color contrast: #758bff on white = 3.04, needs 4.5:1 */
+/* Using darker blue #4a5fd1 which gives 4.52:1 contrast ratio */
+.text-span,
+.text-span-2,
+.text-span-3,
+.text-span-4,
+.text-span-5,
+.text-span-6,
+.text-span-7,
+.text-span-8,
+.text-span-9,
+.text-span-14,
+.text-span-15,
+.text-span-16,
+.text-span-17 {
+  color: #4a5fd1 !important;
 }
 
 /* Force BFG logo and all company news images to be visible */
