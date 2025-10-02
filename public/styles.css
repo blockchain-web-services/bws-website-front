@@ -33571,25 +33571,9 @@ img[src*="Tokenomics"] {
 
 /* Industry cards styles removed - now handled in Navigation.astro component */
 
-/* Partner logo image fixes */
-.image-assure {
-  max-width: 120px !important;
-  width: auto !important;
-  height: auto !important;
-  object-fit: contain !important;
-  display: inline-block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-}
-
-.image-proof {
-  max-width: 120px !important;
-  height: auto !important;
-  object-fit: contain !important;
-  display: inline-block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-}
+/* NOTE: Removed duplicate .image-assure and .image-proof definitions
+   that were overriding the correct values above.
+   Keeping only the first, correct definitions at lines 33532-33549. */
 
 .image-token-allocation {
   max-width: 100% !important;

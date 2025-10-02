@@ -177,7 +177,24 @@ test.describe('Image Files and CSS Validation', () => {
 test.describe('Image Visibility on Live Page', () => {
   test.beforeEach(async ({ page }) => {
     await page.goto('/', { waitUntil: 'networkidle' });
-    await page.waitForTimeout(1000);
+
+    // Increased timeout for CSS to fully parse and apply in headless Chrome
+    // CI environments may need more time than local development
+    await page.waitForTimeout(2000);
+
+    // Verify CSS is loaded by checking if computed styles are available
+    const cssLoaded = await page.evaluate(() => {
+      const testImg = document.querySelector('img[src*="PROOF-logo"]');
+      if (!testImg) return true; // Image not on page, skip check
+
+      const computed = window.getComputedStyle(testImg);
+      return computed.maxWidth !== 'none' && computed.maxWidth !== '';
+    });
+
+    if (!cssLoaded) {
+      console.warn('⚠️ CSS may not be fully loaded, waiting additional time...');
+      await page.waitForTimeout(2000);
+    }
   });
 
   test('All critical images are visible and properly sized', async ({ page }) => {
