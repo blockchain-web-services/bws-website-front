@@ -34217,3 +34217,12 @@ a.button-secondary.w-button:hover,
   justify-self: start;
   margin-left: 10px;
 }
+
+/* WCAG FIX: Roadmap description title on rose background */
+/* Issue: #6b7280 on #c41841 = 1.22:1 (FAIL) */
+/* Fix: Use white text = 5.91:1 (PASS) */
+.container-head-roadmap-25-1st .roadmap-description-title,
+.container-head-roadmap-25-2nd .roadmap-description-title,
+.roadmap-description-title {
+  color: #ffffff !important; /* White on rose background gives 5.91:1 contrast */
+}
