@@ -47,6 +47,15 @@ test.describe('Navigation Tests', () => {
 
   test('Footer navigation links work', async ({ page }) => {
     const homePage = new HomePage(page);
+
+    // Setup console error tracking
+    const consoleErrors = [];
+    page.on('console', msg => {
+      if (msg.type() === 'error') {
+        consoleErrors.push(msg.text());
+      }
+    });
+
     await homePage.goto();
 
     // Scroll to footer
@@ -61,11 +70,40 @@ test.describe('Navigation Tests', () => {
 
     for (const link of footerLinks) {
       const footerLink = page.locator(`footer a:has-text("${link.text}")`);
-      if (await footerLink.isVisible()) {
-        await footerLink.click();
-        await expect(page).toHaveURL(new RegExp(link.url));
-        await page.goBack();
+
+      // Check if link exists and is visible
+      const count = await footerLink.count();
+      if (count === 0) {
+        console.log(`⚠️ Footer link "${link.text}" not found`);
+        continue;
       }
+
+      const isVisible = await footerLink.isVisible({ timeout: 5000 }).catch(() => false);
+      if (!isVisible) {
+        console.log(`⚠️ Footer link "${link.text}" not visible`);
+        continue;
+      }
+
+      // Get href before clicking for debugging
+      const href = await footerLink.getAttribute('href');
+      console.log(`Clicking footer link: "${link.text}" (href: ${href})`);
+
+      // Click and wait for navigation
+      await footerLink.click();
+      await page.waitForLoadState('domcontentloaded', { timeout: 15000 });
+
+      // Log console errors if any
+      if (consoleErrors.length > 0) {
+        console.log(`Console errors detected: ${consoleErrors.join(', ')}`);
+      }
+
+      // Check URL
+      const currentURL = page.url();
+      console.log(`Current URL after click: ${currentURL}`);
+      await expect(page).toHaveURL(new RegExp(link.url), { timeout: 5000 });
+
+      await page.goBack();
+      await page.waitForLoadState('domcontentloaded');
     }
   });
 
@@ -73,21 +111,44 @@ test.describe('Navigation Tests', () => {
     const aboutPage = new AboutPage(page);
     await aboutPage.goto();
 
-    // Click logo to return home
-    await page.locator('.logo-link, a[href="/"]').first().click();
-    await expect(page).toHaveURL('/');
+    // Click logo to return home - with better error handling
+    const logoLink = page.locator('.logo-link, a[href="/"]').first();
+
+    // Wait for logo to be visible and clickable
+    await logoLink.waitFor({ state: 'visible', timeout: 10000 });
+
+    console.log('Clicking logo to return to homepage...');
+    await logoLink.click({ timeout: 15000 });
+    await page.waitForLoadState('domcontentloaded', { timeout: 15000 });
+
+    const currentURL = page.url();
+    console.log(`Current URL after logo click: ${currentURL}`);
+    await expect(page).toHaveURL('/', { timeout: 5000 });
   });
 
   test('404 page handles non-existent routes', async ({ page }) => {
-    await page.goto('/non-existent-page-12345');
+    // Navigate to non-existent page
+    const response = await page.goto('/non-existent-page-12345');
+    await page.waitForLoadState('domcontentloaded');
+
+    console.log(`Response status: ${response?.status()}`);
+    console.log(`Current URL: ${page.url()}`);
 
     // Check for 404 content or redirect
     const pageContent = await page.textContent('body');
     const is404 = pageContent?.includes('404') || pageContent?.includes('Not Found');
 
+    console.log(`Is 404 page: ${is404}`);
+
     if (!is404) {
-      // If not a 404 page, should redirect to home
-      await expect(page).toHaveURL('/');
+      // If not a 404 page, Astro may redirect to home
+      // Wait a bit for potential redirect
+      await page.waitForTimeout(2000);
+      const finalURL = page.url();
+      console.log(`Final URL: ${finalURL}`);
+
+      // Check if redirected to home
+      await expect(page).toHaveURL('/', { timeout: 5000 });
     }
   });
 

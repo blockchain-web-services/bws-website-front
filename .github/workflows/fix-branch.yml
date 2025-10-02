@@ -157,6 +157,58 @@ jobs:
         working-directory: tests
         run: npx playwright install --with-deps ${{ matrix.browser }}
 
+      - name: Debug build artifacts
+        run: |
+          echo "═══════════════════════════════════════════════════════════════════"
+          echo "DEBUG: Build Artifacts Verification"
+          echo "═══════════════════════════════════════════════════════════════════"
+
+          echo "1. Checking _site directory structure..."
+          if [ -d "_site" ]; then
+            echo "✅ _site directory exists"
+            echo "   Contents:"
+            ls -lh _site/ | head -20
+
+            echo ""
+            echo "2. Checking critical files..."
+            [ -f "_site/styles.css" ] && echo "   ✅ styles.css exists ($(wc -l < _site/styles.css) lines)" || echo "   ❌ styles.css MISSING"
+            [ -f "_site/index.html" ] && echo "   ✅ index.html exists ($(wc -l < _site/index.html) lines)" || echo "   ❌ index.html MISSING"
+
+            echo ""
+            echo "3. Checking assets directory..."
+            if [ -d "_site/assets/images" ]; then
+              echo "   ✅ assets/images directory exists"
+              echo "   Image count: $(find _site/assets/images -type f | wc -l) files"
+            else
+              echo "   ❌ assets/images directory MISSING"
+            fi
+
+            echo ""
+            echo "4. Verifying WCAG CSS fixes in built styles.css..."
+            if [ -f "_site/styles.css" ]; then
+              if grep -q "WCAG COMPLIANCE FIXES" _site/styles.css; then
+                echo "   ✅ WCAG fixes section found"
+                echo "   Checking specific color values:"
+                grep -E "(--neutral-400:|--rose:)" _site/styles.css | head -5
+              else
+                echo "   ❌ WCAG fixes section NOT FOUND"
+              fi
+            fi
+
+            echo ""
+            echo "5. Checking for JavaScript files..."
+            find _site -name "*.js" -type f | head -10
+
+          else
+            echo "❌ ERROR: _site directory does not exist!"
+            echo "Current directory: $(pwd)"
+            echo "Directory contents:"
+            ls -la
+          fi
+
+          echo ""
+          echo "═══════════════════════════════════════════════════════════════════"
+
       - name: Run Playwright tests
         id: test-run
         working-directory: tests
@@ -164,8 +216,13 @@ jobs:
           PORT: 4321
           PLAYWRIGHT_BASE_URL: http://localhost:4321
           CI: true
+          DEBUG: pw:browser  # Enable Playwright debug output
         run: |
           echo "Starting Playwright tests..."
+          echo "Environment:"
+          echo "  BASE_URL: $PLAYWRIGHT_BASE_URL"
+          echo "  CI: $CI"
+          echo "  Browser: ${{ matrix.browser }}"
 
           # Run tests and capture output with ANSI color codes
           npx playwright test --config=playwright.config.cjs --project=${{ matrix.browser }} --reporter=json,line 2>&1 | tee test-output-raw.txt

@@ -6,9 +6,28 @@ test.describe('WCAG Accessibility Compliance', () => {
     await page.goto('/');
     await page.waitForLoadState('domcontentloaded'); // Changed from networkidle to prevent timeouts
 
+    // Wait a bit for CSS to apply
+    await page.waitForTimeout(1000);
+
     const accessibilityScanResults = await new AxeBuilder({ page })
       .withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa'])
       .analyze();
+
+    // Log violations for debugging
+    if (accessibilityScanResults.violations.length > 0) {
+      console.log('\n=== WCAG Violations Detected ===');
+      accessibilityScanResults.violations.forEach((violation, index) => {
+        console.log(`\n${index + 1}. ${violation.id}: ${violation.help}`);
+        console.log(`   Impact: ${violation.impact}`);
+        console.log(`   Description: ${violation.description}`);
+        console.log(`   Affected nodes: ${violation.nodes.length}`);
+        violation.nodes.slice(0, 3).forEach((node, i) => {
+          console.log(`   - Node ${i + 1}: ${node.html.substring(0, 100)}...`);
+          console.log(`     Fix: ${node.failureSummary}`);
+        });
+      });
+      console.log('=================================\n');
+    }
 
     expect(accessibilityScanResults.violations).toEqual([]);
   });
@@ -17,9 +36,23 @@ test.describe('WCAG Accessibility Compliance', () => {
     await page.goto('/about');
     await page.waitForLoadState('domcontentloaded'); // Changed from networkidle to prevent timeouts
 
+    // Wait a bit for CSS to apply
+    await page.waitForTimeout(1000);
+
     const accessibilityScanResults = await new AxeBuilder({ page })
       .withTags(['wcag2a', 'wcag2aa'])
       .analyze();
+
+    // Log violations for debugging
+    if (accessibilityScanResults.violations.length > 0) {
+      console.log('\n=== About Page WCAG Violations ===');
+      accessibilityScanResults.violations.forEach((violation, index) => {
+        console.log(`\n${index + 1}. ${violation.id}: ${violation.help}`);
+        console.log(`   Impact: ${violation.impact}`);
+        console.log(`   Nodes: ${violation.nodes.length}`);
+      });
+      console.log('===================================\n');
+    }
 
     expect(accessibilityScanResults.violations).toEqual([]);
   });

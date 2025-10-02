@@ -28,8 +28,16 @@ export class BasePage {
    * Wait for the page to be fully loaded
    */
   async waitForPageLoad() {
-    await this.page.waitForLoadState('networkidle');
+    // In CI environments, networkidle can timeout - use domcontentloaded first
     await this.page.waitForLoadState('domcontentloaded');
+
+    // Try networkidle but with shorter timeout and fallback
+    try {
+      await this.page.waitForLoadState('networkidle', { timeout: 10000 });
+    } catch (e) {
+      // If networkidle times out, wait for load state instead
+      await this.page.waitForLoadState('load');
+    }
   }
 
   /**
