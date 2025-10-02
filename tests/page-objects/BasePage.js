@@ -114,7 +114,23 @@ export class BasePage {
    * Navigate using the main navigation menu
    */
   async navigateViaMenu(menuItem) {
-    await this.navigationMenu.locator(`a:has-text("${menuItem}")`).click();
+    const menuLink = this.navigationMenu.locator(`a:has-text("${menuItem}")`).first();
+
+    // Ensure menu is visible and interactable (important for dropdowns)
+    await menuLink.waitFor({ state: 'visible', timeout: 10000 });
+
+    // For dropdown menus, hover first to make items visible
+    const parentDropdown = this.page.locator('.nav-link-dropdown:has-text("' + menuItem + '")').first();
+    const hasDropdown = await parentDropdown.count() > 0;
+
+    if (hasDropdown) {
+      // Hover over dropdown to reveal menu items
+      await parentDropdown.hover();
+      await this.page.waitForTimeout(500); // Wait for animation
+    }
+
+    // Click the menu item
+    await menuLink.click({ timeout: 15000 });
     await this.waitForPageLoad();
   }
 
