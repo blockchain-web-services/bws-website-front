@@ -419,99 +419,59 @@ jobs:
           echo "Extracting enhanced diagnostics..."
           echo "========================================="
 
-          # Try to extract attachments from test-results.json first
-          FOUND_ATTACHMENTS=false
-          if [ -f "test-results.json" ] && command -v jq >/dev/null 2>&1; then
-            echo "✓ test-results.json exists and jq is available"
+          # Read diagnostic files written by error-reporting.js
+          DIAGNOSTICS_DIR="test-results/diagnostics"
+          FOUND_DIAGNOSTICS=0
+          if [ -d "$DIAGNOSTICS_DIR" ]; then
+            echo "✓ Diagnostics directory exists"
 
-            # Extract custom attachments from JSON (testInfo.attach() calls)
-            # Look for attachments with our custom names (iterate through each name)
-            for attachment_name in image-load-failure css-not-applied 404-error contrast-violation navigation-failure size-constraint-violation; do
-              echo "Searching for attachment: $attachment_name"
+            # Group diagnostics by type for better organization
+            for diagnostic_type in image-load-failure css-not-applied 404-error contrast-violation navigation-failure size-constraint-violation; do
+              echo "Searching for ${diagnostic_type} diagnostics..."
 
-              # Search for this specific attachment across all test results
-              # Using set +e to prevent script exit on jq errors
-              set +e
-              jq_output=$(jq -r --arg name "$attachment_name" '
-                .suites[]?.specs[]? as $spec |
-                $spec.tests[]?.results[]? as $result |
-                $result.attachments[]? | select(.name == $name) |
-                {
-                  title: $spec.title,
-                  body: .body,
-                  path: .path
-                }
-              ' test-results.json 2>&1)
-              jq_exit=$?
-              set -e
+              # Find all diagnostic files of this type
+              diagnostic_files=$(find "$DIAGNOSTICS_DIR" -name "*-${diagnostic_type}.md" 2>/dev/null || true)
 
-              if [ $jq_exit -ne 0 ]; then
-                echo "WARNING: jq query failed for $attachment_name (exit code: $jq_exit)"
-                echo "jq output: $jq_output"
-                continue
-              fi
+              if [ ! -z "$diagnostic_files" ]; then
+                file_count=$(echo "$diagnostic_files" | wc -l)
+                echo "Found $file_count ${diagnostic_type} diagnostic(s)"
 
-              echo "$jq_output" | while IFS= read -r attachment_json; do
-                if [ ! -z "$attachment_json" ] && [ "$attachment_json" != "null" ]; then
-                  FOUND_ATTACHMENTS=true
+                # Add section header for this diagnostic type
+                echo "### ${diagnostic_type} (${file_count} occurrence(s))" >> "../$ISSUES_FILE"
+                echo "" >> "../$ISSUES_FILE"
 
-                  # Extract title and body from the JSON object
-                  TITLE=$(echo "$attachment_json" | jq -r '.title // "Unknown Test"' 2>/dev/null)
-                  BODY=$(echo "$attachment_json" | jq -r '.body // ""' 2>/dev/null)
-                  PATH=$(echo "$attachment_json" | jq -r '.path // ""' 2>/dev/null)
-
-                  if [ ! -z "$BODY" ] || [ ! -z "$PATH" ]; then
-                    echo "### $TITLE - $attachment_name" >> "../$ISSUES_FILE"
+                # Output each diagnostic file
+                echo "$diagnostic_files" | while IFS= read -r diag_file; do
+                  if [ -f "$diag_file" ]; then
+                    FOUND_DIAGNOSTICS=$((FOUND_DIAGNOSTICS + 1))
+                    echo "<details>" >> "../$ISSUES_FILE"
+                    echo "<summary>View diagnostic details</summary>" >> "../$ISSUES_FILE"
                     echo "" >> "../$ISSUES_FILE"
                     echo '```' >> "../$ISSUES_FILE"
-
-                    # If body exists, use it; otherwise try to read from path
-                    if [ ! -z "$BODY" ] && [ "$BODY" != "null" ]; then
-                      echo "$BODY" >> "../$ISSUES_FILE"
-                    elif [ ! -z "$PATH" ] && [ "$PATH" != "null" ] && [ -f "$PATH" ]; then
-                      cat "$PATH" >> "../$ISSUES_FILE"
-                    fi
-
+                    cat "$diag_file" >> "../$ISSUES_FILE"
                     echo '```' >> "../$ISSUES_FILE"
+                    echo "</details>" >> "../$ISSUES_FILE"
                     echo "" >> "../$ISSUES_FILE"
                   fi
-                fi
-              done
-            done
-          fi
-
-          # Fallback: search error-context.md files for our diagnostic markers
-          if [ "$FOUND_ATTACHMENTS" = false ]; then
-            echo "Searching error-context.md files for diagnostics..." >> "../$ISSUES_FILE"
-            echo "" >> "../$ISSUES_FILE"
-
-            # Find all error-context.md files
-            for context_file in test-results/*/error-context.md; do
-              if [ -f "$context_file" ]; then
-                # Check if file contains our diagnostic markers
-                if grep -q "IMAGE LOAD FAILURE\|CSS NOT APPLIED\|404 ERROR\|COLOR CONTRAST VIOLATION\|NAVIGATION FAILURE\|SIZE CONSTRAINT VIOLATION" "$context_file" 2>/dev/null; then
-                  FOUND_ATTACHMENTS=true
-                  TEST_DIR=$(basename "$(dirname "$context_file")")
-                  echo "### $TEST_DIR" >> "../$ISSUES_FILE"
-                  echo "" >> "../$ISSUES_FILE"
-                  echo '```' >> "../$ISSUES_FILE"
-                  # Extract only the diagnostic sections
-                  grep -A 50 "===.*FAILURE\|===.*VIOLATION\|===.*ERROR" "$context_file" | head -100 >> "../$ISSUES_FILE"
-                  echo '```' >> "../$ISSUES_FILE"
-                  echo "" >> "../$ISSUES_FILE"
-                fi
+                done
               fi
             done
-          fi
 
-          if [ "$FOUND_ATTACHMENTS" = false ]; then
-            echo "INFO: No enhanced diagnostic attachments found (this is expected if testInfo.attach() not yet fully working)"
-            echo "❌ No enhanced diagnostic attachments found in test-results.json or error-context.md files." >> "../$ISSUES_FILE"
-            echo "" >> "../$ISSUES_FILE"
-            echo "This suggests testInfo.attach() calls may not be executing or attachments aren't being captured by the JSON reporter." >> "../$ISSUES_FILE"
-            echo "" >> "../$ISSUES_FILE"
+            if [ $FOUND_DIAGNOSTICS -eq 0 ]; then
+              echo "⚠ No diagnostic files found in $DIAGNOSTICS_DIR"
+              echo "No enhanced diagnostics available for this test run." >> "../$ISSUES_FILE"
+              echo "" >> "../$ISSUES_FILE"
+              echo "_Diagnostic files are created when tests call error-reporting functions with testInfo parameter._" >> "../$ISSUES_FILE"
+              echo "" >> "../$ISSUES_FILE"
+            else
+              echo "✓ Successfully extracted $FOUND_DIAGNOSTICS diagnostic file(s)"
+            fi
           else
-            echo "✓ Found some enhanced diagnostic attachments"
+            echo "⚠ Diagnostics directory not found: $DIAGNOSTICS_DIR"
+            echo "No enhanced diagnostics available - diagnostics directory not created." >> "../$ISSUES_FILE"
+            echo "" >> "../$ISSUES_FILE"
+            echo "_This is expected if no tests failed or error-reporting functions weren't called._" >> "../$ISSUES_FILE"
+            echo "" >> "../$ISSUES_FILE"
           fi
 
           echo "========================================="

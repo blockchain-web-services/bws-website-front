@@ -5,6 +5,45 @@
  * including actual vs expected values, element details, and actionable fixes.
  */
 
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+/**
+ * Write diagnostic content to both testInfo.attach() and a dedicated file
+ * This ensures diagnostics are available in both HTML reports (local) and CI extraction
+ */
+function writeDiagnostic(testInfo, name, content) {
+  // 1. Attach for HTML reporter (local development)
+  testInfo?.attach?.(name, {
+    body: content,
+    contentType: 'text/plain'
+  });
+
+  // 2. Write to file for CI extraction
+  if (testInfo?.testId) {
+    try {
+      const diagnosticsDir = path.join(__dirname, '..', 'test-results', 'diagnostics');
+      fs.mkdirSync(diagnosticsDir, { recursive: true });
+
+      const safeTestId = testInfo.testId.replace(/[^a-zA-Z0-9_-]/g, '_');
+      const filename = `${safeTestId}-${name}.md`;
+      const filepath = path.join(diagnosticsDir, filename);
+
+      fs.writeFileSync(filepath, content, 'utf-8');
+    } catch (error) {
+      // Silently fail - don't break tests if diagnostic file writing fails
+      console.warn(`Warning: Could not write diagnostic file: ${error.message}`);
+    }
+  }
+
+  // 3. Also log to console for immediate feedback
+  console.error('\n' + content);
+}
+
 /**
  * Log detailed information about image loading failures
  * @param {import('@playwright/test').TestInfo} testInfo - Playwright test info object for attachments
@@ -40,14 +79,7 @@ ${details.url ? `To download missing image:
 curl -o "_site${details.url}" "https://www.bws.ninja${details.url}"` : ''}
 `.trim();
 
-  // Attach to test for CI visibility
-  testInfo?.attach?.('image-load-failure', {
-    body: errorReport,
-    contentType: 'text/plain'
-  });
-
-  // Also log to console for local debugging
-  console.error('\n' + errorReport);
+  writeDiagnostic(testInfo, 'image-load-failure', errorReport);
 }
 
 /**
@@ -100,12 +132,7 @@ grep -n "${details.expectedClass}" public/styles.css
 grep -n "max-width.*none" public/styles.css | grep "${details.expectedClass}"
 `.trim();
 
-  testInfo?.attach?.('css-not-applied', {
-    body: errorReport,
-    contentType: 'text/plain'
-  });
-
-  console.error('\n' + errorReport);
+  writeDiagnostic(testInfo, 'css-not-applied', errorReport);
 }
 
 /**
@@ -147,12 +174,7 @@ ls -lh "_site${filePath}"
 file "_site${filePath}"
 `.trim();
 
-  testInfo?.attach?.('404-error', {
-    body: errorReport,
-    contentType: 'text/plain'
-  });
-
-  console.error('\n' + errorReport);
+  writeDiagnostic(testInfo, '404-error', errorReport);
 }
 
 /**
@@ -216,12 +238,7 @@ How to fix:
 ${grepCommand}
 `.trim();
 
-  testInfo?.attach?.('contrast-violation', {
-    body: errorReport,
-    contentType: 'text/plain'
-  });
-
-  console.error('\n' + errorReport);
+  writeDiagnostic(testInfo, 'contrast-violation', errorReport);
 }
 
 /**
@@ -263,12 +280,7 @@ ${details.href ? `Check file exists: ls -la "_site${details.href}"` : ''}
 Check HTML: grep -r "href=" src/components/Navigation.astro
 `.trim();
 
-  testInfo?.attach?.('navigation-failure', {
-    body: errorReport,
-    contentType: 'text/plain'
-  });
-
-  console.error('\n' + errorReport);
+  writeDiagnostic(testInfo, 'navigation-failure', errorReport);
 }
 
 /**
@@ -327,12 +339,7 @@ Check for conflicting rules:
   Look for "max-width: none" or "width: 100%" in styles.css
 `.trim();
 
-  testInfo?.attach?.('size-constraint-violation', {
-    body: errorReport,
-    contentType: 'text/plain'
-  });
-
-  console.error('\n' + errorReport);
+  writeDiagnostic(testInfo, 'size-constraint-violation', errorReport);
 }
 
 /**
