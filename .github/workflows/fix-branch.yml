@@ -270,8 +270,8 @@ jobs:
       - name: Collect test failures and commit if any
         if: steps.test-run.outputs.tests_passed == 'false'
         run: |
-          # Note: NOT using 'set -e' globally to allow better error handling and logging
-          # Individual critical sections will check exit codes explicitly
+          set +e  # CRITICAL: Disable exit-on-error (GitHub Actions enables it by default)
+          # We handle errors explicitly for better logging and debugging
 
           echo "========================================="
           echo "Collecting test failures for fix branch..."
