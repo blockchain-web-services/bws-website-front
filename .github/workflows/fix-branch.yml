@@ -416,35 +416,43 @@ jobs:
           FOUND_ATTACHMENTS=false
           if [ -f "test-results.json" ] && command -v jq >/dev/null 2>&1; then
             # Extract custom attachments from JSON (testInfo.attach() calls)
-            # Look for attachments with our custom names
-            ATTACHMENT_NAMES="image-load-failure css-not-applied 404-error contrast-violation navigation-failure size-constraint-violation"
+            # Look for attachments with our custom names (iterate through each name)
+            for attachment_name in image-load-failure css-not-applied 404-error contrast-violation navigation-failure size-constraint-violation; do
+              # Search for this specific attachment across all test results
+              jq -r --arg name "$attachment_name" '
+                .suites[]?.specs[]? as $spec |
+                $spec.tests[]?.results[]? as $result |
+                $result.attachments[]? | select(.name == $name) |
+                {
+                  title: $spec.title,
+                  body: .body,
+                  path: .path
+                }
+              ' test-results.json 2>/dev/null | while IFS= read -r attachment_json; do
+                if [ ! -z "$attachment_json" ] && [ "$attachment_json" != "null" ]; then
+                  FOUND_ATTACHMENTS=true
 
-            for suite_idx in $(jq -r '.suites | keys[]' test-results.json 2>/dev/null); do
-              for spec_idx in $(jq -r ".suites[$suite_idx].specs | keys[]" test-results.json 2>/dev/null); do
-                TEST_TITLE=$(jq -r ".suites[$suite_idx].specs[$spec_idx].title" test-results.json 2>/dev/null)
+                  # Extract title and body from the JSON object
+                  TITLE=$(echo "$attachment_json" | jq -r '.title // "Unknown Test"' 2>/dev/null)
+                  BODY=$(echo "$attachment_json" | jq -r '.body // ""' 2>/dev/null)
+                  PATH=$(echo "$attachment_json" | jq -r '.path // ""' 2>/dev/null)
 
-                for test_idx in $(jq -r ".suites[$suite_idx].specs[$spec_idx].tests | keys[]" test-results.json 2>/dev/null); do
-                  for result_idx in $(jq -r ".suites[$suite_idx].specs[$spec_idx].tests[$test_idx].results | keys[]" test-results.json 2>/dev/null); do
-                    # Get attachments array
-                    ATTACHMENTS=$(jq -r ".suites[$suite_idx].specs[$spec_idx].tests[$test_idx].results[$result_idx].attachments[]? | select(.name | IN(\"$ATTACHMENT_NAMES\")) | {name, body}" test-results.json 2>/dev/null)
+                  if [ ! -z "$BODY" ] || [ ! -z "$PATH" ]; then
+                    echo "### $TITLE - $attachment_name" >> "../$ISSUES_FILE"
+                    echo "" >> "../$ISSUES_FILE"
+                    echo '```' >> "../$ISSUES_FILE"
 
-                    if [ ! -z "$ATTACHMENTS" ]; then
-                      FOUND_ATTACHMENTS=true
-                      echo "### $TEST_TITLE" >> "../$ISSUES_FILE"
-                      echo "" >> "../$ISSUES_FILE"
-
-                      # Extract and decode attachment body
-                      echo "$ATTACHMENTS" | jq -r '.body' 2>/dev/null | while read -r body; do
-                        if [ ! -z "$body" ]; then
-                          echo '```' >> "../$ISSUES_FILE"
-                          echo "$body" >> "../$ISSUES_FILE"
-                          echo '```' >> "../$ISSUES_FILE"
-                          echo "" >> "../$ISSUES_FILE"
-                        fi
-                      done
+                    # If body exists, use it; otherwise try to read from path
+                    if [ ! -z "$BODY" ] && [ "$BODY" != "null" ]; then
+                      echo "$BODY" >> "../$ISSUES_FILE"
+                    elif [ ! -z "$PATH" ] && [ "$PATH" != "null" ] && [ -f "$PATH" ]; then
+                      cat "$PATH" >> "../$ISSUES_FILE"
                     fi
-                  done
-                done
+
+                    echo '```' >> "../$ISSUES_FILE"
+                    echo "" >> "../$ISSUES_FILE"
+                  fi
+                fi
               done
             done
           fi
@@ -460,7 +468,7 @@ jobs:
                 # Check if file contains our diagnostic markers
                 if grep -q "IMAGE LOAD FAILURE\|CSS NOT APPLIED\|404 ERROR\|COLOR CONTRAST VIOLATION\|NAVIGATION FAILURE\|SIZE CONSTRAINT VIOLATION" "$context_file" 2>/dev/null; then
                   FOUND_ATTACHMENTS=true
-                  TEST_DIR=$(basename $(dirname "$context_file"))
+                  TEST_DIR=$(basename "$(dirname "$context_file")")
                   echo "### $TEST_DIR" >> "../$ISSUES_FILE"
                   echo "" >> "../$ISSUES_FILE"
                   echo '```' >> "../$ISSUES_FILE"
