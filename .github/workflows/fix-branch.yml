@@ -225,7 +225,8 @@ jobs:
           echo "  Browser: ${{ matrix.browser }}"
 
           # Run tests and capture output with ANSI color codes
-          npx playwright test --config=playwright.config.cjs --project=${{ matrix.browser }} --reporter=json,line 2>&1 | tee test-output-raw.txt
+          # Note: Reporters are configured in playwright.config.cjs (json with outputFile, list, line)
+          npx playwright test --config=playwright.config.cjs --project=${{ matrix.browser }} 2>&1 | tee test-output-raw.txt
           TEST_EXIT_CODE=${PIPESTATUS[0]}
 
           # Strip ANSI escape codes and create clean output
@@ -363,6 +364,38 @@ jobs:
           else
             echo "### ⚠️ Test Results File Not Found" >> "../$ISSUES_FILE"
             echo "test-results.json was not generated or is not accessible" >> "../$ISSUES_FILE"
+            echo "" >> "../$ISSUES_FILE"
+          fi
+
+          # Extract enhanced diagnostics from test attachment files
+          echo "## 🔍 Enhanced Error Diagnostics" >> "../$ISSUES_FILE"
+          echo "" >> "../$ISSUES_FILE"
+
+          # Find all test result directories with attachments
+          ATTACHMENT_DIRS=$(find test-results -type d -name "*-chromium*" 2>/dev/null | grep -v "\.playwright-artifacts")
+          FOUND_ATTACHMENTS=false
+
+          if [ ! -z "$ATTACHMENT_DIRS" ]; then
+            for result_dir in $ATTACHMENT_DIRS; do
+              # Look for text attachments (our custom error reports)
+              # These are created by testInfo.attach() with names like 'image-load-failure', 'contrast-violation', etc.
+              for attachment in "$result_dir"/image-load-failure "$result_dir"/css-not-applied "$result_dir"/404-error "$result_dir"/contrast-violation "$result_dir"/navigation-failure "$result_dir"/size-constraint-violation; do
+                if [ -f "$attachment" ]; then
+                  FOUND_ATTACHMENTS=true
+                  ATTACHMENT_NAME=$(basename "$attachment")
+                  echo "### $(basename "$result_dir") - $ATTACHMENT_NAME" >> "../$ISSUES_FILE"
+                  echo "" >> "../$ISSUES_FILE"
+                  echo '```' >> "../$ISSUES_FILE"
+                  cat "$attachment" >> "../$ISSUES_FILE"
+                  echo '```' >> "../$ISSUES_FILE"
+                  echo "" >> "../$ISSUES_FILE"
+                fi
+              done
+            done
+          fi
+
+          if [ "$FOUND_ATTACHMENTS" = false ]; then
+            echo "No enhanced diagnostic attachments found in test results." >> "../$ISSUES_FILE"
             echo "" >> "../$ISSUES_FILE"
           fi
 
