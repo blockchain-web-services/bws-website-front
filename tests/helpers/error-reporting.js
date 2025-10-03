@@ -7,6 +7,7 @@
 
 /**
  * Log detailed information about image loading failures
+ * @param {import('@playwright/test').TestInfo} testInfo - Playwright test info object for attachments
  * @param {string} imageName - Name of the image (e.g., "PROOF Logo")
  * @param {object} details - Details about the failure
  * @param {string} details.url - Expected image URL
@@ -17,33 +18,41 @@
  * @param {string} details.src - Actual src attribute from HTML
  * @param {string} details.status - Load status or error message
  */
-export function logImageLoadFailure(imageName, details) {
-  console.error('\n=== IMAGE LOAD FAILURE ===');
-  console.error(`Image: ${imageName}`);
-  console.error(`Expected URL: ${details.url}`);
-  console.error(`Selector: ${details.selector}`);
-  console.error(`Elements found: ${details.count}`);
+export function logImageLoadFailure(testInfo, imageName, details) {
+  const errorReport = `
+=== IMAGE LOAD FAILURE ===
+Image: ${imageName}
+Expected URL: ${details.url}
+Selector: ${details.selector}
+Elements found: ${details.count}
+${details.count > 0 ? `
+Actual src: ${details.src || 'NOT SET'}
+Natural dimensions: ${details.naturalWidth}x${details.naturalHeight}
+Load status: ${details.status || 'FAILED'}` : ''}
 
-  if (details.count > 0) {
-    console.error(`Actual src: ${details.src || 'NOT SET'}`);
-    console.error(`Natural dimensions: ${details.naturalWidth}x${details.naturalHeight}`);
-    console.error(`Load status: ${details.status || 'FAILED'}`);
-  }
+Possible causes:
+1. File missing from _site/assets/images/
+2. Incorrect src attribute in HTML
+3. Network error (check browser console)
+4. CORS policy blocking external image
 
-  console.error('\nPossible causes:');
-  console.error('1. File missing from _site/assets/images/');
-  console.error('2. Incorrect src attribute in HTML');
-  console.error('3. Network error (check browser console)');
-  console.error('4. CORS policy blocking external image');
+${details.url ? `To download missing image:
+curl -o "_site${details.url}" "https://www.bws.ninja${details.url}"` : ''}
+`.trim();
 
-  if (details.url) {
-    console.error('\nTo download missing image:');
-    console.error(`curl -o "_site${details.url}" "https://www.bws.ninja${details.url}"`);
-  }
+  // Attach to test for CI visibility
+  testInfo?.attach?.('image-load-failure', {
+    body: errorReport,
+    contentType: 'text/plain'
+  });
+
+  // Also log to console for local debugging
+  console.error('\n' + errorReport);
 }
 
 /**
  * Log detailed information about CSS not being applied
+ * @param {import('@playwright/test').TestInfo} testInfo - Playwright test info object
  * @param {string} elementName - Name of the element (e.g., "PROOF Logo")
  * @param {object} details - Details about the CSS issue
  * @param {string} details.selector - CSS selector for the element
@@ -57,49 +66,51 @@ export function logImageLoadFailure(imageName, details) {
  * @param {string} details.visibility - Computed visibility value
  * @param {string} details.opacity - Computed opacity value
  */
-export function logCSSNotApplied(elementName, details) {
-  console.error('\n=== CSS NOT APPLIED / WRONG VALUE ===');
-  console.error(`Element: ${elementName}`);
-  console.error(`Selector: ${details.selector}`);
+export function logCSSNotApplied(testInfo, elementName, details) {
+  const errorReport = `
+=== CSS NOT APPLIED / WRONG VALUE ===
+Element: ${elementName}
+Selector: ${details.selector}
+${details.expectedClass ? `
+Expected class: ${details.expectedClass}
+Has class: ${details.hasClass ? '✅ YES' : '❌ NO'}` : ''}
+${details.expectedMaxWidth ? `
+Max-width constraint:
+  Expected: ${details.expectedMaxWidth}
+  Computed: ${details.actualMaxWidth || 'NONE'}${details.inlineMaxWidth ? `
+  Inline style: ${details.inlineMaxWidth} (⚠️ May override CSS)` : ''}` : ''}
+${details.clientWidth !== undefined ? `
+Rendered dimensions:
+  Width: ${details.clientWidth}px` : ''}
 
-  if (details.expectedClass) {
-    console.error(`Expected class: ${details.expectedClass}`);
-    console.error(`Has class: ${details.hasClass ? '✅ YES' : '❌ NO'}`);
-  }
+Visibility:
+  display: ${details.display}
+  visibility: ${details.visibility}
+  opacity: ${details.opacity}
 
-  if (details.expectedMaxWidth) {
-    console.error(`\nMax-width constraint:`);
-    console.error(`  Expected: ${details.expectedMaxWidth}`);
-    console.error(`  Computed: ${details.actualMaxWidth || 'NONE'}`);
-    if (details.inlineMaxWidth) {
-      console.error(`  Inline style: ${details.inlineMaxWidth} (⚠️ May override CSS)`);
-    }
-  }
+Possible causes:
+1. CSS file not loaded (check Network tab)
+2. CSS timing issue in headless Chrome (increase waitForTimeout)
+3. Inline styles overriding CSS (check HTML for style="...")
+4. CSS specificity conflict (another rule winning)
+5. Missing !important flag in styles.css
 
-  if (details.clientWidth !== undefined) {
-    console.error(`\nRendered dimensions:`);
-    console.error(`  Width: ${details.clientWidth}px`);
-  }
+Debugging commands:
+grep -n "${details.expectedClass}" public/styles.css
+grep -n "max-width.*none" public/styles.css | grep "${details.expectedClass}"
+`.trim();
 
-  console.error(`\nVisibility:`);
-  console.error(`  display: ${details.display}`);
-  console.error(`  visibility: ${details.visibility}`);
-  console.error(`  opacity: ${details.opacity}`);
+  testInfo?.attach?.('css-not-applied', {
+    body: errorReport,
+    contentType: 'text/plain'
+  });
 
-  console.error('\nPossible causes:');
-  console.error('1. CSS file not loaded (check Network tab)');
-  console.error('2. CSS timing issue in headless Chrome (increase waitForTimeout)');
-  console.error('3. Inline styles overriding CSS (check HTML for style="...")');
-  console.error('4. CSS specificity conflict (another rule winning)');
-  console.error('5. Missing !important flag in styles.css');
-
-  console.error('\nDebugging commands:');
-  console.error(`grep -n "${details.expectedClass}" public/styles.css`);
-  console.error(`grep -n "max-width.*none" public/styles.css | grep "${details.expectedClass}"`);
+  console.error('\n' + errorReport);
 }
 
 /**
  * Log detailed information about 404 errors
+ * @param {import('@playwright/test').TestInfo} testInfo - Playwright test info object
  * @param {string} url - URL that returned 404
  * @param {object} context - Context about the request
  * @param {string} context.page - Page where the resource was requested
@@ -107,102 +118,115 @@ export function logCSSNotApplied(elementName, details) {
  * @param {string} context.referrer - Referrer URL
  * @param {number} context.status - HTTP status code
  */
-export function log404Error(url, context = {}) {
-  console.error('\n=== 404 ERROR ===');
-  console.error(`URL: ${url}`);
-  console.error(`Status: ${context.status || 404}`);
-  console.error(`Type: ${context.type || 'unknown'}`);
-
-  if (context.page) {
-    console.error(`Requested from: ${context.page}`);
-  }
-
-  if (context.referrer) {
-    console.error(`Referrer: ${context.referrer}`);
-  }
-
-  // Extract file path from URL
+export function log404Error(testInfo, url, context = {}) {
   const urlObj = new URL(url, 'http://localhost');
   const filePath = urlObj.pathname;
 
-  console.error('\nExpected file location:');
-  console.error(`_site${filePath}`);
+  const errorReport = `
+=== 404 ERROR ===
+URL: ${url}
+Status: ${context.status || 404}
+Type: ${context.type || 'unknown'}
+${context.page ? `Requested from: ${context.page}` : ''}
+${context.referrer ? `Referrer: ${context.referrer}` : ''}
 
-  console.error('\nPossible causes:');
-  console.error('1. File not copied during build (check astro.config.mjs public assets)');
-  console.error('2. Incorrect path in HTML (check src/components/*.astro)');
-  console.error('3. URL encoding mismatch (check for %20 vs spaces)');
-  console.error('4. File exists but server not serving it (check webServer config)');
+Expected file location:
+_site${filePath}
 
-  console.error('\nTo download missing resource:');
-  console.error(`curl -o "_site${filePath}" "https://www.bws.ninja${filePath}"`);
+Possible causes:
+1. File not copied during build (check astro.config.mjs public assets)
+2. Incorrect path in HTML (check src/components/*.astro)
+3. URL encoding mismatch (check for %20 vs spaces)
+4. File exists but server not serving it (check webServer config)
 
-  console.error('\nTo verify local file:');
-  console.error(`ls -lh "_site${filePath}"`);
-  console.error(`file "_site${filePath}"`);
+To download missing resource:
+curl -o "_site${filePath}" "https://www.bws.ninja${filePath}"
+
+To verify local file:
+ls -lh "_site${filePath}"
+file "_site${filePath}"
+`.trim();
+
+  testInfo?.attach?.('404-error', {
+    body: errorReport,
+    contentType: 'text/plain'
+  });
+
+  console.error('\n' + errorReport);
 }
 
 /**
  * Log detailed information about WCAG color contrast violations
+ * @param {import('@playwright/test').TestInfo} testInfo - Playwright test info object
  * @param {object} violation - Axe-core violation object
  * @param {object} node - Specific node with violation
  * @param {string} node.html - HTML snippet of the element
  * @param {string[]} node.target - CSS selector path to element
  * @param {object} node.any - Violation details
  */
-export function logContrastViolation(violation, node) {
-  console.error('\n=== WCAG COLOR CONTRAST VIOLATION ===');
-  console.error(`Rule ID: ${violation.id}`);
-  console.error(`Impact: ${node.impact || violation.impact}`);
-  console.error(`Help: ${violation.help}`);
-  console.error(`Help URL: ${violation.helpUrl}`);
-
-  console.error('\nElement:');
-  console.error(`${node.html.substring(0, 200)}${node.html.length > 200 ? '...' : ''}`);
-
-  console.error('\nSelector:');
-  console.error(`${node.target.join(' > ')}`);
-
-  // Try to extract color information from the node
+export function logContrastViolation(testInfo, violation, node) {
+  let colorDetails = '';
   if (node.any && node.any.length > 0) {
     const data = node.any[0].data;
     if (data) {
-      console.error('\nColor details:');
-      if (data.fgColor) console.error(`  Foreground: ${data.fgColor}`);
-      if (data.bgColor) console.error(`  Background: ${data.bgColor}`);
-      if (data.contrastRatio) {
-        console.error(`  Actual ratio: ${data.contrastRatio}:1`);
+      const parts = [];
+      if (data.fgColor) parts.push(`Foreground: ${data.fgColor}`);
+      if (data.bgColor) parts.push(`Background: ${data.bgColor}`);
+      if (data.contrastRatio) parts.push(`Actual ratio: ${data.contrastRatio}:1`);
+      if (data.expectedContrastRatio) parts.push(`Required ratio: ${data.expectedContrastRatio}`);
+      if (data.fontSize) parts.push(`Font size: ${data.fontSize}`);
+      if (data.fontWeight) parts.push(`Font weight: ${data.fontWeight}`);
+      if (parts.length > 0) {
+        colorDetails = `\nColor details:\n  ${parts.join('\n  ')}`;
       }
-      if (data.expectedContrastRatio) {
-        console.error(`  Required ratio: ${data.expectedContrastRatio}`);
-      }
-      if (data.fontSize) console.error(`  Font size: ${data.fontSize}`);
-      if (data.fontWeight) console.error(`  Font weight: ${data.fontWeight}`);
     }
   }
 
-  console.error('\nHow to fix:');
-  console.error('1. Find the element in public/styles.css using the selector above');
-  console.error('2. Calculate contrast ratio: https://webaim.org/resources/contrastchecker/');
-  console.error('3. Adjust foreground or background color to meet WCAG AA:');
-  console.error('   - Normal text: 4.5:1 minimum');
-  console.error('   - Large text (18pt/24px or 14pt/18.66px bold): 3:1 minimum');
-  console.error('4. Add CSS fix with !important flag if needed');
-
-  console.error('\nUseful commands:');
   const selector = node.target[0] || '';
+  let grepCommand = '';
   if (selector) {
-    // Extract class or ID from selector
     const match = selector.match(/\.([a-zA-Z0-9_-]+)|#([a-zA-Z0-9_-]+)/);
     if (match) {
       const identifier = match[1] || match[2];
-      console.error(`grep -n "${identifier}" public/styles.css`);
+      grepCommand = `\nUseful commands:\ngrep -n "${identifier}" public/styles.css`;
     }
   }
+
+  const errorReport = `
+=== WCAG COLOR CONTRAST VIOLATION ===
+Rule ID: ${violation.id}
+Impact: ${node.impact || violation.impact}
+Help: ${violation.help}
+Help URL: ${violation.helpUrl}
+
+Element:
+${node.html.substring(0, 200)}${node.html.length > 200 ? '...' : ''}
+
+Selector:
+${node.target.join(' > ')}
+${colorDetails}
+
+How to fix:
+1. Find the element in public/styles.css using the selector above
+2. Calculate contrast ratio: https://webaim.org/resources/contrastchecker/
+3. Adjust foreground or background color to meet WCAG AA:
+   - Normal text: 4.5:1 minimum
+   - Large text (18pt/24px or 14pt/18.66px bold): 3:1 minimum
+4. Add CSS fix with !important flag if needed
+${grepCommand}
+`.trim();
+
+  testInfo?.attach?.('contrast-violation', {
+    body: errorReport,
+    contentType: 'text/plain'
+  });
+
+  console.error('\n' + errorReport);
 }
 
 /**
  * Log detailed information about navigation failures
+ * @param {import('@playwright/test').TestInfo} testInfo - Playwright test info object
  * @param {object} details - Details about the navigation failure
  * @param {string} details.from - Starting page/URL
  * @param {string} details.to - Expected destination URL
@@ -213,41 +237,43 @@ export function logContrastViolation(violation, node) {
  * @param {string} details.target - target attribute value
  * @param {string} details.error - Error message or reason for failure
  */
-export function logNavigationFailure(details) {
-  console.error('\n=== NAVIGATION FAILURE ===');
-  console.error(`From: ${details.from}`);
-  console.error(`Expected: ${details.to}`);
+export function logNavigationFailure(testInfo, details) {
+  const errorReport = `
+=== NAVIGATION FAILURE ===
+From: ${details.from}
+Expected: ${details.to}
+${details.actual ? `Actual: ${details.actual}` : ''}
 
-  if (details.actual) {
-    console.error(`Actual: ${details.actual}`);
-  }
+Link details:
+  Selector: ${details.selector}
+  Text: ${details.text || 'N/A'}
+  href: ${details.href || 'NOT SET'}
+  target: ${details.target || 'NOT SET'}
+${details.error ? `\nError: ${details.error}` : ''}
 
-  console.error('\nLink details:');
-  console.error(`  Selector: ${details.selector}`);
-  console.error(`  Text: ${details.text || 'N/A'}`);
-  console.error(`  href: ${details.href || 'NOT SET'}`);
-  console.error(`  target: ${details.target || 'NOT SET'}`);
+Possible causes:
+1. Incorrect href attribute in HTML
+2. JavaScript redirect interfering
+3. Link has target="_blank" (opens in new tab)
+4. Page not found (404)
+5. Route not configured in Astro
 
-  if (details.error) {
-    console.error(`\nError: ${details.error}`);
-  }
+Debugging:
+${details.href ? `Check file exists: ls -la "_site${details.href}"` : ''}
+Check HTML: grep -r "href=" src/components/Navigation.astro
+`.trim();
 
-  console.error('\nPossible causes:');
-  console.error('1. Incorrect href attribute in HTML');
-  console.error('2. JavaScript redirect interfering');
-  console.error('3. Link has target="_blank" (opens in new tab)');
-  console.error('4. Page not found (404)');
-  console.error('5. Route not configured in Astro');
+  testInfo?.attach?.('navigation-failure', {
+    body: errorReport,
+    contentType: 'text/plain'
+  });
 
-  console.error('\nDebugging:');
-  if (details.href) {
-    console.error(`Check file exists: ls -la "_site${details.href}"`);
-  }
-  console.error('Check HTML: grep -r "href=" src/components/Navigation.astro');
+  console.error('\n' + errorReport);
 }
 
 /**
  * Log detailed information about image size constraint violations
+ * @param {import('@playwright/test').TestInfo} testInfo - Playwright test info object
  * @param {string} imageName - Name of the image
  * @param {object} details - Details about the size violation
  * @param {string} details.selector - CSS selector for the image
@@ -262,48 +288,51 @@ export function logNavigationFailure(details) {
  * @param {string} details.computedHeight - Computed height
  * @param {string} details.objectFit - Computed object-fit value
  */
-export function logSizeConstraintViolation(imageName, details) {
-  console.error('\n=== IMAGE SIZE CONSTRAINT VIOLATION ===');
-  console.error(`Image: ${imageName}`);
-  console.error(`Selector: ${details.selector}`);
-  console.error(`Constraint: ${details.constraint}`);
-
-  console.error('\nExpected vs Actual:');
-  console.error(`  Expected ${details.constraint}: ${details.expected}`);
-  console.error(`  Actual ${details.constraint}: ${details.actual}`);
-
-  console.error('\nImage dimensions:');
-  console.error(`  Natural: ${details.naturalWidth}x${details.naturalHeight}`);
-  console.error(`  Rendered: ${details.clientWidth}x${details.clientHeight}`);
-
-  console.error('\nComputed styles:');
-  if (details.computedMaxWidth) {
-    console.error(`  max-width: ${details.computedMaxWidth}`);
-  }
-  if (details.computedHeight) {
-    console.error(`  height: ${details.computedHeight}`);
-  }
-  if (details.objectFit) {
-    console.error(`  object-fit: ${details.objectFit}`);
-  }
-
-  console.error('\nPossible causes:');
-  console.error('1. CSS max-width not applied (timing issue in headless Chrome)');
-  console.error('2. Inline style overriding CSS');
-  console.error('3. Parent container forcing larger size');
-  console.error('4. CSS specificity conflict');
-  console.error('5. Image aspect ratio causing unexpected dimensions');
-
-  console.error('\nDebugging:');
-  console.error('Check CSS in public/styles.css:');
+export function logSizeConstraintViolation(testInfo, imageName, details) {
   const match = details.selector.match(/\.([a-zA-Z0-9_-]+)/);
-  if (match && match[1]) {
-    console.error(`  grep -n "${match[1]}" public/styles.css`);
-  }
-  console.error('Check for inline styles:');
-  console.error(`  grep -n "style=" _site/index.html | grep -i "${imageName.toLowerCase()}"`);
-  console.error('Check for conflicting rules:');
-  console.error('  Look for "max-width: none" or "width: 100%" in styles.css');
+  const className = match && match[1] ? match[1] : '';
+
+  const errorReport = `
+=== IMAGE SIZE CONSTRAINT VIOLATION ===
+Image: ${imageName}
+Selector: ${details.selector}
+Constraint: ${details.constraint}
+
+Expected vs Actual:
+  Expected ${details.constraint}: ${details.expected}
+  Actual ${details.constraint}: ${details.actual}
+
+Image dimensions:
+  Natural: ${details.naturalWidth}x${details.naturalHeight}
+  Rendered: ${details.clientWidth}x${details.clientHeight}
+
+Computed styles:
+${details.computedMaxWidth ? `  max-width: ${details.computedMaxWidth}` : ''}
+${details.computedHeight ? `  height: ${details.computedHeight}` : ''}
+${details.objectFit ? `  object-fit: ${details.objectFit}` : ''}
+
+Possible causes:
+1. CSS max-width not applied (timing issue in headless Chrome)
+2. Inline style overriding CSS
+3. Parent container forcing larger size
+4. CSS specificity conflict
+5. Image aspect ratio causing unexpected dimensions
+
+Debugging:
+Check CSS in public/styles.css:
+${className ? `  grep -n "${className}" public/styles.css` : ''}
+Check for inline styles:
+  grep -n "style=" _site/index.html | grep -i "${imageName.toLowerCase()}"
+Check for conflicting rules:
+  Look for "max-width: none" or "width: 100%" in styles.css
+`.trim();
+
+  testInfo?.attach?.('size-constraint-violation', {
+    body: errorReport,
+    contentType: 'text/plain'
+  });
+
+  console.error('\n' + errorReport);
 }
 
 /**

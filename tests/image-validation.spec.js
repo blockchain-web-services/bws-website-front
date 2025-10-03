@@ -270,7 +270,7 @@ test.describe('Image Visibility on Live Page', () => {
     }
   });
 
-  test('All critical images are visible and properly sized', async ({ page }) => {
+  test('All critical images are visible and properly sized', async ({ page }, testInfo) => {
     for (const image of criticalImages) {
       const imgElement = page.locator(image.selector).first();
 
@@ -345,7 +345,7 @@ test.describe('Image Visibility on Live Page', () => {
         // Verify image loaded (natural dimensions > 0 for non-SVG)
         if (!image.url.endsWith('.svg')) {
           if (evaluation.naturalWidth === 0 || evaluation.naturalHeight === 0) {
-            logImageLoadFailure(image.name, {
+            logImageLoadFailure(testInfo, image.name, {
               url: image.url,
               selector: image.selector,
               count: 1,
@@ -387,7 +387,7 @@ test.describe('Image Visibility on Live Page', () => {
           const actualWidth = parseInt(evaluation.computedMaxWidth.replace('px', ''));
 
           if (isNaN(actualWidth) || actualWidth > expectedWidth) {
-            logSizeConstraintViolation(image.name, {
+            logSizeConstraintViolation(testInfo, image.name, {
               selector: image.selector,
               constraint: 'maxWidth',
               expected: image.maxWidth,
@@ -408,7 +408,7 @@ test.describe('Image Visibility on Live Page', () => {
           const actualHeight = parseInt(evaluation.computedHeight.replace('px', ''));
 
           if (isNaN(actualHeight) || actualHeight > expectedHeight) {
-            logSizeConstraintViolation(image.name, {
+            logSizeConstraintViolation(testInfo, image.name, {
               selector: image.selector,
               constraint: 'height',
               expected: image.height,
@@ -427,7 +427,7 @@ test.describe('Image Visibility on Live Page', () => {
         // Verify CSS class
         if (image.expectedClass) {
           if (!evaluation.hasClass) {
-            logCSSNotApplied(image.name, {
+            logCSSNotApplied(testInfo, image.name, {
               selector: image.selector,
               expectedClass: image.expectedClass,
               hasClass: false,
@@ -451,7 +451,7 @@ test.describe('Image Visibility on Live Page', () => {
     }
   });
 
-  test('No 404 errors for images', async ({ page }) => {
+  test('No 404 errors for images', async ({ page }, testInfo) => {
     const failed404s = [];
 
     page.on('response', response => {
@@ -473,7 +473,7 @@ test.describe('Image Visibility on Live Page', () => {
       console.error(`Total 404 errors: ${failed404s.length}\n`);
 
       failed404s.forEach((error, index) => {
-        log404Error(error.url, {
+        log404Error(testInfo, error.url, {
           page: page.url(),
           type: error.type,
           status: error.status

@@ -14,7 +14,7 @@ test.describe('Image Visibility on Index Page', () => {
     await page.waitForTimeout(2000);
   });
 
-  test('PROOF Logo visibility and CSS', async ({ page }) => {
+  test('PROOF Logo visibility and CSS', async ({ page }, testInfo) => {
     const proofImg = page.locator('img[src*="PROOF-logo"]').first();
 
     // Check if image exists
@@ -52,7 +52,7 @@ test.describe('Image Visibility on Index Page', () => {
 
     // Check max-width constraint
     if (!styles.maxWidth || styles.maxWidth === 'none' || !styles.maxWidth.includes('120px')) {
-      logCSSNotApplied('PROOF Logo', {
+      logCSSNotApplied(testInfo, 'PROOF Logo', {
         selector: 'img[src*="PROOF-logo"]',
         expectedClass: 'image-proof',
         hasClass: true, // We don't check class here, just styles
@@ -70,7 +70,7 @@ test.describe('Image Visibility on Index Page', () => {
     expect(styles.maxWidth).toContain('120px');
   });
 
-  test('AssureDefi Logo visibility and CSS', async ({ page }) => {
+  test('AssureDefi Logo visibility and CSS', async ({ page }, testInfo) => {
     const assureImg = page.locator('img[src*="AssureDefi"]').first();
 
     // Check if image exists and is visible
@@ -85,7 +85,7 @@ test.describe('Image Visibility on Index Page', () => {
     }));
 
     if (dimensions.naturalWidth === 0 || dimensions.naturalHeight === 0) {
-      logImageLoadFailure('AssureDefi Logo', {
+      logImageLoadFailure(testInfo, 'AssureDefi Logo', {
         url: '/assets/images/.../AssureDefi.png',
         selector: 'img[src*="AssureDefi"]',
         count: 1,
@@ -117,7 +117,7 @@ test.describe('Image Visibility on Index Page', () => {
 
     // Check if size constraints are applied
     if (!styles.maxWidth || !styles.maxWidth.includes('80px')) {
-      logSizeConstraintViolation('AssureDefi Logo', {
+      logSizeConstraintViolation(testInfo, 'AssureDefi Logo', {
         selector: 'img[src*="AssureDefi"]',
         constraint: 'maxWidth',
         expected: '80px',
@@ -134,7 +134,7 @@ test.describe('Image Visibility on Index Page', () => {
     expect(styles.maxWidth).toContain('80px');
 
     if (!styles.height || !styles.height.includes('40px')) {
-      logSizeConstraintViolation('AssureDefi Logo', {
+      logSizeConstraintViolation(testInfo, 'AssureDefi Logo', {
         selector: 'img[src*="AssureDefi"]',
         constraint: 'height',
         expected: '40px',
@@ -154,7 +154,7 @@ test.describe('Image Visibility on Index Page', () => {
     console.log('AssureDefi Logo:', dimensions, styles);
   });
 
-  test('BFG Logo visibility and CSS', async ({ page }) => {
+  test('BFG Logo visibility and CSS', async ({ page }, testInfo) => {
     const bfgImg = page.locator('img[src*="blockchain-founders-group"]').first();
 
     // Check if image exists
@@ -191,7 +191,7 @@ test.describe('Image Visibility on Index Page', () => {
     expect(parseFloat(styles.opacity)).toBeGreaterThan(0);
 
     if (!styles.maxWidth || !styles.maxWidth.includes('150px')) {
-      logSizeConstraintViolation('BFG Logo', {
+      logSizeConstraintViolation(testInfo, 'BFG Logo', {
         selector: 'img[src*="blockchain-founders-group"]',
         constraint: 'maxWidth',
         expected: '150px',
@@ -209,7 +209,7 @@ test.describe('Image Visibility on Index Page', () => {
     console.log('BFG Logo:', dimensions, styles);
   });
 
-  test('Tokenomics Image visibility', async ({ page }) => {
+  test('Tokenomics Image visibility', async ({ page }, testInfo) => {
     const tokenImg = page.locator('img[src*="Tokenomics"]').first();
 
     // Check if image exists
@@ -225,7 +225,7 @@ test.describe('Image Visibility on Index Page', () => {
       }));
 
       if (dimensions.naturalWidth === 0) {
-        logImageLoadFailure('Tokenomics Image', {
+        logImageLoadFailure(testInfo, 'Tokenomics Image', {
           url: '/assets/images/.../Tokenomics%20Allocation-letters-black.png',
           selector: 'img[src*="Tokenomics"]',
           count: 1,

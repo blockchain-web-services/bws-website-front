@@ -35,7 +35,7 @@ test.describe('Navigation Tests', () => {
     await expect(page).toHaveURL(/\/contact/);
   });
 
-  test('Industry dropdown navigation works', async ({ page }) => {
+  test('Industry dropdown navigation works', async ({ page }, testInfo) => {
     const industriesPage = new IndustriesPage(page);
     await page.goto('/');
 
@@ -63,7 +63,7 @@ test.describe('Navigation Tests', () => {
       await expect(page).toHaveURL(/\/industry-content\/content-creation/, { timeout: 10000 });
     } catch (error) {
       const currentURL = page.url();
-      logNavigationFailure({
+      logNavigationFailure(testInfo, {
         from: '/',
         to: '/industry-content/content-creation',
         actual: currentURL,
@@ -77,7 +77,7 @@ test.describe('Navigation Tests', () => {
     }
   });
 
-  test('Footer navigation links work', async ({ page, context }) => {
+  test('Footer navigation links work', async ({ page, context }, testInfo) => {
     const homePage = new HomePage(page);
 
     // Setup console error tracking
@@ -152,7 +152,7 @@ test.describe('Navigation Tests', () => {
         try {
           await expect(newPage).toHaveURL(new RegExp(link.url), { timeout: 5000 });
         } catch (error) {
-          logNavigationFailure({
+          logNavigationFailure(testInfo, {
             from: page.url(),
             to: link.url,
             actual: newURL,
@@ -185,7 +185,7 @@ test.describe('Navigation Tests', () => {
         try {
           await expect(page).toHaveURL(new RegExp(link.url), { timeout: 5000 });
         } catch (error) {
-          logNavigationFailure({
+          logNavigationFailure(testInfo, {
             from: '/',
             to: link.url,
             actual: currentURL,
@@ -204,7 +204,7 @@ test.describe('Navigation Tests', () => {
     }
   });
 
-  test('Logo click returns to homepage', async ({ page }) => {
+  test('Logo click returns to homepage', async ({ page }, testInfo) => {
     const aboutPage = new AboutPage(page);
     await aboutPage.goto();
 
@@ -226,7 +226,7 @@ test.describe('Navigation Tests', () => {
     const isHome = currentURL.endsWith('/') || currentURL.endsWith('/index.html');
 
     if (!isHome) {
-      logNavigationFailure({
+      logNavigationFailure(testInfo, {
         from: '/about',
         to: '/ or /index.html',
         actual: currentURL,

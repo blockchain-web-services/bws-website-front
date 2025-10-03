@@ -154,7 +154,7 @@ test.describe('WCAG Accessibility Compliance', () => {
     }
   });
 
-  test('Color contrast meets WCAG standards', async ({ page }) => {
+  test('Color contrast meets WCAG standards', async ({ page }, testInfo) => {
     await page.goto('/');
 
     const accessibilityScanResults = await new AxeBuilder({ page })
@@ -177,7 +177,7 @@ test.describe('WCAG Accessibility Compliance', () => {
 
         violation.nodes.forEach((node, nIndex) => {
           if (nIndex < 10) { // Limit to first 10 nodes to avoid overwhelming output
-            logContrastViolation(violation, node);
+            logContrastViolation(testInfo, violation, node);
             if (nIndex < violation.nodes.length - 1) {
               console.error('\n' + '-'.repeat(60));
             }
