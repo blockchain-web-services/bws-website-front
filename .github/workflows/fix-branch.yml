@@ -298,12 +298,12 @@ jobs:
           echo "**Workflow Run:** [View Run](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})" >> "$ISSUES_FILE"
           echo "" >> "$ISSUES_FILE"
 
-          # Check for recurring issues
+          # Check for recurring issues by analyzing error patterns
           echo "## 🔁 Recurring Issues Analysis" >> "$ISSUES_FILE"
           echo "" >> "$ISSUES_FILE"
 
-          # Find previous reports and check for patterns
-          PREV_REPORTS=$(ls -1 "$FIXES_DIR"/BRANCH_ISSUES_*.md 2>/dev/null | grep -v "$TIMESTAMP" | tail -3)
+          # Find previous reports (last 5 for better pattern detection)
+          PREV_REPORTS=$(ls -1t "$FIXES_DIR"/BRANCH_ISSUES_*.md 2>/dev/null | grep -v "$TIMESTAMP" | head -5)
           if [ ! -z "$PREV_REPORTS" ]; then
             echo "Comparing with previous reports:" >> "$ISSUES_FILE"
             for report in $PREV_REPORTS; do
@@ -311,30 +311,69 @@ jobs:
             done
             echo "" >> "$ISSUES_FILE"
 
-            # Track recurring issues
+            # Detect recurring issues by error patterns (file:line locations)
             echo "### Known Recurring Issues:" >> "$ISSUES_FILE"
             HAS_RECURRING=false
 
-            # Check for color contrast issues
-            if grep -q "#c0c4d1.*#ee265f" "$PREV_REPORTS" 2>/dev/null; then
-              echo "- ⚠️ **Color contrast #c0c4d1/#ee265f (ratio 2.37:1)** - Appearing in multiple reports" >> "$ISSUES_FILE"
+            # Extract error patterns from previous reports and count occurrences
+            # Pattern 1: Color contrast WCAG failures
+            WCAG_COUNT=0
+            for report in $PREV_REPORTS; do
+              if grep -q "wcag-compliance.spec.js.*expect(received).*toEqual\|expectedContrastRatio.*3:1" "$report" 2>/dev/null; then
+                ((WCAG_COUNT++))
+              fi
+            done
+            if [ $WCAG_COUNT -ge 2 ]; then
+              echo "- ⚠️ **WCAG Color Contrast Failures** (wcag-compliance.spec.js)" >> "$ISSUES_FILE"
+              echo "  - Appears in $WCAG_COUNT of last 5 reports" >> "$ISSUES_FILE"
+              echo "  - Error: Color contrast violations not meeting WCAG AA 4.5:1 or AAA 3:1 standards" >> "$ISSUES_FILE"
               HAS_RECURRING=true
             fi
 
-            # Check for empty alt issues
-            if grep -q "empty.*alt\|alt=\"\"" "$PREV_REPORTS" 2>/dev/null; then
-              echo "- ⚠️ **Empty alt attributes** - Recurring across reports" >> "$ISSUES_FILE"
+            # Pattern 2: Image width constraint violations
+            IMAGE_WIDTH_COUNT=0
+            for report in $PREV_REPORTS; do
+              if grep -q "image-validation.spec.js:403\|expect.*toBeLessThanOrEqual.*actualWidth" "$report" 2>/dev/null; then
+                ((IMAGE_WIDTH_COUNT++))
+              fi
+            done
+            if [ $IMAGE_WIDTH_COUNT -ge 2 ]; then
+              echo "- ⚠️ **Image Width Constraint Violations** (image-validation.spec.js:403)" >> "$ISSUES_FILE"
+              echo "  - Appears in $IMAGE_WIDTH_COUNT of last 5 reports" >> "$ISSUES_FILE"
+              echo "  - Error: Images exceeding expected width constraints" >> "$ISSUES_FILE"
               HAS_RECURRING=true
             fi
 
-            # Check for BFG logo issues
-            if grep -q "BFG.*hidden\|image-bfg.*visibility" "$PREV_REPORTS" 2>/dev/null; then
-              echo "- ⚠️ **BFG logo visibility** - Persistent issue" >> "$ISSUES_FILE"
+            # Pattern 3: CSS max-width not applied (PROOF/AssureDefi logos)
+            CSS_MAXWIDTH_COUNT=0
+            for report in $PREV_REPORTS; do
+              if grep -q "image-visibility-index.spec.js:70\|styles.maxWidth.*toContain.*120px\|If tests pass locally but fail in CI" "$report" 2>/dev/null; then
+                ((CSS_MAXWIDTH_COUNT++))
+              fi
+            done
+            if [ $CSS_MAXWIDTH_COUNT -ge 2 ]; then
+              echo "- ⚠️ **CSS max-width Not Applied** (image-visibility-index.spec.js:70)" >> "$ISSUES_FILE"
+              echo "  - Appears in $CSS_MAXWIDTH_COUNT of last 5 reports" >> "$ISSUES_FILE"
+              echo "  - Error: Logo images not constrained by CSS max-width rules in headless Chrome" >> "$ISSUES_FILE"
+              HAS_RECURRING=true
+            fi
+
+            # Pattern 4: BFG logo visibility hidden
+            BFG_HIDDEN_COUNT=0
+            for report in $PREV_REPORTS; do
+              if grep -q "image-visibility-index.spec.js:161\|BFG.*visibility.*hidden\|Blockchain Founders Group.*unexpected value.*hidden" "$report" 2>/dev/null; then
+                ((BFG_HIDDEN_COUNT++))
+              fi
+            done
+            if [ $BFG_HIDDEN_COUNT -ge 2 ]; then
+              echo "- ⚠️ **BFG Logo Visibility Hidden** (image-visibility-index.spec.js:161)" >> "$ISSUES_FILE"
+              echo "  - Appears in $BFG_HIDDEN_COUNT of last 5 reports" >> "$ISSUES_FILE"
+              echo "  - Error: Blockchain Founders Group logo has visibility:hidden in computed styles" >> "$ISSUES_FILE"
               HAS_RECURRING=true
             fi
 
             if [ "$HAS_RECURRING" = false ]; then
-              echo "No known recurring issues detected in recent reports." >> "$ISSUES_FILE"
+              echo "✅ No recurring issues detected. All failures appear to be new or infrequent." >> "$ISSUES_FILE"
             fi
 
             echo "" >> "$ISSUES_FILE"
@@ -351,7 +390,9 @@ jobs:
           # Add test statistics if available
           if [ -f "test-results.json" ] && command -v jq >/dev/null 2>&1; then
             echo "### 📊 Test Statistics" >> "../$ISSUES_FILE"
-            jq -r '.stats | "- **Total Tests:** \(.expected)\n- **✅ Passed:** \(.passed)\n- **❌ Failed:** \(.failed)\n- **⏱ Duration:** \(.duration // "N/A")ms"' test-results.json >> "../$ISSUES_FILE" 2>/dev/null || echo "Stats not available" >> "../$ISSUES_FILE"
+            # Playwright JSON reporter structure: stats has expected, unexpected, flaky, skipped
+            # Passed = expected - unexpected - flaky - skipped
+            jq -r '.stats | "- **Total Tests:** \(.expected // 0)\n- **✅ Passed:** \((.expected // 0) - (.unexpected // 0) - (.flaky // 0) - (.skipped // 0))\n- **❌ Failed:** \(.unexpected // 0)\n- **⚠️ Flaky:** \(.flaky // 0)\n- **⏭ Skipped:** \(.skipped // 0)\n- **⏱ Duration:** \(.duration // "N/A")ms"' test-results.json >> "../$ISSUES_FILE" 2>/dev/null || echo "Stats not available" >> "../$ISSUES_FILE"
             echo "" >> "../$ISSUES_FILE"
 
             echo "### 🔴 Failed Tests Summary" >> "../$ISSUES_FILE"
@@ -371,31 +412,71 @@ jobs:
           echo "## 🔍 Enhanced Error Diagnostics" >> "../$ISSUES_FILE"
           echo "" >> "../$ISSUES_FILE"
 
-          # Find all test result directories with attachments
-          ATTACHMENT_DIRS=$(find test-results -type d -name "*-chromium*" 2>/dev/null | grep -v "\.playwright-artifacts")
+          # Try to extract attachments from test-results.json first
           FOUND_ATTACHMENTS=false
+          if [ -f "test-results.json" ] && command -v jq >/dev/null 2>&1; then
+            # Extract custom attachments from JSON (testInfo.attach() calls)
+            # Look for attachments with our custom names
+            ATTACHMENT_NAMES="image-load-failure css-not-applied 404-error contrast-violation navigation-failure size-constraint-violation"
 
-          if [ ! -z "$ATTACHMENT_DIRS" ]; then
-            for result_dir in $ATTACHMENT_DIRS; do
-              # Look for text attachments (our custom error reports)
-              # These are created by testInfo.attach() with names like 'image-load-failure', 'contrast-violation', etc.
-              for attachment in "$result_dir"/image-load-failure "$result_dir"/css-not-applied "$result_dir"/404-error "$result_dir"/contrast-violation "$result_dir"/navigation-failure "$result_dir"/size-constraint-violation; do
-                if [ -f "$attachment" ]; then
-                  FOUND_ATTACHMENTS=true
-                  ATTACHMENT_NAME=$(basename "$attachment")
-                  echo "### $(basename "$result_dir") - $ATTACHMENT_NAME" >> "../$ISSUES_FILE"
-                  echo "" >> "../$ISSUES_FILE"
-                  echo '```' >> "../$ISSUES_FILE"
-                  cat "$attachment" >> "../$ISSUES_FILE"
-                  echo '```' >> "../$ISSUES_FILE"
-                  echo "" >> "../$ISSUES_FILE"
-                fi
+            for suite_idx in $(jq -r '.suites | keys[]' test-results.json 2>/dev/null); do
+              for spec_idx in $(jq -r ".suites[$suite_idx].specs | keys[]" test-results.json 2>/dev/null); do
+                TEST_TITLE=$(jq -r ".suites[$suite_idx].specs[$spec_idx].title" test-results.json 2>/dev/null)
+
+                for test_idx in $(jq -r ".suites[$suite_idx].specs[$spec_idx].tests | keys[]" test-results.json 2>/dev/null); do
+                  for result_idx in $(jq -r ".suites[$suite_idx].specs[$spec_idx].tests[$test_idx].results | keys[]" test-results.json 2>/dev/null); do
+                    # Get attachments array
+                    ATTACHMENTS=$(jq -r ".suites[$suite_idx].specs[$spec_idx].tests[$test_idx].results[$result_idx].attachments[]? | select(.name | IN(\"$ATTACHMENT_NAMES\")) | {name, body}" test-results.json 2>/dev/null)
+
+                    if [ ! -z "$ATTACHMENTS" ]; then
+                      FOUND_ATTACHMENTS=true
+                      echo "### $TEST_TITLE" >> "../$ISSUES_FILE"
+                      echo "" >> "../$ISSUES_FILE"
+
+                      # Extract and decode attachment body
+                      echo "$ATTACHMENTS" | jq -r '.body' 2>/dev/null | while read -r body; do
+                        if [ ! -z "$body" ]; then
+                          echo '```' >> "../$ISSUES_FILE"
+                          echo "$body" >> "../$ISSUES_FILE"
+                          echo '```' >> "../$ISSUES_FILE"
+                          echo "" >> "../$ISSUES_FILE"
+                        fi
+                      done
+                    fi
+                  done
+                done
               done
             done
           fi
 
+          # Fallback: search error-context.md files for our diagnostic markers
           if [ "$FOUND_ATTACHMENTS" = false ]; then
-            echo "No enhanced diagnostic attachments found in test results." >> "../$ISSUES_FILE"
+            echo "Searching error-context.md files for diagnostics..." >> "../$ISSUES_FILE"
+            echo "" >> "../$ISSUES_FILE"
+
+            # Find all error-context.md files
+            for context_file in test-results/*/error-context.md; do
+              if [ -f "$context_file" ]; then
+                # Check if file contains our diagnostic markers
+                if grep -q "IMAGE LOAD FAILURE\|CSS NOT APPLIED\|404 ERROR\|COLOR CONTRAST VIOLATION\|NAVIGATION FAILURE\|SIZE CONSTRAINT VIOLATION" "$context_file" 2>/dev/null; then
+                  FOUND_ATTACHMENTS=true
+                  TEST_DIR=$(basename $(dirname "$context_file"))
+                  echo "### $TEST_DIR" >> "../$ISSUES_FILE"
+                  echo "" >> "../$ISSUES_FILE"
+                  echo '```' >> "../$ISSUES_FILE"
+                  # Extract only the diagnostic sections
+                  grep -A 50 "===.*FAILURE\|===.*VIOLATION\|===.*ERROR" "$context_file" | head -100 >> "../$ISSUES_FILE"
+                  echo '```' >> "../$ISSUES_FILE"
+                  echo "" >> "../$ISSUES_FILE"
+                fi
+              fi
+            done
+          fi
+
+          if [ "$FOUND_ATTACHMENTS" = false ]; then
+            echo "❌ No enhanced diagnostic attachments found in test-results.json or error-context.md files." >> "../$ISSUES_FILE"
+            echo "" >> "../$ISSUES_FILE"
+            echo "This suggests testInfo.attach() calls may not be executing or attachments aren't being captured by the JSON reporter." >> "../$ISSUES_FILE"
             echo "" >> "../$ISSUES_FILE"
           fi
 
