@@ -270,9 +270,12 @@ jobs:
       - name: Collect test failures and commit if any
         if: steps.test-run.outputs.tests_passed == 'false'
         run: |
-          set -e  # Exit on error
+          # Note: NOT using 'set -e' globally to allow better error handling and logging
+          # Individual critical sections will check exit codes explicitly
 
+          echo "========================================="
           echo "Collecting test failures for fix branch..."
+          echo "========================================="
 
           # Generate DD-MM-HH timestamp
           DD=$(date -u '+%d')
@@ -412,14 +415,24 @@ jobs:
           echo "## 🔍 Enhanced Error Diagnostics" >> "../$ISSUES_FILE"
           echo "" >> "../$ISSUES_FILE"
 
+          echo "========================================="
+          echo "Extracting enhanced diagnostics..."
+          echo "========================================="
+
           # Try to extract attachments from test-results.json first
           FOUND_ATTACHMENTS=false
           if [ -f "test-results.json" ] && command -v jq >/dev/null 2>&1; then
+            echo "✓ test-results.json exists and jq is available"
+
             # Extract custom attachments from JSON (testInfo.attach() calls)
             # Look for attachments with our custom names (iterate through each name)
             for attachment_name in image-load-failure css-not-applied 404-error contrast-violation navigation-failure size-constraint-violation; do
+              echo "Searching for attachment: $attachment_name"
+
               # Search for this specific attachment across all test results
-              jq -r --arg name "$attachment_name" '
+              # Using set +e to prevent script exit on jq errors
+              set +e
+              jq_output=$(jq -r --arg name "$attachment_name" '
                 .suites[]?.specs[]? as $spec |
                 $spec.tests[]?.results[]? as $result |
                 $result.attachments[]? | select(.name == $name) |
@@ -428,7 +441,17 @@ jobs:
                   body: .body,
                   path: .path
                 }
-              ' test-results.json 2>/dev/null | while IFS= read -r attachment_json; do
+              ' test-results.json 2>&1)
+              jq_exit=$?
+              set -e
+
+              if [ $jq_exit -ne 0 ]; then
+                echo "WARNING: jq query failed for $attachment_name (exit code: $jq_exit)"
+                echo "jq output: $jq_output"
+                continue
+              fi
+
+              echo "$jq_output" | while IFS= read -r attachment_json; do
                 if [ ! -z "$attachment_json" ] && [ "$attachment_json" != "null" ]; then
                   FOUND_ATTACHMENTS=true
 
@@ -482,11 +505,18 @@ jobs:
           fi
 
           if [ "$FOUND_ATTACHMENTS" = false ]; then
+            echo "INFO: No enhanced diagnostic attachments found (this is expected if testInfo.attach() not yet fully working)"
             echo "❌ No enhanced diagnostic attachments found in test-results.json or error-context.md files." >> "../$ISSUES_FILE"
             echo "" >> "../$ISSUES_FILE"
             echo "This suggests testInfo.attach() calls may not be executing or attachments aren't being captured by the JSON reporter." >> "../$ISSUES_FILE"
             echo "" >> "../$ISSUES_FILE"
+          else
+            echo "✓ Found some enhanced diagnostic attachments"
           fi
+
+          echo "========================================="
+          echo "Adding detailed test failures..."
+          echo "========================================="
 
           echo "## 📋 Detailed Test Failures" >> "../$ISSUES_FILE"
           echo "" >> "../$ISSUES_FILE"
@@ -555,37 +585,56 @@ jobs:
 
           cd ..
 
+          echo "========================================="
+          echo "Report generation completed!"
           echo "Created: $ISSUES_FILE"
+          echo "========================================="
 
           # Configure git
+          echo "Configuring git..."
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
           # Configure remote with authentication
           # Check if PAT is available and configure accordingly
           if [ -n "${{ secrets.PAT_REPOS_AND_WORKFLOW }}" ]; then
-            echo "Configuring git remote with PAT token..."
+            echo "✓ Configuring git remote with PAT token..."
             git remote set-url origin https://x-access-token:${{ secrets.PAT_REPOS_AND_WORKFLOW }}@github.com/${{ github.repository }}.git
           else
-            echo "Warning: PAT_REPOS_AND_WORKFLOW not found, using checkout token"
+            echo "⚠ Warning: PAT_REPOS_AND_WORKFLOW not found, using checkout token"
             # The checkout action should have already configured authentication
           fi
 
+          echo "========================================="
+          echo "Committing test failure report..."
+          echo "========================================="
+
           # Add and commit the test failure report with [skip ci] to prevent retriggering
           git add "$ISSUES_FILE"
-          git commit -m "[skip ci] Add test failure report: BRANCH_ISSUES_${TIMESTAMP}.md" -m "Test failures detected on commit ${{ github.sha }}" -m "See _fixes folder for details." -m "This commit will not trigger workflows to prevent infinite loops."
+          if git commit -m "[skip ci] Add test failure report: BRANCH_ISSUES_${TIMESTAMP}.md" -m "Test failures detected on commit ${{ github.sha }}" -m "See _fixes folder for details." -m "This commit will not trigger workflows to prevent infinite loops."; then
+            echo "✓ Commit created successfully"
+          else
+            echo "ERROR: Failed to create commit"
+            exit 1
+          fi
 
           # Push to current branch with error handling
+          echo "========================================="
           echo "Pushing test failure report to branch..."
-          git push origin HEAD:${{ github.ref_name }} || {
+          echo "========================================="
+          if git push origin HEAD:${{ github.ref_name }}; then
+            echo "✅ Successfully pushed test failure report to branch"
+            echo "========================================="
+            echo "COLLECT TEST FAILURES COMPLETED SUCCESSFULLY"
+            echo "========================================="
+          else
             echo "❌ Failed to push test failure report to branch"
-            echo "Attempting to debug the issue..."
+            echo "Debugging information:"
             git remote -v
             git status
+            git log --oneline -3
             exit 1
-          }
-
-          echo "✅ Successfully pushed test failure report to branch"
+          fi
 
   # Job 2: Update PR with test failure info
   update-pr-on-failure:
