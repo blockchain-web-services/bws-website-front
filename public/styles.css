@@ -34290,8 +34290,11 @@ html body .announcement-flex-logos img.image-proof {
 }
 
 /* BFG Logo - Force visibility (inline CSS doesn't work due to Astro extraction) */
+/* CRITICAL: Must match or exceed specificity of line 33780 rule with [data-astro-cid-pux6a34n] */
 html body .image-bfg,
-html body .top-menu-company-news-image {
+html body .top-menu-company-news-image,
+html body img.top-menu-company-news-image[data-astro-cid-pux6a34n],
+html body img[data-astro-cid-pux6a34n].top-menu-company-news-image {
   visibility: visible !important;
   opacity: 1 !important;
   display: inline-block !important;
