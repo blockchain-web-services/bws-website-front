@@ -33534,7 +33534,7 @@ html body .announcement-flex-logos img.image-assure,
 html body img.image-assure,
 .image-assure {
   max-width: 80px !important;
-  width: auto !important;
+  /* width: auto !important; -- REMOVED: Conflicts with precise width:80px at line 34273 */
   height: 40px !important;
   object-fit: contain !important;
   display: inline-block !important;
