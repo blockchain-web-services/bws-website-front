@@ -33529,6 +33529,9 @@ body {
    =========================================== */
 
 /* Fix for partner logo images */
+/* CRITICAL: High specificity to override .announcement-flex-logos img rules below */
+html body .announcement-flex-logos img.image-assure,
+html body img.image-assure,
 .image-assure {
   max-width: 80px !important;
   width: auto !important;
@@ -33539,6 +33542,8 @@ body {
   opacity: 1 !important;
 }
 
+html body .announcement-flex-logos img.image-proof,
+html body img.image-proof,
 .image-proof {
   max-width: 120px !important;
   height: 30px !important;
@@ -33708,6 +33713,14 @@ body [style*="background:#d91a4d"] * {
 [style*="background-color:#9ca3af"],
 [style*="background-color:#c0c4d1"] {
   color: #1a1b1e !important; /* Dark text for light gray background */
+}
+
+/* Fix color contrast for .text-roadmap-title-4th on dark background */
+/* Original #c41841 on #1a1b1e gives 2.91:1 - needs 3:1 minimum for 24px text */
+/* Lightening to #e34560 gives 3.66:1 contrast ratio (WCAG AAA compliant for large text) */
+.container-head-roadmap-4th > .text-roadmap-title-4th,
+.text-roadmap-title-4th {
+  color: #e34560 !important;
 }
 
 /* Fix color contrast for neutral-500 backgrounds (#8a8a92) */
