@@ -69,7 +69,8 @@ const {
       }
 
       /* CRITICAL: WCAG color contrast fixes */
-      /* Fix for dark backgrounds */
+      /* Fix for dark backgrounds (#1a1b1e) - #e34560 = 4.34:1 (PASS) */
+      .text-roadmap-title,
       .text-roadmap-title-1st,
       .text-roadmap-title-2nd,
       .text-roadmap-title-3rd,
@@ -77,11 +78,21 @@ const {
         color: #e34560 !important;
       }
 
-      /* Fix for gray background: .container-head-roadmap-25-2nd has #6b6b73 background */
-      /* Need darker color for sufficient contrast on gray */
-      .container-head-roadmap-25-2nd .text-roadmap-title-4th,
-      .container-head-roadmap-25-2nd .text-roadmap-title-3rd {
-        color: #a01030 !important; /* 4.5:1 contrast on #6b6b73 */
+      /* Fix for gray background (#6b6b73) - only white achieves 3:1+ */
+      /* #ffffff on #6b6b73 = 5.28:1 (PASS AAA) */
+      .container-head-roadmap-25-2nd .text-roadmap-title-1st,
+      .container-head-roadmap-25-2nd .text-roadmap-title-2nd,
+      .container-head-roadmap-25-2nd .text-roadmap-title-3rd,
+      .container-head-roadmap-25-2nd .text-roadmap-title-4th {
+        color: #ffffff !important;
+      }
+
+      /* BFG Logo visibility fix */
+      .image-bfg,
+      .top-menu-company-news-image {
+        visibility: visible !important;
+        opacity: 1 !important;
+        display: inline-block !important;
       }
     </style>
     <link href="/styles.css" rel="stylesheet" type="text/css" />

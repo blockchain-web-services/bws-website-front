@@ -35,17 +35,33 @@ module.exports = defineConfig({
   projects: [
     {
       name: 'chromium',
-      use: { ...devices['Desktop Chrome'] },
+      use: {
+        ...devices['Desktop Chrome'],
+        // Force headless mode to match CI/CD environment
+        launchOptions: {
+          headless: true,
+        },
+      },
     },
     {
       name: 'smoke',
       testMatch: 'smoke/*.spec.{js,ts}',
-      use: { ...devices['Desktop Chrome'] },
+      use: {
+        ...devices['Desktop Chrome'],
+        launchOptions: {
+          headless: true,
+        },
+      },
     },
     {
       name: 'e2e',
       testMatch: 'e2e/*.spec.{js,ts}',
-      use: { ...devices['Desktop Chrome'] },
+      use: {
+        ...devices['Desktop Chrome'],
+        launchOptions: {
+          headless: true,
+        },
+      },
     },
   ],
 

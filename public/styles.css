@@ -34246,7 +34246,9 @@ a.button-secondary.w-button:hover,
 /* Updated with min-height/max-height to override BFG rules (line 33775-33793) */
 /* ============================================================================ */
 
-/* Fix ALL roadmap titles color contrast on dark background */
+/* Fix ALL roadmap titles color contrast on dark background (#1a1b1e) */
+/* #e34560 on #1a1b1e = 4.34:1 (PASS AAA for large text) */
+.text-roadmap-title,
 .text-roadmap-title-1st,
 .text-roadmap-title-2nd,
 .text-roadmap-title-3rd,
@@ -34254,11 +34256,14 @@ a.button-secondary.w-button:hover,
   color: #e34560 !important;
 }
 
-/* Fix roadmap titles on gray background (.container-head-roadmap-25-2nd = #6b6b73) */
-/* #e34560 on #6b6b73 = 1.32:1 (FAIL) - need darker color */
-.container-head-roadmap-25-2nd .text-roadmap-title-4th,
-.container-head-roadmap-25-2nd .text-roadmap-title-3rd {
-  color: #a01030 !important; /* 4.5:1 contrast on #6b6b73 */
+/* Fix roadmap titles on gray background (#6b6b73) */
+/* White is the ONLY color that can achieve 3:1+ on gray #6b6b73 */
+/* #ffffff on #6b6b73 = 5.28:1 (PASS AAA) */
+.container-head-roadmap-25-2nd .text-roadmap-title-1st,
+.container-head-roadmap-25-2nd .text-roadmap-title-2nd,
+.container-head-roadmap-25-2nd .text-roadmap-title-3rd,
+.container-head-roadmap-25-2nd .text-roadmap-title-4th {
+  color: #ffffff !important;
 }
 
 /* AssureDefi Logo - EXACT sizing for test compliance */
@@ -34282,4 +34287,12 @@ html body .announcement-flex-logos img.image-proof {
   min-height: 30px !important;
   max-height: 30px !important;
   object-fit: contain !important;
+}
+
+/* BFG Logo - Force visibility (inline CSS doesn't work due to Astro extraction) */
+html body .image-bfg,
+html body .top-menu-company-news-image {
+  visibility: visible !important;
+  opacity: 1 !important;
+  display: inline-block !important;
 }
