@@ -18,11 +18,11 @@
 - **Fix:** White text on gray backgrounds (#ffffff on #6b6b73 = 5.28:1 ratio)
 - **Status:** ✅ PASSING (test #9 shows "Color contrast meets WCAG standards")
 
-### 3. BFG Logo Visibility (🔄 FIX DEPLOYED, AWAITING CI/CD)
-- **Root Cause:** CSS specificity issue with `[data-astro-cid-pux6a34n]` attribute
-- **Fix:** Added Astro-scoped selectors with higher specificity (commit `2ed739d`)
-- **Expected:** 9 test failures → 0
-- **Status:** CI/CD testing in progress (run #18248533998)
+### 3. BFG Logo Visibility (✅ CONFIRMED FIXED)
+- **Root Cause:** Test selector targeted BFG logo in hidden dropdown menu navigation
+- **Issue:** `img[src*="blockchain-founders-group"].first()` selected logo with 0x0 dimensions
+- **Fix:** Changed to `img.image-bfg` targeting visible main content logo (commit `61f6a37`)
+- **Status:** ✅ Local test passing - naturalWidth: 300, displayWidth: 150, visibility: visible
 
 ---
 
@@ -195,11 +195,11 @@ headless: true                      ← In playwright.config.cjs
 |----------|--------|-------|-------|
 | AssureDefi Size | ✅ Fixed | 1 | Confirmed in CI/CD |
 | WCAG Color Contrast | ✅ Fixed | 1 | Test #9 passing |
-| BFG Visibility | 🔄 Deployed | 9 | Awaiting CI/CD results |
-| WCAG Homepage | ❌ To Fix | 3 | Need violation details |
-| response.timing() bug | ❌ To Fix | 2 | Simple code fix |
-| Unknown failures | ❓ Investigating | ~15 | Need local test results |
-| **TOTAL** | **In Progress** | **~31** | Target: 0 failures |
+| BFG Visibility | ✅ Fixed | 9 | Selector changed to img.image-bfg |
+| response.timing() bug | ✅ Fixed | 2 | Commit 552bbe9 |
+| WCAG Homepage | ❓ Unknown | 3 | May be side effect of BFG |
+| Unknown failures | ❓ Investigating | ~12 | Need CI/CD results |
+| **TOTAL** | **Testing** | **~28** | Target: 0 failures |
 
 ---
 
@@ -210,6 +210,7 @@ headless: true                      ← In playwright.config.cjs
 3. **Test Count Mismatch:** Local suite may have different test organization
 4. **axe-core Violations:** Must capture console output to see details
 5. **Playwright API:** `response.timing` is a property, not a method
+6. **Test Selectors Must Target Visible Elements:** Using `.first()` on src selectors can grab hidden dropdown menu elements with 0x0 dimensions - always verify element visibility context
 
 ---
 
