@@ -155,7 +155,8 @@ test.describe('Image Visibility on Index Page', () => {
   });
 
   test('BFG Logo visibility and CSS', async ({ page }, testInfo) => {
-    const bfgImg = page.locator('img[src*="blockchain-founders-group"]').first();
+    // Target the .image-bfg class in main content, not the dropdown menu version
+    const bfgImg = page.locator('img.image-bfg').first();
 
     // Check if image exists
     await expect(bfgImg).toBeVisible({ timeout: 10000 });
@@ -192,7 +193,7 @@ test.describe('Image Visibility on Index Page', () => {
 
     if (!styles.maxWidth || !styles.maxWidth.includes('150px')) {
       logSizeConstraintViolation(testInfo, 'BFG Logo', {
-        selector: 'img[src*="blockchain-founders-group"]',
+        selector: 'img.image-bfg',
         constraint: 'maxWidth',
         expected: '150px',
         actual: styles.maxWidth,
