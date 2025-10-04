@@ -17,7 +17,9 @@
       "Bash(npx playwright test:*)",
       "WebSearch",
       "Read(//mnt/x/Git/blockchain-web-services/bws/bws-front/**)",
-      "Bash(pkill:*)"
+      "Bash(pkill:*)",
+      "Bash(npm test)",
+      "Bash(awk:*)"
     ],
     "deny": [],
     "ask": []
