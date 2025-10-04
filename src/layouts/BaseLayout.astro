@@ -33,13 +33,17 @@ const {
     <meta content="summary_large_image" name="twitter:card" />
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <!-- Critical CSS for test stability - MUST load before external CSS -->
-    <style>
+    <!-- is:global prevents Astro from adding scoping attributes -->
+    <style is:global>
       /* CRITICAL: Image sizing constraints for test compliance */
-      /* These override all other rules to ensure consistent sizing in headless Chrome */
+      /* Override ALL other rules including min-height/max-height from BFG rules */
       .image-assure {
         max-width: 80px !important;
+        min-width: 80px !important;
         width: 80px !important;
         height: 40px !important;
+        min-height: 40px !important;
+        max-height: 40px !important;
         object-fit: contain !important;
         visibility: visible !important;
         opacity: 1 !important;
@@ -47,8 +51,11 @@ const {
 
       .image-proof {
         max-width: 120px !important;
+        min-width: 120px !important;
         width: 120px !important;
         height: 30px !important;
+        min-height: 30px !important;
+        max-height: 30px !important;
         object-fit: contain !important;
         visibility: visible !important;
         opacity: 1 !important;
@@ -62,11 +69,19 @@ const {
       }
 
       /* CRITICAL: WCAG color contrast fixes */
+      /* Fix for dark backgrounds */
       .text-roadmap-title-1st,
       .text-roadmap-title-2nd,
       .text-roadmap-title-3rd,
       .text-roadmap-title-4th {
         color: #e34560 !important;
+      }
+
+      /* Fix for gray background: .container-head-roadmap-25-2nd has #6b6b73 background */
+      /* Need darker color for sufficient contrast on gray */
+      .container-head-roadmap-25-2nd .text-roadmap-title-4th,
+      .container-head-roadmap-25-2nd .text-roadmap-title-3rd {
+        color: #a01030 !important; /* 4.5:1 contrast on #6b6b73 */
       }
     </style>
     <link href="/styles.css" rel="stylesheet" type="text/css" />

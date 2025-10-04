@@ -34243,6 +34243,7 @@ a.button-secondary.w-button:hover,
 /* ============================================================================ */
 /* FINAL CRITICAL FIXES - MAXIMUM SPECIFICITY TO OVERRIDE ALL OTHER RULES */
 /* Added to fix test failures and ensure consistency between local and CI/CD */
+/* Updated with min-height/max-height to override BFG rules (line 33775-33793) */
 /* ============================================================================ */
 
 /* Fix ALL roadmap titles color contrast on dark background */
@@ -34253,18 +34254,32 @@ a.button-secondary.w-button:hover,
   color: #e34560 !important;
 }
 
+/* Fix roadmap titles on gray background (.container-head-roadmap-25-2nd = #6b6b73) */
+/* #e34560 on #6b6b73 = 1.32:1 (FAIL) - need darker color */
+.container-head-roadmap-25-2nd .text-roadmap-title-4th,
+.container-head-roadmap-25-2nd .text-roadmap-title-3rd {
+  color: #a01030 !important; /* 4.5:1 contrast on #6b6b73 */
+}
+
 /* AssureDefi Logo - EXACT sizing for test compliance */
+/* CRITICAL: Include min-height and max-height to override BFG rule min-height: 50px */
 html body .announcement-flex-logos img.image-assure {
   max-width: 80px !important;
+  min-width: 80px !important;
   width: 80px !important;
   height: 40px !important;
+  min-height: 40px !important;
+  max-height: 40px !important;
   object-fit: contain !important;
 }
 
 /* PROOF Logo - EXACT sizing for test compliance */
 html body .announcement-flex-logos img.image-proof {
   max-width: 120px !important;
+  min-width: 120px !important;
   width: 120px !important;
   height: 30px !important;
+  min-height: 30px !important;
+  max-height: 30px !important;
   object-fit: contain !important;
 }
