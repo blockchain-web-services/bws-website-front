@@ -34239,32 +34239,3 @@ a.button-secondary.w-button:hover,
 .roadmap-description-title {
   color: #ffffff !important; /* White on rose background gives 5.91:1 contrast */
 }
-
-/* ============================================================================ */
-/* FINAL CRITICAL FIXES - MAXIMUM SPECIFICITY TO OVERRIDE ALL OTHER RULES */
-/* Added to fix test failures and ensure consistency between local and CI/CD */
-/* ============================================================================ */
-
-/* Fix ALL roadmap titles color contrast on dark background */
-.text-roadmap-title-1st,
-.text-roadmap-title-2nd,
-.text-roadmap-title-3rd,
-.text-roadmap-title-4th {
-  color: #e34560 !important;
-}
-
-/* AssureDefi Logo - EXACT sizing for test compliance */
-html body .announcement-flex-logos img.image-assure {
-  max-width: 80px !important;
-  width: 80px !important;
-  height: 40px !important;
-  object-fit: contain !important;
-}
-
-/* PROOF Logo - EXACT sizing for test compliance */
-html body .announcement-flex-logos img.image-proof {
-  max-width: 120px !important;
-  width: 120px !important;
-  height: 30px !important;
-  object-fit: contain !important;
-}

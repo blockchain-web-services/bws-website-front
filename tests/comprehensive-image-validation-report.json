@@ -1,14 +1,18 @@
 {
-  "timestamp": "2025-09-24T10:55:07.744Z",
-  "pagesChecked": 1,
-  "totalImagesChecked": 45,
-  "totalBrokenImages": 1,
+  "timestamp": "2025-10-04T09:34:30.272Z",
+  "pagesChecked": 4,
+  "totalImagesChecked": 46,
+  "totalBrokenImages": 0,
   "brokenImagesByPage": {
     "/": {
+      "error": "page.goto: Timeout 45000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"http://localhost:4321/\", waiting until \"networkidle\"\u001b[22m\n",
+      "allBrokenImages": []
+    },
+    "/about": {
       "imgTags": [
         {
           "url": "http://localhost:4321/assets/images/6474d385cfec71cb21a92251/651c58eabcaaed235a87df6d_logo_plus_BWS.svg",
-          "alt": "",
+          "alt": "Blockchain Web Services logo",
           "width": 305,
           "height": 148,
           "complete": true,
@@ -19,373 +23,17 @@
         },
         {
           "url": "http://localhost:4321/assets/images/6474d385cfec71cb21a9229a/6505cc39f53261fa63453cc8_logo-blockchain-founders-group-background-transparent.svg",
-          "alt": "",
-          "width": 300,
-          "height": 150,
-          "complete": true,
-          "visible": true,
-          "isBroken": false,
-          "type": "img-tag",
-          "reason": null
-        },
-        {
-          "url": "http://localhost:4321/assets/images/6474d385cfec71cb21a92251/670f82f9b05322735f72cbcc_PROOF-logo-lightBG.png",
-          "alt": "BWS is partnering with PROOF for TOKEN LAUNCH.",
-          "width": 1761,
-          "height": 241,
-          "complete": true,
-          "visible": true,
-          "isBroken": false,
-          "type": "img-tag",
-          "reason": null
-        },
-        {
-          "url": "http://localhost:4321/assets/images/6474d385cfec71cb21a92251/6707f1c5c0856eff6c22300e_AssureDefi.png",
-          "alt": "BWS is partnering with Assure Defi for confident $BWS TOKEN LAUNCH",
-          "width": 1000,
-          "height": 1000,
-          "complete": true,
-          "visible": true,
-          "isBroken": false,
-          "type": "img-tag",
-          "reason": null
-        },
-        {
-          "url": "http://localhost:4321/assets/images/6474d385cfec71cb21a92251/64e738258afae2bb6f4d56bf_logo-blockchain-founders-group-background-transparent-large.svg",
-          "alt": "Blockchain Founders Group",
-          "width": 300,
-          "height": 150,
-          "complete": true,
-          "visible": true,
-          "isBroken": false,
-          "type": "img-tag",
-          "reason": null
-        },
-        {
-          "url": "http://localhost:4321/assets/images/6474d385cfec71cb21a92251/6474d385cfec71cb21a922e3_blob-techplus-x-template.png",
-          "alt": "",
-          "width": 1280,
-          "height": 1229,
-          "complete": true,
-          "visible": true,
-          "isBroken": false,
-          "type": "img-tag",
-          "reason": null
-        },
-        {
-          "url": "http://localhost:4321/assets/images/6474d385cfec71cb21a92251/6474d385cfec71cb21a922e3_blob-techplus-x-template.png",
-          "alt": "",
-          "width": 1280,
-          "height": 1229,
-          "complete": true,
-          "visible": true,
-          "isBroken": false,
-          "type": "img-tag",
-          "reason": null
-        },
-        {
-          "url": "http://localhost:4321/assets/images/6474d385cfec71cb21a92251/6708d536ef7b294fa972098e_football-cubes-selection.png",
-          "alt": "NFT Game Cube 1-click BUY EXPERIENCE.",
-          "width": 829,
-          "height": 339,
-          "complete": true,
-          "visible": true,
-          "isBroken": false,
-          "type": "img-tag",
-          "reason": null
-        },
-        {
-          "url": "http://localhost:4321/assets/images/6474d385cfec71cb21a9229a/65061f550fd7be777e64f36f_Save_400x300.jpg",
-          "alt": "",
-          "width": 400,
-          "height": 300,
-          "complete": true,
-          "visible": true,
-          "isBroken": false,
-          "type": "img-tag",
-          "reason": null
-        },
-        {
-          "url": "http://localhost:4321/assets/images/6474d385cfec71cb21a9229a/65061ebf5608b7584d9def34_Hash_400x300.jpg",
-          "alt": "",
-          "width": 400,
-          "height": 300,
-          "complete": true,
-          "visible": true,
-          "isBroken": false,
-          "type": "img-tag",
-          "reason": null
-        },
-        {
-          "url": "http://localhost:4321/assets/images/6474d385cfec71cb21a9229a/655b1a1220eb4c16ccfcab4b_BWS.IPFS.Upload_400x300.jpg",
-          "alt": "",
-          "width": 400,
-          "height": 300,
-          "complete": true,
-          "visible": true,
-          "isBroken": false,
-          "type": "img-tag",
-          "reason": null
-        },
-        {
-          "url": "http://localhost:4321/assets/images/6474d385cfec71cb21a9229a/65061646ead0751dc83790e1_NFT_1200x628.jpg",
-          "alt": "",
-          "width": 939,
-          "height": 491,
-          "complete": true,
-          "visible": true,
-          "isBroken": false,
-          "type": "img-tag",
-          "reason": null
-        },
-        {
-          "url": "http://localhost:4321/assets/images/6474d385cfec71cb21a9229a/66842c0750c2f76ef6ee8a4a_raibow-colors.jpg",
-          "alt": "",
-          "width": 512,
-          "height": 512,
-          "complete": true,
-          "visible": true,
-          "isBroken": false,
-          "type": "img-tag",
-          "reason": null
-        },
-        {
-          "url": "http://localhost:4321/assets/images/6474d385cfec71cb21a9229a/65061830bf101fe685a48e2f_NFT-Marketplace_400x300.jpg",
-          "alt": "",
-          "width": 400,
-          "height": 300,
-          "complete": true,
-          "visible": true,
-          "isBroken": false,
-          "type": "img-tag",
-          "reason": null
-        },
-        {
-          "url": "http://localhost:4321/assets/images/6474d385cfec71cb21a9229a/65061a656980df26769cd4ee_ESG-Credits_400x300.jpg",
-          "alt": "",
-          "width": 400,
-          "height": 300,
-          "complete": true,
-          "visible": true,
-          "isBroken": false,
-          "type": "img-tag",
-          "reason": null
-        },
-        {
-          "url": "http://localhost:4321/assets/images/6474d385cfec71cb21a9229a/6806a0111f7e6589d65385a6_Telegram-X-Bot.png",
-          "alt": "",
-          "width": 320,
-          "height": 156,
-          "complete": true,
-          "visible": true,
-          "isBroken": false,
-          "type": "img-tag",
-          "reason": null
-        },
-        {
-          "url": "http://localhost:4321/assets/images/6474d385cfec71cb21a92251/6474d385cfec71cb21a922e3_blob-techplus-x-template.png",
-          "alt": "",
-          "width": 1280,
-          "height": 1229,
-          "complete": true,
-          "visible": true,
-          "isBroken": false,
-          "type": "img-tag",
-          "reason": null
-        },
-        {
-          "url": "http://localhost:4321/assets/images/6474d385cfec71cb21a92251/6474d385cfec71cb21a922e3_blob-techplus-x-template.png",
-          "alt": "",
-          "width": 1280,
-          "height": 1229,
-          "complete": true,
-          "visible": true,
-          "isBroken": false,
-          "type": "img-tag",
-          "reason": null
-        },
-        {
-          "url": "http://localhost:4321/assets/images/6474d385cfec71cb21a92251/6707fd987c3a05d42e1e908e_Tokenomics-Allocation-letters-black.png",
-          "alt": "$BWS Token Allocation",
+          "alt": "Blockchain Founders Group logo",
           "width": 0,
           "height": 0,
-          "complete": true,
-          "visible": true,
-          "isBroken": true,
-          "type": "img-tag",
-          "reason": "Zero dimensions"
-        },
-        {
-          "url": "http://localhost:4321/assets/images/6474d385cfec71cb21a92251/6474d385cfec71cb21a922e3_blob-techplus-x-template.png",
-          "alt": "",
-          "width": 1280,
-          "height": 1229,
-          "complete": true,
-          "visible": true,
-          "isBroken": false,
-          "type": "img-tag",
-          "reason": null
-        },
-        {
-          "url": "http://localhost:4321/assets/images/6474d385cfec71cb21a92251/670e3109244f671486edfeb7_logo-full-white.svg",
-          "alt": "",
-          "width": 1172,
-          "height": 149,
-          "complete": true,
-          "visible": true,
-          "isBroken": false,
-          "type": "img-tag",
-          "reason": null
-        },
-        {
-          "url": "http://localhost:4321/assets/images/6474d385cfec71cb21a92251/670e1c014d33c13aeb2b78f0_discord-white.svg",
-          "alt": "",
-          "width": 188,
-          "height": 150,
-          "complete": true,
-          "visible": true,
-          "isBroken": false,
-          "type": "img-tag",
-          "reason": null
-        },
-        {
-          "url": "http://localhost:4321/assets/images/6474d385cfec71cb21a92251/670e205d822e237fb9cdffcc_telegram-white.svg",
-          "alt": "",
-          "width": 145,
-          "height": 150,
-          "complete": true,
-          "visible": true,
-          "isBroken": false,
-          "type": "img-tag",
-          "reason": null
-        },
-        {
-          "url": "http://localhost:4321/assets/images/6474d385cfec71cb21a92251/670e20d012e62e075e8d7418_twitter-white.svg",
-          "alt": "",
-          "width": 150,
-          "height": 150,
-          "complete": true,
-          "visible": true,
-          "isBroken": false,
-          "type": "img-tag",
-          "reason": null
-        },
-        {
-          "url": "http://localhost:4321/assets/images/6474d385cfec71cb21a92251/670e20d04c1c46e1dfe79c62_linkedin-white.svg",
-          "alt": "",
-          "width": 131,
-          "height": 150,
-          "complete": true,
-          "visible": true,
-          "isBroken": false,
-          "type": "img-tag",
-          "reason": null
-        },
-        {
-          "url": "http://localhost:4321/assets/images/6474d385cfec71cb21a92251/673f5e99e592f2b62a849413_Brand_DEXTools_Light.svg",
-          "alt": "",
-          "width": 1029,
-          "height": 301,
-          "complete": true,
-          "visible": true,
+          "complete": false,
+          "visible": false,
           "isBroken": false,
           "type": "img-tag",
           "reason": null
         }
       ],
-      "srcsetImages": [
-        {
-          "url": "http://localhost:4321/assets/images/6474d385cfec71cb21a92251/6474d385cfec71cb21a922e3_blob-techplus-x-template.png",
-          "srcset": "/assets/images/6474d385cfec71cb21a92251/6474d385cfec71cb21a922e3_blob-techplus-x-template-p-500.png 500w, /assets/images/6474d385cfec71cb21a92251/6474d385cfec71cb21a922e3_blob-techplus-x-template-p-800.png 800w, /assets/images/6474d385cfec71cb21a92251/6474d385cfec71cb21a922e3_blob-techplus-x-template-p-1080.png 1080w, /assets/images/6474d385cfec71cb21a92251/6474d385cfec71cb21a922e3_blob-techplus-x-template.png 2114w",
-          "alt": "",
-          "actualLoadedImage": "http://localhost:4321/assets/images/6474d385cfec71cb21a92251/6474d385cfec71cb21a922e3_blob-techplus-x-template.png",
-          "width": 1280,
-          "height": 1229,
-          "complete": true,
-          "visible": true,
-          "isBroken": false,
-          "type": "srcset-image",
-          "reason": null
-        },
-        {
-          "url": "http://localhost:4321/assets/images/6474d385cfec71cb21a92251/6474d385cfec71cb21a922e3_blob-techplus-x-template.png",
-          "srcset": "/assets/images/6474d385cfec71cb21a92251/6474d385cfec71cb21a922e3_blob-techplus-x-template-p-500.png 500w, /assets/images/6474d385cfec71cb21a92251/6474d385cfec71cb21a922e3_blob-techplus-x-template-p-800.png 800w, /assets/images/6474d385cfec71cb21a92251/6474d385cfec71cb21a922e3_blob-techplus-x-template-p-1080.png 1080w, /assets/images/6474d385cfec71cb21a92251/6474d385cfec71cb21a922e3_blob-techplus-x-template.png 2114w",
-          "alt": "",
-          "actualLoadedImage": "http://localhost:4321/assets/images/6474d385cfec71cb21a92251/6474d385cfec71cb21a922e3_blob-techplus-x-template.png",
-          "width": 1280,
-          "height": 1229,
-          "complete": true,
-          "visible": true,
-          "isBroken": false,
-          "type": "srcset-image",
-          "reason": null
-        },
-        {
-          "url": "http://localhost:4321/assets/images/6474d385cfec71cb21a92251/6708d536ef7b294fa972098e_football-cubes-selection.png",
-          "srcset": "/assets/images/6474d385cfec71cb21a92251/6708d536ef7b294fa972098e_football-cubes-selection-p-500.png 500w, /assets/images/6474d385cfec71cb21a92251/6708d536ef7b294fa972098e_football-cubes-selection-p-800.png 800w, /assets/images/6474d385cfec71cb21a92251/6708d536ef7b294fa972098e_football-cubes-selection.png 829w",
-          "alt": "NFT Game Cube 1-click BUY EXPERIENCE.",
-          "actualLoadedImage": "http://localhost:4321/assets/images/6474d385cfec71cb21a92251/6708d536ef7b294fa972098e_football-cubes-selection.png",
-          "width": 829,
-          "height": 339,
-          "complete": true,
-          "visible": true,
-          "isBroken": false,
-          "type": "srcset-image",
-          "reason": null
-        },
-        {
-          "url": "http://localhost:4321/assets/images/6474d385cfec71cb21a9229a/65061646ead0751dc83790e1_NFT_1200x628-p-1080.jpg",
-          "srcset": "/assets/images/6474d385cfec71cb21a9229a/65061646ead0751dc83790e1_NFT_1200x628-p-500.jpg 500w, /assets/images/6474d385cfec71cb21a9229a/65061646ead0751dc83790e1_NFT_1200x628-p-800.jpg 800w, /assets/images/6474d385cfec71cb21a9229a/65061646ead0751dc83790e1_NFT_1200x628-p-1080.jpg 1080w, /assets/images/6474d385cfec71cb21a9229a/65061646ead0751dc83790e1_NFT_1200x628.jpg 1200w",
-          "alt": "",
-          "actualLoadedImage": "http://localhost:4321/assets/images/6474d385cfec71cb21a9229a/65061646ead0751dc83790e1_NFT_1200x628-p-1080.jpg",
-          "width": 939,
-          "height": 491,
-          "complete": true,
-          "visible": true,
-          "isBroken": false,
-          "type": "srcset-image",
-          "reason": null
-        },
-        {
-          "url": "http://localhost:4321/assets/images/6474d385cfec71cb21a92251/6474d385cfec71cb21a922e3_blob-techplus-x-template.png",
-          "srcset": "/assets/images/6474d385cfec71cb21a92251/6474d385cfec71cb21a922e3_blob-techplus-x-template-p-500.png 500w, /assets/images/6474d385cfec71cb21a92251/6474d385cfec71cb21a922e3_blob-techplus-x-template-p-800.png 800w, /assets/images/6474d385cfec71cb21a92251/6474d385cfec71cb21a922e3_blob-techplus-x-template-p-1080.png 1080w, /assets/images/6474d385cfec71cb21a92251/6474d385cfec71cb21a922e3_blob-techplus-x-template.png 2114w",
-          "alt": "",
-          "actualLoadedImage": "http://localhost:4321/assets/images/6474d385cfec71cb21a92251/6474d385cfec71cb21a922e3_blob-techplus-x-template.png",
-          "width": 1280,
-          "height": 1229,
-          "complete": true,
-          "visible": true,
-          "isBroken": false,
-          "type": "srcset-image",
-          "reason": null
-        },
-        {
-          "url": "http://localhost:4321/assets/images/6474d385cfec71cb21a92251/6474d385cfec71cb21a922e3_blob-techplus-x-template.png",
-          "srcset": "/assets/images/6474d385cfec71cb21a92251/6474d385cfec71cb21a922e3_blob-techplus-x-template-p-500.png 500w, /assets/images/6474d385cfec71cb21a92251/6474d385cfec71cb21a922e3_blob-techplus-x-template-p-800.png 800w, /assets/images/6474d385cfec71cb21a92251/6474d385cfec71cb21a922e3_blob-techplus-x-template-p-1080.png 1080w, /assets/images/6474d385cfec71cb21a92251/6474d385cfec71cb21a922e3_blob-techplus-x-template.png 2114w",
-          "alt": "",
-          "actualLoadedImage": "http://localhost:4321/assets/images/6474d385cfec71cb21a92251/6474d385cfec71cb21a922e3_blob-techplus-x-template.png",
-          "width": 1280,
-          "height": 1229,
-          "complete": true,
-          "visible": true,
-          "isBroken": false,
-          "type": "srcset-image",
-          "reason": null
-        },
-        {
-          "url": "http://localhost:4321/assets/images/6474d385cfec71cb21a92251/6474d385cfec71cb21a922e3_blob-techplus-x-template.png",
-          "srcset": "/assets/images/6474d385cfec71cb21a92251/6474d385cfec71cb21a922e3_blob-techplus-x-template-p-500.png 500w, /assets/images/6474d385cfec71cb21a92251/6474d385cfec71cb21a922e3_blob-techplus-x-template-p-800.png 800w, /assets/images/6474d385cfec71cb21a92251/6474d385cfec71cb21a922e3_blob-techplus-x-template-p-1080.png 1080w, /assets/images/6474d385cfec71cb21a92251/6474d385cfec71cb21a922e3_blob-techplus-x-template.png 2114w",
-          "alt": "",
-          "actualLoadedImage": "http://localhost:4321/assets/images/6474d385cfec71cb21a92251/6474d385cfec71cb21a922e3_blob-techplus-x-template.png",
-          "width": 1280,
-          "height": 1229,
-          "complete": true,
-          "visible": true,
-          "isBroken": false,
-          "type": "srcset-image",
-          "reason": null
-        }
-      ],
+      "srcsetImages": [],
       "backgroundImages": [
         {
           "url": "http://localhost:4321/assets/images/6474d385cfec71cb21a92251/670f916b2f60627d5201850b_shutterstock_1108417201-poster-00001.jpg",
@@ -395,64 +43,43 @@
           "reason": null
         },
         {
-          "url": "http://localhost:4321/assets/images/6474d385cfec71cb21a9229a/654a2597be432d1f0879bfa6_Elevating-Financial-Services-and-ESG-Compiance.jpg",
+          "url": "http://localhost:4321/assets/images/6474d385cfec71cb21a9229a/654a2597be432d1f0879bfa6_Elevating%20Financial%20Services%20and%20ESG%20Compiance.jpg",
           "element": "div.top-menu-industry-card",
           "type": "background-image",
           "isBroken": false,
           "reason": null
         },
         {
-          "url": "http://localhost:4321/assets/images/6474d385cfec71cb21a9229a/654a258bbfafadcb274d5024_The-Future-of-Creative-Ownership-and-Empowerment.jpg",
+          "url": "http://localhost:4321/assets/images/6474d385cfec71cb21a9229a/654a258bbfafadcb274d5024_The%20Future%20of%20Creative%20Ownership%20and%20Empowerment.jpg",
           "element": "div.top-menu-industry-card",
           "type": "background-image",
           "isBroken": false,
           "reason": null
         },
         {
-          "url": "http://localhost:4321/assets/images/6474d385cfec71cb21a9229a/654a2561e29f2df41f5bfeb8_Transform-the-user-eXperience-with-Blockchain.jpg",
+          "url": "http://localhost:4321/assets/images/6474d385cfec71cb21a9229a/654a2561e29f2df41f5bfeb8_Transform%20the%20user%20eXperience%20with%20Blockchain.jpg",
           "element": "div.top-menu-industry-card",
           "type": "background-image",
           "isBroken": false,
           "reason": null
         },
         {
-          "url": "http://localhost:4321/assets/images/6474d385cfec71cb21a9229a/654a256e853678a54e9cebdf_Blockchain-is-the-New-Frontier-in-Accountability-and-Transparency.jpg",
+          "url": "http://localhost:4321/assets/images/6474d385cfec71cb21a9229a/654a256e853678a54e9cebdf_Blockchain%20is%20the%20New%20Frontier%20in%20Accountability%20and%20Transparency.jpg",
           "element": "div.top-menu-industry-card",
           "type": "background-image",
           "isBroken": false,
           "reason": null
         },
         {
-          "url": "http://localhost:4321/assets/images/6474d385cfec71cb21a9229a/654a2515de4301ab69f9951e_Blockchain-Trust-in-Legal-Practices.jpg",
+          "url": "http://localhost:4321/assets/images/6474d385cfec71cb21a9229a/654a2515de4301ab69f9951e_Blockchain%20Trust%20in%20Legal%20Practices.jpg",
           "element": "div.top-menu-industry-card",
           "type": "background-image",
           "isBroken": false,
           "reason": null
         },
         {
-          "url": "http://localhost:4321/assets/images/6474d385cfec71cb21a9229a/654a25780f2320f1dc394e6a_The-Future-of-Transparent-and-Efficient-Supply-Chain-Management.jpg",
+          "url": "http://localhost:4321/assets/images/6474d385cfec71cb21a9229a/654a25780f2320f1dc394e6a_The%20Future%20of%20Transparent%20and%20Efficient%20Supply%20Chain%20Management.jpg",
           "element": "div.top-menu-industry-card",
-          "type": "background-image",
-          "isBroken": false,
-          "reason": null
-        },
-        {
-          "url": "http://localhost:4321/assets/images/logos/bws-logo-violet.png",
-          "element": "div.w-layout-blockcontainer",
-          "type": "background-image",
-          "isBroken": false,
-          "reason": null
-        },
-        {
-          "url": "http://localhost:4321/assets/images/logos/bws-logo-violet-flying.png",
-          "element": "div.w-layout-blockcontainer",
-          "type": "background-image",
-          "isBroken": false,
-          "reason": null
-        },
-        {
-          "url": "http://localhost:4321/assets/images/6474d385cfec71cb21a92251/670f916b2f60627d5201850b_shutterstock_1108417201-poster-00001.jpg",
-          "element": "video",
           "type": "background-image",
           "isBroken": false,
           "reason": null
@@ -465,7 +92,155 @@
           "type": "video-poster",
           "isBroken": false,
           "reason": null
+        }
+      ],
+      "dropdownImages": [],
+      "allBrokenImages": []
+    },
+    "/contact-us": {
+      "imgTags": [
+        {
+          "url": "http://localhost:4321/assets/images/6474d385cfec71cb21a92251/651c58eabcaaed235a87df6d_logo_plus_BWS.svg",
+          "alt": "Blockchain Web Services logo",
+          "width": 305,
+          "height": 148,
+          "complete": true,
+          "visible": true,
+          "isBroken": false,
+          "type": "img-tag",
+          "reason": null
         },
+        {
+          "url": "http://localhost:4321/assets/images/6474d385cfec71cb21a9229a/6505cc39f53261fa63453cc8_logo-blockchain-founders-group-background-transparent.svg",
+          "alt": "Blockchain Founders Group logo",
+          "width": 0,
+          "height": 0,
+          "complete": false,
+          "visible": false,
+          "isBroken": false,
+          "type": "img-tag",
+          "reason": null
+        },
+        {
+          "url": "http://localhost:4321/assets/images/6474d385cfec71cb21a92251/670e3109244f671486edfeb7_logo-full-white.svg",
+          "alt": "Blockchain Web Services logo",
+          "width": 1172,
+          "height": 149,
+          "complete": true,
+          "visible": true,
+          "isBroken": false,
+          "type": "img-tag",
+          "reason": null
+        },
+        {
+          "url": "http://localhost:4321/assets/images/6474d385cfec71cb21a92251/670e1c014d33c13aeb2b78f0_discord-white.svg",
+          "alt": "Join BWS Discord community",
+          "width": 188,
+          "height": 150,
+          "complete": true,
+          "visible": true,
+          "isBroken": false,
+          "type": "img-tag",
+          "reason": null
+        },
+        {
+          "url": "http://localhost:4321/assets/images/6474d385cfec71cb21a92251/670e205d822e237fb9cdffcc_telegram-white.svg",
+          "alt": "Follow BWS on Telegram",
+          "width": 145,
+          "height": 150,
+          "complete": true,
+          "visible": true,
+          "isBroken": false,
+          "type": "img-tag",
+          "reason": null
+        },
+        {
+          "url": "http://localhost:4321/assets/images/6474d385cfec71cb21a92251/670e20d012e62e075e8d7418_twitter-white.svg",
+          "alt": "Follow BWS on Twitter",
+          "width": 150,
+          "height": 150,
+          "complete": true,
+          "visible": true,
+          "isBroken": false,
+          "type": "img-tag",
+          "reason": null
+        },
+        {
+          "url": "http://localhost:4321/assets/images/6474d385cfec71cb21a92251/670e20d04c1c46e1dfe79c62_linkedin-white.svg",
+          "alt": "Connect with BWS on LinkedIn",
+          "width": 131,
+          "height": 150,
+          "complete": true,
+          "visible": true,
+          "isBroken": false,
+          "type": "img-tag",
+          "reason": null
+        },
+        {
+          "url": "http://localhost:4321/assets/images/6474d385cfec71cb21a92251/673f5e99e592f2b62a849413_Brand_DEXTools_Light.svg",
+          "alt": "View BWS token on DEXTools",
+          "width": 1029,
+          "height": 301,
+          "complete": true,
+          "visible": true,
+          "isBroken": false,
+          "type": "img-tag",
+          "reason": null
+        }
+      ],
+      "srcsetImages": [],
+      "backgroundImages": [
+        {
+          "url": "http://localhost:4321/assets/images/6474d385cfec71cb21a92251/670f916b2f60627d5201850b_shutterstock_1108417201-poster-00001.jpg",
+          "element": "video",
+          "type": "background-image",
+          "isBroken": false,
+          "reason": null
+        },
+        {
+          "url": "http://localhost:4321/assets/images/6474d385cfec71cb21a9229a/654a2597be432d1f0879bfa6_Elevating%20Financial%20Services%20and%20ESG%20Compiance.jpg",
+          "element": "div.top-menu-industry-card",
+          "type": "background-image",
+          "isBroken": false,
+          "reason": null
+        },
+        {
+          "url": "http://localhost:4321/assets/images/6474d385cfec71cb21a9229a/654a258bbfafadcb274d5024_The%20Future%20of%20Creative%20Ownership%20and%20Empowerment.jpg",
+          "element": "div.top-menu-industry-card",
+          "type": "background-image",
+          "isBroken": false,
+          "reason": null
+        },
+        {
+          "url": "http://localhost:4321/assets/images/6474d385cfec71cb21a9229a/654a2561e29f2df41f5bfeb8_Transform%20the%20user%20eXperience%20with%20Blockchain.jpg",
+          "element": "div.top-menu-industry-card",
+          "type": "background-image",
+          "isBroken": false,
+          "reason": null
+        },
+        {
+          "url": "http://localhost:4321/assets/images/6474d385cfec71cb21a9229a/654a256e853678a54e9cebdf_Blockchain%20is%20the%20New%20Frontier%20in%20Accountability%20and%20Transparency.jpg",
+          "element": "div.top-menu-industry-card",
+          "type": "background-image",
+          "isBroken": false,
+          "reason": null
+        },
+        {
+          "url": "http://localhost:4321/assets/images/6474d385cfec71cb21a9229a/654a2515de4301ab69f9951e_Blockchain%20Trust%20in%20Legal%20Practices.jpg",
+          "element": "div.top-menu-industry-card",
+          "type": "background-image",
+          "isBroken": false,
+          "reason": null
+        },
+        {
+          "url": "http://localhost:4321/assets/images/6474d385cfec71cb21a9229a/654a25780f2320f1dc394e6a_The%20Future%20of%20Transparent%20and%20Efficient%20Supply%20Chain%20Management.jpg",
+          "element": "div.top-menu-industry-card",
+          "type": "background-image",
+          "isBroken": false,
+          "reason": null
+        }
+      ],
+      "videoPosters": [
         {
           "url": "http://localhost:4321/assets/images/6474d385cfec71cb21a92251/670f916b2f60627d5201850b_shutterstock_1108417201-poster-00001.jpg",
           "element": "video",
@@ -475,38 +250,188 @@
         }
       ],
       "dropdownImages": [],
-      "allBrokenImages": [
-        {
-          "url": "http://localhost:4321/assets/images/6474d385cfec71cb21a92251/6707fd987c3a05d42e1e908e_Tokenomics-Allocation-letters-black.png",
-          "alt": "$BWS Token Allocation",
-          "width": 0,
-          "height": 0,
-          "complete": true,
-          "visible": true,
-          "isBroken": true,
-          "type": "img-tag",
-          "reason": "Zero dimensions"
-        }
-      ]
-    },
-    "/about": {
-      "error": "page.waitForTimeout: Test timeout of 30000ms exceeded.",
-      "allBrokenImages": []
-    },
-    "/contact-us": {
-      "error": "page.goto: Target page, context or browser has been closed",
       "allBrokenImages": []
     },
     "/industries": {
-      "error": "page.goto: Target page, context or browser has been closed",
+      "imgTags": [
+        {
+          "url": "http://localhost:4321/assets/images/6474d385cfec71cb21a92251/651c58eabcaaed235a87df6d_logo_plus_BWS.svg",
+          "alt": "Blockchain Web Services logo",
+          "width": 305,
+          "height": 148,
+          "complete": true,
+          "visible": true,
+          "isBroken": false,
+          "type": "img-tag",
+          "reason": null
+        },
+        {
+          "url": "http://localhost:4321/assets/images/6474d385cfec71cb21a9229a/6505cc39f53261fa63453cc8_logo-blockchain-founders-group-background-transparent.svg",
+          "alt": "Blockchain Founders Group logo",
+          "width": 0,
+          "height": 0,
+          "complete": false,
+          "visible": false,
+          "isBroken": false,
+          "type": "img-tag",
+          "reason": null
+        }
+      ],
+      "srcsetImages": [],
+      "backgroundImages": [
+        {
+          "url": "http://localhost:4321/assets/images/6474d385cfec71cb21a92251/670f916b2f60627d5201850b_shutterstock_1108417201-poster-00001.jpg",
+          "element": "video",
+          "type": "background-image",
+          "isBroken": false,
+          "reason": null
+        },
+        {
+          "url": "http://localhost:4321/assets/images/6474d385cfec71cb21a9229a/654a2597be432d1f0879bfa6_Elevating%20Financial%20Services%20and%20ESG%20Compiance.jpg",
+          "element": "div.top-menu-industry-card",
+          "type": "background-image",
+          "isBroken": false,
+          "reason": null
+        },
+        {
+          "url": "http://localhost:4321/assets/images/6474d385cfec71cb21a9229a/654a258bbfafadcb274d5024_The%20Future%20of%20Creative%20Ownership%20and%20Empowerment.jpg",
+          "element": "div.top-menu-industry-card",
+          "type": "background-image",
+          "isBroken": false,
+          "reason": null
+        },
+        {
+          "url": "http://localhost:4321/assets/images/6474d385cfec71cb21a9229a/654a2561e29f2df41f5bfeb8_Transform%20the%20user%20eXperience%20with%20Blockchain.jpg",
+          "element": "div.top-menu-industry-card",
+          "type": "background-image",
+          "isBroken": false,
+          "reason": null
+        },
+        {
+          "url": "http://localhost:4321/assets/images/6474d385cfec71cb21a9229a/654a256e853678a54e9cebdf_Blockchain%20is%20the%20New%20Frontier%20in%20Accountability%20and%20Transparency.jpg",
+          "element": "div.top-menu-industry-card",
+          "type": "background-image",
+          "isBroken": false,
+          "reason": null
+        },
+        {
+          "url": "http://localhost:4321/assets/images/6474d385cfec71cb21a9229a/654a2515de4301ab69f9951e_Blockchain%20Trust%20in%20Legal%20Practices.jpg",
+          "element": "div.top-menu-industry-card",
+          "type": "background-image",
+          "isBroken": false,
+          "reason": null
+        },
+        {
+          "url": "http://localhost:4321/assets/images/6474d385cfec71cb21a9229a/654a25780f2320f1dc394e6a_The%20Future%20of%20Transparent%20and%20Efficient%20Supply%20Chain%20Management.jpg",
+          "element": "div.top-menu-industry-card",
+          "type": "background-image",
+          "isBroken": false,
+          "reason": null
+        }
+      ],
+      "videoPosters": [
+        {
+          "url": "http://localhost:4321/assets/images/6474d385cfec71cb21a92251/670f916b2f60627d5201850b_shutterstock_1108417201-poster-00001.jpg",
+          "element": "video",
+          "type": "video-poster",
+          "isBroken": false,
+          "reason": null
+        }
+      ],
+      "dropdownImages": [],
       "allBrokenImages": []
     },
     "/resources": {
-      "error": "page.goto: Target page, context or browser has been closed",
+      "imgTags": [
+        {
+          "url": "http://localhost:4321/assets/images/6474d385cfec71cb21a92251/651c58eabcaaed235a87df6d_logo_plus_BWS.svg",
+          "alt": "Blockchain Web Services logo",
+          "width": 305,
+          "height": 148,
+          "complete": true,
+          "visible": true,
+          "isBroken": false,
+          "type": "img-tag",
+          "reason": null
+        },
+        {
+          "url": "http://localhost:4321/assets/images/6474d385cfec71cb21a9229a/6505cc39f53261fa63453cc8_logo-blockchain-founders-group-background-transparent.svg",
+          "alt": "Blockchain Founders Group logo",
+          "width": 0,
+          "height": 0,
+          "complete": false,
+          "visible": false,
+          "isBroken": false,
+          "type": "img-tag",
+          "reason": null
+        }
+      ],
+      "srcsetImages": [],
+      "backgroundImages": [
+        {
+          "url": "http://localhost:4321/assets/images/6474d385cfec71cb21a92251/670f916b2f60627d5201850b_shutterstock_1108417201-poster-00001.jpg",
+          "element": "video",
+          "type": "background-image",
+          "isBroken": false,
+          "reason": null
+        },
+        {
+          "url": "http://localhost:4321/assets/images/6474d385cfec71cb21a9229a/654a2597be432d1f0879bfa6_Elevating%20Financial%20Services%20and%20ESG%20Compiance.jpg",
+          "element": "div.top-menu-industry-card",
+          "type": "background-image",
+          "isBroken": false,
+          "reason": null
+        },
+        {
+          "url": "http://localhost:4321/assets/images/6474d385cfec71cb21a9229a/654a258bbfafadcb274d5024_The%20Future%20of%20Creative%20Ownership%20and%20Empowerment.jpg",
+          "element": "div.top-menu-industry-card",
+          "type": "background-image",
+          "isBroken": false,
+          "reason": null
+        },
+        {
+          "url": "http://localhost:4321/assets/images/6474d385cfec71cb21a9229a/654a2561e29f2df41f5bfeb8_Transform%20the%20user%20eXperience%20with%20Blockchain.jpg",
+          "element": "div.top-menu-industry-card",
+          "type": "background-image",
+          "isBroken": false,
+          "reason": null
+        },
+        {
+          "url": "http://localhost:4321/assets/images/6474d385cfec71cb21a9229a/654a256e853678a54e9cebdf_Blockchain%20is%20the%20New%20Frontier%20in%20Accountability%20and%20Transparency.jpg",
+          "element": "div.top-menu-industry-card",
+          "type": "background-image",
+          "isBroken": false,
+          "reason": null
+        },
+        {
+          "url": "http://localhost:4321/assets/images/6474d385cfec71cb21a9229a/654a2515de4301ab69f9951e_Blockchain%20Trust%20in%20Legal%20Practices.jpg",
+          "element": "div.top-menu-industry-card",
+          "type": "background-image",
+          "isBroken": false,
+          "reason": null
+        },
+        {
+          "url": "http://localhost:4321/assets/images/6474d385cfec71cb21a9229a/654a25780f2320f1dc394e6a_The%20Future%20of%20Transparent%20and%20Efficient%20Supply%20Chain%20Management.jpg",
+          "element": "div.top-menu-industry-card",
+          "type": "background-image",
+          "isBroken": false,
+          "reason": null
+        }
+      ],
+      "videoPosters": [
+        {
+          "url": "http://localhost:4321/assets/images/6474d385cfec71cb21a92251/670f916b2f60627d5201850b_shutterstock_1108417201-poster-00001.jpg",
+          "element": "video",
+          "type": "video-poster",
+          "isBroken": false,
+          "reason": null
+        }
+      ],
+      "dropdownImages": [],
       "allBrokenImages": []
     },
     "/legal-notice": {
-      "error": "page.goto: Target page, context or browser has been closed",
+      "error": "page.evaluate: Test timeout of 60000ms exceeded.",
       "allBrokenImages": []
     },
     "/privacy-policy": {
@@ -582,47 +507,22 @@
       "allBrokenImages": []
     }
   },
-  "networkErrors": [
-    {
-      "url": "http://localhost:4321/assets/images/6474d385cfec71cb21a92251/670f916b2f60627d5201850b_shutterstock_1108417201-transcode.webm",
-      "status": 404,
-      "statusText": "Not Found",
-      "type": "network-error"
-    },
-    {
-      "url": "http://localhost:4321/assets/images/6474d385cfec71cb21a92251/670f916b2f60627d5201850b_shutterstock_1108417201-transcode.webm",
-      "status": 404,
-      "statusText": "Not Found",
-      "type": "network-error"
-    },
-    {
-      "url": "http://localhost:4321/assets/images/6474d385cfec71cb21a92251/6707fd987c3a05d42e1e908e_Tokenomics-Allocation-letters-black.png",
-      "status": 404,
-      "statusText": "Not Found",
-      "type": "network-error"
-    },
-    {
-      "url": "http://localhost:4321/assets/images/6474d385cfec71cb21a92251/670f916b2f60627d5201850b_shutterstock_1108417201-transcode.webm",
-      "status": 404,
-      "statusText": "Not Found",
-      "type": "network-error"
-    }
-  ],
+  "networkErrors": [],
   "testSummary": {
     "imgTags": {
-      "checked": 26,
-      "broken": 1
+      "checked": 14,
+      "broken": 0
     },
     "srcsetImages": {
-      "checked": 7,
+      "checked": 0,
       "broken": 0
     },
     "backgroundImages": {
-      "checked": 10,
+      "checked": 28,
       "broken": 0
     },
     "videoPosters": {
-      "checked": 2,
+      "checked": 4,
       "broken": 0
     },
     "dropdownImages": {
@@ -635,294 +535,218 @@
       "url": "http://localhost:4321/assets/images/6474d385cfec71cb21a92251/651c58eabcaaed235a87df6d_logo_plus_BWS.svg",
       "status": 200,
       "type": "image",
-      "timestamp": 1758711330452,
+      "timestamp": 1759570571733,
       "statusText": "OK",
-      "responseTime": 1
+      "responseTime": 102
     },
     "http://localhost:4321/assets/images/6474d385cfec71cb21a92251/6474d385cfec71cb21a922e3_blob-techplus-x-template.png": {
       "url": "http://localhost:4321/assets/images/6474d385cfec71cb21a92251/6474d385cfec71cb21a922e3_blob-techplus-x-template.png",
       "status": 200,
       "type": "image",
-      "timestamp": 1758711308318,
+      "timestamp": 1759570470713,
       "statusText": "OK",
-      "responseTime": 6
+      "responseTime": 33
     },
     "http://localhost:4321/assets/images/6474d385cfec71cb21a9229a/65061f550fd7be777e64f36f_Save_400x300.jpg": {
       "url": "http://localhost:4321/assets/images/6474d385cfec71cb21a9229a/65061f550fd7be777e64f36f_Save_400x300.jpg",
       "status": 200,
       "type": "image",
-      "timestamp": 1758711308319,
+      "timestamp": 1759570470713,
       "statusText": "OK",
-      "responseTime": 5
+      "responseTime": 71
     },
     "http://localhost:4321/assets/images/6474d385cfec71cb21a9229a/65061ebf5608b7584d9def34_Hash_400x300.jpg": {
       "url": "http://localhost:4321/assets/images/6474d385cfec71cb21a9229a/65061ebf5608b7584d9def34_Hash_400x300.jpg",
       "status": 200,
       "type": "image",
-      "timestamp": 1758711308319,
+      "timestamp": 1759570470714,
       "statusText": "OK",
-      "responseTime": 49
+      "responseTime": 162
     },
     "http://localhost:4321/assets/images/6474d385cfec71cb21a9229a/655b1a1220eb4c16ccfcab4b_BWS.IPFS.Upload_400x300.jpg": {
       "url": "http://localhost:4321/assets/images/6474d385cfec71cb21a9229a/655b1a1220eb4c16ccfcab4b_BWS.IPFS.Upload_400x300.jpg",
       "status": 200,
       "type": "image",
-      "timestamp": 1758711308320,
+      "timestamp": 1759570470714,
       "statusText": "OK",
-      "responseTime": 65
+      "responseTime": 703
     },
     "http://localhost:4321/assets/images/6474d385cfec71cb21a9229a/65061646ead0751dc83790e1_NFT_1200x628-p-1080.jpg": {
       "url": "http://localhost:4321/assets/images/6474d385cfec71cb21a9229a/65061646ead0751dc83790e1_NFT_1200x628-p-1080.jpg",
       "status": 200,
       "type": "image",
-      "timestamp": 1758711308320,
+      "timestamp": 1759570470714,
       "statusText": "OK",
-      "responseTime": 65
+      "responseTime": 721
     },
     "http://localhost:4321/assets/images/6474d385cfec71cb21a9229a/66842c0750c2f76ef6ee8a4a_raibow-colors.jpg": {
       "url": "http://localhost:4321/assets/images/6474d385cfec71cb21a9229a/66842c0750c2f76ef6ee8a4a_raibow-colors.jpg",
       "status": 200,
       "type": "image",
-      "timestamp": 1758711308321,
+      "timestamp": 1759570470715,
       "statusText": "OK",
-      "responseTime": 64
+      "responseTime": 811
     },
     "http://localhost:4321/assets/images/6474d385cfec71cb21a9229a/65061830bf101fe685a48e2f_NFT-Marketplace_400x300.jpg": {
       "url": "http://localhost:4321/assets/images/6474d385cfec71cb21a9229a/65061830bf101fe685a48e2f_NFT-Marketplace_400x300.jpg",
       "status": 200,
       "type": "image",
-      "timestamp": 1758711308321,
+      "timestamp": 1759570470715,
       "statusText": "OK",
-      "responseTime": 84
+      "responseTime": 813
     },
     "http://localhost:4321/assets/images/6474d385cfec71cb21a9229a/65061a656980df26769cd4ee_ESG-Credits_400x300.jpg": {
       "url": "http://localhost:4321/assets/images/6474d385cfec71cb21a9229a/65061a656980df26769cd4ee_ESG-Credits_400x300.jpg",
       "status": 200,
       "type": "image",
-      "timestamp": 1758711308321,
+      "timestamp": 1759570470715,
       "statusText": "OK",
-      "responseTime": 83
+      "responseTime": 812
     },
     "http://localhost:4321/assets/images/6474d385cfec71cb21a9229a/6806a0111f7e6589d65385a6_Telegram-X-Bot.png": {
       "url": "http://localhost:4321/assets/images/6474d385cfec71cb21a9229a/6806a0111f7e6589d65385a6_Telegram-X-Bot.png",
       "status": 200,
       "type": "image",
-      "timestamp": 1758711308321,
+      "timestamp": 1759570470715,
       "statusText": "OK",
-      "responseTime": 84
-    },
-    "http://localhost:4321/assets/images/6474d385cfec71cb21a92251/670f916b2f60627d5201850b_shutterstock_1108417201-transcode.mp4": {
-      "url": "http://localhost:4321/assets/images/6474d385cfec71cb21a92251/670f916b2f60627d5201850b_shutterstock_1108417201-transcode.mp4",
-      "status": 206,
-      "type": "media",
-      "timestamp": 1758711308370,
-      "statusText": "Partial Content",
-      "responseTime": 51
-    },
-    "http://cdn.embedly.com/widgets/media.html?src=https%3A//player.vimeo.com/video/976431707%3Fh%3Dd5bdb51e8a%26app_id%3D122963&dntp=1&display_name=Vimeo&url=https%3A//vimeo.com/976431707/d5bdb51e8a&image=https%3A//i.vimeocdn.com/video/1890995445-c49ebede2dd2c528b8d3fb266cdc10a0e0d5426662cf451408789231152ca138-d_295x166&key=96f1f04c5f4143bcb0f2e68c87d65feb&type=text/html&schema=vimeo": {
-      "url": "http://cdn.embedly.com/widgets/media.html?src=https%3A//player.vimeo.com/video/976431707%3Fh%3Dd5bdb51e8a%26app_id%3D122963&dntp=1&display_name=Vimeo&url=https%3A//vimeo.com/976431707/d5bdb51e8a&image=https%3A//i.vimeocdn.com/video/1890995445-c49ebede2dd2c528b8d3fb266cdc10a0e0d5426662cf451408789231152ca138-d_295x166&key=96f1f04c5f4143bcb0f2e68c87d65feb&type=text/html&schema=vimeo",
-      "status": 301,
-      "type": "document",
-      "timestamp": 1758711308384,
-      "statusText": "Moved Permanently",
-      "responseTime": 38
-    },
-    "https://cdn.embedly.com/widgets/media.html?src=https%3A//player.vimeo.com/video/976431707%3Fh%3Dd5bdb51e8a%26app_id%3D122963&dntp=1&display_name=Vimeo&url=https%3A//vimeo.com/976431707/d5bdb51e8a&image=https%3A//i.vimeocdn.com/video/1890995445-c49ebede2dd2c528b8d3fb266cdc10a0e0d5426662cf451408789231152ca138-d_295x166&key=96f1f04c5f4143bcb0f2e68c87d65feb&type=text/html&schema=vimeo": {
-      "url": "https://cdn.embedly.com/widgets/media.html?src=https%3A//player.vimeo.com/video/976431707%3Fh%3Dd5bdb51e8a%26app_id%3D122963&dntp=1&display_name=Vimeo&url=https%3A//vimeo.com/976431707/d5bdb51e8a&image=https%3A//i.vimeocdn.com/video/1890995445-c49ebede2dd2c528b8d3fb266cdc10a0e0d5426662cf451408789231152ca138-d_295x166&key=96f1f04c5f4143bcb0f2e68c87d65feb&type=text/html&schema=vimeo",
-      "status": 200,
-      "type": "document",
-      "timestamp": 1758711308422,
-      "statusText": "OK",
-      "responseTime": 1
+      "responseTime": 840
     },
     "http://localhost:4321/assets/images/6474d385cfec71cb21a92251/670f916b2f60627d5201850b_shutterstock_1108417201-poster-00001.jpg": {
       "url": "http://localhost:4321/assets/images/6474d385cfec71cb21a92251/670f916b2f60627d5201850b_shutterstock_1108417201-poster-00001.jpg",
       "status": 200,
       "type": "image",
-      "timestamp": 1758711330488,
+      "timestamp": 1759570571997,
       "statusText": "OK",
-      "responseTime": 0
+      "responseTime": 1
+    },
+    "http://localhost:4321/assets/images/6474d385cfec71cb21a92251/670f916b2f60627d5201850b_shutterstock_1108417201-transcode.mp4": {
+      "url": "http://localhost:4321/assets/images/6474d385cfec71cb21a92251/670f916b2f60627d5201850b_shutterstock_1108417201-transcode.mp4",
+      "status": 206,
+      "type": "media",
+      "timestamp": 1759570572166,
+      "statusText": "Partial Content",
+      "responseTime": 50
+    },
+    "http://cdn.embedly.com/widgets/media.html?src=https%3A//player.vimeo.com/video/976431707%3Fh%3Dd5bdb51e8a%26app_id%3D122963&dntp=1&display_name=Vimeo&url=https%3A//vimeo.com/976431707/d5bdb51e8a&image=https%3A//i.vimeocdn.com/video/1890995445-c49ebede2dd2c528b8d3fb266cdc10a0e0d5426662cf451408789231152ca138-d_295x166&key=96f1f04c5f4143bcb0f2e68c87d65feb&type=text/html&schema=vimeo": {
+      "url": "http://cdn.embedly.com/widgets/media.html?src=https%3A//player.vimeo.com/video/976431707%3Fh%3Dd5bdb51e8a%26app_id%3D122963&dntp=1&display_name=Vimeo&url=https%3A//vimeo.com/976431707/d5bdb51e8a&image=https%3A//i.vimeocdn.com/video/1890995445-c49ebede2dd2c528b8d3fb266cdc10a0e0d5426662cf451408789231152ca138-d_295x166&key=96f1f04c5f4143bcb0f2e68c87d65feb&type=text/html&schema=vimeo",
+      "status": 301,
+      "type": "document",
+      "timestamp": 1759570472128,
+      "statusText": "Moved Permanently",
+      "responseTime": 37
+    },
+    "https://cdn.embedly.com/widgets/media.html?src=https%3A//player.vimeo.com/video/976431707%3Fh%3Dd5bdb51e8a%26app_id%3D122963&dntp=1&display_name=Vimeo&url=https%3A//vimeo.com/976431707/d5bdb51e8a&image=https%3A//i.vimeocdn.com/video/1890995445-c49ebede2dd2c528b8d3fb266cdc10a0e0d5426662cf451408789231152ca138-d_295x166&key=96f1f04c5f4143bcb0f2e68c87d65feb&type=text/html&schema=vimeo": {
+      "url": "https://cdn.embedly.com/widgets/media.html?src=https%3A//player.vimeo.com/video/976431707%3Fh%3Dd5bdb51e8a%26app_id%3D122963&dntp=1&display_name=Vimeo&url=https%3A//vimeo.com/976431707/d5bdb51e8a&image=https%3A//i.vimeocdn.com/video/1890995445-c49ebede2dd2c528b8d3fb266cdc10a0e0d5426662cf451408789231152ca138-d_295x166&key=96f1f04c5f4143bcb0f2e68c87d65feb&type=text/html&schema=vimeo",
+      "status": 200,
+      "type": "document",
+      "timestamp": 1759570472165,
+      "statusText": "OK",
+      "responseTime": 102
     },
     "http://localhost:4321/assets/images/logos/bws-logo-violet.png": {
       "url": "http://localhost:4321/assets/images/logos/bws-logo-violet.png",
       "status": 200,
       "type": "image",
-      "timestamp": 1758711308440,
+      "timestamp": 1759570472239,
       "statusText": "OK",
-      "responseTime": 27
+      "responseTime": 42
     },
     "http://localhost:4321/assets/images/logos/bws-logo-violet-flying.png": {
       "url": "http://localhost:4321/assets/images/logos/bws-logo-violet-flying.png",
       "status": 200,
       "type": "image",
-      "timestamp": 1758711308442,
+      "timestamp": 1759570472239,
       "statusText": "OK",
-      "responseTime": 29
+      "responseTime": 62
     },
     "http://localhost:4321/assets/images/6474d385cfec71cb21a92251/670f82f9b05322735f72cbcc_PROOF-logo-lightBG.png": {
       "url": "http://localhost:4321/assets/images/6474d385cfec71cb21a92251/670f82f9b05322735f72cbcc_PROOF-logo-lightBG.png",
       "status": 200,
       "type": "image",
-      "timestamp": 1758711308448,
+      "timestamp": 1759570472240,
       "statusText": "OK",
-      "responseTime": 36
+      "responseTime": 223
     },
     "http://localhost:4321/assets/images/6474d385cfec71cb21a92251/6707f1c5c0856eff6c22300e_AssureDefi.png": {
       "url": "http://localhost:4321/assets/images/6474d385cfec71cb21a92251/6707f1c5c0856eff6c22300e_AssureDefi.png",
       "status": 200,
       "type": "image",
-      "timestamp": 1758711308448,
+      "timestamp": 1759570472247,
       "statusText": "OK",
-      "responseTime": 28
+      "responseTime": 233
     },
     "http://localhost:4321/assets/images/6474d385cfec71cb21a92251/64e738258afae2bb6f4d56bf_logo-blockchain-founders-group-background-transparent-large.svg": {
       "url": "http://localhost:4321/assets/images/6474d385cfec71cb21a92251/64e738258afae2bb6f4d56bf_logo-blockchain-founders-group-background-transparent-large.svg",
       "status": 200,
       "type": "image",
-      "timestamp": 1758711308448,
+      "timestamp": 1759570472247,
       "statusText": "OK",
-      "responseTime": 33
+      "responseTime": 232
     },
     "http://localhost:4321/assets/images/6474d385cfec71cb21a92251/6708d536ef7b294fa972098e_football-cubes-selection.png": {
       "url": "http://localhost:4321/assets/images/6474d385cfec71cb21a92251/6708d536ef7b294fa972098e_football-cubes-selection.png",
       "status": 200,
       "type": "image",
-      "timestamp": 1758711308449,
+      "timestamp": 1759570472247,
       "statusText": "OK",
-      "responseTime": 28
+      "responseTime": 67
     },
     "http://localhost:4321/assets/images/6474d385cfec71cb21a92251/670f916b2f60627d5201850b_shutterstock_1108417201-transcode.webm": {
       "url": "http://localhost:4321/assets/images/6474d385cfec71cb21a92251/670f916b2f60627d5201850b_shutterstock_1108417201-transcode.webm",
-      "status": 404,
+      "status": 206,
       "type": "media",
-      "timestamp": 1758711330704,
-      "statusText": "Not Found",
-      "responseTime": 17
-    },
-    "http://localhost:4321/assets/images/6474d385cfec71cb21a9229a/654a2597be432d1f0879bfa6_Elevating-Financial-Services-and-ESG-Compiance.jpg": {
-      "url": "http://localhost:4321/assets/images/6474d385cfec71cb21a9229a/654a2597be432d1f0879bfa6_Elevating-Financial-Services-and-ESG-Compiance.jpg",
-      "status": 200,
-      "type": "image",
-      "timestamp": 1758711313120,
-      "statusText": "OK",
-      "responseTime": 16
-    },
-    "http://localhost:4321/assets/images/6474d385cfec71cb21a9229a/654a258bbfafadcb274d5024_The-Future-of-Creative-Ownership-and-Empowerment.jpg": {
-      "url": "http://localhost:4321/assets/images/6474d385cfec71cb21a9229a/654a258bbfafadcb274d5024_The-Future-of-Creative-Ownership-and-Empowerment.jpg",
-      "status": 200,
-      "type": "image",
-      "timestamp": 1758711313120,
-      "statusText": "OK",
-      "responseTime": 13
-    },
-    "http://localhost:4321/assets/images/6474d385cfec71cb21a9229a/654a2561e29f2df41f5bfeb8_Transform-the-user-eXperience-with-Blockchain.jpg": {
-      "url": "http://localhost:4321/assets/images/6474d385cfec71cb21a9229a/654a2561e29f2df41f5bfeb8_Transform-the-user-eXperience-with-Blockchain.jpg",
-      "status": 200,
-      "type": "image",
-      "timestamp": 1758711313120,
-      "statusText": "OK",
-      "responseTime": 13
-    },
-    "http://localhost:4321/assets/images/6474d385cfec71cb21a9229a/654a256e853678a54e9cebdf_Blockchain-is-the-New-Frontier-in-Accountability-and-Transparency.jpg": {
-      "url": "http://localhost:4321/assets/images/6474d385cfec71cb21a9229a/654a256e853678a54e9cebdf_Blockchain-is-the-New-Frontier-in-Accountability-and-Transparency.jpg",
-      "status": 200,
-      "type": "image",
-      "timestamp": 1758711313120,
-      "statusText": "OK",
-      "responseTime": 13
-    },
-    "http://localhost:4321/assets/images/6474d385cfec71cb21a9229a/654a2515de4301ab69f9951e_Blockchain-Trust-in-Legal-Practices.jpg": {
-      "url": "http://localhost:4321/assets/images/6474d385cfec71cb21a9229a/654a2515de4301ab69f9951e_Blockchain-Trust-in-Legal-Practices.jpg",
-      "status": 200,
-      "type": "image",
-      "timestamp": 1758711313121,
-      "statusText": "OK",
-      "responseTime": 15
-    },
-    "http://localhost:4321/assets/images/6474d385cfec71cb21a9229a/654a25780f2320f1dc394e6a_The-Future-of-Transparent-and-Efficient-Supply-Chain-Management.jpg": {
-      "url": "http://localhost:4321/assets/images/6474d385cfec71cb21a9229a/654a25780f2320f1dc394e6a_The-Future-of-Transparent-and-Efficient-Supply-Chain-Management.jpg",
-      "status": 200,
-      "type": "image",
-      "timestamp": 1758711313121,
-      "statusText": "OK",
-      "responseTime": 16
-    },
-    "http://localhost:4321/assets/images/6474d385cfec71cb21a9229a/6505cc39f53261fa63453cc8_logo-blockchain-founders-group-background-transparent.svg": {
-      "url": "http://localhost:4321/assets/images/6474d385cfec71cb21a9229a/6505cc39f53261fa63453cc8_logo-blockchain-founders-group-background-transparent.svg",
-      "status": 200,
-      "type": "image",
-      "timestamp": 1758711330505,
-      "statusText": "OK",
-      "responseTime": 0
-    },
-    "http://localhost:4321/assets/images/6474d385cfec71cb21a92251/6707fd987c3a05d42e1e908e_Tokenomics-Allocation-letters-black.png": {
-      "url": "http://localhost:4321/assets/images/6474d385cfec71cb21a92251/6707fd987c3a05d42e1e908e_Tokenomics-Allocation-letters-black.png",
-      "status": 404,
-      "type": "image",
-      "timestamp": 1758711316918,
-      "statusText": "Not Found",
-      "responseTime": 6
+      "timestamp": 1759570572655,
+      "statusText": "Partial Content",
+      "responseTime": 39
     },
     "http://localhost:4321/assets/images/6474d385cfec71cb21a92251/670e3109244f671486edfeb7_logo-full-white.svg": {
       "url": "http://localhost:4321/assets/images/6474d385cfec71cb21a92251/670e3109244f671486edfeb7_logo-full-white.svg",
       "status": 200,
       "type": "image",
-      "timestamp": 1758711319516,
+      "timestamp": 1759570572286,
       "statusText": "OK",
-      "responseTime": 12
+      "responseTime": 110
     },
     "http://localhost:4321/assets/images/6474d385cfec71cb21a92251/670e1c014d33c13aeb2b78f0_discord-white.svg": {
       "url": "http://localhost:4321/assets/images/6474d385cfec71cb21a92251/670e1c014d33c13aeb2b78f0_discord-white.svg",
       "status": 200,
       "type": "image",
-      "timestamp": 1758711319617,
+      "timestamp": 1759570572286,
       "statusText": "OK",
-      "responseTime": 12
+      "responseTime": 123
     },
     "http://localhost:4321/assets/images/6474d385cfec71cb21a92251/670e205d822e237fb9cdffcc_telegram-white.svg": {
       "url": "http://localhost:4321/assets/images/6474d385cfec71cb21a92251/670e205d822e237fb9cdffcc_telegram-white.svg",
       "status": 200,
       "type": "image",
-      "timestamp": 1758711319617,
+      "timestamp": 1759570572287,
       "statusText": "OK",
-      "responseTime": 18
+      "responseTime": 149
     },
     "http://localhost:4321/assets/images/6474d385cfec71cb21a92251/670e20d012e62e075e8d7418_twitter-white.svg": {
       "url": "http://localhost:4321/assets/images/6474d385cfec71cb21a92251/670e20d012e62e075e8d7418_twitter-white.svg",
       "status": 200,
       "type": "image",
-      "timestamp": 1758711319617,
+      "timestamp": 1759570572287,
       "statusText": "OK",
-      "responseTime": 14
+      "responseTime": 150
     },
     "http://localhost:4321/assets/images/6474d385cfec71cb21a92251/670e20d04c1c46e1dfe79c62_linkedin-white.svg": {
       "url": "http://localhost:4321/assets/images/6474d385cfec71cb21a92251/670e20d04c1c46e1dfe79c62_linkedin-white.svg",
       "status": 200,
       "type": "image",
-      "timestamp": 1758711319617,
+      "timestamp": 1759570572287,
       "statusText": "OK",
-      "responseTime": 20
+      "responseTime": 158
     },
     "http://localhost:4321/assets/images/6474d385cfec71cb21a92251/673f5e99e592f2b62a849413_Brand_DEXTools_Light.svg": {
       "url": "http://localhost:4321/assets/images/6474d385cfec71cb21a92251/673f5e99e592f2b62a849413_Brand_DEXTools_Light.svg",
       "status": 200,
       "type": "image",
-      "timestamp": 1758711319618,
+      "timestamp": 1759570572287,
       "statusText": "OK",
-      "responseTime": 22
+      "responseTime": 158
     }
   },
-  "brokenImageDetails": [
-    {
-      "url": "http://localhost:4321/assets/images/6474d385cfec71cb21a92251/6707fd987c3a05d42e1e908e_Tokenomics-Allocation-letters-black.png",
-      "alt": "$BWS Token Allocation",
-      "width": 0,
-      "height": 0,
-      "complete": true,
-      "visible": true,
-      "isBroken": true,
-      "type": "img-tag",
-      "reason": "Zero dimensions"
-    }
-  ]
+  "brokenImageDetails": []
 }
