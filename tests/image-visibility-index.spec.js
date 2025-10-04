@@ -330,13 +330,15 @@ test.describe('Image Visibility on Index Page', () => {
     // Monitor image loading
     const imageLoadTimes = [];
 
-    page.on('response', response => {
+    page.on('response', async response => {
       const url = response.url();
       if (url.includes('/assets/images/')) {
+        // Get timing from the request object, not response
+        const timing = await response.request().timing();
         imageLoadTimes.push({
           url: url.substring(url.lastIndexOf('/') + 1),
           status: response.status(),
-          timing: response.timing()
+          timing: timing
         });
       }
     });
