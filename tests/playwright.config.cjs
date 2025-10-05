@@ -26,7 +26,7 @@ module.exports = defineConfig({
     baseURL: BASE_URL,
     trace: 'on-first-retry',
     screenshot: 'only-on-failure',
-    video: 'retain-on-failure',
+    video: 'off', // Disable video recording - screenshots and traces are sufficient for debugging
     actionTimeout: 30000, // Increased from 15000
     navigationTimeout: 60000, // Increased from 30000 for slow network conditions
     viewport: { width: 1280, height: 720 }, // Explicit viewport for consistent CSS rendering
