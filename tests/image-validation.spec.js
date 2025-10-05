@@ -43,7 +43,7 @@ const criticalImages = [
   {
     name: 'Tokenomics Image',
     url: '/assets/images/6474d385cfec71cb21a92251/6707fd987c3a05d42e1e908e_Tokenomics%20Allocation-letters-black.png',
-    selector: 'img[src*="Tokenomics"]',
+    selector: 'img.image-token-allocation', // Target visible main content image, not dropdown
     expectedClass: 'image-token-allocation'
   }
 ];
