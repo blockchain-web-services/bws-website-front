@@ -33597,7 +33597,26 @@ img[src*="Tokenomics"] {
 .token-allocation,
 .token-allocation *,
 .token-allocation-image,
-.token-allocation-image * {
+.token-allocation-image *,
+.flex-block-6,
+.flex-block-6 *,
+.w-layout-vflex.flex-block-6,
+.w-layout-vflex.flex-block-6 *,
+.w-layout-blockcontainer.token-allocation-image,
+.w-layout-blockcontainer.token-allocation-image * {
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* Force visibility for BFG logo and its containers */
+.image-bfg,
+.image-bfg *,
+.announcement-box,
+.announcement-box *,
+.container-image-announcement-bfg,
+.container-image-announcement-bfg *,
+img[src*="blockchain-founders-group"],
+img[src*="blockchain-founders-group"] * {
   visibility: visible !important;
   opacity: 1 !important;
 }
