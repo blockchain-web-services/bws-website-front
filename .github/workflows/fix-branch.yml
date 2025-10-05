@@ -236,7 +236,8 @@ jobs:
             sed -E 's/\x1B\[[0-9;]*[mGKH]//g' test-output-raw.txt | sed -E 's/\[([0-9]+)m//g' > test-output-full.txt
 
             # Create a filtered version for the report without failureSummary noise
-            grep -E "(✓|✗|✘|×|FAIL|fail|Error|error|expected|received|Test timeout|\s+at\s+|Running|\d+\)|test-results/)" test-output-full.txt | grep -v "failureSummary" > test-output.txt 2>/dev/null || cp test-output-full.txt test-output.txt
+            # CRITICAL: Include WCAG violation patterns to preserve console.log output from accessibility tests
+            grep -E "(✓|✗|✘|×|FAIL|fail|Error|error|expected|received|Test timeout|\s+at\s+|Running|\d+\)|test-results/|===.*Violations.*===|^\s*[0-9]+\.|Impact:|Description:|Affected nodes:|Fix:|\s+-\s+Node)" test-output-full.txt | grep -v "failureSummary" > test-output.txt 2>/dev/null || cp test-output-full.txt test-output.txt
           fi
 
           echo "Test exit code: ${TEST_EXIT_CODE}"
@@ -290,6 +291,9 @@ jobs:
 
           # Ensure fixes directory exists
           mkdir -p "$FIXES_DIR"
+
+          # Create snapshots directory for test screenshots
+          mkdir -p "$FIXES_DIR/snapshots"
 
           # Create timestamped BRANCH_ISSUES file
           ISSUES_FILE="${FIXES_DIR}/BRANCH_ISSUES_${TIMESTAMP}.md"
@@ -525,11 +529,20 @@ jobs:
                   echo '```' >> "../$ISSUES_FILE"
                 fi
 
-                # Check for screenshot references
+                # Check for screenshot references and copy to snapshots directory
                 SCREENSHOT=$(grep -A10 -F "$line" test-output.txt | grep "test-results/" | grep -E "\.png|screenshot" | head -1 | sed 's/^[[:space:]]*//')
-                if [ ! -z "$SCREENSHOT" ]; then
+                if [ ! -z "$SCREENSHOT" ] && [ -f "$SCREENSHOT" ]; then
+                  # Generate unique snapshot filename based on test name and timestamp
+                  SNAPSHOT_NAME="failure-${FAILURE_NUM}-$(basename "$SCREENSHOT")"
+                  SNAPSHOT_PATH="../$FIXES_DIR/snapshots/$SNAPSHOT_NAME"
+
+                  # Copy screenshot to snapshots directory
+                  cp "$SCREENSHOT" "$SNAPSHOT_PATH"
+
+                  # Reference the snapshot in the report using relative path
                   echo "" >> "../$ISSUES_FILE"
-                  echo "**Screenshot:** \`$SCREENSHOT\`" >> "../$ISSUES_FILE"
+                  echo "**Screenshot:** ![Screenshot](snapshots/$SNAPSHOT_NAME)" >> "../$ISSUES_FILE"
+                  echo "*(Original path: \`$SCREENSHOT\`)*" >> "../$ISSUES_FILE"
                 fi
 
                 # Check for trace file references
