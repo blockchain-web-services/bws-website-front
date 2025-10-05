@@ -514,11 +514,28 @@ jobs:
                 grep -A3 -F "$line" test-output.txt | tail -n +2 | grep -v "failureSummary" | head -3 >> "../$ISSUES_FILE" 2>/dev/null
                 echo '```' >> "../$ISSUES_FILE"
 
+                # Extract and include error-context.md content if available
+                ERROR_CONTEXT_PATH=$(grep -A10 -F "$line" test-output.txt | grep -o 'test-results/[^/]*/error-context.md' | head -1)
+                if [ ! -z "$ERROR_CONTEXT_PATH" ] && [ -f "$ERROR_CONTEXT_PATH" ]; then
+                  echo "" >> "../$ISSUES_FILE"
+                  echo "**Detailed Error Context:**" >> "../$ISSUES_FILE"
+                  echo '```' >> "../$ISSUES_FILE"
+                  cat "$ERROR_CONTEXT_PATH" >> "../$ISSUES_FILE"
+                  echo '```' >> "../$ISSUES_FILE"
+                fi
+
                 # Check for screenshot references
-                SCREENSHOT=$(grep -A1 -F "$line" test-output.txt | grep "test-results/" | head -1)
+                SCREENSHOT=$(grep -A10 -F "$line" test-output.txt | grep "test-results/" | grep -E "\.png|screenshot" | head -1 | sed 's/^[[:space:]]*//')
                 if [ ! -z "$SCREENSHOT" ]; then
                   echo "" >> "../$ISSUES_FILE"
                   echo "**Screenshot:** \`$SCREENSHOT\`" >> "../$ISSUES_FILE"
+                fi
+
+                # Check for trace file references
+                TRACE_PATH=$(grep -A10 -F "$line" test-output.txt | grep -o 'test-results/[^/]*/trace.zip' | head -1)
+                if [ ! -z "$TRACE_PATH" ] && [ -f "$TRACE_PATH" ]; then
+                  echo "" >> "../$ISSUES_FILE"
+                  echo "**Trace Available:** \`npx playwright show-trace $TRACE_PATH\`" >> "../$ISSUES_FILE"
                 fi
 
                 ((FAILURE_NUM++))
