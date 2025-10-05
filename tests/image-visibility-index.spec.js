@@ -211,7 +211,8 @@ test.describe('Image Visibility on Index Page', () => {
   });
 
   test('Tokenomics Image visibility', async ({ page }, testInfo) => {
-    const tokenImg = page.locator('img[src*="Tokenomics"]').first();
+    // Target the visible main content image, not any dropdown/menu versions
+    const tokenImg = page.locator('img.image-token-allocation').first();
 
     // Check if image exists
     const count = await tokenImg.count();

@@ -33588,6 +33588,20 @@ img[src*="Tokenomics"] {
   opacity: 1 !important;
 }
 
+/* CRITICAL: Force visibility on tokenomics section and ALL children to prevent cascade issues */
+#tokenomics,
+#tokenomics * {
+  visibility: visible !important;
+}
+
+.token-allocation,
+.token-allocation *,
+.token-allocation-image,
+.token-allocation-image * {
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
 /* General image visibility fixes */
 img {
   display: inline-block !important;

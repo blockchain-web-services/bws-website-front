@@ -226,7 +226,8 @@ jobs:
 
           # Run tests and capture output with ANSI color codes
           # Note: Reporters are configured in playwright.config.cjs (json with outputFile, list, line)
-          npx playwright test --config=playwright.config.cjs --project=${{ matrix.browser }} 2>&1 | tee test-output-raw.txt
+          # Run ALL tests (chromium + smoke + e2e) for complete pre-deployment validation
+          npx playwright test --config=playwright.config.cjs 2>&1 | tee test-output-raw.txt
           TEST_EXIT_CODE=${PIPESTATUS[0]}
 
           # Strip ANSI escape codes and create clean output

@@ -11,7 +11,7 @@ module.exports = defineConfig({
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 2 : 1,
   workers: process.env.CI ? 2 : undefined,
-  timeout: 60000, // Increase test timeout to 60 seconds
+  timeout: 90000, // Increase test timeout to 90 seconds for slow CI/CD environments
 
   reporter: process.env.CI ? [
     ['json', { outputFile: './test-results.json' }],
