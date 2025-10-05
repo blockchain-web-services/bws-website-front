@@ -603,6 +603,11 @@ jobs:
 
           # Add and commit the test failure report with [skip ci] to prevent retriggering
           git add "$ISSUES_FILE"
+          # Also add snapshots directory if it exists and contains files
+          if [ -d "$FIXES_DIR/snapshots" ] && [ "$(ls -A "$FIXES_DIR/snapshots")" ]; then
+            git add "$FIXES_DIR/snapshots/"
+            echo "✓ Added $(ls -1 "$FIXES_DIR/snapshots" | wc -l) screenshot(s) to commit"
+          fi
           if git commit -m "[skip ci] Add test failure report: BRANCH_ISSUES_${TIMESTAMP}.md" -m "Test failures detected on commit ${{ github.sha }}" -m "See _fixes folder for details." -m "This commit will not trigger workflows to prevent infinite loops."; then
             echo "✓ Commit created successfully"
           else
