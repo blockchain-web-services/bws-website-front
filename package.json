@@ -18,7 +18,9 @@
     "validate": "node scripts/html-validator.js",
     "validate:old": "node scripts/validate-html.js",
     "prettify": "node scripts/html-prettifier.js",
-    "pretty-print": "node scripts/pretty-print-validate.js"
+    "pretty-print": "node scripts/pretty-print-validate.js",
+    "format": "prettier --write 'src/**/*.{astro,js,ts,json}'",
+    "format:check": "prettier --check 'src/**/*.{astro,js,ts,json}'"
   },
   "devDependencies": {
     "@types/node": "^20.0.0",
@@ -30,6 +32,7 @@
     "linkinator": "^6.0.0",
     "node-fetch": "^3.3.2",
     "prettier": "^3.6.2",
+    "prettier-plugin-astro": "^0.14.1",
     "typescript": "^5.0.0"
   },
   "dependencies": {
