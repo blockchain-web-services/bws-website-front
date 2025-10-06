@@ -88,17 +88,11 @@ test.describe('Asset Verification Tests', () => {
     await page.waitForLoadState('networkidle');
 
     // Target the visible BFG logo on the main page (not the one in dropdown menu)
-    const bfgImg = page.locator('img.image-bfg');
-    const count = await bfgImg.count();
-    console.log(`Found ${count} BFG images with .image-bfg class`);
+    // The visible one is in the announcement section, not in .top-menu-dropdown
+    const bfgImg = page.locator('.flex-block-announcements img.image-bfg, .announcement-box img.image-bfg').first();
 
-    if (count > 0) {
-      const img = bfgImg.first();
-      await expect(img).toBeVisible();
-      console.log('✅ BFG image is visible');
-    } else {
-      console.error('❌ No BFG images found in DOM');
-    }
+    await expect(bfgImg).toBeVisible();
+    console.log('✅ BFG image is visible');
   });
 
   RESPONSIVE_SIZES.forEach(size => {

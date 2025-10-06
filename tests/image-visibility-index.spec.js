@@ -156,7 +156,8 @@ test.describe('Image Visibility on Index Page', () => {
 
   test('BFG Logo visibility and CSS', async ({ page }, testInfo) => {
     // Target the .image-bfg class in main content, not the dropdown menu version
-    const bfgImg = page.locator('img.image-bfg').first();
+    // The visible one is in announcement section
+    const bfgImg = page.locator('.flex-block-announcements img.image-bfg, .announcement-box img.image-bfg').first();
 
     // Check if image exists
     await expect(bfgImg).toBeVisible({ timeout: 10000 });

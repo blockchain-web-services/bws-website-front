@@ -85,7 +85,8 @@ test.describe('Image Visibility Tests', () => {
 
     console.log('Testing BFG image visibility...');
 
-    const bfgImg = page.locator('img[src*="blockchain-founders-group"]').first();
+    // Target the visible BFG image in announcement section, not dropdown menu
+    const bfgImg = page.locator('.flex-block-announcements img[src*="blockchain-founders-group"], .announcement-box img[src*="blockchain-founders-group"]').first();
 
     const exists = await bfgImg.count() > 0;
     console.log(`BFG image element exists: ${exists}`);

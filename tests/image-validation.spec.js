@@ -36,7 +36,7 @@ const criticalImages = [
   {
     name: 'BFG Logo',
     url: '/assets/images/6474d385cfec71cb21a92251/64e738258afae2bb6f4d56bf_logo-blockchain-founders-group-background-transparent-large.svg',
-    selector: 'img.image-bfg', // Target visible main content logo, not dropdown menu
+    selector: '.flex-block-announcements img.image-bfg, .announcement-box img.image-bfg', // Target visible main content logo in announcement, not dropdown menu
     expectedClass: 'image-bfg',
     maxWidth: '150px'
   },
