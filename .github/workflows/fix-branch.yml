@@ -515,6 +515,8 @@ jobs:
 
                 # Extract test file name from the test line for error correlation
                 TEST_FILE=$(echo "$test_line" | grep -oP '› \K[^›]*\.spec\.[jt]s' | head -1)
+                # Extract just the base name without extension for directory matching
+                TEST_FILE_BASE=$(echo "$TEST_FILE" | sed 's/\.spec\.[jt]s$//')
 
                 # Find error details for this specific test
                 # CRITICAL FIX: Use -F (fixed string) to avoid regex interpretation of special chars like ()
@@ -541,9 +543,10 @@ jobs:
                 fi
 
                 # Find screenshot for this test
-                # Search for test-results directory matching the test file
-                if [ ! -z "$TEST_FILE" ]; then
-                  TEST_RESULT_DIR=$(ls -d test-results/*${TEST_FILE}*chromium* 2>/dev/null | head -1)
+                # Search for test-results directory matching the test file BASE NAME (without .spec.js)
+                # Playwright creates dirs like: test-results/image-validation-Image-Vis-xxx-chromium/
+                if [ ! -z "$TEST_FILE_BASE" ]; then
+                  TEST_RESULT_DIR=$(ls -d test-results/${TEST_FILE_BASE}-*-chromium* 2>/dev/null | head -1)
                   if [ ! -z "$TEST_RESULT_DIR" ] && [ -d "$TEST_RESULT_DIR" ]; then
                     SCREENSHOT=$(find "$TEST_RESULT_DIR" -name "*.png" -type f | head -1)
                     if [ ! -z "$SCREENSHOT" ] && [ -f "$SCREENSHOT" ]; then
