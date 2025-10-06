@@ -212,6 +212,10 @@ test.describe('Image Visibility on Index Page', () => {
   });
 
   test('Tokenomics Image visibility', async ({ page }, testInfo) => {
+    // Scroll to tokenomics section to trigger visibility
+    await page.locator('#tokenomics').scrollIntoViewIfNeeded();
+    await page.waitForTimeout(1000);
+
     // Target the visible main content image, not any dropdown/menu versions
     const tokenImg = page.locator('img.image-token-allocation').first();
 

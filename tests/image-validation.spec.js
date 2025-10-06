@@ -272,6 +272,12 @@ test.describe('Image Visibility on Live Page', () => {
 
   test('All critical images are visible and properly sized', async ({ page }, testInfo) => {
     for (const image of criticalImages) {
+      // Scroll to tokenomics section if checking that image
+      if (image.name === 'Tokenomics Image') {
+        await page.locator('#tokenomics').scrollIntoViewIfNeeded();
+        await page.waitForTimeout(1000);
+      }
+
       const imgElement = page.locator(image.selector).first();
 
       // Check if image exists in DOM
