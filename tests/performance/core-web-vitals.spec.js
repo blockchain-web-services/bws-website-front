@@ -88,9 +88,9 @@ test.describe('Core Web Vitals Tests', () => {
   test('Resource loading performance', async ({ page }) => {
     const resourceTimings = [];
 
-    page.on('response', response => {
+    page.on('response', async response => {
       const url = response.url();
-      const timing = response.timing();
+      const timing = await response.request().timing();
       if (timing) {
         resourceTimings.push({
           url: url.substring(url.lastIndexOf('/') + 1),

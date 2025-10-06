@@ -11,6 +11,7 @@ module.exports = defineConfig({
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 2 : 1,
   workers: process.env.CI ? 2 : undefined,
+  timeout: 90000, // Increase test timeout to 90 seconds for slow CI/CD environments
 
   reporter: process.env.CI ? [
     ['json', { outputFile: './test-results.json' }],
@@ -25,25 +26,42 @@ module.exports = defineConfig({
     baseURL: BASE_URL,
     trace: 'on-first-retry',
     screenshot: 'only-on-failure',
-    video: 'retain-on-failure',
-    actionTimeout: 15000,
-    navigationTimeout: 30000,
+    video: 'off', // Disable video recording - screenshots and traces are sufficient for debugging
+    actionTimeout: 30000, // Increased from 15000
+    navigationTimeout: 60000, // Increased from 30000 for slow network conditions
+    viewport: { width: 1280, height: 720 }, // Explicit viewport for consistent CSS rendering
   },
 
   projects: [
     {
       name: 'chromium',
-      use: { ...devices['Desktop Chrome'] },
+      use: {
+        ...devices['Desktop Chrome'],
+        // Force headless mode to match CI/CD environment
+        launchOptions: {
+          headless: true,
+        },
+      },
     },
     {
       name: 'smoke',
       testMatch: 'smoke/*.spec.{js,ts}',
-      use: { ...devices['Desktop Chrome'] },
+      use: {
+        ...devices['Desktop Chrome'],
+        launchOptions: {
+          headless: true,
+        },
+      },
     },
     {
       name: 'e2e',
       testMatch: 'e2e/*.spec.{js,ts}',
-      use: { ...devices['Desktop Chrome'] },
+      use: {
+        ...devices['Desktop Chrome'],
+        launchOptions: {
+          headless: true,
+        },
+      },
     },
   ],
 

@@ -83,7 +83,7 @@ test.describe('Critical Path Smoke Tests', () => {
     await expect(page.locator('h1').first()).toBeVisible();
 
     // Check for contact information or call-to-action button
-    const contactContent = page.locator('.get-in-touch, .contact-content-left').first();
+    const contactContent = page.locator('.contact-content-wrapper, .contact-main').first();
     await expect(contactContent).toBeVisible();
   });
 
