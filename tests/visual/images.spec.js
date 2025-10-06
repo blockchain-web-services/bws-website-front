@@ -48,6 +48,12 @@ test.describe('Image Visual Tests', () => {
     ];
 
     for (const imageName of criticalImages) {
+      // Scroll to Tokenomics section to make it visible (lazy loading)
+      if (imageName === 'Tokenomics') {
+        await page.locator('#tokenomics').scrollIntoViewIfNeeded();
+        await page.waitForTimeout(1000);
+      }
+
       const isLoaded = await homePage.checkImageLoading(imageName);
       expect(isLoaded).toBeTruthy();
     }
