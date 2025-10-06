@@ -495,6 +495,9 @@ jobs:
             if [ -z "$FAILING_TESTS" ]; then
               echo "No failing tests found in output." >> "../$ISSUES_FILE"
             else
+              # Create snapshots directory if it doesn't exist
+              mkdir -p "../$FIXES_DIR/snapshots"
+
               FAILURE_NUM=1
 
               # Process each unique failing test
@@ -514,8 +517,8 @@ jobs:
                 TEST_FILE=$(echo "$test_line" | grep -oP '› \K[^›]*\.spec\.[jt]s' | head -1)
 
                 # Find error details for this specific test
-                # Look for Error/expect lines that appear AFTER this test line in the output
-                ERROR_CONTEXT=$(grep -A50 "$test_line" test-output.txt | grep -E "Error:|expect\(|Test.timeout" | head -5)
+                # CRITICAL FIX: Use -F (fixed string) to avoid regex interpretation of special chars like ()
+                ERROR_CONTEXT=$(grep -F -A50 "$test_line" test-output.txt | grep -E "Error:|expect\(|Test.timeout|unexpected value" | head -10)
 
                 if [ ! -z "$ERROR_CONTEXT" ]; then
                   echo "**Error Details:**" >> "../$ISSUES_FILE"
