@@ -21,28 +21,6 @@ const CRITICAL_IMAGES = [
 
 test.describe('Asset Verification Tests', () => {
 
-  test.skip('Critical images loading test', async ({ page }) => {
-    // Skipped: Images need to be properly built and deployed first
-    await page.goto('/');
-    await page.waitForLoadState('networkidle');
-
-    console.log('Testing critical images...');
-
-    // Check each critical image
-    for (const imageSrc of CRITICAL_IMAGES) {
-      console.log(`Testing image: ${imageSrc}`);
-
-      // Make direct request to image
-      const response = await page.request.get(imageSrc);
-      console.log(`Image ${imageSrc}: Status ${response.status()}`);
-
-      if (response.status() >= 400) {
-        console.error(`❌ Missing image: ${imageSrc}`);
-      } else {
-        console.log(`✅ Image found: ${imageSrc}`);
-      }
-    }
-  });
 
   test('AssureDefi image size check', async ({ page }) => {
     await page.goto('/');

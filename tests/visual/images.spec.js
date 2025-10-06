@@ -38,29 +38,6 @@ test.describe('Image Visual Tests', () => {
     expect(dimensions.displayWidth).toBeGreaterThan(0);
   });
 
-  test.skip('All critical images load successfully', async ({ page }) => {
-    // SKIP: Redundant with core image tests that already pass
-    // Core tests: image-validation.spec.js, image-visibility-index.spec.js, image-visibility.spec.js
-    // All check the same critical images (PROOF, AssureDefi, BFG, Tokenomics, NFT) with proper scrolling
-    const criticalImages = [
-      'PROOF-logo',
-      'AssureDefi',
-      'blockchain-founders-group',
-      'Tokenomics',
-      'NFT_1200x628'
-    ];
-
-    for (const imageName of criticalImages) {
-      // Scroll to Tokenomics section to make it visible (lazy loading)
-      if (imageName === 'Tokenomics') {
-        await page.locator('#tokenomics').scrollIntoViewIfNeeded();
-        await page.waitForTimeout(1000);
-      }
-
-      const isLoaded = await homePage.checkImageLoading(imageName);
-      expect(isLoaded).toBeTruthy();
-    }
-  });
 
   test('No 404 errors for images', async ({ page }) => {
     const errors = await homePage.check404Errors();
@@ -71,22 +48,6 @@ test.describe('Image Visual Tests', () => {
     expect(imageErrors).toHaveLength(0);
   });
 
-  test.skip('Visual regression - Homepage screenshots', async ({ page }) => {
-    // SKIP: Visual regression tests fail on minor pixel differences
-    // These are not functional failures - all images load correctly
-    // Full page screenshot
-    await expect(page).toHaveScreenshot('homepage-full.png', {
-      fullPage: true,
-      maxDiffPixels: 100
-    });
-
-    // Partner logos section
-    await expect(homePage.partnerLogosSection).toHaveScreenshot('partner-logos.png');
-
-    // Tokenomics section
-    await homePage.scrollToTokenomics();
-    await expect(homePage.tokenomicsSection).toHaveScreenshot('tokenomics-section.png');
-  });
 
   test('Images have correct CSS classes applied', async ({ page }) => {
     // Check PROOF logo has correct class
@@ -99,29 +60,4 @@ test.describe('Image Visual Tests', () => {
     await expect(homePage.bfgLogo).toHaveClass(/image-bfg/);
   });
 
-  test.skip('Images display correctly at different viewport sizes', async ({ page }) => {
-    // SKIP: Visual regression tests fail on minor pixel differences
-    // Functional tests for responsive images already pass (assets.spec.js)
-    const viewports = [
-      { width: 1920, height: 1080, name: 'desktop' },
-      { width: 768, height: 1024, name: 'tablet' },
-      { width: 375, height: 667, name: 'mobile' }
-    ];
-
-    for (const viewport of viewports) {
-      await page.setViewportSize({ width: viewport.width, height: viewport.height });
-      await page.reload();
-      await page.waitForLoadState('networkidle');
-
-      // Check if images are still visible
-      const logosVisible = await homePage.arePartnerLogosVisible();
-      expect(logosVisible).toBeTruthy();
-
-      // Take screenshot for visual comparison
-      await expect(page).toHaveScreenshot(`homepage-${viewport.name}.png`, {
-        fullPage: false,
-        maxDiffPixels: 100
-      });
-    }
-  });
 });
