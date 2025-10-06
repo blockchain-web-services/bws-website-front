@@ -4,6 +4,7 @@ import path from 'path';
 
 test.describe('Find All Broken Images', () => {
   test('scan all pages for broken images', async ({ page }) => {
+    test.setTimeout(180000); // 3 minutes for scanning entire website
     const brokenImages = [];
     const workingImages = [];
     const allImagesSeen = new Set();

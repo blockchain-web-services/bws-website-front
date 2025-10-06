@@ -37,6 +37,7 @@ const PAGES = [
 
 test.describe('Comprehensive Image Validator', () => {
   test('should detect ALL broken images across the entire website with advanced validation', async ({ page }) => {
+    test.setTimeout(180000); // 3 minutes for scanning entire website
     const report = {
       timestamp: new Date().toISOString(),
       pagesChecked: 0,
