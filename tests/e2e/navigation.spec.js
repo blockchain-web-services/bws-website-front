@@ -6,34 +6,6 @@ import { MarketplacePage } from '../page-objects/MarketplacePage.js';
 import { logNavigationFailure } from '../helpers/error-reporting.js';
 
 test.describe('Navigation Tests', () => {
-  // NOTE: This test is skipped because About, Industries, Resources, and Contact
-  // are NOT direct navigation menu items in the current site design.
-  // The navigation has dropdown menus: Solutions, Developers, Resources (dropdown), Company
-  // To test navigation, we would need to navigate via direct URL or update the test
-  // to match the actual navigation structure.
-  test.skip('Main navigation menu works correctly', async ({ page }) => {
-    const homePage = new HomePage(page);
-    await homePage.goto();
-
-    // Wait for navigation to be ready
-    await page.waitForLoadState('networkidle');
-
-    // Test navigation to About page
-    await homePage.navigateViaMenu('About');
-    await expect(page).toHaveURL(/\/about/, { timeout: 10000 });
-
-    // Test navigation to Industries
-    await homePage.navigateViaMenu('Industries');
-    await expect(page).toHaveURL(/\/industries/);
-
-    // Test navigation to Resources
-    await homePage.navigateViaMenu('Resources');
-    await expect(page).toHaveURL(/\/resources/);
-
-    // Test navigation to Contact
-    await homePage.navigateViaMenu('Contact');
-    await expect(page).toHaveURL(/\/contact/);
-  });
 
   test('Industry dropdown navigation works', async ({ page }, testInfo) => {
     const industriesPage = new IndustriesPage(page);
@@ -324,24 +296,4 @@ test.describe('Navigation Tests', () => {
   });
 
   // NOTE: Skipped - uses navigateViaMenu with non-existent menu items
-  test.skip('Browser back/forward navigation works', async ({ page }) => {
-    const homePage = new HomePage(page);
-    await homePage.goto();
-
-    // Navigate to multiple pages
-    await homePage.navigateViaMenu('About');
-    await homePage.navigateViaMenu('Industries');
-    await homePage.navigateViaMenu('Resources');
-
-    // Test browser back button
-    await page.goBack();
-    await expect(page).toHaveURL(/\/industries/);
-
-    await page.goBack();
-    await expect(page).toHaveURL(/\/about/);
-
-    // Test browser forward button
-    await page.goForward();
-    await expect(page).toHaveURL(/\/industries/);
-  });
 });
