@@ -19,7 +19,9 @@
       "Read(//mnt/x/Git/blockchain-web-services/bws/bws-front/**)",
       "Bash(pkill:*)",
       "Bash(npm test)",
-      "Bash(awk:*)"
+      "Bash(awk:*)",
+      "Bash(git fetch:*)",
+      "Bash(git pull:*)"
     ],
     "deny": [],
     "ask": []
