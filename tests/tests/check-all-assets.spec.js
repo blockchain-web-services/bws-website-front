@@ -23,7 +23,7 @@ test.describe('Comprehensive Asset Check', () => {
     });
 
     // Navigate to homepage
-    await page.goto('http://localhost:5500', {
+    await page.goto('/', {
       waitUntil: 'networkidle',
       timeout: 30000
     });

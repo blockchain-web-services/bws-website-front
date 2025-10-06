@@ -23,7 +23,7 @@ test.describe('Console Error Check', () => {
     });
 
     // Navigate to the page
-    await page.goto('http://localhost:5500', {
+    await page.goto('/', {
       waitUntil: 'networkidle',
       timeout: 30000
     });
@@ -74,7 +74,7 @@ test.describe('Console Error Check', () => {
     });
 
     // Navigate to the page
-    await page.goto('http://localhost:5500', {
+    await page.goto('/', {
       waitUntil: 'networkidle',
       timeout: 30000
     });
