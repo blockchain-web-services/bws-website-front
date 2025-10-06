@@ -786,11 +786,12 @@ jobs:
           echo "Enabling auto-merge for PR #$PR_NUMBER"
 
           # Enable auto-merge using GitHub CLI
+          # NOTE: Removed [skip ci] to allow main-deploy.yml to run tests on master
           gh pr merge $PR_NUMBER \
             --auto \
             --squash \
             --delete-branch \
-            --subject "[skip ci] Auto-merge: Fix branch with all tests passing" \
+            --subject "Auto-merge: Fix branch with all tests passing" \
             --body "Automatically merged after all tests passed" \
             || echo "Auto-merge may already be enabled or PR cannot be merged yet"
 

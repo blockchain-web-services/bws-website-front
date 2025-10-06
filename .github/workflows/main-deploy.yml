@@ -50,6 +50,38 @@ jobs:
       - name: Build site
         run: npm run build
 
+      - name: Verify build includes fixes
+        run: |
+          echo "═══════════════════════════════════════════════════════════════════"
+          echo "BUILD VERIFICATION"
+          echo "═══════════════════════════════════════════════════════════════════"
+
+          echo "1. Checking _site directory structure..."
+          if [ -d "_site" ]; then
+            echo "✅ _site directory exists"
+            echo "   Contents:"
+            ls -lh _site/ | head -20
+
+            echo ""
+            echo "2. Checking critical files..."
+            [ -f "_site/styles.css" ] && echo "   ✅ styles.css exists ($(wc -l < _site/styles.css) lines)" || echo "   ❌ styles.css MISSING"
+            [ -f "_site/index.html" ] && echo "   ✅ index.html exists ($(wc -l < _site/index.html) lines)" || echo "   ❌ index.html MISSING"
+
+            echo ""
+            echo "3. Checking assets directory..."
+            if [ -d "_site/assets/images" ]; then
+              echo "   ✅ assets/images directory exists"
+              echo "   Image count: $(find _site/assets/images -type f | wc -l) files"
+            else
+              echo "   ❌ assets/images directory MISSING"
+            fi
+          else
+            echo "❌ ERROR: _site directory does not exist!"
+          fi
+
+          echo ""
+          echo "═══════════════════════════════════════════════════════════════════"
+
       - name: Install test dependencies
         working-directory: tests
         run: |
@@ -69,10 +101,58 @@ jobs:
         env:
           PORT: 4321
           PLAYWRIGHT_BASE_URL: http://localhost:4321
+          CI: true
+          DEBUG: pw:browser
         run: |
-          npx playwright test --config=playwright.config.cjs --project=${{ matrix.browser }} 2>&1 | tee test-output.txt
+          echo "Starting Playwright tests..."
+          echo "Environment:"
+          echo "  BASE_URL: $PLAYWRIGHT_BASE_URL"
+          echo "  CI: $CI"
+          echo "  Browser: ${{ matrix.browser }}"
+
+          # Run tests and capture output with ANSI color codes
+          # Note: Reporters are configured in playwright.config.cjs (json with outputFile, list, line)
+          # Run ALL tests (chromium + smoke + e2e) for complete pre-deployment validation
+          npx playwright test --config=playwright.config.cjs 2>&1 | tee test-output-raw.txt
           TEST_EXIT_CODE=${PIPESTATUS[0]}
+
+          # Strip ANSI escape codes and create clean output
+          if [ -f "test-output-raw.txt" ]; then
+            # Remove ANSI color codes and control sequences
+            sed -E 's/\x1B\[[0-9;]*[mGKH]//g' test-output-raw.txt | sed -E 's/\[([0-9]+)m//g' > test-output-full.txt
+
+            # Create a filtered version for the report without failureSummary noise
+            # CRITICAL: Include WCAG violation patterns to preserve console.log output from accessibility tests
+            grep -E "(✓|✗|✘|×|FAIL|fail|Error|error|expected|received|Test timeout|\s+at\s+|Running|\d+\)|test-results/|===.*Violations.*===|^\s*[0-9]+\.|Impact:|Description:|Affected nodes:|Fix:|\s+-\s+Node)" test-output-full.txt | grep -v "failureSummary" > test-output.txt 2>/dev/null || cp test-output-full.txt test-output.txt
+          fi
+
+          echo "Test exit code: ${TEST_EXIT_CODE}"
+
+          if [ ${TEST_EXIT_CODE} -eq 0 ]; then
+            echo "✅ All tests passed!"
+            echo "tests_passed=true" >> $GITHUB_OUTPUT
+            echo "Output set: tests_passed=true"
+          else
+            echo "❌ Tests failed with exit code ${TEST_EXIT_CODE}"
+            echo "tests_passed=false" >> $GITHUB_OUTPUT
+            echo "Output set: tests_passed=false"
+          fi
+
+          # Show test summary if available
+          echo "Looking for test results file..."
+          ls -la test-results* 2>/dev/null || echo "No test-results files found"
+
+          if [ -f "test-results.json" ]; then
+            echo "Test results summary:"
+            jq -r '.stats | "Total: \(.expected), Passed: \(.passed), Failed: \(.failed), Skipped: \(.skipped // 0)"' test-results.json 2>/dev/null || echo "Could not parse test results"
+          else
+            echo "test-results.json not found in $(pwd)"
+          fi
+
+          # Store the actual exit code for the workflow
           echo "test_exit_code=${TEST_EXIT_CODE}" >> $GITHUB_OUTPUT
+
+          # Exit with actual code to fail the job if tests failed
           exit ${TEST_EXIT_CODE}
 
       - name: Collect test failures
