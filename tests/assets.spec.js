@@ -33,10 +33,11 @@ test.describe('Asset Verification Tests', () => {
       const boundingBox = await assureImg.boundingBox();
       console.log(`AssureDefi image size: ${boundingBox?.width}x${boundingBox?.height}`);
 
-      if (boundingBox && boundingBox.width > 125) {
-        console.error(`❌ AssureDefi image too wide: ${boundingBox.width}px (should be ≤120px)`);
+      // AssureDefi uses height: 120px, width auto-adjusts based on aspect ratio
+      if (boundingBox && boundingBox.height > 125) {
+        console.error(`❌ AssureDefi image too tall: ${boundingBox.height}px (should be ≤120px)`);
       } else {
-        console.log(`✅ AssureDefi image size OK: ${boundingBox?.width}px`);
+        console.log(`✅ AssureDefi image size OK: ${boundingBox?.height}px height`);
       }
     }
   });

@@ -50,13 +50,13 @@ test.describe('Image Visibility on Index Page', () => {
     // Note: In headless Chrome, CSS may not always apply instantly
     console.log('PROOF Logo:', dimensions, styles);
 
-    // Check max-width constraint
-    if (!styles.maxWidth || styles.maxWidth === 'none' || !styles.maxWidth.includes('120px')) {
+    // Check width constraint (PROOF logo uses fixed width)
+    if (!styles.maxWidth || styles.maxWidth === 'none' || !styles.maxWidth.includes('150px')) {
       logCSSNotApplied(testInfo, 'PROOF Logo', {
         selector: 'img[src*="PROOF-logo"]',
         expectedClass: 'image-proof',
         hasClass: true, // We don't check class here, just styles
-        expectedMaxWidth: '120px',
+        expectedMaxWidth: '150px',
         actualMaxWidth: styles.maxWidth,
         inlineMaxWidth: '', // Not checking inline styles in this test
         clientWidth: dimensions.displayWidth,
@@ -67,7 +67,7 @@ test.describe('Image Visibility on Index Page', () => {
       console.error('\n⚠️ This is likely a CSS timing issue in headless Chrome.');
       console.error('If tests pass locally but fail in CI, increase waitForTimeout in beforeEach.');
     }
-    expect(styles.maxWidth).toContain('120px');
+    expect(styles.maxWidth).toContain('150px');
   });
 
   test('AssureDefi Logo visibility and CSS', async ({ page }, testInfo) => {
@@ -115,29 +115,12 @@ test.describe('Image Visibility on Index Page', () => {
     expect(parseFloat(styles.opacity)).toBeGreaterThan(0);
     expect(styles.display).not.toBe('none');
 
-    // Check if size constraints are applied
-    if (!styles.maxWidth || !styles.maxWidth.includes('80px')) {
-      logSizeConstraintViolation(testInfo, 'AssureDefi Logo', {
-        selector: 'img[src*="AssureDefi"]',
-        constraint: 'maxWidth',
-        expected: '80px',
-        actual: styles.maxWidth,
-        clientWidth: dimensions.displayWidth,
-        clientHeight: dimensions.displayHeight,
-        naturalWidth: dimensions.naturalWidth,
-        naturalHeight: dimensions.naturalHeight,
-        computedMaxWidth: styles.maxWidth,
-        computedHeight: styles.height,
-        objectFit: styles.objectFit
-      });
-    }
-    expect(styles.maxWidth).toContain('80px');
-
-    if (!styles.height || !styles.height.includes('40px')) {
+    // Check if height constraint is applied (AssureDefi uses fixed height, width auto-adjusts)
+    if (!styles.height || !styles.height.includes('120px')) {
       logSizeConstraintViolation(testInfo, 'AssureDefi Logo', {
         selector: 'img[src*="AssureDefi"]',
         constraint: 'height',
-        expected: '40px',
+        expected: '120px',
         actual: styles.height,
         clientWidth: dimensions.displayWidth,
         clientHeight: dimensions.displayHeight,
@@ -148,7 +131,7 @@ test.describe('Image Visibility on Index Page', () => {
         objectFit: styles.objectFit
       });
     }
-    expect(styles.height).toContain('40px');
+    expect(styles.height).toContain('120px');
     expect(styles.objectFit).toBe('contain');
 
     console.log('AssureDefi Logo:', dimensions, styles);
