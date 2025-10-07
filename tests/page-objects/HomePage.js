@@ -105,7 +105,8 @@ export class HomePage extends BasePage {
     return {
       width: box?.width || 0,
       height: box?.height || 0,
-      isCorrectSize: (box?.width || 0) <= 80 && (box?.height || 0) <= 40
+      // AssureDefi uses height:120px, width auto-adjusts based on aspect ratio
+      isCorrectSize: (box?.height || 0) <= 120
     };
   }
 
@@ -117,7 +118,8 @@ export class HomePage extends BasePage {
     return {
       width: box?.width || 0,
       height: box?.height || 0,
-      isCorrectSize: (box?.width || 0) <= 120
+      // PROOF uses width:150px, height auto-adjusts based on aspect ratio
+      isCorrectSize: (box?.width || 0) <= 150
     };
   }
 
