@@ -41,26 +41,18 @@ const {
     <!-- is:global prevents Astro from adding scoping attributes -->
     <style is:global>
       /* CRITICAL: Image sizing constraints for test compliance */
-      /* Override ALL other rules including min-height/max-height from BFG rules */
+      /* Updated logo sizes for better visibility */
       .image-assure {
-        max-width: 80px !important;
-        min-width: 80px !important;
-        width: 80px !important;
-        height: 40px !important;
-        min-height: 40px !important;
-        max-height: 40px !important;
+        height: 120px !important;
+        width: auto !important;
         object-fit: contain !important;
         visibility: visible !important;
         opacity: 1 !important;
       }
 
       .image-proof {
-        max-width: 120px !important;
-        min-width: 120px !important;
-        width: 120px !important;
-        height: 30px !important;
-        min-height: 30px !important;
-        max-height: 30px !important;
+        width: 150px !important;
+        height: auto !important;
         object-fit: contain !important;
         visibility: visible !important;
         opacity: 1 !important;
