@@ -23,15 +23,14 @@ const criticalImages = [
     url: '/assets/images/6474d385cfec71cb21a92251/670f82f9b05322735f72cbcc_PROOF-logo-lightBG.png',
     selector: 'img[src*="PROOF-logo"]',
     expectedClass: 'image-proof',
-    maxWidth: '120px'
+    maxWidth: '150px'
   },
   {
     name: 'AssureDefi Logo',
     url: '/assets/images/6474d385cfec71cb21a92251/6707f1c5c0856eff6c22300e_AssureDefi.png',
     selector: 'img[src*="AssureDefi"]',
-    expectedClass: 'image-assure',
-    maxWidth: '80px',
-    height: '40px'
+    expectedClass: 'image-assure'
+    // Width auto-adjusts based on height: 120px from CSS
   },
   {
     name: 'BFG Logo',
@@ -85,12 +84,12 @@ test.describe('Image Files and CSS Validation', () => {
 
     const cssRules = {
       '.image-assure': {
-        pattern: /\.image-assure\s*{[^}]*max-width:\s*80px\s*!important/,
-        description: 'AssureDefi logo CSS with max-width: 80px !important'
+        pattern: /\.image-assure\s*{[^}]*height:\s*120px\s*!important/,
+        description: 'AssureDefi logo CSS with height: 120px !important'
       },
       '.image-proof': {
-        pattern: /\.image-proof\s*{[^}]*max-width:\s*120px\s*!important/,
-        description: 'PROOF logo CSS with max-width: 120px !important'
+        pattern: /\.image-proof\s*{[^}]*width:\s*150px\s*!important/,
+        description: 'PROOF logo CSS with width: 150px !important'
       },
       '.image-bfg': {
         pattern: /\.image-bfg\s*{[^}]*max-width:\s*150px\s*!important/,
@@ -121,9 +120,11 @@ test.describe('Image Files and CSS Validation', () => {
         }
 
         console.error(`\nTo fix: Add this rule to public/styles.css:`);
-        const maxWidth = rule.description.match(/(\d+px)/)?.[0] || '???px';
+        const sizeValue = rule.description.match(/(\d+px)/)?.[0] || '???px';
+        const property = rule.description.includes('width:') ? 'width' :
+                        rule.description.includes('height:') ? 'height' : 'max-width';
         console.error(`${selector} {`);
-        console.error(`  max-width: ${maxWidth} !important;`);
+        console.error(`  ${property}: ${sizeValue} !important;`);
         console.error(`}`);
       } else {
         console.log(`✅ ${rule.description}`);
