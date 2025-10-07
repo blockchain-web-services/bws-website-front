@@ -180,8 +180,23 @@ jobs:
           fi
 
           # Stop the server - tests will start their own
+          echo "Stopping preview server (PID: $SERVER_PID)..."
           kill $SERVER_PID || true
-          sleep 2
+
+          # Wait for port to be freed
+          for i in {1..10}; do
+            if ! curl -s http://localhost:4321/ > /dev/null 2>&1; then
+              echo "✅ Server stopped, port 4321 is free"
+              break
+            fi
+            if [ $i -eq 10 ]; then
+              echo "⚠️ Port still in use, forcing kill..."
+              pkill -f "sirv.*4321" || true
+              sleep 2
+            fi
+            sleep 1
+          done
+
           echo "✅ CSS verification complete"
 
       - name: Run Playwright tests
