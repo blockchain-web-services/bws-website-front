@@ -34284,14 +34284,10 @@ html body .announcement-flex-logos img.image-assure {
   object-fit: contain !important;
 }
 
-/* PROOF Logo - EXACT sizing for test compliance */
+/* PROOF Logo - Increased size with auto-adjusting height */
 html body .announcement-flex-logos img.image-proof {
-  max-width: 120px !important;
-  min-width: 120px !important;
-  width: 120px !important;
-  height: 30px !important;
-  min-height: 30px !important;
-  max-height: 30px !important;
+  width: 150px !important;
+  height: auto !important;
   object-fit: contain !important;
 }
 

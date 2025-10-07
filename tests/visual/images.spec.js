@@ -13,7 +13,8 @@ test.describe('Image Visual Tests', () => {
     // Check PROOF logo
     const proofDimensions = await homePage.checkProofLogoDimensions();
     expect(proofDimensions.isCorrectSize).toBeTruthy();
-    expect(proofDimensions.width).toBeLessThanOrEqual(120);
+    // Height auto-adjusts based on 150px width and aspect ratio
+    expect(proofDimensions.width).toBeLessThanOrEqual(150);
 
     // Check AssureDefi logo
     const assureDimensions = await homePage.checkAssureDefiLogoDimensions();
