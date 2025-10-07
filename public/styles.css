@@ -33529,29 +33529,7 @@ body {
    =========================================== */
 
 /* Fix for partner logo images */
-/* CRITICAL: High specificity to override .announcement-flex-logos img rules below */
-html body .announcement-flex-logos img.image-assure,
-html body img.image-assure,
-.image-assure {
-  max-width: 80px !important;
-  /* width: auto !important; -- REMOVED: Conflicts with precise width:80px at line 34273 */
-  height: 40px !important;
-  object-fit: contain !important;
-  display: inline-block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-}
-
-html body .announcement-flex-logos img.image-proof,
-html body img.image-proof,
-.image-proof {
-  max-width: 120px !important;
-  height: 30px !important;
-  object-fit: contain !important;
-  display: inline-block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-}
+/* NOTE: Removed duplicate low-specificity rules - see lines ~34304 for actual sizing */
 
 .image-bfg {
   max-width: 150px !important;
@@ -34299,15 +34277,10 @@ a.button-secondary.w-button:hover,
   color: #ffffff !important;
 }
 
-/* AssureDefi Logo - EXACT sizing for test compliance */
-/* CRITICAL: Include min-height and max-height to override BFG rule min-height: 50px */
+/* AssureDefi Logo - Increased size with auto-adjusting width */
 html body .announcement-flex-logos img.image-assure {
-  max-width: 80px !important;
-  min-width: 80px !important;
-  width: 80px !important;
-  height: 40px !important;
-  min-height: 40px !important;
-  max-height: 40px !important;
+  height: 120px !important;
+  width: auto !important;
   object-fit: contain !important;
 }
 

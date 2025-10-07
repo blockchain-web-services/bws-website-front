@@ -18,8 +18,8 @@ test.describe('Image Visual Tests', () => {
     // Check AssureDefi logo
     const assureDimensions = await homePage.checkAssureDefiLogoDimensions();
     expect(assureDimensions.isCorrectSize).toBeTruthy();
-    expect(assureDimensions.width).toBeLessThanOrEqual(80);
-    expect(assureDimensions.height).toBeLessThanOrEqual(40);
+    // Width auto-adjusts based on 120px height and aspect ratio
+    expect(assureDimensions.height).toBeLessThanOrEqual(120);
 
     // Check BFG logo
     const bfgDimensions = await homePage.checkBFGLogoDimensions();
