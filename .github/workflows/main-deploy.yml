@@ -47,6 +47,14 @@ jobs:
             npm install
           fi
 
+      - name: Clean any cached build artifacts
+        run: |
+          echo "Removing any cached _site directory..."
+          rm -rf _site
+          echo "Removing any cached .astro directory..."
+          rm -rf .astro
+          echo "✅ Cache cleared"
+
       - name: Build site
         run: npm run build
 
@@ -68,7 +76,39 @@ jobs:
             [ -f "_site/index.html" ] && echo "   ✅ index.html exists ($(wc -l < _site/index.html) lines)" || echo "   ❌ index.html MISSING"
 
             echo ""
-            echo "3. Checking assets directory..."
+            echo "3. Verifying CSS logo sizing is correct..."
+            if [ -f "_site/styles.css" ]; then
+              echo "   Checking AssureDefi CSS (should be height: 120px)..."
+              if grep -q "html body .announcement-flex-logos img.image-assure" _site/styles.css; then
+                grep -A 3 "html body .announcement-flex-logos img.image-assure" _site/styles.css | head -4
+                if grep -A 3 "html body .announcement-flex-logos img.image-assure" _site/styles.css | grep -q "height: 120px"; then
+                  echo "   ✅ AssureDefi CSS correct (height: 120px)"
+                else
+                  echo "   ❌ AssureDefi CSS WRONG - not 120px height!"
+                  exit 1
+                fi
+              else
+                echo "   ❌ AssureDefi CSS selector not found!"
+                exit 1
+              fi
+
+              echo "   Checking PROOF CSS (should be width: 150px)..."
+              if grep -q "html body .announcement-flex-logos img.image-proof" _site/styles.css; then
+                grep -A 3 "html body .announcement-flex-logos img.image-proof" _site/styles.css | head -4
+                if grep -A 3 "html body .announcement-flex-logos img.image-proof" _site/styles.css | grep -q "width: 150px"; then
+                  echo "   ✅ PROOF CSS correct (width: 150px)"
+                else
+                  echo "   ❌ PROOF CSS WRONG - not 150px width!"
+                  exit 1
+                fi
+              else
+                echo "   ❌ PROOF CSS selector not found!"
+                exit 1
+              fi
+            fi
+
+            echo ""
+            echo "4. Checking assets directory..."
             if [ -d "_site/assets/images" ]; then
               echo "   ✅ assets/images directory exists"
               echo "   Image count: $(find _site/assets/images -type f | wc -l) files"
@@ -94,6 +134,55 @@ jobs:
       - name: Install Playwright browsers
         working-directory: tests
         run: npx playwright install --with-deps ${{ matrix.browser }}
+
+      - name: Start preview server and verify CSS
+        working-directory: tests
+        run: |
+          echo "Starting preview server..."
+          npm run preview:sirv &
+          SERVER_PID=$!
+          echo "Server PID: $SERVER_PID"
+
+          # Wait for server to start
+          echo "Waiting for server to be ready..."
+          for i in {1..30}; do
+            if curl -s http://localhost:4321/ > /dev/null 2>&1; then
+              echo "✅ Server is ready"
+              break
+            fi
+            if [ $i -eq 30 ]; then
+              echo "❌ Server failed to start"
+              kill $SERVER_PID || true
+              exit 1
+            fi
+            sleep 1
+          done
+
+          # Verify CSS is being served with correct content
+          echo ""
+          echo "Verifying CSS is served correctly..."
+          if curl -s http://localhost:4321/styles.css | grep -q "height: 120px"; then
+            echo "✅ AssureDefi CSS (height: 120px) found in served styles.css"
+          else
+            echo "❌ AssureDefi CSS NOT FOUND in served styles.css!"
+            echo "First few occurrences of 'image-assure':"
+            curl -s http://localhost:4321/styles.css | grep -A 3 "image-assure" | head -20
+            kill $SERVER_PID || true
+            exit 1
+          fi
+
+          if curl -s http://localhost:4321/styles.css | grep -q "width: 150px"; then
+            echo "✅ PROOF CSS (width: 150px) found in served styles.css"
+          else
+            echo "❌ PROOF CSS NOT FOUND in served styles.css!"
+            kill $SERVER_PID || true
+            exit 1
+          fi
+
+          # Stop the server - tests will start their own
+          kill $SERVER_PID || true
+          sleep 2
+          echo "✅ CSS verification complete"
 
       - name: Run Playwright tests
         id: test-run
