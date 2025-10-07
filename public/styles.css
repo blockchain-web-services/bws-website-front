@@ -33782,8 +33782,10 @@ html body img[src*="BFG"],
 html body img[src*="bfg"],
 html body img[alt*="Blockchain Founders Group"],
 html body img[alt*="BFG"],
+/* NOTE: Removed "html body .announcement-flex-logos img" from this selector
+   because it was overriding specific .image-assure and .image-proof sizing rules.
+   BFG logo still gets these styles via more specific selectors below. */
 html body img.top-menu-company-news-image,
-html body .announcement-flex-logos img,
 html body .image-bfg[loading="lazy"],
 html body div.announcement-flex-logos img.image-bfg,
 html body a img.image-bfg,
