@@ -21,7 +21,9 @@
       "Bash(npm test)",
       "Bash(awk:*)",
       "Bash(git fetch:*)",
-      "Bash(git pull:*)"
+      "Bash(git pull:*)",
+      "Bash(gh run view:*)",
+      "WebFetch(domain:venngage.com)"
     ],
     "deny": [],
     "ask": []

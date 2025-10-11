@@ -87,6 +87,23 @@ test.describe('Critical Path Smoke Tests', () => {
     await expect(contactContent).toBeVisible();
   });
 
+  test('White Paper page has required content', async ({ page }) => {
+    await page.goto('/white-paper.html');
+
+    // Check critical elements
+    await expect(page.locator('.title').first()).toBeVisible();
+    await expect(page.locator('.nav-menu')).toBeVisible();
+
+    // Check for specific content
+    const heading = await page.locator('h1').first().textContent();
+    expect(heading).toContain('Blockchain Web Services');
+
+    // Verify white paper sections exist
+    await expect(page.locator('text=Abstract')).toBeVisible();
+    await expect(page.locator('text=Introduction')).toBeVisible();
+    await expect(page.locator('text=Tokenomics')).toBeVisible();
+  });
+
   test('Images load without 404 errors', async ({ page }) => {
     const brokenImages = [];
 

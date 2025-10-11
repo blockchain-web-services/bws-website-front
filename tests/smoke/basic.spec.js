@@ -27,6 +27,12 @@ test.describe('Basic Smoke Tests', () => {
     await expect(page.locator('body')).toBeVisible();
   });
 
+  test('White Paper page loads successfully', async ({ page }) => {
+    const response = await page.goto('/white-paper.html');
+    expect(response?.status()).toBeLessThan(400);
+    await expect(page.locator('h1')).toBeVisible();
+  });
+
   test('CSS loads successfully', async ({ page }) => {
     const response = await page.goto('/styles.css');
     expect(response?.status()).toBe(200);
