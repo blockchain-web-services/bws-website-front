@@ -194,9 +194,9 @@
     },
     {
       "file": "_site/white-paper.html",
-      "originalSize": 78394,
-      "newSize": 122392,
-      "sizeDiff": 43998,
+      "originalSize": 78903,
+      "newSize": 123007,
+      "sizeDiff": 44104,
       "prettyPrinted": true,
       "errors": []
     }
@@ -212,10 +212,10 @@
       "errors": []
     },
     {
-      "file": "_site/assets/white-paper.TquNpxz7.css",
-      "originalSize": 10499,
-      "newSize": 12187,
-      "sizeDiff": 1688,
+      "file": "_site/assets/white-paper.BiEdYHFS.css",
+      "originalSize": 10533,
+      "newSize": 12225,
+      "sizeDiff": 1692,
       "prettyPrinted": true,
       "skippedMinified": false,
       "errors": []
