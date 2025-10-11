@@ -114,24 +114,24 @@
     },
     {
       "file": "_site/marketplace/blockchain-badges.html",
-      "originalSize": 48167,
-      "newSize": 82708,
+      "originalSize": 48180,
+      "newSize": 82721,
       "sizeDiff": 34541,
       "prettyPrinted": true,
       "errors": []
     },
     {
       "file": "_site/marketplace/database-immutable.html",
-      "originalSize": 47229,
-      "newSize": 81092,
+      "originalSize": 47242,
+      "newSize": 81105,
       "sizeDiff": 33863,
       "prettyPrinted": true,
       "errors": []
     },
     {
       "file": "_site/marketplace/database-mutable.html",
-      "originalSize": 46302,
-      "newSize": 80471,
+      "originalSize": 46315,
+      "newSize": 80484,
       "sizeDiff": 34169,
       "prettyPrinted": true,
       "errors": []
@@ -146,8 +146,8 @@
     },
     {
       "file": "_site/marketplace/ipfs-upload.html",
-      "originalSize": 45853,
-      "newSize": 79750,
+      "originalSize": 45866,
+      "newSize": 79763,
       "sizeDiff": 33897,
       "prettyPrinted": true,
       "errors": []
@@ -170,8 +170,8 @@
     },
     {
       "file": "_site/marketplace/telegram-xbot.html",
-      "originalSize": 45909,
-      "newSize": 79700,
+      "originalSize": 45922,
+      "newSize": 79713,
       "sizeDiff": 33791,
       "prettyPrinted": true,
       "errors": []
