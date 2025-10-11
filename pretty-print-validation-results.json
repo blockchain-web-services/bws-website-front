@@ -138,9 +138,9 @@
     },
     {
       "file": "_site/marketplace/esg-credits.html",
-      "originalSize": 47531,
-      "newSize": 82132,
-      "sizeDiff": 34601,
+      "originalSize": 47529,
+      "newSize": 82106,
+      "sizeDiff": 34577,
       "prettyPrinted": true,
       "errors": []
     },
@@ -154,17 +154,17 @@
     },
     {
       "file": "_site/marketplace/nft-gamecube.html",
-      "originalSize": 46394,
-      "newSize": 80371,
-      "sizeDiff": 33977,
+      "originalSize": 46392,
+      "newSize": 80345,
+      "sizeDiff": 33953,
       "prettyPrinted": true,
       "errors": []
     },
     {
       "file": "_site/marketplace/nft-zeroknwoledge.html",
-      "originalSize": 46788,
-      "newSize": 80947,
-      "sizeDiff": 34159,
+      "originalSize": 46984,
+      "newSize": 81267,
+      "sizeDiff": 34283,
       "prettyPrinted": true,
       "errors": []
     },
