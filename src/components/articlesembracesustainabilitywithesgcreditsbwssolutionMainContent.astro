@@ -1,5 +1,21 @@
 ---
 // Main content for articles/embrace-sustainability-with-esg-credits-bws-solution page
+
+// Calculate stable date: 4 months ago, day 12
+const now = new Date();
+const currentYear = now.getFullYear();
+const currentMonth = now.getMonth();
+const articleDate = new Date(currentYear, currentMonth - 4, 12);
+
+// Validate: ensure date is not in the future
+const displayDate = articleDate > now ? now : articleDate;
+
+// Format as "MMM DD, YYYY"
+const formattedDate = displayDate.toLocaleDateString('en-US', {
+  year: 'numeric',
+  month: 'short',
+  day: 'numeric'
+});
 ---
 
 <div class="page-top-section">
@@ -12,7 +28,7 @@
             alt="Calendar - Techplus X Webflow Template"
             class="image detail-solution-icon"
           />
-          <div>Sep 16, 2023</div>
+          <div>{formattedDate}</div>
         </div>
       </div>
       <h1 data-w-id="b3312688-6e5e-b18d-2c9c-2086cd55d40e" class="title blog-post-title">
