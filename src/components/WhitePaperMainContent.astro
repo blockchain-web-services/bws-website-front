@@ -102,46 +102,38 @@
     <section id="architecture" class="white-paper-section">
       <h2 class="title h3-size">III. BWS Architecture</h2>
       <div class="paragraph">
-        <p>BWS implements a robust, multi-layer architecture that ensures the platform is secure, scalable, and reliable:</p>
-
-        <h3 class="title h4-size">Multi-layer architecture</h3>
-        <p>BWS is built on three core layers—solutions marketplace, platform API, and platform Smart Contracts. This architecture facilitates seamless interactions between users and the underlying blockchain.</p>
+        <p>Blockchain Web Services (BWS) is built on a three-layer architecture—the Solutions Marketplace, the Platform API, and the Platform Smart Contracts. Together, these layers create a unified environment that allows seamless interaction between end users, developers, and the underlying blockchain infrastructure.</p>
 
         <div class="white-paper-figure">
           <img
             src="/assets/images/white-paper/figure1.png"
-            alt="Figure 1. Blockchain Web Services platform is modular, enabling new solutions to be added easily"
+            alt="Figure 1. The Blockchain Web Services platform architecture is modular, enabling new solutions to be added easily"
             loading="lazy"
           />
-          <p class="figure-caption"><em>Figure 1. Blockchain Web Services platform is modular, enabling new solutions to be added easily.</em></p>
+          <p class="figure-caption"><em>Figure 1. The Blockchain Web Services platform architecture is modular, enabling new solutions to be added easily.</em></p>
         </div>
 
-        <p>Blockchain Web Services is built to enable external developers to add new features/solutions while maintaining a singular API signature.</p>
+        <p>At the top layer, the Solutions Marketplace serves as the user-facing component of the ecosystem. It provides an intuitive interface where end customers can interact with blockchain-powered applications, and where developers and businesses can publish, distribute, and monetize their solutions. All marketplace solutions integrate through a standardized Solutions API, ensuring a consistent and reliable user experience.</p>
+
+        <p>Beneath the marketplace lies the Platform API, which forms the operational backbone of BWS. This layer provides access to essential blockchain functionalities such as data storage (Blockchain Save), data verification (Blockchain Hash), decentralized storage (IPFS), and NFT services (NFT zK, NFT Marketplace). Additional modules include identity and credit management, enabling secure user operations and compliance-ready application design.</p>
+
+        <p>At the foundation of the stack, the Platform Smart Contracts layer provides the decentralized logic and execution environment that powers all interactions. These smart contracts connect with multiple public blockchains—including Ethereum, Polkadot, Polygon, Avalanche, and Cardano—ensuring true blockchain agnosticism and giving developers the freedom to choose the optimal network based on cost, speed, or technical requirements.</p>
 
         <div class="white-paper-figure">
           <img
             src="/assets/images/white-paper/figure2.png"
-            alt="Figure 2. All platform solutions in the marketplace use the same API signature"
+            alt="Figure 2. All marketplace solutions share a unified API signature, allowing external developers to integrate new features and applications seamlessly"
             loading="lazy"
           />
-          <p class="figure-caption"><em>Figure 2. All platform solutions in the marketplace use the same API signature.</em></p>
+          <p class="figure-caption"><em>Figure 2. All marketplace solutions share a unified API signature, allowing external developers to integrate new features and applications seamlessly.</em></p>
         </div>
 
-        <h3 class="title h4-size">Security and auditing</h3>
-        <p>The platform is designed with advanced security mechanisms, including smart contract audits, continuous transaction monitoring, and fail-safe measures to ensure data integrity and protect users.</p>
+        <p>This modular and blockchain-agnostic design allows BWS to scale horizontally by integrating new functionalities and vertically by supporting additional blockchain networks—all without disrupting existing solutions.</p>
 
-        <h3 class="title h4-size">Blockchain Agnostic APIs</h3>
-        <p>The BWS platform is blockchain-agnostic, meaning API calls can be directed to different blockchain networks based on the solution requirements.</p>
-        <p>This allows developers to select the most suitable blockchain for their projects, ensuring flexibility and scalability for various use cases. For instance, developers can choose between Ethereum, Polygon, or Binance Smart Chain, depending on transaction costs, speed, or other specific needs.</p>
+        <h3 class="title h4-size">Security and Auditing</h3>
+        <p>Security is central to the BWS infrastructure. The platform integrates smart contract auditing, continuous transaction monitoring, and fail-safe mechanisms to guarantee data integrity and protect users against vulnerabilities. Every deployed solution undergoes a verification process to maintain the platform's trust and reliability standards.</p>
 
-        <div class="white-paper-figure">
-          <img
-            src="/assets/images/white-paper/figure3.png"
-            alt="Figure 3. Deciding the blockchain to use is as simple as setting an API call parameter"
-            loading="lazy"
-          />
-          <p class="figure-caption"><em>Figure 3. Deciding the blockchain to use is as simple as setting an API call parameter.</em></p>
-        </div>
+        <p>Through this architecture, BWS establishes a developer-friendly, secure, and scalable foundation for building next-generation blockchain applications—empowering creators to focus on innovation while the platform manages complexity behind the scenes.</p>
       </div>
     </section>
 
