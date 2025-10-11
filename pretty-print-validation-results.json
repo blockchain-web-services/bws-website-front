@@ -178,9 +178,9 @@
     },
     {
       "file": "_site/privacy-policy.html",
-      "originalSize": 46564,
-      "newSize": 78804,
-      "sizeDiff": 32240,
+      "originalSize": 48367,
+      "newSize": 81908,
+      "sizeDiff": 33541,
       "prettyPrinted": true,
       "errors": []
     },
@@ -194,9 +194,9 @@
     },
     {
       "file": "_site/white-paper.html",
-      "originalSize": 75988,
-      "newSize": 119507,
-      "sizeDiff": 43519,
+      "originalSize": 77198,
+      "newSize": 121048,
+      "sizeDiff": 43850,
       "prettyPrinted": true,
       "errors": []
     }
@@ -212,10 +212,10 @@
       "errors": []
     },
     {
-      "file": "_site/assets/white-paper.nTeO5ove.css",
-      "originalSize": 10020,
-      "newSize": 11629,
-      "sizeDiff": 1609,
+      "file": "_site/assets/white-paper.37UEBRSY.css",
+      "originalSize": 10402,
+      "newSize": 12078,
+      "sizeDiff": 1676,
       "prettyPrinted": true,
       "skippedMinified": false,
       "errors": []
