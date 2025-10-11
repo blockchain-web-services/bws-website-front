@@ -130,9 +130,9 @@
     },
     {
       "file": "_site/marketplace/database-mutable.html",
-      "originalSize": 46301,
-      "newSize": 80753,
-      "sizeDiff": 34452,
+      "originalSize": 46302,
+      "newSize": 80471,
+      "sizeDiff": 34169,
       "prettyPrinted": true,
       "errors": []
     },
@@ -146,9 +146,9 @@
     },
     {
       "file": "_site/marketplace/ipfs-upload.html",
-      "originalSize": 45852,
-      "newSize": 80038,
-      "sizeDiff": 34186,
+      "originalSize": 45853,
+      "newSize": 79750,
+      "sizeDiff": 33897,
       "prettyPrinted": true,
       "errors": []
     },
