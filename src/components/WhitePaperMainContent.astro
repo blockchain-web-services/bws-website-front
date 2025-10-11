@@ -1,0 +1,1054 @@
+---
+// Main content for white-paper page
+---
+
+<main class="section white-paper-main" role="main">
+  <div class="landing-page-content w-container">
+    <!-- Table of Contents & Content Wrapper -->
+    <div class="white-paper-layout">
+      <!-- Sticky Table of Contents -->
+      <aside class="white-paper-toc">
+        <nav class="toc-nav">
+          <h3 class="toc-title">Table of Contents</h3>
+          <ul class="toc-list">
+            <li><a href="#abstract" class="toc-link">Abstract</a></li>
+            <li><a href="#introduction" class="toc-link">I. Introduction</a></li>
+            <li><a href="#mission" class="toc-link">II. Mission Statement</a></li>
+            <li><a href="#architecture" class="toc-link">III. BWS Architecture</a></li>
+            <li><a href="#strategy" class="toc-link">IV. Strategy</a></li>
+            <li>
+              <a href="#token-model" class="toc-link">V. $BWS token Model</a>
+              <ul class="toc-sublist">
+                <li><a href="#tokenomics" class="toc-link toc-sub">Tokenomics</a></li>
+                <li><a href="#dynamic-tax" class="toc-link toc-sub">Dynamic Tax System</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#nft-game-cube" class="toc-link">VI. Solutions Marketplace</a>
+              <ul class="toc-sublist">
+                <li><a href="#nft-overview" class="toc-link toc-sub">Fan Game Cube</a></li>
+                <li><a href="#xbot-overview" class="toc-link toc-sub">X Bot</a></li>
+              </ul>
+            </li>
+            <li><a href="#developer-grants" class="toc-link">VII. Developer Grants</a></li>
+            <li><a href="#conclusion" class="toc-link">VIII. Conclusion</a></li>
+          </ul>
+        </nav>
+      </aside>
+
+      <!-- Main Content Area -->
+      <div class="white-paper-content">
+        <!-- Scroll Progress Indicator -->
+        <div class="scroll-progress"></div>
+
+        <!-- Title Section -->
+        <div class="white-paper-header">
+          <h1 class="title hero-title">Blockchain Web Services</h1>
+          <h2 class="subtitle white-paper-title">White Paper</h2>
+        </div>
+
+        <!-- Abstract -->
+        <section id="abstract" class="white-paper-section">
+      <h2 class="title h3-size">Abstract</h2>
+      <div class="paragraph">
+        <p>The blockchain market faces a fundamental paradox: revolutionary technology that 95% of users cannot access. Blockchain Web Services (BWS) solves this by creating a marketplace platform that delivers blockchain solutions to businesses (B2B2C) and consumers (B2C) without requiring technical expertise.</p>
+
+        <p>Blockchain's total addressable market exceeds billions in value, yet adoption remains limited to technical users. BWS unlocks this market by eliminating complexity: no wallets, no gas fees, no private keys. Just powerful blockchain solutions accessible to everyone.</p>
+
+        <p>BWS operates as a <strong>three-sided marketplace</strong> connecting Solution Developers who build blockchain applications using BWS APIs, Businesses who license these solutions to serve their customers (B2B2C), and End Consumers who access blockchain benefits seamlessly (B2C). This marketplace model creates a self-sustaining ecosystem where each participant adds value while driving demand for the platform's native token.</p>
+
+        <p>This white paper presents the BWS platform architecture, tokenomics, flagship solutions, competitive advantages, and the path to becoming the standard platform for accessible blockchain solutions.</p>
+      </div>
+    </section>
+
+    <!-- 1. Introduction -->
+    <section id="introduction" class="white-paper-section">
+      <h2 class="title h3-size">I. Introduction</h2>
+      <div class="paragraph">
+        <p>Blockchain technology is often perceived as complex, with technical barriers that hinder its reach to the mass market. While existing blockchain API platforms like Infura, Alchemy, and QuickNode have successfully provided infrastructure for developers, they remain fundamentally developer-oriented—requiring technical expertise, wallet management, gas fee understanding, and Web3 knowledge that excludes 95% of potential users.</p>
+
+        <p>Blockchain Web Services (BWS) represents a paradigm shift: a <strong>customer-centric blockchain platform</strong> designed to serve end-customers first, while simultaneously empowering developers and businesses. Unlike traditional blockchain infrastructure providers, BWS creates a trusted environment where all three actors—developers, businesses, and end-customers—interact seamlessly within a single platform ecosystem.</p>
+
+        <p>The platform is architected to eliminate customer fear and friction around blockchain technology. End-customers never manage wallets, never pay gas fees, never worry about private keys or security complexity. Instead, they experience blockchain benefits through intuitive interfaces backed by BWS's trusted infrastructure. Businesses license ready-to-deploy solutions from the BWS marketplace. Developers build once and reach millions through the platform's distribution network.</p>
+
+        <p>This customer-centric approach addresses the fundamental barrier to blockchain adoption: trust. By establishing BWS as a trusted intermediary that handles all blockchain complexity, security, and infrastructure management, the platform enables customers to confidently engage with blockchain applications without understanding the underlying technology—similar to how consumers use cloud services without understanding distributed computing.</p>
+      </div>
+    </section>
+
+    <!-- 2. Mission Statement -->
+    <section id="mission" class="white-paper-section">
+      <h2 class="title h3-size">II. Mission Statement</h2>
+      <div class="paragraph">
+        <p>The mission of Blockchain Web Services (BWS) is to launch blockchain solutions that democratize access to the technology, reach mass markets, and drive profitability under the slogan "Blockchain Everywhere, for Everyone."</p>
+
+        <p>As a user-centric platform, BWS is committed to providing seamless and easy blockchain experiences for developers and end-users. Its intuitive APIs simplify blockchain development, while the platform ensures ease of use for non-technical and mass-market users.</p>
+
+        <h3 class="title h4-size">Blockchain Agnostic</h3>
+        <p>BWS's blockchain-agnostic design allows developers to select the most appropriate blockchain network for their use case, optimizing their solutions for cost, speed, and technical needs, ensuring a scalable, user-friendly experience that meets the demands of mass-market applications.</p>
+
+        <h3 class="title h4-size">User-Centric API</h3>
+        <p>BWS provides APIs designed for developers without blockchain expertise, enabling them to build powerful blockchain solutions using familiar development patterns. These customer-centric APIs ensure that end-users of the solutions never encounter blockchain complexities—no wallet management, no gas fees, no private keys. Developers focus on building features; BWS handles all blockchain infrastructure and complexity in the background.</p>
+
+        <h3 class="title h4-size">Solutions Marketplace</h3>
+        <p>The BWS Solutions Marketplace establishes a trusted distribution channel that addresses fundamental adoption barriers: customer concerns about security, asset control, transaction irreversibility, and regulatory compliance. By positioning BWS as a trusted intermediary providing platform-level security, standardized experiences, and technical guarantees, the marketplace eliminates friction that prevents businesses and consumers from adopting blockchain solutions. This trust infrastructure transforms blockchain from intimidating technology into confidently-adopted solutions, enabling rapid market penetration and revenue generation across the platform ecosystem.</p>
+      </div>
+    </section>
+
+    <!-- 3. BWS Architecture -->
+    <section id="architecture" class="white-paper-section">
+      <h2 class="title h3-size">III. BWS Architecture</h2>
+      <div class="paragraph">
+        <p>BWS implements a robust, multi-layer architecture that ensures the platform is secure, scalable, and reliable:</p>
+
+        <h3 class="title h4-size">Multi-layer architecture</h3>
+        <p>BWS is built on three core layers—solutions marketplace, platform API, and platform Smart Contracts. This architecture facilitates seamless interactions between users and the underlying blockchain.</p>
+
+        <div class="white-paper-figure">
+          <img
+            src="/assets/images/white-paper/figure1.png"
+            alt="Figure 1. Blockchain Web Services platform is modular, enabling new solutions to be added easily"
+            loading="lazy"
+          />
+          <p class="figure-caption"><em>Figure 1. Blockchain Web Services platform is modular, enabling new solutions to be added easily.</em></p>
+        </div>
+
+        <p>Blockchain Web Services is built to enable external developers to add new features/solutions while maintaining a singular API signature.</p>
+
+        <div class="white-paper-figure">
+          <img
+            src="/assets/images/white-paper/figure2.png"
+            alt="Figure 2. All platform solutions in the marketplace use the same API signature"
+            loading="lazy"
+          />
+          <p class="figure-caption"><em>Figure 2. All platform solutions in the marketplace use the same API signature.</em></p>
+        </div>
+
+        <h3 class="title h4-size">Security and auditing</h3>
+        <p>The platform is designed with advanced security mechanisms, including smart contract audits, continuous transaction monitoring, and fail-safe measures to ensure data integrity and protect users.</p>
+
+        <h3 class="title h4-size">Blockchain Agnostic APIs</h3>
+        <p>The BWS platform is blockchain-agnostic, meaning API calls can be directed to different blockchain networks based on the solution requirements.</p>
+        <p>This allows developers to select the most suitable blockchain for their projects, ensuring flexibility and scalability for various use cases. For instance, developers can choose between Ethereum, Polygon, or Binance Smart Chain, depending on transaction costs, speed, or other specific needs.</p>
+
+        <div class="white-paper-figure">
+          <img
+            src="/assets/images/white-paper/figure3.png"
+            alt="Figure 3. Deciding the blockchain to use is as simple as setting an API call parameter"
+            loading="lazy"
+          />
+          <p class="figure-caption"><em>Figure 3. Deciding the blockchain to use is as simple as setting an API call parameter.</em></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Strategy -->
+    <section id="strategy" class="white-paper-section">
+      <h2 class="title h3-size">IV. Strategy</h2>
+      <div class="paragraph">
+        <p>BWS's core strategy focuses on building an inclusive blockchain ecosystem that empowers developers to create solutions that can reach mass markets. To drive such strategy and growth, we plan the following key initiatives:</p>
+
+        <h3 class="title h4-size">$BWS token Launch</h3>
+        <p>A native token will serve as the backbone of the BWS ecosystem, funding the development of new solutions and driving growth in the marketplace.</p>
+        <p>The BWS token will be used as a fee for API calls and to get access to marketplace solutions, creating a sustainable model where these fees directly support and reward developers who contribute solutions to the marketplace.</p>
+        <p>By powering API transactions, the token ensures continuous innovation and development while incentivizing developers through token rewards for their contributions to the ecosystem. This mechanism creates a self-sustaining cycle of development, innovation, and growth.</p>
+
+        <h3 class="title h4-size">Development of Showcase Solutions</h3>
+        <p>BWS will launch flagship marketplace solutions to demonstrate platform capabilities and drive initial market traction. These showcase solutions serve multiple strategic purposes: validating the platform's technical architecture, establishing credibility with early adopters, and providing reference implementations for third-party developers.</p>
+        <p>By deploying solutions across diverse verticals—from sports engagement to community management—BWS demonstrates the platform's versatility and establishes proven patterns for marketplace success. Each flagship solution serves as both a revenue-generating product and a template for developers to build upon, accelerating ecosystem growth through concrete examples of blockchain technology made accessible.</p>
+        <p>This strategy transforms BWS from a theoretical platform into a proven marketplace with real-world applications, lowering the barrier for businesses to adopt blockchain solutions and for developers to contribute innovative applications to the ecosystem.</p>
+      </div>
+    </section>
+
+    <!-- 5. $BWS token Model -->
+    <section id="token-model" class="white-paper-section">
+      <h2 class="title h3-size">V. $BWS token Model</h2>
+      <div class="paragraph">
+        <p>The $BWS token model ensures long-term funding for solutions on the BWS Marketplace while promoting sustainable growth and innovation in the blockchain ecosystem.</p>
+
+        <p>The tokenomics are structured to drive value creation, support developer incentives, and maintain a self-sustaining economy within the platform. Core Elements of the $BWS token Model:</p>
+
+        <h3 class="title h4-size">$BWS token Utility as API Fee</h3>
+        <p>The primary utility of the $BWS token is to serve as a fee for API and marketplace solutions usage. End-customers will silently use the $BWS tokens to pay when consuming blockchain marketplace solutions such as creating NFTs, certifying data, or storing information. These token-based API fees will directly fund the marketplace and provide financial rewards to developers for their contributions.</p>
+
+        <h3 class="title h4-size">Developer Grants and Funding</h3>
+        <p>A portion of the TOKEN TOTAL SUPPLY will be allocated to the <strong>BWS Developer Grants Program</strong>, which provides funding to developers who create new solutions on the platform. This program encourages innovation by supporting projects that add significant value to the marketplace.</p>
+        <p>Developers can apply for grants based on their solutions' utility, scalability, and marketplace impact.</p>
+
+        <h3 class="title h4-size">Marketplace Growth through Token Circulation</h3>
+        <p>The token model is designed to create a <strong>self-sustaining ecosystem</strong> where increased platform usage leads to more token circulation and growth. Each API interaction generates token fees, which will be used to:</p>
+        <ul>
+          <li><strong>Reward developers</strong> for creating impactful solutions.</li>
+          <li><strong>Fund new marketplace innovations</strong> through grants and ongoing development.</li>
+          <li><strong>Maintain liquidity</strong> and ensure that tokens continuously flow within the platform, supporting developers and token market growth.</li>
+        </ul>
+
+        <h3 class="title h4-size">Token Demand and Value Growth</h3>
+        <p>Demand for $BWS tokens will increase as more API calls are made and the marketplace expands. This creates a feedback loop where platform usage drives token circulation and value growth. The tokenomics are designed to align with marketplace activity, ensuring that as the platform grows, so does the value of the $BWS token, benefiting both developers and token holders.</p>
+
+        <h3 class="title h4-size">Revenue Sharing and Developer Earnings</h3>
+        <p>Developers who list their solutions on the <strong>BWS Marketplace</strong> will earn tokens based on utility and usage. A portion of transaction fees from these interactions will be directed back into the developer's account to ensure long-term sustainability and continuous development.</p>
+        <p>This model ensures developers are fairly compensated for their innovations while contributing to the platform's overall health and growth.</p>
+
+        <p>The $BWS token is the economic engine that powers the marketplace. It ensures continuous funding for developers, incentivizes innovation, and fosters a vibrant ecosystem of blockchain solutions.</p>
+      </div>
+
+      <h3 id="tokenomics" class="title h3-size">Tokenomics</h3>
+      <div class="paragraph">
+        <p>The <strong>$BWS token has a total supply of 100 million $BWS</strong>, strategically allocated to support ecosystem growth, developer incentives, and long-term sustainability. The distribution prioritizes liquidity (70% circulating supply) while dedicating substantial resources to developer grants (10%), team incentives (8%), and marketing initiatives (5%). Additional allocations support partnerships, airdrops, and liquidity reserves to ensure a balanced and sustainable token economy.</p>
+
+        <div class="white-paper-figure">
+          <img
+            src="/assets/images/6474d385cfec71cb21a92251/6707fd987c3a05d42e1e908e_Tokenomics-Allocation-letters-black.png"
+            alt="$BWS Token Allocation"
+            loading="lazy"
+            class="image-token-allocation"
+          />
+          <p class="figure-caption"><em>Allocation of Tokens</em></p>
+        </div>
+
+        <div class="allocation-item">
+          <p><strong>Circulating Supply, 70% (70 million BWS)</strong></p>
+          <p>Most tokens will be available for public trading and use within the BWS ecosystem, ensuring liquidity.</p>
+        </div>
+
+        <div class="allocation-item">
+          <p><strong>Developer Grants, 10% (10 million BWS)</strong></p>
+          <p>These tokens are allocated to support the BWS Developer Grants Program, providing funding to incentivize developers to build innovative solutions on the platform and contribute to the ecosystem's growth.</p>
+        </div>
+
+        <div class="allocation-item">
+          <p><strong>Team Tokens, 8% (8 million BWS)</strong></p>
+          <p>Reserved for the core team, these tokens are allocated to incentivize and reward developers, advisors, and key contributors who help drive the growth and success of the BWS platform.</p>
+        </div>
+
+        <div class="allocation-item">
+          <p><strong>Marketing Tokens, 5% (5 million BWS)</strong></p>
+          <p>Dedicated to promoting BWS, these tokens will fund marketing campaigns, partnerships, and promotional activities to expand the platform's reach and onboard new users and developers.</p>
+        </div>
+
+        <div class="allocation-item">
+          <p><strong>Partnerships & Airdrops, 5% (5 million BWS)</strong></p>
+          <p>Set aside for strategic partnerships, airdrop campaigns, and early supporters; these tokens will drive collaboration, reward early adopters, and expand the ecosystem.</p>
+        </div>
+
+        <div class="allocation-item">
+          <p><strong>Liquidity & Reserves, 2% (2 million BWS)</strong></p>
+          <p>These tokens, allocated to ensure liquidity across decentralized exchanges and maintain stability within the $BWS token ecosystem, will help maintain smooth transactions and price stability.</p>
+        </div>
+      </div>
+
+      <h3 id="dynamic-tax" class="title h3-size">Dynamic Tax System </h3>
+      <div class="paragraph">
+        <p>The $BWS token implements a dynamic tax structure aligned with market best practices for utility tokens.</p>
+        <ul>
+          <li>When market capitalization is low, the buy tax decreases to encourage new participants to enter, while the sell tax increases to deter premature exits and stabilize price.</li>
+          <li>As market capitalization rises, the buy tax increases while the sell tax decreases, rewarding long-term holders and supporting organic price appreciation.</li>
+           <li>Taxes never goes beyond 5% tax for buy and 5% for sell.</li>
+        </ul>
+
+        <h4 class="title h4-size">Tax Fund Allocation</h4>
+        <p>Collected taxes, whether applied on buy or sell transactions, are allocated to support platform growth and ecosystem development:</p>
+        <ul>
+          <li><strong>5% Product Development</strong> - Funds continuous improvements, new features, and innovation within the ecosystem.</li>
+          <li><strong>2% Sales & Business Growth</strong> - Supports partnerships, business expansion, and adoption efforts.</li>
+          <li><strong>2% Marketing</strong> - Fuels marketing campaigns to attract new users and developers.</li>
+          <li><strong>1% BWS Developer Grants Program</strong> - Provides funding to developers building on the $BWS ecosystem.</li>
+        </ul>
+
+        <p>This dynamic tax model ensures a fair and sustainable ecosystem by balancing incentives, reducing volatility, and fostering organic growth at every stage of platform development.</p>
+      </div>
+    </section>
+
+    <!-- 6. BWS Solutions Marketplace -->
+    <section id="nft-game-cube" class="white-paper-section">
+      <h2 class="title h3-size">VI. BWS Solutions Marketplace</h2>
+      <div class="paragraph">
+        <p>Blockchain Web Service's vision, "Blockchain Everywhere, for Everyone," aims to bring blockchain to mass markets through a user-centric API to build accessible, innovative solutions and a platform marketplace where the Web3 community can publish, share, and monetize blockchain applications.</p>
+
+        <p>To trigger initial traction and demonstrate the platform's capabilities, BWS will launch several flagship solutions available in the BWS Solutions Marketplace. These solutions showcase how developers can build revenue-generating applications on the platform while inspiring further development from the community.</p>
+
+        <p>Consider a practical example from the BWS Solutions Marketplace: A sports club (business) licenses Fan Game Cube, offering fans (consumers) the ability to own digital game zones and earn rewards. The solution developer earns fees in $BWS tokens, the club generates new revenue, fans enjoy gamified engagement, and token demand increases with every interaction across all three sides of the marketplace.</p>
+
+        <p>The marketplace features diverse solutions serving different market needs, from Fan Game Cube for sports engagement to X Bot for community management, each demonstrating the power of blockchain technology made accessible through BWS's customer-centric platform.</p>
+      </div>
+
+      <div class="white-paper-figure">
+        <img
+          src="/assets/images/white-paper/figure4.png"
+          alt="Figure 4. NFT Game CUBE Blockchain Web Services platform solution"
+          loading="lazy"
+        />
+        <p class="figure-caption"><em>Figure 4. NFT Game CUBE Blockchain Web Services platform solution.</em></p>
+      </div>
+
+      <h3 id="nft-overview" class="title h3-size">Fan Game Cube Overview</h3>
+      <div class="paragraph">
+        <p>BWS's Fan Game Cube solution lets sports fans own digital assets tied to specific sections of a sports field—not only football but chess, tennis, cricket, and many more.</p>
+
+        <div class="white-paper-figure">
+          <img
+            src="/assets/images/white-paper/figure5.png"
+            alt="Figure 5. Tokenize and sell Sports Clubs field sections in just a few clicks (or API calls!)"
+            loading="lazy"
+          />
+          <p class="figure-caption"><em>Figure 5. Tokenize and sell Sports Clubs field sections in just a few clicks (or API calls!).</em></p>
+        </div>
+
+        <p>As real-time events unfold at their location during the game, fans earn points, unlocking exciting rewards while creating a new revenue stream for sports clubs, former athletes, influencers, and anyone with a market in the sports industry.</p>
+
+        <h4 class="title h4-size">NFT tokenization of game zones</h4>
+        <p>Fans can purchase virtual cubes representing specific zones of a sports field as NFTs. Rewards are based on real-time events, such as a goal being scored from their purchased zone</p>
+
+        <h4 class="title h4-size">Simplified NFT creation via BWS NFT.zK API</h4>
+        <p>The BWS NFT.zK API will handle the technical complexity of creating NFTs. Fans can hold NFTs with only an email address, bypassing the need for a Web3 wallet or tokens, drastically reducing the barrier to entry.</p>
+
+        <h4 class="title h4-size">Developer token-based fee structure</h4>
+        <p>The solution owner (BWS team, in this case) earns $BWS tokens for each API call made when NFTs are created, traded, or interacted with, rewarding the developer's team to maintain and improve the solution.</p>
+
+        <p>Fan Game Cube is a scalable solution where fans can play multiple sports and hold a weekend chess tournament, a soccer VIP final, and a cricket yearly season. It's a new sports fan experience.</p>
+
+        <div class="white-paper-figure">
+          <img
+            src="/assets/images/white-paper/figure6.png"
+            alt="Figure 6. NFT Game CUBE is valid for any sport that has a 'field'!"
+            loading="lazy"
+          />
+          <p class="figure-caption"><em>Figure 6. NFT Game CUBE is valid for any sport that has a "field"!</em></p>
+        </div>
+      </div>
+
+      <h3 id="xbot-overview" class="title h3-size">X Bot Overview</h3>
+      <div class="paragraph">
+        <p>X Bot is an innovative Telegram solution by BWS that empowers community groups to monitor and enhance their engagement on X (formerly Twitter) through a gamified experience. This solution demonstrates how BWS platform APIs can be leveraged to create community management tools that bridge Web2 social platforms with Web3 infrastructure.</p>
+
+        <h4 class="title h4-size">Custom Monitoring & Real-Time Data</h4>
+        <p>Group admins configure custom filters based on specific X accounts, keywords, or mentions. X Bot fetches relevant public posts using the X API in real-time, ensuring community interactions are based on the most current information available.</p>
+
+        <h4 class="title h4-size">Gamified Leaderboards</h4>
+        <p>X Bot compiles leaderboard reports showcasing the most active and supportive community members. This gamified approach incentivizes participation and recognizes top contributors, fostering a competitive and engaging environment that enhances community engagement.</p>
+
+        <h4 class="title h4-size">Data-Driven Community Insights</h4>
+        <p>Community admins gain valuable insights into member activities and engagement trends through real-time data fetching and reporting, facilitating informed decision-making for community growth strategies.</p>
+
+        <p>X Bot exemplifies how BWS marketplace solutions can serve diverse needs—from sports engagement with Fan Game Cube to community management with X Bot—each built on the same platform infrastructure and demonstrating the versatility of BWS's customer-centric approach to blockchain technology.</p>
+      </div>
+    </section>
+
+    <!-- 6. BWS Developer Grants -->
+    <section id="developer-grants" class="white-paper-section">
+      <h2 class="title h3-size">VII. BWS Developer Grants</h2>
+      <div class="paragraph">
+        <p>Recognizing the importance of building a vibrant developer ecosystem, we are excited to introduce the <strong>BWS Developer Grants</strong>—a program designed to incentivize developers to build tools and applications on top of our platform protocols, rewarding them for their contributions.</p>
+
+        <p>The initiative will maintain a development fund to support growth efforts, focusing on fostering innovation within the BWS ecosystem.</p>
+
+        <h3 class="title h4-size">Program Overview</h3>
+        <p>The BWS Developer Grant is a developer-focused program promoting creativity, experimentation, and adoption of the BWS platform. Developers are invited to propose and build innovative projects such as decentralized applications, innovative smart contracts solutions, and integration tools that leverage the capabilities of BWS. Selected projects will receive grants in $BWS tokens.</p>
+
+        <h3 class="title h4-size">Incentives</h3>
+        <p>Developers who participate in the BWS Developer Initiative will benefit from:</p>
+
+        <p><strong>1. Bounty Payments</strong></p>
+        <p>Developers whose projects are selected for integration with BWS will receive bounty payments based on the complexity and impact of their projects.</p>
+
+        <p><strong>2. Recognition and Exposure</strong></p>
+        <p>Featured projects will be showcased on the BWS website, social media, and promotional channels, giving developers visibility and recognition within the blockchain community.</p>
+
+        <p><strong>3. Technical Support and Resources</strong></p>
+        <p>The BWS team will provide developers access to technical support, detailed documentation, and resources to streamline development.</p>
+
+        <p><strong>4. API Fees</strong></p>
+        <p>Once your application is published, you will receive a fee in $BWS tokens every time your APIs get called.</p>
+
+        <h3 class="title h4-size">Program Guidelines</h3>
+        <p>To participate in the BWS Developer Initiative, developers must submit proposals detailing their project's objectives, implementation plans, and alignment with the BWS ecosystem. Projects should demonstrate innovation, technical feasibility, and the potential to add value to the BWS ecosystem.</p>
+
+        <p>Collaboration and open-source development are encouraged to foster community-driven innovation.</p>
+
+        <h3 class="title h4-size">Examples of Eligible Projects</h3>
+
+        <p><strong>1. Tokenization of Environmental and Social Impact Projects</strong></p>
+        <p>Create platforms for tokenizing ESG assets like carbon credits using the BWS.ESG API to certify, track, and trade green assets. This application could revolutionize the way sustainable investments are managed and verified.</p>
+
+        <p><strong>2. NFT-Based Asset Verification Platforms</strong></p>
+        <p>Build applications that allow businesses or individuals to tokenize physical or digital assets, such as property or artwork. The NFT.zK API can provide verifiable proof of ownership and authenticity.</p>
+
+        <p><strong>3. Gaming and Entertainment NFTs</strong></p>
+        <p>Develop NFT-based games or fan engagement platforms that allow users to tokenize experiences and interact with digital assets in new ways. The BWS NFT.zK API simplifies the creation and management of these digital assets.</p>
+
+        <p>By empowering developers with financial incentives, technical resources, and recognition, the BWS Grants initiative will foster innovation and accelerate the growth of the BWS ecosystem.</p>
+      </div>
+    </section>
+
+    <!-- 15. Conclusion -->
+    <section id="conclusion" class="white-paper-section">
+      <h2 class="title h3-size">VIII. Conclusion</h2>
+      <div class="paragraph">
+        <p>Blockchain Web Services is paving the way for broader blockchain adoption through its accessible API solutions, inclusive marketplace, and powerful tokenomics.</p>
+
+        <p>By lowering the barriers to entry and incentivizing developers, BWS is set to become a key player in the future of blockchain. With "Blockchain Everywhere, for Everyone" as its guiding principle, BWS will deliver innovative solutions that empower users of all technical backgrounds to engage with blockchain technology and transform their digital experiences.</p>
+      </div>
+      <div class="white-paper-end">
+        <p><strong>END.</strong></p>
+      </div>
+    </section>
+      </div><!-- end white-paper-content -->
+    </div><!-- end white-paper-layout -->
+  </div>
+</main>
+
+<style>
+  /* ============================================
+     MODERN WHITE PAPER DESIGN - 2025
+     ============================================ */
+
+  /* Scroll Progress Indicator */
+  .scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--rose, #c41841) 0%, #e63c5a 100%);
+    width: 0%;
+    z-index: 1000;
+    transition: width 0.1s ease-out;
+  }
+
+  /* Main Layout - 2 Column Grid */
+  .white-paper-layout {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 60px;
+    margin-top: 40px;
+    align-items: start;
+  }
+
+  /* Sticky Table of Contents */
+  .white-paper-toc {
+    position: sticky;
+    top: 100px; /* Account for nav header */
+    height: fit-content;
+    max-height: calc(100vh - 120px);
+    overflow-y: auto;
+    padding: 24px;
+    background: white;
+    border: 1px solid var(--neutral-300, #e5ecf5);
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+  }
+
+  /* Hero Header - Left Aligned */
+  .white-paper-header {
+    text-align: left;
+    margin-bottom: 60px;
+    padding: 60px 40px 40px;
+    background: linear-gradient(135deg, rgba(245, 249, 255, 0.95) 0%, rgba(229, 236, 245, 0.85) 100%);
+    border-radius: 16px;
+    position: relative;
+  }
+
+  .white-paper-title {
+    color: var(--neutral-800, #1a1b1e);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-top: 10px;
+  }
+
+  .white-paper-header .hero-title {
+    letter-spacing: -0.01em;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  }
+
+  .toc-title {
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--neutral-600, #66666e);
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--neutral-300, #e5ecf5);
+  }
+
+  .toc-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .toc-list > li {
+    margin-bottom: 8px;
+  }
+
+  .toc-link {
+    display: block;
+    padding: 8px 12px;
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--neutral-700, #3b3f44);
+    text-decoration: none;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+    font-weight: 500;
+  }
+
+  .toc-link:hover {
+    background-color: var(--neutral-200, #f5f9ff);
+    color: var(--neutral-800, #1a1b1e);
+    transform: translateX(4px);
+  }
+
+  .toc-link.active {
+    background-color: rgba(196, 24, 65, 0.1);
+    color: var(--rose, #c41841);
+    font-weight: 600;
+    border-left: 3px solid var(--rose, #c41841);
+    padding-left: 9px;
+  }
+
+  .toc-sublist {
+    list-style: none;
+    padding-left: 16px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+  }
+
+  .toc-sublist > li {
+    margin-bottom: 4px;
+  }
+
+  .toc-link.toc-sub {
+    font-size: 13px;
+    padding: 6px 20px;
+    color: var(--neutral-600, #66666e);
+  }
+
+  /* Main Content Area */
+  .white-paper-content {
+    max-width: 100%;
+    scroll-behavior: smooth;
+  }
+
+  /* Section Styling - Left Aligned */
+  .white-paper-section {
+    margin-bottom: 80px;
+    scroll-margin-top: 120px; /* Offset for sticky nav */
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Smooth fade-in animation (handled by JS) */
+  .white-paper-section.fade-in {
+    animation: fadeInUp 0.6s ease-out forwards;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Typography Hierarchy - Left Aligned */
+  .white-paper-section h2 {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--rose, #c41841);
+    margin-top: 0;
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    letter-spacing: -0.02em;
+    line-height: 1.3;
+    padding-top: 8px;
+  }
+
+  .white-paper-section h3 {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--neutral-800, #1a1b1e);
+    margin-top: 40px;
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    letter-spacing: -0.01em;
+    line-height: 1.4;
+    text-align: left;
+  }
+
+  .white-paper-section h4 {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--neutral-800, #1a1b1e);
+    margin-top: 30px;
+    margin-bottom: 12px;
+    line-height: 1.5;
+    text-align: left;
+  }
+
+  .white-paper-section p {
+    margin-bottom: 16px;
+    line-height: 1.75;
+    color: var(--neutral-700, #3b3f44);
+    font-size: 16px;
+  }
+
+  .white-paper-section ul {
+    margin-bottom: 24px;
+    padding-left: 32px;
+  }
+
+  .white-paper-section li {
+    margin-bottom: 12px;
+    line-height: 1.75;
+    color: var(--neutral-700, #3b3f44);
+    font-size: 16px;
+  }
+
+  .white-paper-section strong {
+    color: var(--neutral-800, #1a1b1e);
+    font-weight: 600;
+  }
+
+  /* Mission Aspects - 2 Column Layout */
+  .mission-aspects {
+    margin-top: 40px;
+  }
+
+  .mission-item {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    gap: 30px;
+    margin-bottom: 40px;
+    align-items: start;
+  }
+
+  .mission-title {
+    padding-right: 20px;
+  }
+
+  .mission-title h3 {
+    margin-top: 0;
+    margin-bottom: 0;
+    color: var(--neutral-800, #1a1b1e);
+    font-size: 16px;
+    font-weight: 700;
+  }
+
+  .mission-description p {
+    margin-top: 0;
+  }
+
+  .mission-description p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* Allocation Image Single - 40% Width */
+  .allocation-image-single {
+    width: 40%;
+    margin: 30px auto;
+    display: flex;
+    justify-content: center;
+  }
+
+  .allocation-image-single img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+  }
+
+  .allocation-item {
+    margin-bottom: 24px;
+  }
+
+  .allocation-item p {
+    margin-bottom: 8px;
+    font-size: 16px;
+  }
+
+  .allocation-item p:first-child {
+    margin-top: 0;
+    font-weight: 700;
+  }
+
+  .allocation-item p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* Emphasis Blocks - Modern Card Style */
+  .white-paper-emphasis {
+    background: linear-gradient(135deg, rgba(196, 24, 65, 0.05) 0%, rgba(196, 24, 65, 0.02) 100%);
+    border-left: 4px solid var(--rose, #c41841);
+    border-radius: 8px;
+    padding: 30px 40px;
+    margin: 50px 0;
+    font-style: normal;
+    font-size: 17px;
+    color: var(--neutral-700, #3b3f44);
+    box-shadow: 0 2px 8px rgba(196, 24, 65, 0.08);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .white-paper-emphasis:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(196, 24, 65, 0.12);
+  }
+
+  .white-paper-emphasis em {
+    color: var(--rose, #c41841);
+    font-weight: 500;
+    font-style: normal;
+  }
+
+  /* Highlight Text */
+  .white-paper-highlight {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--neutral-800, #1a1b1e);
+    text-align: left;
+    margin: 20px 0;
+    letter-spacing: 0;
+  }
+
+  /* Figure Container - Proportional Sizing */
+  .white-paper-figure {
+    margin: 60px 0;
+    text-align: center;
+    transition: transform 0.3s ease;
+  }
+
+  .white-paper-figure:hover {
+    transform: translateY(-4px);
+  }
+
+  .white-paper-figure img:not(.image-token-allocation) {
+    max-width: 800px; /* Default for architecture diagrams */
+    width: 100%;
+    height: auto;
+    border: 1px solid var(--neutral-300, #e5ecf5);
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+    transition: box-shadow 0.3s ease;
+  }
+
+  /* Tokenomics image - keep natural size with constraints */
+  .image-token-allocation {
+    width: auto !important;
+    height: auto;
+    display: inline-block !important; /* Allow text-align: center to work */
+    margin: 0 auto; /* Fallback for block display */
+    border: 1px solid var(--neutral-300, #e5ecf5);
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+    transition: box-shadow 0.3s ease;
+  }
+
+  .white-paper-figure:hover img {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+  }
+
+  /* Specific image sizing based on content type */
+  .white-paper-figure img[src*="figure2"],
+  .white-paper-figure img[src*="figure3"] {
+    max-width: 600px; /* Code examples */
+  }
+
+  .white-paper-figure img[src*="figure4"] {
+    max-width: 800px; /* Platform diagram */
+  }
+
+  .white-paper-figure img[src*="figure5"],
+  .white-paper-figure img[src*="figure6"] {
+    max-width: 700px; /* Sports visualizations */
+  }
+
+  /* Tokenomics allocation image - 60% width on large screens */
+  @media screen and (min-width: 992px) {
+    .image-token-allocation {
+      max-width: 60% !important;
+      width: auto !important; /* Override the 100% width from .white-paper-figure img */
+    }
+  }
+
+  .figure-caption {
+    margin-top: 16px;
+    font-size: 14px;
+    color: var(--neutral-600, #66666e);
+    font-style: normal;
+    line-height: 1.6;
+  }
+
+  .figure-caption em {
+    font-weight: 500;
+    font-style: normal;
+  }
+
+  /* End Section */
+  .white-paper-end {
+    text-align: center;
+    margin-top: 80px;
+    margin-bottom: 60px;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--neutral-800, #1a1b1e);
+    letter-spacing: 0.1em;
+  }
+
+  /* Smooth Scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* ============================================
+     RESPONSIVE DESIGN
+     ============================================ */
+
+  /* Tablet */
+  @media screen and (max-width: 991px) {
+    .white-paper-layout {
+      grid-template-columns: 220px 1fr;
+      gap: 40px;
+    }
+
+    .white-paper-toc {
+      padding: 20px;
+    }
+
+    .toc-link {
+      font-size: 13px;
+    }
+
+    .white-paper-section h2 {
+      font-size: 28px;
+    }
+
+    .white-paper-section h3 {
+      font-size: 20px;
+    }
+
+    .white-paper-section h4 {
+      font-size: 17px;
+    }
+
+    /* Mission aspects smaller columns on tablet */
+    .mission-item {
+      grid-template-columns: 200px 1fr;
+      gap: 20px;
+    }
+
+    /* Allocation image on tablet */
+    .allocation-image-single {
+      width: 50%;
+    }
+  }
+
+  /* Mobile */
+  @media screen and (max-width: 767px) {
+    .white-paper-header {
+      margin-bottom: 40px;
+      padding: 40px 20px 30px;
+    }
+
+    /* Stack layout on mobile */
+    .white-paper-layout {
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
+
+    /* TOC becomes collapsible */
+    .white-paper-toc {
+      position: relative;
+      top: 0;
+      max-height: none;
+      margin-bottom: 20px;
+    }
+
+    .white-paper-section {
+      margin-bottom: 50px;
+    }
+
+    .white-paper-section h2 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    .white-paper-section h3 {
+      font-size: 19px;
+      margin-top: 30px;
+    }
+
+    .white-paper-section h4 {
+      font-size: 17px;
+      margin-top: 24px;
+    }
+
+    /* Mission aspects stack on mobile */
+    .mission-item {
+      grid-template-columns: 1fr;
+      gap: 12px;
+      margin-bottom: 30px;
+    }
+
+    .mission-title {
+      padding-right: 0;
+    }
+
+    /* Allocation image on mobile */
+    .allocation-image-single {
+      width: 80%;
+    }
+
+    .white-paper-highlight {
+      font-size: 16px;
+    }
+
+    .allocation-item p {
+      font-size: 15px;
+    }
+
+    .white-paper-section p {
+      font-size: 15px;
+    }
+
+    .white-paper-emphasis {
+      padding: 24px 20px;
+      margin: 35px 0;
+      font-size: 15px;
+    }
+
+    .white-paper-figure {
+      margin: 40px 0;
+    }
+
+    .white-paper-figure img:not(.image-token-allocation) {
+      max-width: 100% !important; /* Override specific sizes */
+      border-radius: 8px;
+    }
+
+    /* Keep tokenomics image smaller on mobile too */
+    .image-token-allocation {
+      max-width: 60% !important;
+    }
+
+    .figure-caption {
+      font-size: 13px;
+    }
+  }
+
+  /* Small Mobile */
+  @media screen and (max-width: 479px) {
+    .white-paper-header {
+      padding: 30px 15px 20px;
+    }
+
+    .toc-title {
+      font-size: 12px;
+    }
+
+    .toc-link {
+      font-size: 12px;
+      padding: 6px 20px;
+    }
+
+    .white-paper-section h2 {
+      font-size: 22px;
+    }
+
+    .white-paper-section h3 {
+      font-size: 18px;
+    }
+
+    .white-paper-section h4 {
+      font-size: 16px;
+    }
+  }
+</style>
+
+<script>
+  // ============================================
+  // WHITE PAPER INTERACTIVE FEATURES
+  // ============================================
+
+  document.addEventListener('DOMContentLoaded', () => {
+    // Scroll Progress Indicator
+    const progressBar = document.querySelector('.scroll-progress');
+    const content = document.querySelector('.white-paper-content');
+
+    if (progressBar && content) {
+      window.addEventListener('scroll', () => {
+        const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
+        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrolled = (winScroll / height) * 100;
+        progressBar.style.width = scrolled + '%';
+      });
+    }
+
+    // Scroll Spy for TOC
+    const sections = document.querySelectorAll('.white-paper-section');
+    const tocLinks = document.querySelectorAll('.toc-link');
+
+    const observerOptions = {
+      root: null,
+      rootMargin: '-120px 0px -60% 0px',
+      threshold: 0
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const id = entry.target.getAttribute('id');
+
+          // Remove active class from all links
+          tocLinks.forEach(link => link.classList.remove('active'));
+
+          // Add active class to current section link
+          const activeLink = document.querySelector(`.toc-link[href="#${id}"]`);
+          if (activeLink) {
+            activeLink.classList.add('active');
+          }
+        }
+      });
+    }, observerOptions);
+
+    sections.forEach(section => {
+      observer.observe(section);
+    });
+
+    // Smooth Scroll with Offset for Anchor Links
+    tocLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const targetId = link.getAttribute('href').substring(1);
+        const targetSection = document.getElementById(targetId);
+
+        if (targetSection) {
+          const navHeight = 100; // Adjust based on your nav height
+          const targetPosition = targetSection.offsetTop - navHeight;
+
+          window.scrollTo({
+            top: targetPosition,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+
+    // Section Fade-in on Scroll (Optional Enhancement)
+    const sectionObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('fade-in');
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
+
+    sections.forEach(section => {
+      sectionObserver.observe(section);
+    });
+  });
+</script>
