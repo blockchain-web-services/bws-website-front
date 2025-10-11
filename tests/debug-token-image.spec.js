@@ -3,10 +3,10 @@ import { test, expect } from '@playwright/test';
 test.describe('Token Allocation Image Centering Debug', () => {
   test('Check token allocation image centering and size', async ({ page }) => {
     // Navigate to white paper page
-    await page.goto('http://localhost:5500/white-paper.html', { waitUntil: 'networkidle' });
+    await page.goto('/white-paper.html', { waitUntil: 'networkidle' });
 
-    // Scroll to the NFT Game Cube section
-    await page.goto('http://localhost:5500/white-paper.html#nft-game-cube');
+    // Scroll to the tokenomics section where token allocation image is
+    await page.goto('/white-paper.html#tokenomics');
     await page.waitForTimeout(1000);
 
     // Find the token allocation image

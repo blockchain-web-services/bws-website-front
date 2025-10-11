@@ -95,13 +95,13 @@ test.describe('Critical Path Smoke Tests', () => {
     await expect(page.locator('.nav-menu')).toBeVisible();
 
     // Check for specific content
-    const heading = await page.locator('h1').first().textContent();
+    const heading = await page.locator('h1.hero-title').textContent();
     expect(heading).toContain('Blockchain Web Services');
 
-    // Verify white paper sections exist
-    await expect(page.locator('text=Abstract')).toBeVisible();
-    await expect(page.locator('text=Introduction')).toBeVisible();
-    await expect(page.locator('text=Tokenomics')).toBeVisible();
+    // Verify white paper sections exist (use unique IDs to avoid TOC duplicates)
+    await expect(page.locator('#abstract')).toBeVisible();
+    await expect(page.locator('#introduction')).toBeVisible();
+    await expect(page.locator('#tokenomics')).toBeVisible();
   });
 
   test('Images load without 404 errors', async ({ page }) => {
