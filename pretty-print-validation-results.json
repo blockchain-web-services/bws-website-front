@@ -34,9 +34,9 @@
     },
     {
       "file": "_site/contact-us.html",
-      "originalSize": 43036,
-      "newSize": 75258,
-      "sizeDiff": 32222,
+      "originalSize": 42970,
+      "newSize": 75148,
+      "sizeDiff": 32178,
       "prettyPrinted": true,
       "errors": []
     },
@@ -138,9 +138,9 @@
     },
     {
       "file": "_site/marketplace/esg-credits.html",
-      "originalSize": 47529,
-      "newSize": 82106,
-      "sizeDiff": 34577,
+      "originalSize": 47531,
+      "newSize": 82132,
+      "sizeDiff": 34601,
       "prettyPrinted": true,
       "errors": []
     },
@@ -154,9 +154,9 @@
     },
     {
       "file": "_site/marketplace/nft-gamecube.html",
-      "originalSize": 46392,
-      "newSize": 80345,
-      "sizeDiff": 33953,
+      "originalSize": 46394,
+      "newSize": 80371,
+      "sizeDiff": 33977,
       "prettyPrinted": true,
       "errors": []
     },
