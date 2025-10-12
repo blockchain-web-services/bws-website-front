@@ -1,0 +1,54 @@
+---
+import type { NewsItem } from '../../data/news';
+
+interface Props {
+  news: NewsItem;
+}
+
+const { news } = Astro.props;
+---
+
+<div class="w-layout-hflex announcement-box">
+  <div class={`w-layout-blockcontainer ${news.backgroundClass} w-container`}></div>
+  <div class="w-layout-vflex flex-block-10">
+    <div class="announcement-title">{news.title}</div>
+    <div class="announcement-text">
+      {news.description}<br />
+    </div>
+    {
+      news.partnershipTitle && (
+        <div class="announcement-logos-title">{news.partnershipTitle}</div>
+      )
+    }
+    <div class="w-layout-vflex announcement-logos">
+      <div class="w-layout-hflex announcement-flex-logos">
+        {
+          news.logos.map((logo) => (
+            <a href={logo.href} target="_blank" class="w-inline-block">
+              <img
+                src={logo.src}
+                loading="lazy"
+                alt={logo.alt}
+                class={logo.class}
+              />
+            </a>
+          ))
+        }
+      </div>
+    </div>
+    <div class="w-layout-hflex announcement-buttons">
+      {
+        news.buttons.map((button) => (
+          <a
+            href={button.href}
+            target={button.target}
+            class={`button-${button.type} button-small w-button`}
+          >
+            {button.text}
+            {button.hasArrow && <span class="button-arrow" />}
+          </a>
+        ))
+      }
+    </div>
+  </div>
+</div>

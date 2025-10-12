@@ -1,0 +1,66 @@
+---
+import type { Solution } from '../../data/solutions';
+
+interface Props {
+  solution: Solution;
+}
+
+const { solution } = Astro.props;
+---
+
+<div role="listitem" class="markeplace-collection-item w-dyn-item">
+  {
+    solution.networks.length > 0 && (
+      <div class="networks-solution w-dyn-list">
+        <div role="list" class="collection-list-2 w-dyn-items">
+          {solution.networks.map((network) => (
+            <div role="listitem" class="collection-item-2 w-dyn-item">
+              <div
+                style={`background-color:${network.color};border-color:${network.color}`}
+                class="div-solution-network"
+              >
+                <div class="text-block-8">{network.name}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    )
+  }
+  <a href={solution.url} class="home-solution-card w-inline-block">
+    <div class="w-embed">
+      <span class={`filter-solution-x filter-solution-${solution.category}`}
+      ></span>
+    </div>
+    <div class="solution-card-wrapper">
+      <div class="home-solution-card-image">
+        <img
+          src={solution.image.src}
+          alt={solution.image.alt}
+          sizes={solution.image.sizes}
+          srcset={solution.image.srcset}
+          class="image solution-card-image"
+        />
+      </div>
+      <div class="solution-card-content-wrapper">
+        <div class="solution-card-2-column-title">
+          <div class="solution-card-icon-wrapper">
+            <div class="solution-card-icon"></div>
+          </div>
+          <div class="solution-card-title-wrapper">
+            <h3 class="solution-card-title">{solution.title}</h3>
+            <div class="solution-card-author">{solution.author}</div>
+          </div>
+        </div>
+        <div class="solution-card-text">
+          <h3 class="title h4-size blog-card-summary">
+            {solution.description}
+          </h3>
+        </div>
+        <div class="solution-card-read-more-text">
+          Read more<span class="button-arrow"></span>
+        </div>
+      </div>
+    </div>
+  </a>
+</div>

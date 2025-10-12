@@ -1,0 +1,171 @@
+---
+import type { NewsItem } from '../../data/news';
+import NewsItemComponent from './NewsItem.astro';
+
+interface Props {
+  news: NewsItem[];
+}
+
+const { news } = Astro.props;
+---
+
+<div class="splide news-carousel" id="news-carousel">
+  <div class="splide__track">
+    <div class="splide__list w-layout-hflex flex-block-announcements">
+      {
+        news.map((item) => (
+          <div class="splide__slide">
+            <NewsItemComponent news={item} />
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</div>
+
+<script define:vars={{ newsCount: news.length }}>
+  // Initialize Splide carousel when DOM is loaded
+  document.addEventListener('DOMContentLoaded', function () {
+    // @ts-ignore - Splide is loaded via CDN
+    if (typeof Splide !== 'undefined') {
+      // Disable autoplay if only 2 news items (both shown at once on desktop)
+      const shouldAutoplay = newsCount > 2;
+
+      // @ts-ignore
+      const splide = new Splide('#news-carousel', {
+        type: newsCount <= 2 ? 'slide' : 'loop', // Use slide mode for 2 items to prevent cloning
+        perPage: 2,
+        perMove: 1,
+        gap: '1rem',
+        padding: 0,
+        width: '100%',
+        focus: 0, // Focus on first slide (index 0) for proper alignment
+        trimSpace: newsCount <= 2, // Trim space when only 2 items to center them
+        updateOnMove: true, // Update on movement for better positioning
+        autoplay: shouldAutoplay,
+        interval: 5000,
+        pauseOnHover: true,
+        pauseOnFocus: true,
+        arrows: shouldAutoplay,
+        pagination: newsCount > 2, // Hide pagination when only 2 items
+        drag: shouldAutoplay,
+        clones: 0, // Disable clones to prevent partial card visibility
+        breakpoints: {
+          991: {
+            perPage: 1,
+            perMove: 1,
+            padding: 0,
+            type: 'loop', // Loop on mobile
+            autoplay: true,
+            arrows: true,
+            drag: true,
+            pagination: true,
+            clones: undefined, // Allow clones on mobile for smooth looping
+            focus: 'center',
+          },
+        },
+      }).mount();
+
+      // Refresh Splide after a short delay to recalculate centering once card widths have settled
+      setTimeout(() => {
+        splide.refresh();
+      }, 100);
+
+      // Also refresh on window load to ensure images and content are fully loaded
+      window.addEventListener('load', () => {
+        setTimeout(() => {
+          splide.refresh();
+        }, 100);
+      });
+    }
+  });
+</script>
+
+<style>
+  /* Override parent container width constraint for carousel */
+  .section-token-launch .landing-page-content {
+    max-width: 100% !important; /* Remove 940px constraint */
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  .news-carousel {
+    width: 100%;
+    max-width: 960px; /* Fit 2 cards comfortably with gap and padding */
+    margin: 0 auto; /* Center the carousel */
+    overflow: visible; /* Allow bottom content to show */
+    padding: 0 1rem 3rem 1rem; /* Add more padding to prevent edge and bottom cutoff */
+    min-height: 580px; /* Ensure enough height for full card visibility */
+  }
+
+  .splide__track {
+    overflow: hidden; /* Ensure track doesn't show overflow */
+  }
+
+  .flex-block-announcements {
+    display: flex;
+    flex-wrap: nowrap;
+    max-width: 100% !important; /* Override 80% constraint from global styles */
+    margin: 0 auto; /* Center the list */
+  }
+
+  .splide__list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px !important;
+  }
+
+  /* Extra specificity to override Splide CSS */
+  #news-carousel .splide__list {
+    margin: 10px !important;
+  }
+
+  .splide__slide {
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box; /* Include padding in width calculations */
+    flex-shrink: 0; /* Prevent slides from shrinking */
+    max-width: 460px; /* Maximum width for each slide */
+  }
+
+  /* Override announcement-box width for carousel - parent already controls size */
+  .news-carousel .announcement-box {
+    width: 100% !important;
+    max-width: 440px; /* Reasonable max width for cards */
+    min-width: 380px; /* Minimum width to maintain card proportions */
+  }
+
+  /* Customize Splide arrows to match site design */
+  .splide__arrow {
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    width: 3rem;
+    height: 3rem;
+  }
+
+  .splide__arrow:hover {
+    background: rgba(255, 255, 255, 1);
+  }
+
+  .splide__arrow svg {
+    fill: #333;
+  }
+
+  /* Customize pagination dots */
+  .splide__pagination {
+    bottom: -2.5rem;
+  }
+
+  .splide__pagination__page {
+    background: rgba(255, 255, 255, 0.5);
+    width: 12px;
+    height: 12px;
+  }
+
+  .splide__pagination__page.is-active {
+    background: #fff;
+    transform: scale(1.2);
+  }
+
+</style>
