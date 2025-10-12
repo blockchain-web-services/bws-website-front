@@ -49,359 +49,711 @@
 
         <!-- Abstract -->
         <section id="abstract" class="white-paper-section">
-      <h2 class="title h3-size">Abstract</h2>
-      <div class="paragraph">
-        <p>The blockchain sector is characterized by a fundamental paradox: despite its transformative potential, approximately 95% of potential users are unable to access or utilize it effectively. Blockchain Web Services (BWS) addresses this limitation by developing a marketplace platform that delivers blockchain-based solutions to businesses (B2B2C) and individual consumers (B2C) without requiring specialized technical knowledge.</p>
-
-        <p>While the total addressable market for blockchain technologies is valued in the billions, adoption remains largely restricted to users with technical expertise. BWS seeks to democratize blockchain access by abstracting its underlying complexity—eliminating the need for wallets, gas fees, and private keys. The result is a seamless user experience that enables broad participation in blockchain ecosystems.</p>
-
-        <p>The BWS platform operates as a three-sided marketplace, facilitating interactions among <strong>Solution Developers</strong>, who design and deploy blockchain applications through BWS APIs; <strong>Businesses</strong>, who license these applications to enhance their service offerings (B2B2C); and <strong>End Consumers</strong>, who benefit from blockchain-enabled services without engaging with the technical infrastructure (B2C).</p>
-
-        <p>This model establishes a self-reinforcing ecosystem in which each stakeholder contributes to value creation and stimulates demand for the platform's native token.</p>
-
-        <p>The present white paper outlines the architecture of the BWS platform, its tokenomic framework, core applications, and competitive differentiators, as well as the strategic trajectory toward positioning BWS as the standard platform for accessible blockchain solutions.</p>
-      </div>
-    </section>
-
-    <!-- 1. Introduction -->
-    <section id="introduction" class="white-paper-section">
-      <h2 class="title h3-size">I. Introduction</h2>
-      <div class="paragraph">
-        <p>Blockchain technology is widely perceived as complex, with significant technical barriers that limit its accessibility to the mass market. Although existing blockchain API providers such as Infura, Alchemy, and QuickNode have successfully supplied the underlying infrastructure for developers, these platforms remain fundamentally developer-oriented. They presuppose advanced technical knowledge—encompassing wallet management, gas fee structures, and Web3 interaction models—which effectively excludes approximately 95% of potential end users.</p>
-
-        <p>Blockchain Web Services (BWS) introduces a paradigm shift by repositioning blockchain technology around the needs of the end user. It is a customer-centric blockchain platform that prioritizes accessibility for consumers while simultaneously empowering developers and businesses. In contrast to traditional infrastructure providers, BWS establishes a trusted, integrated environment where developers, businesses, and end consumers interact seamlessly within a unified ecosystem.</p>
-
-        <p>The platform's architecture is explicitly designed to eliminate user friction and apprehension associated with blockchain adoption. End users are fully shielded from the technical and operational complexities of the blockchain environment—they do not manage wallets, pay gas fees, or handle private keys. Instead, they engage through intuitive, secure interfaces powered by BWS's trusted infrastructure. Within this ecosystem, businesses can license ready-to-deploy blockchain solutions directly from the BWS marketplace, while developers benefit from one-time development and large-scale distribution through the platform's network.</p>
-
-        <p>This customer-first approach addresses the primary barrier to blockchain adoption: trust. By positioning BWS as a reliable intermediary that abstracts all technical complexity, manages security, and ensures operational integrity, the platform enables users to engage confidently with blockchain applications—analogous to how contemporary consumers benefit from cloud-based services without understanding the mechanics of distributed computing.</p>
-      </div>
-    </section>
-
-    <!-- 2. Mission Statement -->
-    <section id="mission" class="white-paper-section">
-      <h2 class="title h3-size">II. Mission Statement</h2>
-      <div class="paragraph">
-        <p>The mission of Blockchain Web Services (BWS) is to deliver blockchain solutions that democratize access to decentralized technologies, expand their reach to mass markets, and achieve sustainable profitability under the guiding principle: "Blockchain Everywhere, for Everyone."</p>
-
-        <p>As a user-centric platform, BWS is dedicated to providing seamless, accessible blockchain experiences for both developers and end users. Its intuitive APIs abstract technical complexity, simplifying blockchain integration for developers while ensuring effortless usability for non-technical and mainstream audiences.</p>
-
-        <h3 class="title h4-size">Blockchain-Agnostic Architecture</h3>
-        <p>BWS employs a blockchain-agnostic design, enabling developers to select the network that best aligns with their specific requirements for cost efficiency, performance, and scalability. This flexibility ensures that each solution can be optimized for its intended use case while maintaining a consistent, user-friendly experience across the platform. By supporting interoperability and adaptability, BWS facilitates the deployment of blockchain applications capable of addressing diverse market needs at scale.</p>
-
-        <h3 class="title h4-size">User-Centric API Framework</h3>
-        <p>The BWS API framework is designed for developers who may not possess prior blockchain expertise. It provides familiar programming interfaces that allow for the creation of powerful blockchain-enabled applications without requiring direct interaction with blockchain infrastructure. End users of these applications remain insulated from all underlying complexity—they do not manage wallets, pay gas fees, or handle private keys. Developers concentrate on delivering functionality and user experience, while BWS manages the blockchain infrastructure, security, and operational mechanics transparently in the background.</p>
-
-        <h3 class="title h4-size">Solutions Marketplace and Trust Infrastructure</h3>
-        <p>The BWS Solutions Marketplace functions as a trusted distribution environment, overcoming the principal barriers to blockchain adoption—namely, concerns regarding security, asset custody, transaction finality, and regulatory compliance. By serving as a reliable intermediary that guarantees platform-level security, standardized user experiences, and compliance assurance, BWS eliminates the friction that has historically hindered business and consumer adoption.</p>
-
-        <p>This trust-based infrastructure redefines blockchain from a technically daunting innovation into a dependable, accessible set of solutions. In doing so, it accelerates market adoption, drives ecosystem growth, and establishes BWS as the enabling layer for mainstream blockchain utilization.</p>
-      </div>
-    </section>
-
-    <!-- 3. BWS Architecture -->
-    <section id="architecture" class="white-paper-section">
-      <h2 class="title h3-size">III. BWS Architecture</h2>
-      <div class="paragraph">
-        <p>Blockchain Web Services (BWS) is built on a three-layer architecture—the Solutions Marketplace, the Platform API, and the Platform Smart Contracts. Together, these layers create a unified environment that allows seamless interaction between end users, developers, and the underlying blockchain infrastructure.</p>
-
-        <div class="white-paper-figure">
-          <img
-            src="/assets/images/white-paper/figure1.png"
-            alt="Figure 1. The Blockchain Web Services platform architecture is modular, enabling new solutions to be added easily"
-            loading="lazy"
-          />
-          <p class="figure-caption"><em>Figure 1. The Blockchain Web Services platform architecture is modular, enabling new solutions to be added easily.</em></p>
-        </div>
-
-        <p>At the top layer, the Solutions Marketplace serves as the user-facing component of the ecosystem. It provides an intuitive interface where end customers can interact with blockchain-powered applications, and where developers and businesses can publish, distribute, and monetize their solutions. All marketplace solutions integrate through a standardized Solutions API, ensuring a consistent and reliable user experience.</p>
-
-        <p>Beneath the marketplace lies the Platform API, which forms the operational backbone of BWS. This layer provides access to essential blockchain functionalities such as data storage (Blockchain Save), data verification (Blockchain Hash), decentralized storage (IPFS), and NFT services (NFT zK, NFT Marketplace). Additional modules include identity and credit management, enabling secure user operations and compliance-ready application design.</p>
-
-        <p>At the foundation of the stack, the Platform Smart Contracts layer provides the decentralized logic and execution environment that powers all interactions. These smart contracts connect with multiple public blockchains—including Ethereum, Polkadot, Polygon, Avalanche, and Cardano—ensuring true blockchain agnosticism and giving developers the freedom to choose the optimal network based on cost, speed, or technical requirements.</p>
-
-        <div class="white-paper-figure">
-          <img
-            src="/assets/images/white-paper/figure2.png"
-            alt="Figure 2. All marketplace solutions share a unified API signature, allowing external developers to integrate new features and applications seamlessly"
-            loading="lazy"
-          />
-          <p class="figure-caption"><em>Figure 2. All marketplace solutions share a unified API signature, allowing external developers to integrate new features and applications seamlessly.</em></p>
-        </div>
-
-        <p>This modular and blockchain-agnostic design allows BWS to scale horizontally by integrating new functionalities and vertically by supporting additional blockchain networks—all without disrupting existing solutions.</p>
-
-        <h3 class="title h4-size">Security and Auditing</h3>
-        <p>Security is central to the BWS infrastructure. The platform integrates smart contract auditing, continuous transaction monitoring, and fail-safe mechanisms to guarantee data integrity and protect users against vulnerabilities. Every deployed solution undergoes a verification process to maintain the platform's trust and reliability standards.</p>
-
-        <p>Through this architecture, BWS establishes a developer-friendly, secure, and scalable foundation for building next-generation blockchain applications—empowering creators to focus on innovation while the platform manages complexity behind the scenes.</p>
-      </div>
-    </section>
-
-    <!-- 4. Strategy -->
-    <section id="strategy" class="white-paper-section">
-      <h2 class="title h3-size">IV. Strategy</h2>
-      <div class="paragraph">
-        <p>The core strategy of Blockchain Web Services (BWS) centers on building an inclusive blockchain ecosystem that empowers developers to create scalable solutions capable of reaching mass markets. This strategy integrates technological accessibility with economic sustainability, ensuring that innovation within the ecosystem is both incentivized and self-reinforcing.</p>
-
-        <p>To advance this vision, BWS will implement a series of key strategic initiatives designed to establish long-term growth, technological credibility, and ecosystem resilience.</p>
-
-        <h3 class="title h4-size">$BWS Token Launch</h3>
-        <p>The BWS native token serves as the foundational economic layer of the ecosystem, underpinning all value exchange and incentivization mechanisms within the platform. It is designed to finance ongoing development, sustain marketplace expansion, and align the interests of developers, businesses, and users.</p>
-
-        <p>Functioning as the medium of exchange within the BWS platform, the token is used to pay for API consumption and access to marketplace solutions. This utility-driven economic model ensures that transactional activity directly supports and rewards developers contributing to the platform's growth. By linking developer incentives to platform usage, BWS establishes a continuous cycle of innovation and participation.</p>
-
-        <p>Through its integration into API and marketplace transactions, the token reinforces both operational sustainability and community engagement. Developers receive token-based rewards proportional to their impact on ecosystem development and innovation. This circular mechanism promotes a self-sustaining economy characterized by ongoing technological progress, market expansion, and long-term value creation—anchoring the financial and operational stability of the BWS ecosystem.</p>
-
-        <h3 class="title h4-size">Development of Showcase Solutions</h3>
-        <p>To catalyze adoption and validate the platform's technical and commercial potential, BWS will develop a series of flagship marketplace solutions. These early implementations serve as strategic demonstration projects, designed to confirm the robustness of the platform's architecture, build credibility with early adopters, and provide reference frameworks for third-party developers.</p>
-
-        <p>By deploying these solutions across diverse industry verticals—including sports engagement, community management, and other consumer-oriented domains—BWS will demonstrate the adaptability, scalability, and accessibility of its platform. Each showcase application functions both as a revenue-generating product and as a development blueprint, enabling external developers to replicate and extend proven design patterns across new use cases.</p>
-
-        <p>This initiative transforms BWS from a conceptual model into a fully operational marketplace with tangible real-world applications. By lowering entry barriers for both businesses and developers, the showcase strategy accelerates ecosystem expansion, fosters cross-sector adoption, and consolidates BWS's position as a trusted and accessible standard for blockchain-enabled solutions.</p>
-      </div>
-    </section>
-
-    <!-- 5. $BWS token Model -->
-    <section id="token-model" class="white-paper-section">
-      <h2 class="title h3-size">V. $BWS token Model</h2>
-      <div class="paragraph">
-        <p>The $BWS token underpins the economic structure of the Blockchain Web Services ecosystem. It ensures long-term funding for marketplace development, incentivizes continuous innovation, and sustains the platform's growth through a transparent and self-reinforcing token economy.</p>
-
-        <p>The tokenomics model is designed to drive value creation, reward developer contributions, and maintain economic stability within the BWS ecosystem. It establishes direct alignment between marketplace activity, developer incentives, and token value appreciation.</p>
-
-        <h3 class="title h4-size">Token Utility: API and Marketplace Transactions</h3>
-        <p>The primary utility of the $BWS token lies in its use as the medium of exchange for API and marketplace interactions. End users indirectly utilize $BWS tokens when engaging with blockchain-powered solutions—such as NFT creation, data certification, or decentralized storage—without facing technical complexities.</p>
-
-        <p>These token-based API fees flow back into the ecosystem, funding the BWS marketplace and distributing rewards to developers whose solutions generate platform activity. This model creates a sustainable revenue loop, ensuring that increased usage directly supports ongoing innovation and developer engagement.</p>
-
-        <h3 class="title h4-size">Developer Grants and Ecosystem Funding</h3>
-        <p>A portion of the total token supply is allocated to the BWS Developer Grants Program, a dedicated initiative to finance new projects and stimulate innovation within the marketplace. Developers can apply for grants based on criteria such as solution utility, scalability, and impact on ecosystem growth.</p>
-
-        <p>By supporting early-stage and high-impact applications, this program establishes a continuous innovation pipeline, ensuring that the platform remains technologically competitive and responsive to emerging market demands.</p>
-
-        <h3 class="title h4-size">Marketplace Growth Through Token Circulation</h3>
-        <p>The BWS token model fosters a self-sustaining economic cycle in which increased platform utilization leads to greater token circulation, liquidity, and marketplace growth. Each API transaction contributes to three primary objectives:</p>
-        <ul>
-          <li>Rewarding developers for impactful solutions.</li>
-          <li>Financing new innovations through grants and development funding.</li>
-          <li>Maintaining token liquidity to stabilize market activity and ensure consistent flow within the ecosystem.</li>
-        </ul>
-
-        <p>This cycle strengthens the correlation between platform adoption and token demand, ensuring that value creation remains decentralized yet coordinated across participants.</p>
-
-        <h3 class="title h4-size">Token Demand and Value Growth</h3>
-        <p>Demand for the $BWS token will naturally expand as marketplace activity and API utilization increase. This structure generates a positive feedback loop: higher transaction volume drives token circulation, which in turn enhances overall token value.</p>
-
-        <p>By tightly coupling economic performance with platform adoption, the tokenomics model ensures mutual benefit for both developers and token holders, aligning short-term engagement with long-term ecosystem sustainability.</p>
-
-        <h3 class="title h4-size">Revenue Sharing and Developer Compensation</h3>
-        <p>Developers listing solutions on the BWS Marketplace receive compensation in the form of token-based revenue sharing. A percentage of transaction fees generated through API usage or solution deployment is redistributed to developers, guaranteeing fair remuneration and incentivizing continued development.</p>
-
-        <p>This model balances individual incentives with collective ecosystem health, ensuring that developer success directly contributes to the broader platform's growth and innovation capacity.</p>
-      </div>
-
-      <h3 id="tokenomics" class="title h3-size">Tokenomics Overview</h3>
-      <div class="paragraph">
-        <p>The total supply of $BWS tokens is fixed at 100 million, strategically distributed to promote ecosystem growth, liquidity, and long-term stability. The allocation model emphasizes transparency, equitable access, and sustainability:</p>
-
-        <div class="white-paper-figure">
-          <img
-            src="/assets/images/6474d385cfec71cb21a92251/6707fd987c3a05d42e1e908e_Tokenomics-Allocation-letters-black.png"
-            alt="$BWS Token Allocation"
-            loading="lazy"
-            class="image-token-allocation"
-          />
-          <p class="figure-caption"><em>Allocation of Tokens</em></p>
-        </div>
-
-        <div class="allocation-item">
-          <p><strong>Circulating Supply: 70% (70M BWS)</strong></p>
-          <p>Ensures liquidity and accessibility across the BWS ecosystem.</p>
-        </div>
-
-        <div class="allocation-item">
-          <p><strong>Developer Grants: 10% (10M BWS)</strong></p>
-          <p>Funds the BWS Developer Grants Program to encourage innovation and ecosystem expansion.</p>
-        </div>
-
-        <div class="allocation-item">
-          <p><strong>Team Tokens: 8% (8M BWS)</strong></p>
-          <p>Rewards the core team, advisors, and key contributors driving the platform's growth.</p>
-        </div>
-
-        <div class="allocation-item">
-          <p><strong>Marketing Tokens: 5% (5M BWS)</strong></p>
-          <p>Supports marketing initiatives, partnerships, and user acquisition.</p>
-        </div>
-
-        <div class="allocation-item">
-          <p><strong>Partnerships & Airdrops: 5% (5M BWS)</strong></p>
-          <p>Incentivizes strategic collaborations and rewards early supporters.</p>
-        </div>
-
-        <div class="allocation-item">
-          <p><strong>Liquidity & Reserves: 2% (2M BWS)</strong></p>
-          <p>Maintains market liquidity and stabilizes token exchange mechanisms.</p>
-        </div>
-
-        <p>This structured allocation ensures that resources are directed toward growth, innovation, and stability while maintaining broad token accessibility.</p>
-      </div>
-
-      <h3 id="dynamic-tax" class="title h3-size">Dynamic Tax System</h3>
-      <div class="paragraph">
-        <p>The $BWS token employs a dynamic taxation mechanism designed to balance incentives, mitigate volatility, and promote sustainable ecosystem development.</p>
-        <ul>
-          <li>When market capitalization is low, the buy tax decreases to encourage new participants, while the sell tax increases to deter short-term speculation.</li>
-          <li>As market capitalization rises, the buy tax increases and the sell tax decreases, rewarding long-term holders and supporting organic price appreciation.</li>
-          <li>Transaction taxes are capped at a maximum of 5% for both buy and sell operations.</li>
-        </ul>
-
-        <h4 class="title h4-size">Tax Fund Allocation</h4>
-        <p>Collected tax proceeds are strategically reinvested to strengthen platform functionality and ecosystem growth:</p>
-        <ul>
-          <li><strong>5% Product Development:</strong> Continuous platform improvements and new feature integration.</li>
-          <li><strong>2% Sales & Business Growth:</strong> Expansion through partnerships and adoption initiatives.</li>
-          <li><strong>2% Marketing:</strong> User acquisition and brand visibility campaigns.</li>
-          <li><strong>1% Developer Grants Program:</strong> Ongoing funding for projects within the BWS ecosystem.</li>
-        </ul>
-
-        <p>This dynamic structure ensures that taxation serves as a stabilizing mechanism, fostering long-term trust, organic growth, and balanced participation across the ecosystem.</p>
-      </div>
-    </section>
-
-    <!-- 6. BWS Solutions Marketplace -->
-    <section id="nft-game-cube" class="white-paper-section">
-      <h2 class="title h3-size">VI. BWS Solutions Marketplace</h2>
-      <div class="paragraph">
-        <p>Blockchain Web Service's vision, "Blockchain Everywhere, for Everyone," aims to bring blockchain to mass markets through a user-centric API to build accessible, innovative solutions and a platform marketplace where the Web3 community can publish, share, and monetize blockchain applications.</p>
-
-        <p>To trigger initial traction and demonstrate the platform's capabilities, BWS will launch several flagship solutions available in the BWS Solutions Marketplace. These solutions showcase how developers can build revenue-generating applications on the platform while inspiring further development from the community.</p>
-
-        <p>Consider a practical example from the BWS Solutions Marketplace: A sports club (business) licenses Fan Game Cube, offering fans (consumers) the ability to own digital game zones and earn rewards. The solution developer earns fees in $BWS tokens, the club generates new revenue, fans enjoy gamified engagement, and token demand increases with every interaction across all three sides of the marketplace.</p>
-
-        <p>The marketplace features diverse solutions serving different market needs, from Fan Game Cube for sports engagement to X Bot for community management, each demonstrating the power of blockchain technology made accessible through BWS's customer-centric platform.</p>
-      </div>
-
-      <div class="white-paper-figure">
-        <img
-          src="/assets/images/white-paper/figure4.png"
-          alt="Figure 4. NFT Game CUBE Blockchain Web Services platform solution"
-          loading="lazy"
-        />
-        <p class="figure-caption"><em>Figure 4. NFT Game CUBE Blockchain Web Services platform solution.</em></p>
-      </div>
-
-      <h3 id="nft-overview" class="title h3-size">Fan Game Cube Overview</h3>
-      <div class="paragraph">
-        <p>BWS's Fan Game Cube solution lets sports fans own digital assets tied to specific sections of a sports field—not only football but chess, tennis, cricket, and many more.</p>
-
-        <div class="white-paper-figure">
-          <img
-            src="/assets/images/white-paper/figure5.png"
-            alt="Figure 5. Tokenize and sell Sports Clubs field sections in just a few clicks (or API calls!)"
-            loading="lazy"
-          />
-          <p class="figure-caption"><em>Figure 5. Tokenize and sell Sports Clubs field sections in just a few clicks (or API calls!).</em></p>
-        </div>
-
-        <p>As real-time events unfold at their location during the game, fans earn points, unlocking exciting rewards while creating a new revenue stream for sports clubs, former athletes, influencers, and anyone with a market in the sports industry.</p>
-
-        <h4 class="title h4-size">NFT tokenization of game zones</h4>
-        <p>Fans can purchase virtual cubes representing specific zones of a sports field as NFTs. Rewards are based on real-time events, such as a goal being scored from their purchased zone</p>
-
-        <h4 class="title h4-size">Simplified NFT creation via BWS NFT.zK API</h4>
-        <p>The BWS NFT.zK API will handle the technical complexity of creating NFTs. Fans can hold NFTs with only an email address, bypassing the need for a Web3 wallet or tokens, drastically reducing the barrier to entry.</p>
-
-        <h4 class="title h4-size">Developer token-based fee structure</h4>
-        <p>The solution owner (BWS team, in this case) earns $BWS tokens for each API call made when NFTs are created, traded, or interacted with, rewarding the developer's team to maintain and improve the solution.</p>
-
-        <p>Fan Game Cube is a scalable solution where fans can play multiple sports and hold a weekend chess tournament, a soccer VIP final, and a cricket yearly season. It's a new sports fan experience.</p>
-
-        <div class="white-paper-figure">
-          <img
-            src="/assets/images/white-paper/figure6.png"
-            alt="Figure 6. NFT Game CUBE is valid for any sport that has a 'field'!"
-            loading="lazy"
-          />
-          <p class="figure-caption"><em>Figure 6. NFT Game CUBE is valid for any sport that has a "field"!</em></p>
-        </div>
-      </div>
-
-      <h3 id="xbot-overview" class="title h3-size">X Bot Overview</h3>
-      <div class="paragraph">
-        <p>X Bot is an innovative Telegram solution by BWS that empowers community groups to monitor and enhance their engagement on X (formerly Twitter) through a gamified experience. This solution demonstrates how BWS platform APIs can be leveraged to create community management tools that bridge Web2 social platforms with Web3 infrastructure.</p>
-
-        <h4 class="title h4-size">Custom Monitoring & Real-Time Data</h4>
-        <p>Group admins configure custom filters based on specific X accounts, keywords, or mentions. X Bot fetches relevant public posts using the X API in real-time, ensuring community interactions are based on the most current information available.</p>
-
-        <h4 class="title h4-size">Gamified Leaderboards</h4>
-        <p>X Bot compiles leaderboard reports showcasing the most active and supportive community members. This gamified approach incentivizes participation and recognizes top contributors, fostering a competitive and engaging environment that enhances community engagement.</p>
-
-        <h4 class="title h4-size">Data-Driven Community Insights</h4>
-        <p>Community admins gain valuable insights into member activities and engagement trends through real-time data fetching and reporting, facilitating informed decision-making for community growth strategies.</p>
-
-        <p>X Bot exemplifies how BWS marketplace solutions can serve diverse needs—from sports engagement with Fan Game Cube to community management with X Bot—each built on the same platform infrastructure and demonstrating the versatility of BWS's customer-centric approach to blockchain technology.</p>
-      </div>
-    </section>
-
-    <!-- 6. BWS Developer Grants -->
-    <section id="developer-grants" class="white-paper-section">
-      <h2 class="title h3-size">VII. BWS Developer Grants</h2>
-      <div class="paragraph">
-        <p>Recognizing the importance of building a vibrant developer ecosystem, we are excited to introduce the <strong>BWS Developer Grants</strong>—a program designed to incentivize developers to build tools and applications on top of our platform protocols, rewarding them for their contributions.</p>
-
-        <p>The initiative will maintain a development fund to support growth efforts, focusing on fostering innovation within the BWS ecosystem.</p>
-
-        <h3 class="title h4-size">Program Overview</h3>
-        <p>The BWS Developer Grant is a developer-focused program promoting creativity, experimentation, and adoption of the BWS platform. Developers are invited to propose and build innovative projects such as decentralized applications, innovative smart contracts solutions, and integration tools that leverage the capabilities of BWS. Selected projects will receive grants in $BWS tokens.</p>
-
-        <h3 class="title h4-size">Incentives</h3>
-        <p>Developers who participate in the BWS Developer Initiative will benefit from:</p>
-
-        <p><strong>1. Bounty Payments</strong></p>
-        <p>Developers whose projects are selected for integration with BWS will receive bounty payments based on the complexity and impact of their projects.</p>
-
-        <p><strong>2. Recognition and Exposure</strong></p>
-        <p>Featured projects will be showcased on the BWS website, social media, and promotional channels, giving developers visibility and recognition within the blockchain community.</p>
-
-        <p><strong>3. Technical Support and Resources</strong></p>
-        <p>The BWS team will provide developers access to technical support, detailed documentation, and resources to streamline development.</p>
-
-        <p><strong>4. API Fees</strong></p>
-        <p>Once your application is published, you will receive a fee in $BWS tokens every time your APIs get called.</p>
-
-        <h3 class="title h4-size">Program Guidelines</h3>
-        <p>To participate in the BWS Developer Initiative, developers must submit proposals detailing their project's objectives, implementation plans, and alignment with the BWS ecosystem. Projects should demonstrate innovation, technical feasibility, and the potential to add value to the BWS ecosystem.</p>
-
-        <p>Collaboration and open-source development are encouraged to foster community-driven innovation.</p>
-
-        <h3 class="title h4-size">Examples of Eligible Projects</h3>
-
-        <p><strong>1. Tokenization of Environmental and Social Impact Projects</strong></p>
-        <p>Create platforms for tokenizing ESG assets like carbon credits using the BWS.ESG API to certify, track, and trade green assets. This application could revolutionize the way sustainable investments are managed and verified.</p>
-
-        <p><strong>2. NFT-Based Asset Verification Platforms</strong></p>
-        <p>Build applications that allow businesses or individuals to tokenize physical or digital assets, such as property or artwork. The NFT.zK API can provide verifiable proof of ownership and authenticity.</p>
-
-        <p><strong>3. Gaming and Entertainment NFTs</strong></p>
-        <p>Develop NFT-based games or fan engagement platforms that allow users to tokenize experiences and interact with digital assets in new ways. The BWS NFT.zK API simplifies the creation and management of these digital assets.</p>
-
-        <p>By empowering developers with financial incentives, technical resources, and recognition, the BWS Grants initiative will foster innovation and accelerate the growth of the BWS ecosystem.</p>
-      </div>
-    </section>
-
-    <!-- 15. Conclusion -->
-    <section id="conclusion" class="white-paper-section">
-      <h2 class="title h3-size">VIII. Conclusion</h2>
-      <div class="paragraph">
-        <p>Blockchain Web Services is paving the way for broader blockchain adoption through its accessible API solutions, inclusive marketplace, and powerful tokenomics.</p>
-
-        <p>By lowering the barriers to entry and incentivizing developers, BWS is set to become a key player in the future of blockchain. With "Blockchain Everywhere, for Everyone" as its guiding principle, BWS will deliver innovative solutions that empower users of all technical backgrounds to engage with blockchain technology and transform their digital experiences.</p>
-      </div>
-      <div class="white-paper-end">
-        <p><strong>END.</strong></p>
-      </div>
-    </section>
+          <h2 class="title h3-size">Abstract</h2>
+          <div class="paragraph">
+            <p>
+              The blockchain sector is characterized by a fundamental paradox: despite its transformative potential,
+              approximately 95% of potential users are unable to access or utilize it effectively. Blockchain Web
+              Services (BWS) addresses this limitation by developing a marketplace platform that delivers
+              blockchain-based solutions to businesses (B2B2C) and individual consumers (B2C) without requiring
+              specialized technical knowledge.
+            </p>
+
+            <p>
+              While the total addressable market for blockchain technologies is valued in the billions, adoption remains
+              largely restricted to users with technical expertise. BWS seeks to democratize blockchain access by
+              abstracting its underlying complexity—eliminating the need for wallets, gas fees, and private keys. The
+              result is a seamless user experience that enables broad participation in blockchain ecosystems.
+            </p>
+
+            <p>
+              The BWS platform operates as a three-sided marketplace, facilitating interactions among <strong
+                >Solution Developers</strong
+              >, who design and deploy blockchain applications through BWS APIs; <strong>Businesses</strong>, who
+              license these applications to enhance their service offerings (B2B2C); and <strong>End Consumers</strong>,
+              who benefit from blockchain-enabled services without engaging with the technical infrastructure (B2C).
+            </p>
+
+            <p>
+              This model establishes a self-reinforcing ecosystem in which each stakeholder contributes to value
+              creation and stimulates demand for the platform's native token.
+            </p>
+
+            <p>
+              The present white paper outlines the architecture of the BWS platform, its tokenomic framework, core
+              applications, and competitive differentiators, as well as the strategic trajectory toward positioning BWS
+              as the standard platform for accessible blockchain solutions.
+            </p>
+          </div>
+        </section>
+
+        <!-- 1. Introduction -->
+        <section id="introduction" class="white-paper-section">
+          <h2 class="title h3-size">I. Introduction</h2>
+          <div class="paragraph">
+            <p>
+              Blockchain technology is widely perceived as complex, with significant technical barriers that limit its
+              accessibility to the mass market. Although existing blockchain API providers such as Infura, Alchemy, and
+              QuickNode have successfully supplied the underlying infrastructure for developers, these platforms remain
+              fundamentally developer-oriented. They presuppose advanced technical knowledge—encompassing wallet
+              management, gas fee structures, and Web3 interaction models—which effectively excludes approximately 95%
+              of potential end users.
+            </p>
+
+            <p>
+              Blockchain Web Services (BWS) introduces a paradigm shift by repositioning blockchain technology around
+              the needs of the end user. It is a customer-centric blockchain platform that prioritizes accessibility for
+              consumers while simultaneously empowering developers and businesses. In contrast to traditional
+              infrastructure providers, BWS establishes a trusted, integrated environment where developers, businesses,
+              and end consumers interact seamlessly within a unified ecosystem.
+            </p>
+
+            <p>
+              The platform's architecture is explicitly designed to eliminate user friction and apprehension associated
+              with blockchain adoption. End users are fully shielded from the technical and operational complexities of
+              the blockchain environment—they do not manage wallets, pay gas fees, or handle private keys. Instead, they
+              engage through intuitive, secure interfaces powered by BWS's trusted infrastructure. Within this
+              ecosystem, businesses can license ready-to-deploy blockchain solutions directly from the BWS marketplace,
+              while developers benefit from one-time development and large-scale distribution through the platform's
+              network.
+            </p>
+
+            <p>
+              This customer-first approach addresses the primary barrier to blockchain adoption: trust. By positioning
+              BWS as a reliable intermediary that abstracts all technical complexity, manages security, and ensures
+              operational integrity, the platform enables users to engage confidently with blockchain
+              applications—analogous to how contemporary consumers benefit from cloud-based services without
+              understanding the mechanics of distributed computing.
+            </p>
+          </div>
+        </section>
+
+        <!-- 2. Mission Statement -->
+        <section id="mission" class="white-paper-section">
+          <h2 class="title h3-size">II. Mission Statement</h2>
+          <div class="paragraph">
+            <p>
+              The mission of Blockchain Web Services (BWS) is to deliver blockchain solutions that democratize access to
+              decentralized technologies, expand their reach to mass markets, and achieve sustainable profitability
+              under the guiding principle: "Blockchain Everywhere, for Everyone."
+            </p>
+
+            <p>
+              As a user-centric platform, BWS is dedicated to providing seamless, accessible blockchain experiences for
+              both developers and end users. Its intuitive APIs abstract technical complexity, simplifying blockchain
+              integration for developers while ensuring effortless usability for non-technical and mainstream audiences.
+            </p>
+
+            <h3 class="title h4-size">Blockchain-Agnostic Architecture</h3>
+            <p>
+              BWS employs a blockchain-agnostic design, enabling developers to select the network that best aligns with
+              their specific requirements for cost efficiency, performance, and scalability. This flexibility ensures
+              that each solution can be optimized for its intended use case while maintaining a consistent,
+              user-friendly experience across the platform. By supporting interoperability and adaptability, BWS
+              facilitates the deployment of blockchain applications capable of addressing diverse market needs at scale.
+            </p>
+
+            <h3 class="title h4-size">User-Centric API Framework</h3>
+            <p>
+              The BWS API framework is designed for developers who may not possess prior blockchain expertise. It
+              provides familiar programming interfaces that allow for the creation of powerful blockchain-enabled
+              applications without requiring direct interaction with blockchain infrastructure. End users of these
+              applications remain insulated from all underlying complexity—they do not manage wallets, pay gas fees, or
+              handle private keys. Developers concentrate on delivering functionality and user experience, while BWS
+              manages the blockchain infrastructure, security, and operational mechanics transparently in the
+              background.
+            </p>
+
+            <h3 class="title h4-size">Solutions Marketplace and Trust Infrastructure</h3>
+            <p>
+              The BWS Solutions Marketplace functions as a trusted distribution environment, overcoming the principal
+              barriers to blockchain adoption—namely, concerns regarding security, asset custody, transaction finality,
+              and regulatory compliance. By serving as a reliable intermediary that guarantees platform-level security,
+              standardized user experiences, and compliance assurance, BWS eliminates the friction that has historically
+              hindered business and consumer adoption.
+            </p>
+
+            <p>
+              This trust-based infrastructure redefines blockchain from a technically daunting innovation into a
+              dependable, accessible set of solutions. In doing so, it accelerates market adoption, drives ecosystem
+              growth, and establishes BWS as the enabling layer for mainstream blockchain utilization.
+            </p>
+          </div>
+        </section>
+
+        <!-- 3. BWS Architecture -->
+        <section id="architecture" class="white-paper-section">
+          <h2 class="title h3-size">III. BWS Architecture</h2>
+          <div class="paragraph">
+            <p>
+              Blockchain Web Services (BWS) is built on a three-layer architecture—the Solutions Marketplace, the
+              Platform API, and the Platform Smart Contracts. Together, these layers create a unified environment that
+              allows seamless interaction between end users, developers, and the underlying blockchain infrastructure.
+            </p>
+
+            <div class="white-paper-figure">
+              <img
+                src="/assets/images/white-paper/figure1.png"
+                alt="Figure 1. The Blockchain Web Services platform architecture is modular, enabling new solutions to be added easily"
+                loading="lazy"
+              />
+              <p class="figure-caption">
+                <em
+                  >Figure 1. The Blockchain Web Services platform architecture is modular, enabling new solutions to be
+                  added easily.</em>
+              </p>
+            </div>
+
+            <p>
+              At the top layer, the Solutions Marketplace serves as the user-facing component of the ecosystem. It
+              provides an intuitive interface where end customers can interact with blockchain-powered applications, and
+              where developers and businesses can publish, distribute, and monetize their solutions. All marketplace
+              solutions integrate through a standardized Solutions API, ensuring a consistent and reliable user
+              experience.
+            </p>
+
+            <p>
+              Beneath the marketplace lies the Platform API, which forms the operational backbone of BWS. This layer
+              provides access to essential blockchain functionalities such as data storage (Blockchain Save), data
+              verification (Blockchain Hash), decentralized storage (IPFS), and NFT services (NFT zK, NFT Marketplace).
+              Additional modules include identity and credit management, enabling secure user operations and
+              compliance-ready application design.
+            </p>
+
+            <p>
+              At the foundation of the stack, the Platform Smart Contracts layer provides the decentralized logic and
+              execution environment that powers all interactions. These smart contracts connect with multiple public
+              blockchains—including Ethereum, Polkadot, Polygon, Avalanche, and Cardano—ensuring true blockchain
+              agnosticism and giving developers the freedom to choose the optimal network based on cost, speed, or
+              technical requirements.
+            </p>
+
+            <div class="white-paper-figure">
+              <img
+                src="/assets/images/white-paper/figure2.png"
+                alt="Figure 2. All marketplace solutions share a unified API signature, allowing external developers to integrate new features and applications seamlessly"
+                loading="lazy"
+              />
+              <p class="figure-caption">
+                <em
+                  >Figure 2. All marketplace solutions share a unified API signature, allowing external developers to
+                  integrate new features and applications seamlessly.</em>
+              </p>
+            </div>
+
+            <p>
+              This modular and blockchain-agnostic design allows BWS to scale horizontally by integrating new
+              functionalities and vertically by supporting additional blockchain networks—all without disrupting
+              existing solutions.
+            </p>
+
+            <h3 class="title h4-size">Security and Auditing</h3>
+            <p>
+              Security is central to the BWS infrastructure. The platform integrates smart contract auditing, continuous
+              transaction monitoring, and fail-safe mechanisms to guarantee data integrity and protect users against
+              vulnerabilities. Every deployed solution undergoes a verification process to maintain the platform's trust
+              and reliability standards.
+            </p>
+
+            <p>
+              Through this architecture, BWS establishes a developer-friendly, secure, and scalable foundation for
+              building next-generation blockchain applications—empowering creators to focus on innovation while the
+              platform manages complexity behind the scenes.
+            </p>
+          </div>
+        </section>
+
+        <!-- 4. Strategy -->
+        <section id="strategy" class="white-paper-section">
+          <h2 class="title h3-size">IV. Strategy</h2>
+          <div class="paragraph">
+            <p>
+              The core strategy of Blockchain Web Services (BWS) centers on building an inclusive blockchain ecosystem
+              that empowers developers to create scalable solutions capable of reaching mass markets. This strategy
+              integrates technological accessibility with economic sustainability, ensuring that innovation within the
+              ecosystem is both incentivized and self-reinforcing.
+            </p>
+
+            <p>
+              To advance this vision, BWS will implement a series of key strategic initiatives designed to establish
+              long-term growth, technological credibility, and ecosystem resilience.
+            </p>
+
+            <h3 class="title h4-size">$BWS Token Launch</h3>
+            <p>
+              The BWS native token serves as the foundational economic layer of the ecosystem, underpinning all value
+              exchange and incentivization mechanisms within the platform. It is designed to finance ongoing
+              development, sustain marketplace expansion, and align the interests of developers, businesses, and users.
+            </p>
+
+            <p>
+              Functioning as the medium of exchange within the BWS platform, the token is used to pay for API
+              consumption and access to marketplace solutions. This utility-driven economic model ensures that
+              transactional activity directly supports and rewards developers contributing to the platform's growth. By
+              linking developer incentives to platform usage, BWS establishes a continuous cycle of innovation and
+              participation.
+            </p>
+
+            <p>
+              Through its integration into API and marketplace transactions, the token reinforces both operational
+              sustainability and community engagement. Developers receive token-based rewards proportional to their
+              impact on ecosystem development and innovation. This circular mechanism promotes a self-sustaining economy
+              characterized by ongoing technological progress, market expansion, and long-term value creation—anchoring
+              the financial and operational stability of the BWS ecosystem.
+            </p>
+
+            <h3 class="title h4-size">Development of Showcase Solutions</h3>
+            <p>
+              To catalyze adoption and validate the platform's technical and commercial potential, BWS will develop a
+              series of flagship marketplace solutions. These early implementations serve as strategic demonstration
+              projects, designed to confirm the robustness of the platform's architecture, build credibility with early
+              adopters, and provide reference frameworks for third-party developers.
+            </p>
+
+            <p>
+              By deploying these solutions across diverse industry verticals—including sports engagement, community
+              management, and other consumer-oriented domains—BWS will demonstrate the adaptability, scalability, and
+              accessibility of its platform. Each showcase application functions both as a revenue-generating product
+              and as a development blueprint, enabling external developers to replicate and extend proven design
+              patterns across new use cases.
+            </p>
+
+            <p>
+              This initiative transforms BWS from a conceptual model into a fully operational marketplace with tangible
+              real-world applications. By lowering entry barriers for both businesses and developers, the showcase
+              strategy accelerates ecosystem expansion, fosters cross-sector adoption, and consolidates BWS's position
+              as a trusted and accessible standard for blockchain-enabled solutions.
+            </p>
+          </div>
+        </section>
+
+        <!-- 5. $BWS token Model -->
+        <section id="token-model" class="white-paper-section">
+          <h2 class="title h3-size">V. $BWS token Model</h2>
+          <div class="paragraph">
+            <p>
+              The $BWS token underpins the economic structure of the Blockchain Web Services ecosystem. It ensures
+              long-term funding for marketplace development, incentivizes continuous innovation, and sustains the
+              platform's growth through a transparent and self-reinforcing token economy.
+            </p>
+
+            <p>
+              The tokenomics model is designed to drive value creation, reward developer contributions, and maintain
+              economic stability within the BWS ecosystem. It establishes direct alignment between marketplace activity,
+              developer incentives, and token value appreciation.
+            </p>
+
+            <h3 class="title h4-size">Token Utility: API and Marketplace Transactions</h3>
+            <p>
+              The primary utility of the $BWS token lies in its use as the medium of exchange for API and marketplace
+              interactions. End users indirectly utilize $BWS tokens when engaging with blockchain-powered
+              solutions—such as NFT creation, data certification, or decentralized storage—without facing technical
+              complexities.
+            </p>
+
+            <p>
+              These token-based API fees flow back into the ecosystem, funding the BWS marketplace and distributing
+              rewards to developers whose solutions generate platform activity. This model creates a sustainable revenue
+              loop, ensuring that increased usage directly supports ongoing innovation and developer engagement.
+            </p>
+
+            <h3 class="title h4-size">Developer Grants and Ecosystem Funding</h3>
+            <p>
+              A portion of the total token supply is allocated to the BWS Developer Grants Program, a dedicated
+              initiative to finance new projects and stimulate innovation within the marketplace. Developers can apply
+              for grants based on criteria such as solution utility, scalability, and impact on ecosystem growth.
+            </p>
+
+            <p>
+              By supporting early-stage and high-impact applications, this program establishes a continuous innovation
+              pipeline, ensuring that the platform remains technologically competitive and responsive to emerging market
+              demands.
+            </p>
+
+            <h3 class="title h4-size">Marketplace Growth Through Token Circulation</h3>
+            <p>
+              The BWS token model fosters a self-sustaining economic cycle in which increased platform utilization leads
+              to greater token circulation, liquidity, and marketplace growth. Each API transaction contributes to three
+              primary objectives:
+            </p>
+            <ul>
+              <li>Rewarding developers for impactful solutions.</li>
+              <li>Financing new innovations through grants and development funding.</li>
+              <li>
+                Maintaining token liquidity to stabilize market activity and ensure consistent flow within the
+                ecosystem.
+              </li>
+            </ul>
+
+            <p>
+              This cycle strengthens the correlation between platform adoption and token demand, ensuring that value
+              creation remains decentralized yet coordinated across participants.
+            </p>
+
+            <h3 class="title h4-size">Token Demand and Value Growth</h3>
+            <p>
+              Demand for the $BWS token will naturally expand as marketplace activity and API utilization increase. This
+              structure generates a positive feedback loop: higher transaction volume drives token circulation, which in
+              turn enhances overall token value.
+            </p>
+
+            <p>
+              By tightly coupling economic performance with platform adoption, the tokenomics model ensures mutual
+              benefit for both developers and token holders, aligning short-term engagement with long-term ecosystem
+              sustainability.
+            </p>
+
+            <h3 class="title h4-size">Revenue Sharing and Developer Compensation</h3>
+            <p>
+              Developers listing solutions on the BWS Marketplace receive compensation in the form of token-based
+              revenue sharing. A percentage of transaction fees generated through API usage or solution deployment is
+              redistributed to developers, guaranteeing fair remuneration and incentivizing continued development.
+            </p>
+
+            <p>
+              This model balances individual incentives with collective ecosystem health, ensuring that developer
+              success directly contributes to the broader platform's growth and innovation capacity.
+            </p>
+          </div>
+
+          <h3 id="tokenomics" class="title h3-size">Tokenomics Overview</h3>
+          <div class="paragraph">
+            <p>
+              The total supply of $BWS tokens is fixed at 100 million, strategically distributed to promote ecosystem
+              growth, liquidity, and long-term stability. The allocation model emphasizes transparency, equitable
+              access, and sustainability:
+            </p>
+
+            <div class="white-paper-figure">
+              <img
+                src="/assets/images/6474d385cfec71cb21a92251/6707fd987c3a05d42e1e908e_Tokenomics-Allocation-letters-black.png"
+                alt="$BWS Token Allocation"
+                loading="lazy"
+                class="image-token-allocation"
+              />
+              <p class="figure-caption"><em>Allocation of Tokens</em></p>
+            </div>
+
+            <div class="allocation-item">
+              <p><strong>Circulating Supply: 70% (70M BWS)</strong></p>
+              <p>Ensures liquidity and accessibility across the BWS ecosystem.</p>
+            </div>
+
+            <div class="allocation-item">
+              <p><strong>Developer Grants: 10% (10M BWS)</strong></p>
+              <p>Funds the BWS Developer Grants Program to encourage innovation and ecosystem expansion.</p>
+            </div>
+
+            <div class="allocation-item">
+              <p><strong>Team Tokens: 8% (8M BWS)</strong></p>
+              <p>Rewards the core team, advisors, and key contributors driving the platform's growth.</p>
+            </div>
+
+            <div class="allocation-item">
+              <p><strong>Marketing Tokens: 5% (5M BWS)</strong></p>
+              <p>Supports marketing initiatives, partnerships, and user acquisition.</p>
+            </div>
+
+            <div class="allocation-item">
+              <p><strong>Partnerships & Airdrops: 5% (5M BWS)</strong></p>
+              <p>Incentivizes strategic collaborations and rewards early supporters.</p>
+            </div>
+
+            <div class="allocation-item">
+              <p><strong>Liquidity & Reserves: 2% (2M BWS)</strong></p>
+              <p>Maintains market liquidity and stabilizes token exchange mechanisms.</p>
+            </div>
+
+            <p>
+              This structured allocation ensures that resources are directed toward growth, innovation, and stability
+              while maintaining broad token accessibility.
+            </p>
+          </div>
+
+          <h3 id="dynamic-tax" class="title h3-size">Dynamic Tax System</h3>
+          <div class="paragraph">
+            <p>
+              The $BWS token employs a dynamic taxation mechanism designed to balance incentives, mitigate volatility,
+              and promote sustainable ecosystem development.
+            </p>
+            <ul>
+              <li>
+                When market capitalization is low, the buy tax decreases to encourage new participants, while the sell
+                tax increases to deter short-term speculation.
+              </li>
+              <li>
+                As market capitalization rises, the buy tax increases and the sell tax decreases, rewarding long-term
+                holders and supporting organic price appreciation.
+              </li>
+              <li>Transaction taxes are capped at a maximum of 5% for both buy and sell operations.</li>
+            </ul>
+
+            <h4 class="title h4-size">Tax Fund Allocation</h4>
+            <p>
+              Collected tax proceeds are strategically reinvested to strengthen platform functionality and ecosystem
+              growth:
+            </p>
+            <ul>
+              <li>
+                <strong>5% Product Development:</strong> Continuous platform improvements and new feature integration.
+              </li>
+              <li>
+                <strong>2% Sales & Business Growth:</strong> Expansion through partnerships and adoption initiatives.
+              </li>
+              <li><strong>2% Marketing:</strong> User acquisition and brand visibility campaigns.</li>
+              <li>
+                <strong>1% Developer Grants Program:</strong> Ongoing funding for projects within the BWS ecosystem.
+              </li>
+            </ul>
+
+            <p>
+              This dynamic structure ensures that taxation serves as a stabilizing mechanism, fostering long-term trust,
+              organic growth, and balanced participation across the ecosystem.
+            </p>
+          </div>
+        </section>
+
+        <!-- 6. BWS Solutions Marketplace -->
+        <section id="nft-game-cube" class="white-paper-section">
+          <h2 class="title h3-size">VI. BWS Solutions Marketplace</h2>
+          <div class="paragraph">
+            <p>
+              Blockchain Web Service's vision, "Blockchain Everywhere, for Everyone," aims to bring blockchain to mass
+              markets through a user-centric API to build accessible, innovative solutions and a platform marketplace
+              where the Web3 community can publish, share, and monetize blockchain applications.
+            </p>
+
+            <p>
+              To trigger initial traction and demonstrate the platform's capabilities, BWS will launch several flagship
+              solutions available in the BWS Solutions Marketplace. These solutions showcase how developers can build
+              revenue-generating applications on the platform while inspiring further development from the community.
+            </p>
+
+            <p>
+              Consider a practical example from the BWS Solutions Marketplace: A sports club (business) licenses Fan
+              Game Cube, offering fans (consumers) the ability to own digital game zones and earn rewards. The solution
+              developer earns fees in $BWS tokens, the club generates new revenue, fans enjoy gamified engagement, and
+              token demand increases with every interaction across all three sides of the marketplace.
+            </p>
+
+            <p>
+              The marketplace features diverse solutions serving different market needs, from Fan Game Cube for sports
+              engagement to X Bot for community management, each demonstrating the power of blockchain technology made
+              accessible through BWS's customer-centric platform.
+            </p>
+          </div>
+
+          <div class="white-paper-figure">
+            <img
+              src="/assets/images/white-paper/figure4.png"
+              alt="Figure 4. NFT Game CUBE Blockchain Web Services platform solution"
+              loading="lazy"
+            />
+            <p class="figure-caption"><em>Figure 4. NFT Game CUBE Blockchain Web Services platform solution.</em></p>
+          </div>
+
+          <h3 id="nft-overview" class="title h3-size">Fan Game Cube Overview</h3>
+          <div class="paragraph">
+            <p>
+              BWS's Fan Game Cube solution lets sports fans own digital assets tied to specific sections of a sports
+              field—not only football but chess, tennis, cricket, and many more.
+            </p>
+
+            <div class="white-paper-figure">
+              <img
+                src="/assets/images/white-paper/figure5.png"
+                alt="Figure 5. Tokenize and sell Sports Clubs field sections in just a few clicks (or API calls!)"
+                loading="lazy"
+              />
+              <p class="figure-caption">
+                <em>Figure 5. Tokenize and sell Sports Clubs field sections in just a few clicks (or API calls!).</em>
+              </p>
+            </div>
+
+            <p>
+              As real-time events unfold at their location during the game, fans earn points, unlocking exciting rewards
+              while creating a new revenue stream for sports clubs, former athletes, influencers, and anyone with a
+              market in the sports industry.
+            </p>
+
+            <h4 class="title h4-size">NFT tokenization of game zones</h4>
+            <p>
+              Fans can purchase virtual cubes representing specific zones of a sports field as NFTs. Rewards are based
+              on real-time events, such as a goal being scored from their purchased zone
+            </p>
+
+            <h4 class="title h4-size">Simplified NFT creation via BWS NFT.zK API</h4>
+            <p>
+              The BWS NFT.zK API will handle the technical complexity of creating NFTs. Fans can hold NFTs with only an
+              email address, bypassing the need for a Web3 wallet or tokens, drastically reducing the barrier to entry.
+            </p>
+
+            <h4 class="title h4-size">Developer token-based fee structure</h4>
+            <p>
+              The solution owner (BWS team, in this case) earns $BWS tokens for each API call made when NFTs are
+              created, traded, or interacted with, rewarding the developer's team to maintain and improve the solution.
+            </p>
+
+            <p>
+              Fan Game Cube is a scalable solution where fans can play multiple sports and hold a weekend chess
+              tournament, a soccer VIP final, and a cricket yearly season. It's a new sports fan experience.
+            </p>
+
+            <div class="white-paper-figure">
+              <img
+                src="/assets/images/white-paper/figure6.png"
+                alt="Figure 6. NFT Game CUBE is valid for any sport that has a 'field'!"
+                loading="lazy"
+              />
+              <p class="figure-caption"><em>Figure 6. NFT Game CUBE is valid for any sport that has a "field"!</em></p>
+            </div>
+          </div>
+
+          <h3 id="xbot-overview" class="title h3-size">X Bot Overview</h3>
+          <div class="paragraph">
+            <p>
+              X Bot is an innovative Telegram solution by BWS that empowers community groups to monitor and enhance
+              their engagement on X (formerly Twitter) through a gamified experience. This solution demonstrates how BWS
+              platform APIs can be leveraged to create community management tools that bridge Web2 social platforms with
+              Web3 infrastructure.
+            </p>
+
+            <h4 class="title h4-size">Custom Monitoring & Real-Time Data</h4>
+            <p>
+              Group admins configure custom filters based on specific X accounts, keywords, or mentions. X Bot fetches
+              relevant public posts using the X API in real-time, ensuring community interactions are based on the most
+              current information available.
+            </p>
+
+            <h4 class="title h4-size">Gamified Leaderboards</h4>
+            <p>
+              X Bot compiles leaderboard reports showcasing the most active and supportive community members. This
+              gamified approach incentivizes participation and recognizes top contributors, fostering a competitive and
+              engaging environment that enhances community engagement.
+            </p>
+
+            <h4 class="title h4-size">Data-Driven Community Insights</h4>
+            <p>
+              Community admins gain valuable insights into member activities and engagement trends through real-time
+              data fetching and reporting, facilitating informed decision-making for community growth strategies.
+            </p>
+
+            <p>
+              X Bot exemplifies how BWS marketplace solutions can serve diverse needs—from sports engagement with Fan
+              Game Cube to community management with X Bot—each built on the same platform infrastructure and
+              demonstrating the versatility of BWS's customer-centric approach to blockchain technology.
+            </p>
+          </div>
+        </section>
+
+        <!-- 6. BWS Developer Grants -->
+        <section id="developer-grants" class="white-paper-section">
+          <h2 class="title h3-size">VII. BWS Developer Grants</h2>
+          <div class="paragraph">
+            <p>
+              Recognizing the importance of building a vibrant developer ecosystem, we are excited to introduce the <strong
+                >BWS Developer Grants</strong
+              >—a program designed to incentivize developers to build tools and applications on top of our platform
+              protocols, rewarding them for their contributions.
+            </p>
+
+            <p>
+              The initiative will maintain a development fund to support growth efforts, focusing on fostering
+              innovation within the BWS ecosystem.
+            </p>
+
+            <h3 class="title h4-size">Program Overview</h3>
+            <p>
+              The BWS Developer Grant is a developer-focused program promoting creativity, experimentation, and adoption
+              of the BWS platform. Developers are invited to propose and build innovative projects such as decentralized
+              applications, innovative smart contracts solutions, and integration tools that leverage the capabilities
+              of BWS. Selected projects will receive grants in $BWS tokens.
+            </p>
+
+            <h3 class="title h4-size">Incentives</h3>
+            <p>Developers who participate in the BWS Developer Initiative will benefit from:</p>
+
+            <p><strong>1. Bounty Payments</strong></p>
+            <p>
+              Developers whose projects are selected for integration with BWS will receive bounty payments based on the
+              complexity and impact of their projects.
+            </p>
+
+            <p><strong>2. Recognition and Exposure</strong></p>
+            <p>
+              Featured projects will be showcased on the BWS website, social media, and promotional channels, giving
+              developers visibility and recognition within the blockchain community.
+            </p>
+
+            <p><strong>3. Technical Support and Resources</strong></p>
+            <p>
+              The BWS team will provide developers access to technical support, detailed documentation, and resources to
+              streamline development.
+            </p>
+
+            <p><strong>4. API Fees</strong></p>
+            <p>
+              Once your application is published, you will receive a fee in $BWS tokens every time your APIs get called.
+            </p>
+
+            <h3 class="title h4-size">Program Guidelines</h3>
+            <p>
+              To participate in the BWS Developer Initiative, developers must submit proposals detailing their project's
+              objectives, implementation plans, and alignment with the BWS ecosystem. Projects should demonstrate
+              innovation, technical feasibility, and the potential to add value to the BWS ecosystem.
+            </p>
+
+            <p>Collaboration and open-source development are encouraged to foster community-driven innovation.</p>
+
+            <h3 class="title h4-size">Examples of Eligible Projects</h3>
+
+            <p><strong>1. Tokenization of Environmental and Social Impact Projects</strong></p>
+            <p>
+              Create platforms for tokenizing ESG assets like carbon credits using the BWS.ESG API to certify, track,
+              and trade green assets. This application could revolutionize the way sustainable investments are managed
+              and verified.
+            </p>
+
+            <p><strong>2. NFT-Based Asset Verification Platforms</strong></p>
+            <p>
+              Build applications that allow businesses or individuals to tokenize physical or digital assets, such as
+              property or artwork. The NFT.zK API can provide verifiable proof of ownership and authenticity.
+            </p>
+
+            <p><strong>3. Gaming and Entertainment NFTs</strong></p>
+            <p>
+              Develop NFT-based games or fan engagement platforms that allow users to tokenize experiences and interact
+              with digital assets in new ways. The BWS NFT.zK API simplifies the creation and management of these
+              digital assets.
+            </p>
+
+            <p>
+              By empowering developers with financial incentives, technical resources, and recognition, the BWS Grants
+              initiative will foster innovation and accelerate the growth of the BWS ecosystem.
+            </p>
+          </div>
+        </section>
+
+        <!-- 15. Conclusion -->
+        <section id="conclusion" class="white-paper-section">
+          <h2 class="title h3-size">VIII. Conclusion</h2>
+          <div class="paragraph">
+            <p>
+              Blockchain Web Services is paving the way for broader blockchain adoption through its accessible API
+              solutions, inclusive marketplace, and powerful tokenomics.
+            </p>
+
+            <p>
+              By lowering the barriers to entry and incentivizing developers, BWS is set to become a key player in the
+              future of blockchain. With "Blockchain Everywhere, for Everyone" as its guiding principle, BWS will
+              deliver innovative solutions that empower users of all technical backgrounds to engage with blockchain
+              technology and transform their digital experiences.
+            </p>
+          </div>
+          <div class="white-paper-end">
+            <p><strong>END.</strong></p>
+          </div>
+        </section>
       </div><!-- end white-paper-content -->
     </div><!-- end white-paper-layout -->
   </div>
@@ -705,7 +1057,9 @@
     color: var(--neutral-700, #3b3f44);
     box-shadow: 0 2px 8px rgba(196, 24, 65, 0.08);
     text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease;
   }
 
   .white-paper-emphasis:hover {
@@ -988,56 +1342,56 @@
   // WHITE PAPER INTERACTIVE FEATURES
   // ============================================
 
-  document.addEventListener('DOMContentLoaded', () => {
+  document.addEventListener("DOMContentLoaded", () => {
     // Scroll Progress Indicator
-    const progressBar = document.querySelector('.scroll-progress');
-    const content = document.querySelector('.white-paper-content');
+    const progressBar = document.querySelector(".scroll-progress");
+    const content = document.querySelector(".white-paper-content");
 
     if (progressBar && content) {
-      window.addEventListener('scroll', () => {
+      window.addEventListener("scroll", () => {
         const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
         const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
         const scrolled = (winScroll / height) * 100;
-        progressBar.style.width = scrolled + '%';
+        progressBar.style.width = scrolled + "%";
       });
     }
 
     // Scroll Spy for TOC
-    const sections = document.querySelectorAll('.white-paper-section');
-    const tocLinks = document.querySelectorAll('.toc-link');
+    const sections = document.querySelectorAll(".white-paper-section");
+    const tocLinks = document.querySelectorAll(".toc-link");
 
     const observerOptions = {
       root: null,
-      rootMargin: '-120px 0px -60% 0px',
-      threshold: 0
+      rootMargin: "-120px 0px -60% 0px",
+      threshold: 0,
     };
 
     const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
+      entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          const id = entry.target.getAttribute('id');
+          const id = entry.target.getAttribute("id");
 
           // Remove active class from all links
-          tocLinks.forEach(link => link.classList.remove('active'));
+          tocLinks.forEach((link) => link.classList.remove("active"));
 
           // Add active class to current section link
           const activeLink = document.querySelector(`.toc-link[href="#${id}"]`);
           if (activeLink) {
-            activeLink.classList.add('active');
+            activeLink.classList.add("active");
           }
         }
       });
     }, observerOptions);
 
-    sections.forEach(section => {
+    sections.forEach((section) => {
       observer.observe(section);
     });
 
     // Smooth Scroll with Offset for Anchor Links
-    tocLinks.forEach(link => {
-      link.addEventListener('click', (e) => {
+    tocLinks.forEach((link) => {
+      link.addEventListener("click", (e) => {
         e.preventDefault();
-        const targetId = link.getAttribute('href').substring(1);
+        const targetId = link.getAttribute("href").substring(1);
         const targetSection = document.getElementById(targetId);
 
         if (targetSection) {
@@ -1046,24 +1400,27 @@
 
           window.scrollTo({
             top: targetPosition,
-            behavior: 'smooth'
+            behavior: "smooth",
           });
         }
       });
     });
 
     // Section Fade-in on Scroll (Optional Enhancement)
-    const sectionObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('fade-in');
-        }
-      });
-    }, {
-      threshold: 0.1
-    });
+    const sectionObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("fade-in");
+          }
+        });
+      },
+      {
+        threshold: 0.1,
+      }
+    );
 
-    sections.forEach(section => {
+    sections.forEach((section) => {
       sectionObserver.observe(section);
     });
   });

@@ -11,10 +11,10 @@ const articleDate = new Date(currentYear, currentMonth - 4, 12);
 const displayDate = articleDate > now ? now : articleDate;
 
 // Format as "MMM DD, YYYY"
-const formattedDate = displayDate.toLocaleDateString('en-US', {
-  year: 'numeric',
-  month: 'short',
-  day: 'numeric'
+const formattedDate = displayDate.toLocaleDateString("en-US", {
+  year: "numeric",
+  month: "short",
+  day: "numeric",
 });
 ---
 

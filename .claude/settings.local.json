@@ -23,7 +23,9 @@
       "Bash(git fetch:*)",
       "Bash(git pull:*)",
       "Bash(gh run view:*)",
-      "WebFetch(domain:venngage.com)"
+      "WebFetch(domain:venngage.com)",
+      "WebFetch(domain:splidejs.com)",
+      "Read(///**)"
     ],
     "deny": [],
     "ask": []
