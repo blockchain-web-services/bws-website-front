@@ -30,10 +30,11 @@ The system runs automatically **every day at 9:00 AM UTC** via GitHub Actions.
      1. Main tweet image
      2. Quoted/retweeted image
      3. Fallback: BWS violet flying logo
-5. **Download Images** - Saves images to `/public/assets/images/news/`
-6. **Update News** - Adds entry to `src/data/news.ts`
-7. **Track State** - Records tweet ID in `scripts/data/processed-tweets.json`
-8. **Commit & Deploy** - Auto-commits changes and triggers site rebuild
+5. **Generate AI Summary** - Uses Claude API to create concise 1-line description
+6. **Download Images** - Saves images to `/public/assets/images/news/`
+7. **Update News** - Adds entry to `src/data/news.ts`
+8. **Track State** - Records tweet ID in `scripts/data/processed-tweets.json`
+9. **Commit & Deploy** - Auto-commits changes and triggers site rebuild
 
 ### Error Handling
 
@@ -91,8 +92,9 @@ src/data/
 ### Locally (for testing)
 
 ```bash
-# Set environment variable
+# Set environment variables
 export TWITTER_BEARER_TOKEN="your_bearer_token_here"
+export ANTHROPIC_API_KEY="your_anthropic_api_key_here"
 
 # Run script
 node scripts/fetch-twitter-partnerships.js
@@ -102,29 +104,45 @@ node scripts/fetch-twitter-partnerships.js
 
 ### GitHub Secrets
 
-The workflow requires one secret to be configured:
+The workflow requires **two secrets** to be configured:
 
-**`TWITTER_BEARER_TOKEN`** - X API Bearer Token (read-only access)
+#### 1. **`TWITTER_BEARER_TOKEN`** - X API Bearer Token (read-only access)
 
-#### How to Set Up:
-
+**How to Set Up:**
 1. Go to Repository **Settings** > **Secrets and variables** > **Actions**
 2. Click **New repository secret**
 3. Name: `TWITTER_BEARER_TOKEN`
 4. Value: Your X API bearer token
 5. Click **Add secret**
 
-#### How to Obtain Bearer Token:
-
+**How to Obtain:**
 1. Visit [Twitter Developer Portal](https://developer.twitter.com/en/portal/dashboard)
 2. Create/select your app
 3. Go to **Keys and Tokens** tab
 4. Generate/copy **Bearer Token**
 
+#### 2. **`ANTHROPIC_API_KEY`** - Anthropic Claude API Key (for AI summaries)
+
+**How to Set Up:**
+1. Go to Repository **Settings** > **Secrets and variables** > **Actions**
+2. Click **New repository secret**
+3. Name: `ANTHROPIC_API_KEY`
+4. Value: Your Anthropic API key
+5. Click **Add secret**
+
+**How to Obtain:**
+1. Visit [Anthropic Console](https://console.anthropic.com/)
+2. Sign in or create an account
+3. Go to **API Keys** section
+4. Generate/copy a new API key
+
+**Note:** The script will gracefully fall back to basic text cleaning if `ANTHROPIC_API_KEY` is not provided, but AI-generated summaries are recommended for better quality descriptions.
+
 ### Dependencies
 
 The script uses:
 - `twitter-api-v2` npm package (installed automatically by workflow)
+- `@anthropic-ai/sdk` npm package (installed automatically by workflow)
 - Node.js 20 (configured in workflow)
 
 ## News Entry Format
@@ -133,8 +151,8 @@ Each partnership announcement creates an entry like:
 
 ```typescript
 {
-  title: 'Partnership: {Partner Name}',
-  description: '{Tweet text cleaned and formatted}',
+  title: 'Partnership: {Partner Name}',  // AI-generated, max 3 words
+  description: '{AI-generated summary}',  // AI-generated, max 150 chars
   partnershipTitle: '{Partner Name}',
   logos: [{
     src: '/assets/images/news/partnership-{timestamp}-{tweetId}.jpg',
@@ -151,6 +169,19 @@ Each partnership announcement creates an entry like:
   }]
 }
 ```
+
+### AI-Generated Content
+
+The script uses Claude API (Anthropic) to generate:
+- **Title** (max 3 words): Concise partner name or key term
+- **Description** (max 150 characters): Single sentence summarizing the partnership and its key benefit
+
+**Example:**
+- Raw tweet: "Partnership | @Quick_Sync\n\nWe're proud to announce our partnership with @Quick_Sync — transforming how data is shared..."
+- AI Title: "Quick Sync"
+- AI Description: "Partnership with Quick Sync transforms data sharing using decentralized infrastructure and Web3 APIs."
+
+**Fallback:** If the Anthropic API is unavailable or ANTHROPIC_API_KEY is not configured, the script falls back to basic text extraction and cleaning.
 
 ## Image Handling
 

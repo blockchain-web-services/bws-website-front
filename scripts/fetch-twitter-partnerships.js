@@ -5,9 +5,11 @@
  *
  * This script fetches recent tweets from @BWSCommunity, filters for "Partnership"
  * announcements, extracts images, and adds them to the news carousel.
+ * Uses Anthropic Claude API to generate concise summaries.
  */
 
 import { TwitterApi } from 'twitter-api-v2';
+import Anthropic from '@anthropic-ai/sdk';
 import fs from 'fs';
 import https from 'https';
 import path from 'path';
@@ -62,31 +64,51 @@ function extractImageUrl(tweet, includes) {
   let imageUrl = null;
   let useFallback = false;
 
+  console.log(`   🔍 Extracting image for tweet ${tweet.id}...`);
+
   // Priority 1: Check main tweet media
   if (tweet.attachments?.media_keys && includes.media) {
+    console.log(`   📎 Main tweet has ${tweet.attachments.media_keys.length} media attachment(s)`);
     const imageMedia = includes.media.find(
       m => m.media_key === tweet.attachments.media_keys[0] && m.type === 'photo'
     );
-    imageUrl = imageMedia?.url;
+    if (imageMedia?.url) {
+      console.log(`   ✅ Found image in main tweet: ${imageMedia.url.substring(0, 60)}...`);
+      imageUrl = imageMedia.url;
+    }
   }
 
   // Priority 2: Check referenced/quoted tweet
   if (!imageUrl && tweet.referenced_tweets && includes.tweets) {
+    console.log(`   🔗 Tweet has ${tweet.referenced_tweets.length} referenced tweet(s)`);
     const quotedTweet = includes.tweets.find(
       t => tweet.referenced_tweets.some(ref => ref.id === t.id)
     );
 
-    if (quotedTweet?.attachments?.media_keys && includes.media) {
-      const imageMedia = includes.media.find(
-        m => m.media_key === quotedTweet.attachments.media_keys[0] && m.type === 'photo'
-      );
-      imageUrl = imageMedia?.url;
+    if (quotedTweet) {
+      console.log(`   📝 Found referenced tweet ${quotedTweet.id}`);
+      if (quotedTweet.attachments?.media_keys) {
+        console.log(`   📎 Referenced tweet has ${quotedTweet.attachments.media_keys.length} media attachment(s)`);
+        if (includes.media) {
+          const imageMedia = includes.media.find(
+            m => m.media_key === quotedTweet.attachments.media_keys[0] && m.type === 'photo'
+          );
+          if (imageMedia?.url) {
+            console.log(`   ✅ Found image in referenced tweet: ${imageMedia.url.substring(0, 60)}...`);
+            imageUrl = imageMedia.url;
+          } else {
+            console.log(`   ⚠️  Media key ${quotedTweet.attachments.media_keys[0]} not found in includes.media`);
+          }
+        }
+      } else {
+        console.log(`   ℹ️  Referenced tweet has no media attachments`);
+      }
     }
   }
 
   // Priority 3: Use fallback
   if (!imageUrl) {
-    console.log(`⚠️  No image found for tweet ${tweet.id}, using fallback BWS logo`);
+    console.log(`   ⚠️  No image found for tweet ${tweet.id}, using fallback BWS logo`);
     useFallback = true;
     imageUrl = FALLBACK_IMAGE;
   }
@@ -144,7 +166,7 @@ function extractPartnerName(text) {
 }
 
 /**
- * Clean tweet text for description
+ * Clean tweet text for description (fallback if AI fails)
  */
 function cleanTweetText(text) {
   // Remove URLs
@@ -159,19 +181,79 @@ function cleanTweetText(text) {
 }
 
 /**
+ * Generate concise summary and title using Claude API
+ */
+async function generateContentWithClaude(tweetText) {
+  const apiKey = process.env.ANTHROPIC_API_KEY;
+
+  // Fallback to basic extraction if no API key
+  if (!apiKey) {
+    console.log('   ⚠️  No ANTHROPIC_API_KEY found, using basic text extraction');
+    return {
+      title: extractPartnerName(tweetText),
+      description: cleanTweetText(tweetText)
+    };
+  }
+
+  try {
+    const anthropic = new Anthropic({ apiKey });
+
+    const message = await anthropic.messages.create({
+      model: 'claude-3-5-sonnet-20241022',
+      max_tokens: 150,
+      messages: [{
+        role: 'user',
+        content: `Analyze this partnership announcement tweet and provide:
+1. A title (max 3 words) - just the partner name or key term
+2. A description (one sentence, max 150 characters) - summarize the partnership and key benefit
+
+Format your response as JSON:
+{
+  "title": "Partner Name",
+  "description": "Brief partnership summary"
+}
+
+Tweet: ${tweetText}`
+      }]
+    });
+
+    const responseText = message.content[0].text.trim();
+    // Try to parse JSON response
+    const jsonMatch = responseText.match(/\{[\s\S]*\}/);
+    if (jsonMatch) {
+      const parsed = JSON.parse(jsonMatch[0]);
+      console.log(`   🤖 AI Title: ${parsed.title}`);
+      console.log(`   🤖 AI Description: ${parsed.description}`);
+      return {
+        title: parsed.title,
+        description: parsed.description
+      };
+    } else {
+      throw new Error('Could not parse JSON response from Claude');
+    }
+  } catch (error) {
+    console.error(`   ⚠️  Claude API error: ${error.message}`);
+    console.log('   📝 Falling back to basic text extraction');
+    return {
+      title: extractPartnerName(tweetText),
+      description: cleanTweetText(tweetText)
+    };
+  }
+}
+
+/**
  * Generate news entry object
  */
-function generateNewsEntry(tweet, imagePath) {
-  const partnerName = extractPartnerName(tweet.text);
-  const description = cleanTweetText(tweet.text);
+async function generateNewsEntry(tweet, imagePath) {
+  const { title, description } = await generateContentWithClaude(tweet.text);
 
   return {
-    title: `Partnership: ${partnerName}`,
+    title: `Partnership: ${title}`,
     description: description,
-    partnershipTitle: partnerName,
+    partnershipTitle: title,
     logos: [{
       src: imagePath,
-      alt: `${partnerName} partnership`,
+      alt: `${title} partnership`,
       href: `https://x.com/BWSCommunity/status/${tweet.id}`,
       class: 'image-partnership'
     }],
@@ -278,10 +360,11 @@ async function main() {
       expansions: [
         'attachments.media_keys',
         'referenced_tweets.id',
+        'referenced_tweets.id.attachments.media_keys',
         'author_id'
       ],
-      'tweet.fields': ['created_at', 'text'],
-      'media.fields': ['url', 'preview_image_url', 'type', 'width', 'height']
+      'tweet.fields': ['created_at', 'text', 'attachments', 'referenced_tweets'],
+      'media.fields': ['url', 'preview_image_url', 'type', 'width', 'height', 'media_key']
     });
 
     if (!timeline.data.data || timeline.data.data.length === 0) {
@@ -336,7 +419,7 @@ async function main() {
       }
 
       // Generate news entry
-      const newsEntry = generateNewsEntry(tweet, imagePath);
+      const newsEntry = await generateNewsEntry(tweet, imagePath);
 
       // Insert into news.ts
       insertNewsEntry(newsEntry);
