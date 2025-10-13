@@ -34,3 +34,31 @@
   height: 80px !important;
   object-fit: cover !important;
 }
+
+/* Partnership background: container-image-partnership-1975576723337982186 */
+.container-image-partnership-1975576723337982186 {
+  background-image: url('/assets/images/news/partnership-1760368601142-1975576723337982186.jpg');
+  background-position: 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border: 1px solid #000;
+  border-top-style: none;
+  border-radius: 20px 20px 0 0;
+  min-width: 100%;
+  max-width: none;
+  min-height: 200px;
+}
+
+/* Partnership background: container-image-partnership-1970799564593537066 */
+.container-image-partnership-1970799564593537066 {
+  background-image: url('/assets/images/news/partnership-1760368603484-1970799564593537066.jpg');
+  background-position: 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border: 1px solid #000;
+  border-top-style: none;
+  border-radius: 20px 20px 0 0;
+  min-width: 100%;
+  max-width: none;
+  min-height: 200px;
+}
