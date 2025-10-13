@@ -286,15 +286,8 @@ async function generateNewsEntry(tweet, imagePath, client) {
     partnerProfileImage = await fetchPartnerProfileImage(client, xUsername);
   }
 
-  // Build logos array - BWS logo + partner logo (if available)
-  const logos = [
-    {
-      src: '/assets/images/6474d385cfec71cb21a92251/651c58eabcaaed235a87df6d_logo_plus_BWS.svg',
-      alt: 'BWS Logo',
-      href: 'https://www.bws.ninja',
-      class: 'image-partnership image-partnership-bws'
-    }
-  ];
+  // Build logos array - only partner logo
+  const logos = [];
 
   // Add partner logo if we have it
   if (partnerProfileImage) {
@@ -365,26 +358,14 @@ function addPartnershipCSS(backgroundClass, imagePath) {
   margin-bottom: 16px !important;
 }
 
-/* Partnership logo styling */
+/* Partnership logo styling - circle styling (like X profile pics) */
 .image-partnership {
-  height: auto !important;
-  max-width: 80px !important;
-  object-fit: contain !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-}
-
-/* BWS logo - no circle, 20% smaller than original */
-.image-partnership-bws {
-  max-width: 80px !important;
-}
-
-/* Partner logo - circle styling (like X profile pics) */
-.image-partnership:not(.image-partnership-bws) {
   border-radius: 50% !important;
   width: 80px !important;
   height: 80px !important;
   object-fit: cover !important;
+  visibility: visible !important;
+  opacity: 1 !important;
 }
 `;
     }
