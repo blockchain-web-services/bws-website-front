@@ -99,6 +99,13 @@ const { news } = Astro.props;
   .splide__list {
     display: flex;
     align-items: center;
+    justify-content: center;
+    margin: 10px !important;
+  }
+
+  /* Extra specificity to override Splide CSS */
+  #news-carousel .splide__list {
+    margin: 10px !important;
   }
 
   .splide__slide {
@@ -106,6 +113,7 @@ const { news } = Astro.props;
     justify-content: center;
     box-sizing: border-box; /* Include padding in width calculations */
     flex-shrink: 0; /* Prevent slides from shrinking */
+    max-width: 460px; /* Maximum width for each slide */
   }
 
   /* Override announcement-box width for carousel - maintain consistent sizing */
