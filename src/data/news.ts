@@ -24,6 +24,52 @@ export interface NewsItem {
 
 export const newsItems: NewsItem[] = [
   {
+    title: 'Quick Sync',
+    description: 'Quick Sync leverages BWS infrastructure and Web3 APIs to enable data sharing through their platform and integrates BWS X Bot',
+    partnershipTitle: 'Quick Sync',
+    logos: [
+      {
+        src: 'https://pbs.twimg.com/profile_images/1918924015781003265/KrrYxgY-_400x400.jpg',
+        alt: 'Quick Sync Logo',
+        href: 'https://x.com/Quick_Sync',
+        class: 'image-partnership image-partnership-partner'
+      }
+    ],
+    buttons: [
+      {
+        text: 'View Announcement',
+        href: 'https://x.com/BWSCommunity/status/1970799564593537066',
+        type: 'secondary',
+        target: '_blank',
+        hasArrow: true
+      }
+    ],
+    backgroundClass: 'container-image-partnership-1970799564593537066'
+  },
+  {
+    title: 'Rouge Studio',
+    description: 'Rouge Studio integrates BWS X Bot technology to enhance Web3 community engagement and performance tracking',
+    partnershipTitle: 'Rouge Studio',
+    logos: [
+      {
+        src: 'https://pbs.twimg.com/profile_images/1778008019856732160/VJvFD1V8_400x400.jpg',
+        alt: 'Rouge Studio Logo',
+        href: 'https://x.com/RougeStudio_',
+        class: 'image-partnership image-partnership-partner'
+      }
+    ],
+    buttons: [
+      {
+        text: 'View Announcement',
+        href: 'https://x.com/BWSCommunity/status/1975576723337982186',
+        type: 'secondary',
+        target: '_blank',
+        hasArrow: true
+      }
+    ],
+    backgroundClass: 'container-image-partnership-1975576723337982186'
+  },
+  {
     title: '$BWS Token Launch Success!',
     description: 'We are thrilled to announce $BWS Token launch has been an incredible success!',
     partnershipTitle: 'In Partnership With',
