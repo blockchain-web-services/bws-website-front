@@ -9,61 +9,58 @@ interface Props {
 const { news } = Astro.props;
 ---
 
-<div class="splide news-carousel" id="news-carousel">
-  <div class="splide__track">
-    <div class="splide__list w-layout-hflex flex-block-announcements">
-      {
-        news.map((item) => (
-          <div class="splide__slide">
-            <NewsItemComponent news={item} />
-          </div>
-        ))
-      }
-    </div>
+<div class="swiper news-carousel">
+  <div class="swiper-wrapper">
+    {
+      news.map((item) => (
+        <div class="swiper-slide">
+          <NewsItemComponent news={item} />
+        </div>
+      ))
+    }
   </div>
+  <!-- Navigation arrows -->
+  <div class="swiper-button-next"></div>
+  <div class="swiper-button-prev"></div>
+  <!-- Pagination -->
+  <div class="swiper-pagination"></div>
 </div>
 
 <script define:vars={{ newsCount: news.length }}>
-  // Initialize Splide carousel when DOM is loaded
+  // Initialize Swiper carousel when DOM is loaded
   document.addEventListener('DOMContentLoaded', function () {
-    // @ts-ignore - Splide is loaded via CDN
-    if (typeof Splide !== 'undefined') {
-      // Disable autoplay if only 2 news items (both shown at once on desktop)
-      const shouldAutoplay = newsCount > 2;
-
+    // @ts-ignore - Swiper is loaded via CDN
+    if (typeof Swiper !== 'undefined') {
       // @ts-ignore
-      const splide = new Splide('#news-carousel', {
-        type: 'loop',
-        perPage: 2,
-        perMove: 1,
-        gap: '1rem',
-        padding: 0,
-        autoplay: shouldAutoplay,
-        interval: 5000,
-        pauseOnHover: true,
-        pauseOnFocus: true,
-        arrows: true,
-        pagination: true,
-        drag: true,
+      new Swiper('.news-carousel', {
+        slidesPerView: 2,
+        spaceBetween: 16,
+        loop: true,
+        autoplay: newsCount > 2 ? {
+          delay: 5000,
+          disableOnInteraction: false,
+          pauseOnMouseEnter: true,
+        } : false,
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
         breakpoints: {
-          991: {
-            perPage: 1,
-            perMove: 1,
-            padding: 0,
+          // Mobile: 1 slide
+          320: {
+            slidesPerView: 1,
+            spaceBetween: 16,
+          },
+          // Desktop: 2 slides
+          992: {
+            slidesPerView: 2,
+            spaceBetween: 16,
           },
         },
-      }).mount();
-
-      // Refresh Splide after a short delay to recalculate centering once card widths have settled
-      setTimeout(() => {
-        splide.refresh();
-      }, 100);
-
-      // Also refresh on window load to ensure images and content are fully loaded
-      window.addEventListener('load', () => {
-        setTimeout(() => {
-          splide.refresh();
-        }, 100);
       });
     }
   });
@@ -81,78 +78,72 @@ const { news } = Astro.props;
     width: 100%;
     max-width: 960px; /* Fit 2 cards comfortably with gap and padding */
     margin: 0 auto; /* Center the carousel */
-    overflow: visible; /* Allow bottom content to show */
-    padding: 0 1rem 3rem 1rem; /* Add more padding to prevent edge and bottom cutoff */
+    padding: 0 1rem 3rem 1rem; /* Add padding for controls */
     min-height: 580px; /* Ensure enough height for full card visibility */
   }
 
-  .splide__track {
-    overflow: hidden; /* Ensure track doesn't show overflow */
-  }
-
-  .flex-block-announcements {
-    display: flex;
-    flex-wrap: nowrap;
-    max-width: 100% !important; /* Override 80% constraint from global styles */
-  }
-
-  .splide__list {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 10px !important;
-  }
-
-  /* Extra specificity to override Splide CSS */
-  #news-carousel .splide__list {
-    margin: 10px !important;
-  }
-
-  .splide__slide {
+  /* Swiper slide styling */
+  .swiper-slide {
     display: flex;
     justify-content: center;
-    box-sizing: border-box; /* Include padding in width calculations */
-    flex-shrink: 0; /* Prevent slides from shrinking */
-    max-width: 460px; /* Maximum width for each slide */
+    height: auto; /* Allow content to determine height */
   }
 
-  /* Override announcement-box width for carousel - maintain consistent sizing */
+  /* Card width constraint */
   .news-carousel .announcement-box {
-    width: 440px !important; /* Fixed width for consistency */
+    width: 440px !important;
     max-width: 440px;
-    min-width: 380px; /* Minimum width to maintain card proportions */
+    min-width: 380px;
   }
 
-  /* Customize Splide arrows to match site design */
-  .splide__arrow {
+  /* Customize Swiper navigation arrows */
+  .news-carousel .swiper-button-next,
+  .news-carousel .swiper-button-prev {
     background: rgba(255, 255, 255, 0.8);
     border-radius: 50%;
     width: 3rem;
     height: 3rem;
+    color: #333;
   }
 
-  .splide__arrow:hover {
+  .news-carousel .swiper-button-next:hover,
+  .news-carousel .swiper-button-prev:hover {
     background: rgba(255, 255, 255, 1);
   }
 
-  .splide__arrow svg {
-    fill: #333;
+  .news-carousel .swiper-button-next::after,
+  .news-carousel .swiper-button-prev::after {
+    font-size: 1.5rem;
+    font-weight: bold;
   }
 
   /* Customize pagination dots */
-  .splide__pagination {
-    bottom: -2.5rem;
+  .news-carousel .swiper-pagination {
+    bottom: 0;
   }
 
-  .splide__pagination__page {
+  .news-carousel .swiper-pagination-bullet {
     background: rgba(255, 255, 255, 0.5);
     width: 12px;
     height: 12px;
+    opacity: 1;
   }
 
-  .splide__pagination__page.is-active {
+  .news-carousel .swiper-pagination-bullet-active {
     background: #fff;
     transform: scale(1.2);
   }
 
+  /* Responsive adjustments */
+  @media screen and (max-width: 991px) {
+    .news-carousel {
+      max-width: 100%;
+    }
+
+    .news-carousel .announcement-box {
+      width: 100% !important;
+      max-width: 500px;
+      min-width: 320px;
+    }
+  }
 </style>
