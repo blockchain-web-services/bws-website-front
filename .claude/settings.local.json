@@ -25,7 +25,10 @@
       "Bash(gh run view:*)",
       "WebFetch(domain:venngage.com)",
       "WebFetch(domain:splidejs.com)",
-      "Read(///**)"
+      "Read(///**)",
+      "Bash(pip3:*)",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:x.com)"
     ],
     "deny": [],
     "ask": []
