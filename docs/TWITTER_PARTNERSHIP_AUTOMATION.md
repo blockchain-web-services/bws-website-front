@@ -151,7 +151,7 @@ Each partnership announcement creates an entry like:
 
 ```typescript
 {
-  title: 'Partnership: {Partner Name}',  // AI-generated, max 3 words
+  title: '{Partner Name}',  // AI-generated, max 3 words
   description: '{AI-generated summary}',  // AI-generated, max 150 chars
   partnershipTitle: '{Partner Name}',
   logos: [{
@@ -173,7 +173,7 @@ Each partnership announcement creates an entry like:
 ### AI-Generated Content
 
 The script uses Claude API (Anthropic) to generate:
-- **Title** (max 3 words): Concise partner name or key term
+- **Title** (max 3 words): Concise partner name or key term (without "Partnership:" prefix)
 - **Description** (max 150 characters): Single sentence summarizing the partnership and its key benefit
 
 **Example:**

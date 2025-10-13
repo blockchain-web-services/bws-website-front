@@ -248,7 +248,7 @@ async function generateNewsEntry(tweet, imagePath) {
   const { title, description } = await generateContentWithClaude(tweet.text);
 
   return {
-    title: `Partnership: ${title}`,
+    title: title,
     description: description,
     partnershipTitle: title,
     logos: [{
