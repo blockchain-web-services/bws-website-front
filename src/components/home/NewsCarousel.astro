@@ -106,6 +106,15 @@ const { news } = Astro.props;
     color: #333;
   }
 
+  /* Position arrows outside the cards area */
+  .news-carousel .swiper-button-next {
+    right: -60px; /* Position outside right edge */
+  }
+
+  .news-carousel .swiper-button-prev {
+    left: -60px; /* Position outside left edge */
+  }
+
   .news-carousel .swiper-button-next:hover,
   .news-carousel .swiper-button-prev:hover {
     background: rgba(255, 255, 255, 1);
@@ -115,6 +124,17 @@ const { news } = Astro.props;
   .news-carousel .swiper-button-prev::after {
     font-size: 1.5rem;
     font-weight: bold;
+  }
+
+  /* On smaller screens, keep arrows inside to avoid overflow */
+  @media screen and (max-width: 1200px) {
+    .news-carousel .swiper-button-next {
+      right: 10px;
+    }
+
+    .news-carousel .swiper-button-prev {
+      left: 10px;
+    }
   }
 
   /* Customize pagination dots */
