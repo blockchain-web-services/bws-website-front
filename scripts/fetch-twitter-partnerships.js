@@ -130,9 +130,15 @@ async function downloadImage(url, filepath) {
  */
 function extractPartnerName(text) {
   // Try to extract partner name after "Partnership" keyword
-  const match = text.match(/Partnership[:\s]+(?:with\s+)?([^.!?\n]+)/i);
+  // Handle formats like "Partnership | @Name" or "Partnership: Name" or "Partnership with Name"
+  const match = text.match(/Partnership\s*[:|]\s*(?:with\s+)?([^.\n]+)/i);
   if (match && match[1]) {
-    return match[1].trim();
+    let name = match[1].trim();
+    // Remove leading pipe if present
+    name = name.replace(/^\|\s*/, '');
+    // Take only the first line if multi-line
+    name = name.split('\n')[0].trim();
+    return name;
   }
   return 'Partnership Announcement';
 }
