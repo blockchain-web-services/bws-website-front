@@ -23,6 +23,50 @@ export interface NewsItem {
 }
 
 export const newsItems: NewsItem[] = [
+  {
+    title: 'Quick Sync',
+    description: 'Integration partnership providing decentralized data sharing infrastructure through no-code tools and Web3 APIs, featuring BWS X Bot.',
+    partnershipTitle: 'Quick Sync',
+    logos: [
+      {
+        src: '/assets/images/news/partnership-1760348845947-1970799564593537066.jpg',
+        alt: 'Quick Sync partnership',
+        href: 'https://x.com/BWSCommunity/status/1970799564593537066',
+        class: 'image-partnership'
+      }
+    ],
+    buttons: [
+      {
+        text: 'View Announcement',
+        href: 'https://x.com/BWSCommunity/status/1970799564593537066',
+        type: 'secondary',
+        target: '_blank',
+        hasArrow: true
+      }
+    ]
+  },
+  {
+    title: 'Rouge Studio',
+    description: 'Rouge Studio joins BWS ecosystem to enhance community engagement and rewards through X Bot integration in Web3.',
+    partnershipTitle: 'Rouge Studio',
+    logos: [
+      {
+        src: '/assets/images/news/partnership-1760348844726-1975576723337982186.jpg',
+        alt: 'Rouge Studio partnership',
+        href: 'https://x.com/BWSCommunity/status/1975576723337982186',
+        class: 'image-partnership'
+      }
+    ],
+    buttons: [
+      {
+        text: 'View Announcement',
+        href: 'https://x.com/BWSCommunity/status/1975576723337982186',
+        type: 'secondary',
+        target: '_blank',
+        hasArrow: true
+      }
+    ]
+  },
 
   {
     title: 'BFG Invests in BWS',
