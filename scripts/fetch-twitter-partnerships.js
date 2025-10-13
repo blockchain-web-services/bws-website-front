@@ -217,7 +217,13 @@ function insertNewsEntry(newsEntry) {
       throw new Error('Could not find newsItems array in news.ts');
     }
 
-    const insertPosition = newsContent.indexOf('[', newsItemsStart) + 1;
+    // Find the '[' that starts the array (after the '= ')
+    const arrayStartMarker = '] = [';
+    const arrayStart = newsContent.indexOf(arrayStartMarker, newsItemsStart);
+    if (arrayStart === -1) {
+      throw new Error('Could not find array start marker in news.ts');
+    }
+    const insertPosition = arrayStart + arrayStartMarker.length;
     newsContent = newsContent.slice(0, insertPosition) + entryCode + newsContent.slice(insertPosition);
 
     fs.writeFileSync(NEWS_FILE_PATH, newsContent);
