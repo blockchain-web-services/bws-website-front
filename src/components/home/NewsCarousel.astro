@@ -90,10 +90,10 @@ const { news } = Astro.props;
   }
 
   /* Card width constraint */
-  .news-carousel .announcement-box {
+  .news-carousel :global(.announcement-box) {
     width: 440px !important;
-    max-width: 440px;
-    min-width: 380px;
+    max-width: 440px !important;
+    min-width: 380px !important;
   }
 
   /* Customize Swiper navigation arrows */
@@ -140,10 +140,10 @@ const { news } = Astro.props;
       max-width: 100%;
     }
 
-    .news-carousel .announcement-box {
+    .news-carousel :global(.announcement-box) {
       width: 100% !important;
-      max-width: 500px;
-      min-width: 320px;
+      max-width: 500px !important;
+      min-width: 320px !important;
     }
   }
 </style>

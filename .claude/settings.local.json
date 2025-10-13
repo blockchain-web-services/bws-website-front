@@ -28,7 +28,8 @@
       "Read(///**)",
       "Bash(pip3:*)",
       "WebFetch(domain:github.com)",
-      "WebFetch(domain:x.com)"
+      "WebFetch(domain:x.com)",
+      "Bash(gh secret:*)"
     ],
     "deny": [],
     "ask": []
