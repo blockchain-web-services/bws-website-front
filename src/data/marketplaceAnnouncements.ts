@@ -97,20 +97,6 @@ export const marketplaceAnnouncements: MarketplaceAnnouncement[] = [
   }
 },
 {
-  product: 'IPFS',
-  title: 'Decentralized File Storage API',
-  descriptions: [
-    'Provides easy access to decentralized infrastructure for secure file storage and management',
-    'Ideal for document vaults, KYC backups, and media NFT storage use cases'
-  ],
-  button: {
-    text: 'Learn More',
-    href: '/marketplace/ipfs-upload.html',
-    target: '_blank',
-    hasArrow: true
-  }
-},
-{
   product: 'Fan Game Cube',
   title: 'Sports Fan Engagement NFTs',
   descriptions: [

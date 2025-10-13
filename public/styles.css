@@ -38653,33 +38653,57 @@ img[src*="blockchain-founders-group"] * {
 /* Marketplace Announcement Adaptive Layouts */
 /* ============================================ */
 
-/* Single-column layout (no video) - center content */
+/* Fixed height for all announcement cards */
+.flex-ngc-announcement {
+  height: 655px !important;
+  overflow: hidden;
+}
+
+/* Single-column layout (no video) - left aligned */
 .flex-ngc-announcement.single-column {
   flex-flow: column;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .flex-ngc-announcement.single-column .flex-block-13 {
   max-width: 100%;
   padding-right: 0;
-  align-items: center;
-  text-align: center;
+  align-items: flex-start;
+  text-align: left;
 }
 
-/* Two-column layout (with video) - maintain row layout */
+/* Two-column layout (with video) - maintain row layout, left aligned */
 .flex-ngc-announcement.two-column {
   flex-flow: row;
+}
+
+.flex-ngc-announcement.two-column .flex-block-13 {
+  text-align: left;
+  align-items: flex-start;
+}
+
+/* Text alignment */
+.flex-ngc-announcement .text-block-38,
+.flex-ngc-announcement .text-block-39 {
+  text-align: left;
+}
+
+.flex-ngc-announcement .flex-block-13 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 /* ============================================ */
 /* Marketplace Announcement Adaptive Image/Video Sizing */
 /* ============================================ */
 
-/* Images - adaptive sizing */
+/* Images - fit within fixed height card */
 .flex-ngc-announcement img {
-  width: 100%;
-  height: auto;
   max-width: 100%;
+  max-height: 300px;
+  width: auto;
+  height: auto;
   object-fit: contain;
   display: block;
 }

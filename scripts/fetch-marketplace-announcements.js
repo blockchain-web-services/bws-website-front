@@ -30,37 +30,53 @@ const PRODUCT_CONFIG = {
   'X Bot': {
     url: '/marketplace/telegram-xbot.html',
     slug: 'x-bot',
-    buttonText: 'Learn More'
+    buttonText: 'Learn More',
+    fallbackImages: [
+      '/assets/images/marketplace/fallback/x-bot/01-analytics.png'
+    ]
   },
   'Telegram XBot': {
     url: '/marketplace/telegram-xbot.html',
     slug: 'x-bot',
-    buttonText: 'Learn More'
+    buttonText: 'Learn More',
+    fallbackImages: [
+      '/assets/images/marketplace/fallback/x-bot/01-analytics.png'
+    ]
   },
   'Blockchain Badges': {
     url: '/marketplace/blockchain-badges.html',
     slug: 'blockchain-badges',
-    buttonText: 'Learn More'
+    buttonText: 'Learn More',
+    fallbackImages: [
+      '/assets/images/marketplace/fallback/blockchain-badges/01-badges-ui.png',
+      '/assets/images/marketplace/fallback/blockchain-badges/02-issuers-list.png'
+    ]
   },
   'ESG Credits': {
     url: '/marketplace/esg-credits.html',
     slug: 'esg-credits',
-    buttonText: 'Learn More'
-  },
-  'IPFS': {
-    url: '/marketplace/ipfs-upload.html',
-    slug: 'ipfs',
-    buttonText: 'Learn More'
+    buttonText: 'Learn More',
+    fallbackImages: [
+      '/assets/images/marketplace/fallback/esg-credits/01-report.png'
+    ]
   },
   'Fan Game Cube': {
     url: '/marketplace/nft-gamecube.html',
     slug: 'fan-game-cube',
-    buttonText: 'View Details'
+    buttonText: 'View Details',
+    fallbackImages: [
+      '/assets/images/marketplace/fallback/fan-game-cube/01-football-cubes-selection.png',
+      '/assets/images/marketplace/fallback/fan-game-cube/02-welcome-message.png'
+    ]
   },
   'NFT Game Cube': {
     url: '/marketplace/nft-gamecube.html',
     slug: 'fan-game-cube',
-    buttonText: 'View Details'
+    buttonText: 'View Details',
+    fallbackImages: [
+      '/assets/images/marketplace/fallback/fan-game-cube/01-football-cubes-selection.png',
+      '/assets/images/marketplace/fallback/fan-game-cube/02-welcome-message.png'
+    ]
   }
 };
 
@@ -270,23 +286,24 @@ async function classifyAndGenerateContent(tweets, includes) {
 
   const prompt = `Analyze these ${tweets.length} tweets from @BWSCommunity and classify them by product category:
 
-Product Categories:
+Product Categories (DO NOT include IPFS):
 - X Bot (also called Telegram XBot)
 - Blockchain Badges
 - ESG Credits
-- IPFS
 - Fan Game Cube (also called NFT Game Cube)
 
 For EACH product category that has relevant tweets, create ONE announcement by:
 
 1. Select 2-3 tweets about that product
 2. Generate a product-focused title (3-5 words)
-3. Create TWO complementary description sections (CRITICAL: they must tell a cohesive story about the same product):
-   - Section 1: Main value proposition or what the product does (1-2 sentences)
-   - Section 2: Key feature, use case, or how it benefits users (1-2 sentences)
+3. Create TWO complementary description sections (CRITICAL LENGTH: ~3 lines each, approximately 35-45 words per section):
+   - Section 1: Main value proposition or what the product does
+   - Section 2: Key feature, use case, or how it benefits users
+   - MUST tell a cohesive story about the same product
    - DO NOT repeat the same information
    - Descriptions must complement each other, not duplicate
-   - Example GOOD: "Creates secure blockchain certificates" + "Universities can issue verifiable credentials that cannot be forged"
+   - Each section should be approximately the length of: "Introducing Fan Game Cube, a new solution powered by Blockchain Web Services. This platform allows sports clubs to tokenize their game fields, creating new revenue opportunities while enabling fans to own digital assets linked to real-time match events."
+   - Example GOOD: "Creates secure blockchain-based badges for verifying achievements, event participation, and learning milestones with immutable proof" + "Enables Web2 companies to seamlessly issue tamper-proof digital credentials without requiring end users to understand blockchain technology"
    - Example BAD: "Creates blockchain certificates" + "Uses blockchain to create certificates"
 4. Select the best tweet ID that has an image (if any)
 5. Detect if any tweet mentions a video URL (Vimeo, YouTube, TikTok)
@@ -297,8 +314,8 @@ Output as JSON array:
     "product": "exact product name from list",
     "title": "Product-focused title",
     "descriptions": [
-      "First complementary description",
-      "Second complementary description"
+      "First complementary description (35-45 words)",
+      "Second complementary description (35-45 words)"
     ],
     "imageTweetId": "tweet_id_with_best_image or null",
     "videoUrl": "video_url if found or null",
@@ -306,7 +323,7 @@ Output as JSON array:
   }
 ]
 
-IMPORTANT: Only include products that are actually mentioned in the tweets.
+IMPORTANT: Only include products that are actually mentioned in the tweets. DO NOT include IPFS.
 
 Tweets:
 ${JSON.stringify(tweetsData, null, 2)}`;
@@ -363,6 +380,7 @@ async function processAnnouncements(classifications, tweets, includes) {
     };
 
     // Process image if tweet ID provided
+    let imageSet = false;
     if (classification.imageTweetId) {
       const tweet = tweets.find(t => t.id === classification.imageTweetId);
       if (tweet) {
@@ -398,7 +416,7 @@ async function processAnnouncements(classifications, tweets, includes) {
             const filename = `${config.slug}-${Date.now()}.jpg`;
             const filepath = path.join(MARKETPLACE_IMAGES_DIR, filename);
 
-            console.log(`   📥 Downloading image...`);
+            console.log(`   📥 Downloading image from tweet...`);
             await downloadImage(imageUrl, filepath);
             console.log(`   ✅ Image saved: ${filename}`);
 
@@ -408,11 +426,28 @@ async function processAnnouncements(classifications, tweets, includes) {
               loading: 'lazy',
               sizes: '(max-width: 767px) 100vw, (max-width: 991px) 95vw, 829px'
             };
+            imageSet = true;
           } catch (error) {
             console.error(`   ⚠️  Failed to download image: ${error.message}`);
           }
         }
       }
+    }
+
+    // Use fallback image if no image from tweets
+    if (!imageSet && config.fallbackImages && config.fallbackImages.length > 0) {
+      // Select random fallback image
+      const randomIndex = Math.floor(Math.random() * config.fallbackImages.length);
+      const fallbackImage = config.fallbackImages[randomIndex];
+
+      console.log(`   🎲 Using fallback image: ${fallbackImage}`);
+
+      announcement.image = {
+        src: fallbackImage,
+        alt: `${classification.product} solution`,
+        loading: 'lazy',
+        sizes: '(max-width: 767px) 100vw, (max-width: 991px) 95vw, 829px'
+      };
     }
 
     // Process video if found in tweets
