@@ -22,9 +22,9 @@
   opacity: 1 !important;
 }
 
-/* BWS logo - no circle */
+/* BWS logo - no circle, 20% smaller than original */
 .image-partnership-bws {
-  max-width: 100px !important;
+  max-width: 80px !important;
 }
 
 /* Partner logo - circle styling (like X profile pics) */
