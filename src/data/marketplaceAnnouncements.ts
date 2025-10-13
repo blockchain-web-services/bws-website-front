@@ -41,23 +41,85 @@ export interface MarketplaceAnnouncement {
   buttons?: AnnouncementButton[];     // OPTIONAL (multiple buttons)
 }
 
-export const marketplaceAnnouncements: MarketplaceAnnouncement[] = [{
-  product: 'Fan Game Cube',
-  title: 'Fan Game Cube Marketplace Solution',
+export const marketplaceAnnouncements: MarketplaceAnnouncement[] = [
+{
+  product: 'X Bot',
+  title: 'Community Engagement Analytics Bot',
   descriptions: [
-    'Introducing Fan Game Cube, a new solution powered by Blockchain Web Services. This platform allows sports clubs to tokenize their game fields, creating new revenue opportunities while enabling fans to own digital assets linked to real-time match events.',
-    'By using NFTs and machine learning, fans can earn rewards based on live events in their chosen sections of the field. Whether for football, chess, cricket, or other sports, Fan Game Cube brings a fresh way for clubs to engage with their fans and generate additional revenue.'
+    'Automated tool that tracks and reports X (Twitter) engagement metrics while syncing posts directly to Telegram groups',
+    'Enables projects to monitor KOL performance, gain real-time insights, and gamify community support through automated daily reports'
   ],
   image: {
-    src: '/assets/images/6474d385cfec71cb21a92251/6708d536ef7b294fa972098e_football-cubes-selection.png',
-    alt: 'Fan Game Cube 1-click BUY EXPERIENCE.',
+    src: '/assets/images/marketplace/x-bot-1760381154720.jpg',
+    alt: 'X Bot solution',
     loading: 'lazy',
-    sizes: '(max-width: 767px) 100vw, (max-width: 991px) 95vw, 829.0030517578125px',
-    srcset: '/assets/images/6474d385cfec71cb21a92251/6708d536ef7b294fa972098e_football-cubes-selection-p-500.png 500w, /assets/images/6474d385cfec71cb21a92251/6708d536ef7b294fa972098e_football-cubes-selection-p-800.png 800w, /assets/images/6474d385cfec71cb21a92251/6708d536ef7b294fa972098e_football-cubes-selection.png 829w'
+    sizes: '(max-width: 767px) 100vw, (max-width: 991px) 95vw, 829px'
   },
   button: {
-    text: 'Launch Deck',
-    href: 'https://docsend.com/view/ua2j9h99jyytj5sp',
+    text: 'Learn More',
+    href: '/marketplace/telegram-xbot.html',
+    target: '_blank',
+    hasArrow: true
+  }
+},
+{
+  product: 'Blockchain Badges',
+  title: 'Web3 Digital Certifications',
+  descriptions: [
+    'Creates blockchain-based badges for verifying achievements, event participation, and learning milestones',
+    'Enables Web2 companies to seamlessly issue tamper-proof digital credentials without requiring end users to understand blockchain technology'
+  ],
+  button: {
+    text: 'Learn More',
+    href: '/marketplace/blockchain-badges.html',
+    target: '_blank',
+    hasArrow: true
+  }
+},
+{
+  product: 'ESG Credits',
+  title: 'Green Finance Verification Platform',
+  descriptions: [
+    'Automates ESG impact alignment and standardizes sustainability disclosures for green bonds and environmental projects',
+    'Provides multilingual, cross-currency support for generating investor-grade ESG reports backed by immutable blockchain records'
+  ],
+  image: {
+    src: '/assets/images/marketplace/esg-credits-1760381155205.jpg',
+    alt: 'ESG Credits solution',
+    loading: 'lazy',
+    sizes: '(max-width: 767px) 100vw, (max-width: 991px) 95vw, 829px'
+  },
+  button: {
+    text: 'Learn More',
+    href: '/marketplace/esg-credits.html',
+    target: '_blank',
+    hasArrow: true
+  }
+},
+{
+  product: 'IPFS',
+  title: 'Decentralized File Storage API',
+  descriptions: [
+    'Provides easy access to decentralized infrastructure for secure file storage and management',
+    'Ideal for document vaults, KYC backups, and media NFT storage use cases'
+  ],
+  button: {
+    text: 'Learn More',
+    href: '/marketplace/ipfs-upload.html',
+    target: '_blank',
+    hasArrow: true
+  }
+},
+{
+  product: 'Fan Game Cube',
+  title: 'Sports Fan Engagement NFTs',
+  descriptions: [
+    'Enables fans to own virtual zones of real sports fields through NFTs tied to live in-game events',
+    'Creates new revenue streams for sports clubs while offering fans points-based rewards for engagement'
+  ],
+  button: {
+    text: 'View Details',
+    href: '/marketplace/nft-gamecube.html',
     target: '_blank',
     hasArrow: true
   },
@@ -74,4 +136,5 @@ export const marketplaceAnnouncements: MarketplaceAnnouncement[] = [{
     target: '_blank',
     highlightedText: '@iamandrewhenderson'
   }
-}];
+}
+];
