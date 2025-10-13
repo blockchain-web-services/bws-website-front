@@ -39,7 +39,8 @@ const { news } = Astro.props;
         gap: '1rem',
         padding: 0,
         width: '100%',
-        focus: 0, // Focus on first slide (index 0) for proper alignment
+        start: 0, // Start at first slide
+        focus: newsCount <= 2 ? 'center' : 0, // Center when only 2 items, otherwise start at first
         trimSpace: newsCount <= 2, // Trim space when only 2 items to center them
         updateOnMove: true, // Update on movement for better positioning
         autoplay: shouldAutoplay,
@@ -49,7 +50,6 @@ const { news } = Astro.props;
         arrows: shouldAutoplay,
         pagination: newsCount > 2, // Hide pagination when only 2 items
         drag: shouldAutoplay,
-        clones: 0, // Disable clones to prevent partial card visibility
         breakpoints: {
           991: {
             perPage: 1,
@@ -60,7 +60,6 @@ const { news } = Astro.props;
             arrows: true,
             drag: true,
             pagination: true,
-            clones: undefined, // Allow clones on mobile for smooth looping
             focus: 'center',
           },
         },
@@ -106,19 +105,11 @@ const { news } = Astro.props;
     display: flex;
     flex-wrap: nowrap;
     max-width: 100% !important; /* Override 80% constraint from global styles */
-    margin: 0 auto; /* Center the list */
   }
 
   .splide__list {
     display: flex;
     align-items: center;
-    justify-content: center;
-    margin: 10px !important;
-  }
-
-  /* Extra specificity to override Splide CSS */
-  #news-carousel .splide__list {
-    margin: 10px !important;
   }
 
   .splide__slide {
@@ -126,7 +117,6 @@ const { news } = Astro.props;
     justify-content: center;
     box-sizing: border-box; /* Include padding in width calculations */
     flex-shrink: 0; /* Prevent slides from shrinking */
-    max-width: 460px; /* Maximum width for each slide */
   }
 
   /* Override announcement-box width for carousel - parent already controls size */
