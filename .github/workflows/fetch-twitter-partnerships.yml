@@ -118,71 +118,48 @@ jobs:
             const fixesDir = `fixes/${branchName.replace(/\//g, '-')}`;
             execSync(`mkdir -p ${fixesDir}`);
 
-            // Create failure report
-            const issueContent = `# Twitter Partnership Fetch Failure Report
-
-**Generated:** ${now.toISOString()}
-**Workflow Run:** [View Run](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})
-**Commit:** ${context.sha}
-**Branch:** ${context.ref.replace('refs/heads/', '')}
-
-## Issue Description
-
-The daily Twitter partnership fetch workflow failed.
-
-## Possible Causes
-
-1. **Twitter API Issues:**
-   - Rate limit exceeded
-   - Invalid/expired bearer token
-   - API endpoint changes
-   - User @BWSCommunity not found or suspended
-
-2. **Network Issues:**
-   - Connection timeout
-   - DNS resolution failure
-   - Firewall blocking API access
-
-3. **Script Issues:**
-   - Parse error in tweet content
-   - Image download failure
-   - File write permission issues
-   - news.ts format changed
-
-## Action Required
-
-1. Check the [workflow logs](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})
-2. Verify TWITTER_BEARER_TOKEN secret is valid:
-   - Go to Repository Settings > Secrets and variables > Actions
-   - Confirm TWITTER_BEARER_TOKEN exists and is not expired
-3. Test script manually:
-   \`\`\`bash
-   export TWITTER_BEARER_TOKEN="your_token_here"
-   node scripts/fetch-twitter-partnerships.js
-   \`\`\`
-4. Fix the issue and push to this branch
-5. Tests will re-run automatically
-
-## Debugging Steps
-
-### Check Twitter API Status
-Visit https://api.twitterstat.us/ to check if Twitter API is operational
-
-### Test Bearer Token
-\`\`\`bash
-curl -H "Authorization: Bearer \${TWITTER_BEARER_TOKEN}" \\
-  "https://api.twitter.com/2/users/by/username/BWSCommunity"
-\`\`\`
-
-### Check Rate Limits
-\`\`\`bash
-curl -H "Authorization: Bearer \${TWITTER_BEARER_TOKEN}" \\
-  "https://api.twitter.com/2/users/by/username/BWSCommunity" \\
-  -i | grep x-rate-limit
-\`\`\`
-
----
-*This is an automated report from the Twitter partnership fetch workflow.*`;
+            // Create failure report - write directly to file to avoid YAML escaping issues
+            const issueContent = [
+              '# Twitter Partnership Fetch Failure Report',
+              '',
+              `**Generated:** ${now.toISOString()}`,
+              `**Workflow Run:** [View Run](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})`,
+              `**Commit:** ${context.sha}`,
+              `**Branch:** ${context.ref.replace('refs/heads/', '')}`,
+              '',
+              '## Issue Description',
+              '',
+              'The daily Twitter partnership fetch workflow failed.',
+              '',
+              '## Possible Causes',
+              '',
+              '1. **Twitter API Issues:**',
+              '   - Rate limit exceeded',
+              '   - Invalid/expired bearer token',
+              '   - API endpoint changes',
+              '   - User @BWSCommunity not found or suspended',
+              '',
+              '2. **Network Issues:**',
+              '   - Connection timeout',
+              '   - DNS resolution failure',
+              '   - Firewall blocking API access',
+              '',
+              '3. **Script Issues:**',
+              '   - Parse error in tweet content',
+              '   - Image download failure',
+              '   - File write permission issues',
+              '   - news.ts format changed',
+              '',
+              '## Action Required',
+              '',
+              `1. Check the [workflow logs](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})`,
+              '2. Verify TWITTER_BEARER_TOKEN secret is valid',
+              '3. Test script manually: `node scripts/fetch-twitter-partnerships.js`',
+              '4. Fix the issue and push to this branch',
+              '',
+              '---',
+              '*This is an automated report from the Twitter partnership fetch workflow.*'
+            ].join('\n');
 
             fs.writeFileSync(`${fixesDir}/FAILURE_REPORT.md`, issueContent);
 
@@ -201,41 +178,7 @@ curl -H "Authorization: Bearer \${TWITTER_BEARER_TOKEN}" \\
                 title: `🔧 Fix: Twitter partnership fetch failure - ${timestamp}`,
                 head: branchName,
                 base: context.ref.replace('refs/heads/', ''),
-                body: `## 🔴 Twitter Partnership Fetch Failure
-
-Automated fix branch created due to Twitter fetch workflow failure.
-
-### 📋 Details
-- **Failed Workflow:** [Run ${{ github.run_id }}](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})
-- **Failed Commit:** ${context.sha}
-- **Branch:** \`${branchName}\`
-- **Failure Report:** [FAILURE_REPORT.md](https://github.com/${{ github.repository }}/blob/${branchName}/${fixesDir}/FAILURE_REPORT.md)
-- **Timestamp:** ${now.toISOString()}
-
-### 🔄 Workflow
-1. Review failure report and workflow logs
-2. Investigate root cause (see debugging steps in report)
-3. Fix the issue:
-   - Update TWITTER_BEARER_TOKEN secret if expired
-   - Fix script bugs if found
-   - Update API calls if Twitter API changed
-4. Push fixes to this branch
-5. Workflow will re-run automatically
-6. PR will auto-merge when workflow succeeds ✅
-
-### 🤖 Auto-Merge
-This PR is configured to auto-merge once the workflow passes.
-
-### 📊 Common Solutions
-
-**Expired Token:** Update the \`TWITTER_BEARER_TOKEN\` secret in repository settings
-
-**Rate Limit:** Wait for the next scheduled run (9 AM UTC daily)
-
-**API Changes:** Check [Twitter API docs](https://developer.x.com/en/docs/x-api) for updates
-
----
-*Generated by GitHub Actions*`,
+                body: `## 🔴 Twitter Partnership Fetch Failure\n\nAutomated fix branch created due to Twitter fetch workflow failure.\n\n### 📋 Details\n- **Failed Workflow:** [Run ${{ github.run_id }}](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})\n- **Failed Commit:** ${context.sha}\n- **Branch:** \`${branchName}\`\n- **Failure Report:** [FAILURE_REPORT.md](https://github.com/${{ github.repository }}/blob/${branchName}/${fixesDir}/FAILURE_REPORT.md)\n- **Timestamp:** ${now.toISOString()}\n\n### 🔄 Workflow\n1. Review failure report and workflow logs\n2. Investigate root cause\n3. Fix the issue (update token, fix script bugs, etc.)\n4. Push fixes to this branch\n5. Workflow will re-run automatically\n6. PR will auto-merge when workflow succeeds ✅\n\n### 🤖 Auto-Merge\nThis PR is configured to auto-merge once the workflow passes.\n\n---\n*Generated by GitHub Actions*`,
                 draft: false
               });
 
@@ -256,25 +199,7 @@ This PR is configured to auto-merge once the workflow passes.
             }
 
             // Create issue for tracking (following existing pattern)
-            const issueBody = `## Twitter Partnership Fetch Failure
-
-The daily Twitter partnership fetch workflow failed.
-
-- **Fix Branch:** \`${branchName}\`
-- **Pull Request:** Created automatically
-- **Workflow Run:** [View Logs](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})
-- **Timestamp:** ${now.toISOString()}
-
-### Action Required
-Review the failure report in the PR and fix the issue.
-
-The workflow will retry daily at 9 AM UTC automatically.
-
-### Quick Checks
-- [ ] Verify TWITTER_BEARER_TOKEN is valid
-- [ ] Check Twitter API status
-- [ ] Review workflow logs for errors
-- [ ] Test script locally`;
+            const issueBody = `## Twitter Partnership Fetch Failure\n\nThe daily Twitter partnership fetch workflow failed.\n\n- **Fix Branch:** \`${branchName}\`\n- **Pull Request:** Created automatically\n- **Workflow Run:** [View Logs](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})\n- **Timestamp:** ${now.toISOString()}\n\n### Action Required\nReview the failure report in the PR and fix the issue.\n\nThe workflow will retry daily at 9 AM UTC automatically.\n\n### Quick Checks\n- [ ] Verify TWITTER_BEARER_TOKEN is valid\n- [ ] Check Twitter API status\n- [ ] Review workflow logs for errors\n- [ ] Test script locally`;
 
             try {
               const issue = await github.rest.issues.create({
