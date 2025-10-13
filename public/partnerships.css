@@ -1,0 +1,63 @@
+/* Auto-generated partnership announcement styles */
+/* Do not edit manually - managed by fetch-twitter-partnerships.js */
+
+/* Fixed height for description text to ensure consistent card heights */
+.announcement-text {
+  min-height: 72px !important;
+  max-height: 72px !important;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  line-height: 24px !important;
+}
+
+/* Partnership logo styling */
+.image-partnership {
+  height: auto !important;
+  max-width: 80px !important;
+  object-fit: contain !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* BWS logo - no circle */
+.image-partnership-bws {
+  max-width: 100px !important;
+}
+
+/* Partner logo - circle styling (like X profile pics) */
+.image-partnership:not(.image-partnership-bws) {
+  border-radius: 50% !important;
+  width: 80px !important;
+  height: 80px !important;
+  object-fit: cover !important;
+}
+
+/* Partnership background: container-image-partnership-1975576723337982186 */
+.container-image-partnership-1975576723337982186 {
+  background-image: url('/assets/images/news/partnership-1760350824503-1975576723337982186.jpg');
+  background-position: 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border: 1px solid #000;
+  border-top-style: none;
+  border-radius: 20px 20px 0 0;
+  min-width: 100%;
+  max-width: none;
+  min-height: 200px;
+}
+
+/* Partnership background: container-image-partnership-1970799564593537066 */
+.container-image-partnership-1970799564593537066 {
+  background-image: url('/assets/images/news/partnership-1760350826713-1970799564593537066.jpg');
+  background-position: 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border: 1px solid #000;
+  border-top-style: none;
+  border-radius: 20px 20px 0 0;
+  min-width: 100%;
+  max-width: none;
+  min-height: 200px;
+}
