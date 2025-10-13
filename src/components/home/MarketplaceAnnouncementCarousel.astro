@@ -1,0 +1,124 @@
+---
+import type { MarketplaceAnnouncement } from '../../data/marketplaceAnnouncements';
+import MarketplaceAnnouncementComponent from './MarketplaceAnnouncement.astro';
+
+interface Props {
+  announcements: MarketplaceAnnouncement[];
+}
+
+const { announcements } = Astro.props;
+const announcementCount = announcements.length;
+---
+
+{
+  announcementCount > 1 ? (
+    // Multiple announcements - use Swiper carousel
+    <>
+      <div class="swiper marketplace-announcement-carousel">
+        <div class="swiper-wrapper">
+          {announcements.map((announcement) => (
+            <div class="swiper-slide">
+              <MarketplaceAnnouncementComponent announcement={announcement} />
+            </div>
+          ))}
+        </div>
+        <!-- Navigation arrows -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <!-- Pagination -->
+        <div class="swiper-pagination"></div>
+      </div>
+
+      <script define:vars={{ announcementCount }}>
+        // Initialize Swiper carousel when DOM is loaded
+        document.addEventListener('DOMContentLoaded', function () {
+          // @ts-ignore - Swiper is loaded via CDN
+          if (typeof Swiper !== 'undefined') {
+            // @ts-ignore
+            new Swiper('.marketplace-announcement-carousel', {
+              slidesPerView: 1,
+              spaceBetween: 0,
+              loop: true,
+              autoplay: {
+                delay: 8000, // 8 seconds (longer than news carousel)
+                disableOnInteraction: false,
+                pauseOnMouseEnter: true,
+              },
+              pagination: {
+                el: '.marketplace-announcement-carousel .swiper-pagination',
+                clickable: true,
+              },
+              navigation: {
+                nextEl: '.marketplace-announcement-carousel .swiper-button-next',
+                prevEl: '.marketplace-announcement-carousel .swiper-button-prev',
+              },
+            });
+          }
+        });
+      </script>
+
+      <style>
+        .marketplace-announcement-carousel {
+          width: 100%;
+          padding: 0 1rem 3rem 1rem;
+          min-height: 400px;
+        }
+
+        /* Swiper slide styling */
+        .marketplace-announcement-carousel .swiper-slide {
+          display: flex;
+          justify-content: center;
+          height: auto;
+        }
+
+        /* Customize Swiper navigation arrows */
+        .marketplace-announcement-carousel .swiper-button-next,
+        .marketplace-announcement-carousel .swiper-button-prev {
+          background: rgba(255, 255, 255, 0.8);
+          border-radius: 50%;
+          width: 3rem;
+          height: 3rem;
+          color: #333;
+        }
+
+        .marketplace-announcement-carousel .swiper-button-next:hover,
+        .marketplace-announcement-carousel .swiper-button-prev:hover {
+          background: rgba(255, 255, 255, 1);
+        }
+
+        .marketplace-announcement-carousel .swiper-button-next::after,
+        .marketplace-announcement-carousel .swiper-button-prev::after {
+          font-size: 1.5rem;
+          font-weight: bold;
+        }
+
+        /* Customize pagination dots */
+        .marketplace-announcement-carousel .swiper-pagination {
+          bottom: 0;
+        }
+
+        .marketplace-announcement-carousel .swiper-pagination-bullet {
+          background: rgba(255, 255, 255, 0.5);
+          width: 12px;
+          height: 12px;
+          opacity: 1;
+        }
+
+        .marketplace-announcement-carousel .swiper-pagination-bullet-active {
+          background: #fff;
+          transform: scale(1.2);
+        }
+
+        /* Mobile adjustments */
+        @media screen and (max-width: 991px) {
+          .marketplace-announcement-carousel {
+            padding: 0 0.5rem 2rem 0.5rem;
+          }
+        }
+      </style>
+    </>
+  ) : (
+    // Single announcement - no carousel, just display it
+    <MarketplaceAnnouncementComponent announcement={announcements[0]} />
+  )
+}

@@ -6,11 +6,24 @@ interface Props {
 }
 
 const { announcement } = Astro.props;
+
+// Determine if we should use two-column layout (when video exists)
+const hasTwoColumns = !!announcement.video;
+
+// Collect all images (single or multiple)
+const allImages = announcement.images || (announcement.image ? [announcement.image] : []);
+
+// Collect all buttons (single or multiple)
+const allButtons = announcement.buttons || (announcement.button ? [announcement.button] : []);
 ---
 
-<div class="w-layout-vflex flex-ngc-announcement">
+<div class={`w-layout-vflex flex-ngc-announcement ${hasTwoColumns ? 'two-column' : 'single-column'}`}>
+  <!-- Left column: Main content -->
   <div class="w-layout-vflex flex-block-13">
+    <!-- Title (mandatory) -->
     <div class="text-block-38">{announcement.title}</div>
+
+    <!-- Descriptions (mandatory, can be multiple) -->
     {
       announcement.descriptions.map((desc) => (
         <div class="text-block-39">
@@ -19,26 +32,36 @@ const { announcement } = Astro.props;
         </div>
       ))
     }
+
+    <!-- Images (optional, can be multiple) -->
     {
-      announcement.image && (
+      allImages.map((image) => (
         <img
-          src={announcement.image.src}
-          loading={announcement.image.loading}
-          sizes={announcement.image.sizes}
-          srcset={announcement.image.srcset}
-          alt={announcement.image.alt}
+          src={image.src}
+          loading={image.loading || 'lazy'}
+          sizes={image.sizes}
+          srcset={image.srcset}
+          alt={image.alt}
         />
-      )
+      ))
     }
-    <a
-      href={announcement.button.href}
-      target={announcement.button.target}
-      class="button-secondary tokenomics button-small w-button"
-    >
-      {announcement.button.text}
-      {announcement.button.hasArrow && <span class="button-arrow" />}
-    </a>
+
+    <!-- Buttons (optional, can be multiple) -->
+    {
+      allButtons.map((button) => (
+        <a
+          href={button.href}
+          target={button.target}
+          class="button-secondary tokenomics button-small w-button"
+        >
+          {button.text}
+          {button.hasArrow && <span class="button-arrow" />}
+        </a>
+      ))
+    }
   </div>
+
+  <!-- Right column: Video (optional, only if video exists) -->
   {
     announcement.video && (
       <div class="w-layout-vflex flex-block-14">

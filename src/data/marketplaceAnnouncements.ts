@@ -30,16 +30,20 @@ export interface AnnouncementButton {
 }
 
 export interface MarketplaceAnnouncement {
-  title: string;
-  descriptions: string[];
-  image?: AnnouncementImage;
-  video?: AnnouncementVideo;
-  link?: AnnouncementLink;
-  button: AnnouncementButton;
+  product: string;                    // MANDATORY
+  title: string;                      // MANDATORY
+  descriptions: string[];              // MANDATORY (array with 1+ descriptions)
+  image?: AnnouncementImage;          // OPTIONAL (single image)
+  images?: AnnouncementImage[];       // OPTIONAL (multiple images)
+  video?: AnnouncementVideo;          // OPTIONAL
+  link?: AnnouncementLink;            // OPTIONAL
+  button?: AnnouncementButton;        // OPTIONAL (single button)
+  buttons?: AnnouncementButton[];     // OPTIONAL (multiple buttons)
 }
 
-export const currentAnnouncement: MarketplaceAnnouncement = {
-  title: 'New Marketplace Solution!',
+export const marketplaceAnnouncements: MarketplaceAnnouncement[] = [{
+  product: 'Fan Game Cube',
+  title: 'Fan Game Cube Marketplace Solution',
   descriptions: [
     'Introducing Fan Game Cube, a new solution powered by Blockchain Web Services. This platform allows sports clubs to tokenize their game fields, creating new revenue opportunities while enabling fans to own digital assets linked to real-time match events.',
     'By using NFTs and machine learning, fans can earn rewards based on live events in their chosen sections of the field. Whether for football, chess, cricket, or other sports, Fan Game Cube brings a fresh way for clubs to engage with their fans and generate additional revenue.'
@@ -70,4 +74,4 @@ export const currentAnnouncement: MarketplaceAnnouncement = {
     target: '_blank',
     highlightedText: '@iamandrewhenderson'
   }
-};
+}];

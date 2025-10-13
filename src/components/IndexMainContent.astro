@@ -1,10 +1,10 @@
 ---
 // Main content from index.html
 import NewsCarousel from './home/NewsCarousel.astro';
-import MarketplaceAnnouncement from './home/MarketplaceAnnouncement.astro';
+import MarketplaceAnnouncementCarousel from './home/MarketplaceAnnouncementCarousel.astro';
 import SolutionCard from './home/SolutionCard.astro';
 import { newsItems } from '../data/news';
-import { currentAnnouncement } from '../data/marketplaceAnnouncements';
+import { marketplaceAnnouncements } from '../data/marketplaceAnnouncements';
 import { solutions } from '../data/solutions';
 ---
 
@@ -140,44 +140,10 @@ import { solutions } from '../data/solutions';
           </h3>
         </div><div class="collection-list-wrapper-3 w-dyn-list"></div>
       </div>
-    </div><div class="w-layout-vflex flex-ngc-announcement">
-      <div class="w-layout-vflex flex-block-13">
-        <div class="text-block-38">New Marketplace Solution!</div><div class="text-block-39">
-          Introducing Fan Game Cube, a new solution powered by Blockchain Web Services. This platform allows sports
-          clubs to tokenize their game fields, creating new revenue opportunities while enabling fans to own digital
-          assets linked to real-time match events.<br />
-        </div><img
-          src="/assets/images/6474d385cfec71cb21a92251/6708d536ef7b294fa972098e_football-cubes-selection.png"
-          loading="lazy"
-          sizes="(max-width: 767px) 100vw, (max-width: 991px) 95vw, 829.0030517578125px"
-          srcset="/assets/images/6474d385cfec71cb21a92251/6708d536ef7b294fa972098e_football-cubes-selection-p-500.png 500w, /assets/images/6474d385cfec71cb21a92251/6708d536ef7b294fa972098e_football-cubes-selection-p-800.png 800w, /assets/images/6474d385cfec71cb21a92251/6708d536ef7b294fa972098e_football-cubes-selection.png 829w"
-          alt="Fan Game Cube 1-click BUY EXPERIENCE."
-        /><div class="text-block-39">
-          By using NFTs and machine learning, fans can earn rewards based on live events in their chosen sections of the
-          field. Whether for football, chess, cricket, or other sports, Fan Game Cube brings a fresh way for clubs to
-          engage with their fans and generate additional revenue.
-        </div><a
-          href="https://docsend.com/view/ua2j9h99jyytj5sp"
-          target="_blank"
-          class="button-secondary tokenomics button-small w-button">Launch Deck<span class="button-arrow"></span></a
-        >
-      </div><div class="w-layout-vflex flex-block-14">
-        <div style="padding-top:177.76595744680853%" class="video w-video w-embed">
-          <iframe
-            src="https://player.vimeo.com/video/976431707?h=d5bdb51e8a"
-            width="940"
-            height="1671"
-            frameborder="0"
-            allow="autoplay; fullscreen; picture-in-picture"
-            allowfullscreen
-            title="Fan Game Cube @ TikTok"></iframe>
-        </div><a href="https://www.tiktok.com/@iamandrewhenderson" target="_blank" class="link-block-3 w-inline-block"
-          ><div class="text-block-42">
-            NFT Game Cube launch event campaign on TikTok <br /><span class="text-span-10">@iamandrewhenderson</span>
-          </div></a
-        >
-      </div>
-    </div><div class="solutions-list mix-solutions">
+    </div>
+    <!-- Marketplace Announcement Carousel -->
+    <MarketplaceAnnouncementCarousel announcements={marketplaceAnnouncements} />
+    <div class="solutions-list mix-solutions">
       <div class="w-dyn-list">
         <div
           data-w-id="971bde81-7167-3cb3-ba84-3a9d83678c32"

@@ -38648,3 +38648,80 @@ img[src*="blockchain-founders-group"] * {
 .splide__list {
   margin: 10px !important;
 }
+
+/* ============================================ */
+/* Marketplace Announcement Adaptive Layouts */
+/* ============================================ */
+
+/* Single-column layout (no video) - center content */
+.flex-ngc-announcement.single-column {
+  flex-flow: column;
+  align-items: center;
+}
+
+.flex-ngc-announcement.single-column .flex-block-13 {
+  max-width: 100%;
+  padding-right: 0;
+  align-items: center;
+  text-align: center;
+}
+
+/* Two-column layout (with video) - maintain row layout */
+.flex-ngc-announcement.two-column {
+  flex-flow: row;
+}
+
+/* ============================================ */
+/* Marketplace Announcement Adaptive Image/Video Sizing */
+/* ============================================ */
+
+/* Images - adaptive sizing */
+.flex-ngc-announcement img {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* Video container - maintains aspect ratio */
+.flex-ngc-announcement .video.w-video {
+  position: relative;
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+  /* padding-top set dynamically per video via inline style */
+}
+
+.flex-ngc-announcement .video iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Two-column layout - video column sizing */
+.flex-ngc-announcement.two-column .flex-block-14 {
+  flex: 1;
+  min-width: 300px;
+  max-width: 500px;
+}
+
+/* Responsive: stack columns on tablet and mobile */
+@media (max-width: 991px) {
+  .flex-ngc-announcement.two-column {
+    flex-direction: column !important;
+  }
+  
+  .flex-ngc-announcement.two-column .flex-block-13 {
+    max-width: 100%;
+    padding-right: 0;
+  }
+  
+  .flex-ngc-announcement.two-column .flex-block-14 {
+    max-width: 100%;
+    min-width: 100%;
+    margin-top: 20px;
+  }
+}
