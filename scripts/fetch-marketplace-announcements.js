@@ -296,15 +296,17 @@ For EACH product category that has relevant tweets, create ONE announcement by:
 
 1. Select 2-3 tweets about that product
 2. Generate a product-focused title (3-5 words)
-3. Create TWO complementary description sections (CRITICAL LENGTH: ~3 lines each, approximately 35-45 words per section):
-   - Section 1: Main value proposition or what the product does
-   - Section 2: Key feature, use case, or how it benefits users
-   - MUST tell a cohesive story about the same product
+3. Create TWO EXTENDED complementary description sections (CRITICAL LENGTH: 60-80 words per section, much longer than before):
+   - Section 1: Comprehensive value proposition - explain what the product does, who it's for, and the main problem it solves (60-80 words)
+   - Section 2: Detailed feature explanation or use case - describe specific features, benefits, technical capabilities, or real-world applications (60-80 words)
+   - MUST tell a cohesive and detailed story about the same product
    - DO NOT repeat the same information
    - Descriptions must complement each other, not duplicate
-   - Each section should be approximately the length of: "Introducing Fan Game Cube, a new solution powered by Blockchain Web Services. This platform allows sports clubs to tokenize their game fields, creating new revenue opportunities while enabling fans to own digital assets linked to real-time match events."
-   - Example GOOD: "Creates secure blockchain-based badges for verifying achievements, event participation, and learning milestones with immutable proof" + "Enables Web2 companies to seamlessly issue tamper-proof digital credentials without requiring end users to understand blockchain technology"
-   - Example BAD: "Creates blockchain certificates" + "Uses blockchain to create certificates"
+   - Use rich, descriptive language that fills the space effectively
+   - Each section should be approximately 2-3 sentences with substantial detail
+   - Example length reference: "The X Bot provides automated community engagement analytics by tracking and reporting X (Twitter) metrics while seamlessly syncing posts to Telegram groups. This innovative tool enables blockchain projects to monitor Key Opinion Leader performance in real-time, helping teams understand engagement patterns across their community. By automating daily reports and providing actionable insights, projects can gamify community support and reward top contributors, creating a more engaged and motivated user base that drives organic growth and brand awareness."
+   - Example GOOD (extended): "Creates comprehensive blockchain-based badge systems for organizations to verify achievements, event participation, and learning milestones with immutable proof. The platform provides enterprise-grade security while maintaining user privacy, allowing institutions to issue digital credentials that can be independently verified without central authority. Perfect for educational institutions, event organizers, and corporate training programs seeking to modernize their certification processes." + "Enables Web2 companies to seamlessly issue tamper-proof digital credentials without requiring end users to understand blockchain technology. The system handles all blockchain complexity behind the scenes, providing simple APIs and interfaces that integrate with existing systems. Recipients can share their credentials across platforms, and verifiers can instantly confirm authenticity, eliminating fraud and reducing administrative overhead while building trust in digital certifications."
+   - Example BAD (too short): "Creates blockchain certificates for achievements" + "Uses blockchain to verify credentials"
 4. Select the best tweet ID that has an image (if any)
 5. Detect if any tweet mentions a video URL (Vimeo, YouTube, TikTok)
 
@@ -314,8 +316,8 @@ Output as JSON array:
     "product": "exact product name from list",
     "title": "Product-focused title",
     "descriptions": [
-      "First complementary description (35-45 words)",
-      "Second complementary description (35-45 words)"
+      "First EXTENDED complementary description (60-80 words with rich detail)",
+      "Second EXTENDED complementary description (60-80 words with rich detail)"
     ],
     "imageTweetId": "tweet_id_with_best_image or null",
     "videoUrl": "video_url if found or null",

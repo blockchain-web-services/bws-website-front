@@ -18,7 +18,7 @@ const allButtons = announcement.buttons || (announcement.button ? [announcement.
 ---
 
 <div class={`w-layout-vflex flex-ngc-announcement ${hasTwoColumns ? 'two-column' : 'single-column'}`}>
-  <!-- Left column: Main content -->
+  <!-- Left column: Main content (text and buttons) -->
   <div class="w-layout-vflex flex-block-13">
     <!-- Title (mandatory) -->
     <div class="text-block-38">{announcement.title}</div>
@@ -30,19 +30,6 @@ const allButtons = announcement.buttons || (announcement.button ? [announcement.
           {desc}
           <br />
         </div>
-      ))
-    }
-
-    <!-- Images (optional, can be multiple) -->
-    {
-      allImages.map((image) => (
-        <img
-          src={image.src}
-          loading={image.loading || 'lazy'}
-          sizes={image.sizes}
-          srcset={image.srcset}
-          alt={image.alt}
-        />
       ))
     }
 
@@ -61,9 +48,10 @@ const allButtons = announcement.buttons || (announcement.button ? [announcement.
     }
   </div>
 
-  <!-- Right column: Video (optional, only if video exists) -->
+  <!-- Right column: Image or Video -->
   {
-    announcement.video && (
+    announcement.video ? (
+      <!-- Video column (for two-column layout) -->
       <div class="w-layout-vflex flex-block-14">
         <div
           style={`padding-top:${announcement.video.paddingTop}`}
@@ -95,6 +83,22 @@ const allButtons = announcement.buttons || (announcement.button ? [announcement.
             </div>
           </a>
         )}
+      </div>
+    ) : allImages.length > 0 && (
+      <!-- Image column (for single-column layout with image) -->
+      <div class="announcement-image-container">
+        {
+          allImages.map((image) => (
+            <img
+              src={image.src}
+              loading={image.loading || 'lazy'}
+              sizes={image.sizes}
+              srcset={image.srcset}
+              alt={image.alt}
+              class="announcement-image"
+            />
+          ))
+        }
       </div>
     )
   }
