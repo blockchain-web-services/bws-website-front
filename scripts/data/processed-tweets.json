@@ -1,6 +1,9 @@
 {
-  "processedTweetIds": [],
-  "lastCheck": null,
-  "lastSuccess": null,
+  "processedTweetIds": [
+    "1975576723337982186",
+    "1970799564593537066"
+  ],
+  "lastCheck": "2025-10-13T10:17:50.482Z",
+  "lastSuccess": "2025-10-13T10:17:54.347Z",
   "failureCount": 0
 }
