@@ -206,13 +206,13 @@ async function generateContentWithClaude(tweetText) {
         role: 'user',
         content: `Analyze this partnership announcement tweet and provide:
 1. A title (max 3 words) - just the partner name or key term
-2. A description (one sentence, max 150 characters) - summarize the partnership and key benefit
+2. A description (one sentence, max 150 characters) - focus on how the partner is using BWS platform solutions, APIs, or integrating BWS technology. This is NOT about the partner becoming a solution in BWS marketplace, but about them utilizing or integrating BWS services.
 3. The partner's X (Twitter) username (without @) - extract from the tweet text
 
 Format your response as JSON:
 {
   "title": "Partner Name",
-  "description": "Brief partnership summary",
+  "description": "Brief partnership summary emphasizing BWS platform/API usage",
   "xUsername": "partnername"
 }
 
