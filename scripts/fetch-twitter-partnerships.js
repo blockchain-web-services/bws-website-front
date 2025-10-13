@@ -207,11 +207,13 @@ async function generateContentWithClaude(tweetText) {
         content: `Analyze this partnership announcement tweet and provide:
 1. A title (max 3 words) - just the partner name or key term
 2. A description (one sentence, max 150 characters) - summarize the partnership and key benefit
+3. The partner's X (Twitter) username (without @) - extract from the tweet text
 
 Format your response as JSON:
 {
   "title": "Partner Name",
-  "description": "Brief partnership summary"
+  "description": "Brief partnership summary",
+  "xUsername": "partnername"
 }
 
 Tweet: ${tweetText}`
@@ -225,9 +227,11 @@ Tweet: ${tweetText}`
       const parsed = JSON.parse(jsonMatch[0]);
       console.log(`   🤖 AI Title: ${parsed.title}`);
       console.log(`   🤖 AI Description: ${parsed.description}`);
+      console.log(`   🤖 AI X Username: ${parsed.xUsername || 'N/A'}`);
       return {
         title: parsed.title,
-        description: parsed.description
+        description: parsed.description,
+        xUsername: parsed.xUsername || null
       };
     } else {
       throw new Error('Could not parse JSON response from Claude');
@@ -243,24 +247,70 @@ Tweet: ${tweetText}`
 }
 
 /**
+ * Fetch partner's X profile image
+ */
+async function fetchPartnerProfileImage(client, username) {
+  try {
+    if (!username) return null;
+
+    console.log(`   🔍 Fetching profile image for @${username}...`);
+    const user = await client.v2.userByUsername(username, {
+      'user.fields': ['profile_image_url']
+    });
+
+    if (user.data?.profile_image_url) {
+      // Get the larger version (replace _normal with _400x400)
+      const largeImageUrl = user.data.profile_image_url.replace('_normal', '_400x400');
+      console.log(`   ✅ Found profile image for @${username}`);
+      return largeImageUrl;
+    }
+    return null;
+  } catch (error) {
+    console.error(`   ⚠️  Failed to fetch profile image for @${username}: ${error.message}`);
+    return null;
+  }
+}
+
+/**
  * Generate news entry object
  */
-async function generateNewsEntry(tweet, imagePath) {
-  const { title, description } = await generateContentWithClaude(tweet.text);
+async function generateNewsEntry(tweet, imagePath, client) {
+  const { title, description, xUsername } = await generateContentWithClaude(tweet.text);
 
   // Generate unique background class for this partnership
   const backgroundClass = `container-image-partnership-${tweet.id}`;
+
+  // Fetch partner's profile image if we have their username
+  let partnerProfileImage = null;
+  if (xUsername) {
+    partnerProfileImage = await fetchPartnerProfileImage(client, xUsername);
+  }
+
+  // Build logos array - BWS logo + partner logo (if available)
+  const logos = [
+    {
+      src: '/assets/images/logos/bws-logo-violet-flying.png',
+      alt: 'BWS Logo',
+      href: 'https://www.bws.ninja',
+      class: 'image-partnership'
+    }
+  ];
+
+  // Add partner logo if we have it
+  if (partnerProfileImage) {
+    logos.push({
+      src: partnerProfileImage,
+      alt: `${title} Logo`,
+      href: xUsername ? `https://x.com/${xUsername}` : `https://x.com/BWSCommunity/status/${tweet.id}`,
+      class: 'image-partnership'
+    });
+  }
 
   return {
     title: title,
     description: description,
     partnershipTitle: title,
-    logos: [{
-      src: imagePath,
-      alt: `${title} partnership`,
-      href: `https://x.com/BWSCommunity/status/${tweet.id}`,
-      class: 'image-partnership'
-    }],
+    logos: logos,
     buttons: [{
       text: 'View Announcement',
       href: `https://x.com/BWSCommunity/status/${tweet.id}`,
@@ -330,19 +380,22 @@ function insertNewsEntry(newsEntry) {
   try {
     let newsContent = fs.readFileSync(NEWS_FILE_PATH, 'utf-8');
 
+    // Format logos array
+    const logosCode = newsEntry.logos.map(logo => `
+      {
+        src: '${logo.src}',
+        alt: '${logo.alt.replace(/'/g, "\\'")}',
+        href: '${logo.href}',
+        class: '${logo.class}'
+      }`).join(',');
+
     // Format the entry as TypeScript code
     const entryCode = `
   {
     title: '${newsEntry.title.replace(/'/g, "\\'")}',
     description: '${newsEntry.description.replace(/'/g, "\\'")}',
     partnershipTitle: '${newsEntry.partnershipTitle.replace(/'/g, "\\'")}',
-    logos: [
-      {
-        src: '${newsEntry.logos[0].src}',
-        alt: '${newsEntry.logos[0].alt.replace(/'/g, "\\'")}',
-        href: '${newsEntry.logos[0].href}',
-        class: '${newsEntry.logos[0].class}'
-      }
+    logos: [${logosCode}
     ],
     buttons: [
       {
@@ -476,7 +529,7 @@ async function main() {
       }
 
       // Generate news entry
-      const newsEntry = await generateNewsEntry(tweet, imagePath);
+      const newsEntry = await generateNewsEntry(tweet, imagePath, client);
 
       // Add CSS for background image
       addPartnershipCSS(newsEntry.backgroundClass, newsEntry.backgroundImage);
