@@ -33,34 +33,23 @@ const { news } = Astro.props;
 
       // @ts-ignore
       const splide = new Splide('#news-carousel', {
-        type: newsCount <= 2 ? 'slide' : 'loop', // Use slide mode for 2 items to prevent cloning
+        type: 'loop',
         perPage: 2,
         perMove: 1,
         gap: '1rem',
         padding: 0,
-        width: '100%',
-        start: 0, // Start at first slide
-        focus: newsCount <= 2 ? 'center' : 0, // Center when only 2 items, otherwise start at first
-        trimSpace: newsCount <= 2, // Trim space when only 2 items to center them
-        updateOnMove: true, // Update on movement for better positioning
         autoplay: shouldAutoplay,
         interval: 5000,
         pauseOnHover: true,
         pauseOnFocus: true,
-        arrows: shouldAutoplay,
-        pagination: newsCount > 2, // Hide pagination when only 2 items
-        drag: shouldAutoplay,
+        arrows: true,
+        pagination: true,
+        drag: true,
         breakpoints: {
           991: {
             perPage: 1,
             perMove: 1,
             padding: 0,
-            type: 'loop', // Loop on mobile
-            autoplay: true,
-            arrows: true,
-            drag: true,
-            pagination: true,
-            focus: 'center',
           },
         },
       }).mount();
@@ -119,10 +108,10 @@ const { news } = Astro.props;
     flex-shrink: 0; /* Prevent slides from shrinking */
   }
 
-  /* Override announcement-box width for carousel - parent already controls size */
+  /* Override announcement-box width for carousel - maintain consistent sizing */
   .news-carousel .announcement-box {
-    width: 100% !important;
-    max-width: 440px; /* Reasonable max width for cards */
+    width: 440px !important; /* Fixed width for consistency */
+    max-width: 440px;
     min-width: 380px; /* Minimum width to maintain card proportions */
   }
 
