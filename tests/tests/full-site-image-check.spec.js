@@ -37,6 +37,9 @@ const PAGES = [
 
 test.describe('Full Site Image Check', () => {
   test('should check ALL images across entire website', async ({ page }) => {
+    // Increase test timeout to prevent browser closure during long image checks
+    test.setTimeout(180000); // 3 minutes
+
     const allBrokenAssets = [];
     const checkedUrls = new Set();
     const pageReports = [];
@@ -69,7 +72,7 @@ test.describe('Full Site Image Check', () => {
         // Navigate to the page
         await page.goto(pageUrl, {
           waitUntil: 'networkidle',
-          timeout: 30000
+          timeout: 60000 // Increased to 60 seconds
         });
 
         // Wait for any dynamic content

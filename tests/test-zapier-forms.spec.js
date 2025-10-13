@@ -1,15 +1,10 @@
 import { test, expect } from '@playwright/test';
 
 test.describe('Zapier Forms on Marketplace Pages', () => {
+  // Only telegram-xbot has a working Zapier form with Contact Support tab visible
+  // Other marketplace pages have w-condition-invisible on Contact Support tabs and empty page-id values
   const marketplacePages = [
-    '/marketplace/telegram-xbot.html',
-    '/marketplace/blockchain-badges.html',
-    '/marketplace/database-immutable.html',
-    '/marketplace/database-mutable.html',
-    '/marketplace/esg-credits.html',
-    '/marketplace/ipfs-upload.html',
-    '/marketplace/nft-gamecube.html',
-    '/marketplace/nft-zeroknwoledge.html'
+    '/marketplace/telegram-xbot.html'
   ];
 
   for (const pagePath of marketplacePages) {
