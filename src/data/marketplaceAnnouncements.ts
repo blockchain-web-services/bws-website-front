@@ -69,6 +69,12 @@ export const marketplaceAnnouncements: MarketplaceAnnouncement[] = [
     'Creates blockchain-based badges for verifying achievements, event participation, and learning milestones',
     'Enables Web2 companies to seamlessly issue tamper-proof digital credentials without requiring end users to understand blockchain technology'
   ],
+  image: {
+    src: '/assets/images/marketplace/fallback/blockchain-badges/01-badges-ui.png',
+    alt: 'Blockchain Badges solution',
+    loading: 'lazy',
+    sizes: '(max-width: 767px) 100vw, (max-width: 991px) 95vw, 829px'
+  },
   button: {
     text: 'Learn More',
     href: '/marketplace/blockchain-badges.html',
