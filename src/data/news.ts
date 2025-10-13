@@ -82,34 +82,6 @@ export const newsItems: NewsItem[] = [
     backgroundClass: 'container-image-partnership-1975576723337982186'
   },
   {
-    title: 'BFG Invests in BWS',
-    description: 'Blockchain Founders Group accelerates BWS to simplify the development of blockchain projects.',
-    partnershipTitle: 'Blockchain Founders Group',
-    logos: [
-      {
-        src: '/assets/images/6474d385cfec71cb21a92251/64e738258afae2bb6f4d56bf_logo-blockchain-founders-group-background-transparent-large.svg',
-        alt: 'Blockchain Founders Group',
-        href: 'https://blockchain-founders.io/news/blockchain-founders-group-accelerates-bws-to-simplify-the-development-of-blockchain-projects',
-        class: 'image-bfg'
-      }
-    ],
-    buttons: [
-      {
-        text: 'Announcement',
-        href: 'https://blockchain-founders.io/news/blockchain-founders-group-accelerates-bws-to-simplify-the-development-of-blockchain-projects',
-        type: 'secondary',
-        target: '_blank',
-        hasArrow: true
-      },
-      {
-        text: 'ROADMAP',
-        href: '#roadmap',
-        type: 'secondary'
-      }
-    ],
-    backgroundClass: 'container-image-announcement-bfg'
-  },
-  {
     title: '$BWS Token Launch Success!',
     description: 'We are thrilled to announce $BWS Token launch has been an incredible success!',
     partnershipTitle: 'In Partnership With',
@@ -141,5 +113,33 @@ export const newsItems: NewsItem[] = [
       }
     ],
     backgroundClass: 'container-image-announcement'
+  },
+  {
+    title: 'BFG Invests in BWS',
+    description: 'Blockchain Founders Group accelerates BWS to simplify the development of blockchain projects.',
+    partnershipTitle: 'Blockchain Founders Group',
+    logos: [
+      {
+        src: '/assets/images/6474d385cfec71cb21a92251/64e738258afae2bb6f4d56bf_logo-blockchain-founders-group-background-transparent-large.svg',
+        alt: 'Blockchain Founders Group',
+        href: 'https://blockchain-founders.io/news/blockchain-founders-group-accelerates-bws-to-simplify-the-development-of-blockchain-projects',
+        class: 'image-bfg'
+      }
+    ],
+    buttons: [
+      {
+        text: 'Announcement',
+        href: 'https://blockchain-founders.io/news/blockchain-founders-group-accelerates-bws-to-simplify-the-development-of-blockchain-projects',
+        type: 'secondary',
+        target: '_blank',
+        hasArrow: true
+      },
+      {
+        text: 'ROADMAP',
+        href: '#roadmap',
+        type: 'secondary'
+      }
+    ],
+    backgroundClass: 'container-image-announcement-bfg'
   }
 ];

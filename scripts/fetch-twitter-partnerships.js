@@ -355,13 +355,13 @@ function addPartnershipCSS(backgroundClass, imagePath) {
 
 /* Fixed height for description text to ensure consistent card heights */
 .announcement-text {
-  min-height: 90px !important;
-  max-height: 90px !important;
+  min-height: 96px !important;
+  max-height: 96px !important;
   overflow: hidden;
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
-  line-height: 28px !important;
+  line-height: 30px !important;
   margin-bottom: 16px !important;
 }
 
