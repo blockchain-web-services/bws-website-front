@@ -358,11 +358,11 @@ function addPartnershipCSS(backgroundClass, imagePath) {
   margin-bottom: 16px !important;
 }
 
-/* Partnership logo styling - circle styling (like X profile pics) */
+/* Partnership logo styling - circle styling (like X profile pics), 20% smaller */
 .image-partnership {
   border-radius: 50% !important;
-  width: 80px !important;
-  height: 80px !important;
+  width: 64px !important;
+  height: 64px !important;
   object-fit: cover !important;
   visibility: visible !important;
   opacity: 1 !important;
