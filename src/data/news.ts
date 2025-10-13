@@ -23,50 +23,6 @@ export interface NewsItem {
 }
 
 export const newsItems: NewsItem[] = [
-  {
-    title: 'Partnership: | @Quick_Sync',
-    description: 'Partnership | @Quick_Sync We’re proud to announce our partnership with @Quick_Sync — transforming how data is shared with proprietary decentralized infrastructure, no-code tools, and developer-friendly Web3 APIs. As part of this partnership: • The $BWS X Bot is now integrated',
-    partnershipTitle: '| @Quick_Sync',
-    logos: [
-      {
-        src: '/assets/images/logos/bws-logo-violet-flying.png',
-        alt: '| @Quick_Sync partnership',
-        href: 'https://x.com/BWSCommunity/status/1970799564593537066',
-        class: 'image-partnership'
-      }
-    ],
-    buttons: [
-      {
-        text: 'View Announcement',
-        href: 'https://x.com/BWSCommunity/status/1970799564593537066',
-        type: 'secondary',
-        target: '_blank',
-        hasArrow: true
-      }
-    ]
-  },
-  {
-    title: 'Partnership: | @RougeStudio_',
-    description: 'Partnership | @RougeStudio_ We’re excited to welcome @RougeStudio_ to the $BWS ecosystem! Together, we’re enhancing how communities engage, track performance, and get rewarded across Web3. As part of this collaboration: • Rouge Studio will integrate the X Bot, our',
-    partnershipTitle: '| @RougeStudio_',
-    logos: [
-      {
-        src: '/assets/images/logos/bws-logo-violet-flying.png',
-        alt: '| @RougeStudio_ partnership',
-        href: 'https://x.com/BWSCommunity/status/1975576723337982186',
-        class: 'image-partnership'
-      }
-    ],
-    buttons: [
-      {
-        text: 'View Announcement',
-        href: 'https://x.com/BWSCommunity/status/1975576723337982186',
-        type: 'secondary',
-        target: '_blank',
-        hasArrow: true
-      }
-    ]
-  },
 
   {
     title: 'BFG Invests in BWS',
