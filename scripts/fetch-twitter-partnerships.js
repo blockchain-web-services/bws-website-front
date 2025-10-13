@@ -25,6 +25,7 @@ const FALLBACK_IMAGE = '/assets/images/logos/bws-logo-violet-flying.png';
 const PROCESSED_TWEETS_PATH = path.join(__dirname, 'data', 'processed-tweets.json');
 const NEWS_FILE_PATH = path.join(__dirname, '..', 'src', 'data', 'news.ts');
 const NEWS_IMAGES_DIR = path.join(__dirname, '..', 'public', 'assets', 'images', 'news');
+const PARTNERSHIP_CSS_FILE = path.join(__dirname, '..', 'public', 'partnerships.css');
 
 // Ensure directories exist
 if (!fs.existsSync(NEWS_IMAGES_DIR)) {
@@ -247,6 +248,9 @@ Tweet: ${tweetText}`
 async function generateNewsEntry(tweet, imagePath) {
   const { title, description } = await generateContentWithClaude(tweet.text);
 
+  // Generate unique background class for this partnership
+  const backgroundClass = `container-image-partnership-${tweet.id}`;
+
   return {
     title: title,
     description: description,
@@ -263,8 +267,60 @@ async function generateNewsEntry(tweet, imagePath) {
       type: 'secondary',
       target: '_blank',
       hasArrow: true
-    }]
+    }],
+    backgroundClass: backgroundClass,
+    backgroundImage: imagePath
   };
+}
+
+/**
+ * Add CSS rule for partnership background image
+ */
+function addPartnershipCSS(backgroundClass, imagePath) {
+  try {
+    const cssRule = `
+/* Partnership background: ${backgroundClass} */
+.${backgroundClass} {
+  background-image: url('${imagePath}');
+  background-position: 50% 0%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+`;
+
+    // Read existing CSS or create new
+    let cssContent = '';
+    if (fs.existsSync(PARTNERSHIP_CSS_FILE)) {
+      cssContent = fs.readFileSync(PARTNERSHIP_CSS_FILE, 'utf-8');
+    } else {
+      // Create file with header
+      cssContent = `/* Auto-generated partnership announcement styles */
+/* Do not edit manually - managed by fetch-twitter-partnerships.js */
+
+/* Fixed height for description text to ensure consistent card heights */
+.announcement-text {
+  min-height: 72px !important;
+  max-height: 72px !important;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  line-height: 24px !important;
+}
+`;
+    }
+
+    // Check if this background class already exists
+    if (!cssContent.includes(`.${backgroundClass}`)) {
+      cssContent += cssRule;
+      fs.writeFileSync(PARTNERSHIP_CSS_FILE, cssContent);
+      console.log(`   ✅ Added CSS rule for ${backgroundClass}`);
+    } else {
+      console.log(`   ℹ️  CSS rule for ${backgroundClass} already exists`);
+    }
+  } catch (error) {
+    console.error(`   ⚠️  Error adding CSS: ${error.message}`);
+  }
 }
 
 /**
@@ -296,7 +352,8 @@ function insertNewsEntry(newsEntry) {
         target: '${newsEntry.buttons[0].target}',
         hasArrow: ${newsEntry.buttons[0].hasArrow}
       }
-    ]
+    ],
+    backgroundClass: '${newsEntry.backgroundClass}'
   },`;
 
     // Find the newsItems array and insert at the beginning
@@ -420,6 +477,9 @@ async function main() {
 
       // Generate news entry
       const newsEntry = await generateNewsEntry(tweet, imagePath);
+
+      // Add CSS for background image
+      addPartnershipCSS(newsEntry.backgroundClass, newsEntry.backgroundImage);
 
       // Insert into news.ts
       insertNewsEntry(newsEntry);
