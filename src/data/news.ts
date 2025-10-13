@@ -23,64 +23,6 @@ export interface NewsItem {
 }
 
 export const newsItems: NewsItem[] = [
-  {
-    title: 'Quick Sync',
-    description: 'Integration partnership providing decentralized data sharing infrastructure, no-code tools and Web3 APIs',
-    partnershipTitle: 'Quick Sync',
-    logos: [
-      {
-        src: '/assets/images/logos/bws-logo-violet-flying.png',
-        alt: 'BWS Logo',
-        href: 'https://www.bws.ninja',
-        class: 'image-partnership'
-      },
-      {
-        src: 'https://pbs.twimg.com/profile_images/1918924015781003265/KrrYxgY-_400x400.jpg',
-        alt: 'Quick Sync Logo',
-        href: 'https://x.com/Quick_Sync',
-        class: 'image-partnership'
-      }
-    ],
-    buttons: [
-      {
-        text: 'View Announcement',
-        href: 'https://x.com/BWSCommunity/status/1970799564593537066',
-        type: 'secondary',
-        target: '_blank',
-        hasArrow: true
-      }
-    ],
-    backgroundClass: 'container-image-partnership-1970799564593537066'
-  },
-  {
-    title: 'Rouge Studio',
-    description: 'Rouge Studio joins BWS ecosystem to enhance Web3 community engagement, tracking and rewards through X Bot integration',
-    partnershipTitle: 'Rouge Studio',
-    logos: [
-      {
-        src: '/assets/images/logos/bws-logo-violet-flying.png',
-        alt: 'BWS Logo',
-        href: 'https://www.bws.ninja',
-        class: 'image-partnership'
-      },
-      {
-        src: 'https://pbs.twimg.com/profile_images/1778008019856732160/VJvFD1V8_400x400.jpg',
-        alt: 'Rouge Studio Logo',
-        href: 'https://x.com/RougeStudio_',
-        class: 'image-partnership'
-      }
-    ],
-    buttons: [
-      {
-        text: 'View Announcement',
-        href: 'https://x.com/BWSCommunity/status/1975576723337982186',
-        type: 'secondary',
-        target: '_blank',
-        hasArrow: true
-      }
-    ],
-    backgroundClass: 'container-image-partnership-1975576723337982186'
-  },
 
   {
     title: 'BFG Invests in BWS',
