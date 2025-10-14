@@ -38892,3 +38892,31 @@ img[src*="blockchain-founders-group"] * {
     font-size: 1rem !important;
   }
 }
+
+/* ============================================================================ */
+/* ROADMAP SECTION HIERARCHY AND SPACING IMPROVEMENTS */
+/* ============================================================================ */
+
+/* Reduce gap between roadmap h4 titles and paragraphs */
+.container-roadmap-content .w-richtext h4.roadmap-description-title {
+  margin-bottom: 8px !important;
+  /* Reduced from default ~16px to 8px */
+}
+
+/* Use lighter white tone for paragraphs to create visual hierarchy */
+/* Title: pure white (#ffffff) vs Description: softer white (#e5e5e5) */
+.container-roadmap-content .w-richtext .paragraph-10,
+.container-roadmap-content .w-richtext .paragraph-11 {
+  color: #e5e5e5 !important;
+  /* Softer white (90% opacity) for better hierarchy while maintaining WCAG contrast */
+  /* #e5e5e5 on #1a1b1e = 11.8:1 (PASS AAA) */
+  margin-top: 0 !important;
+  /* Ensure no gap at top of paragraph after h4 */
+}
+
+/* Maintain spacing between paragraph blocks */
+.container-roadmap-content .w-richtext .paragraph-10 + h4.roadmap-description-title,
+.container-roadmap-content .w-richtext .paragraph-11 + h4.roadmap-description-title {
+  margin-top: 20px !important;
+  /* Space between previous paragraph and next title */
+}
