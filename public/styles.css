@@ -38650,6 +38650,19 @@ img[src*="blockchain-founders-group"] * {
 }
 
 /* ============================================ */
+/* Marketplace Announcement Carousel (Swiper) */
+/* ============================================ */
+
+/* Ensure carousel slides are full width */
+.marketplace-announcement-carousel .swiper-slide {
+  width: 100% !important;
+}
+
+.marketplace-announcement-carousel .swiper-wrapper {
+  align-items: stretch;
+}
+
+/* ============================================ */
 /* Marketplace Announcement Adaptive Layouts */
 /* ============================================ */
 
@@ -38660,6 +38673,7 @@ img[src*="blockchain-founders-group"] * {
   padding: 30px;
   display: flex;
   gap: 40px;
+  width: 100%;
 }
 
 /* Single-column layout (with image on right) - balanced two-column display */
@@ -38767,8 +38781,18 @@ img[src*="blockchain-founders-group"] * {
 /* Two-column layout - video column sizing */
 .flex-ngc-announcement.two-column .flex-block-14 {
   flex: 1;
-  min-width: 300px;
-  max-width: 500px;
+  min-width: 40%;
+  max-width: 45%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Video wrapper - constrain height to fit card */
+.flex-ngc-announcement .video.w-video {
+  max-height: 450px;
+  max-width: 100%;
 }
 
 /* Responsive: stack columns on tablet and mobile */
