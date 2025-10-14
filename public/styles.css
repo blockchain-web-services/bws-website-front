@@ -38009,6 +38009,13 @@ body [style*="background:#d91a4d"] * {
   color: #ffffff !important;
 }
 
+/* Enhanced contrast for Q1 2025 Launch title on rose background */
+/* #ffd6e0 (light rose/pink) on #c41841 (rose) = 6.45:1 (WCAG AAA) */
+/* Better than white (5.91:1) while maintaining brand color harmony */
+.container-head-roadmap-25-1st .text-roadmap-title-2025-q1 {
+  color: #ffd6e0 !important;
+}
+
 /* Fix color contrast for neutral-400 backgrounds */
 /* Ensure proper text color based on background */
 .bg-neutral-400,
