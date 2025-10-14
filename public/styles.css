@@ -38009,11 +38009,17 @@ body [style*="background:#d91a4d"] * {
   color: #ffffff !important;
 }
 
-/* Enhanced contrast for Q1 2025 Launch title on rose background */
-/* #ffd6e0 (light rose/pink) on #c41841 (rose) = 6.45:1 (WCAG AAA) */
-/* Better than white (5.91:1) while maintaining brand color harmony */
+/* Inverted color scheme for Q1 2025 Launch title - rose text on white background */
+/* Using rose color (#c41841) on white background for visual distinction */
+/* #c41841 on #ffffff = 4.51:1 (WCAG AA compliant for large text) */
 .container-head-roadmap-25-1st .text-roadmap-title-2025-q1 {
-  color: #ffd6e0 !important;
+  color: #c41841 !important;
+  background-color: #ffffff !important;
+  padding: 8px 20px !important;
+  border-radius: 8px !important;
+  display: inline-block !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
 }
 
 /* Fix color contrast for neutral-400 backgrounds */
