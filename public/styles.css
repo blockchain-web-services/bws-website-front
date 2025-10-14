@@ -38899,8 +38899,10 @@ img[src*="blockchain-founders-group"] * {
 
 /* Reduce gap between roadmap h4 titles and paragraphs */
 .container-roadmap-content .w-richtext h4.roadmap-description-title {
-  margin-bottom: 8px !important;
-  /* Reduced from default ~16px to 8px */
+  margin-bottom: 4px !important;
+  /* Reduced from 8px to 4px for tighter spacing */
+  font-size: 16px !important;
+  /* Ensure consistent font size across all roadmap titles */
 }
 
 /* Use lighter white tone for paragraphs to create visual hierarchy */
@@ -38912,11 +38914,13 @@ img[src*="blockchain-founders-group"] * {
   /* #e5e5e5 on #1a1b1e = 11.8:1 (PASS AAA) */
   margin-top: 0 !important;
   /* Ensure no gap at top of paragraph after h4 */
+  font-size: 16px !important;
+  /* Ensure consistent font size across all roadmap paragraphs */
 }
 
 /* Maintain spacing between paragraph blocks */
 .container-roadmap-content .w-richtext .paragraph-10 + h4.roadmap-description-title,
 .container-roadmap-content .w-richtext .paragraph-11 + h4.roadmap-description-title {
-  margin-top: 20px !important;
-  /* Space between previous paragraph and next title */
+  margin-top: 16px !important;
+  /* Reduced from 20px to 16px for tighter spacing between sections */
 }
