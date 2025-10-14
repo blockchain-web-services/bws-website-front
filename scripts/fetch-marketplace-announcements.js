@@ -308,7 +308,6 @@ For EACH product category that has relevant tweets, create ONE announcement by:
    - Example GOOD (extended): "Creates comprehensive blockchain-based badge systems for organizations to verify achievements, event participation, and learning milestones with immutable proof. The platform provides enterprise-grade security while maintaining user privacy, allowing institutions to issue digital credentials that can be independently verified without central authority. Perfect for educational institutions, event organizers, and corporate training programs seeking to modernize their certification processes." + "Enables Web2 companies to seamlessly issue tamper-proof digital credentials without requiring end users to understand blockchain technology. The system handles all blockchain complexity behind the scenes, providing simple APIs and interfaces that integrate with existing systems. Recipients can share their credentials across platforms, and verifiers can instantly confirm authenticity, eliminating fraud and reducing administrative overhead while building trust in digital certifications."
    - Example BAD (too short): "Creates blockchain certificates for achievements" + "Uses blockchain to verify credentials"
 4. Select the best tweet ID that has an image (if any)
-5. Detect if any tweet mentions a video URL (Vimeo, YouTube, TikTok)
 
 Output as JSON array:
 [
@@ -319,9 +318,7 @@ Output as JSON array:
       "First EXTENDED complementary description (60-80 words with rich detail)",
       "Second EXTENDED complementary description (60-80 words with rich detail)"
     ],
-    "imageTweetId": "tweet_id_with_best_image or null",
-    "videoUrl": "video_url if found or null",
-    "videoTitle": "video title if found or null"
+    "imageTweetId": "tweet_id_with_best_image or null"
   }
 ]
 
@@ -452,54 +449,7 @@ async function processAnnouncements(classifications, tweets, includes) {
       };
     }
 
-    // Process video if found in tweets
-    if (classification.videoUrl) {
-      console.log(`   📹 Found video in tweets: ${classification.videoUrl}`);
-
-      // Parse video details
-      let embedUrl = classification.videoUrl;
-      let width = '940';
-      let height = '1671';
-      let paddingTop = '177.77%';
-
-      // Handle different video platforms
-      if (embedUrl.includes('vimeo.com')) {
-        // Already in embed format or convert
-        if (!embedUrl.includes('player.vimeo.com')) {
-          const videoId = embedUrl.match(/vimeo\.com\/(\d+)/)?.[1];
-          if (videoId) {
-            embedUrl = `https://player.vimeo.com/video/${videoId}`;
-          }
-        }
-      } else if (embedUrl.includes('youtube.com') || embedUrl.includes('youtu.be')) {
-        // Convert to embed format
-        const videoId = embedUrl.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([^&\s]+)/)?.[1];
-        if (videoId) {
-          embedUrl = `https://www.youtube.com/embed/${videoId}`;
-          width = '560';
-          height = '315';
-          paddingTop = '56.25%'; // 16:9 aspect ratio
-        }
-      }
-
-      announcement.video = {
-        embedUrl: embedUrl,
-        title: classification.videoTitle || `${classification.product} Video`,
-        width: width,
-        height: height,
-        paddingTop: paddingTop
-      };
-    } else {
-      // Preserve existing video if no new one found
-      const existing = existingAnnouncements.find(e => e.product === classification.product);
-      if (existing?.video) {
-        console.log(`   📹 Preserving existing video for ${classification.product}`);
-        announcement.video = existing.video;
-        if (existing.link) {
-          announcement.link = existing.link;
-        }
-      }
-    }
+    // Videos are suppressed - use images only
 
     // Add button
     announcement.button = {
@@ -549,31 +499,6 @@ function writeAnnouncementsFile(announcements) {
     href: '${ann.button.href}',
     target: '${ann.button.target}',
     hasArrow: ${ann.button.hasArrow}
-  }`;
-    }
-
-    if (ann.video) {
-      code += `,
-  video: {
-    embedUrl: '${ann.video.embedUrl}',
-    title: '${ann.video.title.replace(/'/g, "\\'")}',
-    width: '${ann.video.width}',
-    height: '${ann.video.height}',
-    paddingTop: '${ann.video.paddingTop}'
-  }`;
-    }
-
-    if (ann.link) {
-      code += `,
-  link: {
-    text: '${ann.link.text.replace(/'/g, "\\'")}',
-    href: '${ann.link.href}',
-    target: '${ann.link.target}'`;
-      if (ann.link.highlightedText) {
-        code += `,
-    highlightedText: '${ann.link.highlightedText.replace(/'/g, "\\'")}'`;
-      }
-      code += `
   }`;
     }
 

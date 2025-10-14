@@ -109,24 +109,17 @@ export const marketplaceAnnouncements: MarketplaceAnnouncement[] = [
     'Enables fans to own virtual zones of real sports fields through NFTs tied to live in-game events',
     'Creates new revenue streams for sports clubs while offering fans points-based rewards for engagement'
   ],
+  image: {
+    src: '/assets/images/marketplace/fallback/fan-game-cube/01-football-cubes-selection.png',
+    alt: 'Fan Game Cube solution',
+    loading: 'lazy',
+    sizes: '(max-width: 767px) 100vw, (max-width: 991px) 95vw, 829px'
+  },
   button: {
     text: 'View Details',
     href: '/marketplace/nft-gamecube.html',
     target: '_blank',
     hasArrow: true
-  },
-  video: {
-    embedUrl: 'https://player.vimeo.com/video/976431707?h=d5bdb51e8a',
-    title: 'Fan Game Cube @ TikTok',
-    width: '940',
-    height: '1671',
-    paddingTop: '177.76595744680853%'
-  },
-  link: {
-    text: 'NFT Game Cube launch event campaign on TikTok',
-    href: 'https://www.tiktok.com/@iamandrewhenderson',
-    target: '_blank',
-    highlightedText: '@iamandrewhenderson'
   }
 }
 ];
