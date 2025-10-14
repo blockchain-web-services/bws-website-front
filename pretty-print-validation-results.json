@@ -42,9 +42,9 @@
     },
     {
       "file": "_site/index.html",
-      "originalSize": 97903,
-      "newSize": 151190,
-      "sizeDiff": 53287,
+      "originalSize": 97353,
+      "newSize": 150582,
+      "sizeDiff": 53229,
       "prettyPrinted": true,
       "errors": []
     },
@@ -231,9 +231,9 @@
     },
     {
       "file": "_site/styles.css",
-      "originalSize": 723374,
-      "newSize": 684812,
-      "sizeDiff": -38562,
+      "originalSize": 724473,
+      "newSize": 685871,
+      "sizeDiff": -38602,
       "prettyPrinted": true,
       "skippedMinified": false,
       "errors": []
