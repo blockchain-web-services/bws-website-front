@@ -10,6 +10,11 @@ const { announcement } = Astro.props;
 // Determine if we should use two-column layout (when video exists)
 const hasTwoColumns = !!announcement.video;
 
+// Detect vertical video (height > width, aspect ratio > 1)
+const isVerticalVideo = announcement.video
+  ? parseInt(announcement.video.height) > parseInt(announcement.video.width)
+  : false;
+
 // Collect all images (single or multiple)
 const allImages = announcement.images || (announcement.image ? [announcement.image] : []);
 
@@ -17,7 +22,7 @@ const allImages = announcement.images || (announcement.image ? [announcement.ima
 const allButtons = announcement.buttons || (announcement.button ? [announcement.button] : []);
 ---
 
-<div class={`w-layout-vflex flex-ngc-announcement ${hasTwoColumns ? 'two-column' : 'single-column'}`}>
+<div class={`w-layout-vflex flex-ngc-announcement ${hasTwoColumns ? 'two-column' : 'single-column'} ${isVerticalVideo ? 'vertical-video' : ''}`}>
   <!-- Left column: Main content (text and buttons) -->
   <div class="w-layout-vflex flex-block-13">
     <!-- Title (mandatory) -->

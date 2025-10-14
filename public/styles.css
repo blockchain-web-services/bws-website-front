@@ -38811,6 +38811,45 @@ img[src*="blockchain-founders-group"] * {
   object-fit: cover;
 }
 
+/* Vertical video adjustments (height > width, like TikTok 9:16) */
+.flex-ngc-announcement.vertical-video {
+  gap: 30px; /* Slightly tighter gap for vertical videos */
+}
+
+.flex-ngc-announcement.vertical-video .flex-block-13 {
+  flex: 0 0 60%; /* Text column takes 60% */
+  max-width: 60%;
+}
+
+.flex-ngc-announcement.vertical-video .flex-block-14 {
+  flex: 0 0 35%; /* Video column takes 35% (narrower for vertical video) */
+  max-width: 35%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-ngc-announcement.vertical-video .video.w-video {
+  width: 100% !important;
+  height: 450px !important;
+  max-height: 450px !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-ngc-announcement.vertical-video .video iframe {
+  position: relative;
+  top: 0;
+  left: 0;
+  transform: none;
+  width: auto !important;
+  height: 100% !important;
+  max-height: 450px;
+  object-fit: contain;
+}
+
 /* Responsive: stack columns on tablet and mobile */
 @media (max-width: 991px) {
   .flex-ngc-announcement.single-column,
