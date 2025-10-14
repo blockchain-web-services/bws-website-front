@@ -38653,13 +38653,23 @@ img[src*="blockchain-founders-group"] * {
 /* Marketplace Announcement Carousel (Swiper) */
 /* ============================================ */
 
-/* Ensure carousel slides are full width */
-.marketplace-announcement-carousel .swiper-slide {
+/* Force carousel container to full width */
+.marketplace-announcement-carousel {
   width: 100% !important;
+  max-width: 100% !important;
+  overflow: hidden !important;
 }
 
+/* Force slides to full width and prevent sliding multiple cards */
 .marketplace-announcement-carousel .swiper-wrapper {
   align-items: stretch;
+}
+
+.marketplace-announcement-carousel .swiper-slide {
+  width: 100% !important;
+  min-width: 100% !important;
+  max-width: 100% !important;
+  flex-shrink: 0 !important;
 }
 
 /* ============================================ */
@@ -38761,23 +38771,6 @@ img[src*="blockchain-founders-group"] * {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
 }
 
-/* Video container - maintains aspect ratio */
-.flex-ngc-announcement .video.w-video {
-  position: relative;
-  width: 100%;
-  height: 0;
-  overflow: hidden;
-  /* padding-top set dynamically per video via inline style */
-}
-
-.flex-ngc-announcement .video iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-
 /* Two-column layout - video column sizing */
 .flex-ngc-announcement.two-column .flex-block-14 {
   flex: 1;
@@ -38787,12 +38780,28 @@ img[src*="blockchain-founders-group"] * {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  max-height: 450px;
+  overflow: hidden;
 }
 
-/* Video wrapper - constrain height to fit card */
+/* Video container - constrain height to fit within card */
 .flex-ngc-announcement .video.w-video {
-  max-height: 450px;
-  max-width: 100%;
+  position: relative;
+  width: 100%;
+  height: 450px !important;
+  max-height: 450px !important;
+  overflow: hidden;
+  padding-top: 0 !important;
+}
+
+.flex-ngc-announcement .video iframe {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 /* Responsive: stack columns on tablet and mobile */
