@@ -38899,10 +38899,8 @@ img[src*="blockchain-founders-group"] * {
 
 /* Reduce gap between roadmap h4 titles and paragraphs */
 .container-roadmap-content .w-richtext h4.roadmap-description-title {
-  margin-bottom: 4px !important;
-  /* Reduced from 8px to 4px for tighter spacing */
-  font-size: 16px !important;
-  /* Ensure consistent font size across all roadmap titles */
+  margin-bottom: 12px !important;
+  font-size: 19px !important;
 }
 
 /* Use lighter white tone for paragraphs to create visual hierarchy */
