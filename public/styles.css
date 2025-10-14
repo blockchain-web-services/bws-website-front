@@ -38662,6 +38662,11 @@ img[src*="blockchain-founders-group"] * {
   padding: 0 !important;
 }
 
+/* Hide pagination dots */
+.marketplace-announcement-carousel .swiper-pagination {
+  display: none !important;
+}
+
 /* Force slides to full width and prevent sliding multiple cards */
 .marketplace-announcement-carousel .swiper-wrapper {
   align-items: stretch;
