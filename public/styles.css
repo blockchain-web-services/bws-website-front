@@ -38655,7 +38655,7 @@ img[src*="blockchain-founders-group"] * {
 
 /* Fixed height for all announcement cards */
 .flex-ngc-announcement {
-  height: 600px !important;
+  height: 510px !important;
   overflow: hidden;
   padding: 30px;
   display: flex;
@@ -38740,7 +38740,7 @@ img[src*="blockchain-founders-group"] * {
 .flex-ngc-announcement .announcement-image {
   width: 100%;
   height: 100%;
-  max-height: 540px;
+  max-height: 450px;
   object-fit: cover;
   display: block;
   border-radius: 12px;
