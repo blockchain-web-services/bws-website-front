@@ -38653,11 +38653,13 @@ img[src*="blockchain-founders-group"] * {
 /* Marketplace Announcement Carousel (Swiper) */
 /* ============================================ */
 
-/* Force carousel container to full width */
+/* Force carousel container to full width - match solutions-list */
 .marketplace-announcement-carousel {
   width: 100% !important;
   max-width: 100% !important;
   overflow: hidden !important;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
 /* Force slides to full width and prevent sliding multiple cards */
