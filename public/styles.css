@@ -38043,10 +38043,10 @@ body [style*="background:#d91a4d"] * {
   color: #1a1b1e !important;
 }
 
-/* Gray card (Q2'2025, Q4'2026) - gray text on white */
-/* #6b6b73 on #ffffff = 5.28:1 (WCAG AAA compliant) */
+/* Gray card (Q2'2025, Q4'2026) - dark text on white for maximum contrast */
+/* #1a1b1e on #ffffff = 14.74:1 (WCAG AAA compliant) */
 .container-head-roadmap-25-2nd .text-roadmap-title-4th {
-  color: #6b6b73 !important;
+  color: #1a1b1e !important;
 }
 
 /* Fix color contrast for neutral-400 backgrounds */
@@ -38062,8 +38062,8 @@ body [style*="background:#d91a4d"] * {
 /* Fix color contrast for .text-roadmap-title-4th on dark background */
 /* Original #c41841 on #1a1b1e gives 2.91:1 - needs 3:1 minimum for 24px text */
 /* Lightening to #e34560 gives 3.66:1 contrast ratio (WCAG AAA compliant for large text) */
-.container-head-roadmap-4th>.text-roadmap-title-4th,
-.text-roadmap-title-4th {
+/* NOTE: .text-roadmap-title-4th removed - now handled by inverted scheme at line 38048 */
+.container-head-roadmap-4th>.text-roadmap-title-4th {
   color: #e34560 !important;
 }
 
@@ -38074,18 +38074,29 @@ body [style*="background:#d91a4d"] * {
 }
 
 .container-head-roadmap-25-2nd,
-.container-head-roadmap-25-2nd *,
+.container-head-roadmap-25-2nd *:not(.text-roadmap-title-4th),
 .container-head-roadmap-25-2nd p,
 .container-head-roadmap-25-2nd h6,
 .container-head-roadmap-25-2nd .paragraph-11,
 .container-head-roadmap-25-2nd .roadmap-description-title,
-[style*="background-color: var(--neutral-500)"],
-[style*="background-color:#8a8a92"],
-[style*="background:#8a8a92"],
-.bg-gray,
-[style*="background-color:#8a8a92"] *,
-[style*="background:#8a8a92"] * {
+[style*="background-color: var(--neutral-500)"]:not(.text-roadmap-title-4th),
+[style*="background-color:#8a8a92"]:not(.text-roadmap-title-4th),
+[style*="background:#8a8a92"]:not(.text-roadmap-title-4th),
+.bg-gray:not(.text-roadmap-title-4th),
+[style*="background-color:#8a8a92"] *:not(.text-roadmap-title-4th),
+[style*="background:#8a8a92"] *:not(.text-roadmap-title-4th) {
   color: #ffffff !important;
+}
+
+/* CRITICAL OVERRIDE: Force gray card title to use dark color for contrast on white background */
+/* This must come after the white color rule at line 38076 to override it */
+/* Using ULTRA-HIGH specificity to override wildcard selector */
+/* #1a1b1e on #ffffff = 14.74:1 (WCAG AAA compliant) */
+.w-layout-blockcontainer.container-head-roadmap-25-2nd .text-roadmap-title-4th,
+.container-head-roadmap-25-2nd > .text-roadmap-title-4th,
+div.container-head-roadmap-25-2nd .text-roadmap-title-4th,
+.container-head-roadmap-25-2nd .text-roadmap-title-4th {
+  color: #1a1b1e !important;
 }
 
 /* Fix text-span color contrast: #758bff on white = 3.04, needs 4.5:1 */
@@ -38602,12 +38613,21 @@ a.button-secondary.w-button:hover,
 
 /* Fix ALL roadmap titles color contrast on dark background (#1a1b1e) */
 /* #e34560 on #1a1b1e = 4.34:1 (PASS AAA for large text) */
+/* NOTE: .text-roadmap-title-4th removed - now handled by inverted scheme at line 38048 */
 .text-roadmap-title,
 .text-roadmap-title-1st,
 .text-roadmap-title-2nd,
-.text-roadmap-title-3rd,
-.text-roadmap-title-4th {
+.text-roadmap-title-3rd {
   color: #e34560 !important;
+}
+
+/* FINAL OVERRIDE: Gray card title contrast fix */
+/* MUST be last to override all white color rules above */
+/* #1a1b1e on #ffffff = 14.74:1 (WCAG AAA compliant) */
+.w-layout-blockcontainer.container-head-roadmap-25-2nd .text-roadmap-title-4th,
+div.container-head-roadmap-25-2nd .text-roadmap-title-4th,
+.container-head-roadmap-25-2nd .text-roadmap-title-4th {
+  color: #1a1b1e !important;
 }
 
 /* REMOVED: Old rule for text directly on gray background */
