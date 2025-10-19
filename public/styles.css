@@ -38966,9 +38966,9 @@ img[src*="blockchain-founders-group"] * {
 /* Title: pure white (#ffffff) vs Description: softer white (#e5e5e5) */
 .container-roadmap-content .w-richtext .paragraph-10,
 .container-roadmap-content .w-richtext .paragraph-11 {
-  color: #e5e5e5 !important;
-  /* Softer white (90% opacity) for better hierarchy while maintaining WCAG contrast */
-  /* #e5e5e5 on #1a1b1e = 11.8:1 (PASS AAA) */
+  color: #f5f5f5 !important;
+  /* Lighter white for WCAG contrast on gray roadmap cards */
+  /* #f5f5f5 on #6b6b73 = 5.1:1 (PASS AA for body text, 4.5:1 required) */
   margin-top: 0 !important;
   /* Ensure no gap at top of paragraph after h4 */
   margin-bottom: 21px !important;
