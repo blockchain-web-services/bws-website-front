@@ -1,0 +1,231 @@
+name: Fetch Success Stories
+
+on:
+  schedule:
+    - cron: '0 11 * * *'  # Daily at 11:00 AM UTC (1 hour after articles at 10:00 AM)
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+  pull-requests: write
+
+env:
+  NODE_VERSION: "20"
+
+jobs:
+  fetch-success-stories:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: "npm"
+
+      - name: Install project dependencies
+        run: |
+          if [ -f "package-lock.json" ]; then
+            npm ci
+          else
+            npm install
+          fi
+
+      - name: Install fetch script dependencies
+        run: npm install twitter-api-v2 @anthropic-ai/sdk
+
+      - name: Fetch success stories
+        id: fetch
+        env:
+          TWITTER_BEARER_TOKEN: ${{ secrets.TWITTER_BEARER_TOKEN }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          node scripts/fetch-success-stories.js
+          echo "fetch_status=success" >> $GITHUB_OUTPUT
+        continue-on-error: true
+
+      - name: Check for changes
+        id: changes
+        run: |
+          if git diff --quiet src/data/successStories.ts public/assets/images/success-stories/ scripts/data/processed-success-story-tweets.json; then
+            echo "has_changes=false" >> $GITHUB_OUTPUT
+            echo "ℹ️  No changes detected"
+          else
+            echo "has_changes=true" >> $GITHUB_OUTPUT
+            echo "✅ Changes detected"
+          fi
+
+      - name: Build site to verify
+        if: steps.changes.outputs.has_changes == 'true' && steps.fetch.outcome == 'success'
+        run: npx astro build
+
+      - name: Commit changes
+        if: steps.changes.outputs.has_changes == 'true' && steps.fetch.outcome == 'success'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add src/data/successStories.ts public/assets/images/success-stories/ scripts/data/processed-success-story-tweets.json
+          git commit -m "Update success stories from X posts
+
+          🤖 Generated with [Claude Code](https://claude.com/claude-code)
+
+          Co-Authored-By: Claude <noreply@anthropic.com>"
+          git push
+
+      - name: Summary
+        if: steps.fetch.outcome == 'success'
+        run: |
+          if [ "${{ steps.changes.outputs.has_changes }}" == "true" ]; then
+            echo "✅ Successfully updated success stories"
+          else
+            echo "ℹ️  No new success stories found"
+          fi
+
+  # Job 2: Handle failures - create fix branch and PR
+  handle-failure:
+    needs: fetch-success-stories
+    runs-on: ubuntu-latest
+    if: failure()
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Create fix branch and PR
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const fs = require('fs');
+            const { execSync } = require('child_process');
+
+            // Generate timestamp (DD-MM-HH format)
+            const now = new Date();
+            const dd = String(now.getUTCDate()).padStart(2, '0');
+            const mm = String(now.getUTCMonth() + 1).padStart(2, '0');
+            const hh = String(now.getUTCHours()).padStart(2, '0');
+            const timestamp = `${dd}-${mm}-${hh}`;
+            const fullTimestamp = now.toISOString().replace(/[:.]/g, '-').substring(0, 19);
+            const shortSha = context.sha.substring(0, 7);
+
+            // Create branch name
+            const branchName = `fix/success-stories-fetch-failure-${fullTimestamp}-${shortSha}`;
+            console.log(`Creating fix branch: ${branchName}`);
+
+            // Configure git
+            execSync('git config user.name "github-actions[bot]"');
+            execSync('git config user.email "github-actions[bot]@users.noreply.github.com"');
+
+            // Create and checkout new branch
+            execSync(`git checkout -b ${branchName}`);
+
+            // Create fixes directory structure
+            const fixesDir = `fixes/${branchName.replace(/\//g, '-')}`;
+            execSync(`mkdir -p ${fixesDir}`);
+
+            // Create failure report
+            const issueContent = [
+              '# Success Stories Fetch Failure Report',
+              '',
+              `**Generated:** ${now.toISOString()}`,
+              `**Workflow Run:** [View Run](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})`,
+              `**Commit:** ${context.sha}`,
+              `**Branch:** ${context.ref.replace('refs/heads/', '')}`,
+              '',
+              '## Issue Description',
+              '',
+              'The daily success stories fetch workflow failed.',
+              '',
+              '## Possible Causes',
+              '',
+              '1. **Twitter API Issues:**',
+              '   - Rate limit exceeded',
+              '   - Invalid/expired bearer token',
+              '   - API endpoint changes',
+              '   - Search query returned no results',
+              '   - User @BWSCommunity not found or suspended',
+              '',
+              '2. **Anthropic API Issues:**',
+              '   - Rate limit exceeded',
+              '   - Invalid/expired API key',
+              '   - Model errors or timeouts',
+              '   - JSON parsing errors from Claude response',
+              '',
+              '3. **Network Issues:**',
+              '   - Connection timeout',
+              '   - DNS resolution failure',
+              '   - Firewall blocking API access',
+              '',
+              '4. **Script Issues:**',
+              '   - Parse error in tweet content',
+              '   - Image download failure (size requirements)',
+              '   - File write permission issues',
+              '   - successStories.ts format changed',
+              '   - Product classification errors',
+              '   - Manual stories config parse error',
+              '',
+              '## Action Required',
+              '',
+              `1. Check the [workflow logs](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})`,
+              '2. Verify TWITTER_BEARER_TOKEN secret is valid',
+              '3. Verify ANTHROPIC_API_KEY secret is valid',
+              '4. Test script manually: `node scripts/fetch-success-stories.js`',
+              '5. Check manual-success-stories.json format',
+              '6. Fix the issue and push to this branch',
+              '',
+              '---',
+              '*This is an automated report from the success stories fetch workflow.*'
+            ].join('\n');
+
+            fs.writeFileSync(`${fixesDir}/FAILURE_REPORT.md`, issueContent);
+
+            // Commit and push
+            execSync(`git add ${fixesDir}`);
+            execSync(`git commit -m "Add success stories fetch failure report\n\nFailure detected in workflow run ${{ github.run_id }}"`);
+            execSync(`git push -u origin ${branchName}`);
+
+            console.log('Branch created and pushed successfully');
+
+            // Create pull request
+            try {
+              const pr = await github.rest.pulls.create({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                title: `🔧 Fix: Success stories fetch failure - ${timestamp}`,
+                head: branchName,
+                base: context.ref.replace('refs/heads/', ''),
+                body: `## 🔴 Success Stories Fetch Failure\n\nAutomated fix branch created due to success stories fetch workflow failure.\n\n### 📋 Details\n- **Failed Workflow:** [Run ${{ github.run_id }}](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})\n- **Failed Commit:** ${context.sha}\n- **Branch:** \`${branchName}\`\n- **Failure Report:** [FAILURE_REPORT.md](https://github.com/${{ github.repository }}/blob/${branchName}/${fixesDir}/FAILURE_REPORT.md)\n- **Timestamp:** ${now.toISOString()}\n\n### 🔄 Workflow\n1. Review failure report and workflow logs\n2. Investigate root cause (Twitter API, Anthropic API, or script issues)\n3. Fix the issue (update tokens, fix script bugs, etc.)\n4. Push fixes to this branch\n5. Workflow will re-run automatically\n6. PR will auto-merge when workflow succeeds ✅\n\n### 🤖 Auto-Merge\nThis PR is configured to auto-merge once the workflow passes.\n\n---\n*Generated by GitHub Actions*`,
+                draft: false
+              });
+
+              console.log(`Created PR #${pr.data.number}`);
+
+              // Add labels
+              await github.rest.issues.addLabels({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: pr.data.number,
+                labels: ['automated', 'success-stories', 'needs-fix']
+              });
+
+              console.log('Labels added to PR');
+
+            } catch (error) {
+              console.error('Failed to create PR:', error.message);
+            }
+
+            // Create issue for tracking
+            const issueBody = `## Success Stories Fetch Failure\n\nThe daily success stories fetch workflow failed.\n\n- **Fix Branch:** \`${branchName}\`\n- **Pull Request:** Created automatically\n- **Workflow Run:** [View Logs](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})\n- **Timestamp:** ${now.toISOString()}\n\n### Action Required\nReview the failure report in the PR and fix the issue.\n\nThe workflow will retry daily at 11 AM UTC automatically.\n\n### Quick Checks\n- [ ] Verify TWITTER_BEARER_TOKEN is valid\n- [ ] Verify ANTHROPIC_API_KEY is valid\n- [ ] Check Twitter API status\n- [ ] Check Anthropic API status\n- [ ] Review workflow logs for errors\n- [ ] Test script locally\n- [ ] Check manual-success-stories.json format`;
+
+            try {
+              const issue = await github.rest.issues.create({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                title: `Success Stories Fetch Failure - ${timestamp}`,
+                body: issueBody,
+                labels: ['success-stories', 'automated', 'bug']
+              });
+              console.log(`Created issue #${issue.data.number}`);
+            } catch (error) {
+              console.error('Failed to create issue:', error.message);
+            }

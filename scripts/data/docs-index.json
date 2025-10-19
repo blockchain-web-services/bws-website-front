@@ -1,0 +1,1264 @@
+{
+  "lastCrawl": "2025-10-17T14:12:44.298Z",
+  "totalPages": 35,
+  "pages": [
+    {
+      "url": "https://docs.bws.ninja/",
+      "path": "/",
+      "title": "Welcome! | BWS API Docs",
+      "product": "General Documentation",
+      "category": "Guide",
+      "summary": "Main landing page introducing Blockchain Web Services (BWS) platform and its suite of products. Provides overview of platform APIs including IPFS upload, blockchain storage, and NFT solutions, as well as marketplace solutions for badges, gaming, and ESG credits. Highlights the mission to make blockchain accessible to non-technical users.",
+      "keywords": [
+        "blockchain web services",
+        "bws platform",
+        "web3 api",
+        "blockchain api",
+        "developer documentation",
+        "nft marketplace",
+        "ipfs storage",
+        "blockchain integration"
+      ],
+      "codeExamples": [],
+      "useCases": [
+        "Upload NFT images and metadata to decentralized IPFS storage",
+        "Create digital badges and credentials on blockchain",
+        "Build sports fan engagement platforms with NFT game cubes",
+        "Track and manage ESG carbon credits and environmental impacts",
+        "Store immutable data records on blockchain without Web3 wallets"
+      ],
+      "implementationSteps": [],
+      "contentLength": 2003,
+      "lastIndexed": "2025-10-17T14:10:30.358Z"
+    },
+    {
+      "url": "https://docs.bws.ninja/quick-start",
+      "path": "/quick-start",
+      "title": "Quick Start | BWS API Docs",
+      "product": "General Documentation",
+      "category": "Guide",
+      "summary": "Quick start tutorial demonstrating how to write data to blockchain using BWS API in a single call. Shows developers how to authenticate with API keys and use the BWS.Blockchain.Hash solution to save \"Hello World!\" to Matchain blockchain without managing network fees or Web3 wallets.",
+      "keywords": [
+        "quick start",
+        "getting started",
+        "hello world",
+        "blockchain write",
+        "api authentication",
+        "matchain",
+        "web2 api",
+        "blockchain tutorial"
+      ],
+      "codeExamples": [
+        {
+          "language": "curl",
+          "code": "POST https://api.bws.ninja/v1/smart-contracts/call",
+          "description": "API endpoint to write 'Hello World!' message to Matchain blockchain using BWS.Blockchain.Hash solution"
+        }
+      ],
+      "useCases": [
+        "Write first blockchain transaction without Web3 wallet setup",
+        "Save text messages to blockchain immutably",
+        "Test API authentication and connectivity",
+        "Store simple data records on Matchain network",
+        "Verify blockchain transaction status and results"
+      ],
+      "implementationSteps": [
+        {
+          "title": "Get your API key",
+          "description": "Obtain API key from BWS platform for authentication as all requests require a valid API key"
+        },
+        {
+          "title": "Write Hello World to blockchain",
+          "description": "Make POST request to call endpoint with BWS.Blockchain.Hash solution to save message to Matchain blockchain"
+        },
+        {
+          "title": "Check for Status",
+          "description": "Fetch the blockchain job status and results to verify transaction completion"
+        }
+      ],
+      "contentLength": 2003,
+      "lastIndexed": "2025-10-17T14:10:30.358Z"
+    },
+    {
+      "url": "https://docs.bws.ninja/platform-fees",
+      "path": "/platform-fees",
+      "title": "Platform Fees | BWS API Docs",
+      "product": "General Documentation",
+      "category": "Reference",
+      "summary": "Explains BWS platform fee structure for blockchain transactions. Details how blockchain fees compensate miners for computational work and ensure network security. Provides fees calculator and pricing examples to help developers understand costs for using BWS solutions without managing Web3 wallets directly.",
+      "keywords": [
+        "platform fees",
+        "blockchain fees",
+        "pricing calculator",
+        "transaction costs",
+        "gas fees",
+        "network fees",
+        "payment structure",
+        "fee transparency"
+      ],
+      "codeExamples": [],
+      "useCases": [
+        "Calculate blockchain transaction costs before implementation",
+        "Budget for blockchain integration projects",
+        "Compare BWS pricing with direct blockchain interaction costs",
+        "Understand fee structure for smart contract calls",
+        "Plan operational costs for blockchain applications"
+      ],
+      "implementationSteps": [],
+      "contentLength": 2003,
+      "lastIndexed": "2025-10-17T14:10:30.358Z"
+    },
+    {
+      "url": "https://docs.bws.ninja/api-how-tos",
+      "path": "/api-how-tos",
+      "title": "API How Tos | BWS API Docs",
+      "product": "General Documentation",
+      "category": "Reference",
+      "summary": "Overview page introducing API fundamentals for BWS platform. Serves as navigation hub to detailed documentation covering API endpoint configuration, authentication methods, main API methods (call and fetch), response formats, and error handling for programmatic access to BWS solutions.",
+      "keywords": [
+        "api reference",
+        "api documentation",
+        "api basics",
+        "authentication",
+        "api methods",
+        "api responses",
+        "error codes",
+        "developer guide"
+      ],
+      "codeExamples": [],
+      "useCases": [
+        "Learn BWS API authentication requirements",
+        "Understand API endpoint structure and methods",
+        "Handle API responses and error codes properly",
+        "Implement call and fetch API patterns",
+        "Integrate BWS solutions programmatically"
+      ],
+      "implementationSteps": [],
+      "contentLength": 1446,
+      "lastIndexed": "2025-10-17T14:10:30.358Z"
+    },
+    {
+      "url": "https://docs.bws.ninja/certificate-of-trust",
+      "path": "/certificate-of-trust",
+      "title": "Certificate Of Trust | BWS API Docs",
+      "product": "General Documentation",
+      "category": "Reference",
+      "summary": "Documents the Certificate of Trust feature provided by all BWS solutions. Explains how blockchain-verified certificates demonstrate transaction authenticity, trust, and transparency to customers. Certificates are automatically generated upon operation completion with shareable transaction information and proof of registry.",
+      "keywords": [
+        "certificate of trust",
+        "blockchain proof",
+        "transaction verification",
+        "proof of registry",
+        "authenticity certificate",
+        "blockchain certificate",
+        "trust verification",
+        "transaction proof"
+      ],
+      "codeExamples": [],
+      "useCases": [
+        "Provide customers with blockchain-verified transaction proof",
+        "Demonstrate data authenticity and transparency",
+        "Share verifiable certificates for compliance purposes",
+        "Build trust with blockchain-backed documentation",
+        "Create audit trails with shareable certificates"
+      ],
+      "implementationSteps": [],
+      "contentLength": 1807,
+      "lastIndexed": "2025-10-17T14:10:30.358Z"
+    },
+    {
+      "url": "https://docs.bws.ninja/media-assets",
+      "path": "/media-assets",
+      "title": "Media Assets | BWS API Docs",
+      "product": "General Documentation",
+      "category": "Media",
+      "summary": "Provides access to BWS brand assets including logos, visual identity guidelines, and media resources. Contains downloadable BWS Brand Guideline PDF with specifications for proper use of brand elements, logos, and visual design standards for partners and developers.",
+      "keywords": [
+        "brand guidelines",
+        "logo assets",
+        "media kit",
+        "brand identity",
+        "visual guidelines",
+        "logo downloads",
+        "brand resources",
+        "design assets"
+      ],
+      "codeExamples": [],
+      "useCases": [
+        "Download BWS logos for partner integrations",
+        "Follow brand guidelines for co-marketing materials",
+        "Access visual assets for presentations and documentation",
+        "Ensure consistent brand representation in applications",
+        "Obtain official BWS branding for promotional use"
+      ],
+      "implementationSteps": [],
+      "contentLength": 1385,
+      "lastIndexed": "2025-10-17T14:10:30.358Z"
+    },
+    {
+      "url": "https://docs.bws.ninja/solutions/bws.ipfs.upload",
+      "path": "/solutions/bws.ipfs.upload",
+      "title": "BWS.IPFS.Upload | BWS API Docs",
+      "product": "BWS IPFS",
+      "category": "Platform API",
+      "summary": "Main documentation page for BWS.IPFS.Upload solution enabling easy upload of images, PDF, and JSON files to IPFS distributed storage network. Provides overview of IPFS functionality and available operations for decentralized file storage without managing IPFS infrastructure directly.",
+      "keywords": [
+        "ipfs upload",
+        "decentralized storage",
+        "ipfs api",
+        "file upload",
+        "distributed storage",
+        "ipfs service",
+        "content storage",
+        "peer-to-peer storage"
+      ],
+      "codeExamples": [],
+      "useCases": [
+        "Upload NFT images to decentralized IPFS storage",
+        "Store PDF documents on distributed network",
+        "Save JSON metadata files for blockchain assets",
+        "Create permanent decentralized file storage",
+        "Host media files without centralized servers"
+      ],
+      "implementationSteps": [],
+      "contentLength": 1435,
+      "lastIndexed": "2025-10-17T14:10:30.358Z"
+    },
+    {
+      "url": "https://docs.bws.ninja/solutions/bws.ipfs.upload/solution-overview",
+      "path": "/solutions/bws.ipfs.upload/solution-overview",
+      "title": "Solution Overview | BWS API Docs",
+      "product": "BWS IPFS",
+      "category": "Reference",
+      "summary": "Details BWS IPFS API service leveraging InterPlanetary File System for distributed, peer-to-peer storage. Explains how IPFS creates permanent decentralized data storage using content identifiers (CID), file chunking, and distributed network. Documents BWS IPFS Gateway (ipfs.bws.ninja) for accessing uploaded files via traditional web browsers.",
+      "keywords": [
+        "ipfs gateway",
+        "content identifier",
+        "cid",
+        "decentralized storage",
+        "peer-to-peer",
+        "ipfs protocol",
+        "distributed network",
+        "file retrieval"
+      ],
+      "codeExamples": [],
+      "useCases": [
+        "Access IPFS files through web gateway without IPFS client",
+        "Store files with permanent content-addressed identifiers",
+        "Distribute large files across decentralized network",
+        "Create censorship-resistant file storage",
+        "Retrieve IPFS content via standard HTTPS URLs"
+      ],
+      "implementationSteps": [],
+      "contentLength": 2003,
+      "lastIndexed": "2025-10-17T14:10:30.358Z"
+    },
+    {
+      "url": "https://docs.bws.ninja/solutions/bws.ipfs.upload/operations",
+      "path": "/solutions/bws.ipfs.upload/operations",
+      "title": "Operations | BWS API Docs",
+      "product": "BWS IPFS",
+      "category": "Reference",
+      "summary": "API reference documentation for BWS.IPFS.Upload operations including upload to IPFS and list files endpoints. Details request/response formats, parameters, and methods to upload content and retrieve IPFS Content Identifiers (CID) with accessible URIs through BWS gateway.",
+      "keywords": [
+        "ipfs upload api",
+        "cid generation",
+        "ipfs operations",
+        "file upload endpoint",
+        "ipfs uri",
+        "content identifier",
+        "api methods",
+        "ipfs gateway"
+      ],
+      "codeExamples": [
+        {
+          "language": "curl",
+          "code": "POST https://api.bws.ninja/v1/call",
+          "description": "Upload files to IPFS and receive Content Identifier (CID) with IPFS URIs for accessing the uploaded content"
+        },
+        {
+          "language": "json",
+          "code": "{\n  \"statusCode\": 200,\n  \"info\": {\n    \"cid\": \"QmXmCX9S6ANVjYJh3rJmXjqgYtYv7WZLUDL2XCwdPrvUwN\",\n    \"uris\": {\n      \"ipfs\": \"ipfs://QmXmCX9S6ANVjYJh3rJmXjqgYtYv7WZLUDL2XCwdPrvUwN\",\n      \"url\": \"https://ipfs.bws.ninja/ipfs/QmXmCX9S6ANVjYJh3rJmXjqgYtYv7WZ...\"\n    }\n  }\n}",
+          "description": "Response from IPFS upload operation containing the Content Identifier (CID) and accessible URIs including IPFS protocol and HTTPS gateway URL"
+        }
+      ],
+      "useCases": [
+        "Upload NFT artwork and receive IPFS CID",
+        "Store document files on IPFS programmatically",
+        "Generate permanent IPFS links for media content",
+        "List previously uploaded IPFS files",
+        "Integrate IPFS storage into applications"
+      ],
+      "implementationSteps": [
+        {
+          "title": "Upload to IPFS",
+          "description": "Make POST request to call endpoint with solution 'BWS.IPFS.Upload' and operation 'new' to upload content and receive IPFS CID"
+        },
+        {
+          "title": "List IPFS Files",
+          "description": "Use list operation to retrieve previously uploaded IPFS files and their content identifiers"
+        }
+      ],
+      "contentLength": 2003,
+      "lastIndexed": "2025-10-17T14:10:30.358Z"
+    },
+    {
+      "url": "https://docs.bws.ninja/solutions/bws.blockchain.save",
+      "path": "/solutions/bws.blockchain.save",
+      "title": "BWS.Blockchain.Save | BWS API Docs",
+      "product": "Blockchain Save",
+      "category": "Platform API",
+      "summary": "Main documentation page for BWS.Blockchain.Save solution providing efficient immutable data storage on blockchain. Introduces the solution as a platform API for storing permanent, tamper-proof records on blockchain networks without requiring Web3 wallet management or blockchain expertise.",
+      "keywords": [
+        "blockchain storage",
+        "immutable data",
+        "blockchain save",
+        "permanent storage",
+        "data integrity",
+        "blockchain records",
+        "tamper-proof",
+        "decentralized storage"
+      ],
+      "codeExamples": [],
+      "useCases": [
+        "Store immutable records of important documents",
+        "Create permanent audit trails on blockchain",
+        "Save timestamped data that cannot be altered",
+        "Archive critical information with blockchain proof",
+        "Build tamper-proof data storage systems"
+      ],
+      "implementationSteps": [],
+      "contentLength": 1434,
+      "lastIndexed": "2025-10-17T14:10:30.358Z"
+    },
+    {
+      "url": "https://docs.bws.ninja/solutions/bws.blockchain.save/solution-overview",
+      "path": "/solutions/bws.blockchain.save/solution-overview",
+      "title": "Solution Overview | BWS API Docs",
+      "product": "Blockchain Save",
+      "category": "Platform API",
+      "summary": "BWS.Blockchain.Save provides an efficient way to store immutable data on the blockchain without technical complexity. It abstracts blockchain infrastructure, allowing users to write data and receive a Certificate of Trust for verifiable proof of integrity and authenticity.",
+      "keywords": [
+        "blockchain save",
+        "immutable storage",
+        "certificate of trust",
+        "data integrity",
+        "blockchain storage",
+        "write blockchain",
+        "data verification"
+      ],
+      "codeExamples": [],
+      "useCases": [
+        "Store verifiable records with Certificate of Trust",
+        "Save immutable data to blockchain without technical overhead",
+        "Create authenticated proof of data integrity",
+        "Enterprise blockchain data storage"
+      ],
+      "implementationSteps": [],
+      "contentLength": 2003,
+      "lastIndexed": "2025-10-17T14:11:26.634Z"
+    },
+    {
+      "url": "https://docs.bws.ninja/solutions/bws.blockchain.save/operations",
+      "path": "/solutions/bws.blockchain.save/operations",
+      "title": "Operations | BWS API Docs",
+      "product": "Blockchain Save",
+      "category": "Reference",
+      "summary": "This page documents the save operation for BWS.Blockchain.Save, allowing users to write data to the blockchain. The operation is asynchronous and returns a job ID for tracking the blockchain transaction status using the fetch API.",
+      "keywords": [
+        "blockchain save operation",
+        "save data blockchain",
+        "api reference",
+        "asynchronous operation",
+        "job id",
+        "blockchain write",
+        "save method"
+      ],
+      "codeExamples": [
+        {
+          "language": "json",
+          "code": "{\n  \"statusCode\": 200,\n  \"statusMessage\": \"\",\n  \"info\": {\n    \"jobId\": \"59d0f46b-0b58-4972-8aca-51d06f69f25e\"\n  }\n}",
+          "description": "Response from save operation containing job ID for tracking the blockchain transaction"
+        },
+        {
+          "language": "curl",
+          "code": "POST https://api.bws.ninja/v1/call\nRequest Body:\n{\n  \"solution\": \"BWS.Blockchain.Save\",\n  \"version\": 1,\n  \"network\": \"<network>\",\n  \"operation\": \"save\",\n  \"parameters\": {\n    \"value\": \"<string>\"\n  }\n}",
+          "description": "API call to save data to blockchain with solution parameters"
+        }
+      ],
+      "useCases": [
+        "Save immutable records to blockchain",
+        "Create verifiable timestamps for documents",
+        "Store compliance data with blockchain proof",
+        "Archive critical business data on blockchain"
+      ],
+      "implementationSteps": [
+        {
+          "title": "Make save API call",
+          "description": "POST to /v1/call endpoint with solution set to BWS.Blockchain.Save, operation as 'save', and your data in the value parameter"
+        },
+        {
+          "title": "Receive job ID",
+          "description": "API returns a job ID for tracking the asynchronous blockchain transaction"
+        },
+        {
+          "title": "Check transaction status",
+          "description": "Use fetch API with the provided job ID to check blockchain transaction status and results"
+        }
+      ],
+      "contentLength": 2003,
+      "lastIndexed": "2025-10-17T14:11:26.634Z"
+    },
+    {
+      "url": "https://docs.bws.ninja/solutions/bws.blockchain.hash",
+      "path": "/solutions/bws.blockchain.hash",
+      "title": "BWS.Blockchain.Hash | BWS API Docs",
+      "product": "Blockchain Hash",
+      "category": "Platform API",
+      "summary": "BWS.Blockchain.Hash is a navigation page that introduces using the blockchain as a hash table database. It provides links to the solution overview and operations documentation for this mutable blockchain storage service.",
+      "keywords": [
+        "blockchain hash",
+        "hash database",
+        "mutable storage",
+        "blockchain database",
+        "key-value storage",
+        "hash table",
+        "blockchain data"
+      ],
+      "codeExamples": [],
+      "useCases": [
+        "Use blockchain as hash table database",
+        "Store and retrieve mutable blockchain data",
+        "Implement blockchain-based key-value storage",
+        "Create decentralized database applications"
+      ],
+      "implementationSteps": [],
+      "contentLength": 1429,
+      "lastIndexed": "2025-10-17T14:11:26.634Z"
+    },
+    {
+      "url": "https://docs.bws.ninja/solutions/bws.blockchain.hash/solution-overview",
+      "path": "/solutions/bws.blockchain.hash/solution-overview",
+      "title": "Solution Overview | BWS API Docs",
+      "product": "Blockchain Hash",
+      "category": "Platform API",
+      "summary": "BWS.Blockchain.Hash allows using blockchain as a hash database for efficient data storage and retrieval. A hash database uses unique keys for quick lookups, making it ideal for applications requiring rapid data access like client data management.",
+      "keywords": [
+        "blockchain hash database",
+        "hash table",
+        "key-value storage",
+        "mutable blockchain",
+        "data retrieval",
+        "client data",
+        "scalable database"
+      ],
+      "codeExamples": [],
+      "useCases": [
+        "Save client data to blockchain with unique identifiers",
+        "Implement rapid data access with hash keys",
+        "Store business records with efficient retrieval",
+        "Create scalable blockchain database applications",
+        "Manage customer information on blockchain"
+      ],
+      "implementationSteps": [],
+      "contentLength": 2003,
+      "lastIndexed": "2025-10-17T14:11:26.634Z"
+    },
+    {
+      "url": "https://docs.bws.ninja/solutions/bws.blockchain.hash/operations",
+      "path": "/solutions/bws.blockchain.hash/operations",
+      "title": "Operations | BWS API Docs",
+      "product": "Blockchain Hash",
+      "category": "Reference",
+      "summary": "This page documents insert and select operations for BWS.Blockchain.Hash. Insert saves data with a unique key to the blockchain, while select retrieves data using that key, enabling mutable blockchain database functionality.",
+      "keywords": [
+        "blockchain hash operations",
+        "insert operation",
+        "select operation",
+        "hash key",
+        "blockchain database api",
+        "data retrieval",
+        "mutable storage"
+      ],
+      "codeExamples": [
+        {
+          "language": "json",
+          "code": "{\n  \"statusCode\": 200,\n  \"statusMessage\": \"\",\n  \"info\": {\n    \"jobId\": \"59d0f46b-0b58-4972-8aca-51d06f69f25e\"\n  }\n}",
+          "description": "Response from insert operation returning job ID for tracking the blockchain transaction"
+        },
+        {
+          "language": "curl",
+          "code": "POST https://api.bws.ninja/v1/call\nRequest Body:\n{\n  \"solution\": \"BWS.Blockchain.Hash\",\n  \"version\": 1,\n  \"network\": \"<network>\",\n  \"operation\": \"insert\",\n  \"parameters\": {\n    \"key\": \"<string>\",\n    \"value\": \"<data>\"\n  }\n}",
+          "description": "Insert operation to save data with a unique key to blockchain"
+        }
+      ],
+      "useCases": [
+        "Store customer records with unique client IDs",
+        "Implement blockchain-based key-value database",
+        "Save and retrieve mutable business data",
+        "Create distributed hash table on blockchain",
+        "Manage user profiles with blockchain storage"
+      ],
+      "implementationSteps": [
+        {
+          "title": "Insert data with key",
+          "description": "POST to /v1/call with operation 'insert', providing a unique key and data value to store on blockchain"
+        },
+        {
+          "title": "Track insertion job",
+          "description": "Use the returned job ID to monitor the blockchain transaction status"
+        },
+        {
+          "title": "Retrieve data using select",
+          "description": "Use the select operation with the same key to retrieve stored data from blockchain"
+        }
+      ],
+      "contentLength": 2003,
+      "lastIndexed": "2025-10-17T14:11:26.634Z"
+    },
+    {
+      "url": "https://docs.bws.ninja/solutions/bws.nft.zk",
+      "path": "/solutions/bws.nft.zk",
+      "title": "BWS.NFT.zK | BWS API Docs",
+      "product": "NFT.zK",
+      "category": "Platform API",
+      "summary": "BWS.NFT.zK is a zero-knowledge NFT management solution that simplifies NFT creation and management. This navigation page provides access to documentation covering NFT operations, ownership, and attributes for managing NFTs without complexity.",
+      "keywords": [
+        "nft.zk",
+        "zero knowledge nft",
+        "nft management",
+        "create nft",
+        "nft operations",
+        "blockchain nft",
+        "simplified nft"
+      ],
+      "codeExamples": [],
+      "useCases": [
+        "Create NFTs with zero technical complexity",
+        "Manage NFT ownership and transfers",
+        "Mint NFTs on multiple blockchain networks",
+        "Implement NFT solutions without blockchain expertise"
+      ],
+      "implementationSteps": [],
+      "contentLength": 1439,
+      "lastIndexed": "2025-10-17T14:11:26.634Z"
+    },
+    {
+      "url": "https://docs.bws.ninja/solutions/bws.nft.zk/solution-overview",
+      "path": "/solutions/bws.nft.zk/solution-overview",
+      "title": "Solution Overview | BWS API Docs",
+      "product": "NFT.zK",
+      "category": "Platform API",
+      "summary": "This page explains NFT ownership models in BWS.NFT.zK, where newly created NFTs are initially linked to the BWS account. Users can transfer ownership either to blockchain wallet addresses or email addresses, with BWS providing custody before transfer.",
+      "keywords": [
+        "nft ownership",
+        "transfer nft",
+        "nft custody",
+        "wallet transfer",
+        "email transfer",
+        "nft metadata",
+        "smart contracts"
+      ],
+      "codeExamples": [],
+      "useCases": [
+        "Create NFTs with BWS account custody",
+        "Transfer NFT ownership to blockchain wallets",
+        "Send NFTs to recipients via email",
+        "Manage NFT metadata and images on IPFS",
+        "Deploy NFTs across multiple blockchain networks"
+      ],
+      "implementationSteps": [
+        {
+          "title": "Create NFT",
+          "description": "NFT is initially created and linked to your BWS account with BWS providing custody"
+        },
+        {
+          "title": "Choose transfer method",
+          "description": "Select to transfer ownership either to a blockchain wallet address or to an email address"
+        },
+        {
+          "title": "Complete ownership transfer",
+          "description": "Execute the transfer to move NFT ownership from BWS custody to the recipient"
+        }
+      ],
+      "contentLength": 2003,
+      "lastIndexed": "2025-10-17T14:11:26.634Z"
+    },
+    {
+      "url": "https://docs.bws.ninja/solutions/bws.nft.zk/operations",
+      "path": "/solutions/bws.nft.zk/operations",
+      "title": "Operations | BWS API Docs",
+      "product": "NFT.zK",
+      "category": "Reference",
+      "summary": "Complete API reference for NFT.zK operations including creating, listing, transferring, and sending NFTs via email. All operations use asynchronous processing with job IDs for tracking blockchain transactions across multiple networks.",
+      "keywords": [
+        "nft api",
+        "create nft",
+        "mint nft",
+        "transfer nft",
+        "list nft",
+        "send nft email",
+        "nft operations"
+      ],
+      "codeExamples": [
+        {
+          "language": "curl",
+          "code": "POST https://api.bws.ninja/v1/call",
+          "description": "Endpoint for creating (minting) a new NFT on selected blockchain network"
+        }
+      ],
+      "useCases": [
+        "Mint new NFTs programmatically via API",
+        "List all NFTs owned by account",
+        "Transfer NFT ownership to wallet addresses",
+        "Send NFTs to users via email",
+        "Track NFT creation with asynchronous job monitoring"
+      ],
+      "implementationSteps": [
+        {
+          "title": "Call create NFT operation",
+          "description": "POST to /v1/call with operation 'create', network, and NFT parameters including name, description, and image"
+        },
+        {
+          "title": "Receive job ID",
+          "description": "API returns job ID as the operation is asynchronous due to blockchain confirmation time"
+        },
+        {
+          "title": "Check transaction status",
+          "description": "Use fetch API with job ID to monitor blockchain transaction status and get receipt"
+        }
+      ],
+      "contentLength": 2003,
+      "lastIndexed": "2025-10-17T14:11:26.634Z"
+    },
+    {
+      "url": "https://docs.bws.ninja/solutions/bws.nft.zk/nft-attributes-traits",
+      "path": "/solutions/bws.nft.zk/nft-attributes-traits",
+      "title": "NFT Attributes (traits) | BWS API Docs",
+      "product": "NFT.zK",
+      "category": "Guide",
+      "summary": "This page explains NFT attributes (traits) which are specific characteristics that make each NFT unique. It demonstrates metadata structure with examples like animated cat NFTs featuring attributes such as fur color, eye type, and accessories.",
+      "keywords": [
+        "nft attributes",
+        "nft traits",
+        "nft metadata",
+        "nft characteristics",
+        "digital assets",
+        "nft properties",
+        "unique features"
+      ],
+      "codeExamples": [
+        {
+          "language": "json",
+          "code": "{\n  \"name\": \"Animated Cat #001\",\n  \"description\": \"A unique animated cat with distinct features.\",\n  \"image\": \"ipfs://QmcduEBAppXxnyn37deHHf33Ep7cPbYxn1mH36Nvvowkiu\",\n  \"attributes\": [\n    {\n      \"trait_type\": \"Fur Color\",\n      \"value\": \"Black\"\n    },\n    {\n      \"trait_type\": \"Eye Type\",\n      \"value\": \"Round\"\n    },\n    {\n      \"trait_type\": \"Accessories\",\n      \"value\": \"Hat\"\n    }\n  ]\n}",
+          "description": "Example NFT metadata structure showing how to define traits/attributes for a digital art collection"
+        }
+      ],
+      "useCases": [
+        "Define unique characteristics for NFT collections",
+        "Create digital art with specific traits",
+        "Implement rarity systems with attribute combinations",
+        "Build NFT metadata for collectible items",
+        "Structure traits for gaming NFTs"
+      ],
+      "implementationSteps": [],
+      "contentLength": 2003,
+      "lastIndexed": "2025-10-17T14:11:26.634Z"
+    },
+    {
+      "url": "https://docs.bws.ninja/api-how-tos/api-endpoint",
+      "path": "/api-how-tos/api-endpoint",
+      "title": "API Endpoint | BWS API Docs",
+      "product": "General Documentation",
+      "category": "Reference",
+      "summary": "Documentation page specifying the BWS API endpoint location at api.bws.ninja with current API version v1. This is the base URL for all Blockchain Web Services API calls.",
+      "keywords": [
+        "api endpoint",
+        "base url",
+        "api version",
+        "bws api",
+        "api location",
+        "rest api",
+        "v1 api"
+      ],
+      "codeExamples": [
+        {
+          "language": "text",
+          "code": "https://api.bws.ninja/v1/",
+          "description": "Base endpoint URL for all BWS API v1 calls"
+        }
+      ],
+      "useCases": [
+        "Configure API client with base endpoint",
+        "Make API calls to BWS services",
+        "Access version 1 of BWS API",
+        "Set up development environment for BWS integration"
+      ],
+      "implementationSteps": [],
+      "contentLength": 1460,
+      "lastIndexed": "2025-10-17T14:11:26.634Z"
+    },
+    {
+      "url": "https://docs.bws.ninja/api-how-tos/authentication",
+      "path": "/api-how-tos/authentication",
+      "title": "Authentication | BWS API Docs",
+      "product": "General Documentation",
+      "category": "Guide",
+      "summary": "This page explains how to authenticate API requests to the BWS platform using the X-Api-Key header attribute. All API calls must include the API key in the request headers for authorization.",
+      "keywords": [
+        "authentication",
+        "api key",
+        "x-api-key",
+        "header",
+        "authorization",
+        "api security",
+        "bws api"
+      ],
+      "codeExamples": [
+        {
+          "language": "javascript",
+          "code": "$.ajax({\n  ...\n  headers: {\n    'Content-Type': 'application/json',\n    'X-Api-Key': 'my-api-key'\n  },\n  ...\n});",
+          "description": "JavaScript AJAX example showing how to include the API key in request headers"
+        }
+      ],
+      "useCases": [
+        "Authenticate API requests to BWS platform",
+        "Secure access to blockchain services",
+        "Authorize API calls for all BWS solutions"
+      ],
+      "implementationSteps": [
+        {
+          "title": "Add API Key Header",
+          "description": "Include 'X-Api-Key' header attribute with your API key value in all API requests"
+        }
+      ],
+      "contentLength": 1718,
+      "lastIndexed": "2025-10-17T14:12:19.156Z"
+    },
+    {
+      "url": "https://docs.bws.ninja/api-how-tos/authentication/get-your-api-key",
+      "path": "/api-how-tos/authentication/get-your-api-key",
+      "title": "Get your API Key | BWS API Docs",
+      "product": "General Documentation",
+      "category": "Guide",
+      "summary": "This page provides instructions on how to obtain your API key from the BWS platform. Users need to sign in at bws.ninja and navigate to their profile to access and copy their API key.",
+      "keywords": [
+        "api key",
+        "get api key",
+        "profile",
+        "account",
+        "authentication",
+        "api access",
+        "bws.ninja"
+      ],
+      "codeExamples": [],
+      "useCases": [
+        "Obtain API credentials for BWS platform access",
+        "Set up authentication for blockchain API integration",
+        "Retrieve personal API key for development"
+      ],
+      "implementationSteps": [
+        {
+          "title": "Sign In",
+          "description": "Sign in to your account at bws.ninja"
+        },
+        {
+          "title": "Navigate to Profile",
+          "description": "Go to Profile from the top right menu"
+        },
+        {
+          "title": "Access API Key",
+          "description": "Select API Key option to view and copy your API key"
+        }
+      ],
+      "contentLength": 1514,
+      "lastIndexed": "2025-10-17T14:12:19.156Z"
+    },
+    {
+      "url": "https://docs.bws.ninja/api-how-tos/main-api-methods",
+      "path": "/api-how-tos/main-api-methods",
+      "title": "Main API Methods | BWS API Docs",
+      "product": "General Documentation",
+      "category": "Guide",
+      "summary": "This page introduces the two main API methods used by BWS Unified API: Call and Fetch. The Call operation initiates blockchain requests while Fetch retrieves the status of asynchronous operations due to blockchain's validation process.",
+      "keywords": [
+        "api methods",
+        "call",
+        "fetch",
+        "asynchronous",
+        "blockchain",
+        "unified api",
+        "operations"
+      ],
+      "codeExamples": [],
+      "useCases": [
+        "Initiate asynchronous blockchain operations",
+        "Check status of pending blockchain transactions",
+        "Handle blockchain network validation delays"
+      ],
+      "implementationSteps": [
+        {
+          "title": "Use Call Method",
+          "description": "Send data to blockchain and initiate the request"
+        },
+        {
+          "title": "Use Fetch Method",
+          "description": "Poll for operation status and retrieve results"
+        }
+      ],
+      "contentLength": 1703,
+      "lastIndexed": "2025-10-17T14:12:19.156Z"
+    },
+    {
+      "url": "https://docs.bws.ninja/api-how-tos/main-api-methods/call-api-method",
+      "path": "/api-how-tos/main-api-methods/call-api-method",
+      "title": "&#x27;call&#x27; API Method | BWS API Docs",
+      "product": "General Documentation",
+      "category": "Reference",
+      "summary": "This page documents the 'call' API method endpoint at https://api.bws.ninja/v1/call. It provides a code example demonstrating how to use BWS.Blockchain.Save to write data to the Mumbai blockchain network using the save operation.",
+      "keywords": [
+        "call method",
+        "api endpoint",
+        "blockchain save",
+        "mumbai",
+        "post request",
+        "api call",
+        "blockchain write"
+      ],
+      "codeExamples": [
+        {
+          "language": "javascript",
+          "code": "const response = await fetch(\"https://api.bws.ninja/v1/call\", {\n  method: \"post\",\n  body: JSON.stringify({\n    solution: \"BWS.Blockchain.Save\",\n    version: 1,\n    network: \"mumbai\",\n    operation: \"save\",\n    parameters: {\n      value: \"Hello World!\",\n    },\n  }),\n  headers: {\n    \"Content-Type\": \"application/json\",\n    \"X-Api-Key\": \"your api key\",\n  },\n});",
+          "description": "JavaScript example showing how to write 'Hello World!' to the Mumbai blockchain using BWS.Blockchain.Save"
+        }
+      ],
+      "useCases": [
+        "Write data to blockchain networks",
+        "Initiate blockchain save operations",
+        "Store immutable records on Mumbai testnet",
+        "Execute blockchain solution operations"
+      ],
+      "implementationSteps": [
+        {
+          "title": "Set API Endpoint",
+          "description": "Use POST method to https://api.bws.ninja/v1/call"
+        },
+        {
+          "title": "Configure Request Body",
+          "description": "Include solution, version, network, operation, and parameters in JSON body"
+        },
+        {
+          "title": "Add Headers",
+          "description": "Include Content-Type and X-Api-Key headers with your API key"
+        }
+      ],
+      "contentLength": 2003,
+      "lastIndexed": "2025-10-17T14:12:19.156Z"
+    },
+    {
+      "url": "https://docs.bws.ninja/api-how-tos/main-api-methods/fetch-api-method",
+      "path": "/api-how-tos/main-api-methods/fetch-api-method",
+      "title": "&#x27;fetch&#x27; API Method | BWS API Docs",
+      "product": "General Documentation",
+      "category": "Reference",
+      "summary": "This page documents the 'fetch' API method endpoint at https://api.bws.ninja/v1/fetch. It explains how to check the status of asynchronous blockchain operations using a jobId returned from previous API calls.",
+      "keywords": [
+        "fetch method",
+        "job status",
+        "asynchronous",
+        "jobid",
+        "blockchain status",
+        "api polling",
+        "operation results"
+      ],
+      "codeExamples": [
+        {
+          "language": "javascript",
+          "code": "var parameters = {\n  \"jobId\": \"b064cc6b-f394-4ca4-9c51-be506e4cc59d\",\n};\n$.ajax({\n  method: 'POST',\n  url: 'https://api.bws.ninja/v1/fetch',\n  dataType: 'json',\n  data: JSON.stringify(parameters),\n  ...\n});",
+          "description": "JavaScript AJAX example to fetch job status and results using a jobId"
+        }
+      ],
+      "useCases": [
+        "Check status of pending blockchain operations",
+        "Retrieve results from completed blockchain transactions",
+        "Poll for asynchronous operation completion",
+        "Monitor blockchain job progress"
+      ],
+      "implementationSteps": [
+        {
+          "title": "Get JobId",
+          "description": "Obtain the jobId from the initial call API response"
+        },
+        {
+          "title": "Send Fetch Request",
+          "description": "POST to https://api.bws.ninja/v1/fetch with jobId in request body"
+        },
+        {
+          "title": "Check Status",
+          "description": "Review the response to determine operation status and retrieve results"
+        }
+      ],
+      "contentLength": 2003,
+      "lastIndexed": "2025-10-17T14:12:19.156Z"
+    },
+    {
+      "url": "https://docs.bws.ninja/api-how-tos/api-responses",
+      "path": "/api-how-tos/api-responses",
+      "title": "API Responses | BWS API Docs",
+      "product": "General Documentation",
+      "category": "Reference",
+      "summary": "This page describes the structure of API responses from BWS API, including statusCode, statusMessage, and info parameters. It explains the difference between HTTP transport errors and controlled errors related to parameter values.",
+      "keywords": [
+        "api response",
+        "status code",
+        "status message",
+        "response format",
+        "json response",
+        "error handling",
+        "api structure"
+      ],
+      "codeExamples": [
+        {
+          "language": "json",
+          "code": "{\n  \"statusCode\": 200,\n  \"statusMessage\": \"Success\",\n  \"info\": { ... }\n}",
+          "description": "Example API response structure showing statusCode, statusMessage, and info object"
+        }
+      ],
+      "useCases": [
+        "Parse API response data",
+        "Handle successful API calls",
+        "Extract information from API responses",
+        "Implement error detection logic"
+      ],
+      "implementationSteps": [
+        {
+          "title": "Check Status Code",
+          "description": "Verify statusCode is 200 for successful operations"
+        },
+        {
+          "title": "Read Status Message",
+          "description": "Review optional statusMessage for additional context"
+        },
+        {
+          "title": "Extract Info",
+          "description": "Access the info object to retrieve requested data"
+        }
+      ],
+      "contentLength": 2003,
+      "lastIndexed": "2025-10-17T14:12:19.156Z"
+    },
+    {
+      "url": "https://docs.bws.ninja/api-how-tos/api-responses/error-status-codes",
+      "path": "/api-how-tos/api-responses/error-status-codes",
+      "title": "Error Status Codes | BWS API Docs",
+      "product": "General Documentation",
+      "category": "Reference",
+      "summary": "This page lists all possible error status codes returned by the BWS API, ranging from 400 to 503. Each error code includes its meaning and description to help developers troubleshoot API call issues.",
+      "keywords": [
+        "error codes",
+        "http status",
+        "api errors",
+        "400 error",
+        "401 unauthorized",
+        "500 error",
+        "troubleshooting"
+      ],
+      "codeExamples": [
+        {
+          "language": "json",
+          "code": "{\n  \"statusCode\": 500,\n  \"statusMessage\": \"Unexpected Error\"\n}",
+          "description": "Example API response showing a 500 error status code"
+        }
+      ],
+      "useCases": [
+        "Troubleshoot API authentication issues",
+        "Handle bad request errors",
+        "Implement retry logic for server errors",
+        "Debug API parameter problems"
+      ],
+      "implementationSteps": [],
+      "contentLength": 2003,
+      "lastIndexed": "2025-10-17T14:12:19.156Z"
+    },
+    {
+      "url": "https://docs.bws.ninja/media-assets/bws-logo",
+      "path": "/media-assets/bws-logo",
+      "title": "BWS Logo | BWS API Docs",
+      "product": "General Documentation",
+      "category": "Media",
+      "summary": "This page provides downloadable BWS logo assets in various formats and sizes including SVG, PNG, and versions optimized for dark backgrounds. Logos are available in multiple resolutions from 32x32 to 256x256 pixels.",
+      "keywords": [
+        "bws logo",
+        "media assets",
+        "brand assets",
+        "logo download",
+        "svg logo",
+        "png logo",
+        "branding"
+      ],
+      "codeExamples": [],
+      "useCases": [
+        "Display BWS branding in applications",
+        "Add BWS logo to documentation",
+        "Include BWS brand in marketing materials",
+        "Integrate BWS logo in user interfaces"
+      ],
+      "implementationSteps": [],
+      "contentLength": 1455,
+      "lastIndexed": "2025-10-17T14:12:19.156Z"
+    },
+    {
+      "url": "https://docs.bws.ninja/media-assets/snapshots",
+      "path": "/media-assets/snapshots",
+      "title": "Snapshots | BWS API Docs",
+      "product": "BWS IPFS",
+      "category": "Media",
+      "summary": "This page serves as a directory for BWS.IPFS.Upload related media assets and snapshots. It links to resources showing how to use the IPFS file upload service through the BWS platform.",
+      "keywords": [
+        "ipfs upload",
+        "snapshots",
+        "media",
+        "ipfs",
+        "file upload",
+        "bws ipfs",
+        "code examples"
+      ],
+      "codeExamples": [],
+      "useCases": [
+        "View IPFS upload implementation examples",
+        "Access visual guides for IPFS integration",
+        "Reference IPFS upload code samples"
+      ],
+      "implementationSteps": [],
+      "contentLength": 1330,
+      "lastIndexed": "2025-10-17T14:12:19.156Z"
+    },
+    {
+      "url": "https://docs.bws.ninja/media-assets/snapshots/bws.ipfs.upload",
+      "path": "/media-assets/snapshots/bws.ipfs.upload",
+      "title": "BWS.IPFS.Upload | BWS API Docs",
+      "product": "BWS IPFS",
+      "category": "Media",
+      "summary": "This page displays a source code snapshot demonstrating how to upload files to IPFS using the BWS platform API. It provides visual reference material for developers implementing IPFS file upload functionality.",
+      "keywords": [
+        "ipfs upload",
+        "code snapshot",
+        "file upload",
+        "ipfs api",
+        "source code",
+        "implementation example",
+        "bws platform"
+      ],
+      "codeExamples": [],
+      "useCases": [
+        "Upload files to IPFS network",
+        "Store NFT images on IPFS",
+        "Implement decentralized file storage",
+        "Upload media content to distributed storage"
+      ],
+      "implementationSteps": [],
+      "contentLength": 1445,
+      "lastIndexed": "2025-10-17T14:12:19.156Z"
+    },
+    {
+      "url": "https://docs.bws.ninja/marketplace-solutions/bws.blockchain.badges",
+      "path": "/marketplace-solutions/bws.blockchain.badges",
+      "title": "BWS.Blockchain.Badges | BWS API Docs",
+      "product": "Blockchain Badges",
+      "category": "Marketplace Solution",
+      "summary": "BWS.Blockchain.Badges revolutionizes how organizations recognize and validate individual achievements by leveraging blockchain technology's immutable and transparent nature. The solution enables seamless issuance, management, and verification of digital credentials with blockchain certification, making every achievement recognizable and verifiable across platforms.",
+      "keywords": [
+        "blockchain badges",
+        "digital credentials",
+        "verifiable credentials",
+        "open badge standard",
+        "blockchain certification",
+        "credential management",
+        "tamper-proof badges",
+        "achievement verification"
+      ],
+      "codeExamples": [],
+      "useCases": [
+        "Issue verifiable digital credentials for educational achievements",
+        "Manage and verify professional certifications on blockchain",
+        "Create tamper-proof employee achievement badges",
+        "Recognize and validate individual accomplishments across platforms",
+        "Integrate blockchain-certified credentials into custom systems"
+      ],
+      "implementationSteps": [],
+      "contentLength": 2003,
+      "lastIndexed": "2025-10-17T14:12:44.297Z"
+    },
+    {
+      "url": "https://docs.bws.ninja/marketplace-solutions/bws.blockchain.badges/badges-user-interface",
+      "path": "/marketplace-solutions/bws.blockchain.badges/badges-user-interface",
+      "title": "Badges User Interface | BWS API Docs",
+      "product": "Blockchain Badges",
+      "category": "Guide",
+      "summary": "This page provides a comprehensive guide to using the Blockchain Badges user interface for issuing and managing verifiable digital credentials. It covers the no-code solution for companies to add issuers, define badges, and award certificates built on open badge standards with blockchain certification for secure, tamper-proof credentials.",
+      "keywords": [
+        "badges user interface",
+        "no-code solution",
+        "manage issuers",
+        "award certificates",
+        "define badges",
+        "digital credentials ui",
+        "blockchain certification",
+        "verifiable badges"
+      ],
+      "codeExamples": [],
+      "useCases": [
+        "Add and manage badge issuers through user interface",
+        "Define new badge types for various achievements",
+        "Award digital certificates to recipients via email",
+        "Search and track awarded credentials",
+        "Issue verifiable credentials without coding"
+      ],
+      "implementationSteps": [
+        {
+          "title": "Manage Issuers",
+          "description": "Set up and configure organizations or entities that will issue badges and credentials"
+        },
+        {
+          "title": "Define New Badges",
+          "description": "Create badge templates with specific criteria and achievement requirements"
+        },
+        {
+          "title": "Reward Badge Awards",
+          "description": "Issue credentials to recipients and send award notifications via email"
+        },
+        {
+          "title": "Search Awards",
+          "description": "Track and manage issued credentials through the search interface"
+        }
+      ],
+      "contentLength": 2003,
+      "lastIndexed": "2025-10-17T14:12:44.297Z"
+    },
+    {
+      "url": "https://docs.bws.ninja/marketplace-solutions/bws.esg.credits",
+      "path": "/marketplace-solutions/bws.esg.credits",
+      "title": "BWS.ESG.Credits | BWS API Docs",
+      "product": "ESG Credits",
+      "category": "Marketplace Solution",
+      "summary": "BWS.ESG.Credits solution helps financial institutions quickly integrate ESG impact benefits into their digital channels and investment reporting by leveraging investments in green assets. It serves banks, investment advisors, institutional investors, venture capitalists, and issuers by enabling creation of detailed ESG impact reports supporting ICMA frameworks and multi-currency reporting.",
+      "keywords": [
+        "esg credits",
+        "environmental impact reporting",
+        "green assets",
+        "esg impact reports",
+        "icma frameworks",
+        "financial institutions",
+        "investment reporting",
+        "sustainability reporting"
+      ],
+      "codeExamples": [],
+      "useCases": [
+        "Integrate ESG impact reporting into bank digital channels",
+        "Generate investment reports with environmental impact data",
+        "Publish quality-assured impact data through certification bodies",
+        "Track green asset investments for institutional investors",
+        "Provide ESG benefit reporting for venture capital portfolios"
+      ],
+      "implementationSteps": [],
+      "contentLength": 2003,
+      "lastIndexed": "2025-10-17T14:12:44.297Z"
+    },
+    {
+      "url": "https://docs.bws.ninja/marketplace-solutions/bws.nft.gamecube",
+      "path": "/marketplace-solutions/bws.nft.gamecube",
+      "title": "BWS.NFT.GameCube | BWS API Docs",
+      "product": "Fan Game Cube",
+      "category": "Marketplace Solution",
+      "summary": "NFT Game Cube is a scalable B2B2C platform solution that provides new revenue streams for sports clubs worldwide. The solution enables fans to play multiple sports games including weekend chess tournaments, soccer VIP finals, and cricket yearly seasons, creating a new sports fan experience and engagement model.",
+      "keywords": [
+        "nft game cube",
+        "sports fan engagement",
+        "sports industry revenue",
+        "b2b2c platform",
+        "fan experience",
+        "sports clubs",
+        "nft gaming",
+        "sports tournament"
+      ],
+      "codeExamples": [],
+      "useCases": [
+        "Create new revenue streams for sports clubs",
+        "Engage fans through NFT-based sports gaming",
+        "Host weekend chess tournaments with NFT rewards",
+        "Organize soccer VIP finals with digital collectibles",
+        "Run cricket yearly season competitions"
+      ],
+      "implementationSteps": [],
+      "contentLength": 1714,
+      "lastIndexed": "2025-10-17T14:12:44.297Z"
+    },
+    {
+      "url": "https://docs.bws.ninja/telegram-bots/x-bot",
+      "path": "/telegram-bots/x-bot",
+      "title": "X BOT | BWS API Docs",
+      "product": "X Bot",
+      "category": "Marketplace Solution",
+      "summary": "X Bot is a Telegram-based analytics platform that provides accurate X (Twitter) engagement metrics using the official X API. It helps crypto projects measure community impact and KOL profitability, enables KOL teams to showcase verifiable performance, and allows investors to discover projects with authentic community traction.",
+      "keywords": [
+        "x bot",
+        "telegram bot",
+        "twitter analytics",
+        "x api",
+        "kol metrics",
+        "crypto community",
+        "engagement metrics",
+        "community analytics"
+      ],
+      "codeExamples": [],
+      "useCases": [
+        "Measure crypto project community impact and engagement",
+        "Track KOL profitability and performance metrics",
+        "Showcase verifiable KOL team performance data",
+        "Discover crypto projects with authentic community traction",
+        "Analyze Twitter engagement using official X API data"
+      ],
+      "implementationSteps": [],
+      "contentLength": 1864,
+      "lastIndexed": "2025-10-17T14:12:44.297Z"
+    }
+  ],
+  "productMapping": {
+    "BWS IPFS": [
+      "https://docs.bws.ninja/solutions/bws.ipfs.upload",
+      "https://docs.bws.ninja/solutions/bws.ipfs.upload/solution-overview",
+      "https://docs.bws.ninja/solutions/bws.ipfs.upload/operations",
+      "https://docs.bws.ninja/media-assets/snapshots",
+      "https://docs.bws.ninja/media-assets/snapshots/bws.ipfs.upload"
+    ],
+    "Blockchain Save": [
+      "https://docs.bws.ninja/solutions/bws.blockchain.save",
+      "https://docs.bws.ninja/solutions/bws.blockchain.save/solution-overview",
+      "https://docs.bws.ninja/solutions/bws.blockchain.save/operations"
+    ],
+    "Blockchain Hash": [
+      "https://docs.bws.ninja/solutions/bws.blockchain.hash",
+      "https://docs.bws.ninja/solutions/bws.blockchain.hash/solution-overview",
+      "https://docs.bws.ninja/solutions/bws.blockchain.hash/operations"
+    ],
+    "NFT.zK": [
+      "https://docs.bws.ninja/solutions/bws.nft.zk",
+      "https://docs.bws.ninja/solutions/bws.nft.zk/solution-overview",
+      "https://docs.bws.ninja/solutions/bws.nft.zk/operations",
+      "https://docs.bws.ninja/solutions/bws.nft.zk/nft-attributes-traits"
+    ],
+    "Blockchain Badges": [
+      "https://docs.bws.ninja/marketplace-solutions/bws.blockchain.badges",
+      "https://docs.bws.ninja/marketplace-solutions/bws.blockchain.badges/badges-user-interface"
+    ],
+    "ESG Credits": [
+      "https://docs.bws.ninja/marketplace-solutions/bws.esg.credits"
+    ],
+    "Fan Game Cube": [
+      "https://docs.bws.ninja/marketplace-solutions/bws.nft.gamecube"
+    ],
+    "X Bot": [
+      "https://docs.bws.ninja/telegram-bots/x-bot"
+    ]
+  }
+}

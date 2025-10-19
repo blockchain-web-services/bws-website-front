@@ -1,24 +1,24 @@
 ---
-import type { MarketplaceAnnouncement } from '../../data/marketplaceAnnouncements';
-import MarketplaceAnnouncementComponent from './MarketplaceAnnouncement.astro';
+import type { SuccessStory } from '../../data/successStories';
+import SuccessStoryComponent from './SuccessStory.astro';
 
 interface Props {
-  announcements: MarketplaceAnnouncement[];
+  stories: SuccessStory[];
 }
 
-const { announcements } = Astro.props;
-const announcementCount = announcements.length;
+const { stories } = Astro.props;
+const storyCount = stories.length;
 ---
 
 {
-  announcementCount > 1 ? (
-    // Multiple announcements - use Swiper carousel
+  storyCount > 1 ? (
+    // Multiple stories - use Swiper carousel
     <>
-      <div class="swiper marketplace-announcement-carousel">
+      <div class="swiper success-stories-carousel">
         <div class="swiper-wrapper">
-          {announcements.map((announcement) => (
+          {stories.map((story) => (
             <div class="swiper-slide">
-              <MarketplaceAnnouncementComponent announcement={announcement} />
+              <SuccessStoryComponent story={story} />
             </div>
           ))}
         </div>
@@ -27,24 +27,32 @@ const announcementCount = announcements.length;
         <div class="swiper-button-prev"></div>
       </div>
 
-      <script define:vars={{ announcementCount }}>
+      <script define:vars={{ storyCount }}>
         // Initialize Swiper carousel when DOM is loaded
         document.addEventListener('DOMContentLoaded', function () {
           // @ts-ignore - Swiper is loaded via CDN
           if (typeof Swiper !== 'undefined') {
             // @ts-ignore
-            new Swiper('.marketplace-announcement-carousel', {
+            new Swiper('.success-stories-carousel', {
               slidesPerView: 1,
               spaceBetween: 0,
+              centeredSlides: true,
               loop: true,
+              watchOverflow: true,
               autoplay: {
                 delay: 8000, // 8 seconds (longer than news carousel)
                 disableOnInteraction: false,
                 pauseOnMouseEnter: true,
               },
               navigation: {
-                nextEl: '.marketplace-announcement-carousel .swiper-button-next',
-                prevEl: '.marketplace-announcement-carousel .swiper-button-prev',
+                nextEl: '.success-stories-carousel .swiper-button-next',
+                prevEl: '.success-stories-carousel .swiper-button-prev',
+              },
+              breakpoints: {
+                0: {
+                  slidesPerView: 1,
+                  spaceBetween: 0,
+                },
               },
             });
           }
@@ -52,22 +60,36 @@ const announcementCount = announcements.length;
       </script>
 
       <style>
-        .marketplace-announcement-carousel {
+        .success-stories-carousel {
           width: 100%;
-          padding: 0 1rem 3rem 1rem;
+          padding: 0 0 3rem 0;
           min-height: 400px;
+          overflow: hidden;
+        }
+
+        /* Swiper wrapper - ensure no overflow */
+        .success-stories-carousel .swiper-wrapper {
+          align-items: stretch;
         }
 
         /* Swiper slide styling */
-        .marketplace-announcement-carousel .swiper-slide {
+        .success-stories-carousel .swiper-slide {
           display: flex;
           justify-content: center;
           height: auto;
+          width: 100%;
+          flex-shrink: 0;
+        }
+
+        /* Ensure slide content takes full width */
+        .success-stories-carousel .swiper-slide > * {
+          width: 100%;
+          max-width: 100%;
         }
 
         /* Customize Swiper navigation arrows */
-        .marketplace-announcement-carousel .swiper-button-next,
-        .marketplace-announcement-carousel .swiper-button-prev {
+        .success-stories-carousel .swiper-button-next,
+        .success-stories-carousel .swiper-button-prev {
           background: rgba(255, 255, 255, 0.8);
           border-radius: 50%;
           width: 3rem;
@@ -75,32 +97,40 @@ const announcementCount = announcements.length;
           color: #333;
         }
 
-        .marketplace-announcement-carousel .swiper-button-next:hover,
-        .marketplace-announcement-carousel .swiper-button-prev:hover {
+        .success-stories-carousel .swiper-button-next {
+          right: 5px;
+        }
+
+        .success-stories-carousel .swiper-button-prev {
+          left: 5px;
+        }
+
+        .success-stories-carousel .swiper-button-next:hover,
+        .success-stories-carousel .swiper-button-prev:hover {
           background: rgba(255, 255, 255, 1);
         }
 
-        .marketplace-announcement-carousel .swiper-button-next::after,
-        .marketplace-announcement-carousel .swiper-button-prev::after {
+        .success-stories-carousel .swiper-button-next::after,
+        .success-stories-carousel .swiper-button-prev::after {
           font-size: 1.5rem;
           font-weight: bold;
         }
 
         /* Hide pagination dots */
-        .marketplace-announcement-carousel .swiper-pagination {
+        .success-stories-carousel .swiper-pagination {
           display: none !important;
         }
 
         /* Mobile adjustments */
         @media screen and (max-width: 991px) {
-          .marketplace-announcement-carousel {
+          .success-stories-carousel {
             padding: 0 0.5rem 2rem 0.5rem;
           }
         }
       </style>
     </>
   ) : (
-    // Single announcement - no carousel, just display it
-    <MarketplaceAnnouncementComponent announcement={announcements[0]} />
+    // Single story - no carousel, just display it
+    <SuccessStoryComponent story={stories[0]} />
   )
 }

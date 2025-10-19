@@ -4,7 +4,7 @@ import NewsCarousel from './home/NewsCarousel.astro';
 import MarketplaceAnnouncementCarousel from './home/MarketplaceAnnouncementCarousel.astro';
 import SolutionCard from './home/SolutionCard.astro';
 import { newsItems } from '../data/news';
-import { marketplaceAnnouncements } from '../data/marketplaceAnnouncements';
+import { successStories } from '../data/successStories';
 import { solutions } from '../data/solutions';
 ---
 
@@ -23,8 +23,8 @@ import { solutions } from '../data/solutions';
           A Blockchain Solutions Marketplace for mass-market users to find innovative and easy-to-use blockchain
           solutions and a platform for builders to bring those solutions to life.
         </div><div class="_2-button-wrapper">
-          <a href="https://docs.bws.ninja" target="_blank" class="button-primary _2-buttons w-button"
-            >Learn More<span class="button-arrow"></span></a
+          <a href="#roadmap" class="button-primary _2-buttons w-button"
+            >Roadmap</a
           ><a href="#solutions" class="button-secondary w-button">Browse Marketplace</a>
         </div>
       </div>
@@ -141,8 +141,8 @@ import { solutions } from '../data/solutions';
         </div><div class="collection-list-wrapper-3 w-dyn-list"></div>
       </div>
     </div>
-    <!-- Marketplace Announcement Carousel -->
-    <MarketplaceAnnouncementCarousel announcements={marketplaceAnnouncements} />
+    <!-- Success Stories Carousel -->
+    <MarketplaceAnnouncementCarousel stories={successStories} />
     <div class="solutions-list mix-solutions">
       <div class="w-dyn-list">
         <div
@@ -669,19 +669,8 @@ import { solutions } from '../data/solutions';
     <!-- LAUNCH Card (Full-width) -->
     <div class="split-horizontal section-roadmap">
       <div class="w-layout-vflex flex-roadmap-column" style="width: 100%;">
-        <div class="w-layout-blockcontainer container-head-roadmap w-container">
-          <div class="heading-roadmap">LAUNCH</div><div class="text-roadmap-title">
-            Foundation
-          </div><div class="w-layout-blockcontainer container-roadmap-content w-container">
-            <div class="w-richtext">
-              <h4 class="roadmap-description-title">Concept Validation</h4>
-              <p class="paragraph-10">Core infrastructure launched with Platform APIs featuring <a href="/marketplace/database-immutable.html">immutable database</a>, <a href="/marketplace/ipfs-upload.html">IPFS upload</a>, and <a href="/marketplace/database-mutable.html">mutable storage</a> solutions enabling developers to integrate blockchain technology through simple API calls.</p>
-              <p class="paragraph-10">Won Nordea Bank Hackathon, recognized for innovative blockchain solutions in financial services using <a href="https://docs.bws.ninja/solutions/bws.blockchain.save" target="_blank" rel="noopener noreferrer">BWS.Blockchain.Save</a> API to save ESG figures into blockchain with a single API call.</p>
-              <h4 class="roadmap-description-title">Platform Architecture</h4>
-              <p class="paragraph-10"><a href="https://blockchainbadges.com/" target="_blank" rel="noopener noreferrer">Blockchain Badges</a> became our first marketplace solution validating individual achievements by leveraging blockchain technology for secure and immutable digital certification.</p>
-              <p class="paragraph-10">$BWS Token Launch established the platform pillar for growth through API fees and developer community involvement, bringing token utility across all platform services with multi-chain support.</p>
-            </div>
-          </div>
+        <div class="w-layout-blockcontainer container-head-roadmap w-container" data-roadmap-key="launch">
+          <!-- Content injected dynamically from /src/data/quarterContent.ts -->
         </div>
       </div>
     </div>
@@ -689,46 +678,12 @@ import { solutions } from '../data/solutions';
     <!-- Row 1: Q1'2025 + Q2'2025 -->
     <div class="split-horizontal section-roadmap">
       <div class="w-layout-vflex flex-roadmap-column">
-        <div class="w-layout-blockcontainer container-head-roadmap-25-1st w-container">
-          <div class="heading-roadmap">Q1&#x27; <span class="text-span-11">2025</span></div><div
-            class="text-roadmap-title-2025-q1"
-          >
-            Launch
-          </div><div class="w-layout-blockcontainer container-roadmap-content w-container">
-            <div class="w-richtext">
-              <h4 class="roadmap-description-title">Fan Game Cube</h4>
-              <p class="paragraph-10">First revenue-ready solution launched at UEFA Final event for product presentation, enabling sports fan engagement through tokenized playing field zones.</p>
-              <h4 class="roadmap-description-title">ESG Credits</h4>
-              <p class="paragraph-10">Production launch providing financial institutions with trusted and transparent platform to support sustainability initiatives and environmental impact reporting.</p>
-              <h4 class="roadmap-description-title">Blockchain Badges Customer Success</h4>
-              <p class="paragraph-10">Showcase early customer success stories highlighting real-world use cases, testimonials, and impact metrics from educational and event sectors.</p>
-              <h4 class="roadmap-description-title">Full Scale Campaigns</h4>
-              <p class="paragraph-10">Launch comprehensive marketing campaigns across multiple channels to drive platform awareness and user acquisition.</p>
-            </div>
-          </div>
+        <div class="w-layout-blockcontainer container-head-roadmap-25-1st w-container" data-quarter="1" data-year="2025">
+          <!-- Content injected dynamically from /src/data/quarterContent.ts -->
         </div>
       </div><div class="w-layout-vflex flex-roadmap-column">
-        <div class="w-layout-blockcontainer container-head-roadmap-25-2nd w-container">
-          <div class="heading-roadmap">Q2&#x27; <span class="text-span-11">2025</span></div><div
-            class="text-roadmap-title-4th"
-          >
-            Token Integration
-          </div><div class="w-layout-blockcontainer container-roadmap-content w-container">
-            <div target="_blank" class="rich-text-block-6 w-richtext">
-              <h4 class="roadmap-description-title">NFT Game Cube Marketing</h4>
-              <p class="paragraph-11">Kick off GTM strategies targeting major sports clubs and event organizers to drive adoption with demo matches and product presentations.</p>
-              <h4 class="roadmap-description-title">$BWS API Fees</h4>
-              <p class="paragraph-11">Every blockchain API transaction requires $BWS token fee, driving demand and increasing token circulation as platform adoption grows.</p>
-              <h4 class="roadmap-description-title">Token Burn Mechanics</h4>
-              <p class="paragraph-11">Implementation of deflationary token economics through burn mechanisms integrated with platform fee structure.</p>
-              <h4 class="roadmap-description-title">Grant-Funded Solutions</h4>
-              <p class="paragraph-11">Introduction of first blockchain solutions developed through BWS Developer Grants Program, expanding marketplace with innovative utility.</p>
-              <h4 class="roadmap-description-title">Sportsbook Integration</h4>
-              <p class="paragraph-11">Fan Game Cube sportsbook edition tailored for betting partnership requirements with licensed operators.</p>
-              <h4 class="roadmap-description-title">Prediction Markets</h4>
-              <p class="paragraph-11">Launch of prediction markets and fantasy mechanics creating new revenue streams through sports betting integration.</p>
-            </div>
-          </div>
+        <div class="w-layout-blockcontainer container-head-roadmap-25-2nd w-container" data-quarter="2" data-year="2025">
+          <!-- Content injected dynamically from /src/data/quarterContent.ts -->
         </div>
       </div>
     </div>
@@ -736,142 +691,21 @@ import { solutions } from '../data/solutions';
     <!-- Row 2: Q3'2025 + Q4'2025 -->
     <div class="split-horizontal section-roadmap">
       <div class="w-layout-vflex flex-roadmap-column">
-        <div class="w-layout-blockcontainer container-head-roadmap w-container">
-          <div class="heading-roadmap">Q3&#x27; <span class="text-span-11">2025</span></div><div
-            class="text-roadmap-title"
-          >
-            Tier 1 Partnerships
-          </div><div class="w-layout-blockcontainer container-roadmap-content w-container">
-            <div class="w-richtext">
-              <h4 class="roadmap-description-title">PSG Partnership</h4>
-              <p class="paragraph-10">Official partnership with Paris Saint-Germain football club for NFT-based fan engagement platform integration.</p>
-              <h4 class="roadmap-description-title">Chiliz Ecosystem</h4>
-              <p class="paragraph-10">Integration with leading sports blockchain enabling socios token compatibility and fan token interoperability.</p>
-              <h4 class="roadmap-description-title">BWS Market Maker</h4>
-              <p class="paragraph-10">Launch of in-house automated market making infrastructure ensuring token liquidity and price stability.</p>
-              <h4 class="roadmap-description-title">Smart Ticketing</h4>
-              <p class="paragraph-10">NFT-based ticketing system with resale royalties and exclusive holder benefits for sports events.</p>
-              <h4 class="roadmap-description-title">Mobile Applications</h4>
-              <p class="paragraph-10">Native iOS and Android applications for seamless fan engagement and marketplace access.</p>
-              <h4 class="roadmap-description-title">L2 Blockchain Partnerships</h4>
-              <p class="paragraph-10">Strategic partnerships with Layer 2 blockchain solutions targeting sports industry and betting sector integration opportunities.</p>
-            </div>
-          </div>
+        <div class="w-layout-blockcontainer container-head-roadmap w-container" data-quarter="3" data-year="2025">
+          <!-- Content injected dynamically from /src/data/quarterContent.ts -->
         </div>
       </div><div class="w-layout-vflex flex-roadmap-column">
-        <div class="w-layout-blockcontainer container-head-roadmap-4th w-container">
-          <div class="heading-roadmap">Q4&#x27; <span class="text-span-11">2025</span></div><div
-            class="text-roadmap-title-4th"
-          >
-            Premier League & iGaming
-          </div><div class="w-layout-blockcontainer container-roadmap-content w-container">
-            <div class="rich-text-block-6 w-richtext">
-              <h4 class="roadmap-description-title">West Bromwich Partnership</h4>
-              <p class="paragraph-11">First Premier League club partnership implementing tokenized fan zones and blockchain-based fan engagement.</p>
-              <h4 class="roadmap-description-title">iGaming Platform Alpha</h4>
-              <p class="paragraph-11">Maincard.io integration launching regulated iGaming platform in EMEA and North America markets.</p>
-              <h4 class="roadmap-description-title">Provably Fair Gaming</h4>
-              <p class="paragraph-11">Blockchain-verified gaming outcomes building trust and transparency in online betting operations.</p>
-              <h4 class="roadmap-description-title">Crypto Payment Rails</h4>
-              <p class="paragraph-11">Integration of instant cryptocurrency deposits and withdrawals with stablecoin support for seamless transactions.</p>
-              <h4 class="roadmap-description-title">Club Network Expansion</h4>
-              <p class="paragraph-11">Expansion of sports club partnerships across multiple leagues and geographic regions.</p>
-            </div>
-          </div>
+        <div class="w-layout-blockcontainer container-head-roadmap-4th w-container" data-quarter="4" data-year="2025">
+          <!-- Content injected dynamically from /src/data/quarterContent.ts -->
         </div>
       </div>
     </div>
 
-    <!-- Row 3: Q1'2026 + Q2'2026 -->
+    <!-- 2026 Card (Full-width) -->
     <div class="split-horizontal section-roadmap">
-      <div class="w-layout-vflex flex-roadmap-column">
-        <div class="w-layout-blockcontainer container-head-roadmap-3rd w-container">
-          <div class="heading-roadmap">Q1&#x27; <span class="text-span-11">2026</span></div><div
-            class="text-roadmap-title-3rd"
-          >
-            Multi Sport Expansion
-          </div><div class="w-layout-blockcontainer container-roadmap-content w-container">
-            <div class="w-richtext">
-              <h4 class="roadmap-description-title">Geographic Expansion</h4>
-              <p class="paragraph-10">Platform rollout across LATAM, APAC, and MENA markets with localized compliance and regional partnerships.</p>
-              <h4 class="roadmap-description-title">Basketball & Tennis</h4>
-              <p class="paragraph-10">NFT platforms launched for basketball and tennis sports expanding beyond football into new fan engagement sectors.</p>
-              <h4 class="roadmap-description-title">Motorsports Integration</h4>
-              <p class="paragraph-10">Entry into motorsports market with race event tokenization and fan engagement solutions.</p>
-              <h4 class="roadmap-description-title">Crypto AI Public Beta</h4>
-              <p class="paragraph-10">Launch of AI-powered trading signals, sentiment analysis, and portfolio optimization tools for crypto investors.</p>
-              <h4 class="roadmap-description-title">Stadium Partnerships</h4>
-              <p class="paragraph-10">Venue-wide blockchain integrations enabling in-person fan experiences and digital collectibles at sporting events.</p>
-            </div>
-          </div>
-        </div>
-      </div><div class="w-layout-vflex flex-roadmap-column">
-        <div class="w-layout-blockcontainer container-head-roadmap w-container">
-          <div class="heading-roadmap">Q2&#x27; <span class="text-span-11">2026</span></div><div
-            class="text-roadmap-title"
-          >
-            Esports & AI Launch
-          </div><div class="w-layout-blockcontainer container-roadmap-content w-container">
-            <div class="w-richtext">
-              <h4 class="roadmap-description-title">Esports Platform</h4>
-              <p class="paragraph-10">Competitive gaming integrations for League of Legends, Valorant, and Counter-Strike targeting esports fan engagement.</p>
-              <h4 class="roadmap-description-title">Crypto AI Production</h4>
-              <p class="paragraph-10">Full production launch of AI solution with enterprise APIs, white-label options, and institutional compliance features.</p>
-              <h4 class="roadmap-description-title">Predictive Analytics</h4>
-              <p class="paragraph-10">Advanced AI models providing market predictions, risk management dashboards, and automated trading strategies.</p>
-              <h4 class="roadmap-description-title">X Bot Evolution</h4>
-              <p class="paragraph-10">Enhanced AI-powered community management tools for crypto projects and sports clubs with automated engagement tracking.</p>
-              <h4 class="roadmap-description-title">Analytics Dashboards</h4>
-              <p class="paragraph-10">Real-time insights platform for clubs and partners tracking fan engagement, revenue metrics, and platform performance.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Row 4: Q3'2026 + Q4'2026 -->
-    <div class="split-horizontal section-roadmap">
-      <div class="w-layout-vflex flex-roadmap-column">
-        <div class="w-layout-blockcontainer container-head-roadmap-25-1st w-container">
-          <div class="heading-roadmap">Q3&#x27; <span class="text-span-11">2026</span></div><div
-            class="text-roadmap-title-2025-q1"
-          >
-            Ecosystem Maturity
-          </div><div class="w-layout-blockcontainer container-roadmap-content w-container">
-            <div class="w-richtext">
-              <h4 class="roadmap-description-title">Global Club Network</h4>
-              <p class="paragraph-10">Achievement of critical mass partnerships with sports organizations across multiple continents creating network effects.</p>
-              <h4 class="roadmap-description-title">AI Community Tools</h4>
-              <p class="paragraph-10">Advanced community management platform with automated KOL tracking, engagement analytics, and sentiment monitoring.</p>
-              <h4 class="roadmap-description-title">Multi-Continental Operations</h4>
-              <p class="paragraph-10">Established presence across five continents with localized teams and regional market expertise.</p>
-              <h4 class="roadmap-description-title">Platform Optimization</h4>
-              <p class="paragraph-10">Advanced infrastructure improvements enabling scalability, performance optimization, and enhanced user experience.</p>
-              <h4 class="roadmap-description-title">Strategic Acquisitions</h4>
-              <p class="paragraph-10">Evaluation and integration of complementary technologies and platforms strengthening market position.</p>
-            </div>
-          </div>
-        </div>
-      </div><div class="w-layout-vflex flex-roadmap-column">
-        <div class="w-layout-blockcontainer container-head-roadmap-25-2nd w-container">
-          <div class="heading-roadmap">Q4&#x27; <span class="text-span-11">2026</span></div><div
-            class="text-roadmap-title-4th"
-          >
-            Platform Leadership
-          </div><div class="w-layout-blockcontainer container-roadmap-content w-container">
-            <div class="rich-text-block-6 w-richtext">
-              <h4 class="roadmap-description-title">Enterprise SLAs</h4>
-              <p class="paragraph-11">Implementation of enterprise-grade service level agreements with uptime guarantees and institutional custody solutions.</p>
-              <h4 class="roadmap-description-title">SOC2 Compliance</h4>
-              <p class="paragraph-11">Achievement of SOC2 Type II certification demonstrating commitment to security, availability, and confidentiality standards.</p>
-              <h4 class="roadmap-description-title">Institutional Infrastructure</h4>
-              <p class="paragraph-11">Deployment of institutional-grade custody, compliance reporting, and regulatory frameworks for enterprise clients.</p>
-              <h4 class="roadmap-description-title">Revenue Diversification</h4>
-              <p class="paragraph-11">Sustainable revenue generation across multiple product lines including APIs, marketplace solutions, and platform services.</p>
-              <h4 class="roadmap-description-title">Market Leadership</h4>
-              <p class="paragraph-11">Established position as leading blockchain solutions marketplace with proven track record and industry recognition.</p>
-            </div>
-          </div>
+      <div class="w-layout-vflex flex-roadmap-column" style="width: 100%;">
+        <div class="w-layout-blockcontainer container-head-roadmap w-container" data-roadmap-key="2026">
+          <!-- Content injected dynamically from /src/data/quarterContent.ts -->
         </div>
       </div>
     </div>

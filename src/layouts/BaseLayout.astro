@@ -1,4 +1,7 @@
 ---
+import { quarterLearnings } from '../data/quarterLearnings';
+import { quarterContents } from '../data/quarterContent';
+
 export interface Props {
   title?: string;
   description?: string;
@@ -64,25 +67,6 @@ const {
         visibility: visible !important;
         opacity: 1 !important;
         display: inline-block !important;
-      }
-
-      /* CRITICAL: WCAG color contrast fixes */
-      /* Fix for dark backgrounds (#1a1b1e) - #e34560 = 4.34:1 (PASS) */
-      .text-roadmap-title,
-      .text-roadmap-title-1st,
-      .text-roadmap-title-2nd,
-      .text-roadmap-title-3rd,
-      .text-roadmap-title-4th {
-        color: #e34560 !important;
-      }
-
-      /* Fix for gray background (#6b6b73) - only white achieves 3:1+ */
-      /* #ffffff on #6b6b73 = 5.28:1 (PASS AAA) */
-      .container-head-roadmap-25-2nd .text-roadmap-title-1st,
-      .container-head-roadmap-25-2nd .text-roadmap-title-2nd,
-      .container-head-roadmap-25-2nd .text-roadmap-title-3rd,
-      .container-head-roadmap-25-2nd .text-roadmap-title-4th {
-        color: #ffffff !important;
       }
 
       /* BFG Logo visibility fix */
@@ -352,6 +336,235 @@ const {
           }
         }, 200);
       });
+    </script>
+
+    <!-- Dynamic Roadmap Colors based on current date -->
+    <script type="text/javascript" define:vars={{ quarterLearnings, quarterContents }}>
+      (function() {
+        // Learnings data imported from /src/data/quarterLearnings.ts
+        // Quarter content data imported from /src/data/quarterContent.ts
+
+        // Function to get current quarter (1-4)
+        function getCurrentQuarter() {
+          const now = new Date();
+          const month = now.getMonth(); // 0-11
+          return Math.floor(month / 3) + 1; // 1-4
+        }
+
+        // Function to get current year
+        function getCurrentYear() {
+          return new Date().getFullYear();
+        }
+
+        // Function to inject quarter content into roadmap cards
+        function injectQuarterContent(card, quarter, year) {
+          // Determine the key for looking up content
+          let key;
+          if (quarter && year) {
+            key = year + '-' + quarter;
+          } else if (card.hasAttribute('data-roadmap-key')) {
+            // Use the data-roadmap-key attribute for LAUNCH and 2026
+            key = card.getAttribute('data-roadmap-key');
+          }
+
+          const data = quarterContents[key];
+
+          // Skip if no content data exists
+          if (!data) return;
+
+          // Check if content already injected (prevent duplicates)
+          if (card.querySelector('.container-roadmap-content .w-richtext')) {
+            const existingContent = card.querySelector('.container-roadmap-content .w-richtext');
+            if (existingContent && existingContent.children.length > 0) {
+              return; // Content already exists
+            }
+          }
+
+          // Build heading
+          let headingHTML = '';
+          if (data.quarter === 'LAUNCH' || data.quarter === '2026') {
+            headingHTML = '<div class="heading-roadmap">' + data.quarter + '</div>';
+          } else {
+            headingHTML = '<div class="heading-roadmap">Q' + data.quarter + '\' <span class="text-span-11">' + data.year + '</span></div>';
+          }
+
+          // Build title
+          const titleHTML = '<div class="' + data.titleCssClass + '">' + data.title + '</div>';
+
+          // Build sections
+          let sectionsHTML = '';
+          data.sections.forEach(function(section) {
+            sectionsHTML += '<h4 class="roadmap-description-title">' + section.title + '</h4>';
+            section.paragraphs.forEach(function(para) {
+              sectionsHTML += '<p class="paragraph-10">' + para + '</p>';
+            });
+          });
+
+          // Complete content HTML
+          const contentHTML = '<div class="w-layout-blockcontainer container-roadmap-content w-container">' +
+            '<div class="w-richtext">' + sectionsHTML + '</div>' +
+          '</div>';
+
+          // Clear card and inject new content
+          card.innerHTML = headingHTML + titleHTML + contentHTML;
+        }
+
+        // Function to inject learnings section into past quarter cards
+        function injectLearningsSection(card, quarter, year) {
+          const key = year + '-' + quarter;
+          const data = quarterLearnings[key];
+
+          // Skip if no learnings data exists yet
+          if (!data) return;
+
+          // Check if learnings already injected (prevent duplicates)
+          if (card.querySelector('.roadmap-learnings-container')) return;
+
+          // Build achieved list
+          let achievedHTML = '';
+          data.achieved.forEach(function(item) {
+            achievedHTML += '<li>' + item + '</li>';
+          });
+
+          // Build missed list
+          let missedHTML = '';
+          data.missed.forEach(function(item) {
+            missedHTML += '<li>' + item + '</li>';
+          });
+
+          // Build lessons list
+          let lessonsHTML = '';
+          data.lessons.forEach(function(item) {
+            lessonsHTML += '<li>' + item + '</li>';
+          });
+
+          // Build missed section only if there are items
+          let missedSection = '';
+          if (data.missed.length > 0) {
+            missedSection = '<div class="learnings-section">' +
+              '<h4 class="learnings-heading">What We Didn\'t Complete</h4>' +
+              '<ul class="learnings-list">' + missedHTML + '</ul>' +
+            '</div>';
+          }
+
+          // Complete HTML structure
+          const html = '<div class="roadmap-learnings-container">' +
+            '<button class="roadmap-learnings-toggle" aria-expanded="false" type="button">' +
+              '<span class="learnings-label">Quarter Learnings</span>' +
+              '<span class="learnings-arrow">▼</span>' +
+            '</button>' +
+            '<div class="roadmap-learnings-content">' +
+              '<div class="learnings-section">' +
+                '<h4 class="learnings-heading">What We Achieved</h4>' +
+                '<ul class="learnings-list">' + achievedHTML + '</ul>' +
+              '</div>' +
+              missedSection +
+              '<div class="learnings-section">' +
+                '<h4 class="learnings-heading">Key Lessons</h4>' +
+                '<ul class="learnings-list">' + lessonsHTML + '</ul>' +
+              '</div>' +
+            '</div>' +
+          '</div>';
+
+          // Calculate spacer height to align learnings across cards in same row
+          const parentRow = card.closest('.split-horizontal');
+          let spacerHeight = 0;
+          if (parentRow) {
+            const cardsInRow = parentRow.querySelectorAll('[data-quarter][data-year]');
+            let maxContentHeight = 0;
+            cardsInRow.forEach(function(rowCard) {
+              const contentArea = rowCard.querySelector('.container-roadmap-content');
+              if (contentArea && contentArea.offsetHeight > maxContentHeight) {
+                maxContentHeight = contentArea.offsetHeight;
+              }
+            });
+            const thisContentHeight = card.querySelector('.container-roadmap-content').offsetHeight;
+            spacerHeight = maxContentHeight - thisContentHeight;
+          }
+
+          const spacer = document.createElement('div');
+          spacer.className = 'roadmap-flex-spacer';
+          spacer.style.cssText = 'flex: 0 0 auto; height: ' + spacerHeight + 'px;';
+          card.appendChild(spacer);
+
+          // Insert learnings at end of card
+          card.insertAdjacentHTML('beforeend', html);
+
+          // Add toggle functionality
+          const toggle = card.querySelector('.roadmap-learnings-toggle');
+          const content = card.querySelector('.roadmap-learnings-content');
+
+          toggle.addEventListener('click', function() {
+            const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
+            toggle.setAttribute('aria-expanded', !isExpanded);
+            content.classList.toggle('expanded');
+          });
+        }
+
+        // Function to apply dynamic colors to roadmap cards
+        function applyDynamicRoadmapColors() {
+          const currentQuarter = getCurrentQuarter();
+          const currentYear = getCurrentYear();
+
+          // First, inject content for all cards with data attributes
+          const quarterCards = document.querySelectorAll('[data-quarter][data-year]');
+          quarterCards.forEach(function(card) {
+            const cardQuarter = parseInt(card.getAttribute('data-quarter'));
+            const cardYear = parseInt(card.getAttribute('data-year'));
+            injectQuarterContent(card, cardQuarter, cardYear);
+          });
+
+          // Also handle LAUNCH and 2026 cards (with data-roadmap-key)
+          const specialCards = document.querySelectorAll('[data-roadmap-key]');
+          specialCards.forEach(function(card) {
+            injectQuarterContent(card);
+          });
+
+          // Now apply dynamic colors to cards with data attributes
+          quarterCards.forEach(function(card) {
+            const cardQuarter = parseInt(card.getAttribute('data-quarter'));
+            const cardYear = parseInt(card.getAttribute('data-year'));
+
+            // Calculate if this card is past, current, or future
+            let cardClass = '';
+
+            if (cardYear < currentYear) {
+              // Past year - all quarters are past
+              cardClass = 'roadmap-past';
+            } else if (cardYear > currentYear) {
+              // Future year - all quarters are future
+              cardClass = 'roadmap-future';
+            } else {
+              // Same year - compare quarters
+              if (cardQuarter < currentQuarter) {
+                cardClass = 'roadmap-past';
+              } else if (cardQuarter === currentQuarter) {
+                cardClass = 'roadmap-current';
+              } else {
+                cardClass = 'roadmap-future';
+              }
+            }
+
+            // Remove any existing roadmap color classes
+            card.classList.remove('roadmap-past', 'roadmap-current', 'roadmap-future');
+
+            // Add the appropriate class
+            card.classList.add(cardClass);
+
+            // Inject learnings section for past quarters
+            if (cardClass === 'roadmap-past') {
+              injectLearningsSection(card, cardQuarter, cardYear);
+            }
+          });
+        }
+
+        // Run on page load
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', applyDynamicRoadmapColors);
+        } else {
+          applyDynamicRoadmapColors();
+        }
+      })();
     </script>
   </body>
 </html>

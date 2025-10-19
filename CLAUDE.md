@@ -12,6 +12,20 @@ BWS Website is a static site for Blockchain Web Services (www.bws.ninja) built w
 2. **All CSS is in `/public/styles.css`** - Single consolidated CSS file from Webflow migration
 3. **Scripts in `scripts/`** - Build and utility scripts are in the scripts/ directory
 
+## Environment Variables
+
+Scripts that interact with external APIs require environment variables stored in `.env` file in the project root:
+
+```bash
+# Required for Twitter/X API scripts (fetch-twitter-partnerships.js, generate-articles.js, etc.)
+TWITTER_BEARER_TOKEN=your_token_here
+
+# Required for Anthropic Claude API scripts (generate-articles.js, fetch-success-stories.js, etc.)
+ANTHROPIC_API_KEY=your_key_here
+```
+
+**Note:** The `.env` file is gitignored and contains sensitive credentials. Never commit it to the repository.
+
 ## Essential Commands
 
 ### Development

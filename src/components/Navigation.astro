@@ -1,5 +1,11 @@
 ---
 // Navigation component from Webflow
+import { articles } from '../data/articles';
+
+// Show auto-generated articles only (newest first, limit to 10)
+const allArticles = [...articles]
+  .sort((a, b) => new Date(b.publishDate).getTime() - new Date(a.publishDate).getTime())
+  .slice(0, 10);
 ---
 
 <style>
@@ -518,25 +524,16 @@
                               <div class="top-menu-articles-title">Learn Blockchain</div>
                             </div><div class="collection-list-wrapper-8 w-dyn-list">
                               <div role="list" class="w-dyn-items">
-                                <div role="listitem" class="top-menu-articles-collection-item w-dyn-item">
-                                  <a
-                                    href="/articles/discover-the-power-of-blockchain-bwss-data-management-solutions.html"
-                                    class="top-menu-article-link"
-                                    >Discover the Power of Blockchain: BWS&#x27;s Data Management Solutions</a
-                                  >
-                                </div><div role="listitem" class="top-menu-articles-collection-item w-dyn-item">
-                                  <a
-                                    href="/articles/investment-impact-reporting-unlocking-a-sustainable-future.html"
-                                    class="top-menu-article-link"
-                                    >Investment Impact Reporting: Unlocking a Sustainable Future</a
-                                  >
-                                </div><div role="listitem" class="top-menu-articles-collection-item w-dyn-item">
-                                  <a
-                                    href="/articles/embrace-sustainability-with-esg-credits-bws-solution.html"
-                                    class="top-menu-article-link"
-                                    >Embrace Sustainability with ESG.Credits BWS Solution</a
-                                  >
-                                </div>
+                                {allArticles.map((article) => (
+                                  <div role="listitem" class="top-menu-articles-collection-item w-dyn-item">
+                                    <a
+                                      href={`/articles/${article.slug}.html`}
+                                      class="top-menu-article-link"
+                                    >
+                                      {article.title}
+                                    </a>
+                                  </div>
+                                ))}
                               </div>
                             </div>
                           </div>
