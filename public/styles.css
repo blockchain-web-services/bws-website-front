@@ -3279,7 +3279,7 @@ a {
 }
 
 a:hover {
-  color: var(--neutral-800);
+  color: var(--rose);
 }
 
 ul {
@@ -13386,11 +13386,13 @@ figcaption {
 .flex-roadmap-column {
   grid-column-gap: 8px;
   grid-row-gap: 8px;
-  flex: 0 auto;
+  flex: 1 1 0;
   order: 0;
   justify-content: flex-start;
   align-items: stretch;
   width: 50%;
+  display: flex;
+  flex-direction: column;
 }
 
 .heading-roadmap {
@@ -13419,7 +13421,7 @@ figcaption {
 }
 
 .container-head-roadmap {
-  background-color: var(--neutral-800);
+  /* background-color: var(--neutral-800); */ /* DISABLED: Now handled by dynamic JS */
   border-radius: 13px;
   align-self: stretch;
   min-width: 100%;
@@ -13427,6 +13429,9 @@ figcaption {
   margin-bottom: 0;
   padding-top: 20px;
   padding-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .text-roadmap-title {
@@ -13477,7 +13482,7 @@ figcaption {
 }
 
 .container-head-roadmap-3rd {
-  background-color: var(--neutral-800);
+  /* background-color: var(--neutral-800); */ /* DISABLED: Now handled by dynamic JS */
   border-radius: 13px;
   align-self: stretch;
   min-width: 100%;
@@ -13488,7 +13493,7 @@ figcaption {
 }
 
 .container-head-roadmap-4th {
-  background-color: var(--neutral-800);
+  /* background-color: var(--neutral-800); */ /* DISABLED: Now handled by dynamic JS */
   border-radius: 13px;
   align-self: stretch;
   min-width: 100%;
@@ -13590,7 +13595,7 @@ figcaption {
 }
 
 .container-head-roadmap-25-1st {
-  background-color: var(--rose);
+  /* background-color: var(--rose); */ /* DISABLED: Now handled by dynamic JS */
   color: var(--neutral-100);
   /* White text for WCAG contrast */
   border-radius: 13px;
@@ -13603,7 +13608,7 @@ figcaption {
 }
 
 .container-head-roadmap-25-2nd {
-  background-color: var(--neutral-500);
+  /* background-color: var(--neutral-500); */ /* DISABLED: Now handled by dynamic JS */
   color: var(--neutral-100);
   /* White text for WCAG contrast */
   border-radius: 13px;
@@ -20917,7 +20922,7 @@ a {
 }
 
 a:hover {
-  color: var(--neutral-800);
+  color: var(--rose);
 }
 
 ul {
@@ -31036,11 +31041,13 @@ figcaption {
 .flex-roadmap-column {
   grid-column-gap: 8px;
   grid-row-gap: 8px;
-  flex: 0 auto;
+  flex: 1 1 0;
   order: 0;
   justify-content: flex-start;
   align-items: stretch;
   width: 50%;
+  display: flex;
+  flex-direction: column;
 }
 
 .heading-roadmap {
@@ -31069,7 +31076,7 @@ figcaption {
 }
 
 .container-head-roadmap {
-  background-color: var(--neutral-800);
+  /* background-color: var(--neutral-800); */ /* DISABLED: Now handled by dynamic JS */
   border-radius: 13px;
   align-self: stretch;
   min-width: 100%;
@@ -31077,6 +31084,9 @@ figcaption {
   margin-bottom: 0;
   padding-top: 20px;
   padding-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .text-roadmap-title {
@@ -31127,7 +31137,7 @@ figcaption {
 }
 
 .container-head-roadmap-3rd {
-  background-color: var(--neutral-800);
+  /* background-color: var(--neutral-800); */ /* DISABLED: Now handled by dynamic JS */
   border-radius: 13px;
   align-self: stretch;
   min-width: 100%;
@@ -31138,7 +31148,7 @@ figcaption {
 }
 
 .container-head-roadmap-4th {
-  background-color: var(--neutral-800);
+  /* background-color: var(--neutral-800); */ /* DISABLED: Now handled by dynamic JS */
   border-radius: 13px;
   align-self: stretch;
   min-width: 100%;
@@ -31240,7 +31250,7 @@ figcaption {
 }
 
 .container-head-roadmap-25-1st {
-  background-color: var(--rose);
+  /* background-color: var(--rose); */ /* DISABLED: Now handled by dynamic JS */
   color: var(--neutral-100);
   /* White text for WCAG contrast */
   border-radius: 13px;
@@ -31253,7 +31263,7 @@ figcaption {
 }
 
 .container-head-roadmap-25-2nd {
-  background-color: var(--neutral-500);
+  /* background-color: var(--neutral-500); */ /* DISABLED: Now handled by dynamic JS */
   color: var(--neutral-100);
   /* White text for WCAG contrast */
   border-radius: 13px;
@@ -38059,33 +38069,29 @@ body [style*="background:#d91a4d"] * {
   /* Dark text for light gray background */
 }
 
-/* Fix color contrast for .text-roadmap-title-4th on dark background */
-/* Original #c41841 on #1a1b1e gives 2.91:1 - needs 3:1 minimum for 24px text */
-/* Lightening to #e34560 gives 3.66:1 contrast ratio (WCAG AAA compliant for large text) */
-/* NOTE: .text-roadmap-title-4th removed - now handled by inverted scheme at line 38048 */
-.container-head-roadmap-4th>.text-roadmap-title-4th {
-  color: #e34560 !important;
-}
-
 /* Fix color contrast for neutral-500 backgrounds (#8a8a92) */
 /* #8a8a92 is too light for white text (3.42:1). Darken to #6b6b73 for 4.52:1 contrast */
+/* DISABLED: Static background color - now handled by dynamic JavaScript at end of file */
+/*
 .container-head-roadmap-25-2nd {
   background-color: #6b6b73 !important;
 }
+*/
 
 .container-head-roadmap-25-2nd,
-.container-head-roadmap-25-2nd *:not(.text-roadmap-title-4th),
-.container-head-roadmap-25-2nd p,
-.container-head-roadmap-25-2nd h6,
-.container-head-roadmap-25-2nd .paragraph-11,
+.container-head-roadmap-25-2nd *:not(.text-roadmap-title-4th):not(.roadmap-learnings-content):not(.roadmap-learnings-content *),
+.container-head-roadmap-25-2nd p:not(.roadmap-learnings-content p),
+.container-head-roadmap-25-2nd h6:not(.roadmap-learnings-content h6),
+.container-head-roadmap-25-2nd .paragraph-11:not(.roadmap-learnings-content *),
 .container-head-roadmap-25-2nd .roadmap-description-title,
 [style*="background-color: var(--neutral-500)"]:not(.text-roadmap-title-4th),
 [style*="background-color:#8a8a92"]:not(.text-roadmap-title-4th),
 [style*="background:#8a8a92"]:not(.text-roadmap-title-4th),
 .bg-gray:not(.text-roadmap-title-4th),
-[style*="background-color:#8a8a92"] *:not(.text-roadmap-title-4th),
-[style*="background:#8a8a92"] *:not(.text-roadmap-title-4th) {
+[style*="background-color:#8a8a92"] *:not(.text-roadmap-title-4th):not(.roadmap-learnings-content *),
+[style*="background:#8a8a92"] *:not(.text-roadmap-title-4th):not(.roadmap-learnings-content *) {
   color: #ffffff !important;
+  /* White text for card content, EXCEPT learnings boxes */
 }
 
 /* CRITICAL OVERRIDE: Force gray card title to use dark color for contrast on white background */
@@ -38976,4 +38982,537 @@ img[src*="blockchain-founders-group"] * {
 .container-roadmap-content .w-richtext .paragraph-11 + h4.roadmap-description-title {
   margin-top: 16px !important;
   /* Reduced from 20px to 16px for tighter spacing between sections */
+}
+
+/* Ensure roadmap cards in same row have equal height and content areas align */
+.split-horizontal.section-roadmap .flex-roadmap-column {
+  align-self: stretch;
+}
+
+.split-horizontal.section-roadmap .flex-roadmap-column .w-layout-blockcontainer {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Apply equal height fix to ALL roadmap container variants - flexbox for proper learnings alignment */
+.container-head-roadmap,
+.container-head-roadmap-25-1st,
+.container-head-roadmap-25-2nd,
+.container-head-roadmap-3rd,
+.container-head-roadmap-4th {
+  margin-bottom: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  flex: 1 !important;
+  min-height: 100%;
+  height: 100%;
+}
+
+/* Content area should NOT flex-grow - keep natural size */
+.split-horizontal.section-roadmap .container-roadmap-content {
+  flex: 0 1 auto !important;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ============================================ */
+/* DYNAMIC ROADMAP BACKGROUND COLORS */
+/* JavaScript-controlled colors based on current date */
+/* ============================================ */
+
+/* Past quarters: Rose background */
+.roadmap-past {
+  background-color: var(--rose) !important;
+  color: var(--neutral-100) !important;
+}
+
+/* Current quarter: Gray background */
+.roadmap-current {
+  background-color: #6b6b73 !important;
+  color: var(--neutral-100) !important;
+}
+
+/* Future quarters: Black background */
+.roadmap-future {
+  background-color: var(--neutral-800) !important;
+}
+
+/* Static DARK text for ALL dynamic roadmap card titles */
+/* Dark text on white title boxes (titles have white backgrounds) */
+.roadmap-past .text-roadmap-title,
+.roadmap-past .text-roadmap-title-2025-q1,
+.roadmap-past .text-roadmap-title-4th,
+.roadmap-current .text-roadmap-title,
+.roadmap-current .text-roadmap-title-2025-q1,
+.roadmap-current .text-roadmap-title-4th,
+.roadmap-future .text-roadmap-title,
+.roadmap-future .text-roadmap-title-2025-q1,
+.roadmap-future .text-roadmap-title-4th {
+  color: #1a1b1e !important;
+}
+
+/* Ensure LAUNCH and 2026 cards ALWAYS stay black (static) */
+/* These cards don't have data-quarter attributes but this ensures they're never affected */
+.container-head-roadmap:not([data-quarter]) {
+  background-color: var(--neutral-800) !important;
+}
+
+/* Full-width cards (LAUNCH and 2026) should use more width with less padding */
+[data-roadmap-key="launch"] .container-roadmap-content,
+[data-roadmap-key="2026"] .container-roadmap-content {
+  padding-left: 35px !important;
+  padding-right: 35px !important;
+  max-width: 100% !important;
+}
+
+/* ============================================ */
+/* ROADMAP LEARNINGS SECTION */
+/* Collapsible learnings for past quarters only */
+/* ============================================ */
+
+/* Container positioned at bottom of card - aligned across cards in same row */
+/* Flex spacer is injected via JavaScript before this element */
+.roadmap-learnings-container {
+  margin-bottom: 0;
+  padding-top: 24px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+/* Toggle button styling with hover effect - smaller and compact with gray background */
+.roadmap-learnings-toggle {
+  width: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  background: #6b6b73;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: 'Montserrat', sans-serif;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: left;
+}
+
+.roadmap-learnings-toggle:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.roadmap-learnings-toggle:active {
+  transform: translateY(0);
+}
+
+/* Label styling */
+.learnings-label {
+  line-height: 1.2;
+}
+
+/* Arrow rotation animation */
+.learnings-arrow {
+  font-size: 12px;
+  line-height: 1;
+  transition: transform 0.3s ease;
+}
+
+.roadmap-learnings-toggle[aria-expanded="true"] .learnings-arrow {
+  transform: rotate(180deg);
+}
+
+/* Content area - hidden by default with horizontal padding */
+.roadmap-learnings-content {
+  margin-top: 16px;
+  padding: 24px 32px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 0.4s ease, opacity 0.4s ease, margin-top 0.4s ease, padding 0.4s ease;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  margin-top: 0;
+}
+
+/* Expanded state with horizontal margins */
+.roadmap-learnings-content.expanded {
+  max-height: 2000px;
+  opacity: 1;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  padding-left: 32px;
+  padding-right: 32px;
+  margin-top: 16px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+/* Individual sections within learnings */
+.learnings-section {
+  margin-bottom: 24px;
+}
+
+.learnings-section:last-child {
+  margin-bottom: 0;
+}
+
+/* Section headings with rose accent */
+.learnings-heading {
+  color: var(--rose);
+  font-size: 18px;
+  font-weight: 700;
+  font-family: 'Montserrat', sans-serif;
+  margin-bottom: 12px;
+  margin-top: 0;
+  line-height: 1.3;
+}
+
+/* Lists styling - no bullets - ULTRA STRONG dark text override */
+.learnings-list,
+.learnings-list li,
+.roadmap-learnings-content .learnings-list,
+.roadmap-learnings-content .learnings-list li,
+.container-head-roadmap-25-2nd .learnings-list,
+.container-head-roadmap-25-2nd .learnings-list li {
+  color: #1a1b1e !important;
+  font-size: 15px;
+  line-height: 1.4;
+  padding-left: 0;
+  margin: 0;
+  font-family: 'DM Sans', sans-serif;
+  list-style: none;
+}
+
+/* Add spacing between list items for clear separation */
+.learnings-list li {
+  margin-bottom: 10px !important;
+}
+
+.learnings-list li:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* ULTRA STRONG force dark text for learnings headings */
+.learnings-heading,
+.roadmap-learnings-content .learnings-heading,
+.container-head-roadmap-25-2nd .learnings-heading {
+  color: var(--rose) !important;
+}
+
+/* ULTRA STRONG force dark text for all learnings content */
+.roadmap-learnings-content,
+.roadmap-learnings-content *,
+.roadmap-learnings-content p,
+.roadmap-learnings-content div,
+.roadmap-learnings-content span,
+.container-head-roadmap-25-2nd .roadmap-learnings-content,
+.container-head-roadmap-25-2nd .roadmap-learnings-content *,
+.container-head-roadmap-25-2nd .roadmap-learnings-content p,
+.container-head-roadmap-25-2nd .roadmap-learnings-content div,
+.container-head-roadmap-25-2nd .roadmap-learnings-content span {
+  color: #1a1b1e !important;
+}
+
+/* Override for headings which need rose color - HIGHEST SPECIFICITY */
+.roadmap-learnings-content .learnings-heading,
+.container-head-roadmap-25-2nd .roadmap-learnings-content .learnings-heading,
+.roadmap-learnings-content h4.learnings-heading,
+.container-head-roadmap-25-2nd .roadmap-learnings-content h4.learnings-heading {
+  color: var(--rose) !important;
+}
+
+.learnings-list li {
+  margin-bottom: 8px;
+}
+
+.learnings-list li:last-child {
+  margin-bottom: 0;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 991px) {
+  .roadmap-learnings-toggle {
+    font-size: 13px;
+    padding: 9px 14px;
+  }
+
+  .roadmap-learnings-content.expanded {
+    padding-left: 28px;
+    padding-right: 28px;
+  }
+
+  .learnings-heading {
+    font-size: 17px;
+  }
+
+  .learnings-list {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .roadmap-learnings-container {
+    margin-top: auto;
+  }
+
+  .roadmap-learnings-toggle {
+    font-size: 12px;
+    padding: 8px 12px;
+    gap: 6px;
+  }
+
+  .roadmap-learnings-content.expanded {
+    padding-left: 24px;
+    padding-right: 24px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  .learnings-section {
+    margin-bottom: 20px;
+  }
+
+  .learnings-heading {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+
+  .learnings-list {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .roadmap-learnings-container {
+    margin-top: auto;
+  }
+
+  .roadmap-learnings-toggle {
+    font-size: 11px;
+    padding: 7px 10px;
+    gap: 5px;
+  }
+
+  .learnings-arrow {
+    font-size: 10px;
+  }
+
+  .roadmap-learnings-content.expanded {
+    padding: 16px 20px;
+  }
+
+  .learnings-section {
+    margin-bottom: 16px;
+  }
+
+  .learnings-heading {
+    font-size: 15px;
+  }
+
+  .learnings-list {
+    font-size: 13px;
+    padding-left: 18px;
+  }
+
+  .learnings-list li {
+    margin-bottom: 6px;
+  }
+}
+
+/* ============================================ */
+/* ARTICLE CODE EXAMPLES AND GUIDES */
+/* ============================================ */
+
+/* Code block container */
+.rich-text .code-example {
+  background-color: #f8f9fa;
+  border: 1px solid #e5ecf5;
+  border-radius: 12px;
+  margin: 2rem 0;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* Code language label */
+.rich-text .code-example-header {
+  background-color: #0037ff;
+  color: #ffffff;
+  padding: 0.75rem 1.25rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Code content */
+.rich-text .code-example pre {
+  background-color: #ffffff;
+  margin: 0;
+  padding: 1.5rem;
+  overflow-x: auto;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #333333;
+}
+
+.rich-text .code-example code {
+  background-color: transparent;
+  padding: 0;
+  color: inherit;
+  font-family: inherit;
+}
+
+/* Inline code (not in blocks) */
+.rich-text code {
+  background-color: #f0f3f6;
+  color: #0037ff;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.9em;
+}
+
+/* Solution advantages list */
+.rich-text .solution-advantages {
+  background-color: #ecebff;
+  border-left: 4px solid #0037ff;
+  border-radius: 8px;
+  padding: 1.5rem 2rem;
+  margin: 2rem 0;
+}
+
+.rich-text .solution-advantages h4 {
+  color: #0037ff;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.rich-text .solution-advantages ul {
+  margin-bottom: 0;
+}
+
+.rich-text .solution-advantages li {
+  margin-bottom: 0.75rem;
+  line-height: 1.6;
+}
+
+.rich-text .solution-advantages li:last-child {
+  margin-bottom: 0;
+}
+
+/* Step-by-step guide */
+.rich-text .step-by-step-guide {
+  background-color: #fff;
+  border: 1px solid #e5ecf5;
+  border-radius: 12px;
+  padding: 2rem;
+  margin: 2rem 0;
+}
+
+.rich-text .step-by-step-guide h4 {
+  color: #0037ff;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  font-size: 1.3rem;
+}
+
+.rich-text .step-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+}
+
+.rich-text .step-item:last-child {
+  margin-bottom: 0;
+}
+
+.rich-text .step-number {
+  background-color: #0037ff;
+  color: #ffffff;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+  margin-right: 1rem;
+  margin-top: 0.2rem;
+}
+
+.rich-text .step-content h5 {
+  color: #333;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.rich-text .step-content p {
+  margin-bottom: 0.75rem;
+  color: #666;
+}
+
+.rich-text .step-content .code-reference {
+  font-size: 0.85rem;
+  color: #0037ff;
+  font-style: italic;
+}
+
+/* Responsive adjustments for code and guides */
+@media screen and (max-width: 991px) {
+  .rich-text .code-example pre {
+    font-size: 0.85rem;
+    padding: 1.25rem;
+  }
+
+  .rich-text .solution-advantages {
+    padding: 1.25rem 1.5rem;
+  }
+
+  .rich-text .step-by-step-guide {
+    padding: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .rich-text .code-example pre {
+    font-size: 0.8rem;
+    padding: 1rem;
+  }
+
+  .rich-text .solution-advantages {
+    padding: 1rem 1.25rem;
+  }
+
+  .rich-text .step-by-step-guide {
+    padding: 1.25rem;
+  }
+
+  .rich-text .step-item {
+    flex-direction: column;
+  }
+
+  .rich-text .step-number {
+    margin-bottom: 0.75rem;
+  }
+}
+
+/* Success Story List Styling */
+.success-story-description ul {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
 }

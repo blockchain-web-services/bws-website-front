@@ -29,7 +29,9 @@
       "Bash(pip3:*)",
       "WebFetch(domain:github.com)",
       "WebFetch(domain:x.com)",
-      "Bash(gh secret:*)"
+      "Bash(gh secret:*)",
+      "Bash(node:*)",
+      "WebFetch(domain:docs.bws.ninja)"
     ],
     "deny": [],
     "ask": []
