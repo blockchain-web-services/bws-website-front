@@ -1,21 +1,28 @@
 import { test, expect } from '@playwright/test';
 
 test.describe('Articles Pages', () => {
+  // These articles are auto-generated based on the current articles in src/data/articles.ts
+  // Update this list when articles change
   const articles = [
     {
-      url: '/articles/discover-the-power-of-blockchain-bwss-data-management-solutions.html',
-      title: 'Discover the Power of Blockchain: BWS\'s Data Management Solutions',
-      contentSnippet: 'BWS.Blockchain.Save'
+      url: '/articles/blockchain-badges-2025-10-18.html',
+      title: 'Blockchain Badges',
+      contentSnippet: 'Web3-Native Digital Certifications'
     },
     {
-      url: '/articles/embrace-sustainability-with-esg-credits-bws-solution.html',
-      title: 'Embrace Sustainability with ESG.Credits BWS Solution',
-      contentSnippet: 'ESG.Credits'
+      url: '/articles/esg-credits-2025-10-18.html',
+      title: 'ESG Credits',
+      contentSnippet: 'Blockchain-Powered Green Bond'
     },
     {
-      url: '/articles/investment-impact-reporting-unlocking-a-sustainable-future.html',
-      title: 'Investment Impact Reporting: Unlocking a Sustainable Future',
-      contentSnippet: 'investment impact reporting'
+      url: '/articles/fan-game-cube-2025-10-18.html',
+      title: 'Fan Game Cube',
+      contentSnippet: 'Tokenized Sports Fields'
+    },
+    {
+      url: '/articles/x-bot-2025-10-18.html',
+      title: 'X Bot',
+      contentSnippet: 'Automate Community Tracking'
     }
   ];
 
