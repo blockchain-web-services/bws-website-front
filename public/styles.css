@@ -39040,14 +39040,12 @@ img[src*="blockchain-founders-group"] * {
 
 /* Static DARK text for ALL dynamic roadmap card titles */
 /* Dark text on white title boxes (titles have white backgrounds) */
+/* NOTE: .text-roadmap-title-2025-q1 excluded here because it uses rose color */
 .roadmap-past .text-roadmap-title,
-.roadmap-past .text-roadmap-title-2025-q1,
 .roadmap-past .text-roadmap-title-4th,
 .roadmap-current .text-roadmap-title,
-.roadmap-current .text-roadmap-title-2025-q1,
 .roadmap-current .text-roadmap-title-4th,
 .roadmap-future .text-roadmap-title,
-.roadmap-future .text-roadmap-title-2025-q1,
 .roadmap-future .text-roadmap-title-4th {
   color: #1a1b1e !important;
 }

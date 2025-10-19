@@ -105,6 +105,7 @@ const buttons = story.buttons || (story.button ? [story.button] : []);
       closeBtn.onmouseout = function() { this.style.color = '#f1f1f1'; };
 
       const lightboxImg = document.createElement('img');
+      lightboxImg.alt = 'Lightbox image'; // Will be updated with specific alt when image is clicked
       lightboxImg.style.cssText = `
         max-width: 90vw;
         max-height: 90vh;
