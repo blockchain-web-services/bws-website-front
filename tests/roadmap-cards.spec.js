@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 
 test.describe('Roadmap Card Text Visibility', () => {
   test('Gray card Q2 2025 title should be visible with dark text on white', async ({ page }) => {
-    await page.goto('http://localhost:4321/');
+    await page.goto('/');
 
     // Wait for page to load
     await page.waitForLoadState('networkidle');
@@ -28,7 +28,7 @@ test.describe('Roadmap Card Text Visibility', () => {
   });
 
   test('Q1 2025 rose card title should be visible with rose text on white', async ({ page }) => {
-    await page.goto('http://localhost:4321/');
+    await page.goto('/');
     await page.waitForLoadState('networkidle');
 
     const q1Title = page.locator('.container-head-roadmap-25-1st .text-roadmap-title-2025-q1').first();
@@ -50,7 +50,7 @@ test.describe('Roadmap Card Text Visibility', () => {
   });
 
   test('Q3 2025 dark card title should be visible with dark text on white', async ({ page }) => {
-    await page.goto('http://localhost:4321/');
+    await page.goto('/');
     await page.waitForLoadState('networkidle');
 
     const q3Title = page.locator('.container-head-roadmap .text-roadmap-title').first();
@@ -72,7 +72,7 @@ test.describe('Roadmap Card Text Visibility', () => {
   });
 
   test('Visual snapshot of entire roadmap section', async ({ page }) => {
-    await page.goto('http://localhost:4321/');
+    await page.goto('/');
     await page.waitForLoadState('networkidle');
 
     // Scroll to roadmap section

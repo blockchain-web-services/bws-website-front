@@ -1,7 +1,7 @@
 import { test } from '@playwright/test';
 
 test('debug announcement-box styles', async ({ page }) => {
-  await page.goto('http://localhost:5500/index.html');
+  await page.goto('/');
   await page.waitForLoadState('networkidle');
   await page.waitForTimeout(2000);
 

@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 
 test.describe('News Carousel with Swiper', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('http://localhost:41501/');
+    await page.goto('/');
   });
 
   test('carousel should be present and initialized', async ({ page }) => {

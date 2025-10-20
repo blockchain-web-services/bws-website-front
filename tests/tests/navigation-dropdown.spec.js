@@ -3,7 +3,7 @@ import { test, expect } from '@playwright/test';
 test.describe('Navigation Dropdown Menu', () => {
   test.beforeEach(async ({ page }) => {
     // Start from the home page
-    await page.goto('http://localhost:4321');
+    await page.goto('/');
 
     // Wait for page to be fully loaded
     await page.waitForLoadState('networkidle');
@@ -106,7 +106,7 @@ test.describe('Navigation Dropdown Menu', () => {
     });
 
     // Navigate and interact
-    await page.goto('http://localhost:4321');
+    await page.goto('/');
     await page.waitForLoadState('networkidle');
 
     // Try to trigger dropdowns

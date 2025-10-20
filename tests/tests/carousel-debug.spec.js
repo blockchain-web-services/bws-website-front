@@ -1,12 +1,12 @@
 import { test, expect } from '@playwright/test';
 
-test.describe('Carousel Debug at Port 5500', () => {
+test.describe('Carousel Debug', () => {
   test('check carousel cards size and buttons', async ({ page }) => {
     // Enable console logging
     page.on('console', msg => console.log('BROWSER:', msg.text()));
     page.on('pageerror', err => console.log('PAGE ERROR:', err.message));
 
-    await page.goto('http://localhost:5500/index.html');
+    await page.goto('/');
     await page.waitForLoadState('networkidle');
     await page.waitForTimeout(2000);
 
@@ -103,7 +103,7 @@ test.describe('Carousel Debug at Port 5500', () => {
   });
 
   test('check CSS files loaded', async ({ page }) => {
-    await page.goto('http://localhost:5500/index.html');
+    await page.goto('/');
     await page.waitForLoadState('networkidle');
 
     // Check if Swiper CSS is loaded
@@ -130,7 +130,7 @@ test.describe('Carousel Debug at Port 5500', () => {
   });
 
   test('check JavaScript files loaded', async ({ page }) => {
-    await page.goto('http://localhost:5500/index.html');
+    await page.goto('/');
     await page.waitForLoadState('networkidle');
 
     // Check if Swiper JS is loaded

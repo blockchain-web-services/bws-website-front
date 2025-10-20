@@ -67,7 +67,7 @@ test.describe('Find All Broken Images', () => {
       });
 
       // Navigate to page
-      await page.goto(`http://localhost:4321${pagePath}`, {
+      await page.goto(pagePath, {
         waitUntil: 'networkidle',
         timeout: 30000
       });
