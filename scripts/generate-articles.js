@@ -304,7 +304,14 @@ For EACH product category that has relevant tweets, create ONE comprehensive art
 6. **SEO Meta Description**: 150-160 characters
    - Example: "Learn how X Bot helps crypto projects automate community management, track KOL performance, and generate daily engagement reports across social platforms."
 
-7. **All Image Tweet IDs**: Array of tweet IDs that contain images (for downloading all relevant images)
+7. **Most Relevant Image Tweet ID**: ONLY ONE tweet ID containing the MOST relevant image
+   - **CRITICAL**: Select ONLY ONE image - the most representative of the product
+   - **PRIORITY ORDER**:
+     1. Product interface screenshots or feature demonstrations
+     2. Product logo or branding (if no interface available)
+     3. Partnership announcements (ONLY if no product images exist)
+   - Choose the image that best represents the product itself, not partnerships
+   - Return single tweet ID as a string (NOT an array)
 
 Output as JSON array:
 [
@@ -328,7 +335,7 @@ Output as JSON array:
     ],
     "successStorySummary": "Carousel description",
     "seoDescription": "Meta description",
-    "imageTweetIds": ["tweet_id"]
+    "imageTweetId": "single_tweet_id"
   }
 ]
 
@@ -450,6 +457,7 @@ function generateContentComponent(slug, articleData, images, publishDate, docsUr
     }
 
     // Add image if placement specified and images available
+    // Note: Maximum ONE image per article - imageIndex ensures only first placement gets image
     if (section.imagePlacement === 'image-after-section' && imageIndex < images.length) {
       sectionsHTML += `        <figure style="float: right; margin: 0 0 1rem 1rem; max-width: 400px;">\n`;
       sectionsHTML += `          <img\n`;
@@ -723,62 +731,68 @@ async function processArticles(articleDataList, tweets, includes) {
         .replace(/\{\{WEBSITE_URL\}\}/g, websiteUrl)
     }));
 
-    // Download images
+    // Download images - MAXIMUM ONE image per article
+    // Prioritize product screenshots over partnership images
     const images = [];
-    if (articleData.imageTweetIds && articleData.imageTweetIds.length > 0) {
-      for (const tweetId of articleData.imageTweetIds) {
-        const tweet = tweets.find(t => t.id === tweetId);
-        if (tweet) {
-          let imageUrl = null;
 
-          // Find image from tweet (check size requirements)
-          if (tweet.attachments?.media_keys && includes.media) {
+    // Handle both new single value format (imageTweetId) and legacy array format (imageTweetIds)
+    const tweetId = articleData.imageTweetId ||
+                    (articleData.imageTweetIds && Array.isArray(articleData.imageTweetIds)
+                      ? articleData.imageTweetIds[0]
+                      : null);
+
+    if (tweetId) {
+      const tweet = tweets.find(t => t.id === tweetId);
+      if (tweet) {
+        let imageUrl = null;
+
+        // Find image from tweet (check size requirements)
+        if (tweet.attachments?.media_keys && includes.media) {
+          const media = includes.media.find(
+            m => m.media_key === tweet.attachments.media_keys[0] && m.type === 'photo'
+          );
+          // Only use images that are at least 500px in either dimension
+          if (media?.url && (media.width >= 500 || media.height >= 500)) {
+            imageUrl = media.url;
+          } else if (media?.url) {
+            console.log(`   ⚠️  Skipping small image from tweet ${tweetId}: ${media.width}x${media.height}px`);
+          }
+        }
+
+        // Check referenced tweet for image (check size requirements)
+        if (!imageUrl && tweet.referenced_tweets && includes.tweets && includes.media) {
+          const quotedTweet = includes.tweets.find(
+            t => tweet.referenced_tweets.some(ref => ref.id === t.id)
+          );
+          if (quotedTweet?.attachments?.media_keys) {
             const media = includes.media.find(
-              m => m.media_key === tweet.attachments.media_keys[0] && m.type === 'photo'
+              m => m.media_key === quotedTweet.attachments.media_keys[0] && m.type === 'photo'
             );
             // Only use images that are at least 500px in either dimension
             if (media?.url && (media.width >= 500 || media.height >= 500)) {
               imageUrl = media.url;
             } else if (media?.url) {
-              console.log(`   ⚠️  Skipping small image from tweet ${tweetId}: ${media.width}x${media.height}px`);
+              console.log(`   ⚠️  Skipping small image from quoted tweet: ${media.width}x${media.height}px`);
             }
           }
+        }
 
-          // Check referenced tweet for image (check size requirements)
-          if (!imageUrl && tweet.referenced_tweets && includes.tweets && includes.media) {
-            const quotedTweet = includes.tweets.find(
-              t => tweet.referenced_tweets.some(ref => ref.id === t.id)
-            );
-            if (quotedTweet?.attachments?.media_keys) {
-              const media = includes.media.find(
-                m => m.media_key === quotedTweet.attachments.media_keys[0] && m.type === 'photo'
-              );
-              // Only use images that are at least 500px in either dimension
-              if (media?.url && (media.width >= 500 || media.height >= 500)) {
-                imageUrl = media.url;
-              } else if (media?.url) {
-                console.log(`   ⚠️  Skipping small image from quoted tweet: ${media.width}x${media.height}px`);
-              }
-            }
-          }
+        if (imageUrl) {
+          try {
+            const timestamp = Date.now();
+            const filename = `${config.slug}-${timestamp}.jpg`;
+            const filepath = path.join(ARTICLE_IMAGES_DIR, filename);
 
-          if (imageUrl) {
-            try {
-              const timestamp = Date.now();
-              const filename = `${config.slug}-${timestamp}.jpg`;
-              const filepath = path.join(ARTICLE_IMAGES_DIR, filename);
+            console.log(`   📥 Downloading single most relevant image from tweet ${tweetId}...`);
+            await downloadImage(imageUrl, filepath);
+            console.log(`   ✅ Image saved: ${filename}`);
 
-              console.log(`   📥 Downloading image from tweet ${tweetId}...`);
-              await downloadImage(imageUrl, filepath);
-              console.log(`   ✅ Image saved: ${filename}`);
-
-              images.push({
-                src: `/assets/images/articles/${filename}`,
-                alt: `${articleData.product} - ${articleData.articleTitle}`,
-              });
-            } catch (error) {
-              console.error(`   ⚠️  Failed to download image: ${error.message}`);
-            }
+            images.push({
+              src: `/assets/images/articles/${filename}`,
+              alt: `${articleData.product} - ${articleData.articleTitle}`,
+            });
+          } catch (error) {
+            console.error(`   ⚠️  Failed to download image: ${error.message}`);
           }
         }
       }
