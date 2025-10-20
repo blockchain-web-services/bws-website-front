@@ -22,8 +22,9 @@ const __dirname = path.dirname(__filename);
 // Configuration
 const DOCS_BASE_URL = 'https://docs.bws.ninja';
 const INDEX_FILE_PATH = path.join(__dirname, 'data', 'docs-index.json');
+const DOCS_IMAGES_DIR = path.join(__dirname, '..', 'public', 'assets', 'images', 'docs');
 const BATCH_SIZE = 10; // Process 10 pages at a time for Claude
-const MAX_CONTENT_LENGTH = 2000; // Max chars to send to Claude per page
+const MAX_CONTENT_LENGTH = 10000; // Increased from 2000 - more content for better AI analysis
 
 // Known documentation paths (comprehensive list from site navigation)
 const KNOWN_PATHS = [
@@ -111,6 +112,192 @@ function fetchPageContent(url) {
 }
 
 /**
+ * Extract images from HTML
+ */
+function extractImages(html, baseUrl) {
+  const images = [];
+
+  // Extract <img> tags with src attribute
+  const imgRegex = /<img[^>]+src=["']([^"']+)["'][^>]*>/gi;
+  let match;
+
+  while ((match = imgRegex.exec(html)) !== null) {
+    const fullMatch = match[0];
+    const imgUrl = match[1];
+
+    // Extract alt text if present
+    const altMatch = fullMatch.match(/alt=["']([^"']*)["']/i);
+    const alt = altMatch ? altMatch[1] : '';
+
+    // Skip if it's a logo/icon (common in headers/footers)
+    if (imgUrl.includes('logo') || imgUrl.includes('icon') || alt.toLowerCase().includes('logo')) {
+      continue;
+    }
+
+    // Make URL absolute if needed
+    let absoluteUrl = imgUrl;
+    if (imgUrl.startsWith('/')) {
+      const urlObj = new URL(baseUrl);
+      absoluteUrl = `${urlObj.protocol}//${urlObj.host}${imgUrl}`;
+    } else if (!imgUrl.startsWith('http')) {
+      absoluteUrl = new URL(imgUrl, baseUrl).href;
+    }
+
+    images.push({
+      url: absoluteUrl,
+      alt: alt || 'Product screenshot',
+      type: 'img-tag'
+    });
+  }
+
+  return images;
+}
+
+/**
+ * Download image from URL
+ */
+async function downloadImage(url, filepath) {
+  return new Promise((resolve, reject) => {
+    const file = fs.createWriteStream(filepath);
+
+    https.get(url, (response) => {
+      // Handle redirects
+      if (response.statusCode === 301 || response.statusCode === 302) {
+        const redirectUrl = response.headers.location;
+        https.get(redirectUrl, (redirectResponse) => {
+          if (redirectResponse.statusCode !== 200) {
+            reject(new Error(`Failed after redirect: ${redirectResponse.statusCode}`));
+            return;
+          }
+
+          redirectResponse.pipe(file);
+
+          file.on('finish', () => {
+            file.close();
+            resolve();
+          });
+
+          file.on('error', (err) => {
+            fs.unlink(filepath, () => {});
+            reject(err);
+          });
+        }).on('error', reject);
+        return;
+      }
+
+      if (response.statusCode !== 200) {
+        reject(new Error(`HTTP ${response.statusCode}: ${url}`));
+        return;
+      }
+
+      response.pipe(file);
+
+      file.on('finish', () => {
+        file.close();
+        resolve();
+      });
+
+      file.on('error', (err) => {
+        fs.unlink(filepath, () => {});
+        reject(err);
+      });
+    }).on('error', (error) => {
+      reject(error);
+    });
+  });
+}
+
+/**
+ * Download images for a product
+ */
+async function downloadProductImages(images, productSlug) {
+  if (!images || images.length === 0) {
+    return [];
+  }
+
+  // Create product-specific directory
+  const productDir = path.join(DOCS_IMAGES_DIR, productSlug);
+  if (!fs.existsSync(productDir)) {
+    fs.mkdirSync(productDir, { recursive: true });
+  }
+
+  const downloadedImages = [];
+
+  for (let i = 0; i < images.length; i++) {
+    const image = images[i];
+
+    try {
+      // Determine file extension from URL
+      const urlPath = new URL(image.url).pathname;
+      const ext = path.extname(urlPath) || '.png';
+      const filename = `${productSlug}-${i}${ext}`;
+      const filepath = path.join(productDir, filename);
+
+      console.log(`      Downloading image ${i + 1}/${images.length}: ${filename}`);
+      await downloadImage(image.url, filepath);
+
+      downloadedImages.push({
+        originalUrl: image.url,
+        localPath: `/assets/images/docs/${productSlug}/${filename}`,
+        alt: image.alt,
+        type: image.type
+      });
+
+      // Small delay to avoid overwhelming the server
+      await new Promise(resolve => setTimeout(resolve, 300));
+
+    } catch (error) {
+      console.error(`      ⚠️  Failed to download image: ${error.message}`);
+      // Continue with next image
+    }
+  }
+
+  console.log(`      ✅ Downloaded ${downloadedImages.length}/${images.length} images`);
+  return downloadedImages;
+}
+
+/**
+ * Extract structured content (headings, paragraphs, lists)
+ */
+function extractStructuredContent(html) {
+  const structure = {
+    headings: [],
+    paragraphs: [],
+    lists: []
+  };
+
+  // Extract headings (h1, h2, h3)
+  const headingRegex = /<h[123][^>]*>([^<]+)<\/h[123]>/gi;
+  let match;
+  while ((match = headingRegex.exec(html)) !== null) {
+    const heading = match[1].trim();
+    if (heading && !heading.includes('BWS') && heading.length > 2) {
+      structure.headings.push(heading);
+    }
+  }
+
+  // Extract paragraphs
+  const pRegex = /<p[^>]*>([^<]+)<\/p>/gi;
+  while ((match = pRegex.exec(html)) !== null) {
+    const paragraph = match[1].trim();
+    if (paragraph && paragraph.length > 20) {
+      structure.paragraphs.push(paragraph);
+    }
+  }
+
+  // Extract list items
+  const liRegex = /<li[^>]*>([^<]+)<\/li>/gi;
+  while ((match = liRegex.exec(html)) !== null) {
+    const listItem = match[1].trim();
+    if (listItem && listItem.length > 5) {
+      structure.lists.push(listItem);
+    }
+  }
+
+  return structure;
+}
+
+/**
  * Extract text content and title from HTML
  */
 function extractPageData(html, url) {
@@ -147,15 +334,17 @@ function extractPageData(html, url) {
     .replace(/\s+/g, ' ')
     .trim();
 
-  // Truncate to max length
-  if (text.length > MAX_CONTENT_LENGTH) {
-    text = text.substring(0, MAX_CONTENT_LENGTH) + '...';
-  }
+  // Store both full and truncated content
+  const fullContent = text;
+  const truncatedContent = text.length > MAX_CONTENT_LENGTH
+    ? text.substring(0, MAX_CONTENT_LENGTH) + '...'
+    : text;
 
   return {
     title,
-    content: text,
-    contentLength: text.length,
+    content: truncatedContent, // For Claude prompt (length-limited)
+    fullContent: fullContent,  // Complete content (no truncation)
+    contentLength: fullContent.length,
     url
   };
 }
@@ -178,12 +367,22 @@ async function fetchAllPages() {
       const html = await fetchPageContent(fullUrl);
       const pageData = extractPageData(html, fullUrl);
 
+      // Extract images from the page
+      const images = extractImages(html, fullUrl);
+      console.log(`     Found ${images.length} images`);
+
+      // Extract structured content
+      const structuredContent = extractStructuredContent(html);
+
       pages.push({
         url: fullUrl,
         path: urlPath,
         title: pageData.title,
         content: pageData.content,
-        contentLength: pageData.contentLength
+        fullContent: pageData.fullContent,
+        contentLength: pageData.contentLength,
+        rawImages: images, // Store for later download
+        structuredContent: structuredContent
       });
 
       successCount++;
@@ -225,6 +424,8 @@ async function generatePageSummaries(pages) {
     console.log(`   Processing batch ${Math.floor(i / BATCH_SIZE) + 1}/${Math.ceil(pages.length / BATCH_SIZE)} (${batch.length} pages)...`);
 
     const prompt = `You are analyzing documentation pages from docs.bws.ninja (Blockchain Web Services API documentation).
+
+NOTE: You now have access to FULL page content (up to 10,000 characters per page, increased from previous 2,000 limit). Use this comprehensive information to provide detailed, accurate analysis.
 
 For each page below, generate:
 
@@ -335,6 +536,9 @@ Output ONLY a JSON array with exactly ${batch.length} objects, one for each page
             useCases: summaries[idx].useCases || [],
             implementationSteps: summaries[idx].implementationSteps || [],
             contentLength: page.contentLength,
+            fullContent: page.fullContent,
+            structuredContent: page.structuredContent,
+            rawImages: page.rawImages, // Will download later
             lastIndexed: new Date().toISOString()
           });
         }
@@ -359,6 +563,9 @@ Output ONLY a JSON array with exactly ${batch.length} objects, one for each page
           useCases: [],
           implementationSteps: [],
           contentLength: page.contentLength,
+          fullContent: page.fullContent,
+          structuredContent: page.structuredContent,
+          rawImages: page.rawImages,
           lastIndexed: new Date().toISOString()
         });
       });
@@ -425,6 +632,69 @@ function saveIndex(pages, productMapping) {
 }
 
 /**
+ * Download images organized by product
+ */
+async function downloadImagesByProduct(pages) {
+  console.log('\n📥 Downloading images organized by product...');
+
+  // Create base docs images directory
+  if (!fs.existsSync(DOCS_IMAGES_DIR)) {
+    fs.mkdirSync(DOCS_IMAGES_DIR, { recursive: true });
+  }
+
+  // Group pages by product
+  const pagesByProduct = {};
+  pages.forEach(page => {
+    if (page.product && page.product !== 'General Documentation') {
+      if (!pagesByProduct[page.product]) {
+        pagesByProduct[page.product] = [];
+      }
+      pagesByProduct[page.product].push(page);
+    }
+  });
+
+  // Download images for each product
+  for (const [product, productPages] of Object.entries(pagesByProduct)) {
+    console.log(`\n   Processing ${product}...`);
+
+    // Collect all images for this product
+    const allImages = [];
+    productPages.forEach(page => {
+      if (page.rawImages && page.rawImages.length > 0) {
+        allImages.push(...page.rawImages);
+      }
+    });
+
+    if (allImages.length === 0) {
+      console.log(`     No images found for ${product}`);
+      continue;
+    }
+
+    // Create product slug for directory name
+    const productSlug = product.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
+
+    // Download images
+    const downloadedImages = await downloadProductImages(allImages, productSlug);
+
+    // Update pages with downloaded image paths
+    productPages.forEach(page => {
+      page.images = downloadedImages;
+      delete page.rawImages; // Remove temporary field
+    });
+  }
+
+  // Clean up rawImages from all pages
+  pages.forEach(page => {
+    if (page.rawImages) {
+      page.images = []; // No images for general docs
+      delete page.rawImages;
+    }
+  });
+
+  console.log(`\n✅ Image download completed`);
+}
+
+/**
  * Main function
  */
 async function main() {
@@ -442,10 +712,13 @@ async function main() {
     // Step 2: Generate summaries with Claude
     const summarizedPages = await generatePageSummaries(pages);
 
-    // Step 3: Build product mapping
+    // Step 3: Download images organized by product
+    await downloadImagesByProduct(summarizedPages);
+
+    // Step 4: Build product mapping
     const productMapping = buildProductMapping(summarizedPages);
 
-    // Step 4: Save to file
+    // Step 5: Save to file
     saveIndex(summarizedPages, productMapping);
 
     console.log('\n✨ Documentation indexing completed successfully!');
