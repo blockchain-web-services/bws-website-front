@@ -3,7 +3,7 @@ name: Update Visual Snapshots
 on:
   push:
     branches:
-      - main
+      - master
     paths:
       - 'src/**'
       - 'public/**'
@@ -101,7 +101,7 @@ jobs:
         with:
           script: |
             const commitSha = context.sha;
-            const message = `✨ Visual snapshots have been updated for this commit.\n\nView the updated snapshots in [docs/VISUALS.md](https://github.com/${{ github.repository }}/blob/main/docs/VISUALS.md)`;
+            const message = `✨ Visual snapshots have been updated for this commit.\n\nView the updated snapshots in [docs/VISUALS.md](https://github.com/${{ github.repository }}/blob/master/docs/VISUALS.md)`;
 
             github.rest.repos.createCommitComment({
               owner: context.repo.owner,
@@ -120,4 +120,4 @@ jobs:
           echo "- **Commit**: ${{ github.sha }}" >> $GITHUB_STEP_SUMMARY
           echo "- **Changes Detected**: ${{ steps.check_changes.outputs.has_changes }}" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
-          echo "View snapshots: [docs/VISUALS.md](https://github.com/${{ github.repository }}/blob/main/docs/VISUALS.md)" >> $GITHUB_STEP_SUMMARY
+          echo "View snapshots: [docs/VISUALS.md](https://github.com/${{ github.repository }}/blob/master/docs/VISUALS.md)" >> $GITHUB_STEP_SUMMARY
