@@ -49,13 +49,19 @@ jobs:
       - name: Build site
         run: npm run build
 
+      - name: Start preview server
+        run: |
+          cd tests
+          npm run preview:sirv &
+          sleep 5
+
       - name: Run snapshot tests
         run: |
           cd tests
           npx playwright test visual/snapshots.spec.js --config=playwright.config.cjs
         env:
           CI: true
-          NO_WEBSERVER: false
+          NO_WEBSERVER: true
 
       - name: Check for changes
         id: check_changes
