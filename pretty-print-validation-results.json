@@ -2,240 +2,208 @@
   "html": [
     {
       "file": "_site/about.html",
-      "originalSize": 53612,
-      "newSize": 87441,
+      "originalSize": 53652,
+      "newSize": 87481,
       "sizeDiff": 33829,
       "prettyPrinted": true,
       "errors": []
     },
     {
-      "file": "_site/articles/blockchain-badges-2025-10-17.html",
-      "originalSize": 68248,
-      "newSize": 107093,
-      "sizeDiff": 38845,
+      "file": "_site/articles/blockchain-badges-2025-10-20.html",
+      "originalSize": 70869,
+      "newSize": 109900,
+      "sizeDiff": 39031,
       "prettyPrinted": true,
       "errors": []
     },
     {
-      "file": "_site/articles/blockchain-badges-2025-10-18.html",
-      "originalSize": 70942,
-      "newSize": 109831,
-      "sizeDiff": 38889,
+      "file": "_site/articles/esg-credits-2025-10-20.html",
+      "originalSize": 70898,
+      "newSize": 109943,
+      "sizeDiff": 39045,
       "prettyPrinted": true,
       "errors": []
     },
     {
-      "file": "_site/articles/esg-credits-2025-10-17.html",
-      "originalSize": 69508,
-      "newSize": 108793,
-      "sizeDiff": 39285,
+      "file": "_site/articles/fan-game-cube-2025-10-20.html",
+      "originalSize": 70643,
+      "newSize": 109686,
+      "sizeDiff": 39043,
       "prettyPrinted": true,
       "errors": []
     },
     {
-      "file": "_site/articles/esg-credits-2025-10-18.html",
-      "originalSize": 71852,
-      "newSize": 111079,
-      "sizeDiff": 39227,
-      "prettyPrinted": true,
-      "errors": []
-    },
-    {
-      "file": "_site/articles/fan-game-cube-2025-10-17.html",
-      "originalSize": 67857,
-      "newSize": 106636,
-      "sizeDiff": 38779,
-      "prettyPrinted": true,
-      "errors": []
-    },
-    {
-      "file": "_site/articles/fan-game-cube-2025-10-18.html",
-      "originalSize": 70865,
-      "newSize": 109754,
-      "sizeDiff": 38889,
-      "prettyPrinted": true,
-      "errors": []
-    },
-    {
-      "file": "_site/articles/x-bot-2025-10-17.html",
-      "originalSize": 69244,
-      "newSize": 108361,
-      "sizeDiff": 39117,
-      "prettyPrinted": true,
-      "errors": []
-    },
-    {
-      "file": "_site/articles/x-bot-2025-10-18.html",
-      "originalSize": 71748,
-      "newSize": 110913,
-      "sizeDiff": 39165,
+      "file": "_site/articles/x-bot-2025-10-20.html",
+      "originalSize": 71636,
+      "newSize": 110937,
+      "sizeDiff": 39301,
       "prettyPrinted": true,
       "errors": []
     },
     {
       "file": "_site/contact-us.html",
-      "originalSize": 63631,
-      "newSize": 101491,
+      "originalSize": 63671,
+      "newSize": 101531,
       "sizeDiff": 37860,
       "prettyPrinted": true,
       "errors": []
     },
     {
       "file": "_site/index.html",
-      "originalSize": 124108,
-      "newSize": 185368,
+      "originalSize": 124148,
+      "newSize": 185408,
       "sizeDiff": 61260,
       "prettyPrinted": true,
       "errors": []
     },
     {
       "file": "_site/industries.html",
-      "originalSize": 53522,
-      "newSize": 87303,
+      "originalSize": 53562,
+      "newSize": 87343,
       "sizeDiff": 33781,
       "prettyPrinted": true,
       "errors": []
     },
     {
       "file": "_site/industry-content/content-creation.html",
-      "originalSize": 67176,
-      "newSize": 105578,
+      "originalSize": 67216,
+      "newSize": 105618,
       "sizeDiff": 38402,
       "prettyPrinted": true,
       "errors": []
     },
     {
       "file": "_site/industry-content/esg.html",
-      "originalSize": 66974,
-      "newSize": 105450,
+      "originalSize": 67014,
+      "newSize": 105490,
       "sizeDiff": 38476,
       "prettyPrinted": true,
       "errors": []
     },
     {
       "file": "_site/industry-content/financial-services.html",
-      "originalSize": 67217,
-      "newSize": 105611,
+      "originalSize": 67257,
+      "newSize": 105651,
       "sizeDiff": 38394,
       "prettyPrinted": true,
       "errors": []
     },
     {
       "file": "_site/industry-content/legal.html",
-      "originalSize": 67376,
-      "newSize": 105866,
+      "originalSize": 67416,
+      "newSize": 105906,
       "sizeDiff": 38490,
       "prettyPrinted": true,
       "errors": []
     },
     {
       "file": "_site/industry-content/retail.html",
-      "originalSize": 67030,
-      "newSize": 105486,
+      "originalSize": 67070,
+      "newSize": 105526,
       "sizeDiff": 38456,
       "prettyPrinted": true,
       "errors": []
     },
     {
       "file": "_site/industry-content/supply-chain.html",
-      "originalSize": 67624,
-      "newSize": 106098,
+      "originalSize": 67664,
+      "newSize": 106138,
       "sizeDiff": 38474,
       "prettyPrinted": true,
       "errors": []
     },
     {
       "file": "_site/legal-notice.html",
-      "originalSize": 67329,
-      "newSize": 106421,
+      "originalSize": 67369,
+      "newSize": 106461,
       "sizeDiff": 39092,
       "prettyPrinted": true,
       "errors": []
     },
     {
       "file": "_site/marketplace/blockchain-badges.html",
-      "originalSize": 68897,
-      "newSize": 109129,
+      "originalSize": 68937,
+      "newSize": 109169,
       "sizeDiff": 40232,
       "prettyPrinted": true,
       "errors": []
     },
     {
       "file": "_site/marketplace/database-immutable.html",
-      "originalSize": 67947,
-      "newSize": 107501,
+      "originalSize": 67987,
+      "newSize": 107541,
       "sizeDiff": 39554,
       "prettyPrinted": true,
       "errors": []
     },
     {
       "file": "_site/marketplace/database-mutable.html",
-      "originalSize": 67020,
-      "newSize": 106880,
+      "originalSize": 67060,
+      "newSize": 106920,
       "sizeDiff": 39860,
       "prettyPrinted": true,
       "errors": []
     },
     {
       "file": "_site/marketplace/esg-credits.html",
-      "originalSize": 68233,
-      "newSize": 108501,
+      "originalSize": 68273,
+      "newSize": 108541,
       "sizeDiff": 40268,
       "prettyPrinted": true,
       "errors": []
     },
     {
       "file": "_site/marketplace/ipfs-upload.html",
-      "originalSize": 66571,
-      "newSize": 106159,
+      "originalSize": 66611,
+      "newSize": 106199,
       "sizeDiff": 39588,
       "prettyPrinted": true,
       "errors": []
     },
     {
       "file": "_site/marketplace/nft-gamecube.html",
-      "originalSize": 67310,
-      "newSize": 107100,
+      "originalSize": 67350,
+      "newSize": 107140,
       "sizeDiff": 39790,
       "prettyPrinted": true,
       "errors": []
     },
     {
       "file": "_site/marketplace/nft-zeroknwoledge.html",
-      "originalSize": 67691,
-      "newSize": 107665,
+      "originalSize": 67731,
+      "newSize": 107705,
       "sizeDiff": 39974,
       "prettyPrinted": true,
       "errors": []
     },
     {
       "file": "_site/marketplace/telegram-xbot.html",
-      "originalSize": 66641,
-      "newSize": 106121,
+      "originalSize": 66681,
+      "newSize": 106161,
       "sizeDiff": 39480,
       "prettyPrinted": true,
       "errors": []
     },
     {
       "file": "_site/privacy-policy.html",
-      "originalSize": 69068,
-      "newSize": 108251,
+      "originalSize": 69108,
+      "newSize": 108291,
       "sizeDiff": 39183,
       "prettyPrinted": true,
       "errors": []
     },
     {
       "file": "_site/resources.html",
-      "originalSize": 53552,
-      "newSize": 87333,
+      "originalSize": 53592,
+      "newSize": 87373,
       "sizeDiff": 33781,
       "prettyPrinted": true,
       "errors": []
     },
     {
       "file": "_site/white-paper.html",
-      "originalSize": 102982,
-      "newSize": 149978,
+      "originalSize": 103022,
+      "newSize": 150018,
       "sizeDiff": 46996,
       "prettyPrinted": true,
       "errors": []
@@ -282,9 +250,9 @@
     }
   ],
   "summary": {
-    "totalHtml": 30,
+    "totalHtml": 26,
     "totalCss": 4,
-    "htmlPrettyPrinted": 30,
+    "htmlPrettyPrinted": 26,
     "cssPrettyPrinted": 3,
     "htmlErrors": 0,
     "cssErrors": 1
