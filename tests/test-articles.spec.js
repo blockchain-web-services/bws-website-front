@@ -7,22 +7,22 @@ test.describe('Articles Pages', () => {
     {
       url: '/articles/blockchain-badges-2025-10-18.html',
       title: 'Blockchain Badges',
-      contentSnippet: 'Web3-Native Digital Certifications'
+      contentSnippet: 'blockchain verification'
     },
     {
       url: '/articles/esg-credits-2025-10-18.html',
       title: 'ESG Credits',
-      contentSnippet: 'Blockchain-Powered Green Bond'
+      contentSnippet: 'sustainability projects'
     },
     {
       url: '/articles/fan-game-cube-2025-10-18.html',
       title: 'Fan Game Cube',
-      contentSnippet: 'Tokenized Sports Fields'
+      contentSnippet: 'tokenizes sports fields'
     },
     {
       url: '/articles/x-bot-2025-10-18.html',
       title: 'X Bot',
-      contentSnippet: 'Automate Community Tracking'
+      contentSnippet: 'community engagement'
     }
   ];
 
