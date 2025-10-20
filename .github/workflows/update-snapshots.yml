@@ -58,7 +58,7 @@ jobs:
       - name: Run snapshot tests
         run: |
           cd tests
-          npx playwright test visual/snapshots.spec.js --config=playwright.config.cjs
+          npx playwright test visual/snapshots.spec.js --config=playwright.config.cjs --workers=1
         env:
           CI: true
           NO_WEBSERVER: true
