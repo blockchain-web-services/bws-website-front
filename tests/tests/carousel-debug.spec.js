@@ -47,9 +47,9 @@ test.describe('Carousel Debug', () => {
     const exceedsMaxWidth = cardSizes.some(card => card.width > 440);
     console.log('Any card exceeds 440px?', exceedsMaxWidth);
 
-    // Check navigation buttons
-    const nextButton = await page.locator('.swiper-button-next');
-    const prevButton = await page.locator('.swiper-button-prev');
+    // Check navigation buttons (use .first() to avoid strict mode violation when multiple carousels exist)
+    const nextButton = page.locator('.swiper-button-next').first();
+    const prevButton = page.locator('.swiper-button-prev').first();
 
     const nextVisible = await nextButton.isVisible();
     const prevVisible = await prevButton.isVisible();

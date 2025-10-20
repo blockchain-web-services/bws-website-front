@@ -42,8 +42,9 @@ test.describe('News Carousel with Swiper', () => {
     await page.waitForLoadState('networkidle');
     await page.waitForTimeout(1000);
 
-    const nextButton = await page.locator('.swiper-button-next');
-    const prevButton = await page.locator('.swiper-button-prev');
+    // Use .first() to avoid strict mode violation when multiple carousels exist
+    const nextButton = page.locator('.swiper-button-next').first();
+    const prevButton = page.locator('.swiper-button-prev').first();
 
     await expect(nextButton).toBeVisible();
     await expect(prevButton).toBeVisible();
@@ -56,8 +57,8 @@ test.describe('News Carousel with Swiper', () => {
     // Get first slide content before clicking
     const firstSlideContent = await page.locator('.swiper-slide').first().textContent();
 
-    // Click next button
-    await page.locator('.swiper-button-next').click();
+    // Click next button (use .first() to avoid strict mode violation)
+    await page.locator('.swiper-button-next').first().click();
     await page.waitForTimeout(500);
 
     // Get first slide content after clicking

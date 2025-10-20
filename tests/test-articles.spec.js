@@ -17,7 +17,7 @@ test.describe('Articles Pages', () => {
     {
       url: '/articles/fan-game-cube-2025-10-18.html',
       title: 'Fan Game Cube',
-      contentSnippet: 'tokenizes sports fields'
+      contentSnippet: 'tokenize their playing fields'
     },
     {
       url: '/articles/x-bot-2025-10-18.html',
