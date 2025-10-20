@@ -262,22 +262,22 @@
     },
     {
       "file": "_site/styles.css",
-      "originalSize": 742572,
-      "newSize": 703325,
-      "sizeDiff": -39247,
+      "originalSize": 742607,
+      "newSize": 703352,
+      "sizeDiff": -39255,
       "prettyPrinted": true,
       "skippedMinified": false,
       "errors": []
     },
     {
       "file": "_site/styles.min.css",
-      "originalSize": 263225,
-      "newSize": 263225,
+      "originalSize": 258808,
+      "newSize": 258808,
       "sizeDiff": 0,
       "prettyPrinted": false,
       "skippedMinified": true,
       "errors": [
-        "Mismatched braces: 3074 opening, 3075 closing"
+        "Mismatched braces: 3035 opening, 3036 closing"
       ]
     }
   ],

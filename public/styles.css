@@ -12645,7 +12645,7 @@ figcaption {
   color: var(--neutral-100);
   width: auto;
   min-width: 0;
-  max-width: 500px;
+  max-width: 600px;
   padding-top: 20px;
   padding-right: 5px;
   font-size: 34px;
@@ -13421,7 +13421,8 @@ figcaption {
 }
 
 .container-head-roadmap {
-  /* background-color: var(--neutral-800); */ /* DISABLED: Now handled by dynamic JS */
+  /* background-color: var(--neutral-800); */
+  /* DISABLED: Now handled by dynamic JS */
   border-radius: 13px;
   align-self: stretch;
   min-width: 100%;
@@ -13482,7 +13483,8 @@ figcaption {
 }
 
 .container-head-roadmap-3rd {
-  /* background-color: var(--neutral-800); */ /* DISABLED: Now handled by dynamic JS */
+  /* background-color: var(--neutral-800); */
+  /* DISABLED: Now handled by dynamic JS */
   border-radius: 13px;
   align-self: stretch;
   min-width: 100%;
@@ -13493,7 +13495,8 @@ figcaption {
 }
 
 .container-head-roadmap-4th {
-  /* background-color: var(--neutral-800); */ /* DISABLED: Now handled by dynamic JS */
+  /* background-color: var(--neutral-800); */
+  /* DISABLED: Now handled by dynamic JS */
   border-radius: 13px;
   align-self: stretch;
   min-width: 100%;
@@ -13595,7 +13598,8 @@ figcaption {
 }
 
 .container-head-roadmap-25-1st {
-  /* background-color: var(--rose); */ /* DISABLED: Now handled by dynamic JS */
+  /* background-color: var(--rose); */
+  /* DISABLED: Now handled by dynamic JS */
   color: var(--neutral-100);
   /* White text for WCAG contrast */
   border-radius: 13px;
@@ -13608,7 +13612,8 @@ figcaption {
 }
 
 .container-head-roadmap-25-2nd {
-  /* background-color: var(--neutral-500); */ /* DISABLED: Now handled by dynamic JS */
+  /* background-color: var(--neutral-500); */
+  /* DISABLED: Now handled by dynamic JS */
   color: var(--neutral-100);
   /* White text for WCAG contrast */
   border-radius: 13px;
@@ -30288,7 +30293,7 @@ figcaption {
   color: var(--neutral-100);
   width: auto;
   min-width: 0;
-  max-width: 500px;
+  max-width: 600px;
   padding-top: 20px;
   padding-right: 5px;
   font-size: 34px;
@@ -31076,7 +31081,8 @@ figcaption {
 }
 
 .container-head-roadmap {
-  /* background-color: var(--neutral-800); */ /* DISABLED: Now handled by dynamic JS */
+  /* background-color: var(--neutral-800); */
+  /* DISABLED: Now handled by dynamic JS */
   border-radius: 13px;
   align-self: stretch;
   min-width: 100%;
@@ -31137,7 +31143,8 @@ figcaption {
 }
 
 .container-head-roadmap-3rd {
-  /* background-color: var(--neutral-800); */ /* DISABLED: Now handled by dynamic JS */
+  /* background-color: var(--neutral-800); */
+  /* DISABLED: Now handled by dynamic JS */
   border-radius: 13px;
   align-self: stretch;
   min-width: 100%;
@@ -31148,7 +31155,8 @@ figcaption {
 }
 
 .container-head-roadmap-4th {
-  /* background-color: var(--neutral-800); */ /* DISABLED: Now handled by dynamic JS */
+  /* background-color: var(--neutral-800); */
+  /* DISABLED: Now handled by dynamic JS */
   border-radius: 13px;
   align-self: stretch;
   min-width: 100%;
@@ -31250,7 +31258,8 @@ figcaption {
 }
 
 .container-head-roadmap-25-1st {
-  /* background-color: var(--rose); */ /* DISABLED: Now handled by dynamic JS */
+  /* background-color: var(--rose); */
+  /* DISABLED: Now handled by dynamic JS */
   color: var(--neutral-100);
   /* White text for WCAG contrast */
   border-radius: 13px;
@@ -31263,7 +31272,8 @@ figcaption {
 }
 
 .container-head-roadmap-25-2nd {
-  /* background-color: var(--neutral-500); */ /* DISABLED: Now handled by dynamic JS */
+  /* background-color: var(--neutral-500); */
+  /* DISABLED: Now handled by dynamic JS */
   color: var(--neutral-100);
   /* White text for WCAG contrast */
   border-radius: 13px;
@@ -38099,7 +38109,7 @@ body [style*="background:#d91a4d"] * {
 /* Using ULTRA-HIGH specificity to override wildcard selector */
 /* #1a1b1e on #ffffff = 14.74:1 (WCAG AAA compliant) */
 .w-layout-blockcontainer.container-head-roadmap-25-2nd .text-roadmap-title-4th,
-.container-head-roadmap-25-2nd > .text-roadmap-title-4th,
+.container-head-roadmap-25-2nd>.text-roadmap-title-4th,
 div.container-head-roadmap-25-2nd .text-roadmap-title-4th,
 .container-head-roadmap-25-2nd .text-roadmap-title-4th {
   color: #1a1b1e !important;
@@ -38703,6 +38713,7 @@ img[src*="blockchain-founders-group"] * {
   visibility: visible !important;
   opacity: 1 !important;
 }
+
 /* Carousel margin override */
 .splide__list {
   margin: 10px !important;
@@ -38872,16 +38883,19 @@ img[src*="blockchain-founders-group"] * {
 
 /* Vertical video adjustments (height > width, like TikTok 9:16) */
 .flex-ngc-announcement.vertical-video {
-  gap: 30px; /* Slightly tighter gap for vertical videos */
+  gap: 30px;
+  /* Slightly tighter gap for vertical videos */
 }
 
 .flex-ngc-announcement.vertical-video .flex-block-13 {
-  flex: 0 0 60%; /* Text column takes 60% */
+  flex: 0 0 60%;
+  /* Text column takes 60% */
   max-width: 60%;
 }
 
 .flex-ngc-announcement.vertical-video .flex-block-14 {
-  flex: 0 0 35%; /* Video column takes 35% (narrower for vertical video) */
+  flex: 0 0 35%;
+  /* Video column takes 35% (narrower for vertical video) */
   max-width: 35%;
   display: flex;
   flex-direction: column;
@@ -38911,6 +38925,7 @@ img[src*="blockchain-founders-group"] * {
 
 /* Responsive: stack columns on tablet and mobile */
 @media (max-width: 991px) {
+
   .flex-ngc-announcement.single-column,
   .flex-ngc-announcement.two-column {
     flex-direction: column !important;
@@ -38978,8 +38993,8 @@ img[src*="blockchain-founders-group"] * {
 }
 
 /* Maintain spacing between paragraph blocks */
-.container-roadmap-content .w-richtext .paragraph-10 + h4.roadmap-description-title,
-.container-roadmap-content .w-richtext .paragraph-11 + h4.roadmap-description-title {
+.container-roadmap-content .w-richtext .paragraph-10+h4.roadmap-description-title,
+.container-roadmap-content .w-richtext .paragraph-11+h4.roadmap-description-title {
   margin-top: 16px !important;
   /* Reduced from 20px to 16px for tighter spacing between sections */
 }
