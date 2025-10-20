@@ -26,8 +26,8 @@ const DOCS_IMAGES_DIR = path.join(__dirname, '..', 'public', 'assets', 'images',
 const BATCH_SIZE = 10; // Process 10 pages at a time for Claude
 const MAX_CONTENT_LENGTH = 10000; // Increased from 2000 - more content for better AI analysis
 
-// Known documentation paths (comprehensive list from site navigation)
-const KNOWN_PATHS = [
+// Fallback paths (used if discovered-paths.json doesn't exist)
+const FALLBACK_PATHS = [
   // Main pages
   '/',
   '/quick-start',
@@ -87,6 +87,32 @@ const KNOWN_PATHS = [
 ];
 
 /**
+ * Load documentation paths from discovered-paths.json or use fallback
+ */
+function loadDocumentationPaths() {
+  const discoveredFile = path.join(__dirname, 'data', 'discovered-paths.json');
+
+  if (fs.existsSync(discoveredFile)) {
+    try {
+      const data = JSON.parse(fs.readFileSync(discoveredFile, 'utf8'));
+      console.log(`📋 Loaded ${data.paths.length} paths from auto-discovery (${data.discoveredAt})`);
+      return data.paths;
+    } catch (error) {
+      console.warn(`⚠️  Error loading discovered paths: ${error.message}`);
+      console.log(`   Using fallback paths instead (${FALLBACK_PATHS.length} pages)`);
+      return FALLBACK_PATHS;
+    }
+  } else {
+    console.log(`📋 No discovered-paths.json found, using fallback (${FALLBACK_PATHS.length} pages)`);
+    console.log(`   💡 Run 'node scripts/discover-docs-pages.js' to auto-discover all pages`);
+    return FALLBACK_PATHS;
+  }
+}
+
+// Load paths at startup
+const KNOWN_PATHS = loadDocumentationPaths();
+
+/**
  * Fetch page content from URL
  */
 function fetchPageContent(url) {
@@ -123,7 +149,14 @@ function extractImages(html, baseUrl) {
 
   while ((match = imgRegex.exec(html)) !== null) {
     const fullMatch = match[0];
-    const imgUrl = match[1];
+    let imgUrl = match[1];
+
+    // Decode HTML entities in URL
+    imgUrl = imgUrl.replace(/&amp;/g, '&')
+                   .replace(/&lt;/g, '<')
+                   .replace(/&gt;/g, '>')
+                   .replace(/&quot;/g, '"')
+                   .replace(/&#39;/g, "'");
 
     // Extract alt text if present
     const altMatch = fullMatch.match(/alt=["']([^"']*)["']/i);

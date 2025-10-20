@@ -14,6 +14,7 @@
     "test:headed": "playwright test --config=playwright.config.cjs --headed",
     "test:debug": "playwright test --config=playwright.config.cjs --debug",
     "test:report": "playwright show-report playwright-report",
+    "test:snapshot": "playwright test visual/snapshots.spec.js --config=playwright.config.cjs",
     "preview:sirv": "sirv ../_site --port 4321 --host"
   },
   "devDependencies": {

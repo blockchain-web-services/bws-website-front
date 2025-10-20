@@ -8,6 +8,7 @@
 | **[Development Guidelines](./DEVELOPMENT_GUIDELINES.md)** | Code standards and practices | Coding standards, workflow, common patterns |
 | **[Building](./BUILDING.md)** | Build procedures | Build setup, development server, production builds |
 | **[Testing](./TESTING.md)** | Test procedures | Test setup, running tests, writing tests |
+| **[Visual Snapshots](./VISUALS.md)** | Page screenshots for mobile review | Desktop and mobile snapshots, responsive design QA |
 
 ## Workflow Automation Documentation
 
@@ -41,6 +42,8 @@ All GitHub Actions workflows and automation processes are documented in the `wor
 | Add new page | [Development Guidelines > Common Patterns](./DEVELOPMENT_GUIDELINES.md#adding-a-new-page) |
 | Fix build errors | [Building > Troubleshooting](./BUILDING.md#troubleshooting) |
 | Debug test failures | [Testing > Troubleshooting](./TESTING.md#troubleshooting) |
+| Review mobile CSS issues | [Visual Snapshots](./VISUALS.md) |
+| Generate visual snapshots | [Visual Snapshots > Regenerating](./VISUALS.md#regenerating-snapshots) |
 | Configure GitHub Actions | [GitHub Actions Workflows](./workflows/GITHUB_ACTIONS.md) |
 | Generate articles manually | [Article Generation](./workflows/ARTICLE_GENERATION.md#manual-execution) |
 | Fetch success stories | [Success Stories Automation](./workflows/SUCCESS_STORIES_AUTOMATION.md#manual-execution) |
@@ -53,6 +56,7 @@ Each topic is documented in exactly one place:
 - **Architecture** → ARCHITECTURE.md only
 - **Build commands** → BUILDING.md only
 - **Test commands** → TESTING.md only
+- **Visual snapshots** → VISUALS.md only
 - **Deployment** → workflows/GITHUB_PAGES_DEPLOYMENT.md only
 - **Workflows** → workflows/ folder only
   - Main reference → workflows/GITHUB_ACTIONS.md

@@ -14,6 +14,7 @@ import fs from 'fs';
 import https from 'https';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { execSync } from 'child_process';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -123,6 +124,34 @@ function findDocsUrl(productName, docsIndex) {
 function findWebsiteUrl(productName) {
   const config = PRODUCT_CONFIG[productName];
   return config ? config.url : '/marketplace';
+}
+
+/**
+ * Find documentation images for a product
+ * Returns array of images from docs pages matching the product
+ */
+function findDocsImages(productName, docsIndex) {
+  if (!docsIndex || !docsIndex.pages) {
+    return [];
+  }
+
+  // Find all pages for this product
+  const productPages = docsIndex.pages.filter(page => page.product === productName);
+
+  // Collect all images from these pages
+  const allImages = [];
+  productPages.forEach(page => {
+    if (page.images && Array.isArray(page.images) && page.images.length > 0) {
+      page.images.forEach(image => {
+        allImages.push({
+          ...image,
+          sourcePage: page.title || page.url
+        });
+      });
+    }
+  });
+
+  return allImages;
 }
 
 /**
@@ -386,6 +415,122 @@ ${JSON.stringify(tweetsData, null, 2)}`;
 }
 
 /**
+ * Refine article content for better narrative flow
+ */
+async function refineArticleFlow(articleData) {
+  const apiKey = process.env.ANTHROPIC_API_KEY;
+
+  if (!apiKey) {
+    throw new Error('ANTHROPIC_API_KEY environment variable is required');
+  }
+
+  console.log(`   ✨ Refining article flow for ${articleData.product}...`);
+
+  const anthropic = new Anthropic({ apiKey });
+
+  // Prepare current article content for refinement
+  const currentContent = {
+    product: articleData.product,
+    title: articleData.articleTitle,
+    subtitle: articleData.articleSubtitle,
+    sections: articleData.sections.map(section => ({
+      heading: section.heading,
+      sectionType: section.sectionType,
+      content: section.content,
+      advantages: section.advantages,
+      imagePlacement: section.imagePlacement
+    }))
+  };
+
+  const prompt = `You are a content editor specializing in technical blog articles. Your task is to improve the narrative flow and readability of this article about "${articleData.product}".
+
+CURRENT ARTICLE CONTENT:
+${JSON.stringify(currentContent, null, 2)}
+
+YOUR TASK:
+Improve the text flow so the article reads like a cohesive story rather than disconnected paragraphs. Maintain ALL existing structure (sections, headings, advantages lists) but enhance:
+
+1. **Paragraph Transitions**: Add smooth transitions between paragraphs within each section
+   - Use connecting words/phrases (Furthermore, Additionally, Moreover, As a result, etc.)
+   - Reference previous points when introducing new ones
+   - Create logical flow from one idea to the next
+
+2. **Section Coherence**: Ensure each section tells a complete mini-story
+   - Opening sentence should connect to section heading
+   - Middle content should develop the idea progressively
+   - Closing sentence should bridge to next topic or reinforce the point
+
+3. **Overall Narrative Arc**: Maintain progression through the article
+   - Introduction → Problem/Context → Solution/Features → Benefits → Call to Action
+   - Each section should build on previous sections naturally
+
+4. **Readability Improvements**:
+   - Keep paragraphs SHORT (2-4 sentences max)
+   - Use active voice
+   - Vary sentence structure for better rhythm
+   - Remove redundant phrases
+
+CRITICAL RULES:
+- DO NOT change section headings
+- DO NOT change advantages lists (keep them as bullet points)
+- DO NOT change sectionType values
+- DO NOT change imagePlacement values
+- DO NOT remove or add sections
+- DO NOT change placeholder links ({{DOCS_URL}}, {{WEBSITE_URL}})
+- Keep paragraphs SHORT - split into multiple if needed using \\n\\n
+- Maintain the same overall length (don't make it significantly longer or shorter)
+- Only improve flow, transitions, and readability
+
+Output ONLY the refined JSON in the exact same structure:
+{
+  "product": "product name",
+  "articleTitle": "unchanged title",
+  "articleSubtitle": "refined subtitle with better flow",
+  "sections": [
+    {
+      "heading": "unchanged heading",
+      "sectionType": "normal",
+      "content": "refined content with better flow and transitions",
+      "imagePlacement": "unchanged"
+    }
+  ]
+}`;
+
+  try {
+    const message = await anthropic.messages.create({
+      model: 'claude-sonnet-4-5-20250929',
+      max_tokens: 6000,
+      messages: [{
+        role: 'user',
+        content: prompt
+      }]
+    });
+
+    const responseText = message.content[0].text.trim();
+
+    // Extract JSON from response
+    const jsonMatch = responseText.match(/\{[\s\S]*\}/);
+    if (!jsonMatch) {
+      console.log('   ⚠️  Could not parse refinement response, using original content');
+      return articleData;
+    }
+
+    const refinedContent = JSON.parse(jsonMatch[0]);
+    console.log(`   ✅ Flow refinement complete`);
+
+    // Merge refined content back into original articleData
+    return {
+      ...articleData,
+      articleSubtitle: refinedContent.articleSubtitle || articleData.articleSubtitle,
+      sections: refinedContent.sections || articleData.sections
+    };
+  } catch (error) {
+    console.error(`   ⚠️  Flow refinement error: ${error.message}, using original content`);
+    return articleData; // Return original if refinement fails
+  }
+}
+
+/**
  * Generate slug from product name and date
  */
 function generateSlug(product, publishDate) {
@@ -404,6 +549,42 @@ function sanitizeComponentName(slug) {
     .filter(part => part.length > 0)
     .map(part => part.charAt(0).toUpperCase() + part.slice(1))
     .join('');
+}
+
+/**
+ * Get image dimensions and determine appropriate min-size constraint
+ * Returns style string with min-width or min-height based on image orientation
+ */
+function getImageSizeConstraint(imagePath) {
+  try {
+    // Get full path to image file
+    const fullPath = path.join(__dirname, '..', 'public', imagePath);
+
+    // Use 'file' command to get image dimensions
+    const fileOutput = execSync(`file "${fullPath}"`, { encoding: 'utf8' });
+
+    // Parse dimensions from output (e.g., "JPEG image data ... 829x339")
+    // Match digits followed by 'x' followed by digits, followed by a comma or space (to skip "1x1" density)
+    const match = fileOutput.match(/(\d{2,})x(\d{2,})(?:,|\s)/);
+    if (match) {
+      const width = parseInt(match[1]);
+      const height = parseInt(match[2]);
+
+      // Horizontal image (wider than tall) - constrain width
+      if (width > height) {
+        return 'min-width: 500px; max-width: 600px;';
+      }
+      // Vertical image (taller than wide) - constrain height
+      else {
+        return 'min-height: 500px; max-height: 600px;';
+      }
+    }
+  } catch (error) {
+    console.log(`   ⚠️  Could not determine image dimensions for ${imagePath}: ${error.message}`);
+  }
+
+  // Default fallback - assume horizontal
+  return 'min-width: 500px; max-width: 600px;';
 }
 
 /**
@@ -459,7 +640,8 @@ function generateContentComponent(slug, articleData, images, publishDate, docsUr
     // Add image if placement specified and images available
     // Note: Maximum ONE image per article - imageIndex ensures only first placement gets image
     if (section.imagePlacement === 'image-after-section' && imageIndex < images.length) {
-      sectionsHTML += `        <figure style="float: right; margin: 0 0 1rem 1rem; max-width: 400px;">\n`;
+      const sizeConstraint = getImageSizeConstraint(images[imageIndex].src);
+      sectionsHTML += `        <figure style="float: right; margin: 0 0 1rem 1rem; ${sizeConstraint}">\n`;
       sectionsHTML += `          <img\n`;
       sectionsHTML += `            src="${images[imageIndex].src}"\n`;
       sectionsHTML += `            alt="${images[imageIndex].alt}"\n`;
@@ -474,7 +656,8 @@ function generateContentComponent(slug, articleData, images, publishDate, docsUr
       // Insert image mid-section by splitting content
       const paragraphs = section.content.split('\n\n');
       if (paragraphs.length > 1) {
-        sectionsHTML += `        <figure style="float: right; margin: 0 0 1rem 1rem; max-width: 400px;">\n`;
+        const sizeConstraint = getImageSizeConstraint(images[imageIndex].src);
+        sectionsHTML += `        <figure style="float: right; margin: 0 0 1rem 1rem; ${sizeConstraint}">\n`;
         sectionsHTML += `          <img\n`;
         sectionsHTML += `            src="${images[imageIndex].src}"\n`;
         sectionsHTML += `            alt="${images[imageIndex].alt}"\n`;
@@ -703,7 +886,7 @@ async function processArticles(articleDataList, tweets, includes) {
   const docsIndex = loadDocsIndex();
   const articles = [];
 
-  for (const articleData of articleDataList) {
+  for (let articleData of articleDataList) {
     console.log(`\n   📦 Processing article for ${articleData.product}...`);
 
     const config = PRODUCT_CONFIG[articleData.product];
@@ -731,15 +914,30 @@ async function processArticles(articleDataList, tweets, includes) {
         .replace(/\{\{WEBSITE_URL\}\}/g, websiteUrl)
     }));
 
+    // Refine article flow for better narrative coherence
+    articleData = await refineArticleFlow(articleData);
+
     // Download images - MAXIMUM ONE image per article
-    // Prioritize product screenshots over partnership images
+    // PRIORITY ORDER: 1) Docs images, 2) Tweet images, 3) Fallback images
     const images = [];
 
-    // Handle both new single value format (imageTweetId) and legacy array format (imageTweetIds)
-    const tweetId = articleData.imageTweetId ||
-                    (articleData.imageTweetIds && Array.isArray(articleData.imageTweetIds)
-                      ? articleData.imageTweetIds[0]
-                      : null);
+    // PRIORITY 1: Check for documentation images first (official product screenshots)
+    const docsImages = findDocsImages(articleData.product, docsIndex);
+    if (docsImages.length > 0) {
+      console.log(`   📚 Using docs image (${docsImages.length} available from ${new Set(docsImages.map(i => i.sourcePage)).size} pages)`);
+      images.push({
+        src: docsImages[0].localPath,
+        alt: docsImages[0].alt || `${articleData.product} product interface`
+      });
+    }
+
+    // PRIORITY 2: If no docs images, try tweet image selected by Claude
+    if (images.length === 0) {
+      // Handle both new single value format (imageTweetId) and legacy array format (imageTweetIds)
+      const tweetId = articleData.imageTweetId ||
+                      (articleData.imageTweetIds && Array.isArray(articleData.imageTweetIds)
+                        ? articleData.imageTweetIds[0]
+                        : null);
 
     if (tweetId) {
       const tweet = tweets.find(t => t.id === tweetId);
@@ -797,8 +995,9 @@ async function processArticles(articleDataList, tweets, includes) {
         }
       }
     }
+    } // End of PRIORITY 2 check
 
-    // Use fallback image if no images downloaded
+    // PRIORITY 3: Use fallback image as last resort
     if (images.length === 0 && config.fallbackImages && config.fallbackImages.length > 0) {
       const randomIndex = Math.floor(Math.random() * config.fallbackImages.length);
       const fallbackImage = config.fallbackImages[randomIndex];
@@ -807,6 +1006,12 @@ async function processArticles(articleDataList, tweets, includes) {
         src: fallbackImage,
         alt: `${articleData.product} solution`,
       });
+    }
+
+    // Set image placement on second section (or first if only one section exists)
+    if (images.length > 0 && articleData.sections && articleData.sections.length > 0) {
+      const targetSection = articleData.sections.length > 1 ? 1 : 0; // Second section preferred
+      articleData.sections[targetSection].imagePlacement = 'image-after-section';
     }
 
     // Generate content component

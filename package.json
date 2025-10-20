@@ -20,7 +20,9 @@
     "prettify": "node scripts/html-prettifier.js",
     "pretty-print": "node scripts/pretty-print-validate.js",
     "format": "prettier --write 'src/**/*.{astro,js,ts,json}'",
-    "format:check": "prettier --check 'src/**/*.{astro,js,ts,json}'"
+    "format:check": "prettier --check 'src/**/*.{astro,js,ts,json}'",
+    "snapshot": "cd tests && npx playwright test visual/snapshots.spec.js --config=playwright.config.cjs",
+    "snapshot:update": "npm run build && npm run snapshot"
   },
   "devDependencies": {
     "@types/node": "^20.0.0",
