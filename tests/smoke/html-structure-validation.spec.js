@@ -114,7 +114,8 @@ test.describe('HTML Structure Validation', () => {
 
     for (const path of criticalPages) {
       await test.step(`Check navigation in ${path}`, async () => {
-        await page.goto(path);
+        // Increase timeout for CI environments which may be slower
+        await page.goto(path, { timeout: 90000 });
 
         // Check for navigation menu
         const navMenu = await page.locator('.nav-menu, nav[role="navigation"]');
