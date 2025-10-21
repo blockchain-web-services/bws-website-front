@@ -39524,7 +39524,7 @@ img[src*="blockchain-founders-group"] * {
   }
 
   /* Hide "Get Started" button on mobile */
-  .header-button {
+  .button-primary.header-button {
     display: none !important;
   }
 }
