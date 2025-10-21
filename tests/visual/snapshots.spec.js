@@ -68,8 +68,64 @@ test.describe('Visual Snapshots for All Pages', () => {
         // Wait for page to be fully loaded
         await page.waitForLoadState('networkidle');
 
-        // Additional wait for any animations or lazy-loaded content
-        await page.waitForTimeout(1000);
+        // Homepage-specific handling to address carousel and complex content
+        if (pageInfo.name === 'index') {
+          // Wait for Swiper carousel to initialize
+          await page.waitForSelector('.swiper-initialized', { timeout: 10000 }).catch(() => {
+            console.log('⚠ Swiper carousel not found, continuing...');
+          });
+
+          // Wait for all images to load
+          await page.evaluate(async () => {
+            const images = Array.from(document.querySelectorAll('img'));
+            await Promise.all(
+              images.map(img => {
+                if (img.complete) return Promise.resolve();
+                return new Promise((resolve) => {
+                  img.addEventListener('load', resolve);
+                  img.addEventListener('error', resolve); // Continue even if image fails
+                  // Timeout after 5 seconds per image
+                  setTimeout(resolve, 5000);
+                });
+              })
+            );
+          });
+
+          // Disable carousel autoplay to reduce GPU load during screenshot
+          await page.evaluate(() => {
+            const swipers = document.querySelectorAll('.swiper');
+            swipers.forEach(swiperEl => {
+              // @ts-ignore - Swiper instance attached to element
+              if (swiperEl.swiper && swiperEl.swiper.autoplay) {
+                swiperEl.swiper.autoplay.stop();
+              }
+            });
+          }).catch(() => {
+            console.log('⚠ Could not stop carousel autoplay');
+          });
+
+          // Additional wait for animations to complete
+          await page.waitForTimeout(2000);
+
+          // Scroll to trigger any lazy-loaded content
+          await page.evaluate(async () => {
+            const scrollHeight = document.body.scrollHeight;
+            const viewportHeight = window.innerHeight;
+            const scrollSteps = Math.ceil(scrollHeight / viewportHeight);
+
+            for (let i = 0; i < scrollSteps; i++) {
+              window.scrollTo(0, i * viewportHeight);
+              await new Promise(resolve => setTimeout(resolve, 200));
+            }
+
+            // Scroll back to top
+            window.scrollTo(0, 0);
+            await new Promise(resolve => setTimeout(resolve, 500));
+          });
+        } else {
+          // Standard wait for non-homepage pages
+          await page.waitForTimeout(1000);
+        }
 
         // Create directory structure if it doesn't exist
         const screenshotDir = path.join(SCREENSHOTS_BASE_DIR, pageInfo.category, pageInfo.name);
@@ -83,10 +139,37 @@ test.describe('Visual Snapshots for All Pages', () => {
           `${viewport.name}.png`
         );
 
-        await page.screenshot({
-          path: screenshotPath,
-          fullPage: true,
-        });
+        // For homepage mobile viewports, use clip-based approach to reduce GPU load
+        const isHomepageMobile = pageInfo.name === 'index' && viewport.width < 768;
+
+        if (isHomepageMobile) {
+          // Get full page height
+          const fullHeight = await page.evaluate(() => document.body.scrollHeight);
+          const viewportHeight = viewport.height;
+
+          // Take screenshot with a maximum height limit to avoid GPU crashes
+          const maxHeight = Math.min(fullHeight, 15000); // Limit to 15000px to reduce memory usage
+
+          await page.screenshot({
+            path: screenshotPath,
+            fullPage: false, // Don't use fullPage mode
+            clip: {
+              x: 0,
+              y: 0,
+              width: viewport.width,
+              height: maxHeight
+            }
+          });
+
+          if (fullHeight > maxHeight) {
+            console.log(`⚠ ${pageInfo.name} at ${viewport.name}: Page height (${fullHeight}px) exceeds max (${maxHeight}px), screenshot truncated`);
+          }
+        } else {
+          await page.screenshot({
+            path: screenshotPath,
+            fullPage: true,
+          });
+        }
 
         console.log(`✓ Captured: ${pageInfo.name} at ${viewport.name} → ${screenshotPath}`);
       });

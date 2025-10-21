@@ -6,10 +6,10 @@ This document contains visual snapshots of all pages across different viewport s
 
 - **Total Pages**: 26
 - **Viewports per Page**: 4 (Desktop, iPhone SE, iPhone 12 Pro, Pixel 5)
-- **Total Snapshots**: 104 (101 currently available)
-- **Last Updated**: 2025-10-20 (from GitHub Actions Run #18663268326)
+- **Total Snapshots**: 104/104 (all available)
+- **Last Updated**: 2025-10-21
 
-> **Note**: Homepage mobile snapshots (index - iphone-se, iphone-12-pro, pixel-5) are currently unavailable due to GPU limitations in CI environment. All other snapshots (101/104) have been successfully generated.
+> **Note**: Homepage mobile snapshots use a height-limited capture (15000px max) to prevent GPU crashes in resource-constrained environments. The homepage is approximately 19000-22000px tall on mobile viewports, so snapshots capture the first 67-79% of the page content. This is sufficient for CSS review of the primary above-the-fold and mid-page sections.
 
 ## Viewport Sizes
 

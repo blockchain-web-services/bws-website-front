@@ -90,12 +90,17 @@ All snapshots are documented in [docs/VISUALS.md](../VISUALS.md) with side-by-si
 
 ### WSL/Local GPU Issues
 
-If you encounter GPU crashes when running locally (especially on WSL), this is a known Playwright limitation in virtualized environments. The GitHub Actions environment has proper GPU support and will work correctly.
+If you encounter GPU crashes when running locally (especially on WSL), this is a known Playwright limitation in virtualized environments.
 
-**Workaround for local testing:**
-- Test one viewport at a time with smaller pages
+**Solution implemented:**
+- Homepage mobile snapshots use height-limited capture (15000px max) to prevent GPU crashes
+- This affects the homepage only, which is 19000-22000px tall on mobile viewports
+- All other pages use full-page screenshots without limitations
+- The height limit captures 67-79% of homepage content, sufficient for CSS review
+
+**Additional workarounds if needed:**
+- Test one viewport at a time with `--workers=1` flag
 - Use `--grep "desktop"` to test desktop only (less resource-intensive)
-- Rely on GitHub Actions for full snapshot generation
 
 ### Missing Screenshots
 
