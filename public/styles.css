@@ -39522,6 +39522,11 @@ img[src*="blockchain-founders-group"] * {
   .rich-text .step-number {
     margin-bottom: 0.75rem;
   }
+
+  /* Hide "Get Started" button on mobile */
+  .header-button {
+    display: none !important;
+  }
 }
 
 /* Success Story List Styling */
