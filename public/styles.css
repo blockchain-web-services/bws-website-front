@@ -13576,6 +13576,7 @@ figcaption {
 .image-logo-footer {
   max-width: 400px;
   margin-left: -10px;
+  padding-bottom: 10px;
 }
 
 .split-solution-header {
@@ -31236,6 +31237,7 @@ figcaption {
 .image-logo-footer {
   max-width: 400px;
   margin-left: -10px;
+  padding-bottom: 10px;
 }
 
 .split-solution-header {
@@ -38585,16 +38587,12 @@ a.button-secondary.w-button:hover,
   display: block !important;
 }
 
-/* Preserve Webflow dropdown hover states and provide CSS fallback */
-.w-dropdown:hover .w-dropdown-list {
-  display: block !important;
-}
 
 /* Hero section button alignment - divide in 2 halves, center each button */
 .hero-section ._2-button-wrapper {
   display: grid !important;
   grid-template-columns: 1fr 1fr;
-  gap: 0;
+  gap: 16px;
   width: 100%;
   max-width: 600px;
   margin-left: auto;
@@ -38603,12 +38601,123 @@ a.button-secondary.w-button:hover,
 
 .hero-section ._2-button-wrapper>a:first-child {
   justify-self: end;
-  margin-right: 10px;
+  margin-right: 0;
 }
 
 .hero-section ._2-button-wrapper>a:last-child {
   justify-self: start;
-  margin-left: 10px;
+  margin-left: 0;
+}
+
+/* Mobile: Stack hero buttons vertically */
+@media screen and (max-width: 767px) {
+  .hero-section ._2-button-wrapper {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 16px !important;
+    width: 100%;
+  }
+
+  .hero-section ._2-button-wrapper>a:first-child,
+  .hero-section ._2-button-wrapper>a:last-child {
+    justify-self: stretch;
+    margin: 0;
+    width: 100%;
+  }
+
+  /* Reduce section gaps on mobile */
+  .section {
+    padding-top: 30px !important;
+    padding-bottom: 50px !important;
+  }
+
+  .narrow-section {
+    padding-top: 40px !important;
+    padding-bottom: 40px !important;
+  }
+
+  /* Align mobile menu items with BWS logo */
+  .nav-menu {
+    padding-left: 38px !important;
+  }
+
+  /* Mobile dropdown menu improvements: remove borders, backgrounds, height limits */
+  .dropdown-menu-wrapper {
+    border: none !important;
+    background: none !important;
+    background-color: transparent !important;
+    background-image: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin-top: 0 !important;
+    overflow: visible !important;
+  }
+
+  .dropdown-menu-wrapper.wide,
+  .dropdown-menu-wrapper.top-menu-small {
+    border: none !important;
+    background: none !important;
+    background-color: transparent !important;
+    background-image: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    overflow: visible !important;
+  }
+
+  .dropdown-menu-wrapper-solutions {
+    overflow: visible !important;
+    border: none !important;
+    background: none !important;
+    background-color: transparent !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .dropdown-menu {
+    border: none !important;
+    background: none !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
+    max-height: none !important;
+    overflow: visible !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .dropdown-menu.w--open {
+    border: none !important;
+    background: none !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
+    max-height: none !important;
+    overflow: visible !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .dropdown-menu.wide.w--open,
+  .dropdown-menu.wide.first.w--open {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .dropdown-menu-column {
+    padding: 5px 0 5px 0 !important;
+    margin: 0 !important;
+  }
+
+  .dropdown-nav-menu {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .w-dropdown-list {
+    max-height: none !important;
+    overflow: visible !important;
+    height: auto !important;
+  }
 }
 
 /* WCAG FIX: Roadmap description title on rose background */
@@ -39527,6 +39636,124 @@ img[src*="blockchain-founders-group"] * {
   .button-primary.header-button {
     display: none !important;
   }
+
+  /* Fix burger menu icon positioning on mobile */
+  .menu-button {
+    margin-right: 16px !important;
+    padding: 12px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  .hamburger-menu-icon {
+    font-size: 24px !important;
+    color: white !important;
+    line-height: 1 !important;
+  }
+
+  /* Hide footer first column (logo and "We believe..." text) on mobile */
+  .footer-first-column {
+    display: none !important;
+  }
+
+  /* Mobile-specific: constrain logo */
+  .header-logo {
+    width: 150px !important;
+    max-width: 150px !important;
+    height: auto !important;
+    margin-left: 16px !important;
+  }
+
+  /* Mobile-specific: hide carousel */
+  .news-carousel {
+    display: none !important;
+  }
+}
+
+/* Footer logo sizing for all screen sizes */
+.image-logo-footer {
+  max-width: 100px !important;
+  margin-bottom: 5px !important;
+}
+
+/* ========================================
+   DESKTOP: Match navigation width to content
+   Only affects screens > 767px
+   ======================================== */
+@media screen and (min-width: 768px) {
+  /* Center navigation and match .landing-page-content width */
+  .top-menu-wrapper {
+    max-width: 1288px !important;
+    width: 1288px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  .header-wrapper {
+    max-width: 1288px !important;
+    width: 1288px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+}
+
+/* ========================================
+   CRITICAL FIX: Navigation width overflow
+   Affects ALL screen sizes (mobile + desktop)
+   Root cause: inline-block + negative margins
+   ======================================== */
+
+/* Fix 1: Change inline-block to block to respect parent width */
+.header-wrapper {
+  display: block !important;
+}
+
+/* Fix 2: Remove negative margins that cause 20px overflow */
+.top-menu-wrapper .w-row,
+.w-container .w-row {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+/* Fix 3: Ensure all navigation containers respect viewport */
+.top-menu-wrapper,
+.header-wrapper,
+.top-menu-columns {
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+/* Fix 4: Prevent bg-blobs-wrapper from causing horizontal overflow */
+.bg-blobs-wrapper {
+  overflow: hidden !important;
+  max-width: 100vw !important;
+  margin-right: 0 !important; /* Override negative margins */
+}
+
+/* Fix 5: CRITICAL - Prevent absolutely positioned elements from causing horizontal scroll */
+html,
+body {
+  overflow-x: hidden !important;
+  max-width: 100% !important;
+}
+
+/* Fix 6: Force all sections to respect viewport width */
+.section,
+.section.relative {
+  max-width: 100vw !important;
+  overflow-x: hidden !important;
+  position: relative !important;
+}
+
+/* Fix 7: Constrain swiper wrapper to prevent width expansion */
+.swiper-wrapper {
+  max-width: 100vw !important;
+}
+
+/* Fix 8: Ensure carousel parent constrains children */
+.news-carousel {
+  contain: layout !important;
 }
 
 /* Success Story List Styling */
