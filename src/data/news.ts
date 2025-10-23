@@ -70,6 +70,29 @@ export const newsItems: NewsItem[] = [
     backgroundClass: 'container-image-partnership-1975576723337982186'
   },
   {
+    title: 'Matchain',
+    description: 'Matchain partners with BWS to revolutionize sports through Fan Game Cube, empowering clubs with innovative tools for fan engagement',
+    partnershipTitle: 'Matchain',
+    logos: [
+      {
+        src: '/assets/images/matchain-logo.jpg',
+        alt: 'Matchain Logo',
+        href: 'https://x.com/matchain_io',
+        class: 'image-partnership image-partnership-partner'
+      }
+    ],
+    buttons: [
+      {
+        text: 'View Announcement',
+        href: 'https://x.com/BWSCommunity/status/1861451676428775866',
+        type: 'secondary',
+        target: '_blank',
+        hasArrow: true
+      }
+    ],
+    backgroundClass: 'container-image-partnership-1861451676428775866'
+  },
+  {
     title: '$BWS Token Launch Success!',
     description: 'We are thrilled to announce $BWS Token launch has been an incredible success!',
     partnershipTitle: 'In Partnership With',
