@@ -19,9 +19,6 @@ const { news } = Astro.props;
       ))
     }
   </div>
-  <!-- Navigation arrows -->
-  <div class="swiper-button-next"></div>
-  <div class="swiper-button-prev"></div>
   <!-- Pagination -->
   <div class="swiper-pagination"></div>
 </div>
@@ -44,10 +41,6 @@ const { news } = Astro.props;
         pagination: {
           el: '.swiper-pagination',
           clickable: true,
-        },
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
         },
         breakpoints: {
           // Mobile: 1 slide
@@ -94,47 +87,6 @@ const { news } = Astro.props;
     width: 440px !important;
     max-width: 440px !important;
     min-width: 380px !important;
-  }
-
-  /* Customize Swiper navigation arrows */
-  .news-carousel .swiper-button-next,
-  .news-carousel .swiper-button-prev {
-    background: rgba(255, 255, 255, 0.8);
-    border-radius: 50%;
-    width: 3rem;
-    height: 3rem;
-    color: #333;
-  }
-
-  /* Position arrows outside the cards area */
-  .news-carousel .swiper-button-next {
-    right: -60px; /* Position outside right edge */
-  }
-
-  .news-carousel .swiper-button-prev {
-    left: -60px; /* Position outside left edge */
-  }
-
-  .news-carousel .swiper-button-next:hover,
-  .news-carousel .swiper-button-prev:hover {
-    background: rgba(255, 255, 255, 1);
-  }
-
-  .news-carousel .swiper-button-next::after,
-  .news-carousel .swiper-button-prev::after {
-    font-size: 1.5rem;
-    font-weight: bold;
-  }
-
-  /* On smaller screens, keep arrows inside to avoid overflow */
-  @media screen and (max-width: 1200px) {
-    .news-carousel .swiper-button-next {
-      right: 10px;
-    }
-
-    .news-carousel .swiper-button-prev {
-      left: 10px;
-    }
   }
 
   /* Customize pagination dots */
