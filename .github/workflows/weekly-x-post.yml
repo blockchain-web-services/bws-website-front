@@ -66,11 +66,14 @@ jobs:
           if git diff --staged --quiet; then
             echo "ℹ️  No state changes to commit"
           else
-            git commit -m "Update weekly X post state
+            git commit -m "$(cat <<'EOF'
+          Update weekly X post state
 
-🤖 Generated with [Claude Code](https://claude.com/claude-code)
+          🤖 Generated with [Claude Code](https://claude.com/claude-code)
 
-Co-Authored-By: Claude <noreply@anthropic.com>"
+          Co-Authored-By: Claude <noreply@anthropic.com>
+          EOF
+          )"
             git push
           fi
 
