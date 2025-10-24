@@ -389,11 +389,44 @@ Create an engaging X post with this EXACT structure:
 4. CASHTAG AND HASHTAGS:
    $BWS #Web3 #Blockchain #BWS
 
-RULES:
+CONTENT SECURITY & QUALITY RULES (CRITICAL):
+
+⚠️ NEVER include or mention:
+- Secrets, API keys, passwords, tokens, credentials
+- IAM policies, roles, permissions (specific details)
+- Deployment workflows, CI/CD pipeline details
+- Infrastructure configuration details
+- Security implementation specifics
+- Database schema or query details
+- Authentication/authorization implementation details
+- Low-level architecture details
+
+✅ AWS Services: You MAY mention AWS services in general terms (e.g., "DynamoDB optimization", "S3 integration") but NEVER explain how they work internally or configuration details
+
+🎯 SECURITY FIXES: When mentioning security-related fixes:
+- Frame positively as "enhancements" or "improvements"
+- Focus on user benefits, NOT the vulnerability
+- Example: Instead of "Fix SQL injection vulnerability in login" → "Enhanced login security"
+- Example: Instead of "Fix exposed admin endpoint" → "Improved access control"
+
+🎨 QUALITY PERCEPTION: Reformulate commits that might create doubt about product quality:
+- Avoid mentioning multiple fixes to the same feature (looks unstable)
+- Group related fixes into one positive statement
+- Example: Instead of listing 5 separate MetaMask fixes → "Comprehensive MetaMask integration improvements"
+- Example: Instead of "Fix critical bug" → "Enhanced reliability"
+- Frame all changes as deliberate improvements, not reactions to problems
+
+💡 POSITIVE FRAMING:
+- "Bug fix" → "Enhancement" or "Improvement"
+- "Critical error" → "Reliability improvement"
+- "Broken feature" → "Feature optimization"
+- "Security vulnerability" → "Security enhancement"
+
+GENERAL RULES:
 - NO character limit - be comprehensive
-- List ALL significant changes by product
+- List ALL significant changes by product (after filtering/reformulating)
 - Use bullet points (•) for update lists
-- Be specific with technical terms
+- Be specific with technical terms (but NOT security-sensitive details)
 - Include product description for EACH product
 - Include docs link for EACH product
 - End with $BWS cashtag and hashtags
@@ -404,17 +437,17 @@ EXAMPLE FORMAT:
 This week we deployed 76 updates to X Bot in production, delivering major improvements to crypto purchase flows, MetaMask wallet integration, and comprehensive platform documentation.
 
 [X Bot]
-• Admin private notification system for credit exhaustion
-• MetaMask transaction cancellation error feedback
-• DM purchase privacy - messages route to private chat
-• ETH payment confirmation visibility until blockchain confirms
-• Chat-specific tag leaderboard filtering
-• Cashtag validation with enforced AND logic
-• AWS SDK v3 compatibility with JavaScript Set
-• DynamoDB StringSet fix for CHAT_IDS
-• IAM policy simplification to fix size limit
-• CodePipeline and CodeBuild read permissions
-• Comprehensive documentation published
+• Private notification system for account monitoring
+• Enhanced purchase privacy with DM routing
+• MetaMask transaction flow improvements
+• Payment confirmation visibility enhancements
+• Chat-specific analytics filtering
+• Advanced validation logic
+• AWS SDK v3 compatibility upgrade
+• Database optimization for chat operations
+• Documentation infrastructure improvements
+• Enhanced permissions management
+• Comprehensive platform documentation
 
 X Bot is an AI-powered Telegram analytics platform providing accurate X (Twitter) engagement metrics using the official X API, helping crypto projects measure community impact, KOLs showcase their performance, and investors discover authentic projects with real traction.
 
