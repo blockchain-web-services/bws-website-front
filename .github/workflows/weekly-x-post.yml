@@ -217,3 +217,4 @@ Co-Authored-By: Claude <noreply@anthropic.com>"
             } catch (error) {
               console.error('Failed to create issue:', error.message);
             }
+
