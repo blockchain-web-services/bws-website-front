@@ -45,7 +45,7 @@ jobs:
       - name: Generate and post weekly X update
         id: post
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PAT_GITHUB_ACTIONS: ${{ secrets.PAT_GITHUB_ACTIONS }}
           TWITTER_API_KEY: ${{ secrets.TWITTER_API_KEY }}
           TWITTER_API_SECRET: ${{ secrets.TWITTER_API_SECRET }}
           TWITTER_ACCESS_TOKEN: ${{ secrets.TWITTER_ACCESS_TOKEN }}
@@ -155,7 +155,7 @@ jobs:
               '',
               `1. Check [workflow logs](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})`,
               '2. Verify secrets:',
-              '   - GITHUB_TOKEN (automatic)',
+              '   - PAT_GITHUB_ACTIONS (for cross-repo access)',
               '   - TWITTER_API_KEY',
               '   - TWITTER_API_SECRET',
               '   - TWITTER_ACCESS_TOKEN',
@@ -206,7 +206,7 @@ jobs:
             }
 
             // Create issue for tracking
-            const issueBody = `## Weekly X Post Failure\n\nThe weekly X post workflow failed.\n\n- **Fix Branch:** \`${branchName}\`\n- **Pull Request:** Created automatically\n- **Workflow Run:** [View Logs](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})\n- **Timestamp:** ${now.toISOString()}\n\n### Action Required\nReview the failure report in the PR and fix the issue.\n\nThe workflow will retry daily at 14:00 UTC automatically.\n\n### Quick Checks\n- [ ] Verify GitHub token permissions\n- [ ] Verify Twitter OAuth credentials\n- [ ] Verify Anthropic API key\n- [ ] Check API rate limits\n- [ ] Review workflow logs for errors\n- [ ] Test script locally`;
+            const issueBody = `## Weekly X Post Failure\n\nThe weekly X post workflow failed.\n\n- **Fix Branch:** \`${branchName}\`\n- **Pull Request:** Created automatically\n- **Workflow Run:** [View Logs](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})\n- **Timestamp:** ${now.toISOString()}\n\n### Action Required\nReview the failure report in the PR and fix the issue.\n\nThe workflow will retry daily at 14:00 UTC automatically.\n\n### Quick Checks\n- [ ] Verify PAT_GITHUB_ACTIONS secret (for cross-repo access)\n- [ ] Verify Twitter OAuth credentials\n- [ ] Verify Anthropic API key\n- [ ] Check API rate limits\n- [ ] Review workflow logs for errors\n- [ ] Test script locally`;
 
             try {
               const issue = await github.rest.issues.create({

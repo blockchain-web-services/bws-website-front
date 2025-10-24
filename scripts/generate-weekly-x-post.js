@@ -187,8 +187,8 @@ async function fetchCommits(config, lookbackDays) {
   console.log(`   Branch: ${config.branch}`);
   console.log(`   Period: Last ${lookbackDays} days`);
 
-  // Use GITHUB_TOKEN (automatic from Actions) or fallback to GH_TOKEN (local dev)
-  const githubToken = process.env.GITHUB_TOKEN || process.env.GH_TOKEN || '';
+  // Use PAT_GITHUB_ACTIONS for cross-repo access, fallback to GITHUB_TOKEN/GH_TOKEN
+  const githubToken = process.env.PAT_GITHUB_ACTIONS || process.env.GITHUB_TOKEN || process.env.GH_TOKEN || '';
 
   if (!githubToken) {
     console.log('   ⚠️  No GitHub token found, trying without authentication...');
