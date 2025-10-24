@@ -1,7 +1,27 @@
 {
-  "lastPostTimestamp": null,
-  "lastPostUrl": null,
-  "lastPostId": null,
+  "lastPostTimestamp": "2025-10-24T17:49:32.576Z",
+  "lastPostUrl": "https://x.com/BWSCommunity/status/dry-run",
+  "lastPostId": "dry-run-1761328172576",
   "lookbackDays": 14,
-  "posts": []
+  "posts": [
+    {
+      "timestamp": "2025-10-24T17:49:32.576Z",
+      "postId": "dry-run-1761328172576",
+      "url": "https://x.com/BWSCommunity/status/dry-run",
+      "repositories": [
+        {
+          "repo": "blockchain-web-services/bws-api-telegram-xbot",
+          "product": "X Bot",
+          "commits": 100,
+          "features": 19,
+          "fixes": 30,
+          "improvements": 27
+        }
+      ],
+      "totalItems": 76,
+      "daysSinceLastPost": 999,
+      "lookbackDays": 14,
+      "characterCount": 1685
+    }
+  ]
 }
