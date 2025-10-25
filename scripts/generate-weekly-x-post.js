@@ -110,7 +110,7 @@ function getProductInfo(productName, docsIndex) {
 }
 
 /**
- * Post to Twitter/X as @BWSCommunity
+ * Post to Twitter/X (currently configured for @BWSXBot)
  */
 async function postToTwitter(postText) {
   // Dry run mode - don't actually post
@@ -121,11 +121,11 @@ async function postToTwitter(postText) {
     console.log('─'.repeat(60));
     return {
       id: 'dry-run-' + Date.now(),
-      url: 'https://x.com/BWSCommunity/status/dry-run'
+      url: 'https://x.com/status/dry-run'
     };
   }
 
-  console.log('\n🐦 Posting to X as @BWSCommunity...');
+  console.log('\n🐦 Posting to X...');
 
   // Initialize Twitter client with OAuth 1.0a credentials
   const client = new TwitterApi({
@@ -139,13 +139,9 @@ async function postToTwitter(postText) {
   const me = await client.v2.me();
   console.log(`✅ Authenticated as: @${me.data.username}`);
 
-  if (me.data.username !== 'BWSCommunity') {
-    throw new Error(`❌ Wrong account! Authenticated as @${me.data.username}, expected @BWSCommunity`);
-  }
-
   // Post tweet
   const tweet = await client.v2.tweet({ text: postText });
-  const url = `https://x.com/BWSCommunity/status/${tweet.data.id}`;
+  const url = `https://x.com/${me.data.username}/status/${tweet.data.id}`;
 
   console.log(`✅ Posted successfully: ${url}`);
 
