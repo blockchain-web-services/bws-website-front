@@ -139,6 +139,28 @@ async function postToTwitter(postText) {
   const me = await client.v2.me();
   console.log(`✅ Authenticated as: @${me.data.username}`);
 
+  // TEST MODE: Try simple tweet first if TEST_SIMPLE env var is set
+  if (process.env.TEST_SIMPLE === 'true') {
+    console.log('\n⚠️  TEST MODE: Posting simple message first...');
+    try {
+      const testTweet = await client.v2.tweet({ text: 'BWS test post.' });
+      console.log(`✅ Simple test post successful!`);
+      console.log(`   URL: https://x.com/${me.data.username}/status/${testTweet.data.id}`);
+      return {
+        id: testTweet.data.id,
+        url: `https://x.com/${me.data.username}/status/${testTweet.data.id}`
+      };
+    } catch (error) {
+      console.error('\n❌ Simple test post FAILED:');
+      console.error(`   Error code: ${error.code || error.status || 'Unknown'}`);
+      console.error(`   Error message: ${error.message || 'Unknown'}`);
+      if (error.data) {
+        console.error(`   Error details: ${JSON.stringify(error.data, null, 2)}`);
+      }
+      throw error;
+    }
+  }
+
   // Post tweet
   try {
     const tweet = await client.v2.tweet({ text: postText });

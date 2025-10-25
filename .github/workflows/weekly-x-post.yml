@@ -10,6 +10,11 @@ on:
         required: false
         type: boolean
         default: false
+      test_simple:
+        description: 'Test with simple message (no full post)'
+        required: false
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -52,6 +57,7 @@ jobs:
           TWITTER_ACCESS_SECRET: ${{ secrets.TWITTER_ACCESS_SECRET }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           DRY_RUN: ${{ inputs.dry_run }}
+          TEST_SIMPLE: ${{ inputs.test_simple }}
         run: |
           node scripts/generate-weekly-x-post.js
           echo "post_status=success" >> $GITHUB_OUTPUT
