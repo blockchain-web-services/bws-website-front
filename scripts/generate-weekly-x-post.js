@@ -409,9 +409,10 @@ Create an engaging X post with this EXACT structure:
 
    a) Product title enclosed in brackets: "[Product Name]"
 
-   b) Bullet list (•) of 10-15 specific updates
+   b) Bullet list of 10-15 specific updates (use hyphen "-" not bullet points)
       - Be specific: "MetaMask wallet integration", "DM purchase privacy", "ETH swap flow"
       - NOT vague: "improvements", "enhancements", "updates"
+      - IMPORTANT: Use "-" (hyphen) for bullets, NOT emoji bullets or special characters
 
    c) Short product description sentence (1-2 lines)
       - Generate this dynamically from the PRODUCT DOCUMENTATION provided for each product
@@ -420,10 +421,12 @@ Create an engaging X post with this EXACT structure:
       Example: "X Bot is an AI-powered Telegram analytics platform providing accurate X engagement metrics to help crypto projects measure community impact and KOLs showcase their performance."
 
    d) Link to product documentation
-      Example: "📚 https://docs.bws.ninja/telegram-bots/x-bot"
+      Example: "Docs: https://docs.bws.ninja/telegram-bots/x-bot"
+      IMPORTANT: Do NOT use emoji before the link, just write "Docs:"
 
-4. CASHTAG AND HASHTAGS:
-   $BWS #Web3 #Blockchain #BWS
+4. CASHTAG (NO HASHTAGS):
+   $BWS
+   IMPORTANT: Do NOT include hashtags (#Web3, #Blockchain, etc.) - Twitter API rejects posts with hashtags
 
 CONTENT SECURITY & QUALITY RULES (CRITICAL):
 
@@ -461,11 +464,12 @@ CONTENT SECURITY & QUALITY RULES (CRITICAL):
 GENERAL RULES:
 - NO character limit - be comprehensive
 - List ALL significant changes by product (after filtering/reformulating)
-- Use bullet points (•) for update lists
+- Use hyphens "-" for bullet lists (NO emoji bullets, NO special characters)
 - Be specific with technical terms (but NOT security-sensitive details)
 - Include product description for EACH product
 - Include docs link for EACH product
-- End with $BWS cashtag and hashtags
+- End with $BWS cashtag ONLY (NO hashtags)
+- NO EMOJIS anywhere in the post
 
 EXAMPLE FORMAT:
 "BWS | Coding
@@ -473,23 +477,23 @@ EXAMPLE FORMAT:
 This week we deployed 76 updates to X Bot in production, delivering major improvements to crypto purchase flows, MetaMask wallet integration, and comprehensive platform documentation.
 
 [X Bot]
-• Private notification system for account monitoring
-• Enhanced purchase privacy with DM routing
-• MetaMask transaction flow improvements
-• Payment confirmation visibility enhancements
-• Chat-specific analytics filtering
-• Advanced validation logic
-• AWS SDK v3 compatibility upgrade
-• Database optimization for chat operations
-• Documentation infrastructure improvements
-• Enhanced permissions management
-• Comprehensive platform documentation
+- Private notification system for account monitoring
+- Enhanced purchase privacy with DM routing
+- MetaMask transaction flow improvements
+- Payment confirmation visibility enhancements
+- Chat-specific analytics filtering
+- Advanced validation logic
+- AWS SDK v3 compatibility upgrade
+- Database optimization for chat operations
+- Documentation infrastructure improvements
+- Enhanced permissions management
+- Comprehensive platform documentation
 
 X Bot is an AI-powered Telegram analytics platform providing accurate X (Twitter) engagement metrics using the official X API, helping crypto projects measure community impact, KOLs showcase their performance, and investors discover authentic projects with real traction.
 
-📚 https://docs.bws.ninja/telegram-bots/x-bot
+Docs: https://docs.bws.ninja/telegram-bots/x-bot
 
-$BWS #Web3 #Blockchain #BWS"
+$BWS"
 
 Output ONLY the post text, nothing else.`;
 
