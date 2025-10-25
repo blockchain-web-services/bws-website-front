@@ -141,17 +141,19 @@ async function postToTwitter(postText) {
 
   // TEST MODE: Try simple tweet first if TEST_SIMPLE env var is set
   if (process.env.TEST_SIMPLE === 'true') {
-    console.log('\n⚠️  TEST MODE: Posting simple message first...');
+    console.log('\n⚠️  TEST MODE: Posting short message with emojis and hashtags...');
     try {
-      const testTweet = await client.v2.tweet({ text: 'BWS test post.' });
-      console.log(`✅ Simple test post successful!`);
+      const testTweet = await client.v2.tweet({
+        text: 'BWS test 🚀 with emoji and hashtag #Web3 $BWS'
+      });
+      console.log(`✅ Test post with emoji/hashtag successful!`);
       console.log(`   URL: https://x.com/${me.data.username}/status/${testTweet.data.id}`);
       return {
         id: testTweet.data.id,
         url: `https://x.com/${me.data.username}/status/${testTweet.data.id}`
       };
     } catch (error) {
-      console.error('\n❌ Simple test post FAILED:');
+      console.error('\n❌ Test post with emoji/hashtag FAILED:');
       console.error(`   Error code: ${error.code || error.status || 'Unknown'}`);
       console.error(`   Error message: ${error.message || 'Unknown'}`);
       if (error.data) {
