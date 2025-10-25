@@ -140,15 +140,33 @@ async function postToTwitter(postText) {
   console.log(`✅ Authenticated as: @${me.data.username}`);
 
   // Post tweet
-  const tweet = await client.v2.tweet({ text: postText });
-  const url = `https://x.com/${me.data.username}/status/${tweet.data.id}`;
+  try {
+    const tweet = await client.v2.tweet({ text: postText });
+    const url = `https://x.com/${me.data.username}/status/${tweet.data.id}`;
 
-  console.log(`✅ Posted successfully: ${url}`);
+    console.log(`✅ Posted successfully: ${url}`);
 
-  return {
-    id: tweet.data.id,
-    url: url
-  };
+    return {
+      id: tweet.data.id,
+      url: url
+    };
+  } catch (error) {
+    console.error('\n❌ Failed to post tweet:');
+    console.error(`   Error code: ${error.code || error.status || 'Unknown'}`);
+    console.error(`   Error message: ${error.message || 'Unknown'}`);
+    if (error.data) {
+      console.error(`   Error details: ${JSON.stringify(error.data, null, 2)}`);
+    }
+    if (error.code === 403 || error.status === 403) {
+      console.error('\n⚠️  HTTP 403 Forbidden - Possible causes:');
+      console.error('   1. App does not have "Read and Write" permissions');
+      console.error('   2. Access tokens need to be regenerated after permission change');
+      console.error('   3. Twitter API tier does not allow posting (Free tier limitation)');
+      console.error('   4. Rate limit exceeded');
+      console.error('\n   Check: https://developer.twitter.com/en/portal/dashboard');
+    }
+    throw error;
+  }
 }
 
 /**
