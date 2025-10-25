@@ -1,7 +1,27 @@
 {
-  "lastPostTimestamp": null,
-  "lastPostUrl": null,
-  "lastPostId": null,
+  "lastPostTimestamp": "2025-10-25T07:06:24.807Z",
+  "lastPostUrl": "https://x.com/BWSXBot/status/1981980648647643415",
+  "lastPostId": "1981980648647643415",
   "lookbackDays": 14,
-  "posts": []
+  "posts": [
+    {
+      "timestamp": "2025-10-25T07:06:24.807Z",
+      "postId": "1981980648647643415",
+      "url": "https://x.com/BWSXBot/status/1981980648647643415",
+      "repositories": [
+        {
+          "repo": "blockchain-web-services/bws-api-telegram-xbot",
+          "product": "X Bot",
+          "commits": 100,
+          "features": 19,
+          "fixes": 30,
+          "improvements": 27
+        }
+      ],
+      "totalItems": 76,
+      "daysSinceLastPost": 999,
+      "lookbackDays": 14,
+      "characterCount": 1420
+    }
+  ]
 }
