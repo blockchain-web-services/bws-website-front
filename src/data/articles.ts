@@ -19,59 +19,59 @@ export interface ArticleMetadata {
 
 export const articles: ArticleMetadata[] = [
 {
-  slug: 'x-bot-2025-10-26',
+  slug: 'x-bot-2025-10-27',
   product: 'X Bot',
-  title: 'X Bot: Automated Community Tracking and Engagement Analytics for Crypto Projects',
-  subtitle: 'Managing crypto community engagement across X and Telegram manually is time-consuming and inefficient. X Bot automates mention tracking, delivers real-time analytics, and helps projects monitor KOL performance with daily reports—all configured in under one minute.',
-  publishDate: '2025-10-26T10:03:37.711Z',
+  title: 'X Bot: Automate Community Tracking and Engagement Analytics for Crypto Projects',
+  subtitle: 'Managing community engagement across X (Twitter) and Telegram is time-consuming for crypto projects. X Bot delivers automated tracking, real-time analytics, and KOL performance monitoring to help projects build engaged communities without manual overhead.',
+  publishDate: '2025-10-27T10:04:24.450Z',
   tweetId: '',
   featuredImage: {
     src: '/assets/images/docs/x-bot/x-bot-0.png',
     alt: 'Product screenshot',
     loading: 'eager'
   },
-  seoDescription: 'X Bot automates crypto community tracking across X and Telegram with real-time analytics, KOL monitoring, and daily engagement reports. Setup takes one minute.'
+  seoDescription: 'Learn how X Bot helps crypto projects automate community management, track KOL performance, and generate daily engagement reports across X and Telegram platforms.'
 },
 {
-  slug: 'blockchain-badges-2025-10-26',
+  slug: 'blockchain-badges-2025-10-27',
   product: 'Blockchain Badges',
-  title: 'Blockchain Badges: Web3-Native Digital Certifications for Learning and Achievement Recognition',
-  subtitle: 'Traditional digital certification systems struggle with verification and portability across platforms. Blockchain Badges solves this with Web3-native digital certifications for events, learning platforms, and achievement recognition—seamlessly bridging Web2 customers into Web3 with active badge minting already underway.',
-  publishDate: '2025-10-26T10:03:53.457Z',
+  title: 'Blockchain Badges: Web3-Native Digital Certifications for Learning and Achievement',
+  subtitle: 'Traditional digital certifications lack verifiability and portability. Blockchain Badges delivers Web3-native digital credentials that can be awarded for event participation, learning rewards, and achievement unlocks, creating a trust layer for HR tech, events, and learning platforms.',
+  publishDate: '2025-10-27T10:04:38.134Z',
   tweetId: '',
   featuredImage: {
     src: '/assets/images/docs/blockchain-badges/blockchain-badges-0.png',
     alt: 'Cover',
     loading: 'eager'
   },
-  seoDescription: 'Blockchain Badges provides Web3-native digital certifications for events, learning platforms, and HR tech. Active badge minting brings Web2 customers into Web3.'
+  seoDescription: 'Discover how Blockchain Badges helps organizations issue verifiable Web3-native digital credentials for learning, events, and professional achievements without blockchain expertise.'
 },
 {
-  slug: 'esg-credits-2025-10-26',
+  slug: 'esg-credits-2025-10-27',
   product: 'ESG Credits',
-  title: 'ESG Credits: Blockchain-Powered Green Finance and Impact Reporting Solution',
-  subtitle: 'Green finance struggles with transparency and fragmented impact reporting. ESG Credits solves this by certifying sustainability impact, tokenizing green projects, and automating ESG disclosures—all backed by blockchain verification that makes green investing frictionless for advisors and investors alike.',
-  publishDate: '2025-10-26T10:04:08.014Z',
+  title: 'ESG Credits: Blockchain-Powered Green Finance Reporting and Impact Verification',
+  subtitle: 'Green finance lacks standardized impact reporting and verification. ESG Credits automates ESG alignment, standardizes disclosures, and enables transparent investor-grade reporting—all underpinned by immutable blockchain records that certify sustainability impact.',
+  publishDate: '2025-10-27T10:04:52.740Z',
   tweetId: '',
   featuredImage: {
-    src: '/assets/images/articles/esg-credits-1761473063139.jpg',
-    alt: 'ESG Credits - ESG Credits: Blockchain-Powered Green Finance and Impact Reporting Solution',
+    src: '/assets/images/articles/esg-credits-1761559509022.jpg',
+    alt: 'ESG Credits - ESG Credits: Blockchain-Powered Green Finance Reporting and Impact Verification',
     loading: 'eager'
   },
-  seoDescription: 'ESG Credits delivers blockchain-powered green finance reporting with automated disclosures, visual framework comparison, and ICMA-aligned impact certification for investors.'
+  seoDescription: 'Learn how ESG Credits enables blockchain-verified sustainability reporting, green bond framework comparison, and automated ESG alignment for global portfolios and carbon markets.'
 },
 {
-  slug: 'fan-game-cube-2025-10-26',
+  slug: 'fan-game-cube-2025-10-27',
   product: 'Fan Game Cube',
-  title: 'Fan Game Cube: NFT-Based Sports Field Tokenization Creating New Fan Experiences',
-  subtitle: 'Sports clubs need new revenue streams while fans crave deeper engagement. Fan Game Cube bridges this gap by letting fans own virtual zones of real sports fields through NFTs tied to live in-game events—creating unprecedented experiences for fans and sustainable revenue for clubs.',
-  publishDate: '2025-10-26T10:04:23.301Z',
+  title: 'Fan Game Cube: NFT-Powered Virtual Field Ownership for Sports Clubs',
+  subtitle: 'Sports clubs need new digital revenue streams while deepening fan engagement. Fan Game Cube delivers both by letting fans own virtual zones of real fields through NFTs tied to live in-game events—creating immersive experiences without requiring any crypto knowledge.',
+  publishDate: '2025-10-27T10:05:09.072Z',
   tweetId: '',
   featuredImage: {
-    src: '/assets/images/articles/fan-game-cube-1761473077494.jpg',
-    alt: 'Fan Game Cube - Fan Game Cube: NFT-Based Sports Field Tokenization Creating New Fan Experiences',
+    src: '/assets/images/marketplace/fallback/fan-game-cube/02-welcome-message.png',
+    alt: 'Fan Game Cube solution',
     loading: 'eager'
   },
-  seoDescription: 'Fan Game Cube lets fans own virtual sports field zones via NFTs tied to live game events. Earn points when plays happen in your zones—new revenue for clubs.'
+  seoDescription: 'Discover how Fan Game Cube uses NFTs to let sports fans own virtual field zones tied to real game events, creating new revenue for clubs and engagement for fans.'
 }
 ];
