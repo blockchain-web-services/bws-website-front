@@ -73,7 +73,7 @@ test.describe('Articles Pages', () => {
   });
 
   for (const article of articles) {
-    test(`${article.title} - loads and displays correctly`, async ({ page }) => {
+    test(`${article.slug} - loads and displays correctly`, async ({ page }) => {
       await page.goto(article.url);
 
       // Check title is present
