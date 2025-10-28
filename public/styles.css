@@ -2336,7 +2336,7 @@ textarea.w-select {
   --neutral-300: #e5ecf5;
   --neutral-100-65: #ffffffa6;
   --shadow-small-2: #a3a6ff21;
-  --rose: #c41841;
+  --rose: #DC325D;
   /* WCAG AA compliant darker rose - 4.51:1 contrast on white */
   --shadow-small-1: #0c0c0c0a;
   --mini-card-shadow: #448cfc1a;
@@ -39694,6 +39694,7 @@ img[src*="blockchain-founders-group"] * {
    Only affects screens > 767px
    ======================================== */
 @media screen and (min-width: 768px) {
+
   /* Center navigation and match .landing-page-content width */
   .top-menu-wrapper {
     max-width: 1288px !important;
@@ -39740,7 +39741,8 @@ img[src*="blockchain-founders-group"] * {
 .bg-blobs-wrapper {
   overflow: hidden !important;
   max-width: 100vw !important;
-  margin-right: 0 !important; /* Override negative margins */
+  margin-right: 0 !important;
+  /* Override negative margins */
 }
 
 /* Fix 5: CRITICAL - Prevent absolutely positioned elements from causing horizontal scroll */
