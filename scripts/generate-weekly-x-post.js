@@ -110,7 +110,7 @@ function getProductInfo(productName, docsIndex) {
 }
 
 /**
- * Post to Twitter/X (currently configured for @BWSXBot)
+ * Post to Twitter/X as @BWSCommunity
  */
 async function postToTwitter(postText) {
   // Dry run mode - don't actually post
@@ -121,7 +121,7 @@ async function postToTwitter(postText) {
     console.log('─'.repeat(60));
     return {
       id: 'dry-run-' + Date.now(),
-      url: 'https://x.com/status/dry-run'
+      url: 'https://x.com/BWSCommunity/status/dry-run'
     };
   }
 
@@ -138,6 +138,12 @@ async function postToTwitter(postText) {
   // Verify authentication
   const me = await client.v2.me();
   console.log(`✅ Authenticated as: @${me.data.username}`);
+
+  // Verify we're posting as @BWSCommunity
+  if (me.data.username !== 'BWSCommunity') {
+    console.warn(`⚠️  Warning: Authenticated as @${me.data.username}, expected @BWSCommunity`);
+    console.warn('   Continuing with authenticated account...');
+  }
 
   // TEST MODE: Try simple tweet first if TEST_SIMPLE env var is set
   if (process.env.TEST_SIMPLE === 'true') {
@@ -411,10 +417,10 @@ Create an engaging X post with this EXACT structure:
 
    a) Product title enclosed in brackets: "[Product Name]"
 
-   b) Bullet list of 10-15 specific updates (use hyphen "-" not bullet points)
+   b) Bullet list of 10-15 specific updates
       - Be specific: "MetaMask wallet integration", "DM purchase privacy", "ETH swap flow"
       - NOT vague: "improvements", "enhancements", "updates"
-      - IMPORTANT: Use "-" (hyphen) for bullets, NOT emoji bullets or special characters
+      - Use bullet symbol "•" for a clean look
 
    c) Short product description sentence (1-2 lines)
       - Generate this dynamically from the PRODUCT DOCUMENTATION provided for each product
@@ -423,12 +429,10 @@ Create an engaging X post with this EXACT structure:
       Example: "X Bot is an AI-powered Telegram analytics platform providing accurate X engagement metrics to help crypto projects measure community impact and KOLs showcase their performance."
 
    d) Link to product documentation
-      Example: "Docs: https://docs.bws.ninja/telegram-bots/x-bot"
-      IMPORTANT: Do NOT use emoji before the link, just write "Docs:"
+      Example: "📚 https://docs.bws.ninja/telegram-bots/x-bot"
 
-4. CASHTAG (NO HASHTAGS):
-   $BWS
-   IMPORTANT: Do NOT include hashtags (#Web3, #Blockchain, etc.) - Twitter API rejects posts with hashtags
+4. CASHTAG AND HASHTAGS:
+   $BWS #Web3 #Blockchain #BWS
 
 CONTENT SECURITY & QUALITY RULES (CRITICAL):
 
@@ -464,14 +468,13 @@ CONTENT SECURITY & QUALITY RULES (CRITICAL):
 - "Security vulnerability" → "Security enhancement"
 
 GENERAL RULES:
-- NO character limit - be comprehensive
+- NO character limit - be comprehensive (posting as Premium account)
 - List ALL significant changes by product (after filtering/reformulating)
-- Use hyphens "-" for bullet lists (NO emoji bullets, NO special characters)
+- Use bullet points "•" for update lists
 - Be specific with technical terms (but NOT security-sensitive details)
 - Include product description for EACH product
-- Include docs link for EACH product
-- End with $BWS cashtag ONLY (NO hashtags)
-- NO EMOJIS anywhere in the post
+- Include docs link for EACH product with emoji
+- End with $BWS cashtag and hashtags
 
 EXAMPLE FORMAT:
 "BWS | Coding
@@ -479,23 +482,23 @@ EXAMPLE FORMAT:
 This week we deployed 76 updates to X Bot in production, delivering major improvements to crypto purchase flows, MetaMask wallet integration, and comprehensive platform documentation.
 
 [X Bot]
-- Private notification system for account monitoring
-- Enhanced purchase privacy with DM routing
-- MetaMask transaction flow improvements
-- Payment confirmation visibility enhancements
-- Chat-specific analytics filtering
-- Advanced validation logic
-- AWS SDK v3 compatibility upgrade
-- Database optimization for chat operations
-- Documentation infrastructure improvements
-- Enhanced permissions management
-- Comprehensive platform documentation
+• Private notification system for account monitoring
+• Enhanced purchase privacy with DM routing
+• MetaMask transaction flow improvements
+• Payment confirmation visibility enhancements
+• Chat-specific analytics filtering
+• Advanced validation logic
+• AWS SDK v3 compatibility upgrade
+• Database optimization for chat operations
+• Documentation infrastructure improvements
+• Enhanced permissions management
+• Comprehensive platform documentation
 
 X Bot is an AI-powered Telegram analytics platform providing accurate X (Twitter) engagement metrics using the official X API, helping crypto projects measure community impact, KOLs showcase their performance, and investors discover authentic projects with real traction.
 
-Docs: https://docs.bws.ninja/telegram-bots/x-bot
+📚 https://docs.bws.ninja/telegram-bots/x-bot
 
-$BWS"
+$BWS #Web3 #Blockchain #BWS"
 
 Output ONLY the post text, nothing else.`;
 
