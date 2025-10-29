@@ -1,11 +1,15 @@
 ---
 // Navigation component from Webflow
 import { articles } from '../data/articles';
+import { newsItems } from '../data/news';
 
 // Show auto-generated articles only (newest first, limit to 10)
 const allArticles = [...articles]
   .sort((a, b) => new Date(b.publishDate).getTime() - new Date(a.publishDate).getTime())
   .slice(0, 10);
+
+// Show latest 4 news items (newest first)
+const latestNews = newsItems.slice(0, 4);
 ---
 
 <style>
@@ -572,28 +576,20 @@ const allArticles = [...articles]
                         </div><div class="top-menu-dropdown-second-content-wrapper">
                           <div class="top-menu-dropdown-second-content-vertical">
                             <div class="top-menu-dropdown-second-content-title">
-                              <div class="top-menu-dropdown-second-content-title">
-                                <div class="top-menu-articles-title">BWS News</div>
-                              </div><div class="w-dyn-list">
-                                <div role="list" class="w-dyn-items">
-                                  <div
-                                    role="listitem"
-                                    class="top-menu-articles-collection-item split-horizontal w-dyn-item"
-                                  >
-                                    <img
-                                      alt="Blockchain Founders Group logo"
-                                      loading="lazy"
-                                      src="/assets/images/6474d385cfec71cb21a9229a/6505cc39f53261fa63453cc8_logo-blockchain-founders-group-background-transparent.svg"
-                                      class="image-bfg top-menu-company-news-image"
-                                    /><a
-                                      href="https://blockchain-founders.io/news/blockchain-founders-group-accelerates-bws-to-simplify-the-development-of-blockchain-projects"
-                                      target="_blank"
+                              <div class="top-menu-articles-title">BWS News</div>
+                            </div><div class="collection-list-wrapper-8 w-dyn-list">
+                              <div role="list" class="w-dyn-items">
+                                {latestNews.map((news) => (
+                                  <div role="listitem" class="top-menu-articles-collection-item w-dyn-item">
+                                    <a
+                                      href={news.buttons[0].href}
+                                      target={news.buttons[0].target || '_blank'}
                                       class="top-menu-article-link"
-                                      >Blockchain Founders Group accelerates BWS to simplify the development of
-                                      blockchain projects.</a
                                     >
+                                      {news.title}
+                                    </a>
                                   </div>
-                                </div>
+                                ))}
                               </div>
                             </div>
                           </div>
