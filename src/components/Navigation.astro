@@ -13,6 +13,32 @@ const latestNews = newsItems.slice(0, 4);
 ---
 
 <style>
+  /* News items styling */
+  .top-menu-article-title {
+    font-weight: 600 !important;
+    font-size: 14px !important;
+    line-height: 1.3 !important;
+    margin-bottom: 4px !important;
+    color: inherit !important;
+  }
+
+  .top-menu-article-description {
+    font-size: 12px !important;
+    line-height: 1.4 !important;
+    opacity: 0.85 !important;
+    color: inherit !important;
+  }
+
+  .top-menu-article-link {
+    display: block !important;
+    text-decoration: none !important;
+    transition: opacity 0.2s ease !important;
+  }
+
+  .top-menu-article-link:hover {
+    opacity: 0.8 !important;
+  }
+
   /* Simplified Industries Menu Styles */
   .industries-top-menu-collection-list-wrapper {
     width: 100% !important;
@@ -586,7 +612,8 @@ const latestNews = newsItems.slice(0, 4);
                                       target={news.buttons[0].target || '_blank'}
                                       class="top-menu-article-link"
                                     >
-                                      {news.title}
+                                      <div class="top-menu-article-title">{news.title}</div>
+                                      <div class="top-menu-article-description">{news.description}</div>
                                     </a>
                                   </div>
                                 ))}
