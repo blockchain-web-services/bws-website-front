@@ -13,8 +13,9 @@ const { news } = Astro.props;
     position: relative;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
-    min-height: 450px;
+    justify-content: center;
+    align-items: center;
+    min-height: 315px;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -27,6 +28,7 @@ const { news } = Astro.props;
     background: rgba(0, 0, 0, 0.75);
     padding: 24px 20px 20px 20px;
     width: 100%;
+    text-align: center;
   }
 
   .announcement-content-overlay .announcement-text {
@@ -40,13 +42,13 @@ const { news } = Astro.props;
     display: flex;
     flex-wrap: wrap;
     gap: 14px;
-    justify-content: flex-start;
+    justify-content: center;
     width: 100%;
   }
 
   @media screen and (max-width: 991px) {
     .announcement-box-overlay {
-      min-height: 400px;
+      min-height: 280px;
     }
 
     .announcement-content-overlay {
