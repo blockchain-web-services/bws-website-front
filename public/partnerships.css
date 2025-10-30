@@ -50,3 +50,17 @@
   max-width: none;
   min-height: 200px;
 }
+
+/* Partnership background: container-image-partnership-1983622185538257272 */
+.container-image-partnership-1983622185538257272 {
+  background-image: url('/assets/images/news/partnership-1761814978210-1983622185538257272.jpg');
+  background-position: 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border: 1px solid #000;
+  border-top-style: none;
+  border-radius: 20px 20px 0 0;
+  min-width: 100%;
+  max-width: none;
+  min-height: 200px;
+}

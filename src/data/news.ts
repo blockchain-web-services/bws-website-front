@@ -24,6 +24,29 @@ export interface NewsItem {
 
 export const newsItems: NewsItem[] = [
   {
+    title: 'Agentify',
+    description: 'Building autonomous AI agents with MCP for on-chain DeFi actions, now integrating BWS X Bot for verified social intelligence tracking.',
+    partnershipTitle: 'Agentify',
+    logos: [
+      {
+        src: 'https://pbs.twimg.com/profile_images/1923463043671027712/f4bA_sep_400x400.jpg',
+        alt: 'Agentify Logo',
+        href: 'https://x.com/agentifyxyz',
+        class: 'image-partnership image-partnership-partner'
+      }
+    ],
+    buttons: [
+      {
+        text: 'View Announcement',
+        href: 'https://x.com/BWSCommunity/status/1983622185538257272',
+        type: 'secondary',
+        target: '_blank',
+        hasArrow: true
+      }
+    ],
+    backgroundClass: 'container-image-partnership-1983622185538257272'
+  },
+  {
     title: 'Quick Sync',
     description: 'Quick Sync leverages BWS infrastructure and Web3 APIs to enable data sharing through their platform and integrates BWS X Bot',
     partnershipTitle: 'Quick Sync',
