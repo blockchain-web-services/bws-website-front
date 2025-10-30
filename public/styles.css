@@ -39780,7 +39780,8 @@ body {
 /* WCAG Contrast Fix: Links in roadmap dark backgrounds need lighter color */
 /* Corporate color #c22952 has 3.06:1 contrast on #1a1b1e - not enough for WCAG AA (requires 4.5:1) */
 /* Using #ff6b8f provides 4.6:1 contrast ratio - meets WCAG AA standards */
-.container-head-roadmap[data-roadmap-key="launch"] .paragraph-10 a,
-.container-head-roadmap[data-roadmap-key="launch"] .paragraph-11 a {
+/* Apply to ALL roadmap cards with dark backgrounds */
+.container-head-roadmap .paragraph-10 a,
+.container-head-roadmap .paragraph-11 a {
   color: #ff6b8f !important;
 }
