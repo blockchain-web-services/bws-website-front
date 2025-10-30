@@ -9,7 +9,7 @@ test.describe('Live Site - Company Menu News', () => {
     await page.waitForLoadState('networkidle');
 
     // Hover over Company menu to show dropdown
-    const companyMenu = page.locator('a.top-menu-link:has-text("Company")').first();
+    const companyMenu = page.locator('.nav-link-dropdown-text:has-text("Company")').first();
     await companyMenu.hover();
 
     // Wait for dropdown to appear
@@ -19,8 +19,8 @@ test.describe('Live Site - Company Menu News', () => {
     const newsSection = page.locator('.top-menu-articles-title:has-text("BWS News")');
     await expect(newsSection).toBeVisible();
 
-    // Get all news items
-    const newsItems = page.locator('.top-menu-articles-collection-item .top-menu-article-link');
+    // Get all news items specifically within the Company dropdown (BWS News section)
+    const newsItems = page.locator('.top-menu-articles-title:has-text("BWS News")').locator('xpath=../..').locator('.top-menu-article-link');
 
     // Should have exactly 4 news items
     await expect(newsItems).toHaveCount(4);
@@ -72,12 +72,12 @@ test.describe('Live Site - Company Menu News', () => {
     await page.waitForLoadState('networkidle');
 
     // Hover over Company menu
-    const companyMenu = page.locator('a.top-menu-link:has-text("Company")').first();
+    const companyMenu = page.locator('.nav-link-dropdown-text:has-text("Company")').first();
     await companyMenu.hover();
     await page.waitForTimeout(500);
 
-    // Check first news item styling
-    const firstNewsItem = page.locator('.top-menu-articles-collection-item .top-menu-article-link').first();
+    // Check first news item styling (specifically within BWS News section)
+    const firstNewsItem = page.locator('.top-menu-articles-title:has-text("BWS News")').locator('xpath=../..').locator('.top-menu-article-link').first();
     const title = firstNewsItem.locator('.top-menu-article-title');
     const description = firstNewsItem.locator('.top-menu-article-description');
 
