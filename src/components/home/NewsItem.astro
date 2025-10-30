@@ -8,35 +8,59 @@ interface Props {
 const { news } = Astro.props;
 ---
 
-<div class="w-layout-hflex announcement-box">
-  <div class={`w-layout-blockcontainer ${news.backgroundClass} w-container`}></div>
-  <div class="w-layout-vflex flex-block-10">
-    <div class="announcement-title">{news.title}</div>
-    <div class="announcement-text">
-      {news.description}<br />
-    </div>
-    {
-      news.partnershipTitle && (
-        <div class="announcement-logos-title">{news.partnershipTitle}</div>
-      )
+<style>
+  .announcement-box-overlay {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    min-height: 450px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid var(--neutral-400);
+  }
+
+  .announcement-content-overlay {
+    background: rgba(0, 0, 0, 0.75);
+    padding: 24px 20px 20px 20px;
+    width: 100%;
+  }
+
+  .announcement-content-overlay .announcement-text {
+    color: #ffffff;
+    margin-bottom: 16px;
+    font-size: 16px;
+    line-height: 1.4em;
+  }
+
+  .announcement-content-overlay .announcement-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    justify-content: flex-start;
+    width: 100%;
+  }
+
+  @media screen and (max-width: 991px) {
+    .announcement-box-overlay {
+      min-height: 400px;
     }
-    <div class="w-layout-vflex announcement-logos">
-      <div class="w-layout-hflex announcement-flex-logos">
-        {
-          news.logos.map((logo) => (
-            <a href={logo.href} target="_blank" class="w-inline-block">
-              <img
-                src={logo.src}
-                loading="lazy"
-                alt={logo.alt}
-                class={logo.class}
-              />
-            </a>
-          ))
-        }
-      </div>
+
+    .announcement-content-overlay {
+      padding: 20px 16px 16px 16px;
+    }
+  }
+</style>
+
+<div class={`announcement-box-overlay ${news.backgroundClass}`}>
+  <div class="announcement-content-overlay">
+    <div class="announcement-text">
+      {news.description}
     </div>
-    <div class="w-layout-hflex announcement-buttons">
+    <div class="announcement-buttons">
       {
         news.buttons.map((button) => (
           <a
