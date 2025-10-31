@@ -50,6 +50,20 @@ const { news } = Astro.props;
     margin: 0;
   }
 
+  .announcement-link {
+    color: #ffffff;
+    text-decoration: underline;
+    font-size: 16px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+  }
+
+  .announcement-link:hover {
+    opacity: 0.8;
+  }
+
   @media screen and (max-width: 991px) {
     .announcement-box-overlay {
       min-height: 280px;
@@ -68,16 +82,30 @@ const { news } = Astro.props;
     </div>
     <div class="announcement-buttons">
       {
-        news.buttons.map((button) => (
-          <a
-            href={button.href}
-            target={button.target}
-            class={`button-${button.type} button-small w-button`}
-          >
-            {button.text}
-            {button.hasArrow && <span class="button-arrow" />}
-          </a>
-        ))
+        news.buttons.map((button) => {
+          if (button.text === 'View Announcement') {
+            return (
+              <a
+                href={button.href}
+                target={button.target}
+                class="announcement-link"
+              >
+                {button.text}
+              </a>
+            );
+          } else {
+            return (
+              <a
+                href={button.href}
+                target={button.target}
+                class={`button-${button.type} button-small w-button`}
+              >
+                {button.text}
+                {button.hasArrow && <span class="button-arrow" />}
+              </a>
+            );
+          }
+        })
       }
     </div>
   </div>
