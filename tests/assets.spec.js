@@ -62,7 +62,8 @@ test.describe('Asset Verification Tests', () => {
     }
   });
 
-  test('Blockchain Founders Group image test', async ({ page }) => {
+  test.skip('Blockchain Founders Group image test', async ({ page }) => {
+    // SKIPPED: Partner logos removed from news cards in redesign
     await page.goto('/');
     await page.waitForLoadState('networkidle');
 

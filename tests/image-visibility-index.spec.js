@@ -14,7 +14,8 @@ test.describe('Image Visibility on Index Page', () => {
     await page.waitForTimeout(2000);
   });
 
-  test('PROOF Logo visibility and CSS', async ({ page }, testInfo) => {
+  test.skip('PROOF Logo visibility and CSS', async ({ page }, testInfo) => {
+    // SKIPPED: Partner logos removed from news cards in redesign
     const proofImg = page.locator('img[src*="PROOF-logo"]').first();
 
     // Check if image exists
@@ -70,7 +71,8 @@ test.describe('Image Visibility on Index Page', () => {
     expect(styles.maxWidth).toContain('150px');
   });
 
-  test('AssureDefi Logo visibility and CSS', async ({ page }, testInfo) => {
+  test.skip('AssureDefi Logo visibility and CSS', async ({ page }, testInfo) => {
+    // SKIPPED: Partner logos removed from news cards in redesign
     const assureImg = page.locator('img[src*="AssureDefi"]').first();
 
     // Check if image exists and is visible
@@ -137,7 +139,8 @@ test.describe('Image Visibility on Index Page', () => {
     console.log('AssureDefi Logo:', dimensions, styles);
   });
 
-  test('BFG Logo visibility and CSS', async ({ page }, testInfo) => {
+  test.skip('BFG Logo visibility and CSS', async ({ page }, testInfo) => {
+    // SKIPPED: Partner logos removed from news cards in redesign
     // Target the .image-bfg class in main content, not the dropdown menu version
     // The visible one is in announcement section
     const bfgImg = page.locator('.flex-block-announcements img.image-bfg, .announcement-box img.image-bfg').first();

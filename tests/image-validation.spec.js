@@ -17,28 +17,8 @@ const __dirname = path.dirname(__filename);
 const siteDir = path.join(__dirname, '..', '_site');
 
 // Critical images to test
+// NOTE: Partner logos (PROOF, AssureDefi, BFG) removed as they're no longer displayed in news cards
 const criticalImages = [
-  {
-    name: 'PROOF Logo',
-    url: '/assets/images/6474d385cfec71cb21a92251/670f82f9b05322735f72cbcc_PROOF-logo-lightBG.png',
-    selector: 'img[src*="PROOF-logo"]',
-    expectedClass: 'image-proof',
-    maxWidth: '150px'
-  },
-  {
-    name: 'AssureDefi Logo',
-    url: '/assets/images/6474d385cfec71cb21a92251/6707f1c5c0856eff6c22300e_AssureDefi.png',
-    selector: 'img[src*="AssureDefi"]',
-    expectedClass: 'image-assure'
-    // Width auto-adjusts based on height: 120px from CSS
-  },
-  {
-    name: 'BFG Logo',
-    url: '/assets/images/6474d385cfec71cb21a92251/64e738258afae2bb6f4d56bf_logo-blockchain-founders-group-background-transparent-large.svg',
-    selector: '.flex-block-announcements img.image-bfg, .announcement-box img.image-bfg', // Target visible main content logo in announcement, not dropdown menu
-    expectedClass: 'image-bfg',
-    maxWidth: '150px'
-  },
   {
     name: 'Tokenomics Image',
     url: '/assets/images/6474d385cfec71cb21a92251/6707fd987c3a05d42e1e908e_Tokenomics%20Allocation-letters-black.png',
@@ -73,7 +53,8 @@ test.describe('Image Files and CSS Validation', () => {
     }
   });
 
-  test('Check CSS classes are defined with proper rules', async () => {
+  test.skip('Check CSS classes are defined with proper rules', async () => {
+    // SKIPPED: Partner logos removed from news cards in redesign
     const cssPath = path.join(siteDir, 'styles.css');
 
     if (!fs.existsSync(cssPath)) {

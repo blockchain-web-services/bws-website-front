@@ -182,7 +182,8 @@ test.describe('Image Visibility Tests', () => {
     }
   });
 
-  test('Screenshot critical areas for manual inspection', async ({ page }) => {
+  test.skip('Screenshot critical areas for manual inspection', async ({ page }) => {
+    // SKIPPED: Partner logos section removed from news cards
     await page.goto('/');
     await page.waitForLoadState('networkidle');
 

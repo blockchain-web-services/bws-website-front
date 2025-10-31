@@ -9,7 +9,8 @@ test.describe('Image Visual Tests', () => {
     await homePage.goto();
   });
 
-  test('Critical partner logos are visible and properly sized', async ({ page }) => {
+  test.skip('Critical partner logos are visible and properly sized', async ({ page }) => {
+    // SKIPPED: Partner logos removed from news cards in redesign
     // Check PROOF logo
     const proofDimensions = await homePage.checkProofLogoDimensions();
     expect(proofDimensions.isCorrectSize).toBeTruthy();
@@ -50,7 +51,8 @@ test.describe('Image Visual Tests', () => {
   });
 
 
-  test('Images have correct CSS classes applied', async ({ page }) => {
+  test.skip('Images have correct CSS classes applied', async ({ page }) => {
+    // SKIPPED: Partner logos removed from news cards in redesign
     // Check PROOF logo has correct class
     await expect(homePage.proofLogo).toHaveClass(/image-proof/);
 
