@@ -25,7 +25,7 @@ const { news } = Astro.props;
   }
 
   .announcement-content-overlay {
-    background: rgba(0, 0, 0, 0.75);
+    background: rgba(0, 0, 0, 0.85);
     padding: 24px 20px 20px 20px;
     width: 100%;
     text-align: center;
@@ -73,6 +73,10 @@ const { news } = Astro.props;
     opacity: 0.8;
   }
 
+  .partner-name {
+    color: var(--rose);
+  }
+
   @media screen and (max-width: 991px) {
     .announcement-box-overlay {
       min-height: 280px;
@@ -86,8 +90,7 @@ const { news } = Astro.props;
 
 <div class={`announcement-box-overlay ${news.backgroundClass}`}>
   <div class="announcement-content-overlay">
-    <div class="announcement-text">
-      {news.description}
+    <div class="announcement-text" set:html={news.description}>
     </div>
     <div class="announcement-buttons">
       {

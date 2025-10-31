@@ -247,6 +247,26 @@ Tweet: ${tweetText}`
 }
 
 /**
+ * Wrap partner name in description with rose-colored span
+ */
+function highlightPartnerName(description, partnerName) {
+  if (!partnerName || partnerName === 'Partnership Announcement') {
+    return description;
+  }
+
+  // Escape special regex characters in partner name
+  const escapedName = partnerName.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+
+  // Create case-insensitive regex to find partner name
+  const regex = new RegExp(`\\b${escapedName}\\b`, 'gi');
+
+  // Replace with span-wrapped version
+  const highlighted = description.replace(regex, '<span class="partner-name">$&</span>');
+
+  return highlighted;
+}
+
+/**
  * Fetch partner's X profile image
  */
 async function fetchPartnerProfileImage(client, username) {
@@ -277,6 +297,9 @@ async function fetchPartnerProfileImage(client, username) {
 async function generateNewsEntry(tweet, imagePath, client) {
   const { title, description, xUsername } = await generateContentWithClaude(tweet.text);
 
+  // Highlight partner name in description with rose color
+  const highlightedDescription = highlightPartnerName(description, title);
+
   // Generate unique background class for this partnership
   const backgroundClass = `container-image-partnership-${tweet.id}`;
 
@@ -301,7 +324,7 @@ async function generateNewsEntry(tweet, imagePath, client) {
 
   return {
     title: title,
-    description: description,
+    description: highlightedDescription,
     partnershipTitle: title,
     logos: logos,
     buttons: [{

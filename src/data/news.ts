@@ -25,7 +25,7 @@ export interface NewsItem {
 export const newsItems: NewsItem[] = [
   {
     title: 'Agentify',
-    description: 'Building autonomous AI agents with MCP for on-chain DeFi actions, now integrating BWS X Bot for verified social intelligence tracking.',
+    description: '<span class="partner-name">Agentify</span> building autonomous AI agents with MCP for on-chain DeFi actions, now integrating BWS X Bot for verified social intelligence tracking.',
     partnershipTitle: 'Agentify',
     logos: [
       {
@@ -48,7 +48,7 @@ export const newsItems: NewsItem[] = [
   },
   {
     title: 'Quick Sync',
-    description: 'Quick Sync leverages BWS infrastructure and Web3 APIs to enable data sharing through their platform and integrates BWS X Bot',
+    description: '<span class="partner-name">Quick Sync</span> leverages BWS infrastructure and Web3 APIs to enable data sharing through their platform and integrates BWS X Bot',
     partnershipTitle: 'Quick Sync',
     logos: [
       {
@@ -71,7 +71,7 @@ export const newsItems: NewsItem[] = [
   },
   {
     title: 'Rouge Studio',
-    description: 'Rouge Studio integrates BWS X Bot technology to enhance Web3 community engagement and performance tracking',
+    description: '<span class="partner-name">Rouge Studio</span> integrates BWS X Bot technology to enhance Web3 community engagement and performance tracking',
     partnershipTitle: 'Rouge Studio',
     logos: [
       {
@@ -94,7 +94,7 @@ export const newsItems: NewsItem[] = [
   },
   {
     title: 'Matchain',
-    description: 'Matchain partners with BWS to revolutionize sports through Fan Game Cube, empowering clubs with innovative tools for fan engagement',
+    description: '<span class="partner-name">Matchain</span> partners with BWS to revolutionize sports through Fan Game Cube, empowering clubs with innovative tools for fan engagement',
     partnershipTitle: 'Matchain',
     logos: [
       {
@@ -150,7 +150,7 @@ export const newsItems: NewsItem[] = [
   },
   {
     title: 'BFG Invests in BWS',
-    description: 'Blockchain Founders Group accelerates BWS to simplify the development of blockchain projects.',
+    description: '<span class="partner-name">Blockchain Founders Group</span> accelerates BWS to simplify the development of blockchain projects.',
     partnershipTitle: 'Blockchain Founders Group',
     logos: [
       {
