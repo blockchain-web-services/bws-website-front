@@ -1,0 +1,16 @@
+{
+  "repositories": [
+    {
+      "owner": "blockchain-web-services",
+      "repo": "bws-api-telegram-xbot",
+      "branch": "prod",
+      "product": "X Bot"
+    },
+    {
+      "owner": "blockchain-web-services",
+      "repo": "bws-backoffice-website-esg",
+      "branch": "staging",
+      "product": "ESG Credits"
+    }
+  ]
+}

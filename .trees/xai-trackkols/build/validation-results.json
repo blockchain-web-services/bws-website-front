@@ -1,0 +1,159 @@
+{
+  "totalFiles": 25,
+  "prettyPrinted": 25,
+  "validationPassed": 25,
+  "filesWithErrors": 0,
+  "filesWithWarnings": 0,
+  "files": [
+    {
+      "path": "about.html",
+      "prettyPrint": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "articles/discover-the-power-of-blockchain-bwss-data-management-solutions.html",
+      "prettyPrint": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "articles/embrace-sustainability-with-esg-credits-bws-solution.html",
+      "prettyPrint": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "articles/investment-impact-reporting-unlocking-a-sustainable-future.html",
+      "prettyPrint": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "contact-us.html",
+      "prettyPrint": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "index.html",
+      "prettyPrint": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "industries.html",
+      "prettyPrint": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "industry-content/content-creation.html",
+      "prettyPrint": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "industry-content/esg.html",
+      "prettyPrint": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "industry-content/financial-services.html",
+      "prettyPrint": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "industry-content/legal.html",
+      "prettyPrint": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "industry-content/retail.html",
+      "prettyPrint": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "industry-content/supply-chain.html",
+      "prettyPrint": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "legal-notice.html",
+      "prettyPrint": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "marketplace/blockchain-badges.html",
+      "prettyPrint": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "marketplace/database-immutable.html",
+      "prettyPrint": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "marketplace/database-mutable.html",
+      "prettyPrint": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "marketplace/esg-credits.html",
+      "prettyPrint": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "marketplace/ipfs-upload.html",
+      "prettyPrint": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "marketplace/nft-gamecube.html",
+      "prettyPrint": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "marketplace/nft-zeroknwoledge.html",
+      "prettyPrint": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "marketplace/telegram-xbot.html",
+      "prettyPrint": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "privacy-policy.html",
+      "prettyPrint": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "resources.html",
+      "prettyPrint": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "test-images.html",
+      "prettyPrint": true,
+      "errors": [],
+      "warnings": []
+    }
+  ]
+}

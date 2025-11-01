@@ -1,0 +1,31 @@
+{
+  "repliedTweetIds": [],
+  "skippedTweetIds": [
+    "1984407471415574574",
+    "1984394262562423053",
+    "1984392679925727578"
+  ],
+  "productRotation": {
+    "priorityProducts": [
+      "X Bot",
+      "Fan Game Cube"
+    ],
+    "otherProducts": [
+      "Blockchain Badges",
+      "ESG Credits",
+      "Blockchain Hash",
+      "Blockchain Save",
+      "BWS IPFS",
+      "NFT.zK"
+    ],
+    "priorityIndex": 1,
+    "otherIndex": 0,
+    "replyCount": 3
+  },
+  "metadata": {
+    "lastCheck": "2025-11-01T19:31:23.088Z",
+    "totalReplied": 0,
+    "totalSkipped": 3,
+    "lastUpdateBy": "kol-system"
+  }
+}

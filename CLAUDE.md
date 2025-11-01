@@ -187,3 +187,5 @@ Workflows automatically:
 - Download and add actual images/assets rather than creating placeholders
 - If something is broken, stop and fix it correctly rather than working around it
 - Test failures are valuable signals - address them properly
+
+⚠️ **IMPORTANT**: Read `CLAUDE_INSTRUCTIONS.md` for context before making changes in this repository.

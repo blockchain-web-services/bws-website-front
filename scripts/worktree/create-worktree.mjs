@@ -16,6 +16,24 @@ const __dirname = dirname(__filename);
 const rootDir = join(__dirname, '../..');
 
 /**
+ * Detect parent branch from root directory
+ * @returns {string} Parent branch name
+ */
+function detectParentBranch() {
+    try {
+        const branch = execSync('git branch --show-current', {
+            cwd: rootDir,
+            encoding: 'utf8',
+            stdio: ['pipe', 'pipe', 'pipe']
+        }).trim();
+
+        return branch || 'main';
+    } catch (error) {
+        return 'main';
+    }
+}
+
+/**
  * Prompt user for input using readline
  */
 function promptUser(question) {
@@ -214,40 +232,77 @@ WORKTREE_NAME=${branchName}
         console.log('✅ Configuration saved to .worktree-info.json');
     }
 
-    // Step 4: Create worktree context file (optional)
-    console.log('\n📝 Worktree Context');
+    // Step 4: Create Claude Code integration files
+    console.log('\n📝 Claude Code Integration');
     console.log('━'.repeat(50));
 
+    // Detect parent branch
+    const parentBranch = detectParentBranch();
+
     const wantsContext = await promptUser(`Would you like to add context/description for this worktree?
-This helps document the feature's purpose and approach.
+This helps Claude Code understand the feature's purpose and approach.
 
 Press Enter to skip, or type 'y' to add context: `);
 
-    let contextContent = '';
+    let featureDesc = '';
+    let taskList = '';
+    let technicalApproach = '';
+    let testingStrategy = '';
 
     if (wantsContext.toLowerCase() === 'y' || wantsContext.toLowerCase() === 'yes') {
         console.log('\n');
 
         // Feature description
-        const featureDesc = await promptMultiline('📋 Feature/Fix Description (what and why):');
+        console.log('📋 Feature/Fix Description');
+        console.log('━'.repeat(50));
+        console.log('Describe WHAT you\'re building and WHY it\'s needed.');
+        console.log('Focus on the problem and solution, not specific tasks.');
+        console.log('Claude will use this to understand the overall goal.\n');
+        console.log('Example: "Add user authentication to protect admin routes');
+        console.log('         because currently anyone can access admin features."\n');
+        featureDesc = await promptMultiline('What and why:');
 
         // Task list
-        console.log('\n✅ Task List (one per line):');
-        const taskList = await promptMultiline('');
+        console.log('\n✅ Task List');
+        console.log('━'.repeat(50));
+        console.log('List specific tasks/steps needed (one per line).');
+        console.log('Be concrete and actionable - these become checkboxes.');
+        console.log('Claude will use this to track progress and know what\'s left.\n');
+        console.log('Example tasks:');
+        console.log('  Create login form component');
+        console.log('  Add JWT token validation');
+        console.log('  Protect admin routes with middleware\n');
+        taskList = await promptMultiline('Tasks (one per line):');
 
         // Technical approach
-        console.log('\n🔧 Technical Approach/Design Decisions:');
-        const technicalApproach = await promptMultiline('');
+        console.log('\n🔧 Technical Approach/Design Decisions');
+        console.log('━'.repeat(50));
+        console.log('Explain HOW you\'ll implement this technically.');
+        console.log('Include frameworks, libraries, patterns, or architecture.');
+        console.log('Claude will use this to stay consistent with your approach.\n');
+        console.log('Example: "Using JWT tokens stored in httpOnly cookies,');
+        console.log('         express-jwt middleware for validation,');
+        console.log('         and React Context for auth state."\n');
+        technicalApproach = await promptMultiline('How you\'ll build it:');
 
         // Testing strategy
-        console.log('\n🧪 Testing Strategy/Acceptance Criteria:');
-        const testingStrategy = await promptMultiline('');
+        console.log('\n🧪 Testing Strategy/Acceptance Criteria');
+        console.log('━'.repeat(50));
+        console.log('Describe how to verify it works correctly.');
+        console.log('Include test cases, manual steps, or success criteria.');
+        console.log('Claude will use this to validate the implementation.\n');
+        console.log('Example: "User can login with valid credentials,');
+        console.log('         invalid login shows error message,');
+        console.log('         protected routes redirect to login when not authenticated."\n');
+        testingStrategy = await promptMultiline('How to verify it works:');
+    }
 
-        // Build context content
-        contextContent = `# Worktree Context: ${branchName}
+    // Build CLAUDE_INSTRUCTIONS.md content
+    const claudeInstructionsContent = `# Claude Code Instructions - Worktree: ${branchName}
 
 **Created**: ${new Date().toISOString()}
 **Branch**: ${branchName}
+**Parent Branch**: ${parentBranch}
 
 ## Feature/Fix Description
 
@@ -255,7 +310,7 @@ ${featureDesc || 'TODO: Add feature description'}
 
 ## Task List
 
-${taskList.split('\n').map(task => task.trim() ? `- [ ] ${task}` : '').filter(t => t).join('\n') || '- [ ] TODO: Add tasks'}
+${taskList ? taskList.split('\n').map(task => task.trim() ? `- [ ] ${task}` : '').filter(t => t).join('\n') : '- [ ] TODO: Add tasks'}
 
 ## Technical Approach
 
@@ -265,45 +320,77 @@ ${technicalApproach || 'TODO: Add technical notes'}
 
 ${testingStrategy || 'TODO: Add testing strategy'}
 
+## Git Workflow for This Worktree
+
+### 1. Rebase from root branch
+\`\`\`bash
+git fetch origin
+git rebase origin/${parentBranch}
+\`\`\`
+
+### 2. Commit your changes
+\`\`\`bash
+git add .
+git commit -m "feat: description"
+\`\`\`
+
+### 3. Run tests before merging
+\`\`\`bash
+cd test
+npm test
+\`\`\`
+
+### 4. Merge to root (from root directory)
+\`\`\`bash
+cd ../..  # Return to root
+git checkout ${parentBranch}
+git merge --no-ff ${branchName}
+\`\`\`
+
+### 5. Push to origin
+\`\`\`bash
+git push origin ${parentBranch}
+\`\`\`
+
+### 6. Remove worktree when done
+\`\`\`bash
+npm run worktree:remove ${branchName}
+\`\`\`
+
 ---
 
-**Note**: This file is gitignored and won't be merged. It's for your personal context while working in this worktree.
+⚠️ **Note**: This file is gitignored and won't be committed. It's for your local context while working in this worktree.
 `;
-    } else {
-        // Create minimal template
-        contextContent = `# Worktree Context: ${branchName}
 
-**Created**: ${new Date().toISOString()}
-**Branch**: ${branchName}
+    // Write CLAUDE_INSTRUCTIONS.md to worktree root
+    const claudeInstructionsPath = join(worktreePath, 'CLAUDE_INSTRUCTIONS.md');
+    writeFileSync(claudeInstructionsPath, claudeInstructionsContent);
+    console.log(`\n✅ Created CLAUDE_INSTRUCTIONS.md`);
 
-## Feature/Fix Description
-
-TODO: Add feature description
-
-## Task List
-
-- [ ] TODO: Add tasks
-
-## Technical Approach
-
-TODO: Add technical notes
-
-## Testing Strategy
-
-TODO: Add testing strategy
-
----
-
-**Note**: This file is gitignored and won't be merged. It's for your personal context while working in this worktree.
+    // Create CLAUDE.md with reference
+    const claudeMdContent = `
+⚠️ **IMPORTANT**: Read \`CLAUDE_INSTRUCTIONS.md\` for context before making changes in this worktree.
 `;
+
+    const claudeMdPath = join(worktreePath, 'CLAUDE.md');
+    writeFileSync(claudeMdPath, claudeMdContent);
+    console.log(`✅ Created CLAUDE.md`);
+
+    // Step 5: Copy Claude Code skills to worktree
+    console.log('\n🎯 Setting up Claude Code skills...');
+    const claudeSource = join(rootDir, '.claude');
+    const claudeDest = join(worktreePath, '.claude');
+
+    if (existsSync(claudeSource)) {
+        try {
+            cpSync(claudeSource, claudeDest, { recursive: true });
+            console.log('  ✅ Copied Claude Code skills');
+        } catch (error) {
+            console.warn('  ⚠️  Could not copy Claude Code skills:', error.message);
+        }
     }
 
-    // Write WORKTREE_CONTEXT.md to worktree root
-    const contextFilePath = join(worktreePath, 'WORKTREE_CONTEXT.md');
-    writeFileSync(contextFilePath, contextContent);
-    console.log(`\n✅ Context saved to WORKTREE_CONTEXT.md`);
-
-    // Step 5: Copy helper files (if they exist)
+    // Step 6: Copy helper files (if they exist)
     console.log('\n📁 Setting up worktree helpers...');
     const helpersSource = join(rootDir, 'test', 'helpers');
     const helpersTarget = join(worktreeTestDir, 'helpers');
@@ -318,7 +405,7 @@ TODO: Add testing strategy
         }
     }
 
-    // Step 6: Display configuration summary
+    // Step 7: Display configuration summary
     console.log('\n🎉 Worktree created and configured successfully!\n');
     console.log('📊 Configuration Summary:');
     console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━');
@@ -335,7 +422,7 @@ TODO: Add testing strategy
     console.log('  2. Start developing your feature');
 
     if (existsSync(worktreeTestDir)) {
-        console.log(`  3. cd test && npm install     # Install test dependencies (when ready)');
+        console.log('  3. cd test && npm install     # Install test dependencies (when ready)');
         console.log('  4. npm run docker:up          # Start LocalStack container');
         console.log('  5. npm run setup              # Create AWS resources');
         console.log('  6. npm test                   # Run tests');

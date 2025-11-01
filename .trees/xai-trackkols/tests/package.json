@@ -1,0 +1,26 @@
+{
+  "name": "bws-website-tests",
+  "version": "1.0.0",
+  "description": "Test suite for BWS website",
+  "type": "module",
+  "scripts": {
+    "test": "playwright test --config=playwright.config.cjs",
+    "test:ui": "playwright test --config=playwright.config.cjs --ui",
+    "test:smoke": "playwright test smoke/ --config=playwright.config.cjs",
+    "test:visual": "playwright test visual/ --config=playwright.config.cjs",
+    "test:a11y": "playwright test accessibility/ --config=playwright.config.cjs",
+    "test:perf": "playwright test performance/ --config=playwright.config.cjs",
+    "test:e2e": "playwright test e2e/ --config=playwright.config.cjs",
+    "test:headed": "playwright test --config=playwright.config.cjs --headed",
+    "test:debug": "playwright test --config=playwright.config.cjs --debug",
+    "test:report": "playwright show-report playwright-report",
+    "test:snapshot": "playwright test visual/snapshots.spec.js --config=playwright.config.cjs",
+    "preview:sirv": "sirv ../_site --port 4321 --host"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.8.0",
+    "@lhci/cli": "^0.13.0",
+    "@playwright/test": "^1.45.0",
+    "sirv-cli": "^3.0.1"
+  }
+}

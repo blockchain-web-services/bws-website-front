@@ -1,0 +1,90 @@
+name: KOL Reply Cycle
+
+on:
+  schedule:
+    - cron: '30 6 * * *'   # 06:30 UTC
+    - cron: '0 12 * * *'   # 12:00 UTC
+    - cron: '30 15 * * *'  # 15:30 UTC
+    - cron: '0 21 * * *'   # 21:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+env:
+  NODE_VERSION: "20"
+  MAX_REPLIES_PER_RUN: "2"
+
+jobs:
+  post-replies:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: "npm"
+
+      - name: Install dependencies
+        run: |
+          npm install twitter-api-v2 @anthropic-ai/sdk
+
+      - name: Run reply generation and posting
+        id: reply
+        env:
+          BWSXAI_TWITTER_BEARER_TOKEN: ${{ secrets.BWSXAI_TWITTER_BEARER_TOKEN }}
+          BWSXAI_TWITTER_API_KEY: ${{ secrets.BWSXAI_TWITTER_API_KEY }}
+          BWSXAI_TWITTER_API_SECRET: ${{ secrets.BWSXAI_TWITTER_API_SECRET }}
+          BWSXAI_TWITTER_ACCESS_TOKEN: ${{ secrets.BWSXAI_TWITTER_ACCESS_TOKEN }}
+          BWSXAI_TWITTER_ACCESS_SECRET: ${{ secrets.BWSXAI_TWITTER_ACCESS_SECRET }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          echo "Starting reply cycle..."
+          node scripts/kols/evaluate-and-reply-kols.js
+          echo "reply_status=success" >> $GITHUB_OUTPUT
+        continue-on-error: true
+
+      - name: Check for changes
+        id: changes
+        run: |
+          if git diff --quiet scripts/kols/data/; then
+            echo "has_changes=false" >> $GITHUB_OUTPUT
+          else
+            echo "has_changes=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Get stats
+        id: stats
+        run: |
+          if [ -f "scripts/kols/data/kol-replies.json" ]; then
+            TOTAL_REPLIES=$(jq '.replies | length' scripts/kols/data/kol-replies.json)
+            TODAY=$(date +'%Y-%m-%d')
+            TODAY_REPLIES=$(jq --arg date "$TODAY" '[.replies[] | select(.timestamp | startswith($date))] | length' scripts/kols/data/kol-replies.json)
+            echo "total=$TOTAL_REPLIES" >> $GITHUB_OUTPUT
+            echo "today=$TODAY_REPLIES" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Commit changes
+        if: steps.changes.outputs.has_changes == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add scripts/kols/data/
+          git commit -m "KOL reply cycle - $(date +'%Y-%m-%d %H:%M UTC')
+
+          Total replies: ${{ steps.stats.outputs.total }} | Today: ${{ steps.stats.outputs.today }}
+
+          🤖 Generated with [Claude Code](https://claude.com/claude-code)"
+          git push
+
+      - name: Summary
+        run: |
+          echo "## 💬 Reply Cycle Complete" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "- **Time:** $(date +'%H:%M UTC')" >> $GITHUB_STEP_SUMMARY
+          echo "- **Total Replies:** ${{ steps.stats.outputs.total }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Today:** ${{ steps.stats.outputs.today }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Posted This Run:** ${{ steps.changes.outputs.has_changes == 'true' && 'Yes' || 'No' }}" >> $GITHUB_STEP_SUMMARY

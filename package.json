@@ -23,7 +23,11 @@
     "format:check": "prettier --check 'src/**/*.{astro,js,ts,json}'",
     "snapshot": "cd tests && npx playwright test visual/snapshots.spec.js --config=playwright.config.cjs",
     "snapshot:update": "npm run build && npm run snapshot",
-    "weekly-x-post": "node scripts/generate-weekly-x-post.js"
+    "weekly-x-post": "node scripts/generate-weekly-x-post.js",
+    "worktree:create": "node scripts/worktree/create-worktree.mjs",
+    "worktree:list": "node scripts/worktree/list-worktrees.mjs",
+    "worktree:merge": "node scripts/worktree/merge-worktree.mjs",
+    "worktree:remove": "node scripts/worktree/remove-worktree.mjs"
   },
   "devDependencies": {
     "@octokit/rest": "^22.0.0",

@@ -1,0 +1,703 @@
+name: Build, Test, and Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+  pull-requests: write
+  issues: write
+
+concurrency:
+  group: "pages-${{ github.ref }}"
+  cancel-in-progress: true
+
+env:
+  NODE_VERSION: "20"
+
+jobs:
+  # Job 1: Run test suite
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        browser: [chromium]
+    name: Test - ${{ matrix.browser }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: "npm"
+          cache-dependency-path: |
+            package.json
+            tests/package.json
+
+      - name: Install build dependencies
+        run: |
+          if [ -f "package-lock.json" ]; then
+            npm ci
+          else
+            npm install
+          fi
+
+      - name: Build site
+        run: npm run build
+
+      - name: Install test dependencies
+        working-directory: tests
+        run: |
+          if [ -f "package-lock.json" ]; then
+            npm ci
+          else
+            npm install
+          fi
+
+      - name: Install Playwright browsers
+        working-directory: tests
+        run: npx playwright install --with-deps ${{ matrix.browser }}
+
+      - name: Run Playwright tests
+        id: test-run
+        working-directory: tests
+        env:
+          PORT: 4321
+          PLAYWRIGHT_BASE_URL: http://localhost:4321
+        run: |
+          # Run tests with reporters configured in playwright.config.cjs
+          # In CI, this will use JSON reporter outputting to test-results.json
+          # The test command will fail the job if any tests fail
+          npx playwright test --config=playwright.config.cjs --project=${{ matrix.browser }} 2>&1 | tee test-output.txt
+          # Store exit code to check if we need to collect error details
+          TEST_EXIT_CODE=${PIPESTATUS[0]}
+          echo "test_exit_code=${TEST_EXIT_CODE}" >> $GITHUB_OUTPUT
+          # Exit with the test exit code to fail the job if tests failed
+          exit ${TEST_EXIT_CODE}
+
+      - name: Upload test summary only
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-summary-${{ matrix.browser }}
+          path: |
+            tests/test-results.json
+            tests/test-output.txt
+          if-no-files-found: warn
+          retention-days: 7
+
+      - name: Collect and format test errors
+        if: failure()
+        working-directory: tests
+        run: |
+          echo "Collecting test errors..."
+
+          # Debug: Check current directory and files
+          echo "Current directory: $(pwd)"
+          echo "Files in current directory:"
+          ls -la . | head -20
+
+          # Check what test output files exist
+          echo "Test output files:"
+          ls -la test-*.* 2>/dev/null || echo "No test-*.* files found"
+          ls -la test-results/ 2>/dev/null || echo "No test-results/ directory found"
+
+          # Check if test-results.json exists
+          if [ -f "test-results.json" ]; then
+            echo "Found test-results.json ($(wc -l < test-results.json) lines)"
+          else
+            echo "WARNING: test-results.json not found in $(pwd)"
+            # Try to find it
+            echo "Searching for test-results.json:"
+            find . -name "test-results.json" -type f 2>/dev/null || echo "Not found anywhere"
+          fi
+
+          # Generate DD-MM-HH timestamp for the filename
+          DD=$(date -u '+%d')
+          MM=$(date -u '+%m')
+          HH=$(date -u '+%H')
+          TIMESTAMP="${DD}-${MM}-${HH}"
+
+          # Get current branch name and check if it's a fix branch
+          CURRENT_BRANCH="${{ github.ref_name }}"
+          echo "Current branch: $CURRENT_BRANCH"
+
+          # Create fixes directory structure for the current branch
+          if [[ "$CURRENT_BRANCH" == fix/* ]]; then
+            # For fix branches, use the existing fixes folder structure
+            FIXES_DIR="../fixes/${CURRENT_BRANCH//\//-}"
+          else
+            # For other branches (main/master), create a fixes folder for potential future fix branch
+            FIXES_DIR="../fixes/pending-${CURRENT_BRANCH//\//-}"
+          fi
+
+          mkdir -p "$FIXES_DIR"
+          echo "Created fixes directory: $FIXES_DIR"
+
+          # Create detailed error report with timestamped filename in fixes folder
+          ISSUES_FILE="${FIXES_DIR}/BRANCH_ISSUES_${TIMESTAMP}.md"
+          echo "Creating issues file: $ISSUES_FILE"
+
+          echo "# Test Failure Report" > "$ISSUES_FILE"
+          echo "" >> "$ISSUES_FILE"
+          echo "**Generated:** $(date -u '+%Y-%m-%d %H:%M:%S UTC')" >> "$ISSUES_FILE"
+          echo "**Workflow Run:** [View Run](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})" >> "$ISSUES_FILE"
+          echo "**Commit:** ${{ github.sha }}" >> "$ISSUES_FILE"
+          echo "" >> "$ISSUES_FILE"
+
+          echo "## Test Results Summary" >> "$ISSUES_FILE"
+
+          # Try multiple possible locations for test-results.json
+          TEST_RESULTS_FILE=""
+          if [ -f "test-results.json" ]; then
+            TEST_RESULTS_FILE="test-results.json"
+          elif [ -f "./test-results.json" ]; then
+            TEST_RESULTS_FILE="./test-results.json"
+          elif [ -f "../test-results.json" ]; then
+            TEST_RESULTS_FILE="../test-results.json"
+          elif [ -f "playwright-report/test-results.json" ]; then
+            TEST_RESULTS_FILE="playwright-report/test-results.json"
+          fi
+
+          if [ -n "$TEST_RESULTS_FILE" ]; then
+            echo "Processing test results from: $TEST_RESULTS_FILE" >> "$ISSUES_FILE"
+            # Extract test results and format as clean markdown
+            if command -v jq >/dev/null 2>&1; then
+              # Extract stats
+              echo "### Statistics" >> "$ISSUES_FILE"
+              jq -r '.stats | "- **Total Tests:** \(.expected)\n- **Passed:** ✅ \(.passed)\n- **Failed:** ❌ \(.failed)\n- **Skipped:** ⏭️ \(.skipped)\n- **Duration:** \(.duration)ms"' "$TEST_RESULTS_FILE" 2>/dev/null >> "$ISSUES_FILE" || echo "Could not extract stats" >> "$ISSUES_FILE"
+              echo "" >> "$ISSUES_FILE"
+
+              # Extract failed tests grouped by suite
+              echo "### Failed Tests" >> "$ISSUES_FILE"
+              echo "" >> "$ISSUES_FILE"
+
+              # Process each suite and its failed tests
+              jq -r '
+                .suites[] |
+                select(.specs[].tests[].status == "failed") |
+                "#### Suite: \(.title)\n**File:** `\(.file)`\n" +
+                (.specs[] |
+                  select(.tests[].status == "failed") |
+                  "\n##### Test: \(.title)\n" +
+                  (.tests[] |
+                    select(.status == "failed") |
+                    "- **Status:** ❌ Failed\n" +
+                    "- **Duration:** \(.duration)ms\n" +
+                    if .error then
+                      "- **Error Message:**\n```\n\(.error.message | gsub("\\u001b\\[[0-9;]*m"; "") | gsub("\\\\n"; "\n") | gsub("\\\\t"; "  "))\n```\n" +
+                      if .error.snippet then
+                        "- **Code Snippet:**\n```javascript\n\(.error.snippet | gsub("\\u001b\\[[0-9;]*m"; ""))\n```\n"
+                      else "" end
+                    else
+                      ""
+                    end
+                  )
+                )
+              ' "$TEST_RESULTS_FILE" 2>/dev/null >> "$ISSUES_FILE" || {
+                echo "Could not parse test details, showing raw summary:" >> "$ISSUES_FILE"
+                echo '```' >> "$ISSUES_FILE"
+                jq '.stats' "$TEST_RESULTS_FILE" 2>/dev/null | head -20 >> "$ISSUES_FILE"
+                echo '```' >> "$ISSUES_FILE"
+              }
+            else
+              echo "jq not available, cannot parse test-results.json" >> "$ISSUES_FILE"
+            fi
+          else
+            echo "### ⚠️ test-results.json not found" >> "$ISSUES_FILE"
+            echo "" >> "$ISSUES_FILE"
+            echo "Test results file could not be located. Attempting to extract information from test output..." >> "$ISSUES_FILE"
+            echo "" >> "$ISSUES_FILE"
+
+            # Try to extract summary from test-output.txt if it exists
+            if [ -f "test-output.txt" ]; then
+              echo "### Test Summary (from output)" >> "$ISSUES_FILE"
+              echo '```' >> "$ISSUES_FILE"
+              # Extract summary lines containing pass/fail counts
+              grep -E "passed|failed|skipped|flaky" test-output.txt | tail -5 | sed 's/\x1b\[[0-9;]*m//g' >> "$ISSUES_FILE" || echo "No summary found"
+              echo '```' >> "$ISSUES_FILE"
+              echo "" >> "$ISSUES_FILE"
+
+              echo "### Failed Tests (from output)" >> "$ISSUES_FILE"
+              echo '```' >> "$ISSUES_FILE"
+              # Extract lines with ✗ or ✘ (failed test indicators)
+              grep -E "✗|✘|× " test-output.txt | head -20 | sed 's/\x1b\[[0-9;]*m//g' >> "$ISSUES_FILE" || echo "No failed tests found in output"
+              echo '```' >> "$ISSUES_FILE"
+            else
+              echo "test-output.txt also not found. Please check the workflow logs directly." >> "$ISSUES_FILE"
+            fi
+          fi
+          echo "" >> "$ISSUES_FILE"
+
+          echo "## Test Execution Log (Cleaned)" >> "$ISSUES_FILE"
+          if [ -f "test-output.txt" ]; then
+            echo "### Failed Test Output Only" >> "$ISSUES_FILE"
+            echo '```' >> "$ISSUES_FILE"
+            # Extract only failed test output and clean ANSI codes - simplified to avoid broken pipe
+            grep -E "✗|✘|FAILED|Error:|AssertionError|expected.*received" test-output.txt 2>/dev/null | \
+              head -200 | \
+              sed 's/\x1b\[[0-9;]*m//g;s/\x1b\[[0-9;]*[a-zA-Z]//g;s/\\u001b\[[0-9;]*m//g;s/\[39m//g;s/\[31m//g;s/\[32m//g;s/\[90m//g;s/\[2m//g' >> "$ISSUES_FILE" || echo "No specific failures found in output" >> "$ISSUES_FILE"
+            echo '```' >> "$ISSUES_FILE"
+          else
+            echo "No test-output.txt file found" >> "$ISSUES_FILE"
+          fi
+          echo "" >> "$ISSUES_FILE"
+
+          echo "## Environment Information" >> "$ISSUES_FILE"
+          echo "- **Runner OS:** ${{ runner.os }}" >> "$ISSUES_FILE"
+          echo "- **Node Version:** ${{ env.NODE_VERSION }}" >> "$ISSUES_FILE"
+          echo "- **Browser:** ${{ matrix.browser }}" >> "$ISSUES_FILE"
+          echo "" >> "$ISSUES_FILE"
+
+          # Verify BRANCH_ISSUES file was created
+          echo "Checking if BRANCH_ISSUES file was created..."
+          if [ -f "$ISSUES_FILE" ]; then
+            echo "✅ BRANCH_ISSUES file created successfully at: $(realpath $ISSUES_FILE)"
+            echo "File size: $(wc -c < $ISSUES_FILE) bytes"
+            echo "Line count: $(wc -l < $ISSUES_FILE) lines"
+            echo "File location: $ISSUES_FILE"
+          else
+            echo "❌ ERROR: BRANCH_ISSUES file was NOT created!"
+            echo "Current directory: $(pwd)"
+            echo "Expected location: $ISSUES_FILE"
+            echo "Fixes directory contents:"
+            ls -la "$FIXES_DIR" 2>/dev/null || echo "Fixes directory not found"
+          fi
+
+          # Create clean markdown issue content
+          echo "## 🔴 Test Failure Report" > issue-content.md
+          echo "" >> issue-content.md
+          echo "**Commit:** \`${{ github.sha }}\`" >> issue-content.md
+          echo "**Branch:** ${{ github.ref_name }}" >> issue-content.md
+          echo "**Time:** $(date -u '+%Y-%m-%d %H:%M:%S UTC')" >> issue-content.md
+          echo "" >> issue-content.md
+
+          # Add summary stats if available
+          # Use same file detection logic as above
+          TEST_RESULTS=""
+          for file in test-results.json ./test-results.json ../test-results.json playwright-report/test-results.json; do
+            if [ -f "$file" ]; then
+              TEST_RESULTS="$file"
+              break
+            fi
+          done
+
+          if [ -n "$TEST_RESULTS" ] && command -v jq >/dev/null 2>&1; then
+            echo "### 📊 Summary" >> issue-content.md
+            jq -r '.stats | "- Total Tests: **\(.expected)**\n- ✅ Passed: **\(.passed)**\n- ❌ Failed: **\(.failed)**\n- ⏭️ Skipped: **\(.skipped)**"' "$TEST_RESULTS" 2>/dev/null >> issue-content.md || echo "- Could not extract stats" >> issue-content.md
+            echo "" >> issue-content.md
+
+            # Extract failed test details in clean format
+            echo "### 🚨 Failed Tests" >> issue-content.md
+            echo "" >> issue-content.md
+            jq -r '
+              .suites[] |
+              select(.specs[].tests[].status == "failed") |
+              .specs[] |
+              select(.tests[].status == "failed") |
+              "**\(.title)**\n" +
+              (.tests[] |
+                select(.status == "failed") |
+                "- Test: \(.title)\n" +
+                if .error.message then
+                  "  - Error: `\(.error.message | gsub("\\u001b\\[[0-9;]*m"; "") | split("\n")[0] | .[0:100])`\n"
+                else "" end
+              )
+            ' "$TEST_RESULTS" 2>/dev/null | head -20 >> issue-content.md || echo "Could not extract failed test details" >> issue-content.md
+            echo "" >> issue-content.md
+          elif [ -f "test-output.txt" ]; then
+            echo "### 📊 Summary" >> issue-content.md
+            echo "Test results JSON not found. Extracting from output:" >> issue-content.md
+            echo '```' >> issue-content.md
+            grep -E "passed|failed|skipped" test-output.txt | tail -3 | sed 's/\x1b\[[0-9;]*m//g' >> issue-content.md
+            echo '```' >> issue-content.md
+            echo "" >> issue-content.md
+          fi
+
+          echo "### 📝 Next Steps" >> issue-content.md
+          echo "1. A branch with detailed error logs has been created" >> issue-content.md
+          echo "2. Review the BRANCH_ISSUES.md file in that branch" >> issue-content.md
+          echo "3. Fix the failing tests and create a PR" >> issue-content.md
+          echo "" >> issue-content.md
+          echo "**Workflow Run:** [View Full Logs](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})" >> issue-content.md
+
+      - name: Commit and push BRANCH_ISSUES to current branch
+        if: failure() && startsWith(github.ref, 'refs/heads/fix/')
+        run: |
+          echo "Committing BRANCH_ISSUES file to current fix branch..."
+          echo "Note: This step only runs for fix/* branches, not for PR merge branches"
+
+          # Get current branch
+          CURRENT_BRANCH="${{ github.ref_name }}"
+          echo "Current branch: $CURRENT_BRANCH"
+
+          # Configure git
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          # Check what files we have
+          echo "Checking for BRANCH_ISSUES files..."
+          ls -la fixes/ 2>/dev/null || echo "No fixes directory yet"
+
+          # Add and commit the BRANCH_ISSUES file if it exists
+          if [ -d "fixes/${CURRENT_BRANCH//\//-}" ]; then
+            echo "Found fixes directory for current branch"
+            git add "fixes/${CURRENT_BRANCH//\//-}/BRANCH_ISSUES_*.md"
+
+            # Check if there are changes to commit
+            if git diff --staged --quiet; then
+              echo "No changes to commit"
+            else
+              TIMESTAMP=$(date -u '+%d-%m-%H')
+              git commit -m "Add test failure report BRANCH_ISSUES_${TIMESTAMP}.md - Test failures detected by GitHub Actions. See fixes/${CURRENT_BRANCH//\//-}/ for details."
+
+              # Push to current branch
+              git push origin HEAD:"$CURRENT_BRANCH" || {
+                echo "Failed to push with regular token, trying with PAT..."
+                # If regular push fails, try with PAT
+                git remote set-url origin https://x-access-token:${{ secrets.PAT_REPOS_AND_WORKFLOW }}@github.com/${{ github.repository }}.git
+                git push origin HEAD:"$CURRENT_BRANCH"
+              }
+              echo "✅ Successfully pushed BRANCH_ISSUES to $CURRENT_BRANCH"
+            fi
+          else
+            echo "Warning: No fixes directory found for current branch"
+          fi
+
+      - name: Create branch and issue for failures
+        if: failure() && (github.ref == 'refs/heads/master' || github.ref == 'refs/heads/main' || startsWith(github.ref, 'refs/heads/fix/') || github.event_name == 'pull_request')
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.PAT_REPOS_AND_WORKFLOW }}
+          script: |
+            const fs = require('fs');
+            const path = require('path');
+            const { execSync } = require('child_process');
+
+            // Debug: Check current directory and fixes folder
+            console.log('Current working directory:', process.cwd());
+            console.log('Checking for fixes directory:', fs.existsSync('fixes'));
+            if (fs.existsSync('fixes')) {
+              console.log('Fixes directory contents:', fs.readdirSync('fixes'));
+            }
+
+            // Check if current branch is a fix branch or PR
+            const currentBranch = '${{ github.ref_name }}';
+            const isFixBranch = currentBranch.startsWith('fix/');
+            const isPullRequest = '${{ github.event_name }}' === 'pull_request';
+
+            console.log(`Branch: ${currentBranch}, Is Fix: ${isFixBranch}, Is PR: ${isPullRequest}`);
+
+            // Generate timestamp for the report in DD-MM-HH format
+            const now = new Date();
+            const dd = String(now.getUTCDate()).padStart(2, '0');
+            const mm = String(now.getUTCMonth() + 1).padStart(2, '0');
+            const hh = String(now.getUTCHours()).padStart(2, '0');
+            const timestamp = `${dd}-${mm}-${hh}`;
+            const fullTimestamp = new Date().toISOString().replace(/[:.]/g, '-').substring(0, 19);
+            const shortSha = context.sha.substring(0, 7);
+
+            // Variable to track branch name for issue creation
+            let branchNameForIssue = currentBranch;
+            let branchCreated = false;
+
+            if (isFixBranch) {
+              // For fix branches, the BRANCH_ISSUES file is already handled by the shell script
+              console.log(`Current branch is a fix branch (${currentBranch})`);
+              console.log(`BRANCH_ISSUES files should already be in fixes/${currentBranch.replace(/\//g, '-')}/`);
+
+              // Check if the files were created by the previous step
+              const fixesDir = `fixes/${currentBranch.replace(/\//g, '-')}`;
+              if (fs.existsSync(fixesDir)) {
+                const files = fs.readdirSync(fixesDir);
+                console.log(`Files in ${fixesDir}:`, files.filter(f => f.startsWith('BRANCH_ISSUES')));
+              } else {
+                console.log(`Warning: ${fixesDir} directory not found`);
+              }
+
+              // No need to create a new branch for fix branches
+              return;
+            } else if (isPullRequest) {
+              // For PR branches, log the information but don't create a new branch
+              console.log(`This is a PR branch (${currentBranch})`);
+              console.log(`BRANCH_ISSUES files created in fixes/pending-${currentBranch.replace(/\//g, '-')}/`);
+              console.log('PR branches do not create new fix branches or commit changes');
+
+              // Check if the files were created
+              const pendingDir = `fixes/pending-${currentBranch.replace(/\//g, '-')}`;
+              if (fs.existsSync(pendingDir)) {
+                const files = fs.readdirSync(pendingDir);
+                console.log(`Files in ${pendingDir}:`, files.filter(f => f.startsWith('BRANCH_ISSUES')));
+              }
+
+              // Log the failure information for the PR
+              console.log('Test failures have been recorded for this PR');
+              console.log('The BRANCH_ISSUES file can be reviewed but will not be committed to the PR branch');
+
+              // Still create an issue comment on the PR if tests fail
+              // But don't create a new branch
+              return;
+            } else {
+              // Original behavior for non-fix branches - use full timestamp for uniqueness
+              const branchName = `fix/test-failures-${fullTimestamp}-${shortSha}`;
+              branchNameForIssue = branchName;
+              console.log(`Creating new fix branch: ${branchName}`);
+
+            try {
+              // Configure git with PAT for authentication
+              execSync('git config user.name "github-actions[bot]"');
+              execSync('git config user.email "github-actions[bot]@users.noreply.github.com"');
+
+              // Set up authentication with PAT
+              const token = '${{ secrets.PAT_REPOS_AND_WORKFLOW }}';
+              const remoteUrl = `https://x-access-token:${token}@github.com/${{ github.repository }}.git`;
+              execSync(`git remote set-url origin ${remoteUrl}`);
+
+              // Create and checkout new branch from current HEAD
+              execSync(`git checkout -b ${branchName}`);
+
+              // Look for the fixes folder created by the shell script
+              const pendingFixesDir = `fixes/pending-${currentBranch.replace(/\//g, '-')}`;
+              const newFixesDir = `fixes/${branchName.replace(/\//g, '-')}`;
+
+              // Check if pending fixes folder exists and move it to the new branch name
+              if (fs.existsSync(pendingFixesDir)) {
+                console.log(`Found pending fixes folder: ${pendingFixesDir}`);
+                execSync(`mv ${pendingFixesDir} ${newFixesDir}`);
+                console.log(`Renamed to: ${newFixesDir}`);
+
+                // Add the fixes folder
+                execSync(`git add ${newFixesDir}`);
+                execSync(`git commit -m "Add test failure report to fixes folder"`);
+
+                // Push the branch
+                execSync(`git push -u origin ${branchName}`);
+                console.log(`Branch ${branchName} pushed successfully with fixes folder`);
+              } else {
+                console.error('No pending fixes folder found!');
+                // Create a minimal BRANCH_ISSUES file in fixes folder
+                execSync(`mkdir -p ${newFixesDir}`);
+
+                let content = '# Test Failure Report\n\n';
+                content += `Generated: ${new Date().toISOString()}\n\n`;
+                content += `Workflow Run: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}\n\n`;
+
+                if (fs.existsSync('tests/test-output.txt')) {
+                  content += '## Test Output\n```\n';
+                  content += fs.readFileSync('tests/test-output.txt', 'utf8').substring(0, 10000);
+                  content += '\n```\n';
+                }
+
+                const issuesFile = `${newFixesDir}/BRANCH_ISSUES_${timestamp}.md`;
+                fs.writeFileSync(issuesFile, content);
+                execSync(`git add ${newFixesDir}`);
+                execSync(`git commit -m "Add test failure report to fixes folder"`);
+                execSync(`git push -u origin ${branchName}`);
+                console.log(`Branch ${branchName} pushed with generated BRANCH_ISSUES.md`);
+              }
+
+              branchCreated = true;
+            } catch (gitError) {
+              console.error('Error creating branch:', gitError.message);
+              console.error('Git error output:', gitError.stdout?.toString() || 'No stdout');
+              console.error('Git error stderr:', gitError.stderr?.toString() || 'No stderr');
+            }
+            }
+
+            // Create issue for both fix and non-fix branches
+            // Read the issue content
+            let issueBody;
+            try {
+              issueBody = fs.readFileSync('tests/issue-content.md', 'utf8');
+            } catch (error) {
+              console.log('No issue content file found, using default');
+              issueBody = `## Test Failure Report\n\nTests failed in workflow run: [View Run](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})\n\nPlease check the workflow logs for details.`;
+            }
+
+            // Add branch information to issue body
+            issueBody += `\n\n## 📁 Error Details\n\n`;
+            if (isFixBranch) {
+              const fixesDir = `fixes/${currentBranch.replace(/\//g, '-')}`;
+              issueBody += `Test failure detected on fix branch:\n`;
+              issueBody += `- **Branch:** [\`${currentBranch}\`](https://github.com/${{ github.repository }}/tree/${currentBranch})\n`;
+              issueBody += `- **Error Details Folder:** [\`${fixesDir}\`](https://github.com/${{ github.repository }}/tree/${currentBranch}/${fixesDir})\n\n`;
+              issueBody += `Additional test failures have been recorded in the fixes folder.\n`;
+            } else if (branchCreated) {
+              issueBody += `A new branch has been created with detailed error information:\n`;
+              issueBody += `- **Branch:** [\`${branchNameForIssue}\`](https://github.com/${{ github.repository }}/tree/${branchNameForIssue})\n`;
+              issueBody += `- **Error Details File:** [\`BRANCH_ISSUES.md\`](https://github.com/${{ github.repository }}/blob/${branchNameForIssue}/BRANCH_ISSUES.md)\n\n`;
+              issueBody += `To fix these issues:\n`;
+              issueBody += `1. Check out the branch: \`git checkout ${branchNameForIssue}\`\n`;
+              issueBody += `2. Review the errors in \`BRANCH_ISSUES.md\`\n`;
+              issueBody += `3. Fix the failing tests\n`;
+              issueBody += `4. Push your fixes and create a PR\n`;
+            }
+
+            // Check if similar issue already exists
+            const existingIssues = await github.rest.issues.listForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              labels: ['test-failure', 'automated'],
+              state: 'open'
+            });
+
+            const today = new Date().toISOString().split('T')[0];
+            const existingToday = existingIssues.data.find(issue =>
+              issue.title.includes(today) && issue.title.includes('Test Failures')
+            );
+
+            if (!existingToday) {
+              // Create new issue
+              const issue = await github.rest.issues.create({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                title: `🔴 Test Failures - ${today} - ${context.sha.substring(0, 7)}`,
+                body: issueBody,
+                labels: ['test-failure', 'automated', 'urgent']
+              });
+              console.log(`Created issue #${issue.data.number}`);
+
+              // Try to assign to claude (will silently fail if user doesn't exist)
+              try {
+                await github.rest.issues.addAssignees({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  issue_number: issue.data.number,
+                  assignees: ['claude']
+                });
+              } catch (assignError) {
+                console.log('Could not assign to claude:', assignError.message);
+              }
+            } else {
+              // Add comment to existing issue
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: existingToday.number,
+                body: `## 🔄 Additional Test Failure\n\n${issueBody}`
+              });
+              console.log(`Added comment to existing issue #${existingToday.number}`);
+            }
+
+  # Job 2: Build for production
+  build:
+    needs: test
+    runs-on: ubuntu-latest
+    if: github.event_name != 'pull_request' && success()
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: "npm"
+          cache-dependency-path: package.json
+
+      - name: Install dependencies
+        run: |
+          if [ -f "package-lock.json" ]; then
+            npm ci
+          else
+            npm install
+          fi
+
+      - name: Build production site
+        run: |
+          npm run build
+          echo "${{ github.sha }}" > _site/deployment-sha.txt
+        env:
+          NODE_ENV: production
+
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: production-build
+          path: _site/
+          retention-days: 1
+
+  # Job 3: Deploy to gh-pages branch
+  deploy-gh-pages:
+    runs-on: ubuntu-latest
+    needs: build
+    if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
+    environment:
+      name: github-pages
+      url: https://www.bws.ninja
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Download build artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: production-build
+          path: _site/
+
+      - name: Deploy to gh-pages branch
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./_site
+          publish_branch: gh-pages
+          force_orphan: true
+          user_name: "github-actions[bot]"
+          user_email: "github-actions[bot]@users.noreply.github.com"
+          commit_message: "Deploy ${{ github.sha }} to GitHub Pages"
+          cname: www.bws.ninja
+
+  # Job 4: Post-deployment smoke tests
+  validate-deployment:
+    runs-on: ubuntu-latest
+    needs: deploy-gh-pages
+    if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: "npm"
+          cache-dependency-path: tests/package-lock.json
+
+      - name: Install dependencies
+        working-directory: tests
+        run: npm ci
+
+      - name: Install Playwright
+        working-directory: tests
+        run: npx playwright install --with-deps chromium
+
+      - name: Run smoke tests against production
+        id: smoke-test
+        working-directory: tests
+        continue-on-error: true
+        env:
+          PLAYWRIGHT_BASE_URL: "https://www.bws.ninja"
+          NO_WEBSERVER: "true"
+        run: |
+          # Run smoke tests (will output to test-results.json due to CI env)
+          set -o pipefail
+          npx playwright test smoke/ --config=playwright.config.cjs --project=chromium 2>&1 | tee smoke-test-output.txt
+          TEST_EXIT_CODE=${PIPESTATUS[0]}
+
+          if [ $TEST_EXIT_CODE -ne 0 ]; then
+            echo "SMOKE_TESTS_FAILED=true" >> $GITHUB_ENV
+            echo "⚠️ Production smoke tests failed"
+          else
+            echo "✅ Production smoke tests passed"
+          fi
+
+      - name: Check deployment health
+        run: |
+          echo "Checking production site health..."
+          response=$(curl -s -o /dev/null -w "%{http_code}" https://www.bws.ninja/ || echo "000")
+          echo "Homepage status: $response"
+          [ "$response" = "200" ] || [ "$response" = "000" ] || exit 0

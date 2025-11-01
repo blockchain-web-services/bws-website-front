@@ -1,0 +1,643 @@
+---
+// Navigation component from Webflow
+import { articles } from '../data/articles';
+import { newsItems } from '../data/news';
+
+// Show auto-generated articles only (newest first, limit to 10)
+const allArticles = [...articles]
+  .sort((a, b) => new Date(b.publishDate).getTime() - new Date(a.publishDate).getTime())
+  .slice(0, 10);
+
+// Show latest 4 news items (newest first)
+const latestNews = newsItems.slice(0, 4);
+---
+
+<style>
+  /* News items styling */
+  .top-menu-article-title {
+    font-weight: 600 !important;
+    font-size: 14px !important;
+    line-height: 1.3 !important;
+    margin-bottom: 4px !important;
+    color: inherit !important;
+  }
+
+  .top-menu-article-description {
+    font-size: 12px !important;
+    line-height: 1.4 !important;
+    opacity: 0.85 !important;
+    color: #000000 !important;
+  }
+
+  .top-menu-article-link {
+    display: block !important;
+    text-decoration: none !important;
+    transition: opacity 0.2s ease !important;
+  }
+
+  .top-menu-article-link:hover {
+    opacity: 0.8 !important;
+  }
+
+  /* Simplified Industries Menu Styles */
+  .industries-top-menu-collection-list-wrapper {
+    width: 100% !important;
+  }
+
+  .industries-top-menu-collections-list {
+    display: grid !important;
+    grid-template-columns: repeat(6, 1fr) !important;
+    gap: 8px !important;
+    width: 100% !important;
+  }
+
+  .industries-top-menu-collection-item {
+    width: 100% !important;
+  }
+
+  /* Simplified card styles */
+  .top-menu-industry-card {
+    display: block !important;
+    width: 100% !important;
+    height: 120px !important;
+    border-radius: 8px !important;
+    background-size: cover !important;
+    background-position: center !important;
+    position: relative !important;
+    overflow: hidden !important;
+    filter: brightness(0.7) !important;
+    transition: filter 0.3s ease !important;
+  }
+
+  .top-menu-industry-card:hover {
+    filter: brightness(1) !important;
+  }
+
+  /* Link wrapper that contains the content */
+  .indutries-top-menu-item {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-end !important;
+    height: 100% !important;
+    padding: 10px !important;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, transparent 70%) !important;
+    text-decoration: none !important;
+  }
+
+  /* Hide icon divs - they're empty anyway */
+  .industries-top-menu-icon {
+    display: none !important;
+  }
+
+  /* Text content styling */
+  .industries-top-menu-text-wrapper {
+    color: white !important;
+  }
+
+  .industries-top-menu-option-tittle {
+    color: white !important;
+    font-weight: 600 !important;
+    font-size: 13px !important;
+    margin-bottom: 2px !important;
+  }
+
+  .industries-menu-option-text {
+    color: rgba(255, 255, 255, 0.9) !important;
+    font-size: 11px !important;
+    line-height: 1.2 !important;
+  }
+
+  /* Remove unnecessary wrapper */
+  .top-menu-industry-card-wrapper {
+    height: 100% !important;
+    padding: 0 !important;
+    background: none !important;
+  }
+
+  .div-block-20 {
+    margin: 0 !important;
+  }
+
+  /* Responsive adjustments */
+  @media screen and (max-width: 1200px) {
+    .industries-top-menu-collections-list {
+      grid-template-columns: repeat(6, 1fr) !important;
+      gap: 6px !important;
+    }
+    .top-menu-industry-card {
+      height: 110px !important;
+    }
+  }
+
+  @media screen and (max-width: 991px) {
+    .industries-top-menu-collections-list {
+      grid-template-columns: repeat(3, 1fr) !important;
+      gap: 8px !important;
+    }
+    .top-menu-industry-card {
+      height: 100px !important;
+    }
+  }
+
+  @media screen and (max-width: 767px) {
+    .industries-top-menu-collections-list {
+      grid-template-columns: repeat(2, 1fr) !important;
+      gap: 6px !important;
+    }
+    .top-menu-industry-card {
+      height: 90px !important;
+    }
+  }
+</style>
+
+<div class="page-wrapper hidden-overflow">
+  <div
+    data-collapse="medium"
+    data-animation="default"
+    data-duration="400"
+    data-w-id="58db7844-5919-d71b-dd74-2323ed8dffe9"
+    data-easing="ease"
+    data-easing2="ease"
+    role="banner"
+    class="header header-top w-nav"
+  >
+    <div data-w-id="07bb3fbb-8f8e-bc2b-cebf-6cd050d5c069" class="header-main-wrapper">
+      <div class="top-menu-wrapper w-container">
+        <div class="header-wrapper">
+          <div class="top-menu-columns w-row">
+            <div class="top-menu-column-logo w-col w-col-3">
+              <div class="split-content header-right">
+                <a href="/index.html" aria-current="page" class="header-logo-wrapper w-nav-brand w--current"
+                  ><img
+                    src="/assets/images/logo-large.svg"
+                    alt="Blockchain Web Services logo"
+                    height="Auto"
+                    class="header-logo"
+                  /></a
+                >
+              </div>
+            </div><div class="top-menu-column-options w-col w-col-6">
+              <div class="split-content header-center">
+                <nav role="navigation" class="nav-menu w-nav-menu">
+                  <div data-hover="true" data-delay="100" class="nav-link-dropdown w-dropdown">
+                    <div class="nav-link w-dropdown-toggle">
+                      <div class="nav-link-dropdown-text">Solutions</div>
+                    </div><nav class="dropdown-menu wide w-dropdown-list">
+                      <div class="dropdown-menu-wrapper wide">
+                        <div class="top-menu-dropdown-content-wrapper big-dropdown-top-menu">
+                          <div class="solutions-top-menu-list-wrapper w-dyn-list">
+                            <div role="list" class="solutions-top-menu-collection-list w-dyn-items">
+                              <div role="listitem" class="solutions-top-menu-collection-item w-dyn-item">
+                                <a
+                                  href="/marketplace/database-immutable.html"
+                                  class="solutions-top-menu-item w-inline-block"
+                                  ><figure class="top-menu-icon-wrapper"><div class="top-menu-icon"></div></figure><div
+                                    class="top-menu-option-text-wrapper"
+                                  >
+                                    <div class="menu-option-tittle">Blockchain Save</div><div class="menu-option-text">
+                                      Easily store data on the blockchain using a single API call and no Web3 experience
+                                      required.
+                                    </div>
+                                  </div></a
+                                ><link rel="prefetch" href="/marketplace/database-immutable.html" />
+                              </div><div role="listitem" class="solutions-top-menu-collection-item w-dyn-item">
+                                <a
+                                  href="/marketplace/database-mutable.html"
+                                  class="solutions-top-menu-item w-inline-block"
+                                  ><figure class="top-menu-icon-wrapper"><div class="top-menu-icon"></div></figure><div
+                                    class="top-menu-option-text-wrapper"
+                                  >
+                                    <div class="menu-option-tittle">Blockchain Hash</div><div class="menu-option-text">
+                                      Use the blockchain as a trusted database that brings transparency to your
+                                      customers.
+                                    </div>
+                                  </div></a
+                                ><link rel="prefetch" href="/marketplace/database-mutable.html" />
+                              </div><div role="listitem" class="solutions-top-menu-collection-item w-dyn-item">
+                                <a href="/marketplace/ipfs-upload.html" class="solutions-top-menu-item w-inline-block"
+                                  ><figure class="top-menu-icon-wrapper"><div class="top-menu-icon"></div></figure><div
+                                    class="top-menu-option-text-wrapper"
+                                  >
+                                    <div class="menu-option-tittle">BWS IPFS</div><div class="menu-option-text">
+                                      BWS.IPFS.Upload enables easy uploading of images and JSON files to the IPFS
+                                      network, simplifying web3 content distribution.
+                                    </div>
+                                  </div></a
+                                ><link rel="prefetch" href="/marketplace/ipfs-upload.html" />
+                              </div><div role="listitem" class="solutions-top-menu-collection-item w-dyn-item">
+                                <a
+                                  href="/marketplace/nft-zeroknwoledge.html"
+                                  class="solutions-top-menu-item w-inline-block"
+                                  ><figure class="top-menu-icon-wrapper"><div class="top-menu-icon"></div></figure><div
+                                    class="top-menu-option-text-wrapper"
+                                  >
+                                    <div class="menu-option-tittle">NFT.zK</div><div class="menu-option-text">
+                                      Easily bring your NFTs to life with our Zero Knowledge API.
+                                    </div>
+                                  </div></a
+                                ><link rel="prefetch" href="/marketplace/nft-zeroknwoledge.html" />
+                              </div><div role="listitem" class="solutions-top-menu-collection-item w-dyn-item">
+                                <a href="/marketplace/nft-gamecube.html" class="solutions-top-menu-item w-inline-block"
+                                  ><figure class="top-menu-icon-wrapper"><div class="top-menu-icon"></div></figure><div
+                                    class="top-menu-option-text-wrapper"
+                                  >
+                                    <div class="menu-option-tittle">Fan Game Cube</div><div class="menu-option-text">
+                                      Get a new revenue stream for your Sports Club by combining NFTs and Machine
+                                      Learning.
+                                    </div>
+                                  </div></a
+                                ><link rel="prefetch" href="/marketplace/nft-gamecube.html" />
+                              </div><div role="listitem" class="solutions-top-menu-collection-item w-dyn-item">
+                                <a
+                                  href="/marketplace/blockchain-badges.html"
+                                  class="solutions-top-menu-item w-inline-block"
+                                  ><figure class="top-menu-icon-wrapper"><div class="top-menu-icon"></div></figure><div
+                                    class="top-menu-option-text-wrapper"
+                                  >
+                                    <div class="menu-option-tittle">Blockchain Badges</div><div
+                                      class="menu-option-text"
+                                    >
+                                      Blockchain Badges offer trust, secure and verifiable digital credentials using the
+                                      blockchain.
+                                    </div>
+                                  </div></a
+                                ><link rel="prefetch" href="/marketplace/blockchain-badges.html" />
+                              </div><div role="listitem" class="solutions-top-menu-collection-item w-dyn-item">
+                                <a href="/marketplace/esg-credits.html" class="solutions-top-menu-item w-inline-block"
+                                  ><figure class="top-menu-icon-wrapper"><div class="top-menu-icon"></div></figure><div
+                                    class="top-menu-option-text-wrapper"
+                                  >
+                                    <div class="menu-option-tittle">ESG Credits</div><div class="menu-option-text">
+                                      Deliver environmental impact reports using the ICMA standard or any chosen
+                                      taxonomy.
+                                    </div>
+                                  </div></a
+                                ><link rel="prefetch" href="/marketplace/esg-credits.html" />
+                              </div><div role="listitem" class="solutions-top-menu-collection-item w-dyn-item">
+                                <a href="/marketplace/telegram-xbot.html" class="solutions-top-menu-item w-inline-block"
+                                  ><figure class="top-menu-icon-wrapper"><div class="top-menu-icon"></div></figure><div
+                                    class="top-menu-option-text-wrapper"
+                                  >
+                                    <div class="menu-option-tittle">Telegram XBot</div><div class="menu-option-text">
+                                      A Telegram bot to track X activity and highlighting top contributors.
+                                    </div>
+                                  </div></a
+                                ><link rel="prefetch" href="/marketplace/telegram-xbot.html" />
+                              </div>
+                            </div>
+                          </div>
+                        </div><div class="wide top-menu-secondary-background-color">
+                          <div class="top-menu-dropdown-bottom-content-wrapper">
+                            <div class="top-menu-industries-title-wrapper">
+                              <div class="top-menu-industries-title-content">
+                                <div class="top-menu-industries-title">Create Innovative Products</div><div
+                                  class="text-block-25"
+                                >
+                                  Learn how Blockchain Web Services can help your company growth.
+                                </div>
+                              </div><div class="top-menu-industries-title-button">
+                                <a href="/contact-us.html" class="button-secondary button-small no-scale w-button"
+                                  >Contact Sales</a
+                                >
+                              </div>
+                            </div><div class="industries-top-menu-collection-list-wrapper w-dyn-list">
+                              <div role="list" class="industries-top-menu-collections-list w-dyn-items">
+                                <div role="listitem" class="industries-top-menu-collection-item w-dyn-item">
+                                  <div
+                                    style='background-image:url("/assets/images/6474d385cfec71cb21a9229a/654a2597be432d1f0879bfa6_Elevating Financial Services and ESG Compiance.jpg")'
+                                    class="top-menu-industry-card"
+                                  >
+                                    <div class="top-menu-industry-card-wrapper">
+                                      <a
+                                        href="/industry-content/financial-services.html"
+                                        class="indutries-top-menu-item w-inline-block"
+                                        ><div class="industries-top-menu-icon">
+                                          <div class="industries-top-menu-icon"></div>
+                                        </div><div class="industries-top-menu-text-wrapper">
+                                          <div class="industries-top-menu-option-tittle">Financial Services</div><div
+                                            class="div-block-20"
+                                          >
+                                            <div class="industries-menu-option-text">
+                                              A world of new digital assets.
+                                            </div>
+                                          </div>
+                                        </div></a
+                                      >
+                                    </div>
+                                  </div>
+                                </div><div role="listitem" class="industries-top-menu-collection-item w-dyn-item">
+                                  <div
+                                    style='background-image:url("/assets/images/6474d385cfec71cb21a9229a/654a258bbfafadcb274d5024_The Future of Creative Ownership and Empowerment.jpg")'
+                                    class="top-menu-industry-card"
+                                  >
+                                    <div class="top-menu-industry-card-wrapper">
+                                      <a
+                                        href="/industry-content/content-creation.html"
+                                        class="indutries-top-menu-item w-inline-block"
+                                        ><div class="industries-top-menu-icon">
+                                          <div class="industries-top-menu-icon"></div>
+                                        </div><div class="industries-top-menu-text-wrapper">
+                                          <div class="industries-top-menu-option-tittle">Content Creation</div><div
+                                            class="div-block-20"
+                                          >
+                                            <div class="industries-menu-option-text">
+                                              Unleash your creative visions.
+                                            </div>
+                                          </div>
+                                        </div></a
+                                      >
+                                    </div>
+                                  </div>
+                                </div><div role="listitem" class="industries-top-menu-collection-item w-dyn-item">
+                                  <div
+                                    style='background-image:url("/assets/images/6474d385cfec71cb21a9229a/654a2561e29f2df41f5bfeb8_Transform the user eXperience with Blockchain.jpg")'
+                                    class="top-menu-industry-card"
+                                  >
+                                    <div class="top-menu-industry-card-wrapper">
+                                      <a
+                                        href="/industry-content/retail.html"
+                                        class="indutries-top-menu-item w-inline-block"
+                                        ><div class="industries-top-menu-icon">
+                                          <div class="industries-top-menu-icon"></div>
+                                        </div><div class="industries-top-menu-text-wrapper">
+                                          <div class="industries-top-menu-option-tittle">Retail</div><div
+                                            class="div-block-20"
+                                          >
+                                            <div class="industries-menu-option-text">Bringing new opportunities.</div>
+                                          </div>
+                                        </div></a
+                                      >
+                                    </div>
+                                  </div>
+                                </div><div role="listitem" class="industries-top-menu-collection-item w-dyn-item">
+                                  <div
+                                    style='background-image:url("/assets/images/6474d385cfec71cb21a9229a/654a256e853678a54e9cebdf_Blockchain is the New Frontier in Accountability and Transparency.jpg")'
+                                    class="top-menu-industry-card"
+                                  >
+                                    <div class="top-menu-industry-card-wrapper">
+                                      <a
+                                        href="/industry-content/esg.html"
+                                        class="indutries-top-menu-item w-inline-block"
+                                        ><div class="industries-top-menu-icon">
+                                          <div class="industries-top-menu-icon"></div>
+                                        </div><div class="industries-top-menu-text-wrapper">
+                                          <div class="industries-top-menu-option-tittle">ESG</div><div
+                                            class="div-block-20"
+                                          >
+                                            <div class="industries-menu-option-text">Promoting a greener future.</div>
+                                          </div>
+                                        </div></a
+                                      >
+                                    </div>
+                                  </div>
+                                </div><div role="listitem" class="industries-top-menu-collection-item w-dyn-item">
+                                  <div
+                                    style='background-image:url("/assets/images/6474d385cfec71cb21a9229a/654a2515de4301ab69f9951e_Blockchain Trust in Legal Practices.jpg")'
+                                    class="top-menu-industry-card"
+                                  >
+                                    <div class="top-menu-industry-card-wrapper">
+                                      <a
+                                        href="/industry-content/legal.html"
+                                        class="indutries-top-menu-item w-inline-block"
+                                        ><div class="industries-top-menu-icon">
+                                          <div class="industries-top-menu-icon"></div>
+                                        </div><div class="industries-top-menu-text-wrapper">
+                                          <div class="industries-top-menu-option-tittle">Legal</div><div
+                                            class="div-block-20"
+                                          >
+                                            <div class="industries-menu-option-text">
+                                              Improve certainty and security.
+                                            </div>
+                                          </div>
+                                        </div></a
+                                      >
+                                    </div>
+                                  </div>
+                                </div><div role="listitem" class="industries-top-menu-collection-item w-dyn-item">
+                                  <div
+                                    style='background-image:url("/assets/images/6474d385cfec71cb21a9229a/654a25780f2320f1dc394e6a_The Future of Transparent and Efficient Supply Chain Management.jpg")'
+                                    class="top-menu-industry-card"
+                                  >
+                                    <div class="top-menu-industry-card-wrapper">
+                                      <a
+                                        href="/industry-content/supply-chain.html"
+                                        class="indutries-top-menu-item w-inline-block"
+                                        ><div class="industries-top-menu-icon">
+                                          <div class="industries-top-menu-icon"></div>
+                                        </div><div class="industries-top-menu-text-wrapper">
+                                          <div class="industries-top-menu-option-tittle">Supply Chain</div><div
+                                            class="div-block-20"
+                                          >
+                                            <div class="industries-menu-option-text">
+                                              Enforce trust and traceability.
+                                            </div>
+                                          </div>
+                                        </div></a
+                                      >
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </nav>
+                  </div><div data-hover="true" data-delay="100" class="nav-link-dropdown w-dropdown">
+                    <div class="nav-link w-dropdown-toggle">
+                      <div class="nav-link-dropdown-text split-horizontal">Developers</div>
+                    </div><nav class="dropdown-menu dropdown-menu-2-columns w-dropdown-list">
+                      <div class="dropdown-menu-wrapper top-menu-small">
+                        <div class="top-menu-dropdown-content-wrapper">
+                          <ul role="list" class="top-menu-dropdown-list w-list-unstyled">
+                            <li class="menu-list-item">
+                              <a
+                                href="https://docs.bws.ninja/quick-start"
+                                target="_blank"
+                                class="small-top-menu-item w-inline-block"
+                                ><div class="top-menu-icon-wrapper"><div class="top-menu-icon"></div></div><div
+                                  class="top-menu-option-text-wrapper"
+                                >
+                                  <div class="menu-option-tittle">Quick Start</div><div class="menu-option-text">
+                                    Blockchain in just 5 minutes.
+                                  </div>
+                                </div></a
+                              >
+                            </li><li class="menu-list-item">
+                              <a
+                                href="https://docs.bws.ninja/"
+                                target="_blank"
+                                class="small-top-menu-item w-inline-block"
+                                ><div class="top-menu-icon-wrapper"><div class="top-menu-icon"></div></div><div
+                                  class="top-menu-option-text-wrapper"
+                                >
+                                  <div class="menu-option-tittle">API Reference</div><div class="menu-option-text">
+                                    A Web2 interface to Web3.
+                                  </div>
+                                </div></a
+                              >
+                            </li><li class="menu-list-item-bottom">
+                              <a href="/#solutions" class="small-top-menu-item w-inline-block"
+                                ><div class="top-menu-icon-wrapper"><div class="top-menu-icon"></div></div><div
+                                  class="top-menu-option-text-wrapper"
+                                >
+                                  <div class="menu-option-tittle">Solutions</div><div class="menu-option-text">
+                                    Our blockchain Marketplace.
+                                  </div>
+                                </div></a
+                              >
+                            </li>
+                          </ul>
+                        </div><div class="top-menu-dropdown-second-content-wrapper">
+                          <div class="top-menu-dropdown-second-content">
+                            <div class="top-menu-dropdown-second-content-title">
+                              <div class="top-menu-engage-title">Are you a Web3 Hero?</div><div
+                                class="top-menu-engage-text"
+                              >
+                                BWS is an open platform for the community to add new Marketplace solutions and get
+                                rewards.
+                              </div><a
+                                href="https://docs.bws.ninja/#bws-developer-grants"
+                                target="_blank"
+                                class="top-menu-join-community-wrapper w-inline-block"
+                                ><div class="top-menu-option-text-wrapper">
+                                  <div class="community-menu-option-tittle">Join BWS Community</div><div
+                                    class="community-menu-option-text"
+                                  >
+                                    Show the world your work.
+                                  </div>
+                                </div><div class="top-menu-join-community-icon"></div></a
+                              >
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </nav>
+                  </div><div data-hover="true" data-delay="100" class="nav-link-dropdown w-dropdown">
+                    <div class="nav-link w-dropdown-toggle">
+                      <div class="nav-link-dropdown-text">Resources</div>
+                    </div><nav class="dropdown-menu w-dropdown-list">
+                      <div class="dropdown-menu-wrapper top-menu-small split-vertical bottom-gradient">
+                        <div class="top-menu-dropdown-content-wrapper">
+                          <ul role="list" class="top-menu-dropdown-list w-list-unstyled">
+                            <li class="menu-list-item">
+                              <a
+                                href="https://docs.bws.ninja/"
+                                target="_blank"
+                                class="small-top-menu-item w-inline-block"
+                                ><div class="top-menu-icon-wrapper"><div class="top-menu-icon"></div></div><div
+                                  class="top-menu-option-text-wrapper"
+                                >
+                                  <div class="menu-option-tittle">Documentation</div><div class="menu-option-text">
+                                    Learn how to use the platform.
+                                  </div>
+                                </div></a
+                              >
+                            </li><li class="menu-list-item-bottom">
+                              <a
+                                href="https://www.linkedin.com/company/blockchain-web-services"
+                                target="_blank"
+                                class="small-top-menu-item-bottom w-inline-block"
+                                ><div class="top-menu-icon-wrapper"><div class="top-menu-icon"></div></div><div
+                                  class="top-menu-option-text-wrapper"
+                                >
+                                  <div class="menu-option-tittle">Blockchain News</div><div class="menu-option-text">
+                                    Get the latest news.
+                                  </div>
+                                </div></a
+                              >
+                            </li>
+                          </ul>
+                        </div><div class="top-menu-dropdown-second-content-wrapper">
+                          <div class="top-menu-dropdown-second-content-vertical">
+                            <div class="top-menu-dropdown-second-content-title">
+                              <div class="top-menu-articles-title">Learn Blockchain</div>
+                            </div><div class="collection-list-wrapper-8 w-dyn-list">
+                              <div role="list" class="w-dyn-items">
+                                {allArticles.map((article) => (
+                                  <div role="listitem" class="top-menu-articles-collection-item w-dyn-item">
+                                    <a
+                                      href={`/articles/${article.slug}.html`}
+                                      class="top-menu-article-link"
+                                    >
+                                      {article.title}
+                                    </a>
+                                  </div>
+                                ))}
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </nav>
+                  </div><div data-hover="true" data-delay="100" class="nav-link-dropdown w-dropdown">
+                    <div class="nav-link w-dropdown-toggle"><div class="nav-link-dropdown-text">Company</div></div><nav
+                      class="dropdown-menu w-dropdown-list"
+                    >
+                      <div class="dropdown-menu-wrapper top-menu-small split-vertical">
+                        <div class="top-menu-dropdown-content-wrapper">
+                          <ul role="list" class="top-menu-dropdown-list w-list-unstyled">
+                            <li class="menu-list-item"></li><li class="menu-list-item"></li><li class="menu-list-item">
+                              <a href="/legal-notice.html" class="small-top-menu-item w-inline-block"
+                                ><div class="top-menu-icon-wrapper"><div class="top-menu-icon"></div></div><div
+                                  class="top-menu-option-text-wrapper"
+                                >
+                                  <div class="menu-option-tittle">Legal Notice</div><div class="menu-option-text">
+                                    Blockchain is about transparency.
+                                  </div>
+                                </div></a
+                              >
+                            </li><li class="menu-list-item-bottom">
+                              <a href="/contact-us.html" class="small-top-menu-item-bottom w-inline-block"
+                                ><div class="top-menu-icon-wrapper"><div class="top-menu-icon">✉</div></div><div
+                                  class="top-menu-option-text-wrapper"
+                                >
+                                  <div class="menu-option-tittle">Contact Us</div><div class="menu-option-text">
+                                    Let us know how to help.
+                                  </div>
+                                </div></a
+                              >
+                            </li>
+                          </ul>
+                        </div><div class="top-menu-dropdown-second-content-wrapper">
+                          <div class="top-menu-dropdown-second-content-vertical">
+                            <div class="top-menu-dropdown-second-content-title">
+                              <div class="top-menu-articles-title">BWS News</div>
+                            </div><div class="collection-list-wrapper-8 w-dyn-list">
+                              <div role="list" class="w-dyn-items">
+                                {latestNews.map((news) => (
+                                  <div role="listitem" class="top-menu-articles-collection-item w-dyn-item">
+                                    <a
+                                      href={news.buttons[0].href}
+                                      target={news.buttons[0].target || '_blank'}
+                                      class="top-menu-article-link"
+                                    >
+                                      <div class="top-menu-article-title">{news.title}</div>
+                                      <div class="top-menu-article-description">{news.description}</div>
+                                    </a>
+                                  </div>
+                                ))}
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </nav>
+                  </div>
+                </nav>
+              </div>
+            </div><div class="top-menu-column-sign w-col w-col-3">
+              <div class="split-content header-left">
+                <div class="menu-button w-nav-button">
+                  <i class="fa-solid fa-bars hamburger-menu-icon"></i>
+                </div><a href="https://prod.bws.ninja/front-sign-up.html" class="button-primary header-button w-button"
+                  >Get started</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

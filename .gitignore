@@ -35,3 +35,14 @@ dist/
 # IDE
 .vscode/
 .idea/
+
+# Worktree-specific files (added by bws-ai-coding-template)
+.env.worktree
+.worktree-info.json
+docker-compose.worktree.yml
+CLAUDE_INSTRUCTIONS.md
+.worktrees
+test/.env.worktree
+test/.worktree-info.json
+test/docker-compose.worktree.yml
+.trees/*/CLAUDE_INSTRUCTIONS.md
