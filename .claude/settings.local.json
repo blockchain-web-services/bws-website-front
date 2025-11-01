@@ -10,7 +10,10 @@
       "Bash(gh repo view:*)",
       "Bash(gh api:*)",
       "Bash(gh auth status:*)",
-      "Bash(cat:*)"
+      "Bash(cat:*)",
+      "WebFetch(domain:developer.twitter.com)",
+      "WebFetch(domain:developer.x.com)",
+      "WebFetch(domain:docs.x.com)"
     ],
     "deny": [],
     "ask": []

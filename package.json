@@ -23,11 +23,7 @@
     "format:check": "prettier --check 'src/**/*.{astro,js,ts,json}'",
     "snapshot": "cd tests && npx playwright test visual/snapshots.spec.js --config=playwright.config.cjs",
     "snapshot:update": "npm run build && npm run snapshot",
-    "weekly-x-post": "node scripts/generate-weekly-x-post.js",
-    "worktree:create": "node scripts/worktree/create-worktree.mjs",
-    "worktree:list": "node scripts/worktree/list-worktrees.mjs",
-    "worktree:merge": "node scripts/worktree/merge-worktree.mjs",
-    "worktree:remove": "node scripts/worktree/remove-worktree.mjs"
+    "weekly-x-post": "node scripts/generate-weekly-x-post.js"
   },
   "devDependencies": {
     "@octokit/rest": "^22.0.0",
@@ -45,7 +41,7 @@
     "typescript": "^5.0.0"
   },
   "dependencies": {
-    "@anthropic-ai/sdk": "^0.67.0",
+    "@anthropic-ai/sdk": "^0.67.1",
     "@rollup/rollup-linux-x64-gnu": "^4.50.2",
     "twitter-api-v2": "^1.27.0"
   }
