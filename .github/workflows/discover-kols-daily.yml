@@ -1,0 +1,175 @@
+name: Daily KOL Discovery
+
+on:
+  schedule:
+    - cron: '0 6 * * *'  # Run daily at 6 AM UTC
+  workflow_dispatch:  # Allow manual trigger
+
+permissions:
+  contents: write
+  issues: write
+  pull-requests: write
+
+env:
+  NODE_VERSION: "20"
+
+jobs:
+  discover-kols:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: "npm"
+
+      - name: Install dependencies
+        run: |
+          if [ -f "package-lock.json" ]; then
+            npm ci
+          else
+            npm install
+          fi
+
+      - name: Install script dependencies
+        run: npm install twitter-api-v2 @anthropic-ai/sdk
+
+      - name: Run KOL discovery
+        id: discover
+        env:
+          BWSXAI_TWITTER_BEARER_TOKEN: ${{ secrets.BWSXAI_TWITTER_BEARER_TOKEN }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          echo "Starting KOL discovery..."
+          node scripts/kols/discover-kols.js
+          echo "discover_status=success" >> $GITHUB_OUTPUT
+        continue-on-error: true
+
+      - name: Check for changes
+        id: changes
+        run: |
+          if git diff --quiet scripts/kols/data/kols-data.json; then
+            echo "has_changes=false" >> $GITHUB_OUTPUT
+          else
+            echo "has_changes=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Get discovery stats
+        if: steps.discover.outputs.discover_status == 'success'
+        id: stats
+        run: |
+          if [ -f "scripts/kols/data/kols-data.json" ]; then
+            TOTAL_KOLS=$(jq '.kols | length' scripts/kols/data/kols-data.json)
+            ACTIVE_KOLS=$(jq '[.kols[] | select(.status == "active")] | length' scripts/kols/data/kols-data.json)
+            echo "total_kols=$TOTAL_KOLS" >> $GITHUB_OUTPUT
+            echo "active_kols=$ACTIVE_KOLS" >> $GITHUB_OUTPUT
+          else
+            echo "total_kols=0" >> $GITHUB_OUTPUT
+            echo "active_kols=0" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Commit changes
+        if: steps.changes.outputs.has_changes == 'true' && steps.discover.outputs.discover_status == 'success'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add scripts/kols/data/kols-data.json
+          git commit -m "Update KOL discovery data - $(date +'%Y-%m-%d')
+
+          Total KOLs: ${{ steps.stats.outputs.total_kols }}
+          Active KOLs: ${{ steps.stats.outputs.active_kols }}
+
+          🤖 Generated with [Claude Code](https://claude.com/claude-code)
+
+          Co-Authored-By: Claude <noreply@anthropic.com>"
+          git push
+
+      - name: Create summary
+        if: steps.discover.outputs.discover_status == 'success'
+        run: |
+          echo "## 🔍 KOL Discovery Complete" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "- **Total KOLs:** ${{ steps.stats.outputs.total_kols }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Active KOLs:** ${{ steps.stats.outputs.active_kols }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Changes:** ${{ steps.changes.outputs.has_changes == 'true' && 'Yes' || 'No' }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Date:** $(date +'%Y-%m-%d %H:%M:%S UTC')" >> $GITHUB_STEP_SUMMARY
+
+  handle-failure:
+    needs: discover-kols
+    runs-on: ubuntu-latest
+    if: failure()
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Create fix branch
+        id: fix-branch
+        run: |
+          BRANCH_NAME="fix/kol-discovery-failed-$(date +'%Y%m%d-%H%M%S')"
+          echo "branch_name=$BRANCH_NAME" >> $GITHUB_OUTPUT
+
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          git checkout -b "$BRANCH_NAME"
+          git push -u origin "$BRANCH_NAME"
+
+      - name: Create issue and PR
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          ISSUE_BODY="## KOL Discovery Workflow Failed
+
+          The daily KOL discovery workflow failed on $(date +'%Y-%m-%d at %H:%M:%S UTC').
+
+          ### Possible Causes
+          - API rate limits exceeded
+          - Invalid or expired API credentials
+          - Network connectivity issues
+          - Configuration errors in kol-config.json
+
+          ### Required Actions
+          1. Check the workflow logs for specific errors
+          2. Verify API credentials in repository secrets
+          3. Check kol-config.json for valid seed KOLs
+          4. Review rate limit settings
+
+          ### Workflow Run
+          [View failed run](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})
+
+          ---
+          🤖 Auto-generated issue"
+
+          ISSUE_NUMBER=$(gh issue create \
+            --title "KOL Discovery Failed - $(date +'%Y-%m-%d')" \
+            --body "$ISSUE_BODY" \
+            --label "bug,automated,kol-system" \
+            --assignee "${{ github.actor }}" | grep -oP '\d+$')
+
+          echo "Created issue #$ISSUE_NUMBER"
+
+          PR_BODY="## Fix KOL Discovery Workflow Failure
+
+          This PR was automatically created to address the KOL discovery workflow failure.
+
+          Related issue: #$ISSUE_NUMBER
+
+          ### What to do
+          1. Review the error logs
+          2. Make necessary fixes
+          3. Test locally with: \`node scripts/kols/test-kol-system.js\`
+          4. Update this PR with your changes
+
+          ---
+          🤖 Auto-generated PR"
+
+          gh pr create \
+            --title "Fix: KOL Discovery Failure - $(date +'%Y-%m-%d')" \
+            --body "$PR_BODY" \
+            --base main \
+            --head "${{ steps.fix-branch.outputs.branch_name }}" \
+            --label "bug,automated,kol-system" \
+            --assignee "${{ github.actor }}" || echo "PR creation failed or already exists"

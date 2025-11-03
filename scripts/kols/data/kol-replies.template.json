@@ -1,0 +1,47 @@
+{
+  "replies": [
+    {
+      "id": "reply_unique_id",
+      "tweetId": "original_tweet_id",
+      "tweetUrl": "https://twitter.com/user/status/tweetid",
+      "kolId": "kol_twitter_user_id",
+      "kolUsername": "kolUsername",
+      "originalTweetText": "Original tweet content...",
+      "replyTweetId": "our_reply_tweet_id",
+      "replyText": "Our reply text...",
+      "productMentioned": "X Bot",
+      "relevanceScore": 85,
+      "timestamp": "2025-10-31T12:00:00Z",
+      "status": "posted",
+      "dryRun": false,
+      "engagement": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "views": 0,
+        "lastChecked": "2025-10-31T13:00:00Z"
+      },
+      "error": null
+    }
+  ],
+  "dailyStats": {
+    "2025-10-31": {
+      "repliesPosted": 5,
+      "repliesFailed": 1,
+      "averageRelevance": 82,
+      "productDistribution": {
+        "X Bot": 2,
+        "Blockchain Badges": 2,
+        "ESG Credits": 1
+      }
+    }
+  },
+  "metadata": {
+    "totalReplies": 0,
+    "successfulReplies": 0,
+    "failedReplies": 0,
+    "lastReplyAt": null,
+    "todayRepliesCount": 0,
+    "lastUpdateBy": "evaluate-and-reply-kols.js"
+  }
+}
