@@ -1,0 +1,429 @@
+{
+  "html": [
+    {
+      "file": "_site/about.html",
+      "originalSize": 50846,
+      "newSize": 84784,
+      "sizeDiff": 33938,
+      "prettyPrinted": true,
+      "errors": []
+    },
+    {
+      "file": "_site/articles/blockchain-badges-2025-10-23.html",
+      "originalSize": 68588,
+      "newSize": 107690,
+      "sizeDiff": 39102,
+      "prettyPrinted": true,
+      "errors": []
+    },
+    {
+      "file": "_site/articles/blockchain-badges-2025-10-24.html",
+      "originalSize": 68532,
+      "newSize": 107652,
+      "sizeDiff": 39120,
+      "prettyPrinted": true,
+      "errors": []
+    },
+    {
+      "file": "_site/articles/blockchain-badges-2025-10-25.html",
+      "originalSize": 68532,
+      "newSize": 107600,
+      "sizeDiff": 39068,
+      "prettyPrinted": true,
+      "errors": []
+    },
+    {
+      "file": "_site/articles/blockchain-badges-2025-10-26.html",
+      "originalSize": 68528,
+      "newSize": 107626,
+      "sizeDiff": 39098,
+      "prettyPrinted": true,
+      "errors": []
+    },
+    {
+      "file": "_site/articles/blockchain-badges-2025-10-27.html",
+      "originalSize": 68838,
+      "newSize": 108034,
+      "sizeDiff": 39196,
+      "prettyPrinted": true,
+      "errors": []
+    },
+    {
+      "file": "_site/articles/blockchain-badges-2025-10-28.html",
+      "originalSize": 68508,
+      "newSize": 107558,
+      "sizeDiff": 39050,
+      "prettyPrinted": true,
+      "errors": []
+    },
+    {
+      "file": "_site/articles/esg-credits-2025-10-23.html",
+      "originalSize": 68633,
+      "newSize": 107757,
+      "sizeDiff": 39124,
+      "prettyPrinted": true,
+      "errors": []
+    },
+    {
+      "file": "_site/articles/esg-credits-2025-10-24.html",
+      "originalSize": 69562,
+      "newSize": 108836,
+      "sizeDiff": 39274,
+      "prettyPrinted": true,
+      "errors": []
+    },
+    {
+      "file": "_site/articles/esg-credits-2025-10-25.html",
+      "originalSize": 68869,
+      "newSize": 107975,
+      "sizeDiff": 39106,
+      "prettyPrinted": true,
+      "errors": []
+    },
+    {
+      "file": "_site/articles/esg-credits-2025-10-26.html",
+      "originalSize": 69276,
+      "newSize": 108552,
+      "sizeDiff": 39276,
+      "prettyPrinted": true,
+      "errors": []
+    },
+    {
+      "file": "_site/articles/esg-credits-2025-10-27.html",
+      "originalSize": 69912,
+      "newSize": 109322,
+      "sizeDiff": 39410,
+      "prettyPrinted": true,
+      "errors": []
+    },
+    {
+      "file": "_site/articles/esg-credits-2025-10-28.html",
+      "originalSize": 69221,
+      "newSize": 108511,
+      "sizeDiff": 39290,
+      "prettyPrinted": true,
+      "errors": []
+    },
+    {
+      "file": "_site/articles/fan-game-cube-2025-10-23.html",
+      "originalSize": 68149,
+      "newSize": 107177,
+      "sizeDiff": 39028,
+      "prettyPrinted": true,
+      "errors": []
+    },
+    {
+      "file": "_site/articles/fan-game-cube-2025-10-24.html",
+      "originalSize": 68156,
+      "newSize": 107244,
+      "sizeDiff": 39088,
+      "prettyPrinted": true,
+      "errors": []
+    },
+    {
+      "file": "_site/articles/fan-game-cube-2025-10-25.html",
+      "originalSize": 68131,
+      "newSize": 107183,
+      "sizeDiff": 39052,
+      "prettyPrinted": true,
+      "errors": []
+    },
+    {
+      "file": "_site/articles/fan-game-cube-2025-10-26.html",
+      "originalSize": 68296,
+      "newSize": 107364,
+      "sizeDiff": 39068,
+      "prettyPrinted": true,
+      "errors": []
+    },
+    {
+      "file": "_site/articles/fan-game-cube-2025-10-27.html",
+      "originalSize": 68626,
+      "newSize": 107762,
+      "sizeDiff": 39136,
+      "prettyPrinted": true,
+      "errors": []
+    },
+    {
+      "file": "_site/articles/fan-game-cube-2025-10-28.html",
+      "originalSize": 68133,
+      "newSize": 107127,
+      "sizeDiff": 38994,
+      "prettyPrinted": true,
+      "errors": []
+    },
+    {
+      "file": "_site/articles/x-bot-2025-10-23.html",
+      "originalSize": 68185,
+      "newSize": 107171,
+      "sizeDiff": 38986,
+      "prettyPrinted": true,
+      "errors": []
+    },
+    {
+      "file": "_site/articles/x-bot-2025-10-24.html",
+      "originalSize": 68979,
+      "newSize": 108177,
+      "sizeDiff": 39198,
+      "prettyPrinted": true,
+      "errors": []
+    },
+    {
+      "file": "_site/articles/x-bot-2025-10-25.html",
+      "originalSize": 68064,
+      "newSize": 107006,
+      "sizeDiff": 38942,
+      "prettyPrinted": true,
+      "errors": []
+    },
+    {
+      "file": "_site/articles/x-bot-2025-10-26.html",
+      "originalSize": 69172,
+      "newSize": 108384,
+      "sizeDiff": 39212,
+      "prettyPrinted": true,
+      "errors": []
+    },
+    {
+      "file": "_site/articles/x-bot-2025-10-27.html",
+      "originalSize": 69255,
+      "newSize": 108521,
+      "sizeDiff": 39266,
+      "prettyPrinted": true,
+      "errors": []
+    },
+    {
+      "file": "_site/articles/x-bot-2025-10-28.html",
+      "originalSize": 68031,
+      "newSize": 107043,
+      "sizeDiff": 39012,
+      "prettyPrinted": true,
+      "errors": []
+    },
+    {
+      "file": "_site/contact-us.html",
+      "originalSize": 60820,
+      "newSize": 98798,
+      "sizeDiff": 37978,
+      "prettyPrinted": true,
+      "errors": []
+    },
+    {
+      "file": "_site/index.html",
+      "originalSize": 121131,
+      "newSize": 182843,
+      "sizeDiff": 61712,
+      "prettyPrinted": true,
+      "errors": []
+    },
+    {
+      "file": "_site/industries.html",
+      "originalSize": 50756,
+      "newSize": 84646,
+      "sizeDiff": 33890,
+      "prettyPrinted": true,
+      "errors": []
+    },
+    {
+      "file": "_site/industry-content/content-creation.html",
+      "originalSize": 64349,
+      "newSize": 102860,
+      "sizeDiff": 38511,
+      "prettyPrinted": true,
+      "errors": []
+    },
+    {
+      "file": "_site/industry-content/esg.html",
+      "originalSize": 64147,
+      "newSize": 102732,
+      "sizeDiff": 38585,
+      "prettyPrinted": true,
+      "errors": []
+    },
+    {
+      "file": "_site/industry-content/financial-services.html",
+      "originalSize": 64390,
+      "newSize": 102893,
+      "sizeDiff": 38503,
+      "prettyPrinted": true,
+      "errors": []
+    },
+    {
+      "file": "_site/industry-content/legal.html",
+      "originalSize": 64549,
+      "newSize": 103148,
+      "sizeDiff": 38599,
+      "prettyPrinted": true,
+      "errors": []
+    },
+    {
+      "file": "_site/industry-content/retail.html",
+      "originalSize": 64203,
+      "newSize": 102768,
+      "sizeDiff": 38565,
+      "prettyPrinted": true,
+      "errors": []
+    },
+    {
+      "file": "_site/industry-content/supply-chain.html",
+      "originalSize": 64797,
+      "newSize": 103380,
+      "sizeDiff": 38583,
+      "prettyPrinted": true,
+      "errors": []
+    },
+    {
+      "file": "_site/legal-notice.html",
+      "originalSize": 64518,
+      "newSize": 103728,
+      "sizeDiff": 39210,
+      "prettyPrinted": true,
+      "errors": []
+    },
+    {
+      "file": "_site/marketplace/blockchain-badges.html",
+      "originalSize": 66070,
+      "newSize": 106411,
+      "sizeDiff": 40341,
+      "prettyPrinted": true,
+      "errors": []
+    },
+    {
+      "file": "_site/marketplace/database-immutable.html",
+      "originalSize": 65120,
+      "newSize": 104783,
+      "sizeDiff": 39663,
+      "prettyPrinted": true,
+      "errors": []
+    },
+    {
+      "file": "_site/marketplace/database-mutable.html",
+      "originalSize": 64193,
+      "newSize": 104162,
+      "sizeDiff": 39969,
+      "prettyPrinted": true,
+      "errors": []
+    },
+    {
+      "file": "_site/marketplace/esg-credits.html",
+      "originalSize": 65406,
+      "newSize": 105783,
+      "sizeDiff": 40377,
+      "prettyPrinted": true,
+      "errors": []
+    },
+    {
+      "file": "_site/marketplace/ipfs-upload.html",
+      "originalSize": 63744,
+      "newSize": 103441,
+      "sizeDiff": 39697,
+      "prettyPrinted": true,
+      "errors": []
+    },
+    {
+      "file": "_site/marketplace/nft-gamecube.html",
+      "originalSize": 64483,
+      "newSize": 104382,
+      "sizeDiff": 39899,
+      "prettyPrinted": true,
+      "errors": []
+    },
+    {
+      "file": "_site/marketplace/nft-zeroknwoledge.html",
+      "originalSize": 64864,
+      "newSize": 104947,
+      "sizeDiff": 40083,
+      "prettyPrinted": true,
+      "errors": []
+    },
+    {
+      "file": "_site/marketplace/telegram-xbot.html",
+      "originalSize": 63814,
+      "newSize": 103403,
+      "sizeDiff": 39589,
+      "prettyPrinted": true,
+      "errors": []
+    },
+    {
+      "file": "_site/privacy-policy.html",
+      "originalSize": 66257,
+      "newSize": 105558,
+      "sizeDiff": 39301,
+      "prettyPrinted": true,
+      "errors": []
+    },
+    {
+      "file": "_site/resources.html",
+      "originalSize": 50786,
+      "newSize": 84676,
+      "sizeDiff": 33890,
+      "prettyPrinted": true,
+      "errors": []
+    },
+    {
+      "file": "_site/white-paper.html",
+      "originalSize": 100155,
+      "newSize": 147260,
+      "sizeDiff": 47105,
+      "prettyPrinted": true,
+      "errors": []
+    }
+  ],
+  "css": [
+    {
+      "file": "_site/assets/about.BH30zMdw.css",
+      "originalSize": 4315,
+      "newSize": 5028,
+      "sizeDiff": 713,
+      "prettyPrinted": true,
+      "skippedMinified": false,
+      "errors": []
+    },
+    {
+      "file": "_site/assets/white-paper.BiEdYHFS.css",
+      "originalSize": 10533,
+      "newSize": 12225,
+      "sizeDiff": 1692,
+      "prettyPrinted": true,
+      "skippedMinified": false,
+      "errors": []
+    },
+    {
+      "file": "_site/partnerships.css",
+      "originalSize": 1652,
+      "newSize": 1652,
+      "sizeDiff": 0,
+      "prettyPrinted": true,
+      "skippedMinified": false,
+      "errors": []
+    },
+    {
+      "file": "_site/styles.css",
+      "originalSize": 749012,
+      "newSize": 709512,
+      "sizeDiff": -39500,
+      "prettyPrinted": true,
+      "skippedMinified": false,
+      "errors": []
+    },
+    {
+      "file": "_site/styles.min.css",
+      "originalSize": 262441,
+      "newSize": 262441,
+      "sizeDiff": 0,
+      "prettyPrinted": false,
+      "skippedMinified": true,
+      "errors": [
+        "Mismatched braces: 3068 opening, 3069 closing"
+      ]
+    }
+  ],
+  "summary": {
+    "totalHtml": 46,
+    "totalCss": 5,
+    "htmlPrettyPrinted": 46,
+    "cssPrettyPrinted": 4,
+    "htmlErrors": 0,
+    "cssErrors": 1
+  }
+}

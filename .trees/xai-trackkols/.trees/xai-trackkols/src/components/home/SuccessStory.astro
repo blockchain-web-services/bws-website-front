@@ -1,0 +1,166 @@
+---
+import type { SuccessStory } from '../../data/successStories';
+
+interface Props {
+  story: SuccessStory;
+}
+
+const { story } = Astro.props;
+
+// Support both new buttons array and legacy single button
+const buttons = story.buttons || (story.button ? [story.button] : []);
+---
+
+<div class="w-layout-vflex flex-ngc-announcement single-column">
+  <!-- Main content (text and buttons) -->
+  <div class="w-layout-vflex flex-block-13">
+    <!-- Title -->
+    <div class="text-block-38">{story.title}</div>
+
+    <!-- Description -->
+    <div class="text-block-39 success-story-description" set:html={story.description}></div>
+
+    <!-- Buttons (single or multiple) -->
+    <div class="success-story-buttons" style="display: flex; gap: 0.5rem; flex-wrap: wrap; align-items: stretch;">
+      {buttons.map((button) => (
+        <a
+          href={button.href}
+          target={button.target}
+          class={button.target === '_blank' ? "button-primary button-small w-button" : "button-secondary tokenomics button-small w-button"}
+          style="flex: 1; min-width: fit-content; display: flex; align-items: center; justify-content: center; gap: 0.25rem;"
+        >
+          {button.target === '_blank' ? (
+            <>
+              {button.text}
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </>
+          ) : (
+            <>
+              {button.text}
+              {button.hasArrow && <span class="button-arrow" />}
+            </>
+          )}
+        </a>
+      ))}
+    </div>
+  </div>
+
+  <!-- Image (if available) -->
+  {
+    story.image && (
+      <div class="announcement-image-container">
+        <img
+          src={story.image.src}
+          loading={story.image.loading || 'lazy'}
+          sizes={story.image.sizes}
+          alt={story.image.alt}
+          class="announcement-image success-story-image-clickable"
+          data-image-src={story.image.src}
+          style="cursor: pointer;"
+        />
+      </div>
+    )
+  }
+</div>
+
+<script is:inline>
+  // Image lightbox functionality - must run after DOM loads
+  if (typeof window !== 'undefined') {
+    window.addEventListener('DOMContentLoaded', function() {
+      // Check if lightbox already exists
+      if (document.getElementById('success-story-lightbox')) {
+        return;
+      }
+
+      // Create lightbox element with inline styles
+      const lightbox = document.createElement('div');
+      lightbox.id = 'success-story-lightbox';
+      lightbox.style.cssText = `
+        display: none;
+        position: fixed;
+        z-index: 99999;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.95);
+        cursor: pointer;
+        align-items: center;
+        justify-content: center;
+      `;
+
+      const closeBtn = document.createElement('span');
+      closeBtn.innerHTML = '&times;';
+      closeBtn.style.cssText = `
+        position: absolute;
+        top: 20px;
+        right: 35px;
+        color: #f1f1f1;
+        font-size: 50px;
+        font-weight: bold;
+        cursor: pointer;
+        z-index: 100000;
+      `;
+      closeBtn.onmouseover = function() { this.style.color = '#bbb'; };
+      closeBtn.onmouseout = function() { this.style.color = '#f1f1f1'; };
+
+      const lightboxImg = document.createElement('img');
+      lightboxImg.alt = 'Lightbox image'; // Will be updated with specific alt when image is clicked
+      lightboxImg.style.cssText = `
+        max-width: 90vw;
+        max-height: 90vh;
+        width: auto;
+        height: auto;
+        object-fit: contain;
+        display: block;
+        margin: auto;
+      `;
+
+      lightbox.appendChild(closeBtn);
+      lightbox.appendChild(lightboxImg);
+      document.body.appendChild(lightbox);
+
+      // Add click handlers to all success story images
+      function attachImageHandlers() {
+        document.querySelectorAll('.success-story-image-clickable').forEach(img => {
+          img.onclick = function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            lightboxImg.src = this.getAttribute('data-image-src');
+            lightboxImg.alt = this.alt;
+            lightbox.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+          };
+        });
+      }
+
+      attachImageHandlers();
+
+      // Re-attach handlers when carousel changes (for Swiper)
+      setTimeout(attachImageHandlers, 1000);
+
+      // Close lightbox function
+      function closeLightbox() {
+        lightbox.style.display = 'none';
+        document.body.style.overflow = '';
+      }
+
+      // Close on background click
+      lightbox.onclick = function(e) {
+        if (e.target === lightbox || e.target === closeBtn) {
+          closeLightbox();
+        }
+      };
+
+      // Close on X click
+      closeBtn.onclick = closeLightbox;
+
+      // Close on Escape key
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && lightbox.style.display === 'flex') {
+          closeLightbox();
+        }
+      });
+    });
+  }
+</script>

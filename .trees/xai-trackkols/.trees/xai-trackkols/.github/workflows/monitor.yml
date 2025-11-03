@@ -1,0 +1,180 @@
+name: Production Monitoring
+
+on:
+  schedule:
+    # Run every 6 hours
+    - cron: '0 */6 * * *'
+  workflow_dispatch:
+
+permissions:
+  issues: write
+  contents: read
+
+env:
+  PRODUCTION_URL: 'https://www.bws.ninja'
+
+jobs:
+  health-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: tests/package.json
+
+      - name: Install dependencies
+        working-directory: tests
+        run: |
+          if [ -f "package-lock.json" ]; then
+            npm ci
+          else
+            npm install
+          fi
+
+      - name: Install Playwright
+        run: npx playwright install --with-deps chromium
+
+      - name: Run health checks
+        id: health
+        env:
+          PLAYWRIGHT_BASE_URL: ${{ env.PRODUCTION_URL }}
+          NO_WEBSERVER: "true"
+        run: |
+          echo "Running production health checks..."
+
+          # Run existing smoke tests against production
+          npx playwright test tests/smoke/ --config=tests/playwright.config.cjs --project=chromium || true
+
+          # Check HTTP status
+          status=$(curl -s -o /dev/null -w "%{http_code}" ${{ env.PRODUCTION_URL }})
+          echo "status=$status" >> $GITHUB_OUTPUT
+
+          if [ "$status" != "200" ]; then
+            echo "error=HTTP status check failed: $status" >> $GITHUB_OUTPUT
+            exit 1
+          fi
+
+      - name: Performance check
+        id: perf
+        run: |
+          # Measure response time
+          response_time=$(curl -o /dev/null -s -w '%{time_total}' ${{ env.PRODUCTION_URL }})
+          echo "Response time: ${response_time}s"
+          echo "response_time=$response_time" >> $GITHUB_OUTPUT
+
+          # Check if response time is acceptable (under 3 seconds)
+          if (( $(echo "$response_time > 3" | bc -l) )); then
+            echo "⚠️ Slow response time detected: ${response_time}s"
+            echo "slow=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: SSL Certificate check
+        run: |
+          echo "Checking SSL certificate..."
+          echo | openssl s_client -connect www.bws.ninja:443 -servername www.bws.ninja 2>/dev/null | \
+            openssl x509 -noout -dates | grep notAfter
+
+      - name: Check critical resources
+        run: |
+          resources=(
+            "${{ env.PRODUCTION_URL }}/styles.css"
+            "${{ env.PRODUCTION_URL }}/index.html"
+          )
+
+          for resource in "${resources[@]}"; do
+            status=$(curl -s -o /dev/null -w "%{http_code}" "$resource")
+            if [ "$status" != "200" ]; then
+              echo "❌ Resource not accessible: $resource (Status: $status)"
+              exit 1
+            else
+              echo "✅ Resource OK: $resource"
+            fi
+          done
+
+      - name: Create issue on failure
+        if: failure()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const issueTitle = '🚨 Production monitoring alert';
+
+            // Check if an issue already exists
+            const { data: issues } = await github.rest.issues.listForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'open',
+              labels: 'monitoring,production'
+            });
+
+            const existingIssue = issues.find(issue => issue.title === issueTitle);
+
+            const issueBody = `## Production Monitoring Alert
+
+            **Time:** ${new Date().toISOString()}
+            **Site:** ${{ env.PRODUCTION_URL }}
+            **Status:** Failed health checks
+
+            ### Issues Detected:
+            - HTTP Status: ${{ steps.health.outputs.status || 'Unknown' }}
+            - Response Time: ${{ steps.perf.outputs.response_time || 'Unknown' }}s
+            - Error: ${{ steps.health.outputs.error || 'Health check failed' }}
+
+            ### Action Required:
+            1. Check the [monitoring workflow](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})
+            2. Verify the site is accessible: ${{ env.PRODUCTION_URL }}
+            3. Consider running the rollback workflow if needed
+
+            ---
+            *This is an automated alert from the production monitoring system.*`;
+
+            if (existingIssue) {
+              // Update existing issue
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: existingIssue.number,
+                body: issueBody
+              });
+            } else {
+              // Create new issue
+              await github.rest.issues.create({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                title: issueTitle,
+                body: issueBody,
+                labels: ['monitoring', 'production', 'urgent']
+              });
+            }
+
+      - name: Log success
+        if: success()
+        run: |
+          echo "✅ All health checks passed!"
+          echo "Site URL: ${{ env.PRODUCTION_URL }}"
+          echo "Response time: ${{ steps.perf.outputs.response_time }}s"
+          echo "HTTP Status: ${{ steps.health.outputs.status }}"
+
+  lighthouse-audit:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'workflow_dispatch'
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Run Lighthouse CI
+        run: |
+          npm install -g @lhci/cli
+          lhci autorun \
+            --collect.url="${{ env.PRODUCTION_URL }}/" \
+            --collect.url="${{ env.PRODUCTION_URL }}/about" \
+            --collect.url="${{ env.PRODUCTION_URL }}/industries" \
+            --upload.target=temporary-public-storage || echo "Lighthouse audit completed"
+
+      - name: Check Core Web Vitals
+        run: |
+          echo "Core Web Vitals audit results will be available in Lighthouse report"

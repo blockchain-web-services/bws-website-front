@@ -1,0 +1,570 @@
+---
+import { quarterLearnings } from '../data/quarterLearnings';
+import { quarterContents } from '../data/quarterContent';
+
+export interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "Cutting-Edge Blockchain Solutions",
+  description = "A Blockchain Solutions Marketplace for mass-market users to find innovative and easy-to-use blockchain solutions and a platform for builders to bring those solutions to life.",
+} = Astro.props;
+---
+
+<!doctype html>
+<!-- Last Published: Tue Jun 10 2025 17:45:04 GMT+0000 (Coordinated Universal Time) -->
+<html
+  lang="en"
+  data-wf-domain="www.bws.ninja"
+  data-wf-page="6474d385cfec71cb21a922f4"
+  data-wf-site="6474d385cfec71cb21a92251"
+>
+  <head>
+    <meta charset="utf-8" />
+    <title>{title}</title>
+    <meta content={description} name="description" />
+    <meta content={title} property="og:title" />
+    <meta content={description} property="og:description" />
+    <meta
+      content="/assets/images/6474d385cfec71cb21a92251/6731e7a5d7e59b65fb1282e6_BWS%20Cover_landing_1200x630.jpg"
+      property="og:image"
+    />
+    <meta content={title} property="twitter:title" />
+    <meta content={description} property="twitter:description" />
+    <meta
+      content="/assets/images/6474d385cfec71cb21a92251/6731e7a5d7e59b65fb1282e6_BWS%20Cover_landing_1200x630.jpg"
+      property="twitter:image"
+    />
+    <meta property="og:type" content="website" />
+    <meta content="summary_large_image" name="twitter:card" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <!-- Critical CSS for test stability - MUST load before external CSS -->
+    <!-- is:global prevents Astro from adding scoping attributes -->
+    <style is:global>
+      /* CRITICAL: Image sizing constraints for test compliance */
+      /* Updated logo sizes for better visibility */
+      .image-assure {
+        height: 120px !important;
+        width: auto !important;
+        object-fit: contain !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+      }
+
+      .image-proof {
+        width: 150px !important;
+        max-width: 150px !important;
+        height: auto !important;
+        object-fit: contain !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+      }
+
+      .image-bfg,
+      .top-menu-company-news-image {
+        visibility: visible !important;
+        opacity: 1 !important;
+        display: inline-block !important;
+      }
+
+      /* BFG Logo visibility fix */
+      .image-bfg,
+      .top-menu-company-news-image {
+        visibility: visible !important;
+        opacity: 1 !important;
+        display: inline-block !important;
+      }
+    </style>
+    <link href="/styles.css" rel="stylesheet" type="text/css" />
+    <link href="/partnerships.css" rel="stylesheet" type="text/css" />
+    <!-- FontAwesome 6 for button icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Swiper Carousel Library -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <script
+      is:inline
+      src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"
+    ></script>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous" />
+    <script src="/assets/js/webfont.js" type="text/javascript"></script>
+    <script type="text/javascript">
+      WebFont.load({
+        google: {
+          families: [
+            "Montserrat:100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic",
+            "DM Sans:regular,500,700",
+          ],
+        },
+      });
+    </script>
+    <script type="text/javascript">
+      !(function (o, c) {
+        var n = c.documentElement,
+          t = " w-mod-";
+        ((n.className += t + "js"),
+          ("ontouchstart" in o || (o.DocumentTouch && c instanceof DocumentTouch)) && (n.className += t + "touch"));
+      })(window, document);
+    </script>
+    <link
+      href="/assets/images/6474d385cfec71cb21a92251/6546cb1c2a1b5bd337733b38_logo-for-dark-32x32.png"
+      rel="shortcut icon"
+      type="image/x-icon"
+    />
+    <link
+      href="/assets/images/6474d385cfec71cb21a92251/6546cade4aea8f975475bc03_logo-for-dark-256x256.png"
+      rel="apple-touch-icon"
+    />
+    <link href="https://www.bws.ninja" rel="canonical" />
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-TKTH70X52B"></script>
+    <script type="text/javascript">
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("set", "developer_id.dZGVlNj", true);
+      gtag("config", "G-TKTH70X52B");
+    </script>
+    <!-- Google Tag Manager -->
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-PVB2TL4X");
+    </script>
+    <!-- End Google Tag Manager -->
+    <style>
+      .w-dyn-item {
+        opacity: 1;
+        transition: opacity 0.5s;
+      }
+
+      .w-dyn-item.fade {
+        opacity: 0;
+      }
+
+      /* Marketplace pages padding fix */
+      .container-solution {
+        padding-top: 80px !important;
+        padding-bottom: 80px !important;
+      }
+
+      .solution-page-card {
+        margin-top: 40px;
+        margin-bottom: 40px;
+      }
+
+      /* Responsive adjustments */
+      @media screen and (max-width: 991px) {
+        .w-container {
+          padding-left: 20px;
+          padding-right: 20px;
+        }
+
+        .container-solution {
+          padding-top: 60px !important;
+          padding-bottom: 60px !important;
+        }
+      }
+
+      @media screen and (max-width: 767px) {
+        .w-container {
+          padding-left: 15px;
+          padding-right: 15px;
+        }
+
+        .container-solution {
+          padding-top: 40px !important;
+          padding-bottom: 40px !important;
+        }
+      }
+
+      @media screen and (max-width: 479px) {
+        .w-container {
+          padding-left: 10px;
+          padding-right: 10px;
+        }
+
+        .container-solution {
+          padding-top: 30px !important;
+          padding-bottom: 30px !important;
+        }
+      }
+    </style>
+    <script type="text/javascript">
+      window.__WEBFLOW_CURRENCY_SETTINGS = {
+        currencyCode: "USD",
+        symbol: "$",
+        decimal: ".",
+        fractionDigits: 2,
+        group: ",",
+        template:
+          '{{wf {"path":"symbol","type":"PlainText"} }} {{wf {"path":"amount","type":"CommercePrice"} }} {{wf {"path":"currencyCode","type":"PlainText"} }}',
+        hideDecimalForWholeNumbers: false,
+      };
+    </script>
+  </head>
+  <body class="body">
+    <div class="w-embed w-iframe">
+      <!-- Google Tag Manager (noscript) -->
+      <noscript
+        ><iframe
+          src="https://www.googletagmanager.com/ns.html?id=GTM-PVB2TL4X"
+          height="0"
+          width="0"
+          style="display: none; visibility: hidden"
+          title="Google Tag Manager"></iframe></noscript
+      >
+      <!-- End Google Tag Manager (noscript) -->
+    </div>
+
+    <!-- Background video -->
+    <div
+      data-poster-url="/assets/images/6474d385cfec71cb21a92251/670f916b2f60627d5201850b_shutterstock_1108417201-poster-00001.jpg"
+      data-video-urls="/assets/images/6474d385cfec71cb21a92251/670f916b2f60627d5201850b_shutterstock_1108417201-transcode.mp4,/assets/images/6474d385cfec71cb21a92251/670f916b2f60627d5201850b_shutterstock_1108417201-transcode.webm"
+      data-autoplay="true"
+      data-loop="true"
+      data-wf-ignore="true"
+      class="background-lines-top w-background-video w-background-video-atom"
+    >
+      <video
+        id="2c5ecc59-4af4-63ac-e3c4-cae58ae82807-video"
+        autoplay=""
+        loop=""
+        style='
+          background-image: url("/assets/images/6474d385cfec71cb21a92251/670f916b2f60627d5201850b_shutterstock_1108417201-poster-00001.jpg");
+        '
+        muted=""
+        playsinline=""
+        data-wf-ignore="true"
+        data-object-fit="cover"
+      >
+        <source
+          src="/assets/images/6474d385cfec71cb21a92251/670f916b2f60627d5201850b_shutterstock_1108417201-transcode.mp4"
+          data-wf-ignore="true"
+        />
+        <source
+          src="/assets/images/6474d385cfec71cb21a92251/670f916b2f60627d5201850b_shutterstock_1108417201-transcode.webm"
+          data-wf-ignore="true"
+        />
+      </video>
+    </div>
+
+    <slot />
+
+    <slot name="scripts" />
+
+    <!-- jQuery (required for Webflow) -->
+    <script src="/assets/js/jquery-3.5.1.min.dc5e7f18c8.js" type="text/javascript"></script>
+
+    <!-- Patch Webflow initialization to handle missing modules gracefully -->
+    <script type="text/javascript">
+      // Store original jQuery ready function
+      if (typeof $ !== "undefined" && $.fn && $.fn.ready) {
+        var originalReady = $.fn.ready;
+        var pendingCallbacks = [];
+
+        // Override jQuery ready to intercept Webflow's initialization
+        $.fn.ready = function (callback) {
+          // Store callbacks for later
+          pendingCallbacks.push(callback);
+          // Don't execute immediately
+          return this;
+        };
+
+        // After all scripts load, execute callbacks with error handling
+        window.addEventListener("load", function () {
+          // Restore original ready function
+          $.fn.ready = originalReady;
+
+          // Execute pending callbacks with error handling
+          pendingCallbacks.forEach(function (callback) {
+            try {
+              callback.call(document);
+            } catch (e) {
+              console.log("Webflow module initialization skipped (missing dependencies)");
+            }
+          });
+        });
+      }
+    </script>
+
+    <!-- Webflow JavaScript for dropdown menus and interactions -->
+    <script src="/assets/js/webflow.schunk.6d83011aa4f34449.js" type="text/javascript"></script>
+    <script src="/assets/js/webflow.schunk.1ad200ed633c14bf.js" type="text/javascript"></script>
+    <script src="/assets/js/webflow.schunk.4913f0d9ee368d76.js" type="text/javascript"></script>
+    <script src="/assets/js/webflow.00c81055.72e38c471fcb0085.js" type="text/javascript"></script>
+
+    <!-- Manually initialize Webflow components that work -->
+    <script type="text/javascript">
+      window.addEventListener("load", function () {
+        setTimeout(function () {
+          if (typeof Webflow !== "undefined") {
+            // Try to initialize navigation dropdowns specifically
+            if (Webflow.nav && Webflow.nav.ready) {
+              try {
+                Webflow.nav.ready();
+              } catch (e) {
+                console.log("Nav initialization issue:", e);
+              }
+            }
+
+            // Initialize any other working modules
+            if (Webflow.tabs && Webflow.tabs.ready) {
+              try {
+                Webflow.tabs.ready();
+              } catch (e) {}
+            }
+          }
+        }, 200);
+      });
+    </script>
+
+    <!-- Dynamic Roadmap Colors based on current date -->
+    <script type="text/javascript" define:vars={{ quarterLearnings, quarterContents }}>
+      (function() {
+        // Learnings data imported from /src/data/quarterLearnings.ts
+        // Quarter content data imported from /src/data/quarterContent.ts
+
+        // Function to get current quarter (1-4)
+        function getCurrentQuarter() {
+          const now = new Date();
+          const month = now.getMonth(); // 0-11
+          return Math.floor(month / 3) + 1; // 1-4
+        }
+
+        // Function to get current year
+        function getCurrentYear() {
+          return new Date().getFullYear();
+        }
+
+        // Function to inject quarter content into roadmap cards
+        function injectQuarterContent(card, quarter, year) {
+          // Determine the key for looking up content
+          let key;
+          if (quarter && year) {
+            key = year + '-' + quarter;
+          } else if (card.hasAttribute('data-roadmap-key')) {
+            // Use the data-roadmap-key attribute for LAUNCH and 2026
+            key = card.getAttribute('data-roadmap-key');
+          }
+
+          const data = quarterContents[key];
+
+          // Skip if no content data exists
+          if (!data) return;
+
+          // Check if content already injected (prevent duplicates)
+          if (card.querySelector('.container-roadmap-content .w-richtext')) {
+            const existingContent = card.querySelector('.container-roadmap-content .w-richtext');
+            if (existingContent && existingContent.children.length > 0) {
+              return; // Content already exists
+            }
+          }
+
+          // Build heading
+          let headingHTML = '';
+          if (data.quarter === 'LAUNCH' || data.quarter === '2026') {
+            headingHTML = '<div class="heading-roadmap">' + data.quarter + '</div>';
+          } else {
+            headingHTML = '<div class="heading-roadmap">Q' + data.quarter + '\' <span class="text-span-11">' + data.year + '</span></div>';
+          }
+
+          // Build title
+          const titleHTML = '<div class="' + data.titleCssClass + '">' + data.title + '</div>';
+
+          // Build sections
+          let sectionsHTML = '';
+          data.sections.forEach(function(section) {
+            sectionsHTML += '<h4 class="roadmap-description-title">' + section.title + '</h4>';
+            section.paragraphs.forEach(function(para) {
+              sectionsHTML += '<p class="paragraph-10">' + para + '</p>';
+            });
+          });
+
+          // Complete content HTML
+          const contentHTML = '<div class="w-layout-blockcontainer container-roadmap-content w-container">' +
+            '<div class="w-richtext">' + sectionsHTML + '</div>' +
+          '</div>';
+
+          // Clear card and inject new content
+          card.innerHTML = headingHTML + titleHTML + contentHTML;
+        }
+
+        // Function to inject learnings section into past quarter cards
+        function injectLearningsSection(card, quarter, year) {
+          const key = year + '-' + quarter;
+          const data = quarterLearnings[key];
+
+          // Skip if no learnings data exists yet
+          if (!data) return;
+
+          // Check if learnings already injected (prevent duplicates)
+          if (card.querySelector('.roadmap-learnings-container')) return;
+
+          // Build achieved list
+          let achievedHTML = '';
+          data.achieved.forEach(function(item) {
+            achievedHTML += '<li>' + item + '</li>';
+          });
+
+          // Build missed list
+          let missedHTML = '';
+          data.missed.forEach(function(item) {
+            missedHTML += '<li>' + item + '</li>';
+          });
+
+          // Build lessons list
+          let lessonsHTML = '';
+          data.lessons.forEach(function(item) {
+            lessonsHTML += '<li>' + item + '</li>';
+          });
+
+          // Build missed section only if there are items
+          let missedSection = '';
+          if (data.missed.length > 0) {
+            missedSection = '<div class="learnings-section">' +
+              '<h4 class="learnings-heading">What We Didn\'t Complete</h4>' +
+              '<ul class="learnings-list">' + missedHTML + '</ul>' +
+            '</div>';
+          }
+
+          // Complete HTML structure
+          const html = '<div class="roadmap-learnings-container">' +
+            '<button class="roadmap-learnings-toggle" aria-expanded="false" type="button">' +
+              '<span class="learnings-label">Quarter Learnings</span>' +
+              '<span class="learnings-arrow">▼</span>' +
+            '</button>' +
+            '<div class="roadmap-learnings-content">' +
+              '<div class="learnings-section">' +
+                '<h4 class="learnings-heading">What We Achieved</h4>' +
+                '<ul class="learnings-list">' + achievedHTML + '</ul>' +
+              '</div>' +
+              missedSection +
+              '<div class="learnings-section">' +
+                '<h4 class="learnings-heading">Key Lessons</h4>' +
+                '<ul class="learnings-list">' + lessonsHTML + '</ul>' +
+              '</div>' +
+            '</div>' +
+          '</div>';
+
+          // Calculate spacer height to align learnings across cards in same row
+          const parentRow = card.closest('.split-horizontal');
+          let spacerHeight = 0;
+          if (parentRow) {
+            const cardsInRow = parentRow.querySelectorAll('[data-quarter][data-year]');
+            let maxContentHeight = 0;
+            cardsInRow.forEach(function(rowCard) {
+              const contentArea = rowCard.querySelector('.container-roadmap-content');
+              if (contentArea && contentArea.offsetHeight > maxContentHeight) {
+                maxContentHeight = contentArea.offsetHeight;
+              }
+            });
+            const thisContentHeight = card.querySelector('.container-roadmap-content').offsetHeight;
+            spacerHeight = maxContentHeight - thisContentHeight;
+          }
+
+          const spacer = document.createElement('div');
+          spacer.className = 'roadmap-flex-spacer';
+          spacer.style.cssText = 'flex: 0 0 auto; height: ' + spacerHeight + 'px;';
+          card.appendChild(spacer);
+
+          // Insert learnings at end of card
+          card.insertAdjacentHTML('beforeend', html);
+
+          // Add toggle functionality
+          const toggle = card.querySelector('.roadmap-learnings-toggle');
+          const content = card.querySelector('.roadmap-learnings-content');
+
+          toggle.addEventListener('click', function() {
+            const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
+            toggle.setAttribute('aria-expanded', !isExpanded);
+            content.classList.toggle('expanded');
+          });
+        }
+
+        // Function to apply dynamic colors to roadmap cards
+        function applyDynamicRoadmapColors() {
+          const currentQuarter = getCurrentQuarter();
+          const currentYear = getCurrentYear();
+
+          // First, inject content for all cards with data attributes
+          const quarterCards = document.querySelectorAll('[data-quarter][data-year]');
+          quarterCards.forEach(function(card) {
+            const cardQuarter = parseInt(card.getAttribute('data-quarter'));
+            const cardYear = parseInt(card.getAttribute('data-year'));
+            injectQuarterContent(card, cardQuarter, cardYear);
+          });
+
+          // Also handle LAUNCH and 2026 cards (with data-roadmap-key)
+          const specialCards = document.querySelectorAll('[data-roadmap-key]');
+          specialCards.forEach(function(card) {
+            injectQuarterContent(card);
+          });
+
+          // Now apply dynamic colors to cards with data attributes
+          quarterCards.forEach(function(card) {
+            const cardQuarter = parseInt(card.getAttribute('data-quarter'));
+            const cardYear = parseInt(card.getAttribute('data-year'));
+
+            // Calculate if this card is past, current, or future
+            let cardClass = '';
+
+            if (cardYear < currentYear) {
+              // Past year - all quarters are past
+              cardClass = 'roadmap-past';
+            } else if (cardYear > currentYear) {
+              // Future year - all quarters are future
+              cardClass = 'roadmap-future';
+            } else {
+              // Same year - compare quarters
+              if (cardQuarter < currentQuarter) {
+                cardClass = 'roadmap-past';
+              } else if (cardQuarter === currentQuarter) {
+                cardClass = 'roadmap-current';
+              } else {
+                cardClass = 'roadmap-future';
+              }
+            }
+
+            // Remove any existing roadmap color classes
+            card.classList.remove('roadmap-past', 'roadmap-current', 'roadmap-future');
+
+            // Add the appropriate class
+            card.classList.add(cardClass);
+
+            // Inject learnings section for past quarters
+            if (cardClass === 'roadmap-past') {
+              injectLearningsSection(card, cardQuarter, cardYear);
+            }
+          });
+        }
+
+        // Run on page load
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', applyDynamicRoadmapColors);
+        } else {
+          applyDynamicRoadmapColors();
+        }
+      })();
+    </script>
+  </body>
+</html>

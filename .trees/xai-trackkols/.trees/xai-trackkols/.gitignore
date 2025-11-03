@@ -1,0 +1,37 @@
+node_modules/
+.env
+.env.local
+.DS_Store
+*.log
+validation-output.txt
+htmlhint-output.txt
+prettier-output.txt
+
+# Astro generated files
+.astro/
+
+# Playwright test outputs
+tests/playwright-report/
+tests/test-results/
+tests/playwright/.cache/
+tests/visual/**/*.png.actual
+tests/visual/**/*.png.diff
+tests/screenshots/
+test-results.json
+junit.xml
+
+# Old test locations (to be removed)
+test-results/
+playwright-report/
+playwright/.cache/
+
+# Keep visual baselines
+!tests/visual/baselines/
+
+# Build output
+_site/
+dist/
+
+# IDE
+.vscode/
+.idea/

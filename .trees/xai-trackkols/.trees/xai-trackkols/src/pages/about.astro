@@ -1,0 +1,12 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Navigation from "../components/Navigation.astro";
+import AboutMainContent from "../components/aboutMainContent.astro";
+
+const pageTitle = "About Blockchain Web Services - Blockchain Web Services";
+const pageDescription = "Learn about BWS and our mission to revolutionize business with blockchain technology";
+---
+
+<BaseLayout title={pageTitle} description={pageDescription}>
+  <Navigation /><AboutMainContent />
+</BaseLayout>

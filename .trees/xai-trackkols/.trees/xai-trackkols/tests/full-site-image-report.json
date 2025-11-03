@@ -1,0 +1,282 @@
+{
+  "timestamp": "2025-09-24T06:42:25.386Z",
+  "pagesChecked": 24,
+  "totalImagesChecked": 34,
+  "totalBrokenImages": 15,
+  "brokenByPage": {
+    "http://localhost:4321/": [
+      {
+        "url": "http://localhost:4321/assets/images/6474d385cfec71cb21a92251%2F670f916b2f60627d5201850b_shutterstock_1108417201-poster-00001.jpg",
+        "status": 404,
+        "type": "network-request",
+        "page": "http://localhost:4321/"
+      }
+    ],
+    "/": [
+      {
+        "url": "http://localhost:4321/assets/images/6474d385cfec71cb21a92251/6474d385cfec71cb21a922e3_blob-techplus-x-template.png",
+        "type": "img-tag",
+        "alt": "",
+        "page": "/"
+      },
+      {
+        "url": "http://localhost:4321/assets/images/6474d385cfec71cb21a92251/6474d385cfec71cb21a922e3_blob-techplus-x-template.png",
+        "type": "img-tag",
+        "alt": "",
+        "page": "/"
+      },
+      {
+        "url": "http://localhost:4321/assets/images/6474d385cfec71cb21a92251/6708d536ef7b294fa972098e_football-cubes-selection.png",
+        "type": "img-tag",
+        "alt": "NFT Game Cube 1-click BUY EXPERIENCE.",
+        "page": "/"
+      },
+      {
+        "url": "http://localhost:4321/assets/images/6474d385cfec71cb21a92251/6474d385cfec71cb21a922e3_blob-techplus-x-template.png",
+        "type": "img-tag",
+        "alt": "",
+        "page": "/"
+      },
+      {
+        "url": "http://localhost:4321/assets/images/6474d385cfec71cb21a92251/6474d385cfec71cb21a922e3_blob-techplus-x-template.png",
+        "type": "img-tag",
+        "alt": "",
+        "page": "/"
+      },
+      {
+        "url": "http://localhost:4321/assets/images/6474d385cfec71cb21a92251/6707fd987c3a05d42e1e908e_Tokenomics-Allocation-letters-black.png",
+        "type": "img-tag",
+        "alt": "$BWS Token Allocation",
+        "page": "/"
+      },
+      {
+        "url": "http://localhost:4321/assets/images/6474d385cfec71cb21a92251/6474d385cfec71cb21a922e3_blob-techplus-x-template.png",
+        "type": "img-tag",
+        "alt": "",
+        "page": "/"
+      }
+    ],
+    "/contact-us": [
+      {
+        "url": "http://localhost:4321/assets/images/6474d385cfec71cb21a92251/6474d385cfec71cb21a922e3_blob-techplus-x-template.png",
+        "type": "img-tag",
+        "alt": "",
+        "page": "/contact-us"
+      },
+      {
+        "url": "http://localhost:4321/assets/images/6474d385cfec71cb21a92251/6474d385cfec71cb21a922e3_blob-techplus-x-template.png",
+        "type": "img-tag",
+        "alt": "",
+        "page": "/contact-us"
+      }
+    ],
+    "/legal-notice": [
+      {
+        "url": "http://localhost:4321/assets/images/6474d385cfec71cb21a92251/6474d385cfec71cb21a922e3_blob-techplus-x-template.png",
+        "type": "img-tag",
+        "alt": "",
+        "page": "/legal-notice"
+      },
+      {
+        "url": "http://localhost:4321/assets/images/6474d385cfec71cb21a92251/6474d385cfec71cb21a922e3_blob-techplus-x-template.png",
+        "type": "img-tag",
+        "alt": "",
+        "page": "/legal-notice"
+      }
+    ],
+    "/privacy-policy": [
+      {
+        "url": "http://localhost:4321/assets/images/6474d385cfec71cb21a92251/6474d385cfec71cb21a922e3_blob-techplus-x-template.png",
+        "type": "img-tag",
+        "alt": "",
+        "page": "/privacy-policy"
+      },
+      {
+        "url": "http://localhost:4321/assets/images/6474d385cfec71cb21a92251/6474d385cfec71cb21a922e3_blob-techplus-x-template.png",
+        "type": "img-tag",
+        "alt": "",
+        "page": "/privacy-policy"
+      }
+    ],
+    "http://localhost:4321/industry-content/financial-services": [
+      {
+        "url": "http://localhost:4321/assets/images/6474d385cfec71cb21a9229a/654a2597be432d1f0879bfa6_Elevating%20Financial%20Services%20and%20ESG%20Compiance.jpg",
+        "status": 404,
+        "type": "network-request",
+        "page": "http://localhost:4321/industry-content/financial-services"
+      }
+    ]
+  },
+  "pageReports": [
+    {
+      "page": "/",
+      "brokenCount": 7,
+      "assets": [
+        {
+          "url": "http://localhost:4321/assets/images/6474d385cfec71cb21a92251/6474d385cfec71cb21a922e3_blob-techplus-x-template.png",
+          "type": "img-tag",
+          "alt": "",
+          "page": "/"
+        },
+        {
+          "url": "http://localhost:4321/assets/images/6474d385cfec71cb21a92251/6474d385cfec71cb21a922e3_blob-techplus-x-template.png",
+          "type": "img-tag",
+          "alt": "",
+          "page": "/"
+        },
+        {
+          "url": "http://localhost:4321/assets/images/6474d385cfec71cb21a92251/6708d536ef7b294fa972098e_football-cubes-selection.png",
+          "type": "img-tag",
+          "alt": "NFT Game Cube 1-click BUY EXPERIENCE.",
+          "page": "/"
+        },
+        {
+          "url": "http://localhost:4321/assets/images/6474d385cfec71cb21a92251/6474d385cfec71cb21a922e3_blob-techplus-x-template.png",
+          "type": "img-tag",
+          "alt": "",
+          "page": "/"
+        },
+        {
+          "url": "http://localhost:4321/assets/images/6474d385cfec71cb21a92251/6474d385cfec71cb21a922e3_blob-techplus-x-template.png",
+          "type": "img-tag",
+          "alt": "",
+          "page": "/"
+        },
+        {
+          "url": "http://localhost:4321/assets/images/6474d385cfec71cb21a92251/6707fd987c3a05d42e1e908e_Tokenomics-Allocation-letters-black.png",
+          "type": "img-tag",
+          "alt": "$BWS Token Allocation",
+          "page": "/"
+        },
+        {
+          "url": "http://localhost:4321/assets/images/6474d385cfec71cb21a92251/6474d385cfec71cb21a922e3_blob-techplus-x-template.png",
+          "type": "img-tag",
+          "alt": "",
+          "page": "/"
+        }
+      ]
+    },
+    {
+      "page": "/contact-us",
+      "brokenCount": 2,
+      "assets": [
+        {
+          "url": "http://localhost:4321/assets/images/6474d385cfec71cb21a92251/6474d385cfec71cb21a922e3_blob-techplus-x-template.png",
+          "type": "img-tag",
+          "alt": "",
+          "page": "/contact-us"
+        },
+        {
+          "url": "http://localhost:4321/assets/images/6474d385cfec71cb21a92251/6474d385cfec71cb21a922e3_blob-techplus-x-template.png",
+          "type": "img-tag",
+          "alt": "",
+          "page": "/contact-us"
+        }
+      ]
+    },
+    {
+      "page": "/legal-notice",
+      "brokenCount": 2,
+      "assets": [
+        {
+          "url": "http://localhost:4321/assets/images/6474d385cfec71cb21a92251/6474d385cfec71cb21a922e3_blob-techplus-x-template.png",
+          "type": "img-tag",
+          "alt": "",
+          "page": "/legal-notice"
+        },
+        {
+          "url": "http://localhost:4321/assets/images/6474d385cfec71cb21a92251/6474d385cfec71cb21a922e3_blob-techplus-x-template.png",
+          "type": "img-tag",
+          "alt": "",
+          "page": "/legal-notice"
+        }
+      ]
+    },
+    {
+      "page": "/privacy-policy",
+      "brokenCount": 2,
+      "assets": [
+        {
+          "url": "http://localhost:4321/assets/images/6474d385cfec71cb21a92251/6474d385cfec71cb21a922e3_blob-techplus-x-template.png",
+          "type": "img-tag",
+          "alt": "",
+          "page": "/privacy-policy"
+        },
+        {
+          "url": "http://localhost:4321/assets/images/6474d385cfec71cb21a92251/6474d385cfec71cb21a922e3_blob-techplus-x-template.png",
+          "type": "img-tag",
+          "alt": "",
+          "page": "/privacy-policy"
+        }
+      ]
+    },
+    {
+      "page": "/industry-content/financial-services",
+      "error": "page.evaluate: Test timeout of 30000ms exceeded."
+    },
+    {
+      "page": "/industry-content/content-creation",
+      "error": "page.goto: Target page, context or browser has been closed"
+    },
+    {
+      "page": "/industry-content/retail",
+      "error": "page.goto: Target page, context or browser has been closed"
+    },
+    {
+      "page": "/industry-content/esg",
+      "error": "page.goto: Target page, context or browser has been closed"
+    },
+    {
+      "page": "/industry-content/legal",
+      "error": "page.goto: Target page, context or browser has been closed"
+    },
+    {
+      "page": "/industry-content/supply-chain",
+      "error": "page.goto: Target page, context or browser has been closed"
+    },
+    {
+      "page": "/marketplace/database-immutable",
+      "error": "page.goto: Target page, context or browser has been closed"
+    },
+    {
+      "page": "/marketplace/database-mutable",
+      "error": "page.goto: Target page, context or browser has been closed"
+    },
+    {
+      "page": "/marketplace/ipfs-upload",
+      "error": "page.goto: Target page, context or browser has been closed"
+    },
+    {
+      "page": "/marketplace/nft-zeroknwoledge",
+      "error": "page.goto: Target page, context or browser has been closed"
+    },
+    {
+      "page": "/marketplace/nft-gamecube",
+      "error": "page.goto: Target page, context or browser has been closed"
+    },
+    {
+      "page": "/marketplace/blockchain-badges",
+      "error": "page.goto: Target page, context or browser has been closed"
+    },
+    {
+      "page": "/marketplace/esg-credits",
+      "error": "page.goto: Target page, context or browser has been closed"
+    },
+    {
+      "page": "/marketplace/telegram-xbot",
+      "error": "page.goto: Target page, context or browser has been closed"
+    },
+    {
+      "page": "/articles/discover-the-power-of-blockchain-bwss-data-management-solutions",
+      "error": "page.goto: Target page, context or browser has been closed"
+    },
+    {
+      "page": "/articles/embrace-sustainability-with-esg-credits-bws-solution",
+      "error": "page.goto: Target page, context or browser has been closed"
+    },
+    {
+      "page": "/articles/investment-impact-reporting-unlocking-a-sustainable-future",
+      "error": "page.goto: Target page, context or browser has been closed"
+    }
+  ]
+}

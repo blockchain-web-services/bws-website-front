@@ -25,7 +25,7 @@ const { news } = Astro.props;
   }
 
   .announcement-content-overlay {
-    background: rgba(0, 0, 0, 0.75);
+    background: rgba(0, 0, 0, 0.85);
     padding: 24px 20px 20px 20px;
     width: 100%;
     text-align: center;
@@ -50,6 +50,33 @@ const { news } = Astro.props;
     margin: 0;
   }
 
+  .announcement-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+    text-decoration: none;
+  }
+
+  .announcement-link svg {
+    width: 20px;
+    height: 20px;
+    fill: #ffffff;
+  }
+
+  .announcement-link:hover svg {
+    opacity: 0.8;
+  }
+
+  :global(.partner-name) {
+    color: var(--rose);
+  }
+
   @media screen and (max-width: 991px) {
     .announcement-box-overlay {
       min-height: 280px;
@@ -63,21 +90,37 @@ const { news } = Astro.props;
 
 <div class={`announcement-box-overlay ${news.backgroundClass}`}>
   <div class="announcement-content-overlay">
-    <div class="announcement-text">
-      {news.description}
+    <div class="announcement-text" set:html={news.description}>
     </div>
     <div class="announcement-buttons">
       {
-        news.buttons.map((button) => (
-          <a
-            href={button.href}
-            target={button.target}
-            class={`button-${button.type} button-small w-button`}
-          >
-            {button.text}
-            {button.hasArrow && <span class="button-arrow" />}
-          </a>
-        ))
+        news.buttons.map((button) => {
+          if (button.text === 'View Announcement') {
+            return (
+              <a
+                href={button.href}
+                target={button.target}
+                class="announcement-link"
+                aria-label="View on X (Twitter)"
+              >
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                </svg>
+              </a>
+            );
+          } else {
+            return (
+              <a
+                href={button.href}
+                target={button.target}
+                class={`button-${button.type} button-small w-button`}
+              >
+                {button.text}
+                {button.hasArrow && <span class="button-arrow" />}
+              </a>
+            );
+          }
+        })
       }
     </div>
   </div>

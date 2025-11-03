@@ -1,0 +1,257 @@
+name: Weekly KOL Analytics
+
+on:
+  schedule:
+    - cron: '0 21 * * 0'  # Run every Sunday at 9 PM UTC
+  workflow_dispatch:  # Allow manual trigger
+
+permissions:
+  contents: write
+  issues: write
+  pull-requests: write
+
+env:
+  NODE_VERSION: "20"
+
+jobs:
+  analyze-engagement:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: "npm"
+
+      - name: Install dependencies
+        run: |
+          if [ -f "package-lock.json" ]; then
+            npm ci
+          else
+            npm install
+          fi
+
+      - name: Install script dependencies
+        run: npm install twitter-api-v2 @anthropic-ai/sdk
+
+      - name: Check if data exists
+        id: check-data
+        run: |
+          if [ -f "scripts/kols/data/kol-replies.json" ]; then
+            REPLIES_COUNT=$(jq '.replies | length' scripts/kols/data/kol-replies.json)
+            if [ "$REPLIES_COUNT" -gt 0 ]; then
+              echo "has_data=true" >> $GITHUB_OUTPUT
+              echo "replies_count=$REPLIES_COUNT" >> $GITHUB_OUTPUT
+            else
+              echo "has_data=false" >> $GITHUB_OUTPUT
+              echo "replies_count=0" >> $GITHUB_OUTPUT
+            fi
+          else
+            echo "has_data=false" >> $GITHUB_OUTPUT
+            echo "replies_count=0" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Run analytics
+        if: steps.check-data.outputs.has_data == 'true'
+        id: analyze
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          echo "Running KOL engagement analysis..."
+          node scripts/kols/analyze-kol-engagement.js > analytics_output.txt 2>&1
+          cat analytics_output.txt
+          echo "analyze_status=success" >> $GITHUB_OUTPUT
+        continue-on-error: true
+
+      - name: Extract report data
+        if: steps.analyze.outputs.analyze_status == 'success'
+        id: report
+        run: |
+          if [ -f "scripts/kols/data/kol-metrics.json" ]; then
+            # Get latest weekly report
+            WEEK_START=$(jq -r '.weeklyReports[-1].weekStart' scripts/kols/data/kol-metrics.json)
+            WEEK_END=$(jq -r '.weeklyReports[-1].weekEnd' scripts/kols/data/kol-metrics.json)
+            TOTAL_REPLIES=$(jq '.weeklyReports[-1].totalReplies' scripts/kols/data/kol-metrics.json)
+            SUCCESS_RATE=$(jq '.weeklyReports[-1].successRate' scripts/kols/data/kol-metrics.json)
+            AVG_RELEVANCE=$(jq '.weeklyReports[-1].averageRelevanceScore' scripts/kols/data/kol-metrics.json)
+
+            echo "week_start=$WEEK_START" >> $GITHUB_OUTPUT
+            echo "week_end=$WEEK_END" >> $GITHUB_OUTPUT
+            echo "total_replies=$TOTAL_REPLIES" >> $GITHUB_OUTPUT
+            echo "success_rate=$SUCCESS_RATE" >> $GITHUB_OUTPUT
+            echo "avg_relevance=$AVG_RELEVANCE" >> $GITHUB_OUTPUT
+
+            # Extract product performance
+            PRODUCTS=$(jq -r '.weeklyReports[-1].productPerformance | keys[]' scripts/kols/data/kol-metrics.json)
+            echo "products<<EOF" >> $GITHUB_OUTPUT
+            echo "$PRODUCTS" >> $GITHUB_OUTPUT
+            echo "EOF" >> $GITHUB_OUTPUT
+
+            # Get AI analysis summary
+            if [ "$(jq 'has("aiAnalysis")' scripts/kols/data/kol-metrics.json)" == "true" ]; then
+              ASSESSMENT=$(jq -r '.aiAnalysis.overallAssessment' scripts/kols/data/kol-metrics.json)
+              echo "ai_assessment=$ASSESSMENT" >> $GITHUB_OUTPUT
+            else
+              echo "ai_assessment=No AI analysis available" >> $GITHUB_OUTPUT
+            fi
+          fi
+
+      - name: Create weekly report issue
+        if: steps.analyze.outputs.analyze_status == 'success'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          # Build product performance table
+          PRODUCT_TABLE=""
+          if [ -f "scripts/kols/data/kol-metrics.json" ]; then
+            PRODUCTS=$(jq -r '.weeklyReports[-1].productPerformance | to_entries[] | "| \(.key) | \(.value.mentions) | \(.value.avgEngagement) | @\(.value.topKol // "N/A") |"' scripts/kols/data/kol-metrics.json)
+            PRODUCT_TABLE="$PRODUCTS"
+          fi
+
+          # Build top KOLs table
+          TOP_KOLS_TABLE=""
+          if [ -f "scripts/kols/data/kol-metrics.json" ]; then
+            TOP_KOLS=$(jq -r '.weeklyReports[-1].topEngagingKols[:5] | .[] | "| @\(.username) | \(.replies) | \(.avgEngagement) | \(.topics | join(", ")) |"' scripts/kols/data/kol-metrics.json)
+            TOP_KOLS_TABLE="$TOP_KOLS"
+          fi
+
+          # Get AI recommendations
+          RECOMMENDATIONS=""
+          if [ -f "scripts/kols/data/kol-metrics.json" ]; then
+            if [ "$(jq 'has("aiAnalysis")' scripts/kols/data/kol-metrics.json)" == "true" ]; then
+              RECOMMENDATIONS=$(jq -r '.aiAnalysis.recommendations | map("- \(.)") | join("\n")' scripts/kols/data/kol-metrics.json)
+            fi
+          fi
+
+          ISSUE_BODY="## 📊 Weekly KOL Engagement Report
+
+          **Period:** ${{ steps.report.outputs.week_start }} to ${{ steps.report.outputs.week_end }}
+
+          ### Performance Summary
+
+          - **Total Replies:** ${{ steps.report.outputs.total_replies }}
+          - **Success Rate:** ${{ steps.report.outputs.success_rate }}%
+          - **Average Relevance Score:** ${{ steps.report.outputs.avg_relevance }}/100
+
+          ### Product Performance
+
+          | Product | Mentions | Avg Engagement | Top KOL |
+          |---------|----------|----------------|---------|
+          $PRODUCT_TABLE
+
+          ### Top Engaging KOLs
+
+          | Username | Replies | Avg Engagement | Topics |
+          |----------|---------|----------------|--------|
+          $TOP_KOLS_TABLE
+
+          ### AI Analysis
+
+          **Overall Assessment:**
+          ${{ steps.report.outputs.ai_assessment }}
+
+          **Recommendations:**
+          $RECOMMENDATIONS
+
+          ### Next Steps
+
+          Based on this week's data:
+          1. Review product performance and adjust messaging
+          2. Continue engaging with top-performing KOLs
+          3. Monitor spam indicators
+          4. Adjust targeting strategy if needed
+
+          ---
+
+          📅 Report generated: $(date +'%Y-%m-%d %H:%M:%S UTC')
+          🤖 Generated with [Claude Code](https://claude.com/claude-code)"
+
+          gh issue create \
+            --title "Weekly KOL Report - Week of ${{ steps.report.outputs.week_start }}" \
+            --body "$ISSUE_BODY" \
+            --label "report,kol-system,weekly" || echo "Issue creation failed"
+
+      - name: Commit metrics
+        if: steps.analyze.outputs.analyze_status == 'success'
+        run: |
+          if ! git diff --quiet scripts/kols/data/kol-metrics.json; then
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add scripts/kols/data/kol-metrics.json
+            git commit -m "Weekly KOL analytics - ${{ steps.report.outputs.week_start }}
+
+            Success Rate: ${{ steps.report.outputs.success_rate }}%
+            Replies: ${{ steps.report.outputs.total_replies }}
+
+            🤖 Generated with [Claude Code](https://claude.com/claude-code)
+
+            Co-Authored-By: Claude <noreply@anthropic.com>"
+            git push
+          fi
+
+      - name: Create summary
+        if: steps.analyze.outputs.analyze_status == 'success'
+        run: |
+          echo "## 📊 Weekly KOL Analytics Complete" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### Period" >> $GITHUB_STEP_SUMMARY
+          echo "${{ steps.report.outputs.week_start }} to ${{ steps.report.outputs.week_end }}" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### Key Metrics" >> $GITHUB_STEP_SUMMARY
+          echo "- **Replies:** ${{ steps.report.outputs.total_replies }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Success Rate:** ${{ steps.report.outputs.success_rate }}%" >> $GITHUB_STEP_SUMMARY
+          echo "- **Avg Relevance:** ${{ steps.report.outputs.avg_relevance }}/100" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "📝 Detailed report issue created" >> $GITHUB_STEP_SUMMARY
+
+      - name: Skip if no data
+        if: steps.check-data.outputs.has_data == 'false'
+        run: |
+          echo "## ⚠️  No Data Available" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "The analytics process was skipped because no reply data is available." >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Action Required:** Run the KOL reply workflow first to generate data." >> $GITHUB_STEP_SUMMARY
+
+  handle-failure:
+    needs: analyze-engagement
+    runs-on: ubuntu-latest
+    if: failure()
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Create issue for failure
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          ISSUE_BODY="## KOL Analytics Workflow Failed
+
+          The weekly KOL analytics workflow failed on $(date +'%Y-%m-%d at %H:%M:%S UTC').
+
+          ### Possible Causes
+          - No data available for analysis
+          - Claude API issues
+          - Data file corruption
+          - Configuration errors
+
+          ### Required Actions
+          1. Check the workflow logs for specific errors
+          2. Verify data files exist in scripts/kols/data/
+          3. Test locally with: \`node scripts/kols/analyze-kol-engagement.js\`
+          4. Check ANTHROPIC_API_KEY in repository secrets
+
+          ### Workflow Run
+          [View failed run](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})
+
+          ---
+          🤖 Auto-generated issue"
+
+          gh issue create \
+            --title "KOL Analytics Failed - $(date +'%Y-%m-%d')" \
+            --body "$ISSUE_BODY" \
+            --label "bug,automated,kol-system" \
+            --assignee "${{ github.actor }}" || echo "Issue creation failed"

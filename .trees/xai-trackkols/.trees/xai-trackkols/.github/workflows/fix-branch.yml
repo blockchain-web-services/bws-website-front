@@ -1,0 +1,857 @@
+name: Fix Branch Workflow
+
+on:
+  push:
+    branches: ["fix/**"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+  checks: read
+
+env:
+  NODE_VERSION: "20"
+
+jobs:
+  # Job 1: Run tests and collect failures
+  test:
+    # Skip if the last commit was from github-actions bot or contains [skip ci] to prevent infinite loops
+    if: github.actor != 'github-actions[bot]' && !contains(github.event.head_commit.message, '[skip ci]') && !contains(github.event.head_commit.message, '[ci skip]')
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        browser: [chromium]
+    name: Test Fix Branch - ${{ matrix.browser }}
+    outputs:
+      tests_passed: ${{ steps.test-run.outputs.tests_passed }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.PAT_REPOS_AND_WORKFLOW || secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: "npm"
+          cache-dependency-path: |
+            package.json
+            tests/package.json
+
+      - name: Install build dependencies
+        run: |
+          if [ -f "package-lock.json" ]; then
+            npm ci
+          else
+            npm install
+          fi
+
+      - name: Build site
+        run: npm run build
+
+      - name: Verify build includes fixes
+        run: |
+          echo "═══════════════════════════════════════════════════════════════════"
+          echo "ENHANCED BUILD VERIFICATION"
+          echo "═══════════════════════════════════════════════════════════════════"
+
+          # Check 1: CSS fixes presence
+          echo "1. Verifying CSS fixes are in built site..."
+          if grep -q "WCAG COMPLIANCE FIXES" _site/styles.css; then
+            echo "✅ CSS fixes section found in built styles.css"
+
+            # Check actual color values
+            echo "   Checking color variable values..."
+            NEUTRAL_400=$(grep -o '\--neutral-400:[^;]*' _site/styles.css | head -1)
+            ROSE=$(grep -o '\--rose:[^;]*' _site/styles.css | head -1)
+            echo "   Found: $NEUTRAL_400"
+            echo "   Found: $ROSE"
+
+            if echo "$NEUTRAL_400" | grep -q "#c0c4d1"; then
+              echo "   ❌ ERROR: Old problematic color #c0c4d1 still in use!"
+            else
+              echo "   ✅ Color variable --neutral-400 updated correctly"
+            fi
+
+            if echo "$ROSE" | grep -q "#ee265f"; then
+              echo "   ❌ ERROR: Old problematic color #ee265f still in use!"
+            else
+              echo "   ✅ Color variable --rose updated correctly"
+            fi
+          else
+            echo "❌ WARNING: CSS fixes NOT found in _site/styles.css"
+            echo "Checking if styles.css was copied to _site..."
+            ls -la _site/styles.css || echo "styles.css not found in _site"
+          fi
+
+          # Check 2: Empty alt attributes
+          echo ""
+          echo "2. Checking for empty alt attributes in built HTML..."
+          EMPTY_ALTS=$(grep -c 'alt=""' _site/index.html 2>/dev/null || echo "0")
+          echo "   Found $EMPTY_ALTS empty alt attributes in index.html"
+
+          if [ "$EMPTY_ALTS" -gt "0" ]; then
+            echo "   ❌ WARNING: Still have empty alt attributes in built HTML"
+            echo "   First 3 occurrences:"
+            grep -o '<img[^>]*alt=""[^>]*>' _site/index.html | head -3
+          else
+            echo "   ✅ No empty alt attributes found"
+          fi
+
+          # Check 3: BFG logo visibility rules
+          echo ""
+          echo "3. Checking BFG logo visibility fixes..."
+          if grep -q "\.image-bfg.*display.*block.*important" _site/styles.css; then
+            echo "   ✅ BFG logo visibility rules found"
+          else
+            echo "   ⚠️ BFG logo visibility rules may need strengthening"
+          fi
+
+          # Check 4: Compare with previous issues
+          echo ""
+          echo "4. Checking for recurring issues from previous reports..."
+          BRANCH_NAME="${{ github.ref_name }}"
+          FIXES_DIR="_fixes/${BRANCH_NAME//\//-}"
+
+          if [ -d "$FIXES_DIR" ]; then
+            PREV_REPORTS=$(ls -1 "$FIXES_DIR"/BRANCH_ISSUES_*.md 2>/dev/null | tail -3)
+            if [ ! -z "$PREV_REPORTS" ]; then
+              echo "   Previous reports found:"
+              for report in $PREV_REPORTS; do
+                echo "   - $(basename $report)"
+                # Check for specific recurring issues
+                if grep -q "#c0c4d1" "$report" 2>/dev/null; then
+                  echo "     ⚠️ Had color #c0c4d1 issue"
+                fi
+                if grep -q "#ee265f" "$report" 2>/dev/null; then
+                  echo "     ⚠️ Had color #ee265f issue"
+                fi
+                if grep -q "empty alt" "$report" 2>/dev/null; then
+                  echo "     ⚠️ Had empty alt issues"
+                fi
+                if grep -q "BFG.*hidden" "$report" 2>/dev/null; then
+                  echo "     ⚠️ Had BFG logo visibility issue"
+                fi
+              done
+            fi
+          fi
+
+          echo ""
+          echo "═══════════════════════════════════════════════════════════════════"
+          echo "BUILD VERIFICATION COMPLETE"
+          echo "═══════════════════════════════════════════════════════════════════"
+
+      - name: Install test dependencies
+        working-directory: tests
+        run: |
+          if [ -f "package-lock.json" ]; then
+            npm ci
+          else
+            npm install
+          fi
+
+      - name: Install Playwright browsers
+        working-directory: tests
+        run: npx playwright install --with-deps ${{ matrix.browser }}
+
+      - name: Debug build artifacts
+        run: |
+          echo "═══════════════════════════════════════════════════════════════════"
+          echo "DEBUG: Build Artifacts Verification"
+          echo "═══════════════════════════════════════════════════════════════════"
+
+          echo "1. Checking _site directory structure..."
+          if [ -d "_site" ]; then
+            echo "✅ _site directory exists"
+            echo "   Contents:"
+            ls -lh _site/ | head -20
+
+            echo ""
+            echo "2. Checking critical files..."
+            [ -f "_site/styles.css" ] && echo "   ✅ styles.css exists ($(wc -l < _site/styles.css) lines)" || echo "   ❌ styles.css MISSING"
+            [ -f "_site/index.html" ] && echo "   ✅ index.html exists ($(wc -l < _site/index.html) lines)" || echo "   ❌ index.html MISSING"
+
+            echo ""
+            echo "3. Checking assets directory..."
+            if [ -d "_site/assets/images" ]; then
+              echo "   ✅ assets/images directory exists"
+              echo "   Image count: $(find _site/assets/images -type f | wc -l) files"
+            else
+              echo "   ❌ assets/images directory MISSING"
+            fi
+
+            echo ""
+            echo "4. Verifying WCAG CSS fixes in built styles.css..."
+            if [ -f "_site/styles.css" ]; then
+              if grep -q "WCAG COMPLIANCE FIXES" _site/styles.css; then
+                echo "   ✅ WCAG fixes section found"
+                echo "   Checking specific color values:"
+                grep -E "(--neutral-400:|--rose:)" _site/styles.css | head -5
+              else
+                echo "   ❌ WCAG fixes section NOT FOUND"
+              fi
+            fi
+
+            echo ""
+            echo "5. Checking for JavaScript files..."
+            find _site -name "*.js" -type f | head -10
+
+          else
+            echo "❌ ERROR: _site directory does not exist!"
+            echo "Current directory: $(pwd)"
+            echo "Directory contents:"
+            ls -la
+          fi
+
+          echo ""
+          echo "═══════════════════════════════════════════════════════════════════"
+
+      - name: Run Playwright tests
+        id: test-run
+        working-directory: tests
+        env:
+          PORT: 4321
+          PLAYWRIGHT_BASE_URL: http://localhost:4321
+          CI: true
+          DEBUG: pw:browser  # Enable Playwright debug output
+        run: |
+          echo "Starting Playwright tests..."
+          echo "Environment:"
+          echo "  BASE_URL: $PLAYWRIGHT_BASE_URL"
+          echo "  CI: $CI"
+          echo "  Browser: ${{ matrix.browser }}"
+
+          # Run tests and capture output with ANSI color codes
+          # Note: Reporters are configured in playwright.config.cjs (json with outputFile, list, line)
+          # Run ALL tests (chromium + smoke + e2e) for complete pre-deployment validation
+          npx playwright test --config=playwright.config.cjs 2>&1 | tee test-output-raw.txt
+          TEST_EXIT_CODE=${PIPESTATUS[0]}
+
+          # Strip ANSI escape codes and create clean output
+          if [ -f "test-output-raw.txt" ]; then
+            # Remove ANSI color codes and control sequences
+            sed -E 's/\x1B\[[0-9;]*[mGKH]//g' test-output-raw.txt | sed -E 's/\[([0-9]+)m//g' > test-output-full.txt
+
+            # Create a filtered version for the report without failureSummary noise
+            # CRITICAL: Include WCAG violation patterns to preserve console.log output from accessibility tests
+            grep -E "(✓|✗|✘|×|FAIL|fail|Error|error|expected|received|Test timeout|\s+at\s+|Running|\d+\)|test-results/|===.*Violations.*===|^\s*[0-9]+\.|Impact:|Description:|Affected nodes:|Fix:|\s+-\s+Node)" test-output-full.txt | grep -v "failureSummary" > test-output.txt 2>/dev/null || cp test-output-full.txt test-output.txt
+          fi
+
+          echo "Test exit code: ${TEST_EXIT_CODE}"
+
+          if [ ${TEST_EXIT_CODE} -eq 0 ]; then
+            echo "✅ All tests passed!"
+            echo "tests_passed=true" >> $GITHUB_OUTPUT
+            echo "Output set: tests_passed=true"
+          else
+            echo "❌ Tests failed with exit code ${TEST_EXIT_CODE}"
+            echo "tests_passed=false" >> $GITHUB_OUTPUT
+            echo "Output set: tests_passed=false"
+          fi
+
+          # Show test summary if available
+          echo "Looking for test results file..."
+          ls -la test-results* 2>/dev/null || echo "No test-results files found"
+
+          if [ -f "test-results.json" ]; then
+            echo "Test results summary:"
+            jq -r '.stats | "Total: \(.expected), Passed: \(.passed), Failed: \(.failed), Skipped: \(.skipped // 0)"' test-results.json 2>/dev/null || echo "Could not parse test results"
+          else
+            echo "test-results.json not found in $(pwd)"
+          fi
+
+          # Store the actual exit code for the workflow
+          echo "test_exit_code=${TEST_EXIT_CODE}" >> $GITHUB_OUTPUT
+
+          # Always exit 0 to allow subsequent jobs to run
+          exit 0
+
+      - name: Collect test failures and commit if any
+        if: steps.test-run.outputs.tests_passed == 'false'
+        run: |
+          set +e  # CRITICAL: Disable exit-on-error (GitHub Actions enables it by default)
+          # We handle errors explicitly for better logging and debugging
+
+          echo "========================================="
+          echo "Collecting test failures for fix branch..."
+          echo "========================================="
+
+          # Generate DD-MM-HH timestamp
+          DD=$(date -u '+%d')
+          MM=$(date -u '+%m')
+          HH=$(date -u '+%H')
+          TIMESTAMP="${DD}-${MM}-${HH}"
+
+          # Get branch name
+          BRANCH_NAME="${{ github.ref_name }}"
+          FIXES_DIR="_fixes/${BRANCH_NAME//\//-}"
+
+          # Ensure fixes directory exists
+          mkdir -p "$FIXES_DIR"
+
+          # Create snapshots directory for test screenshots
+          mkdir -p "$FIXES_DIR/snapshots"
+
+          # Create timestamped BRANCH_ISSUES file
+          ISSUES_FILE="${FIXES_DIR}/BRANCH_ISSUES_${TIMESTAMP}.md"
+
+          echo "# Test Failure Report - Fix Branch" > "$ISSUES_FILE"
+          echo "" >> "$ISSUES_FILE"
+          echo "**Generated:** $(date -u '+%Y-%m-%d %H:%M:%S UTC')" >> "$ISSUES_FILE"
+          echo "**Branch:** $BRANCH_NAME" >> "$ISSUES_FILE"
+          echo "**Commit:** ${{ github.sha }}" >> "$ISSUES_FILE"
+          echo "**Workflow Run:** [View Run](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})" >> "$ISSUES_FILE"
+          echo "" >> "$ISSUES_FILE"
+
+          # Check for recurring issues by analyzing error patterns
+          echo "## 🔁 Recurring Issues Analysis" >> "$ISSUES_FILE"
+          echo "" >> "$ISSUES_FILE"
+
+          # Find previous reports (last 5 for better pattern detection)
+          PREV_REPORTS=$(ls -1t "$FIXES_DIR"/BRANCH_ISSUES_*.md 2>/dev/null | grep -v "$TIMESTAMP" | head -5)
+          if [ ! -z "$PREV_REPORTS" ]; then
+            echo "Comparing with previous reports:" >> "$ISSUES_FILE"
+            for report in $PREV_REPORTS; do
+              echo "- $(basename $report)" >> "$ISSUES_FILE"
+            done
+            echo "" >> "$ISSUES_FILE"
+
+            # Detect recurring issues by error patterns (file:line locations)
+            echo "### Known Recurring Issues:" >> "$ISSUES_FILE"
+            HAS_RECURRING=false
+
+            # Extract error patterns from previous reports and count occurrences
+            # Pattern 1: Color contrast WCAG failures
+            WCAG_COUNT=0
+            for report in $PREV_REPORTS; do
+              if grep -q "wcag-compliance.spec.js.*expect(received).*toEqual\|expectedContrastRatio.*3:1" "$report" 2>/dev/null; then
+                ((WCAG_COUNT++))
+              fi
+            done
+            if [ $WCAG_COUNT -ge 2 ]; then
+              echo "- ⚠️ **WCAG Color Contrast Failures** (wcag-compliance.spec.js)" >> "$ISSUES_FILE"
+              echo "  - Appears in $WCAG_COUNT of last 5 reports" >> "$ISSUES_FILE"
+              echo "  - Error: Color contrast violations not meeting WCAG AA 4.5:1 or AAA 3:1 standards" >> "$ISSUES_FILE"
+              HAS_RECURRING=true
+            fi
+
+            # Pattern 2: Image width constraint violations
+            IMAGE_WIDTH_COUNT=0
+            for report in $PREV_REPORTS; do
+              if grep -q "image-validation.spec.js:403\|expect.*toBeLessThanOrEqual.*actualWidth" "$report" 2>/dev/null; then
+                ((IMAGE_WIDTH_COUNT++))
+              fi
+            done
+            if [ $IMAGE_WIDTH_COUNT -ge 2 ]; then
+              echo "- ⚠️ **Image Width Constraint Violations** (image-validation.spec.js:403)" >> "$ISSUES_FILE"
+              echo "  - Appears in $IMAGE_WIDTH_COUNT of last 5 reports" >> "$ISSUES_FILE"
+              echo "  - Error: Images exceeding expected width constraints" >> "$ISSUES_FILE"
+              HAS_RECURRING=true
+            fi
+
+            # Pattern 3: CSS max-width not applied (PROOF/AssureDefi logos)
+            CSS_MAXWIDTH_COUNT=0
+            for report in $PREV_REPORTS; do
+              if grep -q "image-visibility-index.spec.js:70\|styles.maxWidth.*toContain.*120px\|If tests pass locally but fail in CI" "$report" 2>/dev/null; then
+                ((CSS_MAXWIDTH_COUNT++))
+              fi
+            done
+            if [ $CSS_MAXWIDTH_COUNT -ge 2 ]; then
+              echo "- ⚠️ **CSS max-width Not Applied** (image-visibility-index.spec.js:70)" >> "$ISSUES_FILE"
+              echo "  - Appears in $CSS_MAXWIDTH_COUNT of last 5 reports" >> "$ISSUES_FILE"
+              echo "  - Error: Logo images not constrained by CSS max-width rules in headless Chrome" >> "$ISSUES_FILE"
+              HAS_RECURRING=true
+            fi
+
+            # Pattern 4: BFG logo visibility hidden
+            BFG_HIDDEN_COUNT=0
+            for report in $PREV_REPORTS; do
+              if grep -q "image-visibility-index.spec.js:161\|BFG.*visibility.*hidden\|Blockchain Founders Group.*unexpected value.*hidden" "$report" 2>/dev/null; then
+                ((BFG_HIDDEN_COUNT++))
+              fi
+            done
+            if [ $BFG_HIDDEN_COUNT -ge 2 ]; then
+              echo "- ⚠️ **BFG Logo Visibility Hidden** (image-visibility-index.spec.js:161)" >> "$ISSUES_FILE"
+              echo "  - Appears in $BFG_HIDDEN_COUNT of last 5 reports" >> "$ISSUES_FILE"
+              echo "  - Error: Blockchain Founders Group logo has visibility:hidden in computed styles" >> "$ISSUES_FILE"
+              HAS_RECURRING=true
+            fi
+
+            if [ "$HAS_RECURRING" = false ]; then
+              echo "✅ No recurring issues detected. All failures appear to be new or infrequent." >> "$ISSUES_FILE"
+            fi
+
+            echo "" >> "$ISSUES_FILE"
+          else
+            echo "No previous reports to compare against." >> "$ISSUES_FILE"
+            echo "" >> "$ISSUES_FILE"
+          fi
+
+          echo "## Test Results" >> "$ISSUES_FILE"
+
+          # Navigate to tests directory to access test results
+          cd tests
+
+          # Add test statistics if available
+          if [ -f "test-results.json" ] && command -v jq >/dev/null 2>&1; then
+            echo "### 📊 Test Statistics" >> "../$ISSUES_FILE"
+            # Playwright JSON reporter structure: stats has expected, unexpected, flaky, skipped
+            # Passed = expected - unexpected - flaky - skipped
+            jq -r '.stats | "- **Total Tests:** \(.expected // 0)\n- **✅ Passed:** \((.expected // 0) - (.unexpected // 0) - (.flaky // 0) - (.skipped // 0))\n- **❌ Failed:** \(.unexpected // 0)\n- **⚠️ Flaky:** \(.flaky // 0)\n- **⏭ Skipped:** \(.skipped // 0)\n- **⏱ Duration:** \(.duration // "N/A")ms"' test-results.json >> "../$ISSUES_FILE" 2>/dev/null || echo "Stats not available" >> "../$ISSUES_FILE"
+            echo "" >> "../$ISSUES_FILE"
+
+            echo "### 🔴 Failed Tests Summary" >> "../$ISSUES_FILE"
+            # Extract failed test names and format them nicely
+            jq -r '.suites[]?.specs[]? | select(.tests[]?.status == "failed") | "- **\(.title)**"' test-results.json >> "../$ISSUES_FILE" 2>/dev/null || {
+              # Fallback: try simpler extraction
+              jq -r '.suites[]? | .title' test-results.json >> "../$ISSUES_FILE" 2>/dev/null || echo "Could not extract test details"
+            }
+            echo "" >> "../$ISSUES_FILE"
+          else
+            echo "### ⚠️ Test Results File Not Found" >> "../$ISSUES_FILE"
+            echo "test-results.json was not generated or is not accessible" >> "../$ISSUES_FILE"
+            echo "" >> "../$ISSUES_FILE"
+          fi
+
+          # Extract enhanced diagnostics from test attachment files
+          echo "## 🔍 Enhanced Error Diagnostics" >> "../$ISSUES_FILE"
+          echo "" >> "../$ISSUES_FILE"
+
+          echo "========================================="
+          echo "Extracting enhanced diagnostics..."
+          echo "========================================="
+
+          # Read diagnostic files written by error-reporting.js
+          DIAGNOSTICS_DIR="test-results/diagnostics"
+          FOUND_DIAGNOSTICS=0
+          if [ -d "$DIAGNOSTICS_DIR" ]; then
+            echo "✓ Diagnostics directory exists"
+
+            # Group diagnostics by type for better organization
+            for diagnostic_type in image-load-failure css-not-applied 404-error contrast-violation navigation-failure size-constraint-violation; do
+              echo "Searching for ${diagnostic_type} diagnostics..."
+
+              # Find all diagnostic files of this type
+              diagnostic_files=$(find "$DIAGNOSTICS_DIR" -name "*-${diagnostic_type}.md" 2>/dev/null || true)
+
+              if [ ! -z "$diagnostic_files" ]; then
+                file_count=$(echo "$diagnostic_files" | wc -l)
+                echo "Found $file_count ${diagnostic_type} diagnostic(s)"
+
+                # Add section header for this diagnostic type
+                echo "### ${diagnostic_type} (${file_count} occurrence(s))" >> "../$ISSUES_FILE"
+                echo "" >> "../$ISSUES_FILE"
+
+                # Output each diagnostic file
+                echo "$diagnostic_files" | while IFS= read -r diag_file; do
+                  if [ -f "$diag_file" ]; then
+                    FOUND_DIAGNOSTICS=$((FOUND_DIAGNOSTICS + 1))
+                    echo "<details>" >> "../$ISSUES_FILE"
+                    echo "<summary>View diagnostic details</summary>" >> "../$ISSUES_FILE"
+                    echo "" >> "../$ISSUES_FILE"
+                    echo '```' >> "../$ISSUES_FILE"
+                    cat "$diag_file" >> "../$ISSUES_FILE"
+                    echo '```' >> "../$ISSUES_FILE"
+                    echo "</details>" >> "../$ISSUES_FILE"
+                    echo "" >> "../$ISSUES_FILE"
+                  fi
+                done
+              fi
+            done
+
+            if [ $FOUND_DIAGNOSTICS -eq 0 ]; then
+              echo "⚠ No diagnostic files found in $DIAGNOSTICS_DIR"
+              echo "No enhanced diagnostics available for this test run." >> "../$ISSUES_FILE"
+              echo "" >> "../$ISSUES_FILE"
+              echo "_Diagnostic files are created when tests call error-reporting functions with testInfo parameter._" >> "../$ISSUES_FILE"
+              echo "" >> "../$ISSUES_FILE"
+            else
+              echo "✓ Successfully extracted $FOUND_DIAGNOSTICS diagnostic file(s)"
+            fi
+          else
+            echo "⚠ Diagnostics directory not found: $DIAGNOSTICS_DIR"
+            echo "No enhanced diagnostics available - diagnostics directory not created." >> "../$ISSUES_FILE"
+            echo "" >> "../$ISSUES_FILE"
+            echo "_This is expected if no tests failed or error-reporting functions weren't called._" >> "../$ISSUES_FILE"
+            echo "" >> "../$ISSUES_FILE"
+          fi
+
+          echo "========================================="
+          echo "Adding detailed test failures..."
+          echo "========================================="
+
+          echo "## 📋 Detailed Test Failures" >> "../$ISSUES_FILE"
+          echo "" >> "../$ISSUES_FILE"
+
+          # Process test output to create structured failure reports
+          if [ -f "test-output.txt" ]; then
+            # NEW APPROACH: Extract UNIQUE failing tests first to avoid duplicates
+            # Get list of unique failing test lines (those starting with ✘)
+            FAILING_TESTS=$(grep "^[[:space:]]*✘" test-output.txt | sort -u)
+
+            if [ -z "$FAILING_TESTS" ]; then
+              echo "No failing tests found in output." >> "../$ISSUES_FILE"
+            else
+              # Create snapshots directory if it doesn't exist
+              mkdir -p "../$FIXES_DIR/snapshots"
+
+              FAILURE_NUM=1
+
+              # Process each unique failing test
+              while IFS= read -r test_line; do
+                if [ $FAILURE_NUM -gt 1 ]; then
+                  echo "" >> "../$ISSUES_FILE"
+                  echo "---" >> "../$ISSUES_FILE"
+                  echo "" >> "../$ISSUES_FILE"
+                fi
+
+                echo "### Failure #$FAILURE_NUM" >> "../$ISSUES_FILE"
+                echo "" >> "../$ISSUES_FILE"
+                echo "**Test:** \`$test_line\`" >> "../$ISSUES_FILE"
+                echo "" >> "../$ISSUES_FILE"
+
+                # Extract test file name from the test line for error correlation
+                TEST_FILE=$(echo "$test_line" | grep -oP '› \K[^›]*\.spec\.[jt]s' | head -1)
+                # Extract just the base name without extension for directory matching
+                TEST_FILE_BASE=$(echo "$TEST_FILE" | sed 's/\.spec\.[jt]s$//')
+
+                # Find error details for this specific test
+                # CRITICAL FIX: Use -F (fixed string) to avoid regex interpretation of special chars like ()
+                ERROR_CONTEXT=$(grep -F -A50 "$test_line" test-output.txt | grep -E "Error:|expect\(|Test.timeout|unexpected value" | head -10)
+
+                if [ ! -z "$ERROR_CONTEXT" ]; then
+                  echo "**Error Details:**" >> "../$ISSUES_FILE"
+                  echo '```' >> "../$ISSUES_FILE"
+                  echo "$ERROR_CONTEXT" >> "../$ISSUES_FILE"
+                  echo '```' >> "../$ISSUES_FILE"
+                fi
+
+                # Extract WCAG violations ONCE per test (not per error line)
+                # Only add if this is an accessibility test
+                if [[ "$test_line" =~ "wcag-compliance" ]] || [[ "$test_line" =~ "accessibility" ]]; then
+                  WCAG_SECTION=$(grep -A100 "=== WCAG Violations Detected ===" test-output.txt | grep -B1 -A50 "^[[:space:]]*[0-9]\+\." | head -50)
+                  if [ ! -z "$WCAG_SECTION" ]; then
+                    echo "" >> "../$ISSUES_FILE"
+                    echo "**WCAG Violations:**" >> "../$ISSUES_FILE"
+                    echo '```' >> "../$ISSUES_FILE"
+                    echo "$WCAG_SECTION" >> "../$ISSUES_FILE"
+                    echo '```' >> "../$ISSUES_FILE"
+                  fi
+                fi
+
+                # Find screenshot for this test
+                # Search for test-results directory matching the test file BASE NAME (without .spec.js)
+                # Playwright creates dirs like: test-results/image-validation-Image-Vis-xxx-chromium/
+                if [ ! -z "$TEST_FILE_BASE" ]; then
+                  TEST_RESULT_DIR=$(ls -d test-results/${TEST_FILE_BASE}-*-chromium* 2>/dev/null | head -1)
+                  if [ ! -z "$TEST_RESULT_DIR" ] && [ -d "$TEST_RESULT_DIR" ]; then
+                    SCREENSHOT=$(find "$TEST_RESULT_DIR" -name "*.png" -type f | head -1)
+                    if [ ! -z "$SCREENSHOT" ] && [ -f "$SCREENSHOT" ]; then
+                      SNAPSHOT_NAME="failure-${FAILURE_NUM}-$(basename "$SCREENSHOT")"
+                      SNAPSHOT_PATH="../$FIXES_DIR/snapshots/$SNAPSHOT_NAME"
+                      cp "$SCREENSHOT" "$SNAPSHOT_PATH"
+
+                      echo "" >> "../$ISSUES_FILE"
+                      echo "**Screenshot:** ![Screenshot](snapshots/$SNAPSHOT_NAME)" >> "../$ISSUES_FILE"
+                      echo "*(Original path: \`$SCREENSHOT\`)*" >> "../$ISSUES_FILE"
+                    fi
+
+                    # Check for trace file
+                    TRACE_PATH=$(find "$TEST_RESULT_DIR" -name "trace.zip" -type f | head -1)
+                    if [ ! -z "$TRACE_PATH" ] && [ -f "$TRACE_PATH" ]; then
+                      echo "" >> "../$ISSUES_FILE"
+                      echo "**Trace Available:** \`npx playwright show-trace $TRACE_PATH\`" >> "../$ISSUES_FILE"
+                    fi
+                  fi
+                fi
+
+                ((FAILURE_NUM++))
+              done <<< "$FAILING_TESTS"
+            fi
+
+            # Add collapsible raw output section
+            echo "" >> "../$ISSUES_FILE"
+            echo "## 📄 Raw Test Output" >> "../$ISSUES_FILE"
+            echo "" >> "../$ISSUES_FILE"
+            echo "<details>" >> "../$ISSUES_FILE"
+            echo "<summary>Click to expand full test output (cleaned)</summary>" >> "../$ISSUES_FILE"
+            echo "" >> "../$ISSUES_FILE"
+            echo '```' >> "../$ISSUES_FILE"
+            # Show cleaned output without failureSummary noise
+            grep -v "failureSummary\|Fix any of the following" test-output.txt | head -150 >> "../$ISSUES_FILE" 2>/dev/null || echo "No test output available" >> "../$ISSUES_FILE"
+            echo '```' >> "../$ISSUES_FILE"
+            echo "</details>" >> "../$ISSUES_FILE"
+          else
+            echo "### ⚠️ No Test Output Found" >> "../$ISSUES_FILE"
+            echo "Test output files not found in $(pwd)" >> "../$ISSUES_FILE"
+            echo "Available files:" >> "../$ISSUES_FILE"
+            ls -la *.txt *.json 2>/dev/null | head -20 >> "../$ISSUES_FILE" || echo "Could not list files" >> "../$ISSUES_FILE"
+          fi
+
+          cd ..
+
+          echo "========================================="
+          echo "Report generation completed!"
+          echo "Created: $ISSUES_FILE"
+          echo "========================================="
+
+          # Configure git
+          echo "Configuring git..."
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          # Configure remote with authentication
+          # Check if PAT is available and configure accordingly
+          if [ -n "${{ secrets.PAT_REPOS_AND_WORKFLOW }}" ]; then
+            echo "✓ Configuring git remote with PAT token..."
+            git remote set-url origin https://x-access-token:${{ secrets.PAT_REPOS_AND_WORKFLOW }}@github.com/${{ github.repository }}.git
+          else
+            echo "⚠ Warning: PAT_REPOS_AND_WORKFLOW not found, using checkout token"
+            # The checkout action should have already configured authentication
+          fi
+
+          echo "========================================="
+          echo "Committing test failure report..."
+          echo "========================================="
+
+          # Add and commit the test failure report with [skip ci] to prevent retriggering
+          git add "$ISSUES_FILE"
+          # Also add snapshots directory if it exists and contains files
+          if [ -d "$FIXES_DIR/snapshots" ] && [ "$(ls -A "$FIXES_DIR/snapshots")" ]; then
+            git add "$FIXES_DIR/snapshots/"
+            echo "✓ Added $(ls -1 "$FIXES_DIR/snapshots" | wc -l) screenshot(s) to commit"
+          fi
+          if git commit -m "[skip ci] Add test failure report: BRANCH_ISSUES_${TIMESTAMP}.md" -m "Test failures detected on commit ${{ github.sha }}" -m "See _fixes folder for details." -m "This commit will not trigger workflows to prevent infinite loops."; then
+            echo "✓ Commit created successfully"
+          else
+            echo "ERROR: Failed to create commit"
+            exit 1
+          fi
+
+          # Push to current branch with error handling
+          echo "========================================="
+          echo "Pushing test failure report to branch..."
+          echo "========================================="
+          if git push origin HEAD:${{ github.ref_name }}; then
+            echo "✅ Successfully pushed test failure report to branch"
+            echo "========================================="
+            echo "COLLECT TEST FAILURES COMPLETED SUCCESSFULLY"
+            echo "========================================="
+          else
+            echo "❌ Failed to push test failure report to branch"
+            echo "Debugging information:"
+            git remote -v
+            git status
+            git log --oneline -3
+            exit 1
+          fi
+
+  # Job 2: Update PR with test failure info
+  update-pr-on-failure:
+    needs: test
+    runs-on: ubuntu-latest
+    if: needs.test.outputs.tests_passed == 'false'
+    steps:
+      - name: Update PR with failure info
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const branchName = context.ref.replace('refs/heads/', '');
+
+            // Find PR for this branch
+            const prs = await github.rest.pulls.list({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              head: `${context.repo.owner}:${branchName}`,
+              state: 'open'
+            });
+
+            if (prs.data.length > 0) {
+              const pr = prs.data[0];
+              console.log(`Found PR #${pr.number} for branch ${branchName}`);
+
+              // Add comment about test failure
+              const timestamp = new Date().toISOString().split('T')[0];
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: pr.number,
+                body: `## ❌ Tests Failed\n\nTest failures detected on commit ${context.sha.substring(0, 7)}.\n\nA new test failure report has been added to the fixes folder.\n\n**Next steps:**\n1. Review the test failure report\n2. Fix the failing tests\n3. Push your fixes to this branch\n4. Tests will re-run automatically\n\n---\n*Automated comment from GitHub Actions*`
+              });
+
+              // Update labels
+              try {
+                // Remove 'tests-passing' label if exists
+                await github.rest.issues.removeLabel({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  issue_number: pr.number,
+                  name: 'tests-passing'
+                }).catch(() => {});
+
+                // Add 'tests-failing' label
+                await github.rest.issues.addLabels({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  issue_number: pr.number,
+                  labels: ['tests-failing']
+                });
+              } catch (error) {
+                console.log('Could not update labels:', error.message);
+              }
+            } else {
+              console.log(`No open PR found for branch ${branchName}`);
+            }
+
+  # Job 3: Auto-merge when tests pass
+  auto-merge-on-success:
+    needs: test
+    runs-on: ubuntu-latest
+    if: needs.test.outputs.tests_passed == 'true'
+    steps:
+      - name: Debug test output
+        run: |
+          echo "Test output value: '${{ needs.test.outputs.tests_passed }}'"
+          echo "Condition evaluated: needs.test.outputs.tests_passed == 'true'"
+
+      - uses: actions/checkout@v4
+
+      - name: Find and update PR
+        id: find-pr
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.PAT_REPOS_AND_WORKFLOW || secrets.GITHUB_TOKEN }}
+          script: |
+            const branchName = context.ref.replace('refs/heads/', '');
+
+            // Find PR for this branch
+            const prs = await github.rest.pulls.list({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              head: `${context.repo.owner}:${branchName}`,
+              state: 'open'
+            });
+
+            if (prs.data.length === 0) {
+              console.log(`No open PR found for branch ${branchName}`);
+              return;
+            }
+
+            const pr = prs.data[0];
+            console.log(`Found PR #${pr.number} for branch ${branchName}`);
+
+            // Store PR number for next step
+            core.setOutput('pr_number', pr.number);
+            core.setOutput('pr_found', 'true');
+
+            // Add success comment
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: pr.number,
+              body: `## ✅ All Tests Passing!\n\nAll tests are now passing on commit ${context.sha.substring(0, 7)}.\n\n🤖 **Auto-merge has been enabled** - This PR will be automatically merged once all checks complete.\n\n---\n*Automated by GitHub Actions*`
+            });
+
+            // Update labels
+            try {
+              // Remove 'tests-failing' label if exists
+              await github.rest.issues.removeLabel({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: pr.number,
+                name: 'tests-failing'
+              }).catch(() => {});
+
+              // Add 'tests-passing' label
+              await github.rest.issues.addLabels({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: pr.number,
+                labels: ['tests-passing', 'ready-to-merge']
+              });
+            } catch (error) {
+              console.log('Could not update labels:', error.message);
+            }
+
+      - name: Enable auto-merge
+        if: steps.find-pr.outputs.pr_found == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.PAT_REPOS_AND_WORKFLOW || secrets.GITHUB_TOKEN }}
+          PR_NUMBER: ${{ steps.find-pr.outputs.pr_number }}
+        run: |
+          echo "Enabling auto-merge for PR #$PR_NUMBER"
+
+          # Enable auto-merge using GitHub CLI
+          # NOTE: Removed [skip ci] to allow main-deploy.yml to run tests on master
+          gh pr merge $PR_NUMBER \
+            --auto \
+            --squash \
+            --delete-branch \
+            --subject "Auto-merge: Fix branch with all tests passing" \
+            --body "Automatically merged after all tests passed" \
+            || echo "Auto-merge may already be enabled or PR cannot be merged yet"
+
+          echo "✅ Auto-merge enabled for PR #$PR_NUMBER"
+
+      - name: Close related issue
+        if: steps.find-pr.outputs.pr_found == 'true'
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            // Find issues related to test failures
+            const issues = await github.rest.issues.listForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              labels: 'test-failure',
+              state: 'open'
+            });
+
+            const branchName = context.ref.replace('refs/heads/', '');
+
+            // Close issues that mention this branch
+            for (const issue of issues.data) {
+              if (issue.body && issue.body.includes(branchName)) {
+                await github.rest.issues.update({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  issue_number: issue.number,
+                  state: 'closed',
+                  state_reason: 'completed'
+                });
+
+                await github.rest.issues.createComment({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  issue_number: issue.number,
+                  body: `✅ Resolved - All tests are now passing and the fix will be auto-merged.`
+                });
+
+                console.log(`Closed issue #${issue.number}`);
+              }
+            }
+
+  # Job 4: Final status check - ensures workflow fails when tests fail
+  final-status:
+    needs: [test, update-pr-on-failure, auto-merge-on-success]
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check test results and fail workflow if needed
+        run: |
+          echo "Test results: ${{ needs.test.outputs.tests_passed }}"
+
+          if [ "${{ needs.test.outputs.tests_passed }}" == "false" ]; then
+            echo "❌ Workflow failed: Tests did not pass"
+            exit 1
+          elif [ "${{ needs.test.outputs.tests_passed }}" == "true" ]; then
+            echo "✅ Workflow succeeded: All tests passed"
+            exit 0
+          else
+            echo "⚠️ Unable to determine test status"
+            exit 1
+          fi
