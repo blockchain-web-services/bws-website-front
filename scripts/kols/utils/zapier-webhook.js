@@ -6,6 +6,8 @@
 import https from 'https';
 import http from 'http';
 
+// TODO: Replace this with YOUR webhook URL from Zapier
+// Go to https://zapier.com/app/zaps and create a Zap with "Catch Hook" trigger
 const ZAPIER_WEBHOOK_URL = 'https://hooks.zapier.com/hooks/catch/15373826/us3spl5/';
 
 /**
@@ -18,6 +20,12 @@ export async function sendToZapier(payload) {
 
   const data = JSON.stringify(payload);
 
+  // Log detailed request info
+  console.log('\n📤 ZAPIER WEBHOOK REQUEST:');
+  console.log(`   URL: ${ZAPIER_WEBHOOK_URL}`);
+  console.log(`   Payload size: ${data.length} bytes`);
+  console.log(`   Payload keys: ${Object.keys(payload).join(', ')}`);
+
   const options = {
     hostname: url.hostname,
     port: url.port || 443,
@@ -25,7 +33,7 @@ export async function sendToZapier(payload) {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      'Content-Length': data.length
+      'Content-Length': Buffer.byteLength(data, 'utf8')  // Fixed: use byte length for UTF-8
     }
   };
 
@@ -40,20 +48,31 @@ export async function sendToZapier(payload) {
       });
 
       res.on('end', () => {
+        // Log detailed response info
+        console.log('\n📥 ZAPIER WEBHOOK RESPONSE:');
+        console.log(`   Status Code: ${res.statusCode}`);
+        console.log(`   Status Message: ${res.statusMessage}`);
+        console.log(`   Response Body: ${responseBody.substring(0, 500)}`);
+        console.log(`   Response Length: ${responseBody.length} bytes`);
+
         if (res.statusCode >= 200 && res.statusCode < 300) {
           try {
             const jsonResponse = JSON.parse(responseBody);
+            console.log(`   ✅ Success - Parsed JSON response`);
             resolve({ success: true, data: jsonResponse, status: res.statusCode });
           } catch (e) {
+            console.log(`   ✅ Success - Raw text response`);
             resolve({ success: true, data: responseBody, status: res.statusCode });
           }
         } else {
+          console.log(`   ❌ Failed with status ${res.statusCode}`);
           reject(new Error(`Zapier webhook failed with status ${res.statusCode}: ${responseBody}`));
         }
       });
     });
 
     req.on('error', (error) => {
+      console.log(`\n❌ ZAPIER REQUEST ERROR: ${error.message}`);
       reject(error);
     });
 
@@ -132,6 +151,7 @@ export async function sendDiscoveryNotification(options) {
   textParts.push(`${emoji} *${scriptName}* - ${status}`);
   textParts.push(`*Time:* ${new Date().toLocaleString('en-US', { timeZone: 'UTC' })} UTC`);
   textParts.push('');
+  textParts.push('');
   textParts.push('*Results:*');
   textParts.push(`  Queries executed: ${totalQueries}`);
   textParts.push(`  Tweets found: ${tweetsFound}`);
@@ -139,6 +159,7 @@ export async function sendDiscoveryNotification(options) {
   textParts.push(`  Total KOLs in DB: ${totalKols}`);
 
   if (apiStats) {
+    textParts.push('');
     textParts.push('');
     textParts.push('📊 *API Consumption:*');
     textParts.push(formatApiStats(apiStats.overall));
@@ -151,10 +172,12 @@ export async function sendDiscoveryNotification(options) {
 
   if (error) {
     textParts.push('');
+    textParts.push('');
     textParts.push(`*Error:* ${error}`);
   }
 
   if (runUrl) {
+    textParts.push('');
     textParts.push('');
     textParts.push(`<${runUrl}|View Workflow Run>`);
   }
@@ -206,9 +229,11 @@ export async function sendReplyNotification(options) {
   textParts.push(`*Time:* ${new Date().toLocaleString('en-US', { timeZone: 'UTC' })} UTC`);
 
   if (dryRun) {
+    textParts.push('');
     textParts.push('⚠️ *DRY RUN MODE* - No actual tweets posted');
   }
 
+  textParts.push('');
   textParts.push('');
   textParts.push('*Results:*');
   textParts.push(`  Tweets evaluated: ${tweetsEvaluated}`);
@@ -219,6 +244,7 @@ export async function sendReplyNotification(options) {
 
   // If successful reply with details, show them
   if (success && replyDetails && repliesPosted > 0) {
+    textParts.push('');
     textParts.push('');
     textParts.push('✉️ *Latest Reply Sent:*');
     textParts.push(`*Our Reply:* "${replyDetails.replyText}"`);
@@ -235,6 +261,7 @@ export async function sendReplyNotification(options) {
 
   if (apiStats) {
     textParts.push('');
+    textParts.push('');
     textParts.push('📊 *API Consumption:*');
     textParts.push(formatApiStats(apiStats.overall));
 
@@ -246,10 +273,12 @@ export async function sendReplyNotification(options) {
 
   if (error) {
     textParts.push('');
+    textParts.push('');
     textParts.push(`*Error:* ${error}`);
   }
 
   if (runUrl) {
+    textParts.push('');
     textParts.push('');
     textParts.push(`<${runUrl}|View Workflow Run>`);
   }
@@ -288,9 +317,11 @@ export async function sendErrorNotification(options) {
   textParts.push(`🚨 *${scriptName}* - FAILED`);
   textParts.push(`*Time:* ${new Date().toLocaleString('en-US', { timeZone: 'UTC' })} UTC`);
   textParts.push('');
+  textParts.push('');
   textParts.push(`*Error:* ${error.message || String(error)}`);
 
   if (Object.keys(context).length > 0) {
+    textParts.push('');
     textParts.push('');
     textParts.push('*Context:*');
     for (const [key, value] of Object.entries(context)) {
@@ -299,6 +330,7 @@ export async function sendErrorNotification(options) {
   }
 
   if (runUrl) {
+    textParts.push('');
     textParts.push('');
     textParts.push(`<${runUrl}|View Workflow Run>`);
   }
