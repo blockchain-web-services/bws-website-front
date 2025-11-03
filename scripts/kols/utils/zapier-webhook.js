@@ -144,11 +144,11 @@ export async function sendDiscoveryNotification(options) {
   } = options;
 
   const emoji = success ? '✅' : '❌';
-  const status = success ? 'Completed' : 'Failed';
+  const statusText = success ? 'SUCCESS' : 'FAILURE';
 
   // Build formatted message
   const textParts = [];
-  textParts.push(`${emoji} *${scriptName}* - ${status}`);
+  textParts.push(`${emoji} *${scriptName}* - ${statusText}`);
   textParts.push(`*Time:* ${new Date().toLocaleString('en-US', { timeZone: 'UTC' })} UTC`);
   textParts.push('');
   textParts.push('');
@@ -221,11 +221,11 @@ export async function sendReplyNotification(options) {
   } = options;
 
   const emoji = success ? '💬' : '❌';
-  const status = success ? 'Completed' : 'Failed';
+  const statusText = success ? 'SUCCESS' : 'FAILURE';
 
   // Build formatted message
   const textParts = [];
-  textParts.push(`${emoji} *KOL Reply Evaluation* - ${status}`);
+  textParts.push(`${emoji} *KOL Reply Evaluation* - ${statusText}`);
   textParts.push(`*Time:* ${new Date().toLocaleString('en-US', { timeZone: 'UTC' })} UTC`);
 
   if (dryRun) {
@@ -314,7 +314,7 @@ export async function sendErrorNotification(options) {
 
   // Build formatted message
   const textParts = [];
-  textParts.push(`🚨 *${scriptName}* - FAILED`);
+  textParts.push(`🚨 *${scriptName}* - FAILURE`);
   textParts.push(`*Time:* ${new Date().toLocaleString('en-US', { timeZone: 'UTC' })} UTC`);
   textParts.push('');
   textParts.push('');
