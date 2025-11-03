@@ -171,7 +171,7 @@ async function discoverByEngagement() {
     // Send notification even when no users discovered
     await sendDiscoveryNotification({
       scriptName: 'KOL Discovery - Search-Based',
-      success: true,
+      success: false,  // No KOLs added = FAILURE
       totalQueries,
       tweetsFound: totalTweetsFound,
       kolsAdded: 0,
@@ -200,7 +200,7 @@ async function discoverByEngagement() {
     // Send notification even when all users already in database
     await sendDiscoveryNotification({
       scriptName: 'KOL Discovery - Search-Based',
-      success: true,
+      success: false,  // No new KOLs added = FAILURE
       totalQueries,
       tweetsFound: totalTweetsFound,
       kolsAdded: 0,
@@ -392,9 +392,10 @@ ${'='.repeat(60)}
   apiTracker.displayStats();
 
   // Send notification to Zapier/Slack
+  // SUCCESS = at least 1 KOL added, FAILURE = no KOLs added
   await sendDiscoveryNotification({
     scriptName: 'KOL Discovery - Search-Based',
-    success: true,
+    success: totalAdded > 0,
     totalQueries,
     tweetsFound: totalTweetsFound,
     kolsAdded: totalAdded,

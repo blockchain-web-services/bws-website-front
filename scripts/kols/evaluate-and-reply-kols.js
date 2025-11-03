@@ -420,8 +420,9 @@ ${'='.repeat(60)}
   apiTracker.displayStats();
 
   // Send notification to Zapier/Slack
+  // SUCCESS = at least 1 reply posted, FAILURE = no replies posted
   await sendReplyNotification({
-    success: true,
+    success: repliesPosted > 0,
     tweetsEvaluated: tweetEvaluated,
     tweetsSkipped,
     repliesPosted,

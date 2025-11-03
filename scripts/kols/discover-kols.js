@@ -296,9 +296,10 @@ ${'='.repeat(60)}
   apiTracker.displayStats();
 
   // Send notification to Zapier/Slack
+  // SUCCESS = at least 1 KOL added, FAILURE = no KOLs added
   await sendDiscoveryNotification({
     scriptName: 'KOL Discovery - Seed-Based',
-    success: true,
+    success: totalAdded > 0,
     totalQueries: 0, // Seed-based doesn't use search queries
     tweetsFound: 0,
     kolsAdded: totalAdded,
