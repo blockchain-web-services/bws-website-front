@@ -90,8 +90,8 @@ function formatApiStats(stats) {
   const lines = [];
 
   lines.push(`*API Calls:* ${stats.totalCalls} total`);
-  lines.push(`  ✅ Success: ${stats.successfulCalls}`);
-  lines.push(`  ❌ Failed: ${stats.failedCalls}`);
+  lines.push(`  Success: ${stats.successfulCalls}`);
+  lines.push(`  Failed: ${stats.failedCalls}`);
   lines.push(`*Items Fetched:* ${stats.totalItemsFetched} (tweets/users)`);
   lines.push(`*Duration:* ${stats.duration}s`);
   lines.push(`*Rate:* ${stats.callsPerMinute} calls/min`);
@@ -113,12 +113,11 @@ function formatEndpointStats(byEndpoint) {
     .sort(([, a], [, b]) => b.totalCalls - a.totalCalls);
 
   for (const [endpoint, stats] of sortedEndpoints) {
-    const emoji = stats.failedCalls > 0 ? '⚠️' : '✅';
-    lines.push(`${emoji} \`${endpoint}\`: ${stats.totalCalls} calls, ${stats.totalItemsFetched} items`);
+    lines.push(`\`${endpoint}\`: ${stats.totalCalls} calls, ${stats.totalItemsFetched} items`);
 
     if (stats.errors.length > 0) {
       for (const error of stats.errors) {
-        lines.push(`    ❌ ${error}`);
+        lines.push(`    ${error}`);
       }
     }
   }
@@ -159,7 +158,7 @@ export async function sendDiscoveryNotification(options) {
   if (apiStats) {
     textParts.push('');
     textParts.push('');
-    textParts.push('📊 *API Consumption:*');
+    textParts.push('*API Consumption:*');
     textParts.push(formatApiStats(apiStats.overall));
 
     if (apiStats.byEndpoint && Object.keys(apiStats.byEndpoint).length > 0) {
@@ -218,7 +217,7 @@ export async function sendReplyNotification(options) {
     replyDetails = null  // { replyText, replyUrl, originalTweetText, originalTweetUrl, kolUsername }
   } = options;
 
-  const emoji = success ? '💬' : '❌';
+  const emoji = success ? '✅' : '❌';
   const statusText = success ? 'SUCCESS' : 'FAILURE';
 
   // Build formatted message
@@ -242,7 +241,7 @@ export async function sendReplyNotification(options) {
   if (success && replyDetails && repliesPosted > 0) {
     textParts.push('');
     textParts.push('');
-    textParts.push('✉️ *Latest Reply Sent:*');
+    textParts.push('*Latest Reply Sent:*');
     textParts.push(`*Our Reply:* "${replyDetails.replyText}"`);
     if (replyDetails.replyUrl) {
       textParts.push(`<${replyDetails.replyUrl}|View Our Reply Tweet>`);
@@ -258,7 +257,7 @@ export async function sendReplyNotification(options) {
   if (apiStats) {
     textParts.push('');
     textParts.push('');
-    textParts.push('📊 *API Consumption:*');
+    textParts.push('*API Consumption:*');
     textParts.push(formatApiStats(apiStats.overall));
 
     if (apiStats.byEndpoint && Object.keys(apiStats.byEndpoint).length > 0) {
@@ -310,7 +309,7 @@ export async function sendErrorNotification(options) {
 
   // Build formatted message
   const textParts = [];
-  textParts.push(`🚨 *${scriptName}* - FAILURE`);
+  textParts.push(`❌ *${scriptName}* - FAILURE`);
   textParts.push('');
   textParts.push(`*Error:* ${error.message || String(error)}`);
 
