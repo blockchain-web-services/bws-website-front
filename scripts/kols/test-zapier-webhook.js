@@ -28,6 +28,9 @@ async function testWebhook() {
 
   console.log('\n---\n');
 
+  // Wait 2 seconds between tests to avoid rate limiting
+  await new Promise(resolve => setTimeout(resolve, 2000));
+
   // Test 2: KOL Discovery notification
   console.log('Test 2: Sending KOL Discovery notification...');
   try {
@@ -72,6 +75,9 @@ async function testWebhook() {
   }
 
   console.log('\n---\n');
+
+  // Wait 2 seconds between tests to avoid rate limiting
+  await new Promise(resolve => setTimeout(resolve, 2000));
 
   // Test 3: KOL Reply notification with reply details
   console.log('Test 3: Sending KOL Reply notification with reply details...');
@@ -127,6 +133,9 @@ async function testWebhook() {
 
   console.log('\n---\n');
 
+  // Wait 2 seconds between tests to avoid rate limiting
+  await new Promise(resolve => setTimeout(resolve, 2000));
+
   // Test 4: Error notification
   console.log('Test 4: Sending Error notification...');
   try {
@@ -150,6 +159,9 @@ async function testWebhook() {
   }
 
   console.log('\n---\n');
+
+  // Wait 2 seconds between tests to avoid rate limiting
+  await new Promise(resolve => setTimeout(resolve, 2000));
 
   // Test 5: Failed discovery notification
   console.log('Test 5: Sending Failed Discovery notification...');
