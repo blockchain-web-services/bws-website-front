@@ -149,8 +149,6 @@ export async function sendDiscoveryNotification(options) {
   // Build formatted message
   const textParts = [];
   textParts.push(`${emoji} *${scriptName}* - ${statusText}`);
-  textParts.push(`*Time:* ${new Date().toLocaleString('en-US', { timeZone: 'UTC' })} UTC`);
-  textParts.push('');
   textParts.push('');
   textParts.push('*Results:*');
   textParts.push(`  Queries executed: ${totalQueries}`);
@@ -226,14 +224,12 @@ export async function sendReplyNotification(options) {
   // Build formatted message
   const textParts = [];
   textParts.push(`${emoji} *KOL Reply Evaluation* - ${statusText}`);
-  textParts.push(`*Time:* ${new Date().toLocaleString('en-US', { timeZone: 'UTC' })} UTC`);
 
   if (dryRun) {
     textParts.push('');
     textParts.push('⚠️ *DRY RUN MODE* - No actual tweets posted');
   }
 
-  textParts.push('');
   textParts.push('');
   textParts.push('*Results:*');
   textParts.push(`  Tweets evaluated: ${tweetsEvaluated}`);
@@ -315,8 +311,6 @@ export async function sendErrorNotification(options) {
   // Build formatted message
   const textParts = [];
   textParts.push(`🚨 *${scriptName}* - FAILURE`);
-  textParts.push(`*Time:* ${new Date().toLocaleString('en-US', { timeZone: 'UTC' })} UTC`);
-  textParts.push('');
   textParts.push('');
   textParts.push(`*Error:* ${error.message || String(error)}`);
 
