@@ -46,3 +46,6 @@ test/.env.worktree
 test/.worktree-info.json
 test/docker-compose.worktree.yml
 .trees/*/CLAUDE_INSTRUCTIONS.md
+
+# Ignore nested worktrees (worktrees created inside worktrees)
+.trees/
