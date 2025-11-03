@@ -15,6 +15,7 @@ import {
   getUserTweetsWithMetrics,
   apiTracker
 } from './utils/twitter-client.js';
+import { sendDiscoveryNotification, sendErrorNotification } from './utils/zapier-webhook.js';
 import {
   createClaudeClient,
   evaluateUserAsCryptoKOL
