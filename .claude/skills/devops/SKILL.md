@@ -26,6 +26,56 @@ git push origin prod
 aws codepipeline get-pipeline-state --name devops-bws-website-front-prod --profile prod --region us-east-1
 ```
 
+## ⚠️ Pre-Flight Safety Checks
+
+**CRITICAL:** Before ANY file modification operation, verify your workspace location to prevent accidentally modifying root repository files.
+
+### Workspace Verification Commands
+
+Run these commands before modifying files:
+
+```bash
+# Check if you're in a worktree
+pwd | grep -q "\.trees/" && echo "✓ In worktree" || echo "⚠️ In root repository"
+
+# Get current working directory
+CURRENT_DIR=$(pwd)
+echo "Working in: $CURRENT_DIR"
+
+# If in worktree, extract branch name
+if [[ "$CURRENT_DIR" =~ \.trees/([^/]+) ]]; then
+    WORKTREE_BRANCH="${BASH_REMATCH[1]}"
+    echo "Worktree branch: $WORKTREE_BRANCH"
+fi
+```
+
+### Safety Rules
+
+1. **If in a worktree (`.trees/*/`):**
+   - ✅ **ONLY modify files within the worktree directory**
+   - ✅ All file paths should be relative to the worktree root
+   - ❌ **NEVER modify files in `../../` (root repository)**
+   - ❌ **NEVER use absolute paths to root repository files**
+
+2. **If in root repository:**
+   - ⚠️ Be aware that changes affect ALL worktrees
+   - ✅ Safe operations: creating worktrees, merging worktrees, configuration changes
+   - ⚠️ Risky operations: modifying source code (should be done in worktrees)
+
+3. **Before any Edit or Write tool usage:**
+   - Verify the file path is within your current workspace
+   - Confirm with user if you need to modify root repository files from a worktree
+
+### Quick Verification
+
+```bash
+# Verify file is in current workspace
+FILE_PATH="path/to/file"
+[[ "$FILE_PATH" != *".."* ]] && echo "✓ Safe path" || echo "⚠️ Path escapes workspace"
+```
+
+**Rule:** If user asks to modify files and you're in a worktree, ALL file operations must stay within the worktree directory. If you need to modify root files, ask the user to confirm first.
+
 ## Table of Contents
 
 - [Project Discovery](#project-discovery)
@@ -86,7 +136,7 @@ Each worktree is created from a **parent branch** (also called root branch). The
 ```bash
 cd .trees/{{BRANCH_NAME}}
 git fetch origin
-git rebase origin/{{PARENT_BRANCH}}
+git rebase origin/master
 ```
 
 If conflicts occur:
@@ -309,7 +359,7 @@ When asked to deploy:
    - [ ] Check existing stacks: `aws cloudformation list-stacks`
 
 2. **Execute Git Workflow**
-   - [ ] Fetch and rebase: `git fetch origin && git rebase origin/staging`
+   - [ ] Fetch and rebase: `git fetch origin && git rebase origin/master`
    - [ ] Commit changes: `git commit -m "feat: description"`
    - [ ] Merge with --no-ff: `npm run worktree:merge <branch>`
    - [ ] Push to staging or prod: `git push origin staging` (triggers deployment)
@@ -342,8 +392,8 @@ When asked to deploy:
 # 1. Make changes in worktree
 cd .trees/feature-name
 
-# 2. Commit and merge to staging
-git fetch origin && git rebase origin/staging
+# 2. Commit and merge to parent branch
+git fetch origin && git rebase origin/master
 git add . && git commit -m "feat: implement feature"
 cd ../.. && npm run worktree:merge feature-name
 
@@ -382,7 +432,7 @@ For more scenarios, see [Common Scenarios](reference/scenarios.md).
 
 ### Git Commands
 - Fetch: `git fetch origin`
-- Rebase: `git rebase origin/staging` or `git rebase origin/prod`
+- Rebase: `git rebase origin/master`
 - Commit: `git commit -m "type: description"`
 - Merge: `npm run worktree:merge <branch>`
 - Push: `git push origin staging` or `git push origin prod` (triggers deployment)

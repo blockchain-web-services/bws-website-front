@@ -38,7 +38,7 @@ Skills use template variables that are replaced during installation:
 - `blockchain-web-services` - GitHub organization or username
 - `bws-website-front` - Repository name
 - `{{BRANCH_NAME}}` - Current branch (dynamic)
-- `{{PARENT_BRANCH}}` - Parent branch for worktree (dynamic)
+- `master` - Parent branch for worktree (dynamic)
 
 ## Adding Custom Skills
 

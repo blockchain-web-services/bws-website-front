@@ -423,7 +423,7 @@ Error: Updates were rejected because the tip of your current branch is behind
 ```bash
 # Rebase onto remote branch
 git fetch origin
-git rebase origin/main
+git rebase origin/master
 
 # Resolve conflicts if any
 # Then push
