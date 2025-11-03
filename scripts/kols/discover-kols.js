@@ -12,7 +12,8 @@ import {
   createReadOnlyClient,
   getUserByUsername,
   getUserFollowing,
-  getUserTweetsWithMetrics
+  getUserTweetsWithMetrics,
+  apiTracker
 } from './utils/twitter-client.js';
 import {
   createClaudeClient,
@@ -26,6 +27,9 @@ import {
 
 async function discoverKOLs() {
   console.log('🚀 Starting KOL Discovery Process...\n');
+
+  // Reset API tracker for this execution
+  apiTracker.reset();
 
   // Load configuration
   const config = loadConfig();
@@ -287,7 +291,10 @@ Queue Remaining: ${discoveryQueue.length}
 ${'='.repeat(60)}
 `);
 
-  console.log('✅ Discovery complete!');
+  // Display API consumption statistics
+  apiTracker.displayStats();
+
+  console.log('\n✅ Discovery complete!');
 }
 
 // Run the script

@@ -10,7 +10,8 @@ import {
 } from './utils/kol-utils.js';
 import {
   createReadOnlyClient,
-  batchUserLookup
+  batchUserLookup,
+  apiTracker
 } from './utils/twitter-client.js';
 import {
   createClaudeClient,
@@ -32,6 +33,9 @@ import {
 
 async function discoverByEngagement() {
   console.log('🔍 Starting Search-Based KOL Discovery Process...\n');
+
+  // Reset API tracker for this execution
+  apiTracker.reset();
 
   // Load configuration
   const config = loadConfig();
@@ -353,7 +357,10 @@ Database:
 ${'='.repeat(60)}
 `);
 
-  console.log('✅ Search-based discovery complete!');
+  // Display API consumption statistics
+  apiTracker.displayStats();
+
+  console.log('\n✅ Search-based discovery complete!');
 }
 
 // Run the script

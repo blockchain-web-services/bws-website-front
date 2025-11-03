@@ -1,4 +1,5 @@
 import { TwitterApi } from 'twitter-api-v2';
+import apiTracker from './api-call-tracker.js';
 
 /**
  * Initialize read-only Twitter client (Bearer Token)
@@ -50,11 +51,14 @@ export async function getUserByUsername(client, username) {
     });
 
     if (!result.data) {
+      apiTracker.recordCall('users/by/username', 0, false, 'User not found');
       throw new Error(`User ${username} not found`);
     }
 
+    apiTracker.recordCall('users/by/username', 1, true);
     return result.data;
   } catch (error) {
+    apiTracker.recordCall('users/by/username', 0, false, error.message);
     console.error(`Error fetching user ${username}: ${error.message}`);
     throw error;
   }
@@ -121,6 +125,7 @@ export async function postReply(client, tweetId, replyText, dryRun = false) {
       console.log('🔍 [DRY RUN] Would post reply:');
       console.log(`   Tweet ID: ${tweetId}`);
       console.log(`   Reply: ${replyText}`);
+      apiTracker.recordCall('tweets/reply', 1, true, 'Dry run - not posted');
       return {
         data: {
           id: `dry-run-${Date.now()}`,
@@ -132,9 +137,11 @@ export async function postReply(client, tweetId, replyText, dryRun = false) {
 
     const result = await client.v2.reply(replyText, tweetId);
 
+    apiTracker.recordCall('tweets/reply', 1, true);
     console.log(`✅ Posted reply to tweet ${tweetId}`);
     return result;
   } catch (error) {
+    apiTracker.recordCall('tweets/reply', 0, false, error.message);
     console.error(`❌ Error posting reply to tweet ${tweetId}: ${error.message}`);
     throw error;
   }
@@ -187,8 +194,17 @@ export async function searchTweets(client, query, options = {}) {
 
     const result = await client.v2.search(query, mergedOptions);
 
+    // Count tweets returned
+    const tweetCount = result.data?.data?.length || 0;
+    apiTracker.recordCall('tweets/search/recent', tweetCount, true);
+
     return result;
   } catch (error) {
+    // Extract error code from message if it's a rate limit error
+    const errorMsg = error.message || String(error);
+    const is429 = errorMsg.includes('429') || errorMsg.includes('Too Many Requests');
+    apiTracker.recordCall('tweets/search/recent', 0, false, is429 ? 'Rate limit (429)' : errorMsg);
+
     console.error(`Error searching tweets: ${error.message}`);
     throw error;
   }
@@ -213,6 +229,7 @@ export async function getUserTweetsViaSearch(client, username, maxResults = 100)
       if (tweets.length >= maxResults) break;
     }
 
+    // Note: searchTweets() already tracks the API call
     return tweets;
   } catch (error) {
     console.error(`Error fetching tweets via search for @${username}: ${error.message}`);
@@ -365,15 +382,21 @@ export async function batchUserLookup(client, userIds) {
 
       if (result.data) {
         allUsers.push(...result.data);
+        apiTracker.recordCall('users/lookup', result.data.length, true);
+      } else {
+        apiTracker.recordCall('users/lookup', 0, false, 'No data returned');
       }
     }
 
     return allUsers;
   } catch (error) {
+    apiTracker.recordCall('users/lookup', 0, false, error.message);
     console.error(`Error in batch user lookup: ${error.message}`);
     throw error;
   }
 }
+
+export { apiTracker };
 
 export default {
   createReadOnlyClient,
@@ -388,5 +411,6 @@ export default {
   paginateResults,
   getUserTweetsWithMetrics,
   isUserActive,
-  batchUserLookup
+  batchUserLookup,
+  apiTracker
 };

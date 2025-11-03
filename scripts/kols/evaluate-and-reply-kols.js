@@ -19,7 +19,8 @@ import {
   createReadWriteClient,
   getUserTweets,
   getUserTweetsViaSearch,
-  postReply
+  postReply,
+  apiTracker
 } from './utils/twitter-client.js';
 import {
   createClaudeClient,
@@ -34,6 +35,9 @@ import {
 
 async function evaluateAndReply() {
   console.log('🚀 Starting KOL Tweet Evaluation and Reply Process...\n');
+
+  // Reset API tracker for this execution
+  apiTracker.reset();
 
   // Load configuration and products
   const config = loadConfig();
@@ -401,7 +405,10 @@ ${dryRun ? '⚠️  DRY RUN MODE - No actual tweets posted' : ''}
 ${'='.repeat(60)}
 `);
 
-  console.log('✅ Evaluation and reply process complete!');
+  // Display API consumption statistics
+  apiTracker.displayStats();
+
+  console.log('\n✅ Evaluation and reply process complete!');
 }
 
 // Run the script
