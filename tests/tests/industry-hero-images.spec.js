@@ -16,7 +16,7 @@ const EXPECTED_HERO_IMAGES = {
   },
   'esg': {
     background: '6505d9933660c5523d5f93eb_ESG-CREDITS_320x400_Layered.jpg',
-    article: '654a256e853678a54e9cebdf_Blockchain is the New Frontier in Accountability and Transparency.jpg'
+    article: '654a256e853678a54e9cebdf_blockchain-accountability.jpg'
   },
   'legal': {
     background: '6505dde3f53261fa63529ee9_Legal-320x400.jpg',
