@@ -19,8 +19,10 @@ import {
   createReadWriteClient,
   getUserTweets,
   getUserTweetsViaSearch,
-  postReply
+  postReply,
+  apiTracker
 } from './utils/twitter-client.js';
+import { sendReplyNotification, sendErrorNotification } from './utils/zapier-webhook.js';
 import {
   createClaudeClient,
   evaluateTweetForReply,
@@ -34,6 +36,9 @@ import {
 
 async function evaluateAndReply() {
   console.log('🚀 Starting KOL Tweet Evaluation and Reply Process...\n');
+
+  // Reset API tracker for this execution
+  apiTracker.reset();
 
   // Load configuration and products
   const config = loadConfig();
@@ -401,11 +406,43 @@ ${dryRun ? '⚠️  DRY RUN MODE - No actual tweets posted' : ''}
 ${'='.repeat(60)}
 `);
 
-  console.log('✅ Evaluation and reply process complete!');
+  // Display API consumption statistics
+  apiTracker.displayStats();
+
+  // Send notification to Zapier/Slack
+  await sendReplyNotification({
+    success: true,
+    tweetsEvaluated: tweetEvaluated,
+    tweetsSkipped,
+    repliesPosted,
+    todayReplies: todayReplies + repliesPosted,
+    maxRepliesPerDay,
+    totalReplies: repliesData.replies.length,
+    dryRun,
+    apiStats: apiTracker.exportStats(),
+    runUrl: process.env.GITHUB_SERVER_URL && process.env.GITHUB_REPOSITORY && process.env.GITHUB_RUN_ID
+      ? `${process.env.GITHUB_SERVER_URL}/${process.env.GITHUB_REPOSITORY}/actions/runs/${process.env.GITHUB_RUN_ID}`
+      : null
+  });
+
+  console.log('\n✅ Evaluation and reply process complete!');
 }
 
 // Run the script
-evaluateAndReply().catch(error => {
+evaluateAndReply().catch(async (error) => {
   console.error('\n❌ Fatal error:', error);
+
+  // Send error notification to Zapier/Slack
+  await sendErrorNotification({
+    scriptName: 'KOL Reply Evaluation',
+    error,
+    context: {
+      api_stats: apiTracker.exportStats()
+    },
+    runUrl: process.env.GITHUB_SERVER_URL && process.env.GITHUB_REPOSITORY && process.env.GITHUB_RUN_ID
+      ? `${process.env.GITHUB_SERVER_URL}/${process.env.GITHUB_REPOSITORY}/actions/runs/${process.env.GITHUB_RUN_ID}`
+      : null
+  });
+
   process.exit(1);
 });

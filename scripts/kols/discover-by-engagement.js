@@ -10,8 +10,10 @@ import {
 } from './utils/kol-utils.js';
 import {
   createReadOnlyClient,
-  batchUserLookup
+  batchUserLookup,
+  apiTracker
 } from './utils/twitter-client.js';
+import { sendDiscoveryNotification, sendErrorNotification } from './utils/zapier-webhook.js';
 import {
   createClaudeClient,
   evaluateUserAsCryptoKOL
@@ -32,6 +34,9 @@ import {
 
 async function discoverByEngagement() {
   console.log('🔍 Starting Search-Based KOL Discovery Process...\n');
+
+  // Reset API tracker for this execution
+  apiTracker.reset();
 
   // Load configuration
   const config = loadConfig();
@@ -353,11 +358,41 @@ Database:
 ${'='.repeat(60)}
 `);
 
-  console.log('✅ Search-based discovery complete!');
+  // Display API consumption statistics
+  apiTracker.displayStats();
+
+  // Send notification to Zapier/Slack
+  await sendDiscoveryNotification({
+    scriptName: 'KOL Discovery - Search-Based',
+    success: true,
+    totalQueries,
+    tweetsFound: totalTweetsFound,
+    kolsAdded: totalAdded,
+    totalKols: kolsData.kols.length,
+    apiStats: apiTracker.exportStats(),
+    runUrl: process.env.GITHUB_SERVER_URL && process.env.GITHUB_REPOSITORY && process.env.GITHUB_RUN_ID
+      ? `${process.env.GITHUB_SERVER_URL}/${process.env.GITHUB_REPOSITORY}/actions/runs/${process.env.GITHUB_RUN_ID}`
+      : null
+  });
+
+  console.log('\n✅ Search-based discovery complete!');
 }
 
 // Run the script
-discoverByEngagement().catch(error => {
+discoverByEngagement().catch(async (error) => {
   console.error('\n❌ Fatal error:', error);
+
+  // Send error notification to Zapier/Slack
+  await sendErrorNotification({
+    scriptName: 'KOL Discovery - Search-Based',
+    error,
+    context: {
+      api_stats: apiTracker.exportStats()
+    },
+    runUrl: process.env.GITHUB_SERVER_URL && process.env.GITHUB_REPOSITORY && process.env.GITHUB_RUN_ID
+      ? `${process.env.GITHUB_SERVER_URL}/${process.env.GITHUB_REPOSITORY}/actions/runs/${process.env.GITHUB_RUN_ID}`
+      : null
+  });
+
   process.exit(1);
 });

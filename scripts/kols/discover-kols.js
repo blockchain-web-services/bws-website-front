@@ -12,8 +12,10 @@ import {
   createReadOnlyClient,
   getUserByUsername,
   getUserFollowing,
-  getUserTweetsWithMetrics
+  getUserTweetsWithMetrics,
+  apiTracker
 } from './utils/twitter-client.js';
+import { sendDiscoveryNotification, sendErrorNotification } from './utils/zapier-webhook.js';
 import {
   createClaudeClient,
   evaluateUserAsCryptoKOL
@@ -26,6 +28,9 @@ import {
 
 async function discoverKOLs() {
   console.log('🚀 Starting KOL Discovery Process...\n');
+
+  // Reset API tracker for this execution
+  apiTracker.reset();
 
   // Load configuration
   const config = loadConfig();
@@ -287,11 +292,41 @@ Queue Remaining: ${discoveryQueue.length}
 ${'='.repeat(60)}
 `);
 
-  console.log('✅ Discovery complete!');
+  // Display API consumption statistics
+  apiTracker.displayStats();
+
+  // Send notification to Zapier/Slack
+  await sendDiscoveryNotification({
+    scriptName: 'KOL Discovery - Seed-Based',
+    success: true,
+    totalQueries: 0, // Seed-based doesn't use search queries
+    tweetsFound: 0,
+    kolsAdded: totalAdded,
+    totalKols: kolsData.kols.length,
+    apiStats: apiTracker.exportStats(),
+    runUrl: process.env.GITHUB_SERVER_URL && process.env.GITHUB_REPOSITORY && process.env.GITHUB_RUN_ID
+      ? `${process.env.GITHUB_SERVER_URL}/${process.env.GITHUB_REPOSITORY}/actions/runs/${process.env.GITHUB_RUN_ID}`
+      : null
+  });
+
+  console.log('\n✅ Discovery complete!');
 }
 
 // Run the script
-discoverKOLs().catch(error => {
+discoverKOLs().catch(async (error) => {
   console.error('\n❌ Fatal error:', error);
+
+  // Send error notification to Zapier/Slack
+  await sendErrorNotification({
+    scriptName: 'KOL Discovery - Seed-Based',
+    error,
+    context: {
+      api_stats: apiTracker.exportStats()
+    },
+    runUrl: process.env.GITHUB_SERVER_URL && process.env.GITHUB_REPOSITORY && process.env.GITHUB_RUN_ID
+      ? `${process.env.GITHUB_SERVER_URL}/${process.env.GITHUB_REPOSITORY}/actions/runs/${process.env.GITHUB_RUN_ID}`
+      : null
+  });
+
   process.exit(1);
 });
