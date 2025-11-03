@@ -14,7 +14,7 @@ const expectedHeroImages = {
   },
   'esg': {
     background: '6505d9933660c5523d5f93eb_ESG-CREDITS_320x400_Layered.jpg',
-    article: '654a256e853678a54e9cebdf_Blockchain%20is%20the%20New%20Frontier%20in%20Accountability%20and%20Transparency.jpg'
+    article: '654a256e853678a54e9cebdf_blockchain-accountability.jpg'
   },
   'financial-services': {
     background: '6505dc980dbf1ad68ea4e1f0_Financial-Services_320x400_Layered.jpg',
