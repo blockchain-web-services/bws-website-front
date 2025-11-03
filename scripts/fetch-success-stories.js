@@ -907,9 +907,9 @@ function writeSuccessStoriesFile(stories) {
 
     code += `\n}`;
     return code;
-  }).join(',');
+  }).join(',\n');
 
-  const newContent = beforeExport + storiesCode + '\n];\n';
+  const newContent = beforeExport + '\n' + storiesCode + '\n];\n';
   fs.writeFileSync(SUCCESS_STORIES_FILE_PATH, newContent);
 
   console.log(`   ✅ Written ${stories.length} success stories`);
