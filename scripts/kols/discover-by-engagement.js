@@ -167,6 +167,21 @@ async function discoverByEngagement() {
 
   if (allUserIds.size === 0) {
     console.log('\n⚠️  No users discovered. Try different queries or lower engagement thresholds.');
+
+    // Send notification even when no users discovered
+    await sendDiscoveryNotification({
+      scriptName: 'KOL Discovery - Search-Based',
+      success: false,  // No KOLs added = FAILURE
+      totalQueries,
+      tweetsFound: totalTweetsFound,
+      kolsAdded: 0,
+      totalKols: kolsData.kols.length,
+      apiStats: apiTracker.exportStats(),
+      runUrl: process.env.GITHUB_SERVER_URL && process.env.GITHUB_REPOSITORY && process.env.GITHUB_RUN_ID
+        ? `${process.env.GITHUB_SERVER_URL}/${process.env.GITHUB_REPOSITORY}/actions/runs/${process.env.GITHUB_RUN_ID}`
+        : null
+    });
+
     process.exit(0);
   }
 
@@ -181,6 +196,21 @@ async function discoverByEngagement() {
 
   if (newUserIds.length === 0) {
     console.log('\n✅ All discovered users are already in the database!');
+
+    // Send notification even when all users already in database
+    await sendDiscoveryNotification({
+      scriptName: 'KOL Discovery - Search-Based',
+      success: false,  // No new KOLs added = FAILURE
+      totalQueries,
+      tweetsFound: totalTweetsFound,
+      kolsAdded: 0,
+      totalKols: kolsData.kols.length,
+      apiStats: apiTracker.exportStats(),
+      runUrl: process.env.GITHUB_SERVER_URL && process.env.GITHUB_REPOSITORY && process.env.GITHUB_RUN_ID
+        ? `${process.env.GITHUB_SERVER_URL}/${process.env.GITHUB_REPOSITORY}/actions/runs/${process.env.GITHUB_RUN_ID}`
+        : null
+    });
+
     process.exit(0);
   }
 
@@ -362,9 +392,10 @@ ${'='.repeat(60)}
   apiTracker.displayStats();
 
   // Send notification to Zapier/Slack
+  // SUCCESS = at least 1 KOL added, FAILURE = no KOLs added
   await sendDiscoveryNotification({
     scriptName: 'KOL Discovery - Search-Based',
-    success: true,
+    success: totalAdded > 0,
     totalQueries,
     tweetsFound: totalTweetsFound,
     kolsAdded: totalAdded,

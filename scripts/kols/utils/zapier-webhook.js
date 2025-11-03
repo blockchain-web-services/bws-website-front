@@ -6,6 +6,8 @@
 import https from 'https';
 import http from 'http';
 
+// TODO: Replace this with YOUR webhook URL from Zapier
+// Go to https://zapier.com/app/zaps and create a Zap with "Catch Hook" trigger
 const ZAPIER_WEBHOOK_URL = 'https://hooks.zapier.com/hooks/catch/15373826/us3spl5/';
 
 /**
@@ -18,6 +20,12 @@ export async function sendToZapier(payload) {
 
   const data = JSON.stringify(payload);
 
+  // Log detailed request info
+  console.log('\n📤 ZAPIER WEBHOOK REQUEST:');
+  console.log(`   URL: ${ZAPIER_WEBHOOK_URL}`);
+  console.log(`   Payload size: ${data.length} bytes`);
+  console.log(`   Payload keys: ${Object.keys(payload).join(', ')}`);
+
   const options = {
     hostname: url.hostname,
     port: url.port || 443,
@@ -25,7 +33,7 @@ export async function sendToZapier(payload) {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      'Content-Length': data.length
+      'Content-Length': Buffer.byteLength(data, 'utf8')  // Fixed: use byte length for UTF-8
     }
   };
 
@@ -40,20 +48,31 @@ export async function sendToZapier(payload) {
       });
 
       res.on('end', () => {
+        // Log detailed response info
+        console.log('\n📥 ZAPIER WEBHOOK RESPONSE:');
+        console.log(`   Status Code: ${res.statusCode}`);
+        console.log(`   Status Message: ${res.statusMessage}`);
+        console.log(`   Response Body: ${responseBody.substring(0, 500)}`);
+        console.log(`   Response Length: ${responseBody.length} bytes`);
+
         if (res.statusCode >= 200 && res.statusCode < 300) {
           try {
             const jsonResponse = JSON.parse(responseBody);
+            console.log(`   ✅ Success - Parsed JSON response`);
             resolve({ success: true, data: jsonResponse, status: res.statusCode });
           } catch (e) {
+            console.log(`   ✅ Success - Raw text response`);
             resolve({ success: true, data: responseBody, status: res.statusCode });
           }
         } else {
+          console.log(`   ❌ Failed with status ${res.statusCode}`);
           reject(new Error(`Zapier webhook failed with status ${res.statusCode}: ${responseBody}`));
         }
       });
     });
 
     req.on('error', (error) => {
+      console.log(`\n❌ ZAPIER REQUEST ERROR: ${error.message}`);
       reject(error);
     });
 
@@ -71,8 +90,8 @@ function formatApiStats(stats) {
   const lines = [];
 
   lines.push(`*API Calls:* ${stats.totalCalls} total`);
-  lines.push(`  ✅ Success: ${stats.successfulCalls}`);
-  lines.push(`  ❌ Failed: ${stats.failedCalls}`);
+  lines.push(`  Success: ${stats.successfulCalls}`);
+  lines.push(`  Failed: ${stats.failedCalls}`);
   lines.push(`*Items Fetched:* ${stats.totalItemsFetched} (tweets/users)`);
   lines.push(`*Duration:* ${stats.duration}s`);
   lines.push(`*Rate:* ${stats.callsPerMinute} calls/min`);
@@ -94,12 +113,11 @@ function formatEndpointStats(byEndpoint) {
     .sort(([, a], [, b]) => b.totalCalls - a.totalCalls);
 
   for (const [endpoint, stats] of sortedEndpoints) {
-    const emoji = stats.failedCalls > 0 ? '⚠️' : '✅';
-    lines.push(`${emoji} \`${endpoint}\`: ${stats.totalCalls} calls, ${stats.totalItemsFetched} items`);
+    lines.push(`\`${endpoint}\`: ${stats.totalCalls} calls, ${stats.totalItemsFetched} items`);
 
     if (stats.errors.length > 0) {
       for (const error of stats.errors) {
-        lines.push(`    ❌ ${error}`);
+        lines.push(`    ${error}`);
       }
     }
   }
@@ -125,26 +143,11 @@ export async function sendDiscoveryNotification(options) {
   } = options;
 
   const emoji = success ? '✅' : '❌';
-  const status = success ? 'Completed' : 'Failed';
+  const statusText = success ? 'SUCCESS' : 'FAILURE';
 
-  const payload = {
-    type: 'kol_discovery',
-    status: status.toLowerCase(),
-    script: scriptName,
-    timestamp: new Date().toISOString(),
-    summary: {
-      status: `${emoji} ${status}`,
-      queries: totalQueries,
-      tweets_found: tweetsFound,
-      kols_added: kolsAdded,
-      total_kols: totalKols
-    }
-  };
-
-  // Add formatted text for Slack
+  // Build formatted message
   const textParts = [];
-  textParts.push(`${emoji} *${scriptName}* - ${status}`);
-  textParts.push(`*Time:* ${new Date().toLocaleString('en-US', { timeZone: 'UTC' })} UTC`);
+  textParts.push(`${emoji} *${scriptName}* - ${statusText}`);
   textParts.push('');
   textParts.push('*Results:*');
   textParts.push(`  Queries executed: ${totalQueries}`);
@@ -154,7 +157,8 @@ export async function sendDiscoveryNotification(options) {
 
   if (apiStats) {
     textParts.push('');
-    textParts.push('📊 *API Consumption:*');
+    textParts.push('');
+    textParts.push('*API Consumption:*');
     textParts.push(formatApiStats(apiStats.overall));
 
     if (apiStats.byEndpoint && Object.keys(apiStats.byEndpoint).length > 0) {
@@ -165,17 +169,22 @@ export async function sendDiscoveryNotification(options) {
 
   if (error) {
     textParts.push('');
+    textParts.push('');
     textParts.push(`*Error:* ${error}`);
-    payload.error = error;
   }
 
   if (runUrl) {
     textParts.push('');
+    textParts.push('');
     textParts.push(`<${runUrl}|View Workflow Run>`);
-    payload.run_url = runUrl;
   }
 
-  payload.text = textParts.join('\n');
+  // Simplified 3-field payload
+  const payload = {
+    Message: textParts.join('\n'),
+    Timestamp: new Date().toISOString(),
+    Type: success ? 'SUCCESS' : 'ERROR'
+  };
 
   try {
     const result = await sendToZapier(payload);
@@ -204,34 +213,19 @@ export async function sendReplyNotification(options) {
     apiStats = null,
     error = null,
     dryRun = false,
-    runUrl = null
+    runUrl = null,
+    replyDetails = null  // { replyText, replyUrl, originalTweetText, originalTweetUrl, kolUsername }
   } = options;
 
-  const emoji = success ? '💬' : '❌';
-  const status = success ? 'Completed' : 'Failed';
+  const emoji = success ? '✅' : '❌';
+  const statusText = success ? 'SUCCESS' : 'FAILURE';
 
-  const payload = {
-    type: 'kol_reply',
-    status: status.toLowerCase(),
-    script: 'KOL Reply Evaluation',
-    timestamp: new Date().toISOString(),
-    summary: {
-      status: `${emoji} ${status}`,
-      tweets_evaluated: tweetsEvaluated,
-      tweets_skipped: tweetsSkipped,
-      replies_posted: repliesPosted,
-      today_replies: todayReplies,
-      max_per_day: maxRepliesPerDay,
-      total_replies: totalReplies
-    }
-  };
-
-  // Add formatted text for Slack
+  // Build formatted message
   const textParts = [];
-  textParts.push(`${emoji} *KOL Reply Evaluation* - ${status}`);
-  textParts.push(`*Time:* ${new Date().toLocaleString('en-US', { timeZone: 'UTC' })} UTC`);
+  textParts.push(`${emoji} *KOL Reply Evaluation* - ${statusText}`);
 
   if (dryRun) {
+    textParts.push('');
     textParts.push('⚠️ *DRY RUN MODE* - No actual tweets posted');
   }
 
@@ -243,9 +237,27 @@ export async function sendReplyNotification(options) {
   textParts.push(`  Replies today: ${todayReplies}/${maxRepliesPerDay}`);
   textParts.push(`  Total replies all time: ${totalReplies}`);
 
+  // If successful reply with details, show them
+  if (success && replyDetails && repliesPosted > 0) {
+    textParts.push('');
+    textParts.push('');
+    textParts.push('*Latest Reply Sent:*');
+    textParts.push(`*Our Reply:* "${replyDetails.replyText}"`);
+    if (replyDetails.replyUrl) {
+      textParts.push(`<${replyDetails.replyUrl}|View Our Reply Tweet>`);
+    }
+    textParts.push('');
+    textParts.push(`*Original Tweet by @${replyDetails.kolUsername}:*`);
+    textParts.push(`"${replyDetails.originalTweetText}"`);
+    if (replyDetails.originalTweetUrl) {
+      textParts.push(`<${replyDetails.originalTweetUrl}|View Original Tweet>`);
+    }
+  }
+
   if (apiStats) {
     textParts.push('');
-    textParts.push('📊 *API Consumption:*');
+    textParts.push('');
+    textParts.push('*API Consumption:*');
     textParts.push(formatApiStats(apiStats.overall));
 
     if (apiStats.byEndpoint && Object.keys(apiStats.byEndpoint).length > 0) {
@@ -256,17 +268,22 @@ export async function sendReplyNotification(options) {
 
   if (error) {
     textParts.push('');
+    textParts.push('');
     textParts.push(`*Error:* ${error}`);
-    payload.error = error;
   }
 
   if (runUrl) {
     textParts.push('');
+    textParts.push('');
     textParts.push(`<${runUrl}|View Workflow Run>`);
-    payload.run_url = runUrl;
   }
 
-  payload.text = textParts.join('\n');
+  // Simplified 3-field payload
+  const payload = {
+    Message: textParts.join('\n'),
+    Timestamp: new Date().toISOString(),
+    Type: success ? 'SUCCESS' : 'ERROR'
+  };
 
   try {
     const result = await sendToZapier(payload);
@@ -290,37 +307,33 @@ export async function sendErrorNotification(options) {
     runUrl = null
   } = options;
 
-  const payload = {
-    type: 'error',
-    status: 'failed',
-    script: scriptName,
-    timestamp: new Date().toISOString(),
-    error: error.message || String(error),
-    stack: error.stack,
-    context
-  };
-
+  // Build formatted message
   const textParts = [];
-  textParts.push(`🚨 *${scriptName}* - FAILED`);
-  textParts.push(`*Time:* ${new Date().toLocaleString('en-US', { timeZone: 'UTC' })} UTC`);
+  textParts.push(`❌ *${scriptName}* - FAILURE`);
   textParts.push('');
   textParts.push(`*Error:* ${error.message || String(error)}`);
 
   if (Object.keys(context).length > 0) {
     textParts.push('');
+    textParts.push('');
     textParts.push('*Context:*');
     for (const [key, value] of Object.entries(context)) {
-      textParts.push(`  ${key}: ${value}`);
+      textParts.push(`  ${key}: ${JSON.stringify(value)}`);
     }
   }
 
   if (runUrl) {
     textParts.push('');
+    textParts.push('');
     textParts.push(`<${runUrl}|View Workflow Run>`);
-    payload.run_url = runUrl;
   }
 
-  payload.text = textParts.join('\n');
+  // Simplified 3-field payload
+  const payload = {
+    Message: textParts.join('\n'),
+    Timestamp: new Date().toISOString(),
+    Type: 'ERROR'
+  };
 
   try {
     const result = await sendToZapier(payload);
