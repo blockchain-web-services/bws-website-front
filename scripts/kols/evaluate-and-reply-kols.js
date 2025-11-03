@@ -111,6 +111,7 @@ async function evaluateAndReply() {
   let repliesPosted = 0;
   let tweetEvaluated = 0;
   let tweetsSkipped = 0;
+  let lastReplyDetails = null;  // Track last successful reply for notification
 
   console.log('🔍 Evaluating recent tweets from KOLs...\n');
 
@@ -286,6 +287,15 @@ async function evaluateAndReply() {
 
           repliesPosted++;
 
+          // Track last successful reply details for notification
+          lastReplyDetails = {
+            replyText: replyGeneration.replyText,
+            replyUrl: replyTweetId ? `https://twitter.com/bws_official/status/${replyTweetId}` : null,
+            originalTweetText: tweet.text,
+            originalTweetUrl: `https://twitter.com/${kol.username}/status/${tweet.id}`,
+            kolUsername: kol.username
+          };
+
           // Mark tweet as replied
           processedPosts.repliedTweetIds.push(tweet.id);
 
@@ -419,6 +429,7 @@ ${'='.repeat(60)}
     maxRepliesPerDay,
     totalReplies: repliesData.replies.length,
     dryRun,
+    replyDetails: lastReplyDetails,  // Include last successful reply details
     apiStats: apiTracker.exportStats(),
     runUrl: process.env.GITHUB_SERVER_URL && process.env.GITHUB_REPOSITORY && process.env.GITHUB_RUN_ID
       ? `${process.env.GITHUB_SERVER_URL}/${process.env.GITHUB_REPOSITORY}/actions/runs/${process.env.GITHUB_RUN_ID}`

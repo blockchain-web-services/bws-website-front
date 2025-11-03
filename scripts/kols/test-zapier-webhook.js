@@ -13,20 +13,13 @@ import {
 async function testWebhook() {
   console.log('🧪 Testing Zapier Webhook Integration...\n');
 
-  // Test 1: Simple raw message
+  // Test 1: Simple raw message (3-field format)
   console.log('Test 1: Sending simple test message...');
   try {
     const result1 = await sendToZapier({
-      type: 'test',
-      message: 'Hello from BWS KOL System!',
-      timestamp: new Date().toISOString(),
-      test_field_1: 'This is a test string',
-      test_field_2: 123,
-      test_field_3: true,
-      test_nested: {
-        nested_field: 'nested value',
-        nested_number: 456
-      }
+      Message: 'Hello from BWS KOL System! This is a test notification.',
+      Timestamp: new Date().toISOString(),
+      Type: 'SUCCESS'
     });
     console.log('✅ Test 1 Success:', result1);
   } catch (error) {
@@ -80,8 +73,8 @@ async function testWebhook() {
 
   console.log('\n---\n');
 
-  // Test 3: KOL Reply notification
-  console.log('Test 3: Sending KOL Reply notification...');
+  // Test 3: KOL Reply notification with reply details
+  console.log('Test 3: Sending KOL Reply notification with reply details...');
   try {
     const result3 = await sendReplyNotification({
       success: true,
@@ -92,6 +85,13 @@ async function testWebhook() {
       maxRepliesPerDay: 7,
       totalReplies: 42,
       dryRun: false,
+      replyDetails: {
+        replyText: 'Great insights on blockchain scalability! Have you considered using BWS Immutable Database for guaranteed data integrity? It offers on-chain verification while keeping costs low.',
+        replyUrl: 'https://twitter.com/bws_official/status/1234567890',
+        originalTweetText: 'Just analyzed 100+ blockchain projects. The biggest challenge isn\'t speed - it\'s maintaining data integrity at scale. Most teams underestimate this.',
+        originalTweetUrl: 'https://twitter.com/cryptokol123/status/1234567889',
+        kolUsername: 'cryptokol123'
+      },
       apiStats: {
         overall: {
           totalCalls: 5,
@@ -190,17 +190,16 @@ async function testWebhook() {
 
   console.log('\n✅ All webhook tests completed!\n');
   console.log('📋 Check your Zapier webhook to see all test messages and configure your Zap accordingly.');
-  console.log('\n💡 JSON fields you can use in Zapier:');
-  console.log('   - type: Message type (test, kol_discovery, kol_reply, error)');
-  console.log('   - status: Status (completed, failed)');
-  console.log('   - script: Script name');
-  console.log('   - timestamp: ISO timestamp');
-  console.log('   - text: Formatted message for Slack');
-  console.log('   - summary: Object with key metrics');
-  console.log('   - error: Error message (if failed)');
-  console.log('   - run_url: GitHub Actions workflow URL');
-  console.log('\n📊 For API stats:');
-  console.log('   - summary.queries, summary.tweets_found, summary.kols_added, etc.');
+  console.log('\n💡 Simplified 3-field JSON format:');
+  console.log('   - Message: Formatted text ready for Slack (includes all details)');
+  console.log('   - Timestamp: ISO 8601 timestamp');
+  console.log('   - Type: Either "SUCCESS" or "ERROR"');
+  console.log('\n📝 The Message field contains all information formatted for Slack:');
+  console.log('   - Execution results (queries, tweets found, KOLs added, etc.)');
+  console.log('   - API consumption statistics');
+  console.log('   - For replies: Our reply text + URL, original tweet + URL');
+  console.log('   - Links to GitHub Actions workflow runs');
+  console.log('   - Error details (if applicable)');
 }
 
 // Run tests

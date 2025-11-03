@@ -14,75 +14,51 @@ https://hooks.zapier.com/hooks/catch/15373826/us3spl5/
 
 ## What Gets Sent
 
+All notifications use a simplified **3-field JSON format** for easy Zapier configuration:
+
+### Payload Structure
+
+```json
+{
+  "Message": "Formatted text ready for Slack (includes all details)",
+  "Timestamp": "2025-11-03T16:30:00.000Z",
+  "Type": "SUCCESS" or "ERROR"
+}
+```
+
 ### 1. **Discovery Completion Notifications**
 Sent when KOL discovery workflows complete (both seed-based and search-based):
 
-**JSON Payload:**
+**Example:**
 ```json
 {
-  "type": "kol_discovery",
-  "status": "completed",
-  "script": "KOL Discovery - Search-Based",
-  "timestamp": "2025-11-03T16:30:00.000Z",
-  "summary": {
-    "status": "✅ Completed",
-    "queries": 6,
-    "tweets_found": 150,
-    "kols_added": 3,
-    "total_kols": 4
-  },
-  "text": "✅ *KOL Discovery - Search-Based* - Completed\n*Time:* 11/3/2025, 4:30:00 PM UTC\n\n*Results:*\n  Queries executed: 6\n  Tweets found: 150\n  New KOLs added: 3\n  Total KOLs in DB: 4\n\n📊 *API Consumption:*\n*API Calls:* 10 total\n  ✅ Success: 8\n  ❌ Failed: 2\n*Items Fetched:* 150 (tweets/users)\n*Duration:* 12.5s\n*Rate:* 48.0 calls/min\n\n*By Endpoint:*\n✅ `tweets/search/recent`: 6 calls, 100 items\n✅ `users/lookup`: 4 calls, 50 items\n\n<https://github.com/.../actions/runs/12345|View Workflow Run>",
-  "run_url": "https://github.com/.../actions/runs/12345"
+  "Message": "✅ *KOL Discovery - Search-Based* - Completed\n*Time:* 11/3/2025, 4:30:00 PM UTC\n\n*Results:*\n  Queries executed: 6\n  Tweets found: 150\n  New KOLs added: 3\n  Total KOLs in DB: 4\n\n📊 *API Consumption:*\n*API Calls:* 10 total\n  ✅ Success: 8\n  ❌ Failed: 2\n*Items Fetched:* 150 (tweets/users)\n*Duration:* 12.5s\n*Rate:* 48.0 calls/min\n\n*By Endpoint:*\n✅ `tweets/search/recent`: 6 calls, 100 items\n✅ `users/lookup`: 4 calls, 50 items\n\n<https://github.com/.../actions/runs/12345|View Workflow Run>",
+  "Timestamp": "2025-11-03T16:30:00.000Z",
+  "Type": "SUCCESS"
 }
 ```
 
 ### 2. **Reply Completion Notifications**
-Sent when reply evaluation workflows complete:
+Sent when reply evaluation workflows complete - includes our reply and original tweet details:
 
-**JSON Payload:**
+**Example:**
 ```json
 {
-  "type": "kol_reply",
-  "status": "completed",
-  "script": "KOL Reply Evaluation",
-  "timestamp": "2025-11-03T16:45:00.000Z",
-  "summary": {
-    "status": "💬 Completed",
-    "tweets_evaluated": 15,
-    "tweets_skipped": 12,
-    "replies_posted": 3,
-    "today_replies": 5,
-    "max_per_day": 7,
-    "total_replies": 42
-  },
-  "text": "💬 *KOL Reply Evaluation* - Completed\n...",
-  "run_url": "https://github.com/.../actions/runs/12346"
+  "Message": "💬 *KOL Reply Evaluation* - Completed\n*Time:* 11/3/2025, 4:45:00 PM UTC\n\n*Results:*\n  Tweets evaluated: 15\n  Tweets skipped: 12\n  Replies posted (this run): 1\n  Replies today: 3/7\n  Total replies all time: 42\n\n✉️ *Latest Reply Sent:*\n*Our Reply:* \"Great insights on blockchain scalability! Have you considered using BWS Immutable Database...\"\n<https://twitter.com/bws_official/status/1234567890|View Our Reply Tweet>\n\n*Original Tweet by @cryptokol123:*\n\"Just analyzed 100+ blockchain projects. The biggest challenge isn't speed - it's maintaining data integrity...\"\n<https://twitter.com/cryptokol123/status/1234567889|View Original Tweet>\n\n📊 *API Consumption:*\n...\n\n<https://github.com/.../actions/runs/12346|View Workflow Run>",
+  "Timestamp": "2025-11-03T16:45:00.000Z",
+  "Type": "SUCCESS"
 }
 ```
 
 ### 3. **Error Notifications**
 Sent when workflows fail with errors:
 
-**JSON Payload:**
+**Example:**
 ```json
 {
-  "type": "error",
-  "status": "failed",
-  "script": "KOL Discovery - Search-Based",
-  "timestamp": "2025-11-03T16:50:00.000Z",
-  "error": "Request failed with code 429 - Rate limit exceeded",
-  "stack": "Error: Request failed...\n    at ...",
-  "context": {
-    "api_stats": {
-      "overall": {
-        "totalCalls": 6,
-        "failedCalls": 6,
-        ...
-      }
-    }
-  },
-  "text": "🚨 *KOL Discovery - Search-Based* - FAILED\n*Error:* Request failed with code 429...",
-  "run_url": "https://github.com/.../actions/runs/12347"
+  "Message": "🚨 *KOL Discovery - Search-Based* - FAILED\n*Time:* 11/3/2025, 4:50:00 PM UTC\n\n*Error:* Request failed with code 429 - Rate limit exceeded\n\n*Context:*\n  api_stats: {...}\n\n<https://github.com/.../actions/runs/12347|View Workflow Run>",
+  "Timestamp": "2025-11-03T16:50:00.000Z",
+  "Type": "ERROR"
 }
 ```
 
@@ -99,71 +75,40 @@ Successfully sent 3 test messages to help configure Zapier:
 ### Step 1: Catch Webhook
 Your Zapier webhook should have received the test messages. You can now see the available JSON fields:
 
-**Top-Level Fields:**
-- `type` - Message type: `test`, `kol_discovery`, `kol_reply`, `error`
-- `status` - Status: `completed` or `failed`
-- `script` - Name of the script that ran
-- `timestamp` - ISO 8601 timestamp
-- `text` - Pre-formatted Slack message (ready to use!)
-- `run_url` - GitHub Actions workflow URL (optional)
+**Simplified 3-Field Structure:**
+- `Message` - Pre-formatted Slack message with all details (ready to use!)
+- `Timestamp` - ISO 8601 timestamp (e.g., `2025-11-03T16:30:00.000Z`)
+- `Type` - Either `SUCCESS` or `ERROR`
 
-**Summary Fields (for discovery):**
-- `summary.status` - Emoji + status text
-- `summary.queries` - Number of search queries executed
-- `summary.tweets_found` - Tweets discovered
-- `summary.kols_added` - New KOLs added this run
-- `summary.total_kols` - Total KOLs in database
+The `Message` field contains everything formatted for Slack:
+- Execution results (queries executed, tweets found, KOLs added, etc.)
+- For successful replies: Our reply text + URL, original tweet text + URL
+- API consumption statistics (calls, items fetched, duration, endpoint breakdown)
+- GitHub Actions workflow run link
+- Error details (if applicable)
 
-**Summary Fields (for reply):**
-- `summary.tweets_evaluated` - Tweets analyzed
-- `summary.tweets_skipped` - Tweets skipped (low relevance)
-- `summary.replies_posted` - Replies posted this run
-- `summary.today_replies` - Total replies today
-- `summary.max_per_day` - Daily limit
-- `summary.total_replies` - All-time replies
+### Step 2: Send to Slack
 
-**Error Fields:**
-- `error` - Error message
-- `stack` - Stack trace
-- `context` - Additional context (varies)
-
-### Step 2: Format for Slack
-
-**Option A: Use Pre-Formatted Text (Recommended)**
-
-Simply use the `text` field which is already formatted for Slack:
+**Recommended Setup:**
 
 ```
 Action: Send Channel Message in Slack
 Channel: #kol-monitoring
-Message Text: {{text}}
+Message Text: {{Message}}
 ```
 
-**Option B: Custom Formatting**
-
-Build your own message:
-
-```
-{{emoji}} *{{script}}* - {{status}}
-
-*Results:*
-• Queries: {{summary.queries}}
-• KOLs Added: {{summary.kols_added}}
-• Total KOLs: {{summary.total_kols}}
-
-{{#if run_url}}
-<{{run_url}}|View Run>
-{{/if}}
-```
+That's it! The `Message` field is already formatted with Slack markdown.
 
 ### Step 3: Filter by Type (Optional)
 
 Add filters to route different message types to different channels:
 
-- **Success Messages**: `status` = `completed` → `#kol-success`
-- **Error Messages**: `status` = `failed` → `#kol-errors`
-- **Discovery**: `type` = `kol_discovery` → `#kol-discovery`
-- **Replies**: `type` = `kol_reply` → `#kol-replies`
+- **Success Messages**: `Type` = `SUCCESS` → `#kol-success`
+- **Error Messages**: `Type` = `ERROR` → `#kol-errors`
+
+You can also filter on the `Message` field content:
+- **Discovery**: `Message` contains `KOL Discovery` → `#kol-discovery`
+- **Replies**: `Message` contains `KOL Reply Evaluation` → `#kol-replies`
 
 ## When Notifications Are Sent
 

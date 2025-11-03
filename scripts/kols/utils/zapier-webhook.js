@@ -127,21 +127,7 @@ export async function sendDiscoveryNotification(options) {
   const emoji = success ? '✅' : '❌';
   const status = success ? 'Completed' : 'Failed';
 
-  const payload = {
-    type: 'kol_discovery',
-    status: status.toLowerCase(),
-    script: scriptName,
-    timestamp: new Date().toISOString(),
-    summary: {
-      status: `${emoji} ${status}`,
-      queries: totalQueries,
-      tweets_found: tweetsFound,
-      kols_added: kolsAdded,
-      total_kols: totalKols
-    }
-  };
-
-  // Add formatted text for Slack
+  // Build formatted message
   const textParts = [];
   textParts.push(`${emoji} *${scriptName}* - ${status}`);
   textParts.push(`*Time:* ${new Date().toLocaleString('en-US', { timeZone: 'UTC' })} UTC`);
@@ -166,16 +152,19 @@ export async function sendDiscoveryNotification(options) {
   if (error) {
     textParts.push('');
     textParts.push(`*Error:* ${error}`);
-    payload.error = error;
   }
 
   if (runUrl) {
     textParts.push('');
     textParts.push(`<${runUrl}|View Workflow Run>`);
-    payload.run_url = runUrl;
   }
 
-  payload.text = textParts.join('\n');
+  // Simplified 3-field payload
+  const payload = {
+    Message: textParts.join('\n'),
+    Timestamp: new Date().toISOString(),
+    Type: success ? 'SUCCESS' : 'ERROR'
+  };
 
   try {
     const result = await sendToZapier(payload);
@@ -204,29 +193,14 @@ export async function sendReplyNotification(options) {
     apiStats = null,
     error = null,
     dryRun = false,
-    runUrl = null
+    runUrl = null,
+    replyDetails = null  // { replyText, replyUrl, originalTweetText, originalTweetUrl, kolUsername }
   } = options;
 
   const emoji = success ? '💬' : '❌';
   const status = success ? 'Completed' : 'Failed';
 
-  const payload = {
-    type: 'kol_reply',
-    status: status.toLowerCase(),
-    script: 'KOL Reply Evaluation',
-    timestamp: new Date().toISOString(),
-    summary: {
-      status: `${emoji} ${status}`,
-      tweets_evaluated: tweetsEvaluated,
-      tweets_skipped: tweetsSkipped,
-      replies_posted: repliesPosted,
-      today_replies: todayReplies,
-      max_per_day: maxRepliesPerDay,
-      total_replies: totalReplies
-    }
-  };
-
-  // Add formatted text for Slack
+  // Build formatted message
   const textParts = [];
   textParts.push(`${emoji} *KOL Reply Evaluation* - ${status}`);
   textParts.push(`*Time:* ${new Date().toLocaleString('en-US', { timeZone: 'UTC' })} UTC`);
@@ -243,6 +217,22 @@ export async function sendReplyNotification(options) {
   textParts.push(`  Replies today: ${todayReplies}/${maxRepliesPerDay}`);
   textParts.push(`  Total replies all time: ${totalReplies}`);
 
+  // If successful reply with details, show them
+  if (success && replyDetails && repliesPosted > 0) {
+    textParts.push('');
+    textParts.push('✉️ *Latest Reply Sent:*');
+    textParts.push(`*Our Reply:* "${replyDetails.replyText}"`);
+    if (replyDetails.replyUrl) {
+      textParts.push(`<${replyDetails.replyUrl}|View Our Reply Tweet>`);
+    }
+    textParts.push('');
+    textParts.push(`*Original Tweet by @${replyDetails.kolUsername}:*`);
+    textParts.push(`"${replyDetails.originalTweetText}"`);
+    if (replyDetails.originalTweetUrl) {
+      textParts.push(`<${replyDetails.originalTweetUrl}|View Original Tweet>`);
+    }
+  }
+
   if (apiStats) {
     textParts.push('');
     textParts.push('📊 *API Consumption:*');
@@ -257,16 +247,19 @@ export async function sendReplyNotification(options) {
   if (error) {
     textParts.push('');
     textParts.push(`*Error:* ${error}`);
-    payload.error = error;
   }
 
   if (runUrl) {
     textParts.push('');
     textParts.push(`<${runUrl}|View Workflow Run>`);
-    payload.run_url = runUrl;
   }
 
-  payload.text = textParts.join('\n');
+  // Simplified 3-field payload
+  const payload = {
+    Message: textParts.join('\n'),
+    Timestamp: new Date().toISOString(),
+    Type: success ? 'SUCCESS' : 'ERROR'
+  };
 
   try {
     const result = await sendToZapier(payload);
@@ -290,16 +283,7 @@ export async function sendErrorNotification(options) {
     runUrl = null
   } = options;
 
-  const payload = {
-    type: 'error',
-    status: 'failed',
-    script: scriptName,
-    timestamp: new Date().toISOString(),
-    error: error.message || String(error),
-    stack: error.stack,
-    context
-  };
-
+  // Build formatted message
   const textParts = [];
   textParts.push(`🚨 *${scriptName}* - FAILED`);
   textParts.push(`*Time:* ${new Date().toLocaleString('en-US', { timeZone: 'UTC' })} UTC`);
@@ -310,17 +294,21 @@ export async function sendErrorNotification(options) {
     textParts.push('');
     textParts.push('*Context:*');
     for (const [key, value] of Object.entries(context)) {
-      textParts.push(`  ${key}: ${value}`);
+      textParts.push(`  ${key}: ${JSON.stringify(value)}`);
     }
   }
 
   if (runUrl) {
     textParts.push('');
     textParts.push(`<${runUrl}|View Workflow Run>`);
-    payload.run_url = runUrl;
   }
 
-  payload.text = textParts.join('\n');
+  // Simplified 3-field payload
+  const payload = {
+    Message: textParts.join('\n'),
+    Timestamp: new Date().toISOString(),
+    Type: 'ERROR'
+  };
 
   try {
     const result = await sendToZapier(payload);
