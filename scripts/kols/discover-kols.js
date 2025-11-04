@@ -61,9 +61,12 @@ async function discoverKOLs() {
   // Load existing data
   let kolsData = loadKolsData();
 
-  // Create a map for quick lookup
+  // Create maps for quick lookup (by ID and by username)
   const existingKolsMap = new Map(
     kolsData.kols.map(k => [k.id, k])
+  );
+  const existingKolsByUsername = new Map(
+    kolsData.kols.map(k => [k.username.toLowerCase(), k])
   );
 
   // Discovery queue: { username, level, discoveredThrough }
@@ -94,20 +97,19 @@ async function discoverKOLs() {
     console.log(`\n📍 [${totalProcessed}] Processing @${current.username} (Level ${current.level})`);
 
     try {
-      // Rate limit Twitter API
-      await twitterLimiter.throttle();
-
-      // Get user info
-      const user = await getUserByUsername(twitterClient, current.username);
-      console.log(`   Followers: ${formatNumber(user.public_metrics.followers_count)}`);
-
-      // Check if already in database
-      if (existingKolsMap.has(user.id)) {
-        console.log(`   ℹ️  Already in database, updating last checked time`);
-        const existing = existingKolsMap.get(user.id);
-        existing.lastChecked = new Date().toISOString();
+      // Check if already in database BEFORE making any API calls
+      const existingKol = existingKolsByUsername.get(current.username.toLowerCase());
+      if (existingKol) {
+        console.log(`   ℹ️  Already in database (${formatNumber(existingKol.followersCount)} followers), skipping API call`);
+        existingKol.lastChecked = new Date().toISOString();
+        totalSkipped++;
         continue;
       }
+
+      // Not in database, fetch from Twitter API
+      await twitterLimiter.throttle();
+      const user = await getUserByUsername(twitterClient, current.username);
+      console.log(`   Followers: ${formatNumber(user.public_metrics.followers_count)}`);
 
       // Quick filter: check minimum followers
       if (user.public_metrics.followers_count < config.kolCriteria.minFollowers) {
@@ -218,6 +220,7 @@ async function discoverKOLs() {
 
       kolsData.kols.push(newKol);
       existingKolsMap.set(newKol.id, newKol);
+      existingKolsByUsername.set(newKol.username.toLowerCase(), newKol);
       totalAdded++;
 
       console.log(`   ✅ Added to KOLs database!`);
