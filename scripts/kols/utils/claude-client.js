@@ -183,7 +183,7 @@ Provide JSON response:
 /**
  * Generate a reply to a tweet
  */
-export async function generateReplyText(client, tweet, kolProfile, product, evaluation, specialNotes = '') {
+export async function generateReplyText(client, tweet, kolProfile, product, evaluation, positioningPhrase = 'microcap opportunity with real fundamentals', recentReplies = [], specialNotes = '') {
   const useCasesText = product.useCases && Array.isArray(product.useCases) && product.useCases.length > 0
     ? `\nUse Cases:\n${product.useCases.slice(0, 4).map(u => `- ${u}`).join('\n')}`
     : '';
@@ -198,7 +198,14 @@ Documentation: ${product.url || 'https://docs.bws.ninja'}`;
 
   const specialNotesSection = specialNotes ? `\n\n${specialNotes}` : '';
 
-  const prompt = `Generate a natural reply positioning BWS as a microcap opportunity with real fundamentals and long-term vision.
+  // Build recent replies context for diversity
+  const recentRepliesContext = recentReplies.length > 0
+    ? `\n\n**RECENT REPLIES CONTEXT** (for diversity - avoid repeating these structures/phrases):\n${recentReplies.slice(0, 3).map((r, idx) =>
+      `${idx + 1}. Product: ${r.productMentioned} | Reply: "${r.replyText}"`
+    ).join('\n')}`
+    : '';
+
+  const prompt = `Generate a natural reply positioning BWS as a ${positioningPhrase}.
 
 KOL's Tweet:
 "${tweet.text}"
@@ -211,34 +218,33 @@ ${productInfo}${specialNotesSection}
 
 Context from Analysis:
 - Suggested Angle: ${evaluation.suggestedAngle}
-- Tweet Category: ${evaluation.tweetCategory}
+- Tweet Category: ${evaluation.tweetCategory}${recentRepliesContext}
 
-**POSITIONING STRATEGY**: Present BWS as an under-the-radar microcap project with:
-- Real products being built (not just hype)
-- Working team delivering even at microcap valuation
-- Long-term vision and fundamentals
-- Multiple utility products (blockchain infrastructure, credentials, NFTs, ESG)
-- Opportunity for those looking beyond meme coins
+**POSITIONING STRATEGY**: Focus on the angle "${positioningPhrase}". Vary your approach based on:
+- The KOL's tweet context and sentiment
+- Recent replies (avoid repeating similar structures/products/phrases)
+- The specific BWS product's strengths
+- Natural conversation flow (don't force positioning if it doesn't fit)
 
 Guidelines for Reply:
 1. Keep it concise (under 280 characters total)
 2. Lead with value/insight related to their tweet
-3. Position BWS as a microcap gem: "building real products", "still at microcap", "long-term play"
-4. Mention 1-2 BWS products as proof of utility
-5. Emphasize fundamentals over hype: "working team", "actual utility", "vision"
-6. Use conversational brand voice - be transparent this is BWS (the company) speaking
-7. **CRITICAL**: NEVER use "I" - use "we" or third-person "BWS". This is BWS team/company account.
-8. **REQUIRED**: Include "$BWS" cashtag somewhere in the text (not just at end)
-9. **REQUIRED**: Include "@BWSCommunity" mention in the reply
-10. **REQUIRED**: Link to specific product docs page or https://www.bws.ninja
-11. NO salesy language: avoid "amazing", "revolutionary", "don't miss", "moon"
-12. Use emojis sparingly (0-1 max)
+3. Apply the positioning angle naturally - don't force it if it doesn't fit the conversation flow
+4. Mention 1-2 BWS products as proof points when relevant
+5. Use conversational brand voice - be transparent this is BWS (the company) speaking
+6. **CRITICAL**: NEVER use "I" - use "we" or third-person "BWS". This is BWS team/company account.
+7. **REQUIRED**: Include "$BWS" cashtag somewhere in the text (not just at end)
+8. **REQUIRED**: Include "@BWSCommunity" mention in the reply
+9. **REQUIRED**: Link to specific product docs page or https://www.bws.ninja
+10. NO salesy language: avoid "amazing", "revolutionary", "don't miss", "moon"
+11. Use emojis sparingly (0-1 max)
+12. **DIVERSITY**: If recent replies exist, vary your tone, structure, and word choices significantly
 
-Examples of good positioning (notice NO "I", using "we" or "$BWS"):
-- "If you're looking beyond memes, $BWS is building real blockchain infrastructure at microcap valuation. Check what we're shipping @BWSCommunity"
-- "$BWS ships actual products (Blockchain Badges, ESG Credits) while still under most radars. We're at https://www.bws.ninja @BWSCommunity"
-- "Rare to find projects still building at this valuation - $BWS has multiple live solutions with working APIs. @BWSCommunity building long-term"
-- "This resonates with our approach at $BWS - we focus on fundamentals (credentials, ESG reporting) vs hype. @BWSCommunity"
+Examples of varied positioning approaches:
+- "If you're looking beyond memes, $BWS is building real blockchain solutions. Check what we're shipping @BWSCommunity"
+- "We focus on products over promises at $BWS - credentials, ESG reporting, NFT solutions. @BWSCommunity https://www.bws.ninja"
+- "Rare to find teams still delivering at this stage - $BWS keeps building regardless. @BWSCommunity"
+- "$BWS brings AWS-style reliability to blockchain with multiple live APIs. Real utility, not hype. @BWSCommunity"
 
 Provide JSON response:
 {

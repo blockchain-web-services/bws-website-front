@@ -190,8 +190,9 @@ async function evaluateAndReply() {
         console.log(`      Likes: ${tweet.public_metrics?.like_count || 0}, Retweets: ${tweet.public_metrics?.retweet_count || 0}`);
 
         // Get featured products using round-robin
-        const featured = getNextFeaturedProducts(processedPosts, bwsProducts);
+        const featured = getNextFeaturedProducts(processedPosts, bwsProducts, config);
         console.log(`      🎯 Featured product: ${featured.productNames.join(', ')} ${featured.isPriority ? '(Priority)' : ''}`);
+        console.log(`      📝 Positioning: ${featured.positioningPhrase}`);
 
         // Evaluate with Claude
         await claudeLimiter.throttle();
@@ -254,12 +255,21 @@ async function evaluateAndReply() {
           continue;
         }
 
+        // Get recent replies for diversity context
+        const maxRecentReplies = config.contentDiversity?.maxRecentRepliesToInclude || 3;
+        const recentReplies = (repliesData.replies || [])
+          .filter(r => r.status === 'posted')
+          .slice(-maxRecentReplies)
+          .reverse(); // Most recent first
+
         const replyGeneration = await generateReplyText(
           claudeClient,
           tweet,
           kol,
           product,
           evaluation,
+          featured.positioningPhrase,  // Dynamic positioning phrase
+          recentReplies,  // Recent replies for diversity
           featured.specialNotes  // Pass special notes (e.g., Fan Game Cube iGaming)
         );
 
