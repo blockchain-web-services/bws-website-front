@@ -1,7 +1,16 @@
 {
   "discovery": {
     "maxDepth": 2,
-    "seedKols": ["IncomeSharks"],
+    "seedKols": [
+      "IncomeSharks",
+      "AltcoinSherpa",
+      "AltcoinDailyio",
+      "cobie",
+      "DoveyWan",
+      "CryptoMichNL",
+      "coinbureau",
+      "DoveyWan"
+    ],
     "maxKolsPerLevel": 50,
     "processingBatchSize": 10
   },
@@ -31,8 +40,17 @@
   },
   "bwsProductsSource": "docs-index.json",
   "spamPrevention": {
-    "avoidCompetitors": ["competitor1", "competitor2"],
-    "avoidKeywords": ["buy now", "guaranteed", "free money", "airdrop", "giveaway"],
+    "avoidCompetitors": [
+      "competitor1",
+      "competitor2"
+    ],
+    "avoidKeywords": [
+      "buy now",
+      "guaranteed",
+      "free money",
+      "airdrop",
+      "giveaway"
+    ],
     "requirePositiveSentiment": false,
     "skipPromotionalPosts": true,
     "maxConsecutiveFailures": 3
