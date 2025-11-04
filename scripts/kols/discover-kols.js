@@ -9,7 +9,7 @@ import {
   sleep
 } from './utils/kol-utils.js';
 import {
-  createReadOnlyClient,
+  createReadWriteClient,
   getUserByUsername,
   getUserFollowing,
   getUserTweetsWithMetrics,
@@ -51,7 +51,7 @@ async function discoverKOLs() {
 `);
 
   // Initialize clients
-  const twitterClient = createReadOnlyClient();
+  const twitterClient = createReadWriteClient();
   const claudeClient = createClaudeClient();
 
   // Initialize rate limiters
