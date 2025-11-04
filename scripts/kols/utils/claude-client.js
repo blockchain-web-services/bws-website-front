@@ -210,8 +210,9 @@ Documentation: ${product.url || 'https://docs.bws.ninja'}`;
 KOL's Tweet:
 "${tweet.text}"
 
-BWS Product(s) to Reference:
-${product.slug}
+BWS Product to Reference:
+${product.name || 'BWS Solution'}
+URL: ${product.url || 'https://www.bws.ninja'}
 
 Product Details:
 ${productInfo}${specialNotesSection}
@@ -259,13 +260,14 @@ Guidelines for Reply:
 12. **DIVERSITY**: If recent replies exist, vary your tone, structure, and word choices significantly
 
 Examples of PLATFORM-LEVEL positioning (for general market/trends tweets):
-- "When BTC dominance rises, projects with actual revenue models matter more. $BWS operates a Blockchain Solutions Marketplace with multiple products serving mass markets - real utility, consistent delivery. @BWSCommunity"
-- "$BWS brings AWS-style reliability to blockchain with multiple live solutions across credentials, ESG, NFTs, and more. Real utility, not hype. @BWSCommunity https://www.bws.ninja"
-- "Rare to find teams still delivering at this stage - $BWS keeps shipping multiple blockchain solutions regardless of market conditions. @BWSCommunity"
+- "When BTC dominance rises, projects with actual revenue models matter more. $BWS operates a Blockchain Solutions Marketplace with multiple products targeting mass markets - real utility, consistent delivery. @BWSCommunity https://www.bws.ninja"
+- "$BWS brings AWS-style reliability to blockchain with multiple live solutions including credentials, ESG reporting, NFT APIs, and fan engagement platforms. Real utility, not hype. @BWSCommunity"
+- "Rare to find teams still delivering at this stage - $BWS keeps shipping multiple blockchain solutions regardless of market conditions. Platform includes API services and marketplace solutions. @BWSCommunity"
 
 Examples of PRODUCT-SPECIFIC positioning (when tweet matches a specific use case):
-- "For sports fan engagement, $BWS SportsBlock enables clubs to issue verifiable credentials & NFTs on-chain - already live with real adoption. @BWSCommunity"
-- "ESG reporting on blockchain? $BWS ESGBlock provides immutable sustainability credentials - perfect for companies needing transparent compliance. @BWSCommunity"
+- "For sports fan engagement, $BWS Fan Game Cube enables fans to own digital field sections and earn rewards during live games - already live across multiple sports. @BWSCommunity https://docs.bws.ninja/marketplace-solutions/bws.nft.gamecube"
+- "ESG reporting on blockchain? $BWS ESG Credits helps financial institutions deliver environmental impact reporting with ICMA framework support - immutable, transparent. @BWSCommunity https://docs.bws.ninja/marketplace-solutions/bws.esg.credits"
+- "Need verifiable credentials? $BWS Blockchain Badges provides secure digital credential issuance on blockchain - trusted, immutable, cross-platform. @BWSCommunity https://docs.bws.ninja/marketplace-solutions/bws.blockchain.badges"
 
 Provide JSON response:
 {
