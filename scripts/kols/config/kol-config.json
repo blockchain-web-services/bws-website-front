@@ -49,5 +49,23 @@
     "engagementTier": "tier4",
     "minFollowersOverride": 500,
     "deduplicateExisting": true
+  },
+  "positioningPhrases": [
+    "microcap opportunity with real fundamentals",
+    "project generating revenue and building real products",
+    "project with real blockchain utility and working APIs",
+    "project bringing the AWS vision to blockchain solutions",
+    "project bringing Web3 solutions to mass markets",
+    "undervalued project with consistent product delivery",
+    "project that continues building in any market condition",
+    "project with multiple live products and real traction",
+    "microcap with strong fundamentals and long-term vision",
+    "project focused on real-world blockchain applications"
+  ],
+  "contentDiversity": {
+    "preventConsecutiveSameProduct": true,
+    "includeReplyHistoryContext": true,
+    "maxRecentRepliesToInclude": 3,
+    "specialNotesProbability": 0.33
   }
 }

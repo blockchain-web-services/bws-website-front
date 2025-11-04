@@ -515,36 +515,81 @@ export function daysSince(date) {
  * 40% of time: Other products
  * Returns product names to filter from BWS products catalog
  */
-export function getNextFeaturedProducts(processedPosts, bwsProducts) {
+export function getNextFeaturedProducts(processedPosts, bwsProducts, config) {
   const rotation = processedPosts.productRotation;
+  const diversityConfig = config.contentDiversity || {};
+  const preventConsecutive = diversityConfig.preventConsecutiveSameProduct !== false;
+  const specialNoteProbability = diversityConfig.specialNotesProbability || 0.33;
 
   // Determine if this should be a priority product (60% chance)
   const usePriority = (rotation.replyCount % 5) < 3; // 3 out of 5 = 60%
 
   let selectedProductNames = [];
   let specialNotes = '';
+  let attempts = 0;
+  const maxAttempts = 10; // Prevent infinite loop
 
-  if (usePriority) {
-    // Select from priority products (X Bot or Fan Game Cube)
-    const productName = rotation.priorityProducts[rotation.priorityIndex];
-    selectedProductNames.push(productName);
+  // Select product with consecutive-product prevention
+  while (attempts < maxAttempts) {
+    attempts++;
 
-    // Add special note for Fan Game Cube about iGaming
-    if (productName === 'Fan Game Cube') {
-      specialNotes = '**IMPORTANT**: Fan Game Cube is expanding into the iGaming domain. Mention this future direction when relevant.';
+    if (usePriority) {
+      // Select from priority products (X Bot or Fan Game Cube)
+      const productName = rotation.priorityProducts[rotation.priorityIndex];
+
+      // Check if this is the same as last product used
+      if (preventConsecutive && rotation.lastProductUsed === productName && rotation.priorityProducts.length > 1) {
+        // Skip to next priority product
+        rotation.priorityIndex = (rotation.priorityIndex + 1) % rotation.priorityProducts.length;
+        continue; // Try again
+      }
+
+      selectedProductNames.push(productName);
+
+      // Add special note for Fan Game Cube about iGaming (conditional based on probability)
+      if (productName === 'Fan Game Cube' && Math.random() < specialNoteProbability) {
+        specialNotes = '**IMPORTANT**: Fan Game Cube is expanding into the iGaming domain. Mention this future direction when relevant.';
+      }
+
+      // Move to next priority product
+      rotation.priorityIndex = (rotation.priorityIndex + 1) % rotation.priorityProducts.length;
+      break;
+
+    } else {
+      // Select from other products
+      const productName = rotation.otherProducts[rotation.otherIndex];
+
+      // Check if this is the same as last product used
+      if (preventConsecutive && rotation.lastProductUsed === productName && rotation.otherProducts.length > 1) {
+        // Skip to next other product
+        rotation.otherIndex = (rotation.otherIndex + 1) % rotation.otherProducts.length;
+        continue; // Try again
+      }
+
+      selectedProductNames.push(productName);
+
+      // Move to next other product
+      rotation.otherIndex = (rotation.otherIndex + 1) % rotation.otherProducts.length;
+      break;
     }
-
-    // Move to next priority product
-    rotation.priorityIndex = (rotation.priorityIndex + 1) % rotation.priorityProducts.length;
-
-  } else {
-    // Select from other products
-    const productName = rotation.otherProducts[rotation.otherIndex];
-    selectedProductNames.push(productName);
-
-    // Move to next other product
-    rotation.otherIndex = (rotation.otherIndex + 1) % rotation.otherProducts.length;
   }
+
+  // If we somehow failed to select a product (shouldn't happen), fallback to first available
+  if (selectedProductNames.length === 0) {
+    selectedProductNames.push(usePriority ? rotation.priorityProducts[0] : rotation.otherProducts[0]);
+  }
+
+  // Update last product used
+  rotation.lastProductUsed = selectedProductNames[0];
+
+  // Get positioning phrase
+  const positioningPhrases = config.positioningPhrases || [
+    "microcap opportunity with real fundamentals"
+  ];
+  const positioningPhrase = positioningPhrases[rotation.positioningPhraseIndex % positioningPhrases.length];
+
+  // Move to next positioning phrase
+  rotation.positioningPhraseIndex = (rotation.positioningPhraseIndex + 1) % positioningPhrases.length;
 
   // Increment reply count
   rotation.replyCount++;
@@ -561,7 +606,8 @@ export function getNextFeaturedProducts(processedPosts, bwsProducts) {
     products: featuredProducts,
     productNames: selectedProductNames,
     specialNotes,
-    isPriority: usePriority
+    isPriority: usePriority,
+    positioningPhrase
   };
 }
 
