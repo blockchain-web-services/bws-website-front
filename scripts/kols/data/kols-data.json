@@ -56,11 +56,12 @@
     }
   ],
   "metadata": {
-    "lastDiscoveryRun": "2025-11-04T06:11:42.236Z",
+    "lastDiscoveryRun": "2025-11-04T09:27:04.710Z",
     "totalKols": 1,
     "activeKols": 1,
     "discoveryDepth": 2,
     "seedKolsCount": 1,
-    "lastUpdateBy": "kol-system"
+    "lastUpdateBy": "kol-system",
+    "discoveryMethod": "search-engagement"
   }
 }
