@@ -12,7 +12,7 @@ const allArticles = [...articles]
 const latestNews = newsItems.slice(0, 4);
 ---
 
-<style>
+<style is:global>
   /* News items styling */
   .top-menu-article-title {
     font-weight: 600 !important;
@@ -37,6 +37,20 @@ const latestNews = newsItems.slice(0, 4);
 
   .top-menu-article-link:hover {
     opacity: 0.8 !important;
+  }
+
+  /* Small top menu item hover behavior - match Solutions menu */
+  .small-top-menu-item:hover,
+  .small-top-menu-item-bottom:hover {
+    color: var(--neutral-800) !important;
+    -webkit-text-stroke-color: var(--neutral-800) !important;
+  }
+
+  /* JOIN BWS Community item hover behavior */
+  .top-menu-join-community-wrapper:hover,
+  .top-menu-join-community-wrapper:hover .top-menu-join-community-icon {
+    color: var(--neutral-800) !important;
+    -webkit-text-stroke-color: var(--neutral-800) !important;
   }
 
   /* Simplified Industries Menu Styles */
