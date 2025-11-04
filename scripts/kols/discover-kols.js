@@ -226,28 +226,41 @@ async function discoverKOLs() {
       if (current.level + 1 < maxDepth) {
         console.log(`   🔗 Fetching following list...`);
 
-        await twitterLimiter.throttle();
-        const following = await getUserFollowing(twitterClient, user.id, maxKolsPerLevel);
+        try {
+          await twitterLimiter.throttle();
+          const following = await getUserFollowing(twitterClient, user.id, maxKolsPerLevel);
 
-        let addedToQueue = 0;
-        for await (const followedUser of following) {
-          const followedUsername = followedUser.username.toLowerCase();
+          let addedToQueue = 0;
+          for await (const followedUser of following) {
+            const followedUsername = followedUser.username.toLowerCase();
 
-          // Skip if already discovered or in queue
-          if (!discovered.has(followedUsername)) {
-            discovered.add(followedUsername);
-            discoveryQueue.push({
-              username: followedUser.username,
-              level: current.level + 1,
-              discoveredThrough: user.username
-            });
-            addedToQueue++;
+            // Skip if already discovered or in queue
+            if (!discovered.has(followedUsername)) {
+              discovered.add(followedUsername);
+              discoveryQueue.push({
+                username: followedUser.username,
+                level: current.level + 1,
+                discoveredThrough: user.username
+              });
+              addedToQueue++;
+            }
+
+            if (addedToQueue >= maxKolsPerLevel) break;
           }
 
-          if (addedToQueue >= maxKolsPerLevel) break;
-        }
+          console.log(`   📝 Added ${addedToQueue} users to discovery queue (Level ${current.level + 1})`);
+        } catch (followError) {
+          const is403 = followError.code === 403 || followError.message?.includes('403');
 
-        console.log(`   📝 Added ${addedToQueue} users to discovery queue (Level ${current.level + 1})`);
+          if (is403) {
+            console.log(`   ⚠️  Cannot fetch following: Twitter API requires OAuth (not available with Bearer token)`);
+            console.log(`   ℹ️  Network traversal disabled - KOL added but no level-1 discovery`);
+          } else {
+            console.log(`   ⚠️  Failed to fetch following: ${followError.message}`);
+          }
+
+          // Continue without following - KOL is still added successfully
+        }
       }
 
       // Batch save every 5 additions
