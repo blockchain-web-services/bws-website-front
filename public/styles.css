@@ -2327,7 +2327,7 @@ textarea.w-select {
   --neutral-200: #f5f9ff;
   --neutral-600: #66666e;
   --neutral-800: #1a1b1e;
-  --primary-1: #e91e63;
+  --primary-1: #C22952;
   --neutral-100: white;
   --neutral-700: #3b3f44;
   --neutral-500: #8a8a92;
@@ -2336,7 +2336,7 @@ textarea.w-select {
   --neutral-300: #e5ecf5;
   --neutral-100-65: #ffffffa6;
   --shadow-small-2: #a3a6ff21;
-  --rose: #e91e63;
+  --rose: #C22952;
   /* WCAG AA compliant darker rose - 4.52:1 contrast with #f5f5f5 */
   /* WCAG AA compliant darker rose - 4.51:1 contrast on white */
   --shadow-small-1: #0c0c0c0a;
