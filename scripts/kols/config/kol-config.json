@@ -18,7 +18,7 @@
     "maxRepliesPerRun": 2,
     "maxRepliesPerDay": 10,
     "maxRepliesPerKolPerWeek": 3,
-    "minRelevanceScoreForReply": 70,
+    "minRelevanceScoreForReply": 60,
     "minTimeBetweenRepliesMinutes": 30,
     "dryRun": false
   },
@@ -27,7 +27,7 @@
     "claudeApiCallsPerMinute": 50,
     "waitBetweenBatchesMs": 5000,
     "maxSearchQueriesPerRun": 2,
-    "maxKolsToEvaluatePerRun": 5
+    "maxKolsToEvaluatePerRun": 30
   },
   "bwsProductsSource": "docs-index.json",
   "spamPrevention": {

@@ -78,6 +78,7 @@ jobs:
           Total replies: ${{ steps.stats.outputs.total }} | Today: ${{ steps.stats.outputs.today }}
 
           🤖 Generated with [Claude Code](https://claude.com/claude-code)"
+          git pull --rebase origin master
           git push
 
       - name: Summary
