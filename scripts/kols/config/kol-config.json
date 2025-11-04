@@ -8,11 +8,10 @@
       "cobie",
       "DoveyWan",
       "CryptoMichNL",
-      "coinbureau",
-      "DoveyWan"
+      "coinbureau"
     ],
     "maxKolsPerLevel": 50,
-    "processingBatchSize": 10
+    "processingBatchSize": 2
   },
   "kolCriteria": {
     "minFollowers": 1000,
@@ -32,9 +31,9 @@
     "dryRun": false
   },
   "rateLimits": {
-    "twitterApiCallsPerMinute": 20,
+    "twitterApiCallsPerMinute": 15,
     "claudeApiCallsPerMinute": 50,
-    "waitBetweenBatchesMs": 5000,
+    "waitBetweenBatchesMs": 10000,
     "maxSearchQueriesPerRun": 2,
     "maxKolsToEvaluatePerRun": 30
   },
