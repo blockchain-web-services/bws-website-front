@@ -19,9 +19,9 @@
       "discoveryLevel": 0,
       "engagementHistory": {
         "totalPostsAnalyzed": 200,
-        "repliedTo": 0,
-        "lastEngagement": null,
-        "successfulReplies": 0,
+        "repliedTo": 1,
+        "lastEngagement": "2025-11-04T07:38:21.206Z",
+        "successfulReplies": 1,
         "failedReplies": 0
       },
       "relationships": {
@@ -51,7 +51,7 @@
       ],
       "sentimentTowardsCrypto": "mixed",
       "accountType": "person",
-      "lastTweetAnalyzed": "1983944969858814137",
+      "lastTweetAnalyzed": "1985384221444358258",
       "status": "active"
     }
   ],
