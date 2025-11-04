@@ -324,30 +324,47 @@ export class RateLimiter {
   constructor(maxCallsPerMinute) {
     this.maxCallsPerMinute = maxCallsPerMinute;
     this.calls = [];
+    this.lastCallTime = 0;
+    // Calculate minimum delay between calls in ms
+    this.minDelayBetweenCalls = Math.ceil(60000 / maxCallsPerMinute);
   }
 
   /**
    * Wait if necessary to respect rate limit
+   * Enforces BOTH:
+   * 1. Minimum delay between consecutive calls (prevents bursts)
+   * 2. Maximum calls per rolling 60-second window
    */
   async throttle() {
     const now = Date.now();
-    const oneMinuteAgo = now - 60000;
 
-    // Remove calls older than 1 minute
+    // FIRST: Enforce minimum delay between consecutive calls (steady pacing)
+    const timeSinceLastCall = now - this.lastCallTime;
+    if (timeSinceLastCall < this.minDelayBetweenCalls && this.lastCallTime > 0) {
+      const delayNeeded = this.minDelayBetweenCalls - timeSinceLastCall;
+      console.log(`   ⏳ Spacing calls: waiting ${(delayNeeded / 1000).toFixed(1)}s (min ${(this.minDelayBetweenCalls / 1000).toFixed(1)}s between calls)`);
+      await new Promise(resolve => setTimeout(resolve, delayNeeded));
+    }
+
+    // SECOND: Check rolling window limit (safety check)
+    const oneMinuteAgo = Date.now() - 60000; // Recalculate after potential delay
     this.calls = this.calls.filter(time => time > oneMinuteAgo);
 
     if (this.calls.length >= this.maxCallsPerMinute) {
       const oldestCall = this.calls[0];
-      const waitTime = 60000 - (now - oldestCall) + 1000; // Add 1s buffer
+      const waitTime = 60000 - (Date.now() - oldestCall) + 1000; // Add 1s buffer
 
-      console.log(`⏳ Rate limit reached. Waiting ${Math.ceil(waitTime / 1000)}s...`);
+      console.log(`   ⏳ Rolling window limit reached (${this.calls.length}/${this.maxCallsPerMinute}). Waiting ${Math.ceil(waitTime / 1000)}s...`);
       await new Promise(resolve => setTimeout(resolve, waitTime));
 
       // Recursive call after waiting
       return this.throttle();
     }
 
-    this.calls.push(now);
+    // Record this call
+    const callTime = Date.now();
+    this.calls.push(callTime);
+    this.lastCallTime = callTime;
   }
 }
 
