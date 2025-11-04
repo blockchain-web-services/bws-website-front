@@ -22,11 +22,20 @@ export function loadSearchQueries() {
 
 /**
  * Execute a search query with proper options
+ * @param {Object} client - Twitter API client
+ * @param {string} query - Search query string
+ * @param {number} maxResults - Maximum tweets to fetch (default 100)
+ * @param {number} hoursBack - How many hours back to search (default 24)
  */
-export async function executeSearchQuery(client, query, maxResults = 100) {
+export async function executeSearchQuery(client, query, maxResults = 100, hoursBack = 24) {
   try {
+    // Calculate start_time (X hours ago in ISO 8601 format)
+    const startTime = new Date(Date.now() - (hoursBack * 60 * 60 * 1000)).toISOString();
+
     const result = await client.v2.search(query, {
-      max_results: maxResults,
+      max_results: Math.min(maxResults, 100), // Twitter API max per page is 100
+      start_time: startTime, // Only get tweets from last X hours
+      sort_order: 'relevancy', // Sort by relevance (most engaging first)
       'tweet.fields': [
         'created_at',
         'text',
@@ -40,10 +49,14 @@ export async function executeSearchQuery(client, query, maxResults = 100) {
       expansions: 'author_id,entities.mentions.username,referenced_tweets.id.author_id'
     });
 
-    // Collect tweets from paginator
+    // Collect tweets from paginator, but respect maxResults limit
     const tweets = [];
     for await (const tweet of result) {
       tweets.push(tweet);
+      // Stop if we've reached the desired limit
+      if (tweets.length >= maxResults) {
+        break;
+      }
     }
 
     return {

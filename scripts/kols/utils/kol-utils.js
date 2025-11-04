@@ -352,6 +352,57 @@ export class RateLimiter {
 }
 
 /**
+ * Shuffle array using Fisher-Yates algorithm
+ */
+export function shuffleArray(array) {
+  const shuffled = [...array];
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+  return shuffled;
+}
+
+/**
+ * Calculate KOL priority score
+ */
+export function calculateKolPriority(kol) {
+  return (kol.engagementRate || 0) * (kol.cryptoRelevanceScore || 0);
+}
+
+/**
+ * Prioritize KOLs with stratified randomization
+ * Groups KOLs by priority tier, randomizes within each tier
+ * @param {Array} kols - Array of KOL objects
+ * @returns {Array} - Prioritized and randomized array
+ */
+export function prioritizeKolsWithRandomization(kols) {
+  // Calculate priority scores
+  const kolsWithPriority = kols.map(kol => ({
+    ...kol,
+    priorityScore: calculateKolPriority(kol)
+  }));
+
+  // Define tier thresholds
+  const HIGH_TIER_THRESHOLD = 3.0;
+  const MID_TIER_THRESHOLD = 1.5;
+
+  // Group into tiers
+  const highTier = kolsWithPriority.filter(k => k.priorityScore >= HIGH_TIER_THRESHOLD);
+  const midTier = kolsWithPriority.filter(k => k.priorityScore >= MID_TIER_THRESHOLD && k.priorityScore < HIGH_TIER_THRESHOLD);
+  const lowTier = kolsWithPriority.filter(k => k.priorityScore < MID_TIER_THRESHOLD);
+
+  // Randomize within each tier, then concatenate
+  const prioritized = [
+    ...shuffleArray(highTier),
+    ...shuffleArray(midTier),
+    ...shuffleArray(lowTier)
+  ];
+
+  return prioritized;
+}
+
+/**
  * Calculate engagement rate
  */
 export function calculateEngagementRate(likes, retweets, replies, followers) {
@@ -386,10 +437,11 @@ export function meetsKolCriteria(user, config, cryptoRelevanceScore, engagementM
     return { meets: false, reason: 'Below minimum average likes' };
   }
 
-  // Check average views
-  if (engagementMetrics.avgViews < criteria.minAverageViews) {
-    return { meets: false, reason: 'Below minimum average views' };
-  }
+  // Check average views - DISABLED: userTimeline API doesn't return impression_count
+  // Without elevated X API access, avgViews is always 0, causing all candidates to fail
+  // if (engagementMetrics.avgViews < criteria.minAverageViews) {
+  //   return { meets: false, reason: 'Below minimum average views' };
+  // }
 
   // Check verification if required
   if (criteria.requireVerified && !user.verified) {

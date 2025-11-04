@@ -15,9 +15,9 @@
     "requireVerified": false
   },
   "replySettings": {
-    "maxRepliesPerRun": 1,
-    "maxRepliesPerDay": 7,
-    "maxRepliesPerKolPerWeek": 1,
+    "maxRepliesPerRun": 2,
+    "maxRepliesPerDay": 10,
+    "maxRepliesPerKolPerWeek": 3,
     "minRelevanceScoreForReply": 70,
     "minTimeBetweenRepliesMinutes": 30,
     "dryRun": false
@@ -46,7 +46,7 @@
   "searchDiscovery": {
     "enabled": true,
     "queriesFile": "search-queries.json",
-    "engagementTier": "tier2",
+    "engagementTier": "tier4",
     "minFollowersOverride": 500,
     "deduplicateExisting": true
   }

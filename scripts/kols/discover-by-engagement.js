@@ -103,7 +103,8 @@ async function discoverByEngagement() {
       const { tweets, includes, meta, error } = await executeSearchQuery(
         twitterClient,
         queryConfig.query,
-        searchConfig.settings.maxTweetsPerQuery
+        searchConfig.settings.maxTweetsPerQuery,
+        searchConfig.settings.searchWindowHours || 24
       );
 
       if (error) {
@@ -224,10 +225,19 @@ async function discoverByEngagement() {
 
   // Filter and evaluate users
   const minFollowers = config.searchDiscovery?.minFollowersOverride || config.kolCriteria.minFollowers;
+  const maxToEvaluate = config.rateLimits?.maxKolsToEvaluatePerRun || 999;
 
   console.log('🔍 Evaluating candidates...\n');
+  console.log(`⚠️  Evaluation limit: ${maxToEvaluate} candidates per run\n`);
 
   for (const user of users) {
+    // Check if we've hit the evaluation limit
+    if (totalProcessed >= maxToEvaluate) {
+      console.log(`\n⚠️  Reached evaluation limit (${maxToEvaluate} candidates). Stopping evaluation.`);
+      console.log(`   ${users.length - totalProcessed} candidates remain for next run.`);
+      break;
+    }
+
     totalProcessed++;
 
     console.log(`\n[${totalProcessed}/${users.length}] @${user.username}`);
@@ -240,13 +250,24 @@ async function discoverByEngagement() {
       continue;
     }
 
+    // Quick filter: check if bio contains crypto-related keywords
+    const bio = (user.description || '').toLowerCase();
+    const cryptoKeywords = ['crypto', 'bitcoin', 'btc', 'eth', 'ethereum', 'blockchain', 'defi', 'nft', 'web3', 'degen', 'altcoin', 'token', 'dao'];
+    const hasCryptoKeyword = cryptoKeywords.some(keyword => bio.includes(keyword));
+
+    if (!hasCryptoKeyword && bio.length > 0) {
+      console.log(`   ⏭️  Skipped: No crypto keywords in bio`);
+      totalSkipped++;
+      continue;
+    }
+
     // Get their recent tweets for evaluation
     try {
       await twitterLimiter.throttle();
 
       const tweets = await twitterClient.v2.userTimeline(user.id, {
         max_results: 20,
-        'tweet.fields': ['created_at', 'text', 'public_metrics'],
+        'tweet.fields': ['created_at', 'text', 'public_metrics', 'non_public_metrics'],
         exclude: ['retweets']
       });
 
@@ -281,10 +302,14 @@ async function discoverByEngagement() {
         user.public_metrics.followers_count
       ) : 0;
 
+      // Calculate average views (may be 0 if not available)
+      const totalViews = tweetsArray.reduce((sum, t) => sum + (t.public_metrics?.impression_count || t.non_public_metrics?.impression_count || 0), 0);
+      const avgViews = tweetsArray.length > 0 ? totalViews / tweetsArray.length : 0;
+
       const criteriaCheck = meetsKolCriteria(user, config, evaluation.cryptoRelevanceScore, {
         avgEngagementRate,
         avgLikes: tweetsArray.reduce((sum, t) => sum + (t.public_metrics?.like_count || 0), 0) / tweetsArray.length,
-        avgViews: 0
+        avgViews
       });
 
       if (!criteriaCheck.meets) {
@@ -313,7 +338,7 @@ async function discoverByEngagement() {
         cryptoRelevanceScore: evaluation.cryptoRelevanceScore,
         engagementRate: avgEngagementRate,
         avgLikes: tweetsArray.reduce((sum, t) => sum + (t.public_metrics?.like_count || 0), 0) / tweetsArray.length,
-        avgViews: 0,
+        avgViews: avgViews,
         discoveredAt: new Date().toISOString(),
         lastChecked: new Date().toISOString(),
         discoveredThrough: 'search-engagement',

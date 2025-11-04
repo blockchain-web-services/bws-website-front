@@ -149,11 +149,14 @@ export async function sendDiscoveryNotification(options) {
   const textParts = [];
   textParts.push(`${emoji} *${scriptName}* - ${statusText}`);
   textParts.push('');
-  textParts.push('*Results:*');
+  textParts.push('');
+  textParts.push('*KOL Database:*');
+  textParts.push(`  Total KOLs tracked: ${totalKols}`);
+  textParts.push(`  New KOLs added: ${kolsAdded}`);
+  textParts.push('');
+  textParts.push('*Discovery Results:*');
   textParts.push(`  Queries executed: ${totalQueries}`);
   textParts.push(`  Tweets found: ${tweetsFound}`);
-  textParts.push(`  New KOLs added: ${kolsAdded}`);
-  textParts.push(`  Total KOLs in DB: ${totalKols}`);
 
   if (apiStats) {
     textParts.push('');
@@ -210,6 +213,8 @@ export async function sendReplyNotification(options) {
     todayReplies = 0,
     maxRepliesPerDay = 7,
     totalReplies = 0,
+    totalKols = 0,
+    activeKols = 0,
     apiStats = null,
     error = null,
     dryRun = false,
@@ -229,6 +234,11 @@ export async function sendReplyNotification(options) {
     textParts.push('⚠️ *DRY RUN MODE* - No actual tweets posted');
   }
 
+  textParts.push('');
+  textParts.push('');
+  textParts.push('*KOL Database:*');
+  textParts.push(`  Total KOLs tracked: ${totalKols}`);
+  textParts.push(`  Active KOLs: ${activeKols}`);
   textParts.push('');
   textParts.push('*Results:*');
   textParts.push(`  Tweets evaluated: ${tweetsEvaluated}`);

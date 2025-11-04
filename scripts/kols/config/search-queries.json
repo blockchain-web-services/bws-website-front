@@ -5,42 +5,42 @@
       "query": "@IncomeSharks lang:en -is:retweet",
       "category": "mention",
       "priority": 1,
-      "description": "Users mentioning @IncomeSharks"
+      "description": "Users mentioning @IncomeSharks (last 24h)"
     },
     {
       "name": "incomesharks-replies",
       "query": "to:IncomeSharks lang:en",
       "category": "reply",
       "priority": 1,
-      "description": "Users replying to @IncomeSharks"
+      "description": "Users replying to @IncomeSharks (last 24h)"
     },
     {
       "name": "speculator-mentions",
       "query": "@Speculator_io lang:en -is:retweet",
       "category": "mention",
       "priority": 1,
-      "description": "Users mentioning @Speculator_io"
+      "description": "Users mentioning @Speculator_io (last 24h)"
     },
     {
       "name": "speculator-replies",
       "query": "to:Speculator_io lang:en",
       "category": "reply",
       "priority": 1,
-      "description": "Users replying to @Speculator_io"
+      "description": "Users replying to @Speculator_io (last 24h)"
     },
     {
       "name": "proof-mentions",
       "query": "PROOF lang:en -is:retweet has:mentions",
       "category": "keyword",
       "priority": 2,
-      "description": "Users discussing PROOF with community engagement"
+      "description": "Users discussing PROOF with community engagement (last 24h)"
     },
     {
       "name": "hood-mentions",
       "query": "HOOD lang:en -is:retweet has:mentions",
       "category": "keyword",
       "priority": 2,
-      "description": "Users discussing HOOD with community engagement"
+      "description": "Users discussing HOOD with community engagement (last 24h)"
     }
   ],
   "engagementThresholds": {
@@ -58,12 +58,18 @@
       "minLikes": 10,
       "minRetweets": 2,
       "minViews": 1000
+    },
+    "tier4": {
+      "minLikes": 5,
+      "minRetweets": 1,
+      "minViews": 500
     }
   },
   "settings": {
     "maxTweetsPerQuery": 100,
     "maxQueriesPerRun": 6,
     "deduplicateUsers": true,
-    "waitBetweenQueriesMs": 10000
+    "waitBetweenQueriesMs": 10000,
+    "searchWindowHours": 24
   }
 }
