@@ -66,6 +66,7 @@ export async function getUserByUsername(client, username) {
 
 /**
  * Fetch user's following list
+ * NOTE: Requires OAuth user context (not available with Bearer token)
  */
 export async function getUserFollowing(client, userId, maxResults = 100) {
   try {
@@ -80,9 +81,22 @@ export async function getUserFollowing(client, userId, maxResults = 100) {
       ]
     });
 
+    const count = following.data?.length || 0;
+    apiTracker.recordCall('users/following', count, true);
     return following;
   } catch (error) {
-    console.error(`Error fetching following for user ${userId}: ${error.message}`);
+    const is403 = error.code === 403 || error.message?.includes('403');
+    const is429 = error.code === 429 || error.message?.includes('429');
+
+    const errorDetail = is403
+      ? 'Forbidden (403) - Requires OAuth user context, not available with Bearer token'
+      : is429
+      ? 'Rate limit (429) - Too many requests'
+      : error.message;
+
+    apiTracker.recordCall('users/following', 0, false, errorDetail);
+
+    console.error(`Error fetching following for user ${userId}: ${errorDetail}`);
     throw error;
   }
 }
@@ -311,12 +325,25 @@ export async function getUserTweetsWithMetrics(client, userId, daysBack = 7, max
       metrics.totalEngagement = totals.likes + totals.retweets + totals.replies;
     }
 
+    apiTracker.recordCall('users/tweets', tweetsArray.length, true);
+
     return {
       tweets: tweetsArray,
       metrics
     };
   } catch (error) {
-    console.error(`Error fetching tweets with metrics for user ${userId}: ${error.message}`);
+    const is429 = error.code === 429 || error.message?.includes('429');
+    const is403 = error.code === 403 || error.message?.includes('403');
+
+    const errorDetail = is429
+      ? 'Rate limit (429) - Too many requests'
+      : is403
+      ? 'Forbidden (403)'
+      : error.message;
+
+    apiTracker.recordCall('users/tweets', 0, false, errorDetail);
+
+    console.error(`Error fetching tweets with metrics for user ${userId}: ${errorDetail}`);
     throw error;
   }
 }
