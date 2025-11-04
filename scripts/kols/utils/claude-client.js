@@ -226,6 +226,24 @@ Context from Analysis:
 - The specific BWS product's strengths
 - Natural conversation flow (don't force positioning if it doesn't fit)
 
+**CRITICAL: PLATFORM vs PRODUCT POSITIONING**
+Choose ONE approach per reply:
+
+A) **PLATFORM-LEVEL** (when tweet is about general market/trends/gems):
+   - Position BWS as "Blockchain Solutions Marketplace"
+   - Mention "platform containing multiple solutions targeting mass markets"
+   - Use phrases like: "multiple live products", "suite of blockchain solutions", "AWS-style platform for Web3"
+   - DO NOT mention single product details (sports clubs, credentials, etc.)
+   - Example: "$BWS operates a Blockchain Solutions Marketplace with multiple products targeting mass markets - real utility, consistent delivery"
+
+B) **PRODUCT-SPECIFIC** (when tweet clearly relates to ONE BWS product):
+   - Mention the specific product AND its specific features
+   - Include product-specific details (sports clubs for SportsBlock, credentials for CredBlock, etc.)
+   - Link directly to that product's docs page
+   - Example: "$BWS CredBlock enables verifiable credentials on-chain - sports clubs already using it for fan verification"
+
+**DEFAULT to PLATFORM-LEVEL unless the tweet is CLEARLY about a specific use case that matches ONE BWS product.**
+
 Guidelines for Reply:
 1. Keep it concise (under 280 characters total)
 2. Lead with value/insight related to their tweet
@@ -240,11 +258,14 @@ Guidelines for Reply:
 11. Use emojis sparingly (0-1 max)
 12. **DIVERSITY**: If recent replies exist, vary your tone, structure, and word choices significantly
 
-Examples of varied positioning approaches:
-- "If you're looking beyond memes, $BWS is building real blockchain solutions. Check what we're shipping @BWSCommunity"
-- "We focus on products over promises at $BWS - credentials, ESG reporting, NFT solutions. @BWSCommunity https://www.bws.ninja"
-- "Rare to find teams still delivering at this stage - $BWS keeps building regardless. @BWSCommunity"
-- "$BWS brings AWS-style reliability to blockchain with multiple live APIs. Real utility, not hype. @BWSCommunity"
+Examples of PLATFORM-LEVEL positioning (for general market/trends tweets):
+- "When BTC dominance rises, projects with actual revenue models matter more. $BWS operates a Blockchain Solutions Marketplace with multiple products serving mass markets - real utility, consistent delivery. @BWSCommunity"
+- "$BWS brings AWS-style reliability to blockchain with multiple live solutions across credentials, ESG, NFTs, and more. Real utility, not hype. @BWSCommunity https://www.bws.ninja"
+- "Rare to find teams still delivering at this stage - $BWS keeps shipping multiple blockchain solutions regardless of market conditions. @BWSCommunity"
+
+Examples of PRODUCT-SPECIFIC positioning (when tweet matches a specific use case):
+- "For sports fan engagement, $BWS SportsBlock enables clubs to issue verifiable credentials & NFTs on-chain - already live with real adoption. @BWSCommunity"
+- "ESG reporting on blockchain? $BWS ESGBlock provides immutable sustainability credentials - perfect for companies needing transparent compliance. @BWSCommunity"
 
 Provide JSON response:
 {
