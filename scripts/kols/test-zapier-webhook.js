@@ -90,6 +90,8 @@ async function testWebhook() {
       todayReplies: 5,
       maxRepliesPerDay: 7,
       totalReplies: 42,
+      totalKols: 25,
+      activeKols: 18,
       dryRun: false,
       replyDetails: {
         replyText: 'Great insights on blockchain scalability! Have you considered using BWS Immutable Database for guaranteed data integrity? It offers on-chain verification while keeping costs low.',

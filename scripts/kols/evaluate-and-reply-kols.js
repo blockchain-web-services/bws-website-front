@@ -12,7 +12,8 @@ import {
   hasReachedDailyLimit,
   hasRepliedRecentlyToKol,
   sleep,
-  getNextFeaturedProducts
+  getNextFeaturedProducts,
+  prioritizeKolsWithRandomization
 } from './utils/kol-utils.js';
 import {
   createReadOnlyClient,
@@ -101,10 +102,11 @@ async function evaluateAndReply() {
 
   console.log(`📋 Found ${activeKols.length} active KOLs\n`);
 
-  // Sort KOLs by priority (higher engagement = higher priority)
-  const prioritizedKols = activeKols.sort((a, b) =>
-    (b.engagementRate * b.cryptoRelevanceScore) - (a.engagementRate * a.cryptoRelevanceScore)
-  );
+  // Prioritize KOLs with stratified randomization
+  // Groups by quality tier, then randomizes within each tier for variety
+  const prioritizedKols = prioritizeKolsWithRandomization(activeKols);
+
+  console.log(`🎲 Randomized KOL order within quality tiers for natural engagement\n`);
 
   const today = getTodayDateString();
   let todayReplies = repliesData.dailyStats[today]?.repliesPosted || 0;
@@ -429,6 +431,8 @@ ${'='.repeat(60)}
     todayReplies: todayReplies + repliesPosted,
     maxRepliesPerDay,
     totalReplies: repliesData.replies.length,
+    totalKols: kolsData.kols.length,
+    activeKols: activeKols.length,
     dryRun,
     replyDetails: lastReplyDetails,  // Include last successful reply details
     apiStats: apiTracker.exportStats(),

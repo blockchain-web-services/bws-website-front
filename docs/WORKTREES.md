@@ -253,7 +253,7 @@ Before finishing work in a worktree:
 ```bash
 # Inside worktree
 git fetch origin
-git rebase origin/main
+git rebase origin/master
 
 # Run tests again after rebase
 cd test && npm test

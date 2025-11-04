@@ -1,66 +1,117 @@
 # Claude Code Instructions - Worktree: xai-trackkols
 
-**Created**: 2025-10-31T17:26:18.896Z
+**Created**: 2025-11-04T10:52:39.431Z
 **Branch**: xai-trackkols
-**Parent Branch**: master
+**Parent Branch**: staging
 
-## Feature/Fix Description
+---
 
-Create a set of github actions to track X (twitter) KOLs who have an impact in the crypto space and use @BWSXAI account X API to interact with those describing BWS product's hihglights. The goal is to improve BWS endorsement and awareness on X.
+## ⚠️ CRITICAL: Working Directory Boundaries
 
-## Task List
+**YOU ARE IN A WORKTREE** (`.trees/xai-trackkols/`)
 
-- [ ] Using a set of initial KOLs usernames we know can have an impact in the crypto space, extend that list by checking who they follow, and if those have recent posts mentionning crypto and those posts impact (likes, views, shares, etc).
-- [ ] For the growing list of X KOLs we will have, check their last posts using antrhopic API, evaluate if the topic is related to crypto projects and post a reply using the reference of one of our products. The challenge is to create replies that do not sound as spamm.
-- [ ] Both processes should run on a daily basis using Github Actions, the already available anthropic key, and a new set of X api keys for posting as BWSXAI.
+**IMPORTANT RULES:**
+
+1. ✅ **ONLY modify files within THIS worktree directory**
+   - Current worktree path: `/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols`
+   - All your work happens HERE
+
+2. ❌ **NEVER modify files in the root repository**
+   - Root repository path: `/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front`
+   - DO NOT EDIT files outside the worktree
+
+3. 🔍 **Always verify your working directory before file operations**
+   ```bash
+   pwd  # Should show: /mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols
+   ```
+
+4. 🚫 **If you need to modify root files, STOP and ask the user first**
+
+**Why this matters:**
+- Worktrees share the same git repository but have separate working directories
+- Changes to root files affect ALL worktrees and could break parallel development
+- The merge script handles bringing changes back to root safely
+
+**Safe operations from worktree:**
+- ✅ Modify any file in `.trees/xai-trackkols/`
+- ✅ Run tests in `test/` directory
+- ✅ Commit changes with `git commit`
+- ✅ Run `npm run worktree:merge xai-trackkols` from root (script handles it)
+
+**Unsafe operations:**
+- ❌ Modifying `../../` files (root directory)
+- ❌ Running `cd ../..` and editing files there
+- ❌ Using absolute paths to root repository files
+
+---
+
+## What You're Building
+
+[User should fill this in when creating the worktree]
+
+Describe the feature, bug fix, or task you're working on in this worktree.
+
+---
+
+## Task Checklist
+
+[User should fill this in when creating the worktree]
+
+- [ ] Task 1
+- [ ] Task 2
+- [ ] Task 3
+
+---
 
 ## Technical Approach
 
-main components will be X API for querying the initial list of KOLs and find following KOLs, and iterate a certain number of levels (example: KOL1 has 3 KOLs, those 3 KOLS have each 5 KOLs, etc). As we don't have any database, we should use the file system to save KOLs and their graph relationships.
-second component will be the Antropic API to evaluate KOLs posts and 1) evaluate if the content of the post opens the door to a reply (we don't want to spamm) and 2) write a reply including BWS related products information
+[User should fill this in when creating the worktree]
 
-## Testing Strategy
+Outline your implementation plan, architecture decisions, and key considerations.
 
-to verify the system works, we need to check if the list of KOLs grows, and if those are "persons" (the hard part is to evaluate if an account a KOL is following is another KOL, and not a project or business account
-we also need to validate we effectively can write replies to KOLs posts, and check the content is properly formatted and includes at least one of the products reference.
+---
 
 ## Git Workflow for This Worktree
 
-### 1. Rebase from root branch
+### 1. Make Changes
 ```bash
-git fetch origin
-git rebase origin/master
+# Work on your feature in this worktree
+# All file modifications stay within .trees/xai-trackkols/
 ```
 
-### 2. Commit your changes
+### 2. Commit Locally
 ```bash
 git add .
-git commit -m "feat: description"
+git commit -m "feat: description of changes"
 ```
 
-### 3. Run tests before merging
+### 3. Merge to Parent Branch
 ```bash
-cd test
-npm test
+# IMPORTANT: Run from project root, not from worktree
+cd ../..
+npm run worktree:merge xai-trackkols
 ```
 
-### 4. Merge to root (from root directory)
-```bash
-cd ../..  # Return to root
-git checkout master
-git merge --no-ff xai-trackkols
-```
+The merge script will:
+- Validate you're on the correct parent branch (`staging`)
+- Merge with `--no-ff` to preserve history
+- Exclude worktree-specific files
+- Push to remote automatically
 
-### 5. Push to origin
-```bash
-git push origin master
-```
-
-### 6. Remove worktree when done
+### 4. Clean Up (Optional)
 ```bash
 npm run worktree:remove xai-trackkols
 ```
 
 ---
 
-⚠️ **Note**: This file is gitignored and won't be committed. It's for your local context while working in this worktree.
+## Important Notes
+
+- **This file (CLAUDE_INSTRUCTIONS.md) is worktree-specific** and should not be committed
+- Read `CLAUDE.md` for complete workspace boundary rules
+- Use `/check-workspace` command to verify your working location
+- See `docs/worktrees/GIT_WORKFLOW.md` for detailed git workflow guide
+
+---
+
+**Last Updated**: 2025-11-04T10:52:39.431Z

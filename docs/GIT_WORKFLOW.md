@@ -20,7 +20,7 @@ Keep your branch up to date with the main branch before creating commits:
 
 ```bash
 git fetch origin
-git rebase origin/main
+git rebase origin/master
 ```
 
 This ensures:
@@ -116,7 +116,7 @@ cd .trees/feature-name
 git fetch origin
 
 # 3. Rebase your branch onto main
-git rebase origin/main
+git rebase origin/master
 
 # 4. Resolve any conflicts (if needed)
 # Edit conflicting files, then:
@@ -369,7 +369,7 @@ cd .trees/feature-name
 
 # Rebase regularly (at least daily)
 git fetch origin
-git rebase origin/main
+git rebase origin/master
 
 # Run tests after rebase
 cd test && npm test
@@ -381,7 +381,7 @@ cd test && npm test
 # 1. Final rebase
 cd .trees/feature-name
 git fetch origin
-git rebase origin/main
+git rebase origin/master
 
 # 2. Final tests
 cd test && npm test
