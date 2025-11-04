@@ -613,7 +613,7 @@ const latestNews = newsItems.slice(0, 4);
                                       class="top-menu-article-link"
                                     >
                                       <div class="top-menu-article-title">{news.title}</div>
-                                      <div class="top-menu-article-description">{news.description}</div>
+                                      <div class="top-menu-article-description" set:html={news.description}></div>
                                     </a>
                                   </div>
                                 ))}

@@ -1,11 +1,44 @@
 {
-  "replies": [],
-  "dailyStats": {},
+  "replies": [
+    {
+      "id": "4441279246-1985384221444358258-1762241901205",
+      "tweetId": "1985384221444358258",
+      "tweetUrl": "https://twitter.com/IncomeSharks/status/1985384221444358258",
+      "kolId": "4441279246",
+      "kolUsername": "IncomeSharks",
+      "originalTweetText": "Fear and Greed isn't even red yet. Those saying they've never seen sentiment this bad forgot about April. https://t.co/asttt8jlgB",
+      "replyTweetId": "1985612564999651750",
+      "replyText": "Fear periods separate builders from hype chasers. $BWS ships real products at microcap (Fan Game Cube for sports engagement, expanding to iGaming) - not promises. Team keeps building regardless of sentiment. @BWSCommunity https://docs.bws.ninja/marketplace-solutions/bws.nft.gamecube",
+      "productMentioned": "Fan Game Cube",
+      "relevanceScore": 72,
+      "timestamp": "2025-11-04T07:38:21.206Z",
+      "status": "posted",
+      "dryRun": false,
+      "engagement": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "views": 0,
+        "lastChecked": "2025-11-04T07:38:21.206Z"
+      },
+      "error": null
+    }
+  ],
+  "dailyStats": {
+    "2025-11-04": {
+      "repliesPosted": 1,
+      "repliesFailed": 0,
+      "averageRelevance": 72,
+      "productDistribution": {
+        "Fan Game Cube": 1
+      }
+    }
+  },
   "metadata": {
-    "totalReplies": 0,
-    "successfulReplies": 0,
+    "totalReplies": 1,
+    "successfulReplies": 1,
     "failedReplies": 0,
-    "lastReplyAt": null,
+    "lastReplyAt": "2025-11-04T07:38:21.206Z",
     "todayRepliesCount": 0,
     "lastUpdateBy": "kol-system"
   }

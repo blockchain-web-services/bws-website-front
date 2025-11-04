@@ -11,6 +11,42 @@ const { story } = Astro.props;
 const buttons = story.buttons || (story.button ? [story.button] : []);
 ---
 
+<style>
+  /* Make content area fill height to push buttons to bottom */
+  .flex-ngc-announcement .flex-block-13 {
+    display: flex !important;
+    flex-direction: column !important;
+    height: 100% !important;
+  }
+
+  /* Let description grow to fill space */
+  .flex-ngc-announcement .success-story-description {
+    flex-grow: 1 !important;
+  }
+
+  /* Keep buttons at bottom */
+  .flex-ngc-announcement .success-story-buttons {
+    margin-top: auto !important;
+  }
+
+  /* Reduce title font size for better fit */
+  .flex-ngc-announcement .text-block-38 {
+    font-size: 2rem !important;
+  }
+
+  @media screen and (max-width: 767px) {
+    .flex-ngc-announcement .text-block-38 {
+      font-size: 1.7rem !important;
+    }
+  }
+
+  @media screen and (max-width: 479px) {
+    .flex-ngc-announcement .text-block-38 {
+      font-size: 1.5rem !important;
+    }
+  }
+</style>
+
 <div class="w-layout-vflex flex-ngc-announcement single-column">
   <!-- Main content (text and buttons) -->
   <div class="w-layout-vflex flex-block-13">
