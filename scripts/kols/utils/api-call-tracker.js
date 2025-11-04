@@ -21,14 +21,36 @@ class ApiCallTracker {
    * @param {string|null} error - Error message if failed
    */
   recordCall(endpoint, itemsFetched = 0, success = true, error = null) {
-    this.calls.push({
+    const callData = {
       timestamp: new Date().toISOString(),
       endpoint,
       itemsFetched,
       success,
       error,
       duration: Date.now() - this.startTime
-    });
+    };
+
+    this.calls.push(callData);
+
+    // Log immediately in real-time
+    this.logCallRealtime(callData, this.calls.length);
+  }
+
+  /**
+   * Log API call in real-time as it happens
+   * @param {object} call - Call data
+   * @param {number} callNumber - Sequential call number
+   */
+  logCallRealtime(call, callNumber) {
+    const time = new Date(call.timestamp).toISOString().split('T')[1].replace('Z', '');
+    const status = call.success ? '✅' : '❌';
+    const items = call.itemsFetched > 0 ? `${call.itemsFetched} items` : 'no items';
+
+    console.log(`   🔌 API Call #${callNumber} [${time}] ${status} ${call.endpoint} → ${items}`);
+
+    if (!call.success && call.error) {
+      console.log(`      └─ Error: ${call.error}`);
+    }
   }
 
   /**
@@ -93,11 +115,45 @@ class ApiCallTracker {
   }
 
   /**
+   * Display chronological call log
+   */
+  displayCallLog() {
+    if (this.calls.length === 0) {
+      return;
+    }
+
+    console.log('\n' + '='.repeat(70));
+    console.log('📋 CHRONOLOGICAL API CALL LOG');
+    console.log('='.repeat(70));
+    console.log('\n   #    Time          Status  Endpoint                    Items  Error');
+    console.log('   ' + '-'.repeat(66));
+
+    for (let i = 0; i < this.calls.length; i++) {
+      const call = this.calls[i];
+      const time = new Date(call.timestamp).toISOString().split('T')[1].replace('Z', '').substring(0, 12);
+      const status = call.success ? '✅ OK ' : '❌ FAIL';
+      const endpoint = call.endpoint.length > 26 ? call.endpoint.substring(0, 23) + '...' : call.endpoint;
+      const items = call.itemsFetched > 0 ? String(call.itemsFetched).padStart(5) : '    -';
+      const error = call.error ? call.error.substring(0, 30) : '';
+
+      console.log(
+        `   ${String(i + 1).padStart(3)}  ${time}  ${status}  ${endpoint.padEnd(26)}  ${items}  ${error}`
+      );
+    }
+
+    console.log('   ' + '-'.repeat(66));
+    console.log('');
+  }
+
+  /**
    * Display comprehensive statistics
    */
   displayStats() {
     const overall = this.getOverallStats();
     const byEndpoint = this.getStatsByEndpoint();
+
+    // First show chronological log
+    this.displayCallLog();
 
     console.log('\n' + '='.repeat(70));
     console.log('📊 API CONSUMPTION STATISTICS');
