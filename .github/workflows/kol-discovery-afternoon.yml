@@ -15,7 +15,6 @@ permissions:
 
 env:
   NODE_VERSION: "20"
-  MAX_QUERIES: "1"
 
 jobs:
   discover-kols:
@@ -32,16 +31,18 @@ jobs:
 
       - name: Install dependencies
         run: |
-          npm install twitter-api-v2 @anthropic-ai/sdk
+          npm install crawlee playwright @anthropic-ai/sdk
 
-      - name: Run search-based discovery (1 query)
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps chromium
+
+      - name: Run KOL discovery with Crawlee
         id: discover
         env:
-          BWSXAI_TWITTER_BEARER_TOKEN: ${{ secrets.BWSXAI_TWITTER_BEARER_TOKEN }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: |
-          echo "Starting afternoon KOL discovery..."
-          node scripts/kols/discover-by-engagement.js
+          echo "Starting afternoon KOL discovery with Crawlee..."
+          node scripts/kols/discover-crawlee-direct.js
           echo "discover_status=success" >> $GITHUB_OUTPUT
         continue-on-error: true
 
