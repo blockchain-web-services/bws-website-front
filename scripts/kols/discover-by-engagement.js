@@ -46,7 +46,7 @@ async function discoverByEngagement() {
    - Queries to run: ${searchConfig.queries.length}
    - Max tweets per query: ${searchConfig.settings.maxTweetsPerQuery}
    - Engagement tier: ${config.searchDiscovery?.engagementTier || 'tier2'}
-   - Min Followers: ${formatNumber(config.searchDiscovery?.minFollowersOverride || config.kolCriteria.minFollowers)}
+   - Follower range: ${formatNumber(config.searchDiscovery?.minFollowersOverride || config.kolCriteria.minFollowers)} - ${formatNumber(config.kolCriteria.maxFollowers || 'unlimited')}
    - Min Crypto Relevance: ${config.kolCriteria.minCryptoRelevance}%
 `);
 
@@ -225,6 +225,7 @@ async function discoverByEngagement() {
 
   // Filter and evaluate users
   const minFollowers = config.searchDiscovery?.minFollowersOverride || config.kolCriteria.minFollowers;
+  const maxFollowers = config.kolCriteria.maxFollowers;
   const maxToEvaluate = config.rateLimits?.maxKolsToEvaluatePerRun || 999;
 
   console.log('🔍 Evaluating candidates...\n');
@@ -246,6 +247,13 @@ async function discoverByEngagement() {
     // Quick filter: minimum followers
     if (user.public_metrics.followers_count < minFollowers) {
       console.log(`   ⏭️  Skipped: Below minimum followers`);
+      totalSkipped++;
+      continue;
+    }
+
+    // Quick filter: maximum followers (avoid mega accounts)
+    if (maxFollowers && user.public_metrics.followers_count > maxFollowers) {
+      console.log(`   ⏭️  Skipped: Above maximum followers (${formatNumber(maxFollowers)}) - Too large for effective engagement`);
       totalSkipped++;
       continue;
     }

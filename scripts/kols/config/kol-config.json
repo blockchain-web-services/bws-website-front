@@ -8,13 +8,15 @@
       "cobie",
       "DoveyWan",
       "CryptoMichNL",
-      "coinbureau"
+      "coinbureau",
+      "Defi_gazer"
     ],
     "maxKolsPerLevel": 50,
     "processingBatchSize": 2
   },
   "kolCriteria": {
     "minFollowers": 1000,
+    "maxFollowers": 1000000,
     "minCryptoRelevance": 70,
     "recentActivityWindowDays": 7,
     "minEngagementRate": 0.03,

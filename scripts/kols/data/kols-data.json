@@ -167,15 +167,85 @@
       "accountType": "person",
       "lastTweetAnalyzed": null,
       "status": "active"
+    },
+    {
+      "id": "1469101279",
+      "username": "aantonop",
+      "name": "aantonop",
+      "bio": "My team uses this account now. Find me on https://t.co/xXqqqjq7Mt or https://t.co/DrzRPDF6ug\n\n#Bitcoin & Open Blockchains, since 2012. \n\nAuthor of 6 books.",
+      "followersCount": 783111,
+      "followingCount": 0,
+      "tweetCount": 30448,
+      "isVerified": true,
+      "cryptoRelevanceScore": 75,
+      "engagementRate": 0,
+      "avgLikes": 0,
+      "avgViews": 0,
+      "discoveredAt": "2025-11-05T10:40:50.814Z",
+      "lastChecked": "2025-11-05T10:40:50.814Z",
+      "discoveredThrough": "crawlee-direct",
+      "discoveryLevel": 0,
+      "engagementHistory": {
+        "totalPostsAnalyzed": 0,
+        "repliedTo": 0,
+        "lastEngagement": null,
+        "successfulReplies": 0,
+        "failedReplies": 0
+      },
+      "relationships": {
+        "follows": [],
+        "followedBy": []
+      },
+      "recentTopics": [],
+      "cryptoProjects": [],
+      "sentimentTowardsCrypto": "positive",
+      "accountType": "person",
+      "lastTweetAnalyzed": null,
+      "status": "active"
+    },
+    {
+      "id": "1110877798820777986",
+      "username": "SBF_FTX",
+      "name": "SBF_FTX",
+      "bio": "SBF's words. Shared by a friend.\n\n✉️ (monitored): Samuel Bankman-Fried 37244-510, FCI Terminal Island, PO Box 3007, San Pedro, CA 90733",
+      "followersCount": 997165,
+      "followingCount": 2749,
+      "tweetCount": 20781,
+      "isVerified": true,
+      "cryptoRelevanceScore": 85,
+      "engagementRate": 0,
+      "avgLikes": 0,
+      "avgViews": 0,
+      "discoveredAt": "2025-11-05T10:49:33.300Z",
+      "lastChecked": "2025-11-05T10:49:33.300Z",
+      "discoveredThrough": "crawlee-direct",
+      "discoveryLevel": 0,
+      "engagementHistory": {
+        "totalPostsAnalyzed": 0,
+        "repliedTo": 0,
+        "lastEngagement": null,
+        "successfulReplies": 0,
+        "failedReplies": 0
+      },
+      "relationships": {
+        "follows": [],
+        "followedBy": []
+      },
+      "recentTopics": [],
+      "cryptoProjects": [],
+      "sentimentTowardsCrypto": "positive",
+      "accountType": "person",
+      "lastTweetAnalyzed": null,
+      "status": "active"
     }
   ],
   "metadata": {
-    "lastDiscoveryRun": "2025-11-05T09:19:12.169Z",
-    "totalKols": 3,
-    "activeKols": 3,
+    "lastDiscoveryRun": "2025-11-05T11:30:00.000Z",
+    "totalKols": 5,
+    "activeKols": 5,
     "discoveryDepth": 2,
-    "seedKolsCount": 7,
-    "lastUpdateBy": "kol-system",
-    "discoveryMethod": "search-engagement"
+    "seedKolsCount": 3,
+    "lastUpdateBy": "tier-cleanup",
+    "discoveryMethod": "filtered-by-max-followers"
   }
 }

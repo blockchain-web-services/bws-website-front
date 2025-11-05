@@ -15,6 +15,28 @@ export function createReadOnlyClient() {
 }
 
 /**
+ * Initialize read-only OAuth client (OAuth 1.0a read-only)
+ * Use this for operations requiring OAuth like getUserFollowing()
+ */
+export function createReadOnlyOAuthClient() {
+  const apiKey = process.env.BWSXAI_TWITTER_API_KEY;
+  const apiSecret = process.env.BWSXAI_TWITTER_API_SECRET;
+  const accessToken = process.env.BWSXAI_TWITTER_ACCESS_TOKEN;
+  const accessSecret = process.env.BWSXAI_TWITTER_ACCESS_SECRET;
+
+  if (!apiKey || !apiSecret || !accessToken || !accessSecret) {
+    throw new Error('All BWSXAI Twitter OAuth credentials are required');
+  }
+
+  return new TwitterApi({
+    appKey: apiKey,
+    appSecret: apiSecret,
+    accessToken: accessToken,
+    accessSecret: accessSecret,
+  }).readOnly;
+}
+
+/**
  * Initialize read-write Twitter client (OAuth 1.0a)
  */
 export function createReadWriteClient() {
@@ -427,6 +449,7 @@ export { apiTracker };
 
 export default {
   createReadOnlyClient,
+  createReadOnlyOAuthClient,
   createReadWriteClient,
   getUserByUsername,
   getUserFollowing,

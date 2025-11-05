@@ -204,13 +204,15 @@ async function testWebhook() {
 
   console.log('\n✅ All webhook tests completed!\n');
   console.log('📋 Check your Zapier webhook to see all test messages and configure your Zap accordingly.');
-  console.log('\n💡 Simplified 3-field JSON format:');
+  console.log('\n💡 Enhanced 4-field JSON format:');
   console.log('   - Message: Formatted text ready for Slack (includes all details)');
   console.log('   - Timestamp: ISO 8601 timestamp');
   console.log('   - Type: Either "SUCCESS" or "ERROR"');
+  console.log('   - Process: "discovery", "reply", or "error" (identifies the workflow)');
   console.log('\n📝 The Message field contains all information formatted for Slack:');
   console.log('   - Execution results (queries, tweets found, KOLs added, etc.)');
   console.log('   - API consumption statistics');
+  console.log('   - For discovery SUCCESS: Full list of all current KOLs');
   console.log('   - For replies: Our reply text + URL, original tweet + URL');
   console.log('   - Links to GitHub Actions workflow runs');
   console.log('   - Error details (if applicable)');
