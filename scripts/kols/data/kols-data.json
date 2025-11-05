@@ -377,12 +377,47 @@
       "accountType": "person",
       "lastTweetAnalyzed": null,
       "status": "active"
+    },
+    {
+      "id": "1353384573435056128",
+      "username": "CryptoRover",
+      "name": "CryptoRover",
+      "bio": "#Bitcoin Crypto YouTuber (200K+ SUBS) | TG: cryptoroveryt | Cryptocurrency investments are high risk, volatile, and can be dangerous. All tweets are NFA.",
+      "followersCount": 1415790,
+      "followingCount": 523,
+      "tweetCount": 57173,
+      "isVerified": true,
+      "cryptoRelevanceScore": 90,
+      "engagementRate": 0,
+      "avgLikes": 0,
+      "avgViews": 0,
+      "discoveredAt": "2025-11-05T15:44:45.145Z",
+      "lastChecked": "2025-11-05T15:44:45.145Z",
+      "discoveredThrough": "crawlee-direct",
+      "discoveryLevel": 0,
+      "engagementHistory": {
+        "totalPostsAnalyzed": 0,
+        "repliedTo": 0,
+        "lastEngagement": null,
+        "successfulReplies": 0,
+        "failedReplies": 0
+      },
+      "relationships": {
+        "follows": [],
+        "followedBy": []
+      },
+      "recentTopics": [],
+      "cryptoProjects": [],
+      "sentimentTowardsCrypto": "positive",
+      "accountType": "person",
+      "lastTweetAnalyzed": null,
+      "status": "active"
     }
   ],
   "metadata": {
     "lastDiscoveryRun": "2025-11-05T12:00:01.384Z",
-    "totalKols": 9,
-    "activeKols": 9,
+    "totalKols": 10,
+    "activeKols": 10,
     "discoveryDepth": 2,
     "seedKolsCount": 8,
     "lastUpdateBy": "kol-system",
