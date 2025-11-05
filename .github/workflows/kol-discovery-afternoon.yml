@@ -1,10 +1,13 @@
 name: KOL Discovery - Afternoon
 
 on:
-  schedule:
-    - cron: '30 12 * * *'  # 12:30 UTC
-    - cron: '0 15 * * *'   # 15:00 UTC
-    - cron: '0 18 * * *'   # 18:00 UTC
+  # DISABLED: Moved to Option B schedule (Mon/Wed/Fri morning only)
+  # This reduces API quota consumption and prevents 429 rate limit errors
+  # Can still be manually triggered via workflow_dispatch if needed
+  # schedule:
+  #   - cron: '30 12 * * *'  # 12:30 UTC
+  #   - cron: '0 15 * * *'   # 15:00 UTC
+  #   - cron: '0 18 * * *'   # 18:00 UTC
   workflow_dispatch:
 
 permissions:
