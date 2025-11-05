@@ -13,7 +13,9 @@
       "Bash(cat:*)",
       "WebFetch(domain:developer.twitter.com)",
       "WebFetch(domain:developer.x.com)",
-      "WebFetch(domain:docs.x.com)"
+      "WebFetch(domain:docs.x.com)",
+      "WebFetch(domain:crawlee.dev)",
+      "WebFetch(domain:scrapfly.io)"
     ],
     "deny": [],
     "ask": []

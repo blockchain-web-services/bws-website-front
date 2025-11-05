@@ -5,6 +5,7 @@
 
 import https from 'https';
 import http from 'http';
+import { loadKolsData } from './kol-utils.js';
 
 // TODO: Replace this with YOUR webhook URL from Zapier
 // Go to https://zapier.com/app/zaps and create a Zap with "Catch Hook" trigger
@@ -126,6 +127,25 @@ function formatEndpointStats(byEndpoint) {
 }
 
 /**
+ * Format KOL list for Slack display
+ * @param {Array} kols - Array of KOL objects
+ * @returns {string} Formatted text
+ */
+function formatKolList(kols) {
+  const lines = [];
+
+  // Sort by followers count descending
+  const sortedKols = [...kols].sort((a, b) => b.followersCount - a.followersCount);
+
+  sortedKols.forEach((kol, index) => {
+    const followerCount = kol.followersCount.toLocaleString();
+    lines.push(`${index + 1}. @${kol.username} - ${followerCount} followers, ${kol.cryptoRelevanceScore}% relevance`);
+  });
+
+  return lines.join('\n');
+}
+
+/**
  * Send KOL discovery completion notification
  * @param {Object} options - Notification options
  */
@@ -158,6 +178,22 @@ export async function sendDiscoveryNotification(options) {
   textParts.push(`  Queries executed: ${totalQueries}`);
   textParts.push(`  Tweets found: ${tweetsFound}`);
 
+  // Include full KOL list on success
+  if (success) {
+    try {
+      const kolsData = loadKolsData();
+      if (kolsData && kolsData.kols && kolsData.kols.length > 0) {
+        textParts.push('');
+        textParts.push('');
+        textParts.push('*📋 Current KOL List:*');
+        textParts.push(formatKolList(kolsData.kols));
+      }
+    } catch (err) {
+      console.error('Failed to load KOL list for notification:', err.message);
+      // Don't fail the notification if we can't load the list
+    }
+  }
+
   if (apiStats) {
     textParts.push('');
     textParts.push('');
@@ -182,11 +218,12 @@ export async function sendDiscoveryNotification(options) {
     textParts.push(`<${runUrl}|View Workflow Run>`);
   }
 
-  // Simplified 3-field payload
+  // Enhanced payload with Process field
   const payload = {
     Message: textParts.join('\n'),
     Timestamp: new Date().toISOString(),
-    Type: success ? 'SUCCESS' : 'ERROR'
+    Type: success ? 'SUCCESS' : 'ERROR',
+    Process: 'discovery'
   };
 
   try {
@@ -288,11 +325,12 @@ export async function sendReplyNotification(options) {
     textParts.push(`<${runUrl}|View Workflow Run>`);
   }
 
-  // Simplified 3-field payload
+  // Enhanced payload with Process field
   const payload = {
     Message: textParts.join('\n'),
     Timestamp: new Date().toISOString(),
-    Type: success ? 'SUCCESS' : 'ERROR'
+    Type: success ? 'SUCCESS' : 'ERROR',
+    Process: 'reply'
   };
 
   try {
@@ -314,7 +352,8 @@ export async function sendErrorNotification(options) {
     scriptName = 'KOL Script',
     error,
     context = {},
-    runUrl = null
+    runUrl = null,
+    process = 'error'  // 'discovery', 'reply', or 'error'
   } = options;
 
   // Build formatted message
@@ -338,11 +377,12 @@ export async function sendErrorNotification(options) {
     textParts.push(`<${runUrl}|View Workflow Run>`);
   }
 
-  // Simplified 3-field payload
+  // Enhanced payload with Process field
   const payload = {
     Message: textParts.join('\n'),
     Timestamp: new Date().toISOString(),
-    Type: 'ERROR'
+    Type: 'ERROR',
+    Process: process
   };
 
   try {
