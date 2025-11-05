@@ -13,17 +13,63 @@ async function discoverWithCrawlee() {
   const startTime = Date.now();
 
   // Known crypto KOLs to discover
+  // Organized by follower tiers for optimal engagement
   const candidateUsernames = [
-    'VitalikButerin',
-    'cz_binance',
-    'SBF_FTX',
-    'aantonop',
-    'naval',
-    'balajis',
-    'APompliano',
+    // Tier 1: 100K-500K followers (high reach, moderate engagement)
+    'IncomeSharks',
+    'AltcoinSherpa',
+    'cobie',
+    'CryptoKaleo',
+    'CryptoHayes',
+    'WuBlockchain',
+    'CryptoCobain',
+    'CryptoRover',
+    'CryptoWendyO',
+    'TheWolfOfAllSt',
+    'CryptosR_Us',
+    'Pentosh1',
+    'CryptoCapo_',
+    'CryptoMessiah',
+    'GiganticRebirth',
+    'MMCrypto',
+    'AltcoinGordon',
+    'CryptoDonAlt',
+    'CryptoWhale',
     'DocumentingBTC',
-    'DeFiDad',
-    'sassal0x'
+
+    // Tier 2: 50K-100K followers (balanced reach/engagement)
+    'CryptoYoda1338',
+    'TraderMayne',
+    'CryptoGodJohn',
+    'ImBagsy',
+    'CryptoPosedon',
+    'BTC_Archive',
+    'thedefiedge',
+    'MacroScope17',
+    'DefiIgnas',
+    'DeFi_Dad',
+    'sassal0x',
+    'ChainLinkGod',
+    'NansenAI',
+    'DuneAnalytics',
+    'CryptoMichNL',
+
+    // Tier 3: 10K-50K followers (high engagement, niche audiences)
+    'MilesDeutscher',
+    'LomahCrypto',
+    'AdamScochran',
+    'CryptoCred',
+    'TheCryptoDog',
+    'cryptoyieldinfo',
+    'CryptoGainz1',
+    'SmartContracter',
+    'KoroushAK',
+    'TheCryptoCactus',
+    'AltcoinPsycho',
+    'DoveyWan',
+    'Defi_gazer',
+    'AltcoinDailyio',
+    'coinbureau'
   ];
 
   const results = {
