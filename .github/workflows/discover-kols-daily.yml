@@ -35,20 +35,18 @@ jobs:
           fi
 
       - name: Install script dependencies
-        run: npm install twitter-api-v2 @anthropic-ai/sdk
+        run: npm install crawlee playwright @anthropic-ai/sdk
+
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps chromium
 
       - name: Run KOL discovery
         id: discover
         env:
-          BWSXAI_TWITTER_BEARER_TOKEN: ${{ secrets.BWSXAI_TWITTER_BEARER_TOKEN }}
-          BWSXAI_TWITTER_API_KEY: ${{ secrets.BWSXAI_TWITTER_API_KEY }}
-          BWSXAI_TWITTER_API_SECRET: ${{ secrets.BWSXAI_TWITTER_API_SECRET }}
-          BWSXAI_TWITTER_ACCESS_TOKEN: ${{ secrets.BWSXAI_TWITTER_ACCESS_TOKEN }}
-          BWSXAI_TWITTER_ACCESS_SECRET: ${{ secrets.BWSXAI_TWITTER_ACCESS_SECRET }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: |
-          echo "Starting KOL discovery..."
-          node scripts/kols/discover-kols.js
+          echo "Starting KOL discovery with Crawlee..."
+          node scripts/kols/discover-crawlee-direct.js
           echo "discover_status=success" >> $GITHUB_OUTPUT
         continue-on-error: true
 
