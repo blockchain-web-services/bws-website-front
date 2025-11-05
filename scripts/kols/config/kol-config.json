@@ -2,7 +2,6 @@
   "discovery": {
     "maxDepth": 2,
     "seedKols": [
-      "IncomeSharks",
       "AltcoinSherpa",
       "AltcoinDailyio",
       "cobie",

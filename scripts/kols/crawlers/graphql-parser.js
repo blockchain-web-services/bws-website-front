@@ -80,7 +80,50 @@ export function parseUserProfile(graphqlResponse) {
  */
 export function parseSearchResults(graphqlResponse) {
   try {
-    const instructions = graphqlResponse?.data?.search_by_raw_query?.search_timeline?.timeline?.instructions || [];
+    // Try multiple possible paths for search results
+    let instructions = null;
+
+    // Path 1: Original path
+    if (graphqlResponse?.data?.search_by_raw_query?.search_timeline?.timeline?.instructions) {
+      instructions = graphqlResponse.data.search_by_raw_query.search_timeline.timeline.instructions;
+      console.log('   📍 Found search data at: data.search_by_raw_query.search_timeline.timeline.instructions');
+    }
+    // Path 2: Alternative search timeline path
+    else if (graphqlResponse?.data?.search?.search_timeline?.timeline?.instructions) {
+      instructions = graphqlResponse.data.search.search_timeline.timeline.instructions;
+      console.log('   📍 Found search data at: data.search.search_timeline.timeline.instructions');
+    }
+    // Path 3: Direct timeline path
+    else if (graphqlResponse?.data?.timeline?.instructions) {
+      instructions = graphqlResponse.data.timeline.instructions;
+      console.log('   📍 Found search data at: data.timeline.instructions');
+    }
+    // Path 4: Search timeline without raw query
+    else if (graphqlResponse?.data?.search_timeline?.timeline?.instructions) {
+      instructions = graphqlResponse.data.search_timeline.timeline.instructions;
+      console.log('   📍 Found search data at: data.search_timeline.timeline.instructions');
+    }
+
+    // Debug: Log the actual structure if we didn't find instructions
+    if (!instructions) {
+      console.log('   ⚠️  Could not find instructions in GraphQL response');
+
+      // Try to identify what paths exist
+      if (graphqlResponse?.data) {
+        const topLevelKeys = Object.keys(graphqlResponse.data);
+        console.log('   📊 Available top-level data keys:', topLevelKeys);
+
+        // Try recursive search for tweet data
+        const foundTweets = recursivelyFindTweets(graphqlResponse);
+        if (foundTweets.length > 0) {
+          console.log(`   ✅ Found ${foundTweets.length} tweets via recursive search`);
+          return foundTweets;
+        }
+      }
+
+      return [];
+    }
+
     const tweets = [];
 
     for (const instruction of instructions) {
@@ -108,8 +151,44 @@ export function parseSearchResults(graphqlResponse) {
     return tweets;
   } catch (error) {
     console.error('Error parsing search results:', error.message);
+    console.error('Stack:', error.stack);
     return [];
   }
+}
+
+/**
+ * Recursively search for tweet data in GraphQL response
+ * Fallback when standard paths don't work
+ */
+function recursivelyFindTweets(obj, depth = 0, maxDepth = 10) {
+  if (depth > maxDepth || !obj || typeof obj !== 'object') return [];
+
+  const tweets = [];
+
+  // Check if this object looks like a tweet
+  if (obj.rest_id && obj.legacy?.full_text) {
+    const tweet = parseTweet(obj);
+    if (tweet) tweets.push(tweet);
+  }
+
+  // Check if this object has tweet_results.result
+  if (obj.tweet_results?.result) {
+    const tweet = parseTweet(obj.tweet_results.result);
+    if (tweet) tweets.push(tweet);
+  }
+
+  // Recurse into arrays and objects
+  for (const key in obj) {
+    if (Array.isArray(obj[key])) {
+      for (const item of obj[key]) {
+        tweets.push(...recursivelyFindTweets(item, depth + 1, maxDepth));
+      }
+    } else if (typeof obj[key] === 'object' && obj[key] !== null) {
+      tweets.push(...recursivelyFindTweets(obj[key], depth + 1, maxDepth));
+    }
+  }
+
+  return tweets;
 }
 
 /**
