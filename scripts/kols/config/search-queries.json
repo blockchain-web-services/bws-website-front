@@ -43,60 +43,32 @@
       "description": "Users discussing HOOD with community engagement (last 24h)"
     },
     {
-      "name": "solana-discussion",
-      "query": "(SOL OR Solana) crypto lang:en -is:retweet min_faves:10",
-      "category": "altcoin",
+      "name": "messierm87-mentions",
+      "query": "@MessierM87 lang:en -is:retweet min_faves:5",
+      "category": "microcap",
       "priority": 3,
-      "description": "High-engagement posts about Solana (SOL)"
+      "description": "High-engagement posts mentioning @MessierM87"
     },
     {
-      "name": "avalanche-discussion",
-      "query": "(AVAX OR Avalanche) crypto lang:en -is:retweet min_faves:10",
-      "category": "altcoin",
+      "name": "m87-hashtag",
+      "query": "#M87 crypto lang:en -is:retweet min_faves:5",
+      "category": "microcap",
       "priority": 3,
-      "description": "High-engagement posts about Avalanche (AVAX)"
+      "description": "High-engagement posts about #M87"
     },
     {
-      "name": "arbitrum-discussion",
-      "query": "(ARB OR Arbitrum) crypto lang:en -is:retweet min_faves:10",
-      "category": "altcoin",
+      "name": "trac-discussion",
+      "query": "$TRAC lang:en -is:retweet min_faves:5",
+      "category": "microcap",
       "priority": 3,
-      "description": "High-engagement posts about Arbitrum (ARB)"
+      "description": "High-engagement posts about $TRAC token"
     },
     {
-      "name": "optimism-discussion",
-      "query": "(OP OR Optimism) layer2 lang:en -is:retweet min_faves:10",
-      "category": "altcoin",
+      "name": "dash-discussion",
+      "query": "$DASH crypto lang:en -is:retweet min_faves:5",
+      "category": "microcap",
       "priority": 3,
-      "description": "High-engagement posts about Optimism (OP)"
-    },
-    {
-      "name": "polygon-discussion",
-      "query": "(MATIC OR Polygon) crypto lang:en -is:retweet min_faves:10",
-      "category": "altcoin",
-      "priority": 3,
-      "description": "High-engagement posts about Polygon (MATIC)"
-    },
-    {
-      "name": "chainlink-discussion",
-      "query": "(LINK OR Chainlink) oracle lang:en -is:retweet min_faves:10",
-      "category": "altcoin",
-      "priority": 3,
-      "description": "High-engagement posts about Chainlink (LINK)"
-    },
-    {
-      "name": "sui-discussion",
-      "query": "(SUI OR \"Sui Network\") crypto lang:en -is:retweet min_faves:10",
-      "category": "altcoin",
-      "priority": 3,
-      "description": "High-engagement posts about Sui Network"
-    },
-    {
-      "name": "aptos-discussion",
-      "query": "(APT OR Aptos) crypto lang:en -is:retweet min_faves:10",
-      "category": "altcoin",
-      "priority": 3,
-      "description": "High-engagement posts about Aptos (APT)"
+      "description": "High-engagement posts about $DASH token"
     }
   ],
   "engagementThresholds": {
