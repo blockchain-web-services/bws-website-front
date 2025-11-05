@@ -16,7 +16,7 @@
   },
   "kolCriteria": {
     "minFollowers": 10000,
-    "maxFollowers": 2000000,
+    "maxFollowers": 1000000,
     "minCryptoRelevance": 70,
     "recentActivityWindowDays": 7,
     "minEngagementRate": 0.02,
