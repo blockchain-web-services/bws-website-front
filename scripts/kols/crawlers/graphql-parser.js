@@ -80,6 +80,33 @@ export function parseUserProfile(graphqlResponse) {
  */
 export function parseSearchResults(graphqlResponse) {
   try {
+    // DEEP DEBUG: Log response structure
+    if (!graphqlResponse) {
+      console.log('   ❌ GraphQL response is null/undefined');
+      return [];
+    }
+
+    const responseKeys = Object.keys(graphqlResponse);
+    console.log('   🔍 GraphQL response top-level keys:', responseKeys.join(', '));
+
+    // Check if it has 'data' key
+    if (!graphqlResponse.data) {
+      console.log('   ⚠️  Response has no "data" key');
+
+      // Log first 500 chars of response for debugging
+      const responsePreview = JSON.stringify(graphqlResponse).substring(0, 500);
+      console.log('   📄 Response preview:', responsePreview);
+
+      // Try recursive search anyway
+      const foundTweets = recursivelyFindTweets(graphqlResponse);
+      if (foundTweets.length > 0) {
+        console.log(`   ✅ Found ${foundTweets.length} tweets via recursive search (no data key)`);
+        return foundTweets;
+      }
+
+      return [];
+    }
+
     // Try multiple possible paths for search results
     let instructions = null;
 
@@ -108,17 +135,15 @@ export function parseSearchResults(graphqlResponse) {
     if (!instructions) {
       console.log('   ⚠️  Could not find instructions in GraphQL response');
 
-      // Try to identify what paths exist
-      if (graphqlResponse?.data) {
-        const topLevelKeys = Object.keys(graphqlResponse.data);
-        console.log('   📊 Available top-level data keys:', topLevelKeys);
+      // Log what's actually in data
+      const dataKeys = Object.keys(graphqlResponse.data);
+      console.log('   📊 Available data keys:', dataKeys.join(', '));
 
-        // Try recursive search for tweet data
-        const foundTweets = recursivelyFindTweets(graphqlResponse);
-        if (foundTweets.length > 0) {
-          console.log(`   ✅ Found ${foundTweets.length} tweets via recursive search`);
-          return foundTweets;
-        }
+      // Try recursive search for tweet data
+      const foundTweets = recursivelyFindTweets(graphqlResponse);
+      if (foundTweets.length > 0) {
+        console.log(`   ✅ Found ${foundTweets.length} tweets via recursive search`);
+        return foundTweets;
       }
 
       return [];
