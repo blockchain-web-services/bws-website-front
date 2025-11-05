@@ -45,6 +45,52 @@
         "lastChecked": "2025-11-05T12:14:13.931Z"
       },
       "error": null
+    },
+    {
+      "id": "4441279246-1985804165562691650-1762357095967",
+      "tweetId": "1985804165562691650",
+      "tweetUrl": "https://twitter.com/IncomeSharks/status/1985804165562691650",
+      "kolId": "4441279246",
+      "kolUsername": "IncomeSharks",
+      "originalTweetText": "$ICP - Instead of trying to knife catch longs on Bitcoin and Ethereum I'd be looking at what's showing strength. If those bounce these altcoins should continue to fly. https://t.co/bhOBdtHoKy https://t.co/THa3oDIB90",
+      "replyTweetId": "1986095726900760612",
+      "replyText": "While most chase momentum, $BWS ships real blockchain infrastructure at microcap valuation - Blockchain Badges for verifiable credentials, Fan Game Cube for sports engagement, ESG reporting tools. Multiple live products, consistent delivery. @BWSCommunity https://www.bws.ninja",
+      "productMentioned": "Blockchain Badges",
+      "relevanceScore": 82,
+      "timestamp": "2025-11-05T15:38:15.967Z",
+      "status": "posted",
+      "dryRun": false,
+      "engagement": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "views": 0,
+        "lastChecked": "2025-11-05T15:38:15.967Z"
+      },
+      "error": null
+    },
+    {
+      "id": "983993370048630785-1985990233062580345-1762358966443",
+      "tweetId": "1985990233062580345",
+      "tweetUrl": "https://twitter.com/CryptoHayes/status/1985990233062580345",
+      "kolId": "983993370048630785",
+      "kolUsername": "CryptoHayes",
+      "originalTweetText": "Team Red got smoked today by Team Blue in the US. Time for Trump &amp; Bessent to run the printer back turbo in 2026 to hand out goodies so Team Red doesn’t lose big in Nov ‘26. I hope ur long $BTC and $ZEC.",
+      "replyTweetId": null,
+      "replyText": "Agree on the liquidity cycle ahead. Beyond majors, $BWS offers exposure to fundamentals-driven infrastructure - Blockchain Solutions Marketplace with multiple live products (verifiable credentials, sports engagement, ESG reporting). Real traction, microcap valuation. @BWSCommunity https://www.bws.ninja",
+      "productMentioned": "Blockchain Badges",
+      "relevanceScore": 72,
+      "timestamp": "2025-11-05T16:09:26.443Z",
+      "status": "failed",
+      "dryRun": false,
+      "engagement": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "views": 0,
+        "lastChecked": "2025-11-05T16:09:26.443Z"
+      },
+      "error": "Request failed with code 403"
     }
   ],
   "dailyStats": {
@@ -57,19 +103,20 @@
       }
     },
     "2025-11-05": {
-      "repliesPosted": 1,
-      "repliesFailed": 0,
-      "averageRelevance": 72,
+      "repliesPosted": 2,
+      "repliesFailed": 1,
+      "averageRelevance": 75,
       "productDistribution": {
-        "X Bot": 1
+        "X Bot": 1,
+        "Blockchain Badges": 2
       }
     }
   },
   "metadata": {
-    "totalReplies": 2,
-    "successfulReplies": 2,
-    "failedReplies": 0,
-    "lastReplyAt": "2025-11-05T12:14:13.931Z",
+    "totalReplies": 4,
+    "successfulReplies": 3,
+    "failedReplies": 1,
+    "lastReplyAt": "2025-11-05T16:09:26.443Z",
     "todayRepliesCount": 0,
     "lastUpdateBy": "kol-system"
   }
