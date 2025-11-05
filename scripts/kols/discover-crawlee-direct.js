@@ -5,6 +5,7 @@
 
 import { getUserProfile } from './crawlers/twitter-crawler.js';
 import { loadConfig, loadKolsData, saveKolsData } from './utils/kol-utils.js';
+import { sendDiscoveryNotification } from './utils/zapier-webhook.js';
 
 async function discoverWithCrawlee() {
   console.log('🔍 KOL DISCOVERY - CRAWLEE MODE');
@@ -265,6 +266,22 @@ async function discoverWithCrawlee() {
   console.log('\n' + '='.repeat(60));
   console.log(`✅ Discovery complete! Added ${results.kolsAdded} new KOLs`);
   console.log('='.repeat(60) + '\n');
+
+  // Send Zapier notification
+  try {
+    await sendDiscoveryNotification({
+      scriptName: 'KOL Discovery (Crawlee)',
+      success: true,
+      totalQueries: results.candidatesChecked,
+      tweetsFound: 0, // Not applicable for profile discovery
+      kolsAdded: results.kolsAdded,
+      totalKols: kolsData.kols.length,
+      runUrl: process.env.GITHUB_RUN_URL || null
+    });
+  } catch (notificationError) {
+    console.error('⚠️  Failed to send Zapier notification:', notificationError.message);
+    // Don't fail the whole script if notification fails
+  }
 
   return results;
 }
