@@ -91,6 +91,29 @@
         "lastChecked": "2025-11-05T16:09:26.443Z"
       },
       "error": "Request failed with code 403"
+    },
+    {
+      "id": "4441279246-1986134787644661791-1762376839103",
+      "tweetId": "1986134787644661791",
+      "tweetUrl": "https://twitter.com/IncomeSharks/status/1986134787644661791",
+      "kolId": "4441279246",
+      "kolUsername": "IncomeSharks",
+      "originalTweetText": "You should treat being bullish or bearish as a sliding scale, too many treat it as black/white, all in or going to zero. From a scale from 1 (Bearish) to 10 (Bullish) I've been at a 3 for a few weeks, after the dump (we eliminated risk) I'm back to a 4. Bull posting starts at 5",
+      "replyTweetId": "1986178535501808034",
+      "replyText": "The 3-5 range is where patient accumulators find microcaps with real utility. $BWS X Bot delivers verifiable Twitter analytics via official API - helps investors separate authentic traction from bot farms during these cautious phases. @BWSCommunity https://docs.bws.ninja/telegram-bots/x-bot",
+      "productMentioned": "X Bot",
+      "relevanceScore": 72,
+      "timestamp": "2025-11-05T21:07:19.103Z",
+      "status": "posted",
+      "dryRun": false,
+      "engagement": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "views": 0,
+        "lastChecked": "2025-11-05T21:07:19.103Z"
+      },
+      "error": null
     }
   ],
   "dailyStats": {
@@ -103,20 +126,20 @@
       }
     },
     "2025-11-05": {
-      "repliesPosted": 2,
+      "repliesPosted": 3,
       "repliesFailed": 1,
       "averageRelevance": 75,
       "productDistribution": {
-        "X Bot": 1,
+        "X Bot": 2,
         "Blockchain Badges": 2
       }
     }
   },
   "metadata": {
-    "totalReplies": 4,
-    "successfulReplies": 3,
+    "totalReplies": 5,
+    "successfulReplies": 4,
     "failedReplies": 1,
-    "lastReplyAt": "2025-11-05T16:09:26.443Z",
+    "lastReplyAt": "2025-11-05T21:07:19.103Z",
     "todayRepliesCount": 0,
     "lastUpdateBy": "kol-system"
   }
