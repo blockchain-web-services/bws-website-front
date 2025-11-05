@@ -268,6 +268,7 @@ async function discoverWithCrawlee() {
   console.log('='.repeat(60) + '\n');
 
   // Send Zapier notification
+  console.log('\n🔔 Sending Zapier notification...');
   try {
     await sendDiscoveryNotification({
       scriptName: 'KOL Discovery (Crawlee)',
@@ -278,8 +279,10 @@ async function discoverWithCrawlee() {
       totalKols: kolsData.kols.length,
       runUrl: process.env.GITHUB_RUN_URL || null
     });
+    console.log('✅ Zapier notification sent successfully');
   } catch (notificationError) {
     console.error('⚠️  Failed to send Zapier notification:', notificationError.message);
+    console.error('   Error stack:', notificationError.stack);
     // Don't fail the whole script if notification fails
   }
 
