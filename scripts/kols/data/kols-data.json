@@ -342,12 +342,47 @@
       "accountType": "person",
       "lastTweetAnalyzed": null,
       "status": "active"
+    },
+    {
+      "id": "935742315389444096",
+      "username": "CryptoWendyO",
+      "name": "CryptoWendyO",
+      "bio": "Media Shock Jock | Bitcoin + Crypto News | Fun Posts | Contact @The_O_Show_ CryptoWendyO@protonmail.com | https://t.co/cvNQvouXbZ",
+      "followersCount": 458634,
+      "followingCount": 834,
+      "tweetCount": 71033,
+      "isVerified": true,
+      "cryptoRelevanceScore": 90,
+      "engagementRate": 0,
+      "avgLikes": 0,
+      "avgViews": 0,
+      "discoveredAt": "2025-11-05T15:13:45.648Z",
+      "lastChecked": "2025-11-05T15:13:45.649Z",
+      "discoveredThrough": "crawlee-direct",
+      "discoveryLevel": 0,
+      "engagementHistory": {
+        "totalPostsAnalyzed": 0,
+        "repliedTo": 0,
+        "lastEngagement": null,
+        "successfulReplies": 0,
+        "failedReplies": 0
+      },
+      "relationships": {
+        "follows": [],
+        "followedBy": []
+      },
+      "recentTopics": [],
+      "cryptoProjects": [],
+      "sentimentTowardsCrypto": "positive",
+      "accountType": "person",
+      "lastTweetAnalyzed": null,
+      "status": "active"
     }
   ],
   "metadata": {
     "lastDiscoveryRun": "2025-11-05T12:00:01.384Z",
-    "totalKols": 8,
-    "activeKols": 8,
+    "totalKols": 9,
+    "activeKols": 9,
     "discoveryDepth": 2,
     "seedKolsCount": 8,
     "lastUpdateBy": "kol-system",
