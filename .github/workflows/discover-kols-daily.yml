@@ -2,7 +2,7 @@ name: Daily KOL Discovery
 
 on:
   schedule:
-    - cron: '0 6 * * *'  # Run daily at 6 AM UTC
+    - cron: '0 6 * * 2,4,6'  # Run Tue/Thu/Sat at 6 AM UTC (Option B schedule)
   workflow_dispatch:  # Allow manual trigger
 
 permissions:
