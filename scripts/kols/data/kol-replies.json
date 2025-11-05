@@ -22,6 +22,29 @@
         "lastChecked": "2025-11-04T07:38:21.206Z"
       },
       "error": null
+    },
+    {
+      "id": "4441279246-1985754534652887476-1762344853931",
+      "tweetId": "1985754534652887476",
+      "tweetUrl": "https://twitter.com/IncomeSharks/status/1985754534652887476",
+      "kolId": "4441279246",
+      "kolUsername": "IncomeSharks",
+      "originalTweetText": "Current discounts\n$BTC - Down 18% from ATH\n$ETH - Down 30% from ATH\n$SOL - Down 38% from ATH\n\nI think when these start approaching 24%, 38%, and 48% (BTC, ETH, SOL) the discounts become pretty hard to pass up on.",
+      "replyTweetId": "1986044379979821112",
+      "replyText": "While blue chips offer those discounts, microcaps with real utility trade even deeper. $BWS X Bot helps investors verify authentic Twitter engagement via official API - separate real traction from bot farms during accumulation phases. @BWSCommunity https://docs.bws.ninja/telegram-bots/x-bot",
+      "productMentioned": "X Bot",
+      "relevanceScore": 72,
+      "timestamp": "2025-11-05T12:14:13.931Z",
+      "status": "posted",
+      "dryRun": false,
+      "engagement": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "views": 0,
+        "lastChecked": "2025-11-05T12:14:13.931Z"
+      },
+      "error": null
     }
   ],
   "dailyStats": {
@@ -32,13 +55,21 @@
       "productDistribution": {
         "Fan Game Cube": 1
       }
+    },
+    "2025-11-05": {
+      "repliesPosted": 1,
+      "repliesFailed": 0,
+      "averageRelevance": 72,
+      "productDistribution": {
+        "X Bot": 1
+      }
     }
   },
   "metadata": {
-    "totalReplies": 1,
-    "successfulReplies": 1,
+    "totalReplies": 2,
+    "successfulReplies": 2,
     "failedReplies": 0,
-    "lastReplyAt": "2025-11-04T07:38:21.206Z",
+    "lastReplyAt": "2025-11-05T12:14:13.931Z",
     "todayRepliesCount": 0,
     "lastUpdateBy": "kol-system"
   }
