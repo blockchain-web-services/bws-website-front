@@ -70,7 +70,14 @@ async function discoverWithCrawlee() {
     'DoveyWan',
     'Defi_gazer',
     'AltcoinDailyio',
-    'coinbureau'
+    'coinbureau',
+
+    // Tier 4: Additional smaller accounts (10K-100K)
+    'TheMoonCarl',
+    'CryptoTea_',
+    'CryptoRUs',
+    'AltcoinBuzz',
+    'Crypto_Bitlord'
   ];
 
   const results = {
