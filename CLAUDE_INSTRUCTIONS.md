@@ -2,7 +2,7 @@
 
 **Created**: 2025-11-04T14:42:47.398Z
 **Branch**: xai-trackkols
-**Parent Branch**: staging
+**Parent Branch**: master
 
 ---
 
@@ -93,7 +93,7 @@ npm run worktree:merge xai-trackkols
 ```
 
 The merge script will:
-- Validate you're on the correct parent branch (`staging`)
+- Validate you're on the correct parent branch (`master`)
 - Merge with `--no-ff` to preserve history
 - Exclude worktree-specific files
 - Push to remote automatically
@@ -114,4 +114,4 @@ npm run worktree:remove xai-trackkols
 
 ---
 
-**Last Updated**: 2025-11-04T14:42:47.398Z
+**Last Updated**: 2025-11-04T19:30:00.000Z
