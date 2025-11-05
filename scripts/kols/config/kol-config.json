@@ -11,25 +11,25 @@
       "coinbureau",
       "Defi_gazer"
     ],
-    "maxKolsPerLevel": 50,
-    "processingBatchSize": 2
+    "maxKolsPerLevel": 100,
+    "processingBatchSize": 5
   },
   "kolCriteria": {
-    "minFollowers": 1000,
+    "minFollowers": 10000,
     "maxFollowers": 1000000,
     "minCryptoRelevance": 70,
     "recentActivityWindowDays": 7,
-    "minEngagementRate": 0.03,
+    "minEngagementRate": 0.02,
     "minAverageLikes": 10,
     "minAverageViews": 100,
     "requireVerified": false
   },
   "replySettings": {
-    "maxRepliesPerRun": 2,
-    "maxRepliesPerDay": 10,
-    "maxRepliesPerKolPerWeek": 3,
+    "maxRepliesPerRun": 3,
+    "maxRepliesPerDay": 15,
+    "maxRepliesPerKolPerWeek": 4,
     "minRelevanceScoreForReply": 60,
-    "minTimeBetweenRepliesMinutes": 30,
+    "minTimeBetweenRepliesMinutes": 20,
     "dryRun": false
   },
   "rateLimits": {
@@ -37,7 +37,7 @@
     "claudeApiCallsPerMinute": 50,
     "waitBetweenBatchesMs": 10000,
     "maxSearchQueriesPerRun": 2,
-    "maxKolsToEvaluatePerRun": 30
+    "maxKolsToEvaluatePerRun": 50
   },
   "bwsProductsSource": "docs-index.json",
   "spamPrevention": {
