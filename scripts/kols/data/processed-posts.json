@@ -285,14 +285,13 @@
   "scrapflyStatus": {
     "enabled": true,
     "lastSuccess": null,
-    "consecutiveFailures": 0,
-    "lastError": null,
-    "fallbackActive": false,
+    "consecutiveFailures": 1,
+    "lastError": "kols.map is not a function",
+    "fallbackActive": true,
     "creditsRemaining": null
   },
   "queryRotation": {
-    "lastIndex": 0,
-    "lastCategory": null,
-    "lastUpdated": null
+    "lastIndex": 6,
+    "lastUpdated": "2025-11-06T18:08:41.492Z"
   }
 }
