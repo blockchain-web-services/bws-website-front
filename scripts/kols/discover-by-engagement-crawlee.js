@@ -4,6 +4,10 @@
  * Discovers crypto KOLs by mining high-engagement tweets
  */
 
+// Load environment variables from .env file
+import dotenv from 'dotenv';
+dotenv.config();
+
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';

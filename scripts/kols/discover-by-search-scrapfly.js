@@ -3,6 +3,10 @@
  * Searches X/Twitter for KOLs and engaging posts using ScrapFly API
  */
 
+// Load environment variables from .env file (local dev only, GitHub Actions uses secrets)
+import dotenv from 'dotenv';
+dotenv.config();
+
 import ScrapFlyClient from './utils/scrapfly-client.js';
 import { getTrendingQueries } from './utils/trending-topics.js';
 import { handleScrapFlyError, handleScrapFlySuccess } from './utils/scrapfly-error-handler.js';

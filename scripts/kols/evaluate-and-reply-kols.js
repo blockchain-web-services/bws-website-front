@@ -1,3 +1,7 @@
+// Load environment variables from .env file (local dev only, GitHub Actions uses secrets)
+import dotenv from 'dotenv';
+dotenv.config();
+
 import {
   loadConfig,
   loadBWSProducts,
