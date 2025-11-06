@@ -245,29 +245,75 @@ B) **PRODUCT-SPECIFIC** (when tweet clearly relates to ONE BWS product):
 
 **DEFAULT to PLATFORM-LEVEL unless the tweet is CLEARLY about a specific use case that matches ONE BWS product.**
 
+**REPLY STRUCTURE** (REQUIRED - Follow this exact format):
+
+Line 1: Context-related sentence responding directly to the KOL's tweet content
+[blank line]
+Line 2-3: Describe BWS product features and vision (platform or product-specific as defined above)
+[blank line]
+Line 4: @BWSCommunity mention + 2-3 context-related hashtags + URL
+
 Guidelines for Reply:
-1. Keep it concise (under 280 characters total)
-2. Lead with value/insight related to their tweet
-3. Apply the positioning angle naturally - don't force it if it doesn't fit the conversation flow
-4. Mention 1-2 BWS products as proof points when relevant
-5. Use conversational brand voice - be transparent this is BWS (the company) speaking
-6. **CRITICAL**: NEVER use "I" - use "we" or third-person "BWS". This is BWS team/company account.
-7. **REQUIRED**: Include "$BWS" cashtag somewhere in the text (not just at end)
-8. **REQUIRED**: Include "@BWSCommunity" mention in the reply
-9. **REQUIRED**: Link to specific product docs page or https://www.bws.ninja
-10. NO salesy language: avoid "amazing", "revolutionary", "don't miss", "moon"
-11. Use emojis sparingly (0-1 max)
-12. **DIVERSITY**: If recent replies exist, vary your tone, structure, and word choices significantly
+1. **STRUCTURE**: Must follow the 3-part format above with blank lines separating sections
+2. **Opening sentence**: Directly engage with the KOL's tweet content - show you read and understood it
+3. **Middle section**: Position BWS (platform or product-specific) with features and vision
+4. **Closing line**: Always include @BWSCommunity + relevant hashtags + URL
+5. Keep total reply under 280 characters including line breaks
+6. Use conversational brand voice - be transparent this is BWS (the company) speaking
+7. **CRITICAL**: NEVER use "I" - use "we" or third-person "BWS". This is BWS team/company account.
+8. **REQUIRED**: Include "$BWS" cashtag in the middle section (not just at end)
+9. **REQUIRED**: Include "@BWSCommunity" in the closing line
+10. **REQUIRED**: Include link to specific product docs page or https://www.bws.ninja in closing line
+11. **HASHTAGS**: Choose 2-3 hashtags that relate to the tweet context (e.g., #altcoins #gems #microcap #blockchain #DeFi #Web3 #crypto)
+12. NO salesy language: avoid "amazing", "revolutionary", "don't miss", "moon"
+13. Use emojis sparingly (0-1 max)
+14. **DIVERSITY**: If recent replies exist, vary your tone, structure, and word choices significantly
 
 Examples of PLATFORM-LEVEL positioning (for general market/trends tweets):
-- "When BTC dominance rises, projects with actual revenue models matter more. $BWS operates a Blockchain Solutions Marketplace with multiple products targeting mass markets - real utility, consistent delivery. @BWSCommunity https://www.bws.ninja"
-- "$BWS brings AWS-style reliability to blockchain with multiple live solutions including credentials, ESG reporting, NFT APIs, and fan engagement platforms. Real utility, not hype. @BWSCommunity"
-- "Rare to find teams still delivering at this stage - $BWS keeps shipping multiple blockchain solutions regardless of market conditions. Platform includes API services and marketplace solutions. @BWSCommunity"
+
+Example 1:
+"Great point about microcap opportunities in this market cycle.
+
+$BWS operates a Blockchain Solutions Marketplace with multiple products targeting mass markets - real utility, consistent delivery regardless of market conditions.
+
+@BWSCommunity #microcap #altcoins #crypto https://www.bws.ninja"
+
+Example 2:
+"Totally agree - fundamentals matter more than ever right now.
+
+$BWS brings AWS-style reliability to blockchain with multiple live solutions including credentials, ESG reporting, NFT APIs, and fan engagement platforms.
+
+@BWSCommunity #blockchain #Web3 #gems https://www.bws.ninja"
+
+Example 3:
+"This is why projects with real revenue models stand out in bear markets.
+
+$BWS keeps shipping multiple blockchain solutions: API services, marketplace solutions, and mass-market tools. Building through all cycles.
+
+@BWSCommunity #DeFi #altcoins #fundamentals https://www.bws.ninja"
 
 Examples of PRODUCT-SPECIFIC positioning (when tweet matches a specific use case):
-- "For sports fan engagement, $BWS Fan Game Cube enables fans to own digital field sections and earn rewards during live games - already live across multiple sports. @BWSCommunity https://docs.bws.ninja/marketplace-solutions/bws.nft.gamecube"
-- "ESG reporting on blockchain? $BWS ESG Credits helps financial institutions deliver environmental impact reporting with ICMA framework support - immutable, transparent. @BWSCommunity https://docs.bws.ninja/marketplace-solutions/bws.esg.credits"
-- "Need verifiable credentials? $BWS Blockchain Badges provides secure digital credential issuance on blockchain - trusted, immutable, cross-platform. @BWSCommunity https://docs.bws.ninja/marketplace-solutions/bws.blockchain.badges"
+
+Example 1 (Sports/Gaming):
+"Fan engagement is huge for sports clubs - totally underserved market.
+
+$BWS Fan Game Cube enables fans to own digital field sections and earn rewards during live games. Already live across multiple sports with real utility.
+
+@BWSCommunity #sports #GameFi #NFT https://docs.bws.ninja/marketplace-solutions/bws.nft.gamecube"
+
+Example 2 (Credentials/Identity):
+"Verifiable credentials are essential for Web3's next phase.
+
+$BWS Blockchain Badges provides secure digital credential issuance on blockchain - trusted, immutable, cross-platform. Used by educational institutions and enterprises.
+
+@BWSCommunity #Web3 #credentials #blockchain https://docs.bws.ninja/marketplace-solutions/bws.blockchain.badges"
+
+Example 3 (ESG/Enterprise):
+"ESG reporting transparency is a massive opportunity for blockchain adoption.
+
+$BWS ESG Credits helps financial institutions deliver environmental impact reporting with ICMA framework support - immutable, transparent, compliant.
+
+@BWSCommunity #ESG #blockchain #fintech https://docs.bws.ninja/marketplace-solutions/bws.esg.credits"
 
 Provide JSON response:
 {

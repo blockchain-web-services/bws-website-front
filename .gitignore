@@ -48,3 +48,6 @@ test/docker-compose.worktree.yml
 
 # Ignore worktree directories (worktrees are in .trees/)
 .trees/
+
+# X Crawler Authentication (cookies only - credentials committed for GitHub Actions)
+scripts/kols/data/cookies/

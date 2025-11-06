@@ -250,5 +250,18 @@
     "totalReplied": 5,
     "totalSkipped": 218,
     "lastUpdateBy": "kol-system"
+  },
+  "scrapflyStatus": {
+    "enabled": true,
+    "lastSuccess": null,
+    "consecutiveFailures": 0,
+    "lastError": null,
+    "fallbackActive": false,
+    "creditsRemaining": null
+  },
+  "queryRotation": {
+    "lastIndex": 0,
+    "lastCategory": null,
+    "lastUpdated": null
   }
 }

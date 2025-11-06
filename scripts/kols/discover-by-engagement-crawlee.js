@@ -19,6 +19,7 @@ import {
 } from './utils/kol-utils.js';
 import { sendDiscoveryNotification } from './utils/zapier-webhook.js';
 import { createClaudeClient, evaluateUserAsCryptoKOL } from './utils/claude-client.js';
+import authManager from './utils/x-auth-manager.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -82,6 +83,17 @@ async function discoverByEngagementCrawlee() {
 
   const startTime = Date.now();
 
+  // Initialize authentication manager
+  console.log('🔐 Initializing authentication manager...');
+  await authManager.initialize();
+  const authStats = authManager.getStats();
+  console.log(`   ✅ ${authStats.available} accounts available for use\n`);
+
+  if (authStats.available === 0) {
+    console.error('❌ No crawler accounts available! Please run setup-crawler-accounts.js first.');
+    process.exit(1);
+  }
+
   // Load configuration
   const config = loadConfig();
   const searchConfig = loadSearchQueries();
@@ -130,10 +142,21 @@ async function discoverByEngagementCrawlee() {
     console.log(`   Search: "${queryConfig.query}"`);
 
     try {
-      // Use Crawlee to search (FREE - no API costs)
+      // Get next available account with authentication
+      const account = await authManager.getNextAccount();
+      console.log(`   🔄 Using account: ${account.id}`);
+
+      // Get authenticated cookies
+      const cookies = await authManager.getAuthenticatedCookies(account);
+
+      // Use Crawlee to search with authentication (FREE - no API costs)
       const tweets = await searchTweets(queryConfig.query, {
-        maxResults: searchConfig.settings.maxTweetsPerQuery || 50
+        maxResults: searchConfig.settings.maxTweetsPerQuery || 50,
+        cookies
       });
+
+      // Mark account as used
+      await authManager.markUsed(account.id);
 
       if (tweets.length === 0) {
         console.log(`   ℹ️  No tweets found`);
@@ -166,6 +189,16 @@ async function discoverByEngagementCrawlee() {
     } catch (error) {
       console.error(`   ❌ Error: ${error.message}`);
       results.errors.push(`Query "${queryConfig.name}": ${error.message}`);
+
+      // Handle account-specific errors
+      if (error.message.includes('rate limit') || error.message.includes('429')) {
+        console.log(`   ⏳ Account rate-limited, will retry with next account`);
+        // Auth manager will automatically switch to next account on next iteration
+      } else if (error.message.includes('suspended')) {
+        console.log(`   🚫 Account suspended, will use next account`);
+        // Auth manager already marked account as suspended
+      }
+
       continue;
     }
 
