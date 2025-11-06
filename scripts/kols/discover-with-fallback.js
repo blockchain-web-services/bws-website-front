@@ -3,6 +3,10 @@
  * Tries ScrapFly first, falls back to Crawlee on failure
  */
 
+// Load environment variables from .env file (local dev only, GitHub Actions uses secrets)
+import dotenv from 'dotenv';
+dotenv.config();
+
 import { discover as discoverScrapfly } from './discover-by-search-scrapfly.js';
 import { sendDiscoveryNotification } from './utils/zapier-webhook.js';
 import fs from 'fs/promises';
@@ -26,6 +30,7 @@ async function runCrawleeDiscovery() {
     const child = spawn('node', [crawleeScript], {
       stdio: 'inherit',
       cwd: __dirname,
+      env: process.env,  // Explicitly pass environment variables to child
     });
 
     child.on('close', (code) => {
