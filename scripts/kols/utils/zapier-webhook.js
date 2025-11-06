@@ -153,11 +153,15 @@ export async function sendDiscoveryNotification(options) {
   const {
     scriptName = 'KOL Discovery',
     success = true,
-    totalQueries = 0,
+    queriesExecuted = 0,
+    totalQueries = 0,  // Keep for backward compatibility
     tweetsFound = 0,
     kolsAdded = 0,
     totalKols = 0,
+    method = null,  // 'scrapfly', 'crawlee', etc.
+    duration = null,
     apiStats = null,
+    apiCalls = null,  // Alternative to apiStats
     error = null,
     runUrl = null
   } = options;
@@ -168,6 +172,17 @@ export async function sendDiscoveryNotification(options) {
   // Build formatted message
   const textParts = [];
   textParts.push(`${emoji} *${scriptName}* - ${statusText}`);
+
+  // Add method if provided
+  if (method) {
+    textParts.push(`*Method:* ${method}`);
+  }
+
+  // Add duration if provided
+  if (duration) {
+    textParts.push(`*Duration:* ${duration}s`);
+  }
+
   textParts.push('');
   textParts.push('');
   textParts.push('*KOL Database:*');
@@ -175,7 +190,7 @@ export async function sendDiscoveryNotification(options) {
   textParts.push(`  New KOLs added: ${kolsAdded}`);
   textParts.push('');
   textParts.push('*Discovery Results:*');
-  textParts.push(`  Queries executed: ${totalQueries}`);
+  textParts.push(`  Queries executed: ${queriesExecuted || totalQueries}`);
   textParts.push(`  Tweets found: ${tweetsFound}`);
 
   // Include full KOL list on success
@@ -194,6 +209,7 @@ export async function sendDiscoveryNotification(options) {
     }
   }
 
+  // Handle both apiStats and apiCalls format
   if (apiStats) {
     textParts.push('');
     textParts.push('');
@@ -204,12 +220,32 @@ export async function sendDiscoveryNotification(options) {
       textParts.push('');
       textParts.push(formatEndpointStats(apiStats.byEndpoint));
     }
+  } else if (apiCalls) {
+    textParts.push('');
+    textParts.push('');
+    textParts.push('*API Calls:*');
+    textParts.push(`  Total: ${apiCalls.total || 0}`);
+    textParts.push(`  Successful: ${apiCalls.successful || 0}`);
+    textParts.push(`  Failed: ${apiCalls.failed || 0}`);
   }
 
   if (error) {
     textParts.push('');
     textParts.push('');
-    textParts.push(`*Error:* ${error}`);
+    // Handle error serialization properly
+    const errorMessage = typeof error === 'object'
+      ? (error.message || JSON.stringify(error, Object.getOwnPropertyNames(error)))
+      : String(error);
+    textParts.push(`*Error:* ${errorMessage}`);
+
+    // Add error stack trace for debugging if available
+    if (error && error.stack) {
+      textParts.push('');
+      textParts.push('*Stack Trace:*');
+      textParts.push('```');
+      textParts.push(error.stack.substring(0, 500)); // Limit to 500 chars
+      textParts.push('```');
+    }
   }
 
   if (runUrl) {
@@ -316,7 +352,20 @@ export async function sendReplyNotification(options) {
   if (error) {
     textParts.push('');
     textParts.push('');
-    textParts.push(`*Error:* ${error}`);
+    // Handle error serialization properly
+    const errorMessage = typeof error === 'object'
+      ? (error.message || JSON.stringify(error, Object.getOwnPropertyNames(error)))
+      : String(error);
+    textParts.push(`*Error:* ${errorMessage}`);
+
+    // Add error stack trace for debugging if available
+    if (error && error.stack) {
+      textParts.push('');
+      textParts.push('*Stack Trace:*');
+      textParts.push('```');
+      textParts.push(error.stack.substring(0, 500)); // Limit to 500 chars
+      textParts.push('```');
+    }
   }
 
   if (runUrl) {
