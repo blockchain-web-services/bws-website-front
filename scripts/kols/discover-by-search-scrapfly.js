@@ -383,6 +383,28 @@ export async function discover() {
 
           // Parse results
           const xhrCalls = result.result.browser_data?.xhr_call || [];
+
+          // Debug: Log XHR call info
+          console.log(`   📊 XHR calls received: ${xhrCalls.length}`);
+          if (xhrCalls.length > 0) {
+            // Log ALL XHR URLs to find the search endpoint
+            console.log(`   📝 ALL XHR URLs:`);
+            xhrCalls.forEach((xhr, i) => {
+              if (!xhr.url) {
+                console.log(`      ${i + 1}. (no URL)`);
+                return;
+              }
+              const url = new URL(xhr.url);
+              const hasData = xhr.response?.body ? `(${xhr.response.body.length} bytes)` : '(no data)';
+              console.log(`      ${i + 1}. ${url.pathname} ${hasData}`);
+            });
+
+            const searchCalls = xhrCalls.filter(xhr =>
+              xhr.url && (xhr.url.includes('SearchTimeline') || xhr.url.includes('search/adaptive'))
+            );
+            console.log(`   🔍 Old search pattern matches: ${searchCalls.length}`);
+          }
+
           const { tweets, users } = parseTweetsFromXHR(xhrCalls);
 
           console.log(`   ✅ Found ${tweets.length} tweets from ${users.length} users`);
