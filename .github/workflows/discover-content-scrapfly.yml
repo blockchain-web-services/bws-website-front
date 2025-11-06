@@ -56,8 +56,8 @@ jobs:
         run: |
           # KOL stats
           if [ -f "scripts/kols/data/kols-data.json" ]; then
-            TOTAL_KOLS=$(jq 'length' scripts/kols/data/kols-data.json)
-            ACTIVE_KOLS=$(jq '[.[] | select(.status == "active")] | length' scripts/kols/data/kols-data.json)
+            TOTAL_KOLS=$(jq '.kols | length' scripts/kols/data/kols-data.json)
+            ACTIVE_KOLS=$(jq '[.kols[] | select(.status == "active")] | length' scripts/kols/data/kols-data.json)
             echo "total_kols=$TOTAL_KOLS" >> $GITHUB_OUTPUT
             echo "active_kols=$ACTIVE_KOLS" >> $GITHUB_OUTPUT
           else
