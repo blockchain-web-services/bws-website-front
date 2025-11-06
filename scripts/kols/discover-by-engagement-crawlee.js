@@ -79,25 +79,49 @@ function filterByEngagement(tweets, threshold) {
  * Main discovery function
  */
 async function discoverByEngagementCrawlee() {
-  console.log('🔍 Starting Search-Based KOL Discovery (Crawlee Mode)...\n');
+  console.log('🔍 Starting Search-Based KOL Discovery (Crawlee Mode)...');
+  console.log(`📍 Script: discover-by-engagement-crawlee.js\n`);
 
   const startTime = Date.now();
+  let currentPhase = 'initialization';
+  let lastSuccessfulOperation = null;
 
   // Initialize authentication manager
+  currentPhase = 'initializing_auth_manager';
   console.log('🔐 Initializing authentication manager...');
   await authManager.initialize();
   const authStats = authManager.getStats();
   console.log(`   ✅ ${authStats.available} accounts available for use\n`);
+  lastSuccessfulOperation = 'auth_manager_initialized';
 
   if (authStats.available === 0) {
     console.error('❌ No crawler accounts available! Please run setup-crawler-accounts.js first.');
+
+    // Send error notification before exiting
+    await sendDiscoveryNotification({
+      scriptName: 'KOL Discovery - Crawlee Search',
+      success: false,
+      queriesExecuted: 0,
+      tweetsFound: 0,
+      kolsAdded: 0,
+      totalKols: 0,
+      method: 'crawlee',
+      error: {
+        message: 'No crawler accounts available',
+        phase: currentPhase,
+      },
+      runUrl: process.env.GITHUB_RUN_URL || null
+    });
+
     process.exit(1);
   }
 
   // Load configuration
+  currentPhase = 'loading_config';
   const config = loadConfig();
   const searchConfig = loadSearchQueries();
   const claudeClient = createClaudeClient();
+  lastSuccessfulOperation = 'config_loaded';
 
   // Get engagement threshold
   const engagementTier = config.searchDiscovery?.engagementTier || 'tier4';
@@ -134,17 +158,22 @@ async function discoverByEngagementCrawlee() {
   console.log('🔎 Executing search queries...\n');
 
   // Execute search queries
+  currentPhase = 'executing_search_queries';
   for (const queryConfig of searchConfig.queries.slice(0, maxQueriesPerRun)) {
     results.queriesExecuted++;
+    const queryPhase = `search_query_${results.queriesExecuted}_${queryConfig.name}`;
+    currentPhase = queryPhase;
 
     console.log(`\n[${results.queriesExecuted}/${Math.min(searchConfig.queries.length, maxQueriesPerRun)}] Query: "${queryConfig.name}"`);
     console.log(`   Category: ${queryConfig.category}`);
     console.log(`   Search: "${queryConfig.query}"`);
+    console.log(`   📍 Phase: ${queryPhase}`);
 
     try {
       // Get next available account with authentication
       const account = await authManager.getNextAccount();
       console.log(`   🔄 Using account: ${account.id}`);
+      lastSuccessfulOperation = `using_account_${account.id}`;
 
       // Get authenticated cookies
       const cookies = await authManager.getAuthenticatedCookies(account);
@@ -187,8 +216,14 @@ async function discoverByEngagementCrawlee() {
       usernames.forEach(u => allUsernames.add(u.toLowerCase()));
 
     } catch (error) {
-      console.error(`   ❌ Error: ${error.message}`);
-      results.errors.push(`Query "${queryConfig.name}": ${error.message}`);
+      console.error(`   ❌ Error in phase: ${currentPhase}`);
+      console.error(`   Last successful operation: ${lastSuccessfulOperation}`);
+      console.error(`   Error: ${error.message}`);
+      if (error.stack) {
+        console.error(`   Stack trace: ${error.stack.substring(0, 300)}`);
+      }
+
+      results.errors.push(`Query "${queryConfig.name}" (${currentPhase}): ${error.message}`);
 
       // Handle account-specific errors
       if (error.message.includes('rate limit') || error.message.includes('429')) {
@@ -451,7 +486,30 @@ async function discoverByEngagementCrawlee() {
 // Run discovery
 discoverByEngagementCrawlee().then(results => {
   process.exit(results.kolsAdded > 0 ? 0 : 1);
-}).catch(error => {
+}).catch(async (error) => {
   console.error('\n💥 Fatal error:', error);
+  console.error('Stack trace:', error.stack);
+
+  // Send error notification
+  try {
+    await sendDiscoveryNotification({
+      scriptName: 'KOL Discovery - Crawlee Search',
+      success: false,
+      queriesExecuted: 0,
+      tweetsFound: 0,
+      kolsAdded: 0,
+      totalKols: 0,
+      method: 'crawlee',
+      error: {
+        message: error.message,
+        type: error.name || 'Error',
+        stack: error.stack ? error.stack.substring(0, 500) : null,
+      },
+      runUrl: process.env.GITHUB_RUN_URL || null
+    });
+  } catch (notifError) {
+    console.error('Failed to send error notification:', notifError.message);
+  }
+
   process.exit(1);
 });

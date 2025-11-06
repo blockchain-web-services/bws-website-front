@@ -78,14 +78,24 @@ async function saveEngagingPosts(data) {
  */
 
 async function evaluateAndReply() {
-  console.log('🚀 Starting KOL Tweet Evaluation and Reply Process...\n');
+  console.log('🚀 Starting KOL Tweet Evaluation and Reply Process...');
+  console.log(`📍 Script: evaluate-and-reply-kols.js\n`);
 
   // Reset API tracker for this execution
   apiTracker.reset();
 
+  let currentPhase = 'initialization';
+  let lastSuccessfulOperation = null;
+
   // Load configuration and products
+  currentPhase = 'loading_config';
+  console.log(`📍 Phase: ${currentPhase}`);
   const config = loadConfig();
+  lastSuccessfulOperation = 'config_loaded';
+
+  currentPhase = 'loading_products';
   const bwsProducts = loadBWSProducts();
+  lastSuccessfulOperation = 'products_loaded';
   const { maxRepliesPerRun, maxRepliesPerDay, maxRepliesPerKolPerWeek, minRelevanceScoreForReply, minTimeBetweenRepliesMinutes, dryRun } = config.replySettings;
   const maxRepliesThisRun = maxRepliesPerRun || maxRepliesPerDay;
 
@@ -104,7 +114,11 @@ async function evaluateAndReply() {
 `);
 
   // Initialize clients
+  currentPhase = 'initializing_twitter_client';
+  console.log(`📍 Phase: ${currentPhase}`);
   const readClient = createReadOnlyClient();
+  lastSuccessfulOperation = 'read_client_initialized';
+
   let writeClient = null;
 
   if (!dryRun) {
@@ -183,9 +197,12 @@ async function evaluateAndReply() {
 
     try {
       // Fetch recent tweets via Search API (60 calls/15min vs userTimeline's 10 calls/15min)
+      currentPhase = `fetching_tweets_for_${kol.username}`;
+      lastSuccessfulOperation = `processing_kol_${kol.username}`;
       await twitterLimiter.throttle();
 
       const tweets = await getUserTweetsViaSearch(readClient, kol.username, 100);
+      lastSuccessfulOperation = `fetched_tweets_for_${kol.username}`;
 
       // Filter tweets: only last 6 hours (preferred) or max 24 hours
       const now = new Date();
@@ -438,7 +455,22 @@ async function evaluateAndReply() {
       }
 
     } catch (error) {
-      console.error(`   ❌ Error processing @${kol.username}: ${error.message}`);
+      console.error(`   ❌ Error processing @${kol.username} in phase: ${currentPhase}`);
+      console.error(`   Last successful operation: ${lastSuccessfulOperation}`);
+      console.error(`   Error: ${error.message}`);
+
+      // Check for rate limit errors
+      if (error.message && (error.message.includes('429') || error.message.includes('rate limit'))) {
+        console.error(`   ⚠️  RATE LIMIT HIT - Twitter API returned 429`);
+        console.error(`   API Tracker stats before error:`);
+        console.error(`   - Total calls: ${apiTracker.exportStats().overall.totalCalls}`);
+        console.error(`   - Calls/min: ${apiTracker.exportStats().overall.callsPerMinute}`);
+
+        // If we hit rate limit, stop processing more KOLs
+        console.log(`\n⏸️  Stopping due to rate limit. Will resume on next run.`);
+        break;
+      }
+
       continue;
     }
   }
@@ -739,14 +771,33 @@ ${'='.repeat(60)}
 // Run the script
 evaluateAndReply().catch(async (error) => {
   console.error('\n❌ Fatal error:', error);
+  console.error('Stack trace:', error.stack);
+
+  // Build error context with detailed information
+  const errorContext = {
+    message: error.message,
+    type: error.name || 'Error',
+  };
+
+  // Check for rate limit errors
+  if (error.message && (error.message.includes('429') || error.message.includes('rate limit'))) {
+    errorContext.is_rate_limit = true;
+    errorContext.note = 'Twitter API rate limit exceeded. Will retry on next scheduled run.';
+  }
+
+  // Add API stats if available
+  try {
+    errorContext.api_stats = apiTracker.exportStats();
+  } catch (e) {
+    // Ignore if apiTracker not available
+  }
 
   // Send error notification to Zapier/Slack
   await sendErrorNotification({
     scriptName: 'KOL Reply Evaluation',
     error,
-    context: {
-      api_stats: apiTracker.exportStats()
-    },
+    context: errorContext,
+    process: 'reply',
     runUrl: process.env.GITHUB_SERVER_URL && process.env.GITHUB_REPOSITORY && process.env.GITHUB_RUN_ID
       ? `${process.env.GITHUB_SERVER_URL}/${process.env.GITHUB_REPOSITORY}/actions/runs/${process.env.GITHUB_RUN_ID}`
       : null

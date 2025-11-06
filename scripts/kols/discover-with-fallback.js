@@ -61,30 +61,42 @@ async function getScrapFlyStatus() {
  * Main discovery with fallback logic
  */
 async function discoverWithFallback() {
-  console.log('🚀 Starting KOL Discovery with Fallback\n');
+  console.log('🚀 Starting KOL Discovery with Fallback');
+  console.log(`📍 Script: discover-with-fallback.js\n`);
 
   const startTime = Date.now();
   let method = 'scrapfly';
   let success = false;
   let stats = null;
   let error = null;
+  let currentPhase = 'initialization';
 
   // Check if ScrapFly is disabled
+  currentPhase = 'checking_scrapfly_status';
   const status = await getScrapFlyStatus();
+
   if (status.fallbackActive && status.consecutiveFailures >= 3) {
     console.log('⚠️  ScrapFly permanently disabled due to repeated failures');
     console.log('   Using Crawlee method directly\n');
     method = 'crawlee';
+    currentPhase = 'crawlee_discovery';
 
     try {
       await runCrawleeDiscovery();
       success = true;
     } catch (err) {
+      console.error(`\n❌ Crawlee discovery failed in phase: ${currentPhase}`);
+      console.error(`   Error: ${err.message}`);
+      if (err.stack) {
+        console.error(`   Stack: ${err.stack.substring(0, 200)}`);
+      }
       error = err;
     }
   } else {
     // Try ScrapFly first
-    console.log('🔍 Attempting ScrapFly discovery...\n');
+    currentPhase = 'scrapfly_discovery';
+    console.log('🔍 Attempting ScrapFly discovery...');
+    console.log(`📍 Phase: ${currentPhase}\n`);
 
     try {
       stats = await discoverScrapfly();
@@ -94,16 +106,28 @@ async function discoverWithFallback() {
       console.log('\n✅ ScrapFly discovery successful!');
 
     } catch (scrapflyError) {
-      console.error('\n❌ ScrapFly discovery failed:', scrapflyError.message);
+      console.error(`\n❌ ScrapFly discovery failed in phase: ${currentPhase}`);
+      console.error(`   Error: ${scrapflyError.message}`);
+      if (scrapflyError.stack) {
+        console.error(`   Stack trace: ${scrapflyError.stack.substring(0, 300)}`);
+      }
       error = scrapflyError;
 
       // Fallback to Crawlee
+      currentPhase = 'crawlee_fallback';
+      console.log(`\n🔄 Switching to Crawlee fallback...`);
+      console.log(`📍 Phase: ${currentPhase}\n`);
+
       try {
         await runCrawleeDiscovery();
         success = true;
         method = 'crawlee_fallback';
       } catch (crawleeError) {
-        console.error('\n❌ Crawlee fallback also failed');
+        console.error(`\n❌ Crawlee fallback also failed in phase: ${currentPhase}`);
+        console.error(`   Error: ${crawleeError.message}`);
+        if (crawleeError.stack) {
+          console.error(`   Stack trace: ${crawleeError.stack.substring(0, 300)}`);
+        }
         error = crawleeError;
         method = 'both_failed';
       }
@@ -145,6 +169,7 @@ async function discoverWithFallback() {
     }
 
     await sendDiscoveryNotification({
+      scriptName: 'KOL Discovery - ScrapFly/Crawlee',
       success: success,
       queriesExecuted: stats?.queriesExecuted || 0,
       tweetsFound: stats?.tweetsFound || 0,
@@ -161,7 +186,8 @@ async function discoverWithFallback() {
       },
       error: error ? {
         message: error.message,
-        phase: 'Search queries',
+        phase: currentPhase,
+        stack: error.stack ? error.stack.substring(0, 500) : null,
       } : null,
     });
 

@@ -24,10 +24,18 @@ async function loadConfig() {
   const config = JSON.parse(await fs.readFile(CONFIG_PATH, 'utf-8'));
   const queriesConfig = JSON.parse(await fs.readFile(QUERIES_PATH, 'utf-8'));
 
+  // Filter active accounts with cookies
+  const activeAccounts = config.accounts.filter(acc =>
+    acc.status === 'active' &&
+    acc.cookies &&
+    acc.cookies.auth_token &&
+    acc.cookies.ct0
+  );
+
   return {
     // Prioritize environment variable (GitHub Secrets or .env) over config file
     apiKey: process.env.SCRAPFLY_API_KEY || config.scrapfly?.apiKey || config.scrapfly?.api_key,
-    account: config.accounts[0],
+    accounts: activeAccounts,  // All active accounts for retry
     queries: queriesConfig,
   };
 }
@@ -303,15 +311,22 @@ export async function discover() {
     kolsFound: 0,
     engagingPostsFound: 0,
     errors: 0,
+    accountsAttempted: [],
   };
 
   try {
     // Load config
-    const { apiKey, account, queries: queriesConfig } = await loadConfig();
-    console.log(`📱 Using account: ${account.username}`);
+    const { apiKey, accounts, queries: queriesConfig } = await loadConfig();
 
-    // Format cookies
-    const cookieString = formatCookies(account);
+    if (accounts.length === 0) {
+      throw new Error('No active accounts with valid cookies found in config');
+    }
+
+    console.log(`📱 Available accounts: ${accounts.length}`);
+    console.log(`   Primary: @${accounts[0].username} (${accounts[0].id})`);
+    if (accounts.length > 1) {
+      console.log(`   Fallbacks: ${accounts.slice(1).map(a => `@${a.username}`).join(', ')}`);
+    }
 
     // Initialize client
     const client = new ScrapFlyClient(apiKey);
@@ -328,47 +343,95 @@ export async function discover() {
     const allUsers = [];
 
     for (const query of selectedQueries) {
-      try {
-        console.log(`\n🔎 Searching: ${query.query}`);
+      let querySuccess = false;
+      let lastError = null;
 
-        const result = await client.searchTwitter(query.query, {
-          cookies: cookieString,
-          session: 'discovery-session',
-          format: 'json',
-          autoScroll: false,
-          timeout: 60000,
-          retry: false,
-        });
+      // Try each account until one succeeds
+      for (let accountIndex = 0; accountIndex < accounts.length; accountIndex++) {
+        const account = accounts[accountIndex];
+        const cookieString = formatCookies(account);
 
-        stats.queriesExecuted++;
+        try {
+          console.log(`\n🔎 Searching: ${query.query}`);
+          console.log(`   👤 Using: @${account.username} (${account.id})`);
 
-        // Parse results
-        const xhrCalls = result.result.browser_data?.xhr_call || [];
-        const { tweets, users } = parseTweetsFromXHR(xhrCalls);
+          const result = await client.searchTwitter(query.query, {
+            cookies: cookieString,
+            session: `${account.id}-session`,
+            format: 'json',
+            autoScroll: false,
+            timeout: 60000,
+            retry: false,
+          });
 
-        console.log(`   Found ${tweets.length} tweets from ${users.length} users`);
+          // Track which account was used
+          if (!stats.accountsAttempted.includes(account.username)) {
+            stats.accountsAttempted.push(account.username);
+          }
 
-        // Filter by engagement
-        const filtered = filterByEngagement(tweets, query);
-        console.log(`   ${filtered.length} meet engagement threshold`);
+          stats.queriesExecuted++;
+          querySuccess = true;
 
-        allTweets.push(...filtered.map(t => ({ ...t, query: query.query, category: query.category })));
-        allUsers.push(...users);
+          // Parse results
+          const xhrCalls = result.result.browser_data?.xhr_call || [];
+          const { tweets, users } = parseTweetsFromXHR(xhrCalls);
 
-        stats.tweetsFound += filtered.length;
+          console.log(`   ✅ Found ${tweets.length} tweets from ${users.length} users`);
 
-        // Small delay between queries
-        await new Promise(resolve => setTimeout(resolve, 2000));
+          // Filter by engagement
+          const filtered = filterByEngagement(tweets, query);
+          console.log(`   ${filtered.length} meet engagement threshold`);
 
-      } catch (error) {
-        console.error(`   ❌ Query failed: ${error.message}`);
-        stats.errors++;
+          allTweets.push(...filtered.map(t => ({ ...t, query: query.query, category: query.category })));
+          allUsers.push(...users);
 
-        // Check if it's a critical error
-        if (error.message.includes('401') || error.message.includes('403') ||
-            error.message.includes('credit')) {
-          throw error; // Re-throw critical errors
+          stats.tweetsFound += filtered.length;
+
+          // Small delay between queries
+          await new Promise(resolve => setTimeout(resolve, 2000));
+
+          break; // Success - don't try more accounts
+
+        } catch (error) {
+          lastError = error;
+
+          // Track which account failed
+          if (!stats.accountsAttempted.includes(account.username)) {
+            stats.accountsAttempted.push(account.username);
+          }
+
+          const isAuthError = error.message.includes('401') || error.message.includes('403');
+
+          console.error(`   ❌ Failed with @${account.username}: ${error.message}`);
+          console.error(`      Authentication error: ${isAuthError ? 'YES (will try next account)' : 'NO'}`);
+          console.error(`      Proxy used: public_residential_pool (us)`);
+
+          // If auth error and more accounts available, try next account
+          if (isAuthError && accountIndex < accounts.length - 1) {
+            console.log(`   🔄 Trying next account...`);
+            continue;
+          }
+
+          // If credit error or last account, re-throw
+          if (error.message.includes('credit') || accountIndex === accounts.length - 1) {
+            stats.errors++;
+
+            // Add detailed context to error
+            error.accountsFailed = stats.accountsAttempted;
+            error.proxyUsed = 'public_residential_pool (us)';
+            error.lastAccountTried = account.username;
+
+            throw error;
+          }
+
+          break; // Non-auth error - don't try more accounts
         }
+      }
+
+      // If query failed with all accounts
+      if (!querySuccess && lastError) {
+        console.error(`   ⚠️  Query failed with all ${accounts.length} accounts`);
+        stats.errors++;
       }
     }
 
@@ -397,6 +460,7 @@ export async function discover() {
     const duration = ((Date.now() - startTime) / 1000).toFixed(1);
     console.log(`\n✅ Discovery complete in ${duration}s`);
     console.log(`📊 Summary:`);
+    console.log(`   Accounts used: ${stats.accountsAttempted.join(', ')}`);
     console.log(`   Queries executed: ${stats.queriesExecuted}`);
     console.log(`   Tweets found: ${stats.tweetsFound}`);
     console.log(`   New KOLs: ${newKOLsCount}`);
@@ -407,10 +471,25 @@ export async function discover() {
 
   } catch (error) {
     console.error('\n❌ Discovery failed:', error.message);
+    console.error(`   Accounts attempted: ${stats.accountsAttempted.join(', ') || 'None'}`);
+
+    if (error.accountsFailed) {
+      console.error(`   All failed accounts: ${error.accountsFailed.join(', ')}`);
+    }
+    if (error.lastAccountTried) {
+      console.error(`   Last account tried: @${error.lastAccountTried}`);
+    }
+    if (error.proxyUsed) {
+      console.error(`   Proxy: ${error.proxyUsed}`);
+    }
 
     // Handle error and send alerts
     await handleScrapFlyError(error, {
       queriesAttempted: stats.queriesExecuted,
+      accountsAttempted: stats.accountsAttempted,
+      accountsFailed: error.accountsFailed || stats.accountsAttempted,
+      lastAccountTried: error.lastAccountTried,
+      proxyUsed: error.proxyUsed || 'public_residential_pool (us)',
       workflowUrl: process.env.GITHUB_RUN_URL,
     });
 

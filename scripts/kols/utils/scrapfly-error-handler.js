@@ -114,8 +114,13 @@ function formatZapierMessage(errorType, details) {
 
 *Error:* Cookie authentication failed (${details.statusCode || '401/403'})
 
-*Details:*
-  • Cookies expired or invalid
+*Account Details:*
+  • Last account tried: ${details.lastAccountTried ? `@${details.lastAccountTried}` : 'Unknown'}
+  • All accounts attempted: ${details.accountsAttempted?.join(', ') || 'Unknown'}
+  • Total accounts tried: ${details.accountsFailed?.length || details.accountsAttempted?.length || 1}
+
+*Connection Details:*
+  • Proxy used: ${details.proxyUsed || 'public_residential_pool (us)'}
   • Last successful search: ${details.lastSuccess || 'Never'}
   • Consecutive failures: ${details.consecutiveFailures || 0}
   • Credits remaining: ${details.creditsRemaining || 'Unknown'}
@@ -126,8 +131,11 @@ function formatZapierMessage(errorType, details) {
   ✅ Reply posting unaffected
 
 *Action Required:*
-  Refresh cookies in \`scripts/kols/config/x-crawler-accounts.json\`
+  ${details.accountsAttempted?.length > 1 ?
+    `All ${details.accountsAttempted.length} accounts failed - refresh all cookies` :
+    'Refresh cookies'} in \`scripts/kols/config/x-crawler-accounts.json\`
   Run: \`node scripts/kols/save-cookies.js\`
+  Test: \`node scripts/kols/test-scrapfly.js\`
 
 ${details.workflowUrl ? `<${details.workflowUrl}|View Workflow Run>` : ''}`;
       break;
@@ -250,6 +258,11 @@ export async function handleScrapFlyError(error, context = {}) {
     consecutiveFailures: status.consecutiveFailures + 1,
     creditsRemaining: context.creditsRemaining || status.creditsRemaining,
     workflowUrl: context.workflowUrl,
+    // Account and proxy details from context
+    accountsAttempted: context.accountsAttempted || [],
+    accountsFailed: context.accountsFailed || [],
+    lastAccountTried: context.lastAccountTried,
+    proxyUsed: context.proxyUsed,
   };
 
   if (isAuthError(error)) {
