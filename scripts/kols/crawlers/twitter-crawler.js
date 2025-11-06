@@ -179,28 +179,62 @@ async function scrapeProfileFromDOM(page, username) {
  * @param {string} query - Search query
  * @param {Object} options - Search options
  * @param {Array} options.cookies - Authentication cookies from auth manager
+ * @param {Object} options.account - Account object with id, username, country
+ * @param {Object} options.proxyConfig - Proxy configuration {username, password}
  * @returns {Promise<Array>} Array of tweets
  */
 export async function searchTweets(query, options = {}) {
   const {
     maxResults = 100,
     cookies = null,
+    account = null,
+    proxyConfig = null,
   } = options;
+
+  // Determine if we should use proxy
+  // Use proxy on GitHub Actions OR if explicitly requested
+  const isCI = !!(process.env.CI || process.env.GITHUB_ACTIONS);
+  const useProxy = isCI && proxyConfig && proxyConfig.username && proxyConfig.password;
+
+  // Build proxy configuration if needed
+  let proxyServer = null;
+  if (useProxy && account) {
+    const country = account.country || 'us';
+    const sessionId = account.id; // Session-based proxy for consistency
+
+    // Oxylabs format: customer-USERNAME-sessid-SESSIONID-cc-COUNTRY
+    const proxyUsername = `customer-${proxyConfig.username}-sessid-${sessionId}-cc-${country}`;
+    const proxyPassword = proxyConfig.password;
+    proxyServer = `http://${proxyUsername}:${proxyPassword}@pr.oxylabs.io:7777`;
+
+    console.log(`   🌐 Using Oxylabs proxy: ${country.toUpperCase()} (session: ${sessionId})`);
+  } else if (isCI) {
+    console.log(`   🔓 Running on CI without proxy (no credentials provided)`);
+  } else {
+    console.log(`   🔓 Direct connection (local environment)`);
+  }
 
   return new Promise((resolve, reject) => {
     const tweets = [];
     let isResolved = false;
 
+    const launchOptions = {
+      headless: process.env.CRAWLEE_HEADLESS !== 'false',
+      args: [
+        '--disable-blink-features=AutomationControlled',
+        '--disable-dev-shm-usage',
+        '--no-sandbox',
+      ],
+    };
+
+    // Add proxy if configured
+    if (proxyServer) {
+      launchOptions.args.push(`--proxy-server=${proxyServer}`);
+    }
+
     const crawler = new PlaywrightCrawler({
       launchContext: {
-        launchOptions: {
-          headless: process.env.CRAWLEE_HEADLESS !== 'false',
-          args: [
-            '--disable-blink-features=AutomationControlled',
-            '--disable-dev-shm-usage',
-            '--no-sandbox',
-          ],
-        },
+        launchOptions,
       },
       browserPoolOptions: {
         useFingerprints: true,
@@ -219,6 +253,7 @@ export async function searchTweets(query, options = {}) {
           let graphqlCaptured = false;
 
           // Set up response interceptor BEFORE navigation
+          const allGraphQLUrls = []; // Track all GraphQL URLs for debugging
           const responseHandler = async (response) => {
             const url = response.url();
 
@@ -228,7 +263,22 @@ export async function searchTweets(query, options = {}) {
                 const contentType = response.headers()['content-type'] || '';
                 if (!contentType.includes('json')) return;
 
+                // Extract endpoint name from URL for logging
+                const urlObj = new URL(url);
+                const pathname = urlObj.pathname;
+                const endpointName = pathname.split('/').pop() || 'unknown';
+
+                // Track this URL
+                if (!allGraphQLUrls.includes(endpointName)) {
+                  allGraphQLUrls.push(endpointName);
+                }
+
                 const data = await response.json();
+
+                // Log the URL and check if it has tweet data
+                const hasDataKey = !!data.data;
+                const dataKeys = data.data ? Object.keys(data.data).join(', ') : 'N/A';
+                console.log(`   📡 GraphQL: ${endpointName} | has data: ${hasDataKey} | keys: ${dataKeys}`);
 
                 // Try to parse search results from any GraphQL response
                 const parsed = parseSearchResults(data);
@@ -236,7 +286,7 @@ export async function searchTweets(query, options = {}) {
                 if (parsed && parsed.length > 0 && !graphqlCaptured) {
                   tweets.push(...parsed);
                   graphqlCaptured = true;
-                  console.log(`✅ Captured ${parsed.length} tweets from GraphQL`);
+                  console.log(`   ✅ Captured ${parsed.length} tweets from: ${endpointName}`);
                 }
               } catch (err) {
                 // Not JSON or parsing failed - ignore
@@ -256,6 +306,20 @@ export async function searchTweets(query, options = {}) {
 
           // Wait for content to load
           await page.waitForTimeout(3000);
+
+          // Check if we're actually on the search page or stuck on login
+          const currentUrl = page.url();
+          console.log(`   📍 Final URL: ${currentUrl}`);
+
+          // Check for login indicators
+          const pageContent = await page.textContent('body').catch(() => '');
+          const isOnLogin = currentUrl.includes('/login') || currentUrl.includes('/flow/login') ||
+                           pageContent.includes('Sign in to X') || pageContent.includes('Log in to X');
+
+          if (isOnLogin) {
+            console.log(`   ⚠️  AUTHENTICATION FAILED: Redirected to login page`);
+            console.log(`      Cookies may be expired or invalid`);
+          }
 
           // Try to wait for tweets to appear
           try {

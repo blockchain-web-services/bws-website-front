@@ -163,8 +163,61 @@ class XAuthManager {
 
   /**
    * Load cookies for account
+   * First checks the account config, then falls back to file-based cookies
    */
   async loadCookies(accountId) {
+    // First try to get cookies from account config
+    const account = this.accounts.find(a => a.id === accountId);
+    if (account && account.cookies) {
+      const { auth_token, ct0, guest_id } = account.cookies;
+
+      // Validate required cookies
+      if (auth_token && ct0) {
+        console.log(`✅ Using cookies from config for ${accountId} (@${account.username})`);
+
+        // Convert to Puppeteer/Playwright cookie format
+        // Use .x.com domain since Twitter rebranded to X
+        const cookies = [
+          {
+            name: 'auth_token',
+            value: auth_token,
+            domain: '.x.com',
+            path: '/',
+            httpOnly: true,
+            secure: true,
+            sameSite: 'None'
+          },
+          {
+            name: 'ct0',
+            value: ct0,
+            domain: '.x.com',
+            path: '/',
+            httpOnly: false,
+            secure: true,
+            sameSite: 'Lax'
+          }
+        ];
+
+        // Add guest_id if available
+        if (guest_id) {
+          cookies.push({
+            name: 'guest_id',
+            value: guest_id,
+            domain: '.x.com',
+            path: '/',
+            httpOnly: false,
+            secure: false,
+            sameSite: 'None'
+          });
+        }
+
+        return cookies;
+      } else {
+        console.log(`⚠️  Account ${accountId} has incomplete cookies in config (missing auth_token or ct0)`);
+      }
+    }
+
+    // Fall back to file-based cookies
     const cookiePath = this.getCookieFilePath(accountId);
 
     if (!existsSync(cookiePath)) {
@@ -181,6 +234,7 @@ class XAuthManager {
         return null;
       }
 
+      console.log(`✅ Using cookies from file for ${accountId}`);
       return data.cookies;
     } catch (error) {
       console.error(`Failed to load cookies for ${accountId}:`, error.message);
