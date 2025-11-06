@@ -5,16 +5,20 @@
 
 // Load environment variables from .env file (local dev only, GitHub Actions uses secrets)
 import dotenv from 'dotenv';
-dotenv.config();
+import { fileURLToPath } from 'url';
+import path from 'path';
+
+const __filename = fileURLToPath(import.meta.url);
+const __scriptsDir = path.dirname(__filename);
+const worktreeRoot = path.resolve(__scriptsDir, '../..');
+dotenv.config({ path: path.join(worktreeRoot, '.env') });
 
 import { discover as discoverScrapfly } from './discover-by-search-scrapfly.js';
 import { sendDiscoveryNotification } from './utils/zapier-webhook.js';
 import fs from 'fs/promises';
-import path from 'path';
-import { fileURLToPath } from 'url';
 import { spawn } from 'child_process';
 
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const __dirname = __scriptsDir;
 const PROCESSED_POSTS_PATH = path.join(__dirname, 'data/processed-posts.json');
 
 /**

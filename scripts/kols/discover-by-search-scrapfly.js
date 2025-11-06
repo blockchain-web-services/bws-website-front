@@ -207,7 +207,9 @@ function identifyKOLs(users, minFollowers = 10000, maxFollowers = 1000000) {
 async function loadExistingKOLs() {
   try {
     const data = await fs.readFile(KOLS_DATA_PATH, 'utf-8');
-    return JSON.parse(data);
+    const parsed = JSON.parse(data);
+    // Handle both array format and { kols: [...] } format
+    return Array.isArray(parsed) ? parsed : (parsed.kols || []);
   } catch {
     return [];
   }
