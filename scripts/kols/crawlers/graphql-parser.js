@@ -87,15 +87,17 @@ export function parseSearchResults(graphqlResponse) {
     }
 
     const responseKeys = Object.keys(graphqlResponse);
-    console.log('   🔍 GraphQL response top-level keys:', responseKeys.join(', '));
+
+    // Only log top-level keys if there are fewer than 20 (otherwise it's an array)
+    if (responseKeys.length < 20) {
+      console.log('   🔍 GraphQL response top-level keys:', responseKeys.join(', '));
+    } else {
+      console.log(`   🔍 GraphQL response is an array/object with ${responseKeys.length} items`);
+    }
 
     // Check if it has 'data' key
     if (!graphqlResponse.data) {
-      console.log('   ⚠️  Response has no "data" key');
-
-      // Log first 500 chars of response for debugging
-      const responsePreview = JSON.stringify(graphqlResponse).substring(0, 500);
-      console.log('   📄 Response preview:', responsePreview);
+      // Don't log "no data key" here - already logged in twitter-crawler.js
 
       // Try recursive search anyway
       const foundTweets = recursivelyFindTweets(graphqlResponse);

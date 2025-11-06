@@ -185,10 +185,15 @@ async function discoverByEngagementCrawlee() {
       // Get authenticated cookies
       const cookies = await authManager.getAuthenticatedCookies(account);
 
+      // Get proxy config from auth manager
+      const proxyConfig = authManager.config?.proxy || null;
+
       // Use Crawlee to search with authentication (FREE - no API costs)
       const tweets = await searchTweets(queryConfig.query, {
         maxResults: searchConfig.settings.maxTweetsPerQuery || 50,
-        cookies
+        cookies,
+        account,        // Pass account for proxy session and country
+        proxyConfig     // Pass proxy credentials (used only on CI)
       });
 
       // Mark account as used
