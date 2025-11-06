@@ -114,6 +114,29 @@
         "lastChecked": "2025-11-05T21:07:19.103Z"
       },
       "error": null
+    },
+    {
+      "id": "1068237257977544704-1986149284509778306-1762411369082",
+      "tweetId": "1986149284509778306",
+      "tweetUrl": "https://twitter.com/AltcoinSherpa/status/1986149284509778306",
+      "kolId": "1068237257977544704",
+      "kolUsername": "AltcoinSherpa",
+      "originalTweetText": "if this is the bottom then people are going to sell too early, if this is a deadcat bounce then people will sell too late https://t.co/Zb07g7SiBy",
+      "replyTweetId": "1986323364810543378",
+      "replyText": "Or shift focus to projects generating actual revenue with live products. $BWS Fan Game Cube creates new income streams for sports clubs through fan-owned digital field sections - real utility solving real problems. @BWSCommunity https://docs.bws.ninja/marketplace-solutions/bws.nft.gamecube",
+      "productMentioned": "Fan Game Cube",
+      "relevanceScore": 68,
+      "timestamp": "2025-11-06T06:42:49.082Z",
+      "status": "posted",
+      "dryRun": false,
+      "engagement": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "views": 0,
+        "lastChecked": "2025-11-06T06:42:49.082Z"
+      },
+      "error": null
     }
   ],
   "dailyStats": {
@@ -133,13 +156,21 @@
         "X Bot": 2,
         "Blockchain Badges": 2
       }
+    },
+    "2025-11-06": {
+      "repliesPosted": 1,
+      "repliesFailed": 0,
+      "averageRelevance": 68,
+      "productDistribution": {
+        "Fan Game Cube": 1
+      }
     }
   },
   "metadata": {
-    "totalReplies": 5,
-    "successfulReplies": 4,
+    "totalReplies": 6,
+    "successfulReplies": 5,
     "failedReplies": 1,
-    "lastReplyAt": "2025-11-05T21:07:19.103Z",
+    "lastReplyAt": "2025-11-06T06:42:49.082Z",
     "todayRepliesCount": 0,
     "lastUpdateBy": "kol-system"
   }

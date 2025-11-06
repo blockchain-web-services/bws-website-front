@@ -73,9 +73,9 @@
       "discoveryLevel": 0,
       "engagementHistory": {
         "totalPostsAnalyzed": 200,
-        "repliedTo": 0,
-        "lastEngagement": null,
-        "successfulReplies": 0,
+        "repliedTo": 1,
+        "lastEngagement": "2025-11-06T06:42:49.082Z",
+        "successfulReplies": 1,
         "failedReplies": 0
       },
       "relationships": {
