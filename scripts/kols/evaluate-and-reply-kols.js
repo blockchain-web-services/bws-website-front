@@ -15,6 +15,12 @@ import {
   getNextFeaturedProducts,
   prioritizeKolsWithRandomization
 } from './utils/kol-utils.js';
+import fs from 'fs/promises';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const ENGAGING_POSTS_PATH = path.join(__dirname, 'data/engaging-posts.json');
 import {
   createReadOnlyClient,
   createReadWriteClient,
@@ -29,6 +35,42 @@ import {
   evaluateTweetForReply,
   generateReplyText
 } from './utils/claude-client.js';
+
+/**
+ * Load engaging posts from ScrapFly discovery
+ */
+async function loadEngagingPosts() {
+  try {
+    const data = JSON.parse(await fs.readFile(ENGAGING_POSTS_PATH, 'utf-8'));
+
+    // Filter out expired and already processed posts
+    const now = new Date().getTime();
+    const validPosts = (data.posts || []).filter(post => {
+      if (post.processed) return false;
+      if (post.expiresAt) {
+        const expiresAt = new Date(post.expiresAt).getTime();
+        if (expiresAt < now) return false;
+      }
+      return true;
+    });
+
+    return { ...data, posts: validPosts };
+  } catch (error) {
+    console.log('⚠️  No engaging posts file found or error loading it');
+    return { posts: [], metadata: {} };
+  }
+}
+
+/**
+ * Save updated engaging posts
+ */
+async function saveEngagingPosts(data) {
+  try {
+    await fs.writeFile(ENGAGING_POSTS_PATH, JSON.stringify(data, null, 2));
+  } catch (error) {
+    console.error('Failed to save engaging posts:', error.message);
+  }
+}
 
 /**
  * Main Evaluation and Reply Script
@@ -86,6 +128,7 @@ async function evaluateAndReply() {
   const kolsData = loadKolsData();
   const repliesData = loadRepliesData();
   const processedPosts = loadProcessedPosts();
+  const engagingPostsData = await loadEngagingPosts();
 
   // Check daily limit
   if (hasReachedDailyLimit(repliesData, maxRepliesPerDay)) {
@@ -100,7 +143,8 @@ async function evaluateAndReply() {
     process.exit(1);
   }
 
-  console.log(`📋 Found ${activeKols.length} active KOLs\n`);
+  console.log(`📋 Found ${activeKols.length} active KOLs`);
+  console.log(`📰 Found ${engagingPostsData.posts.length} unprocessed engaging posts\n`);
 
   // Prioritize KOLs with stratified randomization
   // Groups by quality tier, then randomizes within each tier for variety
@@ -397,6 +441,244 @@ async function evaluateAndReply() {
       console.error(`   ❌ Error processing @${kol.username}: ${error.message}`);
       continue;
     }
+  }
+
+  // Process engaging posts from ScrapFly discovery
+  if (engagingPostsData.posts.length > 0) {
+    console.log('\n🔍 Processing engaging posts from search discovery...\n');
+
+    for (const post of engagingPostsData.posts) {
+      // Check if we've reached run limit or daily limit
+      if (repliesPosted >= maxRepliesThisRun) {
+        console.log(`\n⚠️  Reached run reply limit (${maxRepliesThisRun}). Stopping.`);
+        break;
+      }
+      if (todayReplies + repliesPosted >= maxRepliesPerDay) {
+        console.log(`\n⚠️  Reached daily reply limit (${maxRepliesPerDay}). Stopping.`);
+        break;
+      }
+
+      // Skip if already processed (double-check)
+      if (processedPosts.repliedTweetIds.includes(post.id) ||
+          processedPosts.skippedTweetIds.includes(post.id)) {
+        continue;
+      }
+
+      console.log(`\n📍 Processing post from @${post.username}`);
+      console.log(`   Category: ${post.category}`);
+
+      try {
+        tweetEvaluated++;
+
+        console.log(`\n   📝 Tweet ${post.id.slice(-6)}...`);
+        console.log(`      "${post.text.substring(0, 100)}${post.text.length > 100 ? '...' : ''}"`);
+        console.log(`      Likes: ${post.likes || 0}, Retweets: ${post.retweets || 0}, Views: ${post.views || 0}`);
+
+        // Create a mock KOL object for evaluation (we don't have full KOL data)
+        const mockKol = {
+          id: `engaging_post_${post.username}`,
+          username: post.username,
+          displayName: post.displayName || post.username,
+          cryptoRelevanceScore: 80, // Assume relevant since it came from targeted search
+          verified: post.verified || false
+        };
+
+        // Get featured products
+        const featured = getNextFeaturedProducts(processedPosts, bwsProducts, config);
+        console.log(`      🎯 Featured product: ${featured.productNames.join(', ')} ${featured.isPriority ? '(Priority)' : ''}`);
+        console.log(`      📝 Positioning: ${featured.positioningPhrase}`);
+
+        // Evaluate with Claude
+        await claudeLimiter.throttle();
+        console.log(`      🤖 Evaluating with Claude...`);
+
+        const evaluation = await evaluateTweetForReply(
+          claudeClient,
+          post, // Post has same structure as tweet
+          mockKol,
+          featured.products,
+          config
+        );
+
+        console.log(`      Should Reply: ${evaluation.shouldReply ? '✅' : '❌'}`);
+        console.log(`      Relevance Score: ${evaluation.relevanceScore}%`);
+        console.log(`      Best Product: ${evaluation.bestMatchingProduct || 'None'}`);
+        console.log(`      Category: ${evaluation.tweetCategory}`);
+
+        if (evaluation.riskFactors && evaluation.riskFactors.length > 0) {
+          console.log(`      ⚠️  Risk Factors: ${evaluation.riskFactors.join(', ')}`);
+        }
+
+        // Mark post as processed regardless of outcome
+        post.processed = true;
+
+        // Check if we should reply
+        if (!evaluation.shouldReply ||
+            !evaluation.bestMatchingProduct ||
+            evaluation.relevanceScore < minRelevanceScoreForReply) {
+          console.log(`      ⏭️  Skipped: ${evaluation.reasoning}`);
+          tweetsSkipped++;
+          processedPosts.skippedTweetIds.push(post.id);
+          continue;
+        }
+
+        // Generate reply
+        await claudeLimiter.throttle();
+        console.log(`      ✍️  Generating reply...`);
+
+        // Extract product key
+        let productKey = evaluation.bestMatchingProduct;
+        if (productKey && productKey.toLowerCase().startsWith('multiple')) {
+          const match = productKey.match(/\(([^,)]+)/);
+          productKey = match ? match[1].trim() : productKey;
+        }
+        if (productKey && productKey.includes(',')) {
+          productKey = productKey.split(',')[0].trim();
+        }
+
+        const product = bwsProducts[productKey];
+        if (!product) {
+          console.log(`      ⚠️  Product not found: ${productKey}`);
+          tweetsSkipped++;
+          processedPosts.skippedTweetIds.push(post.id);
+          continue;
+        }
+
+        // Get recent replies for diversity
+        const maxRecentReplies = config.contentDiversity?.maxRecentRepliesToInclude || 3;
+        const recentReplies = (repliesData.replies || [])
+          .filter(r => r.status === 'posted')
+          .slice(-maxRecentReplies)
+          .reverse();
+
+        const replyGeneration = await generateReplyText(
+          claudeClient,
+          post,
+          mockKol,
+          product,
+          evaluation,
+          featured.positioningPhrase,
+          recentReplies,
+          featured.specialNotes
+        );
+
+        console.log(`      💬 Reply: "${replyGeneration.replyText}"`);
+        console.log(`      Tone: ${replyGeneration.tone}`);
+
+        // Post reply
+        let replyStatus = 'pending';
+        let replyTweetId = null;
+        let error = null;
+
+        try {
+          await twitterLimiter.throttle();
+
+          const clientToUse = dryRun ? readClient : writeClient;
+          const result = await postReply(
+            clientToUse,
+            post.id,
+            replyGeneration.replyText,
+            dryRun
+          );
+
+          replyTweetId = result.data?.id || null;
+          replyStatus = dryRun ? 'dry-run' : 'posted';
+
+          console.log(`      ✅ ${dryRun ? 'DRY RUN - Would post' : 'Posted successfully'}!`);
+
+          repliesPosted++;
+
+          // Track last successful reply
+          lastReplyDetails = {
+            replyText: replyGeneration.replyText,
+            replyUrl: replyTweetId ? `https://twitter.com/bws_official/status/${replyTweetId}` : null,
+            originalTweetText: post.text,
+            originalTweetUrl: `https://twitter.com/${post.username}/status/${post.id}`,
+            kolUsername: post.username
+          };
+
+          processedPosts.repliedTweetIds.push(post.id);
+
+        } catch (postError) {
+          error = postError.message;
+          replyStatus = 'failed';
+          console.error(`      ❌ Failed to post: ${error}`);
+          processedPosts.skippedTweetIds.push(post.id);
+        }
+
+        // Record reply
+        const replyRecord = {
+          id: `engaging_${post.id}-${Date.now()}`,
+          tweetId: post.id,
+          tweetUrl: `https://twitter.com/${post.username}/status/${post.id}`,
+          kolId: mockKol.id,
+          kolUsername: post.username,
+          originalTweetText: post.text,
+          replyTweetId,
+          replyText: replyGeneration.replyText,
+          productMentioned: evaluation.bestMatchingProduct,
+          relevanceScore: evaluation.relevanceScore,
+          timestamp: new Date().toISOString(),
+          status: replyStatus,
+          dryRun,
+          source: 'engaging_post', // Mark source
+          category: post.category,
+          engagement: {
+            likes: 0,
+            retweets: 0,
+            replies: 0,
+            views: 0,
+            lastChecked: new Date().toISOString()
+          },
+          error
+        };
+
+        repliesData.replies.push(replyRecord);
+
+        // Update daily stats
+        if (!repliesData.dailyStats[today]) {
+          repliesData.dailyStats[today] = {
+            repliesPosted: 0,
+            repliesFailed: 0,
+            averageRelevance: 0,
+            productDistribution: {}
+          };
+        }
+
+        if (replyStatus === 'posted' || replyStatus === 'dry-run') {
+          repliesData.dailyStats[today].repliesPosted++;
+        } else {
+          repliesData.dailyStats[today].repliesFailed++;
+        }
+
+        if (!repliesData.dailyStats[today].productDistribution[evaluation.bestMatchingProduct]) {
+          repliesData.dailyStats[today].productDistribution[evaluation.bestMatchingProduct] = 0;
+        }
+        repliesData.dailyStats[today].productDistribution[evaluation.bestMatchingProduct]++;
+
+        // Save progress periodically
+        if (repliesPosted % 2 === 0) {
+          saveRepliesData(repliesData);
+          saveProcessedPosts(processedPosts);
+          await saveEngagingPosts(engagingPostsData);
+        }
+
+        // Wait between replies
+        if (repliesPosted < maxRepliesThisRun && todayReplies + repliesPosted < maxRepliesPerDay) {
+          const waitTime = minTimeBetweenRepliesMinutes * 60 * 1000;
+          console.log(`      ⏸️  Waiting ${minTimeBetweenRepliesMinutes} minutes before next reply...`);
+          await sleep(waitTime);
+        }
+
+      } catch (error) {
+        console.error(`   ❌ Error processing post: ${error.message}`);
+        post.processed = true; // Mark as processed even on error
+        continue;
+      }
+    }
+
+    // Save updated engaging posts (all marked as processed)
+    await saveEngagingPosts(engagingPostsData);
   }
 
   // Calculate average relevance for today

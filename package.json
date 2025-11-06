@@ -50,6 +50,8 @@
     "crawlee": "^3.15.2",
     "playwright": "^1.56.1",
     "playwright-extra": "^4.3.6",
+    "puppeteer": "^24.29.0",
+    "puppeteer-extra": "^3.3.6",
     "puppeteer-extra-plugin-stealth": "^2.11.2",
     "twitter-api-v2": "^1.27.0"
   }

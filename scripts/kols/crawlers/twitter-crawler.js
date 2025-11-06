@@ -178,11 +178,13 @@ async function scrapeProfileFromDOM(page, username) {
  * Search tweets by query
  * @param {string} query - Search query
  * @param {Object} options - Search options
+ * @param {Array} options.cookies - Authentication cookies from auth manager
  * @returns {Promise<Array>} Array of tweets
  */
 export async function searchTweets(query, options = {}) {
   const {
     maxResults = 100,
+    cookies = null,
   } = options;
 
   return new Promise((resolve, reject) => {
@@ -208,6 +210,12 @@ export async function searchTweets(query, options = {}) {
 
       async requestHandler({ page, request }) {
         try {
+          // Inject authentication cookies if provided
+          if (cookies) {
+            console.log(`   🔐 Injecting authentication cookies...`);
+            await page.context().addCookies(cookies);
+          }
+
           let graphqlCaptured = false;
 
           // Set up response interceptor BEFORE navigation
@@ -302,10 +310,17 @@ export async function searchTweets(query, options = {}) {
 /**
  * Get user's following list
  * @param {string} username - Twitter username
- * @param {number} maxResults - Maximum number of users to return
+ * @param {Object} options - Options
+ * @param {number} options.maxResults - Maximum number of users to return
+ * @param {Array} options.cookies - Authentication cookies from auth manager
  * @returns {Promise<Array>} Array of user profiles
  */
-export async function getUserFollowing(username, maxResults = 100) {
+export async function getUserFollowing(username, options = {}) {
+  const {
+    maxResults = 100,
+    cookies = null,
+  } = options;
+
   return new Promise((resolve, reject) => {
     const users = [];
     let isResolved = false;
@@ -329,6 +344,12 @@ export async function getUserFollowing(username, maxResults = 100) {
 
       async requestHandler({ page, request }) {
         try {
+          // Inject authentication cookies if provided
+          if (cookies) {
+            console.log(`   🔐 Injecting authentication cookies...`);
+            await page.context().addCookies(cookies);
+          }
+
           // Intercept GraphQL responses
           page.on('response', async (response) => {
             const url = response.url();
@@ -398,6 +419,7 @@ export async function getUserFollowing(username, maxResults = 100) {
  * Get user's recent tweets
  * @param {string} username - Twitter username
  * @param {Object} options - Options
+ * @param {Array} options.cookies - Authentication cookies from auth manager
  * @returns {Promise<Array>} Array of tweets
  */
 export async function getUserTweets(username, options = {}) {
@@ -405,6 +427,7 @@ export async function getUserTweets(username, options = {}) {
     maxResults = 10,
     excludeReplies = true,
     excludeRetweets = true,
+    cookies = null,
   } = options;
 
   return new Promise((resolve, reject) => {
@@ -430,6 +453,12 @@ export async function getUserTweets(username, options = {}) {
 
       async requestHandler({ page, request }) {
         try {
+          // Inject authentication cookies if provided
+          if (cookies) {
+            console.log(`   🔐 Injecting authentication cookies...`);
+            await page.context().addCookies(cookies);
+          }
+
           // Intercept GraphQL responses
           page.on('response', async (response) => {
             const url = response.url();

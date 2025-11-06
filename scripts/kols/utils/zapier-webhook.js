@@ -395,8 +395,12 @@ export async function sendErrorNotification(options) {
   }
 }
 
+// Named export for ScrapFly error handler compatibility
+export const sendRequest = sendToZapier;
+
 export default {
   sendToZapier,
+  sendRequest,
   sendDiscoveryNotification,
   sendReplyNotification,
   sendErrorNotification

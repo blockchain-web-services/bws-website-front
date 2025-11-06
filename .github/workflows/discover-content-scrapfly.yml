@@ -1,0 +1,147 @@
+name: Content Discovery - ScrapFly
+
+on:
+  schedule:
+    - cron: '0 0,6,12,18 * * *'  # 4x daily: midnight, 6 AM, noon, 6 PM UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+env:
+  NODE_VERSION: "20"
+
+jobs:
+  discover-content:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: "npm"
+
+      - name: Install dependencies
+        run: |
+          npm install crawlee playwright @anthropic-ai/sdk
+
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps chromium
+
+      - name: Run ScrapFly content discovery
+        id: discover
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          GITHUB_RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          echo "Starting ScrapFly content discovery..."
+          node scripts/kols/discover-with-fallback.js
+          echo "discover_status=success" >> $GITHUB_OUTPUT
+        continue-on-error: true
+
+      - name: Check for changes
+        id: changes
+        run: |
+          if git diff --quiet scripts/kols/data/; then
+            echo "has_changes=false" >> $GITHUB_OUTPUT
+          else
+            echo "has_changes=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Get stats
+        id: stats
+        run: |
+          # KOL stats
+          if [ -f "scripts/kols/data/kols-data.json" ]; then
+            TOTAL_KOLS=$(jq 'length' scripts/kols/data/kols-data.json)
+            ACTIVE_KOLS=$(jq '[.[] | select(.status == "active")] | length' scripts/kols/data/kols-data.json)
+            echo "total_kols=$TOTAL_KOLS" >> $GITHUB_OUTPUT
+            echo "active_kols=$ACTIVE_KOLS" >> $GITHUB_OUTPUT
+          else
+            echo "total_kols=0" >> $GITHUB_OUTPUT
+            echo "active_kols=0" >> $GITHUB_OUTPUT
+          fi
+
+          # Engaging posts stats
+          if [ -f "scripts/kols/data/engaging-posts.json" ]; then
+            TOTAL_POSTS=$(jq '.posts | length' scripts/kols/data/engaging-posts.json)
+            UNPROCESSED=$(jq '[.posts[] | select(.processed == false)] | length' scripts/kols/data/engaging-posts.json)
+            echo "total_posts=$TOTAL_POSTS" >> $GITHUB_OUTPUT
+            echo "unprocessed_posts=$UNPROCESSED" >> $GITHUB_OUTPUT
+          else
+            echo "total_posts=0" >> $GITHUB_OUTPUT
+            echo "unprocessed_posts=0" >> $GITHUB_OUTPUT
+          fi
+
+          # ScrapFly status
+          if [ -f "scripts/kols/data/processed-posts.json" ]; then
+            SCRAPFLY_STATUS=$(jq -r '.scrapflyStatus.fallbackActive // "false"' scripts/kols/data/processed-posts.json)
+            echo "fallback_active=$SCRAPFLY_STATUS" >> $GITHUB_OUTPUT
+          else
+            echo "fallback_active=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Commit changes
+        if: steps.changes.outputs.has_changes == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add scripts/kols/data/
+          git commit -m "ScrapFly content discovery - $(date +'%Y-%m-%d %H:%M UTC')
+
+          📊 KOLs: ${{ steps.stats.outputs.total_kols }} total, ${{ steps.stats.outputs.active_kols }} active
+          📰 Posts: ${{ steps.stats.outputs.total_posts }} total, ${{ steps.stats.outputs.unprocessed_posts }} unprocessed
+          ${{ steps.stats.outputs.fallback_active == 'true' && '⚠️  Using Crawlee fallback (ScrapFly inactive)' || '✅ ScrapFly active' }}
+
+          🤖 Generated with [Claude Code](https://claude.com/claude-code)"
+          git push
+
+      - name: Summary
+        run: |
+          echo "## 🔍 Content Discovery Complete" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### Discovery Method" >> $GITHUB_STEP_SUMMARY
+          if [ "${{ steps.stats.outputs.fallback_active }}" == "true" ]; then
+            echo "⚠️  **Crawlee Fallback** (ScrapFly inactive)" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "✅ **ScrapFly Primary**" >> $GITHUB_STEP_SUMMARY
+          fi
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### KOLs Database" >> $GITHUB_STEP_SUMMARY
+          echo "- **Total KOLs:** ${{ steps.stats.outputs.total_kols }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Active KOLs:** ${{ steps.stats.outputs.active_kols }}" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### Engaging Posts" >> $GITHUB_STEP_SUMMARY
+          echo "- **Total Posts:** ${{ steps.stats.outputs.total_posts }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Unprocessed:** ${{ steps.stats.outputs.unprocessed_posts }}" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "- **Run Time:** $(date +'%Y-%m-%d %H:%M UTC')" >> $GITHUB_STEP_SUMMARY
+          echo "- **Changes:** ${{ steps.changes.outputs.has_changes == 'true' && 'Yes' || 'No' }}" >> $GITHUB_STEP_SUMMARY
+
+  handle-failure:
+    needs: discover-content
+    runs-on: ubuntu-latest
+    if: failure()
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Create failure alert
+        run: |
+          echo "## ⚠️  Content Discovery Failed" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "The ScrapFly content discovery workflow failed." >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### Possible Causes" >> $GITHUB_STEP_SUMMARY
+          echo "- ScrapFly API credentials invalid or missing" >> $GITHUB_STEP_SUMMARY
+          echo "- ScrapFly credits exhausted" >> $GITHUB_STEP_SUMMARY
+          echo "- Crawlee fallback also failed" >> $GITHUB_STEP_SUMMARY
+          echo "- Network connectivity issues" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### Zapier Alert" >> $GITHUB_STEP_SUMMARY
+          echo "A Zapier webhook was sent with error details if ScrapFly failed." >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "[View workflow run](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})" >> $GITHUB_STEP_SUMMARY
