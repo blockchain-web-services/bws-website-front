@@ -25,7 +25,8 @@ async function loadConfig() {
   const queriesConfig = JSON.parse(await fs.readFile(QUERIES_PATH, 'utf-8'));
 
   return {
-    apiKey: config.scrapfly?.apiKey || config.scrapfly?.api_key,
+    // Prioritize environment variable (GitHub Secrets or .env) over config file
+    apiKey: process.env.SCRAPFLY_API_KEY || config.scrapfly?.apiKey || config.scrapfly?.api_key,
     account: config.accounts[0],
     queries: queriesConfig,
   };

@@ -39,6 +39,16 @@ class XAuthManager {
       const configData = await fs.readFile(CONFIG_PATH, 'utf-8');
       this.config = JSON.parse(configData);
       this.accounts = this.config.accounts;
+
+      // Override proxy credentials with environment variables if available
+      // Prioritize environment variables (GitHub Secrets or .env) over config file
+      if (process.env.OXYLABS_USERNAME || process.env.OXYLABS_PASSWORD) {
+        if (!this.config.proxy) {
+          this.config.proxy = {};
+        }
+        this.config.proxy.username = process.env.OXYLABS_USERNAME || this.config.proxy.username;
+        this.config.proxy.password = process.env.OXYLABS_PASSWORD || this.config.proxy.password;
+      }
     } catch (error) {
       throw new Error(
         `Failed to load account config from ${CONFIG_PATH}. ` +

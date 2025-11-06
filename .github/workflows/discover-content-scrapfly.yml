@@ -34,6 +34,9 @@ jobs:
       - name: Run ScrapFly content discovery
         id: discover
         env:
+          SCRAPFLY_API_KEY: ${{ secrets.SCRAPFLY_API_KEY }}
+          OXYLABS_USERNAME: ${{ secrets.OXYLABS_USERNAME }}
+          OXYLABS_PASSWORD: ${{ secrets.OXYLABS_PASSWORD }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           GITHUB_RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
         run: |
