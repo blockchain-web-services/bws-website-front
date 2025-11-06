@@ -4,13 +4,17 @@
  * Discovers crypto KOLs by mining high-engagement tweets
  */
 
-// Load environment variables from .env file
+// Load environment variables from .env file (local dev only, GitHub Actions uses secrets)
 import dotenv from 'dotenv';
-dotenv.config();
+import { fileURLToPath } from 'url';
+import path from 'path';
+
+const __filename = fileURLToPath(import.meta.url);
+const __scriptsDir = path.dirname(__filename);
+const worktreeRoot = path.resolve(__scriptsDir, '../..');
+dotenv.config({ path: path.join(worktreeRoot, '.env') });
 
 import fs from 'fs';
-import path from 'path';
-import { fileURLToPath } from 'url';
 import { searchTweets, getUserProfile } from './crawlers/twitter-crawler.js';
 import {
   loadConfig,
@@ -25,8 +29,7 @@ import { sendDiscoveryNotification } from './utils/zapier-webhook.js';
 import { createClaudeClient, evaluateUserAsCryptoKOL } from './utils/claude-client.js';
 import authManager from './utils/x-auth-manager.js';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+const __dirname = __scriptsDir;  // Use scriptsDir from dotenv setup above
 
 function loadSearchQueries() {
   const configPath = path.join(__dirname, 'config', 'search-queries.json');
