@@ -3,6 +3,10 @@
  * Searches X/Twitter for KOLs and engaging posts using ScrapFly API
  */
 
+// Load environment variables from .env file (local dev only, GitHub Actions uses secrets)
+import dotenv from 'dotenv';
+dotenv.config();
+
 import ScrapFlyClient from './utils/scrapfly-client.js';
 import { getTrendingQueries } from './utils/trending-topics.js';
 import { handleScrapFlyError, handleScrapFlySuccess } from './utils/scrapfly-error-handler.js';
@@ -352,12 +356,15 @@ export async function discover() {
         const cookieString = formatCookies(account);
 
         try {
+          const proxyCountry = account.country || 'us';  // Default to US if not specified
           console.log(`\n🔎 Searching: ${query.query}`);
           console.log(`   👤 Using: @${account.username} (${account.id})`);
+          console.log(`   🌍 Proxy: ${proxyCountry.toUpperCase()}`);
 
           const result = await client.searchTwitter(query.query, {
             cookies: cookieString,
             session: `${account.id}-session`,
+            country: proxyCountry,  // Use account's country for proxy
             format: 'json',
             autoScroll: false,
             timeout: 60000,
@@ -400,11 +407,12 @@ export async function discover() {
             stats.accountsAttempted.push(account.username);
           }
 
+          const proxyCountry = account.country || 'us';
           const isAuthError = error.message.includes('401') || error.message.includes('403');
 
           console.error(`   ❌ Failed with @${account.username}: ${error.message}`);
           console.error(`      Authentication error: ${isAuthError ? 'YES (will try next account)' : 'NO'}`);
-          console.error(`      Proxy used: public_residential_pool (us)`);
+          console.error(`      Proxy used: public_residential_pool (${proxyCountry})`);
 
           // If auth error and more accounts available, try next account
           if (isAuthError && accountIndex < accounts.length - 1) {
@@ -418,7 +426,7 @@ export async function discover() {
 
             // Add detailed context to error
             error.accountsFailed = stats.accountsAttempted;
-            error.proxyUsed = 'public_residential_pool (us)';
+            error.proxyUsed = `public_residential_pool (${proxyCountry})`;
             error.lastAccountTried = account.username;
 
             throw error;
