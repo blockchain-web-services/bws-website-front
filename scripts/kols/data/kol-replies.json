@@ -137,6 +137,75 @@
         "lastChecked": "2025-11-06T06:42:49.082Z"
       },
       "error": null
+    },
+    {
+      "id": "1068237257977544704-1986753468371968494-1762517415970",
+      "tweetId": "1986753468371968494",
+      "tweetUrl": "https://twitter.com/AltcoinSherpa/status/1986753468371968494",
+      "kolId": "1068237257977544704",
+      "kolUsername": "AltcoinSherpa",
+      "originalTweetText": "$TIA is a wild chart and I still think about that coin.\n\nI still wish we had those types of rallies super often tbh, that move from 2-20 was great. ZEC is kind of reminiscent of it now. \n\nbut not surprised this is sub $1 given everything. wonder if/when it'll ever move https://t.co/EBjDvoa2Ls https://t.co/4FGV7KBsL2",
+      "replyTweetId": null,
+      "replyText": "Those TIA-style rallies reward projects that ship real products during the quiet periods.\n\n$BWS generates revenue through Fan Game Cube - sports clubs monetize fan engagement via digital field sections with live event rewards. Real utility, real income streams.\n\n@BWSCommunity #altcoins #microcap #sports https://docs.bws.ninja/marketplace-solutions/bws.nft.gamecube",
+      "productMentioned": "Fan Game Cube",
+      "relevanceScore": 72,
+      "timestamp": "2025-11-07T12:10:15.970Z",
+      "status": "failed",
+      "dryRun": false,
+      "engagement": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "views": 0,
+        "lastChecked": "2025-11-07T12:10:15.970Z"
+      },
+      "error": "Request failed with code 403"
+    },
+    {
+      "id": "877357064724520961-1986633467417841864-1762519583420",
+      "tweetId": "1986633467417841864",
+      "tweetUrl": "https://twitter.com/CryptosR_Us/status/1986633467417841864",
+      "kolId": "877357064724520961",
+      "kolUsername": "CryptosR_Us",
+      "originalTweetText": "BITCOIN IS LEAVING EXCHANGES -- THIS IS NOT WHAT TOPS LOOK LIKE\n\n#Bitcoin withdrawals on Binance just jumped roughly 4x during the recent price dip.\n\nWhen price moves down but coins leave exchanges, it usually means people are:\n✅ Moving $BTC to self-custody\n✅ Choosing to hold https://t.co/lpahipmwlE",
+      "replyTweetId": null,
+      "replyText": "Self-custody mindset proves conviction - smart money holds through volatility.\n\n$BWS Blockchain Hash API lets developers write data to blockchain with single API calls, no Web3 wallet needed. Real infrastructure enabling practical blockchain adoption beyond speculation.\n\n@BWSCommunity #Bitcoin #blockchain #buidl https://docs.bws.ninja/quick-start",
+      "productMentioned": "Blockchain Hash",
+      "relevanceScore": 72,
+      "timestamp": "2025-11-07T12:46:23.420Z",
+      "status": "failed",
+      "dryRun": false,
+      "engagement": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "views": 0,
+        "lastChecked": "2025-11-07T12:46:23.420Z"
+      },
+      "error": "Request failed with code 403"
+    },
+    {
+      "id": "877357064724520961-1986461298687664479-1762520956602",
+      "tweetId": "1986461298687664479",
+      "tweetUrl": "https://twitter.com/CryptosR_Us/status/1986461298687664479",
+      "kolId": "877357064724520961",
+      "kolUsername": "CryptosR_Us",
+      "originalTweetText": "JUST IN: Robinhood is considering buying #bitcoin for its corporate treasury.\n\nRetail sentiment may be exhausted atm but institutions are just warming up. https://t.co/K6OKIF9XeB",
+      "replyTweetId": null,
+      "replyText": "Institutions moving in while retail pauses - classic accumulation phase.\n\n$BWS keeps building through all cycles: Blockchain Hash for developers, ESG Credits for institutions, Fan Game Cube for sports. Multiple live products shipping real infrastructure.\n\n@BWSCommunity #altcoins #microcap #blockchain https://www.bws.ninja",
+      "productMentioned": "Blockchain Hash",
+      "relevanceScore": 72,
+      "timestamp": "2025-11-07T13:09:16.602Z",
+      "status": "failed",
+      "dryRun": false,
+      "engagement": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "views": 0,
+        "lastChecked": "2025-11-07T13:09:16.602Z"
+      },
+      "error": "Request failed with code 403"
     }
   ],
   "dailyStats": {
@@ -164,13 +233,22 @@
       "productDistribution": {
         "Fan Game Cube": 1
       }
+    },
+    "2025-11-07": {
+      "repliesPosted": 0,
+      "repliesFailed": 3,
+      "averageRelevance": 72,
+      "productDistribution": {
+        "Fan Game Cube": 1,
+        "Blockchain Hash": 2
+      }
     }
   },
   "metadata": {
-    "totalReplies": 6,
+    "totalReplies": 9,
     "successfulReplies": 5,
-    "failedReplies": 1,
-    "lastReplyAt": "2025-11-06T06:42:49.082Z",
+    "failedReplies": 4,
+    "lastReplyAt": "2025-11-07T13:09:16.602Z",
     "todayRepliesCount": 0,
     "lastUpdateBy": "kol-system"
   }
