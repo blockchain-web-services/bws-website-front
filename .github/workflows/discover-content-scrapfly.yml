@@ -1,4 +1,4 @@
-name: Content Discovery - ScrapFly
+name: Content Discovery - Crawlee
 
 on:
   schedule:
@@ -31,16 +31,15 @@ jobs:
       - name: Install Playwright browsers
         run: npx playwright install --with-deps chromium
 
-      - name: Run ScrapFly content discovery
+      - name: Run Crawlee content discovery
         id: discover
         env:
-          SCRAPFLY_API_KEY: ${{ secrets.SCRAPFLY_API_KEY }}
           OXYLABS_USERNAME: ${{ secrets.OXYLABS_USERNAME }}
           OXYLABS_PASSWORD: ${{ secrets.OXYLABS_PASSWORD }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           GITHUB_RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
         run: |
-          echo "Starting ScrapFly content discovery..."
+          echo "Starting Crawlee content discovery..."
           node scripts/kols/discover-with-fallback.js
           echo "discover_status=success" >> $GITHUB_OUTPUT
         continue-on-error: true
@@ -79,13 +78,8 @@ jobs:
             echo "unprocessed_posts=0" >> $GITHUB_OUTPUT
           fi
 
-          # ScrapFly status
-          if [ -f "scripts/kols/data/processed-posts.json" ]; then
-            SCRAPFLY_STATUS=$(jq -r '.scrapflyStatus.fallbackActive // "false"' scripts/kols/data/processed-posts.json)
-            echo "fallback_active=$SCRAPFLY_STATUS" >> $GITHUB_OUTPUT
-          else
-            echo "fallback_active=false" >> $GITHUB_OUTPUT
-          fi
+          # Method used
+          echo "method=crawlee" >> $GITHUB_OUTPUT
 
       - name: Commit changes
         if: steps.changes.outputs.has_changes == 'true'
@@ -93,11 +87,11 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add scripts/kols/data/
-          git commit -m "ScrapFly content discovery - $(date +'%Y-%m-%d %H:%M UTC')
+          git commit -m "Crawlee content discovery - $(date +'%Y-%m-%d %H:%M UTC')
 
           📊 KOLs: ${{ steps.stats.outputs.total_kols }} total, ${{ steps.stats.outputs.active_kols }} active
           📰 Posts: ${{ steps.stats.outputs.total_posts }} total, ${{ steps.stats.outputs.unprocessed_posts }} unprocessed
-          ${{ steps.stats.outputs.fallback_active == 'true' && '⚠️  Using Crawlee fallback (ScrapFly inactive)' || '✅ ScrapFly active' }}
+          🔍 Method: Crawlee (with Playwright + Oxylabs proxy)
 
           🤖 Generated with [Claude Code](https://claude.com/claude-code)"
           git push
@@ -107,11 +101,7 @@ jobs:
           echo "## 🔍 Content Discovery Complete" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "### Discovery Method" >> $GITHUB_STEP_SUMMARY
-          if [ "${{ steps.stats.outputs.fallback_active }}" == "true" ]; then
-            echo "⚠️  **Crawlee Fallback** (ScrapFly inactive)" >> $GITHUB_STEP_SUMMARY
-          else
-            echo "✅ **ScrapFly Primary**" >> $GITHUB_STEP_SUMMARY
-          fi
+          echo "🔍 **Crawlee** (Playwright + Oxylabs proxy)" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "### KOLs Database" >> $GITHUB_STEP_SUMMARY
           echo "- **Total KOLs:** ${{ steps.stats.outputs.total_kols }}" >> $GITHUB_STEP_SUMMARY
@@ -136,15 +126,16 @@ jobs:
         run: |
           echo "## ⚠️  Content Discovery Failed" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
-          echo "The ScrapFly content discovery workflow failed." >> $GITHUB_STEP_SUMMARY
+          echo "The Crawlee content discovery workflow failed." >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "### Possible Causes" >> $GITHUB_STEP_SUMMARY
-          echo "- ScrapFly API credentials invalid or missing" >> $GITHUB_STEP_SUMMARY
-          echo "- ScrapFly credits exhausted" >> $GITHUB_STEP_SUMMARY
-          echo "- Crawlee fallback also failed" >> $GITHUB_STEP_SUMMARY
+          echo "- Authentication cookies expired or invalid" >> $GITHUB_STEP_SUMMARY
+          echo "- Proxy connection issues (Oxylabs)" >> $GITHUB_STEP_SUMMARY
+          echo "- Twitter/X blocking or rate limiting" >> $GITHUB_STEP_SUMMARY
           echo "- Network connectivity issues" >> $GITHUB_STEP_SUMMARY
+          echo "- Playwright browser launch failure" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "### Zapier Alert" >> $GITHUB_STEP_SUMMARY
-          echo "A Zapier webhook was sent with error details if ScrapFly failed." >> $GITHUB_STEP_SUMMARY
+          echo "A Zapier webhook was sent with error details." >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "[View workflow run](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})" >> $GITHUB_STEP_SUMMARY
