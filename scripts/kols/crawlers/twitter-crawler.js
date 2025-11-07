@@ -197,7 +197,7 @@ export async function searchTweets(query, options = {}) {
   const useProxy = isCI && proxyConfig && proxyConfig.username && proxyConfig.password;
 
   // Build proxy configuration if needed
-  let proxyServer = null;
+  let proxyConfig_playwright = null;
   if (useProxy && account) {
     const country = account.country || 'us';
     const sessionId = account.id; // Session-based proxy for consistency
@@ -205,7 +205,13 @@ export async function searchTweets(query, options = {}) {
     // Oxylabs format: customer-USERNAME-sessid-SESSIONID-cc-COUNTRY
     const proxyUsername = `customer-${proxyConfig.username}-sessid-${sessionId}-cc-${country}`;
     const proxyPassword = proxyConfig.password;
-    proxyServer = `http://${proxyUsername}:${proxyPassword}@pr.oxylabs.io:7777`;
+
+    // Playwright requires proxy as an object, not command-line arg with credentials
+    proxyConfig_playwright = {
+      server: 'http://pr.oxylabs.io:7777',
+      username: proxyUsername,
+      password: proxyPassword
+    };
 
     console.log(`   🌐 Using Oxylabs proxy: ${country.toUpperCase()} (session: ${sessionId})`);
   } else if (isCI) {
@@ -227,9 +233,9 @@ export async function searchTweets(query, options = {}) {
       ],
     };
 
-    // Add proxy if configured
-    if (proxyServer) {
-      launchOptions.args.push(`--proxy-server=${proxyServer}`);
+    // Add proxy if configured (must be object with server/username/password)
+    if (proxyConfig_playwright) {
+      launchOptions.proxy = proxyConfig_playwright;
     }
 
     const crawler = new PlaywrightCrawler({
