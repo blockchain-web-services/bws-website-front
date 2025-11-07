@@ -1,8 +1,8 @@
 # Claude Code Instructions - Worktree: xai-trackkols
 
-**Created**: 2025-11-06T10:53:05.912Z
+**Created**: 2025-11-07T10:34:00.620Z
 **Branch**: xai-trackkols
-**Parent Branch**: master
+**Parent Branch**: staging
 
 ---
 
@@ -114,4 +114,4 @@ npm run worktree:remove xai-trackkols
 
 ---
 
-**Last Updated**: 2025-11-06T10:53:05.912Z
+**Last Updated**: 2025-11-07T10:34:00.620Z
