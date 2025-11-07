@@ -1,6 +1,6 @@
 /**
- * Unified KOL Discovery with Fallback
- * Tries ScrapFly first, falls back to Crawlee on failure
+ * Unified KOL Discovery
+ * Uses Crawlee directly (ScrapFly suppressed - cheaper and more flexible)
  */
 
 // Load environment variables from .env file (local dev only, GitHub Actions uses secrets)
@@ -22,10 +22,10 @@ const __dirname = __scriptsDir;
 const PROCESSED_POSTS_PATH = path.join(__dirname, 'data/processed-posts.json');
 
 /**
- * Run Crawlee discovery as fallback
+ * Run Crawlee discovery
  */
 async function runCrawleeDiscovery() {
-  console.log('\n🔄 Falling back to Crawlee discovery...\n');
+  console.log('\n🔄 Running Crawlee discovery...\n');
 
   return new Promise((resolve, reject) => {
     // Run discover-by-engagement-crawlee.js
@@ -67,10 +67,10 @@ async function getScrapFlyStatus() {
 }
 
 /**
- * Main discovery with fallback logic
+ * Main discovery function
  */
 async function discoverWithFallback() {
-  console.log('🚀 Starting KOL Discovery with Fallback');
+  console.log('🚀 Starting KOL Discovery (Crawlee)');
   console.log(`📍 Script: discover-with-fallback.js\n`);
 
   const startTime = Date.now();
