@@ -117,8 +117,10 @@ fi
 Run the merge command with `--update` flag (since we already rebased):
 
 ```bash
-npm run worktree:merge {BRANCH_NAME} --update
+npm run worktree:merge {BRANCH_NAME} -- --update
 ```
+
+**Note:** The `--` separator is required to pass flags through npm to the script.
 
 **What the script does:**
 - Validates parent branch (should pass since we're on correct branch)
@@ -239,7 +241,24 @@ After successful merge and deployment:
 ## Important Notes
 
 **Automatic Push:**
-The `npm run worktree:merge` command **automatically pushes to origin** unless you use `--no-push` flag. This is intentional to trigger CI/CD pipelines immediately.
+The `npm run worktree:merge` command **automatically pushes to origin** unless you use `-- --no-push` flag. This is intentional to trigger CI/CD pipelines immediately.
+
+**Flag Syntax:**
+When passing flags through npm, you must use the `--` separator:
+```bash
+npm run worktree:merge branch -- --update     # Auto-rebase before merge
+npm run worktree:merge branch -- --no-push    # Skip auto-push
+npm run worktree:merge branch -- --force      # Force merge even if outdated
+npm run worktree:merge branch -- --update --no-push  # Combine flags
+```
+
+**Auto-commit Uncommitted Changes:**
+If you have uncommitted changes in the worktree when running merge, the script will:
+1. Detect the uncommitted changes
+2. Automatically commit them with message: `chore: Auto-commit before merge to {branch}`
+3. Continue with the merge (all changes included)
+
+This ensures no work is lost during the merge process. The auto-commit message clearly indicates it was automated.
 
 **Parent Branch Validation:**
 The merge script validates you're on the correct parent branch. This prevents accidentally merging to the wrong branch.

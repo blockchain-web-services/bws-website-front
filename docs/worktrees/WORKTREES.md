@@ -107,13 +107,20 @@ Shows all worktrees with their:
 
 ```bash
 npm run worktree:merge <branch-name>
+
+# With flags (note the -- separator for npm flag passing):
+npm run worktree:merge <branch-name> -- --update      # Auto-rebase before merge
+npm run worktree:merge <branch-name> -- --no-push     # Skip auto-push to origin
+npm run worktree:merge <branch-name> -- --force       # Force merge even if outdated
+npm run worktree:merge <branch-name> -- --update --no-push  # Combine flags
 ```
 
 Merges the worktree branch into your current branch using `--no-ff` to preserve history. This command:
 - Validates the worktree exists
-- Checks for uncommitted changes
+- Auto-commits any uncommitted changes in the worktree (with message: `chore: Auto-commit before merge to {branch}`)
 - Performs the merge
 - Preserves merge commit for traceability
+- Automatically pushes to origin (unless `-- --no-push` is used)
 
 ### Remove a Worktree
 
