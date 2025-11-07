@@ -206,6 +206,29 @@
         "lastChecked": "2025-11-07T13:09:16.602Z"
       },
       "error": "Request failed with code 403"
+    },
+    {
+      "id": "1353384573435056128-1986690833693765880-1762530490557",
+      "tweetId": "1986690833693765880",
+      "tweetUrl": "https://twitter.com/CryptoRover/status/1986690833693765880",
+      "kolId": "1353384573435056128",
+      "kolUsername": "CryptoRover",
+      "originalTweetText": "Last time the U.S. government shutdown ended, Bitcoin skyrocketed.\n\nNow, it’s expected to end by mid-November. https://t.co/cmnwa5gopk",
+      "replyTweetId": null,
+      "replyText": "Macro catalysts drive Bitcoin, but accumulation phases favor microcaps with real infrastructure.\n\n$BWS Blockchain.Hash API lets developers write to blockchain as easily as using a database - no Web3 wallets, no transaction fees. Working utility, not speculation.\n\n@BWSCommunity #microcap #blockchain #BTC https://docs.bws.ninja/quick-start",
+      "productMentioned": "Blockchain Hash",
+      "relevanceScore": 72,
+      "timestamp": "2025-11-07T15:48:10.557Z",
+      "status": "failed",
+      "dryRun": false,
+      "engagement": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "views": 0,
+        "lastChecked": "2025-11-07T15:48:10.557Z"
+      },
+      "error": "Request failed with code 403"
     }
   ],
   "dailyStats": {
@@ -236,19 +259,19 @@
     },
     "2025-11-07": {
       "repliesPosted": 0,
-      "repliesFailed": 3,
+      "repliesFailed": 4,
       "averageRelevance": 72,
       "productDistribution": {
         "Fan Game Cube": 1,
-        "Blockchain Hash": 2
+        "Blockchain Hash": 3
       }
     }
   },
   "metadata": {
-    "totalReplies": 9,
+    "totalReplies": 10,
     "successfulReplies": 5,
-    "failedReplies": 4,
-    "lastReplyAt": "2025-11-07T13:09:16.602Z",
+    "failedReplies": 5,
+    "lastReplyAt": "2025-11-07T15:48:10.557Z",
     "todayRepliesCount": 0,
     "lastUpdateBy": "kol-system"
   }
