@@ -229,6 +229,29 @@
         "lastChecked": "2025-11-07T15:48:10.557Z"
       },
       "error": "Request failed with code 403"
+    },
+    {
+      "id": "1068237257977544704-1986923782833906085-1762603818208",
+      "tweetId": "1986923782833906085",
+      "tweetUrl": "https://twitter.com/AltcoinSherpa/status/1986923782833906085",
+      "kolId": "1068237257977544704",
+      "kolUsername": "AltcoinSherpa",
+      "originalTweetText": "IF this is a real rally (time will tell), prep yourself.\n\n1) create a list of the biggest gainers today\n\n2) monitor those over next few days and research 'tech', beta, etc\n\n3) observe which continue leading if this move is real\n\nprob worth it to aggressively buy dips tbh",
+      "replyTweetId": null,
+      "replyText": "Solid framework. When researching 'tech' and beta, look for projects with actual B2B revenue models.\n\n$BWS Fan Game Cube creates verifiable revenue streams for sports clubs through fan-owned digital field sections - live across multiple sports, expanding into iGaming. Real utility beyond speculation.\n\n@BWSCommunity #microcap #gems #blockchain https://docs.bws.ninja/marketplace-solutions/bws.nft.gamecube",
+      "productMentioned": "Fan Game Cube",
+      "relevanceScore": 88,
+      "timestamp": "2025-11-08T12:10:18.208Z",
+      "status": "failed",
+      "dryRun": false,
+      "engagement": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "views": 0,
+        "lastChecked": "2025-11-08T12:10:18.208Z"
+      },
+      "error": "Request failed with code 403"
     }
   ],
   "dailyStats": {
@@ -265,13 +288,21 @@
         "Fan Game Cube": 1,
         "Blockchain Hash": 3
       }
+    },
+    "2025-11-08": {
+      "repliesPosted": 0,
+      "repliesFailed": 1,
+      "averageRelevance": 88,
+      "productDistribution": {
+        "Fan Game Cube": 1
+      }
     }
   },
   "metadata": {
-    "totalReplies": 10,
+    "totalReplies": 11,
     "successfulReplies": 5,
-    "failedReplies": 5,
-    "lastReplyAt": "2025-11-07T15:48:10.557Z",
+    "failedReplies": 6,
+    "lastReplyAt": "2025-11-08T12:10:18.208Z",
     "todayRepliesCount": 0,
     "lastUpdateBy": "kol-system"
   }
