@@ -73,10 +73,10 @@
       "discoveryLevel": 0,
       "engagementHistory": {
         "totalPostsAnalyzed": 200,
-        "repliedTo": 3,
-        "lastEngagement": "2025-11-08T12:10:18.208Z",
+        "repliedTo": 5,
+        "lastEngagement": "2025-11-08T16:00:13.528Z",
         "successfulReplies": 1,
-        "failedReplies": 2
+        "failedReplies": 4
       },
       "relationships": {
         "follows": [],
@@ -397,10 +397,10 @@
       "discoveryLevel": 0,
       "engagementHistory": {
         "totalPostsAnalyzed": 0,
-        "repliedTo": 1,
-        "lastEngagement": "2025-11-07T15:48:10.557Z",
+        "repliedTo": 3,
+        "lastEngagement": "2025-11-08T16:46:22.165Z",
         "successfulReplies": 0,
-        "failedReplies": 1
+        "failedReplies": 3
       },
       "relationships": {
         "follows": [],

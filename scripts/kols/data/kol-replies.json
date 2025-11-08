@@ -252,6 +252,98 @@
         "lastChecked": "2025-11-08T12:10:18.208Z"
       },
       "error": "Request failed with code 403"
+    },
+    {
+      "id": "1068237257977544704-1986875175686779211-1762616343660",
+      "tweetId": "1986875175686779211",
+      "tweetUrl": "https://twitter.com/AltcoinSherpa/status/1986875175686779211",
+      "kolId": "1068237257977544704",
+      "kolUsername": "AltcoinSherpa",
+      "originalTweetText": "scratch that, if $BTC goes to 102k, alts are flying (apparently) https://t.co/jywe67AdQQ",
+      "replyTweetId": null,
+      "replyText": "Alt season momentum favors projects with actual fundamentals to sustain gains beyond initial pumps.\n\n$BWS operates a Blockchain Solutions Marketplace - live APIs for digital credentials, sports engagement, ESG reporting. Real infrastructure, not vaporware.\n\n@BWSCommunity #altseason #blockchain #microcap https://www.bws.ninja",
+      "productMentioned": "Blockchain Badges",
+      "relevanceScore": 78,
+      "timestamp": "2025-11-08T15:39:03.660Z",
+      "status": "failed",
+      "dryRun": false,
+      "engagement": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "views": 0,
+        "lastChecked": "2025-11-08T15:39:03.660Z"
+      },
+      "error": "Request failed with code 403"
+    },
+    {
+      "id": "1068237257977544704-1986832512631414930-1762617613528",
+      "tweetId": "1986832512631414930",
+      "tweetUrl": "https://twitter.com/AltcoinSherpa/status/1986832512631414930",
+      "kolId": "1068237257977544704",
+      "kolUsername": "AltcoinSherpa",
+      "originalTweetText": "On Narratives: (Long)\n\nNarrative trading became the best way to trade in 2021, specifically after the May 60k-30k dump. All liquidity started to get concentrated in 1 main runner alongside a multitude of beta coins, mostly started by $AXS and then further perpetuated by $SOL",
+      "replyTweetId": null,
+      "replyText": "Narrative cycles reward projects that build consistently through all phases.\n\n$BWS ships real blockchain infrastructure at microcap valuation - Blockchain Hash for developer API access, NFT platforms, ESG tools. Multiple live products, actual traction, fundamentals before the narrative catches up.\n\n@BWSCommunity #microcap #altcoins #infrastructure https://www.bws.ninja",
+      "productMentioned": "Blockchain Hash",
+      "relevanceScore": 82,
+      "timestamp": "2025-11-08T16:00:13.528Z",
+      "status": "failed",
+      "dryRun": false,
+      "engagement": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "views": 0,
+        "lastChecked": "2025-11-08T16:00:13.528Z"
+      },
+      "error": "Request failed with code 403"
+    },
+    {
+      "id": "1353384573435056128-1987158919928815817-1762618983377",
+      "tweetId": "1987158919928815817",
+      "tweetUrl": "https://twitter.com/CryptoRover/status/1987158919928815817",
+      "kolId": "1353384573435056128",
+      "kolUsername": "CryptoRover",
+      "originalTweetText": "According to the Bitcoin Bubble Index, we’re nowhere near a top. https://t.co/p6BXzt2PO6",
+      "replyTweetId": null,
+      "replyText": "Extended bull cycles separate projects shipping actual products from pure speculation plays.\n\n$BWS Fan Game Cube generates revenue for sports clubs through fan-owned digital field sections - live across football, tennis, cricket. Real utility meeting market demand.\n\n@BWSCommunity #altcoins #sports #microcap https://docs.bws.ninja/marketplace-solutions/bws.nft.gamecube",
+      "productMentioned": "Fan Game Cube",
+      "relevanceScore": 78,
+      "timestamp": "2025-11-08T16:23:03.377Z",
+      "status": "failed",
+      "dryRun": false,
+      "engagement": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "views": 0,
+        "lastChecked": "2025-11-08T16:23:03.377Z"
+      },
+      "error": "Request failed with code 403"
+    },
+    {
+      "id": "1353384573435056128-1986836363174646159-1762620382165",
+      "tweetId": "1986836363174646159",
+      "tweetUrl": "https://twitter.com/CryptoRover/status/1986836363174646159",
+      "kolId": "1353384573435056128",
+      "kolUsername": "CryptoRover",
+      "originalTweetText": "💥BREAKING:\n\n🇺🇸NY FED PRESIDENT WILLIAMS SAYS THE FED COULD START EXPANDING ITS BALANCE SHEET SOON.\n\nQE BACK ON THE HORIZON? 🚀 \n\nMASSIVELY BULLISH FOR MARKETS. https://t.co/TLQl6TUqQP",
+      "replyTweetId": null,
+      "replyText": "When QE liquidity flows back into crypto, projects with real products and consistent execution tend to capture disproportionate value.\n\n$BWS operates a Blockchain Solutions Marketplace with multiple live products targeting mass markets - API services, NFT platforms, ESG tools. Building through all cycles.\n\n@BWSCommunity #QE #altcoins #microcap https://www.bws.ninja",
+      "productMentioned": "Blockchain Hash",
+      "relevanceScore": 78,
+      "timestamp": "2025-11-08T16:46:22.165Z",
+      "status": "failed",
+      "dryRun": false,
+      "engagement": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "views": 0,
+        "lastChecked": "2025-11-08T16:46:22.165Z"
+      },
+      "error": "Request failed with code 403"
     }
   ],
   "dailyStats": {
@@ -291,18 +383,20 @@
     },
     "2025-11-08": {
       "repliesPosted": 0,
-      "repliesFailed": 1,
-      "averageRelevance": 88,
+      "repliesFailed": 5,
+      "averageRelevance": 81,
       "productDistribution": {
-        "Fan Game Cube": 1
+        "Fan Game Cube": 2,
+        "Blockchain Badges": 1,
+        "Blockchain Hash": 2
       }
     }
   },
   "metadata": {
-    "totalReplies": 11,
+    "totalReplies": 15,
     "successfulReplies": 5,
-    "failedReplies": 6,
-    "lastReplyAt": "2025-11-08T12:10:18.208Z",
+    "failedReplies": 10,
+    "lastReplyAt": "2025-11-08T16:46:22.165Z",
     "todayRepliesCount": 0,
     "lastUpdateBy": "kol-system"
   }
