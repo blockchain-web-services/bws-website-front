@@ -137,6 +137,52 @@
         "lastChecked": "2025-11-06T06:42:49.082Z"
       },
       "error": null
+    },
+    {
+      "id": "877357064724520961-1986501355515621578-1762515954747",
+      "tweetId": "1986501355515621578",
+      "tweetUrl": "https://twitter.com/CryptosR_Us/status/1986501355515621578",
+      "kolId": "877357064724520961",
+      "kolUsername": "CryptosR_Us",
+      "originalTweetText": "📊 INSIGHT: BINANCE TRADERS TURNED BULLISH ON $XRP\n\nTraders are using the slight dips to add to their $XRP positions while there is some fear in $BTC &amp; $ETH markets. \n\nStack those conviction plays during the dips. That is how the game is played. \n\nSource: CryptoQuant https://t.co/WYNo8Bpj30",
+      "replyTweetId": null,
+      "replyText": "Conviction plays work best when backed by actual product delivery, not just speculation.\n\n$BWS X Bot ships verifiable Twitter analytics through official API - helps traders measure authentic community traction vs bot-inflated metrics. Building tools that matter in any market.\n\n@BWSCommunity #altcoins #XRP #cryptotrading https://docs.bws.ninja/telegram-bots/x-bot",
+      "productMentioned": "X Bot",
+      "relevanceScore": 78,
+      "timestamp": "2025-11-07T11:45:54.747Z",
+      "status": "failed",
+      "dryRun": false,
+      "engagement": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "views": 0,
+        "lastChecked": "2025-11-07T11:45:54.747Z"
+      },
+      "error": "Request failed with code 403"
+    },
+    {
+      "id": "1353384573435056128-1986624872869396751-1762517636553",
+      "tweetId": "1986624872869396751",
+      "tweetUrl": "https://twitter.com/CryptoRover/status/1986624872869396751",
+      "kolId": "1353384573435056128",
+      "kolUsername": "CryptoRover",
+      "originalTweetText": "💥BREAKING: \n\nDEAL TO REOPEN THE U.S. GOVERNMENT IS CLOSE, ACCORDING TO POLITICO.\n\nBULLISH FOR MARKETS! https://t.co/sCzo1aKmkM",
+      "replyTweetId": null,
+      "replyText": "Government reopening is bullish for risk-on assets and innovation.\n\n$BWS Blockchain Hash API is already live - developers write data to blockchain with simple API calls, no Web3 wallet needed. Real infrastructure, zero vapor.\n\n@BWSCommunity #microcap #blockchain #altcoins https://docs.bws.ninja/quick-start",
+      "productMentioned": "Blockchain Hash",
+      "relevanceScore": 68,
+      "timestamp": "2025-11-07T12:13:56.554Z",
+      "status": "failed",
+      "dryRun": false,
+      "engagement": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "views": 0,
+        "lastChecked": "2025-11-07T12:13:56.554Z"
+      },
+      "error": "Request failed with code 403"
     }
   ],
   "dailyStats": {
@@ -164,13 +210,22 @@
       "productDistribution": {
         "Fan Game Cube": 1
       }
+    },
+    "2025-11-07": {
+      "repliesPosted": 0,
+      "repliesFailed": 2,
+      "averageRelevance": 73,
+      "productDistribution": {
+        "X Bot": 1,
+        "Blockchain Hash": 1
+      }
     }
   },
   "metadata": {
-    "totalReplies": 6,
+    "totalReplies": 8,
     "successfulReplies": 5,
-    "failedReplies": 1,
-    "lastReplyAt": "2025-11-06T06:42:49.082Z",
+    "failedReplies": 3,
+    "lastReplyAt": "2025-11-07T12:13:56.554Z",
     "todayRepliesCount": 0,
     "lastUpdateBy": "kol-system"
   }

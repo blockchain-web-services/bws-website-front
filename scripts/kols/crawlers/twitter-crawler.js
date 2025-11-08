@@ -353,10 +353,7 @@ export async function searchTweets(query, options = {}) {
           // Remove listener
           page.off('response', responseHandler);
 
-          if (!isResolved) {
-            isResolved = true;
-            resolve(tweets.slice(0, maxResults));
-          }
+          // Don't resolve here - let the crawler finish
         } catch (error) {
           console.error(`Error searching tweets:`, error.message);
           if (!isResolved) {
@@ -367,7 +364,15 @@ export async function searchTweets(query, options = {}) {
       },
     });
 
+    // Properly wait for crawler completion before resolving
     crawler.run([`https://x.com/search?q=${encodeURIComponent(query)}&src=typed_query&f=live`])
+      .then(() => {
+        // Crawler finished - now resolve with collected tweets
+        if (!isResolved) {
+          isResolved = true;
+          resolve(tweets.slice(0, maxResults));
+        }
+      })
       .catch((error) => {
         if (!isResolved) {
           isResolved = true;
