@@ -12,10 +12,25 @@ export function parseTweet(tweetData) {
   const legacy = tweetData.legacy || {};
   const core = tweetData.core || {};
 
+  // Extract author username from core.user_results
+  // Try multiple possible locations for username
+  const userResult = core?.user_results?.result || {};
+  const authorLegacy = userResult.legacy || {};
+  const authorCore = userResult.core || {};
+
+  // Username is in userResult.core.screen_name (Twitter's GraphQL structure)
+  // Fallback to other possible locations for robustness
+  const username = authorCore.screen_name ||
+                   authorLegacy.screen_name ||
+                   userResult.screen_name ||
+                   userResult.username ||
+                   null;
+
   return {
     id: tweetData.rest_id,
     text: legacy.full_text || '',
     author_id: legacy.user_id_str,
+    username: username,  // Author's username
     created_at: legacy.created_at,
     public_metrics: {
       like_count: legacy.favorite_count || 0,
