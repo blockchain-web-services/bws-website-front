@@ -35,7 +35,7 @@
     "twitterApiCallsPerMinute": 15,
     "claudeApiCallsPerMinute": 50,
     "waitBetweenBatchesMs": 10000,
-    "maxSearchQueriesPerRun": 2,
+    "maxSearchQueriesPerRun": 10,
     "maxKolsToEvaluatePerRun": 50
   },
   "bwsProductsSource": "docs-index.json",
@@ -66,7 +66,24 @@
     "queriesFile": "search-queries.json",
     "engagementTier": "tier4",
     "minFollowersOverride": 500,
-    "deduplicateExisting": true
+    "deduplicateExisting": true,
+    "amplifiedSearch": {
+      "enabled": true,
+      "kolSearchQueries": [
+        "crypto microcap lang:en -is:retweet min_faves:10",
+        "altcoin gems lang:en -is:retweet min_faves:10",
+        "hidden gem crypto lang:en -is:retweet min_faves:10",
+        "undervalued crypto projects lang:en -is:retweet min_faves:10",
+        "blockchain utility lang:en -is:retweet min_faves:10"
+      ],
+      "relaxedThresholds": {
+        "minLikes": 3,
+        "minRetweets": 0,
+        "minViews": 50
+      },
+      "maxNewKolsPerRun": 5,
+      "maxTweetsPerProduct": 10
+    }
   },
   "positioningPhrases": [
     "microcap opportunity with real fundamentals",

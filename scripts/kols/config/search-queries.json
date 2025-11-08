@@ -88,9 +88,9 @@
       "minViews": 1000
     },
     "tier4": {
-      "minLikes": 5,
-      "minRetweets": 1,
-      "minViews": 500
+      "minLikes": 0,
+      "minRetweets": 0,
+      "minViews": 0
     }
   },
   "settings": {

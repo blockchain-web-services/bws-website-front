@@ -1,6 +1,12 @@
 // Load environment variables from .env file (local dev only, GitHub Actions uses secrets)
 import dotenv from 'dotenv';
-dotenv.config();
+import { fileURLToPath } from 'url';
+import path from 'path';
+
+const __filename = fileURLToPath(import.meta.url);
+const __scriptsDir = path.dirname(__filename);
+const worktreeRoot = path.resolve(__scriptsDir, '../..');
+dotenv.config({ path: path.join(worktreeRoot, '.env') });
 
 import {
   loadConfig,
@@ -19,11 +25,10 @@ import {
   getNextFeaturedProducts,
   prioritizeKolsWithRandomization
 } from './utils/kol-utils.js';
+import { runAmplifiedTweetSearch } from './utils/amplified-search.js';
 import fs from 'fs/promises';
-import path from 'path';
-import { fileURLToPath } from 'url';
 
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const __dirname = __scriptsDir;
 const ENGAGING_POSTS_PATH = path.join(__dirname, 'data/engaging-posts.json');
 import {
   createReadOnlyClient,
@@ -312,6 +317,11 @@ async function evaluateAndReply() {
           productKey = productKey.split(',')[0].trim();
         }
 
+        // Strip parenthetical notes like "(Marketplace Solution)" or "(Platform API)"
+        if (productKey) {
+          productKey = productKey.replace(/\s*\([^)]*\)\s*/g, '').trim();
+        }
+
         const product = bwsProducts[productKey];
         if (!product) {
           console.log(`      ⚠️  Product not found: ${productKey}`);
@@ -480,6 +490,26 @@ async function evaluateAndReply() {
   }
 
   // Process engaging posts from ScrapFly discovery
+  if (engagingPostsData.posts.length > 0) {
+    console.log('\n🔍 Processing engaging posts from search discovery...\n');
+  } else if (repliesPosted === 0) {
+    // No engaging posts and no replies posted yet - trigger amplified search
+    console.log('\n🔍 No engaging posts found and no replies posted. Triggering amplified tweet search...');
+    try {
+      const amplifiedPosts = await runAmplifiedTweetSearch(bwsProducts, config, processedPosts);
+
+      if (amplifiedPosts.length > 0) {
+        console.log(`\n💬 Amplified search found ${amplifiedPosts.length} relevant tweets!`);
+        console.log('   Adding to engaging posts for processing...\n');
+        engagingPostsData.posts.push(...amplifiedPosts);
+      } else {
+        console.log('   ⚠️  No suitable tweets found in amplified search\n');
+      }
+    } catch (amplifiedError) {
+      console.error(`\n❌ Amplified tweet search failed: ${amplifiedError.message}\n`);
+    }
+  }
+
   if (engagingPostsData.posts.length > 0) {
     console.log('\n🔍 Processing engaging posts from search discovery...\n');
 

@@ -16,6 +16,7 @@ dotenv.config({ path: path.join(worktreeRoot, '.env') });
 
 import fs from 'fs';
 import { searchTweets, getUserProfile } from './crawlers/twitter-crawler.js';
+import { runAmplifiedKolSearch } from './utils/amplified-search.js';
 import {
   loadConfig,
   loadKolsData,
@@ -72,14 +73,32 @@ function extractUsernamesFromTweets(tweets) {
  * Filter tweets by engagement threshold
  */
 function filterByEngagement(tweets, threshold) {
-  return tweets.filter(tweet => {
+  console.log(`\n🔍 DEBUG: Filtering ${tweets.length} tweets with threshold:`, JSON.stringify(threshold));
+
+  const filtered = tweets.filter(tweet => {
     const metrics = tweet.public_metrics || {};
-    return (
+    const passes = (
       (metrics.like_count || 0) >= threshold.minLikes &&
       (metrics.retweet_count || 0) >= threshold.minRetweets &&
       (metrics.impression_count || 0) >= threshold.minViews
     );
+
+    // Debug first tweet to see what data we have
+    if (tweets.indexOf(tweet) === 0) {
+      console.log(`🔍 DEBUG: First tweet metrics:`, {
+        likes: metrics.like_count || 0,
+        retweets: metrics.retweet_count || 0,
+        views: metrics.impression_count || 0,
+        hasMetrics: !!tweet.public_metrics,
+        metricsKeys: tweet.public_metrics ? Object.keys(tweet.public_metrics) : []
+      });
+    }
+
+    return passes;
   });
+
+  console.log(`🔍 DEBUG: ${filtered.length}/${tweets.length} tweets passed filter\n`);
+  return filtered;
 }
 
 /**
@@ -269,6 +288,19 @@ async function discoverByEngagementCrawlee() {
   if (allUsernames.size === 0) {
     console.log('\n⚠️  No users discovered.');
 
+    // Trigger amplified search to find new KOL candidates
+    console.log('\n🔍 No users found from standard queries. Triggering amplified search...');
+    try {
+      const amplifiedCandidates = await runAmplifiedKolSearch(searchConfig, config, kolsData);
+
+      if (amplifiedCandidates.length > 0) {
+        console.log(`\n💎 Amplified search found ${amplifiedCandidates.length} new candidates!`);
+        console.log('   These candidates can be manually reviewed and added to the KOL database.\n');
+      }
+    } catch (amplifiedError) {
+      console.error(`\n❌ Amplified search failed: ${amplifiedError.message}`);
+    }
+
     await sendDiscoveryNotification({
       scriptName: 'KOL Discovery - Crawlee Search',
       success: false,
@@ -292,6 +324,19 @@ async function discoverByEngagementCrawlee() {
 
   if (newUsernames.length === 0) {
     console.log('✅ All discovered users are already in the database!');
+
+    // Trigger amplified search to find new KOL candidates
+    console.log('\n🔍 No new candidates from standard search. Triggering amplified search...');
+    try {
+      const amplifiedCandidates = await runAmplifiedKolSearch(searchConfig, config, kolsData);
+
+      if (amplifiedCandidates.length > 0) {
+        console.log(`\n💎 Amplified search found ${amplifiedCandidates.length} new candidates!`);
+        console.log('   These candidates can be manually reviewed and added to the KOL database.\n');
+      }
+    } catch (amplifiedError) {
+      console.error(`\n❌ Amplified search failed: ${amplifiedError.message}`);
+    }
 
     await sendDiscoveryNotification({
       scriptName: 'KOL Discovery - Crawlee Search',
