@@ -1,0 +1,9 @@
+{
+	"id": "VDNHXZ3coah9ru4",
+	"json": "{\"id\":\"VDNHXZ3coah9ru4\",\"url\":\"https://x.com/search?q=PROOF%20lang%3Aen%20-is%3Aretweet%20has%3Amentions&src=typed_query&f=live\",\"loadedUrl\":\"https://x.com/search?q=PROOF%20lang%3Aen%20-is%3Aretweet%20has%3Amentions&src=typed_query&f=live\",\"uniqueKey\":\"https://x.com/search?f=live&q=PROOF+lang%3Aen+-is%3Aretweet+has%3Amentions&src=typed_query\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"state\":4}},\"handledAt\":\"2025-11-08T11:47:03.085Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://x.com/search?f=live&q=PROOF+lang%3Aen+-is%3Aretweet+has%3Amentions&src=typed_query",
+	"url": "https://x.com/search?q=PROOF%20lang%3Aen%20-is%3Aretweet%20has%3Amentions&src=typed_query&f=live"
+}

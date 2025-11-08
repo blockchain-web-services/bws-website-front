@@ -6,7 +6,7 @@
       "password": "tQqfcq8MPy@n3N4J",
       "country": "es",
       "status": "active",
-      "usageCount": 1,
+      "usageCount": 60,
       "rateLimitedUntil": null,
       "suspended": false,
       "notes": "crawler account",
@@ -15,18 +15,23 @@
         "ct0": "d5902ebc5e4579ae87a9313541f23451a5c0bb41fdf1a09a2a83992a6eb48ec5035ae418be63c1fbffa937c6af8cc5baf99b7caee9a341b5903a38389746b37f4e3dff306b0b775bb724c9e22ef679c5",
         "guest_id": "v1%3A176242476760319357"
       },
-      "lastUsed": "2025-11-06T18:33:50.211Z"
+      "lastUsed": "2025-11-08T11:47:32.540Z"
     }
   ],
   "rotation": {
     "strategy": "round-robin",
-    "cooldownMinutes": 30,
+    "cooldownMinutes": 0,
     "maxUsesPerHour": 10,
-    "retryAttempts": 2
+    "retryAttempts": 2,
+    "note": "TESTING ONLY - Set to 30 for production"
   },
   "metadata": {
     "version": "1.0.0",
     "lastUpdated": null,
     "totalSearches": 0
+  },
+  "proxy": {
+    "username": "nachocoll_qX9vp",
+    "password": "N_7symqckE9dPct7"
   }
 }

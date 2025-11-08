@@ -1,0 +1,9 @@
+{
+	"id": "KduwRLW62yIDRPB",
+	"json": "{\"id\":\"KduwRLW62yIDRPB\",\"url\":\"https://x.com/search?q=%40IncomeSharks%20lang%3Aen%20-is%3Aretweet&src=typed_query&f=live\",\"loadedUrl\":\"https://x.com/search?q=%40IncomeSharks%20lang%3Aen%20-is%3Aretweet&src=typed_query&f=live\",\"uniqueKey\":\"https://x.com/search?f=live&q=%40IncomeSharks+lang%3Aen+-is%3Aretweet&src=typed_query\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"state\":4}},\"handledAt\":\"2025-11-08T11:44:16.089Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://x.com/search?f=live&q=%40IncomeSharks+lang%3Aen+-is%3Aretweet&src=typed_query",
+	"url": "https://x.com/search?q=%40IncomeSharks%20lang%3Aen%20-is%3Aretweet&src=typed_query&f=live"
+}
