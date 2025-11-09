@@ -1,7 +1,7 @@
 {
-  "lastPostTimestamp": "2025-11-03T14:04:47.189Z",
-  "lastPostUrl": "https://x.com/BWSCommunity/status/1985347426350145946",
-  "lastPostId": "1985347426350145946",
+  "lastPostTimestamp": "2025-11-09T14:04:07.203Z",
+  "lastPostUrl": "https://x.com/BWSCommunity/status/1987521585813811662",
+  "lastPostId": "1987521585813811662",
   "lookbackDays": 14,
   "posts": [
     {
@@ -41,6 +41,25 @@
       "daysSinceLastPost": 5.9,
       "lookbackDays": 14,
       "characterCount": 1363
+    },
+    {
+      "timestamp": "2025-11-09T14:04:07.203Z",
+      "postId": "1987521585813811662",
+      "url": "https://x.com/BWSCommunity/status/1987521585813811662",
+      "repositories": [
+        {
+          "repo": "blockchain-web-services/bws-api-telegram-xbot",
+          "product": "X Bot",
+          "commits": 100,
+          "features": 39,
+          "fixes": 36,
+          "improvements": 8
+        }
+      ],
+      "totalItems": 83,
+      "daysSinceLastPost": 6,
+      "lookbackDays": 14,
+      "characterCount": 1466
     }
   ]
 }
