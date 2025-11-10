@@ -1,9 +1,0 @@
-{
-	"id": "SFtYTR7WaiHZoDT",
-	"json": "{\"id\":\"SFtYTR7WaiHZoDT\",\"url\":\"https://x.com/search?q=%40Speculator_io%20lang%3Aen%20-is%3Aretweet&src=typed_query&f=live\",\"loadedUrl\":\"https://x.com/search?q=%40Speculator_io%20lang%3Aen%20-is%3Aretweet&src=typed_query&f=live\",\"uniqueKey\":\"https://x.com/search?f=live&q=%40Speculator_io+lang%3Aen+-is%3Aretweet&src=typed_query\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"state\":4}},\"handledAt\":\"2025-11-08T11:45:38.796Z\"}",
-	"method": "GET",
-	"orderNo": null,
-	"retryCount": 0,
-	"uniqueKey": "https://x.com/search?f=live&q=%40Speculator_io+lang%3Aen+-is%3Aretweet&src=typed_query",
-	"url": "https://x.com/search?q=%40Speculator_io%20lang%3Aen%20-is%3Aretweet&src=typed_query&f=live"
-}

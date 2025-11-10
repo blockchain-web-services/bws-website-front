@@ -28,7 +28,7 @@
     "maxRepliesPerDay": 15,
     "maxRepliesPerKolPerWeek": 4,
     "minRelevanceScoreForReply": 60,
-    "minTimeBetweenRepliesMinutes": 20,
+    "minTimeBetweenRepliesMinutes": 2,
     "dryRun": false
   },
   "rateLimits": {
