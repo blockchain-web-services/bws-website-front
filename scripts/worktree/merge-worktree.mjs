@@ -2,7 +2,8 @@
 
 /**
  * Merge a worktree branch into the current branch while preserving worktree-specific files
- * Usage: npm run worktree:merge <branch-name> [--update] [--force] [--no-push]
+ * Usage: npm run worktree:merge <branch-name> -- [--update] [--force] [--no-push]
+ * Note: The -- separator is required to pass flags through npm to the script
  */
 
 import { execSync } from 'child_process';
@@ -134,10 +135,17 @@ const noPushFlag = process.argv.includes('--no-push');
 
 if (!branchName) {
     console.error(colorize('❌ Error: Please provide a branch name', 'red'));
-    console.error('Usage: npm run worktree:merge <branch-name> [--update] [--force] [--no-push]');
+    console.error('Usage: npm run worktree:merge <branch-name> -- [--update] [--force] [--no-push]');
+    console.error('Note: The -- separator is required to pass flags through npm');
+    console.error('');
+    console.error('Flags:');
     console.error('  --update   Automatically rebase the branch before merging');
     console.error('  --force    Merge even if branch is outdated');
     console.error('  --no-push  Skip automatic push to origin after merge');
+    console.error('');
+    console.error('Examples:');
+    console.error('  npm run worktree:merge feature-auth -- --update');
+    console.error('  npm run worktree:merge feature-auth -- --no-push');
     process.exit(1);
 }
 
@@ -200,12 +208,49 @@ try {
         }
     }
 
-    // Check for uncommitted changes
+    // Check for uncommitted changes in parent branch
     const status = execCommand('git status --porcelain');
     if (status) {
-        console.error(colorize('\n❌ Error: You have uncommitted changes', 'red'));
+        console.error(colorize('\n❌ Error: You have uncommitted changes in parent branch', 'red'));
         console.error('Please commit or stash your changes before merging');
         process.exit(1);
+    }
+
+    // Check for uncommitted changes in the worktree branch
+    const worktreePath = join(rootDir, '.trees', branchName);
+
+    if (existsSync(worktreePath)) {
+        const worktreeStatus = execCommand(`git -C "${worktreePath}" status --porcelain`, { ignoreError: true });
+
+        if (worktreeStatus) {
+            console.log(colorize('\n📝 Uncommitted changes detected in worktree', 'yellow'));
+            console.log(colorize('   Auto-committing changes before merge...', 'yellow'));
+
+            try {
+                // Add all changes
+                execCommand(`git -C "${worktreePath}" add -A`);
+
+                // Create commit with descriptive message
+                const commitMessage = `chore: Auto-commit before merge to ${currentBranch}
+
+This commit was automatically created by the worktree-merge script
+because uncommitted changes were detected in the worktree branch.
+
+Changes committed automatically to ensure they are included in the merge.`;
+
+                execCommand(`git -C "${worktreePath}" commit -m "${commitMessage}"`);
+
+                console.log(colorize('   ✓ Changes committed successfully', 'green'));
+            } catch (error) {
+                console.error(colorize('\n❌ Error: Failed to auto-commit changes', 'red'));
+                console.error(colorize(`   ${error.message}`, 'yellow'));
+                console.error(colorize('\n💡 Please commit changes manually:', 'cyan'));
+                console.error(`   cd ${worktreePath}`);
+                console.error('   git add <files>');
+                console.error('   git commit -m "your message"');
+                process.exit(1);
+            }
+        }
     }
 
     // Check if branch is up to date with current branch
