@@ -321,6 +321,144 @@
         "lastChecked": "2025-11-10T12:17:05.539Z"
       },
       "error": "Request failed with code 429"
+    },
+    {
+      "id": "1068237257977544704-1987714834394497223-1762789353342",
+      "tweetId": "1987714834394497223",
+      "tweetUrl": "https://twitter.com/AltcoinSherpa/status/1987714834394497223",
+      "kolId": "1068237257977544704",
+      "kolUsername": "AltcoinSherpa",
+      "originalTweetText": "same view in current environment; we just got done with a great run with $ZEC and privacy coins. What's next? https://t.co/IWp0NlCcwF",
+      "replyTweetId": null,
+      "replyText": "After momentum plays, low-cap builders with real fundamentals deserve attention.\n\n$BWS NFT.zK provides zero-knowledge NFT infrastructure for devs - create and manage collections without blockchain complexity. Microcap with live API shipping vs vaporware.\n\n@BWSCommunity #microcap #NFT #gems https://docs.bws.ninja/solutions/bws.nft.zk",
+      "productMentioned": "NFT.zK (Platform API)",
+      "relevanceScore": 85,
+      "timestamp": "2025-11-10T15:42:33.342Z",
+      "status": "failed",
+      "dryRun": false,
+      "engagement": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "views": 0,
+        "lastChecked": "2025-11-10T15:42:33.342Z"
+      },
+      "error": "Request failed with code 403"
+    },
+    {
+      "id": "983993370048630785-1987688688596508791-1762789376736",
+      "tweetId": "1987688688596508791",
+      "tweetUrl": "https://twitter.com/CryptoHayes/status/1987688688596508791",
+      "kolId": "983993370048630785",
+      "kolUsername": "CryptoHayes",
+      "originalTweetText": "USG is back doing what it does best, printing money and handing out goodies. $BTC and $ZEC 2 da moon! https://t.co/yNoNST8NzX",
+      "replyTweetId": null,
+      "replyText": "Majors ride liquidity waves, but microcaps with actual products can see bigger multiples when capital flows down the cap curve.\n\n$BWS operates a Blockchain Solutions Marketplace with multiple live products targeting mass markets - the kind of fundamental play that separates from vaporware.\n\n@BWSCommunity #microcap #BTC #altcoins https://www.bws.ninja",
+      "productMentioned": "Fan Game Cube (Marketplace Solution)",
+      "relevanceScore": 72,
+      "timestamp": "2025-11-10T15:42:56.736Z",
+      "status": "failed",
+      "dryRun": false,
+      "engagement": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "views": 0,
+        "lastChecked": "2025-11-10T15:42:56.736Z"
+      },
+      "error": "Request failed with code 403"
+    },
+    {
+      "id": "935742315389444096-1987903020093596124-1762789413908",
+      "tweetId": "1987903020093596124",
+      "tweetUrl": "https://twitter.com/CryptoWendyO/status/1987903020093596124",
+      "kolId": "935742315389444096",
+      "kolUsername": "CryptoWendyO",
+      "originalTweetText": "Altcoin season. https://t.co/xwctXCU2ZE",
+      "replyTweetId": null,
+      "replyText": "Altcoin season separates projects with shipping velocity from empty promises.\n\n$BWS runs a Blockchain Solutions Marketplace with multiple live products targeting mass markets - credentials, fan engagement, ESG tools. Real fundamentals at microcap valuation.\n\n@BWSCommunity #altcoins #microcap #fundamentals https://www.bws.ninja",
+      "productMentioned": "Fan Game Cube (Marketplace Solution)",
+      "relevanceScore": 85,
+      "timestamp": "2025-11-10T15:43:33.908Z",
+      "status": "failed",
+      "dryRun": false,
+      "engagement": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "views": 0,
+        "lastChecked": "2025-11-10T15:43:33.908Z"
+      },
+      "error": "Request failed with code 403"
+    },
+    {
+      "id": "906234475604037637-1987563453457019126-1762789471033",
+      "tweetId": "1987563453457019126",
+      "tweetUrl": "https://twitter.com/CryptoKaleo/status/1987563453457019126",
+      "kolId": "906234475604037637",
+      "kolUsername": "CryptoKaleo",
+      "originalTweetText": "Alright bros I feel like we’re due for some bigger green candles soon. https://t.co/HeqLFJfvbo",
+      "replyTweetId": null,
+      "replyText": "Smart to position before momentum picks up - that's when research actually matters.\n\n$BWS X Bot helps investors verify authentic Twitter engagement using official API - cuts through bot farms to find real community traction. Microcap with functioning products.\n\n@BWSCommunity #microcap #altcoins #DeFi https://docs.bws.ninja/telegram-bots/x-bot",
+      "productMentioned": "X Bot (Marketplace Solution)",
+      "relevanceScore": 68,
+      "timestamp": "2025-11-10T15:44:31.033Z",
+      "status": "failed",
+      "dryRun": false,
+      "engagement": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "views": 0,
+        "lastChecked": "2025-11-10T15:44:31.033Z"
+      },
+      "error": "Request failed with code 403"
+    },
+    {
+      "id": "877357064724520961-1987898053781520602-1762789492380",
+      "tweetId": "1987898053781520602",
+      "tweetUrl": "https://twitter.com/CryptosR_Us/status/1987898053781520602",
+      "kolId": "877357064724520961",
+      "kolUsername": "CryptosR_Us",
+      "originalTweetText": "POOLYMARKET PREDICTS THE GOVERNMENT SHUTDOWN TO END SOON 🇺🇸  \n\nNovember 14th is currently the top bet for when the shutdown will end, according to Polymarket data.  \n\nHistorically, markets;  and especially $BTC, tend to rally once a government shutdown concludes. https://t.co/1ow8WumV7q https://t.co/OJXxRZJafl",
+      "replyTweetId": null,
+      "replyText": "Solid macro read - post-shutdown rallies historically lift microcaps harder than majors.\n\n$BWS offers quality fundamentals at microcap valuation: Blockchain Solutions Marketplace with multiple live products from hash table APIs to ESG tools. Real utility, not vaporware.\n\n@BWSCommunity #microcap #altcoins #BTC https://www.bws.ninja",
+      "productMentioned": "Blockchain Hash (Platform API)",
+      "relevanceScore": 72,
+      "timestamp": "2025-11-10T15:44:52.380Z",
+      "status": "failed",
+      "dryRun": false,
+      "engagement": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "views": 0,
+        "lastChecked": "2025-11-10T15:44:52.380Z"
+      },
+      "error": "Request failed with code 403"
+    },
+    {
+      "id": "1353384573435056128-1987902567813136611-1762789712429",
+      "tweetId": "1987902567813136611",
+      "tweetUrl": "https://twitter.com/CryptoRover/status/1987902567813136611",
+      "kolId": "1353384573435056128",
+      "kolUsername": "CryptoRover",
+      "originalTweetText": "POWELL WILL START QE.  \n\nDON'T SELL TOO EARLY. https://t.co/gs4h4FPb6u",
+      "replyTweetId": null,
+      "replyText": "Liquidity cycles favor microcaps with real fundamentals over pure speculation.\n\n$BWS X Bot uses official X API to deliver verifiable Twitter analytics - helps investors spot authentic community traction vs bot farms. Built for this exact phase.\n\n@BWSCommunity #microcap #altcoins #QE https://docs.bws.ninja/telegram-bots/x-bot",
+      "productMentioned": "X Bot (Marketplace Solution)",
+      "relevanceScore": 78,
+      "timestamp": "2025-11-10T15:48:32.429Z",
+      "status": "failed",
+      "dryRun": false,
+      "engagement": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "views": 0,
+        "lastChecked": "2025-11-10T15:48:32.429Z"
+      },
+      "error": "Request failed with code 403"
     }
   ],
   "dailyStats": {
@@ -360,21 +498,22 @@
     },
     "2025-11-10": {
       "repliesPosted": 0,
-      "repliesFailed": 6,
+      "repliesFailed": 12,
       "averageRelevance": 76,
       "productDistribution": {
-        "X Bot (Marketplace Solution)": 2,
-        "Fan Game Cube (Marketplace Solution)": 2,
+        "X Bot (Marketplace Solution)": 4,
+        "Fan Game Cube (Marketplace Solution)": 4,
         "Blockchain Badges (Marketplace Solution)": 1,
-        "Blockchain Hash (Platform API)": 1
+        "Blockchain Hash (Platform API)": 2,
+        "NFT.zK (Platform API)": 1
       }
     }
   },
   "metadata": {
-    "totalReplies": 14,
+    "totalReplies": 20,
     "successfulReplies": 5,
-    "failedReplies": 9,
-    "lastReplyAt": "2025-11-10T12:17:05.539Z",
+    "failedReplies": 15,
+    "lastReplyAt": "2025-11-10T15:48:32.429Z",
     "todayRepliesCount": 0,
     "lastUpdateBy": "kol-system"
   }
