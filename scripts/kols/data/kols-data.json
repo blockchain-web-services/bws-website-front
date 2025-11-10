@@ -517,12 +517,53 @@
       "accountType": "person",
       "lastTweetAnalyzed": null,
       "status": "active"
+    },
+    {
+      "id": "965385625825406978",
+      "username": "profcryptotalks",
+      "name": "profcryptotalks",
+      "bio": "🏆 13x Multi Award-Winning YouTuber / Content Creator  💎 2x @forbes 30 U 30 & 40 U 40 ▶️  Web3 / Crypto / Tech / iGaming\n\n 💻 https://t.co/GzeZxNEKPP",
+      "followersCount": 31197,
+      "followingCount": 626,
+      "tweetCount": 27794,
+      "isVerified": true,
+      "cryptoRelevanceScore": 75,
+      "engagementRate": 0,
+      "avgLikes": 0,
+      "avgViews": 0,
+      "discoveredAt": "2025-11-10T00:30:57.295Z",
+      "lastChecked": "2025-11-10T00:30:57.295Z",
+      "discoveredThrough": "crawlee-search",
+      "discoveryLevel": 0,
+      "engagementHistory": {
+        "totalPostsAnalyzed": 0,
+        "repliedTo": 0,
+        "lastEngagement": null,
+        "successfulReplies": 0,
+        "failedReplies": 0
+      },
+      "relationships": {
+        "follows": [],
+        "followedBy": []
+      },
+      "recentTopics": [
+        "Web3",
+        "Crypto",
+        "Tech",
+        "iGaming",
+        "Content Creation"
+      ],
+      "cryptoProjects": [],
+      "sentimentTowardsCrypto": "positive",
+      "accountType": "person",
+      "lastTweetAnalyzed": null,
+      "status": "active"
     }
   ],
   "metadata": {
     "lastDiscoveryRun": "2025-11-05T12:00:01.384Z",
-    "totalKols": 13,
-    "activeKols": 13,
+    "totalKols": 14,
+    "activeKols": 14,
     "discoveryDepth": 2,
     "seedKolsCount": 8,
     "lastUpdateBy": "kol-system",
