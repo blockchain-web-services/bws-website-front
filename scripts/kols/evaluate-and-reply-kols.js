@@ -38,6 +38,7 @@ import {
   postReply,
   apiTracker
 } from './utils/twitter-client.js';
+import usageLogger from './utils/api-usage-logger.js';
 import { sendReplyNotification, sendErrorNotification } from './utils/zapier-webhook.js';
 import {
   createClaudeClient,
@@ -778,6 +779,9 @@ ${'='.repeat(60)}
 
   // Display API consumption statistics
   apiTracker.displayStats();
+
+  // Display persistent usage tracking
+  await usageLogger.displayTodayUsage();
 
   // Send notification to Zapier/Slack
   // SUCCESS = at least 1 reply posted, FAILURE = no replies posted

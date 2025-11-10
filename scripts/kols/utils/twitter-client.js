@@ -1,5 +1,6 @@
 import { TwitterApi } from 'twitter-api-v2';
 import apiTracker from './api-call-tracker.js';
+import usageLogger from './api-usage-logger.js';
 
 /**
  * Initialize read-only Twitter client (Bearer Token)
@@ -173,11 +174,62 @@ export async function postReply(client, tweetId, replyText, dryRun = false) {
 
     const result = await client.v2.reply(replyText, tweetId);
 
+    // Log successful post
     apiTracker.recordCall('tweets/reply', 1, true);
+    await usageLogger.logSuccessfulPost({
+      tweetId,
+      replyId: result.data?.id,
+      replyText: replyText.substring(0, 100),
+      rateLimit: result.rateLimit || null
+    });
+
     console.log(`✅ Posted reply to tweet ${tweetId}`);
     return result;
   } catch (error) {
-    apiTracker.recordCall('tweets/reply', 0, false, error.message);
+    // Enhanced 429 error logging with rate limit details
+    if (error.code === 429 && error.rateLimit) {
+      const limit = error.rateLimit.limit;
+      const remaining = error.rateLimit.remaining;
+      const reset = new Date(error.rateLimit.reset * 1000);
+      const used = limit - remaining;
+
+      console.error(`❌ Rate limit exceeded (429):`);
+      console.error(`   Limit: ${limit} posts per time window`);
+      console.error(`   Used: ${used} posts`);
+      console.error(`   Remaining: ${remaining} posts`);
+      console.error(`   Resets at: ${reset.toISOString()}`);
+
+      // Identify tier based on limit
+      if (limit === 17) {
+        console.error(`   ⚠️  FREE TIER DETECTED - Upgrade to Basic tier required`);
+      } else if (limit === 100) {
+        console.error(`   ✅ Basic tier user-level limit (OAuth 1.0a)`);
+      } else if (limit >= 1000) {
+        console.error(`   ✅ Higher tier detected`);
+      }
+
+      // Log rate limit error to persistent storage
+      await usageLogger.logRateLimitError({
+        tweetId,
+        limit,
+        remaining,
+        used,
+        reset: reset.toISOString()
+      });
+
+      apiTracker.recordCall('tweets/reply', 0, false, `Rate limit: ${used}/${limit} used`);
+    } else {
+      apiTracker.recordCall('tweets/reply', 0, false, error.message);
+
+      // Log other errors
+      await usageLogger.logPostAttempt({
+        tweetId,
+        success: false,
+        error: error.message,
+        errorCode: error.code
+      });
+    }
+
     console.error(`❌ Error posting reply to tweet ${tweetId}: ${error.message}`);
     throw error;
   }
