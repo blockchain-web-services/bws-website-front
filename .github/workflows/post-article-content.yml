@@ -19,6 +19,9 @@ on:
         required: false
         default: '4'
 
+permissions:
+  contents: write  # Required to push updated article-x-posts.json
+
 jobs:
   generate-and-post:
     runs-on: ubuntu-latest
