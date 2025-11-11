@@ -1,0 +1,332 @@
+{
+  "metadata": {
+    "lastGenerated": "2025-11-11T08:01:16.117Z",
+    "totalPosts": 12,
+    "totalArticles": 4,
+    "pendingPosts": 11,
+    "postedCount": 0,
+    "lastPosted": "2025-11-11T08:03:53.344Z",
+    "failedCount": 1
+  },
+  "posts": [
+    {
+      "id": "d0543892-67e0-482f-bd3d-46eecee9d7a6",
+      "articleSlug": "x-bot-2025-11-10",
+      "product": "X Bot",
+      "type": "announcement",
+      "text": "Manual community tracking drains resources from every crypto project. X Bot automates mention tracking across X and Telegram, delivering real-time analytics and engagement leaderboards. @BWSCommunity $BWS\n\n📖 Article: https://www.bws.ninja/articles/x-bot-2025-11-10\n📚 Docs: https://docs.bws.ninja/telegram-bots/x-bot\n\n#XBot #Web3Analytics",
+      "mainText": "Manual community tracking drains resources from every crypto project. X Bot automates mention tracking across X and Telegram, delivering real-time analytics and engagement leaderboards. @BWSCommunity $BWS",
+      "articleUrl": "https://www.bws.ninja/articles/x-bot-2025-11-10",
+      "docsUrl": "https://docs.bws.ninja/telegram-bots/x-bot",
+      "hashtags": [
+        "XBot",
+        "Web3Analytics"
+      ],
+      "priority": "high",
+      "status": "failed",
+      "scheduledFor": null,
+      "postedAt": null,
+      "tweetId": null,
+      "generatedAt": "2025-11-11T08:00:44.615Z",
+      "metadata": {
+        "articleTitle": "X Bot: Automate Community Tracking and KOL Performance Analytics",
+        "articlePublishDate": "2025-11-10T10:04:31.897Z",
+        "mainTextLength": 204,
+        "fullTextLength": 339
+      },
+      "error": {
+        "message": "Request failed with code 403",
+        "code": 403,
+        "timestamp": "2025-11-11T08:03:53.343Z"
+      },
+      "lastAttempt": "2025-11-11T08:03:53.344Z",
+      "retryCount": 1
+    },
+    {
+      "id": "a406edb5-d61c-4247-84f2-60cf4b492ab9",
+      "articleSlug": "x-bot-2025-11-10",
+      "product": "X Bot",
+      "type": "feature",
+      "text": "Track every mention of your project automatically. X Bot monitors X and Telegram in real-time, building comprehensive leaderboards to identify and reward your top advocates. @BWSCommunity $BWS\n\n📖 Article: https://www.bws.ninja/articles/x-bot-2025-11-10\n📚 Docs: https://docs.bws.ninja/telegram-bots/x-bot\n\n#CommunityManagement #AutomationTools",
+      "mainText": "Track every mention of your project automatically. X Bot monitors X and Telegram in real-time, building comprehensive leaderboards to identify and reward your top advocates. @BWSCommunity $BWS",
+      "articleUrl": "https://www.bws.ninja/articles/x-bot-2025-11-10",
+      "docsUrl": "https://docs.bws.ninja/telegram-bots/x-bot",
+      "hashtags": [
+        "CommunityManagement",
+        "AutomationTools"
+      ],
+      "priority": "medium",
+      "status": "pending",
+      "scheduledFor": null,
+      "postedAt": null,
+      "tweetId": null,
+      "generatedAt": "2025-11-11T08:00:44.616Z",
+      "metadata": {
+        "articleTitle": "X Bot: Automate Community Tracking and KOL Performance Analytics",
+        "articlePublishDate": "2025-11-10T10:04:31.897Z",
+        "mainTextLength": 192,
+        "fullTextLength": 344
+      }
+    },
+    {
+      "id": "d57ed0a5-8860-4b46-b686-f2e4795f4d2b",
+      "articleSlug": "x-bot-2025-11-10",
+      "product": "X Bot",
+      "type": "use_case",
+      "text": "Launch day: Instead of manually searching for mentions, your team gets instant alerts and analytics. X Bot tracks engagement, ranks supporters, and helps you reward KOLs who drive real value. @BWSCommunity $BWS\n\n📖 Article: https://www.bws.ninja/articles/x-bot-2025-11-10\n📚 Docs: https://docs.bws.ninja/telegram-bots/x-bot\n\n#CryptoMarketing #KOLTracking",
+      "mainText": "Launch day: Instead of manually searching for mentions, your team gets instant alerts and analytics. X Bot tracks engagement, ranks supporters, and helps you reward KOLs who drive real value. @BWSCommunity $BWS",
+      "articleUrl": "https://www.bws.ninja/articles/x-bot-2025-11-10",
+      "docsUrl": "https://docs.bws.ninja/telegram-bots/x-bot",
+      "hashtags": [
+        "CryptoMarketing",
+        "KOLTracking"
+      ],
+      "priority": "medium",
+      "status": "pending",
+      "scheduledFor": null,
+      "postedAt": null,
+      "tweetId": null,
+      "generatedAt": "2025-11-11T08:00:44.616Z",
+      "metadata": {
+        "articleTitle": "X Bot: Automate Community Tracking and KOL Performance Analytics",
+        "articlePublishDate": "2025-11-10T10:04:31.897Z",
+        "mainTextLength": 210,
+        "fullTextLength": 354
+      }
+    },
+    {
+      "id": "65c3b05e-51ee-4684-b65c-c7f1fa423831",
+      "articleSlug": "blockchain-badges-2025-11-10",
+      "product": "Blockchain Badges",
+      "type": "announcement",
+      "text": "Traditional digital credentials can't be verified or transferred between platforms. Blockchain Badges by @BWSCommunity creates immutable, portable web3 certifications that recipients truly own. $BWS\n\n📖 Article: https://www.bws.ninja/articles/blockchain-badges-2025-11-10\n📚 Docs: https://docs.bws.ninja/marketplace-solutions/bws.blockchain.badges\n\n#BlockchainBadges #Web3Credentials",
+      "mainText": "Traditional digital credentials can't be verified or transferred between platforms. Blockchain Badges by @BWSCommunity creates immutable, portable web3 certifications that recipients truly own. $BWS",
+      "articleUrl": "https://www.bws.ninja/articles/blockchain-badges-2025-11-10",
+      "docsUrl": "https://docs.bws.ninja/marketplace-solutions/bws.blockchain.badges",
+      "hashtags": [
+        "BlockchainBadges",
+        "Web3Credentials"
+      ],
+      "priority": "high",
+      "status": "pending",
+      "scheduledFor": null,
+      "postedAt": null,
+      "tweetId": null,
+      "generatedAt": "2025-11-11T08:00:54.729Z",
+      "metadata": {
+        "articleTitle": "Blockchain Badges: Web3-Native Digital Certifications for Organizations",
+        "articlePublishDate": "2025-11-10T10:04:47.324Z",
+        "mainTextLength": 198,
+        "fullTextLength": 383
+      }
+    },
+    {
+      "id": "31259616-6cfc-4bb6-9cb8-54dce5d6c217",
+      "articleSlug": "blockchain-badges-2025-11-10",
+      "product": "Blockchain Badges",
+      "type": "feature",
+      "text": "Issue verifiable event participation certificates that live on-chain forever. Conference attendees receive badges they can prove ownership of across any platform. @BWSCommunity $BWS\n\n📖 Article: https://www.bws.ninja/articles/blockchain-badges-2025-11-10\n📚 Docs: https://docs.bws.ninja/marketplace-solutions/bws.blockchain.badges\n\n#ImmutableCredentials #SmartContracts",
+      "mainText": "Issue verifiable event participation certificates that live on-chain forever. Conference attendees receive badges they can prove ownership of across any platform. @BWSCommunity $BWS",
+      "articleUrl": "https://www.bws.ninja/articles/blockchain-badges-2025-11-10",
+      "docsUrl": "https://docs.bws.ninja/marketplace-solutions/bws.blockchain.badges",
+      "hashtags": [
+        "ImmutableCredentials",
+        "SmartContracts"
+      ],
+      "priority": "medium",
+      "status": "pending",
+      "scheduledFor": null,
+      "postedAt": null,
+      "tweetId": null,
+      "generatedAt": "2025-11-11T08:00:54.729Z",
+      "metadata": {
+        "articleTitle": "Blockchain Badges: Web3-Native Digital Certifications for Organizations",
+        "articlePublishDate": "2025-11-10T10:04:47.324Z",
+        "mainTextLength": 181,
+        "fullTextLength": 369
+      }
+    },
+    {
+      "id": "bdd8e952-8fab-406c-941d-0ab407afa3cd",
+      "articleSlug": "blockchain-badges-2025-11-10",
+      "product": "Blockchain Badges",
+      "type": "use_case",
+      "text": "Learning platforms struggle with credential fraud. With Blockchain Badges, course completions become tamper-proof NFTs that learners control and employers can instantly verify. @BWSCommunity $BWS\n\n📖 Article: https://www.bws.ninja/articles/blockchain-badges-2025-11-10\n📚 Docs: https://docs.bws.ninja/marketplace-solutions/bws.blockchain.badges\n\n#EdTech #DigitalCertification",
+      "mainText": "Learning platforms struggle with credential fraud. With Blockchain Badges, course completions become tamper-proof NFTs that learners control and employers can instantly verify. @BWSCommunity $BWS",
+      "articleUrl": "https://www.bws.ninja/articles/blockchain-badges-2025-11-10",
+      "docsUrl": "https://docs.bws.ninja/marketplace-solutions/bws.blockchain.badges",
+      "hashtags": [
+        "EdTech",
+        "DigitalCertification"
+      ],
+      "priority": "medium",
+      "status": "pending",
+      "scheduledFor": null,
+      "postedAt": null,
+      "tweetId": null,
+      "generatedAt": "2025-11-11T08:00:54.729Z",
+      "metadata": {
+        "articleTitle": "Blockchain Badges: Web3-Native Digital Certifications for Organizations",
+        "articlePublishDate": "2025-11-10T10:04:47.324Z",
+        "mainTextLength": 195,
+        "fullTextLength": 375
+      }
+    },
+    {
+      "id": "86aab002-bdab-4a83-9fb5-3ab20cd94b5f",
+      "articleSlug": "esg-credits-2025-11-10",
+      "product": "ESG Credits",
+      "type": "announcement",
+      "text": "Green finance lacks transparent impact verification. ESG Credits brings investor-grade reporting to sustainable investments through blockchain—automating ESG alignment with immutable proof. @BWSCommunity $BWS\n\n📖 Article: https://www.bws.ninja/articles/esg-credits-2025-11-10\n📚 Docs: https://docs.bws.ninja/marketplace-solutions/bws.esg.credits\n\n#ESGCredits #SustainableFinance",
+      "mainText": "Green finance lacks transparent impact verification. ESG Credits brings investor-grade reporting to sustainable investments through blockchain—automating ESG alignment with immutable proof. @BWSCommunity $BWS",
+      "articleUrl": "https://www.bws.ninja/articles/esg-credits-2025-11-10",
+      "docsUrl": "https://docs.bws.ninja/marketplace-solutions/bws.esg.credits",
+      "hashtags": [
+        "ESGCredits",
+        "SustainableFinance"
+      ],
+      "priority": "high",
+      "status": "pending",
+      "scheduledFor": null,
+      "postedAt": null,
+      "tweetId": null,
+      "generatedAt": "2025-11-11T08:01:05.567Z",
+      "metadata": {
+        "articleTitle": "ESG Credits: Blockchain-Powered Green Finance and Impact Reporting",
+        "articlePublishDate": "2025-11-10T10:04:58.377Z",
+        "mainTextLength": 208,
+        "fullTextLength": 378
+      }
+    },
+    {
+      "id": "ef3f0f9d-c2e7-49f2-ad50-b6b3798d90d8",
+      "articleSlug": "esg-credits-2025-11-10",
+      "product": "ESG Credits",
+      "type": "feature",
+      "text": "Standardized ESG disclosures eliminate reporting inconsistencies. Fund managers can now automate compliance tracking across portfolios, reducing audit time by 70% while ensuring regulatory alignment. @BWSCommunity $BWS\n\n📖 Article: https://www.bws.ninja/articles/esg-credits-2025-11-10\n📚 Docs: https://docs.bws.ninja/marketplace-solutions/bws.esg.credits\n\n#ImpactReporting #BlockchainTech",
+      "mainText": "Standardized ESG disclosures eliminate reporting inconsistencies. Fund managers can now automate compliance tracking across portfolios, reducing audit time by 70% while ensuring regulatory alignment. @BWSCommunity $BWS",
+      "articleUrl": "https://www.bws.ninja/articles/esg-credits-2025-11-10",
+      "docsUrl": "https://docs.bws.ninja/marketplace-solutions/bws.esg.credits",
+      "hashtags": [
+        "ImpactReporting",
+        "BlockchainTech"
+      ],
+      "priority": "medium",
+      "status": "pending",
+      "scheduledFor": null,
+      "postedAt": null,
+      "tweetId": null,
+      "generatedAt": "2025-11-11T08:01:05.567Z",
+      "metadata": {
+        "articleTitle": "ESG Credits: Blockchain-Powered Green Finance and Impact Reporting",
+        "articlePublishDate": "2025-11-10T10:04:58.377Z",
+        "mainTextLength": 218,
+        "fullTextLength": 389
+      }
+    },
+    {
+      "id": "4443fb9f-bb18-4078-8ee4-5ecf368e7318",
+      "articleSlug": "esg-credits-2025-11-10",
+      "product": "ESG Credits",
+      "type": "use_case",
+      "text": "Before: Investors question green bond impact with opaque third-party reports. After: Real-time blockchain verification shows exact environmental outcomes—building trust through transparent, immutable data. @BWSCommunity $BWS\n\n📖 Article: https://www.bws.ninja/articles/esg-credits-2025-11-10\n📚 Docs: https://docs.bws.ninja/marketplace-solutions/bws.esg.credits\n\n#GreenFinance #ESGInvesting",
+      "mainText": "Before: Investors question green bond impact with opaque third-party reports. After: Real-time blockchain verification shows exact environmental outcomes—building trust through transparent, immutable data. @BWSCommunity $BWS",
+      "articleUrl": "https://www.bws.ninja/articles/esg-credits-2025-11-10",
+      "docsUrl": "https://docs.bws.ninja/marketplace-solutions/bws.esg.credits",
+      "hashtags": [
+        "GreenFinance",
+        "ESGInvesting"
+      ],
+      "priority": "medium",
+      "status": "pending",
+      "scheduledFor": null,
+      "postedAt": null,
+      "tweetId": null,
+      "generatedAt": "2025-11-11T08:01:05.567Z",
+      "metadata": {
+        "articleTitle": "ESG Credits: Blockchain-Powered Green Finance and Impact Reporting",
+        "articlePublishDate": "2025-11-10T10:04:58.377Z",
+        "mainTextLength": 224,
+        "fullTextLength": 390
+      }
+    },
+    {
+      "id": "022aa0b3-ea4c-42ea-8b6c-02ca8e79b4b6",
+      "articleSlug": "fan-game-cube-2025-11-10",
+      "product": "Fan Game Cube",
+      "type": "announcement",
+      "text": "Sports clubs lose revenue while fans stay passive. Fan Game Cube changes this by letting fans own virtual field zones as NFTs tied to live game events—creating active engagement and new revenue streams powered by @BWSCommunity $BWS\n\n📖 Article: https://www.bws.ninja/articles/fan-game-cube-2025-11-10\n📚 Docs: https://docs.bws.ninja/marketplace-solutions/bws.nft.gamecube\n\n#FanGameCube #SportsNFT",
+      "mainText": "Sports clubs lose revenue while fans stay passive. Fan Game Cube changes this by letting fans own virtual field zones as NFTs tied to live game events—creating active engagement and new revenue streams powered by @BWSCommunity $BWS",
+      "articleUrl": "https://www.bws.ninja/articles/fan-game-cube-2025-11-10",
+      "docsUrl": "https://docs.bws.ninja/marketplace-solutions/bws.nft.gamecube",
+      "hashtags": [
+        "FanGameCube",
+        "SportsNFT"
+      ],
+      "priority": "high",
+      "status": "pending",
+      "scheduledFor": null,
+      "postedAt": null,
+      "tweetId": null,
+      "generatedAt": "2025-11-11T08:01:16.116Z",
+      "metadata": {
+        "articleTitle": "Fan Game Cube: NFT-Powered Sports Fan Engagement Platform",
+        "articlePublishDate": "2025-11-10T10:05:20.761Z",
+        "mainTextLength": 231,
+        "fullTextLength": 396
+      }
+    },
+    {
+      "id": "c77efd18-d04c-4faf-859c-d65fe6627fe8",
+      "articleSlug": "fan-game-cube-2025-11-10",
+      "product": "Fan Game Cube",
+      "type": "feature",
+      "text": "Real-time NFT ownership meets live sports. When a goal is scored in your virtual zone, you earn rewards automatically. Fan Game Cube connects on-field action to blockchain-verified ownership through @BWSCommunity $BWS\n\n📖 Article: https://www.bws.ninja/articles/fan-game-cube-2025-11-10\n📚 Docs: https://docs.bws.ninja/marketplace-solutions/bws.nft.gamecube\n\n#NFTUtility #Web3Gaming",
+      "mainText": "Real-time NFT ownership meets live sports. When a goal is scored in your virtual zone, you earn rewards automatically. Fan Game Cube connects on-field action to blockchain-verified ownership through @BWSCommunity $BWS",
+      "articleUrl": "https://www.bws.ninja/articles/fan-game-cube-2025-11-10",
+      "docsUrl": "https://docs.bws.ninja/marketplace-solutions/bws.nft.gamecube",
+      "hashtags": [
+        "NFTUtility",
+        "Web3Gaming"
+      ],
+      "priority": "medium",
+      "status": "pending",
+      "scheduledFor": null,
+      "postedAt": null,
+      "tweetId": null,
+      "generatedAt": "2025-11-11T08:01:16.116Z",
+      "metadata": {
+        "articleTitle": "Fan Game Cube: NFT-Powered Sports Fan Engagement Platform",
+        "articlePublishDate": "2025-11-10T10:05:20.761Z",
+        "mainTextLength": 217,
+        "fullTextLength": 382
+      }
+    },
+    {
+      "id": "9b499484-a40c-4814-a1c3-03101eddcecc",
+      "articleSlug": "fan-game-cube-2025-11-10",
+      "product": "Fan Game Cube",
+      "type": "use_case",
+      "text": "A soccer club launches virtual field zones as NFTs. Fans buy their favorite penalty box section. Every goal scored there triggers automatic rewards. Result: deeper engagement, measurable loyalty, recurring revenue via @BWSCommunity $BWS\n\n📖 Article: https://www.bws.ninja/articles/fan-game-cube-2025-11-10\n📚 Docs: https://docs.bws.ninja/marketplace-solutions/bws.nft.gamecube\n\n#SportsWeb3 #FanEngagement",
+      "mainText": "A soccer club launches virtual field zones as NFTs. Fans buy their favorite penalty box section. Every goal scored there triggers automatic rewards. Result: deeper engagement, measurable loyalty, recurring revenue via @BWSCommunity $BWS",
+      "articleUrl": "https://www.bws.ninja/articles/fan-game-cube-2025-11-10",
+      "docsUrl": "https://docs.bws.ninja/marketplace-solutions/bws.nft.gamecube",
+      "hashtags": [
+        "SportsWeb3",
+        "FanEngagement"
+      ],
+      "priority": "medium",
+      "status": "pending",
+      "scheduledFor": null,
+      "postedAt": null,
+      "tweetId": null,
+      "generatedAt": "2025-11-11T08:01:16.117Z",
+      "metadata": {
+        "articleTitle": "Fan Game Cube: NFT-Powered Sports Fan Engagement Platform",
+        "articlePublishDate": "2025-11-10T10:05:20.761Z",
+        "mainTextLength": 236,
+        "fullTextLength": 404
+      }
+    }
+  ]
+}

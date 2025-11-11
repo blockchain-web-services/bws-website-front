@@ -444,6 +444,84 @@ export async function sendErrorNotification(options) {
   }
 }
 
+/**
+ * Send article post notification
+ * @param {Object} options - Notification options
+ */
+export async function sendArticlePostNotification(options) {
+  const {
+    success = true,
+    product,
+    articleTitle,
+    articleUrl,
+    docsUrl,
+    postUrl,
+    postText,
+    hashtags = [],
+    error = null,
+    runUrl = null
+  } = options;
+
+  const emoji = success ? '✅' : '❌';
+  const statusText = success ? 'POSTED' : 'FAILED';
+
+  // Build formatted message
+  const textParts = [];
+  textParts.push(`${emoji} *Article Content Posted* - ${statusText}`);
+  textParts.push('');
+  textParts.push(`*Product:* ${product}`);
+  textParts.push(`*Article:* ${articleTitle}`);
+  textParts.push('');
+  textParts.push('*Links:*');
+  textParts.push(`  📖 Article: <${articleUrl}|View Article>`);
+  textParts.push(`  📚 Docs: <${docsUrl}|View Docs>`);
+  if (postUrl) {
+    textParts.push(`  🐦 Post: <${postUrl}|View on X>`);
+  }
+
+  if (postText) {
+    textParts.push('');
+    textParts.push('*Posted Text:*');
+    textParts.push(`"${postText}"`);
+  }
+
+  if (hashtags && hashtags.length > 0) {
+    textParts.push('');
+    textParts.push(`*Hashtags:* ${hashtags.map(t => `#${t}`).join(' ')}`);
+  }
+
+  if (error) {
+    textParts.push('');
+    textParts.push('');
+    const errorMessage = typeof error === 'object'
+      ? (error.message || JSON.stringify(error, Object.getOwnPropertyNames(error)))
+      : String(error);
+    textParts.push(`*Error:* ${errorMessage}`);
+  }
+
+  if (runUrl) {
+    textParts.push('');
+    textParts.push('');
+    textParts.push(`<${runUrl}|View Workflow Run>`);
+  }
+
+  const payload = {
+    Message: textParts.join('\n'),
+    Timestamp: new Date().toISOString(),
+    Type: success ? 'SUCCESS' : 'ERROR',
+    Process: 'article_post'
+  };
+
+  try {
+    const result = await sendToZapier(payload);
+    console.log('✅ Sent article post notification to Zapier/Slack');
+    return result;
+  } catch (err) {
+    console.error('❌ Failed to send article post notification to Zapier:', err.message);
+    return { success: false, error: err.message };
+  }
+}
+
 // Named export for ScrapFly error handler compatibility
 export const sendRequest = sendToZapier;
 
@@ -452,5 +530,6 @@ export default {
   sendRequest,
   sendDiscoveryNotification,
   sendReplyNotification,
+  sendArticlePostNotification,
   sendErrorNotification
 };

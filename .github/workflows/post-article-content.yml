@@ -1,0 +1,103 @@
+name: Post Article Content to X
+
+on:
+  # Run after article generation completes
+  workflow_run:
+    workflows: ["Generate Articles"]
+    types:
+      - completed
+
+  # Also run on schedule (daily at 12:00 PM UTC)
+  schedule:
+    - cron: '0 12 * * *'
+
+  # Allow manual trigger
+  workflow_dispatch:
+    inputs:
+      max_posts:
+        description: 'Maximum posts to publish (default: 4)'
+        required: false
+        default: '4'
+
+jobs:
+  generate-and-post:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Need full history for git operations
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: |
+          npm install @anthropic-ai/sdk
+          npm install twitter-api-v2
+          npm install dotenv
+
+      - name: Generate posts for new articles
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          cd scripts
+          node generate-article-posts.js
+
+      - name: Post to X (Twitter)
+        env:
+          BWSXAI_TWITTER_API_KEY: ${{ secrets.BWSXAI_TWITTER_API_KEY }}
+          BWSXAI_TWITTER_API_SECRET: ${{ secrets.BWSXAI_TWITTER_API_SECRET }}
+          BWSXAI_TWITTER_ACCESS_TOKEN: ${{ secrets.BWSXAI_TWITTER_ACCESS_TOKEN }}
+          BWSXAI_TWITTER_ACCESS_SECRET: ${{ secrets.BWSXAI_TWITTER_ACCESS_SECRET }}
+        run: |
+          cd scripts
+          node post-article-content.js
+
+      - name: Commit updated posts data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          if [[ -n $(git status --porcelain scripts/data/article-x-posts.json) ]]; then
+            git add scripts/data/article-x-posts.json
+            git commit -m "chore: Update article X posts data [skip ci]
+
+            - Posted article content to @BWSXAI
+            - Updated post statuses and tweet IDs
+
+            🤖 Generated with [Claude Code](https://claude.com/claude-code)"
+
+            git push
+            echo "✅ Posts data committed and pushed"
+          else
+            echo "ℹ️  No changes to commit"
+          fi
+
+      - name: Summary
+        if: always()
+        run: |
+          echo "## Article Posting Results" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+
+          if [ -f scripts/data/article-x-posts.json ]; then
+            TOTAL=$(node -p "require('./scripts/data/article-x-posts.json').posts.length")
+            PENDING=$(node -p "require('./scripts/data/article-x-posts.json').posts.filter(p => p.status === 'pending').length")
+            POSTED=$(node -p "require('./scripts/data/article-x-posts.json').posts.filter(p => p.status === 'posted').length")
+            FAILED=$(node -p "require('./scripts/data/article-x-posts.json').posts.filter(p => p.status === 'failed').length")
+
+            echo "### 📊 Stats" >> $GITHUB_STEP_SUMMARY
+            echo "- Total posts: $TOTAL" >> $GITHUB_STEP_SUMMARY
+            echo "- ✅ Posted: $POSTED" >> $GITHUB_STEP_SUMMARY
+            echo "- ⏳ Pending: $PENDING" >> $GITHUB_STEP_SUMMARY
+            echo "- ❌ Failed: $FAILED" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "🔗 [View @BWSXAI on X](https://twitter.com/BWSXAI)" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "⚠️ No posts data file found" >> $GITHUB_STEP_SUMMARY
+          fi

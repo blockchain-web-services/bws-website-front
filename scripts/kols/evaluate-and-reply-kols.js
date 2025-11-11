@@ -36,6 +36,8 @@ import {
   getUserTweets,
   getUserTweetsViaSearch,
   postReply,
+  followUser,
+  likeTweet,
   apiTracker
 } from './utils/twitter-client.js';
 import usageLogger from './utils/api-usage-logger.js';
@@ -106,8 +108,16 @@ async function evaluateAndReply() {
   currentPhase = 'loading_products';
   const bwsProducts = loadBWSProducts();
   lastSuccessfulOperation = 'products_loaded';
-  const { maxRepliesPerRun, maxRepliesPerDay, maxRepliesPerKolPerWeek, minRelevanceScoreForReply, minTimeBetweenRepliesMinutes, dryRun } = config.replySettings;
+  const { maxRepliesPerRun, maxRepliesPerDay, maxRepliesPerKolPerWeek, minRelevanceScoreForReply, minTimeBetweenRepliesMinutes, dryRun, antiSpamActions } = config.replySettings;
   const maxRepliesThisRun = maxRepliesPerRun || maxRepliesPerDay;
+
+  // Default anti-spam settings if not specified
+  const antiSpam = antiSpamActions || {
+    followKolBeforeReply: true,
+    likeTweetBeforeReply: true,
+    onlyIfNotAlreadyFollowing: true,
+    skipOnError: true
+  };
 
   if (Object.keys(bwsProducts).length === 0) {
     console.error('❌ No BWS products loaded. Check scripts/data/docs-index.json exists.');
@@ -121,6 +131,9 @@ async function evaluateAndReply() {
    - Min relevance score: ${minRelevanceScoreForReply}
    - Min time between replies: ${minTimeBetweenRepliesMinutes} minutes
    - Dry run mode: ${dryRun ? '✅ ON (no actual posts)' : '❌ OFF (will post)'}
+   - Anti-spam actions:
+     • Follow KOL: ${antiSpam.followKolBeforeReply ? '✅' : '❌'}
+     • Like tweet: ${antiSpam.likeTweetBeforeReply ? '✅' : '❌'}
 `);
 
   // Initialize clients
@@ -358,6 +371,52 @@ async function evaluateAndReply() {
         let error = null;
 
         try {
+          // Anti-spam actions: Follow and Like before replying
+          if (!dryRun && writeClient && antiSpam) {
+            // Like the original tweet
+            if (antiSpam.likeTweetBeforeReply) {
+              try {
+                console.log(`      👍 Liking original tweet...`);
+                const likeResult = await likeTweet(writeClient, tweet.id);
+                if (likeResult.success) {
+                  console.log(`      ✅ Liked tweet successfully`);
+                } else if (!antiSpam.skipOnError) {
+                  throw new Error(`Failed to like tweet: ${likeResult.error}`);
+                } else {
+                  console.log(`      ⚠️  Failed to like (continuing): ${likeResult.error}`);
+                }
+              } catch (likeError) {
+                if (!antiSpam.skipOnError) {
+                  throw likeError;
+                }
+                console.log(`      ⚠️  Like error (continuing): ${likeError.message}`);
+              }
+            }
+
+            // Follow the KOL
+            if (antiSpam.followKolBeforeReply) {
+              try {
+                console.log(`      👤 Following @${kol.username}...`);
+                const followResult = await followUser(writeClient, kol.id);
+                if (followResult.success) {
+                  console.log(`      ✅ Followed successfully`);
+                } else if (!antiSpam.skipOnError) {
+                  throw new Error(`Failed to follow user: ${followResult.error}`);
+                } else {
+                  console.log(`      ⚠️  Failed to follow (continuing): ${followResult.error}`);
+                }
+              } catch (followError) {
+                if (!antiSpam.skipOnError) {
+                  throw followError;
+                }
+                console.log(`      ⚠️  Follow error (continuing): ${followError.message}`);
+              }
+            }
+
+            // Small delay after anti-spam actions
+            await sleep(2000); // 2 seconds
+          }
+
           await twitterLimiter.throttle();
 
           const clientToUse = dryRun ? readClient : writeClient;
