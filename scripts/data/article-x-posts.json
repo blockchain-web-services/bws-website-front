@@ -3,10 +3,10 @@
     "lastGenerated": "2025-11-11T10:27:57.184Z",
     "totalPosts": 24,
     "totalArticles": 8,
-    "pendingPosts": 19,
+    "pendingPosts": 15,
     "postedCount": 0,
-    "lastPosted": "2025-11-11T10:30:58.104Z",
-    "failedCount": 5
+    "lastPosted": "2025-11-11T10:58:36.218Z",
+    "failedCount": 9
   },
   "posts": [
     {
@@ -56,7 +56,7 @@
         "AutomationTools"
       ],
       "priority": "medium",
-      "status": "pending",
+      "status": "failed",
       "scheduledFor": null,
       "postedAt": null,
       "tweetId": null,
@@ -66,7 +66,14 @@
         "articlePublishDate": "2025-11-10T10:04:31.897Z",
         "mainTextLength": 192,
         "fullTextLength": 344
-      }
+      },
+      "error": {
+        "message": "Request failed with code 403",
+        "code": 403,
+        "timestamp": "2025-11-11T10:58:36.218Z"
+      },
+      "lastAttempt": "2025-11-11T10:58:36.218Z",
+      "retryCount": 1
     },
     {
       "id": "d57ed0a5-8860-4b46-b686-f2e4795f4d2b",
@@ -448,7 +455,7 @@
         "DigitalCredentials"
       ],
       "priority": "high",
-      "status": "pending",
+      "status": "failed",
       "scheduledFor": null,
       "postedAt": null,
       "tweetId": null,
@@ -458,7 +465,14 @@
         "articlePublishDate": "2025-11-11T10:04:15.682Z",
         "mainTextLength": 240,
         "fullTextLength": 428
-      }
+      },
+      "error": {
+        "message": "Request failed with code 403",
+        "code": 403,
+        "timestamp": "2025-11-11T10:55:35.773Z"
+      },
+      "lastAttempt": "2025-11-11T10:55:35.774Z",
+      "retryCount": 1
     },
     {
       "id": "0e265879-c743-415a-a6e7-5462e5d84f5e",
@@ -526,7 +540,7 @@
         "GreenFinance"
       ],
       "priority": "high",
-      "status": "pending",
+      "status": "failed",
       "scheduledFor": null,
       "postedAt": null,
       "tweetId": null,
@@ -536,7 +550,14 @@
         "articlePublishDate": "2025-11-11T10:04:28.406Z",
         "mainTextLength": 193,
         "fullTextLength": 357
-      }
+      },
+      "error": {
+        "message": "Request failed with code 403",
+        "code": 403,
+        "timestamp": "2025-11-11T10:56:35.939Z"
+      },
+      "lastAttempt": "2025-11-11T10:56:35.939Z",
+      "retryCount": 1
     },
     {
       "id": "ddb9cbe4-bfe1-4dc5-9f00-fa53515b8313",
@@ -604,7 +625,7 @@
         "SportsNFT"
       ],
       "priority": "high",
-      "status": "pending",
+      "status": "failed",
       "scheduledFor": null,
       "postedAt": null,
       "tweetId": null,
@@ -614,7 +635,14 @@
         "articlePublishDate": "2025-11-11T10:04:42.726Z",
         "mainTextLength": 229,
         "fullTextLength": 394
-      }
+      },
+      "error": {
+        "message": "Request failed with code 403",
+        "code": 403,
+        "timestamp": "2025-11-11T10:57:36.082Z"
+      },
+      "lastAttempt": "2025-11-11T10:57:36.082Z",
+      "retryCount": 1
     },
     {
       "id": "edad77a6-0de0-4a72-9f83-669d0e1044fa",
