@@ -44,6 +44,7 @@ jobs:
           npm install @anthropic-ai/sdk
           npm install twitter-api-v2
           npm install dotenv
+          npm install https-proxy-agent
 
       - name: Generate posts for new articles
         env:
@@ -58,6 +59,8 @@ jobs:
           BWSXAI_TWITTER_API_SECRET: ${{ secrets.BWSXAI_TWITTER_API_SECRET }}
           BWSXAI_TWITTER_ACCESS_TOKEN: ${{ secrets.BWSXAI_TWITTER_ACCESS_TOKEN }}
           BWSXAI_TWITTER_ACCESS_SECRET: ${{ secrets.BWSXAI_TWITTER_ACCESS_SECRET }}
+          OXYLABS_USERNAME: ${{ secrets.OXYLABS_USERNAME }}
+          OXYLABS_PASSWORD: ${{ secrets.OXYLABS_PASSWORD }}
         run: |
           cd scripts
           node post-article-content.js
