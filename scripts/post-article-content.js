@@ -4,6 +4,8 @@ import { fileURLToPath } from 'url';
 import dotenv from 'dotenv';
 import { sendArticlePostNotification } from './kols/utils/zapier-webhook.js';
 import { createReadWriteClient } from './kols/utils/twitter-client.js';
+import { recordRun } from './utils/schedule-randomizer.js';
+import { updateAndCommitSchedule, isGitHubActions } from './utils/workflow-updater.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -277,6 +279,33 @@ async function main() {
 
     if (successCount > 0) {
       console.log(`🎉 Check your posts at: https://twitter.com/BWSXAI\n`);
+    }
+
+    // Randomize next run schedule (only on GitHub Actions)
+    if (isGitHubActions()) {
+      console.log('=' .repeat(60));
+      console.log('\n🎲 Randomizing next run schedule...\n');
+
+      try {
+        // Record this run and generate next schedule
+        const currentCron = process.env.CURRENT_CRON || '0 12 * * *'; // Fallback
+        const nextSchedule = recordRun(currentCron);
+
+        // Update workflow file and commit
+        const updateSuccess = updateAndCommitSchedule(
+          nextSchedule.cron,
+          nextSchedule.scheduledTimeUTC
+        );
+
+        if (!updateSuccess) {
+          console.error('⚠️  Schedule randomization failed, will use existing schedule');
+        }
+      } catch (scheduleError) {
+        console.error('⚠️  Error during schedule randomization:', scheduleError.message);
+        console.error('   Continuing with existing schedule');
+      }
+    } else {
+      console.log('\nℹ️  Skipping schedule randomization (not running on GitHub Actions)\n');
     }
 
   } catch (error) {
