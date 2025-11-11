@@ -20,7 +20,8 @@ on:
         default: '4'
 
 permissions:
-  contents: write  # Required to push updated article-x-posts.json
+  contents: write   # Required to push updated article-x-posts.json
+  workflows: write  # Required to update workflow schedule for randomization
 
 jobs:
   generate-and-post:
