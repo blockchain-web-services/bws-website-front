@@ -299,6 +299,62 @@ export async function searchTweets(client, query, options = {}) {
 }
 
 /**
+ * Follow a user (anti-spam strategy)
+ * @param {TwitterApi} client - Twitter client with write permissions
+ * @param {string} userId - User ID to follow
+ * @returns {Promise<Object>} Follow result
+ */
+export async function followUser(client, userId) {
+  try {
+    // Get the authenticated user's ID first
+    const me = await client.v2.me();
+    const myUserId = me.data.id;
+
+    // Follow the user
+    const result = await client.v2.follow(myUserId, userId);
+
+    apiTracker.recordCall('users/follow', 1, true);
+    return { success: true, data: result };
+  } catch (error) {
+    const errorMsg = error.message || String(error);
+    const is429 = errorMsg.includes('429') || errorMsg.includes('Too Many Requests');
+
+    apiTracker.recordCall('users/follow', 0, false, is429 ? 'Rate limit (429)' : errorMsg);
+
+    console.error(`Error following user ${userId}: ${error.message}`);
+    return { success: false, error: errorMsg };
+  }
+}
+
+/**
+ * Like a tweet (anti-spam strategy)
+ * @param {TwitterApi} client - Twitter client with write permissions
+ * @param {string} tweetId - Tweet ID to like
+ * @returns {Promise<Object>} Like result
+ */
+export async function likeTweet(client, tweetId) {
+  try {
+    // Get the authenticated user's ID first
+    const me = await client.v2.me();
+    const myUserId = me.data.id;
+
+    // Like the tweet
+    const result = await client.v2.like(myUserId, tweetId);
+
+    apiTracker.recordCall('tweets/like', 1, true);
+    return { success: true, data: result };
+  } catch (error) {
+    const errorMsg = error.message || String(error);
+    const is429 = errorMsg.includes('429') || errorMsg.includes('Too Many Requests');
+
+    apiTracker.recordCall('tweets/like', 0, false, is429 ? 'Rate limit (429)' : errorMsg);
+
+    console.error(`Error liking tweet ${tweetId}: ${error.message}`);
+    return { success: false, error: errorMsg };
+  }
+}
+
+/**
  * Get user tweets via Search API (60 calls/15min vs userTimeline's 10 calls/15min)
  * Uses search with "from:username" query
  */
