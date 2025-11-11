@@ -1,9 +1,9 @@
-import { TwitterApi } from 'twitter-api-v2';
 import { readFileSync, writeFileSync, existsSync } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import dotenv from 'dotenv';
 import { sendArticlePostNotification } from './kols/utils/zapier-webhook.js';
+import { createReadWriteClient } from './kols/utils/twitter-client.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -15,27 +15,6 @@ dotenv.config({ path: join(__dirname, '..', '.env') });
 const ARTICLE_X_POSTS_FILE = join(__dirname, 'data', 'article-x-posts.json');
 const MAX_POSTS_PER_RUN = 4; // Conservative limit per execution
 const DELAY_BETWEEN_POSTS_MS = 60000; // 60 seconds (1 minute) between posts
-
-/**
- * Initialize Twitter client for posting
- */
-function createTwitterClient() {
-  const apiKey = process.env.BWSXAI_TWITTER_API_KEY;
-  const apiSecret = process.env.BWSXAI_TWITTER_API_SECRET;
-  const accessToken = process.env.BWSXAI_TWITTER_ACCESS_TOKEN;
-  const accessSecret = process.env.BWSXAI_TWITTER_ACCESS_SECRET;
-
-  if (!apiKey || !apiSecret || !accessToken || !accessSecret) {
-    throw new Error('Missing BWSXAI Twitter OAuth credentials. Please check your .env file.');
-  }
-
-  return new TwitterApi({
-    appKey: apiKey,
-    appSecret: apiSecret,
-    accessToken: accessToken,
-    accessSecret: accessSecret,
-  });
-}
 
 /**
  * Load posts data
@@ -210,8 +189,8 @@ async function main() {
   }
 
   try {
-    // Initialize Twitter client
-    const twitterClient = createTwitterClient();
+    // Initialize Twitter client (with proxy support on CI)
+    const twitterClient = createReadWriteClient();
     console.log('✅ Twitter client initialized\n');
 
     // Load posts data
