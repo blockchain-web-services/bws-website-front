@@ -1,6 +1,38 @@
 import { TwitterApi } from 'twitter-api-v2';
+import { HttpsProxyAgent } from 'https-proxy-agent';
 import apiTracker from './api-call-tracker.js';
 import usageLogger from './api-usage-logger.js';
+
+/**
+ * Create Oxylabs proxy agent for Twitter API requests
+ * Only used on CI/GitHub Actions environments
+ */
+function createProxyAgent() {
+  // Only use proxy on CI (GitHub Actions)
+  const isCI = process.env.CI === 'true' || process.env.GITHUB_ACTIONS === 'true';
+
+  if (!isCI) {
+    return null; // No proxy for local development
+  }
+
+  // Get proxy credentials from environment (set in GitHub Secrets)
+  const proxyUsername = process.env.OXYLABS_USERNAME;
+  const proxyPassword = process.env.OXYLABS_PASSWORD;
+
+  if (!proxyUsername || !proxyPassword) {
+    console.log('   ⚠️  Running on CI without proxy (credentials not found)');
+    return null;
+  }
+
+  // Oxylabs proxy configuration
+  // Use session-based proxy for consistency (same IP across requests)
+  const sessionId = 'bwsxai-posting'; // Consistent session for article posting
+  const proxyUrl = `http://customer-${proxyUsername}-sessid-${sessionId}:${proxyPassword}@pr.oxylabs.io:7777`;
+
+  console.log('   🌐 Using Oxylabs proxy for Twitter API requests');
+
+  return new HttpsProxyAgent(proxyUrl);
+}
 
 /**
  * Initialize read-only Twitter client (Bearer Token)
@@ -39,6 +71,7 @@ export function createReadOnlyOAuthClient() {
 
 /**
  * Initialize read-write Twitter client (OAuth 1.0a)
+ * Automatically uses Oxylabs proxy on CI/GitHub Actions
  */
 export function createReadWriteClient() {
   const apiKey = process.env.BWSXAI_TWITTER_API_KEY;
@@ -50,12 +83,22 @@ export function createReadWriteClient() {
     throw new Error('All BWSXAI Twitter OAuth credentials are required for posting');
   }
 
-  return new TwitterApi({
+  // Create proxy agent (only on CI)
+  const proxyAgent = createProxyAgent();
+
+  const clientConfig = {
     appKey: apiKey,
     appSecret: apiSecret,
     accessToken: accessToken,
     accessSecret: accessSecret,
-  });
+  };
+
+  // Add proxy agent if available
+  if (proxyAgent) {
+    clientConfig.agent = proxyAgent;
+  }
+
+  return new TwitterApi(clientConfig);
 }
 
 /**
