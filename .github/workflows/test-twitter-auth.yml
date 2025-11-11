@@ -1,0 +1,116 @@
+name: Test Twitter Auth
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test-auth:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm install twitter-api-v2
+
+      - name: Test Twitter API Credentials
+        env:
+          BWSXAI_TWITTER_API_KEY: ${{ secrets.BWSXAI_TWITTER_API_KEY }}
+          BWSXAI_TWITTER_API_SECRET: ${{ secrets.BWSXAI_TWITTER_API_SECRET }}
+          BWSXAI_TWITTER_ACCESS_TOKEN: ${{ secrets.BWSXAI_TWITTER_ACCESS_TOKEN }}
+          BWSXAI_TWITTER_ACCESS_SECRET: ${{ secrets.BWSXAI_TWITTER_ACCESS_SECRET }}
+        run: |
+          cat > test-auth.js << 'EOF'
+          import { TwitterApi } from 'twitter-api-v2';
+
+          async function test() {
+            console.log('🔍 Testing GitHub Secrets for @BWSXAI\n');
+
+            const apiKey = process.env.BWSXAI_TWITTER_API_KEY;
+            const apiSecret = process.env.BWSXAI_TWITTER_API_SECRET;
+            const accessToken = process.env.BWSXAI_TWITTER_ACCESS_TOKEN;
+            const accessSecret = process.env.BWSXAI_TWITTER_ACCESS_SECRET;
+
+            // Check if secrets exist
+            console.log('Checking secrets presence:');
+            console.log('  API Key:', apiKey ? '✅ Present (' + apiKey.substring(0,10) + '...)' : '❌ Missing');
+            console.log('  API Secret:', apiSecret ? '✅ Present (' + apiSecret.substring(0,10) + '...)' : '❌ Missing');
+            console.log('  Access Token:', accessToken ? '✅ Present (' + accessToken.substring(0,10) + '...)' : '❌ Missing');
+            console.log('  Access Secret:', accessSecret ? '✅ Present (' + accessSecret.substring(0,10) + '...)' : '❌ Missing');
+            console.log();
+
+            if (!apiKey || !apiSecret || !accessToken || !accessSecret) {
+              console.error('❌ Some credentials are missing!');
+              process.exit(1);
+            }
+
+            const client = new TwitterApi({
+              appKey: apiKey,
+              appSecret: apiSecret,
+              accessToken: accessToken,
+              accessSecret: accessSecret,
+            });
+
+            try {
+              // Test 1: Read access
+              console.log('📖 Test 1: Read Access');
+              const me = await client.v2.me();
+              console.log(`   ✅ Read works: @${me.data.username} (ID: ${me.data.id})\n`);
+
+              // Test 2: Write access
+              console.log('✍️  Test 2: Write Access');
+              try {
+                const tweet = await client.v2.tweet('GitHub Actions auth test - please ignore');
+                console.log('   ✅ WRITE ACCESS WORKS!');
+                console.log(`   Tweet ID: ${tweet.data.id}`);
+
+                // Clean up
+                await client.v2.deleteTweet(tweet.data.id);
+                console.log('   ✅ Test tweet deleted');
+                console.log('\n✅ All tests passed - GitHub secrets are valid!');
+              } catch (error) {
+                if (error.code === 403) {
+                  console.log('   ❌ WRITE ACCESS DENIED (403 Forbidden)');
+                  console.log('   🔥 GitHub secrets OAuth app lacks "Read and Write" permissions');
+                  console.log('\n   Fix Required:');
+                  console.log('   1. Go to https://developer.twitter.com/en/portal/dashboard');
+                  console.log('   2. Find the OAuth app used for these secrets');
+                  console.log('   3. Change permissions to "Read and Write"');
+                  console.log('   4. Regenerate Access Token & Secret');
+                  console.log('   5. Update GitHub secrets BWSXAI_TWITTER_ACCESS_TOKEN and BWSXAI_TWITTER_ACCESS_SECRET');
+                  process.exit(1);
+                } else {
+                  throw error;
+                }
+              }
+            } catch (error) {
+              console.error('❌ Test failed:', error.message);
+              if (error.code === 401) {
+                console.error('   Invalid credentials - tokens may be revoked or incorrect');
+              }
+              process.exit(1);
+            }
+          }
+
+          test();
+          EOF
+
+          node test-auth.js
+
+      - name: Summary
+        if: always()
+        run: |
+          echo "## Twitter Auth Test Results" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          if [ $? -eq 0 ]; then
+            echo "✅ **SUCCESS** - GitHub secrets are working correctly" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "❌ **FAILED** - Check logs for details" >> $GITHUB_STEP_SUMMARY
+          fi
