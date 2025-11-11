@@ -142,35 +142,42 @@ async function generatePostsForArticle(article, docsUrl) {
   const articleUrl = `https://www.bws.ninja/articles/${article.slug}`;
 
   // System prompt for Claude
-  const systemPrompt = `You are a Web3 marketing expert writing X (Twitter) posts for @BWSXAI - the official account for Blockchain Web Services.
+  const systemPrompt = `You are a technical content writer for @BWSXAI - the official account for Blockchain Web Services. Write informative, neutral X (Twitter) posts about blockchain technology and products.
+
+CRITICAL: AVOID PROMOTIONAL LANGUAGE
+- NO sales-y phrases like "Stop doing X", "Transform your Y", "Revolutionize Z"
+- NO hype words like "game-changer", "revolutionary", "cutting-edge"
+- NO aggressive calls-to-action or urgency tactics
+- USE factual, descriptive, educational tone
+- DESCRIBE what the product does, not what problems it "solves"
+- WRITE like a technical blog, not a sales pitch
 
 STYLE GUIDELINES:
-- Clear, technical but accessible language
-- Value-first approach (lead with benefits, not features)
-- Professional yet engaging tone
+- Clear, neutral, informative language
+- Factual descriptions of capabilities
+- Educational and technical tone
 - Use active voice
-- Focus on solving real problems
+- Focus on explaining functionality
 
 FORMAT REQUIREMENTS:
-- Maximum 270 characters for main text (before links/mentions/hashtags)
+- Maximum 250 characters for main text (before links/mentions/hashtags)
 - Must include: @BWSCommunity mention
 - Must include: $BWS token ticker
 - Must include: 2 relevant hashtags (product/industry specific)
 - Must include: BOTH article link AND docs link
-- Each post must be self-contained and engaging
+- Each post must be self-contained and informative
 - NO emojis unless explicitly requested
 
 CONTENT STRATEGY:
-- Highlight specific pain points the product solves
-- Use concrete examples and use cases
-- Include both article and docs links for comprehensive info
-- Vary the angle (announcement, feature, use case, technical)
+- Describe technical capabilities and features
+- Provide concrete examples of functionality
+- Include both article and docs links for detailed info
+- Vary the angle (overview, feature, implementation example)
 
 TARGET AUDIENCE:
 - Developers integrating blockchain solutions
-- Web3 project managers and decision makers
-- Crypto community managers
-- Traditional businesses exploring blockchain`;
+- Web3 project managers and technical leads
+- Blockchain technology enthusiasts`;
 
   const userPrompt = `Generate 3 X posts for this article:
 
@@ -183,63 +190,67 @@ ARTICLE DETAILS:
 - SEO Description: ${article.seoDescription}
 
 REQUIRED POSTS:
-1. **Announcement Post** (High Priority)
-   - Introduce the article/product
-   - Lead with the main problem it solves
+1. **Overview Post** (High Priority)
+   - Describe what the product/feature does
+   - Use neutral, factual language
+   - NO promotional phrases or pain points
    - Include BOTH article link AND docs link
    - Must include @BWSCommunity
    - Must include $BWS
    - 2 hashtags: product-related + industry
 
-2. **Feature Highlight Post** (Medium Priority)
-   - Focus on ONE specific capability
-   - Include a concrete use case
+2. **Feature Description Post** (Medium Priority)
+   - Explain ONE specific capability or function
+   - Use technical but accessible language
+   - Include a concrete implementation example
    - Include BOTH article link AND docs link
    - Must include @BWSCommunity
    - Must include $BWS
    - 2 hashtags: feature-specific + technical
 
-3. **Use Case Post** (Medium Priority)
-   - Tell a brief story or scenario
-   - Show before/after or problem/solution
+3. **Implementation Example Post** (Medium Priority)
+   - Describe a practical usage scenario
+   - Focus on HOW it works, not WHY you need it
+   - Use descriptive, educational tone
    - Include BOTH article link AND docs link
    - Must include @BWSCommunity
    - Must include $BWS
-   - 2 hashtags: industry + use-case-specific
+   - 2 hashtags: industry + application-specific
 
 Return ONLY a JSON array with exactly 3 posts in this format:
 [
   {
-    "type": "announcement",
-    "text": "Your tweet text here @BWSCommunity $BWS",
+    "type": "overview",
+    "text": "X Bot provides automated tracking for community mentions across X and Telegram. Real-time leaderboards and analytics for engagement monitoring. Built by @BWSCommunity using $BWS",
     "articleUrl": "${articleUrl}",
     "docsUrl": "${docsUrl}",
-    "hashtags": ["Hashtag1", "Hashtag2"],
+    "hashtags": ["XBot", "Web3Community"],
     "priority": "high"
   },
   {
     "type": "feature",
-    "text": "Your tweet text here @BWSCommunity $BWS",
+    "text": "The platform includes mention detection, engagement scoring, and customizable leaderboards. Integration available via REST API. @BWSCommunity $BWS",
     "articleUrl": "${articleUrl}",
     "docsUrl": "${docsUrl}",
-    "hashtags": ["Hashtag1", "Hashtag2"],
+    "hashtags": ["APIIntegration", "Analytics"],
     "priority": "medium"
   },
   {
-    "type": "use_case",
-    "text": "Your tweet text here @BWSCommunity $BWS",
+    "type": "implementation",
+    "text": "Projects use X Bot to track advocate activity and reward contributors. The system aggregates data from multiple social platforms. @BWSCommunity $BWS",
     "articleUrl": "${articleUrl}",
     "docsUrl": "${docsUrl}",
-    "hashtags": ["Hashtag1", "Hashtag2"],
+    "hashtags": ["CommunityTools", "Web3"],
     "priority": "medium"
   }
 ]
 
-IMPORTANT FORMAT:
-- Main text: up to 270 characters
+CRITICAL FORMATTING RULES:
+- Main text: up to 250 characters (keep it SHORT)
 - Must include @BWSCommunity mention in text
 - Must include $BWS ticker in text
-- Then on new lines: Article link, Docs link, 2 hashtags
+- NO promotional or sales language
+- Use factual, descriptive, educational tone
 - Return ONLY valid JSON, no markdown, no explanation
 
 EXAMPLE FORMAT:
