@@ -272,6 +272,16 @@ export function loadProcessedPosts() {
     };
   }
 
+  // Ensure metadata exists
+  if (!data.metadata) {
+    data.metadata = {
+      lastCheck: null,
+      totalReplied: data.repliedTweetIds?.length || 0,
+      totalSkipped: data.skippedTweetIds?.length || 0,
+      lastUpdateBy: null
+    };
+  }
+
   return data;
 }
 
