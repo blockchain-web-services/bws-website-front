@@ -3,10 +3,10 @@
     "lastGenerated": "2025-11-11T08:01:16.117Z",
     "totalPosts": 12,
     "totalArticles": 4,
-    "pendingPosts": 11,
+    "pendingPosts": 10,
     "postedCount": 0,
-    "lastPosted": "2025-11-11T08:03:53.344Z",
-    "failedCount": 1
+    "lastPosted": "2025-11-11T11:02:19.296Z",
+    "failedCount": 2
   },
   "posts": [
     {
@@ -108,7 +108,7 @@
         "Web3Credentials"
       ],
       "priority": "high",
-      "status": "pending",
+      "status": "failed",
       "scheduledFor": null,
       "postedAt": null,
       "tweetId": null,
@@ -118,7 +118,14 @@
         "articlePublishDate": "2025-11-10T10:04:47.324Z",
         "mainTextLength": 198,
         "fullTextLength": 383
-      }
+      },
+      "error": {
+        "message": "Request failed with code 403",
+        "code": 403,
+        "timestamp": "2025-11-11T11:02:19.295Z"
+      },
+      "lastAttempt": "2025-11-11T11:02:19.295Z",
+      "retryCount": 1
     },
     {
       "id": "31259616-6cfc-4bb6-9cb8-54dce5d6c217",
