@@ -292,9 +292,12 @@ async function main() {
         const nextSchedule = recordRun(currentCron);
 
         // Update workflow file and commit
+        const workflowFile = join(__dirname, '..', '.github', 'workflows', 'post-article-content.yml');
         const updateSuccess = updateAndCommitSchedule(
           nextSchedule.cron,
-          nextSchedule.scheduledTimeUTC
+          nextSchedule.scheduledTimeUTC,
+          workflowFile,
+          'article posting'
         );
 
         if (!updateSuccess) {

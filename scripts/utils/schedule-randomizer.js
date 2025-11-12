@@ -5,24 +5,25 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-const SCHEDULE_DATA_FILE = join(__dirname, '..', 'data', 'last-schedule.json');
-
-// Configuration
-const TIME_WINDOW = {
-  minHour: 8,   // 8:00 AM UTC
-  maxHour: 20   // 8:00 PM UTC
-};
-
-const RUN_CONSTRAINTS = {
-  minHoursBetween: 18,  // Minimum 18 hours between runs
-  maxHoursBetween: 30   // Maximum 30 hours between runs
+// Default configuration
+const DEFAULT_CONFIG = {
+  scheduleDataFile: join(__dirname, '..', 'data', 'last-schedule.json'),
+  timeWindow: {
+    minHour: 8,   // 8:00 AM UTC
+    maxHour: 20   // 8:00 PM UTC
+  },
+  runConstraints: {
+    minHoursBetween: 18,  // Minimum 18 hours between runs
+    maxHoursBetween: 30   // Maximum 30 hours between runs
+  }
 };
 
 /**
  * Load schedule history
+ * @param {string} scheduleDataFile - Path to schedule data file
  */
-export function loadScheduleData() {
-  if (!existsSync(SCHEDULE_DATA_FILE)) {
+export function loadScheduleData(scheduleDataFile = DEFAULT_CONFIG.scheduleDataFile) {
+  if (!existsSync(scheduleDataFile)) {
     return {
       lastRunTime: null,
       lastCron: null,
@@ -31,14 +32,16 @@ export function loadScheduleData() {
     };
   }
 
-  return JSON.parse(readFileSync(SCHEDULE_DATA_FILE, 'utf8'));
+  return JSON.parse(readFileSync(scheduleDataFile, 'utf8'));
 }
 
 /**
  * Save schedule history
+ * @param {object} data - Schedule data to save
+ * @param {string} scheduleDataFile - Path to schedule data file
  */
-export function saveScheduleData(data) {
-  writeFileSync(SCHEDULE_DATA_FILE, JSON.stringify(data, null, 2), 'utf8');
+export function saveScheduleData(data, scheduleDataFile = DEFAULT_CONFIG.scheduleDataFile) {
+  writeFileSync(scheduleDataFile, JSON.stringify(data, null, 2), 'utf8');
 }
 
 /**
@@ -50,24 +53,26 @@ function randomInt(min, max) {
 
 /**
  * Calculate next run time within constraints
+ * @param {string|null} lastRunTime - ISO timestamp of last run
+ * @param {object} config - Configuration object
  */
-function calculateNextRunTime(lastRunTime) {
+function calculateNextRunTime(lastRunTime, config = DEFAULT_CONFIG) {
   const now = lastRunTime ? new Date(lastRunTime) : new Date();
 
   // Random hours between min and max constraints
   const hoursToAdd = randomInt(
-    RUN_CONSTRAINTS.minHoursBetween,
-    RUN_CONSTRAINTS.maxHoursBetween
+    config.runConstraints.minHoursBetween,
+    config.runConstraints.maxHoursBetween
   );
 
   const nextRun = new Date(now.getTime() + hoursToAdd * 60 * 60 * 1000);
 
-  // Ensure time is within daily window (8:00-20:00 UTC)
+  // Ensure time is within daily window
   let hour = nextRun.getUTCHours();
 
   // If outside window, adjust to random time within window
-  if (hour < TIME_WINDOW.minHour || hour > TIME_WINDOW.maxHour) {
-    hour = randomInt(TIME_WINDOW.minHour, TIME_WINDOW.maxHour);
+  if (hour < config.timeWindow.minHour || hour > config.timeWindow.maxHour) {
+    hour = randomInt(config.timeWindow.minHour, config.timeWindow.maxHour);
     nextRun.setUTCHours(hour);
   }
 
@@ -92,10 +97,11 @@ function dateToCron(date) {
 /**
  * Generate next random cron schedule
  * @param {string|null} lastRunTime - ISO timestamp of last run
- * @returns {object} { cron: string, scheduledTime: string }
+ * @param {object} config - Configuration object
+ * @returns {object} { cron: string, scheduledTime: string, scheduledTimeUTC: string }
  */
-export function generateRandomCron(lastRunTime = null) {
-  const nextRunTime = calculateNextRunTime(lastRunTime);
+export function generateRandomCron(lastRunTime = null, config = DEFAULT_CONFIG) {
+  const nextRunTime = calculateNextRunTime(lastRunTime, config);
   const cron = dateToCron(nextRunTime);
 
   return {
@@ -107,9 +113,12 @@ export function generateRandomCron(lastRunTime = null) {
 
 /**
  * Record a run in schedule history
+ * @param {string} cronExpression - Current cron expression
+ * @param {object} config - Configuration object
+ * @returns {object} Next schedule information
  */
-export function recordRun(cronExpression) {
-  const data = loadScheduleData();
+export function recordRun(cronExpression, config = DEFAULT_CONFIG) {
+  const data = loadScheduleData(config.scheduleDataFile);
   const now = new Date().toISOString();
 
   // Update schedule data
@@ -128,20 +137,21 @@ export function recordRun(cronExpression) {
   }
 
   // Generate next schedule
-  const nextSchedule = generateRandomCron(now);
+  const nextSchedule = generateRandomCron(now, config);
   data.nextScheduledCron = nextSchedule.cron;
   data.nextScheduledTime = nextSchedule.scheduledTime;
 
-  saveScheduleData(data);
+  saveScheduleData(data, config.scheduleDataFile);
 
   return nextSchedule;
 }
 
 /**
  * Get current schedule status
+ * @param {string} scheduleDataFile - Path to schedule data file
  */
-export function getScheduleStatus() {
-  const data = loadScheduleData();
+export function getScheduleStatus(scheduleDataFile = DEFAULT_CONFIG.scheduleDataFile) {
+  const data = loadScheduleData(scheduleDataFile);
 
   if (!data.lastRunTime) {
     return {
@@ -163,4 +173,36 @@ export function getScheduleStatus() {
     hoursSinceLastRun: Math.round(hoursSince * 10) / 10,
     historyCount: data.history?.length || 0
   };
+}
+
+/**
+ * Generate multiple random cron schedules evenly distributed throughout the day
+ * @param {number} count - Number of schedules to generate
+ * @param {object} config - Configuration object
+ * @returns {Array} Array of cron schedules
+ */
+export function generateMultipleRandomCrons(count, config = DEFAULT_CONFIG) {
+  const schedules = [];
+  const hourRange = config.timeWindow.maxHour - config.timeWindow.minHour;
+  const hoursPerSlot = hourRange / count;
+
+  for (let i = 0; i < count; i++) {
+    // Divide the day into slots and randomize within each slot
+    const slotStart = config.timeWindow.minHour + (i * hoursPerSlot);
+    const slotEnd = Math.min(slotStart + hoursPerSlot, config.timeWindow.maxHour);
+
+    // Random hour within this slot
+    const hour = Math.floor(slotStart + Math.random() * (slotEnd - slotStart));
+    const minute = randomInt(0, 59);
+
+    const cron = `${minute} ${hour} * * *`;
+    const time = `${String(hour).padStart(2, '0')}:${String(minute).padStart(2, '0')} UTC`;
+
+    schedules.push({ cron, time });
+  }
+
+  // Sort by time
+  schedules.sort((a, b) => a.cron.localeCompare(b.cron));
+
+  return schedules;
 }

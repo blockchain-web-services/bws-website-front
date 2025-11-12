@@ -6,9 +6,6 @@ import { execSync } from 'child_process';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-// Path to workflow file (relative to worktree root)
-const WORKFLOW_FILE = join(__dirname, '..', '..', '.github', 'workflows', 'post-article-content.yml');
-
 /**
  * Check if running on GitHub Actions
  */
@@ -17,34 +14,51 @@ export function isGitHubActions() {
 }
 
 /**
- * Update workflow YAML with new cron schedule
- * @param {string} newCron - New cron expression (e.g., "30 14 * * *")
+ * Update workflow YAML with new cron schedule(s)
+ * @param {string|Array} newCrons - New cron expression(s) (e.g., "30 14 * * *" or ["0 6 * * *", "0 12 * * *"])
  * @param {string} scheduledTimeUTC - Human-readable time for logging
+ * @param {string} workflowFile - Path to workflow file
  * @returns {boolean} Success status
  */
-export function updateWorkflowSchedule(newCron, scheduledTimeUTC) {
+export function updateWorkflowSchedule(newCrons, scheduledTimeUTC, workflowFile) {
   try {
     console.log('\n🔄 Updating workflow schedule...');
-    console.log(`   New cron: ${newCron}`);
+
+    const cronsArray = Array.isArray(newCrons) ? newCrons : [newCrons];
+    console.log(`   New cron(s): ${cronsArray.join(', ')}`);
     console.log(`   Next run: ${scheduledTimeUTC}`);
 
     // Read current workflow file
-    const workflowContent = readFileSync(WORKFLOW_FILE, 'utf8');
+    const workflowContent = readFileSync(workflowFile, 'utf8');
 
-    // Find and replace the cron schedule
-    // Pattern: - cron: 'MINUTE HOUR * * *'
-    const cronPattern = /(- cron:\s*')(\d+\s+\d+\s+\*\s+\*\s+\*)(')/;
+    let updatedContent = workflowContent;
 
-    if (!cronPattern.test(workflowContent)) {
-      console.error('   ❌ Could not find cron schedule in workflow file');
-      return false;
+    if (cronsArray.length === 1) {
+      // Single schedule - replace first cron pattern
+      const cronPattern = /(- cron:\s*')(\d+\s+\d+\s+\*\s+\*\s+\*)(')/;
+
+      if (!cronPattern.test(updatedContent)) {
+        console.error('   ❌ Could not find cron schedule in workflow file');
+        return false;
+      }
+
+      updatedContent = updatedContent.replace(
+        cronPattern,
+        `$1${cronsArray[0]}$3`
+      );
+    } else {
+      // Multiple schedules - replace the entire schedule section
+      const schedulePattern = /(schedule:\s*\n(?:\s*-\s*cron:\s*'[^']+'\s*(?:#[^\n]*)?\n)+)/;
+
+      if (!schedulePattern.test(updatedContent)) {
+        console.error('   ❌ Could not find schedule section in workflow file');
+        return false;
+      }
+
+      const newScheduleSection = 'schedule:\n' + cronsArray.map(cron => `    - cron: '${cron}'`).join('\n') + '\n';
+
+      updatedContent = updatedContent.replace(schedulePattern, newScheduleSection);
     }
-
-    // Replace the cron expression
-    const updatedContent = workflowContent.replace(
-      cronPattern,
-      `$1${newCron}$3`
-    );
 
     // Verify the update worked
     if (updatedContent === workflowContent) {
@@ -53,7 +67,7 @@ export function updateWorkflowSchedule(newCron, scheduledTimeUTC) {
     }
 
     // Write updated workflow file
-    writeFileSync(WORKFLOW_FILE, updatedContent, 'utf8');
+    writeFileSync(workflowFile, updatedContent, 'utf8');
     console.log('   ✅ Workflow file updated');
 
     return true;
@@ -66,15 +80,20 @@ export function updateWorkflowSchedule(newCron, scheduledTimeUTC) {
 
 /**
  * Commit and push workflow schedule change
- * @param {string} newCron - The new cron expression
+ * @param {string|Array} newCrons - The new cron expression(s)
  * @param {string} scheduledTimeUTC - Human-readable time
+ * @param {string} workflowFile - Path to workflow file
+ * @param {string} workflowName - Name for commit message
  */
-export function commitScheduleChange(newCron, scheduledTimeUTC) {
+export function commitScheduleChange(newCrons, scheduledTimeUTC, workflowFile, workflowName = 'workflow') {
   try {
     console.log('\n📝 Committing schedule change...');
 
+    const cronsArray = Array.isArray(newCrons) ? newCrons : [newCrons];
+
     // Check if there are changes to commit
-    const status = execSync('git status --porcelain .github/workflows/post-article-content.yml', {
+    const workflowFileRelative = workflowFile.replace(join(__dirname, '..', '..') + '/', '');
+    const status = execSync(`git status --porcelain ${workflowFileRelative}`, {
       encoding: 'utf8',
       cwd: join(__dirname, '..', '..')
     }).trim();
@@ -95,14 +114,18 @@ export function commitScheduleChange(newCron, scheduledTimeUTC) {
     }
 
     // Stage the workflow file
-    execSync('git add .github/workflows/post-article-content.yml', {
+    execSync(`git add ${workflowFileRelative}`, {
       cwd: join(__dirname, '..', '..')
     });
 
     // Commit with detailed message
-    const commitMessage = `chore: Randomize next posting schedule [skip ci]
+    const scheduleText = cronsArray.length === 1
+      ? `Schedule updated to: ${cronsArray[0]}`
+      : `Schedules updated to:\n${cronsArray.map(c => `  - ${c}`).join('\n')}`;
 
-Schedule updated to: ${newCron}
+    const commitMessage = `chore: Randomize next ${workflowName} schedule [skip ci]
+
+${scheduleText}
 Next run approximately: ${scheduledTimeUTC}
 
 This randomization helps avoid predictable posting patterns.
@@ -138,19 +161,21 @@ Co-Authored-By: Claude <noreply@anthropic.com>`;
 
 /**
  * Complete workflow schedule update (update + commit + push)
- * @param {string} newCron - New cron expression
+ * @param {string|Array} newCrons - New cron expression(s)
  * @param {string} scheduledTimeUTC - Human-readable time
+ * @param {string} workflowFile - Path to workflow file
+ * @param {string} workflowName - Name for commit message
  * @returns {boolean} Success status
  */
-export function updateAndCommitSchedule(newCron, scheduledTimeUTC) {
+export function updateAndCommitSchedule(newCrons, scheduledTimeUTC, workflowFile, workflowName = 'workflow') {
   // Update workflow file
-  const updateSuccess = updateWorkflowSchedule(newCron, scheduledTimeUTC);
+  const updateSuccess = updateWorkflowSchedule(newCrons, scheduledTimeUTC, workflowFile);
   if (!updateSuccess) {
     return false;
   }
 
   // Commit and push changes
-  const commitSuccess = commitScheduleChange(newCron, scheduledTimeUTC);
+  const commitSuccess = commitScheduleChange(newCrons, scheduledTimeUTC, workflowFile, workflowName);
   if (!commitSuccess) {
     return false;
   }
