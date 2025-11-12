@@ -10,7 +10,6 @@ on:
 
 permissions:
   contents: write
-  workflows: write  # Required to update workflow schedule for randomization
 
 env:
   NODE_VERSION: "20"
@@ -43,6 +42,7 @@ jobs:
           BWSXAI_TWITTER_ACCESS_TOKEN: ${{ secrets.BWSXAI_TWITTER_ACCESS_TOKEN }}
           BWSXAI_TWITTER_ACCESS_SECRET: ${{ secrets.BWSXAI_TWITTER_ACCESS_SECRET }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          PAT_REPOS_AND_WORKFLOW: ${{ secrets.PAT_REPOS_AND_WORKFLOW }}
         run: |
           echo "Starting reply cycle..."
           node scripts/kols/evaluate-and-reply-kols.js

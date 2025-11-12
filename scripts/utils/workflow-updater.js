@@ -143,6 +143,19 @@ Co-Authored-By: Claude <noreply@anthropic.com>`;
     // Push to origin (only on GitHub Actions)
     if (isGitHubActions()) {
       console.log('\n🚀 Pushing to origin...');
+
+      // Use PAT_REPOS_AND_WORKFLOW token for pushing workflow changes
+      const token = process.env.PAT_REPOS_AND_WORKFLOW || process.env.GITHUB_TOKEN;
+      if (token && process.env.GITHUB_REPOSITORY) {
+        const repo = process.env.GITHUB_REPOSITORY;
+        const remoteUrl = `https://x-access-token:${token}@github.com/${repo}.git`;
+
+        // Configure git to use the PAT for this push
+        execSync(`git remote set-url origin ${remoteUrl}`, {
+          cwd: join(__dirname, '..', '..')
+        });
+      }
+
       execSync('git push origin master', {
         cwd: join(__dirname, '..', '..')
       });

@@ -21,7 +21,6 @@ on:
 
 permissions:
   contents: write   # Required to push updated article-x-posts.json
-  workflows: write  # Required to update workflow schedule for randomization
 
 jobs:
   generate-and-post:
@@ -62,6 +61,7 @@ jobs:
           BWSXAI_TWITTER_ACCESS_SECRET: ${{ secrets.BWSXAI_TWITTER_ACCESS_SECRET }}
           OXYLABS_USERNAME: ${{ secrets.OXYLABS_USERNAME }}
           OXYLABS_PASSWORD: ${{ secrets.OXYLABS_PASSWORD }}
+          PAT_REPOS_AND_WORKFLOW: ${{ secrets.PAT_REPOS_AND_WORKFLOW }}
         run: |
           cd scripts
           node post-article-content.js
