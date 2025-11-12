@@ -92,18 +92,90 @@ async function saveEngagingPosts(data) {
  */
 
 async function evaluateAndReply() {
+  const scriptStartTime = Date.now();
   console.log('🚀 Starting KOL Tweet Evaluation and Reply Process...');
-  console.log(`📍 Script: evaluate-and-reply-kols.js\n`);
+  console.log(`📍 Script: evaluate-and-reply-kols.js`);
+  console.log(`⏰ Start time: ${new Date().toISOString()}\n`);
 
   // Reset API tracker for this execution
   apiTracker.reset();
 
+  // Setup timeout warnings
+  const TIMEOUT_WARNINGS = [5, 10, 15, 20, 25]; // Minutes
+  const timeoutWarnings = TIMEOUT_WARNINGS.map(minutes => {
+    return setTimeout(() => {
+      const elapsed = Math.round((Date.now() - scriptStartTime) / 1000 / 60);
+      console.log(`\n⏰ TIMEOUT WARNING: Script has been running for ${elapsed} minutes`);
+      console.log(`   API Calls: ${apiTracker.exportStats().overall.totalCalls}`);
+      console.log(`   Current phase: ${currentPhase || 'unknown'}`);
+    }, minutes * 60 * 1000);
+  });
+
+  // Track current phase for debugging
   let currentPhase = 'initialization';
+
+  // ========================================================================
+  // STEP 1: Randomize next run schedule FIRST (before main work)
+  // ========================================================================
+  // This ensures schedule is updated even if the main script fails/times out
+  if (isGitHubActions()) {
+    currentPhase = 'schedule_randomization';
+    console.log('='.repeat(60));
+    console.log(`⏰ [${Math.round((Date.now() - scriptStartTime) / 1000)}s] 🎲 Randomizing next run schedules...\n`);
+
+    try {
+      const scheduleConfig = {
+        scheduleDataFile: path.join(__scriptsDir, 'data', 'kol-reply-schedule.json'),
+        timeWindow: {
+          minHour: 6,   // 6:00 AM UTC
+          maxHour: 22   // 10:00 PM UTC (wider window for 4 schedules)
+        },
+        runConstraints: {
+          minHoursBetween: 18,  // Not used for multiple schedules
+          maxHoursBetween: 30
+        }
+      };
+
+      // Generate 4 random schedules evenly distributed throughout the day
+      const schedules = generateMultipleRandomCrons(4, scheduleConfig);
+      const crons = schedules.map(s => s.cron);
+
+      console.log('   Generated schedules:');
+      schedules.forEach((s, i) => {
+        console.log(`   ${i + 1}. ${s.cron} (${s.time})`);
+      });
+
+      const workflowFile = path.join(__scriptsDir, '..', '.github', 'workflows', 'kol-reply-cycle.yml');
+      const updateSuccess = updateAndCommitSchedule(
+        crons,
+        schedules[0].time,  // Use first schedule time for logging
+        workflowFile,
+        'KOL reply cycle'
+      );
+
+      if (updateSuccess) {
+        console.log(`✅ [${Math.round((Date.now() - scriptStartTime) / 1000)}s] Schedule randomization complete!`);
+      } else {
+        console.error('⚠️  Schedule randomization failed, will use existing schedule');
+      }
+    } catch (scheduleError) {
+      console.error('⚠️  Error during schedule randomization:', scheduleError.message);
+      console.error('   Continuing with main script...');
+    }
+    console.log('='.repeat(60) + '\n');
+  } else {
+    console.log('ℹ️  Skipping schedule randomization (not running on GitHub Actions)\n');
+  }
+
+  // ========================================================================
+  // STEP 2: Main KOL Reply Process
+  // ========================================================================
+
   let lastSuccessfulOperation = null;
 
   // Load configuration and products
   currentPhase = 'loading_config';
-  console.log(`📍 Phase: ${currentPhase}`);
+  console.log(`⏰ [${Math.round((Date.now() - scriptStartTime) / 1000)}s] 📍 Phase: ${currentPhase}`);
   const config = loadConfig();
   lastSuccessfulOperation = 'config_loaded';
 
@@ -140,16 +212,17 @@ async function evaluateAndReply() {
 
   // Initialize clients
   currentPhase = 'initializing_twitter_client';
-  console.log(`📍 Phase: ${currentPhase}`);
+  console.log(`⏰ [${Math.round((Date.now() - scriptStartTime) / 1000)}s] 📍 Phase: ${currentPhase}`);
   const readClient = createReadOnlyClient();
   lastSuccessfulOperation = 'read_client_initialized';
+  console.log(`✅ [${Math.round((Date.now() - scriptStartTime) / 1000)}s] Read client initialized`);
 
   let writeClient = null;
 
   if (!dryRun) {
     try {
       writeClient = createReadWriteClient();
-      console.log('✅ Twitter write client initialized\n');
+      console.log(`✅ [${Math.round((Date.now() - scriptStartTime) / 1000)}s] Twitter write client initialized\n`);
     } catch (error) {
       console.error('❌ Failed to initialize write client. Running in dry-run mode.');
       console.error(`   Error: ${error.message}\n`);
@@ -157,17 +230,22 @@ async function evaluateAndReply() {
     }
   }
 
+  currentPhase = 'initializing_claude_client';
   const claudeClient = createClaudeClient();
+  console.log(`✅ [${Math.round((Date.now() - scriptStartTime) / 1000)}s] Claude client initialized`);
 
   // Initialize rate limiters
   const twitterLimiter = new RateLimiter(config.rateLimits.twitterApiCallsPerMinute);
   const claudeLimiter = new RateLimiter(config.rateLimits.claudeApiCallsPerMinute);
 
   // Load data
+  currentPhase = 'loading_data';
+  console.log(`⏰ [${Math.round((Date.now() - scriptStartTime) / 1000)}s] 📍 Phase: ${currentPhase}`);
   const kolsData = loadKolsData();
   const repliesData = loadRepliesData();
   const processedPosts = loadProcessedPosts();
   const engagingPostsData = await loadEngagingPosts();
+  console.log(`✅ [${Math.round((Date.now() - scriptStartTime) / 1000)}s] Data loaded`);
 
   // Check daily limit
   if (hasReachedDailyLimit(repliesData, maxRepliesPerDay)) {
@@ -198,10 +276,30 @@ async function evaluateAndReply() {
   let tweetsSkipped = 0;
   let lastReplyDetails = null;  // Track last successful reply for notification
 
-  console.log('🔍 Evaluating recent tweets from KOLs...\n');
+  // Safety limits to prevent infinite loops
+  const MAX_KOLS_TO_PROCESS = 50; // Maximum KOLs to process in one run
+  const MAX_TWEETS_TO_EVALUATE = 200; // Maximum tweets to evaluate in one run
+  let kolsProcessed = 0;
+
+  currentPhase = 'processing_kols';
+  console.log(`⏰ [${Math.round((Date.now() - scriptStartTime) / 1000)}s] 🔍 Evaluating recent tweets from KOLs...`);
+  console.log(`   Total KOLs to check: ${prioritizedKols.length} (max ${MAX_KOLS_TO_PROCESS})\n`);
 
   // Process KOLs
   for (const kol of prioritizedKols) {
+    kolsProcessed++;
+
+    // Safety check: maximum KOLs
+    if (kolsProcessed > MAX_KOLS_TO_PROCESS) {
+      console.log(`\n⚠️  Reached maximum KOL processing limit (${MAX_KOLS_TO_PROCESS}). Stopping.`);
+      break;
+    }
+
+    // Safety check: maximum tweets evaluated
+    if (tweetEvaluated >= MAX_TWEETS_TO_EVALUATE) {
+      console.log(`\n⚠️  Reached maximum tweet evaluation limit (${MAX_TWEETS_TO_EVALUATE}). Stopping.`);
+      break;
+    }
     // Check if we've reached run limit or daily limit
     if (repliesPosted >= maxRepliesThisRun) {
       console.log(`\n⚠️  Reached run reply limit (${maxRepliesThisRun}). Stopping.`);
@@ -218,7 +316,8 @@ async function evaluateAndReply() {
       continue;
     }
 
-    console.log(`\n📍 Processing @${kol.username} (${kol.cryptoRelevanceScore}% crypto relevance)`);
+    console.log(`\n⏰ [${Math.round((Date.now() - scriptStartTime) / 1000)}s] 📍 Processing KOL ${kolsProcessed}/${prioritizedKols.length}: @${kol.username} (${kol.cryptoRelevanceScore}% crypto relevance)`);
+    console.log(`   Stats: ${tweetEvaluated} tweets evaluated, ${repliesPosted} replies posted, ${tweetsSkipped} skipped`);
 
     try {
       // Fetch recent tweets via Search API (60 calls/15min vs userTimeline's 10 calls/15min)
@@ -525,8 +624,12 @@ async function evaluateAndReply() {
         // Wait between replies to avoid spam detection
         if (repliesPosted < maxRepliesThisRun && todayReplies + repliesPosted < maxRepliesPerDay) {
           const waitTime = minTimeBetweenRepliesMinutes * 60 * 1000;
-          console.log(`      ⏸️  Waiting ${minTimeBetweenRepliesMinutes} minutes before next reply...`);
+          const elapsedMinutes = Math.round((Date.now() - scriptStartTime) / 1000 / 60);
+          const estimatedTotalMinutes = elapsedMinutes + minTimeBetweenRepliesMinutes;
+          console.log(`      ⏸️  [${Math.round((Date.now() - scriptStartTime) / 1000)}s] Waiting ${minTimeBetweenRepliesMinutes} minutes before next reply...`);
+          console.log(`      ⚠️  WARNING: This will extend total runtime to ~${estimatedTotalMinutes} minutes`);
           await sleep(waitTime);
+          console.log(`      ✅ [${Math.round((Date.now() - scriptStartTime) / 1000)}s] Wait complete, continuing...`);
         }
       }
 
@@ -552,28 +655,33 @@ async function evaluateAndReply() {
   }
 
   // Process engaging posts from ScrapFly discovery
+  currentPhase = 'processing_engaging_posts';
+  console.log(`\n⏰ [${Math.round((Date.now() - scriptStartTime) / 1000)}s] 📍 Phase: ${currentPhase}`);
+
   if (engagingPostsData.posts.length > 0) {
-    console.log('\n🔍 Processing engaging posts from search discovery...\n');
+    console.log(`🔍 Found ${engagingPostsData.posts.length} engaging posts to process\n`);
   } else if (repliesPosted === 0) {
     // No engaging posts and no replies posted yet - trigger amplified search
-    console.log('\n🔍 No engaging posts found and no replies posted. Triggering amplified tweet search...');
+    currentPhase = 'amplified_search';
+    console.log(`⏰ [${Math.round((Date.now() - scriptStartTime) / 1000)}s] 🔍 No engaging posts found and no replies posted. Triggering amplified tweet search...`);
     try {
       const amplifiedPosts = await runAmplifiedTweetSearch(bwsProducts, config, processedPosts);
 
       if (amplifiedPosts.length > 0) {
-        console.log(`\n💬 Amplified search found ${amplifiedPosts.length} relevant tweets!`);
+        console.log(`\n⏰ [${Math.round((Date.now() - scriptStartTime) / 1000)}s] 💬 Amplified search found ${amplifiedPosts.length} relevant tweets!`);
         console.log('   Adding to engaging posts for processing...\n');
         engagingPostsData.posts.push(...amplifiedPosts);
       } else {
-        console.log('   ⚠️  No suitable tweets found in amplified search\n');
+        console.log(`   ⚠️  [${Math.round((Date.now() - scriptStartTime) / 1000)}s] No suitable tweets found in amplified search\n`);
       }
     } catch (amplifiedError) {
-      console.error(`\n❌ Amplified tweet search failed: ${amplifiedError.message}\n`);
+      console.error(`\n❌ [${Math.round((Date.now() - scriptStartTime) / 1000)}s] Amplified tweet search failed: ${amplifiedError.message}\n`);
     }
+    currentPhase = 'processing_engaging_posts';
   }
 
   if (engagingPostsData.posts.length > 0) {
-    console.log('\n🔍 Processing engaging posts from search discovery...\n');
+    console.log(`\n⏰ [${Math.round((Date.now() - scriptStartTime) / 1000)}s] 🔍 Processing ${engagingPostsData.posts.length} engaging posts from search discovery...\n`);
 
     for (const post of engagingPostsData.posts) {
       // Check if we've reached run limit or daily limit
@@ -794,8 +902,12 @@ async function evaluateAndReply() {
         // Wait between replies
         if (repliesPosted < maxRepliesThisRun && todayReplies + repliesPosted < maxRepliesPerDay) {
           const waitTime = minTimeBetweenRepliesMinutes * 60 * 1000;
-          console.log(`      ⏸️  Waiting ${minTimeBetweenRepliesMinutes} minutes before next reply...`);
+          const elapsedMinutes = Math.round((Date.now() - scriptStartTime) / 1000 / 60);
+          const estimatedTotalMinutes = elapsedMinutes + minTimeBetweenRepliesMinutes;
+          console.log(`      ⏸️  [${Math.round((Date.now() - scriptStartTime) / 1000)}s] Waiting ${minTimeBetweenRepliesMinutes} minutes before next reply...`);
+          console.log(`      ⚠️  WARNING: This will extend total runtime to ~${estimatedTotalMinutes} minutes`);
           await sleep(waitTime);
+          console.log(`      ✅ [${Math.round((Date.now() - scriptStartTime) / 1000)}s] Wait complete, continuing...`);
         }
 
       } catch (error) {
@@ -816,18 +928,33 @@ async function evaluateAndReply() {
     repliesData.dailyStats[today].averageRelevance = Math.round(avgRelevance);
   }
 
+  // Clear timeout warnings
+  timeoutWarnings.forEach(timer => clearTimeout(timer));
+
   // Final save
+  currentPhase = 'saving_data';
+  console.log(`\n⏰ [${Math.round((Date.now() - scriptStartTime) / 1000)}s] 📍 Phase: ${currentPhase}`);
   saveRepliesData(repliesData);
   saveProcessedPosts(processedPosts);
   saveKolsData(kolsData);
+  console.log(`✅ [${Math.round((Date.now() - scriptStartTime) / 1000)}s] Data saved`);
+
+  // Calculate execution time
+  const executionTimeSeconds = Math.round((Date.now() - scriptStartTime) / 1000);
+  const executionTimeMinutes = Math.round(executionTimeSeconds / 60 * 10) / 10;
 
   // Print summary
+  currentPhase = 'complete';
   console.log(`\n
 ${'='.repeat(60)}
 📊 REPLY SUMMARY
 ${'='.repeat(60)}
 
-Tweets Evaluated: ${tweetEvaluated}
+⏰ Execution Time: ${executionTimeMinutes} minutes (${executionTimeSeconds} seconds)
+📍 Final Phase: ${currentPhase}
+
+KOLs Processed: ${kolsProcessed}/${prioritizedKols.length}
+Tweets Evaluated: ${tweetEvaluated} (max: ${MAX_TWEETS_TO_EVALUATE})
 Tweets Skipped: ${tweetsSkipped}
 Replies Posted (this run): ${repliesPosted}
 Replies Posted Today: ${todayReplies + repliesPosted}/${maxRepliesPerDay}

@@ -24,7 +24,7 @@
     "requireVerified": false
   },
   "replySettings": {
-    "maxRepliesPerRun": 3,
+    "maxRepliesPerRun": 5,
     "maxRepliesPerDay": 15,
     "maxRepliesPerKolPerWeek": 4,
     "minRelevanceScoreForReply": 60,
