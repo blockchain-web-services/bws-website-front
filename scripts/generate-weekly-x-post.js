@@ -18,6 +18,8 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import dotenv from 'dotenv';
+import { recordRun } from './utils/schedule-randomizer.js';
+import { updateAndCommitSchedule, isGitHubActions } from './utils/workflow-updater.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -556,6 +558,55 @@ Output ONLY the post text, nothing else.`;
 async function main() {
   console.log('🚀 Weekly X Post Generation');
   console.log('═'.repeat(60));
+
+  // ========================================================================
+  // STEP 1: Randomize next run schedule FIRST (before main work)
+  // ========================================================================
+  // This ensures schedule is updated even if the main script fails/times out
+  if (isGitHubActions()) {
+    console.log('\n🎲 Randomizing next run schedule...\n');
+
+    try {
+      const scheduleConfig = {
+        scheduleDataFile: path.join(__dirname, 'data', 'weekly-x-post-schedule.json'),
+        timeWindow: {
+          minHour: 8,   // 8:00 AM UTC
+          maxHour: 20   // 8:00 PM UTC
+        },
+        runConstraints: {
+          minHoursBetween: 18,  // Minimum 18 hours between runs
+          maxHoursBetween: 30   // Maximum 30 hours between runs
+        }
+      };
+
+      const currentCron = process.env.CURRENT_CRON || '0 14 * * *';  // Fallback
+      const nextSchedule = recordRun(currentCron, scheduleConfig);
+
+      const workflowFile = path.join(__dirname, '..', '.github', 'workflows', 'weekly-x-post.yml');
+      const updateSuccess = updateAndCommitSchedule(
+        nextSchedule.cron,
+        nextSchedule.scheduledTimeUTC,
+        workflowFile,
+        'weekly X post'
+      );
+
+      if (updateSuccess) {
+        console.log('✅ Schedule randomization complete!');
+      } else {
+        console.error('⚠️  Schedule randomization failed, will use existing schedule');
+      }
+    } catch (scheduleError) {
+      console.error('⚠️  Error during schedule randomization:', scheduleError.message);
+      console.error('   Continuing with main script...');
+    }
+    console.log('═'.repeat(60) + '\n');
+  } else {
+    console.log('ℹ️  Skipping schedule randomization (not running on GitHub Actions)\n');
+  }
+
+  // ========================================================================
+  // STEP 2: Main Weekly X Post Generation
+  // ========================================================================
 
   // Load state and configuration
   const state = loadState();

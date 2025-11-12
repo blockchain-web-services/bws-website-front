@@ -183,6 +183,45 @@ async function main() {
   console.log('🚀 Starting Article Content Posting\n');
   console.log('=' .repeat(60) + '\n');
 
+  // ========================================================================
+  // STEP 1: Randomize next run schedule FIRST (before main work)
+  // ========================================================================
+  // This ensures schedule is updated even if the main script fails/times out
+  if (isGitHubActions()) {
+    console.log('🎲 Randomizing next run schedule...\n');
+
+    try {
+      // Record this run and generate next schedule
+      const currentCron = process.env.CURRENT_CRON || '0 12 * * *'; // Fallback
+      const nextSchedule = recordRun(currentCron);
+
+      // Update workflow file and commit
+      const workflowFile = join(__dirname, '..', '.github', 'workflows', 'post-article-content.yml');
+      const updateSuccess = updateAndCommitSchedule(
+        nextSchedule.cron,
+        nextSchedule.scheduledTimeUTC,
+        workflowFile,
+        'article posting'
+      );
+
+      if (updateSuccess) {
+        console.log('✅ Schedule randomization complete!');
+      } else {
+        console.error('⚠️  Schedule randomization failed, will use existing schedule');
+      }
+    } catch (scheduleError) {
+      console.error('⚠️  Error during schedule randomization:', scheduleError.message);
+      console.error('   Continuing with main script...');
+    }
+    console.log('=' .repeat(60) + '\n');
+  } else {
+    console.log('ℹ️  Skipping schedule randomization (not running on GitHub Actions)\n');
+  }
+
+  // ========================================================================
+  // STEP 2: Main Article Posting Process
+  // ========================================================================
+
   // Check for Twitter credentials
   if (!process.env.BWSXAI_TWITTER_API_KEY) {
     console.error('❌ Twitter credentials not set');
@@ -279,33 +318,6 @@ async function main() {
 
     if (successCount > 0) {
       console.log(`🎉 Check your posts at: https://twitter.com/BWSXAI\n`);
-    }
-
-    // Randomize next run schedule (only on GitHub Actions)
-    if (isGitHubActions()) {
-      console.log('=' .repeat(60));
-      console.log('\n🎲 Randomizing next run schedule...\n');
-
-      try {
-        // Record this run and generate next schedule
-        const currentCron = process.env.CURRENT_CRON || '0 12 * * *'; // Fallback
-        const nextSchedule = recordRun(currentCron);
-
-        // Update workflow file and commit
-        const updateSuccess = updateAndCommitSchedule(
-          nextSchedule.cron,
-          nextSchedule.scheduledTimeUTC
-        );
-
-        if (!updateSuccess) {
-          console.error('⚠️  Schedule randomization failed, will use existing schedule');
-        }
-      } catch (scheduleError) {
-        console.error('⚠️  Error during schedule randomization:', scheduleError.message);
-        console.error('   Continuing with existing schedule');
-      }
-    } else {
-      console.log('\nℹ️  Skipping schedule randomization (not running on GitHub Actions)\n');
     }
 
   } catch (error) {

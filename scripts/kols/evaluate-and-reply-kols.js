@@ -26,6 +26,8 @@ import {
   prioritizeKolsWithRandomization
 } from './utils/kol-utils.js';
 import { runAmplifiedTweetSearch } from './utils/amplified-search.js';
+import { generateMultipleRandomCrons } from '../utils/schedule-randomizer.js';
+import { updateAndCommitSchedule, isGitHubActions } from '../utils/workflow-updater.js';
 import fs from 'fs/promises';
 
 const __dirname = __scriptsDir;
@@ -95,6 +97,62 @@ async function evaluateAndReply() {
 
   // Reset API tracker for this execution
   apiTracker.reset();
+
+  // ========================================================================
+  // STEP 1: Randomize next run schedule FIRST (before main work)
+  // ========================================================================
+  // This ensures schedule is updated even if the main script fails/times out
+  if (isGitHubActions()) {
+    console.log('='.repeat(60));
+    console.log('🎲 Randomizing next run schedules...\n');
+
+    try {
+      const scheduleConfig = {
+        scheduleDataFile: path.join(__scriptsDir, 'data', 'kol-reply-schedule.json'),
+        timeWindow: {
+          minHour: 6,   // 6:00 AM UTC
+          maxHour: 22   // 10:00 PM UTC (wider window for 4 schedules)
+        },
+        runConstraints: {
+          minHoursBetween: 18,  // Not used for multiple schedules
+          maxHoursBetween: 30
+        }
+      };
+
+      // Generate 4 random schedules evenly distributed throughout the day
+      const schedules = generateMultipleRandomCrons(4, scheduleConfig);
+      const crons = schedules.map(s => s.cron);
+
+      console.log('   Generated schedules:');
+      schedules.forEach((s, i) => {
+        console.log(`   ${i + 1}. ${s.cron} (${s.time})`);
+      });
+
+      const workflowFile = path.join(__scriptsDir, '..', '.github', 'workflows', 'kol-reply-cycle.yml');
+      const updateSuccess = updateAndCommitSchedule(
+        crons,
+        schedules[0].time,  // Use first schedule time for logging
+        workflowFile,
+        'KOL reply cycle'
+      );
+
+      if (updateSuccess) {
+        console.log('✅ Schedule randomization complete!');
+      } else {
+        console.error('⚠️  Schedule randomization failed, will use existing schedule');
+      }
+    } catch (scheduleError) {
+      console.error('⚠️  Error during schedule randomization:', scheduleError.message);
+      console.error('   Continuing with main script...');
+    }
+    console.log('='.repeat(60) + '\n');
+  } else {
+    console.log('ℹ️  Skipping schedule randomization (not running on GitHub Actions)\n');
+  }
+
+  // ========================================================================
+  // STEP 2: Main KOL Reply Process
+  // ========================================================================
 
   let currentPhase = 'initialization';
   let lastSuccessfulOperation = null;
