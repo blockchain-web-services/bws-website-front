@@ -20,6 +20,7 @@ permissions:
   contents: write
   issues: write
   pull-requests: write
+  workflows: write  # Required to update workflow schedule for randomization
 
 env:
   NODE_VERSION: "20"

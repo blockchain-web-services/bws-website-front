@@ -18,6 +18,8 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import dotenv from 'dotenv';
+import { recordRun } from './utils/schedule-randomizer.js';
+import { updateAndCommitSchedule, isGitHubActions } from './utils/workflow-updater.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -721,6 +723,46 @@ async function main() {
     const outputPath = path.join(__dirname, 'data', 'test-weekly-x-post-results.json');
     fs.writeFileSync(outputPath, JSON.stringify(results, null, 2));
     console.log(`\n💾 Results saved to: ${outputPath}`);
+
+    // Randomize next run schedule (only on GitHub Actions)
+    if (isGitHubActions()) {
+      console.log(`\n${'═'.repeat(60)}`);
+      console.log('\n🎲 Randomizing next run schedule...\n');
+
+      try {
+        const config = {
+          scheduleDataFile: path.join(__dirname, 'data', 'weekly-x-post-schedule.json'),
+          timeWindow: {
+            minHour: 8,   // 8:00 AM UTC
+            maxHour: 20   // 8:00 PM UTC
+          },
+          runConstraints: {
+            minHoursBetween: 18,  // Minimum 18 hours between runs
+            maxHoursBetween: 30   // Maximum 30 hours between runs
+          }
+        };
+
+        const currentCron = process.env.CURRENT_CRON || '0 14 * * *';  // Fallback
+        const nextSchedule = recordRun(currentCron, config);
+
+        const workflowFile = path.join(__dirname, '..', '.github', 'workflows', 'weekly-x-post.yml');
+        const updateSuccess = updateAndCommitSchedule(
+          nextSchedule.cron,
+          nextSchedule.scheduledTimeUTC,
+          workflowFile,
+          'weekly X post'
+        );
+
+        if (!updateSuccess) {
+          console.error('⚠️  Schedule randomization failed, will use existing schedule');
+        }
+      } catch (scheduleError) {
+        console.error('⚠️  Error during schedule randomization:', scheduleError.message);
+        console.error('   Continuing with existing schedule');
+      }
+    } else {
+      console.log('\nℹ️  Skipping schedule randomization (not running on GitHub Actions)');
+    }
 
   } catch (error) {
     console.error('\n❌ Test failed:', error.message);
