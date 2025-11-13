@@ -24,15 +24,15 @@
     "requireVerified": false
   },
   "replySettings": {
-    "maxRepliesPerRun": 5,
-    "maxRepliesPerDay": 15,
+    "maxRepliesPerRun": 2,
+    "maxRepliesPerDay": 8,
     "maxRepliesPerKolPerWeek": 4,
     "minRelevanceScoreForReply": 60,
-    "minTimeBetweenRepliesMinutes": 2,
+    "minTimeBetweenRepliesMinutes": 5,
     "dryRun": false,
     "antiSpamActions": {
-      "followKolBeforeReply": true,
-      "likeTweetBeforeReply": true,
+      "followKolBeforeReply": false,
+      "likeTweetBeforeReply": false,
       "onlyIfNotAlreadyFollowing": true,
       "skipOnError": true
     }
