@@ -44,7 +44,7 @@ async function testMinimalRead() {
     const startTime = Date.now();
 
     const timeline = await client.v2.userTimeline(me.data.id, {
-      max_results: 1,
+      max_results: 5,
       'tweet.fields': ['created_at', 'public_metrics', 'author_id']
     });
 
