@@ -1,0 +1,51 @@
+name: Test Content Variations
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test-content-variations:
+    name: Test E - Content Variation Analysis
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm install twitter-api-v2 @anthropic-ai/sdk
+
+      - name: Run content variation tests
+        env:
+          BWSXAI_TWITTER_API_KEY: ${{ secrets.BWSXAI_TWITTER_API_KEY }}
+          BWSXAI_TWITTER_API_SECRET: ${{ secrets.BWSXAI_TWITTER_API_SECRET }}
+          BWSXAI_TWITTER_ACCESS_TOKEN: ${{ secrets.BWSXAI_TWITTER_ACCESS_TOKEN }}
+          BWSXAI_TWITTER_ACCESS_SECRET: ${{ secrets.BWSXAI_TWITTER_ACCESS_SECRET }}
+          OXYLABS_USERNAME: ${{ secrets.OXYLABS_USERNAME }}
+          OXYLABS_PASSWORD: ${{ secrets.OXYLABS_PASSWORD }}
+          CI: true
+          GITHUB_ACTIONS: true
+        run: |
+          echo "🧪 Running Test E: Content Variation Analysis"
+          echo "=============================================="
+          echo ""
+          echo "Objective: Identify which content elements trigger 403"
+          echo "Tests: hashtags, links, @mentions, and combinations"
+          echo ""
+          node scripts/test-content-variations.js
+
+      - name: Upload test results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-content-variations-results
+          path: |
+            *.log
+            *.json
