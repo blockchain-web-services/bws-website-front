@@ -804,6 +804,52 @@
         "lastChecked": "2025-11-14T15:07:13.075Z"
       },
       "error": "Request failed with code 403"
+    },
+    {
+      "id": "1068237257977544704-1989414011600027953-1763154295913",
+      "tweetId": "1989414011600027953",
+      "tweetUrl": "https://twitter.com/AltcoinSherpa/status/1989414011600027953",
+      "kolId": "1068237257977544704",
+      "kolUsername": "AltcoinSherpa",
+      "originalTweetText": "$ZEC as a leader is powerful because the narrative is easily digestible, the fundamentals are solid, and the extras (no VC unlocks, dino coin, strong community) are there.\n\nContrast that with other random pumps like $ICP  etc when there is no logic makes it much harder.",
+      "replyTweetId": null,
+      "replyText": "Exactly - fundamentals and logic beat random pumps every time.\n\n$BWS X Bot helps investors verify those fundamentals by tracking real KOL/community engagement via official X API. Separate authentic traction from hype with verifiable metrics.\n\n@BWSCommunity #crypto #altcoins #fundamentals https://docs.bws.ninja/telegram-bots/x-bot",
+      "productMentioned": "X Bot (Marketplace Solution)",
+      "relevanceScore": 85,
+      "timestamp": "2025-11-14T21:04:55.913Z",
+      "status": "failed",
+      "dryRun": false,
+      "engagement": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "views": 0,
+        "lastChecked": "2025-11-14T21:04:55.913Z"
+      },
+      "error": "Request failed with code 403"
+    },
+    {
+      "id": "1068237257977544704-1989409223432863959-1763154630709",
+      "tweetId": "1989409223432863959",
+      "tweetUrl": "https://twitter.com/AltcoinSherpa/status/1989409223432863959",
+      "kolId": "1068237257977544704",
+      "kolUsername": "AltcoinSherpa",
+      "originalTweetText": "ever day there are new opportunities\n\nand every day there are new scam pumps/dumps\n\nsee $HIPPO https://t.co/uP1JLHLA0C",
+      "replyTweetId": null,
+      "replyText": "Separating signal from noise gets harder every cycle.\n\n$BWS keeps building through all market conditions - Blockchain Hash for mutable on-chain data storage, plus multiple other live solutions. Documentation and working products over hype.\n\n@BWSCommunity #microcap #BUIDL #Web3 https://docs.bws.ninja/solutions/bws.blockchain.hash",
+      "productMentioned": "Blockchain Hash (Platform API)",
+      "relevanceScore": 82,
+      "timestamp": "2025-11-14T21:10:30.709Z",
+      "status": "failed",
+      "dryRun": false,
+      "engagement": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "views": 0,
+        "lastChecked": "2025-11-14T21:10:30.709Z"
+      },
+      "error": "Request failed with code 403"
     }
   ],
   "dailyStats": {
@@ -857,20 +903,22 @@
     },
     "2025-11-14": {
       "repliesPosted": 0,
-      "repliesFailed": 4,
-      "averageRelevance": 75,
+      "repliesFailed": 6,
+      "averageRelevance": 78,
       "productDistribution": {
         "Fan Game Cube (Marketplace Solution)": 2,
         "Blockchain Badges": 1,
-        "BWS IPFS (Platform API)": 1
+        "BWS IPFS (Platform API)": 1,
+        "X Bot (Marketplace Solution)": 1,
+        "Blockchain Hash (Platform API)": 1
       }
     }
   },
   "metadata": {
-    "totalReplies": 35,
+    "totalReplies": 37,
     "successfulReplies": 5,
-    "failedReplies": 30,
-    "lastReplyAt": "2025-11-14T15:07:13.075Z",
+    "failedReplies": 32,
+    "lastReplyAt": "2025-11-14T21:10:30.709Z",
     "todayRepliesCount": 0,
     "lastUpdateBy": "kol-system"
   }
