@@ -758,6 +758,52 @@
         "lastChecked": "2025-11-14T12:18:58.223Z"
       },
       "error": "Request failed with code 403"
+    },
+    {
+      "id": "1068237257977544704-1988992246729814274-1763132251103",
+      "tweetId": "1988992246729814274",
+      "tweetUrl": "https://twitter.com/AltcoinSherpa/status/1988992246729814274",
+      "kolId": "1068237257977544704",
+      "kolUsername": "AltcoinSherpa",
+      "originalTweetText": "I miss $ZEC as the clear leader, where everyone was piling in and seeing it do a liquid 10x from the bottom. I only caught part of the move but it was very reminiscent of former market conditions with a consistent trend. Waiting for the next one...",
+      "replyTweetId": null,
+      "replyText": "The next moves come from microcaps with actual fundamentals - revenue models and shipping products.\n\n$BWS operates a Blockchain Solutions Marketplace with multiple live products targeting mass markets. Consistent delivery, real utility being adopted across verticals.\n\n@BWSCommunity #microcap #altcoins #gems https://www.bws.ninja",
+      "productMentioned": "Blockchain Badges",
+      "relevanceScore": 88,
+      "timestamp": "2025-11-14T14:57:31.103Z",
+      "status": "failed",
+      "dryRun": false,
+      "engagement": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "views": 0,
+        "lastChecked": "2025-11-14T14:57:31.103Z"
+      },
+      "error": "Request failed with code 403"
+    },
+    {
+      "id": "1353384573435056128-1989331510600601987-1763132833075",
+      "tweetId": "1989331510600601987",
+      "tweetUrl": "https://twitter.com/CryptoRover/status/1989331510600601987",
+      "kolId": "1353384573435056128",
+      "kolUsername": "CryptoRover",
+      "originalTweetText": "Most people fail to make money in crypto because they slow down and lose their hunger when the market gets tough.  \n\nThe wins you enjoy in good times come from the effort you invested in the hard times.",
+      "replyTweetId": null,
+      "replyText": "Exactly this - consistent execution during downturns separates real projects from vaporware.\n\n$BWS keeps shipping infrastructure regardless of market conditions: IPFS APIs for decentralized storage, NFT solutions, analytics tools. Building fundamentals while others pause.\n\n@BWSCommunity #microcap #blockchain #fundamentals https://www.bws.ninja",
+      "productMentioned": "BWS IPFS (Platform API)",
+      "relevanceScore": 68,
+      "timestamp": "2025-11-14T15:07:13.075Z",
+      "status": "failed",
+      "dryRun": false,
+      "engagement": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "views": 0,
+        "lastChecked": "2025-11-14T15:07:13.075Z"
+      },
+      "error": "Request failed with code 403"
     }
   ],
   "dailyStats": {
@@ -811,18 +857,20 @@
     },
     "2025-11-14": {
       "repliesPosted": 0,
-      "repliesFailed": 2,
-      "averageRelevance": 72,
+      "repliesFailed": 4,
+      "averageRelevance": 75,
       "productDistribution": {
-        "Fan Game Cube (Marketplace Solution)": 2
+        "Fan Game Cube (Marketplace Solution)": 2,
+        "Blockchain Badges": 1,
+        "BWS IPFS (Platform API)": 1
       }
     }
   },
   "metadata": {
-    "totalReplies": 33,
+    "totalReplies": 35,
     "successfulReplies": 5,
-    "failedReplies": 28,
-    "lastReplyAt": "2025-11-14T12:18:58.223Z",
+    "failedReplies": 30,
+    "lastReplyAt": "2025-11-14T15:07:13.075Z",
     "todayRepliesCount": 0,
     "lastUpdateBy": "kol-system"
   }
