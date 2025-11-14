@@ -276,6 +276,10 @@ async function evaluateAndReply() {
   let tweetsSkipped = 0;
   let lastReplyDetails = null;  // Track last successful reply for notification
 
+  // Fast-fail for repeated 403 errors (indicates missing proxy or IP block)
+  let consecutive403Count = 0;
+  const MAX_403_BEFORE_ABORT = 3;
+
   // Safety limits to prevent infinite loops
   const MAX_KOLS_TO_PROCESS = 50; // Maximum KOLs to process in one run
   const MAX_TWEETS_TO_EVALUATE = 200; // Maximum tweets to evaluate in one run
@@ -535,6 +539,9 @@ async function evaluateAndReply() {
 
           repliesPosted++;
 
+          // Reset 403 counter on success
+          consecutive403Count = 0;
+
           // Track last successful reply details for notification
           lastReplyDetails = {
             replyText: replyGeneration.replyText,
@@ -551,6 +558,37 @@ async function evaluateAndReply() {
           error = postError.message;
           replyStatus = 'failed';
           console.error(`      ❌ Failed to post: ${error}`);
+
+          // Check for 403 Forbidden errors (likely missing proxy or IP block)
+          const is403 = postError.code === 403 || error.includes('403') || error.includes('Forbidden');
+
+          if (is403) {
+            consecutive403Count++;
+            console.error(`      ⚠️  403 Forbidden error detected (${consecutive403Count}/${MAX_403_BEFORE_ABORT})`);
+
+            if (consecutive403Count >= MAX_403_BEFORE_ABORT) {
+              console.error(`\n${'='.repeat(70)}`);
+              console.error(`❌ ABORTING: ${consecutive403Count} consecutive 403 Forbidden errors`);
+              console.error(`${'='.repeat(70)}`);
+              console.error(`\nThis indicates one of these issues:`);
+              console.error(`  1. Proxy not configured (missing OXYLABS_USERNAME/PASSWORD)`);
+              console.error(`  2. Twitter is blocking the current IP address`);
+              console.error(`  3. Account has been restricted from automated posting`);
+              console.error(`\nCurrent environment:`);
+              console.error(`  CI: ${process.env.CI || 'not set'}`);
+              console.error(`  GITHUB_ACTIONS: ${process.env.GITHUB_ACTIONS || 'not set'}`);
+              console.error(`  OXYLABS_USERNAME: ${process.env.OXYLABS_USERNAME ? 'set' : 'NOT SET'}`);
+              console.error(`  OXYLABS_PASSWORD: ${process.env.OXYLABS_PASSWORD ? 'set' : 'NOT SET'}`);
+              console.error(`\nStopping immediately to avoid wasting resources on repeated failures.\n`);
+
+              // Save current progress
+              saveRepliesData(repliesData);
+              saveProcessedPosts(processedPosts);
+              saveKolsData(kolsData);
+
+              throw new Error(`Repeated 403 Forbidden errors - likely missing proxy configuration or IP block`);
+            }
+          }
 
           // Mark as skipped if posting failed (don't retry failed posts)
           processedPosts.skippedTweetIds.push(tweet.id);
@@ -824,6 +862,9 @@ async function evaluateAndReply() {
 
           repliesPosted++;
 
+          // Reset 403 counter on success
+          consecutive403Count = 0;
+
           // Track last successful reply
           lastReplyDetails = {
             replyText: replyGeneration.replyText,
@@ -839,6 +880,29 @@ async function evaluateAndReply() {
           error = postError.message;
           replyStatus = 'failed';
           console.error(`      ❌ Failed to post: ${error}`);
+
+          // Check for 403 Forbidden errors
+          const is403 = postError.code === 403 || error.includes('403') || error.includes('Forbidden');
+
+          if (is403) {
+            consecutive403Count++;
+            console.error(`      ⚠️  403 Forbidden error detected (${consecutive403Count}/${MAX_403_BEFORE_ABORT})`);
+
+            if (consecutive403Count >= MAX_403_BEFORE_ABORT) {
+              console.error(`\n${'='.repeat(70)}`);
+              console.error(`❌ ABORTING: ${consecutive403Count} consecutive 403 Forbidden errors`);
+              console.error(`${'='.repeat(70)}`);
+              console.error(`\nStopping immediately. Check proxy configuration.`);
+
+              // Save current progress
+              saveRepliesData(repliesData);
+              saveProcessedPosts(processedPosts);
+              await saveEngagingPosts(engagingPostsData);
+
+              throw new Error(`Repeated 403 Forbidden errors - likely missing proxy configuration or IP block`);
+            }
+          }
+
           processedPosts.skippedTweetIds.push(post.id);
         }
 
