@@ -1,0 +1,51 @@
+name: Test Minimal Reply
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test-minimal-reply:
+    name: Test B - Minimal Automated Reply
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm install twitter-api-v2 @anthropic-ai/sdk
+
+      - name: Run minimal reply test
+        env:
+          BWSXAI_TWITTER_API_KEY: ${{ secrets.BWSXAI_TWITTER_API_KEY }}
+          BWSXAI_TWITTER_API_SECRET: ${{ secrets.BWSXAI_TWITTER_API_SECRET }}
+          BWSXAI_TWITTER_ACCESS_TOKEN: ${{ secrets.BWSXAI_TWITTER_ACCESS_TOKEN }}
+          BWSXAI_TWITTER_ACCESS_SECRET: ${{ secrets.BWSXAI_TWITTER_ACCESS_SECRET }}
+          OXYLABS_USERNAME: ${{ secrets.OXYLABS_USERNAME }}
+          OXYLABS_PASSWORD: ${{ secrets.OXYLABS_PASSWORD }}
+          CI: true
+          GITHUB_ACTIONS: true
+        run: |
+          echo "🧪 Running Test B: Minimal Automated Reply"
+          echo "=========================================="
+          echo ""
+          echo "Objective: Determine if minimal, natural replies succeed"
+          echo "Content: No hashtags, no links, no promotional language"
+          echo ""
+          node scripts/test-minimal-reply.js
+
+      - name: Upload test results
+        if: always()
+        uses: actions/upload-artifact@v3
+        with:
+          name: test-minimal-reply-results
+          path: |
+            *.log
+            *.json
