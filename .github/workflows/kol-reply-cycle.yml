@@ -2,10 +2,8 @@ name: KOL Reply Cycle
 
 on:
   schedule:
-    - cron: '30 6 * * *'   # 06:30 UTC
-    - cron: '0 12 * * *'   # 12:00 UTC
-    - cron: '30 15 * * *'  # 15:30 UTC
-    - cron: '0 21 * * *'   # 21:00 UTC
+    - cron: '0 9 * * *'    # 09:00 UTC - Morning run
+    - cron: '0 21 * * *'   # 21:00 UTC - Evening run
   workflow_dispatch:
 
 permissions:
@@ -13,7 +11,7 @@ permissions:
 
 env:
   NODE_VERSION: "20"
-  MAX_REPLIES_PER_RUN: "2"  # Updated from 1 to 2 for higher engagement
+  MAX_REPLIES_PER_RUN: "1"  # Reduced to 1 to avoid spam detection (Twitter blocks multiple sequential replies)
 
 jobs:
   post-replies:
@@ -33,6 +31,23 @@ jobs:
         run: |
           npm install twitter-api-v2 @anthropic-ai/sdk
 
+      - name: Verify proxy configuration
+        run: |
+          echo "Checking proxy configuration..."
+          if [ -z "$OXYLABS_USERNAME" ] || [ -z "$OXYLABS_PASSWORD" ]; then
+            echo "❌ ERROR: Proxy credentials not found!"
+            echo "   OXYLABS_USERNAME: ${OXYLABS_USERNAME:+set}"
+            echo "   OXYLABS_PASSWORD: ${OXYLABS_PASSWORD:+set}"
+            echo ""
+            echo "   Without proxy, production will fail with 403 errors!"
+            echo "   Twitter blocks automated posting from GitHub Actions IPs"
+            exit 1
+          fi
+          echo "✅ Proxy credentials configured"
+        env:
+          OXYLABS_USERNAME: ${{ secrets.OXYLABS_USERNAME }}
+          OXYLABS_PASSWORD: ${{ secrets.OXYLABS_PASSWORD }}
+
       - name: Run reply generation and posting
         id: reply
         env:
@@ -43,6 +58,10 @@ jobs:
           BWSXAI_TWITTER_ACCESS_SECRET: ${{ secrets.BWSXAI_TWITTER_ACCESS_SECRET }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           PAT_REPOS_AND_WORKFLOW: ${{ secrets.PAT_REPOS_AND_WORKFLOW }}
+          OXYLABS_USERNAME: ${{ secrets.OXYLABS_USERNAME }}
+          OXYLABS_PASSWORD: ${{ secrets.OXYLABS_PASSWORD }}
+          CI: true
+          GITHUB_ACTIONS: true
         run: |
           echo "Starting reply cycle..."
           node scripts/kols/evaluate-and-reply-kols.js
