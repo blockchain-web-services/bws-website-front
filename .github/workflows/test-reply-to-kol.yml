@@ -1,0 +1,53 @@
+name: Test Reply to KOL
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test-reply-to-kol:
+    name: Test F - Reply to Actual KOL Tweet
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm install twitter-api-v2 @anthropic-ai/sdk
+
+      - name: Test reply to KOL tweet
+        env:
+          BWSXAI_TWITTER_API_KEY: ${{ secrets.BWSXAI_TWITTER_API_KEY }}
+          BWSXAI_TWITTER_API_SECRET: ${{ secrets.BWSXAI_TWITTER_API_SECRET }}
+          BWSXAI_TWITTER_ACCESS_TOKEN: ${{ secrets.BWSXAI_TWITTER_ACCESS_TOKEN }}
+          BWSXAI_TWITTER_ACCESS_SECRET: ${{ secrets.BWSXAI_TWITTER_ACCESS_SECRET }}
+          OXYLABS_USERNAME: ${{ secrets.OXYLABS_USERNAME }}
+          OXYLABS_PASSWORD: ${{ secrets.OXYLABS_PASSWORD }}
+          CI: true
+          GITHUB_ACTIONS: true
+        run: |
+          echo "🧪 Running Test F: Reply to Actual KOL Tweet"
+          echo "=============================================="
+          echo ""
+          echo "CRITICAL TEST - Determines root cause of 403 errors"
+          echo ""
+          echo "Hypothesis: 403 errors triggered by replying to strangers/KOLs"
+          echo "Not by content patterns (hashtags/links/mentions)"
+          echo ""
+          node scripts/test-reply-to-kol.js
+
+      - name: Upload test results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-reply-to-kol-results
+          path: |
+            *.log
+            *.json
