@@ -2,10 +2,8 @@ name: KOL Reply Cycle
 
 on:
   schedule:
-    - cron: '30 6 * * *'   # 06:30 UTC
-    - cron: '0 12 * * *'   # 12:00 UTC
-    - cron: '30 15 * * *'  # 15:30 UTC
-    - cron: '0 21 * * *'   # 21:00 UTC
+    - cron: '0 9 * * *'    # 09:00 UTC - Morning run
+    - cron: '0 21 * * *'   # 21:00 UTC - Evening run
   workflow_dispatch:
 
 permissions:
@@ -13,7 +11,7 @@ permissions:
 
 env:
   NODE_VERSION: "20"
-  MAX_REPLIES_PER_RUN: "2"  # Updated from 1 to 2 for higher engagement
+  MAX_REPLIES_PER_RUN: "1"  # Reduced to 1 to avoid spam detection (Twitter blocks multiple sequential replies)
 
 jobs:
   post-replies:
