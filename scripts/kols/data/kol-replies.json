@@ -712,6 +712,52 @@
         "lastChecked": "2025-11-10T21:12:31.545Z"
       },
       "error": "Request failed with code 403"
+    },
+    {
+      "id": "4441279246-1989200575846838431-1763122367353",
+      "tweetId": "1989200575846838431",
+      "tweetUrl": "https://twitter.com/IncomeSharks/status/1989200575846838431",
+      "kolId": "4441279246",
+      "kolUsername": "IncomeSharks",
+      "originalTweetText": "Crypto adds 2 trillion in marketcap in 7 months\n\nCrypto Twitter - \"This bull market sucks\"\n\nCrypto loses 1 trillion in marketcap in 1 month\n\nCrypto Twitter - \"This is the worst it's ever been\".\n\nWe are just back to where we were in July, which is still up 1 trillion... https://t.co/8kzrDGj4OB",
+      "replyTweetId": null,
+      "replyText": "Exactly - we're at July levels which were solid accumulation zones for projects with fundamentals.\n\n$BWS is a microcap Blockchain Solutions Marketplace with multiple live products targeting mass markets. Real B2B2C revenue models, not hype-dependent.\n\n@BWSCommunity #microcap #altcoins #fundamentals https://www.bws.ninja",
+      "productMentioned": "Fan Game Cube (Marketplace Solution)",
+      "relevanceScore": 72,
+      "timestamp": "2025-11-14T12:12:47.353Z",
+      "status": "failed",
+      "dryRun": false,
+      "engagement": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "views": 0,
+        "lastChecked": "2025-11-14T12:12:47.353Z"
+      },
+      "error": "Request failed with code 403"
+    },
+    {
+      "id": "4441279246-1989070980057297014-1763122738223",
+      "tweetId": "1989070980057297014",
+      "tweetUrl": "https://twitter.com/IncomeSharks/status/1989070980057297014",
+      "kolId": "4441279246",
+      "kolUsername": "IncomeSharks",
+      "originalTweetText": "The market shaking the tree again and some fruit still falling. Each time there is less and eventually the markets get numb to news and sellers actually get exhausted. This is where the timeline actually gets bearish, before it was a lot of people still holding and hopeful.",
+      "replyTweetId": null,
+      "replyText": "This shakeout phase is exactly when microcaps with real fundamentals get overlooked.\n\n$BWS operates a Blockchain Solutions Marketplace with multiple live products targeting mass markets - building revenue streams while others chase pumps. Real utility, consistent delivery.\n\n@BWSCommunity #microcap #altcoins #fundamentals https://www.bws.ninja",
+      "productMentioned": "Fan Game Cube (Marketplace Solution)",
+      "relevanceScore": 72,
+      "timestamp": "2025-11-14T12:18:58.223Z",
+      "status": "failed",
+      "dryRun": false,
+      "engagement": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "views": 0,
+        "lastChecked": "2025-11-14T12:18:58.223Z"
+      },
+      "error": "Request failed with code 403"
     }
   ],
   "dailyStats": {
@@ -762,13 +808,21 @@
         "ESG Credits (Marketplace Solution)": 2,
         "Blockchain Save (Platform API)": 2
       }
+    },
+    "2025-11-14": {
+      "repliesPosted": 0,
+      "repliesFailed": 2,
+      "averageRelevance": 72,
+      "productDistribution": {
+        "Fan Game Cube (Marketplace Solution)": 2
+      }
     }
   },
   "metadata": {
-    "totalReplies": 31,
+    "totalReplies": 33,
     "successfulReplies": 5,
-    "failedReplies": 26,
-    "lastReplyAt": "2025-11-10T21:12:31.545Z",
+    "failedReplies": 28,
+    "lastReplyAt": "2025-11-14T12:18:58.223Z",
     "todayRepliesCount": 0,
     "lastUpdateBy": "kol-system"
   }

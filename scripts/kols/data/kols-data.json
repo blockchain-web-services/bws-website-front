@@ -19,10 +19,10 @@
       "discoveryLevel": 0,
       "engagementHistory": {
         "totalPostsAnalyzed": 200,
-        "repliedTo": 4,
-        "lastEngagement": "2025-11-05T21:07:19.103Z",
+        "repliedTo": 6,
+        "lastEngagement": "2025-11-14T12:18:58.223Z",
         "successfulReplies": 4,
-        "failedReplies": 0
+        "failedReplies": 2
       },
       "relationships": {
         "follows": [],
@@ -566,7 +566,7 @@
     "activeKols": 14,
     "discoveryDepth": 2,
     "seedKolsCount": 8,
-    "lastUpdateBy": "manual-restore",
+    "lastUpdateBy": "kol-system",
     "discoveryMethod": "filtered-by-max-followers"
   }
 }
