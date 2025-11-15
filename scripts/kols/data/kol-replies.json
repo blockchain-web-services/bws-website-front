@@ -850,6 +850,52 @@
         "lastChecked": "2025-11-14T21:10:30.709Z"
       },
       "error": "Request failed with code 403"
+    },
+    {
+      "id": "1068237257977544704-1989509662467920288-1763197477311",
+      "tweetId": "1989509662467920288",
+      "tweetUrl": "https://twitter.com/AltcoinSherpa/status/1989509662467920288",
+      "kolId": "1068237257977544704",
+      "kolUsername": "AltcoinSherpa",
+      "originalTweetText": "Technical analysis is great for entries and exits but it's not as applicable for which coins to really buy in current market conditions. Coin selection is more important imo",
+      "replyTweetId": null,
+      "replyText": "Smart take - coin selection matters when fundamentals separate signal from noise.\n\n$BWS X Bot helps with exactly this: authentic community traction metrics via official X API. Cut through the bot farms and measure real engagement before everyone catches on.\n\n@BWSCommunity #altcoins #gems #Web3 https://docs.bws.ninja/telegram-bots/x-bot",
+      "productMentioned": "X Bot (Guide)",
+      "relevanceScore": 85,
+      "timestamp": "2025-11-15T09:04:37.311Z",
+      "status": "failed",
+      "dryRun": false,
+      "engagement": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "views": 0,
+        "lastChecked": "2025-11-15T09:04:37.311Z"
+      },
+      "error": "Request failed with code 403"
+    },
+    {
+      "id": "1068237257977544704-1989503653045232089-1763197796950",
+      "tweetId": "1989503653045232089",
+      "tweetUrl": "https://twitter.com/AltcoinSherpa/status/1989503653045232089",
+      "kolId": "1068237257977544704",
+      "kolUsername": "AltcoinSherpa",
+      "originalTweetText": "ALTSEASON",
+      "replyTweetId": null,
+      "replyText": "Altseason rewards execution over promises.\n\n$BWS operates a Blockchain Solutions Marketplace with multiple live products targeting mass markets - Fan Game Cube for sports engagement, credential systems, ESG reporting. Consistent delivery, microcap valuation.\n\n@BWSCommunity #altseason #microcap #gems https://www.bws.ninja",
+      "productMentioned": "Fan Game Cube (Marketplace Solution)",
+      "relevanceScore": 85,
+      "timestamp": "2025-11-15T09:09:56.950Z",
+      "status": "failed",
+      "dryRun": false,
+      "engagement": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "views": 0,
+        "lastChecked": "2025-11-15T09:09:56.950Z"
+      },
+      "error": "Request failed with code 403"
     }
   ],
   "dailyStats": {
@@ -912,13 +958,22 @@
         "X Bot (Marketplace Solution)": 1,
         "Blockchain Hash (Platform API)": 1
       }
+    },
+    "2025-11-15": {
+      "repliesPosted": 0,
+      "repliesFailed": 2,
+      "averageRelevance": 85,
+      "productDistribution": {
+        "X Bot (Guide)": 1,
+        "Fan Game Cube (Marketplace Solution)": 1
+      }
     }
   },
   "metadata": {
-    "totalReplies": 37,
+    "totalReplies": 39,
     "successfulReplies": 5,
-    "failedReplies": 32,
-    "lastReplyAt": "2025-11-14T21:10:30.709Z",
+    "failedReplies": 34,
+    "lastReplyAt": "2025-11-15T09:09:56.950Z",
     "todayRepliesCount": 0,
     "lastUpdateBy": "kol-system"
   }
