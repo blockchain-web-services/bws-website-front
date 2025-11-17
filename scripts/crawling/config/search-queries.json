@@ -1,0 +1,191 @@
+{
+  "queries": [
+    {
+      "query": "#microcap crypto",
+      "minLikes": 20,
+      "category": "microcap",
+      "description": "Microcap cryptocurrency discussions"
+    },
+    {
+      "query": "#smallcap crypto",
+      "minLikes": 20,
+      "category": "microcap",
+      "description": "Small cap crypto projects"
+    },
+    {
+      "query": "#lowcap gem",
+      "minLikes": 15,
+      "category": "microcap",
+      "description": "Low market cap hidden gems"
+    },
+    {
+      "query": "#cryptogem",
+      "minLikes": 25,
+      "category": "discovery",
+      "description": "Crypto gem discoveries"
+    },
+    {
+      "query": "#100xgem",
+      "minLikes": 20,
+      "category": "discovery",
+      "description": "High potential 100x gems"
+    },
+    {
+      "query": "#moonshot crypto",
+      "minLikes": 20,
+      "category": "discovery",
+      "description": "Moonshot cryptocurrency opportunities"
+    },
+    {
+      "query": "#IDO announcement",
+      "minLikes": 30,
+      "category": "launch",
+      "description": "Initial DEX Offering announcements"
+    },
+    {
+      "query": "#presale crypto",
+      "minLikes": 25,
+      "category": "launch",
+      "description": "Cryptocurrency presale events"
+    },
+    {
+      "query": "#tokensale",
+      "minLikes": 20,
+      "category": "launch",
+      "description": "Token sale announcements"
+    },
+    {
+      "query": "#airdrop crypto",
+      "minLikes": 30,
+      "category": "launch",
+      "description": "Crypto airdrop opportunities"
+    },
+    {
+      "query": "#fairlaunch",
+      "minLikes": 15,
+      "category": "launch",
+      "description": "Fair launch crypto projects"
+    },
+    {
+      "query": "#cryptoinvesting",
+      "minLikes": 40,
+      "category": "investor",
+      "description": "Cryptocurrency investing discussions"
+    },
+    {
+      "query": "#altcoininvesting",
+      "minLikes": 25,
+      "category": "investor",
+      "description": "Altcoin investment strategies"
+    },
+    {
+      "query": "#cryptoportfolio",
+      "minLikes": 30,
+      "category": "investor",
+      "description": "Crypto portfolio management"
+    },
+    {
+      "query": "#altseason",
+      "minLikes": 40,
+      "category": "investor",
+      "description": "Alt season discussions"
+    },
+    {
+      "query": "#cryptoalpha",
+      "minLikes": 25,
+      "category": "investor",
+      "description": "Crypto alpha opportunities"
+    },
+    {
+      "query": "#earlyinvestor crypto",
+      "minLikes": 20,
+      "category": "investor",
+      "description": "Early stage crypto investing"
+    },
+    {
+      "query": "#cryptovc",
+      "minLikes": 30,
+      "category": "institutional",
+      "description": "Crypto venture capital"
+    },
+    {
+      "query": "#seedround crypto",
+      "minLikes": 25,
+      "category": "institutional",
+      "description": "Seed funding rounds"
+    },
+    {
+      "query": "new crypto launch",
+      "minLikes": 35,
+      "category": "launch",
+      "description": "New cryptocurrency launches"
+    },
+    {
+      "query": "hidden gem crypto",
+      "minLikes": 30,
+      "category": "discovery",
+      "description": "Hidden gem crypto projects"
+    },
+    {
+      "query": "under radar crypto",
+      "minLikes": 20,
+      "category": "discovery",
+      "description": "Under the radar opportunities"
+    },
+    {
+      "query": "next 100x",
+      "minLikes": 25,
+      "category": "discovery",
+      "description": "Next 100x opportunities"
+    },
+    {
+      "query": "$XAI",
+      "minLikes": 50,
+      "category": "ticker",
+      "description": "XAI token discussions"
+    },
+    {
+      "query": "crypto launchpad",
+      "minLikes": 30,
+      "category": "launch",
+      "description": "Crypto launchpad platforms"
+    },
+    {
+      "query": "#DeFi gem",
+      "minLikes": 25,
+      "category": "discovery",
+      "description": "DeFi hidden gems"
+    },
+    {
+      "query": "#GameFi launch",
+      "minLikes": 20,
+      "category": "launch",
+      "description": "GameFi project launches"
+    },
+    {
+      "query": "#Web3 investing",
+      "minLikes": 30,
+      "category": "investor",
+      "description": "Web3 investment opportunities"
+    },
+    {
+      "query": "micro cap alert",
+      "minLikes": 15,
+      "category": "microcap",
+      "description": "Microcap alerts and calls"
+    },
+    {
+      "query": "low cap calls",
+      "minLikes": 20,
+      "category": "microcap",
+      "description": "Low cap investment calls"
+    }
+  ],
+  "settings": {
+    "maxTweetsPerQuery": 50,
+    "maxQueriesPerRun": 5,
+    "minEngagementThreshold": 15,
+    "maxAccountsPerQuery": 10,
+    "description": "Microcap/small cap crypto investor-focused search queries. Targets new launches, hidden gems, and early investment opportunities."
+  }
+}
