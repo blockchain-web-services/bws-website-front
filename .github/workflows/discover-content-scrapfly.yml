@@ -40,14 +40,14 @@ jobs:
           GITHUB_RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
         run: |
           echo "Starting Crawlee content discovery..."
-          node scripts/kols/discover-with-fallback.js
+          node scripts/crawling/production/discover-with-fallback.js
           echo "discover_status=success" >> $GITHUB_OUTPUT
         continue-on-error: true
 
       - name: Check for changes
         id: changes
         run: |
-          if git diff --quiet scripts/kols/data/; then
+          if git diff --quiet scripts/crawling/data/; then
             echo "has_changes=false" >> $GITHUB_OUTPUT
           else
             echo "has_changes=true" >> $GITHUB_OUTPUT
@@ -57,9 +57,9 @@ jobs:
         id: stats
         run: |
           # KOL stats
-          if [ -f "scripts/kols/data/kols-data.json" ]; then
-            TOTAL_KOLS=$(jq '.kols | length' scripts/kols/data/kols-data.json)
-            ACTIVE_KOLS=$(jq '[.kols[] | select(.status == "active")] | length' scripts/kols/data/kols-data.json)
+          if [ -f "scripts/crawling/data/kols-data.json" ]; then
+            TOTAL_KOLS=$(jq '.kols | length' scripts/crawling/data/kols-data.json)
+            ACTIVE_KOLS=$(jq '[.kols[] | select(.status == "active")] | length' scripts/crawling/data/kols-data.json)
             echo "total_kols=$TOTAL_KOLS" >> $GITHUB_OUTPUT
             echo "active_kols=$ACTIVE_KOLS" >> $GITHUB_OUTPUT
           else
@@ -68,9 +68,9 @@ jobs:
           fi
 
           # Engaging posts stats
-          if [ -f "scripts/kols/data/engaging-posts.json" ]; then
-            TOTAL_POSTS=$(jq '.posts | length' scripts/kols/data/engaging-posts.json)
-            UNPROCESSED=$(jq '[.posts[] | select(.processed == false)] | length' scripts/kols/data/engaging-posts.json)
+          if [ -f "scripts/crawling/data/engaging-posts.json" ]; then
+            TOTAL_POSTS=$(jq '.posts | length' scripts/crawling/data/engaging-posts.json)
+            UNPROCESSED=$(jq '[.posts[] | select(.processed == false)] | length' scripts/crawling/data/engaging-posts.json)
             echo "total_posts=$TOTAL_POSTS" >> $GITHUB_OUTPUT
             echo "unprocessed_posts=$UNPROCESSED" >> $GITHUB_OUTPUT
           else
@@ -86,7 +86,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add scripts/kols/data/
+          git add scripts/crawling/data/
           git commit -m "Crawlee content discovery - $(date +'%Y-%m-%d %H:%M UTC')
 
           📊 KOLs: ${{ steps.stats.outputs.total_kols }} total, ${{ steps.stats.outputs.active_kols }} active

@@ -1,0 +1,161 @@
+name: Test H - Multi-Account Scraper Reply Test
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+env:
+  NODE_VERSION: "20"
+  MAX_REPLIES_PER_RUN: "1"
+
+jobs:
+  test-multi-account-scraper:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: "npm"
+
+      - name: Install dependencies
+        run: |
+          npm install twitter-api-v2 @anthropic-ai/sdk @the-convocation/twitter-scraper
+
+      - name: Run multi-account scraper test
+        id: test
+        env:
+          # @BWSXAI Twitter API credentials (for posting only)
+          BWSXAI_TWITTER_API_KEY: ${{ secrets.BWSXAI_TWITTER_API_KEY }}
+          BWSXAI_TWITTER_API_SECRET: ${{ secrets.BWSXAI_TWITTER_API_SECRET }}
+          BWSXAI_TWITTER_ACCESS_TOKEN: ${{ secrets.BWSXAI_TWITTER_ACCESS_TOKEN }}
+          BWSXAI_TWITTER_ACCESS_SECRET: ${{ secrets.BWSXAI_TWITTER_ACCESS_SECRET }}
+          # Claude API
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          # Oxylabs proxy
+          OXYLABS_USERNAME: ${{ secrets.OXYLABS_USERNAME }}
+          OXYLABS_PASSWORD: ${{ secrets.OXYLABS_PASSWORD }}
+          # GitHub PAT for workflow updates
+          PAT_REPOS_AND_WORKFLOW: ${{ secrets.PAT_REPOS_AND_WORKFLOW }}
+          # Search account 1 (twitter-scraper)
+          SEARCH1_USERNAME: ${{ secrets.SEARCH1_USERNAME }}
+          SEARCH1_PASSWORD: ${{ secrets.SEARCH1_PASSWORD }}
+          SEARCH1_EMAIL: ${{ secrets.SEARCH1_EMAIL }}
+          # Search account 2 (twitter-scraper)
+          SEARCH2_USERNAME: ${{ secrets.SEARCH2_USERNAME }}
+          SEARCH2_PASSWORD: ${{ secrets.SEARCH2_PASSWORD }}
+          SEARCH2_EMAIL: ${{ secrets.SEARCH2_EMAIL }}
+          # Search account 3 (optional, twitter-scraper)
+          SEARCH3_USERNAME: ${{ secrets.SEARCH3_USERNAME }}
+          SEARCH3_PASSWORD: ${{ secrets.SEARCH3_PASSWORD }}
+          SEARCH3_EMAIL: ${{ secrets.SEARCH3_EMAIL }}
+          # Environment flags
+          CI: true
+          GITHUB_ACTIONS: true
+        run: |
+          echo "🧪 Testing multi-account scraper reply system"
+          echo ""
+          echo "This test will:"
+          echo "1. Initialize multi-account scraper client (2-3 accounts)"
+          echo "2. Use twitter-scraper (NOT Twitter API) for searches"
+          echo "3. Use Twitter API v2 ONLY for posting from @BWSXAI"
+          echo "4. Attempt to post 1 reply to verify system works"
+          echo ""
+          node scripts/crawling/production/evaluate-and-reply-kols.js
+        continue-on-error: true
+
+      - name: Check for changes
+        id: changes
+        run: |
+          if git diff --quiet scripts/crawling/data/; then
+            echo "has_changes=false" >> $GITHUB_OUTPUT
+          else
+            echo "has_changes=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Get test results
+        id: results
+        run: |
+          if [ -f "scripts/crawling/data/kol-replies.json" ]; then
+            TOTAL_REPLIES=$(jq '.replies | length' scripts/crawling/data/kol-replies.json)
+            TODAY=$(date +'%Y-%m-%d')
+            TODAY_REPLIES=$(jq --arg date "$TODAY" '[.replies[] | select(.timestamp | startswith($date))] | length' scripts/crawling/data/kol-replies.json)
+            echo "total=$TOTAL_REPLIES" >> $GITHUB_OUTPUT
+            echo "today=$TODAY_REPLIES" >> $GITHUB_OUTPUT
+
+            # Check for any 403 errors in recent replies
+            RECENT_403=$(jq --arg date "$TODAY" '[.replies[] | select(.timestamp | startswith($date)) | select(.error | contains("403"))] | length' scripts/crawling/data/kol-replies.json)
+            echo "recent_403=$RECENT_403" >> $GITHUB_OUTPUT
+          else
+            echo "total=0" >> $GITHUB_OUTPUT
+            echo "today=0" >> $GITHUB_OUTPUT
+            echo "recent_403=0" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Commit test results
+        if: steps.changes.outputs.has_changes == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add scripts/crawling/data/
+          git commit -m "Test H - Multi-Account Scraper Test - $(date +'%Y-%m-%d %H:%M UTC')
+
+          Total replies: ${{ steps.results.outputs.total }} | Today: ${{ steps.results.outputs.today }}
+          403 errors today: ${{ steps.results.outputs.recent_403 }}
+
+          🤖 Generated with [Claude Code](https://claude.com/claude-code)"
+          git push
+
+      - name: Summary
+        run: |
+          echo "## 🧪 Test H - Multi-Account Scraper Test Complete" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### Test Objectives" >> $GITHUB_STEP_SUMMARY
+          echo "- ✅ Verify multi-account scraper client initialization" >> $GITHUB_STEP_SUMMARY
+          echo "- ✅ Test twitter-scraper for searches (NO Twitter API)" >> $GITHUB_STEP_SUMMARY
+          echo "- ✅ Test Twitter API v2 for posting (1 call only)" >> $GITHUB_STEP_SUMMARY
+          echo "- ✅ Verify account rotation works" >> $GITHUB_STEP_SUMMARY
+          echo "- ✅ Check for 403 errors" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### Results" >> $GITHUB_STEP_SUMMARY
+          echo "- **Time:** $(date +'%H:%M UTC')" >> $GITHUB_STEP_SUMMARY
+          echo "- **Total Replies:** ${{ steps.results.outputs.total }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Today:** ${{ steps.results.outputs.today }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Posted This Run:** ${{ steps.changes.outputs.has_changes == 'true' && 'Yes ✅' || 'No ❌' }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **403 Errors Today:** ${{ steps.results.outputs.recent_403 }}" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### Next Steps" >> $GITHUB_STEP_SUMMARY
+          if [ "${{ steps.changes.outputs.has_changes }}" == "true" ] && [ "${{ steps.results.outputs.recent_403 }}" == "0" ]; then
+            echo "✅ **SUCCESS!** Multi-account scraper working. No 403 errors detected." >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "Ready for production deployment:" >> $GITHUB_STEP_SUMMARY
+            echo "1. Verify search account credentials are configured" >> $GITHUB_STEP_SUMMARY
+            echo "2. Monitor first few production runs" >> $GITHUB_STEP_SUMMARY
+            echo "3. Compare success rate before/after" >> $GITHUB_STEP_SUMMARY
+          elif [ "${{ steps.results.outputs.recent_403 }}" != "0" ]; then
+            echo "⚠️ **403 ERRORS DETECTED** despite multi-account approach." >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "This suggests:" >> $GITHUB_STEP_SUMMARY
+            echo "1. Account-level restriction on @BWSXAI (not pattern-related)" >> $GITHUB_STEP_SUMMARY
+            echo "2. Tweet-specific reply restrictions" >> $GITHUB_STEP_SUMMARY
+            echo "3. May need to upgrade to full Crawlee + Playwright approach" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "⚠️ **No reply posted**. Check logs for errors." >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "Possible issues:" >> $GITHUB_STEP_SUMMARY
+            echo "1. Search account credentials not configured" >> $GITHUB_STEP_SUMMARY
+            echo "2. No suitable tweets found" >> $GITHUB_STEP_SUMMARY
+            echo "3. Login failed for search accounts" >> $GITHUB_STEP_SUMMARY
+          fi
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### Logs" >> $GITHUB_STEP_SUMMARY
+          echo "Check workflow logs for:" >> $GITHUB_STEP_SUMMARY
+          echo "- Multi-account client initialization messages" >> $GITHUB_STEP_SUMMARY
+          echo "- Search account login status" >> $GITHUB_STEP_SUMMARY
+          echo "- Account rotation logs" >> $GITHUB_STEP_SUMMARY
+          echo "- Multi-account usage summary" >> $GITHUB_STEP_SUMMARY

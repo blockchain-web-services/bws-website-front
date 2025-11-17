@@ -39,7 +39,7 @@ jobs:
           echo "Objective: Determine if minimal, natural replies succeed"
           echo "Content: No hashtags, no links, no promotional language"
           echo ""
-          node scripts/test-minimal-reply.js
+          node scripts/crawling/tests/test-minimal-reply.js
 
       - name: Upload test results
         if: always()
