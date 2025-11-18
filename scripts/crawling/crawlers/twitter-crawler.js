@@ -31,7 +31,9 @@ export async function getUserProfile(username) {
       },
       browserPoolOptions: {
         useFingerprints: true,
+        maxOpenPagesPerBrowser: 1,  // Force sequential processing - each browser instance handles only 1 page
       },
+      maxConcurrency: 1,  // Process one request at a time to avoid browser pool conflicts
       maxRequestRetries: 3,
       requestHandlerTimeoutSecs: 60,
 
