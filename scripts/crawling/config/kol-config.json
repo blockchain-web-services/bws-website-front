@@ -1,0 +1,27 @@
+{
+  "discovery": {
+    "enabled": true,
+    "interval": "daily",
+    "maxNewKolsPerRun": 10
+  },
+  "kolCriteria": {
+    "minFollowers": 10000,
+    "maxFollowers": 500000,
+    "minEngagementRate": 0.01,
+    "cryptoRelevanceThreshold": 50
+  },
+  "replySettings": {
+    "enabled": true,
+    "maxRepliesPerRun": 3,
+    "minTimeBetweenReplies": 3600,
+    "replyTemplates": [
+      "Insightful perspective on {topic}! Have you explored {bws_product}? It might complement your {use_case}.",
+      "Great thread! {bws_product} could help with {problem}. Would love to hear your thoughts."
+    ]
+  },
+  "monitoring": {
+    "checkInterval": 21600,
+    "maxPostsPerKol": 20,
+    "relevanceThreshold": 60
+  }
+}
