@@ -6,7 +6,7 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import { getUserProfile } from '../crawlers/twitter-crawler.js';
+import { getUserProfile, cleanupCrawler } from '../crawlers/twitter-crawler.js';
 import { loadConfig, loadKolsData, saveKolsData, updateReadmeKolStats } from '../utils/kol-utils.js';
 import { sendDiscoveryNotification } from '../utils/zapier-webhook.js';
 import { logMorningDiscovery } from '../utils/execution-logger.js';
@@ -337,6 +337,10 @@ async function discoverWithCrawlee() {
     // Don't fail the whole script if logging fails
   }
 
+  // Cleanup shared crawler instance
+  console.log('\n🧹 Cleaning up crawler...');
+  await cleanupCrawler();
+
   return results;
 }
 
@@ -345,5 +349,8 @@ discoverWithCrawlee().then(results => {
   process.exit(results.kolsAdded > 0 ? 0 : 1);
 }).catch(error => {
   console.error('\n💥 Fatal error:', error);
-  process.exit(1);
+  // Cleanup on error too
+  cleanupCrawler().finally(() => {
+    process.exit(1);
+  });
 });
