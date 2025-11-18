@@ -45,7 +45,7 @@ function getSharedCrawler() {
     requestHandlerTimeoutSecs: 60,
 
     // Set up response interceptor ONCE per page (not per request)
-    async preNavigationHooks({ page, request }) {
+    preNavigationHooks: [async ({ page, request }) => {
       // Only set up listener once per page
       if (!page._twitterResponseListenerSetup) {
         page._twitterResponseListenerSetup = true;
@@ -81,7 +81,7 @@ function getSharedCrawler() {
           }
         });
       }
-    },
+    }],
 
     async requestHandler({ page, request }) {
       // Extract username from URL
