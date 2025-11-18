@@ -30,6 +30,7 @@ import {
 import { sendDiscoveryNotification } from '../utils/zapier-webhook.js';
 import { createClaudeClient, evaluateUserAsCryptoKOL } from '../utils/claude-client.js';
 import authManager from '../utils/x-auth-manager.js';
+import { logSearchDiscovery } from '../utils/execution-logger.js';
 
 const __dirname = __scriptsDir;  // Use scriptsDir from dotenv setup above
 
@@ -169,6 +170,7 @@ async function discoverByEngagementCrawlee() {
   // Track stats
   const results = {
     queriesExecuted: 0,
+    queriesUsed: [],
     totalTweetsFound: 0,
     tweetsFiltered: 0,
     usernamesExtracted: 0,
@@ -176,6 +178,7 @@ async function discoverByEngagementCrawlee() {
     newCandidates: 0,
     profilesFetched: 0,
     kolsAdded: 0,
+    topDiscovery: null,
     errors: []
   };
 
@@ -188,6 +191,7 @@ async function discoverByEngagementCrawlee() {
   currentPhase = 'executing_search_queries';
   for (const queryConfig of searchConfig.queries.slice(0, maxQueriesPerRun)) {
     results.queriesExecuted++;
+    results.queriesUsed.push(queryConfig.query);
     const queryPhase = `search_query_${results.queriesExecuted}_${queryConfig.name}`;
     currentPhase = queryPhase;
 
@@ -468,6 +472,14 @@ async function discoverByEngagementCrawlee() {
       existingUsernames.add(newKol.username.toLowerCase());
       results.kolsAdded++;
 
+      // Track top discovery (highest follower count)
+      if (!results.topDiscovery || followers > results.topDiscovery.followers) {
+        results.topDiscovery = {
+          username: newKol.username,
+          followers: followers
+        };
+      }
+
       console.log(`   ✅ Added to KOLs database!`);
 
       // Save after each addition
@@ -531,6 +543,9 @@ async function discoverByEngagementCrawlee() {
   console.log('='.repeat(60));
   console.log(`\n✅ Crawlee search discovery complete! Added ${results.kolsAdded} new KOLs`);
 
+  // Add duration to results
+  results.duration = duration;
+
   // Send Zapier notification
   await sendDiscoveryNotification({
     scriptName: 'KOL Discovery - Crawlee Search',
@@ -541,6 +556,15 @@ async function discoverByEngagementCrawlee() {
     totalKols: kolsData.kols.length,
     runUrl: process.env.GITHUB_RUN_URL || null
   });
+
+  // Log execution metrics for README history
+  console.log('\n📊 Logging execution metrics...');
+  try {
+    logSearchDiscovery(results);
+  } catch (logError) {
+    console.error('⚠️  Failed to log execution metrics:', logError.message);
+    // Don't fail the whole script if logging fails
+  }
 
   return results;
 }
