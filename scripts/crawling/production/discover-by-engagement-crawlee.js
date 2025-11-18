@@ -15,7 +15,7 @@ const worktreeRoot = path.resolve(__scriptsDir, '../../..');
 dotenv.config({ path: path.join(worktreeRoot, '.env') });
 
 import fs from 'fs';
-import { searchTweets, getUserProfile } from './crawlers/twitter-crawler.js';
+import { searchTweets, getUserProfile } from '../crawlers/twitter-crawler.js';
 import { runAmplifiedKolSearch } from '../utils/amplified-search.js';
 import {
   loadConfig,
