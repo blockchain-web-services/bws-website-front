@@ -230,22 +230,13 @@ Each successful discovery automatically removes that candidate from the pool, en
 
 ---
 
-**Recent Execution History** (Last 10 Runs):
+**Recent Execution History** (Last 10 Days):
 
 | Date | Day | Environment | Candidates Start | KOLs Discovered | Candidates Remaining | Top Discovery | Status |
 |------|-----|-------------|------------------|-----------------|----------------------|---------------|--------|
-| _2025-11-15_ | _Fri_ | _GitHub_ | _162_ | _3_ | _159_ | _@profcryptotalks (31K)_ | _✅ Success_ |
-| _2025-11-13_ | _Wed_ | _GitHub_ | _159_ | _2_ | _157_ | _@WuBlockchain (545K)_ | _✅ Success_ |
-| _2025-11-12_ | _Tue_ | _Local_ | _159_ | _1_ | _158_ | _@TestAccount (25K)_ | _✅ Success_ |
-| _2025-11-11_ | _Mon_ | _GitHub_ | _157_ | _1_ | _156_ | _@CryptoWendyO (458K)_ | _✅ Success_ |
-| _2025-11-08_ | _Fri_ | _GitHub_ | _156_ | _2_ | _154_ | _@CryptoRover (1.4M)_ | _✅ Success_ |
-| _2025-11-06_ | _Wed_ | _GitHub_ | _154_ | _1_ | _153_ | _@cobie (865K)_ | _✅ Success_ |
-| _2025-11-04_ | _Mon_ | _GitHub_ | _153_ | _3_ | _150_ | _@AltcoinSherpa (257K)_ | _✅ Success_ |
-| _2025-11-01_ | _Fri_ | _GitHub_ | _150_ | _2_ | _148_ | _@IncomeSharks (688K)_ | _✅ Success_ |
-| _2025-10-30_ | _Wed_ | _GitHub_ | _148_ | _0_ | _148_ | _N/A_ | _❌ Failed (no discoveries)_ |
-| _2025-10-28_ | _Mon_ | _GitHub_ | _148_ | _1_ | _147_ | _@CryptoCapo_ (987K)_ | _✅ Success_ |
 
-_Note: This table should be updated after each workflow execution. Environment: "GitHub" for automated runs, "Local" for manual testing. Italic text indicates placeholder data._
+
+_Note: Table auto-generated from last 10 days of workflow executions. Older entries automatically removed. Metrics populated from logged execution data._
 
 ---
 
@@ -317,22 +308,13 @@ Unlike seed-based discovery, this workflow actively searches Twitter for crypto 
 
 ---
 
-**Recent Execution History** (Last 10 Runs):
+**Recent Execution History** (Last 10 Days):
 
 | Date | Day | Environment | Queries Used | Tweets Analyzed | Candidates Checked | KOLs Discovered | Top Discovery | Status |
 |------|-----|-------------|--------------|-----------------|--------------------|--------------------|---------------|--------|
-| _2025-11-15_ | _Fri_ | _GitHub_ | _#microcap, #cryptogem, #IDO, #altseason, $XAI_ | _142_ | _28_ | _2_ | _@cryptomicrocap (45K)_ | _✅ Success_ |
-| _2025-11-14_ | _Thu_ | _Local_ | _#smallcap, #100xgem, #presale_ | _89_ | _17_ | _1_ | _@TestMicrocap (8K)_ | _✅ Success_ |
-| _2025-11-13_ | _Wed_ | _GitHub_ | _#smallcap, #100xgem, #presale, #cryptoalpha, #cryptovc_ | _156_ | _31_ | _1_ | _@GemHunter_X (12K)_ | _✅ Success_ |
-| _2025-11-11_ | _Mon_ | _GitHub_ | _#lowcap, #moonshot, #tokensale, #earlyinvestor, #seedround_ | _98_ | _19_ | _0_ | _N/A_ | _❌ Failed (no discoveries)_ |
-| _2025-11-08_ | _Fri_ | _GitHub_ | _#DeFi gem, #airdrop, #cryptoinvesting, launchpad, $XAI_ | _189_ | _35_ | _3_ | _@DeFiWhale_ (89K)_ | _✅ Success_ |
-| _2025-11-06_ | _Wed_ | _GitHub_ | _micro cap alert, #fairlaunch, #altcoininvesting, #cryptovc_ | _123_ | _24_ | _1_ | _@profcryptotalks (31K)_ | _✅ Success_ |
-| _2025-11-04_ | _Mon_ | _GitHub_ | _low cap calls, #GameFi, #cryptoportfolio, #Web3 investing_ | _167_ | _29_ | _2_ | _@Web3Investor (67K)_ | _✅ Success_ |
-| _2025-11-01_ | _Fri_ | _GitHub_ | _hidden gem, next 100x, #presale, #cryptoalpha, #seedround_ | _145_ | _27_ | _1_ | _@AltcoinAlpha (23K)_ | _✅ Success_ |
-| _2025-10-30_ | _Wed_ | _GitHub_ | _#microcap, #cryptogem, #IDO, #earlyinvestor, $XAI_ | _134_ | _22_ | _2_ | _@MicroCapKing (18K)_ | _✅ Success_ |
-| _2025-10-28_ | _Mon_ | _GitHub_ | _#smallcap, #100xgem, #tokensale, #altseason, launchpad_ | _112_ | _20_ | _0_ | _N/A_ | _❌ Failed (no discoveries)_ |
 
-_Note: This table should be updated after each workflow execution. Environment: "GitHub" for automated runs, "Local" for manual testing. Italic text indicates placeholder data._
+
+_Note: Table auto-generated from last 10 days of workflow executions. Older entries automatically removed. Metrics populated from logged execution data._
 
 ---
 
@@ -390,22 +372,13 @@ Content Discovery monitors the timelines of active KOLs in the database, extract
 
 ---
 
-**Recent Execution History** (Last 10 Runs):
+**Recent Execution History** (Last 10 Days):
 
 | Date | Time (UTC) | Environment | KOLs Monitored | Posts Found | High-Relevance | Status |
 |------|------------|-------------|----------------|-------------|----------------|--------|
-| _2025-11-17_ | _18:00_ | _GitHub_ | _14_ | _23_ | _8_ | _✅ Success_ |
-| _2025-11-17_ | _12:00_ | _GitHub_ | _14_ | _19_ | _6_ | _✅ Success_ |
-| _2025-11-17_ | _06:00_ | _GitHub_ | _14_ | _15_ | _5_ | _✅ Success_ |
-| _2025-11-17_ | _00:00_ | _GitHub_ | _14_ | _21_ | _7_ | _✅ Success_ |
-| _2025-11-16_ | _21:30_ | _Local_ | _14_ | _18_ | _4_ | _✅ Success_ |
-| _2025-11-16_ | _18:00_ | _GitHub_ | _14_ | _25_ | _9_ | _✅ Success_ |
-| _2025-11-16_ | _12:00_ | _GitHub_ | _14_ | _12_ | _3_ | _✅ Success_ |
-| _2025-11-16_ | _06:00_ | _GitHub_ | _14_ | _20_ | _6_ | _✅ Success_ |
-| _2025-11-15_ | _18:00_ | _GitHub_ | _14_ | _17_ | _5_ | _✅ Success_ |
-| _2025-11-15_ | _12:00_ | _GitHub_ | _14_ | _22_ | _8_ | _✅ Success_ |
 
-_Note: This table should be updated after each workflow execution. Environment: "GitHub" for automated runs, "Local" for manual testing. Italic text indicates placeholder data._
+
+_Note: Table auto-generated from last 10 days of workflow executions. Older entries automatically removed. Metrics populated from logged execution data._
 
 ---
 

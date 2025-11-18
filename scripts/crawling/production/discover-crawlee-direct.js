@@ -9,6 +9,7 @@ import { fileURLToPath } from 'url';
 import { getUserProfile } from './crawlers/twitter-crawler.js';
 import { loadConfig, loadKolsData, saveKolsData, updateReadmeKolStats } from '../utils/kol-utils.js';
 import { sendDiscoveryNotification } from '../utils/zapier-webhook.js';
+import { logMorningDiscovery } from '../utils/execution-logger.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -81,12 +82,15 @@ async function discoverWithCrawlee() {
   const { candidates: candidateUsernames, config: candidatesConfig } = loadCandidates();
 
   const results = {
+    candidatesStart: candidateUsernames.length,
     candidatesChecked: 0,
     profilesRetrieved: 0,
     kolsAdded: 0,
     errors: [],
     discovered: [],
-    addedUsernames: []  // Track successfully added KOLs for removal from candidates
+    addedUsernames: [],  // Track successfully added KOLs for removal from candidates
+    topDiscovery: null,
+    candidatesRemaining: candidateUsernames.length
   };
 
   // Load existing KOLs
@@ -211,6 +215,14 @@ async function discoverWithCrawlee() {
         verified: verified
       });
 
+      // Track top discovery (highest follower count)
+      if (!results.topDiscovery || followers > results.topDiscovery.followers) {
+        results.topDiscovery = {
+          username: newKol.username,
+          followers: followers
+        };
+      }
+
       // Track for removal from candidates list
       results.addedUsernames.push(username);
 
@@ -246,6 +258,10 @@ async function discoverWithCrawlee() {
   }
 
   const duration = Math.round((Date.now() - startTime) / 1000);
+
+  // Update candidates remaining count
+  results.candidatesRemaining = candidatesConfig.totalCandidates || (results.candidatesStart - results.kolsAdded);
+  results.duration = duration;
 
   // Print results
   console.log('\n' + '='.repeat(60));
@@ -302,6 +318,15 @@ async function discoverWithCrawlee() {
     console.error('⚠️  Failed to send Zapier notification:', notificationError.message);
     console.error('   Error stack:', notificationError.stack);
     // Don't fail the whole script if notification fails
+  }
+
+  // Log execution metrics for README history
+  console.log('\n📊 Logging execution metrics...');
+  try {
+    logMorningDiscovery(results);
+  } catch (logError) {
+    console.error('⚠️  Failed to log execution metrics:', logError.message);
+    // Don't fail the whole script if logging fails
   }
 
   return results;
