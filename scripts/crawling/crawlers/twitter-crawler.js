@@ -39,6 +39,9 @@ export async function getUserProfile(username) {
 
       async requestHandler({ page, request }) {
         try {
+          // Extract username from request URL to avoid closure issues
+          const requestUsername = request.url.split('/').pop();
+
           // Set up response interceptor before navigation
           const responsePromise = new Promise((resolveResponse) => {
             page.on('response', async (response) => {
@@ -52,7 +55,7 @@ export async function getUserProfile(username) {
 
                   if (parsed) {
                     profileData = parsed;
-                    console.log(`✅ Captured profile data for @${username}`);
+                    console.log(`✅ Captured profile data for @${requestUsername}`);
                     resolveResponse(parsed);
                   }
                 } catch (err) {
@@ -63,7 +66,7 @@ export async function getUserProfile(username) {
           });
 
           // Navigate to profile page
-          console.log(`🔍 Crawling profile: @${username}`);
+          console.log(`🔍 Crawling profile: @${requestUsername}`);
           console.log(`   URL: ${request.url}`);
 
           await page.goto(request.url, {
@@ -82,7 +85,7 @@ export async function getUserProfile(username) {
           const pageContent = await page.content();
           if (pageContent.includes('This account doesn\'t exist') ||
               pageContent.includes('Account suspended')) {
-            console.log(`❌ User @${username} not found or suspended`);
+            console.log(`❌ User @${requestUsername} not found or suspended`);
             if (!isResolved) {
               isResolved = true;
               resolve(null);
@@ -97,15 +100,15 @@ export async function getUserProfile(username) {
             }
           } else {
             // Fallback: scrape visible data if GraphQL capture failed
-            console.log(`⚠️ GraphQL capture failed, attempting DOM scraping for @${username}`);
-            const fallbackData = await scrapeProfileFromDOM(page, username);
+            console.log(`⚠️ GraphQL capture failed, attempting DOM scraping for @${requestUsername}`);
+            const fallbackData = await scrapeProfileFromDOM(page, requestUsername);
             if (!isResolved) {
               isResolved = true;
               resolve(fallbackData);
             }
           }
         } catch (error) {
-          console.error(`Error crawling @${username}:`, error.message);
+          console.error(`Error crawling @${requestUsername}:`, error.message);
           if (!isResolved) {
             isResolved = true;
             reject(error);
@@ -115,7 +118,9 @@ export async function getUserProfile(username) {
     });
 
     // Run crawler with URL
-    crawler.run([`https://x.com/${username}`])
+    const targetUrl = `https://x.com/${username}`;
+    console.log(`   🎯 Target URL: ${targetUrl}`);
+    crawler.run([targetUrl])
       .catch((error) => {
         if (!isResolved) {
           isResolved = true;
