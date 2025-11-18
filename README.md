@@ -119,36 +119,124 @@ BWS Website includes several X/Twitter automations for content discovery, KOL en
 
 ### Discovery Workflows
 
-| Automation | Status | Success Rate | Strategy | Schedule |
-|------------|--------|--------------|----------|----------|
-| Morning Discovery (Seed-Based) | ✅ | 100% (2/2) | Crawlee + Playwright | Mon/Wed/Fri 09:09 UTC |
-| Search-Based Discovery (Dynamic) | ✅ | Fixed (2025-11-17) | Crawlee + Playwright | Tue/Thu/Sat 14:00 UTC |
-| Content Discovery - Crawlee | ✅ | 100% (15/15) | Crawlee + Playwright | 4x daily (6hr intervals) |
+| Automation | Status | Success Rate | Strategy | Schedule | Credentials |
+|------------|--------|--------------|----------|----------|-------------|
+| Morning Discovery (Seed-Based) | ✅ | 100% (2/2) | Crawlee + Playwright | Mon/Wed/Fri 09:09 UTC | `ANTHROPIC_API_KEY` |
+| Search-Based Discovery (Dynamic) | ✅ | Fixed (2025-11-17) | Crawlee + Playwright | Tue/Thu/Sat 14:00 UTC | `OXYLABS_USERNAME`, `OXYLABS_PASSWORD`, `ANTHROPIC_API_KEY` |
+| Content Discovery - Crawlee | ✅ | 100% (15/15) | Crawlee + Playwright | 4x daily (6hr intervals) | `OXYLABS_USERNAME`, `OXYLABS_PASSWORD`, `ANTHROPIC_API_KEY` |
 
 ### Engagement Workflows
 
-| Automation | Status | Success Rate | Strategy | Schedule |
-|------------|--------|--------------|----------|----------|
-| KOL Reply Cycle | 🔴 | 33% (4/12) | Twitter API v2 (403 errors) | 4x daily |
+| Automation | Status | Success Rate | Strategy | Schedule | Credentials |
+|------------|--------|--------------|----------|----------|-------------|
+| KOL Reply Cycle | 🔴 | 33% (4/12) | Twitter API v2 (403 errors) | 4x daily | `BWSXAI_TWITTER_*` (5 vars), `ANTHROPIC_API_KEY`, `OXYLABS_*` (2 vars), `SEARCH1_*` (2 vars), `PAT_REPOS_AND_WORKFLOW` |
 
 ### Analytics & Reporting
 
-| Automation | Status | Success Rate | Strategy | Schedule |
-|------------|--------|--------------|----------|----------|
-| Weekly KOL Analytics | ✅ | 100% (1/1) | Twitter API v2 | Sunday 21:00 UTC |
+| Automation | Status | Success Rate | Strategy | Schedule | Credentials |
+|------------|--------|--------------|----------|----------|-------------|
+| Weekly KOL Analytics | ✅ | 100% (1/1) | Twitter API v2 | Sunday 21:00 UTC | `ANTHROPIC_API_KEY`, `GH_TOKEN` (GitHub auto) |
 
 ### Content Posting
 
-| Automation | Status | Success Rate | Strategy | Schedule |
-|------------|--------|--------------|----------|----------|
-| Post Article Content | 🔴 | 0% (0/4) | Twitter API v2 (403 errors) | Daily 12:00 UTC |
-| Weekly X Post | ⚠️ | 25% (1/4) | Twitter API v2 (403 errors) | Monday 15:00 UTC |
+| Automation | Status | Success Rate | Strategy | Schedule | Credentials |
+|------------|--------|--------------|----------|----------|-------------|
+| Post Article Content | 🔴 | 0% (0/4) | Twitter API v2 (403 errors) | Daily 12:00 UTC | `BWSXAI_TWITTER_*` (4 vars), `ANTHROPIC_API_KEY`, `OXYLABS_*` (2 vars), `PAT_REPOS_AND_WORKFLOW` |
+| Weekly X Post | ⚠️ | 25% (1/4) | Twitter API v2 (403 errors) | Monday 15:00 UTC | `TWITTER_*` (4 vars), `ANTHROPIC_API_KEY`, `PAT_REPOS_AND_WORKFLOW`, `PAT_GITHUB_ACTIONS` |
 
 ### Infrastructure
 
-| Automation | Status | Success Rate | Strategy | Schedule |
-|------------|--------|--------------|----------|----------|
-| Production Monitoring | ✅ | 100% (16/16) | Internal | Hourly |
+| Automation | Status | Success Rate | Strategy | Schedule | Credentials |
+|------------|--------|--------------|----------|----------|-------------|
+| Production Monitoring | ✅ | 100% (16/16) | Internal | Hourly | None (GitHub API) |
+
+---
+
+## Credentials & Authentication
+
+All workflows use credentials stored as **GitHub Secrets** (environment variables). Credentials are **never** committed to the repository.
+
+### Credential Types & Usage
+
+| Credential | Purpose | Used By | Selection Method |
+|------------|---------|---------|------------------|
+| **`OXYLABS_USERNAME`** | Residential proxy authentication | Discovery workflows | Environment variable (GitHub Secret) |
+| **`OXYLABS_PASSWORD`** | Residential proxy authentication | Discovery workflows | Environment variable (GitHub Secret) |
+| **`ANTHROPIC_API_KEY`** | Claude AI for KOL evaluation & reply generation | Discovery & Reply workflows | Environment variable (GitHub Secret) |
+| **`BWSXAI_TWITTER_BEARER_TOKEN`** | Twitter API read-only access | Analytics workflow | Environment variable (GitHub Secret) |
+| **`BWSXAI_TWITTER_API_KEY`** | Twitter API OAuth 1.0a | Reply & Posting workflows | Environment variable (GitHub Secret) |
+| **`BWSXAI_TWITTER_API_SECRET`** | Twitter API OAuth 1.0a | Reply & Posting workflows | Environment variable (GitHub Secret) |
+| **`BWSXAI_TWITTER_ACCESS_TOKEN`** | Twitter API OAuth 1.0a | Reply & Posting workflows | Environment variable (GitHub Secret) |
+| **`BWSXAI_TWITTER_ACCESS_SECRET`** | Twitter API OAuth 1.0a | Reply & Posting workflows | Environment variable (GitHub Secret) |
+| **`TWITTER_API_KEY`** | Twitter API OAuth 1.0a (legacy naming) | Weekly X Post workflow | Environment variable (GitHub Secret) |
+| **`TWITTER_API_SECRET`** | Twitter API OAuth 1.0a (legacy naming) | Weekly X Post workflow | Environment variable (GitHub Secret) |
+| **`TWITTER_ACCESS_TOKEN`** | Twitter API OAuth 1.0a (legacy naming) | Weekly X Post workflow | Environment variable (GitHub Secret) |
+| **`TWITTER_ACCESS_SECRET`** | Twitter API OAuth 1.0a (legacy naming) | Weekly X Post workflow | Environment variable (GitHub Secret) |
+| **`SEARCH1_USERNAME`** | Twitter-scraper account credentials | Reply workflow (tweet reading) | Environment variable (GitHub Secret) |
+| **`SEARCH1_PASSWORD`** | Twitter-scraper account credentials | Reply workflow (tweet reading) | Environment variable (GitHub Secret) |
+| **`PAT_REPOS_AND_WORKFLOW`** | GitHub Personal Access Token | Workflow automation | Environment variable (GitHub Secret) |
+| **`PAT_GITHUB_ACTIONS`** | GitHub Personal Access Token | Workflow automation | Environment variable (GitHub Secret) |
+| **`GH_TOKEN`** | GitHub Actions auto-token | Workflow automation | Automatically provided by GitHub |
+
+### Proxy Configuration
+
+**Oxylabs Residential Proxies** (used by search & content discovery workflows):
+
+- **Provider**: Oxylabs residential proxy network
+- **Authentication**: `OXYLABS_USERNAME` and `OXYLABS_PASSWORD` environment variables
+- **Purpose**: Bypass IP rate limits and anti-bot detection
+- **Endpoint**: `pr.oxylabs.io:7777`
+- **Selection**: Automatically rotates residential IPs per request
+
+**When Proxies Are Used:**
+- ✅ Search-Based Discovery - Required for Twitter search scraping
+- ✅ Content Discovery - Required for KOL timeline monitoring
+- ❌ Morning Discovery - Not required (direct profile fetching only)
+
+### Credential Selection Logic
+
+**Priority Order (highest to lowest):**
+
+1. **Environment Variables (GitHub Secrets)** - Used in production workflows
+2. **Local `.env` file** - Used in local development (gitignored)
+3. **Config files** - Fallback for local testing (also gitignored)
+
+**Example:** For Oxylabs credentials:
+- Production: Uses `${{ secrets.OXYLABS_USERNAME }}` from GitHub Secrets
+- Local: Uses `OXYLABS_USERNAME` from `.env` file
+- Fallback: Can read from `config/x-crawler-accounts.json` if environment vars not set
+
+### Local Development Setup
+
+For local testing, create a `.env` file in the repository root (gitignored):
+
+```bash
+# Oxylabs Proxy (required for search & content discovery)
+OXYLABS_USERNAME=customer-nachocoll_XXXX
+OXYLABS_PASSWORD=your-password-here
+
+# Anthropic AI (required for all workflows)
+ANTHROPIC_API_KEY=sk-ant-your-key-here
+
+# Twitter API - BWSXAI Account (for posting/reply tests)
+BWSXAI_TWITTER_BEARER_TOKEN=your-bearer-token
+BWSXAI_TWITTER_API_KEY=your-api-key
+BWSXAI_TWITTER_API_SECRET=your-api-secret
+BWSXAI_TWITTER_ACCESS_TOKEN=your-access-token
+BWSXAI_TWITTER_ACCESS_SECRET=your-access-secret
+
+# Twitter API - Legacy Naming (for weekly post workflow)
+TWITTER_API_KEY=your-api-key
+TWITTER_API_SECRET=your-api-secret
+TWITTER_ACCESS_TOKEN=your-access-token
+TWITTER_ACCESS_SECRET=your-access-secret
+
+# Twitter-Scraper Credentials (for reply workflow)
+SEARCH1_USERNAME=your-twitter-username
+SEARCH1_PASSWORD=your-twitter-password
+```
+
+**Note:** See [`scripts/crawling/docs/CREDENTIALS.md`](./scripts/crawling/docs/CREDENTIALS.md) for detailed credential setup and management instructions.
 
 ---
 
