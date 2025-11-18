@@ -12,6 +12,8 @@ import { parseUserProfile, parseSearchResults, parseFollowingList, parseUserTwee
  * @returns {Promise<Object|null>} User profile data matching Twitter API v2 format
  */
 export async function getUserProfile(username) {
+  console.log(`📞 getUserProfile called with username: "${username}"`);
+
   return new Promise((resolve, reject) => {
     let profileData = null;
     let isResolved = false;
@@ -60,6 +62,7 @@ export async function getUserProfile(username) {
 
           // Navigate to profile page
           console.log(`🔍 Crawling profile: @${username}`);
+          console.log(`   URL: ${request.url}`);
 
           await page.goto(request.url, {
             waitUntil: 'domcontentloaded',
