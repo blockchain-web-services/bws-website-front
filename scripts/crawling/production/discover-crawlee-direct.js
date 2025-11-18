@@ -6,7 +6,7 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import { getUserProfile, cleanupCrawler } from '../crawlers/twitter-crawler.js';
+import { getUserProfile } from '../crawlers/twitter-crawler-simple.js';
 import { loadConfig, loadKolsData, saveKolsData, updateReadmeKolStats } from '../utils/kol-utils.js';
 import { sendDiscoveryNotification } from '../utils/zapier-webhook.js';
 import { logMorningDiscovery } from '../utils/execution-logger.js';
@@ -114,20 +114,22 @@ async function discoverWithCrawlee() {
     return true;
   });
 
-  console.log(`\n📦 Batching ${candidatesToFetch.length} profile fetch requests...\n`);
+  // TESTING: Only process 1 candidate for now
+  const testCandidates = candidatesToFetch.slice(0, 1);
+  console.log(`\n🧪 TEST MODE: Processing only ${testCandidates.length} candidate for testing\n`);
 
-  // Batch fetch all profiles at once
-  const profilePromises = candidatesToFetch.map(username => {
-    console.log(`🔄 Queueing request for @${username}`);
-    return getUserProfile(username)
-      .then(profile => ({ username, profile, error: null }))
-      .catch(error => ({ username, profile: null, error }));
-  });
+  console.log(`\n📦 Processing ${testCandidates.length} profile sequentially...\n`);
 
-  console.log(`\n⏳ Waiting for all ${profilePromises.length} profile fetches to complete...\n`);
-
-  // Wait for all profiles to be fetched
-  const profileResults = await Promise.all(profilePromises);
+  // Process profiles ONE AT A TIME (slower but reliable)
+  const profileResults = [];
+  for (const username of testCandidates) {
+    try {
+      const profile = await getUserProfile(username);
+      profileResults.push({ username, profile, error: null });
+    } catch (error) {
+      profileResults.push({ username, profile: null, error });
+    }
+  }
 
   console.log(`\n✅ All profile fetches complete! Processing results...\n`);
 
@@ -358,10 +360,6 @@ async function discoverWithCrawlee() {
     // Don't fail the whole script if logging fails
   }
 
-  // Cleanup shared crawler instance
-  console.log('\n🧹 Cleaning up crawler...');
-  await cleanupCrawler();
-
   return results;
 }
 
@@ -370,8 +368,5 @@ discoverWithCrawlee().then(results => {
   process.exit(results.kolsAdded > 0 ? 0 : 1);
 }).catch(error => {
   console.error('\n💥 Fatal error:', error);
-  // Cleanup on error too
-  cleanupCrawler().finally(() => {
-    process.exit(1);
-  });
+  process.exit(1);
 });

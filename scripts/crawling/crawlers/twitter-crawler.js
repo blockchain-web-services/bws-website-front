@@ -10,6 +10,14 @@
 
 import { PlaywrightCrawler } from 'crawlee';
 import { parseUserProfile, parseSearchResults, parseFollowingList, parseUserTweets } from './graphql-parser.js';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+// Configure Crawlee storage to use local directory via environment variable
+process.env.CRAWLEE_STORAGE_DIR = path.join(__dirname, '../storage');
 
 // Shared crawler instance - created once and reused
 let sharedCrawler = null;
@@ -171,18 +179,9 @@ export async function getUserProfile(username) {
     const crawler = getSharedCrawler();
 
     try {
-      // Add URL to crawler's request queue (MUST await before starting crawler)
+      // Add URL to crawler's request queue
       await crawler.addRequests([targetUrl]);
       console.log(`   ✅ Request added to queue for @${username}`);
-
-      // Start the crawler if not already running
-      if (!crawler.running) {
-        console.log(`   🚀 Starting crawler...`);
-        crawler.run()
-          .catch((error) => {
-            console.error('Crawler run error:', error.message);
-          });
-      }
     } catch (error) {
       console.error(`Failed to add request for @${username}:`, error.message);
       const pending = pendingRequests.get(username);
@@ -192,6 +191,29 @@ export async function getUserProfile(username) {
       }
     }
   });
+}
+
+/**
+ * Start the shared crawler to process all queued requests
+ * Call this AFTER all getUserProfile() calls have been made
+ */
+export async function startCrawler() {
+  const crawler = getSharedCrawler();
+
+  if (crawler.running) {
+    console.log('⚠️  Crawler already running');
+    return;
+  }
+
+  console.log('🚀 Starting shared crawler to process queued requests...');
+
+  try {
+    await crawler.run();
+    console.log('✅ Crawler finished processing all requests');
+  } catch (error) {
+    console.error('❌ Crawler run error:', error.message);
+    throw error;
+  }
 }
 
 /**
