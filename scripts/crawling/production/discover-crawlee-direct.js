@@ -89,6 +89,7 @@ async function discoverWithCrawlee() {
     errors: [],
     discovered: [],
     addedUsernames: [],  // Track successfully added KOLs for removal from candidates
+    checkedUsernames: [],  // Track ALL checked candidates for removal (success or failure)
     topDiscovery: null,
     candidatesRemaining: candidateUsernames.length
   };
@@ -107,6 +108,9 @@ async function discoverWithCrawlee() {
     results.candidatesChecked++;
 
     console.log(`\n[${results.candidatesChecked}/${candidateUsernames.length}] Checking @${username}...`);
+
+    // Track this candidate as checked (will be removed from list regardless of outcome)
+    results.checkedUsernames.push(username);
 
     // Skip if already in database
     if (existingUsernames.has(username.toLowerCase())) {
@@ -249,12 +253,16 @@ async function discoverWithCrawlee() {
     kolsData.metadata.discoveryMethod = 'crawlee-direct';
     saveKolsData(kolsData);
 
-    // Remove successfully added KOLs from candidates list
-    saveCandidates(candidatesConfig, results.addedUsernames);
-
     // Update README with new KOL counts
     console.log('\n📝 Updating README.md with new KOL stats...');
     updateReadmeKolStats();
+  }
+
+  // Remove ALL checked candidates from list (regardless of whether they were added)
+  // This prevents re-checking candidates that don't meet criteria
+  if (results.checkedUsernames.length > 0) {
+    console.log(`\n📝 Removing ${results.checkedUsernames.length} checked candidates from input list...`);
+    saveCandidates(candidatesConfig, results.checkedUsernames);
   }
 
   const duration = Math.round((Date.now() - startTime) / 1000);
