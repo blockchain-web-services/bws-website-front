@@ -103,24 +103,52 @@ async function discoverWithCrawlee() {
   console.log(`📊 Existing KOLs in database: ${kolsData.kols.length}`);
   console.log(`📏 Min followers required: ${config.kolCriteria.minFollowers.toLocaleString()}\n`);
 
-  // Process each candidate
-  for (const username of candidateUsernames) {
+  // Filter out candidates already in database
+  const candidatesToFetch = candidateUsernames.filter(username => {
+    if (existingUsernames.has(username.toLowerCase())) {
+      console.log(`⏭️  Skipping @${username} - already in database`);
+      results.candidatesChecked++;
+      results.checkedUsernames.push(username);
+      return false;
+    }
+    return true;
+  });
+
+  console.log(`\n📦 Batching ${candidatesToFetch.length} profile fetch requests...\n`);
+
+  // Batch fetch all profiles at once
+  const profilePromises = candidatesToFetch.map(username => {
+    console.log(`🔄 Queueing request for @${username}`);
+    return getUserProfile(username)
+      .then(profile => ({ username, profile, error: null }))
+      .catch(error => ({ username, profile: null, error }));
+  });
+
+  console.log(`\n⏳ Waiting for all ${profilePromises.length} profile fetches to complete...\n`);
+
+  // Wait for all profiles to be fetched
+  const profileResults = await Promise.all(profilePromises);
+
+  console.log(`\n✅ All profile fetches complete! Processing results...\n`);
+
+  // Process each result
+  let processedCount = 0;
+  for (const { username, profile, error } of profileResults) {
+    processedCount++;
     results.candidatesChecked++;
 
-    console.log(`\n[${results.candidatesChecked}/${candidateUsernames.length}] Checking @${username}...`);
+    console.log(`\n[${processedCount}/${profileResults.length}] Processing @${username}...`);
 
-    // Track this candidate as checked (will be removed from list regardless of outcome)
+    // Track this candidate as checked
     results.checkedUsernames.push(username);
 
-    // Skip if already in database
-    if (existingUsernames.has(username.toLowerCase())) {
-      console.log(`   ⏭️  Already in database`);
+    if (error) {
+      console.log(`   ❌ Error: ${error.message}`);
+      results.errors.push(`@${username}: ${error.message}`);
       continue;
     }
 
     try {
-      // Fetch profile
-      const profile = await getUserProfile(username);
 
       if (!profile) {
         console.log(`   ❌ Profile not found`);
@@ -227,32 +255,25 @@ async function discoverWithCrawlee() {
         };
       }
 
+      console.log(`   ✅ Added to KOLs database!`);
+
       // Track for removal from candidates list
       results.addedUsernames.push(username);
 
-      console.log(`   ✅ Added to KOLs database!`);
-
-      // Save after each addition
-      saveKolsData(kolsData);
-
     } catch (error) {
-      console.log(`   ❌ Error: ${error.message}`);
+      console.log(`   ❌ Error processing profile: ${error.message}`);
       results.errors.push(`@${username}: ${error.message}`);
-    }
-
-    // Rate limiting - wait between requests
-    if (results.candidatesChecked < candidateUsernames.length) {
-      console.log(`   ⏸️  Waiting 3s...`);
-      await new Promise(resolve => setTimeout(resolve, 3000));
     }
   }
 
-  // Final save
-  if (results.kolsAdded > 0) {
-    kolsData.metadata.lastDiscoveryRun = new Date().toISOString();
-    kolsData.metadata.discoveryMethod = 'crawlee-direct';
-    saveKolsData(kolsData);
+  // Update metadata and save
+  kolsData.metadata.lastDiscoveryRun = new Date().toISOString();
+  kolsData.metadata.discoveryMethod = 'crawlee-direct';
 
+  console.log(`\n💾 Saving all changes to database...`);
+  saveKolsData(kolsData);
+
+  if (results.kolsAdded > 0) {
     // Update README with new KOL counts
     console.log('\n📝 Updating README.md with new KOL stats...');
     updateReadmeKolStats();
