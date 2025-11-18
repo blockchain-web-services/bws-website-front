@@ -44,6 +44,45 @@ function getSharedCrawler() {
     maxRequestRetries: 3,
     requestHandlerTimeoutSecs: 60,
 
+    // Set up response interceptor ONCE per page (not per request)
+    async preNavigationHooks({ page, request }) {
+      // Only set up listener once per page
+      if (!page._twitterResponseListenerSetup) {
+        page._twitterResponseListenerSetup = true;
+
+        page.on('response', async (response) => {
+          const url = response.url();
+
+          // Check if this is a Twitter GraphQL response
+          if (url.includes('UserByScreenName') || url.includes('UserByRestId')) {
+            try {
+              const data = await response.json();
+              const parsed = parseUserProfile(data);
+
+              if (parsed && parsed.username) {
+                // Find the pending request for this username
+                const pendingRequest = pendingRequests.get(parsed.username);
+
+                if (pendingRequest) {
+                  pendingRequest.profileData = parsed;
+                  console.log(`✅ Captured profile data for @${parsed.username}`);
+
+                  // Resolve the promise
+                  if (pendingRequest.resolveResponse) {
+                    pendingRequest.resolveResponse(parsed);
+                  }
+                } else {
+                  console.log(`⚠️  Received profile for @${parsed.username} but no pending request found`);
+                }
+              }
+            } catch (err) {
+              // Not JSON or parsing error - ignore
+            }
+          }
+        });
+      }
+    },
+
     async requestHandler({ page, request }) {
       // Extract username from URL
       const requestUsername = request.url.split('/').pop();
@@ -58,26 +97,9 @@ function getSharedCrawler() {
         console.log(`🔍 Crawling profile: @${requestUsername}`);
         console.log(`   URL: ${request.url}`);
 
-        // Set up response interceptor
+        // Create a promise that will be resolved by the response interceptor
         const responsePromise = new Promise((resolveResponse) => {
-          page.on('response', async (response) => {
-            const url = response.url();
-
-            if (url.includes('UserByScreenName') || url.includes('UserByRestId')) {
-              try {
-                const data = await response.json();
-                const parsed = parseUserProfile(data);
-
-                if (parsed) {
-                  pendingRequest.profileData = parsed;
-                  console.log(`✅ Captured profile data for @${requestUsername}`);
-                  resolveResponse(parsed);
-                }
-              } catch (err) {
-                // Not JSON or parsing error - ignore
-              }
-            }
-          });
+          pendingRequest.resolveResponse = resolveResponse;
         });
 
         // Navigate to profile page
@@ -133,12 +155,13 @@ function getSharedCrawler() {
 export async function getUserProfile(username) {
   console.log(`📞 getUserProfile called with username: "${username}"`);
 
-  return new Promise((resolve, reject) => {
+  return new Promise(async (resolve, reject) => {
     // Store the pending request
     pendingRequests.set(username, {
       resolve,
       reject,
-      profileData: null
+      profileData: null,
+      resolveResponse: null  // Will be set in requestHandler
     });
 
     const targetUrl = `https://x.com/${username}`;
@@ -147,23 +170,26 @@ export async function getUserProfile(username) {
     // Get shared crawler and add request to queue
     const crawler = getSharedCrawler();
 
-    // Add URL to crawler's request queue
-    crawler.addRequests([targetUrl])
-      .catch((error) => {
-        console.error(`Failed to add request for @${username}:`, error.message);
-        const pending = pendingRequests.get(username);
-        if (pending) {
-          pending.reject(error);
-          pendingRequests.delete(username);
-        }
-      });
+    try {
+      // Add URL to crawler's request queue (MUST await before starting crawler)
+      await crawler.addRequests([targetUrl]);
+      console.log(`   ✅ Request added to queue for @${username}`);
 
-    // Start the crawler if not already running
-    if (!crawler.running) {
-      crawler.run()
-        .catch((error) => {
-          console.error('Crawler run error:', error.message);
-        });
+      // Start the crawler if not already running
+      if (!crawler.running) {
+        console.log(`   🚀 Starting crawler...`);
+        crawler.run()
+          .catch((error) => {
+            console.error('Crawler run error:', error.message);
+          });
+      }
+    } catch (error) {
+      console.error(`Failed to add request for @${username}:`, error.message);
+      const pending = pendingRequests.get(username);
+      if (pending) {
+        pending.reject(error);
+        pendingRequests.delete(username);
+      }
     }
   });
 }
