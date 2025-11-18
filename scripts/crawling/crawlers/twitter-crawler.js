@@ -133,7 +133,7 @@ function getSharedCrawler() {
 export async function getUserProfile(username) {
   console.log(`📞 getUserProfile called with username: "${username}"`);
 
-  return new Promise((resolve, reject) => {
+  return new Promise(async (resolve, reject) => {
     // Store the pending request
     pendingRequests.set(username, {
       resolve,
@@ -147,23 +147,26 @@ export async function getUserProfile(username) {
     // Get shared crawler and add request to queue
     const crawler = getSharedCrawler();
 
-    // Add URL to crawler's request queue
-    crawler.addRequests([targetUrl])
-      .catch((error) => {
-        console.error(`Failed to add request for @${username}:`, error.message);
-        const pending = pendingRequests.get(username);
-        if (pending) {
-          pending.reject(error);
-          pendingRequests.delete(username);
-        }
-      });
+    try {
+      // Add URL to crawler's request queue (MUST await before starting crawler)
+      await crawler.addRequests([targetUrl]);
+      console.log(`   ✅ Request added to queue for @${username}`);
 
-    // Start the crawler if not already running
-    if (!crawler.running) {
-      crawler.run()
-        .catch((error) => {
-          console.error('Crawler run error:', error.message);
-        });
+      // Start the crawler if not already running
+      if (!crawler.running) {
+        console.log(`   🚀 Starting crawler...`);
+        crawler.run()
+          .catch((error) => {
+            console.error('Crawler run error:', error.message);
+          });
+      }
+    } catch (error) {
+      console.error(`Failed to add request for @${username}:`, error.message);
+      const pending = pendingRequests.get(username);
+      if (pending) {
+        pending.reject(error);
+        pendingRequests.delete(username);
+      }
     }
   });
 }
