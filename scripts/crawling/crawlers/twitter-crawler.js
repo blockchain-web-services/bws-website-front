@@ -121,7 +121,13 @@ export async function getUserProfile(username) {
     const targetUrl = `https://x.com/${username}`;
     console.log(`   🎯 Target URL: ${targetUrl}`);
     crawler.run([targetUrl])
-      .catch((error) => {
+      .then(async () => {
+        // Ensure crawler is fully torn down before resolving
+        await crawler.teardown();
+      })
+      .catch(async (error) => {
+        // Teardown even on error
+        await crawler.teardown().catch(() => {});
         if (!isResolved) {
           isResolved = true;
           reject(error);
