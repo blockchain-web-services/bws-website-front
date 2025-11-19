@@ -5,7 +5,7 @@
  */
 
 import 'dotenv/config';
-import { PlaywrightCrawler } from 'crawlee';
+import { PlaywrightCrawler, ProxyConfiguration } from 'crawlee';
 import { parseUserProfile } from './graphql-parser.js';
 import path from 'path';
 import { fileURLToPath } from 'url';
@@ -214,9 +214,9 @@ export async function getUserProfile(username) {
 
     // Add proxy configuration if available
     if (proxyUrl) {
-      crawlerConfig.proxyConfiguration = {
+      crawlerConfig.proxyConfiguration = new ProxyConfiguration({
         proxyUrls: [proxyUrl],
-      };
+      });
     }
 
     const crawler = new PlaywrightCrawler(crawlerConfig);
