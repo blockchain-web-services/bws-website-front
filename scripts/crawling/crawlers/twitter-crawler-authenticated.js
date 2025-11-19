@@ -91,12 +91,13 @@ async function loadAccountWithCookies() {
     // Use environment variables if available (GitHub Secrets)
     const username = process.env.OXYLABS_USERNAME || config.proxy.username;
     const password = process.env.OXYLABS_PASSWORD || config.proxy.password;
-    const country = config.proxy.country || 'es';
+    // Use account-specific country, fallback to proxy config country, default to 'es'
+    const country = account.country || config.proxy.country || 'es';
 
     if (username && password && !username.includes('REPLACE')) {
       // Format: customer-USERNAME-country-COUNTRY:PASSWORD@pr.oxylabs.io:7777
       proxyUrl = `http://customer-${username}-country-${country}:${password}@${config.proxy.host}:${config.proxy.port}`;
-      console.log(`🌐 Using Oxylabs proxy with country: ${country}`);
+      console.log(`🌐 Using Oxylabs proxy with country: ${country} (from account: ${account.id})`);
     } else {
       console.log(`⚠️  Proxy credentials not configured, running without proxy`);
     }

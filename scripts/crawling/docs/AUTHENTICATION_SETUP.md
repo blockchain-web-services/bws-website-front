@@ -40,6 +40,7 @@ Edit `scripts/crawling/config/x-crawler-accounts.json`:
       "id": "account_1",
       "username": "your_x_username",
       "email": "your_email@example.com",
+      "country": "es",
       "status": "active",
       "suspended": false,
       "cookies": {
@@ -53,6 +54,8 @@ Edit `scripts/crawling/config/x-crawler-accounts.json`:
 ```
 
 **IMPORTANT**: Replace ALL `REPLACE_WITH_*` placeholders with real values.
+
+**Country Code**: Set to your actual country code (e.g., "es" for Spain, "us" for USA). This is used by Oxylabs proxy to route through that country, reducing bot detection.
 
 ### 3. Configure Proxy Settings (Oxylabs)
 

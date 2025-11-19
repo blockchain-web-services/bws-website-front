@@ -19,6 +19,7 @@
       "id": "account_1",
       "username": "REPLACE_WITH_X_USERNAME",
       "email": "REPLACE_WITH_EMAIL",
+      "country": "es",
       "status": "active",
       "suspended": false,
       "cookies": {
@@ -29,7 +30,7 @@
       "usageCount": 0,
       "lastUsed": null,
       "rateLimitedUntil": null,
-      "notes": "Primary account for KOL discovery - requires real X cookies"
+      "notes": "Primary account for KOL discovery - requires real X cookies. Country code used by Oxylabs proxy."
     }
   ],
   "instructions": {
