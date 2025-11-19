@@ -31,13 +31,16 @@ jobs:
       - name: Install Playwright browsers
         run: npx playwright install --with-deps chromium
 
-      - name: Run KOL discovery with Crawlee
+      - name: Run KOL discovery with Web Unblocker (Batch)
         id: discover
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          OXYLABS_USERNAME: ${{ secrets.OXYLABS_USERNAME }}
+          OXYLABS_PASSWORD: ${{ secrets.OXYLABS_PASSWORD }}
         run: |
-          echo "Starting morning KOL discovery with Crawlee..."
-          node scripts/crawling/production/discover-crawlee-direct.js
+          echo "Starting morning KOL discovery with Web Unblocker (batch mode)..."
+          echo "Batch size: 10 profiles per run"
+          node scripts/crawling/production/discover-web-unblocker-batch.js
           # Script exit code determines success (0 = success, 1 = failure)
 
       - name: Check for changes
@@ -81,10 +84,11 @@ jobs:
           git add scripts/crawling/data/kols-data.json
           git add scripts/crawling/config/kol-candidates.json
 
-          git commit -m "Morning KOL discovery - $(date +'%Y-%m-%d %H:%M UTC')
+          git commit -m "Morning KOL discovery (Web Unblocker batch) - $(date +'%Y-%m-%d %H:%M UTC')
 
           Total: ${{ steps.stats.outputs.total }} | Active: ${{ steps.stats.outputs.active }}
-          Successfully added KOLs removed from candidate list
+          Batch: 10 profiles processed, successful KOLs added
+          Processed candidates removed from queue
 
           🤖 Generated with [Claude Code](https://claude.com/claude-code)"
           git push
