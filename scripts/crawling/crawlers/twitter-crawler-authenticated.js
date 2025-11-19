@@ -144,7 +144,8 @@ export async function getUserProfile(username) {
       },
       maxConcurrency: 1,
       maxRequestRetries: 2,
-      requestHandlerTimeoutSecs: 30,
+      requestHandlerTimeoutSecs: 90,
+      navigationTimeoutSecs: 90,
 
       // Set up response interceptor ONCE per page
       preNavigationHooks: [async ({ page }) => {
@@ -188,7 +189,7 @@ export async function getUserProfile(username) {
 
           await page.goto(request.url, {
             waitUntil: 'domcontentloaded',
-            timeout: 20000,
+            timeout: 90000,
           });
 
           // Wait for GraphQL response
