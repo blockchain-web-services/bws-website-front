@@ -65,14 +65,14 @@ export async function parseProfileFromHTML(page, username) {
       .textContent()
       .catch(() => '');
 
-    // Extract follower count
-    const followersElement = await page.locator('a[href$="/verified_followers"] span, a[href$="/followers"] span').first();
-    const followersText = await followersElement.textContent().catch(() => '0');
+    // Extract follower count - target innermost span with the number
+    const followersLink = await page.locator('a[href$="/verified_followers"], a[href$="/followers"]').first();
+    const followersText = await followersLink.locator('span span').first().textContent().catch(() => '0');
     const followers_count = parseNumber(followersText);
 
-    // Extract following count
-    const followingElement = await page.locator('a[href$="/following"] span').first();
-    const followingText = await followingElement.textContent().catch(() => '0');
+    // Extract following count - target innermost span with the number
+    const followingLink = await page.locator('a[href$="/following"]').first();
+    const followingText = await followingLink.locator('span span').first().textContent().catch(() => '0');
     const following_count = parseNumber(followingText);
 
     // Extract location
