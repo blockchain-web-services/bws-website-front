@@ -1,20 +1,10 @@
 {
   "description": "Candidate KOL usernames for discovery. Successfully added KOLs are automatically removed from this list.",
-  "lastUpdated": "2025-11-19T17:39:29.079Z",
-  "totalCandidates": 133,
+  "lastUpdated": "2025-11-19T18:57:37.155Z",
+  "totalCandidates": 120,
   "candidatesByTier": {
     "tier1_100k_500k": [],
     "tier2_50k_100k": [
-      "TraderMayne",
-      "CryptoGodJohn",
-      "ImBagsy",
-      "CryptoPosedon",
-      "BTC_Archive",
-      "thedefiedge",
-      "MacroScope17",
-      "DefiIgnas",
-      "DeFi_Dad",
-      "sassal0x",
       "ChainLinkGod",
       "NansenAI",
       "DuneAnalytics",
@@ -55,7 +45,6 @@
       "justinsuntron",
       "CoinDesk",
       "Cointelegraph",
-      "BTC_Archive",
       "BitcoinMagazine",
       "Bloomberg_Crypto"
     ],
@@ -70,10 +59,8 @@
       "ColdBloodShill",
       "CryptoKaiju",
       "Crypto_Chase",
-      "CryptoGodJohn",
       "TraderXO",
-      "Leonidasnft",
-      "TraderMayne"
+      "Leonidasnft"
     ],
     "tier7_defi_protocols_50k_200k": [
       "AndreCronjeTech",
