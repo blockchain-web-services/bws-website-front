@@ -35,6 +35,8 @@ jobs:
         id: discover
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          OXYLABS_USERNAME: ${{ secrets.OXYLABS_USERNAME }}
+          OXYLABS_PASSWORD: ${{ secrets.OXYLABS_PASSWORD }}
         run: |
           echo "Starting morning KOL discovery with Crawlee..."
           node scripts/crawling/production/discover-crawlee-direct.js
