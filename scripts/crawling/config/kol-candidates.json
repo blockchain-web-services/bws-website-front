@@ -1,21 +1,10 @@
 {
   "description": "Candidate KOL usernames for discovery. Successfully added KOLs are automatically removed from this list.",
-  "lastUpdated": "2025-11-18T08:27:58.230Z",
-  "totalCandidates": 146,
+  "lastUpdated": "2025-11-19T17:39:29.079Z",
+  "totalCandidates": 133,
   "candidatesByTier": {
-    "tier1_100k_500k": [
-      "CryptoCobain",
-      "TheWolfOfAllSt",
-      "CryptoMessiah",
-      "GiganticRebirth",
-      "MMCrypto",
-      "AltcoinGordon",
-      "CryptoDonAlt",
-      "CryptoWhale",
-      "DocumentingBTC"
-    ],
+    "tier1_100k_500k": [],
     "tier2_50k_100k": [
-      "CryptoYoda1338",
       "TraderMayne",
       "CryptoGodJohn",
       "ImBagsy",
@@ -143,11 +132,9 @@
       "BenjaminCowen",
       "ByteSizeCapital",
       "CryptoCred",
-      "CryptoMessiah",
       "CryptoZombie",
       "TheBlockchainPod",
       "Coin_Bureau",
-      "MMCrypto",
       "TheMoon",
       "CryptoLark",
       "DataDash",
@@ -168,7 +155,6 @@
       "AriDavidPaul",
       "econoar",
       "lawmaster",
-      "CryptoCobain",
       "0xSisyphus"
     ]
   }
