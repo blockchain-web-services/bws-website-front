@@ -122,16 +122,25 @@ export async function getUserProfile(username) {
     let profileData = null;
     let resolved = false;
 
+    const launchOptions = {
+      headless: process.env.CRAWLEE_HEADLESS !== 'false',
+      args: [
+        '--disable-blink-features=AutomationControlled',
+        '--disable-dev-shm-usage',
+        '--no-sandbox',
+      ],
+    };
+
+    // Add proxy directly to launch options (required for Playwright)
+    if (proxyUrl) {
+      launchOptions.proxy = {
+        server: proxyUrl,
+      };
+    }
+
     const crawlerConfig = {
       launchContext: {
-        launchOptions: {
-          headless: process.env.CRAWLEE_HEADLESS !== 'false',
-          args: [
-            '--disable-blink-features=AutomationControlled',
-            '--disable-dev-shm-usage',
-            '--no-sandbox',
-          ],
-        },
+        launchOptions,
       },
       maxConcurrency: 1,
       maxRequestRetries: 2,
@@ -211,13 +220,6 @@ export async function getUserProfile(username) {
         }
       },
     };
-
-    // Add proxy configuration if available
-    if (proxyUrl) {
-      crawlerConfig.proxyConfiguration = {
-        proxyUrls: [proxyUrl],
-      };
-    }
 
     const crawler = new PlaywrightCrawler(crawlerConfig);
 
