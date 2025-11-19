@@ -5,8 +5,6 @@
     "provider": "oxylabs",
     "host": "pr.oxylabs.io",
     "port": 7777,
-    "username": "REPLACE_WITH_OXYLABS_USERNAME",
-    "password": "REPLACE_WITH_OXYLABS_PASSWORD",
     "country": "es",
     "sessionType": "sticky"
   },
@@ -47,11 +45,12 @@
     ],
     "proxy_setup": [
       "The proxy settings use Oxylabs residential proxies with:",
-      "- country: 'es' (Spain) to match your region",
+      "- country: 'es' (default, can be overridden per-account)",
       "- sessionType: 'sticky' to maintain same IP during session",
-      "- Credentials should be stored in GitHub Secrets:",
-      "  * OXYLABS_USERNAME",
-      "  * OXYLABS_PASSWORD"
+      "- Credentials MUST be stored in environment variables:",
+      "  * OXYLABS_USERNAME (GitHub Secrets or .env file)",
+      "  * OXYLABS_PASSWORD (GitHub Secrets or .env file)",
+      "- Per-account 'country' field overrides default proxy country"
     ],
     "environment_variables": [
       "Set these in GitHub Actions secrets:",
