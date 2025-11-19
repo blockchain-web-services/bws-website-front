@@ -32,6 +32,90 @@ function parseNumber(text) {
 }
 
 /**
+ * Try multiple selector strategies to extract a number from a link element
+ * X/Twitter's HTML structure can vary, so we try different approaches
+ */
+async function extractNumberFromLink(page, linkSelectors, description = 'count') {
+  // Strategy 1: Try each link selector with innermost span
+  for (const selector of linkSelectors) {
+    try {
+      const link = await page.locator(selector).first();
+      const count = await link.count();
+      if (count === 0) continue;
+
+      // Try innermost span (span span)
+      const text = await link.locator('span span').first().textContent().catch(() => null);
+      if (text) {
+        const num = parseNumber(text);
+        if (num > 0) return num;
+      }
+    } catch (e) {
+      // Continue to next strategy
+    }
+  }
+
+  // Strategy 2: Get all text and find numbers with K/M/B suffix
+  for (const selector of linkSelectors) {
+    try {
+      const link = await page.locator(selector).first();
+      const count = await link.count();
+      if (count === 0) continue;
+
+      const fullText = await link.textContent().catch(() => '');
+      // Extract number patterns like "1.7M" or "229,100"
+      const numberMatch = fullText.match(/([\d,.]+[KMB]?)/i);
+      if (numberMatch) {
+        const num = parseNumber(numberMatch[1]);
+        if (num > 0) return num;
+      }
+    } catch (e) {
+      // Continue to next strategy
+    }
+  }
+
+  // Strategy 3: Try direct span within link (not nested)
+  for (const selector of linkSelectors) {
+    try {
+      const link = await page.locator(selector).first();
+      const count = await link.count();
+      if (count === 0) continue;
+
+      const spans = await link.locator('span').all();
+      for (const span of spans) {
+        const text = await span.textContent().catch(() => '');
+        const num = parseNumber(text);
+        if (num > 0) return num;
+      }
+    } catch (e) {
+      // Continue to next strategy
+    }
+  }
+
+  // Strategy 4: Use aria-label which often contains the full count
+  for (const selector of linkSelectors) {
+    try {
+      const link = await page.locator(selector).first();
+      const count = await link.count();
+      if (count === 0) continue;
+
+      const ariaLabel = await link.getAttribute('aria-label').catch(() => '');
+      if (ariaLabel) {
+        // aria-label often contains full number like "1,234,567 Followers"
+        const numberMatch = ariaLabel.match(/([\d,]+)/);
+        if (numberMatch) {
+          const num = parseNumber(numberMatch[1]);
+          if (num > 0) return num;
+        }
+      }
+    } catch (e) {
+      // Continue to next strategy
+    }
+  }
+
+  return 0;
+}
+
+/**
  * Extract profile data from rendered HTML page
  *
  * @param {Page} page - Playwright page object with loaded profile
@@ -65,15 +149,18 @@ export async function parseProfileFromHTML(page, username) {
       .textContent()
       .catch(() => '');
 
-    // Extract follower count - target innermost span with the number
-    const followersLink = await page.locator('a[href$="/verified_followers"], a[href$="/followers"]').first();
-    const followersText = await followersLink.locator('span span').first().textContent().catch(() => '0');
-    const followers_count = parseNumber(followersText);
+    // Extract follower count using multi-strategy approach
+    const followerSelectors = [
+      'a[href$="/verified_followers"]',
+      'a[href$="/followers"]'
+    ];
+    const followers_count = await extractNumberFromLink(page, followerSelectors, 'followers');
 
-    // Extract following count - target innermost span with the number
-    const followingLink = await page.locator('a[href$="/following"]').first();
-    const followingText = await followingLink.locator('span span').first().textContent().catch(() => '0');
-    const following_count = parseNumber(followingText);
+    // Extract following count using multi-strategy approach
+    const followingSelectors = [
+      'a[href$="/following"]'
+    ];
+    const following_count = await extractNumberFromLink(page, followingSelectors, 'following');
 
     // Extract location
     const location = await page.locator('[data-testid="UserLocation"] span')
