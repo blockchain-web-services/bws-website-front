@@ -6,7 +6,7 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import { getUserProfile } from '../crawlers/twitter-crawler-simple.js';
+import { getUserProfile } from '../crawlers/twitter-crawler-authenticated.js';
 import { loadConfig, loadKolsData, saveKolsData, updateReadmeKolStats } from '../utils/kol-utils.js';
 import { sendDiscoveryNotification } from '../utils/zapier-webhook.js';
 import { logMorningDiscovery } from '../utils/execution-logger.js';

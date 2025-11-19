@@ -1,0 +1,65 @@
+{
+  "description": "X/Twitter crawler accounts for authenticated scraping",
+  "proxy": {
+    "enabled": true,
+    "provider": "oxylabs",
+    "host": "pr.oxylabs.io",
+    "port": 7777,
+    "username": "REPLACE_WITH_OXYLABS_USERNAME",
+    "password": "REPLACE_WITH_OXYLABS_PASSWORD",
+    "country": "es",
+    "sessionType": "sticky"
+  },
+  "rotation": {
+    "strategy": "round-robin",
+    "cooldownMinutes": 30
+  },
+  "accounts": [
+    {
+      "id": "account_1",
+      "username": "@Altcoin934648",
+      "email": "almost_operative047@simplelogin.com",
+      "country": "es",
+      "status": "active",
+      "suspended": false,
+      "cookies": {
+        "auth_token": "ba9904e887c43f6572b10e334152aed044dc4e94",
+        "ct0": "5e4ac01d901a884030289869f7c86abd6442fcf4ae6ee4e72d1384958efb12b4baa973eee9737b51b0b9515cfd2a9153afc28c0d9f1e111c6e52f0e7d294c8f36eeb9928f07a60e347851b168ba51255",
+        "guest_id": "v1%3A176353471164990130"
+      },
+      "usageCount": 0,
+      "lastUsed": null,
+      "rateLimitedUntil": null,
+      "notes": "Primary account for KOL discovery - requires real X cookies. Country code used by Oxylabs proxy."
+    }
+  ],
+  "instructions": {
+    "how_to_get_cookies": [
+      "1. Open x.com in your browser and log in",
+      "2. Open DevTools (F12) and go to Application tab",
+      "3. Navigate to Cookies > https://x.com",
+      "4. Copy these cookie values:",
+      "   - auth_token (required)",
+      "   - ct0 (required)",
+      "   - guest_id (optional but recommended)",
+      "5. Replace the REPLACE_WITH_* placeholders above",
+      "6. Keep this file PRIVATE - never commit real cookies to git!"
+    ],
+    "proxy_setup": [
+      "The proxy settings use Oxylabs residential proxies with:",
+      "- country: 'es' (Spain) to match your region",
+      "- sessionType: 'sticky' to maintain same IP during session",
+      "- Credentials should be stored in GitHub Secrets:",
+      "  * OXYLABS_USERNAME",
+      "  * OXYLABS_PASSWORD"
+    ],
+    "environment_variables": [
+      "Set these in GitHub Actions secrets:",
+      "OXYLABS_USERNAME - Your Oxylabs username",
+      "OXYLABS_PASSWORD - Your Oxylabs password",
+      "",
+      "The auth manager will automatically use env vars if available,",
+      "overriding the values in this config file."
+    ]
+  }
+}
