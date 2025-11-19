@@ -61,16 +61,27 @@ Edit `scripts/crawling/config/x-crawler-accounts.json`:
 
 The crawler uses Oxylabs residential proxies to avoid detection.
 
-#### Option A: Using GitHub Secrets (RECOMMENDED for CI/CD)
+#### Option A: Using .env File (RECOMMENDED for local development)
+
+Create or edit `.env` file in the project root:
+
+```
+OXYLABS_USERNAME=your_oxylabs_username
+OXYLABS_PASSWORD=your_oxylabs_password
+```
+
+The crawler automatically loads this file using `dotenv`.
+
+#### Option B: Using GitHub Secrets (RECOMMENDED for CI/CD)
 
 Add these secrets in GitHub repository settings:
 
 - `OXYLABS_USERNAME` - Your Oxylabs customer username
 - `OXYLABS_PASSWORD` - Your Oxylabs password
 
-The crawler will automatically use these values.
+The crawler will automatically use these values in GitHub Actions.
 
-#### Option B: Local Configuration
+#### Option C: Local Configuration File
 
 Edit the `proxy` section in `x-crawler-accounts.json`:
 
@@ -90,6 +101,11 @@ Edit the `proxy` section in `x-crawler-accounts.json`:
 ```
 
 **Country Code**: Use your actual country code (e.g., "es" for Spain, "us" for USA) to match your geographic location and reduce bot detection.
+
+**Credential Priority**: The crawler loads credentials in this order:
+1. Environment variables (`.env` file locally, GitHub Secrets in CI/CD)
+2. Values from `x-crawler-accounts.json` config file
+3. Default values
 
 ## How It Works
 

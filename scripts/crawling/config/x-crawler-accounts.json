@@ -17,15 +17,15 @@
   "accounts": [
     {
       "id": "account_1",
-      "username": "REPLACE_WITH_X_USERNAME",
-      "email": "REPLACE_WITH_EMAIL",
+      "username": "@Altcoin934648",
+      "email": "almost_operative047@simplelogin.com",
       "country": "es",
       "status": "active",
       "suspended": false,
       "cookies": {
-        "auth_token": "REPLACE_WITH_AUTH_TOKEN",
-        "ct0": "REPLACE_WITH_CT0_TOKEN",
-        "guest_id": "REPLACE_WITH_GUEST_ID"
+        "auth_token": "ba9904e887c43f6572b10e334152aed044dc4e94",
+        "ct0": "5e4ac01d901a884030289869f7c86abd6442fcf4ae6ee4e72d1384958efb12b4baa973eee9737b51b0b9515cfd2a9153afc28c0d9f1e111c6e52f0e7d294c8f36eeb9928f07a60e347851b168ba51255",
+        "guest_id": "v1%3A176353471164990130"
       },
       "usageCount": 0,
       "lastUsed": null,

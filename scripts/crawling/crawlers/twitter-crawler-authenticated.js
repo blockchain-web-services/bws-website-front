@@ -4,6 +4,7 @@
  * Processes ONE profile at a time sequentially
  */
 
+import 'dotenv/config';
 import { PlaywrightCrawler } from 'crawlee';
 import { parseUserProfile } from './graphql-parser.js';
 import path from 'path';
