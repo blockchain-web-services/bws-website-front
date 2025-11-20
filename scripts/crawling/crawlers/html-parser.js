@@ -41,7 +41,14 @@ function parseNumber(text) {
     const number = parseFloat(numStr);
     if (isNaN(number)) return 0;
 
-    return Math.floor(number * multipliers[suffix]);
+    // SANITY CHECK: If number >= 1000 with K/M/B suffix, it's likely wrong
+    // "376.2K" makes sense (376.2 < 1000), "376200K" doesn't (would be 376.2M)
+    if (number >= 1000) {
+      // Return the number without applying the suffix multiplier
+      return Math.round(number);
+    }
+
+    return Math.round(number * multipliers[suffix]);
   }
 
   // No suffix found, try plain number
