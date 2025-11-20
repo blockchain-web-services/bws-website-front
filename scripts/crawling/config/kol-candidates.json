@@ -1,24 +1,13 @@
 {
   "description": "Candidate KOL usernames for discovery. Successfully added KOLs are automatically removed from this list.",
-  "lastUpdated": "2025-11-20T15:06:18.255Z",
-  "totalCandidates": 98,
+  "lastUpdated": "2025-11-20T18:24:03.059Z",
+  "totalCandidates": 88,
   "candidatesByTier": {
     "tier1_100k_500k": [],
     "tier2_50k_100k": [],
     "tier3_10k_50k": [],
-    "tier4_additional_10k_100k": [
-      "CryptoTea_",
-      "CryptoRUs",
-      "AltcoinBuzz",
-      "Crypto_Bitlord"
-    ],
+    "tier4_additional_10k_100k": [],
     "tier5_major_influencers_500k_5m": [
-      "VitalikButerin",
-      "cz_binance",
-      "naval",
-      "balajis",
-      "APompliano",
-      "elonmusk",
       "SatoshiLite",
       "justinsuntron",
       "CoinDesk",
