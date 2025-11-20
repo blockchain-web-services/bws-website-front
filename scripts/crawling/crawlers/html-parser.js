@@ -7,28 +7,32 @@
 
 /**
  * Parse number from text (handles K, M, B suffixes)
- * Examples: "229.1M" -> 229100000, "1,227" -> 1227
+ * Examples: "556.4K" -> 556400, "229.1M" -> 229100000, "1,227" -> 1227
  */
 function parseNumber(text) {
   if (!text || typeof text !== 'string') return 0;
 
-  // Remove commas
+  // Clean up text: remove commas and extra whitespace
   text = text.replace(/,/g, '').trim();
 
-  // Handle K, M, B suffixes
+  // Handle K, M, B suffixes (K = thousands, M = millions, B = billions)
   const multipliers = {
     'K': 1000,
     'M': 1000000,
     'B': 1000000000
   };
 
-  const match = text.match(/^([\d.]+)([KMB])?$/i);
+  // Match number with optional decimal and optional K/M/B suffix
+  const match = text.match(/^([\d.]+)\s*([KMB])?$/i);
   if (!match) return 0;
 
   const number = parseFloat(match[1]);
   const suffix = match[2]?.toUpperCase();
 
-  return suffix ? Math.floor(number * multipliers[suffix]) : Math.floor(number);
+  if (suffix) {
+    return Math.floor(number * multipliers[suffix]);
+  }
+  return Math.floor(number);
 }
 
 /**
@@ -124,12 +128,30 @@ async function extractNumberFromLink(page, linkSelectors, description = 'count')
  */
 export async function parseProfileFromHTML(page, username) {
   try {
-    // Check if account exists (look for error message)
-    const accountNotFound = await page.locator('text="This account doesn\'t exist"').count() > 0;
-    const accountSuspended = await page.locator('text="Account suspended"').count() > 0;
+    // Check if account exists using data-testid selectors (more reliable)
+    const emptyStateHeader = await page.locator('[data-testid="empty_state_header_text"]').first();
+    const emptyStateText = await emptyStateHeader.textContent().catch(() => '');
 
-    if (accountNotFound || accountSuspended) {
-      console.log(`   ⚠️  Account @${username} ${accountNotFound ? 'not found' : 'suspended'}`);
+    // Check for various account error states
+    const accountNotFound = emptyStateText.includes("This account doesn't exist") ||
+                           emptyStateText.includes("doesn't exist");
+    const accountSuspended = emptyStateText.includes("Account suspended") ||
+                            emptyStateText.includes("suspended");
+    const accountUnavailable = emptyStateText.includes("Something went wrong") ||
+                              emptyStateText.includes("unavailable");
+
+    if (accountNotFound) {
+      console.log(`   ⚠️  Account @${username} does not exist`);
+      return null;
+    }
+
+    if (accountSuspended) {
+      console.log(`   ⚠️  Account @${username} is suspended`);
+      return null;
+    }
+
+    if (accountUnavailable) {
+      console.log(`   ⚠️  Account @${username} is unavailable`);
       return null;
     }
 
