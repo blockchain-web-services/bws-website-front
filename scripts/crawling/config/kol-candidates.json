@@ -1,23 +1,12 @@
 {
   "description": "Candidate KOL usernames for discovery. Successfully added KOLs are automatically removed from this list.",
-  "lastUpdated": "2025-11-20T11:22:14.325Z",
-  "totalCandidates": 108,
+  "lastUpdated": "2025-11-20T15:06:18.255Z",
+  "totalCandidates": 98,
   "candidatesByTier": {
     "tier1_100k_500k": [],
     "tier2_50k_100k": [],
-    "tier3_10k_50k": [
-      "CryptoGainz1",
-      "SmartContracter",
-      "KoroushAK",
-      "TheCryptoCactus",
-      "AltcoinPsycho",
-      "DoveyWan",
-      "Defi_gazer",
-      "AltcoinDailyio",
-      "coinbureau"
-    ],
+    "tier3_10k_50k": [],
     "tier4_additional_10k_100k": [
-      "TheMoonCarl",
       "CryptoTea_",
       "CryptoRUs",
       "AltcoinBuzz",
