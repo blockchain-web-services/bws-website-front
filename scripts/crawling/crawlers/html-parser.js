@@ -7,112 +7,105 @@
 
 /**
  * Parse number from text (handles K, M, B suffixes)
- * Examples: "556.4K" -> 556400, "229.1M" -> 229100000, "1,227" -> 1227
+ * Supports both US format (1,234.5K) and European format (1.234,5K)
+ * Examples: "556.4K" -> 556400, "188,2K" -> 188200, "1,227" -> 1227
  */
 function parseNumber(text) {
   if (!text || typeof text !== 'string') return 0;
 
-  // Clean up text: remove commas and extra whitespace
-  text = text.replace(/,/g, '').trim();
+  text = text.trim();
 
-  // Handle K, M, B suffixes (K = thousands, M = millions, B = billions)
-  const multipliers = {
-    'K': 1000,
-    'M': 1000000,
-    'B': 1000000000
-  };
+  const multipliers = { 'K': 1000, 'M': 1000000, 'B': 1000000000 };
 
-  // Match number with optional decimal and optional K/M/B suffix
-  const match = text.match(/^([\d.]+)\s*([KMB])?$/i);
-  if (!match) return 0;
+  // First, try to match number WITH K/M/B suffix
+  let match = text.match(/([\d.,]+)\s*([KMB])/i);
 
-  const number = parseFloat(match[1]);
-  const suffix = match[2]?.toUpperCase();
+  if (match) {
+    let numStr = match[1];
+    const suffix = match[2].toUpperCase();
 
-  if (suffix) {
+    // Detect decimal format based on last separator
+    const lastComma = numStr.lastIndexOf(',');
+    const lastPeriod = numStr.lastIndexOf('.');
+
+    if (lastComma > lastPeriod && numStr.length - lastComma <= 4) {
+      // European format: comma is decimal separator
+      numStr = numStr.replace(/\./g, '').replace(',', '.');
+    } else if (lastPeriod > lastComma && numStr.length - lastPeriod <= 4) {
+      // US format: period is decimal separator
+      numStr = numStr.replace(/,/g, '');
+    } else {
+      numStr = numStr.replace(/[.,]/g, '');
+    }
+
+    const number = parseFloat(numStr);
+    if (isNaN(number)) return 0;
+
     return Math.floor(number * multipliers[suffix]);
   }
-  return Math.floor(number);
+
+  // No suffix found, try plain number
+  match = text.match(/([\d.,]+)/);
+  if (match) {
+    let numStr = match[1];
+
+    // For plain numbers, commas are usually thousands separators
+    const commaCount = (numStr.match(/,/g) || []).length;
+    const periodCount = (numStr.match(/\./g) || []).length;
+
+    if (commaCount > 1 || periodCount > 1) {
+      numStr = numStr.replace(/[.,]/g, '');
+    } else if (commaCount === 1 && periodCount === 0) {
+      const afterComma = numStr.split(',')[1];
+      if (afterComma && afterComma.length <= 2) {
+        numStr = numStr.replace(',', '.');
+      } else {
+        numStr = numStr.replace(',', '');
+      }
+    } else if (periodCount === 1 && commaCount === 0) {
+      const afterPeriod = numStr.split('.')[1];
+      if (afterPeriod && afterPeriod.length === 3) {
+        numStr = numStr.replace('.', '');
+      }
+    } else {
+      numStr = numStr.replace(/,/g, '');
+    }
+
+    const number = parseFloat(numStr);
+    if (isNaN(number)) return 0;
+
+    return Math.floor(number);
+  }
+
+  return 0;
 }
 
 /**
- * Try multiple selector strategies to extract a number from a link element
- * X/Twitter's HTML structure can vary, so we try different approaches
+ * Extract a number from a link element
+ * Gets FULL text content first to capture K/M/B suffixes
  */
 async function extractNumberFromLink(page, linkSelectors, description = 'count') {
-  // Strategy 1: Try each link selector with innermost span
   for (const selector of linkSelectors) {
     try {
       const link = await page.locator(selector).first();
       const count = await link.count();
       if (count === 0) continue;
 
-      // Try innermost span (span span)
-      const text = await link.locator('span span').first().textContent().catch(() => null);
-      if (text) {
-        const num = parseNumber(text);
-        if (num > 0) return num;
-      }
-    } catch (e) {
-      // Continue to next strategy
-    }
-  }
-
-  // Strategy 2: Get all text and find numbers with K/M/B suffix
-  for (const selector of linkSelectors) {
-    try {
-      const link = await page.locator(selector).first();
-      const count = await link.count();
-      if (count === 0) continue;
-
+      // Strategy 1: Get FULL text content (this includes K/M/B suffix)
       const fullText = await link.textContent().catch(() => '');
-      // Extract number patterns like "1.7M" or "229,100"
-      const numberMatch = fullText.match(/([\d,.]+[KMB]?)/i);
-      if (numberMatch) {
-        const num = parseNumber(numberMatch[1]);
+      if (fullText) {
+        const num = parseNumber(fullText);
         if (num > 0) return num;
       }
-    } catch (e) {
-      // Continue to next strategy
-    }
-  }
 
-  // Strategy 3: Try direct span within link (not nested)
-  for (const selector of linkSelectors) {
-    try {
-      const link = await page.locator(selector).first();
-      const count = await link.count();
-      if (count === 0) continue;
-
-      const spans = await link.locator('span').all();
-      for (const span of spans) {
-        const text = await span.textContent().catch(() => '');
-        const num = parseNumber(text);
-        if (num > 0) return num;
-      }
-    } catch (e) {
-      // Continue to next strategy
-    }
-  }
-
-  // Strategy 4: Use aria-label which often contains the full count
-  for (const selector of linkSelectors) {
-    try {
-      const link = await page.locator(selector).first();
-      const count = await link.count();
-      if (count === 0) continue;
-
+      // Strategy 2: Try aria-label (often has full number)
       const ariaLabel = await link.getAttribute('aria-label').catch(() => '');
       if (ariaLabel) {
-        // aria-label often contains full number like "1,234,567 Followers"
-        const numberMatch = ariaLabel.match(/([\d,]+)/);
-        if (numberMatch) {
-          const num = parseNumber(numberMatch[1]);
-          if (num > 0) return num;
-        }
+        const num = parseNumber(ariaLabel);
+        if (num > 0) return num;
       }
     } catch (e) {
-      // Continue to next strategy
+      // Continue to next selector
     }
   }
 
