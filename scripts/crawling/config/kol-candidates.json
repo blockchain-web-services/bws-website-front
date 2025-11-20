@@ -1,22 +1,11 @@
 {
   "description": "Candidate KOL usernames for discovery. Successfully added KOLs are automatically removed from this list.",
-  "lastUpdated": "2025-11-19T18:57:37.155Z",
-  "totalCandidates": 120,
+  "lastUpdated": "2025-11-20T11:22:14.325Z",
+  "totalCandidates": 108,
   "candidatesByTier": {
     "tier1_100k_500k": [],
-    "tier2_50k_100k": [
-      "ChainLinkGod",
-      "NansenAI",
-      "DuneAnalytics",
-      "CryptoMichNL"
-    ],
+    "tier2_50k_100k": [],
     "tier3_10k_50k": [
-      "MilesDeutscher",
-      "LomahCrypto",
-      "AdamScochran",
-      "CryptoCred",
-      "TheCryptoDog",
-      "cryptoyieldinfo",
       "CryptoGainz1",
       "SmartContracter",
       "KoroushAK",
@@ -51,7 +40,6 @@
     "tier6_trading_analysis_100k_500k": [
       "PeterLBrandt",
       "RektCapital",
-      "CryptoMichNL",
       "PostyXBT",
       "nebraskangooner",
       "ToneVays",
@@ -118,7 +106,6 @@
       "AltcoinDaily",
       "BenjaminCowen",
       "ByteSizeCapital",
-      "CryptoCred",
       "CryptoZombie",
       "TheBlockchainPod",
       "Coin_Bureau",
