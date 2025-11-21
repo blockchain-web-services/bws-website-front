@@ -121,7 +121,7 @@ BWS Website includes several X/Twitter automations for content discovery, KOL en
 
 | Automation | Status | Success Rate | Strategy | Schedule | Credentials |
 |------------|--------|--------------|----------|----------|-------------|
-| Morning Discovery (Seed-Based) | ✅ | 100% (2/2) | Crawlee + Playwright | Mon/Wed/Fri 09:09 UTC | `ANTHROPIC_API_KEY` |
+| Morning Discovery (Seed-Based) | ⚠️ | Debugging | Oxylabs Web Unblocker + HTML Parsing | Mon/Wed/Fri 09:09 UTC | `OXYLABS_USERNAME`, `OXYLABS_PASSWORD`, `ANTHROPIC_API_KEY` |
 | Search-Based Discovery (Dynamic) | ✅ | Fixed (2025-11-17) | Crawlee + Playwright | Tue/Thu/Sat 14:00 UTC | `OXYLABS_USERNAME`, `OXYLABS_PASSWORD`, `ANTHROPIC_API_KEY` |
 | Content Discovery - Crawlee | ✅ | 100% (15/15) | Crawlee + Playwright | 4x daily (6hr intervals) | `OXYLABS_USERNAME`, `OXYLABS_PASSWORD`, `ANTHROPIC_API_KEY` |
 
@@ -263,35 +263,47 @@ _Note: This table is **automatically updated** by the discovery scripts (`discov
 
 **Workflow File**: `.github/workflows/kol-discovery-morning.yml`
 
-**Overview**: Discovers Key Opinion Leaders (KOLs) in the crypto space using a curated seed list of high-value influencer candidates across 11 tiers.
+**Overview**: Discovers Key Opinion Leaders (KOLs) in the crypto space using a curated seed list of high-value influencer candidates across 11 tiers. Uses **Oxylabs Web Unblocker** for server-side rendering to bypass X/Twitter's JavaScript rendering requirements.
 
 **Schedule**: 3x weekly - Monday, Wednesday, Friday at 09:09 UTC
 
 **Scripts Used**:
-- `scripts/crawling/production/discover-crawlee-direct.js` (main discovery logic)
-- `scripts/crawling/crawlers/crawlee-browser.js` (browser automation)
+- `scripts/crawling/production/discover-kols-oxylabs.js` (main discovery with Web Unblocker)
+- `scripts/crawling/crawlers/html-parser.js` (HTML parsing for profile data)
 - `scripts/crawling/utils/kol-utils.js` (data management)
 - `scripts/crawling/utils/claude-client.js` (AI evaluation)
 
-**Strategy**: **Seed List Discovery with Self-Optimizing Auto-Removal**
+**Strategy**: **Oxylabs Web Unblocker + HTML Parsing**
 
-Morning Discovery uses a curated list of crypto influencer candidates organized into 11 tiers based on follower count and specialization. The system features intelligent auto-cleanup that removes successfully discovered KOLs from the candidate list, preventing redundant checks and optimizing performance over time.
+Morning Discovery uses **Oxylabs Web Unblocker** for server-side rendering of X/Twitter profiles. Unlike traditional Crawlee approaches, Web Unblocker renders JavaScript on Oxylabs' servers and returns fully rendered HTML, which is then parsed to extract profile metrics (followers, following, bio, verification status).
+
+**Key Technical Details**:
+- **Server-side rendering**: Oxylabs renders X/Twitter profiles before returning HTML
+- **HTML parsing**: Custom parser extracts follower counts with K/M/B suffix handling
+- **European number format support**: Handles both `188.2K` (US) and `188,2K` (European) formats
+- **Multi-account authentication**: Rotates through multiple Twitter accounts with per-account geo-targeting
+- **Session reuse**: 10-minute session windows reduce proxy costs
 
 **Discovery Process**:
 1. **Load Candidates**: Reads candidate usernames from `kol-candidates.json`
 2. **Filter Existing**: Skips candidates already in KOL database
-3. **Profile Scraping**: Uses Crawlee + Playwright to fetch Twitter profiles
-4. **Validation**: Filters by follower count (10K+ minimum), crypto relevance, verified status
-5. **Auto-Removal**: Successfully added KOLs removed from candidate list automatically
-6. **Commit**: Both KOL database and updated candidate list saved to git
+3. **Web Unblocker Fetch**: Oxylabs renders X/Twitter profile pages server-side
+4. **HTML Parsing**: Extract follower counts, bio, verification from rendered HTML
+5. **Number Parsing**: Handle K/M/B suffixes with sanity checks for invalid patterns
+6. **Validation**: Filters by follower count (10K-500K range), crypto relevance
+7. **Auto-Removal**: Successfully added KOLs removed from candidate list automatically
+8. **Commit**: Both KOL database and updated candidate list saved to git
 
 **Key Features**:
 - **Self-Optimizing**: Candidate list shrinks automatically after each successful discovery
 - **No Re-Checks**: Previously discovered KOLs never evaluated again
-- **Efficient Execution**: Fewer candidates over time = faster runs and lower costs
-- **Browser Automation**: Bypasses Twitter API restrictions using Crawlee + Playwright
-- **Oxylabs Proxy**: Residential proxies prevent IP blocking
-- **Validation**: Workflow fails when no discoveries made (alerts team to exhausted list)
+- **Server-Side Rendering**: Oxylabs Web Unblocker renders JavaScript-heavy pages
+- **HTML Parsing**: Custom parser with data-testid selectors for reliable extraction
+- **Number Format Support**: Handles US (188.2K) and European (188,2K) decimal formats
+- **Account Rotation**: Multi-account support with per-account country geo-targeting
+- **Sanity Checks**: Prevents parsing errors like "376,200K" → 376,200,000
+
+**Current Status**: ⚠️ **Debugging follower count parsing** - Large accounts (M suffix) parse correctly, but some K-suffix accounts showing incorrect values. Debug logging added to identify text extraction issues.
 
 **Candidate Tiers** (11 Total):
 - **Tier 1-4**: Core KOLs (10K-500K followers) - High engagement, crypto-native accounts
