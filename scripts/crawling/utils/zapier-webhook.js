@@ -163,7 +163,9 @@ export async function sendDiscoveryNotification(options) {
     apiStats = null,
     apiCalls = null,  // Alternative to apiStats
     error = null,
-    runUrl = null
+    runUrl = null,
+    discardedKols = [],  // Array of { username, reason }
+    candidatesProcessed = 0
   } = options;
 
   const emoji = success ? '✅' : '❌';
@@ -184,28 +186,30 @@ export async function sendDiscoveryNotification(options) {
   }
 
   textParts.push('');
-  textParts.push('');
-  textParts.push('*KOL Database:*');
+  textParts.push('*Results:*');
+  textParts.push(`  Candidates processed: ${candidatesProcessed}`);
+  textParts.push(`  ✅ New KOLs added: ${kolsAdded}`);
+  textParts.push(`  ❌ Discarded: ${discardedKols.length}`);
   textParts.push(`  Total KOLs tracked: ${totalKols}`);
-  textParts.push(`  New KOLs added: ${kolsAdded}`);
-  textParts.push('');
-  textParts.push('*Discovery Results:*');
-  textParts.push(`  Queries executed: ${queriesExecuted || totalQueries}`);
-  textParts.push(`  Tweets found: ${tweetsFound}`);
 
-  // Include full KOL list on success
-  if (success) {
-    try {
-      const kolsData = loadKolsData();
-      if (kolsData && kolsData.kols && kolsData.kols.length > 0) {
-        textParts.push('');
-        textParts.push('');
-        textParts.push('*📋 Current KOL List:*');
-        textParts.push(formatKolList(kolsData.kols));
+  // Show discarded KOLs with reasons
+  if (discardedKols.length > 0) {
+    textParts.push('');
+    textParts.push('*Discarded Candidates:*');
+
+    // Group by reason
+    const byReason = {};
+    for (const { username, reason } of discardedKols) {
+      if (!byReason[reason]) byReason[reason] = [];
+      byReason[reason].push(username);
+    }
+
+    for (const [reason, usernames] of Object.entries(byReason)) {
+      if (usernames.length <= 3) {
+        textParts.push(`  • ${reason}: @${usernames.join(', @')}`);
+      } else {
+        textParts.push(`  • ${reason}: @${usernames.slice(0, 3).join(', @')} +${usernames.length - 3} more`);
       }
-    } catch (err) {
-      console.error('Failed to load KOL list for notification:', err.message);
-      // Don't fail the notification if we can't load the list
     }
   }
 

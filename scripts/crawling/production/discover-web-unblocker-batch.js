@@ -99,6 +99,7 @@ async function discoverWithWebUnblocker() {
     errors: [],
     discovered: [],
     processedUsernames: [],  // Track ALL processed candidates for removal (success or failure)
+    discardedKols: [],  // Track discards with reasons: { username, reason }
     topDiscovery: null,
     candidatesRemaining: 0
   };
@@ -164,6 +165,7 @@ async function discoverWithWebUnblocker() {
     if (!profile) {
       console.log(`   ❌ Profile not retrieved`);
       results.errors.push(`@${username}: Profile not retrieved`);
+      results.discardedKols.push({ username, reason: 'Profile not found' });
       continue;
     }
 
@@ -182,12 +184,14 @@ async function discoverWithWebUnblocker() {
       // Check if meets minimum criteria
       if (followers < config.kolCriteria.minFollowers) {
         console.log(`   ⏭️  Below minimum followers (${config.kolCriteria.minFollowers.toLocaleString()})`);
+        results.discardedKols.push({ username, reason: `Below ${config.kolCriteria.minFollowers.toLocaleString()} followers` });
         continue;
       }
 
       // Check if exceeds maximum followers
       if (config.kolCriteria.maxFollowers && followers > config.kolCriteria.maxFollowers) {
         console.log(`   ⏭️  Above maximum followers (${config.kolCriteria.maxFollowers.toLocaleString()})`);
+        results.discardedKols.push({ username, reason: `Above ${config.kolCriteria.maxFollowers.toLocaleString()} followers` });
         continue;
       }
 
@@ -208,6 +212,7 @@ async function discoverWithWebUnblocker() {
 
       if (!passesFilter) {
         console.log(`   ⏭️  Does not meet crypto relevance criteria`);
+        results.discardedKols.push({ username, reason: 'Not crypto relevant' });
         continue;
       }
 
@@ -289,13 +294,20 @@ async function discoverWithWebUnblocker() {
   // Log execution
   await logMorningDiscovery(results);
 
-  // Send notification if new KOLs discovered
-  if (results.kolsAdded > 0 && process.env.ZAPIER_WEBHOOK_URL) {
-    try {
-      await sendDiscoveryNotification(results);
-    } catch (error) {
-      console.log(`⚠️  Webhook notification failed: ${error.message}`);
-    }
+  // Send notification
+  try {
+    await sendDiscoveryNotification({
+      scriptName: 'KOL Discovery (Morning)',
+      success: true,
+      kolsAdded: results.kolsAdded,
+      totalKols: kolsData.kols.length,
+      method: 'Web Unblocker',
+      duration: Math.round((Date.now() - startTime) / 1000),
+      discardedKols: results.discardedKols,
+      candidatesProcessed: results.candidatesChecked
+    });
+  } catch (error) {
+    console.log(`⚠️  Webhook notification failed: ${error.message}`);
   }
 
   return results;
