@@ -1,7 +1,7 @@
 {
   "description": "Candidate KOL usernames for discovery. Successfully added KOLs are automatically removed from this list.",
-  "lastUpdated": "2025-11-21T12:10:09.267Z",
-  "totalCandidates": 58,
+  "lastUpdated": "2025-11-21T18:22:01.302Z",
+  "totalCandidates": 48,
   "candidatesByTier": {
     "tier1_100k_500k": [],
     "tier2_50k_100k": [],
@@ -9,19 +9,8 @@
     "tier4_additional_10k_100k": [],
     "tier5_major_influencers_500k_5m": [],
     "tier6_trading_analysis_100k_500k": [],
-    "tier7_defi_protocols_50k_200k": [
-      "santiagoroel",
-      "MessariCrypto"
-    ],
+    "tier7_defi_protocols_50k_200k": [],
     "tier8_nft_web3_50k_300k": [
-      "gmoney",
-      "punk6529",
-      "GaryVee",
-      "seedphrase",
-      "punk4156",
-      "pranksy",
-      "farokh",
-      "beaniemaxi",
       "franklinisbored",
       "j1mmyeth",
       "ArtOnBlockchain",
