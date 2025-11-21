@@ -17,6 +17,24 @@ function parseNumber(text) {
 
   const multipliers = { 'K': 1000, 'M': 1000000, 'B': 1000000000 };
 
+  // Handle Spanish format: "149,8 mil" = 149.8K, "1,2 millones" = 1.2M
+  let spanishMatch = text.match(/([\d.,]+)\s*(mil|millones?)\b/i);
+  if (spanishMatch) {
+    let numStr = spanishMatch[1];
+    const spanishSuffix = spanishMatch[2].toLowerCase();
+
+    // Spanish uses comma as decimal separator
+    // "149,8" → "149.8"
+    numStr = numStr.replace(/\./g, '').replace(',', '.');
+
+    const number = parseFloat(numStr);
+    if (isNaN(number)) return 0;
+
+    // mil = thousand, millones = million
+    const multiplier = spanishSuffix === 'mil' ? 1000 : 1000000;
+    return Math.round(number * multiplier);
+  }
+
   // First, try to match number WITH K/M/B suffix
   let match = text.match(/([\d.,]+)\s*([KMB])/i);
 
