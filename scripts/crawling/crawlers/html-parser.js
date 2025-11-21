@@ -100,13 +100,16 @@ async function extractNumberFromLink(page, linkSelectors, description = 'count')
 
       // Strategy 1: Get FULL text content (this includes K/M/B suffix)
       const fullText = await link.textContent().catch(() => '');
+      console.log(`      [DEBUG] ${description} fullText: "${fullText}"`);
       if (fullText) {
         const num = parseNumber(fullText);
+        console.log(`      [DEBUG] ${description} parsed: ${num}`);
         if (num > 0) return num;
       }
 
       // Strategy 2: Try aria-label (often has full number)
       const ariaLabel = await link.getAttribute('aria-label').catch(() => '');
+      console.log(`      [DEBUG] ${description} ariaLabel: "${ariaLabel}"`);
       if (ariaLabel) {
         const num = parseNumber(ariaLabel);
         if (num > 0) return num;
