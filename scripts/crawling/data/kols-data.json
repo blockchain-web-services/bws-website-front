@@ -558,11 +558,26 @@
       "accountType": "person",
       "lastTweetAnalyzed": null,
       "status": "active"
+    },
+    {
+      "username": "ColdBloodShill",
+      "name": "Cold Blooded Shiller",
+      "followers_count": 347200,
+      "following_count": 713,
+      "verified": false,
+      "description": "@TheHavenCrypto Building Mode Engaged\n\nhttps://whop.com/thehaven/?a=giftedsunset5a02…",
+      "url": "",
+      "location": "",
+      "created_at": "Se unió el abril de 2018",
+      "profile_image_url": "",
+      "discovered_at": "2025-11-21T11:05:06.707Z",
+      "source": "web-unblocker-batch",
+      "tier": "macro"
     }
   ],
   "metadata": {
     "lastDiscoveryRun": "2025-11-05T12:00:01.384Z",
-    "totalKols": 14,
+    "totalKols": 15,
     "activeKols": 14,
     "discoveryDepth": 2,
     "seedKolsCount": 8,
