@@ -195,20 +195,30 @@ async function discoverWithWebUnblocker() {
         continue;
       }
 
-      // Check for crypto keywords in bio
-      const cryptoKeywords = ['crypto', 'bitcoin', 'btc', 'eth', 'ethereum', 'blockchain', 'defi', 'web3', 'nft', 'dao', 'degen'];
+      // Check for crypto keywords in bio (expanded list)
+      const cryptoKeywords = [
+        'crypto', 'bitcoin', 'btc', 'eth', 'ethereum', 'blockchain', 'defi', 'web3', 'nft', 'dao', 'degen',
+        'solana', 'sol', 'token', 'coin', 'protocol', 'decentralized', 'smart contract', 'validator',
+        'staking', 'yield', 'liquidity', 'airdrop', 'hodl', 'moon', 'rug', 'dex', 'cex', 'wallet',
+        'ledger', 'metamask', 'uniswap', 'opensea', 'founder', 'investor', 'vc', 'angel'
+      ];
       const bioLower = bio.toLowerCase();
       const hasCryptoKeyword = cryptoKeywords.some(kw => bioLower.includes(kw));
 
-      // Known crypto influencers
+      // Known crypto influencers (expanded list)
       const knownCryptoUsernames = [
         'vitalikbuterin', 'cz_binance', 'aantonop', 'naval',
         'balajis', 'apompliano', 'documentingbtc', 'defidad', 'sassal0x',
-        'elonmusk', 'satoshilite', 'justinsuntron', 'cobie', 'incomesharks'
+        'elonmusk', 'satoshilite', 'justinsuntron', 'cobie', 'incomesharks',
+        // Add more known crypto people
+        'dcfgod', 'vladzamfir', 'stanikulechov', 'erikvoorhees', 'ryansadams',
+        'trustlessstate', 'ljxie', 'antiprosynth', 'takenstheorem', 'justinbons',
+        'cryptotea_', 'altcoinbuzz', 'cryptorus'
       ];
       const isKnownCryptoKOL = knownCryptoUsernames.includes(username.toLowerCase());
 
-      const passesFilter = hasCryptoKeyword || isKnownCryptoKOL || (verified && followers > 500000);
+      // More lenient filter: accept if crypto keyword OR known KOL OR high followers (50K+)
+      const passesFilter = hasCryptoKeyword || isKnownCryptoKOL || followers >= 50000;
 
       if (!passesFilter) {
         console.log(`   ⏭️  Does not meet crypto relevance criteria`);

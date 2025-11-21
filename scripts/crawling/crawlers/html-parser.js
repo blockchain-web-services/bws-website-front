@@ -195,13 +195,37 @@ export async function parseProfileFromHTML(page, username) {
     // Extract follower count using multi-strategy approach
     const followerSelectors = [
       'a[href$="/verified_followers"]',
-      'a[href$="/followers"]'
+      'a[href$="/followers"]',
+      // Fallback: Any link containing "Follower" text
+      'a:has-text("Follower")',
+      'a:has-text("Seguidores")',
+      // Data-testid based selectors
+      '[data-testid="UserProfileHeader_Items"] a[href*="followers"]'
     ];
     const followers_count = await extractNumberFromLink(page, followerSelectors, 'followers');
 
+    // If still 0, try to find any text with follower patterns
+    if (followers_count === 0) {
+      console.log('      [DEBUG] No followers found with selectors, trying text patterns...');
+      try {
+        const bodyText = await page.locator('body').textContent().catch(() => '');
+        // Look for patterns like "123K Followers" or "123 mil Seguidores"
+        const followerMatch = bodyText.match(/([\d.,]+)\s*([KMB]|mil|millones?)?\s*(Followers?|Seguidores)/i);
+        if (followerMatch) {
+          console.log(`      [DEBUG] Found text pattern: "${followerMatch[0]}"`);
+        } else {
+          console.log('      [DEBUG] No follower text pattern found in page body');
+        }
+      } catch (e) {
+        console.log('      [DEBUG] Failed to search body text:', e.message);
+      }
+    }
+
     // Extract following count using multi-strategy approach
     const followingSelectors = [
-      'a[href$="/following"]'
+      'a[href$="/following"]',
+      'a:has-text("Following")',
+      'a:has-text("Siguiendo")'
     ];
     const following_count = await extractNumberFromLink(page, followingSelectors, 'following');
 
