@@ -573,11 +573,26 @@
       "discovered_at": "2025-11-21T11:05:06.707Z",
       "source": "web-unblocker-batch",
       "tier": "macro"
+    },
+    {
+      "username": "RyanSAdams",
+      "name": "RYAN SΞAN ADAMS - rsa.eth",
+      "followers_count": 272900,
+      "following_count": 2404,
+      "verified": false,
+      "description": "Crypto investor going bankless.",
+      "url": "",
+      "location": "",
+      "created_at": "Se unió el abril de 2008",
+      "profile_image_url": "",
+      "discovered_at": "2025-11-21T12:10:09.265Z",
+      "source": "web-unblocker-batch",
+      "tier": "macro"
     }
   ],
   "metadata": {
     "lastDiscoveryRun": "2025-11-05T12:00:01.384Z",
-    "totalKols": 15,
+    "totalKols": 16,
     "activeKols": 14,
     "discoveryDepth": 2,
     "seedKolsCount": 8,

@@ -1,7 +1,7 @@
 {
   "description": "Candidate KOL usernames for discovery. Successfully added KOLs are automatically removed from this list.",
-  "lastUpdated": "2025-11-21T11:05:06.710Z",
-  "totalCandidates": 68,
+  "lastUpdated": "2025-11-21T12:10:09.267Z",
+  "totalCandidates": 58,
   "candidatesByTier": {
     "tier1_100k_500k": [],
     "tier2_50k_100k": [],
@@ -10,16 +10,6 @@
     "tier5_major_influencers_500k_5m": [],
     "tier6_trading_analysis_100k_500k": [],
     "tier7_defi_protocols_50k_200k": [
-      "stanikulechov",
-      "justinbons",
-      "dcfgod",
-      "ErikVoorhees",
-      "VladZamfir",
-      "RyanSAdams",
-      "TrustlessState",
-      "ljxie",
-      "antiprosynth",
-      "takenstheorem",
       "santiagoroel",
       "MessariCrypto"
     ],
