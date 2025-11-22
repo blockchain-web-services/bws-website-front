@@ -1,7 +1,7 @@
 {
   "description": "Candidate KOL usernames for discovery. Successfully added KOLs are automatically removed from this list.",
-  "lastUpdated": "2025-11-21T18:22:01.302Z",
-  "totalCandidates": 48,
+  "lastUpdated": "2025-11-22T17:33:16.853Z",
+  "totalCandidates": 38,
   "candidatesByTier": {
     "tier1_100k_500k": [],
     "tier2_50k_100k": [],
@@ -10,19 +10,8 @@
     "tier5_major_influencers_500k_5m": [],
     "tier6_trading_analysis_100k_500k": [],
     "tier7_defi_protocols_50k_200k": [],
-    "tier8_nft_web3_50k_300k": [
-      "franklinisbored",
-      "j1mmyeth",
-      "ArtOnBlockchain",
-      "NFTherder",
-      "punk9059",
-      "GrailersDAO",
-      "DCLBlogger"
-    ],
+    "tier8_nft_web3_50k_300k": [],
     "tier9_layer1_layer2_30k_150k": [
-      "StarkWareLtd",
-      "Polkadot",
-      "cosmos",
       "solana",
       "avalancheavax",
       "ethereum",
