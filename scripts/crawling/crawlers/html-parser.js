@@ -204,15 +204,22 @@ export async function parseProfileFromHTML(page, username) {
     ];
     const followers_count = await extractNumberFromLink(page, followerSelectors, 'followers');
 
-    // If still 0, try to find any text with follower patterns
+    // If still 0, try to find any text with follower patterns and parse it
+    let followers_count_final = followers_count;
     if (followers_count === 0) {
       console.log('      [DEBUG] No followers found with selectors, trying text patterns...');
       try {
         const bodyText = await page.locator('body').textContent().catch(() => '');
-        // Look for patterns like "123K Followers" or "123 mil Seguidores"
+        // Look for patterns like "123K Followers" or "123 mil Seguidores" or "3 M Seguidores"
         const followerMatch = bodyText.match(/([\d.,]+)\s*([KMB]|mil|millones?)?\s*(Followers?|Seguidores)/i);
         if (followerMatch) {
           console.log(`      [DEBUG] Found text pattern: "${followerMatch[0]}"`);
+          // Parse the matched text
+          const parsedFromBody = parseNumber(followerMatch[0]);
+          if (parsedFromBody > 0) {
+            console.log(`      [DEBUG] Parsed from body text: ${parsedFromBody}`);
+            followers_count_final = parsedFromBody;
+          }
         } else {
           console.log('      [DEBUG] No follower text pattern found in page body');
         }
@@ -270,7 +277,7 @@ export async function parseProfileFromHTML(page, username) {
       name: name,
       description: description.trim(),
       public_metrics: {
-        followers_count,
+        followers_count: followers_count_final,
         following_count,
         tweet_count: 0,  // Not easily extractable from HTML
         listed_count: 0   // Not easily extractable from HTML
