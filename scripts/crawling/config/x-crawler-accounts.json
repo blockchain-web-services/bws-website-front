@@ -6,11 +6,13 @@
     "host": "pr.oxylabs.io",
     "port": 7777,
     "country": "es",
-    "sessionType": "sticky"
+    "sessionType": "sticky",
+    "username": "github_ZDKqq",
+    "password": "G_xer7PTbXsBY38"
   },
   "rotation": {
     "strategy": "round-robin",
-    "cooldownMinutes": 30
+    "cooldownMinutes": 1
   },
   "accounts": [
     {
@@ -21,12 +23,12 @@
       "status": "active",
       "suspended": false,
       "cookies": {
-        "auth_token": "ba9904e887c43f6572b10e334152aed044dc4e94",
-        "ct0": "5e4ac01d901a884030289869f7c86abd6442fcf4ae6ee4e72d1384958efb12b4baa973eee9737b51b0b9515cfd2a9153afc28c0d9f1e111c6e52f0e7d294c8f36eeb9928f07a60e347851b168ba51255",
-        "guest_id": "v1%3A176353471164990130"
+        "auth_token": "0b01d81486e6bb6a2eca588040d56f61cd5f65f4",
+        "ct0": "1ab440b0042c89b0eb39139acaa2ba90b8d5e672048e5925027a4c7209c3a0f8780691b4e87c811d40edf564e9f0a440f9e0acbcf985d14c879623c33670bbb0c3773a25be5a18f1ddfc41e53f4425c4",
+        "guest_id": "v1%3A176391575421801835"
       },
-      "usageCount": 0,
-      "lastUsed": null,
+      "usageCount": 1,
+      "lastUsed": "2025-11-23T16:42:49.370Z",
       "rateLimitedUntil": null,
       "notes": "Primary account for KOL discovery - requires real X cookies. Country code used by Oxylabs proxy."
     }
