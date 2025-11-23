@@ -151,9 +151,14 @@ async function discoverByEngagementCrawlee() {
   const claudeClient = createClaudeClient();
   lastSuccessfulOperation = 'config_loaded';
 
-  // Get engagement threshold
+  // Get engagement threshold (use defaults if not configured)
   const engagementTier = config.searchDiscovery?.engagementTier || 'tier4';
-  const threshold = searchConfig.engagementThresholds[engagementTier];
+  const defaultThreshold = {
+    minLikes: searchConfig.settings?.minEngagementThreshold || 15,
+    minRetweets: 0,
+    minViews: 0
+  };
+  const threshold = searchConfig.engagementThresholds?.[engagementTier] || defaultThreshold;
 
   console.log(`📊 Configuration:`);
   console.log(`   - Queries: ${searchConfig.queries.length}`);
