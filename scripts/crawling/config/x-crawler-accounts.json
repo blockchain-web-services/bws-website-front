@@ -12,7 +12,7 @@
   },
   "rotation": {
     "strategy": "round-robin",
-    "cooldownMinutes": 1
+    "cooldownMinutes": 0
   },
   "accounts": [
     {
