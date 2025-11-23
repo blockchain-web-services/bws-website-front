@@ -15,7 +15,7 @@ const worktreeRoot = path.resolve(__scriptsDir, '../../..');
 dotenv.config({ path: path.join(worktreeRoot, '.env') });
 
 import fs from 'fs';
-import { searchTweets, getUserProfile } from '../crawlers/twitter-crawler.js';
+import { searchTweets, getUserProfileWebUnblocker } from '../crawlers/twitter-crawler.js';
 import { runAmplifiedKolSearch } from '../utils/amplified-search.js';
 import {
   loadConfig,
@@ -179,7 +179,8 @@ async function discoverByEngagementCrawlee() {
     profilesFetched: 0,
     kolsAdded: 0,
     topDiscovery: null,
-    errors: []
+    errors: [],
+    discardedKols: []  // Track discards with reasons: { username, reason }
   };
 
   const allUsernames = new Set();
@@ -369,12 +370,13 @@ async function discoverByEngagementCrawlee() {
     console.log(`\n[${results.profilesFetched + 1}/${candidatesToProcess.length}] @${username}`);
 
     try {
-      // Fetch profile with Crawlee (FREE)
-      const profile = await getUserProfile(username);
+      // Fetch profile with Web Unblocker (FREE, better parsing)
+      const profile = await getUserProfileWebUnblocker(username);
 
       if (!profile) {
         console.log(`   ❌ Profile not found`);
         results.errors.push(`@${username}: Profile not found`);
+        results.discardedKols.push({ username, reason: 'Profile not found' });
         continue;
       }
 
@@ -386,21 +388,43 @@ async function discoverByEngagementCrawlee() {
       // Quick filters
       if (followers < config.kolCriteria.minFollowers) {
         console.log(`   ⏭️  Skipped: Below minimum followers`);
+        results.discardedKols.push({ username, reason: `Below ${formatNumber(config.kolCriteria.minFollowers)} followers` });
         continue;
       }
 
       if (config.kolCriteria.maxFollowers && followers > config.kolCriteria.maxFollowers) {
         console.log(`   ⏭️  Skipped: Above maximum followers (${formatNumber(config.kolCriteria.maxFollowers)})`);
+        results.discardedKols.push({ username, reason: `Above ${formatNumber(config.kolCriteria.maxFollowers)} followers` });
         continue;
       }
 
-      // Check bio for crypto keywords
+      // Check bio for crypto keywords (expanded list matching 2.1.1)
       const bio = (profile.description || '').toLowerCase();
-      const cryptoKeywords = ['crypto', 'bitcoin', 'btc', 'eth', 'ethereum', 'blockchain', 'defi', 'nft', 'web3', 'degen', 'altcoin', 'token', 'dao'];
+      const cryptoKeywords = [
+        'crypto', 'bitcoin', 'btc', 'eth', 'ethereum', 'blockchain', 'defi', 'web3', 'nft', 'dao', 'degen',
+        'solana', 'sol', 'token', 'coin', 'protocol', 'decentralized', 'smart contract', 'validator',
+        'staking', 'yield', 'liquidity', 'airdrop', 'hodl', 'moon', 'rug', 'dex', 'cex', 'wallet',
+        'ledger', 'metamask', 'uniswap', 'opensea', 'founder', 'investor', 'vc', 'angel', 'altcoin'
+      ];
       const hasCryptoKeyword = cryptoKeywords.some(keyword => bio.includes(keyword));
 
-      if (!hasCryptoKeyword && bio.length > 0) {
-        console.log(`   ⏭️  Skipped: No crypto keywords in bio`);
+      // Known crypto influencers (expanded list)
+      const knownCryptoUsernames = [
+        'vitalikbuterin', 'cz_binance', 'aantonop', 'naval',
+        'balajis', 'apompliano', 'documentingbtc', 'defidad', 'sassal0x',
+        'elonmusk', 'satoshilite', 'justinsuntron', 'cobie', 'incomesharks',
+        'dcfgod', 'vladzamfir', 'stanikulechov', 'erikvoorhees', 'ryansadams',
+        'trustlessstate', 'ljxie', 'antiprosynth', 'takenstheorem', 'justinbons',
+        'cryptotea_', 'altcoinbuzz', 'cryptorus'
+      ];
+      const isKnownCryptoKOL = knownCryptoUsernames.includes(username.toLowerCase());
+
+      // More lenient filter: accept if crypto keyword OR known KOL OR high followers (50K+)
+      const passesFilter = hasCryptoKeyword || isKnownCryptoKOL || followers >= 50000;
+
+      if (!passesFilter && bio.length > 0) {
+        console.log(`   ⏭️  Skipped: Does not meet crypto relevance criteria`);
+        results.discardedKols.push({ username, reason: 'Not crypto relevant' });
         continue;
       }
 
@@ -418,16 +442,19 @@ async function discoverByEngagementCrawlee() {
       // Check criteria
       if (!evaluation.isCryptoKOL) {
         console.log(`   ⏭️  Skipped: Not identified as crypto KOL`);
+        results.discardedKols.push({ username, reason: 'Not identified as crypto KOL' });
         continue;
       }
 
       if (evaluation.cryptoRelevanceScore < config.kolCriteria.minCryptoRelevance) {
         console.log(`   ⏭️  Skipped: Crypto relevance too low (${evaluation.cryptoRelevanceScore}%)`);
+        results.discardedKols.push({ username, reason: `Low crypto relevance (${evaluation.cryptoRelevanceScore}%)` });
         continue;
       }
 
       if (!['person', 'mixed'].includes(evaluation.accountType.toLowerCase())) {
         console.log(`   ⏭️  Skipped: Not a person account (${evaluation.accountType})`);
+        results.discardedKols.push({ username, reason: `Not person account (${evaluation.accountType})` });
         continue;
       }
 
@@ -554,6 +581,10 @@ async function discoverByEngagementCrawlee() {
     tweetsFound: results.totalTweetsFound,
     kolsAdded: results.kolsAdded,
     totalKols: kolsData.kols.length,
+    method: 'Web Unblocker',
+    duration: duration,
+    discardedKols: results.discardedKols,
+    candidatesProcessed: results.profilesFetched,
     runUrl: process.env.GITHUB_RUN_URL || null
   });
 
