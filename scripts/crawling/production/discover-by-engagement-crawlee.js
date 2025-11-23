@@ -35,7 +35,7 @@ import { logSearchDiscovery } from '../utils/execution-logger.js';
 const __dirname = __scriptsDir;  // Use scriptsDir from dotenv setup above
 
 function loadSearchQueries() {
-  const configPath = path.join(__dirname, 'config', 'search-queries.json');
+  const configPath = path.join(__dirname, '..', 'config', 'search-queries.json');
 
   try {
     const data = fs.readFileSync(configPath, 'utf-8');
