@@ -333,8 +333,113 @@ export async function waitForProfileLoad(page, timeout = 10000) {
   }
 }
 
+/**
+ * Parse search results from HTML page (fallback when GraphQL fails)
+ *
+ * @param {Page} page - Playwright page object with loaded search results
+ * @returns {Promise<Array>} Array of tweet objects
+ */
+export async function parseSearchResultsFromHTML(page) {
+  try {
+    const tweets = [];
+
+    // Get all tweet articles
+    const tweetElements = await page.locator('article[data-testid="tweet"]').all();
+    console.log(`   📄 HTML fallback: Found ${tweetElements.length} tweet elements`);
+
+    for (const tweetEl of tweetElements) {
+      try {
+        // Extract username from the tweet
+        const userNameEl = await tweetEl.locator('[data-testid="User-Name"]').first();
+        const userText = await userNameEl.textContent().catch(() => '');
+        const usernameMatch = userText.match(/@([\w]+)/);
+        const username = usernameMatch ? usernameMatch[1] : '';
+
+        if (!username) continue;
+
+        // Extract display name
+        const nameMatch = userText.match(/^(.+?)[@·]/);
+        const name = nameMatch ? nameMatch[1].trim() : '';
+
+        // Extract tweet text
+        const tweetTextEl = await tweetEl.locator('[data-testid="tweetText"]').first();
+        const text = await tweetTextEl.textContent().catch(() => '');
+
+        // Extract engagement metrics
+        // Likes
+        const likeButton = await tweetEl.locator('[data-testid="like"]').first();
+        const likeAriaLabel = await likeButton.getAttribute('aria-label').catch(() => '');
+        const likeMatch = likeAriaLabel.match(/([\d.,]+)/);
+        const likeCount = likeMatch ? parseNumber(likeMatch[0]) : 0;
+
+        // Retweets
+        const retweetButton = await tweetEl.locator('[data-testid="retweet"]').first();
+        const retweetAriaLabel = await retweetButton.getAttribute('aria-label').catch(() => '');
+        const retweetMatch = retweetAriaLabel.match(/([\d.,]+)/);
+        const retweetCount = retweetMatch ? parseNumber(retweetMatch[0]) : 0;
+
+        // Reply count
+        const replyButton = await tweetEl.locator('[data-testid="reply"]').first();
+        const replyAriaLabel = await replyButton.getAttribute('aria-label').catch(() => '');
+        const replyMatch = replyAriaLabel.match(/([\d.,]+)/);
+        const replyCount = replyMatch ? parseNumber(replyMatch[0]) : 0;
+
+        // Views (if available)
+        const viewsEl = await tweetEl.locator('a[href*="/analytics"]').first();
+        const viewsAriaLabel = await viewsEl.getAttribute('aria-label').catch(() => '');
+        const viewsMatch = viewsAriaLabel.match(/([\d.,]+)/);
+        const viewCount = viewsMatch ? parseNumber(viewsMatch[0]) : 0;
+
+        // Try to get tweet ID from link
+        const tweetLink = await tweetEl.locator('a[href*="/status/"]').first();
+        const tweetHref = await tweetLink.getAttribute('href').catch(() => '');
+        const tweetIdMatch = tweetHref.match(/\/status\/(\d+)/);
+        const tweetId = tweetIdMatch ? tweetIdMatch[1] : `html-${Date.now()}-${Math.random().toString(36).substring(7)}`;
+
+        // Build tweet object matching GraphQL structure
+        const tweet = {
+          id: tweetId,
+          text: text.trim(),
+          author: {
+            id: '', // Not available from HTML
+            username: username,
+            name: name,
+            profile_image_url: '',
+            public_metrics: {
+              followers_count: 0, // Not available from HTML
+              following_count: 0,
+              tweet_count: 0
+            }
+          },
+          public_metrics: {
+            like_count: likeCount,
+            retweet_count: retweetCount,
+            reply_count: replyCount,
+            impression_count: viewCount
+          },
+          created_at: '', // Not easily available from HTML
+          extraction_method: 'HTML parsing'
+        };
+
+        tweets.push(tweet);
+      } catch (e) {
+        // Skip individual tweet parsing errors
+        continue;
+      }
+    }
+
+    console.log(`   ✅ HTML fallback extracted ${tweets.length} tweets`);
+    return tweets;
+
+  } catch (error) {
+    console.error('   ❌ Error parsing search results from HTML:', error.message);
+    return [];
+  }
+}
+
 export default {
   parseProfileFromHTML,
   waitForProfileLoad,
-  parseNumber
+  parseNumber,
+  parseSearchResultsFromHTML
 };

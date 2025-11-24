@@ -11,7 +11,7 @@
 import { PlaywrightCrawler, RequestQueue } from 'crawlee';
 import { chromium } from 'playwright';
 import { parseUserProfile, parseSearchResults, parseFollowingList, parseUserTweets } from './graphql-parser.js';
-import { parseProfileFromHTML } from './html-parser.js';
+import { parseProfileFromHTML, parseSearchResultsFromHTML } from './html-parser.js';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import fs from 'fs';
@@ -410,6 +410,13 @@ export async function searchTweets(query, options = {}) {
           for (let i = 0; i < 3 && tweets.length < maxResults; i++) {
             await page.evaluate(() => window.scrollBy(0, 1000));
             await page.waitForTimeout(1000);
+          }
+
+          // HTML fallback if GraphQL interception failed
+          if (tweets.length === 0) {
+            console.log('   ⚠️ No GraphQL data captured, trying HTML fallback...');
+            const htmlTweets = await parseSearchResultsFromHTML(page);
+            tweets.push(...htmlTweets);
           }
 
           if (!isResolved) {
