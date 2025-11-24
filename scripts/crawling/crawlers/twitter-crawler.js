@@ -312,9 +312,12 @@ export async function searchTweets(query, maxResults = 20) {
       maxRequestRetries: 3,
       requestHandlerTimeoutSecs: 60,
 
-      async requestHandler({ page, request }) {
-        try {
-          // Set up response interceptor
+      // Set up response interceptor BEFORE navigation
+      preNavigationHooks: [async ({ page }) => {
+        // Only set up listener once per page
+        if (!page._searchResponseListenerSetup) {
+          page._searchResponseListenerSetup = true;
+
           page.on('response', async (response) => {
             const url = response.url();
 
@@ -332,7 +335,11 @@ export async function searchTweets(query, maxResults = 20) {
               }
             }
           });
+        }
+      }],
 
+      async requestHandler({ page, request }) {
+        try {
           // Navigate to search page
           await page.goto(request.url, {
             waitUntil: 'domcontentloaded',
