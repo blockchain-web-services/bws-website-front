@@ -1,7 +1,7 @@
 {
   "description": "Candidate KOL usernames for discovery. Successfully added KOLs are automatically removed from this list.",
-  "lastUpdated": "2025-11-22T17:33:16.853Z",
-  "totalCandidates": 38,
+  "lastUpdated": "2025-11-24T09:54:33.127Z",
+  "totalCandidates": 28,
   "candidatesByTier": {
     "tier1_100k_500k": [],
     "tier2_50k_100k": [],
@@ -12,16 +12,6 @@
     "tier7_defi_protocols_50k_200k": [],
     "tier8_nft_web3_50k_300k": [],
     "tier9_layer1_layer2_30k_150k": [
-      "solana",
-      "avalancheavax",
-      "ethereum",
-      "arbitrum",
-      "Optimism",
-      "0xPolygon",
-      "zksync",
-      "FantomFDN",
-      "flow_blockchain",
-      "Algorand",
       "Cardano",
       "NEARProtocol"
     ],

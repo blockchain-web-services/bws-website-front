@@ -738,11 +738,26 @@
       "discovered_at": "2025-11-22T17:33:16.850Z",
       "source": "web-unblocker-batch",
       "tier": "macro"
+    },
+    {
+      "username": "Algorand",
+      "name": "Algorand Technologies",
+      "followers_count": 358100,
+      "following_count": 804,
+      "verified": false,
+      "description": "The Builders of Algorand, the high-performance Layer 1.\nWatch for scams: we'll never ask for wallet info or sell/trade digital assets",
+      "url": "",
+      "location": "",
+      "created_at": "Se unió el noviembre de 2017",
+      "profile_image_url": "",
+      "discovered_at": "2025-11-24T09:54:33.125Z",
+      "source": "web-unblocker-batch",
+      "tier": "macro"
     }
   ],
   "metadata": {
     "lastDiscoveryRun": "2025-11-05T12:00:01.384Z",
-    "totalKols": 26,
+    "totalKols": 27,
     "activeKols": 14,
     "discoveryDepth": 2,
     "seedKolsCount": 8,
