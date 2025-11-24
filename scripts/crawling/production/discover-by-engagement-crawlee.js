@@ -216,12 +216,13 @@ async function discoverByEngagementCrawlee() {
       const cookies = await authManager.getAuthenticatedCookies(account);
 
       // Use Crawlee with GraphQL interception (works both locally and on CI)
-      // Note: Web Unblocker has rate limits for search pages
+      // Note: Do NOT use proxy for searches - GitHub Actions can access X directly
+      // Proxy causes 120s timeouts and prevents GraphQL interception
       const tweets = await searchTweets(queryConfig.query, {
         maxResults: searchConfig.settings.maxTweetsPerQuery || 50,
         cookies,
-        account,
-        proxyConfig: config.proxy // Use proxy on CI
+        account
+        // proxyConfig: undefined - No proxy needed, works better without it
       });
 
       // Mark account as used
