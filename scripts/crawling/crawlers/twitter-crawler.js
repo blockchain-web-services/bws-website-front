@@ -284,15 +284,58 @@ async function scrapeProfileFromDOM(page, username) {
 /**
  * Search for tweets matching query
  * @param {string} query - Search query
- * @param {number} maxResults - Maximum number of results
+ * @param {Object} options - Search options
+ * @param {number} options.maxResults - Maximum number of results (default: 20)
+ * @param {Object} options.cookies - Twitter cookies for authentication
+ * @param {Object} options.account - Account config with country for proxy
+ * @param {Object} options.proxyConfig - Proxy configuration
  * @returns {Promise<Array>} Array of tweets
  */
-export async function searchTweets(query, maxResults = 20) {
+export async function searchTweets(query, options = {}) {
+  const { maxResults = 20, cookies, account, proxyConfig } = options;
   console.log(`🔍 Searching tweets: "${query}"`);
 
   return new Promise((resolve, reject) => {
     const tweets = [];
     let isResolved = false;
+
+    // Prepare cookies array for browser context
+    const cookiesArray = [];
+    if (cookies) {
+      if (cookies.auth_token) {
+        cookiesArray.push({
+          name: 'auth_token',
+          value: cookies.auth_token,
+          domain: '.x.com',
+          path: '/',
+          httpOnly: true,
+          secure: true,
+          sameSite: 'None'
+        });
+      }
+      if (cookies.ct0) {
+        cookiesArray.push({
+          name: 'ct0',
+          value: cookies.ct0,
+          domain: '.x.com',
+          path: '/',
+          httpOnly: false,
+          secure: true,
+          sameSite: 'Lax'
+        });
+      }
+      if (cookies.guest_id) {
+        cookiesArray.push({
+          name: 'guest_id',
+          value: cookies.guest_id,
+          domain: '.x.com',
+          path: '/',
+          httpOnly: false,
+          secure: true,
+          sameSite: 'None'
+        });
+      }
+    }
 
     const crawler = new PlaywrightCrawler({
       launchContext: {
@@ -311,9 +354,14 @@ export async function searchTweets(query, maxResults = 20) {
       maxConcurrency: 1,
       maxRequestRetries: 3,
       requestHandlerTimeoutSecs: 60,
+      navigationTimeoutSecs: 90,
 
-      // Set up response interceptor BEFORE navigation
+      // Set up response interceptor and cookies BEFORE navigation
       preNavigationHooks: [async ({ page }) => {
+        // Add cookies to context if provided
+        if (cookiesArray.length > 0) {
+          await page.context().addCookies(cookiesArray);
+        }
         // Only set up listener once per page
         if (!page._searchResponseListenerSetup) {
           page._searchResponseListenerSetup = true;
