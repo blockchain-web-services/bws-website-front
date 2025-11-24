@@ -30,7 +30,7 @@
       "usageCount": 5,
       "lastUsed": "2025-11-24T10:43:15.448Z",
       "rateLimitedUntil": null,
-      "notes": "Primary account for KOL discovery - requires real X cookies. Country code used by Oxylabs proxy."
+      "notes": "Country code used by Oxylabs proxy."
     },
     {
       "id": "account_2",
@@ -47,7 +47,25 @@
       "usageCount": 0,
       "lastUsed": "2025-11-24T10:43:15.448Z",
       "rateLimitedUntil": null,
-      "notes": "Primary account for KOL discovery - requires real X cookies. Country code used by Oxylabs proxy."
+      "notes": "Country code used by Oxylabs proxy."
+    },
+    {
+      "id": "account_3",
+      "username": "@kilt_me",
+      "email": "kilt_aspirate416@simplelogin.com",
+      "country": "us",
+      "city": "atlanta",
+      "status": "active",
+      "suspended": false,
+      "cookies": {
+        "auth_token": "a27a09f9fcd37dbdc6bcd5f68cb9074d47b24034",
+        "ct0": "ddf3263e4b00953500b8be823fdb2c1170ebb0e8e243819e80d98da4335f0c0c31d2d46233c9607b6989cdcaac7693298757c95064b97d5c4fdebe91d0916521b8644f2c5cb1f58be268b2838f243507",
+        "guest_id": "v1%3A176400671062878242"
+      },
+      "usageCount": 0,
+      "lastUsed": "2025-11-24T10:43:15.448Z",
+      "rateLimitedUntil": null,
+      "notes": "Country code used by Oxylabs proxy."
     }
   ],
   "instructions": {
