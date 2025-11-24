@@ -32,7 +32,7 @@
       "rateLimitedUntil": null,
       "notes": "Primary account for KOL discovery - requires real X cookies. Country code used by Oxylabs proxy."
     },
-     {
+    {
       "id": "account_2",
       "username": "@justdotit93",
       "email": "justdoti.napkin429@slmail.me",
@@ -40,11 +40,11 @@
       "status": "active",
       "suspended": false,
       "cookies": {
-        "auth_token": "0b01d81486e6bb6a2eca588040d56f61cd5f65f4",
-        "ct0": "1ab440b0042c89b0eb39139acaa2ba90b8d5e672048e5925027a4c7209c3a0f8780691b4e87c811d40edf564e9f0a440f9e0acbcf985d14c879623c33670bbb0c3773a25be5a18f1ddfc41e53f4425c4",
-        "guest_id": "v1%3A176391575421801835"
+        "auth_token": "579e586d78c88044d861c9d0b18ef833f0d4471f",
+        "ct0": "ff09146f76243d136123a723a68472c88e219e47283dc87a38ab5f5010272934198264e26c472e8924a16aec58d14933142c0bc78c9363e73308f4987543b0f7fab7172f6513381877e42a3290715b53",
+        "guest_id": "v1%3A176399562047222821"
       },
-      "usageCount": 5,
+      "usageCount": 0,
       "lastUsed": "2025-11-24T10:43:15.448Z",
       "rateLimitedUntil": null,
       "notes": "Primary account for KOL discovery - requires real X cookies. Country code used by Oxylabs proxy."

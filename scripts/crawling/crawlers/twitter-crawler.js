@@ -385,8 +385,8 @@ export async function searchTweets(query, options = {}) {
       },
       maxConcurrency: 1,
       maxRequestRetries: 3,
-      requestHandlerTimeoutSecs: 60,
-      navigationTimeoutSecs: 90,
+      requestHandlerTimeoutSecs: 120,
+      navigationTimeoutSecs: 180,  // Increased for proxy latency
 
       // Set up response interceptor and cookies BEFORE navigation
       preNavigationHooks: [async ({ page }) => {
@@ -422,8 +422,8 @@ export async function searchTweets(query, options = {}) {
         try {
           // Navigate to search page
           await page.goto(request.url, {
-            waitUntil: 'domcontentloaded',
-            timeout: 30000,
+            waitUntil: 'networkidle',  // Wait for network to be idle (better for slow proxies)
+            timeout: 180000,  // 3 minutes for proxy latency
           });
 
           // Wait for results to load
