@@ -15,7 +15,7 @@ const worktreeRoot = path.resolve(__scriptsDir, '../../..');
 dotenv.config({ path: path.join(worktreeRoot, '.env') });
 
 import fs from 'fs';
-import { searchTweets, searchTweetsWebUnblocker, getUserProfileWebUnblocker } from '../crawlers/twitter-crawler.js';
+import { searchTweets, getUserProfileWebUnblocker } from '../crawlers/twitter-crawler.js';
 import { runAmplifiedKolSearch } from '../utils/amplified-search.js';
 import {
   loadConfig,
@@ -215,12 +215,13 @@ async function discoverByEngagementCrawlee() {
       // Get authenticated cookies
       const cookies = await authManager.getAuthenticatedCookies(account);
 
-      // Use Web Unblocker for reliable search on CI (same as profile fetching)
-      // Falls back to local Crawlee if Web Unblocker not available
-      const tweets = await searchTweetsWebUnblocker(queryConfig.query, {
+      // Use Crawlee with GraphQL interception (works both locally and on CI)
+      // Note: Web Unblocker has rate limits for search pages
+      const tweets = await searchTweets(queryConfig.query, {
         maxResults: searchConfig.settings.maxTweetsPerQuery || 50,
         cookies,
-        account
+        account,
+        proxyConfig: config.proxy // Use proxy on CI
       });
 
       // Mark account as used

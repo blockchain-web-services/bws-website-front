@@ -668,41 +668,23 @@ export async function searchTweetsWebUnblocker(query, options = {}) {
       ],
     });
 
-    // Prepare cookies
-    const cookieArray = [
-      {
-        name: 'auth_token',
-        value: accountToUse.cookies.auth_token,
-        domain: '.x.com',
-        path: '/',
-        httpOnly: true,
-        secure: true,
-        sameSite: 'None'
-      },
-      {
-        name: 'ct0',
-        value: accountToUse.cookies.ct0,
-        domain: '.x.com',
-        path: '/',
-        httpOnly: false,
-        secure: true,
-        sameSite: 'Lax'
-      }
-    ];
+    // Build cookie string for X-Oxylabs-Cookies header
+    // Web Unblocker requires cookies to be passed via header, not context.addCookies()
+    const cookieString = `auth_token=${accountToUse.cookies.auth_token}; ct0=${accountToUse.cookies.ct0}`;
 
-    // Create context with Web Unblocker headers
+    // Create context with Web Unblocker headers (including cookies)
     context = await browser.newContext({
       userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
       extraHTTPHeaders: {
         'X-Oxylabs-Render': 'html',
         'X-Oxylabs-Geo-Location': accountToUse.country || 'Spain',
+        'X-Oxylabs-Cookies': cookieString,  // Pass cookies via Oxylabs header
         'x-csrf-token': accountToUse.cookies.ct0,
         'Accept-Language': 'es-ES,es;q=0.9,en;q=0.8',
       },
       ignoreHTTPSErrors: true,
     });
 
-    await context.addCookies(cookieArray);
     const page = await context.newPage();
 
     // Build search URL
@@ -731,6 +713,51 @@ export async function searchTweetsWebUnblocker(query, options = {}) {
 
     // Extract tweets using HTML parser
     const tweets = await parseSearchResultsFromHTML(page);
+
+    // Debug: If no tweets found, capture page content
+    if (tweets.length === 0) {
+      console.log(`   🔍 DEBUG: No tweets found, checking page content...`);
+
+      // Check page title
+      const pageTitle = await page.title().catch(() => '');
+      console.log(`   🔍 Page title: "${pageTitle}"`);
+
+      // Check if we're on login page
+      const isLoginPage = await page.locator('input[name="session[username_or_email]"]').count() > 0;
+      console.log(`   🔍 Is login page: ${isLoginPage}`);
+
+      // Check for error messages
+      const errorMessages = await page.locator('text=/error|wrong|suspend/i').allTextContents();
+      if (errorMessages.length > 0) {
+        console.log(`   🔍 Error messages found: ${errorMessages.slice(0, 3).join(', ')}`);
+      }
+
+      // Count total articles on page
+      const articleCount = await page.locator('article').count();
+      console.log(`   🔍 Total <article> elements: ${articleCount}`);
+
+      // Check specifically for tweet articles
+      const tweetArticles = await page.locator('article[data-testid="tweet"]').count();
+      console.log(`   🔍 Tweet articles [data-testid="tweet"]: ${tweetArticles}`);
+
+      // Check for alternative tweet containers
+      const cellInnerDivs = await page.locator('[data-testid="cellInnerDiv"]').count();
+      console.log(`   🔍 Cell inner divs: ${cellInnerDivs}`);
+
+      // Capture page text snippet (first 500 chars)
+      const bodyText = await page.locator('body').textContent().catch(() => '');
+      const snippet = bodyText.slice(0, 500).replace(/\s+/g, ' ').trim();
+      console.log(`   🔍 Page text snippet: "${snippet}"`);
+
+      // Take screenshot for debugging
+      try {
+        const screenshotPath = `/tmp/search-debug-${Date.now()}.png`;
+        await page.screenshot({ path: screenshotPath, fullPage: true });
+        console.log(`   📸 Screenshot saved: ${screenshotPath}`);
+      } catch (e) {
+        console.log(`   ⚠️  Could not save screenshot: ${e.message}`);
+      }
+    }
 
     await context.close();
     await browser.close();
