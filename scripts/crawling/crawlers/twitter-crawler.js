@@ -345,17 +345,40 @@ export async function searchTweets(query, options = {}) {
     // Re-open the queue after drop
     const freshQueue = await RequestQueue.open(queueName);
 
+    // Build proxy URL if proxyConfig is provided
+    let proxyUrl = null;
+    if (proxyConfig && proxyConfig.enabled) {
+      const username = process.env.OXYLABS_USERNAME || proxyConfig.username;
+      const password = process.env.OXYLABS_PASSWORD || proxyConfig.password;
+      const country = account?.country || proxyConfig.country || 'es';
+
+      if (username && password && !username.includes('REPLACE')) {
+        proxyUrl = `http://customer-${username}-country-${country}:${password}@${proxyConfig.host}:${proxyConfig.port}`;
+        console.log(`   🌐 Using Oxylabs proxy with country: ${country}`);
+      }
+    }
+
+    // Build launch options
+    const launchOptions = {
+      headless: process.env.CRAWLEE_HEADLESS !== 'false',
+      args: [
+        '--disable-blink-features=AutomationControlled',
+        '--disable-dev-shm-usage',
+        '--no-sandbox',
+      ],
+    };
+
+    // Add proxy to launch options if available
+    if (proxyUrl) {
+      launchOptions.proxy = {
+        server: proxyUrl,
+      };
+    }
+
     const crawler = new PlaywrightCrawler({
       requestQueue: freshQueue,
       launchContext: {
-        launchOptions: {
-          headless: process.env.CRAWLEE_HEADLESS !== 'false',
-          args: [
-            '--disable-blink-features=AutomationControlled',
-            '--disable-dev-shm-usage',
-            '--no-sandbox',
-          ],
-        },
+        launchOptions,
       },
       browserPoolOptions: {
         useFingerprints: true,
