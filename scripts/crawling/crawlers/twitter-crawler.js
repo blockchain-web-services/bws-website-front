@@ -8,7 +8,7 @@
  * - Excessive setup/teardown overhead
  */
 
-import { PlaywrightCrawler } from 'crawlee';
+import { PlaywrightCrawler, RequestQueue } from 'crawlee';
 import { chromium } from 'playwright';
 import { parseUserProfile, parseSearchResults, parseFollowingList, parseUserTweets } from './graphql-parser.js';
 import { parseProfileFromHTML } from './html-parser.js';
@@ -295,9 +295,14 @@ export async function searchTweets(query, options = {}) {
   const { maxResults = 20, cookies, account, proxyConfig } = options;
   console.log(`🔍 Searching tweets: "${query}"`);
 
-  return new Promise((resolve, reject) => {
+  return new Promise(async (resolve, reject) => {
     const tweets = [];
     let isResolved = false;
+
+    // Create unique request queue for this search and purge it
+    const queueName = `search-${Date.now()}-${Math.random().toString(36).substring(7)}`;
+    const requestQueue = await RequestQueue.open(queueName);
+    await requestQueue.drop(); // Clear any stale requests
 
     // Prepare cookies array for browser context
     const cookiesArray = [];
@@ -337,7 +342,11 @@ export async function searchTweets(query, options = {}) {
       }
     }
 
+    // Re-open the queue after drop
+    const freshQueue = await RequestQueue.open(queueName);
+
     const crawler = new PlaywrightCrawler({
+      requestQueue: freshQueue,
       launchContext: {
         launchOptions: {
           headless: process.env.CRAWLEE_HEADLESS !== 'false',
