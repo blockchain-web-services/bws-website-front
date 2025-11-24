@@ -601,3 +601,150 @@ export async function getUserProfileWebUnblocker(username, options = {}) {
     return null;
   }
 }
+
+/**
+ * Search tweets using Oxylabs Web Unblocker
+ * This is the fallback when Crawlee + proxy fails
+ *
+ * @param {string} query - Search query
+ * @param {Object} options - Search options
+ * @param {number} options.maxResults - Maximum number of results (default: 20)
+ * @param {Object} options.cookies - Twitter cookies for authentication
+ * @param {Object} options.account - Account config with country
+ * @returns {Promise<Array>} Array of tweets
+ */
+export async function searchTweetsWebUnblocker(query, options = {}) {
+  const { maxResults = 20, cookies, account } = options;
+  console.log(`🔍 Searching tweets (Web Unblocker): "${query}"`);
+
+  // Load account config if not provided
+  let accountToUse = account;
+  if (!accountToUse && cookies) {
+    // Create minimal account object from cookies
+    accountToUse = { cookies, country: 'Spain' };
+  }
+  if (!accountToUse) {
+    try {
+      const configPath = path.join(__dirname, '../config/x-crawler-accounts.json');
+      const configData = fs.readFileSync(configPath, 'utf-8');
+      const config = JSON.parse(configData);
+      accountToUse = config.accounts.find(a => a.status === 'active' && !a.suspended);
+
+      if (!accountToUse) {
+        throw new Error('No active account found');
+      }
+    } catch (error) {
+      console.error(`   ❌ Failed to load account config: ${error.message}`);
+      return [];
+    }
+  }
+
+  // Get Oxylabs credentials
+  const oxyUsername = process.env.OXYLABS_USERNAME;
+  const oxyPassword = process.env.OXYLABS_PASSWORD;
+
+  if (!oxyUsername || !oxyPassword) {
+    console.error('   ❌ OXYLABS_USERNAME and OXYLABS_PASSWORD required for Web Unblocker');
+    return [];
+  }
+
+  let browser = null;
+  let context = null;
+
+  try {
+    // Launch browser with Web Unblocker proxy
+    console.log(`   🌐 Using Oxylabs Web Unblocker (country: ${accountToUse.country || 'Spain'})`);
+    browser = await chromium.launch({
+      headless: true,
+      proxy: {
+        server: 'https://unblock.oxylabs.io:60000',
+        username: oxyUsername,
+        password: oxyPassword
+      },
+      args: [
+        '--disable-blink-features=AutomationControlled',
+        '--disable-dev-shm-usage',
+        '--no-sandbox',
+      ],
+    });
+
+    // Prepare cookies
+    const cookieArray = [
+      {
+        name: 'auth_token',
+        value: accountToUse.cookies.auth_token,
+        domain: '.x.com',
+        path: '/',
+        httpOnly: true,
+        secure: true,
+        sameSite: 'None'
+      },
+      {
+        name: 'ct0',
+        value: accountToUse.cookies.ct0,
+        domain: '.x.com',
+        path: '/',
+        httpOnly: false,
+        secure: true,
+        sameSite: 'Lax'
+      }
+    ];
+
+    // Create context with Web Unblocker headers
+    context = await browser.newContext({
+      userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
+      extraHTTPHeaders: {
+        'X-Oxylabs-Render': 'html',
+        'X-Oxylabs-Geo-Location': accountToUse.country || 'Spain',
+        'x-csrf-token': accountToUse.cookies.ct0,
+        'Accept-Language': 'es-ES,es;q=0.9,en;q=0.8',
+      },
+      ignoreHTTPSErrors: true,
+    });
+
+    await context.addCookies(cookieArray);
+    const page = await context.newPage();
+
+    // Build search URL
+    const searchUrl = `https://x.com/search?q=${encodeURIComponent(query)}&src=typed_query&f=live`;
+
+    // Navigate to search page
+    console.log(`   🌐 Loading ${searchUrl}...`);
+    const startTime = Date.now();
+
+    await page.goto(searchUrl, {
+      waitUntil: 'networkidle',
+      timeout: 120000,
+    });
+
+    const loadTime = Date.now() - startTime;
+    console.log(`   ✅ Page loaded (${(loadTime / 1000).toFixed(1)}s)`);
+
+    // Wait for rendering
+    await page.waitForTimeout(3000);
+
+    // Try to scroll to load more results
+    for (let i = 0; i < 3; i++) {
+      await page.evaluate(() => window.scrollBy(0, 1000));
+      await page.waitForTimeout(1000);
+    }
+
+    // Extract tweets using HTML parser
+    const tweets = await parseSearchResultsFromHTML(page);
+
+    await context.close();
+    await browser.close();
+
+    console.log(`   ✅ Extracted ${tweets.length} tweets from HTML`);
+
+    return tweets.slice(0, maxResults);
+
+  } catch (error) {
+    console.error(`   ❌ Error searching tweets:`, error.message);
+
+    if (context) await context.close().catch(() => {});
+    if (browser) await browser.close().catch(() => {});
+
+    return [];
+  }
+}
