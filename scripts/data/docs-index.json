@@ -1,5 +1,5 @@
 {
-  "lastCrawl": "2025-11-24T02:43:39.955Z",
+  "lastCrawl": "2025-11-25T02:40:05.950Z",
   "totalPages": 14,
   "pages": [
     {
@@ -8,16 +8,15 @@
       "title": "Welcome! | BWS API Docs",
       "product": "General Documentation",
       "category": "Guide",
-      "summary": "Main landing page for BWS API documentation covering all products and services. Introduces Platform APIs (IPFS, Blockchain Save/Hash, NFT.zK) and Marketplace Solutions (Badges, Game Cube, ESG Credits, X Bot). Highlights the BWS Developer Grants program offering bounty payments, recognition, and API fees in $BWS tokens.",
+      "summary": "The main landing page for BWS API documentation, introducing Blockchain Web Services as a platform that makes blockchain technology accessible to non-technical users. It provides an overview of all Platform APIs (IPFS, Blockchain Save/Hash, NFT.zK) and Marketplace Solutions (Blockchain Badges, NFT Game Cube, ESG Credits, X Bot), plus details about the BWS Developer Grants program.",
       "keywords": [
-        "bws api",
         "blockchain web services",
+        "bws api",
+        "web3 integration",
         "developer grants",
-        "platform api",
-        "marketplace solutions",
         "nft game cube",
         "blockchain badges",
-        "web3"
+        "platform api"
       ],
       "codeExamples": [],
       "useCases": [
@@ -25,11 +24,11 @@
         "Upload images and JSON files to IPFS network",
         "Create NFTs for non-blockchain-expert users",
         "Issue secure digital credentials on blockchain",
-        "Engage sports fans with NFT-based rewards"
+        "Enable sports fans to own digital assets tied to game locations"
       ],
       "implementationSteps": [],
       "contentLength": 4035,
-      "fullContent": "BWS API Docs Ctrl k Contact Us Create Account Sign In More Welcome! Developer Grants Quick Start Platform Fees API How Tos Certificate Of Trust Media Assets PLATFORM APIs BWS.IPFS.Upload BWS.Blockchain.Save BWS.Blockchain.Hash BWS.NFT.zK Marketplace Solutions BWS.Blockchain.Badges BWS.NFT.GameCube BWS.ESG.Credits TELEGRAM BOTS X BOT Powered by GitBook On this page Platform API Marketplace Solutions BWS Developer Grants Was this helpful? Copy Welcome! Blockchain Web Services documentation. Blockchain Web Services (aka BWS) aims to transform the blockchain market by making innovative solutions accessible to a broad audience, including those without technical or Web3 experience. Read Blockchain Web Services&#x27;s White Paper . NFT Game Cube&#x27;s new marketplace solution launch! BWS’s NFT Game Cube lets sports fans own digital assets tied to specific sections of a sports field—not only football but chess, tennis, cricket, and many more. As real-time events unfold at their location during the game, fans earn points, unlocking exciting rewards while creating a new revenue stream for sports clubs, former athletes, influencers, and anyone with a market in the sports industry. Read the Launch Pitch . Platform API By leveraging the Blockchain Web Services API, developers can seamlessly integrate blockchain technology into their offerings, providing their target customers with blockchain innovative solutions without requiring Web3 expertise. Blockchain Save Easily and affordably store data on the blockchain while receiving a Certificate of Trust for enhanced transparency. Blockchain Hash A single API call to save data to the blockchain without passing your wallet or managing the transaction fees. IPFS Effortlessly upload images and JSON files to the IPFS network and use our IPFS gateway for reliable access. NFT.zk This solution is designed to create NFTs easily but also to transfer the ownership to non-blockchain-experts users that will now be able to experience the NFT revolution too. Marketplace Solutions Blockchain Web Services is not just an API but a set of platform protocols and development practices to enable the community to contribute and grow the solutions offering. The following solutions offer mass market blockchain use cases targeting end-customers without Web3 know-how or setup. Blockchain Badges Blockchain Badges elevate your credentialing system with secure, immutable digital recognition on the blockchain. NFT Game Cube Engage your fans and get a new revenue stream for your Sports Club by combining NFTs and Machine Learning. ESG Credits Assists financial institutions and system integrators in delivering environmental impact reporting to their digital channels. X Bot A Telegram bot that helps community groups boost engagement on X (formerly Twitter) and track project&#x27;s KOLs. BWS Developer Grants Recognizing the importance of building a vibrant developer ecosystem, we are excited to introduce the BWS Developer Grants—a program designed to incentivize developers to create tools and applications on top of our platform protocols, rewarding them for their contributions. The initiative will maintain a development fund to support growth efforts, focusing on fostering innovation within the BWS ecosystem. Bounty Payments Developers whose projects are selected for integration with BWS will receive bounty payments based on their complexity and impact. Recognition and Exposure Featured projects will be showcased on the BWS website, social media, and promotional channels, giving developers visibility and recognition within the blockchain community. Technical Support and Resources The BWS team will provide developers access to technical support, detailed documentation, and resources to streamline development. API Fees Once your application is published, you will receive a fee in $BWS tokens every time your APIs get called. Read the BWS White Paper to learn more about developer grants and $BWS tokenomics. Next Quick Start Last updated 12 days ago Was this helpful?",
+      "fullContent": "BWS API Docs Ctrl k Contact Us Create Account Sign In More Welcome! Developer Grants Quick Start Platform Fees API How Tos Certificate Of Trust Media Assets PLATFORM APIs BWS.IPFS.Upload BWS.Blockchain.Save BWS.Blockchain.Hash BWS.NFT.zK Marketplace Solutions BWS.Blockchain.Badges BWS.NFT.GameCube BWS.ESG.Credits TELEGRAM BOTS X BOT Powered by GitBook On this page Platform API Marketplace Solutions BWS Developer Grants Was this helpful? Copy Welcome! Blockchain Web Services documentation. Blockchain Web Services (aka BWS) aims to transform the blockchain market by making innovative solutions accessible to a broad audience, including those without technical or Web3 experience. Read Blockchain Web Services&#x27;s White Paper . NFT Game Cube&#x27;s new marketplace solution launch! BWS’s NFT Game Cube lets sports fans own digital assets tied to specific sections of a sports field—not only football but chess, tennis, cricket, and many more. As real-time events unfold at their location during the game, fans earn points, unlocking exciting rewards while creating a new revenue stream for sports clubs, former athletes, influencers, and anyone with a market in the sports industry. Read the Launch Pitch . Platform API By leveraging the Blockchain Web Services API, developers can seamlessly integrate blockchain technology into their offerings, providing their target customers with blockchain innovative solutions without requiring Web3 expertise. Blockchain Save Easily and affordably store data on the blockchain while receiving a Certificate of Trust for enhanced transparency. Blockchain Hash A single API call to save data to the blockchain without passing your wallet or managing the transaction fees. IPFS Effortlessly upload images and JSON files to the IPFS network and use our IPFS gateway for reliable access. NFT.zk This solution is designed to create NFTs easily but also to transfer the ownership to non-blockchain-experts users that will now be able to experience the NFT revolution too. Marketplace Solutions Blockchain Web Services is not just an API but a set of platform protocols and development practices to enable the community to contribute and grow the solutions offering. The following solutions offer mass market blockchain use cases targeting end-customers without Web3 know-how or setup. Blockchain Badges Blockchain Badges elevate your credentialing system with secure, immutable digital recognition on the blockchain. NFT Game Cube Engage your fans and get a new revenue stream for your Sports Club by combining NFTs and Machine Learning. ESG Credits Assists financial institutions and system integrators in delivering environmental impact reporting to their digital channels. X Bot A Telegram bot that helps community groups boost engagement on X (formerly Twitter) and track project&#x27;s KOLs. BWS Developer Grants Recognizing the importance of building a vibrant developer ecosystem, we are excited to introduce the BWS Developer Grants—a program designed to incentivize developers to create tools and applications on top of our platform protocols, rewarding them for their contributions. The initiative will maintain a development fund to support growth efforts, focusing on fostering innovation within the BWS ecosystem. Bounty Payments Developers whose projects are selected for integration with BWS will receive bounty payments based on their complexity and impact. Recognition and Exposure Featured projects will be showcased on the BWS website, social media, and promotional channels, giving developers visibility and recognition within the blockchain community. Technical Support and Resources The BWS team will provide developers access to technical support, detailed documentation, and resources to streamline development. API Fees Once your application is published, you will receive a fee in $BWS tokens every time your APIs get called. Read the BWS White Paper to learn more about developer grants and $BWS tokenomics. Next Quick Start Last updated 13 days ago Was this helpful?",
       "structuredContent": {
         "headings": [
           "Welcome!"
@@ -51,7 +50,7 @@
         ],
         "lists": []
       },
-      "lastIndexed": "2025-11-24T02:43:21.812Z",
+      "lastIndexed": "2025-11-25T02:39:47.661Z",
       "images": []
     },
     {
@@ -59,27 +58,26 @@
       "path": "/api-how-tos",
       "title": "API How Tos | BWS API Docs",
       "product": "General Documentation",
-      "category": "Guide",
-      "summary": "Navigation page providing access to API basics and tutorials. Covers API endpoint configuration, authentication methods, main API methods, and API response formats. Serves as an entry point to learn how to run BWS Solutions programmatically.",
+      "category": "Reference",
+      "summary": "Navigation page providing links to essential API documentation sections including API Endpoint, Authentication, Main API Methods, and API Responses. This page serves as a directory for developers to learn the basics of running BWS Solutions programmatically.",
       "keywords": [
         "api how to",
+        "api authentication",
         "api endpoint",
-        "authentication",
         "api methods",
         "api responses",
-        "tutorial",
-        "getting started"
+        "bws tutorial"
       ],
       "codeExamples": [],
       "useCases": [
-        "Learn API authentication for BWS services",
-        "Understand API endpoint configuration",
-        "Integrate BWS APIs into applications",
-        "Handle API responses programmatically"
+        "Learn API authentication methods",
+        "Understand main API methods available",
+        "Access API endpoint documentation",
+        "Review API response formats"
       ],
       "implementationSteps": [],
       "contentLength": 642,
-      "fullContent": "BWS API Docs Ctrl k Contact Us Create Account Sign In More Welcome! Quick Start Platform Fees API How Tos API Endpoint Authentication Main API Methods API Responses Certificate Of Trust Media Assets PLATFORM APIs BWS.IPFS.Upload BWS.Blockchain.Save BWS.Blockchain.Hash BWS.NFT.zK Marketplace Solutions BWS.Blockchain.Badges BWS.NFT.GameCube BWS.ESG.Credits TELEGRAM BOTS X BOT Powered by GitBook On this page Was this helpful? Copy API How Tos Learn the basics to run BWS Solutions programmatically. API Endpoint Authentication Main API Methods API Responses Previous Platform Fees Next API Endpoint Last updated 12 days ago Was this helpful?",
+      "fullContent": "BWS API Docs Ctrl k Contact Us Create Account Sign In More Welcome! Quick Start Platform Fees API How Tos API Endpoint Authentication Main API Methods API Responses Certificate Of Trust Media Assets PLATFORM APIs BWS.IPFS.Upload BWS.Blockchain.Save BWS.Blockchain.Hash BWS.NFT.zK Marketplace Solutions BWS.Blockchain.Badges BWS.NFT.GameCube BWS.ESG.Credits TELEGRAM BOTS X BOT Powered by GitBook On this page Was this helpful? Copy API How Tos Learn the basics to run BWS Solutions programmatically. API Endpoint Authentication Main API Methods API Responses Previous Platform Fees Next API Endpoint Last updated 13 days ago Was this helpful?",
       "structuredContent": {
         "headings": [
           "API How Tos"
@@ -89,7 +87,7 @@
         ],
         "lists": []
       },
-      "lastIndexed": "2025-11-24T02:43:21.812Z",
+      "lastIndexed": "2025-11-25T02:39:47.661Z",
       "images": []
     },
     {
@@ -98,25 +96,25 @@
       "title": "Certificate Of Trust | BWS API Docs",
       "product": "General Documentation",
       "category": "Reference",
-      "summary": "Documentation for blockchain-verified Certificate of Trust provided by all BWS Solutions. Explains how certificates demonstrate authenticity, trust, and transparency to customers. Generated automatically after each operation completion with transaction details in shareable format.",
+      "summary": "Documentation page explaining the Certificate of Trust feature that BWS provides for all blockchain transactions. Every completed operation generates a blockchain-verified certificate showing transaction information in an easily shareable format to demonstrate authenticity, trust, and transparency to customers.",
       "keywords": [
         "certificate of trust",
         "blockchain verification",
-        "proof of registry",
-        "transaction certificate",
+        "transaction proof",
+        "bws proof of registry",
         "transparency",
         "authenticity"
       ],
       "codeExamples": [],
       "useCases": [
         "Demonstrate transaction authenticity to customers",
-        "Share blockchain proof of registry with stakeholders",
-        "Verify blockchain transaction transparency",
-        "Provide immutable proof of data storage"
+        "Share blockchain verification certificates",
+        "Provide proof of registry for blockchain operations",
+        "Enhance transparency in blockchain transactions"
       ],
       "implementationSteps": [],
       "contentLength": 944,
-      "fullContent": "BWS API Docs Ctrl k Contact Us Create Account Sign In More Welcome! Quick Start Platform Fees API How Tos Certificate Of Trust Media Assets PLATFORM APIs BWS.IPFS.Upload BWS.Blockchain.Save BWS.Blockchain.Hash BWS.NFT.zK Marketplace Solutions BWS.Blockchain.Badges BWS.NFT.GameCube BWS.ESG.Credits TELEGRAM BOTS X BOT Powered by GitBook On this page Was this helpful? Copy Certificate Of Trust Easy to share blockchain transaction Certificate of Trust Every BWS Solution provides a blockchain-verified Certificate of Trust. Use this certificate to demonstrate your customer&#x27;s authenticity, trust, and transparency. When an operation is completed, a Certificate of Trust is generated as part of the results. This certificate shows your transaction&#x27;s relevant information in a format you can easily share with your customers. BWS Proof of Registry Previous Error Status Codes Next Media Assets Last updated 12 days ago Was this helpful?",
+      "fullContent": "BWS API Docs Ctrl k Contact Us Create Account Sign In More Welcome! Quick Start Platform Fees API How Tos Certificate Of Trust Media Assets PLATFORM APIs BWS.IPFS.Upload BWS.Blockchain.Save BWS.Blockchain.Hash BWS.NFT.zK Marketplace Solutions BWS.Blockchain.Badges BWS.NFT.GameCube BWS.ESG.Credits TELEGRAM BOTS X BOT Powered by GitBook On this page Was this helpful? Copy Certificate Of Trust Easy to share blockchain transaction Certificate of Trust Every BWS Solution provides a blockchain-verified Certificate of Trust. Use this certificate to demonstrate your customer&#x27;s authenticity, trust, and transparency. When an operation is completed, a Certificate of Trust is generated as part of the results. This certificate shows your transaction&#x27;s relevant information in a format you can easily share with your customers. BWS Proof of Registry Previous Error Status Codes Next Media Assets Last updated 13 days ago Was this helpful?",
       "structuredContent": {
         "headings": [
           "Certificate Of Trust"
@@ -127,7 +125,7 @@
         ],
         "lists": []
       },
-      "lastIndexed": "2025-11-24T02:43:21.812Z",
+      "lastIndexed": "2025-11-25T02:39:47.661Z",
       "images": []
     },
     {
@@ -136,27 +134,39 @@
       "title": "BWS.Blockchain.Badges | BWS API Docs",
       "product": "Blockchain Badges",
       "category": "Marketplace Solution",
-      "summary": "Marketplace solution for issuing, managing, and verifying digital credentials on blockchain. Leverages blockchain's immutable and transparent nature to add trust layers to achievements. Provides both user interface dashboard and API for credential management.",
+      "summary": "Overview page for BWS.Blockchain.Badges marketplace solution that revolutionizes how organizations issue, manage, and verify digital credentials using blockchain technology. The solution provides both a user interface dashboard and API for issuing blockchain-backed badges with immutable and transparent verification across platforms.",
       "keywords": [
         "blockchain badges",
         "digital credentials",
-        "badges api",
-        "credentialing system",
-        "achievements",
-        "verification",
-        "marketplace solution"
+        "credential verification",
+        "badge issuing",
+        "achievement recognition",
+        "immutable credentials"
       ],
       "codeExamples": [],
       "useCases": [
-        "Issue digital credentials to students or employees",
-        "Verify achievements across multiple platforms",
-        "Manage organizational recognition programs",
-        "Create blockchain-backed certifications",
-        "Build custom credentialing solutions via API"
+        "Issue digital credentials for individual achievements",
+        "Verify credentials across multiple platforms",
+        "Manage organizational credentialing systems",
+        "Create blockchain-backed certificates",
+        "Provide tamper-proof achievement recognition"
       ],
-      "implementationSteps": [],
+      "implementationSteps": [
+        {
+          "title": "Start issuing credentials",
+          "description": "Check the BWS dashboard to begin issuing badges using the provided user interface"
+        },
+        {
+          "title": "Build custom solution",
+          "description": "Use the Badges API to integrate credential issuing into your own application"
+        },
+        {
+          "title": "Get support",
+          "description": "Contact BWS team if you need assistance with implementation"
+        }
+      ],
       "contentLength": 1365,
-      "fullContent": "BWS API Docs Ctrl k Contact Us Create Account Sign In More Welcome! Quick Start Platform Fees API How Tos Certificate Of Trust Media Assets PLATFORM APIs BWS.IPFS.Upload BWS.Blockchain.Save BWS.Blockchain.Hash BWS.NFT.zK Marketplace Solutions BWS.Blockchain.Badges Badges User Interface Badges API BWS.NFT.GameCube BWS.ESG.Credits TELEGRAM BOTS X BOT Powered by GitBook On this page Was this helpful? Copy Marketplace Solutions BWS.Blockchain.Badges Seamlessly issue, manage, and verify digital credentials. Author Status BWS User Interface Git BWS Ready blockchain-web-services/bws-backoffice-website-badges BWS.Blockchain.Badges solution revolutionizes how organizations recognize and validate individual achievements by leveraging blockchain technology&#x27;s immutable and transparent nature. By integrating blockchain into the credentialing process, BWS.Blockchain.Badges ensure each badge carries an additional layer of trust, making every achievement recognizable and verifiable across platforms. Quick Start Check out the following sections to start issuing badges using the provided BWS solution User Interface or the solution API. Start issuing credentials, check our dashboard. Build your own solution, check our Badges API Need some help? Contact us. Previous NFT Attributes (traits) Next Badges User Interface Last updated 12 days ago Was this helpful?",
+      "fullContent": "BWS API Docs Ctrl k Contact Us Create Account Sign In More Welcome! Quick Start Platform Fees API How Tos Certificate Of Trust Media Assets PLATFORM APIs BWS.IPFS.Upload BWS.Blockchain.Save BWS.Blockchain.Hash BWS.NFT.zK Marketplace Solutions BWS.Blockchain.Badges Badges User Interface Badges API BWS.NFT.GameCube BWS.ESG.Credits TELEGRAM BOTS X BOT Powered by GitBook On this page Was this helpful? Copy Marketplace Solutions BWS.Blockchain.Badges Seamlessly issue, manage, and verify digital credentials. Author Status BWS User Interface Git BWS Ready blockchain-web-services/bws-backoffice-website-badges BWS.Blockchain.Badges solution revolutionizes how organizations recognize and validate individual achievements by leveraging blockchain technology&#x27;s immutable and transparent nature. By integrating blockchain into the credentialing process, BWS.Blockchain.Badges ensure each badge carries an additional layer of trust, making every achievement recognizable and verifiable across platforms. Quick Start Check out the following sections to start issuing badges using the provided BWS solution User Interface or the solution API. Start issuing credentials, check our dashboard. Build your own solution, check our Badges API Need some help? Contact us. Previous NFT Attributes (traits) Next Badges User Interface Last updated 13 days ago Was this helpful?",
       "structuredContent": {
         "headings": [],
         "paragraphs": [
@@ -166,7 +176,7 @@
         ],
         "lists": []
       },
-      "lastIndexed": "2025-11-24T02:43:21.812Z",
+      "lastIndexed": "2025-11-25T02:39:47.661Z",
       "images": [
         {
           "originalUrl": "https://docs.bws.ninja/~gitbook/image?url=https%3A%2F%2F2325872365-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FS3Z6uUpcVa8WKPcDlZlN%252Fuploads%252Fgit-blob-718852f5344525cfb3ab849ca118a16ec8a10148%252FBadges_UI_Overall.png%3Falt%3Dmedia&width=490&dpr=4&quality=100&sign=f400a3d0&sv=2",
@@ -194,27 +204,27 @@
       "title": "BWS.ESG.Credits | BWS API Docs",
       "product": "ESG Credits",
       "category": "Marketplace Solution",
-      "summary": "Solution for financial institutions to integrate ESG impact reporting into digital channels and investment reporting. Supports ICMA frameworks and custom taxonomies with blockchain integration for secure, immutable storage. Prevents double-counting and ensures transparency for green investments and certification bodies.",
+      "summary": "Documentation for BWS.ESG.Credits solution designed to help financial institutions integrate ESG impact reporting into their digital channels and investment reporting. The solution supports ICMA frameworks, enables creation of detailed ESG impact reports, and integrates with blockchain for secure, immutable storage and certification of green investments.",
       "keywords": [
         "esg credits",
-        "environmental impact",
+        "environmental impact reporting",
         "green assets",
         "financial institutions",
-        "icma framework",
-        "impact reporting",
-        "sustainability"
+        "icma frameworks",
+        "impact calculation",
+        "blockchain certification"
       ],
       "codeExamples": [],
       "useCases": [
-        "Generate ESG impact reports for bank customers",
-        "Track green asset investments with blockchain certification",
-        "Publish quality-assured impact data for certification bodies",
-        "Integrate ESG benefits into digital banking channels",
-        "Prevent double-counting of green investments"
+        "Integrate ESG impact benefits into digital banking channels",
+        "Create detailed ESG impact reports for stakeholders",
+        "Publish quality-assured impact data from certification bodies",
+        "Prevent double-counting of green investments",
+        "Provide transparent investment reporting for institutional investors"
       ],
       "implementationSteps": [],
       "contentLength": 1481,
-      "fullContent": "BWS API Docs Ctrl k Contact Us Create Account Sign In More Welcome! Quick Start Platform Fees API How Tos Certificate Of Trust Media Assets PLATFORM APIs BWS.IPFS.Upload BWS.Blockchain.Save BWS.Blockchain.Hash BWS.NFT.zK Marketplace Solutions BWS.Blockchain.Badges BWS.NFT.GameCube BWS.ESG.Credits Solution Overview ESG Credits API TELEGRAM BOTS X BOT Powered by GitBook On this page Was this helpful? Copy Marketplace Solutions BWS.ESG.Credits For financial institutions that want to provide positive ESG impact reporting in their digital channels and investment reporting Author Status Contact Support BWS Ready https://www.greenassets.io/#contact-us BWS.ESG.Credits solution is designed to help financial institutions quickly integrate ESG impact benefits into their digital channels and investment reporting by leveraging investments in green assets. It serves banks, investment advisors, institutional investors, venture capitalists, and issuers of green assets by enabling the creation of detailed ESG impact reports for various stakeholders. Certification bodies can also use the API to publish quality-assured impact data. The solution supports ICMA frameworks and custom taxonomies, allows flexible impact calculations, and integrates seamlessly with blockchain for secure, immutable storage and certification of green investments, preventing double-counting and ensuring transparency. Previous Live Events Next Solution Overview Last updated 12 days ago Was this helpful?",
+      "fullContent": "BWS API Docs Ctrl k Contact Us Create Account Sign In More Welcome! Quick Start Platform Fees API How Tos Certificate Of Trust Media Assets PLATFORM APIs BWS.IPFS.Upload BWS.Blockchain.Save BWS.Blockchain.Hash BWS.NFT.zK Marketplace Solutions BWS.Blockchain.Badges BWS.NFT.GameCube BWS.ESG.Credits Solution Overview ESG Credits API TELEGRAM BOTS X BOT Powered by GitBook On this page Was this helpful? Copy Marketplace Solutions BWS.ESG.Credits For financial institutions that want to provide positive ESG impact reporting in their digital channels and investment reporting Author Status Contact Support BWS Ready https://www.greenassets.io/#contact-us BWS.ESG.Credits solution is designed to help financial institutions quickly integrate ESG impact benefits into their digital channels and investment reporting by leveraging investments in green assets. It serves banks, investment advisors, institutional investors, venture capitalists, and issuers of green assets by enabling the creation of detailed ESG impact reports for various stakeholders. Certification bodies can also use the API to publish quality-assured impact data. The solution supports ICMA frameworks and custom taxonomies, allows flexible impact calculations, and integrates seamlessly with blockchain for secure, immutable storage and certification of green investments, preventing double-counting and ensuring transparency. Previous Live Events Next Solution Overview Last updated 13 days ago Was this helpful?",
       "structuredContent": {
         "headings": [],
         "paragraphs": [
@@ -224,7 +234,7 @@
         ],
         "lists": []
       },
-      "lastIndexed": "2025-11-24T02:43:21.812Z",
+      "lastIndexed": "2025-11-25T02:39:47.661Z",
       "images": []
     },
     {
@@ -233,7 +243,7 @@
       "title": "BWS.NFT.GameCube | BWS API Docs",
       "product": "Fan Game Cube",
       "category": "Marketplace Solution",
-      "summary": "B2B2C platform solution creating new revenue streams for sports clubs worldwide. Enables fans to own digital assets tied to specific sections of sports fields across multiple sports (football, chess, tennis, cricket). Fans earn points and rewards as real-time events unfold at their location.",
+      "summary": "Overview page for BWS.NFT.GameCube, a B2B2C platform solution that creates new revenue streams for sports clubs worldwide. The scalable solution allows fans to own digital assets tied to specific sections of sports fields across multiple sports, earning points and rewards as real-time events unfold at their location.",
       "keywords": [
         "nft game cube",
         "sports nft",
@@ -241,19 +251,19 @@
         "revenue stream",
         "sports club",
         "digital assets",
-        "b2b2c platform"
+        "sports industry"
       ],
       "codeExamples": [],
       "useCases": [
-        "Create NFT-based fan engagement for soccer clubs",
-        "Generate revenue streams for sports organizations",
-        "Enable fans to own field sections as digital assets",
-        "Run multiple sports events and tournaments",
-        "Reward fans based on real-time game events"
+        "Enable fans to own sections of sports fields as NFTs",
+        "Create new revenue streams for sports clubs",
+        "Organize weekend chess tournaments with NFT rewards",
+        "Run soccer VIP finals with fan engagement",
+        "Manage cricket yearly seasons with point-based rewards"
       ],
       "implementationSteps": [],
       "contentLength": 887,
-      "fullContent": "BWS API Docs Ctrl k Contact Us Create Account Sign In More Welcome! Quick Start Platform Fees API How Tos Certificate Of Trust Media Assets PLATFORM APIs BWS.IPFS.Upload BWS.Blockchain.Save BWS.Blockchain.Hash BWS.NFT.zK Marketplace Solutions BWS.Blockchain.Badges BWS.NFT.GameCube NFT Game Overview NFT Game Cube API BWS.ESG.Credits TELEGRAM BOTS X BOT Powered by GitBook On this page Was this helpful? Copy Marketplace Solutions BWS.NFT.GameCube Building New Revenue Streams for the Sports Industry NFT Game Cube is a scalable solution where fans can play multiple sports and hold a weekend chess tournament, a soccer VIP final, and a cricket yearly season. It&#x27;s a new sports fan experience. A B2B2C platform solution that provides a new revenue stream for any sports club worldwide . Previous Awards (Credentials) Next NFT Game Overview Last updated 12 days ago Was this helpful?",
+      "fullContent": "BWS API Docs Ctrl k Contact Us Create Account Sign In More Welcome! Quick Start Platform Fees API How Tos Certificate Of Trust Media Assets PLATFORM APIs BWS.IPFS.Upload BWS.Blockchain.Save BWS.Blockchain.Hash BWS.NFT.zK Marketplace Solutions BWS.Blockchain.Badges BWS.NFT.GameCube NFT Game Overview NFT Game Cube API BWS.ESG.Credits TELEGRAM BOTS X BOT Powered by GitBook On this page Was this helpful? Copy Marketplace Solutions BWS.NFT.GameCube Building New Revenue Streams for the Sports Industry NFT Game Cube is a scalable solution where fans can play multiple sports and hold a weekend chess tournament, a soccer VIP final, and a cricket yearly season. It&#x27;s a new sports fan experience. A B2B2C platform solution that provides a new revenue stream for any sports club worldwide . Previous Awards (Credentials) Next NFT Game Overview Last updated 13 days ago Was this helpful?",
       "structuredContent": {
         "headings": [],
         "paragraphs": [
@@ -261,7 +271,7 @@
         ],
         "lists": []
       },
-      "lastIndexed": "2025-11-24T02:43:21.812Z",
+      "lastIndexed": "2025-11-25T02:39:47.661Z",
       "images": []
     },
     {
@@ -270,25 +280,25 @@
       "title": "Media Assets | BWS API Docs",
       "product": "General Documentation",
       "category": "Media",
-      "summary": "Media assets and brand guidelines page for BWS. Provides access to BWS logo files, snapshots, and brand guideline PDF document (version 0.1, 191KB). Contains resources for developers and partners to properly represent BWS brand identity.",
+      "summary": "Media assets page providing access to BWS branding materials and guidelines. The page includes a downloadable BWS Brand Guideline PDF document and links to logo resources and snapshots for proper brand representation.",
       "keywords": [
         "media assets",
-        "bws logo",
         "brand guidelines",
-        "snapshots",
+        "bws logo",
         "branding",
-        "logo files"
+        "marketing materials",
+        "logo snapshots"
       ],
       "codeExamples": [],
       "useCases": [
-        "Download BWS logos for partner integrations",
-        "Access brand guidelines for marketing materials",
-        "Obtain official BWS visual assets",
-        "Ensure consistent brand representation"
+        "Download BWS brand guidelines for marketing materials",
+        "Access official BWS logos for integration",
+        "Review branding standards for partnerships",
+        "Obtain media assets for promotional content"
       ],
       "implementationSteps": [],
       "contentLength": 555,
-      "fullContent": "BWS API Docs Ctrl k Contact Us Create Account Sign In More Welcome! Quick Start Platform Fees API How Tos Certificate Of Trust Media Assets BWS Logo Snapshots PLATFORM APIs BWS.IPFS.Upload BWS.Blockchain.Save BWS.Blockchain.Hash BWS.NFT.zK Marketplace Solutions BWS.Blockchain.Badges BWS.NFT.GameCube BWS.ESG.Credits TELEGRAM BOTS X BOT Powered by GitBook On this page Was this helpful? Copy Media Assets Guidelines 191KB BWS Brand Guideline v0.1.pdf PDF Download Open Previous Certificate Of Trust Next BWS Logo Last updated 12 days ago Was this helpful?",
+      "fullContent": "BWS API Docs Ctrl k Contact Us Create Account Sign In More Welcome! Quick Start Platform Fees API How Tos Certificate Of Trust Media Assets BWS Logo Snapshots PLATFORM APIs BWS.IPFS.Upload BWS.Blockchain.Save BWS.Blockchain.Hash BWS.NFT.zK Marketplace Solutions BWS.Blockchain.Badges BWS.NFT.GameCube BWS.ESG.Credits TELEGRAM BOTS X BOT Powered by GitBook On this page Was this helpful? Copy Media Assets Guidelines 191KB BWS Brand Guideline v0.1.pdf PDF Download Open Previous Certificate Of Trust Next BWS Logo Last updated 13 days ago Was this helpful?",
       "structuredContent": {
         "headings": [
           "Media Assets"
@@ -296,7 +306,7 @@
         "paragraphs": [],
         "lists": []
       },
-      "lastIndexed": "2025-11-24T02:43:21.812Z",
+      "lastIndexed": "2025-11-25T02:39:47.661Z",
       "images": []
     },
     {
@@ -305,41 +315,39 @@
       "title": "Platform Fees | BWS API Docs",
       "product": "General Documentation",
       "category": "Reference",
-      "summary": "Explains BWS platform fee structure and blockchain transaction costs. Covers test network free transactions (100 without credit card, 1000 with subscription), real-time USD conversion for mainnet fees, and $BWS token requirements. Uses 0.01 USD as minimum billable unit called Blockchain Credit Fee.",
+      "summary": "Detailed explanation of BWS platform fees and pricing model. BWS handles all blockchain network fees by converting USD to required network tokens in real-time, charging a minimum of 0.01 USD per blockchain credit fee unit. Test networks provide free transactions (100 without credit card, 1000 with subscription) and all solutions require $BWS tokens for execution.",
       "keywords": [
         "platform fees",
         "blockchain fees",
-        "pricing",
-        "billing",
-        "bws tokens",
+        "pricing calculator",
         "network fees",
-        "credit usage",
-        "subscription"
+        "bws tokens",
+        "billing",
+        "transaction costs"
       ],
       "codeExamples": [],
       "useCases": [
-        "Test blockchain solutions for free on Mumbai or Sepolia",
-        "Run 100 NFT creations with automatic fee calculation",
-        "Monitor monthly blockchain credit usage",
-        "Convert USD to network tokens automatically",
-        "Track billing for blockchain operations"
+        "Calculate costs for creating 100 NFTs on Polygon blockchain",
+        "Test blockchain solutions for free using Mumbai or Sepolia networks",
+        "Pay blockchain fees without managing Web3 wallets",
+        "Track monthly blockchain credit usage in billing dashboard"
       ],
       "implementationSteps": [
         {
-          "title": "Test for Free",
-          "description": "Use Mumbai or Sepolia test networks to run 100 transactions without credit card or 1000 with subscription, no charges applied"
+          "title": "Test for free",
+          "description": "Use Mumbai or Sepolia test networks to run 100 blockchain transactions for free without credit card, or 1000 with subscription"
         },
         {
-          "title": "Move to Production",
-          "description": "Enter credit card details for subscription mode, BWS handles real-time USD conversion to network tokens"
+          "title": "Subscribe for mainnet",
+          "description": "Enter credit card details to move into subscription mode for production blockchain networks"
         },
         {
-          "title": "Monitor Usage",
-          "description": "Check Billing menu for credit usage, charged in 0.01 USD Blockchain Credit Fee units on next bill"
+          "title": "Monitor usage",
+          "description": "Check Billing menu to review current monthly cost and blockchain credit fee usage"
         }
       ],
       "contentLength": 3129,
-      "fullContent": "BWS API Docs Ctrl k Contact Us Create Account Sign In More Welcome! Quick Start Platform Fees Fees Calculator API How Tos Certificate Of Trust Media Assets PLATFORM APIs BWS.IPFS.Upload BWS.Blockchain.Save BWS.Blockchain.Hash BWS.NFT.zK Marketplace Solutions BWS.Blockchain.Badges BWS.NFT.GameCube BWS.ESG.Credits TELEGRAM BOTS X BOT Powered by GitBook On this page Fees Calculator Pricing Example How do I pay those Fees? Was this helpful? Copy Platform Fees We take care of everything. Calling blockchain smart contracts requires funds: “It is the fuel that allows it to operate”. Fees compensate miners for their computational efforts in processing and securing transactions on the network. They are fundamental to the blockchain&#x27;s sustainability, security, and efficiency, ensuring the network remains robust and decentralized. Blockchain Web Services (BWS) aims to transform the blockchain market by making innovative solutions accessible to a broad audience, including those without technical or Web3 experience. Fees Calculator Interacting with blockchain requires paying fees, so it&#x27;s important to understand how Blockchain Web Services manages those fees to offer our customers the best user experience. In any scenario, we handle all the blockchain complexities. You interact with the blockchain(s) we support using our simplified API, and you don&#x27;t need to worry about anything other than naming the blockchain you want to use. If you haven&#x27;t entered your credit card, you can test our blockchain solutions for free using the Mumbai or Sepolia test networks. You can run 100 blockchain transactions for free. We use our token pools to pay network fees, and you are not charged. Using test networks does not consume $BWS tokens. Once you move into subscription mode by entering your credit card details, You can run 1000 testnet transactions for free. When running on main networks, we do real-time trading, convert US dollars to the required network token, and pay the fees for you. You will then be charged for those fees on your next bill, using 0.01 USD as the minimum billable unit. Every solution requires $BWS tokens to execute and fund the developer&#x27;s community and platform maintenance. Please read the platform White Paper to know more about the $BWS token and its tokenomics. Pricing Example Suppose you subscribe to Blockchain Web Services and want to create 100 new NFTs on the Polygon blockchain using BWS.NFT.zK to create the NFTs, and BWS.IPFS.Upload to save your images to IPFS. Creating those 100 NFTs will cost you: Copy 100 IPFS Images, included = 0 USD 100 NFTs x 0.02 Network Fee = 2 USD Your next bill will show an extra 2 USD to your monthly plan. How do I pay those Fees? To check your current monthly cost, go to the Billing menu and check your credit usage. BLOCKCHAIN CREDIT FEE We use the Blockchain Credit Fee as the minimum billable unit, 0.01 USD. If, for example, you spend 2 USD creating NFTs, we will add 200 blockchain credit fee units to your next bill. Credits Usage balance. Previous Quick Start Next API How Tos Last updated 12 days ago Was this helpful?",
+      "fullContent": "BWS API Docs Ctrl k Contact Us Create Account Sign In More Welcome! Quick Start Platform Fees Fees Calculator API How Tos Certificate Of Trust Media Assets PLATFORM APIs BWS.IPFS.Upload BWS.Blockchain.Save BWS.Blockchain.Hash BWS.NFT.zK Marketplace Solutions BWS.Blockchain.Badges BWS.NFT.GameCube BWS.ESG.Credits TELEGRAM BOTS X BOT Powered by GitBook On this page Fees Calculator Pricing Example How do I pay those Fees? Was this helpful? Copy Platform Fees We take care of everything. Calling blockchain smart contracts requires funds: “It is the fuel that allows it to operate”. Fees compensate miners for their computational efforts in processing and securing transactions on the network. They are fundamental to the blockchain&#x27;s sustainability, security, and efficiency, ensuring the network remains robust and decentralized. Blockchain Web Services (BWS) aims to transform the blockchain market by making innovative solutions accessible to a broad audience, including those without technical or Web3 experience. Fees Calculator Interacting with blockchain requires paying fees, so it&#x27;s important to understand how Blockchain Web Services manages those fees to offer our customers the best user experience. In any scenario, we handle all the blockchain complexities. You interact with the blockchain(s) we support using our simplified API, and you don&#x27;t need to worry about anything other than naming the blockchain you want to use. If you haven&#x27;t entered your credit card, you can test our blockchain solutions for free using the Mumbai or Sepolia test networks. You can run 100 blockchain transactions for free. We use our token pools to pay network fees, and you are not charged. Using test networks does not consume $BWS tokens. Once you move into subscription mode by entering your credit card details, You can run 1000 testnet transactions for free. When running on main networks, we do real-time trading, convert US dollars to the required network token, and pay the fees for you. You will then be charged for those fees on your next bill, using 0.01 USD as the minimum billable unit. Every solution requires $BWS tokens to execute and fund the developer&#x27;s community and platform maintenance. Please read the platform White Paper to know more about the $BWS token and its tokenomics. Pricing Example Suppose you subscribe to Blockchain Web Services and want to create 100 new NFTs on the Polygon blockchain using BWS.NFT.zK to create the NFTs, and BWS.IPFS.Upload to save your images to IPFS. Creating those 100 NFTs will cost you: Copy 100 IPFS Images, included = 0 USD 100 NFTs x 0.02 Network Fee = 2 USD Your next bill will show an extra 2 USD to your monthly plan. How do I pay those Fees? To check your current monthly cost, go to the Billing menu and check your credit usage. BLOCKCHAIN CREDIT FEE We use the Blockchain Credit Fee as the minimum billable unit, 0.01 USD. If, for example, you spend 2 USD creating NFTs, we will add 200 blockchain credit fee units to your next bill. Credits Usage balance. Previous Quick Start Next API How Tos Last updated 13 days ago Was this helpful?",
       "structuredContent": {
         "headings": [
           "Platform Fees"
@@ -364,7 +372,7 @@
         ],
         "lists": []
       },
-      "lastIndexed": "2025-11-24T02:43:21.812Z",
+      "lastIndexed": "2025-11-25T02:39:47.661Z",
       "images": []
     },
     {
@@ -373,57 +381,55 @@
       "title": "Quick Start | BWS API Docs",
       "product": "General Documentation",
       "category": "Guide",
-      "summary": "Quick start tutorial demonstrating how to write \"Hello World!\" to Matchain blockchain using BWS.Blockchain.Hash solution. Covers API key authentication, making POST requests, checking job status, and receiving blockchain receipts with Certificate of Trust. Provides complete code examples in curl, JavaScript, and Python.",
+      "summary": "Quick start tutorial demonstrating how to write \"Hello World!\" to the Matchain blockchain using BWS.Blockchain.Hash solution. The guide walks through API authentication, making the first API request to save data, and checking job status to receive blockchain receipt and Certificate of Trust.",
       "keywords": [
         "quick start",
         "hello world",
         "blockchain hash",
+        "api tutorial",
         "matchain",
-        "api key",
-        "tutorial",
         "getting started",
-        "code examples"
+        "api key"
       ],
       "codeExamples": [
         {
           "language": "curl",
           "code": "curl --location 'https://api.bws.ninja/v1/smart-contracts/call' \\\n--header 'X-Api-Key: API-KEY' \\\n--header 'Content-Type: application/json' \\\n--data '{\n  \"solution\": \"BWS.Blockchain.Hash\",\n  \"version\": 1,\n  \"network\": \"matchain\",\n  \"operation\": \"insert\",\n  \"parameters\": {\n    \"key\": \"timestamp: 1736418591440\",\n    \"value\": \"Hola\"\n  }\n}'",
-          "description": "Write 'Hello World!' to Matchain blockchain using BWS.Blockchain.Hash solution"
-        },
-        {
-          "language": "javascript",
-          "code": "var settings = {\n  \"url\": \"https://api.bws.ninja/v1/call\",\n  \"method\": \"POST\",\n  \"timeout\": 0,\n  \"headers\": {\n    \"X-Api-Key\": \"API-KEY\",\n    \"Content-Type\": \"application/json\"\n  },\n  \"data\": JSON.stringify({\n    \"solution\": \"BWS.Blockchain.Hash\",\n    \"version\": 1,\n    \"network\": \"matchain\",\n    \"operation\": \"insert\",\n    \"parameters\": {\n      \"key\": \"timestamp: 1736418591440\",\n      \"value\": \"Hola\"\n    }\n  }),\n};\n$.ajax(settings).done(function (response) {\n  console.log(response);\n});",
-          "description": "JavaScript example using jQuery AJAX to insert data to blockchain"
+          "description": "Write 'Hello World!' to Matchain blockchain without managing network fees or Web3 wallets"
         },
         {
           "language": "curl",
           "code": "curl --location 'https://api.bws.ninja/v1/fetch' \\\n--header 'X-Api-Key: API-KEY' \\\n--header 'Content-Type: application/json' \\\n--data '{\n  \"jobId\": \"59d0f46b-0b58-4972-8aca-51d06f69f25e\"\n}'",
-          "description": "Fetch blockchain job status and results using jobId from previous call"
+          "description": "Fetch blockchain job status and results using the jobId returned from the previous call"
+        },
+        {
+          "language": "javascript",
+          "code": "var settings = {\n  \"url\": \"https://api.bws.ninja/v1/call\",\n  \"method\": \"POST\",\n  \"timeout\": 0,\n  \"headers\": {\n    \"X-Api-Key\": \"API-KEY\",\n    \"Content-Type\": \"application/json\"\n  },\n  \"data\": JSON.stringify({\n    \"solution\": \"BWS.Blockchain.Hash\",\n    \"version\": 1,\n    \"network\": \"matchain\",\n    \"operation\": \"insert\",\n    \"parameters\": {\n      \"key\": \"timestamp: 1736418591440\",\n      \"value\": \"Hola\"\n    }\n  }),\n};\n\n$.ajax(settings).done(function (response) {\n  console.log(response);\n});",
+          "description": "JavaScript example to save data to blockchain using BWS API"
         }
       ],
       "useCases": [
-        "Write messages to blockchain without Web3 wallet",
-        "Store key-value pairs on Matchain network",
-        "Retrieve blockchain transaction receipts",
-        "Generate Certificate of Trust for data storage",
-        "Test blockchain integration with simple API calls"
+        "Write data to blockchain without Web3 wallet",
+        "Save messages to Matchain network via simple API call",
+        "Retrieve blockchain transaction receipts and certificates",
+        "Test blockchain integration with minimal code"
       ],
       "implementationSteps": [
         {
-          "title": "Get API Key",
-          "description": "Obtain your API key for authentication as all requests require it"
+          "title": "Get your API key",
+          "description": "Obtain API key for authentication as all requests without API key will return an error"
         },
         {
-          "title": "Write to Blockchain",
-          "description": "POST to /v1/smart-contracts/call with solution parameters to insert data, receive jobId in response"
+          "title": "Write to blockchain",
+          "description": "Make POST request to /v1/smart-contracts/call with BWS.Blockchain.Hash solution to save data to Matchain network"
         },
         {
-          "title": "Check Status",
-          "description": "POST to /v1/smart-contracts/fetch with jobId to get completion status, blockchain receipt, and Certificate of Trust"
+          "title": "Check job status",
+          "description": "Use jobId from response to fetch blockchain job completion status and receive transaction receipt and Certificate of Trust"
         }
       ],
       "contentLength": 6129,
-      "fullContent": "BWS API Docs Ctrl k Contact Us Create Account Sign In More Welcome! Quick Start Platform Fees API How Tos Certificate Of Trust Media Assets PLATFORM APIs BWS.IPFS.Upload BWS.Blockchain.Save BWS.Blockchain.Hash BWS.NFT.zK Marketplace Solutions BWS.Blockchain.Badges BWS.NFT.GameCube BWS.ESG.Credits TELEGRAM BOTS X BOT Powered by GitBook On this page Get your API key Your First BWS API Request Write \"Hello World!\" to Matchain blockchain. Check for Status Fetch for the blockchain job status and results. Was this helpful? Copy Quick Start Writing \"Hello World!\" to the blockchain in just one call! Get your API key Your API requests should be authenticated using your API key (any request that doesn&#x27;t include an API key will return an error). Learn how to Get your API Key . Your First BWS API Request We&#x27;re going to use the BWS.Blockchain.Hash solution to save a message to the blockchain. Write \"Hello World!\" to Matchain blockchain. POST https://api.bws.ninja/v1/smart-contracts/call Let&#x27;s write \"Hello World!\" to the Matchain blockchain network without managing network fees or Web3 wallets by calling a regular Web2 API. Request Body Name Type Description solution * string BWS.Blockchain.Hash version * number 1 network * string matchain operation * string insert parameters * JSON { key: \"mykey\", value: \"Hello World!\" } Please copy & Paste one of the following code snippets and run it (remember to use your API Key). curl Javascript Phyton Copy curl --location &#x27;https://api.bws.ninja/v1/smart-contracts/call&#x27; \\ --header &#x27;X-Api-Key: API-KEY&#x27; \\ --header &#x27;Content-Type: application/json&#x27; \\ --data &#x27;{ \"solution\": \"BWS.Blockchain.Hash\", \"version\": 1, \"network\": \"matchain\", \"operation\": \"insert\", \"parameters\": { \"key\": \"timestamp: 1736418591440\", \"value\": \"Hola\" } }&#x27; Copy var settings = { \"url\": \"https://api.bws.ninja/v1/call\", \"method\": \"POST\", \"timeout\": 0, \"headers\": { \"X-Api-Key\": \"API-KEY\", \"Content-Type\": \"application/json\" }, \"data\": JSON.stringify({ \"solution\": \"BWS.Blockchain.Hash\", \"version\": 1, \"network\": \"matchain\", \"operation\": \"insert\", \"parameters\": { \"key\": \"timestamp: 1736418591440\", \"value\": \"Hola\" } }), }; $.ajax(settings).done(function (response) { console.log(response); }); Copy import http.client import json conn = http.client.HTTPSConnection(\"api.bws.ninja\") payload = json.dumps({ \"solution\": \"BWS.Blockchain.Hash\", \"version\": 1, \"network\": \"matchain\", \"operation\": \"insert\", \"parameters\": { \"key\": \"timestamp: 1736418591440\", \"value\": \"Hola\" } }) headers = { &#x27;X-Api-Key&#x27;: &#x27;API-KEY&#x27;, &#x27;Content-Type&#x27;: &#x27;application/json&#x27; } conn.request(\"POST\", \"/v1/call\", payload, headers) res = conn.getresponse() data = res.read() print(data.decode(\"utf-8\")) If executed correctly, check for jobId in the response body part. We will use it to verify that the blockchain operation has been completed correctly and to receive the blockchain transaction receipt and Certificate of Trust . API Call response Copy { \"statusCode\": 200, \"statusMessage\": \"\", \"info\": { \"jobId\": \"59d0f46b-0b58-4972-8aca-51d06f69f25e\" } } Check for Status To check for job completion and results, use the jobId you got from the previous call. Please note that interacting with blockchain(s) is asynchronous, so it may take some time for the operation to finish and for the blockchain receipt to be received. Fetch for the blockchain job status and results. POST https://api.bws.ninja/v1/smart-contracts/fetch Using the previous call response jobId we fetch the blockchain job started previously. Request Body Name Type Description jobId * String (use previously returned jobId, as for example 59d0f46b-0b58-4972-8aca-51d06f69f25e) Copy & Paste one of the following code snippets and run it (remember to use your own API Key). curl Javascript Phyton Copy curl --location &#x27;https://api.bws.ninja/v1/fetch&#x27; \\ --header &#x27;X-Api-Key: API-KEY&#x27; \\ --header &#x27;Content-Type: application/json&#x27; \\ --data &#x27;{ \"jobId\": \"59d0f46b-0b58-4972-8aca-51d06f69f25e\" }&#x27; Copy var settings = { \"url\": \"https://api.bws.ninja/v1/fetch\", \"method\": \"POST\", \"timeout\": 0, \"headers\": { \"X-Api-Key\": \"API-KEY\", \"Content-Type\": \"application/json\" }, \"data\": JSON.stringify({ \"jobId\": \"59d0f46b-0b58-4512-8aca-51d06f69f25e\" }), }; $.ajax(settings).done(function (response) { console.log(response); }); Copy import http.client import json conn = http.client.HTTPSConnection(\"api.bws.ninja\") payload = json.dumps({ \"jobId\": \"59d0f46b-0b58-4512-8aca-51d06f69f25e\" }) headers = { &#x27;X-Api-Key&#x27;: &#x27;API-KEY&#x27;, &#x27;Content-Type&#x27;: &#x27;application/json&#x27; } conn.request(\"POST\", \"/v1/fetch\", payload, headers) res = conn.getresponse() data = res.read() print(data.decode(\"utf-8\")) You should receive a response indicating the completed job and the related blockchain receipt and certificate. Fetch API Call Response Copy { \"statusCode\": 200, \"info\": { \"status\": { \"Value\": \"completed\" }, \"request\": { \"solution\": \"BWS.Blockchain.Hash\", \"version\": 1, \"network\": \"matchain\", \"operation\": \"insert\", \"parameters\": { \"key\": \"timestamp: 1736418591440\", \"value\": \"Hola\" } }, \"hash\": \"0xd5c51886e57b1b16e59bd866910f2c689728f9e4025a4abc14bf7b07ae21dcc8\", \"txnUrl\": \"https://matchscan.io/tx/0xd5c51886e57b1b16e59bd866910f2c689728f9e4025a4abc14bf7b07ae21dcc8\", \"certificateOfTrust\": \"https://s3.amazonaws.com/bws-backoffice-website-infra-prod/tx/matchain/0xd5c51886e57b1b16e59bd866910f2c689728f9e4025a4abc14bf7b07ae21dcc8.pdf\", \"certificateOfTrustJPG\": \"https://s3.amazonaws.com/bws-backoffice-website-infra-prod/tx/matchain/0xd5c51886e57b1b16e59bd866910f2c689728f9e4025a4abc14bf7b07ae21dcc8.jpg\", \"certificateOfTrustUrl\": \"https://prod.bws.ninja/tx.html?t=0xd5c51886e57b1b16e59bd866910f2c689728f9e4025a4abc14bf7b07ae21dcc8\", \"type\": { \"value\": \"blockchain-job\" }, \"timestampInMillis\": 1736418605359, \"id\": \"a89bf8bf-392b-4cc3-8ded-7dbe9d43c341\" } } Congratulations! In just one call, you used BWS to save data into the Web3 blockchain ecosystem. Previous Welcome! Next Platform Fees Last updated 12 days ago Was this helpful?",
+      "fullContent": "BWS API Docs Ctrl k Contact Us Create Account Sign In More Welcome! Quick Start Platform Fees API How Tos Certificate Of Trust Media Assets PLATFORM APIs BWS.IPFS.Upload BWS.Blockchain.Save BWS.Blockchain.Hash BWS.NFT.zK Marketplace Solutions BWS.Blockchain.Badges BWS.NFT.GameCube BWS.ESG.Credits TELEGRAM BOTS X BOT Powered by GitBook On this page Get your API key Your First BWS API Request Write \"Hello World!\" to Matchain blockchain. Check for Status Fetch for the blockchain job status and results. Was this helpful? Copy Quick Start Writing \"Hello World!\" to the blockchain in just one call! Get your API key Your API requests should be authenticated using your API key (any request that doesn&#x27;t include an API key will return an error). Learn how to Get your API Key . Your First BWS API Request We&#x27;re going to use the BWS.Blockchain.Hash solution to save a message to the blockchain. Write \"Hello World!\" to Matchain blockchain. POST https://api.bws.ninja/v1/smart-contracts/call Let&#x27;s write \"Hello World!\" to the Matchain blockchain network without managing network fees or Web3 wallets by calling a regular Web2 API. Request Body Name Type Description solution * string BWS.Blockchain.Hash version * number 1 network * string matchain operation * string insert parameters * JSON { key: \"mykey\", value: \"Hello World!\" } Please copy & Paste one of the following code snippets and run it (remember to use your API Key). curl Javascript Phyton Copy curl --location &#x27;https://api.bws.ninja/v1/smart-contracts/call&#x27; \\ --header &#x27;X-Api-Key: API-KEY&#x27; \\ --header &#x27;Content-Type: application/json&#x27; \\ --data &#x27;{ \"solution\": \"BWS.Blockchain.Hash\", \"version\": 1, \"network\": \"matchain\", \"operation\": \"insert\", \"parameters\": { \"key\": \"timestamp: 1736418591440\", \"value\": \"Hola\" } }&#x27; Copy var settings = { \"url\": \"https://api.bws.ninja/v1/call\", \"method\": \"POST\", \"timeout\": 0, \"headers\": { \"X-Api-Key\": \"API-KEY\", \"Content-Type\": \"application/json\" }, \"data\": JSON.stringify({ \"solution\": \"BWS.Blockchain.Hash\", \"version\": 1, \"network\": \"matchain\", \"operation\": \"insert\", \"parameters\": { \"key\": \"timestamp: 1736418591440\", \"value\": \"Hola\" } }), }; $.ajax(settings).done(function (response) { console.log(response); }); Copy import http.client import json conn = http.client.HTTPSConnection(\"api.bws.ninja\") payload = json.dumps({ \"solution\": \"BWS.Blockchain.Hash\", \"version\": 1, \"network\": \"matchain\", \"operation\": \"insert\", \"parameters\": { \"key\": \"timestamp: 1736418591440\", \"value\": \"Hola\" } }) headers = { &#x27;X-Api-Key&#x27;: &#x27;API-KEY&#x27;, &#x27;Content-Type&#x27;: &#x27;application/json&#x27; } conn.request(\"POST\", \"/v1/call\", payload, headers) res = conn.getresponse() data = res.read() print(data.decode(\"utf-8\")) If executed correctly, check for jobId in the response body part. We will use it to verify that the blockchain operation has been completed correctly and to receive the blockchain transaction receipt and Certificate of Trust . API Call response Copy { \"statusCode\": 200, \"statusMessage\": \"\", \"info\": { \"jobId\": \"59d0f46b-0b58-4972-8aca-51d06f69f25e\" } } Check for Status To check for job completion and results, use the jobId you got from the previous call. Please note that interacting with blockchain(s) is asynchronous, so it may take some time for the operation to finish and for the blockchain receipt to be received. Fetch for the blockchain job status and results. POST https://api.bws.ninja/v1/smart-contracts/fetch Using the previous call response jobId we fetch the blockchain job started previously. Request Body Name Type Description jobId * String (use previously returned jobId, as for example 59d0f46b-0b58-4972-8aca-51d06f69f25e) Copy & Paste one of the following code snippets and run it (remember to use your own API Key). curl Javascript Phyton Copy curl --location &#x27;https://api.bws.ninja/v1/fetch&#x27; \\ --header &#x27;X-Api-Key: API-KEY&#x27; \\ --header &#x27;Content-Type: application/json&#x27; \\ --data &#x27;{ \"jobId\": \"59d0f46b-0b58-4972-8aca-51d06f69f25e\" }&#x27; Copy var settings = { \"url\": \"https://api.bws.ninja/v1/fetch\", \"method\": \"POST\", \"timeout\": 0, \"headers\": { \"X-Api-Key\": \"API-KEY\", \"Content-Type\": \"application/json\" }, \"data\": JSON.stringify({ \"jobId\": \"59d0f46b-0b58-4512-8aca-51d06f69f25e\" }), }; $.ajax(settings).done(function (response) { console.log(response); }); Copy import http.client import json conn = http.client.HTTPSConnection(\"api.bws.ninja\") payload = json.dumps({ \"jobId\": \"59d0f46b-0b58-4512-8aca-51d06f69f25e\" }) headers = { &#x27;X-Api-Key&#x27;: &#x27;API-KEY&#x27;, &#x27;Content-Type&#x27;: &#x27;application/json&#x27; } conn.request(\"POST\", \"/v1/fetch\", payload, headers) res = conn.getresponse() data = res.read() print(data.decode(\"utf-8\")) You should receive a response indicating the completed job and the related blockchain receipt and certificate. Fetch API Call Response Copy { \"statusCode\": 200, \"info\": { \"status\": { \"Value\": \"completed\" }, \"request\": { \"solution\": \"BWS.Blockchain.Hash\", \"version\": 1, \"network\": \"matchain\", \"operation\": \"insert\", \"parameters\": { \"key\": \"timestamp: 1736418591440\", \"value\": \"Hola\" } }, \"hash\": \"0xd5c51886e57b1b16e59bd866910f2c689728f9e4025a4abc14bf7b07ae21dcc8\", \"txnUrl\": \"https://matchscan.io/tx/0xd5c51886e57b1b16e59bd866910f2c689728f9e4025a4abc14bf7b07ae21dcc8\", \"certificateOfTrust\": \"https://s3.amazonaws.com/bws-backoffice-website-infra-prod/tx/matchain/0xd5c51886e57b1b16e59bd866910f2c689728f9e4025a4abc14bf7b07ae21dcc8.pdf\", \"certificateOfTrustJPG\": \"https://s3.amazonaws.com/bws-backoffice-website-infra-prod/tx/matchain/0xd5c51886e57b1b16e59bd866910f2c689728f9e4025a4abc14bf7b07ae21dcc8.jpg\", \"certificateOfTrustUrl\": \"https://prod.bws.ninja/tx.html?t=0xd5c51886e57b1b16e59bd866910f2c689728f9e4025a4abc14bf7b07ae21dcc8\", \"type\": { \"value\": \"blockchain-job\" }, \"timestampInMillis\": 1736418605359, \"id\": \"a89bf8bf-392b-4cc3-8ded-7dbe9d43c341\" } } Congratulations! In just one call, you used BWS to save data into the Web3 blockchain ecosystem. Previous Welcome! Next Platform Fees Last updated 13 days ago Was this helpful?",
       "structuredContent": {
         "headings": [
           "Quick Start"
@@ -440,7 +446,7 @@
         ],
         "lists": []
       },
-      "lastIndexed": "2025-11-24T02:43:21.812Z",
+      "lastIndexed": "2025-11-25T02:39:47.661Z",
       "images": []
     },
     {
@@ -449,27 +455,25 @@
       "title": "BWS.Blockchain.Hash | BWS API Docs",
       "product": "Blockchain Hash",
       "category": "Platform API",
-      "summary": "Platform API solution for using blockchain as a hash table database. Provides mutable blockchain data storage with key-value operations. Part of BWS core platform APIs enabling developers to integrate blockchain storage without Web3 complexity.",
+      "summary": "Documentation page for BWS.Blockchain.Hash platform API that allows developers to use the blockchain as a hash table database. The solution enables storing and retrieving key-value pairs on blockchain with simple operations, providing links to detailed solution overview and available operations.",
       "keywords": [
         "blockchain hash",
         "hash table",
+        "blockchain database",
         "key-value storage",
-        "mutable storage",
         "platform api",
-        "database",
         "blockchain storage"
       ],
       "codeExamples": [],
       "useCases": [
-        "Store key-value pairs on blockchain",
-        "Update mutable blockchain data records",
-        "Use blockchain as distributed hash table",
-        "Insert and retrieve data without Web3 wallets",
-        "Build applications with blockchain-backed databases"
+        "Store key-value pairs on blockchain as hash table",
+        "Retrieve data from blockchain using key lookups",
+        "Use blockchain as immutable database",
+        "Implement distributed hash table with blockchain"
       ],
       "implementationSteps": [],
       "contentLength": 595,
-      "fullContent": "BWS API Docs Ctrl k Contact Us Create Account Sign In More Welcome! Quick Start Platform Fees API How Tos Certificate Of Trust Media Assets PLATFORM APIs BWS.IPFS.Upload BWS.Blockchain.Save BWS.Blockchain.Hash Solution Overview Operations BWS.NFT.zK Marketplace Solutions BWS.Blockchain.Badges BWS.NFT.GameCube BWS.ESG.Credits TELEGRAM BOTS X BOT Powered by GitBook On this page Was this helpful? Copy PLATFORM APIs BWS.Blockchain.Hash Use the blockchain as a hash table database. Solution Overview Operations Previous Operations Next Solution Overview Last updated 12 days ago Was this helpful?",
+      "fullContent": "BWS API Docs Ctrl k Contact Us Create Account Sign In More Welcome! Quick Start Platform Fees API How Tos Certificate Of Trust Media Assets PLATFORM APIs BWS.IPFS.Upload BWS.Blockchain.Save BWS.Blockchain.Hash Solution Overview Operations BWS.NFT.zK Marketplace Solutions BWS.Blockchain.Badges BWS.NFT.GameCube BWS.ESG.Credits TELEGRAM BOTS X BOT Powered by GitBook On this page Was this helpful? Copy PLATFORM APIs BWS.Blockchain.Hash Use the blockchain as a hash table database. Solution Overview Operations Previous Operations Next Solution Overview Last updated 13 days ago Was this helpful?",
       "structuredContent": {
         "headings": [],
         "paragraphs": [
@@ -477,7 +481,7 @@
         ],
         "lists": []
       },
-      "lastIndexed": "2025-11-24T02:43:21.812Z",
+      "lastIndexed": "2025-11-25T02:39:47.661Z",
       "images": []
     },
     {
@@ -486,27 +490,27 @@
       "title": "BWS.Blockchain.Save | BWS API Docs",
       "product": "Blockchain Save",
       "category": "Platform API",
-      "summary": "BWS.Blockchain.Save provides an efficient method for storing immutable data directly on the blockchain. This platform API enables developers to permanently store information with blockchain security and transparency guarantees.",
+      "summary": "BWS.Blockchain.Save provides an efficient way to store data immutably on the blockchain. This platform API enables developers to permanently save information with blockchain's security and transparency benefits.",
       "keywords": [
-        "blockchain storage",
-        "immutable data",
         "blockchain save",
-        "data permanence",
-        "blockchain api",
-        "decentralized storage",
-        "blockchain data"
+        "immutable storage",
+        "blockchain data",
+        "permanent storage",
+        "data on blockchain",
+        "bws api",
+        "blockchain storage"
       ],
       "codeExamples": [],
       "useCases": [
         "Store permanent records on blockchain",
-        "Create immutable audit trails",
-        "Save timestamped data with blockchain proof",
-        "Archive critical documents with blockchain verification",
-        "Store compliance data with permanent blockchain record"
+        "Save immutable document hashes",
+        "Create tamper-proof data archives",
+        "Maintain blockchain-verified audit trails",
+        "Preserve critical business data permanently"
       ],
       "implementationSteps": [],
       "contentLength": 600,
-      "fullContent": "BWS API Docs Ctrl k Contact Us Create Account Sign In More Welcome! Quick Start Platform Fees API How Tos Certificate Of Trust Media Assets PLATFORM APIs BWS.IPFS.Upload BWS.Blockchain.Save Solution Overview Operations BWS.Blockchain.Hash BWS.NFT.zK Marketplace Solutions BWS.Blockchain.Badges BWS.NFT.GameCube BWS.ESG.Credits TELEGRAM BOTS X BOT Powered by GitBook On this page Was this helpful? Copy PLATFORM APIs BWS.Blockchain.Save An efficient way to store data on the blockchain. Solution Overview Operations Previous Operations Next Solution Overview Last updated 12 days ago Was this helpful?",
+      "fullContent": "BWS API Docs Ctrl k Contact Us Create Account Sign In More Welcome! Quick Start Platform Fees API How Tos Certificate Of Trust Media Assets PLATFORM APIs BWS.IPFS.Upload BWS.Blockchain.Save Solution Overview Operations BWS.Blockchain.Hash BWS.NFT.zK Marketplace Solutions BWS.Blockchain.Badges BWS.NFT.GameCube BWS.ESG.Credits TELEGRAM BOTS X BOT Powered by GitBook On this page Was this helpful? Copy PLATFORM APIs BWS.Blockchain.Save An efficient way to store data on the blockchain. Solution Overview Operations Previous Operations Next Solution Overview Last updated 13 days ago Was this helpful?",
       "structuredContent": {
         "headings": [],
         "paragraphs": [
@@ -514,7 +518,7 @@
         ],
         "lists": []
       },
-      "lastIndexed": "2025-11-24T02:43:38.211Z",
+      "lastIndexed": "2025-11-25T02:40:03.022Z",
       "images": []
     },
     {
@@ -523,28 +527,28 @@
       "title": "BWS.IPFS.Upload | BWS API Docs",
       "product": "BWS IPFS",
       "category": "Platform API",
-      "summary": "BWS.IPFS.Upload enables easy uploading of images, PDF documents, and JSON files to the InterPlanetary File System (IPFS). This service simplifies decentralized file storage for blockchain applications and NFT projects.",
+      "summary": "BWS.IPFS.Upload enables easy uploading of Images, PDF, and JSON files to IPFS (InterPlanetary File System). This service simplifies decentralized file storage for blockchain applications and NFT metadata.",
       "keywords": [
         "ipfs upload",
         "decentralized storage",
         "ipfs api",
         "file upload",
-        "image storage",
+        "nft storage",
+        "json upload",
         "pdf storage",
-        "json storage",
-        "nft metadata"
+        "image hosting"
       ],
       "codeExamples": [],
       "useCases": [
         "Upload NFT images to IPFS",
         "Store NFT metadata JSON files",
-        "Upload PDF documents to decentralized storage",
-        "Host images for blockchain applications",
-        "Store decentralized content for dApps"
+        "Host PDF documents on decentralized storage",
+        "Save image assets for blockchain applications",
+        "Create permanent links for digital content"
       ],
       "implementationSteps": [],
       "contentLength": 601,
-      "fullContent": "BWS API Docs Ctrl k Contact Us Create Account Sign In More Welcome! Quick Start Platform Fees API How Tos Certificate Of Trust Media Assets PLATFORM APIs BWS.IPFS.Upload Solution Overview Operations BWS.Blockchain.Save BWS.Blockchain.Hash BWS.NFT.zK Marketplace Solutions BWS.Blockchain.Badges BWS.NFT.GameCube BWS.ESG.Credits TELEGRAM BOTS X BOT Powered by GitBook On this page Was this helpful? Copy PLATFORM APIs BWS.IPFS.Upload Easily upload Images, PDF and JSON files to IPFS. Solution Overview Operations Previous BWS.IPFS.Upload Next Solution Overview Last updated 12 days ago Was this helpful?",
+      "fullContent": "BWS API Docs Ctrl k Contact Us Create Account Sign In More Welcome! Quick Start Platform Fees API How Tos Certificate Of Trust Media Assets PLATFORM APIs BWS.IPFS.Upload Solution Overview Operations BWS.Blockchain.Save BWS.Blockchain.Hash BWS.NFT.zK Marketplace Solutions BWS.Blockchain.Badges BWS.NFT.GameCube BWS.ESG.Credits TELEGRAM BOTS X BOT Powered by GitBook On this page Was this helpful? Copy PLATFORM APIs BWS.IPFS.Upload Easily upload Images, PDF and JSON files to IPFS. Solution Overview Operations Previous BWS.IPFS.Upload Next Solution Overview Last updated 13 days ago Was this helpful?",
       "structuredContent": {
         "headings": [],
         "paragraphs": [
@@ -552,7 +556,7 @@
         ],
         "lists": []
       },
-      "lastIndexed": "2025-11-24T02:43:38.211Z",
+      "lastIndexed": "2025-11-25T02:40:03.022Z",
       "images": []
     },
     {
@@ -561,28 +565,28 @@
       "title": "BWS.NFT.zK | BWS API Docs",
       "product": "NFT.zK",
       "category": "Platform API",
-      "summary": "BWS.NFT.zK simplifies NFT management by removing technical complexities from the creation and management process. The platform supports NFT attributes and traits, making it easy to deploy and manage NFT collections without blockchain expertise.",
+      "summary": "BWS.NFT.zK allows developers to manage NFTs with zero complexities. The platform simplifies NFT creation, management, and attribute handling, making NFT operations accessible without deep blockchain expertise.",
       "keywords": [
-        "nft creation",
-        "zero knowledge",
         "nft management",
+        "zero knowledge nft",
+        "nft api",
         "nft traits",
         "nft attributes",
+        "nft creation",
         "blockchain nft",
-        "nft api",
-        "nft minting"
+        "simplified nft"
       ],
       "codeExamples": [],
       "useCases": [
-        "Create NFT collections without coding complexity",
+        "Create NFT collections without blockchain complexity",
         "Manage NFT attributes and traits",
-        "Deploy NFTs with zero-knowledge technology",
-        "Mint NFTs for digital art projects",
-        "Build NFT-based membership systems"
+        "Deploy NFTs for gaming applications",
+        "Issue digital collectibles for fan engagement",
+        "Build NFT-based loyalty programs"
       ],
       "implementationSteps": [],
       "contentLength": 630,
-      "fullContent": "BWS API Docs Ctrl k Contact Us Create Account Sign In More Welcome! Quick Start Platform Fees API How Tos Certificate Of Trust Media Assets PLATFORM APIs BWS.IPFS.Upload BWS.Blockchain.Save BWS.Blockchain.Hash BWS.NFT.zK Solution Overview Operations NFT Attributes (traits) Marketplace Solutions BWS.Blockchain.Badges BWS.NFT.GameCube BWS.ESG.Credits TELEGRAM BOTS X BOT Powered by GitBook On this page Was this helpful? Copy PLATFORM APIs BWS.NFT.zK Manage your NFTs with zero complexities. Solution Overview Operations NFT Attributes (traits) Previous Operations Next Solution Overview Last updated 12 days ago Was this helpful?",
+      "fullContent": "BWS API Docs Ctrl k Contact Us Create Account Sign In More Welcome! Quick Start Platform Fees API How Tos Certificate Of Trust Media Assets PLATFORM APIs BWS.IPFS.Upload BWS.Blockchain.Save BWS.Blockchain.Hash BWS.NFT.zK Solution Overview Operations NFT Attributes (traits) Marketplace Solutions BWS.Blockchain.Badges BWS.NFT.GameCube BWS.ESG.Credits TELEGRAM BOTS X BOT Powered by GitBook On this page Was this helpful? Copy PLATFORM APIs BWS.NFT.zK Manage your NFTs with zero complexities. Solution Overview Operations NFT Attributes (traits) Previous Operations Next Solution Overview Last updated 13 days ago Was this helpful?",
       "structuredContent": {
         "headings": [],
         "paragraphs": [
@@ -590,7 +594,7 @@
         ],
         "lists": []
       },
-      "lastIndexed": "2025-11-24T02:43:38.211Z",
+      "lastIndexed": "2025-11-25T02:40:03.022Z",
       "images": []
     },
     {
@@ -598,29 +602,29 @@
       "path": "/telegram-bots/x-bot",
       "title": "X BOT | BWS API Docs",
       "product": "X Bot",
-      "category": "Marketplace Solution",
-      "summary": "X Bot is a Telegram-based analytics platform providing accurate X (Twitter) engagement metrics through the official X API. It helps crypto projects measure community impact, enables KOL teams to showcase verifiable performance, and allows investors to discover projects with authentic traction without posting or accessing private data.",
+      "category": "Guide",
+      "summary": "X Bot is a Telegram-based analytics platform providing accurate X (Twitter) engagement metrics using the official X API. It helps crypto projects measure community impact, enables KOL teams to showcase verifiable performance, and allows investors to discover projects with authentic community traction.",
       "keywords": [
-        "telegram bot",
+        "x bot",
         "twitter analytics",
-        "x analytics",
+        "telegram bot",
         "kol metrics",
-        "community engagement",
-        "crypto analytics",
-        "social media metrics",
-        "telegram analytics"
+        "engagement tracking",
+        "crypto community",
+        "twitter metrics",
+        "social analytics"
       ],
       "codeExamples": [],
       "useCases": [
         "Measure crypto project community impact on X (Twitter)",
         "Track KOL profitability and performance metrics",
-        "Showcase verifiable social media engagement data",
-        "Discover crypto projects with authentic community traction",
-        "Analyze Twitter engagement for blockchain projects"
+        "Showcase verifiable social media engagement",
+        "Discover crypto projects with authentic traction",
+        "Monitor X engagement for community management"
       ],
       "implementationSteps": [],
       "contentLength": 1054,
-      "fullContent": "BWS API Docs Ctrl k Contact Us Create Account Sign In More Welcome! Quick Start Platform Fees API How Tos Certificate Of Trust Media Assets PLATFORM APIs BWS.IPFS.Upload BWS.Blockchain.Save BWS.Blockchain.Hash BWS.NFT.zK Marketplace Solutions BWS.Blockchain.Badges BWS.NFT.GameCube BWS.ESG.Credits TELEGRAM BOTS X BOT Overview How To Install X Bot Commands Getting Support Powered by GitBook On this page Was this helpful? Copy TELEGRAM BOTS X BOT X Bot is a Telegram-based analytics platform that provides accurate X (Twitter) engagement metrics using the official X API. It helps crypto projects measure community impact and KOL profitability, enables KOL teams to showcase verifiable performance, and allows investors to discover projects with authentic community traction. Built on the official X API to ensure accuracy and reliability in every metric. X Bot does not post or interact on X and does not access private user data—only publicly available post content is processed. Previous Users Next Overview Last updated 12 days ago Was this helpful?",
+      "fullContent": "BWS API Docs Ctrl k Contact Us Create Account Sign In More Welcome! Quick Start Platform Fees API How Tos Certificate Of Trust Media Assets PLATFORM APIs BWS.IPFS.Upload BWS.Blockchain.Save BWS.Blockchain.Hash BWS.NFT.zK Marketplace Solutions BWS.Blockchain.Badges BWS.NFT.GameCube BWS.ESG.Credits TELEGRAM BOTS X BOT Overview How To Install X Bot Commands Getting Support Powered by GitBook On this page Was this helpful? Copy TELEGRAM BOTS X BOT X Bot is a Telegram-based analytics platform that provides accurate X (Twitter) engagement metrics using the official X API. It helps crypto projects measure community impact and KOL profitability, enables KOL teams to showcase verifiable performance, and allows investors to discover projects with authentic community traction. Built on the official X API to ensure accuracy and reliability in every metric. X Bot does not post or interact on X and does not access private user data—only publicly available post content is processed. Previous Users Next Overview Last updated 13 days ago Was this helpful?",
       "structuredContent": {
         "headings": [
           "X BOT"
@@ -631,7 +635,7 @@
         ],
         "lists": []
       },
-      "lastIndexed": "2025-11-24T02:43:38.211Z",
+      "lastIndexed": "2025-11-25T02:40:03.022Z",
       "images": [
         {
           "originalUrl": "https://docs.bws.ninja/~gitbook/image?url=https%3A%2F%2F2325872365-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FS3Z6uUpcVa8WKPcDlZlN%252Fuploads%252Fgit-blob-b5f44c807a135f8aa7f0f3f92b88ddc6e12d4f89%252Fimage.png%3Falt%3Dmedia&width=768&dpr=4&quality=100&sign=bf80f0ee&sv=2",
