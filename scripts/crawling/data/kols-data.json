@@ -753,15 +753,193 @@
       "discovered_at": "2025-11-24T09:54:33.125Z",
       "source": "web-unblocker-batch",
       "tier": "macro"
+    },
+    {
+      "id": "crawlee_search__greysupremacy",
+      "username": "_greysupremacyCuenta",
+      "name": "GREY",
+      "bio": "retarded gambler | tg - http://t.me/greysupremacyy |partner : @solpumpcom + @menacedotcom",
+      "followersCount": 10300,
+      "followingCount": 2028,
+      "tweetCount": 0,
+      "isVerified": false,
+      "cryptoRelevanceScore": 75,
+      "engagementRate": 0,
+      "avgLikes": 0,
+      "avgViews": 0,
+      "discoveredAt": "2025-11-25T10:13:26.667Z",
+      "lastChecked": "2025-11-25T10:13:26.667Z",
+      "discoveredThrough": "crawlee-search",
+      "discoveryLevel": 0,
+      "engagementHistory": {
+        "totalPostsAnalyzed": 0,
+        "repliedTo": 0,
+        "lastEngagement": null,
+        "successfulReplies": 0,
+        "failedReplies": 0
+      },
+      "relationships": {
+        "follows": [],
+        "followedBy": []
+      },
+      "recentTopics": [
+        "Meme coins",
+        "Solana ecosystem",
+        "Crypto trading/gambling",
+        "DeFi platforms"
+      ],
+      "cryptoProjects": [
+        "solpumpcom",
+        "menacedotcom",
+        "Solana"
+      ],
+      "sentimentTowardsCrypto": "positive",
+      "accountType": "person",
+      "lastTweetAnalyzed": null,
+      "status": "active"
+    },
+    {
+      "id": "crawlee_search_cryptopatel",
+      "username": "CryptoPatel",
+      "name": "Crypto Patel",
+      "bio": "Elite KOL @CoinMarketCap & @Binance \n350K+ Crypto Traders | TA (SMC + ICT) & | Alpha Calls, Market Intel \nHelping You Hit 7-Figure Success | DM for Collabs",
+      "followersCount": 53700,
+      "followingCount": 828,
+      "tweetCount": 0,
+      "isVerified": false,
+      "cryptoRelevanceScore": 95,
+      "engagementRate": 0,
+      "avgLikes": 0,
+      "avgViews": 0,
+      "discoveredAt": "2025-11-25T10:18:50.026Z",
+      "lastChecked": "2025-11-25T10:18:50.026Z",
+      "discoveredThrough": "crawlee-search",
+      "discoveryLevel": 0,
+      "engagementHistory": {
+        "totalPostsAnalyzed": 0,
+        "repliedTo": 0,
+        "lastEngagement": null,
+        "successfulReplies": 0,
+        "failedReplies": 0
+      },
+      "relationships": {
+        "follows": [],
+        "followedBy": []
+      },
+      "recentTopics": [
+        "Technical Analysis (TA)",
+        "Trading Signals/Alpha Calls",
+        "Market Intelligence",
+        "Crypto Trading Education"
+      ],
+      "cryptoProjects": [
+        "CoinMarketCap",
+        "Binance"
+      ],
+      "sentimentTowardsCrypto": "positive",
+      "accountType": "person",
+      "lastTweetAnalyzed": null,
+      "status": "active"
+    },
+    {
+      "id": "crawlee_search_crypt0_defi",
+      "username": "Crypt0_DeFi",
+      "name": "Crypto DeFi 𝕏",
+      "bio": "Full Time Web3 | Degen | building on @Arbitrum @Mey_Network @MantaNetwork | CM | KOL | @Hyperion_xyz $WAVES Wallet- 3PQwgmPwS2VHY89pbhEcJV7J7G2r4bg3Tuh",
+      "followersCount": 29900,
+      "followingCount": 5391,
+      "tweetCount": 0,
+      "isVerified": false,
+      "cryptoRelevanceScore": 85,
+      "engagementRate": 0,
+      "avgLikes": 0,
+      "avgViews": 0,
+      "discoveredAt": "2025-11-25T10:33:29.689Z",
+      "lastChecked": "2025-11-25T10:33:29.689Z",
+      "discoveredThrough": "crawlee-search",
+      "discoveryLevel": 0,
+      "engagementHistory": {
+        "totalPostsAnalyzed": 0,
+        "repliedTo": 0,
+        "lastEngagement": null,
+        "successfulReplies": 0,
+        "failedReplies": 0
+      },
+      "relationships": {
+        "follows": [],
+        "followedBy": []
+      },
+      "recentTopics": [
+        "DeFi",
+        "Web3 Projects",
+        "Layer 2 Solutions (Arbitrum)",
+        "Community Management",
+        "Cryptocurrency Trading/Investing"
+      ],
+      "cryptoProjects": [
+        "Arbitrum",
+        "Mey_Network",
+        "MantaNetwork",
+        "Hyperion_xyz",
+        "WAVES"
+      ],
+      "sentimentTowardsCrypto": "positive",
+      "accountType": "person",
+      "lastTweetAnalyzed": null,
+      "status": "active"
+    },
+    {
+      "id": "crawlee_search_habibivc",
+      "username": "habibivc",
+      "name": "Habibi  (//acc)",
+      "bio": "Yalla Mfs! Degen Investor Memes x Alts  http://t.me/xbullrun  Vibin @Gudspace Promo dm @Oxmcds",
+      "followersCount": 28100,
+      "followingCount": 14600,
+      "tweetCount": 0,
+      "isVerified": false,
+      "cryptoRelevanceScore": 75,
+      "engagementRate": 0,
+      "avgLikes": 0,
+      "avgViews": 0,
+      "discoveredAt": "2025-11-25T10:36:40.503Z",
+      "lastChecked": "2025-11-25T10:36:40.503Z",
+      "discoveredThrough": "crawlee-search",
+      "discoveryLevel": 0,
+      "engagementHistory": {
+        "totalPostsAnalyzed": 0,
+        "repliedTo": 0,
+        "lastEngagement": null,
+        "successfulReplies": 0,
+        "failedReplies": 0
+      },
+      "relationships": {
+        "follows": [],
+        "followedBy": []
+      },
+      "recentTopics": [
+        "Altcoins",
+        "Memecoins",
+        "Cryptocurrency Trading",
+        "Crypto Community Building",
+        "Degen Culture"
+      ],
+      "cryptoProjects": [
+        "Gudspace",
+        "xbullrun (Telegram group)"
+      ],
+      "sentimentTowardsCrypto": "positive",
+      "accountType": "person",
+      "lastTweetAnalyzed": null,
+      "status": "active"
     }
   ],
   "metadata": {
-    "lastDiscoveryRun": "2025-11-05T12:00:01.384Z",
-    "totalKols": 27,
-    "activeKols": 14,
+    "lastDiscoveryRun": "2025-11-25T10:59:05.062Z",
+    "totalKols": 31,
+    "activeKols": 18,
     "discoveryDepth": 2,
     "seedKolsCount": 8,
     "lastUpdateBy": "kol-system",
-    "discoveryMethod": "filtered-by-max-followers"
+    "discoveryMethod": "crawlee-search"
   }
 }
