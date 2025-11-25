@@ -931,12 +931,137 @@
       "accountType": "person",
       "lastTweetAnalyzed": null,
       "status": "active"
+    },
+    {
+      "id": "crawlee_search_bitcoinhabebe",
+      "username": "Bitcoinhabebe",
+      "name": "BitcoinHabebe",
+      "bio": "! The all in one Crypto account. NOTHING i post is financial advice - 88.",
+      "followersCount": 204200,
+      "followingCount": 388,
+      "tweetCount": 0,
+      "isVerified": false,
+      "cryptoRelevanceScore": 95,
+      "engagementRate": 0,
+      "avgLikes": 0,
+      "avgViews": 0,
+      "discoveredAt": "2025-11-25T15:59:15.252Z",
+      "lastChecked": "2025-11-25T15:59:15.252Z",
+      "discoveredThrough": "crawlee-search",
+      "discoveryLevel": 0,
+      "engagementHistory": {
+        "totalPostsAnalyzed": 0,
+        "repliedTo": 0,
+        "lastEngagement": null,
+        "successfulReplies": 0,
+        "failedReplies": 0
+      },
+      "relationships": {
+        "follows": [],
+        "followedBy": []
+      },
+      "recentTopics": [
+        "cryptocurrency",
+        "bitcoin",
+        "crypto education/advice"
+      ],
+      "cryptoProjects": [
+        "Bitcoin"
+      ],
+      "sentimentTowardsCrypto": "positive",
+      "accountType": "person",
+      "lastTweetAnalyzed": null,
+      "status": "active"
+    },
+    {
+      "id": "crawlee_search_crypto_theboss",
+      "username": "Crypto_TheBoss",
+      "name": "The Boss",
+      "bio": "Not Today | Gem coin hunter | Seed Investor | Margin and Spot Trader|",
+      "followersCount": 100900,
+      "followingCount": 304,
+      "tweetCount": 0,
+      "isVerified": false,
+      "cryptoRelevanceScore": 85,
+      "engagementRate": 0,
+      "avgLikes": 0,
+      "avgViews": 0,
+      "discoveredAt": "2025-11-25T16:08:26.651Z",
+      "lastChecked": "2025-11-25T16:08:26.651Z",
+      "discoveredThrough": "crawlee-search",
+      "discoveryLevel": 0,
+      "engagementHistory": {
+        "totalPostsAnalyzed": 0,
+        "repliedTo": 0,
+        "lastEngagement": null,
+        "successfulReplies": 0,
+        "failedReplies": 0
+      },
+      "relationships": {
+        "follows": [],
+        "followedBy": []
+      },
+      "recentTopics": [
+        "cryptocurrency investing",
+        "altcoin discovery/gem hunting",
+        "crypto trading",
+        "seed investments"
+      ],
+      "cryptoProjects": [],
+      "sentimentTowardsCrypto": "positive",
+      "accountType": "person",
+      "lastTweetAnalyzed": null,
+      "status": "active"
+    },
+    {
+      "id": "crawlee_search_nihilusbtc",
+      "username": "NihilusBTC",
+      "name": "Nihilus",
+      "bio": "Gem Insider | PA | Founder @MorabandTrading | Not financial advice, just sharing my own views.",
+      "followersCount": 103100,
+      "followingCount": 81,
+      "tweetCount": 0,
+      "isVerified": false,
+      "cryptoRelevanceScore": 95,
+      "engagementRate": 0,
+      "avgLikes": 0,
+      "avgViews": 0,
+      "discoveredAt": "2025-11-25T16:11:39.904Z",
+      "lastChecked": "2025-11-25T16:11:39.904Z",
+      "discoveredThrough": "crawlee-search",
+      "discoveryLevel": 0,
+      "engagementHistory": {
+        "totalPostsAnalyzed": 0,
+        "repliedTo": 0,
+        "lastEngagement": null,
+        "successfulReplies": 0,
+        "failedReplies": 0
+      },
+      "relationships": {
+        "follows": [],
+        "followedBy": []
+      },
+      "recentTopics": [
+        "Cryptocurrency Trading",
+        "Price Action Analysis",
+        "Crypto Project Discovery/Gems",
+        "Bitcoin",
+        "Trading Strategies"
+      ],
+      "cryptoProjects": [
+        "Bitcoin (BTC implied in username)",
+        "Moraband Trading (own project)"
+      ],
+      "sentimentTowardsCrypto": "positive",
+      "accountType": "person",
+      "lastTweetAnalyzed": null,
+      "status": "active"
     }
   ],
   "metadata": {
-    "lastDiscoveryRun": "2025-11-25T10:59:05.062Z",
-    "totalKols": 31,
-    "activeKols": 18,
+    "lastDiscoveryRun": "2025-11-25T16:21:57.748Z",
+    "totalKols": 34,
+    "activeKols": 21,
     "discoveryDepth": 2,
     "seedKolsCount": 8,
     "lastUpdateBy": "kol-system",
