@@ -9,7 +9,7 @@
  * This ensures continuous engagement and self-sustaining growth.
  */
 
-import { searchTweets } from '../crawlers/twitter-crawler.js';
+import { searchTweetsWebUnblocker } from '../crawlers/twitter-crawler.js';
 import authManager from './x-auth-manager.js';
 
 /**
@@ -75,12 +75,11 @@ export async function runAmplifiedKolSearch(searchConfig, config, kolsData) {
       const account = await authManager.getNextAccount();
       const cookies = await authManager.getAuthenticatedCookies(account);
 
-      // Execute search with Crawlee
-      const tweets = await searchTweets(query, {
+      // Execute search with HTML parsing (no GraphQL, works on CI)
+      const tweets = await searchTweetsWebUnblocker(query, {
         maxResults: 50,
         cookies,
-        account,
-        proxyConfig
+        account
       });
 
       console.log(`   ✅ Found ${tweets.length} tweets`);
