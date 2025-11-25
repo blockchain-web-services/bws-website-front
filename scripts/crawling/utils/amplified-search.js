@@ -106,7 +106,7 @@ export async function runAmplifiedKolSearch(searchConfig, config, kolsData) {
       }
 
       // Mark account as used
-      await authManager.markAccountUsed(account);
+      await authManager.markUsed(account.id);
 
     } catch (error) {
       console.error(`   ❌ Query failed: ${error.message}`);
@@ -288,7 +288,7 @@ export async function runAmplifiedTweetSearch(bwsProducts, config, processedPost
         }
 
         // Mark account as used
-        await authManager.markAccountUsed(account);
+        await authManager.markUsed(account.id);
 
       } catch (error) {
         console.error(`      ❌ Query failed: ${error.message}`);
