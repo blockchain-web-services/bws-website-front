@@ -53,9 +53,10 @@ function extractUsernamesFromTweets(tweets) {
   const usernames = new Set();
 
   tweets.forEach(tweet => {
-    // Add tweet author
-    if (tweet.username) {
-      usernames.add(tweet.username);
+    // Add tweet author (support both formats: tweet.username and tweet.author.username)
+    const username = tweet.username || tweet.author?.username;
+    if (username) {
+      usernames.add(username);
     }
 
     // Add mentioned users (if available in parsed data)

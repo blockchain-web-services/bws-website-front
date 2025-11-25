@@ -1,191 +1,151 @@
 {
   "queries": [
     {
-      "query": "#microcap crypto",
-      "minLikes": 20,
-      "category": "microcap",
-      "description": "Microcap cryptocurrency discussions"
+      "name": "sol-cashtag",
+      "query": "$SOL lang:en -is:retweet min_faves:10",
+      "minLikes": 10,
+      "category": "cashtag",
+      "description": "Solana cashtag discussions"
     },
     {
-      "query": "#smallcap crypto",
-      "minLikes": 20,
-      "category": "microcap",
-      "description": "Small cap crypto projects"
+      "name": "arb-cashtag",
+      "query": "$ARB lang:en -is:retweet min_faves:10",
+      "minLikes": 10,
+      "category": "cashtag",
+      "description": "Arbitrum cashtag discussions"
     },
     {
-      "query": "#lowcap gem",
-      "minLikes": 15,
-      "category": "microcap",
-      "description": "Low market cap hidden gems"
+      "name": "op-cashtag",
+      "query": "$OP lang:en -is:retweet min_faves:10",
+      "minLikes": 10,
+      "category": "cashtag",
+      "description": "Optimism cashtag discussions"
     },
     {
-      "query": "#cryptogem",
-      "minLikes": 25,
-      "category": "discovery",
-      "description": "Crypto gem discoveries"
+      "name": "avax-cashtag",
+      "query": "$AVAX lang:en -is:retweet min_faves:10",
+      "minLikes": 10,
+      "category": "cashtag",
+      "description": "Avalanche cashtag discussions"
     },
     {
-      "query": "#100xgem",
-      "minLikes": 20,
-      "category": "discovery",
-      "description": "High potential 100x gems"
+      "name": "matic-cashtag",
+      "query": "$MATIC lang:en -is:retweet min_faves:10",
+      "minLikes": 10,
+      "category": "cashtag",
+      "description": "Polygon cashtag discussions"
     },
     {
-      "query": "#moonshot crypto",
-      "minLikes": 20,
-      "category": "discovery",
-      "description": "Moonshot cryptocurrency opportunities"
+      "name": "link-cashtag",
+      "query": "$LINK lang:en -is:retweet min_faves:10",
+      "minLikes": 10,
+      "category": "cashtag",
+      "description": "Chainlink cashtag discussions"
     },
     {
-      "query": "#IDO announcement",
-      "minLikes": 30,
-      "category": "launch",
-      "description": "Initial DEX Offering announcements"
+      "name": "uni-cashtag",
+      "query": "$UNI lang:en -is:retweet min_faves:10",
+      "minLikes": 10,
+      "category": "cashtag",
+      "description": "Uniswap cashtag discussions"
     },
     {
-      "query": "#presale crypto",
-      "minLikes": 25,
-      "category": "launch",
-      "description": "Cryptocurrency presale events"
+      "name": "pepe-cashtag",
+      "query": "$PEPE lang:en -is:retweet min_faves:10",
+      "minLikes": 10,
+      "category": "cashtag",
+      "description": "Pepe cashtag discussions"
     },
     {
-      "query": "#tokensale",
-      "minLikes": 20,
-      "category": "launch",
-      "description": "Token sale announcements"
+      "name": "wif-cashtag",
+      "query": "$WIF lang:en -is:retweet min_faves:10",
+      "minLikes": 10,
+      "category": "cashtag",
+      "description": "Dogwifhat cashtag discussions"
     },
     {
-      "query": "#airdrop crypto",
-      "minLikes": 30,
-      "category": "launch",
-      "description": "Crypto airdrop opportunities"
+      "name": "bonk-cashtag",
+      "query": "$BONK lang:en -is:retweet min_faves:10",
+      "minLikes": 10,
+      "category": "cashtag",
+      "description": "Bonk cashtag discussions"
     },
     {
-      "query": "#fairlaunch",
-      "minLikes": 15,
-      "category": "launch",
-      "description": "Fair launch crypto projects"
-    },
-    {
-      "query": "#cryptoinvesting",
-      "minLikes": 40,
-      "category": "investor",
-      "description": "Cryptocurrency investing discussions"
-    },
-    {
-      "query": "#altcoininvesting",
-      "minLikes": 25,
-      "category": "investor",
-      "description": "Altcoin investment strategies"
-    },
-    {
-      "query": "#cryptoportfolio",
-      "minLikes": 30,
-      "category": "investor",
-      "description": "Crypto portfolio management"
-    },
-    {
-      "query": "#altseason",
-      "minLikes": 40,
-      "category": "investor",
-      "description": "Alt season discussions"
-    },
-    {
-      "query": "#cryptoalpha",
-      "minLikes": 25,
-      "category": "investor",
-      "description": "Crypto alpha opportunities"
-    },
-    {
-      "query": "#earlyinvestor crypto",
-      "minLikes": 20,
-      "category": "investor",
-      "description": "Early stage crypto investing"
-    },
-    {
-      "query": "#cryptovc",
-      "minLikes": 30,
-      "category": "institutional",
-      "description": "Crypto venture capital"
-    },
-    {
-      "query": "#seedround crypto",
-      "minLikes": 25,
-      "category": "institutional",
-      "description": "Seed funding rounds"
-    },
-    {
-      "query": "new crypto launch",
-      "minLikes": 35,
-      "category": "launch",
-      "description": "New cryptocurrency launches"
-    },
-    {
-      "query": "hidden gem crypto",
-      "minLikes": 30,
-      "category": "discovery",
-      "description": "Hidden gem crypto projects"
-    },
-    {
-      "query": "under radar crypto",
-      "minLikes": 20,
-      "category": "discovery",
-      "description": "Under the radar opportunities"
-    },
-    {
-      "query": "next 100x",
-      "minLikes": 25,
-      "category": "discovery",
-      "description": "Next 100x opportunities"
-    },
-    {
-      "query": "$XAI",
-      "minLikes": 50,
-      "category": "ticker",
+      "name": "xai-cashtag",
+      "query": "$XAI lang:en -is:retweet min_faves:10",
+      "minLikes": 10,
+      "category": "cashtag",
       "description": "XAI token discussions"
     },
     {
-      "query": "crypto launchpad",
-      "minLikes": 30,
-      "category": "launch",
-      "description": "Crypto launchpad platforms"
+      "name": "render-cashtag",
+      "query": "$RENDER lang:en -is:retweet min_faves:10",
+      "minLikes": 10,
+      "category": "cashtag",
+      "description": "Render cashtag discussions"
     },
     {
-      "query": "#DeFi gem",
-      "minLikes": 25,
-      "category": "discovery",
-      "description": "DeFi hidden gems"
+      "name": "inj-cashtag",
+      "query": "$INJ lang:en -is:retweet min_faves:10",
+      "minLikes": 10,
+      "category": "cashtag",
+      "description": "Injective cashtag discussions"
     },
     {
-      "query": "#GameFi launch",
-      "minLikes": 20,
-      "category": "launch",
-      "description": "GameFi project launches"
+      "name": "sei-cashtag",
+      "query": "$SEI lang:en -is:retweet min_faves:10",
+      "minLikes": 10,
+      "category": "cashtag",
+      "description": "Sei cashtag discussions"
     },
     {
-      "query": "#Web3 investing",
-      "minLikes": 30,
-      "category": "investor",
-      "description": "Web3 investment opportunities"
+      "name": "tia-cashtag",
+      "query": "$TIA lang:en -is:retweet min_faves:10",
+      "minLikes": 10,
+      "category": "cashtag",
+      "description": "Celestia cashtag discussions"
     },
     {
-      "query": "micro cap alert",
-      "minLikes": 15,
-      "category": "microcap",
-      "description": "Microcap alerts and calls"
+      "name": "dym-cashtag",
+      "query": "$DYM lang:en -is:retweet min_faves:10",
+      "minLikes": 10,
+      "category": "cashtag",
+      "description": "Dymension cashtag discussions"
     },
     {
-      "query": "low cap calls",
-      "minLikes": 20,
-      "category": "microcap",
-      "description": "Low cap investment calls"
+      "name": "jup-cashtag",
+      "query": "$JUP lang:en -is:retweet min_faves:10",
+      "minLikes": 10,
+      "category": "cashtag",
+      "description": "Jupiter cashtag discussions"
+    },
+    {
+      "name": "pyth-cashtag",
+      "query": "$PYTH lang:en -is:retweet min_faves:10",
+      "minLikes": 10,
+      "category": "cashtag",
+      "description": "Pyth Network cashtag discussions"
+    },
+    {
+      "name": "jto-cashtag",
+      "query": "$JTO lang:en -is:retweet min_faves:10",
+      "minLikes": 10,
+      "category": "cashtag",
+      "description": "Jito cashtag discussions"
+    },
+    {
+      "name": "wld-cashtag",
+      "query": "$WLD lang:en -is:retweet min_faves:10",
+      "minLikes": 10,
+      "category": "cashtag",
+      "description": "Worldcoin cashtag discussions"
     }
   ],
   "settings": {
     "maxTweetsPerQuery": 50,
     "maxQueriesPerRun": 5,
-    "minEngagementThreshold": 15,
+    "minEngagementThreshold": 10,
     "maxAccountsPerQuery": 10,
-    "description": "Microcap/small cap crypto investor-focused search queries. Targets new launches, hidden gems, and early investment opportunities."
+    "description": "Microcap and altcoin cashtag searches. Targets genuine discussions with min_faves filter in query for efficiency."
   }
 }
