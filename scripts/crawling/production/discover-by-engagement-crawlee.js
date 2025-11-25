@@ -15,7 +15,7 @@ const worktreeRoot = path.resolve(__scriptsDir, '../../..');
 dotenv.config({ path: path.join(worktreeRoot, '.env') });
 
 import fs from 'fs';
-import { searchTweets, getUserProfileWebUnblocker } from '../crawlers/twitter-crawler.js';
+import { searchTweetsWebUnblocker, getUserProfileWebUnblocker } from '../crawlers/twitter-crawler.js';
 import { runAmplifiedKolSearch } from '../utils/amplified-search.js';
 import {
   loadConfig,
@@ -215,14 +215,13 @@ async function discoverByEngagementCrawlee() {
       // Get authenticated cookies
       const cookies = await authManager.getAuthenticatedCookies(account);
 
-      // Use Crawlee with GraphQL interception (works both locally and on CI)
-      // Note: Do NOT use proxy for searches - GitHub Actions can access X directly
-      // Proxy causes 120s timeouts and prevents GraphQL interception
-      const tweets = await searchTweets(queryConfig.query, {
+      // Use Web Unblocker with HTML parsing (works on CI)
+      // GraphQL interception fails on GitHub Actions, but HTML parsing works
+      // Same approach as profile fetching which works perfectly
+      const tweets = await searchTweetsWebUnblocker(queryConfig.query, {
         maxResults: searchConfig.settings.maxTweetsPerQuery || 50,
         cookies,
         account
-        // proxyConfig: undefined - No proxy needed, works better without it
       });
 
       // Mark account as used
