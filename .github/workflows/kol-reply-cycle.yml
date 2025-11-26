@@ -64,14 +64,14 @@ jobs:
           GITHUB_ACTIONS: true
         run: |
           echo "Starting reply cycle..."
-          node scripts/kols/evaluate-and-reply-kols.js
+          node scripts/crawling/production/evaluate-and-reply-kols.js
           echo "reply_status=success" >> $GITHUB_OUTPUT
         continue-on-error: true
 
       - name: Check for changes
         id: changes
         run: |
-          if git diff --quiet scripts/kols/data/; then
+          if git diff --quiet scripts/crawling/data/; then
             echo "has_changes=false" >> $GITHUB_OUTPUT
           else
             echo "has_changes=true" >> $GITHUB_OUTPUT
@@ -80,10 +80,10 @@ jobs:
       - name: Get stats
         id: stats
         run: |
-          if [ -f "scripts/kols/data/kol-replies.json" ]; then
-            TOTAL_REPLIES=$(jq '.replies | length' scripts/kols/data/kol-replies.json)
+          if [ -f "scripts/crawling/data/kol-replies.json" ]; then
+            TOTAL_REPLIES=$(jq '.replies | length' scripts/crawling/data/kol-replies.json)
             TODAY=$(date +'%Y-%m-%d')
-            TODAY_REPLIES=$(jq --arg date "$TODAY" '[.replies[] | select(.timestamp | startswith($date))] | length' scripts/kols/data/kol-replies.json)
+            TODAY_REPLIES=$(jq --arg date "$TODAY" '[.replies[] | select(.timestamp | startswith($date))] | length' scripts/crawling/data/kol-replies.json)
             echo "total=$TOTAL_REPLIES" >> $GITHUB_OUTPUT
             echo "today=$TODAY_REPLIES" >> $GITHUB_OUTPUT
           fi
@@ -93,7 +93,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add scripts/kols/data/
+          git add scripts/crawling/data/
           git commit -m "KOL reply cycle - $(date +'%Y-%m-%d %H:%M UTC')
 
           Total replies: ${{ steps.stats.outputs.total }} | Today: ${{ steps.stats.outputs.today }}
