@@ -215,8 +215,9 @@ async function evaluateAndReply() {
      • Like tweet: ${antiSpam.likeTweetBeforeReply ? '✅' : '❌'}
 `);
 
-  // HTML Parsing with authManager (2.1.2) - No initialization needed
-  // authManager is automatically initialized when imported
+  // HTML Parsing with authManager (2.1.2) - Initialize authManager
+  currentPhase = 'initializing_authManager';
+  await authManager.initialize();
   currentPhase = 'ready_to_fetch_tweets';
   console.log(`⏰ [${Math.round((Date.now() - scriptStartTime) / 1000)}s] 📍 HTML parsing ready via authManager`);
 
