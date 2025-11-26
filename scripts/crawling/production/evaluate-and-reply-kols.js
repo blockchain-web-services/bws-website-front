@@ -32,13 +32,10 @@ import fs from 'fs/promises';
 
 const __dirname = __scriptsDir;
 const ENGAGING_POSTS_PATH = path.join(__dirname, '../data/engaging-posts.json');
-// UPDATED: Using multi-account scraper client instead of Twitter API client
-// This decouples searches from Twitter API to avoid 403 errors
+// UPDATED 2.1.2: Using HTML parsing via authManager (no multi-account client needed)
+// We no longer use multi-account-scraper-client.js - HTML parsing handles everything
+// Keep apiTracker reference for compatibility
 import {
-  initializeMultiAccountClient,
-  getUserTweetsViaSearch,
-  postReply,
-  printMultiAccountUsageSummary,
   apiTracker
 } from '../utils/multi-account-scraper-client.js';
 // Keep twitter-client for followUser/likeTweet actions (these still need a write client)
@@ -215,19 +212,10 @@ async function evaluateAndReply() {
      • Like tweet: ${antiSpam.likeTweetBeforeReply ? '✅' : '❌'}
 `);
 
-  // Initialize multi-account scraper client
-  currentPhase = 'initializing_multi_account_client';
-  console.log(`⏰ [${Math.round((Date.now() - scriptStartTime) / 1000)}s] 📍 Phase: ${currentPhase}`);
-
-  try {
-    await initializeMultiAccountClient();
-    lastSuccessfulOperation = 'multi_account_client_initialized';
-    console.log(`✅ [${Math.round((Date.now() - scriptStartTime) / 1000)}s] Multi-account scraper client initialized`);
-  } catch (error) {
-    console.error('❌ Failed to initialize multi-account client. Exiting.');
-    console.error(`   Error: ${error.message}\n`);
-    process.exit(1);
-  }
+  // HTML Parsing with authManager (2.1.2) - No initialization needed
+  // authManager is automatically initialized when imported
+  currentPhase = 'ready_to_fetch_tweets';
+  console.log(`⏰ [${Math.round((Date.now() - scriptStartTime) / 1000)}s] 📍 HTML parsing ready via authManager`);
 
   // Initialize write client for anti-spam actions (follow/like)
   let writeClient = null;
