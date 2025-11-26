@@ -292,6 +292,7 @@ export async function sendReplyNotification(options) {
     totalReplies = 0,
     totalKols = 0,
     activeKols = 0,
+    kolsProcessed = 0,  // NEW: KOLs actually checked this run
     apiStats = null,
     error = null,
     dryRun = false,
@@ -301,6 +302,11 @@ export async function sendReplyNotification(options) {
 
   const emoji = success ? '✅' : '❌';
   const statusText = success ? 'SUCCESS' : 'FAILURE';
+
+  // Calculate selection rate
+  const tweetsConsidered = tweetsEvaluated > 0 ? tweetsEvaluated : 1; // Avoid division by zero
+  const selectionRate = ((repliesPosted / tweetsConsidered) * 100).toFixed(1);
+  const skipRate = ((tweetsSkipped / tweetsConsidered) * 100).toFixed(1);
 
   // Build formatted message
   const textParts = [];
@@ -312,17 +318,24 @@ export async function sendReplyNotification(options) {
   }
 
   textParts.push('');
-  textParts.push('');
   textParts.push('*KOL Database:*');
-  textParts.push(`  Total KOLs tracked: ${totalKols}`);
-  textParts.push(`  Active KOLs: ${activeKols}`);
+  textParts.push(`  Total tracked: ${totalKols}`);
+  textParts.push(`  Active: ${activeKols}`);
+  if (kolsProcessed > 0) {
+    textParts.push(`  Checked this run: ${kolsProcessed}`);
+  }
+
   textParts.push('');
-  textParts.push('*Results:*');
-  textParts.push(`  Tweets evaluated: ${tweetsEvaluated}`);
-  textParts.push(`  Tweets skipped: ${tweetsSkipped}`);
-  textParts.push(`  Replies posted (this run): ${repliesPosted}`);
-  textParts.push(`  Replies today: ${todayReplies}/${maxRepliesPerDay}`);
-  textParts.push(`  Total replies all time: ${totalReplies}`);
+  textParts.push('*Tweet Processing:*');
+  textParts.push(`  📊 Tweets checked: ${tweetsEvaluated}`);
+  textParts.push(`  ✅ Selected for reply: ${repliesPosted} (${selectionRate}%)`);
+  textParts.push(`  ⏭️  Skipped: ${tweetsSkipped} (${skipRate}%)`);
+
+  textParts.push('');
+  textParts.push('*Reply Stats:*');
+  textParts.push(`  Posted this run: ${repliesPosted}`);
+  textParts.push(`  Today total: ${todayReplies}/${maxRepliesPerDay}`);
+  textParts.push(`  All time: ${totalReplies}`);
 
   // If successful reply with details, show them
   if (success && replyDetails && repliesPosted > 0) {
