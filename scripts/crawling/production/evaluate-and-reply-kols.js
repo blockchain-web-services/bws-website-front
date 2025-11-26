@@ -332,12 +332,12 @@ async function evaluateAndReply() {
       lastSuccessfulOperation = `processing_kol_${kol.username}`;
       await twitterLimiter.throttle();
 
-      // Get cookies from authManager for this search
-      const cookies = await authManager.getCookies();
+      // Get next available account with cookies from authManager
+      const account = await authManager.getNextAccount();
       const tweets = await getUserTweetsWebUnblocker(kol.username, {
         maxResults: 100,
-        cookies,
-        account: { username: 'scraper_account' } // Identifier for logging
+        cookies: account.cookies,
+        account // Pass the full account object for tracking/logging
       });
       lastSuccessfulOperation = `fetched_tweets_for_${kol.username}`;
 
