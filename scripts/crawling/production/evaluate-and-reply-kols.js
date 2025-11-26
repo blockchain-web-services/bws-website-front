@@ -234,9 +234,9 @@ async function evaluateAndReply() {
   const claudeClient = createClaudeClient();
   console.log(`✅ [${Math.round((Date.now() - scriptStartTime) / 1000)}s] Claude client initialized`);
 
-  // Initialize rate limiters
-  const twitterLimiter = new RateLimiter(config.rateLimits.twitterApiCallsPerMinute);
-  const claudeLimiter = new RateLimiter(config.rateLimits.claudeApiCallsPerMinute);
+  // Initialize rate limiters with defaults if not in config
+  const twitterLimiter = new RateLimiter(config.rateLimits?.twitterApiCallsPerMinute || 15);
+  const claudeLimiter = new RateLimiter(config.rateLimits?.claudeApiCallsPerMinute || 50);
 
   // Load data
   currentPhase = 'loading_data';
