@@ -1097,11 +1097,26 @@
       "accountType": "person",
       "lastTweetAnalyzed": null,
       "status": "active"
+    },
+    {
+      "username": "IvanOnTech",
+      "name": "Ivan on Tech",
+      "followers_count": 493900,
+      "following_count": 6122,
+      "verified": false,
+      "description": "@joinbullmania to get the Money Line, the Money Scanner and become part of the most profitable community in crypto  I WILL NEVER DM YOU ANYWHERE!!!",
+      "url": "",
+      "location": "",
+      "created_at": "Se unió el octubre de 2011",
+      "profile_image_url": "",
+      "discovered_at": "2025-11-26T09:45:06.065Z",
+      "source": "web-unblocker-batch",
+      "tier": "macro"
     }
   ],
   "metadata": {
     "lastDiscoveryRun": "2025-11-26T07:36:25.871Z",
-    "totalKols": 35,
+    "totalKols": 36,
     "activeKols": 22,
     "discoveryDepth": 2,
     "seedKolsCount": 8,

@@ -1,7 +1,7 @@
 {
   "description": "Candidate KOL usernames for discovery. Successfully added KOLs are automatically removed from this list.",
-  "lastUpdated": "2025-11-24T09:54:33.127Z",
-  "totalCandidates": 28,
+  "lastUpdated": "2025-11-26T09:45:06.067Z",
+  "totalCandidates": 18,
   "candidatesByTier": {
     "tier1_100k_500k": [],
     "tier2_50k_100k": [],
@@ -11,19 +11,8 @@
     "tier6_trading_analysis_100k_500k": [],
     "tier7_defi_protocols_50k_200k": [],
     "tier8_nft_web3_50k_300k": [],
-    "tier9_layer1_layer2_30k_150k": [
-      "Cardano",
-      "NEARProtocol"
-    ],
+    "tier9_layer1_layer2_30k_150k": [],
     "tier10_content_creators_20k_100k": [
-      "IvanOnTech",
-      "AltcoinDaily",
-      "BenjaminCowen",
-      "ByteSizeCapital",
-      "CryptoZombie",
-      "TheBlockchainPod",
-      "Coin_Bureau",
-      "TheMoon",
       "CryptoLark",
       "DataDash",
       "BoxMining"
