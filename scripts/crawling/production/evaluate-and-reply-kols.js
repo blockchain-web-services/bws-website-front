@@ -327,12 +327,18 @@ async function evaluateAndReply() {
     console.log(`   Stats: ${tweetEvaluated} tweets evaluated, ${repliesPosted} replies posted, ${tweetsSkipped} skipped`);
 
     try {
-      // Fetch recent tweets via multi-account scraper (NO Twitter API)
+      // Fetch recent tweets via HTML parsing with authManager (NO Twitter API)
       currentPhase = `fetching_tweets_for_${kol.username}`;
       lastSuccessfulOperation = `processing_kol_${kol.username}`;
       await twitterLimiter.throttle();
 
-      const tweets = await getUserTweetsViaSearch(kol.username, 100);
+      // Get cookies from authManager for this search
+      const cookies = await authManager.getCookies();
+      const tweets = await getUserTweetsWebUnblocker(kol.username, {
+        maxResults: 100,
+        cookies,
+        account: { username: 'scraper_account' } // Identifier for logging
+      });
       lastSuccessfulOperation = `fetched_tweets_for_${kol.username}`;
 
       // Filter tweets: only last 6 hours (preferred) or max 24 hours
@@ -1029,9 +1035,6 @@ ${dryRun ? '⚠️  DRY RUN MODE - No actual tweets posted' : ''}
 
 ${'='.repeat(60)}
 `);
-
-  // Display multi-account scraper usage summary
-  printMultiAccountUsageSummary();
 
   // Display API consumption statistics
   apiTracker.displayStats();
