@@ -51,6 +51,9 @@ import {
   evaluateTweetForReply,
   generateReplyText
 } from '../utils/claude-client.js';
+// HTML parsing and auth manager for tweet fetching (2.1.2 approach)
+import { getUserTweetsWebUnblocker } from '../crawlers/twitter-crawler.js';
+import authManager from '../utils/x-auth-manager.js';
 
 /**
  * Load engaging posts from ScrapFly discovery
