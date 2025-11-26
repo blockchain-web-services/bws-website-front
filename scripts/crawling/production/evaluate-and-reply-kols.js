@@ -1048,6 +1048,7 @@ ${'='.repeat(60)}
     totalReplies: repliesData.replies.length,
     totalKols: kolsData.kols.length,
     activeKols: activeKols.length,
+    kolsProcessed,  // NEW: Include how many KOLs were actually checked this run
     dryRun,
     replyDetails: lastReplyDetails,  // Include last successful reply details
     apiStats: apiTracker.exportStats(),
