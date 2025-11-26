@@ -732,3 +732,39 @@ export async function searchTweetsWebUnblocker(query, options = {}) {
     return [];
   }
 }
+
+/**
+ * Get user tweets using Web Unblocker HTML parsing
+ * Uses from:username search to fetch user's original tweets
+ */
+export async function getUserTweetsWebUnblocker(username, options = {}) {
+  const { maxResults = 100, cookies, account } = options;
+
+  // Use search with from:username operator to get user's tweets
+  // Filter out retweets and replies to get original content only
+  const query = `from:${username} -is:retweet -is:reply`;
+
+  console.log(`📊 Fetching tweets from @${username} (HTML parsing)`);
+
+  // Leverage searchTweetsWebUnblocker with the from:username query
+  const tweets = await searchTweetsWebUnblocker(query, {
+    maxResults,
+    cookies,
+    account
+  });
+
+  // Convert to format compatible with multi-account-scraper-client
+  return tweets.map(tweet => ({
+    id: tweet.id,
+    text: tweet.text,
+    created_at: tweet.created_at,
+    author_id: tweet.author_id,
+    username: tweet.username || tweet.author?.username,
+    public_metrics: {
+      retweet_count: tweet.retweets || tweet.public_metrics?.retweet_count || 0,
+      reply_count: tweet.replies || tweet.public_metrics?.reply_count || 0,
+      like_count: tweet.likes || tweet.public_metrics?.like_count || 0,
+      quote_count: tweet.quotes || tweet.public_metrics?.quote_count || 0
+    }
+  }));
+}
