@@ -420,55 +420,69 @@ _Note: Table auto-generated from last 10 days of workflow executions. Older entr
 
 ## 2.2 Tweet Discovery
 
-Tweet Discovery monitors the timelines of discovered KOLs to identify high-engagement content relevant to BWS products and blockchain trends. This workflow feeds the reply automation system with engagement opportunities.
+Tweet Discovery monitors the timelines of discovered KOLs to identify high-engagement content relevant to BWS products and blockchain trends. The system uses a 2-script architecture:
+
+1. **Script 2.2.1**: Timeline monitoring - discovers high-engagement tweets and saves to queue
+2. **Script 2.3.1**: Reply posting - processes queue and posts AI-generated replies
 
 ---
 
-### 2.2.1 Content Discovery - Crawlee
+### 2.2.1 KOL Timeline Monitoring
 
-**Workflow File**: `.github/workflows/discover-content-scrapfly.yml`
+**Workflow File**: `.github/workflows/kol-monitor-timelines.yml`
 
-**Overview**: Monitors KOL timelines to discover high-engagement crypto content relevant to BWS products and blockchain trends. Feeds the reply system with engagement opportunities.
+**Overview**: Monitors KOL timelines to discover high-engagement crypto content relevant to BWS products and blockchain trends. Populates the reply queue (`engaging-posts.json`) for downstream reply processing.
 
-**Schedule**: 4x daily - 00:00, 06:00, 12:00, 18:00 UTC (every 6 hours)
+**Schedule**: 4x daily - 07:15, 12:30, 17:45, 22:00 UTC (randomized schedule)
 
 **Scripts Used**:
-- `scripts/crawling/production/discover-with-fallback.js` (content scanner)
-- `scripts/crawling/crawlers/crawlee-browser.js` (browser automation)
+- `scripts/crawling/production/monitor-kol-timelines.js` (timeline scanner)
+- `scripts/crawling/crawlers/twitter-crawler.js` (HTML parsing via Web Unblocker)
+- `scripts/crawling/utils/x-auth-manager.js` (multi-account authentication)
 - `scripts/crawling/utils/kol-utils.js` (KOL data management)
-- `scripts/crawling/utils/claude-client.js` (AI relevance scoring)
+- `scripts/crawling/utils/zapier-webhook.js` (monitoring notifications)
 
-**Strategy**: **Timeline Monitoring with AI Relevance Filtering**
+**Strategy**: **HTML Parsing + Engagement Filtering (NO AI)**
 
-Content Discovery monitors the timelines of active KOLs in the database, extracting tweets with high engagement metrics and filtering for BWS product relevance. Unlike discovery workflows that find new KOLs, this workflow finds engagement-worthy content from existing KOLs for reply opportunities.
+Timeline Monitoring scans active KOL timelines using HTML parsing via getUserTweetsWebUnblocker(). Unlike the old monolithic approach, this script ONLY discovers and queues tweets - it does NOT evaluate relevance or post replies.
 
-**Discovery Process**:
-1. **Load KOL Database**: Reads list of active KOLs from database
-2. **Timeline Scraping**: Fetches recent tweets from each KOL using Crawlee + Playwright
-3. **Engagement Filtering**: Filters by likes, retweets, views (high-engagement only)
-4. **Relevance Scoring**: Claude AI scores content for BWS product relevance
-5. **Queue Building**: Adds relevant posts to `engaging-posts.json` for reply workflow
-6. **Deduplication**: Skips previously processed posts
+**Monitoring Process**:
+1. **Load KOL Database**: Reads list of active KOLs from `kols-data.json`
+2. **Timeline Fetching**: Uses HTML parsing via Web Unblocker to fetch recent tweets (no Twitter API)
+3. **Engagement Filtering**: Filters by engagement threshold (likes + retweets)
+4. **Queue Population**: Saves qualifying tweets to `engaging-posts.json` with metadata
+5. **Deduplication**: Skips tweets already in queue or processed
+6. **Schedule Randomization**: Randomizes next 4 run times to avoid spam detection
+7. **Zapier Notification**: Sends simplified metrics (tweets scanned, selected, queue status)
 
 **Key Features**:
-- **Browser Automation**: Headless Chromium via Playwright bypasses API restrictions
-- **Cookie Authentication**: Uses manually extracted cookies (no API keys needed)
-- **Oxylabs Proxy**: Residential proxies prevent IP blocking and rate limits
-- **AI Relevance Scoring**: Claude evaluates content for BWS product mention opportunities
-- **High-Engagement Focus**: Only extracts tweets with significant community interaction
-- **4x Daily Execution**: Frequent runs ensure timely content discovery
+- **NO AI Evaluation**: Pure monitoring - evaluation happens in Script 2.3.1
+- **NO Reply Posting**: Only populates queue - replying happens in Script 2.3.1
+- **HTML Parsing**: Uses getUserTweetsWebUnblocker() via authManager
+- **Cookie Authentication**: Multi-account rotation via x-auth-manager.js
+- **Oxylabs Proxy**: Residential proxies prevent IP blocking
+- **Engagement-Only Filtering**: Simple like/retweet threshold (no AI overhead)
+- **7-Day Expiration**: Posts expire after 7 days if not processed
+- **Processed Flag**: Marks posts as processed: false for downstream handling
 
-**Content Types Discovered**:
-- Market analysis and trend discussions
-- DeFi protocol launches and updates
-- NFT marketplace activity
-- Web3 infrastructure developments
-- Crypto regulatory news and impacts
-- Trading strategies and technical analysis
+**Queue Data Structure** (`engaging-posts.json`):
+```json
+{
+  "posts": [{
+    "id": "tweet_id",
+    "text": "tweet content",
+    "author": { "id": "kol_id", "username": "@KOL", "displayName": "KOL Name" },
+    "public_metrics": { "like_count": 100, "retweet_count": 20 },
+    "processed": false,
+    "expiresAt": "2025-12-05T00:00:00Z",
+    "source": "timeline_monitor"
+  }]
+}
+```
 
 **Data Files**:
 - **Input**: `scripts/crawling/data/kols-data.json` (KOL database)
-- **Output**: `scripts/crawling/data/engaging-posts.json` (reply queue)
+- **Output**: `scripts/crawling/data/engaging-posts.json` (reply queue for Script 2.3.1)
 
 ---
 
@@ -484,30 +498,33 @@ _Note: Table auto-generated from last 10 days of workflow executions. Older entr
 
 ## 2.3 Reply Automation
 
-Reply Automation generates and posts AI-powered replies to discovered tweets from monitored KOLs. Uses Claude AI to create contextual responses that mention BWS products naturally.
+Reply Automation processes the tweet queue populated by Script 2.2.1, evaluating each tweet with Claude AI and posting contextual replies that mention BWS products naturally.
 
 ---
 
-### 2.3.1 KOL Reply Cycle
+### 2.3.1 KOL Reply Cycle (Queue Processor)
 
 **Workflow File**: `.github/workflows/kol-reply-cycle.yml`
 
-**Overview**: 🔴 **CRITICAL ISSUE** - Automated engagement system that generates and posts AI-powered replies to KOL tweets. Currently experiencing high failure rate due to Twitter API restrictions.
+**Overview**: Processes the `engaging-posts.json` queue populated by Script 2.2.1. Evaluates each unprocessed tweet with Claude AI and posts contextual replies via Twitter API v2.
 
-**Schedule**: 4x daily (06:30, 12:00, 15:30, 21:00 UTC)
+**Schedule**: 2x daily (09:00, 21:00 UTC)
 
 **Scripts Used**:
-- `scripts/crawling/production/evaluate-and-reply-kols.js` (main script)
-- `scripts/crawling/utils/twitter-client.js` (Twitter API v2)
-- `scripts/crawling/utils/claude-client.js` (AI reply generation)
+- `scripts/crawling/production/reply-to-kol-posts.js` (NEW - queue processor)
+- `scripts/crawling/utils/twitter-client.js` (Twitter API v2 posting)
+- `scripts/crawling/utils/claude-client.js` (AI evaluation & reply generation)
 - `scripts/crawling/utils/kol-utils.js` (KOL data management)
 - `scripts/crawling/utils/schedule-randomizer.js` (anti-spam delays)
+- `scripts/crawling/utils/zapier-webhook.js` (reply notifications)
 
-**Strategy**: **Twitter API v2 + Claude AI**
-- Uses official Twitter API v2 for posting
-- AI-generated replies via Claude API (context-aware, product mentions)
-- Relevance scoring system (only replies to high-relevance tweets)
-- Rate limiting: Max 2 replies per run
+**Strategy**: **Queue-Based Processing + Twitter API v2**
+- Reads unprocessed posts from `engaging-posts.json` (populated by Script 2.2.1)
+- AI evaluation per tweet (relevance scoring + product matching)
+- AI-generated contextual replies via Claude API
+- Posts via Twitter API v2 with anti-spam actions (follow KOL, like tweet)
+- Marks posts as `processed: true` to prevent duplicate replies
+- Rate limiting: Max 1 reply per run (configurable)
 - Randomized scheduling to avoid spam detection
 
 **Recent Failures**: **4 failures, 4 cancelled** (Last 3 days)
