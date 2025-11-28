@@ -1779,13 +1779,193 @@
       "addedAt": "2025-11-28T07:18:06.160Z",
       "expiresAt": "2025-12-05T07:18:06.160Z",
       "source": "timeline_monitor"
+    },
+    {
+      "id": "1992209779746611200",
+      "text": "",
+      "author": {
+        "id": "2259434528",
+        "username": "cobie"
+      },
+      "public_metrics": {
+        "retweet_count": 279,
+        "reply_count": 271,
+        "like_count": 7444,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/cobie/status/1992209779746611200",
+      "processed": false,
+      "addedAt": "2025-11-28T08:49:50.655Z",
+      "expiresAt": "2025-12-05T08:49:50.655Z",
+      "source": "timeline_monitor"
+    },
+    {
+      "id": "1994307773966815327",
+      "text": "BREAKING: $17.25B Stablecoin Explosion Since Oct 11\n\nSince the Oct. 11 crash, Tether & Circle minted $17.25B, including $1.25B USDC Yesterday.\n\nSignaling Surging Demand for Dollar-backed Crypto.\n\n$USDT $USDC",
+      "author": {
+        "id": "crawlee_search_cryptopatel",
+        "username": "CryptoPatel"
+      },
+      "public_metrics": {
+        "retweet_count": 13,
+        "reply_count": 10,
+        "like_count": 152,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoPatel/status/1994307773966815327",
+      "processed": false,
+      "addedAt": "2025-11-28T08:50:25.377Z",
+      "expiresAt": "2025-12-05T08:50:25.377Z",
+      "source": "timeline_monitor"
+    },
+    {
+      "id": "1994292421920969186",
+      "text": "$ONE Bearish bias\n\nPrice hitting a 4H Order Block, Expecting a rejection & downside expansion. Place SL $0.00494 (for safety).",
+      "author": {
+        "id": "crawlee_search_cryptopatel",
+        "username": "CryptoPatel"
+      },
+      "public_metrics": {
+        "retweet_count": 12,
+        "reply_count": 9,
+        "like_count": 172,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoPatel/status/1994292421920969186",
+      "processed": false,
+      "addedAt": "2025-11-28T08:50:25.377Z",
+      "expiresAt": "2025-12-05T08:50:25.377Z",
+      "source": "timeline_monitor"
+    },
+    {
+      "id": "1994305328335163461",
+      "text": "BREAKING:\n\nTom Lee's BitMine Immersion buys another 14,618 $ETH worth $44.3 million.",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "retweet_count": 38,
+        "reply_count": 124,
+        "like_count": 372,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoRover/status/1994305328335163461",
+      "processed": false,
+      "addedAt": "2025-11-28T08:54:19.972Z",
+      "expiresAt": "2025-12-05T08:54:19.972Z",
+      "source": "timeline_monitor"
+    },
+    {
+      "id": "1994304137505210512",
+      "text": "$REPPO might be one of the most serious AI builds at the moment\n\nWhile everyone talks about AI tokens, Reppo is actually building Bittensor-style infrastructure for AI training data, using prediction markets— live, working, and already usable at http://reppo.ai.\n\nScale AI",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "retweet_count": 26,
+        "reply_count": 43,
+        "like_count": 115,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoRover/status/1994304137505210512",
+      "processed": false,
+      "addedAt": "2025-11-28T08:54:19.972Z",
+      "expiresAt": "2025-12-05T08:54:19.972Z",
+      "source": "timeline_monitor"
+    },
+    {
+      "id": "1994303207896428848",
+      "text": "BREAKING:\n\n$14,935,000,000 IN BITCOIN AND ETHEREUM OPTIONS ARE SET TO EXPIRE TODAY.\n\nEXPECT VOLATILITY.",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "retweet_count": 74,
+        "reply_count": 104,
+        "like_count": 403,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoRover/status/1994303207896428848",
+      "processed": false,
+      "addedAt": "2025-11-28T08:54:19.972Z",
+      "expiresAt": "2025-12-05T08:54:19.972Z",
+      "source": "timeline_monitor"
+    },
+    {
+      "id": "1994300978628006266",
+      "text": "3 years of pain for 0 months of glory.  \n\nRIP altcoin holders.",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "retweet_count": 40,
+        "reply_count": 172,
+        "like_count": 466,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoRover/status/1994300978628006266",
+      "processed": false,
+      "addedAt": "2025-11-28T08:54:19.972Z",
+      "expiresAt": "2025-12-05T08:54:19.972Z",
+      "source": "timeline_monitor"
+    },
+    {
+      "id": "1994267545554276741",
+      "text": "#BITCOIN IS TRAPPING YOU...\n\nWatch NOW:\nhttps://youtu.be/WFuS5lQBD4E",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "retweet_count": 21,
+        "reply_count": 55,
+        "like_count": 230,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoRover/status/1994267545554276741",
+      "processed": false,
+      "addedAt": "2025-11-28T08:54:19.972Z",
+      "expiresAt": "2025-12-05T08:54:19.972Z",
+      "source": "timeline_monitor"
+    },
+    {
+      "id": "1994207755586895979",
+      "text": "This new update about $VSN entering Binance Alpha feels like an important step for the @Arbitrum ecosystem. \n\nIt shows early readiness and strong coordination from the team behind it. Three things stand out clearly:\n\n It shows real confidence and preparation. Becoming the first",
+      "author": {
+        "id": "crawlee_search_crypt0_defi",
+        "username": "Crypt0_DeFi"
+      },
+      "public_metrics": {
+        "retweet_count": 28,
+        "reply_count": 74,
+        "like_count": 89,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/Crypt0_DeFi/status/1994207755586895979",
+      "processed": false,
+      "addedAt": "2025-11-28T08:54:28.166Z",
+      "expiresAt": "2025-12-05T08:54:28.166Z",
+      "source": "timeline_monitor"
     }
   ],
   "metadata": {
-    "lastUpdated": "2025-11-28T07:20:11.568Z",
-    "totalPosts": 89,
+    "lastUpdated": "2025-11-28T08:57:02.569Z",
+    "totalPosts": 98,
     "bySource": {
-      "timeline_monitor": 89,
+      "timeline_monitor": 98,
       "search_discovery": 0
     }
   }
