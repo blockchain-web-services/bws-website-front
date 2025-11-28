@@ -1959,13 +1959,373 @@
       "addedAt": "2025-11-28T08:54:28.166Z",
       "expiresAt": "2025-12-05T08:54:28.166Z",
       "source": "timeline_monitor"
+    },
+    {
+      "id": "1994223538123821119",
+      "text": "$ZEC prob goes sub $200 in the coming weeks/months. Should be some bounces along the way though",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "retweet_count": 32,
+        "reply_count": 82,
+        "like_count": 259,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/AltcoinSherpa/status/1994223538123821119",
+      "processed": false,
+      "addedAt": "2025-11-28T12:46:15.011Z",
+      "expiresAt": "2025-12-05T12:46:15.011Z",
+      "source": "timeline_monitor"
+    },
+    {
+      "id": "1994061613263962284",
+      "text": "probably a low volatility day today...",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "retweet_count": 19,
+        "reply_count": 43,
+        "like_count": 75,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/AltcoinSherpa/status/1994061613263962284",
+      "processed": false,
+      "addedAt": "2025-11-28T12:46:15.011Z",
+      "expiresAt": "2025-12-05T12:46:15.011Z",
+      "source": "timeline_monitor"
+    },
+    {
+      "id": "1994314826139529703",
+      "text": "APPLE PAY EXPANDS TO BITCOIN & CRYPTO \n\nApple users can now use Apple Pay to seamlessly purchase $BTC & crypto on their Trust Wallet.\n\nThis integration makes buying crypto nearly as easy as buying apps, dramatically lowering friction for newcomers - no bank transfers, complex",
+      "author": {
+        "id": "877357064724520961",
+        "username": "CryptosR_Us"
+      },
+      "public_metrics": {
+        "retweet_count": 47,
+        "reply_count": 54,
+        "like_count": 237,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptosR_Us/status/1994314826139529703",
+      "processed": false,
+      "addedAt": "2025-11-28T12:47:13.387Z",
+      "expiresAt": "2025-12-05T12:47:13.387Z",
+      "source": "timeline_monitor"
+    },
+    {
+      "id": "1994284879303881097",
+      "text": "A GOVERNMENT-LINKED WALLET JUST ENTERED ETHEREUM STAKING\n\nOn-chain data shows a wallet associated with Bhutan’s sovereign investment arm moving 320 $ETH to Figment -- enough to activate 10 #Ethereum validators.\n\nA sovereign-linked entity is now participating directly in",
+      "author": {
+        "id": "877357064724520961",
+        "username": "CryptosR_Us"
+      },
+      "public_metrics": {
+        "retweet_count": 40,
+        "reply_count": 47,
+        "like_count": 172,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptosR_Us/status/1994284879303881097",
+      "processed": false,
+      "addedAt": "2025-11-28T12:47:13.388Z",
+      "expiresAt": "2025-12-05T12:47:13.388Z",
+      "source": "timeline_monitor"
+    },
+    {
+      "id": "1994254958523273261",
+      "text": "S&P JUST HIT TETHER WITH A “WEAK” RATING\n\nS&P Global downgraded Tether’s stability score to its lowest tier, citing rising reserve risk and limited transparency.\n\nTheir key factors behind the cut:\n\n $USDT’s exposure to “risk assets” like $BTC, gold, corporate bonds, and loans",
+      "author": {
+        "id": "877357064724520961",
+        "username": "CryptosR_Us"
+      },
+      "public_metrics": {
+        "retweet_count": 12,
+        "reply_count": 38,
+        "like_count": 77,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptosR_Us/status/1994254958523273261",
+      "processed": false,
+      "addedAt": "2025-11-28T12:47:13.388Z",
+      "expiresAt": "2025-12-05T12:47:13.388Z",
+      "source": "timeline_monitor"
+    },
+    {
+      "id": "1994374966079524917",
+      "text": "Gold is forming another bullish consolidation:\n\nWhile Bitcoin remains significantly lagging behind.\n\nHistorically, these divergences tend to narrow as liquidity rotations accelerate.",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "retweet_count": 47,
+        "reply_count": 86,
+        "like_count": 196,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoRover/status/1994374966079524917",
+      "processed": false,
+      "addedAt": "2025-11-28T12:48:18.381Z",
+      "expiresAt": "2025-12-05T12:48:18.381Z",
+      "source": "timeline_monitor"
+    },
+    {
+      "id": "1994373126852080102",
+      "text": "BREAKING:\n\nMICHAEL SAYLOR: \"IF PEOPLE KNEW WHAT I KNOW, BITCOIN WOULD GO TO $10M TOMORROW.\"",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "retweet_count": 79,
+        "reply_count": 142,
+        "like_count": 510,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoRover/status/1994373126852080102",
+      "processed": false,
+      "addedAt": "2025-11-28T12:48:18.381Z",
+      "expiresAt": "2025-12-05T12:48:18.381Z",
+      "source": "timeline_monitor"
+    },
+    {
+      "id": "1994357484941713713",
+      "text": "BREAKING:\n\nKUCOIN EU JUST SECURED A MICA LICENSE, ALLOWING IT TO OFFER REGULATED SERVICES ACROSS THE ENTIRE EEA.",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "retweet_count": 46,
+        "reply_count": 85,
+        "like_count": 383,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoRover/status/1994357484941713713",
+      "processed": false,
+      "addedAt": "2025-11-28T12:48:18.381Z",
+      "expiresAt": "2025-12-05T12:48:18.381Z",
+      "source": "timeline_monitor"
+    },
+    {
+      "id": "1994356812712194322",
+      "text": "BREAKING:\n\nINDIA EXPECTS TO HAVE A DEAL WITH THE U.S. BEFORE YEAR END AS MOST ISSUES ARE ALREADY RESOLVED.",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "retweet_count": 53,
+        "reply_count": 100,
+        "like_count": 529,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoRover/status/1994356812712194322",
+      "processed": false,
+      "addedAt": "2025-11-28T12:48:18.381Z",
+      "expiresAt": "2025-12-05T12:48:18.381Z",
+      "source": "timeline_monitor"
+    },
+    {
+      "id": "1994356091577389329",
+      "text": "During Bitcoin’s consolidation and  crash, large players have continued to build BIG long positions.\n\nThey likely know something.",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "retweet_count": 44,
+        "reply_count": 89,
+        "like_count": 261,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoRover/status/1994356091577389329",
+      "processed": false,
+      "addedAt": "2025-11-28T12:48:18.381Z",
+      "expiresAt": "2025-12-05T12:48:18.381Z",
+      "source": "timeline_monitor"
+    },
+    {
+      "id": "1994350051767050543",
+      "text": "REMINDER: \n\nEthereum's upcoming hard-fork Fusaka goes live in just 1 week!",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "retweet_count": 68,
+        "reply_count": 133,
+        "like_count": 568,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoRover/status/1994350051767050543",
+      "processed": false,
+      "addedAt": "2025-11-28T12:48:18.381Z",
+      "expiresAt": "2025-12-05T12:48:18.381Z",
+      "source": "timeline_monitor"
+    },
+    {
+      "id": "1994340992158204226",
+      "text": "Potential Bitcoin trading setups im eyeing.\n\nClaim a 50% deposit bonus on WEEX to trade yourself. \n\nOnly with this link \nhttps://weex.com/events/welcome-event?vipCode=00dt&qrType=activity…",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "retweet_count": 24,
+        "reply_count": 59,
+        "like_count": 185,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoRover/status/1994340992158204226",
+      "processed": false,
+      "addedAt": "2025-11-28T12:48:18.381Z",
+      "expiresAt": "2025-12-05T12:48:18.381Z",
+      "source": "timeline_monitor"
+    },
+    {
+      "id": "1994331178338501010",
+      "text": "Bitcoin is setting the trap.\n\nMassive topside liquidity is still untouched.\n\nIt’s inevitable, we’re going to take some of it.",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "retweet_count": 99,
+        "reply_count": 135,
+        "like_count": 554,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoRover/status/1994331178338501010",
+      "processed": false,
+      "addedAt": "2025-11-28T12:48:18.381Z",
+      "expiresAt": "2025-12-05T12:48:18.381Z",
+      "source": "timeline_monitor"
+    },
+    {
+      "id": "1994087053001207880",
+      "text": "$TRADE Weekly chart says the reversal is just starting & the pump is at only 5-10% from its potential.",
+      "author": {
+        "id": "crawlee_search_bitcoinhabebe",
+        "username": "Bitcoinhabebe"
+      },
+      "public_metrics": {
+        "retweet_count": 18,
+        "reply_count": 16,
+        "like_count": 51,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/Bitcoinhabebe/status/1994087053001207880",
+      "processed": false,
+      "addedAt": "2025-11-28T12:48:46.517Z",
+      "expiresAt": "2025-12-05T12:48:46.517Z",
+      "source": "timeline_monitor"
+    },
+    {
+      "id": "1994368175258177653",
+      "text": "$15.4B OPTIONS EXPIRY HITS FRIDAY: BRACE FOR VOLATILITY\n\nOne of the biggest option expiries of the year is about to shake the market \n\nBitcoin: $13.7B expiring\nPut/Call Ratio: 0.58\nMax Pain: $100K\n\nEthereum: $1.7B expiring\nPut/Call ratio: 1.0\nMax Pain: $1,400\n\nWhen billions",
+      "author": {
+        "id": "crawlee_search_cryptopatel",
+        "username": "CryptoPatel"
+      },
+      "public_metrics": {
+        "retweet_count": 11,
+        "reply_count": 9,
+        "like_count": 117,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoPatel/status/1994368175258177653",
+      "processed": false,
+      "addedAt": "2025-11-28T12:49:13.469Z",
+      "expiresAt": "2025-12-05T12:49:13.469Z",
+      "source": "timeline_monitor"
+    },
+    {
+      "id": "1994337974259941386",
+      "text": "The Royal Government of Bhutan just transferred 160.35 $ETH to QCP Capital today.",
+      "author": {
+        "id": "crawlee_search_cryptopatel",
+        "username": "CryptoPatel"
+      },
+      "public_metrics": {
+        "retweet_count": 10,
+        "reply_count": 10,
+        "like_count": 155,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoPatel/status/1994337974259941386",
+      "processed": false,
+      "addedAt": "2025-11-28T12:49:13.469Z",
+      "expiresAt": "2025-12-05T12:49:13.470Z",
+      "source": "timeline_monitor"
+    },
+    {
+      "id": "1994322621605777496",
+      "text": "If You're Panicking Right Now, You're About To Miss The Easiest 5x-20x Biggest Altseason\n\nEveryone’s panicking over Trendlines Breakdown. I’m Accumulating. \n\nHere’s why:\nLast cycle: Breakout → Retest → Liquidity Sweep → 1200% explosion\n\n We’re in the retest phase NOW",
+      "author": {
+        "id": "crawlee_search_cryptopatel",
+        "username": "CryptoPatel"
+      },
+      "public_metrics": {
+        "retweet_count": 10,
+        "reply_count": 10,
+        "like_count": 174,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoPatel/status/1994322621605777496",
+      "processed": false,
+      "addedAt": "2025-11-28T12:49:13.470Z",
+      "expiresAt": "2025-12-05T12:49:13.470Z",
+      "source": "timeline_monitor"
+    },
+    {
+      "id": "1994373010397302887",
+      "text": "Drop your trc20 address below\n\nCongrats \n\nYou won $100",
+      "author": {
+        "id": "crawlee_search_nihilusbtc",
+        "username": "NihilusBTC"
+      },
+      "public_metrics": {
+        "retweet_count": 11,
+        "reply_count": 71,
+        "like_count": 74,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/NihilusBTC/status/1994373010397302887",
+      "processed": false,
+      "addedAt": "2025-11-28T12:51:49.472Z",
+      "expiresAt": "2025-12-05T12:51:49.472Z",
+      "source": "timeline_monitor"
     }
   ],
   "metadata": {
-    "lastUpdated": "2025-11-28T08:57:02.569Z",
-    "totalPosts": 98,
+    "lastUpdated": "2025-11-28T12:53:34.834Z",
+    "totalPosts": 116,
     "bySource": {
-      "timeline_monitor": 98,
+      "timeline_monitor": 116,
       "search_discovery": 0
     }
   }
