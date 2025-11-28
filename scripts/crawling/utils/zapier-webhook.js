@@ -539,6 +539,78 @@ export async function sendArticlePostNotification(options) {
   }
 }
 
+/**
+ * Send timeline monitoring notification (Script 2.2.1)
+ * Simplified notification showing tweets selected for reply processing
+ */
+export async function sendMonitorNotification(options) {
+  const {
+    success = true,
+    kolsProcessed = 0,
+    tweetsEvaluated = 0,
+    tweetsSelected = 0,
+    tweetsSkipped = 0,
+    totalKols = 0,
+    totalEngagingPosts = 0,
+    duration = '0',
+    dryRun = false,
+    runUrl = null
+  } = options;
+
+  const emoji = success ? ':white_check_mark:' : ':x:';
+  const statusText = success ? 'SUCCESS' : 'NO TWEETS SELECTED';
+
+  const selectionRate = tweetsEvaluated > 0 ? ((tweetsSelected / tweetsEvaluated) * 100).toFixed(1) : '0.0';
+
+  const textParts = [];
+  textParts.push(`${emoji} *KOL Timeline Monitoring* - ${statusText}`);
+
+  textParts.push('');
+  textParts.push('*KOLs Monitored:*');
+  textParts.push(`  Processed: ${kolsProcessed}/${totalKols}`);
+
+  textParts.push('');
+  textParts.push('*Timeline Scanning:*');
+  textParts.push(`  :mag: Tweets scanned: ${tweetsEvaluated}`);
+  textParts.push(`  :white_check_mark: Selected for reply: ${tweetsSelected} (${selectionRate}%)`);
+  textParts.push(`  :no_entry_sign: Skipped: ${tweetsSkipped}`);
+
+  textParts.push('');
+  textParts.push('*Engaging Posts Queue:*');
+  textParts.push(`  Total posts awaiting reply: ${totalEngagingPosts}`);
+  textParts.push(`  Added this run: ${tweetsSelected}`);
+
+  textParts.push('');
+  textParts.push(`*Duration:* ${duration}s`);
+
+  if (dryRun) {
+    textParts.push('');
+    textParts.push(':warning: *DRY RUN MODE* - No changes saved');
+  }
+
+  if (runUrl) {
+    textParts.push('');
+    textParts.push(`<${runUrl}|View Workflow Run>`);
+  }
+
+  const payload = {
+    Message: textParts.join('\n'),
+    Timestamp: new Date().toISOString(),
+    Type: success ? 'SUCCESS' : 'WARNING',
+    Process: 'monitor'
+  };
+
+  try {
+    console.log(`\n📤 Sending timeline monitoring notification to Zapier...`);
+    await sendToZapier(payload);
+    console.log('✅ Zapier notification sent successfully\n');
+    return { success: true };
+  } catch (error) {
+    console.error('❌ Failed to send Zapier notification:', error.message);
+    return { success: false, error: error.message };
+  }
+}
+
 // Named export for ScrapFly error handler compatibility
 export const sendRequest = sendToZapier;
 
@@ -548,5 +620,6 @@ export default {
   sendDiscoveryNotification,
   sendReplyNotification,
   sendArticlePostNotification,
-  sendErrorNotification
+  sendErrorNotification,
+  sendMonitorNotification
 };
