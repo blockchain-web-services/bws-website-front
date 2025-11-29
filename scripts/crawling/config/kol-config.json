@@ -13,11 +13,26 @@
   "replySettings": {
     "enabled": true,
     "maxRepliesPerRun": 3,
+    "maxRepliesPerDay": 10,
+    "maxRepliesPerKolPerWeek": 2,
+    "minRelevanceScoreForReply": 7,
+    "minTimeBetweenRepliesMinutes": 60,
+    "dryRun": false,
+    "antiSpamActions": {
+      "followKolBeforeReply": true,
+      "likeTweetBeforeReply": true,
+      "onlyIfNotAlreadyFollowing": true,
+      "skipOnError": true
+    },
     "minTimeBetweenReplies": 3600,
     "replyTemplates": [
       "Insightful perspective on {topic}! Have you explored {bws_product}? It might complement your {use_case}.",
       "Great thread! {bws_product} could help with {problem}. Would love to hear your thoughts."
     ]
+  },
+  "contentDiversity": {
+    "preventConsecutiveSameProduct": true,
+    "specialNotesProbability": 0.33
   },
   "monitoring": {
     "checkInterval": 21600,
