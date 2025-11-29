@@ -4879,13 +4879,493 @@
       "addedAt": "2025-11-29T17:57:49.129Z",
       "expiresAt": "2025-12-06T17:57:49.129Z",
       "source": "timeline_monitor"
+    },
+    {
+      "id": "1994726993800433889",
+      "text": "$BTC honestly still just ranging for now, could be a decent scalp long tbh. Wouldn't plan on holding anything for a few days if actively trading though",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "retweet_count": 14,
+        "reply_count": 30,
+        "like_count": 116,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/AltcoinSherpa/status/1994726993800433889",
+      "processed": false,
+      "addedAt": "2025-11-29T22:07:49.948Z",
+      "expiresAt": "2025-12-06T22:07:49.948Z",
+      "source": "timeline_monitor"
+    },
+    {
+      "id": "1994863434362753350",
+      "text": "Most important Bitcoin S&R levels.",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "retweet_count": 17,
+        "reply_count": 73,
+        "like_count": 166,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoRover/status/1994863434362753350",
+      "processed": false,
+      "addedAt": "2025-11-29T22:08:17.700Z",
+      "expiresAt": "2025-12-06T22:08:17.700Z",
+      "source": "timeline_monitor"
+    },
+    {
+      "id": "1994854374783525025",
+      "text": "Tom Lee believes a 100x run is possible for Ethereum!",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "retweet_count": 32,
+        "reply_count": 118,
+        "like_count": 275,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoRover/status/1994854374783525025",
+      "processed": false,
+      "addedAt": "2025-11-29T22:08:17.700Z",
+      "expiresAt": "2025-12-06T22:08:17.700Z",
+      "source": "timeline_monitor"
+    },
+    {
+      "id": "1994852009112191319",
+      "text": "BREAKING:\n\n RUSSIA TO ALLOW BANKS TO CONDUCT BITCOIN & CRYPTO RELATED ACTIVITIES.",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "retweet_count": 116,
+        "reply_count": 153,
+        "like_count": 830,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoRover/status/1994852009112191319",
+      "processed": false,
+      "addedAt": "2025-11-29T22:08:17.700Z",
+      "expiresAt": "2025-12-06T22:08:17.700Z",
+      "source": "timeline_monitor"
+    },
+    {
+      "id": "1994844560233762830",
+      "text": "Bitcoin dominance is stuck in complacency.\n\nSend it lower!",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "retweet_count": 44,
+        "reply_count": 126,
+        "like_count": 410,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoRover/status/1994844560233762830",
+      "processed": false,
+      "addedAt": "2025-11-29T22:08:17.700Z",
+      "expiresAt": "2025-12-06T22:08:17.700Z",
+      "source": "timeline_monitor"
+    },
+    {
+      "id": "1994833235717607790",
+      "text": "Smart money bought the dip, again.\n\nAlways follow where smart money flows.",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "retweet_count": 67,
+        "reply_count": 145,
+        "like_count": 403,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoRover/status/1994833235717607790",
+      "processed": false,
+      "addedAt": "2025-11-29T22:08:17.700Z",
+      "expiresAt": "2025-12-06T22:08:17.700Z",
+      "source": "timeline_monitor"
+    },
+    {
+      "id": "1994824175811489952",
+      "text": "Bitcoin vs the  US business cycle.   \n\nWas it ever about four-year cycles, or just business cycles?",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "retweet_count": 47,
+        "reply_count": 98,
+        "like_count": 314,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoRover/status/1994824175811489952",
+      "processed": false,
+      "addedAt": "2025-11-29T22:08:17.700Z",
+      "expiresAt": "2025-12-06T22:08:17.700Z",
+      "source": "timeline_monitor"
+    },
+    {
+      "id": "1994820397314019401",
+      "text": "BREAKING:\n\n PRESIDENT TRUMP: “UNFORTUNATELY, IN RECENT YEARS THE U.S. GOVERNMENT SOLD TENS OF THOUSANDS OF $BTC THAT WOULD NOW BE WORTH BILLIONS.”\n\n“FROM THIS DAY FORWARD, AMERICA WILL FOLLOW THE RULE EVERY BITCOINER KNOWS…”\n\n“NEVER SELL YOUR BITCOIN.”",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "retweet_count": 851,
+        "reply_count": 327,
+        "like_count": 8116,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoRover/status/1994820397314019401",
+      "processed": false,
+      "addedAt": "2025-11-29T22:08:17.700Z",
+      "expiresAt": "2025-12-06T22:08:17.700Z",
+      "source": "timeline_monitor"
+    },
+    {
+      "id": "1994814487149551691",
+      "text": "Bitcoin’s post-halving December performance has been mixed.",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "retweet_count": 47,
+        "reply_count": 115,
+        "like_count": 290,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoRover/status/1994814487149551691",
+      "processed": false,
+      "addedAt": "2025-11-29T22:08:17.700Z",
+      "expiresAt": "2025-12-06T22:08:17.700Z",
+      "source": "timeline_monitor"
+    },
+    {
+      "id": "1994821282098286735",
+      "text": "$ETH Could Skyrocket to $7.8K After FUSAKA Upgrade – History Shows\n\nThe last Ethereum Pectra Upgrade on 7 May 2025 triggered a massive move:\n +55% in 35 days\n +168% in 109 days\n\nWhat’s next?\nThe FUSAKA Upgrade is scheduled for 3 December 2025. If history repeats:\n\n Target",
+      "author": {
+        "id": "crawlee_search_cryptopatel",
+        "username": "CryptoPatel"
+      },
+      "public_metrics": {
+        "retweet_count": 21,
+        "reply_count": 15,
+        "like_count": 169,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoPatel/status/1994821282098286735",
+      "processed": false,
+      "addedAt": "2025-11-29T22:08:26.113Z",
+      "expiresAt": "2025-12-06T22:08:26.113Z",
+      "source": "timeline_monitor"
+    },
+    {
+      "id": "1994805804994568208",
+      "text": "BREAKING: Arthur Hayes warns a 99% crash for $MOD\n\nCurrently #MONAD trading at $0.035 and if Hayes is right, a 99% dump means Monad could hit ~$0.0005 in the future.\n\nKeep in mind, guys… stay sharp.\n\n@monad",
+      "author": {
+        "id": "crawlee_search_cryptopatel",
+        "username": "CryptoPatel"
+      },
+      "public_metrics": {
+        "retweet_count": 13,
+        "reply_count": 13,
+        "like_count": 160,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoPatel/status/1994805804994568208",
+      "processed": false,
+      "addedAt": "2025-11-29T22:08:26.113Z",
+      "expiresAt": "2025-12-06T22:08:26.113Z",
+      "source": "timeline_monitor"
+    },
+    {
+      "id": "1994817381223526407",
+      "text": "KAZAKHSTAN TO SELL GOLD AND FOREX ASSETS TO BUY $300 MILLION IN DIGITAL ASSETS \n\nThe National Bank of Kazakhstan (NBK) may acquire up to $300 million worth of crypto assets, the head of the monetary authority announced on Friday.\n\nThe NBK Chairman said they'd like to see the",
+      "author": {
+        "id": "877357064724520961",
+        "username": "CryptosR_Us"
+      },
+      "public_metrics": {
+        "retweet_count": 40,
+        "reply_count": 25,
+        "like_count": 143,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptosR_Us/status/1994817381223526407",
+      "processed": false,
+      "addedAt": "2025-11-29T22:08:34.568Z",
+      "expiresAt": "2025-12-06T22:08:34.568Z",
+      "source": "timeline_monitor"
+    },
+    {
+      "id": "1994852392169607214",
+      "text": "$PIPPIN",
+      "author": {
+        "id": "crawlee_search_nihilusbtc",
+        "username": "NihilusBTC"
+      },
+      "public_metrics": {
+        "retweet_count": 17,
+        "reply_count": 31,
+        "like_count": 71,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/NihilusBTC/status/1994852392169607214",
+      "processed": false,
+      "addedAt": "2025-11-29T22:13:25.309Z",
+      "expiresAt": "2025-12-06T22:13:25.309Z",
+      "source": "timeline_monitor"
+    },
+    {
+      "id": "1994848305415950797",
+      "text": "$EVAA\n$JCT",
+      "author": {
+        "id": "crawlee_search_nihilusbtc",
+        "username": "NihilusBTC"
+      },
+      "public_metrics": {
+        "retweet_count": 14,
+        "reply_count": 20,
+        "like_count": 54,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/NihilusBTC/status/1994848305415950797",
+      "processed": false,
+      "addedAt": "2025-11-29T22:13:25.309Z",
+      "expiresAt": "2025-12-06T22:13:25.309Z",
+      "source": "timeline_monitor"
+    },
+    {
+      "id": "1994835023086981554",
+      "text": "$EVAA | Range Low > Range High",
+      "author": {
+        "id": "crawlee_search_nihilusbtc",
+        "username": "NihilusBTC"
+      },
+      "public_metrics": {
+        "retweet_count": 30,
+        "reply_count": 29,
+        "like_count": 83,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/NihilusBTC/status/1994835023086981554",
+      "processed": false,
+      "addedAt": "2025-11-29T22:13:25.310Z",
+      "expiresAt": "2025-12-06T22:13:25.310Z",
+      "source": "timeline_monitor"
+    },
+    {
+      "id": "1994834855843303711",
+      "text": "$JCT | BREAKOUT!",
+      "author": {
+        "id": "crawlee_search_nihilusbtc",
+        "username": "NihilusBTC"
+      },
+      "public_metrics": {
+        "retweet_count": 28,
+        "reply_count": 24,
+        "like_count": 79,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/NihilusBTC/status/1994834855843303711",
+      "processed": false,
+      "addedAt": "2025-11-29T22:13:25.310Z",
+      "expiresAt": "2025-12-06T22:13:25.310Z",
+      "source": "timeline_monitor"
+    },
+    {
+      "id": "1994834736527892492",
+      "text": "$KERNEL | Give me this.",
+      "author": {
+        "id": "crawlee_search_nihilusbtc",
+        "username": "NihilusBTC"
+      },
+      "public_metrics": {
+        "retweet_count": 22,
+        "reply_count": 23,
+        "like_count": 73,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/NihilusBTC/status/1994834736527892492",
+      "processed": false,
+      "addedAt": "2025-11-29T22:13:25.310Z",
+      "expiresAt": "2025-12-06T22:13:25.310Z",
+      "source": "timeline_monitor"
+    },
+    {
+      "id": "1994832984743317849",
+      "text": "$200 Giveaway ($100x2)\n\nFollow me\nRT & Like my recent posts\nReply guys wins",
+      "author": {
+        "id": "crawlee_search_nihilusbtc",
+        "username": "NihilusBTC"
+      },
+      "public_metrics": {
+        "retweet_count": 160,
+        "reply_count": 169,
+        "like_count": 203,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/NihilusBTC/status/1994832984743317849",
+      "processed": false,
+      "addedAt": "2025-11-29T22:13:25.310Z",
+      "expiresAt": "2025-12-06T22:13:25.310Z",
+      "source": "timeline_monitor"
+    },
+    {
+      "id": "1994832742891278734",
+      "text": "$KERNEL\n\nTotal invested 100k usdt.\n\nI hope it goes 0.20",
+      "author": {
+        "id": "crawlee_search_nihilusbtc",
+        "username": "NihilusBTC"
+      },
+      "public_metrics": {
+        "retweet_count": 44,
+        "reply_count": 33,
+        "like_count": 107,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/NihilusBTC/status/1994832742891278734",
+      "processed": false,
+      "addedAt": "2025-11-29T22:13:25.310Z",
+      "expiresAt": "2025-12-06T22:13:25.310Z",
+      "source": "timeline_monitor"
+    },
+    {
+      "id": "1994830085896176094",
+      "text": "$JCT buying until 0.0032",
+      "author": {
+        "id": "crawlee_search_nihilusbtc",
+        "username": "NihilusBTC"
+      },
+      "public_metrics": {
+        "retweet_count": 16,
+        "reply_count": 14,
+        "like_count": 57,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/NihilusBTC/status/1994830085896176094",
+      "processed": false,
+      "addedAt": "2025-11-29T22:13:25.310Z",
+      "expiresAt": "2025-12-06T22:13:25.310Z",
+      "source": "timeline_monitor"
+    },
+    {
+      "id": "1994827594517315735",
+      "text": "$KERNEL will pump like $PIPPIN and $TRADOOR",
+      "author": {
+        "id": "crawlee_search_nihilusbtc",
+        "username": "NihilusBTC"
+      },
+      "public_metrics": {
+        "retweet_count": 16,
+        "reply_count": 24,
+        "like_count": 68,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/NihilusBTC/status/1994827594517315735",
+      "processed": false,
+      "addedAt": "2025-11-29T22:13:25.310Z",
+      "expiresAt": "2025-12-06T22:13:25.310Z",
+      "source": "timeline_monitor"
+    },
+    {
+      "id": "1994827266975736125",
+      "text": "$EVAA | LONG!",
+      "author": {
+        "id": "crawlee_search_nihilusbtc",
+        "username": "NihilusBTC"
+      },
+      "public_metrics": {
+        "retweet_count": 16,
+        "reply_count": 19,
+        "like_count": 65,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/NihilusBTC/status/1994827266975736125",
+      "processed": false,
+      "addedAt": "2025-11-29T22:13:25.310Z",
+      "expiresAt": "2025-12-06T22:13:25.310Z",
+      "source": "timeline_monitor"
+    },
+    {
+      "id": "1994337777668821257",
+      "text": "$TRADE Wants to pump multiples. Chart is immaculate with this breakout",
+      "author": {
+        "id": "crawlee_search_bitcoinhabebe",
+        "username": "Bitcoinhabebe"
+      },
+      "public_metrics": {
+        "retweet_count": 10,
+        "reply_count": 19,
+        "like_count": 52,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/Bitcoinhabebe/status/1994337777668821257",
+      "processed": false,
+      "addedAt": "2025-11-29T22:14:59.681Z",
+      "expiresAt": "2025-12-06T22:14:59.681Z",
+      "source": "timeline_monitor"
+    },
+    {
+      "id": "1994806766555861459",
+      "text": "Happy Morning San Diego California.",
+      "author": {
+        "id": "935742315389444096",
+        "username": "CryptoWendyO"
+      },
+      "public_metrics": {
+        "retweet_count": 12,
+        "reply_count": 147,
+        "like_count": 303,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoWendyO/status/1994806766555861459",
+      "processed": false,
+      "addedAt": "2025-11-29T22:15:16.873Z",
+      "expiresAt": "2025-12-06T22:15:16.873Z",
+      "source": "timeline_monitor"
     }
   ],
   "metadata": {
-    "lastUpdated": "2025-11-29T17:57:58.009Z",
-    "totalPosts": 244,
+    "lastUpdated": "2025-11-29T22:15:34.148Z",
+    "totalPosts": 268,
     "bySource": {
-      "timeline_monitor": 244,
+      "timeline_monitor": 268,
       "search_discovery": 0
     }
   }
