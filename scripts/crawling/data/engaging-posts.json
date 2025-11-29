@@ -4379,13 +4379,513 @@
       "addedAt": "2025-11-29T12:53:22.607Z",
       "expiresAt": "2025-12-06T12:53:22.607Z",
       "source": "timeline_monitor"
+    },
+    {
+      "id": "1993908507213496603",
+      "text": "Just trying to make things better. If someone buys your business for half a billy then it is honourable to do whatever you can to make their business better. It would be easy to just fuck off or chill but I would prefer for people to say “damn that guy really put some effort in”.",
+      "author": {
+        "id": "2259434528",
+        "username": "cobie"
+      },
+      "public_metrics": {
+        "retweet_count": 27,
+        "reply_count": 51,
+        "like_count": 482,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/cobie/status/1993908507213496603",
+      "processed": false,
+      "addedAt": "2025-11-29T17:50:21.552Z",
+      "expiresAt": "2025-12-06T17:50:21.552Z",
+      "source": "timeline_monitor"
+    },
+    {
+      "id": "1994727700276109599",
+      "text": "$HYPE I think HyperLiquid is 1 of the most interesting situations over the next few days given the team unlocks. Wild to believe it was just 1 year ago that gave the best / biggest wealth generation event ever in crypto. Very curious as to what happens with the team",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "retweet_count": 18,
+        "reply_count": 37,
+        "like_count": 120,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/AltcoinSherpa/status/1994727700276109599",
+      "processed": false,
+      "addedAt": "2025-11-29T17:51:00.999Z",
+      "expiresAt": "2025-12-06T17:51:00.999Z",
+      "source": "timeline_monitor"
+    },
+    {
+      "id": "1994790705554677969",
+      "text": "India Flexing Again! Q2 FY 25-26 GDP growth 8.2% vs 5.6% last year, smashing the 7.4% estimate \n\nMeanwhile, Trump said India was a “Dead Economy”…  Guess someone needs a new economic crystal ball!",
+      "author": {
+        "id": "crawlee_search_cryptopatel",
+        "username": "CryptoPatel"
+      },
+      "public_metrics": {
+        "retweet_count": 15,
+        "reply_count": 11,
+        "like_count": 152,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoPatel/status/1994790705554677969",
+      "processed": false,
+      "addedAt": "2025-11-29T17:52:05.619Z",
+      "expiresAt": "2025-12-06T17:52:05.619Z",
+      "source": "timeline_monitor"
+    },
+    {
+      "id": "1994775860210200630",
+      "text": "$SUI Is Repeating The EXACT Pattern That Caused 450% and 750% Pumps \n\n2023: Touched support → +450%\n2024: Touched support → +750%\n2025: Touched support → ???\n\nCould history repeat? Get ready \n\n@SuiNetwork #SUI",
+      "author": {
+        "id": "crawlee_search_cryptopatel",
+        "username": "CryptoPatel"
+      },
+      "public_metrics": {
+        "retweet_count": 22,
+        "reply_count": 14,
+        "like_count": 185,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoPatel/status/1994775860210200630",
+      "processed": false,
+      "addedAt": "2025-11-29T17:52:05.619Z",
+      "expiresAt": "2025-12-06T17:52:05.619Z",
+      "source": "timeline_monitor"
+    },
+    {
+      "id": "1994760760191332756",
+      "text": "Strategy has already raised $21B this year, driving massive market inflows.\n\nMomentum is accelerating rapidly, Will 2026 be even bigger for Bitcoin?",
+      "author": {
+        "id": "crawlee_search_cryptopatel",
+        "username": "CryptoPatel"
+      },
+      "public_metrics": {
+        "retweet_count": 15,
+        "reply_count": 10,
+        "like_count": 180,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoPatel/status/1994760760191332756",
+      "processed": false,
+      "addedAt": "2025-11-29T17:52:05.619Z",
+      "expiresAt": "2025-12-06T17:52:05.619Z",
+      "source": "timeline_monitor"
+    },
+    {
+      "id": "1994745661078790327",
+      "text": "$HYPE Shorted $50 → Now Under $35, Next Unlock Could Drop It to $15\n\nSHORT PLAYED TO PERFECTION\nI told you to short #HYPE from $48–$50, and now price is under $35, all happy with the analysis:\n Entry: $50 → Price flushed to $29\n Spot Position: 38% gain\n 5x Short: ~190%",
+      "author": {
+        "id": "crawlee_search_cryptopatel",
+        "username": "CryptoPatel"
+      },
+      "public_metrics": {
+        "retweet_count": 12,
+        "reply_count": 10,
+        "like_count": 180,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoPatel/status/1994745661078790327",
+      "processed": false,
+      "addedAt": "2025-11-29T17:52:05.619Z",
+      "expiresAt": "2025-12-06T17:52:05.619Z",
+      "source": "timeline_monitor"
+    },
+    {
+      "id": "1994730560917225571",
+      "text": "BITCOIN SMC Quick Update\n\nPrice just swept 91–92k liquidity with zero real displacement, Classic premium retracement in a HTF downtrend.\n\nIf this zone rejects, $BTC likely dives back to 85k demand, then hunts the 79k weak low.\nOnly a clean BOS above 92k flips the script and opens",
+      "author": {
+        "id": "crawlee_search_cryptopatel",
+        "username": "CryptoPatel"
+      },
+      "public_metrics": {
+        "retweet_count": 20,
+        "reply_count": 15,
+        "like_count": 196,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoPatel/status/1994730560917225571",
+      "processed": false,
+      "addedAt": "2025-11-29T17:52:05.619Z",
+      "expiresAt": "2025-12-06T17:52:05.619Z",
+      "source": "timeline_monitor"
+    },
+    {
+      "id": "1994746257831858483",
+      "text": "$AGT looks ready to pump. Beautiful breakout & Retest. It Will start soon",
+      "author": {
+        "id": "crawlee_search_bitcoinhabebe",
+        "username": "Bitcoinhabebe"
+      },
+      "public_metrics": {
+        "retweet_count": 15,
+        "reply_count": 19,
+        "like_count": 79,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/Bitcoinhabebe/status/1994746257831858483",
+      "processed": false,
+      "addedAt": "2025-11-29T17:52:23.221Z",
+      "expiresAt": "2025-12-06T17:52:23.221Z",
+      "source": "timeline_monitor"
+    },
+    {
+      "id": "1994541823143133412",
+      "text": "CoinShares has withdrawn its SEC filings for planned $XRP, $SOL staking, and $LTC ETFs.\n\nThe firm is shifting focus as it pursues a Nasdaq listing through a $1.2B merger, aiming to become a publicly traded company.\n\nSource: Crypto Briefing",
+      "author": {
+        "id": "935742315389444096",
+        "username": "CryptoWendyO"
+      },
+      "public_metrics": {
+        "retweet_count": 18,
+        "reply_count": 29,
+        "like_count": 199,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoWendyO/status/1994541823143133412",
+      "processed": false,
+      "addedAt": "2025-11-29T17:52:32.257Z",
+      "expiresAt": "2025-12-06T17:52:32.257Z",
+      "source": "timeline_monitor"
+    },
+    {
+      "id": "1994795738795028653",
+      "text": "BLACKROCK PURCHASES $589M IN BITCOIN & ETHEREUM\n\nOver the past 3 days, BlackRock acquired 4,044 $BTC (~$354M) and 80,121 $ETH (~$235M) from Coinbase, according to OnchainLens.\n\nThis major move comes as crypto sentiment shows signs of recovery and institutional activity ramps",
+      "author": {
+        "id": "877357064724520961",
+        "username": "CryptosR_Us"
+      },
+      "public_metrics": {
+        "retweet_count": 27,
+        "reply_count": 25,
+        "like_count": 171,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptosR_Us/status/1994795738795028653",
+      "processed": false,
+      "addedAt": "2025-11-29T17:56:16.183Z",
+      "expiresAt": "2025-12-06T17:56:16.183Z",
+      "source": "timeline_monitor"
+    },
+    {
+      "id": "1994765792102199764",
+      "text": "POWELL SPEAKS DEC 1 : QT ENDS THE SAME DAY\n\nThe final month of the year kicks off with critical labor data and a key speech from Fed Chair Jerome Powell on Monday, Dec 1. He’s expected to address current economic conditions, near-term policy outlook, and the Fed’s ongoing",
+      "author": {
+        "id": "877357064724520961",
+        "username": "CryptosR_Us"
+      },
+      "public_metrics": {
+        "retweet_count": 61,
+        "reply_count": 53,
+        "like_count": 358,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptosR_Us/status/1994765792102199764",
+      "processed": false,
+      "addedAt": "2025-11-29T17:56:16.183Z",
+      "expiresAt": "2025-12-06T17:56:16.183Z",
+      "source": "timeline_monitor"
+    },
+    {
+      "id": "1994735850836344929",
+      "text": "ALTSEASON WASN’T CANCELLED : JUST POSTPONED \n\nA lot of people expected an altseason just like 2017 and 2021.\nSo the big question became: are altcoins dead?\nThe answer is no : macro simply hasn’t allowed the rotation yet. \n\nQuantitative tightening and reduced central bank",
+      "author": {
+        "id": "877357064724520961",
+        "username": "CryptosR_Us"
+      },
+      "public_metrics": {
+        "retweet_count": 184,
+        "reply_count": 91,
+        "like_count": 856,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptosR_Us/status/1994735850836344929",
+      "processed": false,
+      "addedAt": "2025-11-29T17:56:16.183Z",
+      "expiresAt": "2025-12-06T17:56:16.183Z",
+      "source": "timeline_monitor"
+    },
+    {
+      "id": "1994706651824242911",
+      "text": "CENTRAL ASIA ADVANCING CRYPTO REGULATION !\n\nUzbekistan is moving to integrate crypto into its formal payment system.  \nStarting Jan. 1, 2026, local entities can issue tokenized assets like shares and bonds, with a dedicated trading platform on licensed stock exchanges.",
+      "author": {
+        "id": "877357064724520961",
+        "username": "CryptosR_Us"
+      },
+      "public_metrics": {
+        "retweet_count": 23,
+        "reply_count": 21,
+        "like_count": 91,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptosR_Us/status/1994706651824242911",
+      "processed": false,
+      "addedAt": "2025-11-29T17:56:16.183Z",
+      "expiresAt": "2025-12-06T17:56:16.183Z",
+      "source": "timeline_monitor"
+    },
+    {
+      "id": "1994803036531954080",
+      "text": "Tom Lee now owns 3% of Ethereum supply.   \n\nHe 100% knows something.",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "retweet_count": 49,
+        "reply_count": 137,
+        "like_count": 436,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoRover/status/1994803036531954080",
+      "processed": false,
+      "addedAt": "2025-11-29T17:56:25.155Z",
+      "expiresAt": "2025-12-06T17:56:25.155Z",
+      "source": "timeline_monitor"
+    },
+    {
+      "id": "1994798433262072284",
+      "text": "BREAKING:\n\n U.S. ONLINE BLACK FRIDAY SALES REACH RECORD $11.8 BILLION, UP 9.1% FROM LAST YEAR\n\nIT DOESN’T LOOK LIKE THE ECONOMY IS WEAKENING.\n\nBULLISH!",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "retweet_count": 137,
+        "reply_count": 154,
+        "like_count": 1057,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoRover/status/1994798433262072284",
+      "processed": false,
+      "addedAt": "2025-11-29T17:56:25.155Z",
+      "expiresAt": "2025-12-06T17:56:25.155Z",
+      "source": "timeline_monitor"
+    },
+    {
+      "id": "1994793976860385719",
+      "text": "I want to flip $10,000 into $1,000,000.    \n\nWhat to buy now?",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "retweet_count": 32,
+        "reply_count": 307,
+        "like_count": 323,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoRover/status/1994793976860385719",
+      "processed": false,
+      "addedAt": "2025-11-29T17:56:25.155Z",
+      "expiresAt": "2025-12-06T17:56:25.155Z",
+      "source": "timeline_monitor"
+    },
+    {
+      "id": "1994776361144107059",
+      "text": "BITCOIN SUPPLY SHOCK INCOMING!",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "retweet_count": 89,
+        "reply_count": 133,
+        "like_count": 549,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoRover/status/1994776361144107059",
+      "processed": false,
+      "addedAt": "2025-11-29T17:56:25.155Z",
+      "expiresAt": "2025-12-06T17:56:25.155Z",
+      "source": "timeline_monitor"
+    },
+    {
+      "id": "1994769063440953653",
+      "text": "RATE CUT IN 11 DAYS.",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "retweet_count": 46,
+        "reply_count": 114,
+        "like_count": 351,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoRover/status/1994769063440953653",
+      "processed": false,
+      "addedAt": "2025-11-29T17:56:25.156Z",
+      "expiresAt": "2025-12-06T17:56:25.156Z",
+      "source": "timeline_monitor"
+    },
+    {
+      "id": "1994769056180679036",
+      "text": "BREAKING:\n\n TREASURY SECRETARY BESSENT SAYS PRESIDENT TRUMP'S ADMINISTRATION IS 'GOING BIG' ON CRYPTO.",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "retweet_count": 218,
+        "reply_count": 125,
+        "like_count": 1194,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoRover/status/1994769056180679036",
+      "processed": false,
+      "addedAt": "2025-11-29T17:56:25.156Z",
+      "expiresAt": "2025-12-06T17:56:25.156Z",
+      "source": "timeline_monitor"
+    },
+    {
+      "id": "1994757738359132301",
+      "text": "Potential trade setups for Bitcoin.",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "retweet_count": 55,
+        "reply_count": 101,
+        "like_count": 307,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoRover/status/1994757738359132301",
+      "processed": false,
+      "addedAt": "2025-11-29T17:56:25.156Z",
+      "expiresAt": "2025-12-06T17:56:25.156Z",
+      "source": "timeline_monitor"
+    },
+    {
+      "id": "1994755345290596812",
+      "text": "BREAKING:\n\nOCT 10TH INSIDER WHALE SHORTING $ETH AGAIN.",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "retweet_count": 61,
+        "reply_count": 129,
+        "like_count": 349,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoRover/status/1994755345290596812",
+      "processed": false,
+      "addedAt": "2025-11-29T17:56:25.156Z",
+      "expiresAt": "2025-12-06T17:56:25.156Z",
+      "source": "timeline_monitor"
+    },
+    {
+      "id": "1994750529629720938",
+      "text": "BREAKING:\n\nPresident Trump says the airspace “above and surrounding” Venezuela is now “closed in its entirety.”",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "retweet_count": 71,
+        "reply_count": 118,
+        "like_count": 499,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoRover/status/1994750529629720938",
+      "processed": false,
+      "addedAt": "2025-11-29T17:56:25.157Z",
+      "expiresAt": "2025-12-06T17:56:25.157Z",
+      "source": "timeline_monitor"
+    },
+    {
+      "id": "1994816216301801690",
+      "text": "$EVAA | Higher.\n\nRT for targets.",
+      "author": {
+        "id": "crawlee_search_nihilusbtc",
+        "username": "NihilusBTC"
+      },
+      "public_metrics": {
+        "retweet_count": 12,
+        "reply_count": 18,
+        "like_count": 50,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/NihilusBTC/status/1994816216301801690",
+      "processed": false,
+      "addedAt": "2025-11-29T17:57:49.129Z",
+      "expiresAt": "2025-12-06T17:57:49.129Z",
+      "source": "timeline_monitor"
+    },
+    {
+      "id": "1994793150259363979",
+      "text": "My current longs\n\nYou can take them\n\nNFA",
+      "author": {
+        "id": "crawlee_search_nihilusbtc",
+        "username": "NihilusBTC"
+      },
+      "public_metrics": {
+        "retweet_count": 10,
+        "reply_count": 23,
+        "like_count": 51,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/NihilusBTC/status/1994793150259363979",
+      "processed": false,
+      "addedAt": "2025-11-29T17:57:49.129Z",
+      "expiresAt": "2025-12-06T17:57:49.129Z",
+      "source": "timeline_monitor"
+    },
+    {
+      "id": "1994787469372608774",
+      "text": "#RECALL\n\n0.20 MUST COME!",
+      "author": {
+        "id": "crawlee_search_nihilusbtc",
+        "username": "NihilusBTC"
+      },
+      "public_metrics": {
+        "retweet_count": 10,
+        "reply_count": 22,
+        "like_count": 61,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/NihilusBTC/status/1994787469372608774",
+      "processed": false,
+      "addedAt": "2025-11-29T17:57:49.129Z",
+      "expiresAt": "2025-12-06T17:57:49.129Z",
+      "source": "timeline_monitor"
     }
   ],
   "metadata": {
-    "lastUpdated": "2025-11-29T12:54:01.647Z",
-    "totalPosts": 219,
+    "lastUpdated": "2025-11-29T17:57:58.009Z",
+    "totalPosts": 244,
     "bySource": {
-      "timeline_monitor": 219,
+      "timeline_monitor": 244,
       "search_discovery": 0
     }
   }
