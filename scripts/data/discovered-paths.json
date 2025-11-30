@@ -1,5 +1,5 @@
 {
-  "discoveredAt": "2025-11-29T02:37:05.763Z",
+  "discoveredAt": "2025-11-30T02:44:25.707Z",
   "baseUrl": "https://docs.bws.ninja",
   "totalPaths": 14,
   "paths": [
@@ -9,14 +9,14 @@
     "/marketplace-solutions/bws.blockchain.badges",
     "/marketplace-solutions/bws.esg.credits",
     "/marketplace-solutions/bws.nft.gamecube",
+    "/marketplace-solutions/bws.x.bot",
     "/media-assets",
     "/platform-fees",
     "/quick-start",
     "/solutions/bws.blockchain.hash",
     "/solutions/bws.blockchain.save",
     "/solutions/bws.ipfs.upload",
-    "/solutions/bws.nft.zk",
-    "/telegram-bots/x-bot"
+    "/solutions/bws.nft.zk"
   ],
   "categories": {
     "root": [
@@ -34,11 +34,10 @@
     "marketplace-solutions": [
       "/marketplace-solutions/bws.blockchain.badges",
       "/marketplace-solutions/bws.esg.credits",
-      "/marketplace-solutions/bws.nft.gamecube"
+      "/marketplace-solutions/bws.nft.gamecube",
+      "/marketplace-solutions/bws.x.bot"
     ],
-    "telegram-bots": [
-      "/telegram-bots/x-bot"
-    ],
+    "telegram-bots": [],
     "media-assets": [
       "/media-assets"
     ],
@@ -50,7 +49,7 @@
   },
   "metadata": {
     "discoveryMethod": "html-link-extraction",
-    "htmlSize": 356062,
+    "htmlSize": 356000,
     "version": "1.0.0"
   }
 }
