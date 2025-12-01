@@ -1,86 +1,6 @@
 {
   "posts": [
     {
-      "id": "1993761013079191851",
-      "text": "$HOOD - Two of three potential buy zones have been hit and price now back above both of them.",
-      "author": {
-        "id": "4441279246",
-        "username": "IncomeSharks"
-      },
-      "public_metrics": {
-        "retweet_count": 12,
-        "reply_count": 49,
-        "like_count": 328,
-        "quote_count": 0
-      },
-      "created_at": "",
-      "url": "https://twitter.com/IncomeSharks/status/1993761013079191851",
-      "processed": true,
-      "addedAt": "2025-11-28T07:10:58.778Z",
-      "expiresAt": "2025-12-05T07:10:58.778Z",
-      "source": "timeline_monitor"
-    },
-    {
-      "id": "1993758189989581159",
-      "text": "$SOL - Good bounce and reaction to support so far.",
-      "author": {
-        "id": "4441279246",
-        "username": "IncomeSharks"
-      },
-      "public_metrics": {
-        "retweet_count": 58,
-        "reply_count": 42,
-        "like_count": 739,
-        "quote_count": 0
-      },
-      "created_at": "",
-      "url": "https://twitter.com/IncomeSharks/status/1993758189989581159",
-      "processed": true,
-      "addedAt": "2025-11-28T07:10:58.778Z",
-      "expiresAt": "2025-12-05T07:10:58.778Z",
-      "source": "timeline_monitor"
-    },
-    {
-      "id": "1993756673958400528",
-      "text": "Now for stocks to hold above to hold bullish momentum.",
-      "author": {
-        "id": "4441279246",
-        "username": "IncomeSharks"
-      },
-      "public_metrics": {
-        "retweet_count": 36,
-        "reply_count": 34,
-        "like_count": 575,
-        "quote_count": 0
-      },
-      "created_at": "",
-      "url": "https://twitter.com/IncomeSharks/status/1993756673958400528",
-      "processed": true,
-      "addedAt": "2025-11-28T07:10:58.778Z",
-      "expiresAt": "2025-12-05T07:10:58.778Z",
-      "source": "timeline_monitor"
-    },
-    {
-      "id": "1994014810392924431",
-      "text": "$BTC ready for all time highs next??",
-      "author": {
-        "id": "1068237257977544704",
-        "username": "AltcoinSherpa"
-      },
-      "public_metrics": {
-        "retweet_count": 29,
-        "reply_count": 70,
-        "like_count": 261,
-        "quote_count": 0
-      },
-      "created_at": "",
-      "url": "https://twitter.com/AltcoinSherpa/status/1994014810392924431",
-      "processed": true,
-      "addedAt": "2025-11-28T07:11:21.325Z",
-      "expiresAt": "2025-12-05T07:11:21.325Z",
-      "source": "timeline_monitor"
-    },
-    {
       "id": "1994277575334510734",
       "text": "Massive $BTC Outflows Signal a New Shift: What Are Whales Preparing For?\n\nExchanges recorded 14,858 BITCOIN in net outflows over the past 7 days and 47,292 BTC in the last 30 days.\n\nStrong signals of increased self-custody withdrawals and long-term holder conviction.",
       "author": {
@@ -115,7 +35,7 @@
       },
       "created_at": "",
       "url": "https://twitter.com/CryptoPatel/status/1994262222865051661",
-      "processed": false,
+      "processed": true,
       "addedAt": "2025-11-28T07:12:00.174Z",
       "expiresAt": "2025-12-05T07:12:00.174Z",
       "source": "timeline_monitor"
@@ -135,7 +55,7 @@
       },
       "created_at": "",
       "url": "https://twitter.com/CryptoPatel/status/1994247376845066283",
-      "processed": false,
+      "processed": true,
       "addedAt": "2025-11-28T07:12:00.174Z",
       "expiresAt": "2025-12-05T07:12:00.174Z",
       "source": "timeline_monitor"
@@ -155,7 +75,7 @@
       },
       "created_at": "",
       "url": "https://twitter.com/CryptoPatel/status/1994126580562452794",
-      "processed": false,
+      "processed": true,
       "addedAt": "2025-11-28T07:12:00.174Z",
       "expiresAt": "2025-12-05T07:12:00.174Z",
       "source": "timeline_monitor"
@@ -175,7 +95,7 @@
       },
       "created_at": "",
       "url": "https://twitter.com/CryptoKaleo/status/1993731174532043180",
-      "processed": false,
+      "processed": true,
       "addedAt": "2025-11-28T07:12:45.948Z",
       "expiresAt": "2025-12-05T07:12:45.948Z",
       "source": "timeline_monitor"

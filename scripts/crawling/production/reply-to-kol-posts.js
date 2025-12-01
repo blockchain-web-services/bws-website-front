@@ -205,15 +205,31 @@ async function replyToKolPosts() {
 
   // Initialize write client for posting replies and anti-spam actions
   let writeClient = null;
+  let accountName = null;
   if (!dryRun) {
     try {
-      writeClient = createReadWriteClient();
-      console.log(`✅ [${Math.round((Date.now() - scriptStartTime) / 1000)}s] Write client initialized\n`);
-    } catch (error) {
-      console.warn('⚠️  Failed to initialize write client.');
-      console.warn(`   Error: ${error.message}\n`);
-      console.error('   Cannot continue without write client for posting replies.');
-      process.exit(1);
+      // Try primary account (@BWSXAI) first
+      const result = createReadWriteClient(false);
+      writeClient = result.client;
+      accountName = result.accountName;
+      console.log(`✅ [${Math.round((Date.now() - scriptStartTime) / 1000)}s] Write client initialized (${accountName})\n`);
+    } catch (primaryError) {
+      console.warn('⚠️  Failed to initialize primary write client (@BWSXAI).');
+      console.warn(`   Error: ${primaryError.message}`);
+
+      // Try fallback account (@BWSCommunity)
+      try {
+        console.log('   🔄 Attempting fallback to @BWSCommunity account...');
+        const fallbackResult = createReadWriteClient(true);
+        writeClient = fallbackResult.client;
+        accountName = fallbackResult.accountName;
+        console.log(`✅ [${Math.round((Date.now() - scriptStartTime) / 1000)}s] Fallback write client initialized (${accountName})\n`);
+      } catch (fallbackError) {
+        console.error('❌ Failed to initialize fallback write client.');
+        console.error(`   Error: ${fallbackError.message}\n`);
+        console.error('   Cannot continue without write client for posting replies.');
+        process.exit(1);
+      }
     }
   }
 
