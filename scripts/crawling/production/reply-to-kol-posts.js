@@ -347,6 +347,13 @@ async function replyToKolPosts() {
       break;
     }
 
+    // Declare variables outside try block so they're accessible in catch block for retry
+    let tweet = null;
+    let kol = null;
+    let evaluation = null;
+    let replyText = null;
+    let productSelection = null;
+
     try {
       console.log(`\n${'='.repeat(60)}`);
       console.log(`📝 Processing Post: ${post.id}`);
@@ -354,7 +361,7 @@ async function replyToKolPosts() {
       console.log(`   Text: ${post.text.substring(0, 100)}...`);
       console.log(`${'='.repeat(60)}\n`);
 
-      const tweet = {
+      tweet = {
         id: post.id,
         text: post.text,
         author: post.author,
@@ -363,7 +370,7 @@ async function replyToKolPosts() {
       };
 
       // Find KOL data
-      const kol = kolsData.kols.find(k => k.username === post.author.username);
+      kol = kolsData.kols.find(k => k.username === post.author.username);
       if (!kol) {
         console.log(`⚠️  KOL @${post.author.username} not found in database. Skipping...`);
         post.processed = true;
@@ -383,7 +390,7 @@ async function replyToKolPosts() {
       await claudeLimiter.throttle();
 
       console.log(`🤖 Evaluating tweet relevance with Claude AI...`);
-      const evaluation = await evaluateTweetForReply(claudeClient, tweet, kol, bwsProducts, config);
+      evaluation = await evaluateTweetForReply(claudeClient, tweet, kol, bwsProducts, config);
       tweetEvaluated++;
 
       console.log(`   Relevance score: ${evaluation.relevanceScore}/100`);
@@ -400,7 +407,7 @@ async function replyToKolPosts() {
       currentPhase = `generating_reply_for_${post.id}`;
       await claudeLimiter.throttle();
 
-      const productSelection = getNextFeaturedProducts(processedPosts, bwsProducts, config);
+      productSelection = getNextFeaturedProducts(processedPosts, bwsProducts, config);
       const selectedProduct = Object.values(productSelection.products)[0]; // Get first product
       console.log(`\n✍️  Generating reply (featuring: ${productSelection.productNames.join(', ')})...`);
       if (productSelection.specialNotes) {
@@ -418,7 +425,7 @@ async function replyToKolPosts() {
         productSelection.specialNotes
       );
 
-      const replyText = replyResult.replyText || replyResult.alternativeVersion || JSON.stringify(replyResult);
+      replyText = replyResult.replyText || replyResult.alternativeVersion || JSON.stringify(replyResult);
 
       console.log(`\n📤 Generated reply (${replyText.length} chars):`);
       console.log(`"${replyText}"\n`);
