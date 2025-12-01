@@ -94,14 +94,19 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add scripts/crawling/data/
-          git commit -m "$(cat <<EOF
-KOL reply cycle - $(date +'%Y-%m-%d %H:%M UTC')
 
-Total replies: ${{ steps.stats.outputs.total }} | Today: ${{ steps.stats.outputs.today }}
+          TIMESTAMP=$(date +'%Y-%m-%d %H:%M UTC')
+          TOTAL="${{ steps.stats.outputs.total }}"
+          TODAY="${{ steps.stats.outputs.today }}"
 
-🤖 Generated with [Claude Code](https://claude.com/claude-code)
-EOF
-)"
+          git commit -m "KOL reply cycle - $TIMESTAMP" \
+            -m "" \
+            -m "Total replies: $TOTAL | Today: $TODAY" \
+            -m "" \
+            -m "Generated with Claude Code (https://claude.com/claude-code)" \
+            -m "" \
+            -m "Co-Authored-By: Claude <noreply@anthropic.com>"
+
           git push
 
       - name: Summary
