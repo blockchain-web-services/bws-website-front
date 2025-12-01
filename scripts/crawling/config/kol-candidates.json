@@ -1,7 +1,7 @@
 {
   "description": "Candidate KOL usernames for discovery. Successfully added KOLs are automatically removed from this list.",
-  "lastUpdated": "2025-11-28T09:19:41.377Z",
-  "totalCandidates": 8,
+  "lastUpdated": "2025-12-01T09:20:13.810Z",
+  "totalCandidates": 0,
   "candidatesByTier": {
     "tier1_100k_500k": [],
     "tier2_50k_100k": [],
@@ -13,15 +13,6 @@
     "tier8_nft_web3_50k_300k": [],
     "tier9_layer1_layer2_30k_150k": [],
     "tier10_content_creators_20k_100k": [],
-    "tier11_researchers_10k_50k": [
-      "CremeDeLaCrypto",
-      "ThinkingUSD",
-      "scottmelker",
-      "cryptomanran",
-      "AriDavidPaul",
-      "econoar",
-      "lawmaster",
-      "0xSisyphus"
-    ]
+    "tier11_researchers_10k_50k": []
   }
 }
