@@ -72,15 +72,37 @@ export function createReadOnlyOAuthClient() {
 /**
  * Initialize read-write Twitter client (OAuth 1.0a)
  * Automatically uses Oxylabs proxy on CI/GitHub Actions
+ *
+ * @param {boolean} useFallback - If true, use @BWSCommunity account instead of @BWSXAI
+ * @returns {Object} { client: TwitterApi, accountName: string }
  */
-export function createReadWriteClient() {
-  const apiKey = process.env.BWSXAI_TWITTER_API_KEY;
-  const apiSecret = process.env.BWSXAI_TWITTER_API_SECRET;
-  const accessToken = process.env.BWSXAI_TWITTER_ACCESS_TOKEN;
-  const accessSecret = process.env.BWSXAI_TWITTER_ACCESS_SECRET;
+export function createReadWriteClient(useFallback = false) {
+  let apiKey, apiSecret, accessToken, accessSecret, accountName;
 
-  if (!apiKey || !apiSecret || !accessToken || !accessSecret) {
-    throw new Error('All BWSXAI Twitter OAuth credentials are required for posting');
+  if (useFallback) {
+    // Use @BWSCommunity account (TWITTER_* credentials)
+    apiKey = process.env.TWITTER_API_KEY;
+    apiSecret = process.env.TWITTER_API_SECRET;
+    accessToken = process.env.TWITTER_ACCESS_TOKEN;
+    accessSecret = process.env.TWITTER_ACCESS_SECRET;
+    accountName = '@BWSCommunity';
+
+    if (!apiKey || !apiSecret || !accessToken || !accessSecret) {
+      throw new Error('All BWSCommunity Twitter OAuth credentials are required for fallback posting');
+    }
+
+    console.log('   🔄 Using fallback account: @BWSCommunity');
+  } else {
+    // Use @BWSXAI account (BWSXAI_TWITTER_* credentials)
+    apiKey = process.env.BWSXAI_TWITTER_API_KEY;
+    apiSecret = process.env.BWSXAI_TWITTER_API_SECRET;
+    accessToken = process.env.BWSXAI_TWITTER_ACCESS_TOKEN;
+    accessSecret = process.env.BWSXAI_TWITTER_ACCESS_SECRET;
+    accountName = '@BWSXAI';
+
+    if (!apiKey || !apiSecret || !accessToken || !accessSecret) {
+      throw new Error('All BWSXAI Twitter OAuth credentials are required for posting');
+    }
   }
 
   // Create proxy agent (only on CI)
@@ -98,7 +120,9 @@ export function createReadWriteClient() {
     clientConfig.agent = proxyAgent;
   }
 
-  return new TwitterApi(clientConfig);
+  const client = new TwitterApi(clientConfig);
+
+  return { client, accountName };
 }
 
 /**
