@@ -15,89 +15,9 @@
       },
       "created_at": "",
       "url": "https://twitter.com/CryptoRover/status/1994142556071031079",
-      "processed": false,
+      "processed": true,
       "addedAt": "2025-11-28T07:13:26.376Z",
       "expiresAt": "2025-12-05T07:13:26.376Z",
-      "source": "timeline_monitor"
-    },
-    {
-      "id": "1994220961999036653",
-      "text": "SOLANA JUST CAPTURED 99% OF TOKENIZED STOCK TRADING\n\n Four straight months above 95% market share\n October: 99% of all tokenized stock volume\n Competing chains -- Ethereum, Base, Gnosis, Avalanche, Sonic -- barely register\n\nWhat’s happening is simple: tokenized equities",
-      "author": {
-        "id": "877357064724520961",
-        "username": "CryptosR_Us"
-      },
-      "public_metrics": {
-        "retweet_count": 18,
-        "reply_count": 19,
-        "like_count": 121,
-        "quote_count": 0
-      },
-      "created_at": "",
-      "url": "https://twitter.com/CryptosR_Us/status/1994220961999036653",
-      "processed": true,
-      "addedAt": "2025-11-28T07:13:37.295Z",
-      "expiresAt": "2025-12-05T07:13:37.295Z",
-      "source": "timeline_monitor"
-    },
-    {
-      "id": "1994186979299176889",
-      "text": "IMAGINE SAYING THIS... THEN BUILDING BITCOIN PRODUCTS\n\nJPMorgan CEO Jamie Dimon said #Bitcoin buyers were “stupid.”\n\nNow JPMorgan is engineering leveraged $BTC exposure tied to Blackrock's $IBIT.\n\nThe truth? They don’t hate Bitcoin -- they hate not getting paid on it.",
-      "author": {
-        "id": "877357064724520961",
-        "username": "CryptosR_Us"
-      },
-      "public_metrics": {
-        "retweet_count": 34,
-        "reply_count": 46,
-        "like_count": 250,
-        "quote_count": 0
-      },
-      "created_at": "",
-      "url": "https://twitter.com/CryptosR_Us/status/1994186979299176889",
-      "processed": true,
-      "addedAt": "2025-11-28T07:13:37.295Z",
-      "expiresAt": "2025-12-05T07:13:37.295Z",
-      "source": "timeline_monitor"
-    },
-    {
-      "id": "1994147975866593504",
-      "text": "INSIGHT: $XRP RESERVES PLUMMET ON BINANCE\n\nBinance reserves are dropping fast as long-term and institutional buyers accumulate XRP. \n\nLong consolidation periods in XRP followed by squeezes above key moving averages have historically been followed by strong moves. \n\nThe most",
-      "author": {
-        "id": "877357064724520961",
-        "username": "CryptosR_Us"
-      },
-      "public_metrics": {
-        "retweet_count": 139,
-        "reply_count": 39,
-        "like_count": 525,
-        "quote_count": 0
-      },
-      "created_at": "",
-      "url": "https://twitter.com/CryptosR_Us/status/1994147975866593504",
-      "processed": true,
-      "addedAt": "2025-11-28T07:13:37.295Z",
-      "expiresAt": "2025-12-05T07:13:37.295Z",
-      "source": "timeline_monitor"
-    },
-    {
-      "id": "1994113367267790934",
-      "text": "BIG MONEY IS STILL FLOWING THROUGH BINANCE\n\nDespite price weakness in #Bitcoin and #Ethereum, capital moving into exchanges has climbed to $40B per day.\n\nBinance captures $15B of that -- more than a third of total $BTC / $ETH inflows and ahead of Coinbase at $11B. \n\nThat kind",
-      "author": {
-        "id": "877357064724520961",
-        "username": "CryptosR_Us"
-      },
-      "public_metrics": {
-        "retweet_count": 13,
-        "reply_count": 19,
-        "like_count": 103,
-        "quote_count": 0
-      },
-      "created_at": "",
-      "url": "https://twitter.com/CryptosR_Us/status/1994113367267790934",
-      "processed": true,
-      "addedAt": "2025-11-28T07:13:37.295Z",
-      "expiresAt": "2025-12-05T07:13:37.295Z",
       "source": "timeline_monitor"
     },
     {
@@ -115,7 +35,7 @@
       },
       "created_at": "",
       "url": "https://twitter.com/CryptosR_Us/status/1994073489263693901",
-      "processed": false,
+      "processed": true,
       "addedAt": "2025-11-28T07:13:37.295Z",
       "expiresAt": "2025-12-05T07:13:37.295Z",
       "source": "timeline_monitor"
@@ -135,7 +55,7 @@
       },
       "created_at": "",
       "url": "https://twitter.com/CryptosR_Us/status/1994054019132666054",
-      "processed": false,
+      "processed": true,
       "addedAt": "2025-11-28T07:13:37.295Z",
       "expiresAt": "2025-12-05T07:13:37.295Z",
       "source": "timeline_monitor"
@@ -155,7 +75,7 @@
       },
       "created_at": "",
       "url": "https://twitter.com/SBF_FTX/status/1986539511250362845",
-      "processed": false,
+      "processed": true,
       "addedAt": "2025-11-28T07:13:50.050Z",
       "expiresAt": "2025-12-05T07:13:50.050Z",
       "source": "timeline_monitor"
@@ -175,7 +95,7 @@
       },
       "created_at": "",
       "url": "https://twitter.com/SBF_FTX/status/1986538443779023218",
-      "processed": false,
+      "processed": true,
       "addedAt": "2025-11-28T07:13:50.050Z",
       "expiresAt": "2025-12-05T07:13:50.050Z",
       "source": "timeline_monitor"

@@ -956,6 +956,37 @@
       "timestamp": "2025-12-01T19:54:31.287Z",
       "status": "posted",
       "dryRun": false
+    },
+    {
+      "id": "1353384573435056128-1994142556071031079-1764631121323",
+      "tweetId": "1994142556071031079",
+      "tweetUrl": "https://twitter.com/CryptoRover/status/1994142556071031079",
+      "kolId": "1353384573435056128",
+      "kolUsername": "CryptoRover",
+      "originalTweetText": "BREAKING:\n\nBLACKROCK CEO LARRY FINK: IT DOESN'T MATTER IF MARKETS RISE AND FALL. BUBBLES COME AND GO.\n\nWHAT MATTERS MOST IS STAYING IN THE MARKET THROUGH ALL CYCLES.",
+      "replyTweetId": "1995633680501375241",
+      "replyText": "Fink's right - surviving cycles comes down to fundamentals over hype.\n\n$BWS operates a Blockchain Solutions Marketplace with multiple live products targeting mass markets. Real B2B revenue, consistent shipping, built to last through any market condition.\n\n@BWSCommunity #microcap #fundamentals #altcoins https://www.bws.ninja",
+      "productMentioned": "Multiple products (Blockchain Badges, ESG Credits, X Bot, NFT.zK)",
+      "relevanceScore": 82,
+      "timestamp": "2025-12-01T23:18:41.323Z",
+      "status": "posted",
+      "dryRun": false,
+      "accountUsed": "@BWSCommunity"
+    },
+    {
+      "id": "877357064724520961-1994054019132666054-1764631153185",
+      "tweetId": "1994054019132666054",
+      "tweetUrl": "https://twitter.com/CryptosR_Us/status/1994054019132666054",
+      "kolId": "877357064724520961",
+      "kolUsername": "CryptosR_Us",
+      "originalTweetText": "$BTC $1.5M BULL CASE UNCHANGED : CATHIE WOOD\n\nAccording to Ark-invest : liquidity is returning: $70B has flowed back since the US government shutdown, with $300B more expected in 5–6 weeks. The Fed ends QT Dec 1, potentially pivoting to QE, supporting equities & crypto.\n\nWood",
+      "replyTweetId": "1995633814169620963",
+      "replyText": "Liquidity returning is exactly when fundamentals-driven microcaps separate from noise.\n\n$BWS X Bot delivers verifiable KOL analytics via X API - helping projects measure real community impact and investors discover authentic traction. Building utility that matters.\n\n@BWSCommunity #microcap #crypto #altcoins https://docs.bws.ninja/marketplace-solutions/bws.x.bot",
+      "productMentioned": "X Bot",
+      "relevanceScore": 78,
+      "timestamp": "2025-12-01T23:19:13.185Z",
+      "status": "posted",
+      "dryRun": false
     }
   ],
   "dailyStats": {
@@ -1030,10 +1061,10 @@
     }
   },
   "metadata": {
-    "totalReplies": 43,
-    "successfulReplies": 9,
+    "totalReplies": 45,
+    "successfulReplies": 11,
     "failedReplies": 34,
-    "lastReplyAt": "2025-12-01T19:54:31.287Z",
+    "lastReplyAt": "2025-12-01T23:19:13.185Z",
     "todayRepliesCount": 0,
     "lastUpdateBy": "kol-system"
   }
