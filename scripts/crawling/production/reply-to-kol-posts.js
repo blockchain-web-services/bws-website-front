@@ -293,11 +293,18 @@ async function replyToKolPosts() {
 
   // Process engaging posts
   for (const post of engagingPostsData.posts) {
-    // Check if we've hit the evaluation limit
+    // Check if we've hit the evaluation limit AND posted at least 1 reply
+    // Continue evaluating if no replies posted yet (up to 2x the limit)
+    const shouldContinueForFirstReply = repliesPosted === 0 && tweetEvaluated < (maxEvaluationsThisRun * 2);
+
     if (tweetEvaluated >= maxEvaluationsThisRun) {
-      console.log(`\n✅ Reached max tweet evaluations for this run (${tweetEvaluated}/${maxEvaluationsThisRun}). Stopping...`);
-      console.log(`   This ensures timely completion. Remaining tweets will be processed in next run.`);
-      break;
+      if (shouldContinueForFirstReply) {
+        console.log(`\n⏩ Evaluated ${tweetEvaluated} tweets with no replies yet. Continuing to find at least 1 reply...`);
+      } else {
+        console.log(`\n✅ Reached max tweet evaluations for this run (${tweetEvaluated}/${maxEvaluationsThisRun})`);
+        console.log(`   Posted ${repliesPosted} ${repliesPosted === 1 ? 'reply' : 'replies'}. Remaining tweets will be processed in next run.`);
+        break;
+      }
     }
 
     // Check if we've hit the run limit
