@@ -1,106 +1,6 @@
 {
   "posts": [
     {
-      "id": "1763204181802840480",
-      "text": "Reminder to everyone new: you can find a FREE Introduction to #bitcoin workshop in English and Spanish on my website. Welcome! https://aantonop.com/workshops-page/",
-      "author": {
-        "id": "1469101279",
-        "username": "aantonop"
-      },
-      "public_metrics": {
-        "retweet_count": 110,
-        "reply_count": 0,
-        "like_count": 338,
-        "quote_count": 0
-      },
-      "created_at": "",
-      "url": "https://twitter.com/aantonop/status/1763204181802840480",
-      "processed": true,
-      "addedAt": "2025-11-28T07:12:58.663Z",
-      "expiresAt": "2025-12-05T07:12:58.663Z",
-      "source": "timeline_monitor"
-    },
-    {
-      "id": "1763024925642604676",
-      "text": "My latest video: Buying Bitcoin Using Dollar Cost Averaging & Avoiding Dust UTXO - Self Custody Series - Feb 2024 #bitcoin #UTXO #selfcustody",
-      "author": {
-        "id": "1469101279",
-        "username": "aantonop"
-      },
-      "public_metrics": {
-        "retweet_count": 104,
-        "reply_count": 0,
-        "like_count": 391,
-        "quote_count": 0
-      },
-      "created_at": "",
-      "url": "https://twitter.com/aantonop/status/1763024925642604676",
-      "processed": true,
-      "addedAt": "2025-11-28T07:12:58.663Z",
-      "expiresAt": "2025-12-05T07:12:58.663Z",
-      "source": "timeline_monitor"
-    },
-    {
-      "id": "1762988232969490689",
-      "text": "Are ETFs better than Self Custody? Watch this 1 min video to hear my answer.",
-      "author": {
-        "id": "1469101279",
-        "username": "aantonop"
-      },
-      "public_metrics": {
-        "retweet_count": 169,
-        "reply_count": 0,
-        "like_count": 441,
-        "quote_count": 0
-      },
-      "created_at": "",
-      "url": "https://twitter.com/aantonop/status/1762988232969490689",
-      "processed": true,
-      "addedAt": "2025-11-28T07:12:58.663Z",
-      "expiresAt": "2025-12-05T07:12:58.663Z",
-      "source": "timeline_monitor"
-    },
-    {
-      "id": "1752790565178245159",
-      "text": "Last chance to save on the Path to Self Custody Bundle. Includes a step-by-step hardware wallet demo. 14 day money back guarantee. Learn more https://patreon.com/posts/96124187",
-      "author": {
-        "id": "1469101279",
-        "username": "aantonop"
-      },
-      "public_metrics": {
-        "retweet_count": 82,
-        "reply_count": 0,
-        "like_count": 112,
-        "quote_count": 0
-      },
-      "created_at": "",
-      "url": "https://twitter.com/aantonop/status/1752790565178245159",
-      "processed": true,
-      "addedAt": "2025-11-28T07:12:58.663Z",
-      "expiresAt": "2025-12-05T07:12:58.664Z",
-      "source": "timeline_monitor"
-    },
-    {
-      "id": "1752728668458336597",
-      "text": "FREE class - Introduction to Digital Currencies - is starting on Feb 5th. Enroll now / learn more:",
-      "author": {
-        "id": "1469101279",
-        "username": "aantonop"
-      },
-      "public_metrics": {
-        "retweet_count": 63,
-        "reply_count": 0,
-        "like_count": 111,
-        "quote_count": 0
-      },
-      "created_at": "",
-      "url": "https://twitter.com/aantonop/status/1752728668458336597",
-      "processed": true,
-      "addedAt": "2025-11-28T07:12:58.664Z",
-      "expiresAt": "2025-12-05T07:12:58.664Z",
-      "source": "timeline_monitor"
-    },
-    {
       "id": "1752459918848975001",
       "text": "A menudo, cuando las personas realmente comienzan a analizar la seguridad de sus criptomonedas, se dan cuenta de que no están tan avanzadas en el camino de la custodia propia como esperaban.Último día para ahorrar $ en nuestro Paquete de Talleres sobre Custodia Propia.",
       "author": {
@@ -115,7 +15,7 @@
       },
       "created_at": "",
       "url": "https://twitter.com/aantonop/status/1752459918848975001",
-      "processed": false,
+      "processed": true,
       "addedAt": "2025-11-28T07:12:58.664Z",
       "expiresAt": "2025-12-05T07:12:58.664Z",
       "source": "timeline_monitor"
@@ -135,7 +35,7 @@
       },
       "created_at": "",
       "url": "https://twitter.com/aantonop/status/1752410125791555918",
-      "processed": false,
+      "processed": true,
       "addedAt": "2025-11-28T07:12:58.664Z",
       "expiresAt": "2025-12-05T07:12:58.664Z",
       "source": "timeline_monitor"
@@ -155,7 +55,7 @@
       },
       "created_at": "",
       "url": "https://twitter.com/aantonop/status/1752006419874984223",
-      "processed": false,
+      "processed": true,
       "addedAt": "2025-11-28T07:12:58.664Z",
       "expiresAt": "2025-12-05T07:12:58.664Z",
       "source": "timeline_monitor"
@@ -175,7 +75,7 @@
       },
       "created_at": "",
       "url": "https://twitter.com/CryptoRover/status/1994240443974909993",
-      "processed": false,
+      "processed": true,
       "addedAt": "2025-11-28T07:13:26.376Z",
       "expiresAt": "2025-12-05T07:13:26.376Z",
       "source": "timeline_monitor"
@@ -195,7 +95,7 @@
       },
       "created_at": "",
       "url": "https://twitter.com/CryptoRover/status/1994239923918950465",
-      "processed": false,
+      "processed": true,
       "addedAt": "2025-11-28T07:13:26.376Z",
       "expiresAt": "2025-12-05T07:13:26.376Z",
       "source": "timeline_monitor"
@@ -215,7 +115,7 @@
       },
       "created_at": "",
       "url": "https://twitter.com/CryptoRover/status/1994157533137981462",
-      "processed": false,
+      "processed": true,
       "addedAt": "2025-11-28T07:13:26.376Z",
       "expiresAt": "2025-12-05T07:13:26.376Z",
       "source": "timeline_monitor"
@@ -235,7 +135,7 @@
       },
       "created_at": "",
       "url": "https://twitter.com/CryptoRover/status/1994149983747232179",
-      "processed": false,
+      "processed": true,
       "addedAt": "2025-11-28T07:13:26.376Z",
       "expiresAt": "2025-12-05T07:13:26.376Z",
       "source": "timeline_monitor"
@@ -295,7 +195,7 @@
       },
       "created_at": "",
       "url": "https://twitter.com/CryptoRover/status/1994108459751755946",
-      "processed": false,
+      "processed": true,
       "addedAt": "2025-11-28T07:13:26.376Z",
       "expiresAt": "2025-12-05T07:13:26.376Z",
       "source": "timeline_monitor"
