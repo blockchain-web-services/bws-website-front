@@ -356,7 +356,7 @@ async function replyToKolPosts() {
         console.log(`   📌 Special note: ${productSelection.specialNotes}`);
       }
 
-      const replyText = await generateReplyText(
+      const replyResult = await generateReplyText(
         claudeClient,
         tweet,
         kol,
@@ -366,6 +366,8 @@ async function replyToKolPosts() {
         [],
         productSelection.specialNotes
       );
+
+      const replyText = replyResult.replyText || replyResult.alternativeVersion || JSON.stringify(replyResult);
 
       console.log(`\n📤 Generated reply (${replyText.length} chars):`);
       console.log(`"${replyText}"\n`);
