@@ -941,6 +941,21 @@
       "timestamp": "2025-12-01T19:14:52.609Z",
       "status": "posted",
       "dryRun": false
+    },
+    {
+      "id": "877357064724520961-1994113367267790934-1764618871287",
+      "tweetId": "1994113367267790934",
+      "tweetUrl": "https://twitter.com/CryptosR_Us/status/1994113367267790934",
+      "kolId": "877357064724520961",
+      "kolUsername": "CryptosR_Us",
+      "originalTweetText": "BIG MONEY IS STILL FLOWING THROUGH BINANCE\n\nDespite price weakness in #Bitcoin and #Ethereum, capital moving into exchanges has climbed to $40B per day.\n\nBinance captures $15B of that -- more than a third of total $BTC / $ETH inflows and ahead of Coinbase at $11B. \n\nThat kind",
+      "replyTweetId": "1995582299925348818",
+      "replyText": "While Binance captures $15B daily in BTC/ETH flows, the real alpha is in overlooked infrastructure plays.\n\n$BWS X Bot delivers verifiable KOL analytics via official X API - helps projects measure community impact and investors discover authentic traction. Sub-$5M mcap with live product.\n\n@BWSCommunity #microcap #crypto #analytics https://docs.bws.ninja/marketplace-solutions/bws.x.bot",
+      "productMentioned": "X Bot",
+      "relevanceScore": 72,
+      "timestamp": "2025-12-01T19:54:31.287Z",
+      "status": "posted",
+      "dryRun": false
     }
   ],
   "dailyStats": {
@@ -1015,10 +1030,10 @@
     }
   },
   "metadata": {
-    "totalReplies": 42,
-    "successfulReplies": 8,
+    "totalReplies": 43,
+    "successfulReplies": 9,
     "failedReplies": 34,
-    "lastReplyAt": "2025-12-01T19:14:52.609Z",
+    "lastReplyAt": "2025-12-01T19:54:31.287Z",
     "todayRepliesCount": 0,
     "lastUpdateBy": "kol-system"
   }
