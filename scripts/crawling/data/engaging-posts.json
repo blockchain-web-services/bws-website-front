@@ -1,106 +1,6 @@
 {
   "posts": [
     {
-      "id": "1994277575334510734",
-      "text": "Massive $BTC Outflows Signal a New Shift: What Are Whales Preparing For?\n\nExchanges recorded 14,858 BITCOIN in net outflows over the past 7 days and 47,292 BTC in the last 30 days.\n\nStrong signals of increased self-custody withdrawals and long-term holder conviction.",
-      "author": {
-        "id": "crawlee_search_cryptopatel",
-        "username": "CryptoPatel"
-      },
-      "public_metrics": {
-        "retweet_count": 12,
-        "reply_count": 10,
-        "like_count": 116,
-        "quote_count": 0
-      },
-      "created_at": "",
-      "url": "https://twitter.com/CryptoPatel/status/1994277575334510734",
-      "processed": true,
-      "addedAt": "2025-11-28T07:12:00.174Z",
-      "expiresAt": "2025-12-05T07:12:00.174Z",
-      "source": "timeline_monitor"
-    },
-    {
-      "id": "1993419796566725089",
-      "text": "You vs. the person that didn’t sell their Monad airdrop",
-      "author": {
-        "id": "906234475604037637",
-        "username": "CryptoKaleo"
-      },
-      "public_metrics": {
-        "retweet_count": 11,
-        "reply_count": 71,
-        "like_count": 340,
-        "quote_count": 0
-      },
-      "created_at": "",
-      "url": "https://twitter.com/CryptoKaleo/status/1993419796566725089",
-      "processed": true,
-      "addedAt": "2025-11-28T07:12:45.948Z",
-      "expiresAt": "2025-12-05T07:12:45.948Z",
-      "source": "timeline_monitor"
-    },
-    {
-      "id": "1993413211081544002",
-      "text": "They didn’t seize Bitcoin.\n\nThey bought it.\n\nEverything is bigger in Texas.",
-      "author": {
-        "id": "906234475604037637",
-        "username": "CryptoKaleo"
-      },
-      "public_metrics": {
-        "retweet_count": 67,
-        "reply_count": 74,
-        "like_count": 1679,
-        "quote_count": 0
-      },
-      "created_at": "",
-      "url": "https://twitter.com/CryptoKaleo/status/1993413211081544002",
-      "processed": true,
-      "addedAt": "2025-11-28T07:12:45.948Z",
-      "expiresAt": "2025-12-05T07:12:45.948Z",
-      "source": "timeline_monitor"
-    },
-    {
-      "id": "1763321484859027665",
-      "text": "Videos to Learn How Bitcoin and Open Blockchains Might Change Our Lives (no ads): (1) A crowd fav about #Bitcoin  & why it matters (20 min) https://youtu.be/rc744Z9IjhY(2) 1,000,000+ views: Intro to Bitcoin and Open Blockchains: https://youtu.be/l1si5ZWLgy0",
-      "author": {
-        "id": "1469101279",
-        "username": "aantonop"
-      },
-      "public_metrics": {
-        "retweet_count": 378,
-        "reply_count": 0,
-        "like_count": 1031,
-        "quote_count": 0
-      },
-      "created_at": "",
-      "url": "https://twitter.com/aantonop/status/1763321484859027665",
-      "processed": true,
-      "addedAt": "2025-11-28T07:12:58.663Z",
-      "expiresAt": "2025-12-05T07:12:58.663Z",
-      "source": "timeline_monitor"
-    },
-    {
-      "id": "1763255504476774742",
-      "text": "FREE resources to learn about #bitcoin",
-      "author": {
-        "id": "1469101279",
-        "username": "aantonop"
-      },
-      "public_metrics": {
-        "retweet_count": 104,
-        "reply_count": 0,
-        "like_count": 269,
-        "quote_count": 0
-      },
-      "created_at": "",
-      "url": "https://twitter.com/aantonop/status/1763255504476774742",
-      "processed": true,
-      "addedAt": "2025-11-28T07:12:58.663Z",
-      "expiresAt": "2025-12-05T07:12:58.663Z",
-      "source": "timeline_monitor"
-    },
-    {
       "id": "1763204181802840480",
       "text": "Reminder to everyone new: you can find a FREE Introduction to #bitcoin workshop in English and Spanish on my website. Welcome! https://aantonop.com/workshops-page/",
       "author": {
@@ -115,7 +15,7 @@
       },
       "created_at": "",
       "url": "https://twitter.com/aantonop/status/1763204181802840480",
-      "processed": false,
+      "processed": true,
       "addedAt": "2025-11-28T07:12:58.663Z",
       "expiresAt": "2025-12-05T07:12:58.663Z",
       "source": "timeline_monitor"
@@ -135,7 +35,7 @@
       },
       "created_at": "",
       "url": "https://twitter.com/aantonop/status/1763024925642604676",
-      "processed": false,
+      "processed": true,
       "addedAt": "2025-11-28T07:12:58.663Z",
       "expiresAt": "2025-12-05T07:12:58.663Z",
       "source": "timeline_monitor"
@@ -155,7 +55,7 @@
       },
       "created_at": "",
       "url": "https://twitter.com/aantonop/status/1762988232969490689",
-      "processed": false,
+      "processed": true,
       "addedAt": "2025-11-28T07:12:58.663Z",
       "expiresAt": "2025-12-05T07:12:58.663Z",
       "source": "timeline_monitor"
@@ -175,7 +75,7 @@
       },
       "created_at": "",
       "url": "https://twitter.com/aantonop/status/1752790565178245159",
-      "processed": false,
+      "processed": true,
       "addedAt": "2025-11-28T07:12:58.663Z",
       "expiresAt": "2025-12-05T07:12:58.664Z",
       "source": "timeline_monitor"
@@ -195,7 +95,7 @@
       },
       "created_at": "",
       "url": "https://twitter.com/aantonop/status/1752728668458336597",
-      "processed": false,
+      "processed": true,
       "addedAt": "2025-11-28T07:12:58.664Z",
       "expiresAt": "2025-12-05T07:12:58.664Z",
       "source": "timeline_monitor"
