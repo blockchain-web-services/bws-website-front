@@ -173,8 +173,9 @@ async function replyToKolPosts() {
   currentPhase = 'loading_products';
   const bwsProducts = loadBWSProducts();
   lastSuccessfulOperation = 'products_loaded';
-  const { maxRepliesPerRun, maxRepliesPerDay, maxRepliesPerKolPerWeek, minRelevanceScoreForReply, minTimeBetweenRepliesMinutes, dryRun, antiSpamActions } = config.replySettings;
+  const { maxRepliesPerRun, maxTweetsToEvaluatePerRun, maxRepliesPerDay, maxRepliesPerKolPerWeek, minRelevanceScoreForReply, minTimeBetweenRepliesMinutes, dryRun, antiSpamActions } = config.replySettings;
   const maxRepliesThisRun = maxRepliesPerRun || maxRepliesPerDay;
+  const maxEvaluationsThisRun = maxTweetsToEvaluatePerRun || 10; // Default to 10 if not specified
 
   // Default anti-spam settings if not specified
   const antiSpam = antiSpamActions || {
@@ -190,6 +191,7 @@ async function replyToKolPosts() {
   }
 
   console.log(`📊 Configuration:
+   - Max tweets to evaluate: ${maxEvaluationsThisRun}
    - Max replies this run: ${maxRepliesThisRun}
    - Max replies per day: ${maxRepliesPerDay}
    - Max replies per KOL per week: ${maxRepliesPerKolPerWeek}
@@ -275,6 +277,13 @@ async function replyToKolPosts() {
 
   // Process engaging posts
   for (const post of engagingPostsData.posts) {
+    // Check if we've hit the evaluation limit
+    if (tweetEvaluated >= maxEvaluationsThisRun) {
+      console.log(`\n✅ Reached max tweet evaluations for this run (${tweetEvaluated}/${maxEvaluationsThisRun}). Stopping...`);
+      console.log(`   This ensures timely completion. Remaining tweets will be processed in next run.`);
+      break;
+    }
+
     // Check if we've hit the run limit
     if (repliesPosted >= maxRepliesThisRun) {
       console.log(`\n✅ Reached max replies for this run (${repliesPosted}/${maxRepliesThisRun}). Stopping...`);

@@ -13,6 +13,7 @@
   "replySettings": {
     "enabled": true,
     "maxRepliesPerRun": 3,
+    "maxTweetsToEvaluatePerRun": 5,
     "maxRepliesPerDay": 10,
     "maxRepliesPerKolPerWeek": 2,
     "minRelevanceScoreForReply": 7,
