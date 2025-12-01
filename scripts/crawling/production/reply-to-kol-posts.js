@@ -323,10 +323,10 @@ async function replyToKolPosts() {
       await claudeLimiter.throttle();
 
       console.log(`🤖 Evaluating tweet relevance with Claude AI...`);
-      const evaluation = await evaluateTweetForReply(claudeClient, tweet, bwsProducts, minRelevanceScoreForReply);
+      const evaluation = await evaluateTweetForReply(claudeClient, tweet, kol, bwsProducts, config);
       tweetEvaluated++;
 
-      console.log(`   Relevance score: ${evaluation.score}/100`);
+      console.log(`   Relevance score: ${evaluation.relevanceScore}/100`);
       console.log(`   Reasoning: ${evaluation.reasoning}`);
 
       if (!evaluation.shouldReply) {
@@ -340,15 +340,22 @@ async function replyToKolPosts() {
       currentPhase = `generating_reply_for_${post.id}`;
       await claudeLimiter.throttle();
 
-      const featuredProducts = getNextFeaturedProducts(bwsProducts);
-      console.log(`\n✍️  Generating reply (featuring: ${featuredProducts.map(p => p.name).join(', ')})...`);
+      const productSelection = getNextFeaturedProducts(processedPosts, bwsProducts, config);
+      const selectedProduct = Object.values(productSelection.products)[0]; // Get first product
+      console.log(`\n✍️  Generating reply (featuring: ${productSelection.productNames.join(', ')})...`);
+      if (productSelection.specialNotes) {
+        console.log(`   📌 Special note: ${productSelection.specialNotes}`);
+      }
 
       const replyText = await generateReplyText(
         claudeClient,
         tweet,
         kol,
-        featuredProducts,
-        evaluation.suggestedProduct
+        selectedProduct,
+        evaluation,
+        productSelection.positioningPhrase,
+        [],
+        productSelection.specialNotes
       );
 
       console.log(`\n📤 Generated reply (${replyText.length} chars):`);
@@ -417,8 +424,8 @@ async function replyToKolPosts() {
           originalTweetText: tweet.text,
           replyTweetId,
           replyText,
-          productMentioned: evaluation.suggestedProduct || featuredProducts[0]?.name || 'BWS',
-          relevanceScore: evaluation.score,
+          productMentioned: evaluation.bestMatchingProduct || productSelection.productNames[0] || 'BWS',
+          relevanceScore: evaluation.relevanceScore,
           timestamp: new Date().toISOString(),
           status: 'posted',
           dryRun: false

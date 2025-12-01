@@ -1,6 +1,7 @@
 import Anthropic from '@anthropic-ai/sdk';
 
 const MODEL = 'claude-sonnet-4-5-20250929';
+const QUICK_FILTER_MODEL = 'claude-3-5-haiku-20241022'; // Fast, cheap model for pre-filtering
 
 /**
  * Create Anthropic client
@@ -85,6 +86,55 @@ Focus on:
   } catch (error) {
     console.error(`Claude API error evaluating user: ${error.message}`);
     throw error;
+  }
+}
+
+/**
+ * Quick pre-filter: Is this tweet about crypto projects/opportunities?
+ * Fast, cheap evaluation using Haiku model
+ * Returns true if tweet is potentially relevant for detailed evaluation
+ */
+export async function quickFilterTweetRelevance(client, tweet) {
+  const prompt = `Quickly analyze if this tweet is about cryptocurrency PROJECTS, ALTCOINS, or INVESTMENT OPPORTUNITIES.
+
+Tweet: "${tweet.text}"
+
+Answer with ONLY a JSON object:
+{
+  "isRelevant": true/false,
+  "category": "project-discussion/altcoin-talk/market-trends/price-speculation/technical-analysis/off-topic/news"
+}
+
+RELEVANT (return true):
+- Discusses specific crypto projects (tokens, DeFi, NFT projects)
+- Talks about altcoins, portfolio building, gems, opportunities
+- Project launches, narratives, ecosystem discussions
+- "What are you buying?", "Hidden gems", "Undervalued projects"
+
+NOT RELEVANT (return false):
+- Pure technical analysis (support/resistance levels, chart patterns)
+- Bitcoin-only price speculation ("BTC to $100k")
+- Traditional stocks/finance
+- Off-topic (politics, sports, food)
+- Generic news with no investment angle`;
+
+  try {
+    const message = await client.messages.create({
+      model: QUICK_FILTER_MODEL, // Use Haiku for speed and cost
+      max_tokens: 100,
+      messages: [{
+        role: 'user',
+        content: prompt
+      }]
+    });
+
+    const responseText = message.content[0].text.trim();
+    const result = extractJSON(responseText);
+    return result;
+  } catch (error) {
+    console.error(`Claude API error in quick filter: ${error.message}`);
+    // Default to true (pass through) on error to avoid losing tweets
+    return { isRelevant: true, category: 'error' };
   }
 }
 

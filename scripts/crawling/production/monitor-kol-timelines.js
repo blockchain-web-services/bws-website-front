@@ -35,6 +35,7 @@ const ENGAGING_POSTS_PATH = path.join(__dirname, '../data/engaging-posts.json');
 import { getUserTweetsWebUnblocker } from '../crawlers/twitter-crawler.js';
 import authManager from '../utils/x-auth-manager.js';
 import { sendMonitorNotification } from '../utils/zapier-webhook.js';
+import { createClaudeClient, quickFilterTweetRelevance } from '../utils/claude-client.js';
 
 /**
  * Load engaging posts
@@ -154,8 +155,14 @@ async function monitorKolTimelines() {
   currentPhase = 'ready_to_fetch_tweets';
   console.log(`⏰ [${Math.round((Date.now() - scriptStartTime) / 1000)}s] 📍 HTML parsing ready via authManager`);
 
-  // Initialize rate limiter
+  // Initialize Claude client for content filtering
+  currentPhase = 'initializing_claude';
+  const claudeClient = createClaudeClient();
+  console.log(`✅ [${Math.round((Date.now() - scriptStartTime) / 1000)}s] Claude client initialized for content filtering`);
+
+  // Initialize rate limiters
   const twitterLimiter = new RateLimiter(config.rateLimits?.twitterApiCallsPerMinute || 15);
+  const claudeLimiter = new RateLimiter(config.rateLimits?.claudeApiCallsPerMinute || 30);
 
   // Load data
   currentPhase = 'loading_data';
@@ -175,7 +182,18 @@ async function monitorKolTimelines() {
   let tweetsEvaluated = 0;
   let tweetsSelected = 0;
   let tweetsSkipped = 0;
+  let tweetsFilteredByContent = 0;
   const selectedTweets = [];
+  const contentFilterStats = {
+    'project-discussion': 0,
+    'altcoin-talk': 0,
+    'market-trends': 0,
+    'price-speculation': 0,
+    'technical-analysis': 0,
+    'off-topic': 0,
+    'news': 0,
+    'error': 0
+  };
 
   // Process each KOL
   for (const kol of prioritizedKols) {
@@ -218,7 +236,7 @@ async function monitorKolTimelines() {
       // Select top tweets (limit per KOL)
       const topTweets = engagingTweets.slice(0, maxTweetsPerKol);
 
-      // Add to selected tweets with metadata
+      // Add to selected tweets with metadata, with AI content filtering
       for (const tweet of topTweets) {
         // Check if already in engaging posts or processed
         const tweetId = tweet.id || tweet.tweet_id;
@@ -232,6 +250,21 @@ async function monitorKolTimelines() {
         }
 
         tweetsEvaluated++;
+
+        // NEW: Quick AI content filter
+        await claudeLimiter.throttle();
+        console.log(`🤖 Quick filter: "${tweet.text.substring(0, 80)}${tweet.text.length > 80 ? '...' : ''}"`);
+
+        const filterResult = await quickFilterTweetRelevance(claudeClient, tweet);
+        contentFilterStats[filterResult.category] = (contentFilterStats[filterResult.category] || 0) + 1;
+
+        if (!filterResult.isRelevant) {
+          console.log(`   ⏭️  Filtered out (${filterResult.category})`);
+          tweetsFilteredByContent++;
+          continue;
+        }
+
+        console.log(`   ✅ Passed filter (${filterResult.category})`);
 
         selectedTweets.push({
           id: tweetId,
@@ -247,7 +280,8 @@ async function monitorKolTimelines() {
           processed: false,
           addedAt: new Date().toISOString(),
           expiresAt: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000).toISOString(), // 7 days
-          source: 'timeline_monitor'
+          source: 'timeline_monitor',
+          contentCategory: filterResult.category
         });
 
         tweetsSelected++;
@@ -308,10 +342,18 @@ async function monitorKolTimelines() {
   console.log(`${'='.repeat(60)}`);
   console.log(`KOLs processed: ${kolsProcessed}/${activeKols.length}`);
   console.log(`Tweets evaluated: ${tweetsEvaluated}`);
+  console.log(`Tweets filtered by content: ${tweetsFilteredByContent}`);
   console.log(`Tweets selected: ${tweetsSelected}`);
-  console.log(`Tweets skipped: ${tweetsSkipped}`);
+  console.log(`Tweets skipped (duplicates): ${tweetsSkipped}`);
   console.log(`Total engaging posts: ${engagingPostsData.posts.length}`);
   console.log(`Duration: ${duration}s`);
+  console.log(`\n📊 Content Filter Breakdown:`);
+  Object.entries(contentFilterStats).forEach(([category, count]) => {
+    if (count > 0) {
+      const emoji = category.includes('project') || category.includes('altcoin') || category.includes('market') ? '✅' : '⏭️';
+      console.log(`   ${emoji} ${category}: ${count}`);
+    }
+  });
   console.log(`${'='.repeat(60)}\n`);
 
   console.log('✅ Timeline monitoring complete!');
