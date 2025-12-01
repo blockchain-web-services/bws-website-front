@@ -896,6 +896,51 @@
         "lastChecked": "2025-11-15T09:09:56.950Z"
       },
       "error": "Request failed with code 403"
+    },
+    {
+      "id": "1353384573435056128-1994129599198887994-1764616442521",
+      "tweetId": "1994129599198887994",
+      "tweetUrl": "https://twitter.com/CryptoRover/status/1994129599198887994",
+      "kolId": "1353384573435056128",
+      "kolUsername": "CryptoRover",
+      "originalTweetText": "Will we ever see a true altseason again?",
+      "replyTweetId": "1995572113151840328",
+      "replyText": "Altseason rewards projects shipping real utility, not just hype.\n\n$BWS X Bot provides verifiable KOL analytics using official X API - helping crypto projects measure authentic engagement and ROI. Building tools that matter beyond market cycles.\n\n@BWSCommunity #altcoins #microcap #crypto https://docs.bws.ninja/marketplace-solutions/bws.x.bot",
+      "productMentioned": "X Bot (Telegram Analytics Platform)",
+      "relevanceScore": 85,
+      "timestamp": "2025-12-01T19:14:02.521Z",
+      "status": "posted",
+      "dryRun": false
+    },
+    {
+      "id": "1353384573435056128-1994099400126222523-1764616464680",
+      "tweetId": "1994099400126222523",
+      "tweetUrl": "https://twitter.com/CryptoRover/status/1994099400126222523",
+      "kolId": "1353384573435056128",
+      "kolUsername": "CryptoRover",
+      "originalTweetText": "FED WILL CUT RATES IN DECEMBER! \n\nBullish for markets, most definitely for risk assets.",
+      "replyTweetId": "1995572206152118459",
+      "replyText": "Rate cuts typically pump narratives first, but smart money positions in microcaps with real fundamentals before the broader rotation.\n\n$BWS operates a Blockchain Solutions Marketplace with multiple live products targeting mass markets - IPFS APIs, NFT tools, ESG reporting. Building through all cycles.\n\n@BWSCommunity #microcap #altcoins #fundamentals https://www.bws.ninja",
+      "productMentioned": "X Bot",
+      "relevanceScore": 78,
+      "timestamp": "2025-12-01T19:14:24.680Z",
+      "status": "posted",
+      "dryRun": false
+    },
+    {
+      "id": "1353384573435056128-1994094336653324501-1764616492609",
+      "tweetId": "1994094336653324501",
+      "tweetUrl": "https://twitter.com/CryptoRover/status/1994094336653324501",
+      "kolId": "1353384573435056128",
+      "kolUsername": "CryptoRover",
+      "originalTweetText": "YOU ARE WATCHING THE BIGGEST MARKET MANIPULATION OF 2025 IN REAL-TIME. \n\nTHEY CREATED THE FUD TO BUY THE EXACT BAGS YOU JUST SOLD.\n\nTHE TIMELINE THEY DON'T WANT YOU TO SEE: \n\nThe JPMorgan and Strategy situation didn’t begin with the October crash. It goes all the way back to",
+      "replyTweetId": "1995572323311628477",
+      "replyText": "Exactly this - manufactured fear creates accumulation windows for fundamentals.\n\n$BWS operates a Blockchain Solutions Marketplace with multiple live products targeting mass markets: NFT infrastructure, credential systems, ESG reporting. Real utility, sub-$5M mcap.\n\n@BWSCommunity #microcap #altcoins #fundamentals https://www.bws.ninja",
+      "productMentioned": "X Bot (for analytics/transparency angle) or General BWS positioning",
+      "relevanceScore": 82,
+      "timestamp": "2025-12-01T19:14:52.609Z",
+      "status": "posted",
+      "dryRun": false
     }
   ],
   "dailyStats": {
@@ -970,10 +1015,10 @@
     }
   },
   "metadata": {
-    "totalReplies": 39,
-    "successfulReplies": 5,
+    "totalReplies": 42,
+    "successfulReplies": 8,
     "failedReplies": 34,
-    "lastReplyAt": "2025-11-15T09:09:56.950Z",
+    "lastReplyAt": "2025-12-01T19:14:52.609Z",
     "todayRepliesCount": 0,
     "lastUpdateBy": "kol-system"
   }
