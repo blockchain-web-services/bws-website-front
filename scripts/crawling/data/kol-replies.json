@@ -1018,6 +1018,21 @@
       "timestamp": "2025-12-02T07:39:23.029Z",
       "status": "posted",
       "dryRun": false
+    },
+    {
+      "id": "crawlee_search_crypto_theboss-1993955227892855202-1764689413641",
+      "tweetId": "1993955227892855202",
+      "tweetUrl": "https://twitter.com/Crypto_TheBoss/status/1993955227892855202",
+      "kolId": "crawlee_search_crypto_theboss",
+      "kolUsername": "Crypto_TheBoss",
+      "originalTweetText": "The price action today looks promising: Bitcoin (#BTC) has shown a clear reaction after the recent decline and started to rise again with renewed buying interest across the market. After bouncing from the recent local low and testing levels above 90,000 USD, the chart shows",
+      "replyTweetId": "1995878176241721428",
+      "replyText": "Market bounces like this separate speculative plays from projects with actual fundamentals.\n\n$BWS X Bot provides crypto teams with verifiable Twitter engagement metrics via official API - helping investors identify projects with real community traction vs manufactured hype.\n\n@BWSCommunity #altcoins #microcap #crypto https://docs.bws.ninja/marketplace-solutions/bws.x.bot",
+      "productMentioned": "X Bot",
+      "relevanceScore": 72,
+      "timestamp": "2025-12-02T15:30:13.641Z",
+      "status": "posted",
+      "dryRun": false
     }
   ],
   "dailyStats": {
@@ -1092,10 +1107,10 @@
     }
   },
   "metadata": {
-    "totalReplies": 47,
-    "successfulReplies": 13,
+    "totalReplies": 48,
+    "successfulReplies": 14,
     "failedReplies": 34,
-    "lastReplyAt": "2025-12-02T07:39:23.029Z",
+    "lastReplyAt": "2025-12-02T15:30:13.641Z",
     "todayRepliesCount": 0,
     "lastUpdateBy": "kol-system"
   }
