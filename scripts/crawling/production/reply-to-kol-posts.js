@@ -276,6 +276,31 @@ async function replyToKolPosts() {
   const engagingPostsData = await loadEngagingPosts();
   const processedPosts = loadProcessedPosts();
 
+  // Initialize product rotation in engagingPostsData if not present
+  if (!engagingPostsData.productRotation) {
+    engagingPostsData.productRotation = {
+      allProducts: [
+        'X Bot',
+        'Fan Game Cube',
+        'Blockchain Hash',
+        'NFT.zK',
+        'Blockchain Badges',
+        'ESG Credits',
+        'BWS IPFS',
+        'Blockchain Save'
+      ],
+      currentIndex: 0,
+      lastProductUsed: null,
+      positioningPhraseIndex: 0,
+      replyCount: 0
+    };
+    console.log('✨ Initialized product rotation state in engaging-posts.json');
+  }
+
+  // Use engaging-posts rotation state instead of processed-posts
+  // This ensures rotation persists across workflow runs
+  processedPosts.productRotation = engagingPostsData.productRotation;
+
   console.log(`📋 Found ${engagingPostsData.posts.length} unprocessed engaging posts\n`);
 
   if (engagingPostsData.posts.length === 0) {

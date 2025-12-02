@@ -537,9 +537,8 @@ export function daysSince(date) {
 }
 
 /**
- * Get next product(s) to feature using round-robin
- * 60% of time: X Bot or Fan Game Cube
- * 40% of time: Other products
+ * Get next product(s) to feature using simple round-robin
+ * All products get equal rotation (no priority/other split)
  * Returns product names to filter from BWS products catalog
  */
 export function getNextFeaturedProducts(processedPosts, bwsProducts, config) {
@@ -548,66 +547,63 @@ export function getNextFeaturedProducts(processedPosts, bwsProducts, config) {
   const preventConsecutive = diversityConfig.preventConsecutiveSameProduct !== false;
   const specialNoteProbability = diversityConfig.specialNotesProbability || 0.33;
 
-  // Determine if this should be a priority product (60% chance)
-  const usePriority = (rotation.replyCount % 5) < 3; // 3 out of 5 = 60%
+  // Support both old format (priorityProducts/otherProducts) and new format (allProducts)
+  let allProducts;
+  let currentIndex;
+
+  if (rotation.allProducts) {
+    // New format: simple list of all products
+    allProducts = rotation.allProducts;
+    currentIndex = rotation.currentIndex || 0;
+  } else {
+    // Old format: merge priority and other products
+    allProducts = [...(rotation.priorityProducts || []), ...(rotation.otherProducts || [])];
+    currentIndex = rotation.priorityIndex || 0;
+  }
 
   let selectedProductNames = [];
   let specialNotes = '';
   let attempts = 0;
-  const maxAttempts = 10; // Prevent infinite loop
+  const maxAttempts = allProducts.length + 1; // Try all products once
 
-  // Select product with consecutive-product prevention
+  // Simple round-robin with consecutive prevention
   while (attempts < maxAttempts) {
     attempts++;
 
-    if (usePriority) {
-      // Select from priority products (X Bot or Fan Game Cube)
-      const productName = rotation.priorityProducts[rotation.priorityIndex];
+    const productName = allProducts[currentIndex % allProducts.length];
 
-      // Check if this is the same as last product used
-      if (preventConsecutive && rotation.lastProductUsed === productName && rotation.priorityProducts.length > 1) {
-        // Skip to next priority product
-        rotation.priorityIndex = (rotation.priorityIndex + 1) % rotation.priorityProducts.length;
-        continue; // Try again
-      }
-
-      selectedProductNames.push(productName);
-
-      // Add special note for Fan Game Cube about iGaming (conditional based on probability)
-      if (productName === 'Fan Game Cube' && Math.random() < specialNoteProbability) {
-        specialNotes = '**IMPORTANT**: Fan Game Cube is expanding into the iGaming domain. Mention this future direction when relevant.';
-      }
-
-      // Move to next priority product
-      rotation.priorityIndex = (rotation.priorityIndex + 1) % rotation.priorityProducts.length;
-      break;
-
-    } else {
-      // Select from other products
-      const productName = rotation.otherProducts[rotation.otherIndex];
-
-      // Check if this is the same as last product used
-      if (preventConsecutive && rotation.lastProductUsed === productName && rotation.otherProducts.length > 1) {
-        // Skip to next other product
-        rotation.otherIndex = (rotation.otherIndex + 1) % rotation.otherProducts.length;
-        continue; // Try again
-      }
-
-      selectedProductNames.push(productName);
-
-      // Move to next other product
-      rotation.otherIndex = (rotation.otherIndex + 1) % rotation.otherProducts.length;
-      break;
+    // Check if this is the same as last product used
+    if (preventConsecutive && rotation.lastProductUsed === productName && allProducts.length > 1) {
+      // Skip to next product
+      currentIndex = (currentIndex + 1) % allProducts.length;
+      continue; // Try again
     }
+
+    selectedProductNames.push(productName);
+
+    // Add special note for Fan Game Cube about iGaming (conditional based on probability)
+    if (productName === 'Fan Game Cube' && Math.random() < specialNoteProbability) {
+      specialNotes = '**IMPORTANT**: Fan Game Cube is expanding into the iGaming domain. Mention this future direction when relevant.';
+    }
+
+    // Move to next product
+    currentIndex = (currentIndex + 1) % allProducts.length;
+    break;
   }
 
   // If we somehow failed to select a product (shouldn't happen), fallback to first available
   if (selectedProductNames.length === 0) {
-    selectedProductNames.push(usePriority ? rotation.priorityProducts[0] : rotation.otherProducts[0]);
+    selectedProductNames.push(allProducts[0]);
+    currentIndex = 1;
   }
 
-  // Update last product used
+  // Update rotation state
   rotation.lastProductUsed = selectedProductNames[0];
+  if (rotation.allProducts) {
+    rotation.currentIndex = currentIndex;
+  } else {
+    rotation.priorityIndex = currentIndex; // For backward compatibility
+  }
 
   // Get positioning phrase
   const positioningPhrases = config.positioningPhrases || [
@@ -633,7 +629,7 @@ export function getNextFeaturedProducts(processedPosts, bwsProducts, config) {
     products: featuredProducts,
     productNames: selectedProductNames,
     specialNotes,
-    isPriority: usePriority,
+    isPriority: false, // No more priority distinction
     positioningPhrase
   };
 }
