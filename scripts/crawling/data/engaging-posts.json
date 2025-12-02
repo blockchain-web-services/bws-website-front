@@ -3257,13 +3257,496 @@
       "expiresAt": "2025-12-08T22:20:23.421Z",
       "source": "timeline_monitor",
       "contentCategory": "news"
+    },
+    {
+      "id": "1995633898831917467",
+      "text": "$SOL - OBV and price working on trying to hold support. Best case would be to make this a double bottom to avoid the next level which brings us down to $100.",
+      "author": {
+        "id": "4441279246",
+        "username": "IncomeSharks"
+      },
+      "public_metrics": {
+        "retweet_count": 33,
+        "reply_count": 30,
+        "like_count": 412,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/IncomeSharks/status/1995633898831917467",
+      "processed": false,
+      "addedAt": "2025-12-02T07:23:44.830Z",
+      "expiresAt": "2025-12-09T07:23:44.830Z",
+      "source": "timeline_monitor",
+      "contentCategory": "technical-analysis"
+    },
+    {
+      "id": "1995608036522819618",
+      "text": "$COIN - OBV gave a nice warning and we almost filled the lower gap on the first attempt. Still think if patient enough you'll be able to bid that zone.",
+      "author": {
+        "id": "4441279246",
+        "username": "IncomeSharks"
+      },
+      "public_metrics": {
+        "retweet_count": 10,
+        "reply_count": 27,
+        "like_count": 206,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/IncomeSharks/status/1995608036522819618",
+      "processed": false,
+      "addedAt": "2025-12-02T07:23:46.893Z",
+      "expiresAt": "2025-12-09T07:23:46.893Z",
+      "source": "timeline_monitor",
+      "contentCategory": "technical-analysis"
+    },
+    {
+      "id": "1995607191978660050",
+      "text": "$MSTR - Since OBV made a double top at $450 in July it's been almost free falling. Looks like another horizontal about to fall through.",
+      "author": {
+        "id": "4441279246",
+        "username": "IncomeSharks"
+      },
+      "public_metrics": {
+        "retweet_count": 20,
+        "reply_count": 41,
+        "like_count": 294,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/IncomeSharks/status/1995607191978660050",
+      "processed": false,
+      "addedAt": "2025-12-02T07:23:50.851Z",
+      "expiresAt": "2025-12-09T07:23:50.851Z",
+      "source": "timeline_monitor",
+      "contentCategory": "technical-analysis"
+    },
+    {
+      "id": "1995532845096542524",
+      "text": "$BTC - This shouldn't bother long term holders but will terrify those overleveraged or impatient.",
+      "author": {
+        "id": "4441279246",
+        "username": "IncomeSharks"
+      },
+      "public_metrics": {
+        "retweet_count": 86,
+        "reply_count": 92,
+        "like_count": 1001,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/IncomeSharks/status/1995532845096542524",
+      "processed": false,
+      "addedAt": "2025-12-02T07:23:56.288Z",
+      "expiresAt": "2025-12-09T07:23:56.288Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends/price-speculation"
+    },
+    {
+      "id": "1995610827458838961",
+      "text": "According to Bloomberg, Vanguard will begin allowing ETFs and mutual funds that primarily hold Bitcoin, Ether, XRP, Solana, and other cryptocurrencies to trade on its platform starting December 2, 2025, ending its long-standing stance against supporting crypto products. Vanguard",
+      "author": {
+        "id": "111533746",
+        "username": "WuBlockchain"
+      },
+      "public_metrics": {
+        "retweet_count": 29,
+        "reply_count": 5,
+        "like_count": 68,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/WuBlockchain/status/1995610827458838961",
+      "processed": false,
+      "addedAt": "2025-12-02T07:26:54.689Z",
+      "expiresAt": "2025-12-09T07:26:54.689Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "1995622939128123767",
+      "text": "Bitcoin can go back to $10,000, and I wouldn't care.\n\nNumber will go back up.",
+      "author": {
+        "id": "935742315389444096",
+        "username": "CryptoWendyO"
+      },
+      "public_metrics": {
+        "retweet_count": 22,
+        "reply_count": 80,
+        "like_count": 254,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoWendyO/status/1995622939128123767",
+      "processed": false,
+      "addedAt": "2025-12-02T07:27:24.125Z",
+      "expiresAt": "2025-12-09T07:27:24.125Z",
+      "source": "timeline_monitor",
+      "contentCategory": "price-speculation"
+    },
+    {
+      "id": "1995613885810766072",
+      "text": "Ripple received regulatory approval in Singapore to expand payment services using XRP and RLUSD under its Major Payment Institution license.\n\nIt allows Ripple to offer faster, regulated cross-border payments to Singapore customers.\n\nSource: Decrypt",
+      "author": {
+        "id": "935742315389444096",
+        "username": "CryptoWendyO"
+      },
+      "public_metrics": {
+        "retweet_count": 25,
+        "reply_count": 23,
+        "like_count": 268,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoWendyO/status/1995613885810766072",
+      "processed": false,
+      "addedAt": "2025-12-02T07:27:26.016Z",
+      "expiresAt": "2025-12-09T07:27:26.016Z",
+      "source": "timeline_monitor",
+      "contentCategory": "project-discussion"
+    },
+    {
+      "id": "1995609500812968242",
+      "text": "NEW: Vanguard will roll out crypto ETF access to brokerage clients tomorrow, per Bloomberg",
+      "author": {
+        "id": "935742315389444096",
+        "username": "CryptoWendyO"
+      },
+      "public_metrics": {
+        "retweet_count": 30,
+        "reply_count": 42,
+        "like_count": 363,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoWendyO/status/1995609500812968242",
+      "processed": false,
+      "addedAt": "2025-12-02T07:27:27.871Z",
+      "expiresAt": "2025-12-09T07:27:27.871Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "1995660503537041886",
+      "text": "BREAKING:\n\n PRESIDENT TRUMP SAYS THE US WILL BE THE \"WORLD CAPITAL OF ARTIFICIAL INTELLIGENCE & CRYPTO.\"\n\nYOU CAN’T BE BEARISH ON BITCOIN WHEN THE PRESIDENT OF THE UNITED STATES IS SAYING THIS.",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "retweet_count": 401,
+        "reply_count": 216,
+        "like_count": 3162,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoRover/status/1995660503537041886",
+      "processed": false,
+      "addedAt": "2025-12-02T07:28:55.742Z",
+      "expiresAt": "2025-12-09T07:28:55.742Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "1995688147770871899",
+      "text": "THE LEGACY FINANCIAL SYSTEM IS BROKEN\n\n  Crazy Real Estate Prices\n  $338 TRILLION in Global Debt\n  Ever-Increasing Inflation Rates\n\n@IOHK_Charles' message is clear: Teach people about sound money. It's up to us to make a change.",
+      "author": {
+        "id": "877357064724520961",
+        "username": "CryptosR_Us"
+      },
+      "public_metrics": {
+        "retweet_count": 11,
+        "reply_count": 7,
+        "like_count": 58,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptosR_Us/status/1995688147770871899",
+      "processed": false,
+      "addedAt": "2025-12-02T07:29:17.920Z",
+      "expiresAt": "2025-12-09T07:29:17.920Z",
+      "source": "timeline_monitor",
+      "contentCategory": "project-discussion"
+    },
+    {
+      "id": "1995679317624336788",
+      "text": "BIG BANK JUST OPENED THE DOORS TO CRYPTO\n\nBank of America -- one of the largest banks in the U.S. with nearly $2.9 trillion in assets under management -- is now telling its wealth clients they can allocate up to 4% of their portfolio into crypto. That’s not small-time financial",
+      "author": {
+        "id": "877357064724520961",
+        "username": "CryptosR_Us"
+      },
+      "public_metrics": {
+        "retweet_count": 291,
+        "reply_count": 47,
+        "like_count": 1203,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptosR_Us/status/1995679317624336788",
+      "processed": false,
+      "addedAt": "2025-12-02T07:29:18.865Z",
+      "expiresAt": "2025-12-09T07:29:18.865Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "1995662952863879244",
+      "text": "QT JUST ENDED AND THIS IS THE BIG CATALYST\n\nTom Lee says the quiet part out loud: The Fed just stopped quantitative tightening -- the biggest liquidity drain since 2022.\n\nLast time QT ended? Markets ripped +17% in three weeks.\n\nThis matters for Bitcoin because liquidity is",
+      "author": {
+        "id": "877357064724520961",
+        "username": "CryptosR_Us"
+      },
+      "public_metrics": {
+        "retweet_count": 71,
+        "reply_count": 30,
+        "like_count": 520,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptosR_Us/status/1995662952863879244",
+      "processed": false,
+      "addedAt": "2025-12-02T07:29:22.093Z",
+      "expiresAt": "2025-12-09T07:29:22.093Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "1995647979165024280",
+      "text": "VANGUARD ISN’T JUST OPENING THE DOOR... THEY’RE OPENING A BIGGER ONE THAN BLACKROCK\n\nBlackRock only offers Bitcoin + Ethereum ETFs. Vanguard is coming in with $BTC, $ETH, $XRP, and $SOL right out of the gate.\n\nBlackRock AUM: $13.46T\nVanguard AUM: $11T\n\nTwo giants. One expands",
+      "author": {
+        "id": "877357064724520961",
+        "username": "CryptosR_Us"
+      },
+      "public_metrics": {
+        "retweet_count": 314,
+        "reply_count": 47,
+        "like_count": 1446,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptosR_Us/status/1995647979165024280",
+      "processed": false,
+      "addedAt": "2025-12-02T07:29:23.637Z",
+      "expiresAt": "2025-12-09T07:29:23.637Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "1995632258569359527",
+      "text": "LATEST: ELON MUSK PREDICTS ENERGY-BASED BITCOIN TO REPLACE MONEY \n\nMusk said in a recent interview that he believes money will 'disappear' as energy becomes humanity's real currency.\n\n“If AI and robotics are big enough to satisfy all human needs, then money is no longer… its",
+      "author": {
+        "id": "877357064724520961",
+        "username": "CryptosR_Us"
+      },
+      "public_metrics": {
+        "retweet_count": 34,
+        "reply_count": 21,
+        "like_count": 164,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptosR_Us/status/1995632258569359527",
+      "processed": false,
+      "addedAt": "2025-12-02T07:29:27.094Z",
+      "expiresAt": "2025-12-09T07:29:27.094Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "1995616851200737658",
+      "text": "SEC chairman at the NYSE tomorrow.\n\nEyes open, $BTC & crypto might get a moment.",
+      "author": {
+        "id": "877357064724520961",
+        "username": "CryptosR_Us"
+      },
+      "public_metrics": {
+        "retweet_count": 23,
+        "reply_count": 15,
+        "like_count": 209,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptosR_Us/status/1995616851200737658",
+      "processed": false,
+      "addedAt": "2025-12-02T07:29:29.419Z",
+      "expiresAt": "2025-12-09T07:29:29.419Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "1752728668458336597",
+      "text": "FREE class - Introduction to Digital Currencies - is starting on Feb 5th. Enroll now / learn more:",
+      "author": {
+        "id": "1469101279",
+        "username": "aantonop"
+      },
+      "public_metrics": {
+        "retweet_count": 75,
+        "reply_count": 0,
+        "like_count": 111,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/aantonop/status/1752728668458336597",
+      "processed": false,
+      "addedAt": "2025-12-02T07:29:42.860Z",
+      "expiresAt": "2025-12-09T07:29:42.860Z",
+      "source": "timeline_monitor",
+      "contentCategory": "news"
+    },
+    {
+      "id": "1994129377035182177",
+      "text": "I think if you only trade crypto you’re doing yourself such a huge disservice \n\nThe next decade is going to be full of some of the most exciting developments in history. And you’re job is to put yourself in the best position to capitalize on that. To remain as objective as",
+      "author": {
+        "id": "1138993163706753029",
+        "username": "Pentosh1"
+      },
+      "public_metrics": {
+        "retweet_count": 93,
+        "reply_count": 151,
+        "like_count": 1118,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/Pentosh1/status/1994129377035182177",
+      "processed": false,
+      "addedAt": "2025-12-02T07:31:22.155Z",
+      "expiresAt": "2025-12-09T07:31:22.155Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "1995593966075740424",
+      "text": "$1000 > $20k Copy Trading Update\n\nAlmost 8k hit! +6,919.54 USD profit in just 2 days!\n\nIf you want to join;\n\n1-) Sign-up BloFin via my referral link (Must!)\n2-) DM me with your UID\n@NihilusBTC\n\nYou can open new account\nNO KYC, NO VPN NEEDED!\n\nhttp://partner.blofin.com/d/Nihilus",
+      "author": {
+        "id": "crawlee_search_nihilusbtc",
+        "username": "NihilusBTC"
+      },
+      "public_metrics": {
+        "retweet_count": 24,
+        "reply_count": 0,
+        "like_count": 65,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/NihilusBTC/status/1995593966075740424",
+      "processed": false,
+      "addedAt": "2025-12-02T07:31:34.775Z",
+      "expiresAt": "2025-12-09T07:31:34.775Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "1995593249906721186",
+      "text": "$UAI | #1 in top gainers!",
+      "author": {
+        "id": "crawlee_search_nihilusbtc",
+        "username": "NihilusBTC"
+      },
+      "public_metrics": {
+        "retweet_count": 18,
+        "reply_count": 34,
+        "like_count": 70,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/NihilusBTC/status/1995593249906721186",
+      "processed": false,
+      "addedAt": "2025-12-02T07:31:36.309Z",
+      "expiresAt": "2025-12-09T07:31:36.309Z",
+      "source": "timeline_monitor",
+      "contentCategory": "altcoin-talk"
+    },
+    {
+      "id": "1995590472103055640",
+      "text": "$EUL \n\nTransparency is best thing in this space, longed @ copy trading account now.",
+      "author": {
+        "id": "crawlee_search_nihilusbtc",
+        "username": "NihilusBTC"
+      },
+      "public_metrics": {
+        "retweet_count": 17,
+        "reply_count": 28,
+        "like_count": 61,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/NihilusBTC/status/1995590472103055640",
+      "processed": false,
+      "addedAt": "2025-12-02T07:31:38.334Z",
+      "expiresAt": "2025-12-09T07:31:38.334Z",
+      "source": "timeline_monitor",
+      "contentCategory": "altcoin-talk"
+    },
+    {
+      "id": "1995574069216117246",
+      "text": "$UAI longed @ 0.1460",
+      "author": {
+        "id": "crawlee_search_nihilusbtc",
+        "username": "NihilusBTC"
+      },
+      "public_metrics": {
+        "retweet_count": 21,
+        "reply_count": 42,
+        "like_count": 58,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/NihilusBTC/status/1995574069216117246",
+      "processed": false,
+      "addedAt": "2025-12-02T07:31:40.162Z",
+      "expiresAt": "2025-12-09T07:31:40.162Z",
+      "source": "timeline_monitor",
+      "contentCategory": "price-speculation"
+    },
+    {
+      "id": "1995549294800363638",
+      "text": "$EUL | We started.\n\nTP is 4.84 for scalpers\nSpot $8",
+      "author": {
+        "id": "crawlee_search_nihilusbtc",
+        "username": "NihilusBTC"
+      },
+      "public_metrics": {
+        "retweet_count": 36,
+        "reply_count": 40,
+        "like_count": 102,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/NihilusBTC/status/1995549294800363638",
+      "processed": false,
+      "addedAt": "2025-12-02T07:31:42.073Z",
+      "expiresAt": "2025-12-09T07:31:42.073Z",
+      "source": "timeline_monitor",
+      "contentCategory": "price-speculation"
+    },
+    {
+      "id": "1986538443779023218",
+      "text": "[SBF says:]\n\nI don't quite agree with every point—but, yeah, this is basically what happened.\n\nI'm not saying FTX's solvency or the Debtors' mismanagement are the reasons I'm innocent (although it's a piece of the story!). But the Debtors are still withholding funds—see, e.g.,",
+      "author": {
+        "id": "1110877798820777986",
+        "username": "SBF_FTX"
+      },
+      "public_metrics": {
+        "retweet_count": 226,
+        "reply_count": 623,
+        "like_count": 986,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/SBF_FTX/status/1986538443779023218",
+      "processed": false,
+      "addedAt": "2025-12-02T07:32:09.504Z",
+      "expiresAt": "2025-12-09T07:32:09.504Z",
+      "source": "timeline_monitor",
+      "contentCategory": "news"
     }
   ],
   "metadata": {
-    "lastUpdated": "2025-12-01T22:21:08.298Z",
-    "totalPosts": 167,
+    "lastUpdated": "2025-12-02T07:32:27.950Z",
+    "totalPosts": 181,
     "bySource": {
-      "timeline_monitor": 167,
+      "timeline_monitor": 181,
       "search_discovery": 0
     }
   }
