@@ -1048,6 +1048,21 @@
       "timestamp": "2025-12-02T19:54:30.118Z",
       "status": "posted",
       "dryRun": false
+    },
+    {
+      "id": "crawlee_search_crypt0_defi-1994103637325357181-1764717592294",
+      "tweetId": "1994103637325357181",
+      "tweetUrl": "https://twitter.com/Crypt0_DeFi/status/1994103637325357181",
+      "kolId": "crawlee_search_crypt0_defi",
+      "kolUsername": "Crypt0_DeFi",
+      "originalTweetText": "This update is a big moment for the Arbitrum ecosystem. With Arbitrum now supported on Binance Alpha, more people can finally see and use Arbitrum projects. \n\nMillions of Binance users can now discover new Alpha tokens on this chain without going to any other platform.\n\nMany",
+      "replyTweetId": "1995996365718253926",
+      "replyText": "Exactly - Arbitrum visibility on Binance Alpha is a game-changer for discoverability.\n\n$BWS X Bot is a perfect example of real utility on Arbitrum: Telegram-based analytics using official X API to measure authentic community engagement and KOL performance. Microcap with shipped products.\n\n@BWSCommunity #ArbitrumAlpha #microcap #gems https://docs.bws.ninja/marketplace-solutions/bws.x.bot",
+      "productMentioned": "X Bot, Blockchain Badges",
+      "relevanceScore": 78,
+      "timestamp": "2025-12-02T23:19:52.294Z",
+      "status": "posted",
+      "dryRun": false
     }
   ],
   "dailyStats": {
@@ -1122,10 +1137,10 @@
     }
   },
   "metadata": {
-    "totalReplies": 49,
-    "successfulReplies": 15,
+    "totalReplies": 50,
+    "successfulReplies": 16,
     "failedReplies": 34,
-    "lastReplyAt": "2025-12-02T19:54:30.118Z",
+    "lastReplyAt": "2025-12-02T23:19:52.294Z",
     "todayRepliesCount": 0,
     "lastUpdateBy": "kol-system"
   }
