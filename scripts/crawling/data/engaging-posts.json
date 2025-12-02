@@ -1,106 +1,6 @@
 {
   "posts": [
     {
-      "id": "1994142556071031079",
-      "text": "BREAKING:\n\nBLACKROCK CEO LARRY FINK: IT DOESN'T MATTER IF MARKETS RISE AND FALL. BUBBLES COME AND GO.\n\nWHAT MATTERS MOST IS STAYING IN THE MARKET THROUGH ALL CYCLES.",
-      "author": {
-        "id": "1353384573435056128",
-        "username": "CryptoRover"
-      },
-      "public_metrics": {
-        "retweet_count": 268,
-        "reply_count": 192,
-        "like_count": 2410,
-        "quote_count": 0
-      },
-      "created_at": "",
-      "url": "https://twitter.com/CryptoRover/status/1994142556071031079",
-      "processed": true,
-      "addedAt": "2025-11-28T07:13:26.376Z",
-      "expiresAt": "2025-12-05T07:13:26.376Z",
-      "source": "timeline_monitor"
-    },
-    {
-      "id": "1994073489263693901",
-      "text": "BITCOIN ICHIMOKU CLOUD HOLDING STRONG! \n\nThe Ichimoku Cloud is an all-in-one indicator that shows trend, momentum, and major support/resistance zones. When price bounces off the Cloud, it often signals strong market reactions. \n\nBitcoin just did exactly that : the Cloud caught",
-      "author": {
-        "id": "877357064724520961",
-        "username": "CryptosR_Us"
-      },
-      "public_metrics": {
-        "retweet_count": 23,
-        "reply_count": 21,
-        "like_count": 155,
-        "quote_count": 0
-      },
-      "created_at": "",
-      "url": "https://twitter.com/CryptosR_Us/status/1994073489263693901",
-      "processed": true,
-      "addedAt": "2025-11-28T07:13:37.295Z",
-      "expiresAt": "2025-12-05T07:13:37.295Z",
-      "source": "timeline_monitor"
-    },
-    {
-      "id": "1994054019132666054",
-      "text": "$BTC $1.5M BULL CASE UNCHANGED : CATHIE WOOD\n\nAccording to Ark-invest : liquidity is returning: $70B has flowed back since the US government shutdown, with $300B more expected in 5–6 weeks. The Fed ends QT Dec 1, potentially pivoting to QE, supporting equities & crypto.\n\nWood",
-      "author": {
-        "id": "877357064724520961",
-        "username": "CryptosR_Us"
-      },
-      "public_metrics": {
-        "retweet_count": 28,
-        "reply_count": 21,
-        "like_count": 167,
-        "quote_count": 0
-      },
-      "created_at": "",
-      "url": "https://twitter.com/CryptosR_Us/status/1994054019132666054",
-      "processed": true,
-      "addedAt": "2025-11-28T07:13:37.295Z",
-      "expiresAt": "2025-12-05T07:13:37.295Z",
-      "source": "timeline_monitor"
-    },
-    {
-      "id": "1986539511250362845",
-      "text": "By solvency I mean more assets than liabilities, which even the Debtors have now admitted: pre-petition, on petition date, and post-petition.",
-      "author": {
-        "id": "1110877798820777986",
-        "username": "SBF_FTX"
-      },
-      "public_metrics": {
-        "retweet_count": 82,
-        "reply_count": 178,
-        "like_count": 318,
-        "quote_count": 0
-      },
-      "created_at": "",
-      "url": "https://twitter.com/SBF_FTX/status/1986539511250362845",
-      "processed": true,
-      "addedAt": "2025-11-28T07:13:50.050Z",
-      "expiresAt": "2025-12-05T07:13:50.050Z",
-      "source": "timeline_monitor"
-    },
-    {
-      "id": "1986538443779023218",
-      "text": "[SBF says:]\n\nI don't quite agree with every point—but, yeah, this is basically what happened.\n\nI'm not saying FTX's solvency or the Debtors' mismanagement are the reasons I'm innocent (although it's a piece of the story!). But the Debtors are still withholding funds—see, e.g.,",
-      "author": {
-        "id": "1110877798820777986",
-        "username": "SBF_FTX"
-      },
-      "public_metrics": {
-        "retweet_count": 228,
-        "reply_count": 600,
-        "like_count": 968,
-        "quote_count": 0
-      },
-      "created_at": "",
-      "url": "https://twitter.com/SBF_FTX/status/1986538443779023218",
-      "processed": true,
-      "addedAt": "2025-11-28T07:13:50.050Z",
-      "expiresAt": "2025-12-05T07:13:50.050Z",
-      "source": "timeline_monitor"
-    },
-    {
       "id": "1984120959725416849",
       "text": "[SBF says:]\n\nYup.\n\nMy highest duty was to do right by FTX's stakeholders: its customers, employees, and investors.\n\nIn Nov22, that meant standing strong and being the leader FTX needed, against the lawyers who were trying to place it into a bankruptcy that would end up harming",
       "author": {
@@ -115,7 +15,7 @@
       },
       "created_at": "",
       "url": "https://twitter.com/SBF_FTX/status/1984120959725416849",
-      "processed": false,
+      "processed": true,
       "addedAt": "2025-11-28T07:13:50.050Z",
       "expiresAt": "2025-12-05T07:13:50.050Z",
       "source": "timeline_monitor"
@@ -135,7 +35,7 @@
       },
       "created_at": "",
       "url": "https://twitter.com/SBF_FTX/status/1984091090795032939",
-      "processed": false,
+      "processed": true,
       "addedAt": "2025-11-28T07:13:50.050Z",
       "expiresAt": "2025-12-05T07:13:50.050Z",
       "source": "timeline_monitor"
@@ -155,7 +55,7 @@
       },
       "created_at": "",
       "url": "https://twitter.com/SBF_FTX/status/1978301465794953280",
-      "processed": false,
+      "processed": true,
       "addedAt": "2025-11-28T07:13:50.050Z",
       "expiresAt": "2025-12-05T07:13:50.050Z",
       "source": "timeline_monitor"
@@ -175,7 +75,7 @@
       },
       "created_at": "",
       "url": "https://twitter.com/SBF_FTX/status/1978301203634143328",
-      "processed": false,
+      "processed": true,
       "addedAt": "2025-11-28T07:13:50.050Z",
       "expiresAt": "2025-12-05T07:13:50.050Z",
       "source": "timeline_monitor"
@@ -195,7 +95,7 @@
       },
       "created_at": "",
       "url": "https://twitter.com/SBF_FTX/status/1970680835624829184",
-      "processed": false,
+      "processed": true,
       "addedAt": "2025-11-28T07:13:50.050Z",
       "expiresAt": "2025-12-05T07:13:50.050Z",
       "source": "timeline_monitor"
@@ -215,7 +115,7 @@
       },
       "created_at": "",
       "url": "https://twitter.com/SBF_FTX/status/1970633704323362904",
-      "processed": false,
+      "processed": true,
       "addedAt": "2025-11-28T07:13:50.050Z",
       "expiresAt": "2025-12-05T07:13:50.050Z",
       "source": "timeline_monitor"
@@ -235,7 +135,7 @@
       },
       "created_at": "",
       "url": "https://twitter.com/SBF_FTX/status/1897715567521321434",
-      "processed": false,
+      "processed": true,
       "addedAt": "2025-11-28T07:13:50.050Z",
       "expiresAt": "2025-12-05T07:13:50.050Z",
       "source": "timeline_monitor"
@@ -255,7 +155,7 @@
       },
       "created_at": "",
       "url": "https://twitter.com/CryptoHayes/status/1993303011918029217",
-      "processed": false,
+      "processed": true,
       "addedAt": "2025-11-28T07:14:16.195Z",
       "expiresAt": "2025-12-05T07:14:16.195Z",
       "source": "timeline_monitor"
@@ -275,7 +175,7 @@
       },
       "created_at": "",
       "url": "https://twitter.com/CryptoHayes/status/1993277544767033657",
-      "processed": false,
+      "processed": true,
       "addedAt": "2025-11-28T07:14:16.195Z",
       "expiresAt": "2025-12-05T07:14:16.195Z",
       "source": "timeline_monitor"
@@ -295,7 +195,7 @@
       },
       "created_at": "",
       "url": "https://twitter.com/CryptoHayes/status/1993166727405011381",
-      "processed": false,
+      "processed": true,
       "addedAt": "2025-11-28T07:14:16.195Z",
       "expiresAt": "2025-12-05T07:14:16.195Z",
       "source": "timeline_monitor"
