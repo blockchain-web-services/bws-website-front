@@ -987,6 +987,37 @@
       "timestamp": "2025-12-01T23:19:13.185Z",
       "status": "posted",
       "dryRun": false
+    },
+    {
+      "id": "983993370048630785-1992913719165419752-1764661127635",
+      "tweetId": "1992913719165419752",
+      "tweetUrl": "https://twitter.com/CryptoHayes/status/1992913719165419752",
+      "kolId": "983993370048630785",
+      "kolUsername": "CryptoHayes",
+      "originalTweetText": "minor improvements in $ liq:\n- fed qt stops dec 1, this wed will prob be last fall in b/s\n- us banks increased lending in nov\n\nwe chop below $90k, maybe one more stab down into low $80k's but i think $80k holds. might start nibbling, but leave the bazooka until the new year",
+      "replyTweetId": "1995759536150552656",
+      "replyText": "Smart play - nibbling majors while researching microcaps with actual fundamentals.\n\n$BWS operates a Blockchain Solutions Marketplace with multiple live products targeting mass markets. Real utility shipping consistently while others ride narratives.\n\n@BWSCommunity #microcap #altcoins #gems https://www.bws.ninja",
+      "productMentioned": "X Bot",
+      "relevanceScore": 78,
+      "timestamp": "2025-12-02T07:38:47.635Z",
+      "status": "posted",
+      "dryRun": false,
+      "accountUsed": "@BWSCommunity"
+    },
+    {
+      "id": "983993370048630785-1991271745450361341-1764661163029",
+      "tweetId": "1991271745450361341",
+      "tweetUrl": "https://twitter.com/CryptoHayes/status/1991271745450361341",
+      "kolId": "983993370048630785",
+      "kolUsername": "CryptoHayes",
+      "originalTweetText": "What’s your hedge?\n\nMine is $ZEC.",
+      "replyTweetId": "1995759684624748646",
+      "replyText": "$ZEC is solid for privacy - respectable technical hedge.\n\n$BWS is our microcap play with different fundamentals: Blockchain Solutions Marketplace with analytics tools like X Bot for measuring real community engagement. Building B2B infrastructure, not just narratives.\n\n@BWSCommunity #microcap #altcoins #fundamentals https://docs.bws.ninja/marketplace-solutions/bws.x.bot",
+      "productMentioned": "X Bot",
+      "relevanceScore": 78,
+      "timestamp": "2025-12-02T07:39:23.029Z",
+      "status": "posted",
+      "dryRun": false
     }
   ],
   "dailyStats": {
@@ -1061,10 +1092,10 @@
     }
   },
   "metadata": {
-    "totalReplies": 45,
-    "successfulReplies": 11,
+    "totalReplies": 47,
+    "successfulReplies": 13,
     "failedReplies": 34,
-    "lastReplyAt": "2025-12-01T23:19:13.185Z",
+    "lastReplyAt": "2025-12-02T07:39:23.029Z",
     "todayRepliesCount": 0,
     "lastUpdateBy": "kol-system"
   }
