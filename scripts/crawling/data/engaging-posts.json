@@ -21,86 +21,6 @@
       "source": "timeline_monitor"
     },
     {
-      "id": "1993955227892855202",
-      "text": "The price action today looks promising: Bitcoin (#BTC) has shown a clear reaction after the recent decline and started to rise again with renewed buying interest across the market. After bouncing from the recent local low and testing levels above 90,000 USD, the chart shows",
-      "author": {
-        "id": "crawlee_search_crypto_theboss",
-        "username": "Crypto_TheBoss"
-      },
-      "public_metrics": {
-        "retweet_count": 34,
-        "reply_count": 19,
-        "like_count": 161,
-        "quote_count": 0
-      },
-      "created_at": "",
-      "url": "https://twitter.com/Crypto_TheBoss/status/1993955227892855202",
-      "processed": true,
-      "addedAt": "2025-11-28T07:15:14.946Z",
-      "expiresAt": "2025-12-05T07:15:14.946Z",
-      "source": "timeline_monitor"
-    },
-    {
-      "id": "1993130780680172028",
-      "text": "THIS WEEK’S KEY EVENTS \n\n Tuesday, November 25 – Network update for Starknet ( $STRK ) scheduled.\n Tuesday, November 25 – 16:30 ET – U.S. Annual Producer Price Index (PPI) release:  Expectation: 2.7% |  Previous: 2.6%.\n Wednesday, November 26 – 16:30 ET – U.S.",
-      "author": {
-        "id": "crawlee_search_crypto_theboss",
-        "username": "Crypto_TheBoss"
-      },
-      "public_metrics": {
-        "retweet_count": 26,
-        "reply_count": 15,
-        "like_count": 117,
-        "quote_count": 0
-      },
-      "created_at": "",
-      "url": "https://twitter.com/Crypto_TheBoss/status/1993130780680172028",
-      "processed": true,
-      "addedAt": "2025-11-28T07:15:14.946Z",
-      "expiresAt": "2025-12-05T07:15:14.946Z",
-      "source": "timeline_monitor"
-    },
-    {
-      "id": "1993130326277714256",
-      "text": "Throughout the past week:\n\n Spot $Bitcoin ETFs saw approximately $1.22 billion in outflows.\n Spot $Ethereum ETFs recorded around $500 million in outflows.\n Spot $Solana ETFs, on the other hand, saw about $128 million in inflows.\n\n This is not investment advice.",
-      "author": {
-        "id": "crawlee_search_crypto_theboss",
-        "username": "Crypto_TheBoss"
-      },
-      "public_metrics": {
-        "retweet_count": 26,
-        "reply_count": 12,
-        "like_count": 110,
-        "quote_count": 0
-      },
-      "created_at": "",
-      "url": "https://twitter.com/Crypto_TheBoss/status/1993130326277714256",
-      "processed": true,
-      "addedAt": "2025-11-28T07:15:14.946Z",
-      "expiresAt": "2025-12-05T07:15:14.946Z",
-      "source": "timeline_monitor"
-    },
-    {
-      "id": "1993129633806438649",
-      "text": "According to Tokenomist data, more than $373 million in token unlocks are scheduled for the week of November 24–30. The most notable event is the $314.56M unlock for HYPE, making it the largest release of the week. In addition, $SVL , $XPL , $SAHARA , $JUP , and $ZORA will",
-      "author": {
-        "id": "crawlee_search_crypto_theboss",
-        "username": "Crypto_TheBoss"
-      },
-      "public_metrics": {
-        "retweet_count": 23,
-        "reply_count": 12,
-        "like_count": 115,
-        "quote_count": 0
-      },
-      "created_at": "",
-      "url": "https://twitter.com/Crypto_TheBoss/status/1993129633806438649",
-      "processed": true,
-      "addedAt": "2025-11-28T07:15:14.946Z",
-      "expiresAt": "2025-12-05T07:15:14.946Z",
-      "source": "timeline_monitor"
-    },
-    {
       "id": "1993129456274489638",
       "text": "Breaking News \n\nThe Bureau of Economic Analysis (BEA) has postponed the release of the October Personal Consumption Expenditures (PCE) report. The data will now be published on December 5th. \n\n This is not financial advice.\n\n#economy #inflation #PCE #crypto",
       "author": {
@@ -115,7 +35,7 @@
       },
       "created_at": "",
       "url": "https://twitter.com/Crypto_TheBoss/status/1993129456274489638",
-      "processed": false,
+      "processed": true,
       "addedAt": "2025-11-28T07:15:14.946Z",
       "expiresAt": "2025-12-05T07:15:14.946Z",
       "source": "timeline_monitor"
@@ -135,7 +55,7 @@
       },
       "created_at": "",
       "url": "https://twitter.com/Crypto_TheBoss/status/1991558635390956001",
-      "processed": false,
+      "processed": true,
       "addedAt": "2025-11-28T07:15:14.946Z",
       "expiresAt": "2025-12-05T07:15:14.946Z",
       "source": "timeline_monitor"
@@ -155,7 +75,7 @@
       },
       "created_at": "",
       "url": "https://twitter.com/WuBlockchain/status/1994067081135067606",
-      "processed": false,
+      "processed": true,
       "addedAt": "2025-11-28T07:16:12.297Z",
       "expiresAt": "2025-12-05T07:16:12.297Z",
       "source": "timeline_monitor"
@@ -175,7 +95,7 @@
       },
       "created_at": "",
       "url": "https://twitter.com/WuBlockchain/status/1994042956815454367",
-      "processed": false,
+      "processed": true,
       "addedAt": "2025-11-28T07:16:12.297Z",
       "expiresAt": "2025-12-05T07:16:12.297Z",
       "source": "timeline_monitor"
@@ -195,7 +115,7 @@
       },
       "created_at": "",
       "url": "https://twitter.com/Bitcoinhabebe/status/1994077756456620239",
-      "processed": false,
+      "processed": true,
       "addedAt": "2025-11-28T07:16:26.491Z",
       "expiresAt": "2025-12-05T07:16:26.491Z",
       "source": "timeline_monitor"
@@ -215,7 +135,7 @@
       },
       "created_at": "",
       "url": "https://twitter.com/Bitcoinhabebe/status/1994059335949758932",
-      "processed": false,
+      "processed": true,
       "addedAt": "2025-11-28T07:16:26.491Z",
       "expiresAt": "2025-12-05T07:16:26.491Z",
       "source": "timeline_monitor"
@@ -235,7 +155,7 @@
       },
       "created_at": "",
       "url": "https://twitter.com/Bitcoinhabebe/status/1993781481890828393",
-      "processed": false,
+      "processed": true,
       "addedAt": "2025-11-28T07:16:26.491Z",
       "expiresAt": "2025-12-05T07:16:26.491Z",
       "source": "timeline_monitor"
@@ -255,7 +175,7 @@
       },
       "created_at": "",
       "url": "https://twitter.com/Bitcoinhabebe/status/1993660643032039487",
-      "processed": false,
+      "processed": true,
       "addedAt": "2025-11-28T07:16:26.491Z",
       "expiresAt": "2025-12-05T07:16:26.491Z",
       "source": "timeline_monitor"
@@ -275,7 +195,7 @@
       },
       "created_at": "",
       "url": "https://twitter.com/Bitcoinhabebe/status/1993603713253163324",
-      "processed": false,
+      "processed": true,
       "addedAt": "2025-11-28T07:16:26.491Z",
       "expiresAt": "2025-12-05T07:16:26.491Z",
       "source": "timeline_monitor"

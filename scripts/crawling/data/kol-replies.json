@@ -1033,6 +1033,21 @@
       "timestamp": "2025-12-02T15:30:13.641Z",
       "status": "posted",
       "dryRun": false
+    },
+    {
+      "id": "crawlee_search_bitcoinhabebe-1993603713253163324-1764705270118",
+      "tweetId": "1993603713253163324",
+      "tweetUrl": "https://twitter.com/Bitcoinhabebe/status/1993603713253163324",
+      "kolId": "crawlee_search_bitcoinhabebe",
+      "kolUsername": "Bitcoinhabebe",
+      "originalTweetText": "Altcoins Now VS Altcoins in 2020 . \n\nThe OTHERS.D chart which measures total crypto market dominance excluding $BTC, $ETH, and stablecoins has spent the last four years forming a large falling wedge structure. Similar to that of 2020 directly before the broad altcoin expansion",
+      "replyTweetId": "1995944683097174516",
+      "replyText": "If 2020 taught us anything, it's that being early to projects with real fundamentals pays off.\n\n$BWS X Bot helps crypto projects and KOLs track authentic community engagement using official X API - real metrics, not bot farms. Built for the next wave of genuine growth.\n\n@BWSCommunity #altcoins #microcap #crypto https://docs.bws.ninja/marketplace-solutions/bws.x.bot",
+      "productMentioned": "X Bot, Blockchain Badges",
+      "relevanceScore": 88,
+      "timestamp": "2025-12-02T19:54:30.118Z",
+      "status": "posted",
+      "dryRun": false
     }
   ],
   "dailyStats": {
@@ -1107,10 +1122,10 @@
     }
   },
   "metadata": {
-    "totalReplies": 48,
-    "successfulReplies": 14,
+    "totalReplies": 49,
+    "successfulReplies": 15,
     "failedReplies": 34,
-    "lastReplyAt": "2025-12-02T15:30:13.641Z",
+    "lastReplyAt": "2025-12-02T19:54:30.118Z",
     "todayRepliesCount": 0,
     "lastUpdateBy": "kol-system"
   }
