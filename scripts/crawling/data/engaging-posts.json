@@ -1,106 +1,6 @@
 {
   "posts": [
     {
-      "id": "1993160211675148663",
-      "text": "Preach",
-      "author": {
-        "id": "983993370048630785",
-        "username": "CryptoHayes"
-      },
-      "public_metrics": {
-        "retweet_count": 12,
-        "reply_count": 38,
-        "like_count": 115,
-        "quote_count": 0
-      },
-      "created_at": "",
-      "url": "https://twitter.com/CryptoHayes/status/1993160211675148663",
-      "processed": true,
-      "addedAt": "2025-11-28T07:14:16.195Z",
-      "expiresAt": "2025-12-05T07:14:16.195Z",
-      "source": "timeline_monitor"
-    },
-    {
-      "id": "1992925161092243533",
-      "text": "Ser just some simple maths will tell you the only way $HYPE overcomes the uncertainty is massively growing rev. Even if the team pinky swears to not sell, there is nothing holding them to that. So you have to assume a >0% amount of daily sell pressure. The market is already",
-      "author": {
-        "id": "983993370048630785",
-        "username": "CryptoHayes"
-      },
-      "public_metrics": {
-        "retweet_count": 55,
-        "reply_count": 130,
-        "like_count": 646,
-        "quote_count": 0
-      },
-      "created_at": "",
-      "url": "https://twitter.com/CryptoHayes/status/1992925161092243533",
-      "processed": true,
-      "addedAt": "2025-11-28T07:14:16.195Z",
-      "expiresAt": "2025-12-05T07:14:16.195Z",
-      "source": "timeline_monitor"
-    },
-    {
-      "id": "1992913719165419752",
-      "text": "minor improvements in $ liq:\n- fed qt stops dec 1, this wed will prob be last fall in b/s\n- us banks increased lending in nov\n\nwe chop below $90k, maybe one more stab down into low $80k's but i think $80k holds. might start nibbling, but leave the bazooka until the new year",
-      "author": {
-        "id": "983993370048630785",
-        "username": "CryptoHayes"
-      },
-      "public_metrics": {
-        "retweet_count": 187,
-        "reply_count": 181,
-        "like_count": 1914,
-        "quote_count": 0
-      },
-      "created_at": "",
-      "url": "https://twitter.com/CryptoHayes/status/1992913719165419752",
-      "processed": true,
-      "addedAt": "2025-11-28T07:14:16.195Z",
-      "expiresAt": "2025-12-05T07:14:16.195Z",
-      "source": "timeline_monitor"
-    },
-    {
-      "id": "1991867359083241473",
-      "text": "$BTC undershooting decline in $ liq. Bottom is near, but be patient before blowing your load. Wait for US stonks to puke as well. We are playing for more money printing, and for that we need AI tech stocks to crater.",
-      "author": {
-        "id": "983993370048630785",
-        "username": "CryptoHayes"
-      },
-      "public_metrics": {
-        "retweet_count": 388,
-        "reply_count": 288,
-        "like_count": 2972,
-        "quote_count": 0
-      },
-      "created_at": "",
-      "url": "https://twitter.com/CryptoHayes/status/1991867359083241473",
-      "processed": true,
-      "addedAt": "2025-11-28T07:14:16.195Z",
-      "expiresAt": "2025-12-05T07:14:16.195Z",
-      "source": "timeline_monitor"
-    },
-    {
-      "id": "1991271745450361341",
-      "text": "What’s your hedge?\n\nMine is $ZEC.",
-      "author": {
-        "id": "983993370048630785",
-        "username": "CryptoHayes"
-      },
-      "public_metrics": {
-        "retweet_count": 246,
-        "reply_count": 442,
-        "like_count": 1584,
-        "quote_count": 0
-      },
-      "created_at": "",
-      "url": "https://twitter.com/CryptoHayes/status/1991271745450361341",
-      "processed": true,
-      "addedAt": "2025-11-28T07:14:16.195Z",
-      "expiresAt": "2025-12-05T07:14:16.195Z",
-      "source": "timeline_monitor"
-    },
-    {
       "id": "1977686540592492695",
       "text": "$BTC\n\nConfirmations needed, but the cycle top could be in.\n\nLoss of momentum, good news not having impact anymore, and a potential financial crisis incoming.\n\nReminder: Not financial advice. Just my opinion and observation.",
       "author": {
@@ -115,7 +15,7 @@
       },
       "created_at": "",
       "url": "https://twitter.com/CryptoCapo_/status/1977686540592492695",
-      "processed": false,
+      "processed": true,
       "addedAt": "2025-11-28T07:15:01.624Z",
       "expiresAt": "2025-12-05T07:15:01.624Z",
       "source": "timeline_monitor"
@@ -135,7 +35,7 @@
       },
       "created_at": "",
       "url": "https://twitter.com/CryptoCapo_/status/1976935569499513001",
-      "processed": false,
+      "processed": true,
       "addedAt": "2025-11-28T07:15:01.624Z",
       "expiresAt": "2025-12-05T07:15:01.624Z",
       "source": "timeline_monitor"
@@ -155,7 +55,7 @@
       },
       "created_at": "",
       "url": "https://twitter.com/CryptoCapo_/status/1976930215977689455",
-      "processed": false,
+      "processed": true,
       "addedAt": "2025-11-28T07:15:01.624Z",
       "expiresAt": "2025-12-05T07:15:01.624Z",
       "source": "timeline_monitor"
@@ -175,7 +75,7 @@
       },
       "created_at": "",
       "url": "https://twitter.com/CryptoCapo_/status/1976911100315943083",
-      "processed": false,
+      "processed": true,
       "addedAt": "2025-11-28T07:15:01.624Z",
       "expiresAt": "2025-12-05T07:15:01.624Z",
       "source": "timeline_monitor"
@@ -195,7 +95,7 @@
       },
       "created_at": "",
       "url": "https://twitter.com/CryptoCapo_/status/1963133026134622414",
-      "processed": false,
+      "processed": true,
       "addedAt": "2025-11-28T07:15:01.624Z",
       "expiresAt": "2025-12-05T07:15:01.624Z",
       "source": "timeline_monitor"
@@ -215,7 +115,7 @@
       },
       "created_at": "",
       "url": "https://twitter.com/CryptoCapo_/status/1960987925090382102",
-      "processed": false,
+      "processed": true,
       "addedAt": "2025-11-28T07:15:01.624Z",
       "expiresAt": "2025-12-05T07:15:01.624Z",
       "source": "timeline_monitor"
@@ -255,7 +155,7 @@
       },
       "created_at": "",
       "url": "https://twitter.com/CryptoCapo_/status/1943376647308050787",
-      "processed": false,
+      "processed": true,
       "addedAt": "2025-11-28T07:15:01.624Z",
       "expiresAt": "2025-12-05T07:15:01.624Z",
       "source": "timeline_monitor"
@@ -275,7 +175,7 @@
       },
       "created_at": "",
       "url": "https://twitter.com/CryptoCapo_/status/1939739204948214191",
-      "processed": false,
+      "processed": true,
       "addedAt": "2025-11-28T07:15:01.624Z",
       "expiresAt": "2025-12-05T07:15:01.624Z",
       "source": "timeline_monitor"
@@ -295,7 +195,7 @@
       },
       "created_at": "",
       "url": "https://twitter.com/CryptoCapo_/status/1922921142538432903",
-      "processed": false,
+      "processed": true,
       "addedAt": "2025-11-28T07:15:01.624Z",
       "expiresAt": "2025-12-05T07:15:01.624Z",
       "source": "timeline_monitor"
