@@ -439,6 +439,12 @@ async function replyToKolPosts() {
         console.log(`   📌 Special note: ${productSelection.specialNotes}`);
       }
 
+      // Get last 10 successful replies for diversity context
+      const recentSuccessfulReplies = repliesData.replies
+        .filter(r => r.status === 'posted' && r.replyText)
+        .slice(-10)
+        .reverse(); // Most recent first
+
       const replyResult = await generateReplyText(
         claudeClient,
         tweet,
@@ -446,7 +452,7 @@ async function replyToKolPosts() {
         selectedProduct,
         evaluation,
         productSelection.positioningPhrase,
-        [],
+        recentSuccessfulReplies,
         productSelection.specialNotes
       );
 
