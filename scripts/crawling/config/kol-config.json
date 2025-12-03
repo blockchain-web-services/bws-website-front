@@ -25,6 +25,11 @@
       "onlyIfNotAlreadyFollowing": true,
       "skipOnError": true
     },
+    "imageAttachments": {
+      "enabled": true,
+      "attachOnlyWhenAvailable": true,
+      "skipReplyOnUploadFailure": false
+    },
     "minTimeBetweenReplies": 3600,
     "replyTemplates": [
       "Insightful perspective on {topic}! Have you explored {bws_product}? It might complement your {use_case}.",

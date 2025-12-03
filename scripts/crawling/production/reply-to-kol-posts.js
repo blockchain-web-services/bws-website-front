@@ -219,7 +219,7 @@ async function replyToKolPosts() {
   currentPhase = 'loading_products';
   const bwsProducts = loadBWSProducts();
   lastSuccessfulOperation = 'products_loaded';
-  const { maxRepliesPerRun, maxTweetsToEvaluatePerRun, maxRepliesPerDay, maxRepliesPerKolPerWeek, minRelevanceScoreForReply, minTimeBetweenRepliesMinutes, dryRun, antiSpamActions } = config.replySettings;
+  const { maxRepliesPerRun, maxTweetsToEvaluatePerRun, maxRepliesPerDay, maxRepliesPerKolPerWeek, minRelevanceScoreForReply, minTimeBetweenRepliesMinutes, dryRun, antiSpamActions, imageAttachments } = config.replySettings;
   const maxRepliesThisRun = maxRepliesPerRun || maxRepliesPerDay;
   const maxEvaluationsThisRun = maxTweetsToEvaluatePerRun || 10; // Default to 10 if not specified
 
@@ -229,6 +229,13 @@ async function replyToKolPosts() {
     likeTweetBeforeReply: true,
     onlyIfNotAlreadyFollowing: true,
     skipOnError: true
+  };
+
+  // Default image attachment settings if not specified
+  const imageSettings = imageAttachments || {
+    enabled: true,
+    attachOnlyWhenAvailable: true,
+    skipReplyOnUploadFailure: false
   };
 
   if (Object.keys(bwsProducts).length === 0) {
@@ -247,6 +254,9 @@ async function replyToKolPosts() {
    - Anti-spam actions:
      • Follow KOL: ${antiSpam.followKolBeforeReply ? '✅' : '❌'}
      • Like tweet: ${antiSpam.likeTweetBeforeReply ? '✅' : '❌'}
+   - Image attachments:
+     • Enabled: ${imageSettings.enabled ? '✅' : '❌'}
+     • Attach when available: ${imageSettings.attachOnlyWhenAvailable ? '✅' : '❌'}
 `);
 
   // Initialize write client for posting replies and anti-spam actions
@@ -511,15 +521,17 @@ async function replyToKolPosts() {
       }
       console.log('');
 
-      // Select product image (if available)
+      // Select product image (if enabled and available)
       let selectedImage = null;
       let uploadedMediaId = null;
 
-      if (selectedProduct && selectedProduct.images && selectedProduct.images.length > 0) {
+      if (imageSettings.enabled && selectedProduct && selectedProduct.images && selectedProduct.images.length > 0) {
         selectedImage = selectProductImage(selectedProduct, replyResult);
         if (selectedImage) {
           console.log(`📸 Selected image for ${selectedProduct.name}: ${selectedImage.localPath}`);
         }
+      } else if (imageSettings.enabled && selectedProduct) {
+        console.log(`ℹ️  No images available for ${selectedProduct.name}`);
       }
 
       if (dryRun) {
@@ -532,9 +544,27 @@ async function replyToKolPosts() {
         continue;
       }
 
-      // Upload image if selected
-      if (selectedImage && writeClient) {
-        uploadedMediaId = await uploadImageToTwitter(writeClient, selectedImage);
+      // Upload image if selected and enabled
+      if (imageSettings.enabled && selectedImage && writeClient) {
+        try {
+          uploadedMediaId = await uploadImageToTwitter(writeClient, selectedImage);
+
+          // Check if upload failed and we should skip reply
+          if (!uploadedMediaId && imageSettings.skipReplyOnUploadFailure) {
+            console.warn(`⚠️  Image upload failed and skipReplyOnUploadFailure is enabled. Skipping reply...`);
+            tweetsSkipped++;
+            continue;
+          }
+        } catch (uploadError) {
+          console.error(`❌ Image upload error: ${uploadError.message}`);
+          if (imageSettings.skipReplyOnUploadFailure) {
+            console.warn(`⚠️  Skipping reply due to upload failure`);
+            tweetsSkipped++;
+            continue;
+          }
+          // Otherwise continue without image
+          console.log(`ℹ️  Continuing with reply without image attachment`);
+        }
       }
 
       // Anti-spam actions: Follow and like
