@@ -1157,6 +1157,22 @@
       "timestamp": "2025-12-03T16:15:32.895Z",
       "status": "posted",
       "dryRun": false
+    },
+    {
+      "id": "1353384573435056128-1994744222394827009-1764791580402",
+      "tweetId": "1994744222394827009",
+      "tweetUrl": "https://twitter.com/CryptoRover/status/1994744222394827009",
+      "kolId": "1353384573435056128",
+      "kolUsername": "CryptoRover",
+      "originalTweetText": "BREAKING:\n\nUNLESS A MIRACLE HAPPENS, BITCOIN WILL CLOSE THE MONTH OF NOVEMBER IN THE RED TOMORROW. \n\nHISTORICALLY, EVERY RED NOVEMBER HAS BEEN FOLLOWED BY ANOTHER RED DECEMBER. \n\nSHOULD WE BE WORRIED?",
+      "replyTweetId": "1996306694612353055",
+      "replyText": "Historically red months matter less than what you're positioned in during recovery cycles.\n\n$BWS Blockchain Hash enables developers to build mutable key-value databases directly on-chain - updating app configs, user profiles, and dynamic business data with blockchain transparency.\n\n@BWSCommunity #microcap #blockchain #buidl https://docs.bws.ninja/solutions/bws.blockchain.hash",
+      "productMentioned": "X Bot",
+      "relevanceScore": 72,
+      "timestamp": "2025-12-03T19:53:00.402Z",
+      "status": "posted",
+      "dryRun": false,
+      "accountUsed": "@BWSCommunity"
     }
   ],
   "dailyStats": {
@@ -1231,10 +1247,10 @@
     }
   },
   "metadata": {
-    "totalReplies": 56,
-    "successfulReplies": 22,
+    "totalReplies": 57,
+    "successfulReplies": 23,
     "failedReplies": 34,
-    "lastReplyAt": "2025-12-03T16:15:32.895Z",
+    "lastReplyAt": "2025-12-03T19:53:00.402Z",
     "todayRepliesCount": 0,
     "lastUpdateBy": "kol-system"
   }

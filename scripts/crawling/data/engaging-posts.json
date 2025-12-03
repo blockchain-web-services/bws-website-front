@@ -1,111 +1,6 @@
 {
   "posts": [
     {
-      "id": "1993980664765362426",
-      "text": "#DOT continues its journey inside the parallel channel. The price is currently sitting at the lower boundary, which acts as an important support zone.\n\nIf it manages to hold this level, we could see a potential move toward the mid and upper bands of the channel (the yellow",
-      "author": {
-        "id": "crawlee_search_crypto_theboss",
-        "username": "Crypto_TheBoss"
-      },
-      "public_metrics": {
-        "retweet_count": 41,
-        "reply_count": 19,
-        "like_count": 184,
-        "quote_count": 0
-      },
-      "created_at": "",
-      "url": "https://twitter.com/Crypto_TheBoss/status/1993980664765362426",
-      "processed": true,
-      "addedAt": "2025-11-29T17:21:49.808Z",
-      "expiresAt": "2025-12-06T17:21:49.808Z",
-      "source": "timeline_monitor",
-      "contentCategory": "technical-analysis"
-    },
-    {
-      "id": "1993978938331140217",
-      "text": "#ETH had reached the upper boundary of the parallel channel we previously mentioned, but it failed to hold that level and pulled back to its support zone.\n\n If it manages to hold this support area, it has the potential to start a strong upward move again.\n\n This is not",
-      "author": {
-        "id": "crawlee_search_crypto_theboss",
-        "username": "Crypto_TheBoss"
-      },
-      "public_metrics": {
-        "retweet_count": 50,
-        "reply_count": 19,
-        "like_count": 178,
-        "quote_count": 0
-      },
-      "created_at": "",
-      "url": "https://twitter.com/Crypto_TheBoss/status/1993978938331140217",
-      "processed": true,
-      "addedAt": "2025-11-29T17:21:51.587Z",
-      "expiresAt": "2025-12-06T17:21:51.587Z",
-      "source": "timeline_monitor",
-      "contentCategory": "technical-analysis"
-    },
-    {
-      "id": "1994793976860385719",
-      "text": "I want to flip $10,000 into $1,000,000.    \n\nWhat to buy now?",
-      "author": {
-        "id": "1353384573435056128",
-        "username": "CryptoRover"
-      },
-      "public_metrics": {
-        "retweet_count": 32,
-        "reply_count": 299,
-        "like_count": 307,
-        "quote_count": 0
-      },
-      "created_at": "",
-      "url": "https://twitter.com/CryptoRover/status/1994793976860385719",
-      "processed": true,
-      "addedAt": "2025-11-29T17:24:50.988Z",
-      "expiresAt": "2025-12-06T17:24:50.988Z",
-      "source": "timeline_monitor",
-      "contentCategory": "price-speculation"
-    },
-    {
-      "id": "1994776361144107059",
-      "text": "BITCOIN SUPPLY SHOCK INCOMING!",
-      "author": {
-        "id": "1353384573435056128",
-        "username": "CryptoRover"
-      },
-      "public_metrics": {
-        "retweet_count": 88,
-        "reply_count": 131,
-        "like_count": 524,
-        "quote_count": 0
-      },
-      "created_at": "",
-      "url": "https://twitter.com/CryptoRover/status/1994776361144107059",
-      "processed": true,
-      "addedAt": "2025-11-29T17:24:52.794Z",
-      "expiresAt": "2025-12-06T17:24:52.794Z",
-      "source": "timeline_monitor",
-      "contentCategory": "market-trends"
-    },
-    {
-      "id": "1994769056180679036",
-      "text": "BREAKING:\n\n TREASURY SECRETARY BESSENT SAYS PRESIDENT TRUMP'S ADMINISTRATION IS 'GOING BIG' ON CRYPTO.",
-      "author": {
-        "id": "1353384573435056128",
-        "username": "CryptoRover"
-      },
-      "public_metrics": {
-        "retweet_count": 203,
-        "reply_count": 120,
-        "like_count": 1114,
-        "quote_count": 0
-      },
-      "created_at": "",
-      "url": "https://twitter.com/CryptoRover/status/1994769056180679036",
-      "processed": true,
-      "addedAt": "2025-11-29T17:24:58.122Z",
-      "expiresAt": "2025-12-06T17:24:58.122Z",
-      "source": "timeline_monitor",
-      "contentCategory": "news"
-    },
-    {
       "id": "1994757738359132301",
       "text": "Potential trade setups for Bitcoin.",
       "author": {
@@ -120,7 +15,7 @@
       },
       "created_at": "",
       "url": "https://twitter.com/CryptoRover/status/1994757738359132301",
-      "processed": false,
+      "processed": true,
       "addedAt": "2025-11-29T17:24:59.116Z",
       "expiresAt": "2025-12-06T17:24:59.116Z",
       "source": "timeline_monitor",
@@ -141,7 +36,7 @@
       },
       "created_at": "",
       "url": "https://twitter.com/CryptoRover/status/1994755345290596812",
-      "processed": false,
+      "processed": true,
       "addedAt": "2025-11-29T17:25:00.997Z",
       "expiresAt": "2025-12-06T17:25:00.997Z",
       "source": "timeline_monitor",
@@ -162,7 +57,7 @@
       },
       "created_at": "",
       "url": "https://twitter.com/CryptoRover/status/1994747168775622693",
-      "processed": false,
+      "processed": true,
       "addedAt": "2025-11-29T17:25:05.288Z",
       "expiresAt": "2025-12-06T17:25:05.288Z",
       "source": "timeline_monitor",
@@ -183,7 +78,7 @@
       },
       "created_at": "",
       "url": "https://twitter.com/CryptoRover/status/1994744222394827009",
-      "processed": false,
+      "processed": true,
       "addedAt": "2025-11-29T17:25:06.935Z",
       "expiresAt": "2025-12-06T17:25:06.935Z",
       "source": "timeline_monitor",
@@ -204,7 +99,7 @@
       },
       "created_at": "",
       "url": "https://twitter.com/Bitcoinhabebe/status/1994746257831858483",
-      "processed": false,
+      "processed": true,
       "addedAt": "2025-11-29T17:25:44.616Z",
       "expiresAt": "2025-12-06T17:25:44.616Z",
       "source": "timeline_monitor",
@@ -6215,9 +6110,9 @@
       "BWS IPFS",
       "Blockchain Save"
     ],
-    "currentIndex": 2,
-    "lastProductUsed": "Fan Game Cube",
+    "currentIndex": 3,
+    "lastProductUsed": "Blockchain Hash",
     "positioningPhraseIndex": 0,
-    "replyCount": 2
+    "replyCount": 3
   }
 }
