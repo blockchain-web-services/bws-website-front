@@ -1094,6 +1094,22 @@
       "status": "posted",
       "dryRun": false,
       "accountUsed": "@BWSCommunity"
+    },
+    {
+      "id": "crawlee_search_cryptopatel-1994307773966815327-1764762547190",
+      "tweetId": "1994307773966815327",
+      "tweetUrl": "https://twitter.com/CryptoPatel/status/1994307773966815327",
+      "kolId": "crawlee_search_cryptopatel",
+      "kolUsername": "CryptoPatel",
+      "originalTweetText": "BREAKING: $17.25B Stablecoin Explosion Since Oct 11\n\nSince the Oct. 11 crash, Tether & Circle minted $17.25B, including $1.25B USDC Yesterday.\n\nSignaling Surging Demand for Dollar-backed Crypto.\n\n$USDT $USDC",
+      "replyTweetId": "1996184920415482191",
+      "replyText": "That stablecoin liquidity will eventually rotate into quality microcaps with real products.\n\n$BWS operates a Blockchain Solutions Marketplace with multiple live products targeting mass markets - NFT tools, ESG solutions, API infrastructure. Building regardless of market conditions.\n\n@BWSCommunity #microcap #altcoins #Web3 https://www.bws.ninja",
+      "productMentioned": "X Bot",
+      "relevanceScore": 72,
+      "timestamp": "2025-12-03T11:49:07.190Z",
+      "status": "posted",
+      "dryRun": false,
+      "accountUsed": "@BWSCommunity"
     }
   ],
   "dailyStats": {
@@ -1168,10 +1184,10 @@
     }
   },
   "metadata": {
-    "totalReplies": 52,
-    "successfulReplies": 18,
+    "totalReplies": 53,
+    "successfulReplies": 19,
     "failedReplies": 34,
-    "lastReplyAt": "2025-12-03T07:37:47.563Z",
+    "lastReplyAt": "2025-12-03T11:49:07.190Z",
     "todayRepliesCount": 0,
     "lastUpdateBy": "kol-system"
   }
