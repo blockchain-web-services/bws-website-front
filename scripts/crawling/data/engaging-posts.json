@@ -1,111 +1,6 @@
 {
   "posts": [
     {
-      "id": "1994757738359132301",
-      "text": "Potential trade setups for Bitcoin.",
-      "author": {
-        "id": "1353384573435056128",
-        "username": "CryptoRover"
-      },
-      "public_metrics": {
-        "retweet_count": 51,
-        "reply_count": 100,
-        "like_count": 296,
-        "quote_count": 0
-      },
-      "created_at": "",
-      "url": "https://twitter.com/CryptoRover/status/1994757738359132301",
-      "processed": true,
-      "addedAt": "2025-11-29T17:24:59.116Z",
-      "expiresAt": "2025-12-06T17:24:59.116Z",
-      "source": "timeline_monitor",
-      "contentCategory": "price-speculation/technical-analysis"
-    },
-    {
-      "id": "1994755345290596812",
-      "text": "BREAKING:\n\nOCT 10TH INSIDER WHALE SHORTING $ETH AGAIN.",
-      "author": {
-        "id": "1353384573435056128",
-        "username": "CryptoRover"
-      },
-      "public_metrics": {
-        "retweet_count": 61,
-        "reply_count": 129,
-        "like_count": 343,
-        "quote_count": 0
-      },
-      "created_at": "",
-      "url": "https://twitter.com/CryptoRover/status/1994755345290596812",
-      "processed": true,
-      "addedAt": "2025-11-29T17:25:00.997Z",
-      "expiresAt": "2025-12-06T17:25:00.997Z",
-      "source": "timeline_monitor",
-      "contentCategory": "price-speculation"
-    },
-    {
-      "id": "1994747168775622693",
-      "text": "Bitcoin is undervalued!",
-      "author": {
-        "id": "1353384573435056128",
-        "username": "CryptoRover"
-      },
-      "public_metrics": {
-        "retweet_count": 64,
-        "reply_count": 101,
-        "like_count": 276,
-        "quote_count": 0
-      },
-      "created_at": "",
-      "url": "https://twitter.com/CryptoRover/status/1994747168775622693",
-      "processed": true,
-      "addedAt": "2025-11-29T17:25:05.288Z",
-      "expiresAt": "2025-12-06T17:25:05.288Z",
-      "source": "timeline_monitor",
-      "contentCategory": "price-speculation"
-    },
-    {
-      "id": "1994744222394827009",
-      "text": "BREAKING:\n\nUNLESS A MIRACLE HAPPENS, BITCOIN WILL CLOSE THE MONTH OF NOVEMBER IN THE RED TOMORROW. \n\nHISTORICALLY, EVERY RED NOVEMBER HAS BEEN FOLLOWED BY ANOTHER RED DECEMBER. \n\nSHOULD WE BE WORRIED?",
-      "author": {
-        "id": "1353384573435056128",
-        "username": "CryptoRover"
-      },
-      "public_metrics": {
-        "retweet_count": 146,
-        "reply_count": 308,
-        "like_count": 559,
-        "quote_count": 0
-      },
-      "created_at": "",
-      "url": "https://twitter.com/CryptoRover/status/1994744222394827009",
-      "processed": true,
-      "addedAt": "2025-11-29T17:25:06.935Z",
-      "expiresAt": "2025-12-06T17:25:06.935Z",
-      "source": "timeline_monitor",
-      "contentCategory": "market-trends/price-speculation"
-    },
-    {
-      "id": "1994746257831858483",
-      "text": "$AGT looks ready to pump. Beautiful breakout & Retest. It Will start soon",
-      "author": {
-        "id": "crawlee_search_bitcoinhabebe",
-        "username": "Bitcoinhabebe"
-      },
-      "public_metrics": {
-        "retweet_count": 15,
-        "reply_count": 19,
-        "like_count": 78,
-        "quote_count": 0
-      },
-      "created_at": "",
-      "url": "https://twitter.com/Bitcoinhabebe/status/1994746257831858483",
-      "processed": true,
-      "addedAt": "2025-11-29T17:25:44.616Z",
-      "expiresAt": "2025-12-06T17:25:44.616Z",
-      "source": "timeline_monitor",
-      "contentCategory": "price-speculation"
-    },
-    {
       "id": "1994393401320763709",
       "text": "$TRADE forming a bullish engulfing weekly candle suggesting the beginning of the reversal. \n\n@Polytrade_fin will outperform as one of the best RWA Gems.",
       "author": {
@@ -120,7 +15,7 @@
       },
       "created_at": "",
       "url": "https://twitter.com/Bitcoinhabebe/status/1994393401320763709",
-      "processed": false,
+      "processed": true,
       "addedAt": "2025-11-29T17:25:50.835Z",
       "expiresAt": "2025-12-06T17:25:50.835Z",
       "source": "timeline_monitor",
@@ -141,7 +36,7 @@
       },
       "created_at": "",
       "url": "https://twitter.com/Bitcoinhabebe/status/1994355616836448321",
-      "processed": false,
+      "processed": true,
       "addedAt": "2025-11-29T17:25:52.828Z",
       "expiresAt": "2025-12-06T17:25:52.828Z",
       "source": "timeline_monitor",
@@ -162,7 +57,7 @@
       },
       "created_at": "",
       "url": "https://twitter.com/CryptoWendyO/status/1994541823143133412",
-      "processed": false,
+      "processed": true,
       "addedAt": "2025-11-29T17:26:02.987Z",
       "expiresAt": "2025-12-06T17:26:02.987Z",
       "source": "timeline_monitor",
@@ -183,7 +78,7 @@
       },
       "created_at": "",
       "url": "https://twitter.com/CryptoWendyO/status/1994486835113070678",
-      "processed": false,
+      "processed": true,
       "addedAt": "2025-11-29T17:26:07.105Z",
       "expiresAt": "2025-12-06T17:26:07.105Z",
       "source": "timeline_monitor",
@@ -204,7 +99,7 @@
       },
       "created_at": "",
       "url": "https://twitter.com/CryptoWendyO/status/1994474106314789204",
-      "processed": false,
+      "processed": true,
       "addedAt": "2025-11-29T17:26:09.183Z",
       "expiresAt": "2025-12-06T17:26:09.183Z",
       "source": "timeline_monitor",
@@ -225,7 +120,7 @@
       },
       "created_at": "",
       "url": "https://twitter.com/CryptoWendyO/status/1994463797759902196",
-      "processed": false,
+      "processed": true,
       "addedAt": "2025-11-29T17:26:10.975Z",
       "expiresAt": "2025-12-06T17:26:10.975Z",
       "source": "timeline_monitor",
@@ -246,7 +141,7 @@
       },
       "created_at": "",
       "url": "https://twitter.com/CryptoPatel/status/1994775860210200630",
-      "processed": false,
+      "processed": true,
       "addedAt": "2025-11-29T17:26:31.932Z",
       "expiresAt": "2025-12-06T17:26:31.932Z",
       "source": "timeline_monitor",
@@ -267,7 +162,7 @@
       },
       "created_at": "",
       "url": "https://twitter.com/CryptoPatel/status/1994760760191332756",
-      "processed": false,
+      "processed": true,
       "addedAt": "2025-11-29T17:26:33.895Z",
       "expiresAt": "2025-12-06T17:26:33.895Z",
       "source": "timeline_monitor",
@@ -6572,9 +6467,9 @@
       "BWS IPFS",
       "Blockchain Save"
     ],
-    "currentIndex": 3,
-    "lastProductUsed": "Blockchain Hash",
+    "currentIndex": 4,
+    "lastProductUsed": "NFT.zK",
     "positioningPhraseIndex": 0,
-    "replyCount": 3
+    "replyCount": 4
   }
 }

@@ -1173,6 +1173,22 @@
       "status": "posted",
       "dryRun": false,
       "accountUsed": "@BWSCommunity"
+    },
+    {
+      "id": "crawlee_search_cryptopatel-1994760760191332756-1764803968721",
+      "tweetId": "1994760760191332756",
+      "tweetUrl": "https://twitter.com/CryptoPatel/status/1994760760191332756",
+      "kolId": "crawlee_search_cryptopatel",
+      "kolUsername": "CryptoPatel",
+      "originalTweetText": "Strategy has already raised $21B this year, driving massive market inflows.\n\nMomentum is accelerating rapidly, Will 2026 be even bigger for Bitcoin?",
+      "replyTweetId": "1996358654929305729",
+      "replyText": "2026 could bring a massive altseason rotation - microcaps with real products positioned best.\n\n$BWS NFT.zK simplifies NFT creation for developers: launch collections with custom attributes and traits, mint certificates, run branded campaigns - zero blockchain coding complexity required.\n\n@BWSCommunity #altseason #NFT #microcap https://docs.bws.ninja/solutions/bws.nft.zk",
+      "productMentioned": "X Bot (for KOL tracking & authentic metrics) + ESG Credits (institutional appeal)",
+      "relevanceScore": 72,
+      "timestamp": "2025-12-03T23:19:28.721Z",
+      "status": "posted",
+      "dryRun": false,
+      "accountUsed": "@BWSCommunity"
     }
   ],
   "dailyStats": {
@@ -1247,10 +1263,10 @@
     }
   },
   "metadata": {
-    "totalReplies": 57,
-    "successfulReplies": 23,
+    "totalReplies": 58,
+    "successfulReplies": 24,
     "failedReplies": 34,
-    "lastReplyAt": "2025-12-03T19:53:00.402Z",
+    "lastReplyAt": "2025-12-03T23:19:28.721Z",
     "todayRepliesCount": 0,
     "lastUpdateBy": "kol-system"
   }
