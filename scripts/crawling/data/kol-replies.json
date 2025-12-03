@@ -1110,6 +1110,22 @@
       "status": "posted",
       "dryRun": false,
       "accountUsed": "@BWSCommunity"
+    },
+    {
+      "id": "4441279246-1993828276821995997-1764775842399",
+      "tweetId": "1993828276821995997",
+      "tweetUrl": "https://twitter.com/IncomeSharks/status/1993828276821995997",
+      "kolId": "4441279246",
+      "kolUsername": "IncomeSharks",
+      "originalTweetText": "Buy zones and multiple entries is the only way I've been able to help decrease my emotions. Whatever your plan is expect entries to go lower than you want, prices to take longer to move than you think, and targets to go higher than you expect (or less for some with wild targets)",
+      "replyTweetId": "1996240684706115623",
+      "replyText": "Smart strategy - patience during accumulation is key for microcaps with real fundamentals.\n\n$BWS operates a Blockchain Solutions Marketplace with multiple live products targeting mass markets. Real utility means price eventually reflects value, but gives disciplined accumulators better entries.\n\n@BWSCommunity #microcap #altcoins #fundamentals https://www.bws.ninja",
+      "productMentioned": "Multiple BWS products (emphasize real utility)",
+      "relevanceScore": 68,
+      "timestamp": "2025-12-03T15:30:42.399Z",
+      "status": "posted",
+      "dryRun": false,
+      "accountUsed": "@BWSCommunity"
     }
   ],
   "dailyStats": {
@@ -1184,10 +1200,10 @@
     }
   },
   "metadata": {
-    "totalReplies": 53,
-    "successfulReplies": 19,
+    "totalReplies": 54,
+    "successfulReplies": 20,
     "failedReplies": 34,
-    "lastReplyAt": "2025-12-03T11:49:07.190Z",
+    "lastReplyAt": "2025-12-03T15:30:42.399Z",
     "todayRepliesCount": 0,
     "lastUpdateBy": "kol-system"
   }
