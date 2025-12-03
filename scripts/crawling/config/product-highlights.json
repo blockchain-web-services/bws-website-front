@@ -1,6 +1,13 @@
 {
+  "linkRotationSettings": {
+    "mainSiteWeight": 0.25,
+    "productDocsWeight": 0.75,
+    "mainSiteUrl": "https://www.bws.ninja",
+    "docsBaseUrl": "https://docs.bws.ninja"
+  },
   "productHighlights": {
     "X Bot": {
+      "docsPath": "/marketplace-solutions/bws.x.bot",
       "specificFeatures": [
         "Official X API integration for verified metrics (not scraped data)",
         "Real-time KOL performance tracking with engagement analytics",
@@ -26,6 +33,7 @@
       ]
     },
     "Fan Game Cube": {
+      "docsPath": "/marketplace-solutions/bws.nft.gamecube",
       "specificFeatures": [
         "Digital field sections as NFTs - fans own specific field locations",
         "Real-time point scoring system based on game events at owned locations",
@@ -51,6 +59,7 @@
       ]
     },
     "Blockchain Hash": {
+      "docsPath": "/solutions/bws.blockchain.hash",
       "specificFeatures": [
         "Mutable on-chain database - update blockchain data after initial save",
         "Key-value hash table storage model on blockchain",
@@ -76,6 +85,7 @@
       ]
     },
     "NFT.zK": {
+      "docsPath": "/solutions/bws.nft.zk",
       "specificFeatures": [
         "Create NFT collections without blockchain expertise",
         "Transfer NFTs to non-technical users (no wallet setup required)",
@@ -101,6 +111,7 @@
       ]
     },
     "Blockchain Badges": {
+      "docsPath": "/marketplace-solutions/bws.blockchain.badges",
       "specificFeatures": [
         "Issue verifiable digital credentials on blockchain",
         "Immutable proof of achievements and certifications",
@@ -126,6 +137,7 @@
       ]
     },
     "ESG Credits": {
+      "docsPath": "/marketplace-solutions/bws.esg.credits",
       "specificFeatures": [
         "Environmental impact reporting for financial institutions",
         "Carbon footprint tracking and offset verification",
@@ -151,6 +163,7 @@
       ]
     },
     "BWS IPFS": {
+      "docsPath": "/solutions/bws.ipfs.upload",
       "specificFeatures": [
         "Decentralized file storage via IPFS network",
         "Simple API for uploading images, JSON, documents",
@@ -176,6 +189,7 @@
       ]
     },
     "Blockchain Save": {
+      "docsPath": "/solutions/bws.blockchain.save",
       "specificFeatures": [
         "Immutable data storage on blockchain (permanent records)",
         "Certificate of Trust generation for every save operation",

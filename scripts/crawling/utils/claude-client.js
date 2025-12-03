@@ -369,6 +369,45 @@ export function selectProductImage(product, template = null) {
 }
 
 /**
+ * Select link URL for reply
+ * Rotates between product-specific docs and main BWS site
+ *
+ * @param {Object} product - Product object with docsPath
+ * @param {Object} highlights - Product highlights configuration with linkRotationSettings
+ * @returns {string} URL to include in reply
+ */
+export function selectReplyLink(product, highlights) {
+  const settings = highlights.linkRotationSettings || {
+    mainSiteWeight: 0.25,
+    productDocsWeight: 0.75,
+    mainSiteUrl: 'https://www.bws.ninja',
+    docsBaseUrl: 'https://docs.bws.ninja'
+  };
+
+  // Weighted random selection (75% product docs, 25% main site)
+  const useMainSite = Math.random() < settings.mainSiteWeight;
+
+  if (useMainSite) {
+    console.log(`🔗 Link selected: Main site (${settings.mainSiteUrl})`);
+    return settings.mainSiteUrl;
+  }
+
+  // Get product-specific docs path
+  const productName = product.name || 'Unknown Product';
+  const productHighlights = highlights.productHighlights[productName];
+
+  if (productHighlights && productHighlights.docsPath) {
+    const productDocsUrl = settings.docsBaseUrl + productHighlights.docsPath;
+    console.log(`🔗 Link selected: Product docs (${productDocsUrl})`);
+    return productDocsUrl;
+  }
+
+  // Fallback to main site if no docs path found
+  console.log(`🔗 Link selected: Main site (fallback - no docs path for ${productName})`);
+  return settings.mainSiteUrl;
+}
+
+/**
  * Build template-specific prompt instructions
  */
 function buildTemplateInstructions(template, recentTemplateIds, productHighlights) {
@@ -528,6 +567,9 @@ Documentation: ${product.url || 'https://docs.bws.ninja'}`;
     ).join('')}`
     : '';
 
+  // Select link URL (75% product docs, 25% main site)
+  const replyLink = selectReplyLink(product, highlights);
+
   // Build template-specific instructions
   const templateInstructions = buildTemplateInstructions(selectedTemplate, recentTemplateIds, highlights);
 
@@ -538,7 +580,7 @@ KOL's Tweet:
 
 BWS Product to Reference:
 ${product.name || 'BWS Solution'}
-URL: ${product.url || 'https://www.bws.ninja'}
+URL: ${replyLink}
 
 Product Details:
 ${productInfo}${specialNotesSection}
@@ -597,7 +639,9 @@ ${templateInstructions}
 3. **CRITICAL**: NEVER use "I" - use "we" or third-person "BWS". This is BWS team/company account.
 4. **REQUIRED**: Include "$BWS" cashtag somewhere in the reply (placement varies by template)
 5. **REQUIRED**: Include "@BWSCommunity" in the closing line
-6. **REQUIRED**: Include link to specific product docs page or https://www.bws.ninja in closing line
+6. **CRITICAL - MUST INCLUDE LINK**: End reply with the URL provided above: ${replyLink}
+   - Place link at the very end after @BWSCommunity and hashtags
+   - This link is REQUIRED in every reply - do not omit it
 7. **HASHTAGS**: Choose 2-3 hashtags that relate to the tweet context (e.g., #altcoins #gems #microcap #blockchain #DeFi #Web3 #crypto)
 8. NO salesy language: avoid "amazing", "revolutionary", "don't miss", "moon"
 9. **CRITICAL**: Follow the TEMPLATE STRUCTURE above EXACTLY - this is the most important requirement
@@ -755,5 +799,6 @@ export default {
   evaluateTweetForReply,
   generateReplyText,
   analyzeEngagementPatterns,
-  selectProductImage
+  selectProductImage,
+  selectReplyLink
 };
