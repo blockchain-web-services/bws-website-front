@@ -1126,6 +1126,37 @@
       "status": "posted",
       "dryRun": false,
       "accountUsed": "@BWSCommunity"
+    },
+    {
+      "id": "1353384573435056128-1994793976860385719-1764778507798",
+      "tweetId": "1994793976860385719",
+      "tweetUrl": "https://twitter.com/CryptoRover/status/1994793976860385719",
+      "kolId": "1353384573435056128",
+      "kolUsername": "CryptoRover",
+      "originalTweetText": "I want to flip $10,000 into $1,000,000.    \n\nWhat to buy now?",
+      "replyTweetId": "1996251864212378059",
+      "replyText": "100x requires separating signal from noise - especially in microcaps.\n\n$BWS X Bot tracks KOL performance with official X API metrics, helping investors identify projects with authentic community traction vs bot-inflated engagement. Rare microcap building revenue tools, not just narratives.\n\n@BWSCommunity #gems #microcap #crypto https://docs.bws.ninja/marketplace-solutions/bws.x.bot",
+      "productMentioned": "X Bot (Telegram Analytics) + Platform APIs",
+      "relevanceScore": 92,
+      "timestamp": "2025-12-03T16:15:07.798Z",
+      "status": "posted",
+      "dryRun": false,
+      "accountUsed": "@BWSCommunity"
+    },
+    {
+      "id": "1353384573435056128-1994776361144107059-1764778532895",
+      "tweetId": "1994776361144107059",
+      "tweetUrl": "https://twitter.com/CryptoRover/status/1994776361144107059",
+      "kolId": "1353384573435056128",
+      "kolUsername": "CryptoRover",
+      "originalTweetText": "BITCOIN SUPPLY SHOCK INCOMING!",
+      "replyTweetId": "1996251969430618378",
+      "replyText": "Supply shocks are the perfect setup for capital rotation into overlooked microcaps with shipping products.\n\n$BWS Fan Game Cube enables sports clubs to monetize digital field sections as NFTs - fans earn points when real-time game events occur at their location. Expanding into iGaming next.\n\n@BWSCommunity #Bitcoin #microcap #NFT https://docs.bws.ninja/marketplace-solutions/bws.nft.gamecube",
+      "productMentioned": "Fan Game Cube",
+      "relevanceScore": 72,
+      "timestamp": "2025-12-03T16:15:32.895Z",
+      "status": "posted",
+      "dryRun": false
     }
   ],
   "dailyStats": {
@@ -1200,10 +1231,10 @@
     }
   },
   "metadata": {
-    "totalReplies": 54,
-    "successfulReplies": 20,
+    "totalReplies": 56,
+    "successfulReplies": 22,
     "failedReplies": 34,
-    "lastReplyAt": "2025-12-03T15:30:42.399Z",
+    "lastReplyAt": "2025-12-03T16:15:32.895Z",
     "todayRepliesCount": 0,
     "lastUpdateBy": "kol-system"
   }

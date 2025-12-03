@@ -1,108 +1,6 @@
 {
   "posts": [
     {
-      "id": "1994300978628006266",
-      "text": "3 years of pain for 0 months of glory.  \n\nRIP altcoin holders.",
-      "author": {
-        "id": "1353384573435056128",
-        "username": "CryptoRover"
-      },
-      "public_metrics": {
-        "retweet_count": 40,
-        "reply_count": 172,
-        "like_count": 466,
-        "quote_count": 0
-      },
-      "created_at": "",
-      "url": "https://twitter.com/CryptoRover/status/1994300978628006266",
-      "processed": true,
-      "addedAt": "2025-11-28T08:54:19.972Z",
-      "expiresAt": "2025-12-05T08:54:19.972Z",
-      "source": "timeline_monitor"
-    },
-    {
-      "id": "1994267545554276741",
-      "text": "#BITCOIN IS TRAPPING YOU...\n\nWatch NOW:\nhttps://youtu.be/WFuS5lQBD4E",
-      "author": {
-        "id": "1353384573435056128",
-        "username": "CryptoRover"
-      },
-      "public_metrics": {
-        "retweet_count": 21,
-        "reply_count": 55,
-        "like_count": 230,
-        "quote_count": 0
-      },
-      "created_at": "",
-      "url": "https://twitter.com/CryptoRover/status/1994267545554276741",
-      "processed": true,
-      "addedAt": "2025-11-28T08:54:19.972Z",
-      "expiresAt": "2025-12-05T08:54:19.972Z",
-      "source": "timeline_monitor"
-    },
-    {
-      "id": "1994207755586895979",
-      "text": "This new update about $VSN entering Binance Alpha feels like an important step for the @Arbitrum ecosystem. \n\nIt shows early readiness and strong coordination from the team behind it. Three things stand out clearly:\n\n It shows real confidence and preparation. Becoming the first",
-      "author": {
-        "id": "crawlee_search_crypt0_defi",
-        "username": "Crypt0_DeFi"
-      },
-      "public_metrics": {
-        "retweet_count": 28,
-        "reply_count": 74,
-        "like_count": 89,
-        "quote_count": 0
-      },
-      "created_at": "",
-      "url": "https://twitter.com/Crypt0_DeFi/status/1994207755586895979",
-      "processed": true,
-      "addedAt": "2025-11-28T08:54:28.166Z",
-      "expiresAt": "2025-12-05T08:54:28.166Z",
-      "source": "timeline_monitor"
-    },
-    {
-      "id": "1994727700276109599",
-      "text": "$HYPE I think HyperLiquid is 1 of the most interesting situations over the next few days given the team unlocks. Wild to believe it was just 1 year ago that gave the best / biggest wealth generation event ever in crypto. Very curious as to what happens with the team",
-      "author": {
-        "id": "1068237257977544704",
-        "username": "AltcoinSherpa"
-      },
-      "public_metrics": {
-        "retweet_count": 15,
-        "reply_count": 37,
-        "like_count": 115,
-        "quote_count": 0
-      },
-      "created_at": "",
-      "url": "https://twitter.com/AltcoinSherpa/status/1994727700276109599",
-      "processed": true,
-      "addedAt": "2025-11-29T17:20:54.067Z",
-      "expiresAt": "2025-12-06T17:20:54.067Z",
-      "source": "timeline_monitor",
-      "contentCategory": "project-discussion"
-    },
-    {
-      "id": "1993828276821995997",
-      "text": "Buy zones and multiple entries is the only way I've been able to help decrease my emotions. Whatever your plan is expect entries to go lower than you want, prices to take longer to move than you think, and targets to go higher than you expect (or less for some with wild targets)",
-      "author": {
-        "id": "4441279246",
-        "username": "IncomeSharks"
-      },
-      "public_metrics": {
-        "retweet_count": 68,
-        "reply_count": 62,
-        "like_count": 948,
-        "quote_count": 0
-      },
-      "created_at": "",
-      "url": "https://twitter.com/IncomeSharks/status/1993828276821995997",
-      "processed": true,
-      "addedAt": "2025-11-29T17:21:20.144Z",
-      "expiresAt": "2025-12-06T17:21:20.144Z",
-      "source": "timeline_monitor",
-      "contentCategory": "technical-analysis"
-    },
-    {
       "id": "1993980664765362426",
       "text": "#DOT continues its journey inside the parallel channel. The price is currently sitting at the lower boundary, which acts as an important support zone.\n\nIf it manages to hold this level, we could see a potential move toward the mid and upper bands of the channel (the yellow",
       "author": {
@@ -117,7 +15,7 @@
       },
       "created_at": "",
       "url": "https://twitter.com/Crypto_TheBoss/status/1993980664765362426",
-      "processed": false,
+      "processed": true,
       "addedAt": "2025-11-29T17:21:49.808Z",
       "expiresAt": "2025-12-06T17:21:49.808Z",
       "source": "timeline_monitor",
@@ -138,7 +36,7 @@
       },
       "created_at": "",
       "url": "https://twitter.com/Crypto_TheBoss/status/1993978938331140217",
-      "processed": false,
+      "processed": true,
       "addedAt": "2025-11-29T17:21:51.587Z",
       "expiresAt": "2025-12-06T17:21:51.587Z",
       "source": "timeline_monitor",
@@ -159,7 +57,7 @@
       },
       "created_at": "",
       "url": "https://twitter.com/CryptoRover/status/1994793976860385719",
-      "processed": false,
+      "processed": true,
       "addedAt": "2025-11-29T17:24:50.988Z",
       "expiresAt": "2025-12-06T17:24:50.988Z",
       "source": "timeline_monitor",
@@ -180,7 +78,7 @@
       },
       "created_at": "",
       "url": "https://twitter.com/CryptoRover/status/1994776361144107059",
-      "processed": false,
+      "processed": true,
       "addedAt": "2025-11-29T17:24:52.794Z",
       "expiresAt": "2025-12-06T17:24:52.794Z",
       "source": "timeline_monitor",
@@ -201,7 +99,7 @@
       },
       "created_at": "",
       "url": "https://twitter.com/CryptoRover/status/1994769056180679036",
-      "processed": false,
+      "processed": true,
       "addedAt": "2025-11-29T17:24:58.122Z",
       "expiresAt": "2025-12-06T17:24:58.122Z",
       "source": "timeline_monitor",
@@ -5561,9 +5459,9 @@
       "BWS IPFS",
       "Blockchain Save"
     ],
-    "currentIndex": 0,
-    "lastProductUsed": null,
+    "currentIndex": 2,
+    "lastProductUsed": "Fan Game Cube",
     "positioningPhraseIndex": 0,
-    "replyCount": 0
+    "replyCount": 2
   }
 }
