@@ -104,6 +104,70 @@ function extractNavigationLinks(html) {
 }
 
 /**
+ * Recursively discover child pages by following links from parent pages
+ * Crawls section pages (like /media-assets, /api-how-tos) to find sub-pages
+ */
+async function discoverChildPages(parentPaths, baseUrl, maxDepth = 2) {
+  const allPaths = new Set(parentPaths);
+  const visited = new Set();
+  const toVisit = [...parentPaths];
+
+  console.log('\n🔄 Starting recursive sub-page discovery...');
+
+  let depth = 0;
+  while (toVisit.length > 0 && depth < maxDepth) {
+    depth++;
+    const currentBatch = [...toVisit];
+    toVisit.length = 0;
+
+    console.log(`   Level ${depth}: Checking ${currentBatch.length} pages for sub-pages...`);
+
+    for (const pagePath of currentBatch) {
+      if (visited.has(pagePath)) continue;
+      visited.add(pagePath);
+
+      try {
+        const url = `${baseUrl}${pagePath}`;
+        const html = await fetchPageContent(url);
+        const links = extractNavigationLinks(html);
+
+        // Find new child pages (must start with parent path)
+        links.forEach(link => {
+          if (!allPaths.has(link)) {
+            // Check if this is a child of current page
+            if (link.startsWith(pagePath + '/') ||
+                (pagePath !== '/' && link.startsWith(pagePath.split('/').slice(0, -1).join('/') + '/'))) {
+              allPaths.add(link);
+              toVisit.push(link);
+            }
+          }
+        });
+
+        // Small delay to avoid overwhelming server
+        await new Promise(resolve => setTimeout(resolve, 100));
+
+      } catch (error) {
+        console.log(`   ⚠️  Could not fetch ${pagePath}: ${error.message}`);
+      }
+    }
+
+    const newPaths = allPaths.size - parentPaths.length;
+    if (newPaths > 0) {
+      console.log(`   ✅ Level ${depth}: Found ${newPaths} new sub-pages`);
+    }
+  }
+
+  const totalNewPaths = allPaths.size - parentPaths.length;
+  if (totalNewPaths > 0) {
+    console.log(`🎉 Recursive discovery found ${totalNewPaths} additional pages!`);
+  } else {
+    console.log(`✅ No additional sub-pages found`);
+  }
+
+  return Array.from(allPaths).sort();
+}
+
+/**
  * Categorize paths by section
  */
 function categorizePaths(paths) {
@@ -150,12 +214,16 @@ async function discoverAllPaths() {
     const html = await fetchPageContent(DOCS_BASE_URL);
     console.log(`✅ Fetched ${(html.length / 1024).toFixed(1)}KB of HTML`);
 
-    // Extract all navigation links
-    const paths = extractNavigationLinks(html);
-    console.log(`📋 Discovered ${paths.length} unique paths`);
+    // Extract all navigation links from main page
+    const initialPaths = extractNavigationLinks(html);
+    console.log(`📋 Discovered ${initialPaths.length} unique paths from main navigation`);
+
+    // Recursively discover child pages
+    const allPaths = await discoverChildPages(initialPaths, DOCS_BASE_URL);
+    console.log(`📋 Total paths after recursive discovery: ${allPaths.length}`);
 
     // Categorize paths
-    const categories = categorizePaths(paths);
+    const categories = categorizePaths(allPaths);
 
     // Display summary
     console.log('\n📊 Paths by category:');
@@ -169,13 +237,15 @@ async function discoverAllPaths() {
     const output = {
       discoveredAt: new Date().toISOString(),
       baseUrl: DOCS_BASE_URL,
-      totalPaths: paths.length,
-      paths: paths,
+      totalPaths: allPaths.length,
+      paths: allPaths,
       categories: categories,
       metadata: {
-        discoveryMethod: 'html-link-extraction',
+        discoveryMethod: 'recursive-link-extraction',
         htmlSize: html.length,
-        version: '1.0.0'
+        initialPaths: initialPaths.length,
+        recursivePaths: allPaths.length - initialPaths.length,
+        version: '2.0.0'
       }
     };
 
