@@ -47,7 +47,8 @@ import { sendReplyNotification, sendErrorNotification } from '../utils/zapier-we
 import {
   createClaudeClient,
   evaluateTweetForReply,
-  generateReplyText
+  generateReplyText,
+  selectProductImage
 } from '../utils/claude-client.js';
 
 /**
@@ -83,6 +84,51 @@ async function saveEngagingPosts(data) {
     await fs.writeFile(ENGAGING_POSTS_PATH, JSON.stringify(data, null, 2));
   } catch (error) {
     console.error('Failed to save engaging posts:', error.message);
+  }
+}
+
+/**
+ * Upload image to Twitter and return media ID
+ * @param {Object} client - Twitter client instance
+ * @param {Object} imageMetadata - Image metadata from product
+ * @returns {string|null} Media ID for use in tweet, or null if upload failed
+ */
+async function uploadImageToTwitter(client, imageMetadata) {
+  if (!imageMetadata || !imageMetadata.localPath) {
+    return null;
+  }
+
+  try {
+    // Resolve absolute path from public directory
+    const absolutePath = path.join(worktreeRoot, 'public', imageMetadata.localPath);
+
+    console.log(`📸 Uploading image: ${imageMetadata.localPath}`);
+
+    // Check if file exists
+    try {
+      await fs.access(absolutePath);
+    } catch (fileError) {
+      console.warn(`⚠️  Image file not found: ${absolutePath}`);
+      return null;
+    }
+
+    // Read image buffer
+    const imageBuffer = await fs.readFile(absolutePath);
+
+    // Upload to Twitter using v1 API (media upload)
+    const mediaId = await client.v1.uploadMedia(imageBuffer, {
+      mimeType: imageMetadata.mimeType || 'image/png'
+    });
+
+    console.log(`✅ Image uploaded successfully, media ID: ${mediaId}`);
+    if (imageMetadata.alt) {
+      console.log(`   Alt text: ${imageMetadata.alt}`);
+    }
+
+    return mediaId;
+  } catch (error) {
+    console.error(`❌ Failed to upload image: ${error.message}`);
+    return null;
   }
 }
 
@@ -465,11 +511,30 @@ async function replyToKolPosts() {
       }
       console.log('');
 
+      // Select product image (if available)
+      let selectedImage = null;
+      let uploadedMediaId = null;
+
+      if (selectedProduct && selectedProduct.images && selectedProduct.images.length > 0) {
+        selectedImage = selectProductImage(selectedProduct, replyResult);
+        if (selectedImage) {
+          console.log(`📸 Selected image for ${selectedProduct.name}: ${selectedImage.localPath}`);
+        }
+      }
+
       if (dryRun) {
         console.log('⚠️  DRY RUN: Would have posted reply (skipped)');
+        if (selectedImage) {
+          console.log(`⚠️  DRY RUN: Would have attached image: ${selectedImage.localPath}`);
+        }
         repliesPosted++;
         post.processed = true;
         continue;
+      }
+
+      // Upload image if selected
+      if (selectedImage && writeClient) {
+        uploadedMediaId = await uploadImageToTwitter(writeClient, selectedImage);
       }
 
       // Anti-spam actions: Follow and like
@@ -511,8 +576,13 @@ async function replyToKolPosts() {
         // Post reply
         await sleep(2000);
         console.log(`\n📤 Posting reply to tweet ${tweet.id}...`);
+        if (uploadedMediaId) {
+          console.log(`   📎 Attaching media ID: ${uploadedMediaId}`);
+        }
 
-        const replyResponse = await writeClient.v2.reply(replyText, tweet.id);
+        // Post reply with optional media attachment
+        const replyOptions = { media: uploadedMediaId ? { media_ids: [uploadedMediaId] } : undefined };
+        const replyResponse = await writeClient.v2.reply(replyText, tweet.id, replyOptions);
         const replyTweetId = replyResponse.data.id;
 
         console.log(`✅ Reply posted! Tweet ID: ${replyTweetId}`);
@@ -532,6 +602,8 @@ async function replyToKolPosts() {
           relevanceScore: evaluation.relevanceScore,
           templateUsed: replyResult.templateUsed || null,
           templateName: replyResult.templateName || null,
+          imageAttached: uploadedMediaId ? true : false,
+          imagePath: selectedImage ? selectedImage.localPath : null,
           timestamp: new Date().toISOString(),
           status: 'posted',
           dryRun: false
@@ -595,8 +667,13 @@ async function replyToKolPosts() {
           // Retry posting reply with fallback client
           await sleep(2000);
           console.log(`\n📤 Posting reply to tweet ${tweet.id} with ${accountName}...`);
+          if (uploadedMediaId) {
+            console.log(`   📎 Attaching media ID: ${uploadedMediaId}`);
+          }
 
-          const replyResponse = await writeClient.v2.reply(replyText, tweet.id);
+          // Post reply with optional media attachment
+          const replyOptions = { media: uploadedMediaId ? { media_ids: [uploadedMediaId] } : undefined };
+          const replyResponse = await writeClient.v2.reply(replyText, tweet.id, replyOptions);
           const replyTweetId = replyResponse.data.id;
 
           console.log(`✅ Reply posted with fallback! Tweet ID: ${replyTweetId}`);
@@ -617,6 +694,8 @@ async function replyToKolPosts() {
             relevanceScore: evaluation.relevanceScore,
             templateUsed: replyResult.templateUsed || null,
             templateName: replyResult.templateName || null,
+            imageAttached: uploadedMediaId ? true : false,
+            imagePath: selectedImage ? selectedImage.localPath : null,
             timestamp: new Date().toISOString(),
             status: 'posted',
             dryRun: false,

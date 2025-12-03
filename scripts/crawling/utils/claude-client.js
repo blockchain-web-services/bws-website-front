@@ -333,6 +333,42 @@ function selectReplyTemplate(recentReplies = []) {
 }
 
 /**
+ * Select appropriate product image for reply
+ * Prioritizes images based on priority level and template type
+ *
+ * @param {Object} product - Product object with images array
+ * @param {Object} template - Selected reply template (optional)
+ * @returns {Object|null} Selected image metadata or null
+ */
+export function selectProductImage(product, template = null) {
+  if (!product.images || product.images.length === 0) {
+    return null;
+  }
+
+  // Sort images by priority (lowest number = highest priority)
+  const sortedImages = [...product.images].sort((a, b) => {
+    const priorityA = a.priority || 999;
+    const priorityB = b.priority || 999;
+    return priorityA - priorityB;
+  });
+
+  // Strategy: Use first image (highest priority, typically product hero/overview)
+  // Future enhancement: Template-aware selection
+  // - feature_list template → UI screenshots (type: "screenshot")
+  // - stat_driven template → Analytics dashboards
+  // - problem_solution template → Hero shots (type: "hero")
+
+  const selectedImage = sortedImages[0];
+
+  console.log(`📸 Image selected: ${selectedImage.localPath || selectedImage.path}`);
+  if (selectedImage.alt) {
+    console.log(`   Alt: ${selectedImage.alt}`);
+  }
+
+  return selectedImage;
+}
+
+/**
  * Build template-specific prompt instructions
  */
 function buildTemplateInstructions(template, recentTemplateIds, productHighlights) {
@@ -718,5 +754,6 @@ export default {
   evaluateUserAsCryptoKOL,
   evaluateTweetForReply,
   generateReplyText,
-  analyzeEngagementPatterns
+  analyzeEngagementPatterns,
+  selectProductImage
 };
