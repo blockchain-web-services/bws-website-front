@@ -1078,6 +1078,22 @@
       "timestamp": "2025-12-03T02:53:23.951Z",
       "status": "posted",
       "dryRun": false
+    },
+    {
+      "id": "1138993163706753029-1994121080458629611-1764747467563",
+      "tweetId": "1994121080458629611",
+      "tweetUrl": "https://twitter.com/Pentosh1/status/1994121080458629611",
+      "kolId": "1138993163706753029",
+      "kolUsername": "Pentosh1",
+      "originalTweetText": "The biggest difference between the stock market and crypto is the stock market basically goes up every day of the year\n\nWhile the alt market cap of crypto has been in this same range for 5 years this Feb. Or close to 2,000 days. More than 10-20% of our lives.",
+      "replyTweetId": "1996121672106058097",
+      "replyText": "This stagnation is exactly why fundamentals matter more than hype cycles.\n\n$BWS operates a Blockchain Solutions Marketplace with multiple live products targeting mass markets - real B2B revenue, consistent delivery regardless of alt market conditions.\n\n@BWSCommunity #altcoins #microcap #fundamentals https://www.bws.ninja",
+      "productMentioned": "X Bot (for demonstrating real utility) + General BWS ecosystem",
+      "relevanceScore": 82,
+      "timestamp": "2025-12-03T07:37:47.563Z",
+      "status": "posted",
+      "dryRun": false,
+      "accountUsed": "@BWSCommunity"
     }
   ],
   "dailyStats": {
@@ -1152,10 +1168,10 @@
     }
   },
   "metadata": {
-    "totalReplies": 51,
-    "successfulReplies": 17,
+    "totalReplies": 52,
+    "successfulReplies": 18,
     "failedReplies": 34,
-    "lastReplyAt": "2025-12-03T02:53:23.951Z",
+    "lastReplyAt": "2025-12-03T07:37:47.563Z",
     "todayRepliesCount": 0,
     "lastUpdateBy": "kol-system"
   }

@@ -15,89 +15,9 @@
       },
       "created_at": "",
       "url": "https://twitter.com/CryptoCapo_/status/1943382013630673056",
-      "processed": false,
+      "processed": true,
       "addedAt": "2025-11-28T07:15:01.624Z",
       "expiresAt": "2025-12-05T07:15:01.624Z",
-      "source": "timeline_monitor"
-    },
-    {
-      "id": "1993917726285242866",
-      "text": "A community member recently received whitelist access to the @alliancegamesx Virtual Arcade and their first experience has been very positive. \n\nFrom the moment they entered the arcade, it was clear that the team put real effort into building something smooth, fun, and rewarding.",
-      "author": {
-        "id": "crawlee_search_crypt0_defi",
-        "username": "Crypt0_DeFi"
-      },
-      "public_metrics": {
-        "retweet_count": 18,
-        "reply_count": 56,
-        "like_count": 62,
-        "quote_count": 0
-      },
-      "created_at": "",
-      "url": "https://twitter.com/Crypt0_DeFi/status/1993917726285242866",
-      "processed": true,
-      "addedAt": "2025-11-28T07:17:21.832Z",
-      "expiresAt": "2025-12-05T07:17:21.832Z",
-      "source": "timeline_monitor"
-    },
-    {
-      "id": "1993739366271787347",
-      "text": "The latest ScaffoldStylus release brings an exciting new feature for developers:\n\n“npx create-stylus@latest -e chainlink-vrf”\n\nThis integrates @chainlink Verifiable Random Function (VRF) directly into ScaffoldStylus, making it much easier for developers to use secure randomness",
-      "author": {
-        "id": "crawlee_search_crypt0_defi",
-        "username": "Crypt0_DeFi"
-      },
-      "public_metrics": {
-        "retweet_count": 31,
-        "reply_count": 66,
-        "like_count": 82,
-        "quote_count": 0
-      },
-      "created_at": "",
-      "url": "https://twitter.com/Crypt0_DeFi/status/1993739366271787347",
-      "processed": true,
-      "addedAt": "2025-11-28T07:17:21.832Z",
-      "expiresAt": "2025-12-05T07:17:21.832Z",
-      "source": "timeline_monitor"
-    },
-    {
-      "id": "1993734699542278376",
-      "text": "Arbitrum DAO is supporting @nuvolari_ai in its mission to bring smarter productivity and personalised automation into the DeFi markets on @Arbitrum.\n\n Risk assessment is a major challenge in DeFi\nMost users cannot manually track dozens of risk signals across lending markets and",
-      "author": {
-        "id": "crawlee_search_crypt0_defi",
-        "username": "Crypt0_DeFi"
-      },
-      "public_metrics": {
-        "retweet_count": 27,
-        "reply_count": 75,
-        "like_count": 94,
-        "quote_count": 0
-      },
-      "created_at": "",
-      "url": "https://twitter.com/Crypt0_DeFi/status/1993734699542278376",
-      "processed": true,
-      "addedAt": "2025-11-28T07:17:21.832Z",
-      "expiresAt": "2025-12-05T07:17:21.832Z",
-      "source": "timeline_monitor"
-    },
-    {
-      "id": "1993732275310137590",
-      "text": "Many people in the crypto space are realizing that Dollar-Cost Averaging (DCA) is one of the most reliable long-term strategies for building a Bitcoin position especially for everyday investors.\n\n DCA works by investing a fixed amount at regular intervals, no matter what the",
-      "author": {
-        "id": "crawlee_search_crypt0_defi",
-        "username": "Crypt0_DeFi"
-      },
-      "public_metrics": {
-        "retweet_count": 26,
-        "reply_count": 59,
-        "like_count": 69,
-        "quote_count": 0
-      },
-      "created_at": "",
-      "url": "https://twitter.com/Crypt0_DeFi/status/1993732275310137590",
-      "processed": true,
-      "addedAt": "2025-11-28T07:17:21.832Z",
-      "expiresAt": "2025-12-05T07:17:21.832Z",
       "source": "timeline_monitor"
     },
     {
@@ -115,7 +35,7 @@
       },
       "created_at": "",
       "url": "https://twitter.com/Pentosh1/status/1994121080458629611",
-      "processed": false,
+      "processed": true,
       "addedAt": "2025-11-28T07:18:06.160Z",
       "expiresAt": "2025-12-05T07:18:06.160Z",
       "source": "timeline_monitor"
@@ -135,7 +55,7 @@
       },
       "created_at": "",
       "url": "https://twitter.com/Pentosh1/status/1993822977734135883",
-      "processed": false,
+      "processed": true,
       "addedAt": "2025-11-28T07:18:06.160Z",
       "expiresAt": "2025-12-05T07:18:06.160Z",
       "source": "timeline_monitor"
@@ -155,7 +75,7 @@
       },
       "created_at": "",
       "url": "https://twitter.com/Pentosh1/status/1991814583913165070",
-      "processed": false,
+      "processed": true,
       "addedAt": "2025-11-28T07:18:06.160Z",
       "expiresAt": "2025-12-05T07:18:06.160Z",
       "source": "timeline_monitor"
@@ -175,7 +95,7 @@
       },
       "created_at": "",
       "url": "https://twitter.com/cobie/status/1992209779746611200",
-      "processed": false,
+      "processed": true,
       "addedAt": "2025-11-28T08:49:50.655Z",
       "expiresAt": "2025-12-05T08:49:50.655Z",
       "source": "timeline_monitor"
