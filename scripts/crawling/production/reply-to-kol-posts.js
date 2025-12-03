@@ -459,7 +459,11 @@ async function replyToKolPosts() {
       replyText = replyResult.replyText || replyResult.alternativeVersion || JSON.stringify(replyResult);
 
       console.log(`\n📤 Generated reply (${replyText.length} chars):`);
-      console.log(`"${replyText}"\n`);
+      console.log(`"${replyText}"`);
+      if (replyResult.templateUsed) {
+        console.log(`   Template: ${replyResult.templateName} (${replyResult.templateUsed})`);
+      }
+      console.log('');
 
       if (dryRun) {
         console.log('⚠️  DRY RUN: Would have posted reply (skipped)');
@@ -526,6 +530,8 @@ async function replyToKolPosts() {
           replyText,
           productMentioned: evaluation.bestMatchingProduct || productSelection.productNames[0] || 'BWS',
           relevanceScore: evaluation.relevanceScore,
+          templateUsed: replyResult.templateUsed || null,
+          templateName: replyResult.templateName || null,
           timestamp: new Date().toISOString(),
           status: 'posted',
           dryRun: false
@@ -609,6 +615,8 @@ async function replyToKolPosts() {
             replyText,
             productMentioned: evaluation.bestMatchingProduct || productSelection.productNames[0] || 'BWS',
             relevanceScore: evaluation.relevanceScore,
+            templateUsed: replyResult.templateUsed || null,
+            templateName: replyResult.templateName || null,
             timestamp: new Date().toISOString(),
             status: 'posted',
             dryRun: false,

@@ -223,5 +223,176 @@
       "Mix technical details with business benefits",
       "Alternate between specific examples and general capabilities"
     ]
+  },
+  "templateGuidelines": {
+    "feature_list": {
+      "bulletPointRules": [
+        "Each bullet: 5-15 words max",
+        "Focus on concrete capabilities, not vague benefits",
+        "Mix technical and business value",
+        "No marketing fluff ('amazing', 'revolutionary')",
+        "Use action-oriented language (Track, Identify, Measure, Enable)"
+      ],
+      "exampleBullets": {
+        "X Bot": [
+          "• Track 100+ KOLs simultaneously with comparative analytics",
+          "• Bot farm detection via engagement pattern analysis",
+          "• Automated daily reports delivered via Telegram",
+          "• Historical data retention for trend analysis",
+          "• ROI measurement for marketing campaigns"
+        ],
+        "Fan Game Cube": [
+          "• Fans own digital field sections as NFTs",
+          "• Real-time point scoring from game events",
+          "• Machine learning event detection",
+          "• Multi-sport support (football, chess, tennis)",
+          "• Revenue sharing between clubs and fans"
+        ],
+        "Blockchain Hash": [
+          "• Mutable on-chain database functionality",
+          "• No wallet management required",
+          "• No gas fees for developers",
+          "• Simple REST API integration",
+          "• Permanent blockchain storage"
+        ],
+        "NFT.zK": [
+          "• Transfer NFTs to non-crypto users",
+          "• Managed wallet infrastructure",
+          "• Bulk minting with single API call",
+          "• Claim codes for easy distribution",
+          "• No gas fees for end users"
+        ],
+        "Blockchain Badges": [
+          "• Issue tamper-proof digital credentials",
+          "• Blockchain-backed verification",
+          "• Bulk issuance for institutions",
+          "• Expiration dates and revocation",
+          "• Integration with LMS and HR systems"
+        ],
+        "ESG Credits": [
+          "• Carbon footprint tracking automation",
+          "• Blockchain-verified sustainability claims",
+          "• Regulatory compliance reporting",
+          "• Integration with banking apps",
+          "• Tokenized carbon credits"
+        ],
+        "BWS IPFS": [
+          "• Decentralized file storage",
+          "• BWS-hosted gateway for reliability",
+          "• Content addressing by hash",
+          "• Automatic pinning service",
+          "• Permanent, censorship-resistant hosting"
+        ],
+        "Blockchain Save": [
+          "• Immutable blockchain records",
+          "• Certificate of Trust generation",
+          "• Document hash verification",
+          "• Audit trail with timestamps",
+          "• Public verification URLs"
+        ]
+      }
+    },
+    "emoji_enhanced": {
+      "emojiRules": [
+        "Max 3 emojis per reply total",
+        "Use contextual emojis only (💡🔧📊⚡🎯🌱🔥👥💬)",
+        "Place at start of sentences/paragraphs, not mid-sentence",
+        "Avoid overuse - maintain professional tone",
+        "Match emoji to content type (data=📊, tools=🔧, ideas=💡)"
+      ],
+      "contextualEmojis": {
+        "data_analytics": {
+          "emojis": ["📊", "📈", "📉", "🎯"],
+          "usage": "For X Bot, analytics features, metrics, tracking"
+        },
+        "tools_infrastructure": {
+          "emojis": ["🔧", "⚙️", "🛠️", "🏗️"],
+          "usage": "For Blockchain Hash, NFT.zK, BWS IPFS - technical tools"
+        },
+        "insights_ideas": {
+          "emojis": ["💡", "🎯", "🧠"],
+          "usage": "For strategic insights, solutions, smart approaches"
+        },
+        "speed_performance": {
+          "emojis": ["⚡", "🚀", "⏱️"],
+          "usage": "For fast processing, efficiency, quick deployment"
+        },
+        "security_trust": {
+          "emojis": ["🔒", "✅", "🛡️", "🔐"],
+          "usage": "For Blockchain Badges, verification, security features"
+        },
+        "growth_trending": {
+          "emojis": ["🌱", "📈", "🔥", "💹"],
+          "usage": "For market growth, adoption, trending topics"
+        },
+        "community_social": {
+          "emojis": ["👥", "💬", "🤝", "🌐"],
+          "usage": "For Fan Game Cube, community features, social engagement"
+        },
+        "environmental": {
+          "emojis": ["🌍", "🌱", "♻️", "🌿"],
+          "usage": "For ESG Credits, sustainability, environmental impact"
+        }
+      }
+    },
+    "problem_solution": {
+      "problemStatementRules": [
+        "State a real pain point (1-2 sentences)",
+        "Be specific, not generic (mention bot farms, fraud, complexity)",
+        "Relate to tweet context when possible",
+        "Avoid negative tone - focus on opportunity"
+      ],
+      "solutionLeadIns": [
+        "The solution:",
+        "Here's how:",
+        "The answer:",
+        "Enter:",
+        "That's where [Product] comes in:"
+      ]
+    },
+    "delayed_cashtag": {
+      "cashtagPlacementRules": [
+        "Mention product name first WITHOUT $BWS",
+        "Build interest with features/capabilities",
+        "Add $BWS naturally in second sentence",
+        "Phrases: 'This is what $BWS ships', 'Built by $BWS', '$BWS delivers this at microcap'"
+      ]
+    },
+    "stat_driven": {
+      "metricExamples": {
+        "X Bot": [
+          "Track 100+ KOLs simultaneously",
+          "Bot detection through pattern analysis",
+          "Historical data for trend analysis",
+          "Real-time engagement rate calculations"
+        ],
+        "Fan Game Cube": [
+          "Real-time point scoring from game events",
+          "Multi-sport support (football, chess, tennis, cricket)",
+          "Machine learning event detection",
+          "Revenue sharing model"
+        ],
+        "Blockchain Hash": [
+          "Mutable on-chain storage",
+          "Zero wallet/gas management",
+          "Single API call deployment",
+          "Permanent blockchain records"
+        ]
+      }
+    },
+    "question_led": {
+      "questionTypes": [
+        "Challenge: 'How do you verify [problem]?'",
+        "Opportunity: 'What if [benefit scenario]?'",
+        "Pain point: 'Tired of [frustration]?'",
+        "Comparison: 'What separates [X] from [Y]?'"
+      ],
+      "answerLeadIns": [
+        "$BWS [Product] solves this:",
+        "$BWS [Product] delivers:",
+        "Here's the answer: $BWS [Product]",
+        "$BWS [Product] changes this:"
+      ]
+    }
   }
 }
