@@ -1063,6 +1063,21 @@
       "timestamp": "2025-12-02T23:19:52.294Z",
       "status": "posted",
       "dryRun": false
+    },
+    {
+      "id": "crawlee_search_crypt0_defi-1993732275310137590-1764730403951",
+      "tweetId": "1993732275310137590",
+      "tweetUrl": "https://twitter.com/Crypt0_DeFi/status/1993732275310137590",
+      "kolId": "crawlee_search_crypt0_defi",
+      "kolUsername": "Crypt0_DeFi",
+      "originalTweetText": "Many people in the crypto space are realizing that Dollar-Cost Averaging (DCA) is one of the most reliable long-term strategies for building a Bitcoin position especially for everyday investors.\n\n DCA works by investing a fixed amount at regular intervals, no matter what the",
+      "replyTweetId": "1996050101979279514",
+      "replyText": "DCA is solid for Bitcoin foundation. For those diversifying into microcaps, due diligence on actual utility matters.\n\n$BWS X Bot helps investors verify authentic community traction and KOL performance with official Twitter API metrics - cuts through fake engagement noise.\n\n@BWSCommunity #microcap #DCA #crypto https://docs.bws.ninja/marketplace-solutions/bws.x.bot",
+      "productMentioned": "X Bot",
+      "relevanceScore": 72,
+      "timestamp": "2025-12-03T02:53:23.951Z",
+      "status": "posted",
+      "dryRun": false
     }
   ],
   "dailyStats": {
@@ -1137,10 +1152,10 @@
     }
   },
   "metadata": {
-    "totalReplies": 50,
-    "successfulReplies": 16,
+    "totalReplies": 51,
+    "successfulReplies": 17,
     "failedReplies": 34,
-    "lastReplyAt": "2025-12-02T23:19:52.294Z",
+    "lastReplyAt": "2025-12-03T02:53:23.951Z",
     "todayRepliesCount": 0,
     "lastUpdateBy": "kol-system"
   }
