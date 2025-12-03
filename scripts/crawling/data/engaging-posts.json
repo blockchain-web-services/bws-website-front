@@ -5549,5 +5549,21 @@
       "timeline_monitor": 269,
       "search_discovery": 0
     }
+  },
+  "productRotation": {
+    "allProducts": [
+      "X Bot",
+      "Fan Game Cube",
+      "Blockchain Hash",
+      "NFT.zK",
+      "Blockchain Badges",
+      "ESG Credits",
+      "BWS IPFS",
+      "Blockchain Save"
+    ],
+    "currentIndex": 0,
+    "lastProductUsed": null,
+    "positioningPhraseIndex": 0,
+    "replyCount": 0
   }
 }

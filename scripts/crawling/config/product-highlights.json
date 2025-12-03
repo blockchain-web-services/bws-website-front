@@ -1,0 +1,227 @@
+{
+  "productHighlights": {
+    "X Bot": {
+      "specificFeatures": [
+        "Official X API integration for verified metrics (not scraped data)",
+        "Real-time KOL performance tracking with engagement analytics",
+        "Automated daily reports delivered via Telegram",
+        "Track multiple KOLs simultaneously with comparative analytics",
+        "Historical data retention for trend analysis",
+        "Bot farm detection through engagement pattern analysis",
+        "ROI measurement for crypto marketing campaigns"
+      ],
+      "technicalDetails": [
+        "Uses official X API v2 with OAuth authentication",
+        "Tracks likes, retweets, replies, impressions per tweet",
+        "Follower growth tracking with daily snapshots",
+        "Engagement rate calculations (interactions/followers)",
+        "Accessible via Telegram bot interface - no code required"
+      ],
+      "uniqueAngles": [
+        "Verify authentic community traction vs bot farms during accumulation phases",
+        "Measure actual ROI from KOL partnerships with verifiable data",
+        "Track influencer performance before/after partnership deals",
+        "Compare multiple KOL candidates using engagement metrics",
+        "Identify trending topics from top crypto influencers"
+      ]
+    },
+    "Fan Game Cube": {
+      "specificFeatures": [
+        "Digital field sections as NFTs - fans own specific field locations",
+        "Real-time point scoring system based on game events at owned locations",
+        "Machine learning integration for event detection and point allocation",
+        "Multi-sport support: football, chess, tennis, cricket, and more",
+        "Revenue-sharing model between clubs, fans, and platform",
+        "Gamified fan engagement through competitive point leaderboards",
+        "Expanding to iGaming sector with new partnerships"
+      ],
+      "technicalDetails": [
+        "NFT-based ownership on blockchain (immutable proof)",
+        "Real-time event detection via ML algorithms",
+        "Point accumulation system with reward tiers",
+        "Secondary marketplace for trading field sections",
+        "White-label solution for sports clubs and organizations"
+      ],
+      "uniqueAngles": [
+        "Creates new revenue stream for sports clubs through fan monetization",
+        "Fans earn rewards from real game events at their owned field locations",
+        "Bridges traditional sports with blockchain/NFT technology",
+        "Former athletes and influencers can launch their own fan cubes",
+        "Expanding beyond sports into iGaming (e.g., virtual slot machines, poker tables)"
+      ]
+    },
+    "Blockchain Hash": {
+      "specificFeatures": [
+        "Mutable on-chain database - update blockchain data after initial save",
+        "Key-value hash table storage model on blockchain",
+        "No wallet management required - BWS handles transactions",
+        "No gas fees for developers - included in API pricing",
+        "Simple REST API - single call to save/update data",
+        "Automatic transaction management and confirmation tracking",
+        "Data retrievable via blockchain explorer or API"
+      ],
+      "technicalDetails": [
+        "Hash table data structure on-chain (mutable storage)",
+        "BWS manages wallet keys and transaction signing",
+        "Gas fees abstracted away from developers",
+        "Data stored permanently on blockchain",
+        "Supports JSON, text, and binary data types"
+      ],
+      "uniqueAngles": [
+        "Unlike traditional blockchain, data can be updated after saving",
+        "Developers build blockchain apps without managing wallets or gas",
+        "Mutable database functionality with blockchain immutability proofs",
+        "Perfect for dynamic data that needs blockchain verification",
+        "Infrastructure layer for dApps without Web3 complexity"
+      ]
+    },
+    "NFT.zK": {
+      "specificFeatures": [
+        "Create NFT collections without blockchain expertise",
+        "Transfer NFTs to non-technical users (no wallet setup required)",
+        "Managed wallet infrastructure - BWS handles complexity",
+        "Bulk NFT minting with single API call",
+        "Metadata management and IPFS storage included",
+        "User-friendly claiming process for non-crypto users",
+        "White-label NFT platform for brands and creators"
+      ],
+      "technicalDetails": [
+        "Managed wallet system for end users",
+        "IPFS integration for metadata and media storage",
+        "Bulk minting capabilities for collections",
+        "Claim codes for easy NFT distribution",
+        "No gas fees for end users"
+      ],
+      "uniqueAngles": [
+        "Onboards non-crypto users to NFTs without wallet friction",
+        "Brands can distribute NFTs to customers seamlessly",
+        "Perfect for reward programs, event tickets, memberships",
+        "Removes technical barriers to NFT adoption",
+        "Enables NFT utility for mainstream audiences"
+      ]
+    },
+    "Blockchain Badges": {
+      "specificFeatures": [
+        "Issue verifiable digital credentials on blockchain",
+        "Immutable proof of achievements and certifications",
+        "Shareable across platforms with verification links",
+        "Visual badge designer with customizable templates",
+        "Bulk credential issuance for institutions",
+        "Expiration dates and revocation capabilities",
+        "Integration with existing LMS and HR systems"
+      ],
+      "technicalDetails": [
+        "Blockchain-backed credential verification",
+        "IPFS storage for badge metadata and images",
+        "Public verification URLs for instant authenticity checks",
+        "API and UI access for issuing/managing badges",
+        "Supports various credential types (certificates, licenses, memberships)"
+      ],
+      "uniqueAngles": [
+        "Combat credential fraud with immutable blockchain proof",
+        "Universities and companies issue tamper-proof certificates",
+        "Recipients control and share their verified achievements",
+        "Employers instantly verify candidate credentials",
+        "Perfect for professional certifications, course completions, skill endorsements"
+      ]
+    },
+    "ESG Credits": {
+      "specificFeatures": [
+        "Environmental impact reporting for financial institutions",
+        "Carbon footprint tracking and offset verification",
+        "Blockchain-verified sustainability claims",
+        "Integration with banking apps and digital channels",
+        "Real-time ESG metrics dashboard for institutions",
+        "Regulatory compliance reporting automation",
+        "Tokenized carbon credits on blockchain"
+      ],
+      "technicalDetails": [
+        "API integration for banks and fintech platforms",
+        "Blockchain verification of carbon offset purchases",
+        "Automated ESG reporting and compliance documentation",
+        "White-label solution for financial institutions",
+        "Data aggregation from multiple ESG data providers"
+      ],
+      "uniqueAngles": [
+        "Financial institutions meet regulatory ESG requirements",
+        "Banks offer verified sustainability features to customers",
+        "Blockchain ensures transparency in carbon offset claims",
+        "Institutional-grade ESG reporting infrastructure",
+        "Bridges traditional finance with environmental accountability"
+      ]
+    },
+    "BWS IPFS": {
+      "specificFeatures": [
+        "Decentralized file storage via IPFS network",
+        "Simple API for uploading images, JSON, documents",
+        "BWS-hosted IPFS gateway for reliable access",
+        "Content addressing - files referenced by hash",
+        "Redundant storage across IPFS network",
+        "No file size limits (within reason)",
+        "Permanent storage with blockchain integration"
+      ],
+      "technicalDetails": [
+        "IPFS protocol for decentralized storage",
+        "BWS gateway: reliable access point",
+        "Content-addressed storage (CID-based)",
+        "Automatic pinning service included",
+        "REST API for upload/retrieval"
+      ],
+      "uniqueAngles": [
+        "Decentralized storage without running your own IPFS node",
+        "Perfect for NFT metadata and media storage",
+        "Content cannot be censored or taken down",
+        "Files accessible even if BWS gateway is down (via IPFS network)",
+        "Infrastructure for permanent, tamper-proof content"
+      ]
+    },
+    "Blockchain Save": {
+      "specificFeatures": [
+        "Immutable data storage on blockchain (permanent records)",
+        "Certificate of Trust generation for every save operation",
+        "Document hash storage for tamper-proof verification",
+        "Audit trail creation with blockchain timestamps",
+        "No wallet management - BWS handles transactions",
+        "Public verification URLs for data authenticity",
+        "Perfect for legal documents, records, proofs"
+      ],
+      "technicalDetails": [
+        "Data written to blockchain permanently",
+        "Cryptographic hash verification",
+        "Transaction IDs for blockchain explorer lookup",
+        "Certificate of Trust with visual proof",
+        "Single API call for complete operation"
+      ],
+      "uniqueAngles": [
+        "Create tamper-proof records for legal compliance",
+        "Timestamp documents with blockchain immutability",
+        "Prove data existed at specific time (notarization)",
+        "Verify document authenticity without revealing contents",
+        "Infrastructure for transparent, auditable systems"
+      ]
+    }
+  },
+  "diversityGuidelines": {
+    "toneVariations": [
+      "Direct and factual: focus on specific features and technical capabilities",
+      "Problem-solution: identify pain point, then show how product solves it",
+      "Comparison-based: contrast with alternatives (bot farms vs verified data, centralized vs decentralized)",
+      "Use-case driven: describe specific scenario where product shines",
+      "Stats-focused: mention concrete metrics (% engagement, # of KOLs, etc.)"
+    ],
+    "structureVariations": [
+      "Lead with feature, then benefit",
+      "Lead with problem, then solution",
+      "Lead with use case, then technical detail",
+      "Lead with unique angle, then implementation",
+      "Lead with question/challenge, then answer with product"
+    ],
+    "avoidRepetition": [
+      "Don't start multiple replies with 'Agree on...' or 'Exactly...'",
+      "Vary product positioning: sometimes detailed feature, sometimes high-level platform",
+      "Rotate through different features of same product",
+      "Mix technical details with business benefits",
+      "Alternate between specific examples and general capabilities"
+    ]
+  }
+}

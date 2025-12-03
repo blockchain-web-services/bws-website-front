@@ -230,8 +230,24 @@ Provide JSON response:
   }
 }
 
+// Load product highlights once at module level
+let productHighlights = null;
+function loadProductHighlights() {
+  if (productHighlights) return productHighlights;
+
+  try {
+    const highlightsPath = path.join(process.cwd(), 'scripts/crawling/config/product-highlights.json');
+    const data = fs.readFileSync(highlightsPath, 'utf-8');
+    productHighlights = JSON.parse(data);
+    return productHighlights;
+  } catch (error) {
+    console.warn(`⚠️  Could not load product-highlights.json: ${error.message}`);
+    return { productHighlights: {}, diversityGuidelines: {} };
+  }
+}
+
 /**
- * Generate a reply to a tweet
+ * Generate a reply to a tweet with enhanced diversity and specific product features
  */
 export async function generateReplyText(client, tweet, kolProfile, product, evaluation, positioningPhrase = 'microcap opportunity with real fundamentals', recentReplies = [], specialNotes = '') {
   const useCasesText = product.useCases && Array.isArray(product.useCases) && product.useCases.length > 0
@@ -242,17 +258,28 @@ export async function generateReplyText(client, tweet, kolProfile, product, eval
     ? `\nHow it works:\n${product.implementationSteps.slice(0, 3).map(s => `- ${s.title || s.description || s}`).join('\n')}`
     : '';
 
-  const productInfo = `${product.description || product.name || 'BWS Product'}${useCasesText}${implementationText}
+  // Load product highlights for more specific features
+  const highlights = loadProductHighlights();
+  const productHighlight = highlights.productHighlights[product.name];
+
+  let specificFeaturesText = '';
+  if (productHighlight) {
+    const features = productHighlight.specificFeatures.slice(0, 5).map(f => `- ${f}`).join('\n');
+    const angles = productHighlight.uniqueAngles.slice(0, 3).map(a => `- ${a}`).join('\n');
+    specificFeaturesText = `\n\n**Specific ${product.name} Features** (use 1-2 of these for variety):\n${features}\n\n**Unique Positioning Angles**:\n${angles}`;
+  }
+
+  const productInfo = `${product.description || product.name || 'BWS Product'}${useCasesText}${implementationText}${specificFeaturesText}
 
 Documentation: ${product.url || 'https://docs.bws.ninja'}`;
 
   const specialNotesSection = specialNotes ? `\n\n${specialNotes}` : '';
 
-  // Build recent replies context for diversity
+  // Build recent replies context for diversity (last 10 replies)
   const recentRepliesContext = recentReplies.length > 0
-    ? `\n\n**RECENT REPLIES CONTEXT** (for diversity - avoid repeating these structures/phrases):\n${recentReplies.slice(0, 3).map((r, idx) =>
-      `${idx + 1}. Product: ${r.productMentioned} | Reply: "${r.replyText}"`
-    ).join('\n')}`
+    ? `\n\n**RECENT REPLIES CONTEXT** (CRITICAL - avoid these patterns/phrases/structures):\n${recentReplies.slice(0, 10).map((r, idx) =>
+      `${idx + 1}. [${r.timestamp ? new Date(r.timestamp).toLocaleDateString() : 'recent'}] Product: ${r.productMentioned}\n   Reply: "${r.replyText}"\n`
+    ).join('')}`
     : '';
 
   const prompt = `Generate a natural reply positioning BWS as a ${positioningPhrase}.
@@ -271,10 +298,29 @@ Context from Analysis:
 - Suggested Angle: ${evaluation.suggestedAngle}
 - Tweet Category: ${evaluation.tweetCategory}${recentRepliesContext}
 
+**CONTENT DIVERSITY REQUIREMENTS** (CRITICAL - read recent replies carefully):
+${recentReplies.length > 0 ? `
+You have ${recentReplies.length} recent replies above. Your NEW reply MUST:
+1. Use DIFFERENT opening phrases (don't start with same words as recent replies)
+2. Highlight DIFFERENT product features (pick specific features from the list, don't use generic statements)
+3. Use DIFFERENT sentence structures and flow
+4. Vary between problem-solution, feature-benefit, use-case, technical detail approaches
+5. Mix high-level platform positioning with specific technical capabilities
+
+**SPECIFIC vs GENERIC - USE SPECIFIC FEATURES**:
+❌ BAD (generic): "$BWS X Bot provides verifiable KOL analytics using official X API"
+✅ GOOD (specific): "$BWS X Bot tracks engagement rates across 100+ KOLs simultaneously with bot farm detection through pattern analysis"
+
+❌ BAD (generic): "$BWS Fan Game Cube creates revenue streams for sports clubs"
+✅ GOOD (specific): "Fans own digital field sections as NFTs - earn points when game events happen at their location, creating new monetization for clubs"
+
+USE THE SPECIFIC FEATURES LIST ABOVE - pick 1-2 unique features to highlight!
+` : 'Create a unique, engaging reply using specific product features from the list above.'}
+
 **POSITIONING STRATEGY**: Focus on the angle "${positioningPhrase}". Vary your approach based on:
 - The KOL's tweet context and sentiment
 - Recent replies (avoid repeating similar structures/products/phrases)
-- The specific BWS product's strengths
+- The specific BWS product's strengths and SPECIFIC FEATURES listed above
 - Natural conversation flow (don't force positioning if it doesn't fit)
 
 **CRITICAL: PLATFORM vs PRODUCT POSITIONING**
