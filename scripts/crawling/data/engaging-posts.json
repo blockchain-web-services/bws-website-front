@@ -5438,13 +5438,769 @@
       "expiresAt": "2025-12-10T12:56:10.848Z",
       "source": "timeline_monitor",
       "contentCategory": "market-trends"
+    },
+    {
+      "id": "1996214022866096235",
+      "text": "$BTC are we just going to smash through this region? A bit surprised if so. Also near the 200ema on the 4h, this is a scary area. Still think we eventually go higher though in the short term",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "retweet_count": 10,
+        "reply_count": 20,
+        "like_count": 74,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/AltcoinSherpa/status/1996214022866096235",
+      "processed": false,
+      "addedAt": "2025-12-03T17:52:41.401Z",
+      "expiresAt": "2025-12-10T17:52:41.401Z",
+      "source": "timeline_monitor",
+      "contentCategory": "technical-analysis"
+    },
+    {
+      "id": "1996211459567874507",
+      "text": "Being a professional crypto trader sounds fun until you realize you have no consistent income, you endure gigantic PNL swings, you are self employed and have no help with health insurance/401k/benefits, have to work 24/7, and are constantly on edge /never at peace",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "retweet_count": 21,
+        "reply_count": 42,
+        "like_count": 243,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/AltcoinSherpa/status/1996211459567874507",
+      "processed": false,
+      "addedAt": "2025-12-03T17:52:43.351Z",
+      "expiresAt": "2025-12-10T17:52:43.351Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "1996233211618439216",
+      "text": "UK FORMALLY RECOGNIZES CRYPTO & $BTC AS PROPERTY\n\nParliament has passed a new law giving cryptocurrencies and stablecoins the same legal footing as traditional assets.\n\n- Crypto and Bitcoin can now be owned, inherited, and recovered under UK law.\n- Industry groups say it",
+      "author": {
+        "id": "877357064724520961",
+        "username": "CryptosR_Us"
+      },
+      "public_metrics": {
+        "retweet_count": 30,
+        "reply_count": 28,
+        "like_count": 102,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptosR_Us/status/1996233211618439216",
+      "processed": false,
+      "addedAt": "2025-12-03T17:52:52.911Z",
+      "expiresAt": "2025-12-10T17:52:52.911Z",
+      "source": "timeline_monitor",
+      "contentCategory": "news"
+    },
+    {
+      "id": "1996203776105959656",
+      "text": "HAYABUSA $VET UPGRADE JUST WENT LIVE  \n\nVeChain’s Hayabusa upgrade is now live on mainnet and in its transition phase until Dec 9, 2025, reducing inflation and increasing staking to tighten supply: \n\n• VET no longer generates VTHO automatically ; only active stakers earn",
+      "author": {
+        "id": "877357064724520961",
+        "username": "CryptosR_Us"
+      },
+      "public_metrics": {
+        "retweet_count": 12,
+        "reply_count": 10,
+        "like_count": 57,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptosR_Us/status/1996203776105959656",
+      "processed": false,
+      "addedAt": "2025-12-03T17:52:54.862Z",
+      "expiresAt": "2025-12-10T17:52:54.862Z",
+      "source": "timeline_monitor",
+      "contentCategory": "project-discussion"
+    },
+    {
+      "id": "1996173946006446269",
+      "text": "ANALYST SAYS MOST ETH MODELS SHOW $ETH IS UNDERVALUED\n\nThis latest valuation breakdown indicates Ethereum is likely undervalued and momentum could be building.\n\n- 9 of 12 models show $ETH should be higher than $3,000  \n- Average “fair value” across models: $4,836 (+58%) \n- Some",
+      "author": {
+        "id": "877357064724520961",
+        "username": "CryptosR_Us"
+      },
+      "public_metrics": {
+        "retweet_count": 33,
+        "reply_count": 23,
+        "like_count": 156,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptosR_Us/status/1996173946006446269",
+      "processed": false,
+      "addedAt": "2025-12-03T17:52:56.882Z",
+      "expiresAt": "2025-12-10T17:52:56.882Z",
+      "source": "timeline_monitor",
+      "contentCategory": "price-speculation/technical-analysis"
+    },
+    {
+      "id": "1996143878722781681",
+      "text": "CRYPTO TREASURIES LEAD DECEMBER STOCK RECOVERY  \n\nDigital Asset Treasuries (DATs), companies holding large amounts of $BTC and $ETH on their balance sheets,  are driving a market rebound after a rough start to December.  \n\nNasdaq-listed EthZilla ( $ETHZ ) jumped 12.35% to",
+      "author": {
+        "id": "877357064724520961",
+        "username": "CryptosR_Us"
+      },
+      "public_metrics": {
+        "retweet_count": 29,
+        "reply_count": 28,
+        "like_count": 113,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptosR_Us/status/1996143878722781681",
+      "processed": false,
+      "addedAt": "2025-12-03T17:52:58.995Z",
+      "expiresAt": "2025-12-10T17:52:58.995Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "1996112171923571067",
+      "text": "Many in the Layer 2 community have been reacting very positively to this update. \n\nThe general feeling is that it brings a calm and confident view of the market, something rare in a space often full of noise and hype. \n\nThe update gives a clear sense of direction, and many see it",
+      "author": {
+        "id": "crawlee_search_crypt0_defi",
+        "username": "Crypt0_DeFi"
+      },
+      "public_metrics": {
+        "retweet_count": 49,
+        "reply_count": 51,
+        "like_count": 79,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/Crypt0_DeFi/status/1996112171923571067",
+      "processed": false,
+      "addedAt": "2025-12-03T17:53:35.008Z",
+      "expiresAt": "2025-12-10T17:53:35.008Z",
+      "source": "timeline_monitor",
+      "contentCategory": "project-discussion"
+    },
+    {
+      "id": "1996251871573631153",
+      "text": "My exact Bitcoin trading game plan:\n\nShort and long options are open.\n\nMake sure to claim your 50% deposit bonus on Weex before you trade.",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "retweet_count": 51,
+        "reply_count": 69,
+        "like_count": 214,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoRover/status/1996251871573631153",
+      "processed": false,
+      "addedAt": "2025-12-03T17:53:56.383Z",
+      "expiresAt": "2025-12-10T17:53:56.383Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "1996249922899726749",
+      "text": "BREAKING:\n\n$12 TRILLION BLACKROCK SAYS US NATIONAL DEBT WILL ACCELERATE CRYPTO ADOPTION.",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "retweet_count": 123,
+        "reply_count": 119,
+        "like_count": 786,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoRover/status/1996249922899726749",
+      "processed": false,
+      "addedAt": "2025-12-03T17:53:58.277Z",
+      "expiresAt": "2025-12-10T17:53:58.277Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "1996248813971894615",
+      "text": "GSG tracks real commodities.\n\nBTC/GSG shows Bitcoin’s real growth without the dollar noise.\n\nWhen the ratio hits new highs, one bitcoin buys more actual stuff, oil, copper, wheat, you name it.\n\nStill firmly on support now.",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "retweet_count": 30,
+        "reply_count": 71,
+        "like_count": 167,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoRover/status/1996248813971894615",
+      "processed": false,
+      "addedAt": "2025-12-03T17:54:02.108Z",
+      "expiresAt": "2025-12-10T17:54:02.108Z",
+      "source": "timeline_monitor",
+      "contentCategory": "technical-analysis"
+    },
+    {
+      "id": "1996237488596369841",
+      "text": "BITCOIN SUPPLY SHOCK SOON!",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "retweet_count": 94,
+        "reply_count": 130,
+        "like_count": 593,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoRover/status/1996237488596369841",
+      "processed": false,
+      "addedAt": "2025-12-03T17:54:03.282Z",
+      "expiresAt": "2025-12-10T17:54:03.282Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "1996229059731415087",
+      "text": "CRYPTO MARKET IS PUMPING",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "retweet_count": 284,
+        "reply_count": 290,
+        "like_count": 1851,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoRover/status/1996229059731415087",
+      "processed": false,
+      "addedAt": "2025-12-03T17:54:07.684Z",
+      "expiresAt": "2025-12-10T17:54:07.684Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "1996228429209825521",
+      "text": "$ETH performance after major upgrades is mixed.",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "retweet_count": 48,
+        "reply_count": 70,
+        "like_count": 262,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoRover/status/1996228429209825521",
+      "processed": false,
+      "addedAt": "2025-12-03T17:54:09.834Z",
+      "expiresAt": "2025-12-10T17:54:09.834Z",
+      "source": "timeline_monitor",
+      "contentCategory": "project-discussion"
+    },
+    {
+      "id": "1996226441692713407",
+      "text": "BREAKING:\n\nTOM LEE: YEAR-END RALLY IS COMING\n\nDESPITE A BRUTAL SIX WEEKS, TOM LEE SAYS A STRONG DECEMBER RALLY IS ON DECK, BACKED BY A DOVISH INCOMING FED PIVOT.",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "retweet_count": 124,
+        "reply_count": 107,
+        "like_count": 873,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoRover/status/1996226441692713407",
+      "processed": false,
+      "addedAt": "2025-12-03T17:54:11.475Z",
+      "expiresAt": "2025-12-10T17:54:11.475Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "1995956770301526152",
+      "text": "Ran my account balance down from $50K to $450 in the first 12 hours of Season 2 of the SNX Trading Compettion.\n\nSomehow have managed to pull off more than a 100X on my account balance in the past six hours to get back to break even lmfao.",
+      "author": {
+        "id": "906234475604037637",
+        "username": "CryptoKaleo"
+      },
+      "public_metrics": {
+        "retweet_count": 37,
+        "reply_count": 73,
+        "like_count": 189,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoKaleo/status/1995956770301526152",
+      "processed": false,
+      "addedAt": "2025-12-03T17:56:02.011Z",
+      "expiresAt": "2025-12-10T17:56:02.011Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "1996173692116906139",
+      "text": "Binance announced the launch of Binance Junior, a parent-controlled crypto sub-account app designed for children and teens aged 6 to 17. Parents must be existing Binance users who have completed KYC verification and enabled Two-Factor Authentication (2FA) to create a Binance",
+      "author": {
+        "id": "111533746",
+        "username": "WuBlockchain"
+      },
+      "public_metrics": {
+        "retweet_count": 26,
+        "reply_count": 8,
+        "like_count": 65,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/WuBlockchain/status/1996173692116906139",
+      "processed": false,
+      "addedAt": "2025-12-03T17:56:13.072Z",
+      "expiresAt": "2025-12-10T17:56:13.072Z",
+      "source": "timeline_monitor",
+      "contentCategory": "project-discussion"
+    },
+    {
+      "id": "1996124845789020448",
+      "text": "Binance announced at its December 3 Blockchain Week event that co-founder He Yi has been appointed Co-CEO. Binance said He Yi has long been involved in company management and will work alongside current Co-CEO Richard Teng to advance business expansion, product innovation, and",
+      "author": {
+        "id": "111533746",
+        "username": "WuBlockchain"
+      },
+      "public_metrics": {
+        "retweet_count": 19,
+        "reply_count": 24,
+        "like_count": 59,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/WuBlockchain/status/1996124845789020448",
+      "processed": false,
+      "addedAt": "2025-12-03T17:56:19.766Z",
+      "expiresAt": "2025-12-10T17:56:19.766Z",
+      "source": "timeline_monitor",
+      "contentCategory": "news"
+    },
+    {
+      "id": "1996089066182582705",
+      "text": "On December 2nd (ET), Bitcoin spot ETFs recorded a total net inflow of $58.5 million, marking the 5th consecutive day of net inflows. Ethereum spot ETFs saw a total net outflow of $9.9 million, while Solana spot ETFs experienced a total net inflow of $45.8 million.",
+      "author": {
+        "id": "111533746",
+        "username": "WuBlockchain"
+      },
+      "public_metrics": {
+        "retweet_count": 10,
+        "reply_count": 9,
+        "like_count": 66,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/WuBlockchain/status/1996089066182582705",
+      "processed": false,
+      "addedAt": "2025-12-03T17:56:20.849Z",
+      "expiresAt": "2025-12-10T17:56:20.849Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "1996164124800131285",
+      "text": "Do not sleep on $DAM , it will go soon .",
+      "author": {
+        "id": "crawlee_search_bitcoinhabebe",
+        "username": "Bitcoinhabebe"
+      },
+      "public_metrics": {
+        "retweet_count": 22,
+        "reply_count": 16,
+        "like_count": 86,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/Bitcoinhabebe/status/1996164124800131285",
+      "processed": false,
+      "addedAt": "2025-12-03T17:58:53.503Z",
+      "expiresAt": "2025-12-10T17:58:53.503Z",
+      "source": "timeline_monitor",
+      "contentCategory": "price-speculation"
+    },
+    {
+      "id": "1996255356616655277",
+      "text": "Crypto & Blockchain News – Dec 3, 2025\n\n Bitcoin Volume Surpasses Tech Giants\nMichael Saylor highlighted Bitcoin’s $20–100B daily trading, beating Google & Microsoft and far above the U.S. Navy’s $700M daily spend.\nInstitutional interest grows with BlackRock, Goldman Sachs, and",
+      "author": {
+        "id": "crawlee_search_cryptopatel",
+        "username": "CryptoPatel"
+      },
+      "public_metrics": {
+        "retweet_count": 11,
+        "reply_count": 11,
+        "like_count": 127,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoPatel/status/1996255356616655277",
+      "processed": false,
+      "addedAt": "2025-12-03T17:59:46.313Z",
+      "expiresAt": "2025-12-10T17:59:46.313Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "1996240510227280132",
+      "text": "LATEST: FRANKLIN TEMPLETON ANNOUNCES ITS SOLANA ETF IS NOW LIVE",
+      "author": {
+        "id": "crawlee_search_cryptopatel",
+        "username": "CryptoPatel"
+      },
+      "public_metrics": {
+        "retweet_count": 11,
+        "reply_count": 12,
+        "like_count": 145,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoPatel/status/1996240510227280132",
+      "processed": false,
+      "addedAt": "2025-12-03T17:59:49.178Z",
+      "expiresAt": "2025-12-10T17:59:49.178Z",
+      "source": "timeline_monitor",
+      "contentCategory": "news"
+    },
+    {
+      "id": "1996225409042534779",
+      "text": "The $C98 Horror Story You NEED to See\n\nFrom $6.44 → $0.027\n -91% in 1 year\n -68% in 2 months\n 99.6% from ATH\n\n$1,000 invested at the ATH = Less than $4 Today.\n\nCrypto isn’t just risky… it’s a meme-level nightmare.\n\n@coin98_wallet",
+      "author": {
+        "id": "crawlee_search_cryptopatel",
+        "username": "CryptoPatel"
+      },
+      "public_metrics": {
+        "retweet_count": 14,
+        "reply_count": 12,
+        "like_count": 168,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoPatel/status/1996225409042534779",
+      "processed": false,
+      "addedAt": "2025-12-03T17:59:50.401Z",
+      "expiresAt": "2025-12-10T17:59:50.401Z",
+      "source": "timeline_monitor",
+      "contentCategory": "altcoin-talk"
+    },
+    {
+      "id": "1996210058309275994",
+      "text": "Binance launches \"Binance Junior,\" a parent-controlled crypto savings account for kids and teens.",
+      "author": {
+        "id": "crawlee_search_cryptopatel",
+        "username": "CryptoPatel"
+      },
+      "public_metrics": {
+        "retweet_count": 14,
+        "reply_count": 11,
+        "like_count": 157,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoPatel/status/1996210058309275994",
+      "processed": false,
+      "addedAt": "2025-12-03T17:59:52.221Z",
+      "expiresAt": "2025-12-10T17:59:52.221Z",
+      "source": "timeline_monitor",
+      "contentCategory": "project-discussion/news"
+    },
+    {
+      "id": "1996235944614396266",
+      "text": "Manifesting $10,000 Ethereum",
+      "author": {
+        "id": "935742315389444096",
+        "username": "CryptoWendyO"
+      },
+      "public_metrics": {
+        "retweet_count": 10,
+        "reply_count": 19,
+        "like_count": 85,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoWendyO/status/1996235944614396266",
+      "processed": false,
+      "addedAt": "2025-12-03T18:00:02.561Z",
+      "expiresAt": "2025-12-10T18:00:02.561Z",
+      "source": "timeline_monitor",
+      "contentCategory": "price-speculation"
+    },
+    {
+      "id": "1996235174431105081",
+      "text": "Thank you @KitcoNewsNOW for inviting me on to discuss @Vanguard_Group giving their clients access to Crypto and Bitcoin ETFs! \n\n$HBAR $XRP $SOL",
+      "author": {
+        "id": "935742315389444096",
+        "username": "CryptoWendyO"
+      },
+      "public_metrics": {
+        "retweet_count": 16,
+        "reply_count": 30,
+        "like_count": 168,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoWendyO/status/1996235174431105081",
+      "processed": false,
+      "addedAt": "2025-12-03T18:00:04.742Z",
+      "expiresAt": "2025-12-10T18:00:04.742Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "1996197411900006885",
+      "text": "NEW: Hedera has entered a Memorandum of Understanding with Georgia’s Ministry of Justice to bring its tech into key areas of the country’s public sector",
+      "author": {
+        "id": "935742315389444096",
+        "username": "CryptoWendyO"
+      },
+      "public_metrics": {
+        "retweet_count": 30,
+        "reply_count": 50,
+        "like_count": 122,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoWendyO/status/1996197411900006885",
+      "processed": false,
+      "addedAt": "2025-12-03T18:00:06.097Z",
+      "expiresAt": "2025-12-10T18:00:06.097Z",
+      "source": "timeline_monitor",
+      "contentCategory": "project-discussion"
+    },
+    {
+      "id": "1996250141616226637",
+      "text": "A call to all my copy-trade members:\n\nAs long as you don’t withdraw money externally, you will lose money. Always make withdrawals.\n\nThose who follow me have reached at least 5x. PLEASE MAKE PROFIT WITHDRAWALS!\n\nI love and care about you all.",
+      "author": {
+        "id": "crawlee_search_nihilusbtc",
+        "username": "NihilusBTC"
+      },
+      "public_metrics": {
+        "retweet_count": 13,
+        "reply_count": 29,
+        "like_count": 61,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/NihilusBTC/status/1996250141616226637",
+      "processed": false,
+      "addedAt": "2025-12-03T18:00:18.053Z",
+      "expiresAt": "2025-12-10T18:00:18.053Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "1996247007287971987",
+      "text": "$OPEN | Open long, thank me later.",
+      "author": {
+        "id": "crawlee_search_nihilusbtc",
+        "username": "NihilusBTC"
+      },
+      "public_metrics": {
+        "retweet_count": 15,
+        "reply_count": 34,
+        "like_count": 68,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/NihilusBTC/status/1996247007287971987",
+      "processed": false,
+      "addedAt": "2025-12-03T18:00:19.034Z",
+      "expiresAt": "2025-12-10T18:00:19.034Z",
+      "source": "timeline_monitor",
+      "contentCategory": "price-speculation"
+    },
+    {
+      "id": "1996232012332511421",
+      "text": "$CLO |  30m BREAKOUT!",
+      "author": {
+        "id": "crawlee_search_nihilusbtc",
+        "username": "NihilusBTC"
+      },
+      "public_metrics": {
+        "retweet_count": 11,
+        "reply_count": 29,
+        "like_count": 58,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/NihilusBTC/status/1996232012332511421",
+      "processed": false,
+      "addedAt": "2025-12-03T18:00:20.844Z",
+      "expiresAt": "2025-12-10T18:00:20.844Z",
+      "source": "timeline_monitor",
+      "contentCategory": "price-speculation"
+    },
+    {
+      "id": "1996218781744419327",
+      "text": "$LAB\n$AXS\n\nAdd more long",
+      "author": {
+        "id": "crawlee_search_nihilusbtc",
+        "username": "NihilusBTC"
+      },
+      "public_metrics": {
+        "retweet_count": 14,
+        "reply_count": 37,
+        "like_count": 68,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/NihilusBTC/status/1996218781744419327",
+      "processed": false,
+      "addedAt": "2025-12-03T18:00:23.339Z",
+      "expiresAt": "2025-12-10T18:00:23.339Z",
+      "source": "timeline_monitor",
+      "contentCategory": "altcoin-talk"
+    },
+    {
+      "id": "1996211639415193930",
+      "text": "$SKYAI | Nice pump.",
+      "author": {
+        "id": "crawlee_search_nihilusbtc",
+        "username": "NihilusBTC"
+      },
+      "public_metrics": {
+        "retweet_count": 13,
+        "reply_count": 32,
+        "like_count": 63,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/NihilusBTC/status/1996211639415193930",
+      "processed": false,
+      "addedAt": "2025-12-03T18:00:26.187Z",
+      "expiresAt": "2025-12-10T18:00:26.187Z",
+      "source": "timeline_monitor",
+      "contentCategory": "price-speculation"
+    },
+    {
+      "id": "1996211045665300559",
+      "text": "$LAB | Longed.\n\nBREAKOUT",
+      "author": {
+        "id": "crawlee_search_nihilusbtc",
+        "username": "NihilusBTC"
+      },
+      "public_metrics": {
+        "retweet_count": 16,
+        "reply_count": 34,
+        "like_count": 67,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/NihilusBTC/status/1996211045665300559",
+      "processed": false,
+      "addedAt": "2025-12-03T18:00:27.171Z",
+      "expiresAt": "2025-12-10T18:00:27.171Z",
+      "source": "timeline_monitor",
+      "contentCategory": "altcoin-talk"
+    },
+    {
+      "id": "1996201138476273863",
+      "text": "$AXS | Weekly bottom.\n\nSend higher.",
+      "author": {
+        "id": "crawlee_search_nihilusbtc",
+        "username": "NihilusBTC"
+      },
+      "public_metrics": {
+        "retweet_count": 19,
+        "reply_count": 42,
+        "like_count": 87,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/NihilusBTC/status/1996201138476273863",
+      "processed": false,
+      "addedAt": "2025-12-03T18:00:30.527Z",
+      "expiresAt": "2025-12-10T18:00:30.527Z",
+      "source": "timeline_monitor",
+      "contentCategory": "technical-analysis"
+    },
+    {
+      "id": "1996198046263325125",
+      "text": "$AXS | Longed more.",
+      "author": {
+        "id": "crawlee_search_nihilusbtc",
+        "username": "NihilusBTC"
+      },
+      "public_metrics": {
+        "retweet_count": 19,
+        "reply_count": 26,
+        "like_count": 68,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/NihilusBTC/status/1996198046263325125",
+      "processed": false,
+      "addedAt": "2025-12-03T18:00:31.383Z",
+      "expiresAt": "2025-12-10T18:00:31.383Z",
+      "source": "timeline_monitor",
+      "contentCategory": "altcoin-talk"
+    },
+    {
+      "id": "1996175726421463386",
+      "text": "$EUL\n$AXS\n\nLong more.",
+      "author": {
+        "id": "crawlee_search_nihilusbtc",
+        "username": "NihilusBTC"
+      },
+      "public_metrics": {
+        "retweet_count": 16,
+        "reply_count": 41,
+        "like_count": 80,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/NihilusBTC/status/1996175726421463386",
+      "processed": false,
+      "addedAt": "2025-12-03T18:00:33.744Z",
+      "expiresAt": "2025-12-10T18:00:33.744Z",
+      "source": "timeline_monitor",
+      "contentCategory": "altcoin-talk"
+    },
+    {
+      "id": "1996174056807358466",
+      "text": "$EUL | HUGE BREAKOUT!\n\nTake it early.",
+      "author": {
+        "id": "crawlee_search_nihilusbtc",
+        "username": "NihilusBTC"
+      },
+      "public_metrics": {
+        "retweet_count": 19,
+        "reply_count": 38,
+        "like_count": 87,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/NihilusBTC/status/1996174056807358466",
+      "processed": false,
+      "addedAt": "2025-12-03T18:00:35.331Z",
+      "expiresAt": "2025-12-10T18:00:35.331Z",
+      "source": "timeline_monitor",
+      "contentCategory": "altcoin-talk"
     }
   ],
   "metadata": {
-    "lastUpdated": "2025-12-03T12:56:10.848Z",
-    "totalPosts": 269,
+    "lastUpdated": "2025-12-03T18:00:54.811Z",
+    "totalPosts": 295,
     "bySource": {
-      "timeline_monitor": 269,
+      "timeline_monitor": 295,
       "search_discovery": 0
     }
   },
