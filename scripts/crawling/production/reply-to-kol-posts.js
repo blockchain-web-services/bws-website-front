@@ -268,39 +268,18 @@ async function replyToKolPosts() {
 
   if (!dryRun) {
     try {
-      // Try primary account (@BWSXAI) first
-      const result = createReadWriteClient(false);
+      // Use @BWSCommunity account directly (primary @BWSXAI tokens expired)
+      console.log('   🔄 Using @BWSCommunity account for posting...');
+      const result = createReadWriteClient(true);  // Use fallback=true
       writeClient = result.client;
       accountName = result.accountName;
+      usingFallback = true;
       console.log(`✅ [${Math.round((Date.now() - scriptStartTime) / 1000)}s] Write client initialized (${accountName})\n`);
-
-      // Also initialize fallback client for 403 error recovery
-      try {
-        const fallbackResult = createReadWriteClient(true);
-        fallbackClient = fallbackResult.client;
-        fallbackAccountName = fallbackResult.accountName;
-        console.log(`✅ [${Math.round((Date.now() - scriptStartTime) / 1000)}s] Fallback client ready (${fallbackAccountName})\n`);
-      } catch (fallbackInitError) {
-        console.warn(`⚠️  Fallback client not available: ${fallbackInitError.message}`);
-      }
-    } catch (primaryError) {
-      console.warn('⚠️  Failed to initialize primary write client (@BWSXAI).');
-      console.warn(`   Error: ${primaryError.message}`);
-
-      // Try fallback account (@BWSCommunity)
-      try {
-        console.log('   🔄 Attempting fallback to @BWSCommunity account...');
-        const fallbackResult = createReadWriteClient(true);
-        writeClient = fallbackResult.client;
-        accountName = fallbackResult.accountName;
-        usingFallback = true;
-        console.log(`✅ [${Math.round((Date.now() - scriptStartTime) / 1000)}s] Fallback write client initialized (${accountName})\n`);
-      } catch (fallbackError) {
-        console.error('❌ Failed to initialize fallback write client.');
-        console.error(`   Error: ${fallbackError.message}\n`);
-        console.error('   Cannot continue without write client for posting replies.');
-        process.exit(1);
-      }
+    } catch (error) {
+      console.error('❌ Failed to initialize write client.');
+      console.error(`   Error: ${error.message}\n`);
+      console.error('   Cannot continue without write client for posting replies.');
+      process.exit(1);
     }
   }
 
