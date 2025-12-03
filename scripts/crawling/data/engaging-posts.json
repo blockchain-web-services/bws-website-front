@@ -4749,13 +4749,475 @@
       "expiresAt": "2025-12-09T22:19:37.101Z",
       "source": "timeline_monitor",
       "contentCategory": "news"
+    },
+    {
+      "id": "1995914954122428834",
+      "text": "According to Reuters, a group of 10 European banks including ING, UniCredit and BNP Paribas has formed a new company, Qivalis, to launch a euro-denominated stablecoin in the second half of 2026, aiming to counter the U.S. dominance in digital payments. Qivalis is applying for an",
+      "author": {
+        "id": "111533746",
+        "username": "WuBlockchain"
+      },
+      "public_metrics": {
+        "retweet_count": 26,
+        "reply_count": 7,
+        "like_count": 56,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/WuBlockchain/status/1995914954122428834",
+      "processed": false,
+      "addedAt": "2025-12-03T07:24:52.080Z",
+      "expiresAt": "2025-12-10T07:24:52.080Z",
+      "source": "timeline_monitor",
+      "contentCategory": "project-discussion"
+    },
+    {
+      "id": "1994455703134580867",
+      "text": "yup, 93-94k \n\nNot sure whats next now. We'll see. Dont know",
+      "author": {
+        "id": "1138993163706753029",
+        "username": "Pentosh1"
+      },
+      "public_metrics": {
+        "retweet_count": 23,
+        "reply_count": 36,
+        "like_count": 188,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/Pentosh1/status/1994455703134580867",
+      "processed": false,
+      "addedAt": "2025-12-03T07:25:31.641Z",
+      "expiresAt": "2025-12-10T07:25:31.641Z",
+      "source": "timeline_monitor",
+      "contentCategory": "price-speculation"
+    },
+    {
+      "id": "1995273151618392076",
+      "text": "Sometimes the market slows down and people panic before they even stop to think. In crypto, these quieter moments often reveal the real opportunities, the ones that don’t make noise but still carry solid value behind them.\n\nRight now, that is exactly how BitDCA ($BDCA",
+      "author": {
+        "id": "crawlee_search_crypt0_defi",
+        "username": "Crypt0_DeFi"
+      },
+      "public_metrics": {
+        "retweet_count": 83,
+        "reply_count": 71,
+        "like_count": 138,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/Crypt0_DeFi/status/1995273151618392076",
+      "processed": false,
+      "addedAt": "2025-12-03T07:26:14.381Z",
+      "expiresAt": "2025-12-10T07:26:14.381Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "1995271319001161956",
+      "text": "The @alliancegamesx Node ecosystem is entering a new phase, and this marks a major turning point for the entire Arcade. Nodes are no longer simple background infrastructure. They are becoming the backbone of a future where gamers, creators, and studios have real control over the",
+      "author": {
+        "id": "crawlee_search_crypt0_defi",
+        "username": "Crypt0_DeFi"
+      },
+      "public_metrics": {
+        "retweet_count": 20,
+        "reply_count": 36,
+        "like_count": 53,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/Crypt0_DeFi/status/1995271319001161956",
+      "processed": false,
+      "addedAt": "2025-12-03T07:26:15.596Z",
+      "expiresAt": "2025-12-10T07:26:15.596Z",
+      "source": "timeline_monitor",
+      "contentCategory": "project-discussion"
+    },
+    {
+      "id": "1996100780018069691",
+      "text": "REMINDER: \n\n$ETH FUSAKA GOES LIVE TONIGHT    \n\nMainnet activates at 21:49 UTC (slot 13,164,544).",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "retweet_count": 56,
+        "reply_count": 90,
+        "like_count": 382,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoRover/status/1996100780018069691",
+      "processed": false,
+      "addedAt": "2025-12-03T07:28:47.826Z",
+      "expiresAt": "2025-12-10T07:28:47.826Z",
+      "source": "timeline_monitor",
+      "contentCategory": "project-discussion"
+    },
+    {
+      "id": "1996081837144506385",
+      "text": "THIS IS WHY #BITCOIN PUMPED!!!!!\n\nWatch NOW:\nhttps://youtu.be/p2LVp10kcqw",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "retweet_count": 14,
+        "reply_count": 37,
+        "like_count": 104,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoRover/status/1996081837144506385",
+      "processed": false,
+      "addedAt": "2025-12-03T07:28:53.636Z",
+      "expiresAt": "2025-12-10T07:28:53.636Z",
+      "source": "timeline_monitor",
+      "contentCategory": "price-speculation"
+    },
+    {
+      "id": "1996069814058860550",
+      "text": "BREAKING:\n\n BlackRock buys $119.66 million worth of Bitcoin.",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "retweet_count": 109,
+        "reply_count": 145,
+        "like_count": 762,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoRover/status/1996069814058860550",
+      "processed": false,
+      "addedAt": "2025-12-03T07:28:55.655Z",
+      "expiresAt": "2025-12-10T07:28:55.655Z",
+      "source": "timeline_monitor",
+      "contentCategory": "news"
+    },
+    {
+      "id": "1996053003686609087",
+      "text": "BREAKING:\n\n EUROPEAN CENTRAL BANK PRESIDENT CHRISTINE LAGARDE SAYS BITCOIN HAS “NO INTRINSIC VALUE.”\n\nTHE EU ISN’T JUST FALLING BEHIND IN AI, IT’S ALSO LOSING THE CRYPTO RACE WITH STANCES LIKE THIS.",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "retweet_count": 99,
+        "reply_count": 148,
+        "like_count": 641,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoRover/status/1996053003686609087",
+      "processed": false,
+      "addedAt": "2025-12-03T07:29:01.371Z",
+      "expiresAt": "2025-12-10T07:29:01.371Z",
+      "source": "timeline_monitor",
+      "contentCategory": "news"
+    },
+    {
+      "id": "1996049891035152499",
+      "text": "BREAKING:\n\n$365,000,000 WORTH OF CRYPTO SHORTS LIQUIDATED IN THE PAST 24 HOURS.",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "retweet_count": 46,
+        "reply_count": 87,
+        "like_count": 411,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoRover/status/1996049891035152499",
+      "processed": false,
+      "addedAt": "2025-12-03T07:29:02.993Z",
+      "expiresAt": "2025-12-10T07:29:02.993Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "1995976273731223683",
+      "text": "Ripple’s RLUSD surpassed $1B in circulating supply, with more than 80% now issued on Ethereum.\n\nMost RLUSD on Ethereum is held in Aave for yield, and despite growth, boosted by Ripple’s Rail acquisition, RLUSD remains smaller than USDT and USDC.\n\nSource: The Defiant",
+      "author": {
+        "id": "935742315389444096",
+        "username": "CryptoWendyO"
+      },
+      "public_metrics": {
+        "retweet_count": 18,
+        "reply_count": 22,
+        "like_count": 83,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoWendyO/status/1995976273731223683",
+      "processed": false,
+      "addedAt": "2025-12-03T07:30:00.878Z",
+      "expiresAt": "2025-12-10T07:30:00.879Z",
+      "source": "timeline_monitor",
+      "contentCategory": "project-discussion"
+    },
+    {
+      "id": "1996110577949655424",
+      "text": "$EUL add long @ 4.28\n\nRT for chart and targets.",
+      "author": {
+        "id": "crawlee_search_nihilusbtc",
+        "username": "NihilusBTC"
+      },
+      "public_metrics": {
+        "retweet_count": 23,
+        "reply_count": 32,
+        "like_count": 60,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/NihilusBTC/status/1996110577949655424",
+      "processed": false,
+      "addedAt": "2025-12-03T07:30:13.110Z",
+      "expiresAt": "2025-12-10T07:30:13.110Z",
+      "source": "timeline_monitor",
+      "contentCategory": "technical-analysis"
+    },
+    {
+      "id": "1996109259189166159",
+      "text": "$NAORIS | +50%",
+      "author": {
+        "id": "crawlee_search_nihilusbtc",
+        "username": "NihilusBTC"
+      },
+      "public_metrics": {
+        "retweet_count": 11,
+        "reply_count": 37,
+        "like_count": 60,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/NihilusBTC/status/1996109259189166159",
+      "processed": false,
+      "addedAt": "2025-12-03T07:30:15.096Z",
+      "expiresAt": "2025-12-10T07:30:15.096Z",
+      "source": "timeline_monitor",
+      "contentCategory": "price-speculation"
+    },
+    {
+      "id": "1995940205308903655",
+      "text": "$UAI | Retest done, longed more.",
+      "author": {
+        "id": "crawlee_search_nihilusbtc",
+        "username": "NihilusBTC"
+      },
+      "public_metrics": {
+        "retweet_count": 16,
+        "reply_count": 40,
+        "like_count": 95,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/NihilusBTC/status/1995940205308903655",
+      "processed": false,
+      "addedAt": "2025-12-03T07:30:21.095Z",
+      "expiresAt": "2025-12-10T07:30:21.095Z",
+      "source": "timeline_monitor",
+      "contentCategory": "price-speculation"
+    },
+    {
+      "id": "1995909732826058865",
+      "text": "$UAI \n\nLonged at current market price.",
+      "author": {
+        "id": "crawlee_search_nihilusbtc",
+        "username": "NihilusBTC"
+      },
+      "public_metrics": {
+        "retweet_count": 22,
+        "reply_count": 48,
+        "like_count": 100,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/NihilusBTC/status/1995909732826058865",
+      "processed": false,
+      "addedAt": "2025-12-03T07:30:24.124Z",
+      "expiresAt": "2025-12-10T07:30:24.124Z",
+      "source": "timeline_monitor",
+      "contentCategory": "price-speculation"
+    },
+    {
+      "id": "1995832605909156194",
+      "text": "If people only knew what $ICE has in store and why i am so confident in their vision they will drop everything & go all in.",
+      "author": {
+        "id": "crawlee_search_bitcoinhabebe",
+        "username": "Bitcoinhabebe"
+      },
+      "public_metrics": {
+        "retweet_count": 12,
+        "reply_count": 13,
+        "like_count": 134,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/Bitcoinhabebe/status/1995832605909156194",
+      "processed": false,
+      "addedAt": "2025-12-03T07:31:43.291Z",
+      "expiresAt": "2025-12-10T07:31:43.291Z",
+      "source": "timeline_monitor",
+      "contentCategory": "project-discussion"
+    },
+    {
+      "id": "1996081964890083618",
+      "text": "WALL STREET ISN’T PRETENDING ANYMORE\n\nAfter BlackRock embraced Bitcoin, JPMorgan is now dipping its toes too -- speaking on CNBC to position $BTC as a market indicator and subtly warming up its audience.\n\nThis is how Wall Street moves:\nFirst they ignore it, then they fight it,",
+      "author": {
+        "id": "877357064724520961",
+        "username": "CryptosR_Us"
+      },
+      "public_metrics": {
+        "retweet_count": 35,
+        "reply_count": 25,
+        "like_count": 220,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptosR_Us/status/1996081964890083618",
+      "processed": false,
+      "addedAt": "2025-12-03T07:32:03.387Z",
+      "expiresAt": "2025-12-10T07:32:03.387Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "1996022824432013713",
+      "text": "THE CLIP VANGUARD DOESN’T WANT YOU TO REMEMBER\n\nThrowback to when Vanguard said Bitcoin “doesn’t belong in a long-term portfolio,” “isn’t a store of value,” and is “too volatile for retirement accounts.”\n\nToday? They just opened their platform to $BTC, $ETH, $XRP, and $SOL ETFs",
+      "author": {
+        "id": "877357064724520961",
+        "username": "CryptosR_Us"
+      },
+      "public_metrics": {
+        "retweet_count": 36,
+        "reply_count": 26,
+        "like_count": 174,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptosR_Us/status/1996022824432013713",
+      "processed": false,
+      "addedAt": "2025-12-03T07:32:07.319Z",
+      "expiresAt": "2025-12-10T07:32:07.319Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "1996010241201164559",
+      "text": "Alts = beach ball under water",
+      "author": {
+        "id": "877357064724520961",
+        "username": "CryptosR_Us"
+      },
+      "public_metrics": {
+        "retweet_count": 61,
+        "reply_count": 18,
+        "like_count": 374,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptosR_Us/status/1996010241201164559",
+      "processed": false,
+      "addedAt": "2025-12-03T07:32:09.219Z",
+      "expiresAt": "2025-12-10T07:32:09.219Z",
+      "source": "timeline_monitor",
+      "contentCategory": "altcoin-talk"
+    },
+    {
+      "id": "1995976322288394650",
+      "text": "$13 TRILLION BLACKROCK EXPECTS TOKENIZATION TO GROW FASTER THAN THE INTERNET\n\nBlackRock's CEO, Larry Fink, and COO Rob Goldstein, assert that tokenization is in an early internet phase with the potential to transform markets much faster than anticipated. \n\n  RWA",
+      "author": {
+        "id": "877357064724520961",
+        "username": "CryptosR_Us"
+      },
+      "public_metrics": {
+        "retweet_count": 37,
+        "reply_count": 15,
+        "like_count": 189,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptosR_Us/status/1995976322288394650",
+      "processed": false,
+      "addedAt": "2025-12-03T07:32:11.550Z",
+      "expiresAt": "2025-12-10T07:32:11.550Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "1995492984884711543",
+      "text": "Strategy announced that it purchased 130 $BTC last week at an average price of $89,960, for a total outlay of approximately $11.7 million.\n The company also set aside $1.4 billion in reserves for future dividend distributions.\n\n This is not investment advice.\n\n#crypto",
+      "author": {
+        "id": "crawlee_search_crypto_theboss",
+        "username": "Crypto_TheBoss"
+      },
+      "public_metrics": {
+        "retweet_count": 27,
+        "reply_count": 15,
+        "like_count": 138,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/Crypto_TheBoss/status/1995492984884711543",
+      "processed": false,
+      "addedAt": "2025-12-03T07:32:23.195Z",
+      "expiresAt": "2025-12-10T07:32:23.195Z",
+      "source": "timeline_monitor",
+      "contentCategory": "news"
+    },
+    {
+      "id": "1995492437716824088",
+      "text": "BitMine announced that it purchased 96,798 $ETH (~$272M) over the past week.\n The company’s total Ethereum holdings have now reached 3.72M #ETH (≈ $10.48B).\n\n This move indicates that BitMine continues to follow a long-term Ethereum accumulation strategy. Despite market",
+      "author": {
+        "id": "crawlee_search_crypto_theboss",
+        "username": "Crypto_TheBoss"
+      },
+      "public_metrics": {
+        "retweet_count": 29,
+        "reply_count": 16,
+        "like_count": 145,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/Crypto_TheBoss/status/1995492437716824088",
+      "processed": false,
+      "addedAt": "2025-12-03T07:32:25.191Z",
+      "expiresAt": "2025-12-10T07:32:25.191Z",
+      "source": "timeline_monitor",
+      "contentCategory": "project-discussion/market-trends"
+    },
+    {
+      "id": "1995308018125119705",
+      "text": "DATA December Token Unlocks\n\nAccording to the graphic, the token unlocks scheduled for December are as follows:\n\n$HYPE: ~ $350.95M\n\n$SUI: ~ $86.86M\n\n$ZRO: ~ $33.70M (≈10.3% of supply)\n\n$PUMP: ~ $31.22M\n\n$ENA: ~ $27.66M\n\n$APT: ~ $25.20M\n\n$EIGEN: ~ $23.50M (≈8.3% of supply)",
+      "author": {
+        "id": "crawlee_search_crypto_theboss",
+        "username": "Crypto_TheBoss"
+      },
+      "public_metrics": {
+        "retweet_count": 26,
+        "reply_count": 20,
+        "like_count": 143,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/Crypto_TheBoss/status/1995308018125119705",
+      "processed": false,
+      "addedAt": "2025-12-03T07:32:26.981Z",
+      "expiresAt": "2025-12-10T07:32:26.981Z",
+      "source": "timeline_monitor",
+      "contentCategory": "project-discussion/altcoin-talk"
     }
   ],
   "metadata": {
-    "lastUpdated": "2025-12-02T22:19:37.101Z",
-    "totalPosts": 242,
+    "lastUpdated": "2025-12-03T07:32:41.894Z",
+    "totalPosts": 249,
     "bySource": {
-      "timeline_monitor": 242,
+      "timeline_monitor": 249,
       "search_discovery": 0
     }
   }
