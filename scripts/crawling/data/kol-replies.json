@@ -991,6 +991,44 @@
       "timestamp": "2025-12-04T15:30:36.383Z",
       "status": "posted",
       "dryRun": false
+    },
+    {
+      "id": "1353384573435056128-1994142556071031079-1764877948049",
+      "tweetId": "1994142556071031079",
+      "tweetUrl": "https://twitter.com/CryptoRover/status/1994142556071031079",
+      "kolId": "1353384573435056128",
+      "kolUsername": "CryptoRover",
+      "originalTweetText": "BREAKING:\n\nBLACKROCK CEO LARRY FINK: IT DOESN'T MATTER IF MARKETS RISE AND FALL. BUBBLES COME AND GO.\n\nWHAT MATTERS MOST IS STAYING IN THE MARKET THROUGH ALL CYCLES.",
+      "replyTweetId": "1996668946762944990",
+      "replyText": "Long-term holds require real fundamentals, not speculation.\n\nBlockchain Save delivers:\n• Permanent records with blockchain immutability\n• Automated Certificate of Trust generation\n• No wallet management - BWS handles transactions\n\nDocument storage infrastructure at microcap. $BWS\n\n@BWSCommunity #microcap #blockchain #infrastructure https://docs.bws.ninja/solutions/bws.blockchain.save",
+      "productMentioned": "X Bot, Blockchain Badges",
+      "relevanceScore": 82,
+      "templateUsed": "feature_list",
+      "templateName": "Feature List Structure",
+      "imageAttached": false,
+      "imagePath": null,
+      "timestamp": "2025-12-04T19:52:28.049Z",
+      "status": "posted",
+      "dryRun": false
+    },
+    {
+      "id": "1068237257977544704-1996404865929822313-1764877987681",
+      "tweetId": "1996404865929822313",
+      "tweetUrl": "https://twitter.com/AltcoinSherpa/status/1996404865929822313",
+      "kolId": "1068237257977544704",
+      "kolUsername": "AltcoinSherpa",
+      "originalTweetText": "If $BTC legs up then coins like $FARTCOIN are going to full send",
+      "replyTweetId": "1996669112463118354",
+      "replyText": "Memes pump hard but fade fast without substance.\n\n$BWS X Bot tracks engagement rates across 100+ KOLs simultaneously with bot farm detection through pattern analysis - helps investors verify authentic community traction during accumulation phases.\n\n@BWSCommunity #microcap #altcoins #crypto https://docs.bws.ninja/marketplace-solutions/bws.x.bot",
+      "productMentioned": "X Bot",
+      "relevanceScore": 72,
+      "templateUsed": "classic",
+      "templateName": "Classic Structure",
+      "imageAttached": true,
+      "imagePath": "/assets/images/docs/x-bot/x-bot-0.png",
+      "timestamp": "2025-12-04T19:53:07.681Z",
+      "status": "posted",
+      "dryRun": false
     }
   ],
   "dailyStats": {
@@ -1065,10 +1103,10 @@
     }
   },
   "metadata": {
-    "totalReplies": 44,
-    "successfulReplies": 10,
+    "totalReplies": 46,
+    "successfulReplies": 12,
     "failedReplies": 34,
-    "lastReplyAt": "2025-12-04T15:30:36.383Z",
+    "lastReplyAt": "2025-12-04T19:53:07.681Z",
     "todayRepliesCount": 0,
     "lastUpdateBy": "kol-system"
   }
