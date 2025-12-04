@@ -1029,6 +1029,44 @@
       "timestamp": "2025-12-04T19:53:07.681Z",
       "status": "posted",
       "dryRun": false
+    },
+    {
+      "id": "1353384573435056128-1994142556071031079-1764890316079",
+      "tweetId": "1994142556071031079",
+      "tweetUrl": "https://twitter.com/CryptoRover/status/1994142556071031079",
+      "kolId": "1353384573435056128",
+      "kolUsername": "CryptoRover",
+      "originalTweetText": "BREAKING:\n\nBLACKROCK CEO LARRY FINK: IT DOESN'T MATTER IF MARKETS RISE AND FALL. BUBBLES COME AND GO.\n\nWHAT MATTERS MOST IS STAYING IN THE MARKET THROUGH ALL CYCLES.",
+      "replyTweetId": "1996720821721878592",
+      "replyText": "Sports clubs leave revenue on the table - fan engagement ends when the whistle blows.\n\nFan Game Cube enables clubs to monetize through NFT field zones where fans earn points from real-time game events. $BWS built this for football, chess, tennis, cricket at microcap valuation.\n\nRevenue infrastructure that survives cycles.\n\n@BWSCommunity #microcap #sports #NFT https://www.bws.ninja",
+      "productMentioned": "X Bot, Blockchain Badges",
+      "relevanceScore": 82,
+      "templateUsed": "problem_solution",
+      "templateName": "Problem-Solution Structure",
+      "imageAttached": true,
+      "imagePath": "/assets/images/docs/fan-game-cube/fan-game-cube-0.png",
+      "timestamp": "2025-12-04T23:18:36.079Z",
+      "status": "posted",
+      "dryRun": false
+    },
+    {
+      "id": "1068237257977544704-1996404865929822313-1764890358449",
+      "tweetId": "1996404865929822313",
+      "tweetUrl": "https://twitter.com/AltcoinSherpa/status/1996404865929822313",
+      "kolId": "1068237257977544704",
+      "kolUsername": "AltcoinSherpa",
+      "originalTweetText": "If $BTC legs up then coins like $FARTCOIN are going to full send",
+      "replyTweetId": "1996720999753306353",
+      "replyText": "Memecoins ride momentum waves. Infrastructure plays compound through cycles.\n\nBlockchain Hash enables mutable on-chain databases where developers update data after initial save - no wallet management, no gas fees. Built by $BWS at microcap valuation.\n\n@BWSCommunity #microcap #builders #altcoins https://docs.bws.ninja/solutions/bws.blockchain.hash",
+      "productMentioned": "X Bot",
+      "relevanceScore": 72,
+      "templateUsed": "delayed_cashtag",
+      "templateName": "Delayed $BWS Mention",
+      "imageAttached": false,
+      "imagePath": null,
+      "timestamp": "2025-12-04T23:19:18.449Z",
+      "status": "posted",
+      "dryRun": false
     }
   ],
   "dailyStats": {
@@ -1103,10 +1141,10 @@
     }
   },
   "metadata": {
-    "totalReplies": 46,
-    "successfulReplies": 12,
+    "totalReplies": 48,
+    "successfulReplies": 14,
     "failedReplies": 34,
-    "lastReplyAt": "2025-12-04T19:53:07.681Z",
+    "lastReplyAt": "2025-12-04T23:19:18.449Z",
     "todayRepliesCount": 0,
     "lastUpdateBy": "kol-system"
   }
