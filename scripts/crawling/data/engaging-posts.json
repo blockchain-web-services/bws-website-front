@@ -2266,13 +2266,349 @@
       "expiresAt": "2025-12-11T18:00:02.651Z",
       "source": "timeline_monitor",
       "contentCategory": "technical-analysis"
+    },
+    {
+      "id": "1996367736474329552",
+      "text": "A good example of how emotional markets can be and the opportunities you can play. Almost a 5x return if you remained confident in a rate cut. And best part is not even having to wait for the decision, can realize profits now.",
+      "author": {
+        "id": "4441279246",
+        "username": "IncomeSharks"
+      },
+      "public_metrics": {
+        "retweet_count": 11,
+        "reply_count": 35,
+        "like_count": 353,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/IncomeSharks/status/1996367736474329552",
+      "processed": false,
+      "addedAt": "2025-12-04T22:07:55.715Z",
+      "expiresAt": "2025-12-11T22:07:55.715Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends/price-speculation"
+    },
+    {
+      "id": "1996620598534152469",
+      "text": "$FARTCOIN up a bunch the last week... 'it's already pumped!!'\n\nbrother, we have plenty of upside left.",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "retweet_count": 37,
+        "reply_count": 50,
+        "like_count": 174,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/AltcoinSherpa/status/1996620598534152469",
+      "processed": false,
+      "addedAt": "2025-12-04T22:08:51.370Z",
+      "expiresAt": "2025-12-11T22:08:51.370Z",
+      "source": "timeline_monitor",
+      "contentCategory": "altcoin-talk"
+    },
+    {
+      "id": "1996612710696468549",
+      "text": "Majors review:\n\n$ETH is undoubtably the strongest major right now, strong flows. 0.618 fib is generally a pretty good region bounce wise and there's definitely some big buying going on. \n\n$SOL: The weakest of the 3 but still at a fine area. It is -50% from the highs over the",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "retweet_count": 18,
+        "reply_count": 22,
+        "like_count": 100,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/AltcoinSherpa/status/1996612710696468549",
+      "processed": false,
+      "addedAt": "2025-12-04T22:08:53.486Z",
+      "expiresAt": "2025-12-11T22:08:53.486Z",
+      "source": "timeline_monitor",
+      "contentCategory": "technical-analysis"
+    },
+    {
+      "id": "1996682168794599690",
+      "text": "TOM LEE CALLS FOR $62,000 $ETH\n\n\"I think Ethereum's going to become the future of finance, the payment rails of the future and if it gets to .25 relative to Bitcoin that's $62,000. Ethereum at $3,000 is grossly undervalued.\"",
+      "author": {
+        "id": "877357064724520961",
+        "username": "CryptosR_Us"
+      },
+      "public_metrics": {
+        "retweet_count": 105,
+        "reply_count": 63,
+        "like_count": 697,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptosR_Us/status/1996682168794599690",
+      "processed": false,
+      "addedAt": "2025-12-04T22:13:45.324Z",
+      "expiresAt": "2025-12-11T22:13:45.324Z",
+      "source": "timeline_monitor",
+      "contentCategory": "price-speculation"
+    },
+    {
+      "id": "1996659568294646241",
+      "text": "CZ WON THE BITCOIN DEBATE IN LESS THAN A MINUTE\n\nCZ pulled out a gold bar during the Bitcoin v. Gold debate and asked Peter Schiff to verify if it was real. Schiff was unable to verify it without having extra tools. \n\nCZ seized the moment to push the point that Bitcoin",
+      "author": {
+        "id": "877357064724520961",
+        "username": "CryptosR_Us"
+      },
+      "public_metrics": {
+        "retweet_count": 184,
+        "reply_count": 67,
+        "like_count": 1270,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptosR_Us/status/1996659568294646241",
+      "processed": false,
+      "addedAt": "2025-12-04T22:13:47.251Z",
+      "expiresAt": "2025-12-11T22:13:47.251Z",
+      "source": "timeline_monitor",
+      "contentCategory": "news"
+    },
+    {
+      "id": "1996645606438433018",
+      "text": "$RECALL | +40%",
+      "author": {
+        "id": "crawlee_search_nihilusbtc",
+        "username": "NihilusBTC"
+      },
+      "public_metrics": {
+        "retweet_count": 14,
+        "reply_count": 31,
+        "like_count": 53,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/NihilusBTC/status/1996645606438433018",
+      "processed": false,
+      "addedAt": "2025-12-04T22:14:10.854Z",
+      "expiresAt": "2025-12-11T22:14:10.854Z",
+      "source": "timeline_monitor",
+      "contentCategory": "price-speculation"
+    },
+    {
+      "id": "1996637266790568299",
+      "text": "$KGEN",
+      "author": {
+        "id": "crawlee_search_nihilusbtc",
+        "username": "NihilusBTC"
+      },
+      "public_metrics": {
+        "retweet_count": 16,
+        "reply_count": 30,
+        "like_count": 63,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/NihilusBTC/status/1996637266790568299",
+      "processed": false,
+      "addedAt": "2025-12-04T22:14:13.137Z",
+      "expiresAt": "2025-12-11T22:14:13.137Z",
+      "source": "timeline_monitor",
+      "contentCategory": "altcoin-talk"
+    },
+    {
+      "id": "1996629824610488572",
+      "text": "$BARD | +35%",
+      "author": {
+        "id": "crawlee_search_nihilusbtc",
+        "username": "NihilusBTC"
+      },
+      "public_metrics": {
+        "retweet_count": 21,
+        "reply_count": 38,
+        "like_count": 76,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/NihilusBTC/status/1996629824610488572",
+      "processed": false,
+      "addedAt": "2025-12-04T22:14:14.918Z",
+      "expiresAt": "2025-12-11T22:14:14.918Z",
+      "source": "timeline_monitor",
+      "contentCategory": "price-speculation"
+    },
+    {
+      "id": "1996624759992566058",
+      "text": "$RESOLV\n$KGEN\n\nLonged more.",
+      "author": {
+        "id": "crawlee_search_nihilusbtc",
+        "username": "NihilusBTC"
+      },
+      "public_metrics": {
+        "retweet_count": 20,
+        "reply_count": 42,
+        "like_count": 77,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/NihilusBTC/status/1996624759992566058",
+      "processed": false,
+      "addedAt": "2025-12-04T22:14:16.786Z",
+      "expiresAt": "2025-12-11T22:14:16.786Z",
+      "source": "timeline_monitor",
+      "contentCategory": "altcoin-talk"
+    },
+    {
+      "id": "1996587447971348781",
+      "text": "$KGEN\n\nBuying more here.",
+      "author": {
+        "id": "crawlee_search_nihilusbtc",
+        "username": "NihilusBTC"
+      },
+      "public_metrics": {
+        "retweet_count": 25,
+        "reply_count": 43,
+        "like_count": 98,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/NihilusBTC/status/1996587447971348781",
+      "processed": false,
+      "addedAt": "2025-12-04T22:14:19.517Z",
+      "expiresAt": "2025-12-11T22:14:19.517Z",
+      "source": "timeline_monitor",
+      "contentCategory": "altcoin-talk"
+    },
+    {
+      "id": "1996648350775701896",
+      "text": "\"I WAS COMPLETELY WRONG ABOUT BITCOIN\"  BlackRock’s Larry Fink DROPS NUKE on Crypto Haters in SHOCK Confession!",
+      "author": {
+        "id": "935742315389444096",
+        "username": "CryptoWendyO"
+      },
+      "public_metrics": {
+        "retweet_count": 18,
+        "reply_count": 20,
+        "like_count": 82,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoWendyO/status/1996648350775701896",
+      "processed": false,
+      "addedAt": "2025-12-04T22:14:49.031Z",
+      "expiresAt": "2025-12-11T22:14:49.031Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "1996613706550301152",
+      "text": "NEW:\n\nDEFT’s cornerstone subsidiary, Valour, is launching crypto ETPs on Brazil’s B3 exchange starting Dec 17. \n\nBrazil is Latin America’s largest crypto market, giving $DEFT direct access to one of the fastest-growing digital-asset economies.",
+      "author": {
+        "id": "935742315389444096",
+        "username": "CryptoWendyO"
+      },
+      "public_metrics": {
+        "retweet_count": 29,
+        "reply_count": 33,
+        "like_count": 53,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoWendyO/status/1996613706550301152",
+      "processed": false,
+      "addedAt": "2025-12-04T22:14:49.983Z",
+      "expiresAt": "2025-12-11T22:14:49.983Z",
+      "source": "timeline_monitor",
+      "contentCategory": "news"
+    },
+    {
+      "id": "1996651214759776760",
+      "text": "BE HONEST:     \n\nDo you still believe in the 4-year cycle?",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "retweet_count": 26,
+        "reply_count": 209,
+        "like_count": 300,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoRover/status/1996651214759776760",
+      "processed": false,
+      "addedAt": "2025-12-04T22:15:11.722Z",
+      "expiresAt": "2025-12-11T22:15:11.722Z",
+      "source": "timeline_monitor",
+      "contentCategory": "technical-analysis"
+    },
+    {
+      "id": "1996650490520916422",
+      "text": "BREAKING:\n\nCOINBASE CEO BRIAN ARMSTRONG SAYS \"TOKENIZATION IS GOING TO REINVENT FINANCE.\"",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "retweet_count": 78,
+        "reply_count": 128,
+        "like_count": 443,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoRover/status/1996650490520916422",
+      "processed": false,
+      "addedAt": "2025-12-04T22:15:14.054Z",
+      "expiresAt": "2025-12-11T22:15:14.054Z",
+      "source": "timeline_monitor",
+      "contentCategory": "news"
+    },
+    {
+      "id": "1996641400335773969",
+      "text": "$BNB Stoch RSI bullish crossover.\n\nBut that’s not the crazy thing.\n\nIt’s how low the Stoch RSI actually is.\n\nLowest levels since summer 2024.\n\n$BNB is severely undervalued.",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "retweet_count": 50,
+        "reply_count": 83,
+        "like_count": 269,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoRover/status/1996641400335773969",
+      "processed": false,
+      "addedAt": "2025-12-04T22:15:15.872Z",
+      "expiresAt": "2025-12-11T22:15:15.872Z",
+      "source": "timeline_monitor",
+      "contentCategory": "technical-analysis"
+    },
+    {
+      "id": "1994455703134580867",
+      "text": "yup, 93-94k \n\nNot sure whats next now. We'll see. Dont know",
+      "author": {
+        "id": "1138993163706753029",
+        "username": "Pentosh1"
+      },
+      "public_metrics": {
+        "retweet_count": 23,
+        "reply_count": 36,
+        "like_count": 195,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/Pentosh1/status/1994455703134580867",
+      "processed": false,
+      "addedAt": "2025-12-04T22:15:58.931Z",
+      "expiresAt": "2025-12-11T22:15:58.931Z",
+      "source": "timeline_monitor",
+      "contentCategory": "price-speculation"
     }
   ],
   "metadata": {
-    "lastUpdated": "2025-12-04T18:00:54.284Z",
-    "totalPosts": 108,
+    "lastUpdated": "2025-12-04T22:16:05.657Z",
+    "totalPosts": 124,
     "bySource": {
-      "timeline_monitor": 108,
+      "timeline_monitor": 124,
       "search_discovery": 0
     }
   },
