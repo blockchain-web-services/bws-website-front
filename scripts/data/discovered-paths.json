@@ -1,5 +1,5 @@
 {
-  "discoveredAt": "2025-12-03T02:39:01.036Z",
+  "discoveredAt": "2025-12-04T02:39:44.996Z",
   "baseUrl": "https://docs.bws.ninja",
   "totalPaths": 14,
   "paths": [
@@ -49,7 +49,7 @@
   },
   "metadata": {
     "discoveryMethod": "html-link-extraction",
-    "htmlSize": 362642,
+    "htmlSize": 362398,
     "version": "1.0.0"
   }
 }
