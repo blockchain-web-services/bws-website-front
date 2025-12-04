@@ -40,6 +40,13 @@
     "preventConsecutiveSameProduct": true,
     "specialNotesProbability": 0.33
   },
+  "freshnessFilter": {
+    "enabled": true,
+    "maxTweetAgeHours": 24,
+    "cleanupThresholdHours": 48,
+    "fallbackToAddedAt": true,
+    "description": "Only reply to tweets less than 24 hours old for maximum engagement impact"
+  },
   "monitoring": {
     "checkInterval": 21600,
     "maxPostsPerKol": 20,
