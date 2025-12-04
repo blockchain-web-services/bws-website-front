@@ -896,6 +896,25 @@
         "lastChecked": "2025-11-15T09:09:56.950Z"
       },
       "error": "Request failed with code 403"
+    },
+    {
+      "id": "1353384573435056128-1994149983747232179-1764786282820",
+      "tweetId": "1994149983747232179",
+      "tweetUrl": "https://twitter.com/CryptoRover/status/1994149983747232179",
+      "kolId": "1353384573435056128",
+      "kolUsername": "CryptoRover",
+      "originalTweetText": "$MSTR has only reached these oversold levels three times since adopting its Bitcoin strategy:\n\n1. During the COVID crash\n2. At the 2022 bear market bottom\n3. NOW\n\nThis is a pivotal moment for $MSTR.",
+      "replyTweetId": "1996284476112986521",
+      "replyText": "Oversold microcaps with shipping products outperform narrative plays in recoveries.\n\n$BWS Fan Game Cube: fans own digital field sections as NFTs, earn points when game events happen at their location - creating new monetization for sports clubs globally.\n\n@BWSCommunity #microcap #NFT #sports https://docs.bws.ninja/marketplace-solutions/bws.nft.gamecube",
+      "productMentioned": "Fan Game Cube",
+      "relevanceScore": 72,
+      "templateUsed": "classic",
+      "templateName": "Classic Structure",
+      "imageAttached": true,
+      "imagePath": "/assets/images/docs/fan-game-cube/fan-game-cube-0.png",
+      "timestamp": "2025-12-03T18:24:42.820Z",
+      "status": "posted",
+      "dryRun": false
     }
   ],
   "dailyStats": {
@@ -970,10 +989,10 @@
     }
   },
   "metadata": {
-    "totalReplies": 39,
-    "successfulReplies": 5,
+    "totalReplies": 40,
+    "successfulReplies": 6,
     "failedReplies": 34,
-    "lastReplyAt": "2025-11-15T09:09:56.950Z",
+    "lastReplyAt": "2025-12-03T18:24:42.820Z",
     "todayRepliesCount": 0,
     "lastUpdateBy": "kol-system"
   }
