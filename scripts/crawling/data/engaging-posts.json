@@ -1,132 +1,6 @@
 {
   "posts": [
     {
-      "id": "1994745661078790327",
-      "text": "$HYPE Shorted $50 → Now Under $35, Next Unlock Could Drop It to $15\n\nSHORT PLAYED TO PERFECTION\nI told you to short #HYPE from $48–$50, and now price is under $35, all happy with the analysis:\n Entry: $50 → Price flushed to $29\n Spot Position: 38% gain\n 5x Short: ~190%",
-      "author": {
-        "id": "crawlee_search_cryptopatel",
-        "username": "CryptoPatel"
-      },
-      "public_metrics": {
-        "retweet_count": 12,
-        "reply_count": 10,
-        "like_count": 180,
-        "quote_count": 0
-      },
-      "created_at": "",
-      "url": "https://twitter.com/CryptoPatel/status/1994745661078790327",
-      "processed": true,
-      "addedAt": "2025-11-29T17:26:35.885Z",
-      "expiresAt": "2025-12-06T17:26:35.885Z",
-      "source": "timeline_monitor",
-      "contentCategory": "price-speculation"
-    },
-    {
-      "id": "1994715207961313467",
-      "text": "US SPOT ETFs Yesterday Flows Data update (28-11-2025):\n\n BitcoinETFs: +782 $BTC (+$71.40MM)\n EthereumETFs: +25,416 $ETH (+$76.60M)\n Solana ETFs: +37,650 $SOL (+$5.30M)\n XRP ETFs: +10.38M $XRP (+$22.68M)\n\nTotal Net Flow: +$175.98M\n\nFact: Spot #BitcoinETFs Purchased ~2 days",
-      "author": {
-        "id": "crawlee_search_cryptopatel",
-        "username": "CryptoPatel"
-      },
-      "public_metrics": {
-        "retweet_count": 12,
-        "reply_count": 10,
-        "like_count": 197,
-        "quote_count": 0
-      },
-      "created_at": "",
-      "url": "https://twitter.com/CryptoPatel/status/1994715207961313467",
-      "processed": true,
-      "addedAt": "2025-11-29T17:26:39.737Z",
-      "expiresAt": "2025-12-06T17:26:39.737Z",
-      "source": "timeline_monitor",
-      "contentCategory": "market-trends"
-    },
-    {
-      "id": "1994700361571934396",
-      "text": "Bitcoin Mining Sees a Stealth Revival in China \n\nBitcoin mining activity is quietly resurging in China, despite the nationwide ban imposed four years ago.\n\nThe industry continues to find ways to operate, reinforcing the idea that nothing can slow down Bitcoin’s global",
-      "author": {
-        "id": "crawlee_search_cryptopatel",
-        "username": "CryptoPatel"
-      },
-      "public_metrics": {
-        "retweet_count": 12,
-        "reply_count": 10,
-        "like_count": 194,
-        "quote_count": 0
-      },
-      "created_at": "",
-      "url": "https://twitter.com/CryptoPatel/status/1994700361571934396",
-      "processed": true,
-      "addedAt": "2025-11-29T17:26:42.826Z",
-      "expiresAt": "2025-12-06T17:26:42.826Z",
-      "source": "timeline_monitor",
-      "contentCategory": "news"
-    },
-    {
-      "id": "1994685263054835820",
-      "text": "ETH Liquidity Tightens as On-Chain Demand Surges\n\nEthereum recorded over –$1.15B in net outflows this week, signaling rapid withdrawals from centralized platforms.\n\nUsers appear to be shifting ETH into on-chain DeFi, reducing liquid exchange supply at a time when price momentum",
-      "author": {
-        "id": "crawlee_search_cryptopatel",
-        "username": "CryptoPatel"
-      },
-      "public_metrics": {
-        "retweet_count": 12,
-        "reply_count": 10,
-        "like_count": 204,
-        "quote_count": 0
-      },
-      "created_at": "",
-      "url": "https://twitter.com/CryptoPatel/status/1994685263054835820",
-      "processed": true,
-      "addedAt": "2025-11-29T17:26:43.794Z",
-      "expiresAt": "2025-12-06T17:26:43.794Z",
-      "source": "timeline_monitor",
-      "contentCategory": "market-trends"
-    },
-    {
-      "id": "1994300160222941506",
-      "text": "If you’ve ever felt limited by single-chain swaps, Baltexio is setting a new standard in multichain trading. \n\nIt’s a platform designed to simplify the complexity of moving assets across different networks while keeping security and privacy at the forefront.\n\nHere’s why it stands",
-      "author": {
-        "id": "crawlee_search_crypt0_defi",
-        "username": "Crypt0_DeFi"
-      },
-      "public_metrics": {
-        "retweet_count": 62,
-        "reply_count": 57,
-        "like_count": 106,
-        "quote_count": 0
-      },
-      "created_at": "",
-      "url": "https://twitter.com/Crypt0_DeFi/status/1994300160222941506",
-      "processed": true,
-      "addedAt": "2025-11-29T17:26:53.592Z",
-      "expiresAt": "2025-12-06T17:26:53.592Z",
-      "source": "timeline_monitor",
-      "contentCategory": "project-discussion"
-    },
-    {
-      "id": "1994293113309835564",
-      "text": "This new update explains how @baltexio sees the crypto market, and it shows why many people respect their views. \n\nTheir approach is steady, calm, and realistic. They don’t chase hype because they watch real signals like liquidity, utility, and policy changes. This makes their",
-      "author": {
-        "id": "crawlee_search_crypt0_defi",
-        "username": "Crypt0_DeFi"
-      },
-      "public_metrics": {
-        "retweet_count": 48,
-        "reply_count": 37,
-        "like_count": 76,
-        "quote_count": 0
-      },
-      "created_at": "",
-      "url": "https://twitter.com/Crypt0_DeFi/status/1994293113309835564",
-      "processed": true,
-      "addedAt": "2025-11-29T17:26:55.547Z",
-      "expiresAt": "2025-12-06T17:26:55.547Z",
-      "source": "timeline_monitor",
-      "contentCategory": "project-discussion"
-    },
-    {
       "id": "1994793150259363979",
       "text": "My current longs\n\nYou can take them\n\nNFA",
       "author": {
@@ -141,7 +15,7 @@
       },
       "created_at": "",
       "url": "https://twitter.com/NihilusBTC/status/1994793150259363979",
-      "processed": false,
+      "processed": true,
       "addedAt": "2025-11-29T17:27:05.064Z",
       "expiresAt": "2025-12-06T17:27:05.064Z",
       "source": "timeline_monitor",
@@ -162,7 +36,7 @@
       },
       "created_at": "",
       "url": "https://twitter.com/NihilusBTC/status/1994787469372608774",
-      "processed": false,
+      "processed": true,
       "addedAt": "2025-11-29T17:27:07.247Z",
       "expiresAt": "2025-12-06T17:27:07.247Z",
       "source": "timeline_monitor",
@@ -183,7 +57,7 @@
       },
       "created_at": "",
       "url": "https://twitter.com/CryptoKaleo/status/1993731730201854339",
-      "processed": false,
+      "processed": true,
       "addedAt": "2025-11-29T17:27:48.520Z",
       "expiresAt": "2025-12-06T17:27:48.520Z",
       "source": "timeline_monitor",
@@ -204,7 +78,7 @@
       },
       "created_at": "",
       "url": "https://twitter.com/CryptosR_Us/status/1994795738795028653",
-      "processed": false,
+      "processed": true,
       "addedAt": "2025-11-29T17:27:58.246Z",
       "expiresAt": "2025-12-06T17:27:58.246Z",
       "source": "timeline_monitor",
@@ -225,7 +99,7 @@
       },
       "created_at": "",
       "url": "https://twitter.com/CryptosR_Us/status/1994735850836344929",
-      "processed": false,
+      "processed": true,
       "addedAt": "2025-11-29T17:28:02.258Z",
       "expiresAt": "2025-12-06T17:28:02.258Z",
       "source": "timeline_monitor",
@@ -6908,9 +6782,9 @@
       "BWS IPFS",
       "Blockchain Save"
     ],
-    "currentIndex": 5,
-    "lastProductUsed": "Blockchain Badges",
+    "currentIndex": 7,
+    "lastProductUsed": "BWS IPFS",
     "positioningPhraseIndex": 0,
-    "replyCount": 5
+    "replyCount": 7
   }
 }

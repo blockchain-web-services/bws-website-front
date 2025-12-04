@@ -1205,6 +1205,37 @@
       "status": "posted",
       "dryRun": false,
       "accountUsed": "@BWSCommunity"
+    },
+    {
+      "id": "877357064724520961-1994795738795028653-1764833852215",
+      "tweetId": "1994795738795028653",
+      "tweetUrl": "https://twitter.com/CryptosR_Us/status/1994795738795028653",
+      "kolId": "877357064724520961",
+      "kolUsername": "CryptosR_Us",
+      "originalTweetText": "BLACKROCK PURCHASES $589M IN BITCOIN & ETHEREUM\n\nOver the past 3 days, BlackRock acquired 4,044 $BTC (~$354M) and 80,121 $ETH (~$235M) from Coinbase, according to OnchainLens.\n\nThis major move comes as crypto sentiment shows signs of recovery and institutional activity ramps",
+      "replyTweetId": "1996483995190644855",
+      "replyText": "BlackRock's institutional accumulation signals maturation, but microcaps with shipping products remain undervalued during rotation periods.\n\n$BWS ESG.Credits helps financial institutions integrate green asset impact reporting with ICMA framework support, blockchain verification, and double-counting prevention - real infrastructure for institutional ESG compliance.\n\n@BWSCommunity #microcap #ESG #crypto https://docs.bws.ninja/marketplace-solutions/bws.esg.credits",
+      "productMentioned": "X Bot",
+      "relevanceScore": 72,
+      "timestamp": "2025-12-04T07:37:32.215Z",
+      "status": "posted",
+      "dryRun": false,
+      "accountUsed": "@BWSCommunity"
+    },
+    {
+      "id": "877357064724520961-1994735850836344929-1764833876830",
+      "tweetId": "1994735850836344929",
+      "tweetUrl": "https://twitter.com/CryptosR_Us/status/1994735850836344929",
+      "kolId": "877357064724520961",
+      "kolUsername": "CryptosR_Us",
+      "originalTweetText": "ALTSEASON WASN’T CANCELLED : JUST POSTPONED \n\nA lot of people expected an altseason just like 2017 and 2021.\nSo the big question became: are altcoins dead?\nThe answer is no : macro simply hasn’t allowed the rotation yet. \n\nQuantitative tightening and reduced central bank",
+      "replyTweetId": "1996484098626388158",
+      "replyText": "Macro headwinds separate projects shipping products from vaporware waiting for pumps.\n\n$BWS IPFS.Upload provides decentralized storage for NFT images, metadata, and JSON files - developers get permanent, censorship-resistant hosting without infrastructure complexity.\n\n@BWSCommunity #altseason #microcap #IPFS https://docs.bws.ninja/solutions/bws.ipfs.upload",
+      "productMentioned": "X Bot (for demonstrating real utility), Blockchain Badges (for showcasing fundamentals)",
+      "relevanceScore": 92,
+      "timestamp": "2025-12-04T07:37:56.830Z",
+      "status": "posted",
+      "dryRun": false
     }
   ],
   "dailyStats": {
@@ -1279,10 +1310,10 @@
     }
   },
   "metadata": {
-    "totalReplies": 59,
-    "successfulReplies": 25,
+    "totalReplies": 61,
+    "successfulReplies": 27,
     "failedReplies": 34,
-    "lastReplyAt": "2025-12-04T02:53:58.040Z",
+    "lastReplyAt": "2025-12-04T07:37:56.830Z",
     "todayRepliesCount": 0,
     "lastUpdateBy": "kol-system"
   }
