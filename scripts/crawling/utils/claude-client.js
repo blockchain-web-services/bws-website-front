@@ -446,11 +446,20 @@ function buildTemplateInstructions(template, recentTemplateIds, productHighlight
         : structure.middle.sentences;
       instructions += `${middleSentences} sentence(s)\n`;
     }
+
+    // EXPLICIT $BWS POSITIONING INSTRUCTIONS
     if (structure.middle.startsWithCashtag) {
-      instructions += `  → Start with "$BWS [Product Name]:"\n`;
-    } else if (structure.middle.cashtagPosition) {
-      instructions += `  → Include $BWS ${structure.middle.cashtagPosition}\n`;
+      instructions += `  → ⚠️  CRITICAL: Start immediately with "$BWS [Product Name]:" (no text before $BWS)\n`;
+    } else if (structure.middle.cashtagPosition === 'middle') {
+      instructions += `  → ⚠️  CRITICAL: Product name FIRST, then $BWS in MIDDLE of content\n`;
+      instructions += `     Example: "[Product] [feature]. $BWS [additional detail]."\n`;
+    } else if (structure.middle.cashtagPosition === 'middle-end') {
+      instructions += `  → ⚠️  CRITICAL: Product name FIRST (no $BWS). Add $BWS in SECOND sentence.\n`;
+      instructions += `     Example: "[Product] [features]. This is what $BWS ships..."\n`;
+    } else if (structure.middle.startsWithCashtag === false) {
+      instructions += `  → ⚠️  CRITICAL: DO NOT start with $BWS. Place it naturally in middle/end.\n`;
     }
+
     if (structure.middle.instruction) {
       instructions += `  → ${structure.middle.instruction}\n`;
     }
@@ -637,14 +646,18 @@ ${templateInstructions}
 1. Keep total reply under 280 characters including line breaks
 2. Use conversational brand voice - be transparent this is BWS (the company) speaking
 3. **CRITICAL**: NEVER use "I" - use "we" or third-person "BWS". This is BWS team/company account.
-4. **REQUIRED**: Include "$BWS" cashtag somewhere in the reply (placement varies by template)
+4. **REQUIRED**: Include "$BWS" cashtag somewhere in the reply
+   ⚠️  **$BWS POSITIONING VARIES BY TEMPLATE** - Follow the template's cashtag placement instructions EXACTLY:
+   - Some templates start with "$BWS" immediately
+   - Some templates mention product name FIRST, then $BWS later
+   - Check the template instructions above for the EXACT positioning rule
 5. **REQUIRED**: Include "@BWSCommunity" in the closing line
 6. **CRITICAL - MUST INCLUDE LINK**: End reply with the URL provided above: ${replyLink}
    - Place link at the very end after @BWSCommunity and hashtags
    - This link is REQUIRED in every reply - do not omit it
 7. **HASHTAGS**: Choose 2-3 hashtags that relate to the tweet context (e.g., #altcoins #gems #microcap #blockchain #DeFi #Web3 #crypto)
 8. NO salesy language: avoid "amazing", "revolutionary", "don't miss", "moon"
-9. **CRITICAL**: Follow the TEMPLATE STRUCTURE above EXACTLY - this is the most important requirement
+9. **CRITICAL**: Follow the TEMPLATE STRUCTURE above EXACTLY - especially the $BWS placement rule - this is the most important requirement
 
 Examples of PLATFORM-LEVEL positioning (for general market/trends tweets):
 
