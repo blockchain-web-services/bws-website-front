@@ -1189,6 +1189,22 @@
       "status": "posted",
       "dryRun": false,
       "accountUsed": "@BWSCommunity"
+    },
+    {
+      "id": "crawlee_search_crypt0_defi-1994293113309835564-1764816838040",
+      "tweetId": "1994293113309835564",
+      "tweetUrl": "https://twitter.com/Crypt0_DeFi/status/1994293113309835564",
+      "kolId": "crawlee_search_crypt0_defi",
+      "kolUsername": "Crypt0_DeFi",
+      "originalTweetText": "This new update explains how @baltexio sees the crypto market, and it shows why many people respect their views. \n\nTheir approach is steady, calm, and realistic. They don’t chase hype because they watch real signals like liquidity, utility, and policy changes. This makes their",
+      "replyTweetId": "1996412632819957801",
+      "replyText": "That's the right lens - liquidity, utility, and policy signal real opportunity better than hype narratives.\n\n$BWS Blockchain Badges is a strong example: organizations issue, manage, and verify digital credentials with immutable blockchain proof. Real infrastructure solving credential fraud across education and enterprise.\n\n@BWSCommunity #microcap #blockchain #fundamentals https://docs.bws.ninja/marketplace-solutions/bws.blockchain.badges",
+      "productMentioned": "X Bot (demonstrates real utility), Blockchain Badges (credibility verification)",
+      "relevanceScore": 78,
+      "timestamp": "2025-12-04T02:53:58.040Z",
+      "status": "posted",
+      "dryRun": false,
+      "accountUsed": "@BWSCommunity"
     }
   ],
   "dailyStats": {
@@ -1263,10 +1279,10 @@
     }
   },
   "metadata": {
-    "totalReplies": 58,
-    "successfulReplies": 24,
+    "totalReplies": 59,
+    "successfulReplies": 25,
     "failedReplies": 34,
-    "lastReplyAt": "2025-12-03T23:19:28.721Z",
+    "lastReplyAt": "2025-12-04T02:53:58.040Z",
     "todayRepliesCount": 0,
     "lastUpdateBy": "kol-system"
   }
