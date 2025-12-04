@@ -47,7 +47,8 @@ import { sendReplyNotification, sendErrorNotification } from '../utils/zapier-we
 import {
   createClaudeClient,
   evaluateTweetForReply,
-  generateReplyText
+  generateReplyText,
+  selectProductImage
 } from '../utils/claude-client.js';
 
 /**
@@ -83,6 +84,51 @@ async function saveEngagingPosts(data) {
     await fs.writeFile(ENGAGING_POSTS_PATH, JSON.stringify(data, null, 2));
   } catch (error) {
     console.error('Failed to save engaging posts:', error.message);
+  }
+}
+
+/**
+ * Upload image to Twitter and return media ID
+ * @param {Object} client - Twitter client instance
+ * @param {Object} imageMetadata - Image metadata from product
+ * @returns {string|null} Media ID for use in tweet, or null if upload failed
+ */
+async function uploadImageToTwitter(client, imageMetadata) {
+  if (!imageMetadata || !imageMetadata.localPath) {
+    return null;
+  }
+
+  try {
+    // Resolve absolute path from public directory
+    const absolutePath = path.join(worktreeRoot, 'public', imageMetadata.localPath);
+
+    console.log(`📸 Uploading image: ${imageMetadata.localPath}`);
+
+    // Check if file exists
+    try {
+      await fs.access(absolutePath);
+    } catch (fileError) {
+      console.warn(`⚠️  Image file not found: ${absolutePath}`);
+      return null;
+    }
+
+    // Read image buffer
+    const imageBuffer = await fs.readFile(absolutePath);
+
+    // Upload to Twitter using v1 API (media upload)
+    const mediaId = await client.v1.uploadMedia(imageBuffer, {
+      mimeType: imageMetadata.mimeType || 'image/png'
+    });
+
+    console.log(`✅ Image uploaded successfully, media ID: ${mediaId}`);
+    if (imageMetadata.alt) {
+      console.log(`   Alt text: ${imageMetadata.alt}`);
+    }
+
+    return mediaId;
+  } catch (error) {
+    console.error(`❌ Failed to upload image: ${error.message}`);
+    return null;
   }
 }
 
@@ -173,7 +219,7 @@ async function replyToKolPosts() {
   currentPhase = 'loading_products';
   const bwsProducts = loadBWSProducts();
   lastSuccessfulOperation = 'products_loaded';
-  const { maxRepliesPerRun, maxTweetsToEvaluatePerRun, maxRepliesPerDay, maxRepliesPerKolPerWeek, minRelevanceScoreForReply, minTimeBetweenRepliesMinutes, dryRun, antiSpamActions } = config.replySettings;
+  const { maxRepliesPerRun, maxTweetsToEvaluatePerRun, maxRepliesPerDay, maxRepliesPerKolPerWeek, minRelevanceScoreForReply, minTimeBetweenRepliesMinutes, dryRun, antiSpamActions, imageAttachments } = config.replySettings;
   const maxRepliesThisRun = maxRepliesPerRun || maxRepliesPerDay;
   const maxEvaluationsThisRun = maxTweetsToEvaluatePerRun || 10; // Default to 10 if not specified
 
@@ -183,6 +229,13 @@ async function replyToKolPosts() {
     likeTweetBeforeReply: true,
     onlyIfNotAlreadyFollowing: true,
     skipOnError: true
+  };
+
+  // Default image attachment settings if not specified
+  const imageSettings = imageAttachments || {
+    enabled: true,
+    attachOnlyWhenAvailable: true,
+    skipReplyOnUploadFailure: false
   };
 
   if (Object.keys(bwsProducts).length === 0) {
@@ -201,6 +254,9 @@ async function replyToKolPosts() {
    - Anti-spam actions:
      • Follow KOL: ${antiSpam.followKolBeforeReply ? '✅' : '❌'}
      • Like tweet: ${antiSpam.likeTweetBeforeReply ? '✅' : '❌'}
+   - Image attachments:
+     • Enabled: ${imageSettings.enabled ? '✅' : '❌'}
+     • Attach when available: ${imageSettings.attachOnlyWhenAvailable ? '✅' : '❌'}
 `);
 
   // Initialize write client for posting replies and anti-spam actions
@@ -212,39 +268,18 @@ async function replyToKolPosts() {
 
   if (!dryRun) {
     try {
-      // Try primary account (@BWSXAI) first
-      const result = createReadWriteClient(false);
+      // Use @BWSCommunity account directly (primary @BWSXAI tokens expired)
+      console.log('   🔄 Using @BWSCommunity account for posting...');
+      const result = createReadWriteClient(true);  // Use fallback=true
       writeClient = result.client;
       accountName = result.accountName;
+      usingFallback = true;
       console.log(`✅ [${Math.round((Date.now() - scriptStartTime) / 1000)}s] Write client initialized (${accountName})\n`);
-
-      // Also initialize fallback client for 403 error recovery
-      try {
-        const fallbackResult = createReadWriteClient(true);
-        fallbackClient = fallbackResult.client;
-        fallbackAccountName = fallbackResult.accountName;
-        console.log(`✅ [${Math.round((Date.now() - scriptStartTime) / 1000)}s] Fallback client ready (${fallbackAccountName})\n`);
-      } catch (fallbackInitError) {
-        console.warn(`⚠️  Fallback client not available: ${fallbackInitError.message}`);
-      }
-    } catch (primaryError) {
-      console.warn('⚠️  Failed to initialize primary write client (@BWSXAI).');
-      console.warn(`   Error: ${primaryError.message}`);
-
-      // Try fallback account (@BWSCommunity)
-      try {
-        console.log('   🔄 Attempting fallback to @BWSCommunity account...');
-        const fallbackResult = createReadWriteClient(true);
-        writeClient = fallbackResult.client;
-        accountName = fallbackResult.accountName;
-        usingFallback = true;
-        console.log(`✅ [${Math.round((Date.now() - scriptStartTime) / 1000)}s] Fallback write client initialized (${accountName})\n`);
-      } catch (fallbackError) {
-        console.error('❌ Failed to initialize fallback write client.');
-        console.error(`   Error: ${fallbackError.message}\n`);
-        console.error('   Cannot continue without write client for posting replies.');
-        process.exit(1);
-      }
+    } catch (error) {
+      console.error('❌ Failed to initialize write client.');
+      console.error(`   Error: ${error.message}\n`);
+      console.error('   Cannot continue without write client for posting replies.');
+      process.exit(1);
     }
   }
 
@@ -459,13 +494,56 @@ async function replyToKolPosts() {
       replyText = replyResult.replyText || replyResult.alternativeVersion || JSON.stringify(replyResult);
 
       console.log(`\n📤 Generated reply (${replyText.length} chars):`);
-      console.log(`"${replyText}"\n`);
+      console.log(`"${replyText}"`);
+      if (replyResult.templateUsed) {
+        console.log(`   Template: ${replyResult.templateName} (${replyResult.templateUsed})`);
+      }
+      console.log('');
+
+      // Select product image (if enabled and available)
+      let selectedImage = null;
+      let uploadedMediaId = null;
+
+      if (imageSettings.enabled && selectedProduct && selectedProduct.images && selectedProduct.images.length > 0) {
+        selectedImage = selectProductImage(selectedProduct, replyResult);
+        if (selectedImage) {
+          console.log(`📸 Selected image for ${selectedProduct.name}: ${selectedImage.localPath}`);
+        }
+      } else if (imageSettings.enabled && selectedProduct) {
+        console.log(`ℹ️  No images available for ${selectedProduct.name}`);
+      }
 
       if (dryRun) {
         console.log('⚠️  DRY RUN: Would have posted reply (skipped)');
+        if (selectedImage) {
+          console.log(`⚠️  DRY RUN: Would have attached image: ${selectedImage.localPath}`);
+        }
         repliesPosted++;
         post.processed = true;
         continue;
+      }
+
+      // Upload image if selected and enabled
+      if (imageSettings.enabled && selectedImage && writeClient) {
+        try {
+          uploadedMediaId = await uploadImageToTwitter(writeClient, selectedImage);
+
+          // Check if upload failed and we should skip reply
+          if (!uploadedMediaId && imageSettings.skipReplyOnUploadFailure) {
+            console.warn(`⚠️  Image upload failed and skipReplyOnUploadFailure is enabled. Skipping reply...`);
+            tweetsSkipped++;
+            continue;
+          }
+        } catch (uploadError) {
+          console.error(`❌ Image upload error: ${uploadError.message}`);
+          if (imageSettings.skipReplyOnUploadFailure) {
+            console.warn(`⚠️  Skipping reply due to upload failure`);
+            tweetsSkipped++;
+            continue;
+          }
+          // Otherwise continue without image
+          console.log(`ℹ️  Continuing with reply without image attachment`);
+        }
       }
 
       // Anti-spam actions: Follow and like
@@ -507,8 +585,13 @@ async function replyToKolPosts() {
         // Post reply
         await sleep(2000);
         console.log(`\n📤 Posting reply to tweet ${tweet.id}...`);
+        if (uploadedMediaId) {
+          console.log(`   📎 Attaching media ID: ${uploadedMediaId}`);
+        }
 
-        const replyResponse = await writeClient.v2.reply(replyText, tweet.id);
+        // Post reply with optional media attachment
+        const replyOptions = { media: uploadedMediaId ? { media_ids: [uploadedMediaId] } : undefined };
+        const replyResponse = await writeClient.v2.reply(replyText, tweet.id, replyOptions);
         const replyTweetId = replyResponse.data.id;
 
         console.log(`✅ Reply posted! Tweet ID: ${replyTweetId}`);
@@ -526,6 +609,10 @@ async function replyToKolPosts() {
           replyText,
           productMentioned: evaluation.bestMatchingProduct || productSelection.productNames[0] || 'BWS',
           relevanceScore: evaluation.relevanceScore,
+          templateUsed: replyResult.templateUsed || null,
+          templateName: replyResult.templateName || null,
+          imageAttached: uploadedMediaId ? true : false,
+          imagePath: selectedImage ? selectedImage.localPath : null,
           timestamp: new Date().toISOString(),
           status: 'posted',
           dryRun: false
@@ -589,8 +676,13 @@ async function replyToKolPosts() {
           // Retry posting reply with fallback client
           await sleep(2000);
           console.log(`\n📤 Posting reply to tweet ${tweet.id} with ${accountName}...`);
+          if (uploadedMediaId) {
+            console.log(`   📎 Attaching media ID: ${uploadedMediaId}`);
+          }
 
-          const replyResponse = await writeClient.v2.reply(replyText, tweet.id);
+          // Post reply with optional media attachment
+          const replyOptions = { media: uploadedMediaId ? { media_ids: [uploadedMediaId] } : undefined };
+          const replyResponse = await writeClient.v2.reply(replyText, tweet.id, replyOptions);
           const replyTweetId = replyResponse.data.id;
 
           console.log(`✅ Reply posted with fallback! Tweet ID: ${replyTweetId}`);
@@ -609,6 +701,10 @@ async function replyToKolPosts() {
             replyText,
             productMentioned: evaluation.bestMatchingProduct || productSelection.productNames[0] || 'BWS',
             relevanceScore: evaluation.relevanceScore,
+            templateUsed: replyResult.templateUsed || null,
+            templateName: replyResult.templateName || null,
+            imageAttached: uploadedMediaId ? true : false,
+            imagePath: selectedImage ? selectedImage.localPath : null,
             timestamp: new Date().toISOString(),
             status: 'posted',
             dryRun: false,

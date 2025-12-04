@@ -8,6 +8,7 @@ const __dirname = path.dirname(__filename);
 const CONFIG_PATH = path.join(__dirname, '..', 'config', 'kol-config.json');
 const DATA_DIR = path.join(__dirname, '..', 'data');
 const DOCS_INDEX_PATH = path.join(__dirname, '..', '..', 'data', 'docs-index.json');
+const PRODUCT_IMAGES_PATH = path.join(__dirname, '..', 'config', 'product-images.json');
 
 /**
  * Load configuration from kol-config.json
@@ -85,7 +86,36 @@ export function loadBWSProducts() {
       }
     });
 
-    console.log(`✅ Loaded ${Object.keys(products).length} BWS products from documentation`);
+    // Load product images from product-images.json
+    try {
+      const imagesData = fs.readFileSync(PRODUCT_IMAGES_PATH, 'utf-8');
+      const productImages = JSON.parse(imagesData);
+
+      // Merge images into products
+      Object.keys(products).forEach(productName => {
+        const images = productImages.productImages[productName] || [];
+
+        // Also check docs-index for images (from automated crawling)
+        const docsImages = [];
+        docsIndex.pages.forEach(page => {
+          if (page.product === productName && page.images && page.images.length > 0) {
+            docsImages.push(...page.images);
+          }
+        });
+
+        // Combine manual mapping + automated discovery
+        // Manual mapping takes priority (has better metadata)
+        products[productName].images = images.length > 0 ? images : docsImages;
+      });
+
+      const productsWithImages = Object.values(products).filter(p => p.images && p.images.length > 0).length;
+      console.log(`✅ Loaded ${Object.keys(products).length} BWS products from documentation`);
+      console.log(`   📸 ${productsWithImages} products have images available`);
+    } catch (imageError) {
+      console.warn(`⚠️  Could not load product images: ${imageError.message}`);
+      // Products still usable without images
+    }
+
     return products;
   } catch (error) {
     console.error(`❌ Error loading BWS products from docs: ${error.message}`);

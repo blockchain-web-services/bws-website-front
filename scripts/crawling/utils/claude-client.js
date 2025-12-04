@@ -1,4 +1,6 @@
 import Anthropic from '@anthropic-ai/sdk';
+import fs from 'fs';
+import path from 'path';
 
 const MODEL = 'claude-sonnet-4-5-20250929';
 const QUICK_FILTER_MODEL = 'claude-3-5-haiku-20241022'; // Fast, cheap model for pre-filtering
@@ -246,10 +248,293 @@ function loadProductHighlights() {
   }
 }
 
+// Load reply templates once at module level
+let replyTemplates = null;
+function loadReplyTemplates() {
+  if (replyTemplates) return replyTemplates;
+
+  try {
+    const templatesPath = path.join(process.cwd(), 'scripts/crawling/config/reply-templates.json');
+    const data = fs.readFileSync(templatesPath, 'utf-8');
+    replyTemplates = JSON.parse(data);
+    return replyTemplates;
+  } catch (error) {
+    console.warn(`⚠️  Could not load reply-templates.json: ${error.message}`);
+    return { templates: [] };
+  }
+}
+
+/**
+ * Extract template IDs from recent replies
+ */
+function extractTemplateIds(replies) {
+  return replies
+    .filter(r => r.templateUsed)
+    .map(r => r.templateUsed);
+}
+
+/**
+ * Weighted random selection from array of templates
+ */
+function weightedRandomSelect(templates) {
+  // Calculate total weight
+  const totalWeight = templates.reduce((sum, t) => sum + (t.weight || 0), 0);
+
+  if (totalWeight === 0) {
+    // No weights, select randomly
+    return templates[Math.floor(Math.random() * templates.length)];
+  }
+
+  // Generate random number between 0 and totalWeight
+  let random = Math.random() * totalWeight;
+
+  // Select based on cumulative weights
+  for (const template of templates) {
+    random -= (template.weight || 0);
+    if (random <= 0) {
+      return template;
+    }
+  }
+
+  // Fallback to last template
+  return templates[templates.length - 1];
+}
+
+/**
+ * Select appropriate reply template based on recent usage
+ * Avoids using same template consecutively
+ */
+function selectReplyTemplate(recentReplies = []) {
+  const templatesData = loadReplyTemplates();
+  const allTemplates = templatesData.templates || [];
+
+  if (allTemplates.length === 0) {
+    console.warn('⚠️  No templates loaded, using default structure');
+    return null;
+  }
+
+  // Get templates used in last 5 replies
+  const recentTemplateIds = extractTemplateIds(recentReplies.slice(0, 5));
+
+  // Filter out templates used in last 3 replies to avoid immediate repetition
+  const recentlyUsed = recentTemplateIds.slice(0, 3);
+  const availableTemplates = allTemplates.filter(t => !recentlyUsed.includes(t.id));
+
+  // If all templates were recently used, reset and use all
+  const templatesPool = availableTemplates.length > 0 ? availableTemplates : allTemplates;
+
+  // Weighted random selection
+  const selected = weightedRandomSelect(templatesPool);
+
+  console.log(`📋 Template selected: "${selected.name}" (${selected.id})`);
+  console.log(`   Recent templates: [${recentTemplateIds.slice(0, 3).join(', ')}]`);
+
+  return selected;
+}
+
+/**
+ * Select appropriate product image for reply
+ * Prioritizes images based on priority level and template type
+ *
+ * @param {Object} product - Product object with images array
+ * @param {Object} template - Selected reply template (optional)
+ * @returns {Object|null} Selected image metadata or null
+ */
+export function selectProductImage(product, template = null) {
+  if (!product.images || product.images.length === 0) {
+    return null;
+  }
+
+  // Sort images by priority (lowest number = highest priority)
+  const sortedImages = [...product.images].sort((a, b) => {
+    const priorityA = a.priority || 999;
+    const priorityB = b.priority || 999;
+    return priorityA - priorityB;
+  });
+
+  // Strategy: Use first image (highest priority, typically product hero/overview)
+  // Future enhancement: Template-aware selection
+  // - feature_list template → UI screenshots (type: "screenshot")
+  // - stat_driven template → Analytics dashboards
+  // - problem_solution template → Hero shots (type: "hero")
+
+  const selectedImage = sortedImages[0];
+
+  console.log(`📸 Image selected: ${selectedImage.localPath || selectedImage.path}`);
+  if (selectedImage.alt) {
+    console.log(`   Alt: ${selectedImage.alt}`);
+  }
+
+  return selectedImage;
+}
+
+/**
+ * Select link URL for reply
+ * Rotates between product-specific docs and main BWS site
+ *
+ * @param {Object} product - Product object with docsPath
+ * @param {Object} highlights - Product highlights configuration with linkRotationSettings
+ * @returns {string} URL to include in reply
+ */
+export function selectReplyLink(product, highlights) {
+  const settings = highlights.linkRotationSettings || {
+    mainSiteWeight: 0.25,
+    productDocsWeight: 0.75,
+    mainSiteUrl: 'https://www.bws.ninja',
+    docsBaseUrl: 'https://docs.bws.ninja'
+  };
+
+  // Weighted random selection (75% product docs, 25% main site)
+  const useMainSite = Math.random() < settings.mainSiteWeight;
+
+  if (useMainSite) {
+    console.log(`🔗 Link selected: Main site (${settings.mainSiteUrl})`);
+    return settings.mainSiteUrl;
+  }
+
+  // Get product-specific docs path
+  const productName = product.name || 'Unknown Product';
+  const productHighlights = highlights.productHighlights[productName];
+
+  if (productHighlights && productHighlights.docsPath) {
+    const productDocsUrl = settings.docsBaseUrl + productHighlights.docsPath;
+    console.log(`🔗 Link selected: Product docs (${productDocsUrl})`);
+    return productDocsUrl;
+  }
+
+  // Fallback to main site if no docs path found
+  console.log(`🔗 Link selected: Main site (fallback - no docs path for ${productName})`);
+  return settings.mainSiteUrl;
+}
+
+/**
+ * Build template-specific prompt instructions
+ */
+function buildTemplateInstructions(template, recentTemplateIds, productHighlights) {
+  if (!template) return '';
+
+  const structure = template.structure;
+  const formatting = template.formatting;
+
+  let instructions = `\n\n**🎨 STRUCTURAL TEMPLATE FOR THIS REPLY**: ${template.name}\n\n`;
+  instructions += `**Description**: ${template.description}\n\n`;
+
+  // Structure requirements
+  instructions += `**Structure Requirements**:\n`;
+  instructions += `- Paragraphs: ${structure.paragraphs}\n`;
+
+  if (structure.opening) {
+    const openingSentences = Array.isArray(structure.opening.sentences)
+      ? `${structure.opening.sentences[0]}-${structure.opening.sentences[1]}`
+      : structure.opening.sentences;
+    instructions += `- Opening: ${openingSentences} sentence(s), pattern: ${structure.opening.pattern}\n`;
+    if (structure.opening.instruction) {
+      instructions += `  → ${structure.opening.instruction}\n`;
+    }
+  }
+
+  if (structure.middle) {
+    instructions += `- Middle section: `;
+    if (structure.middle.format === 'bullet_list') {
+      const bulletCount = Array.isArray(structure.middle.bulletCount)
+        ? `${structure.middle.bulletCount[0]}-${structure.middle.bulletCount[1]}`
+        : structure.middle.bulletCount;
+      instructions += `BULLET LIST format with ${bulletCount} bullets\n`;
+    } else {
+      const middleSentences = Array.isArray(structure.middle.sentences)
+        ? `${structure.middle.sentences[0]}-${structure.middle.sentences[1]}`
+        : structure.middle.sentences;
+      instructions += `${middleSentences} sentence(s)\n`;
+    }
+    if (structure.middle.startsWithCashtag) {
+      instructions += `  → Start with "$BWS [Product Name]:"\n`;
+    } else if (structure.middle.cashtagPosition) {
+      instructions += `  → Include $BWS ${structure.middle.cashtagPosition}\n`;
+    }
+    if (structure.middle.instruction) {
+      instructions += `  → ${structure.middle.instruction}\n`;
+    }
+  }
+
+  if (structure.conclusion) {
+    const conclusionSentences = Array.isArray(structure.conclusion.sentences)
+      ? `${structure.conclusion.sentences[0]}-${structure.conclusion.sentences[1]}`
+      : structure.conclusion.sentences;
+    instructions += `- Conclusion: ${conclusionSentences} sentence(s)`;
+    if (structure.conclusion.includesCashtag) {
+      instructions += `, must include $BWS`;
+    }
+    instructions += `\n`;
+    if (structure.conclusion.instruction) {
+      instructions += `  → ${structure.conclusion.instruction}\n`;
+    }
+  }
+
+  // Formatting requirements
+  instructions += `\n**Formatting**:\n`;
+  instructions += `- Emojis: ${formatting.emojis ? `YES - Use 1-${formatting.emojiLimit || 2} contextual emojis` : 'NO - Plain text only'}\n`;
+  instructions += `- Bullet points: ${formatting.bulletPoints ? 'YES - Use • for features' : 'NO'}\n`;
+
+  // Add template-specific guidelines if available
+  const guidelines = productHighlights?.templateGuidelines?.[template.id];
+  if (guidelines) {
+    instructions += `\n**${template.name} Guidelines**:\n`;
+
+    if (guidelines.bulletPointRules) {
+      instructions += `\nBullet Point Rules:\n`;
+      guidelines.bulletPointRules.forEach(rule => {
+        instructions += `- ${rule}\n`;
+      });
+    }
+
+    if (guidelines.emojiRules) {
+      instructions += `\nEmoji Rules:\n`;
+      guidelines.emojiRules.forEach(rule => {
+        instructions += `- ${rule}\n`;
+      });
+    }
+
+    if (guidelines.problemStatementRules) {
+      instructions += `\nProblem Statement Rules:\n`;
+      guidelines.problemStatementRules.forEach(rule => {
+        instructions += `- ${rule}\n`;
+      });
+    }
+
+    if (guidelines.cashtagPlacementRules) {
+      instructions += `\nCashtag Placement:\n`;
+      guidelines.cashtagPlacementRules.forEach(rule => {
+        instructions += `- ${rule}\n`;
+      });
+    }
+  }
+
+  // Add examples
+  if (template.examples && template.examples.length > 0) {
+    instructions += `\n**${template.name} EXAMPLES**:\n\n`;
+    template.examples.forEach((ex, idx) => {
+      instructions += `Example ${idx + 1}:\n"${ex.text}"\n\n`;
+    });
+  }
+
+  // Diversity requirements
+  instructions += `**STRUCTURAL DIVERSITY**:\n`;
+  instructions += `- This reply uses: "${template.name}" template\n`;
+  instructions += `- Recent templates used: [${recentTemplateIds.slice(0, 3).join(', ') || 'none'}] - DO NOT replicate these structures\n`;
+  instructions += `- Follow the structure rules above EXACTLY\n`;
+  instructions += `- Vary sentence lengths within the template constraints\n`;
+
+  return instructions;
+}
+
 /**
  * Generate a reply to a tweet with enhanced diversity and specific product features
  */
 export async function generateReplyText(client, tweet, kolProfile, product, evaluation, positioningPhrase = 'microcap opportunity with real fundamentals', recentReplies = [], specialNotes = '') {
+  // Select structural template for this reply
+  const selectedTemplate = selectReplyTemplate(recentReplies);
+  const recentTemplateIds = extractTemplateIds(recentReplies.slice(0, 5));
+
   const useCasesText = product.useCases && Array.isArray(product.useCases) && product.useCases.length > 0
     ? `\nUse Cases:\n${product.useCases.slice(0, 4).map(u => `- ${u}`).join('\n')}`
     : '';
@@ -282,6 +567,12 @@ Documentation: ${product.url || 'https://docs.bws.ninja'}`;
     ).join('')}`
     : '';
 
+  // Select link URL (75% product docs, 25% main site)
+  const replyLink = selectReplyLink(product, highlights);
+
+  // Build template-specific instructions
+  const templateInstructions = buildTemplateInstructions(selectedTemplate, recentTemplateIds, highlights);
+
   const prompt = `Generate a natural reply positioning BWS as a ${positioningPhrase}.
 
 KOL's Tweet:
@@ -289,7 +580,7 @@ KOL's Tweet:
 
 BWS Product to Reference:
 ${product.name || 'BWS Solution'}
-URL: ${product.url || 'https://www.bws.ninja'}
+URL: ${replyLink}
 
 Product Details:
 ${productInfo}${specialNotesSection}
@@ -340,30 +631,20 @@ B) **PRODUCT-SPECIFIC** (when tweet clearly relates to ONE BWS product):
    - Example: "$BWS CredBlock enables verifiable credentials on-chain - sports clubs already using it for fan verification"
 
 **DEFAULT to PLATFORM-LEVEL unless the tweet is CLEARLY about a specific use case that matches ONE BWS product.**
+${templateInstructions}
 
-**REPLY STRUCTURE** (REQUIRED - Follow this exact format):
-
-Line 1: Context-related sentence responding directly to the KOL's tweet content
-[blank line]
-Line 2-3: Describe BWS product features and vision (platform or product-specific as defined above)
-[blank line]
-Line 4: @BWSCommunity mention + 2-3 context-related hashtags + URL
-
-Guidelines for Reply:
-1. **STRUCTURE**: Must follow the 3-part format above with blank lines separating sections
-2. **Opening sentence**: Directly engage with the KOL's tweet content - show you read and understood it
-3. **Middle section**: Position BWS (platform or product-specific) with features and vision
-4. **Closing line**: Always include @BWSCommunity + relevant hashtags + URL
-5. Keep total reply under 280 characters including line breaks
-6. Use conversational brand voice - be transparent this is BWS (the company) speaking
-7. **CRITICAL**: NEVER use "I" - use "we" or third-person "BWS". This is BWS team/company account.
-8. **REQUIRED**: Include "$BWS" cashtag in the middle section (not just at end)
-9. **REQUIRED**: Include "@BWSCommunity" in the closing line
-10. **REQUIRED**: Include link to specific product docs page or https://www.bws.ninja in closing line
-11. **HASHTAGS**: Choose 2-3 hashtags that relate to the tweet context (e.g., #altcoins #gems #microcap #blockchain #DeFi #Web3 #crypto)
-12. NO salesy language: avoid "amazing", "revolutionary", "don't miss", "moon"
-13. Use emojis sparingly (0-1 max)
-14. **DIVERSITY**: If recent replies exist, vary your tone, structure, and word choices significantly
+**GENERAL REPLY GUIDELINES** (Apply to all templates):
+1. Keep total reply under 280 characters including line breaks
+2. Use conversational brand voice - be transparent this is BWS (the company) speaking
+3. **CRITICAL**: NEVER use "I" - use "we" or third-person "BWS". This is BWS team/company account.
+4. **REQUIRED**: Include "$BWS" cashtag somewhere in the reply (placement varies by template)
+5. **REQUIRED**: Include "@BWSCommunity" in the closing line
+6. **CRITICAL - MUST INCLUDE LINK**: End reply with the URL provided above: ${replyLink}
+   - Place link at the very end after @BWSCommunity and hashtags
+   - This link is REQUIRED in every reply - do not omit it
+7. **HASHTAGS**: Choose 2-3 hashtags that relate to the tweet context (e.g., #altcoins #gems #microcap #blockchain #DeFi #Web3 #crypto)
+8. NO salesy language: avoid "amazing", "revolutionary", "don't miss", "moon"
+9. **CRITICAL**: Follow the TEMPLATE STRUCTURE above EXACTLY - this is the most important requirement
 
 Examples of PLATFORM-LEVEL positioning (for general market/trends tweets):
 
@@ -430,7 +711,15 @@ Provide JSON response:
     });
 
     const responseText = message.content[0].text.trim();
-    return extractJSON(responseText);
+    const result = extractJSON(responseText);
+
+    // Add template metadata to result
+    if (selectedTemplate) {
+      result.templateUsed = selectedTemplate.id;
+      result.templateName = selectedTemplate.name;
+    }
+
+    return result;
   } catch (error) {
     console.error(`Claude API error generating reply: ${error.message}`);
     throw error;
@@ -509,5 +798,7 @@ export default {
   evaluateUserAsCryptoKOL,
   evaluateTweetForReply,
   generateReplyText,
-  analyzeEngagementPatterns
+  analyzeEngagementPatterns,
+  selectProductImage,
+  selectReplyLink
 };
