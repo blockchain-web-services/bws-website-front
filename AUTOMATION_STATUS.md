@@ -272,9 +272,12 @@ TWITTER_ACCESS_SECRET (BWSCommunity)
 ## 7. Other Workflows (Inactive/On-Demand)
 
 ### Weekly Analytics
-**Workflow:** `analyze-kols-weekly.yml`
-**Status:** Not yet active (weekly schedule)
-**Next Run:** Sunday
+**Status:** ❌ **DEPRECATED AND REMOVED** (Dec 4, 2025)
+**Reason:** Not actively used, can generate analytics manually from `kol-replies.json` when needed
+**Files Removed:**
+- `.github/workflows/analyze-kols-weekly.yml`
+- `scripts/crawling/production/analyze-kol-engagement.js`
+- `loadMetricsData()` and `saveMetricsData()` functions from `kol-utils.js`
 
 ### Weekly X Post
 **Workflow:** `weekly-x-post.yml`
