@@ -516,6 +516,39 @@ export function getTodayDateString() {
 }
 
 /**
+ * Get tweet age in hours
+ * @param {Object} post - Post object with created_at or addedAt timestamp
+ * @returns {number} Age in hours
+ */
+export function getTweetAgeHours(post) {
+  const now = Date.now();
+  const createdAt = post.created_at
+    ? new Date(post.created_at).getTime()
+    : new Date(post.addedAt).getTime();
+  return (now - createdAt) / (60 * 60 * 1000);
+}
+
+/**
+ * Check if post is fresh enough to reply (default: 24 hours)
+ * @param {Object} post - Post object with created_at or addedAt timestamp
+ * @param {number} maxAgeHours - Maximum age in hours (default: 24)
+ * @returns {boolean} True if post is fresh enough
+ */
+export function isPostFresh(post, maxAgeHours = 24) {
+  return getTweetAgeHours(post) <= maxAgeHours;
+}
+
+/**
+ * Check if post should be removed from engaging-posts (default: 48 hours)
+ * @param {Object} post - Post object with created_at or addedAt timestamp
+ * @param {number} cleanupThresholdHours - Cleanup threshold in hours (default: 48)
+ * @returns {boolean} True if post should be removed
+ */
+export function isPostStale(post, cleanupThresholdHours = 48) {
+  return getTweetAgeHours(post) > cleanupThresholdHours;
+}
+
+/**
  * Check if we've reached the daily reply limit
  */
 export function hasReachedDailyLimit(repliesData, maxRepliesPerDay) {

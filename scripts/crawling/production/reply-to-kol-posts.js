@@ -52,24 +52,100 @@ import {
 } from '../utils/claude-client.js';
 
 /**
- * Load engaging posts
+ * Load engaging posts with 24-hour freshness filter
  */
 async function loadEngagingPosts() {
   try {
     const data = JSON.parse(await fs.readFile(ENGAGING_POSTS_PATH, 'utf-8'));
 
-    // Filter out expired and already processed posts
     const now = new Date().getTime();
-    const validPosts = (data.posts || []).filter(post => {
-      if (post.processed) return false;
+    const TWENTY_FOUR_HOURS = 24 * 60 * 60 * 1000;
+    const FORTY_EIGHT_HOURS = 48 * 60 * 60 * 1000;
+
+    // Separate posts into valid (fresh) and stale (to remove)
+    const validPosts = [];
+    const stalePosts = [];
+    let skippedOld = 0;
+
+    (data.posts || []).forEach(post => {
+      // Already processed - keep but don't evaluate
+      if (post.processed) {
+        validPosts.push(post);
+        return;
+      }
+
+      // Check tweet age (created_at from Twitter)
+      let tweetAge = null;
+      if (post.created_at) {
+        const createdAt = new Date(post.created_at).getTime();
+        tweetAge = now - createdAt;
+
+        // Remove posts older than 48 hours
+        if (tweetAge > FORTY_EIGHT_HOURS) {
+          stalePosts.push(post);
+          return;
+        }
+
+        // Skip (but keep in file) posts between 24-48 hours old
+        if (tweetAge > TWENTY_FOUR_HOURS) {
+          validPosts.push(post);
+          skippedOld++;
+          return;
+        }
+      } else {
+        // No created_at - fallback to addedAt for legacy posts
+        console.warn(`⚠️  Post ${post.id} missing created_at, using addedAt`);
+        const addedAt = new Date(post.addedAt).getTime();
+        tweetAge = now - addedAt;
+
+        if (tweetAge > FORTY_EIGHT_HOURS) {
+          stalePosts.push(post);
+          return;
+        }
+
+        if (tweetAge > TWENTY_FOUR_HOURS) {
+          validPosts.push(post);
+          skippedOld++;
+          return;
+        }
+      }
+
+      // Check expiresAt (legacy system)
       if (post.expiresAt) {
         const expiresAt = new Date(post.expiresAt).getTime();
-        if (expiresAt < now) return false;
+        if (expiresAt < now) {
+          stalePosts.push(post);
+          return;
+        }
       }
-      return true;
+
+      // Post is fresh (< 24 hours old)
+      validPosts.push(post);
     });
 
-    return { ...data, posts: validPosts };
+    // Log cleanup stats
+    if (stalePosts.length > 0) {
+      console.log(`🧹 Removing ${stalePosts.length} stale posts (>48 hours old)`);
+    }
+    if (skippedOld > 0) {
+      console.log(`⏭️  Skipping ${skippedOld} posts between 24-48 hours old (too old to reply)`);
+    }
+
+    // Calculate fresh posts available for reply
+    const freshPosts = validPosts.filter(p => {
+      if (p.processed) return false;
+      if (!p.created_at) return true; // Legacy posts
+      const createdAt = new Date(p.created_at).getTime();
+      return (now - createdAt) <= TWENTY_FOUR_HOURS;
+    });
+
+    console.log(`📋 Found ${freshPosts.length} fresh posts (<24h old) available for reply`);
+
+    return {
+      ...data,
+      posts: validPosts,
+      _removedStale: stalePosts.length > 0 // Flag to trigger save
+    };
   } catch (error) {
     console.log('⚠️  No engaging posts file found or error loading it');
     return { posts: [], metadata: {} };
@@ -311,6 +387,17 @@ async function replyToKolPosts() {
   const engagingPostsData = await loadEngagingPosts();
   const processedPosts = loadProcessedPosts();
 
+  // Save cleaned file if stale posts were removed
+  if (engagingPostsData._removedStale) {
+    console.log('💾 Saving cleaned engaging-posts.json...');
+    await saveEngagingPosts({
+      posts: engagingPostsData.posts,
+      metadata: engagingPostsData.metadata,
+      productRotation: engagingPostsData.productRotation
+    });
+    delete engagingPostsData._removedStale; // Remove internal flag
+  }
+
   // Initialize product rotation in engagingPostsData if not present
   if (!engagingPostsData.productRotation) {
     engagingPostsData.productRotation = {
@@ -336,7 +423,9 @@ async function replyToKolPosts() {
   // This ensures rotation persists across workflow runs
   processedPosts.productRotation = engagingPostsData.productRotation;
 
-  console.log(`📋 Found ${engagingPostsData.posts.length} unprocessed engaging posts\n`);
+  // Note: engagingPostsData.posts is already filtered for freshness (<24h old) and unprocessed status
+  const unprocessedCount = engagingPostsData.posts.filter(p => !p.processed).length;
+  console.log(`📋 Loaded ${engagingPostsData.posts.length} total posts (${unprocessedCount} unprocessed, fresh < 24h)\n`);
 
   if (engagingPostsData.posts.length === 0) {
     console.log('⚠️  No engaging posts to process. Exiting...');
