@@ -915,6 +915,25 @@
       "timestamp": "2025-12-03T18:24:42.820Z",
       "status": "posted",
       "dryRun": false
+    },
+    {
+      "id": "1353384573435056128-1994142556071031079-1764847341691",
+      "tweetId": "1994142556071031079",
+      "tweetUrl": "https://twitter.com/CryptoRover/status/1994142556071031079",
+      "kolId": "1353384573435056128",
+      "kolUsername": "CryptoRover",
+      "originalTweetText": "BREAKING:\n\nBLACKROCK CEO LARRY FINK: IT DOESN'T MATTER IF MARKETS RISE AND FALL. BUBBLES COME AND GO.\n\nWHAT MATTERS MOST IS STAYING IN THE MARKET THROUGH ALL CYCLES.",
+      "replyTweetId": "1996540573843595310",
+      "replyText": "Brands struggle to distribute NFTs to mainstream customers - wallet setup kills adoption before it starts.\n\nNFT.zK from $BWS lets companies send NFTs via email with zero wallet friction, handling blockchain complexity behind the scenes.\n\nReal infrastructure for mass adoption.\n\n@BWSCommunity #NFT #Web3 #microcap https://www.bws.ninja",
+      "productMentioned": "X Bot, Blockchain Badges",
+      "relevanceScore": 82,
+      "templateUsed": "problem_solution",
+      "templateName": "Problem-Solution Structure",
+      "imageAttached": true,
+      "imagePath": "/assets/images/docs/nftzk/nftzk-0.png",
+      "timestamp": "2025-12-04T11:22:21.691Z",
+      "status": "posted",
+      "dryRun": false
     }
   ],
   "dailyStats": {
@@ -989,10 +1008,10 @@
     }
   },
   "metadata": {
-    "totalReplies": 40,
-    "successfulReplies": 6,
+    "totalReplies": 41,
+    "successfulReplies": 7,
     "failedReplies": 34,
-    "lastReplyAt": "2025-12-03T18:24:42.820Z",
+    "lastReplyAt": "2025-12-04T11:22:21.691Z",
     "todayRepliesCount": 0,
     "lastUpdateBy": "kol-system"
   }
