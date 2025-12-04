@@ -953,6 +953,44 @@
       "timestamp": "2025-12-04T11:49:14.481Z",
       "status": "posted",
       "dryRun": false
+    },
+    {
+      "id": "1353384573435056128-1994142556071031079-1764862188547",
+      "tweetId": "1994142556071031079",
+      "tweetUrl": "https://twitter.com/CryptoRover/status/1994142556071031079",
+      "kolId": "1353384573435056128",
+      "kolUsername": "CryptoRover",
+      "originalTweetText": "BREAKING:\n\nBLACKROCK CEO LARRY FINK: IT DOESN'T MATTER IF MARKETS RISE AND FALL. BUBBLES COME AND GO.\n\nWHAT MATTERS MOST IS STAYING IN THE MARKET THROUGH ALL CYCLES.",
+      "replyTweetId": "1996602846679089535",
+      "replyText": "Staying invested through cycles requires conviction in fundamentals, not narratives.\n\nESG Credits enables financial institutions to integrate blockchain-verified environmental impact reporting directly into banking apps - supporting ICMA frameworks and preventing double-counting. Built by $BWS at microcap valuation.\n\n@BWSCommunity #microcap #ESG #fintech https://docs.bws.ninja/marketplace-solutions/bws.esg.credits",
+      "productMentioned": "Multiple products (Blockchain Badges, ESG Credits, X Bot)",
+      "relevanceScore": 82,
+      "templateUsed": "delayed_cashtag",
+      "templateName": "Delayed $BWS Mention",
+      "imageAttached": false,
+      "imagePath": null,
+      "timestamp": "2025-12-04T15:29:48.547Z",
+      "status": "posted",
+      "dryRun": false
+    },
+    {
+      "id": "1068237257977544704-1996404865929822313-1764862236383",
+      "tweetId": "1996404865929822313",
+      "tweetUrl": "https://twitter.com/AltcoinSherpa/status/1996404865929822313",
+      "kolId": "1068237257977544704",
+      "kolUsername": "AltcoinSherpa",
+      "originalTweetText": "If $BTC legs up then coins like $FARTCOIN are going to full send",
+      "replyTweetId": "1996603045979816099",
+      "replyText": "Fair - momentum plays have their moment.\n\nConsider this: $BWS IPFS service enables decentralized NFT metadata and media storage without running your own node. Content-addressed files replicated across IPFS network - censorship-resistant infrastructure at microcap valuation.\n\n@BWSCommunity #microcap #NFT #infrastructure https://docs.bws.ninja/solutions/bws.ipfs.upload",
+      "productMentioned": "X Bot",
+      "relevanceScore": 78,
+      "templateUsed": "stat_driven",
+      "templateName": "Stat/Fact-Driven Structure",
+      "imageAttached": true,
+      "imagePath": "/assets/images/docs/bws-ipfs/bws-ipfs-0.png",
+      "timestamp": "2025-12-04T15:30:36.383Z",
+      "status": "posted",
+      "dryRun": false
     }
   ],
   "dailyStats": {
@@ -1027,10 +1065,10 @@
     }
   },
   "metadata": {
-    "totalReplies": 42,
-    "successfulReplies": 8,
+    "totalReplies": 44,
+    "successfulReplies": 10,
     "failedReplies": 34,
-    "lastReplyAt": "2025-12-04T11:49:14.481Z",
+    "lastReplyAt": "2025-12-04T15:30:36.383Z",
     "todayRepliesCount": 0,
     "lastUpdateBy": "kol-system"
   }

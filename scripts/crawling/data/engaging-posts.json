@@ -35,7 +35,7 @@
       },
       "created_at": "",
       "url": "https://twitter.com/AltcoinSherpa/status/1996409892572365131",
-      "processed": false,
+      "processed": true,
       "addedAt": "2025-12-04T12:46:39.742Z",
       "expiresAt": "2025-12-11T12:46:39.742Z",
       "source": "timeline_monitor",
@@ -56,7 +56,7 @@
       },
       "created_at": "",
       "url": "https://twitter.com/AltcoinSherpa/status/1996404865929822313",
-      "processed": false,
+      "processed": true,
       "addedAt": "2025-12-04T12:46:41.753Z",
       "expiresAt": "2025-12-11T12:46:41.753Z",
       "source": "timeline_monitor",
@@ -77,7 +77,7 @@
       },
       "created_at": "",
       "url": "https://twitter.com/IncomeSharks/status/1996303125905555857",
-      "processed": false,
+      "processed": true,
       "addedAt": "2025-12-04T12:46:56.616Z",
       "expiresAt": "2025-12-11T12:46:56.616Z",
       "source": "timeline_monitor",
@@ -98,7 +98,7 @@
       },
       "created_at": "",
       "url": "https://twitter.com/WuBlockchain/status/1996506182547382433",
-      "processed": false,
+      "processed": true,
       "addedAt": "2025-12-04T12:47:09.380Z",
       "expiresAt": "2025-12-11T12:47:09.380Z",
       "source": "timeline_monitor",
@@ -1489,10 +1489,10 @@
       "BWS IPFS",
       "Blockchain Save"
     ],
-    "currentIndex": 5,
-    "lastProductUsed": "Blockchain Badges",
+    "currentIndex": 7,
+    "lastProductUsed": "BWS IPFS",
     "positioningPhraseIndex": 0,
-    "replyCount": 13
+    "replyCount": 15
   },
   "_removedStale": false
 }
