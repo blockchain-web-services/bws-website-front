@@ -55,12 +55,7 @@ jobs:
 
       - name: Post to X (Twitter)
         env:
-          # Primary account (@BWSXAI) - will fallback to @BWSCommunity if not available
-          BWSXAI_TWITTER_API_KEY: ${{ secrets.BWSXAI_TWITTER_API_KEY }}
-          BWSXAI_TWITTER_API_SECRET: ${{ secrets.BWSXAI_TWITTER_API_SECRET }}
-          BWSXAI_TWITTER_ACCESS_TOKEN: ${{ secrets.BWSXAI_TWITTER_ACCESS_TOKEN }}
-          BWSXAI_TWITTER_ACCESS_SECRET: ${{ secrets.BWSXAI_TWITTER_ACCESS_SECRET }}
-          # Fallback account (@BWSCommunity)
+          # Using @BWSCommunity account exclusively
           TWITTER_API_KEY: ${{ secrets.TWITTER_API_KEY }}
           TWITTER_API_SECRET: ${{ secrets.TWITTER_API_SECRET }}
           TWITTER_ACCESS_TOKEN: ${{ secrets.TWITTER_ACCESS_TOKEN }}
@@ -81,7 +76,7 @@ jobs:
             git add scripts/data/article-x-posts.json
             git commit -m "chore: Update article X posts data [skip ci]
 
-            - Posted article content to @BWSXAI
+            - Posted article content to @BWSCommunity
             - Updated post statuses and tweet IDs
 
             🤖 Generated with [Claude Code](https://claude.com/claude-code)"
@@ -110,7 +105,7 @@ jobs:
             echo "- ⏳ Pending: $PENDING" >> $GITHUB_STEP_SUMMARY
             echo "- ❌ Failed: $FAILED" >> $GITHUB_STEP_SUMMARY
             echo "" >> $GITHUB_STEP_SUMMARY
-            echo "🔗 [View @BWSXAI on X](https://twitter.com/BWSXAI)" >> $GITHUB_STEP_SUMMARY
+            echo "🔗 [View @BWSCommunity on X](https://twitter.com/BWSCommunity)" >> $GITHUB_STEP_SUMMARY
           else
             echo "⚠️ No posts data file found" >> $GITHUB_STEP_SUMMARY
           fi
