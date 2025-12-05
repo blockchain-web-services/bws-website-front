@@ -611,50 +611,7 @@ Reply Automation processes the tweet queue populated by Script 2.2.1, evaluating
 
 ---
 
-## 2.4 Weekly KOL Analytics
-
-**Workflow File**: `.github/workflows/analyze-kols-weekly.yml`
-
-**Overview**: Generates comprehensive weekly reports analyzing KOL engagement performance, product mentions, and AI-powered insights.
-
-**Schedule**: Every Sunday at 21:00 UTC
-
-**Scripts Used**:
-- `scripts/crawling/production/analyze-kol-engagement.js`
-- `scripts/crawling/utils/claude-client.js` (AI analysis)
-- `scripts/crawling/utils/kol-utils.js`
-
-**Strategy**: **Data Analysis + Claude AI**
-- Analyzes reply performance metrics from `kol-replies.json`
-- Calculates engagement rates, success rates, relevance scores
-- AI-powered insights and recommendations via Claude
-- Creates GitHub issue with formatted report
-- Tracks product mention performance
-
-**Recent Failures**: None (1/1 success)
-
-**Recent Outputs** (Latest Weekly Report):
-- **Period**: Last 7 days
-- **Total Replies**: 6
-- **Success Rate**: 100% (when not blocked by 403 errors)
-- **Average Relevance Score**: 72/100
-- **Top KOLs Engaged**:
-  - @IncomeSharks (3 replies, 688K followers)
-  - @AltcoinSherpa (1 reply, 257K followers)
-- **Product Performance**:
-  - Fan Game Cube: 2 mentions
-  - X Bot: 2 mentions
-  - NFT Solutions: 1 mention
-- **AI Assessment**: "Engagement quality high, but volume limited by API restrictions. Focus on top-performing KOLs."
-
-**Data Files**:
-- Input: `scripts/crawling/data/kol-replies.json`
-- Output: `scripts/crawling/data/kol-metrics.json`
-- Creates GitHub issue with report
-
----
-
-## 2.5 Post Article Content to X
+## 2.4 Post Article Content to X
 
 **Workflow File**: `.github/workflows/post-article-content.yml`
 
@@ -695,9 +652,11 @@ Root Cause: Same Twitter API blocking issue as KOL Reply Cycle
 - Input: Article files in `src/pages/`
 - Output: `scripts/data/article-x-posts.json`
 
+**Note**: Section 2.4 (Weekly KOL Analytics) has been deprecated and removed. Analytics can be manually generated from `kol-replies.json` data when needed.
+
 ---
 
-## 2.6 Weekly X Post
+## 2.5 Weekly X Post
 
 **Workflow File**: `.github/workflows/weekly-x-post.yml`
 
@@ -734,7 +693,7 @@ Occasional Success: Suggests intermittent account access or rate limit recovery
 
 ---
 
-## 2.7 Production Monitoring
+## 2.6 Production Monitoring
 
 **Workflow File**: `.github/workflows/monitor.yml`
 
