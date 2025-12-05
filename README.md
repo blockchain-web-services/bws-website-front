@@ -820,6 +820,89 @@ $BWS #Web3 #Blockchain #BWS
 
 ---
 
+## 2.8 Partnership Announcements Fetch
+
+**Workflow File**: `.github/workflows/fetch-twitter-partnerships.yml`
+
+**Overview**: ✅ **STABLE** - Automatically detects and adds partnership announcements from @BWSCommunity to the BWS website news carousel.
+
+**Schedule**: Daily at 9:00 AM UTC
+
+**Status**: ✅ Fixed and working (Dec 5, 2025)
+
+**Scripts Used**:
+- `scripts/crawling/production/fetch-twitter-partnerships.js` (main script)
+- Uses Twitter API v2 for tweet fetching
+- Uses Claude AI (Anthropic) for content summarization
+
+**Strategy**: **Twitter API v2 + Claude AI + Automated Website Updates**
+- Monitors @BWSCommunity timeline for tweets starting with "Partnership"
+- Extracts partnership images (from main tweet or quoted tweet)
+- Fetches partner's X profile image for logo display
+- AI-generated title and concise description via Claude
+- Automatically updates `src/data/news.ts` with new partnership entry
+- Downloads and saves partnership images to `public/assets/images/news/`
+- Generates CSS for partnership background images in `public/partnerships.css`
+- Tracks processed tweets to avoid duplicates
+- Auto-commits and pushes changes to repository
+
+**Recent Status**: ✅ **STABLE** (Successfully fixed Dec 5, 2025)
+
+**Recent Fixes** (Dec 5, 2025):
+```
+Issue #1: Wrong script path in workflow
+Fix: Updated workflow from scripts/fetch-twitter-partnerships.js
+     to scripts/crawling/production/fetch-twitter-partnerships.js
+Commit: 85beb1b
+
+Issue #2: Incorrect relative paths in script
+Fix: Updated path resolution from ../ to ../../../
+     (NEWS_FILE_PATH, NEWS_IMAGES_DIR, PARTNERSHIP_CSS_FILE)
+Commit: 85beb1b
+
+Issue #3: Wrong data file path in workflow
+Fix: Updated from scripts/data/processed-tweets.json
+     to scripts/crawling/production/data/processed-tweets.json
+Commit: 85beb1b
+
+Result: All path issues resolved, workflow ready to run
+```
+
+**Partnership Detection**:
+- Filters tweets starting with "Partnership"
+- Formats: "Partnership | @Name", "Partnership: Name", "Partnership with Name"
+- Extracts partner X username for profile image fetching
+- Falls back to BWS logo if no image found
+
+**Content Generation** (Claude AI):
+- Title: 3-word partner name extraction
+- Description: One sentence (max 150 chars) focusing on BWS platform/API usage
+- Partner username extraction for profile linking
+- Highlights partner name with rose-colored span in description
+
+**Website Integration**:
+- Adds entries to beginning of news carousel (`src/data/news.ts`)
+- Each entry includes:
+  - Partnership title and description
+  - Partner logo (circular, like X profile pics)
+  - Background image from tweet
+  - "View Announcement" button linking to tweet
+  - Unique CSS class for background styling
+
+**Data Files**:
+- State: `scripts/crawling/production/data/processed-tweets.json`
+- Output: `src/data/news.ts` (TypeScript news carousel data)
+- Images: `public/assets/images/news/partnership-*.jpg`
+- CSS: `public/partnerships.css` (auto-generated styles)
+
+**Error Handling**:
+- Creates fix branch and PR on failure
+- Tracks failure count in state file
+- Continues workflow with `continue-on-error: true`
+- Auto-creates GitHub issue for tracking
+
+---
+
 ## Automation Documentation
 
 Complete automation documentation in [`scripts/crawling/docs/`](./scripts/crawling/docs/):
