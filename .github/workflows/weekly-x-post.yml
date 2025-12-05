@@ -60,7 +60,7 @@ jobs:
           DRY_RUN: ${{ inputs.dry_run }}
           TEST_SIMPLE: ${{ inputs.test_simple }}
         run: |
-          node scripts/generate-weekly-x-post.js
+          node scripts/crawling/production/generate-weekly-x-post.js
           echo "post_status=success" >> $GITHUB_OUTPUT
         continue-on-error: true
 
@@ -69,7 +69,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add scripts/data/weekly-x-posts-state.json
+          git add scripts/crawling/production/data/weekly-x-posts-state.json
           if git diff --staged --quiet; then
             echo "ℹ️  No state changes to commit"
           else
@@ -168,7 +168,7 @@ jobs:
               '   - TWITTER_ACCESS_TOKEN',
               '   - TWITTER_ACCESS_SECRET',
               '   - ANTHROPIC_API_KEY',
-              '3. Test locally: `DRY_RUN=true node scripts/generate-weekly-x-post.js`',
+              '3. Test locally: `DRY_RUN=true node scripts/crawling/production/generate-weekly-x-post.js`',
               '4. Fix and push to this branch',
               '',
               '---',
