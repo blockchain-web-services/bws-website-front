@@ -1067,6 +1067,25 @@
       "timestamp": "2025-12-04T23:19:18.449Z",
       "status": "posted",
       "dryRun": false
+    },
+    {
+      "id": "1353384573435056128-1994142556071031079-1764920243278",
+      "tweetId": "1994142556071031079",
+      "tweetUrl": "https://twitter.com/CryptoRover/status/1994142556071031079",
+      "kolId": "1353384573435056128",
+      "kolUsername": "CryptoRover",
+      "originalTweetText": "BREAKING:\n\nBLACKROCK CEO LARRY FINK: IT DOESN'T MATTER IF MARKETS RISE AND FALL. BUBBLES COME AND GO.\n\nWHAT MATTERS MOST IS STAYING IN THE MARKET THROUGH ALL CYCLES.",
+      "replyTweetId": "1996846345051951113",
+      "replyText": "Fink's right - long-term thinking separates survivors from noise traders.\n\nNFT.zK delivers:\n• Transfer NFTs to customers via email - no wallet required\n• Bulk mint collections with single API call\n• IPFS metadata management included\n\nReal NFT infrastructure at microcap. $BWS\n\n@BWSCommunity #microcap #NFT #Web3 https://docs.bws.ninja/solutions/bws.nft.zk",
+      "productMentioned": "Multiple products (Blockchain Badges, ESG Credits, X Bot)",
+      "relevanceScore": 82,
+      "templateUsed": "feature_list",
+      "templateName": "Feature List Structure",
+      "imageAttached": true,
+      "imagePath": "/assets/images/docs/nftzk/nftzk-0.png",
+      "timestamp": "2025-12-05T07:37:23.278Z",
+      "status": "posted",
+      "dryRun": false
     }
   ],
   "dailyStats": {
@@ -1141,10 +1160,10 @@
     }
   },
   "metadata": {
-    "totalReplies": 48,
-    "successfulReplies": 14,
+    "totalReplies": 49,
+    "successfulReplies": 15,
     "failedReplies": 34,
-    "lastReplyAt": "2025-12-04T23:19:18.449Z",
+    "lastReplyAt": "2025-12-05T07:37:23.278Z",
     "todayRepliesCount": 0,
     "lastUpdateBy": "kol-system"
   }
