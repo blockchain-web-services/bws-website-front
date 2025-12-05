@@ -24,6 +24,98 @@ export interface NewsItem {
 
 export const newsItems: NewsItem[] = [
   {
+    title: 'Rouge Studio',
+    description: '<span class="partner-name">Rouge Studio</span> integrates BWS X Bot to enhance community engagement, performance tracking, and rewards in Web3.',
+    partnershipTitle: 'Rouge Studio',
+    logos: [
+      {
+        src: 'https://pbs.twimg.com/profile_images/1778008019856732160/VJvFD1V8_400x400.jpg',
+        alt: 'Rouge Studio Logo',
+        href: 'https://x.com/RougeStudio_',
+        class: 'image-partnership image-partnership-partner'
+      }
+    ],
+    buttons: [
+      {
+        text: 'View Announcement',
+        href: 'https://x.com/BWSCommunity/status/1975576723337982186',
+        type: 'secondary',
+        target: '_blank',
+        hasArrow: true
+      }
+    ],
+    backgroundClass: 'container-image-partnership-1975576723337982186'
+  },
+  {
+    title: 'Agentify',
+    description: 'Building autonomous AI agents using BWS X Bot for tracking verified social intelligence and Web3 automation.',
+    partnershipTitle: 'Agentify',
+    logos: [
+      {
+        src: 'https://pbs.twimg.com/profile_images/1923463043671027712/f4bA_sep_400x400.jpg',
+        alt: 'Agentify Logo',
+        href: 'https://x.com/agentifyxyz',
+        class: 'image-partnership image-partnership-partner'
+      }
+    ],
+    buttons: [
+      {
+        text: 'View Announcement',
+        href: 'https://x.com/BWSCommunity/status/1983622185538257272',
+        type: 'secondary',
+        target: '_blank',
+        hasArrow: true
+      }
+    ],
+    backgroundClass: 'container-image-partnership-1983622185538257272'
+  },
+  {
+    title: 'RATI AI',
+    description: '<span class="partner-name">RATI AI</span> integrates BWS platform to build an AI-driven ecosystem merging consciousness, memecoins, and art.',
+    partnershipTitle: 'RATI AI',
+    logos: [
+      {
+        src: 'https://pbs.twimg.com/profile_images/1932550989745369089/PMFUBdvU_400x400.jpg',
+        alt: 'RATI AI Logo',
+        href: 'https://x.com/rati_ai',
+        class: 'image-partnership image-partnership-partner'
+      }
+    ],
+    buttons: [
+      {
+        text: 'View Announcement',
+        href: 'https://x.com/BWSCommunity/status/1990835882102857755',
+        type: 'secondary',
+        target: '_blank',
+        hasArrow: true
+      }
+    ],
+    backgroundClass: 'container-image-partnership-1990835882102857755'
+  },
+  {
+    title: 'Orbler',
+    description: '<span class="partner-name">Orbler</span> integrates BWS solutions to make Web3 accessible through fandom and creativity-driven blockchain pathways.',
+    partnershipTitle: 'Orbler',
+    logos: [
+      {
+        src: 'https://abs.twimg.com/sticky/default_profile_images/default_profile_400x400.png',
+        alt: 'Orbler Logo',
+        href: 'https://x.com/orbler',
+        class: 'image-partnership image-partnership-partner'
+      }
+    ],
+    buttons: [
+      {
+        text: 'View Announcement',
+        href: 'https://x.com/BWSCommunity/status/1991912746615775572',
+        type: 'secondary',
+        target: '_blank',
+        hasArrow: true
+      }
+    ],
+    backgroundClass: 'container-image-partnership-1991912746615775572'
+  },
+  {
     title: 'Agentify',
     description: '<span class="partner-name">Agentify</span> building autonomous AI agents with MCP for on-chain DeFi actions, now integrating BWS X Bot for verified social intelligence tracking.',
     partnershipTitle: 'Agentify',
