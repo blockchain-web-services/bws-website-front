@@ -1086,6 +1086,25 @@
       "timestamp": "2025-12-05T07:37:23.278Z",
       "status": "posted",
       "dryRun": false
+    },
+    {
+      "id": "1353384573435056128-1994142556071031079-1764935264266",
+      "tweetId": "1994142556071031079",
+      "tweetUrl": "https://twitter.com/CryptoRover/status/1994142556071031079",
+      "kolId": "1353384573435056128",
+      "kolUsername": "CryptoRover",
+      "originalTweetText": "BREAKING:\n\nBLACKROCK CEO LARRY FINK: IT DOESN'T MATTER IF MARKETS RISE AND FALL. BUBBLES COME AND GO.\n\nWHAT MATTERS MOST IS STAYING IN THE MARKET THROUGH ALL CYCLES.",
+      "replyTweetId": "1996909348107227426",
+      "replyText": "Fink's advice works if you hold fundamentals, not just hype.\n\n$BWS Blockchain Badges issues tamper-proof credentials with immutable blockchain certification - universities and companies prevent credential fraud through verifiable digital certificates that can't be forged.\n\n@BWSCommunity #microcap #blockchain #Web3 https://docs.bws.ninja/marketplace-solutions/bws.blockchain.badges",
+      "productMentioned": "X Bot, Blockchain Badges",
+      "relevanceScore": 82,
+      "templateUsed": "classic",
+      "templateName": "Classic Structure",
+      "imageAttached": true,
+      "imagePath": "/assets/images/docs/blockchain-badges/blockchain-badges-0.png",
+      "timestamp": "2025-12-05T11:47:44.266Z",
+      "status": "posted",
+      "dryRun": false
     }
   ],
   "dailyStats": {
@@ -1160,10 +1179,10 @@
     }
   },
   "metadata": {
-    "totalReplies": 49,
-    "successfulReplies": 15,
+    "totalReplies": 50,
+    "successfulReplies": 16,
     "failedReplies": 34,
-    "lastReplyAt": "2025-12-05T07:37:23.278Z",
+    "lastReplyAt": "2025-12-05T11:47:44.266Z",
     "todayRepliesCount": 0,
     "lastUpdateBy": "kol-system"
   }
