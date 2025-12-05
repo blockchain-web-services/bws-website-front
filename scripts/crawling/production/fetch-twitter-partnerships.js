@@ -23,9 +23,9 @@ const TWITTER_USERNAME = 'BWSCommunity';
 const MAX_TWEETS_TO_FETCH = 50;
 const FALLBACK_IMAGE = '/assets/images/logos/bws-logo-violet-flying.png';
 const PROCESSED_TWEETS_PATH = path.join(__dirname, 'data', 'processed-tweets.json');
-const NEWS_FILE_PATH = path.join(__dirname, '..', 'src', 'data', 'news.ts');
-const NEWS_IMAGES_DIR = path.join(__dirname, '..', 'public', 'assets', 'images', 'news');
-const PARTNERSHIP_CSS_FILE = path.join(__dirname, '..', 'public', 'partnerships.css');
+const NEWS_FILE_PATH = path.join(__dirname, '..', '..', '..', 'src', 'data', 'news.ts');
+const NEWS_IMAGES_DIR = path.join(__dirname, '..', '..', '..', 'public', 'assets', 'images', 'news');
+const PARTNERSHIP_CSS_FILE = path.join(__dirname, '..', '..', '..', 'public', 'partnerships.css');
 
 // Ensure directories exist
 if (!fs.existsSync(NEWS_IMAGES_DIR)) {
