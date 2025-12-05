@@ -2602,13 +2602,433 @@
       "expiresAt": "2025-12-11T22:15:58.931Z",
       "source": "timeline_monitor",
       "contentCategory": "price-speculation"
+    },
+    {
+      "id": "1996772461321572761",
+      "text": "$HOOD - People think being bullish means you want higher prices. Sometimes being bullish means you want prices to go as low as they can so you can buy more at cheaper prices. Two buy zones hit before price pushes back to the major trend line.",
+      "author": {
+        "id": "4441279246",
+        "username": "IncomeSharks"
+      },
+      "public_metrics": {
+        "retweet_count": 12,
+        "reply_count": 22,
+        "like_count": 233,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/IncomeSharks/status/1996772461321572761",
+      "processed": false,
+      "addedAt": "2025-12-05T07:23:28.972Z",
+      "expiresAt": "2025-12-12T07:23:28.972Z",
+      "source": "timeline_monitor",
+      "contentCategory": "technical-analysis"
+    },
+    {
+      "id": "1996649419845083456",
+      "text": "Banks and institutions with their price targets are hilarious. UBS raises their price target $8 to $22 on the day it hits $23. That's like calling for $20k Bitcoin for 3 years then showing up and saying \"Yeah we predict $90k now\".",
+      "author": {
+        "id": "4441279246",
+        "username": "IncomeSharks"
+      },
+      "public_metrics": {
+        "retweet_count": 11,
+        "reply_count": 37,
+        "like_count": 268,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/IncomeSharks/status/1996649419845083456",
+      "processed": false,
+      "addedAt": "2025-12-05T07:23:30.828Z",
+      "expiresAt": "2025-12-12T07:23:30.828Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends/price-speculation"
+    },
+    {
+      "id": "1996635085320401044",
+      "text": "$FLNC - Another nice day for the energy play.",
+      "author": {
+        "id": "4441279246",
+        "username": "IncomeSharks"
+      },
+      "public_metrics": {
+        "retweet_count": 17,
+        "reply_count": 30,
+        "like_count": 261,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/IncomeSharks/status/1996635085320401044",
+      "processed": false,
+      "addedAt": "2025-12-05T07:23:32.884Z",
+      "expiresAt": "2025-12-12T07:23:32.884Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "1996670350252208551",
+      "text": "cmon $FARTCOIN come and do it",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "retweet_count": 10,
+        "reply_count": 19,
+        "like_count": 166,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/AltcoinSherpa/status/1996670350252208551",
+      "processed": false,
+      "addedAt": "2025-12-05T07:24:12.492Z",
+      "expiresAt": "2025-12-12T07:24:12.492Z",
+      "source": "timeline_monitor",
+      "contentCategory": "altcoin-talk"
+    },
+    {
+      "id": "1996660457357398469",
+      "text": "$BTC ehhh maybe we're going to get that pullback that i was looking at",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "retweet_count": 17,
+        "reply_count": 16,
+        "like_count": 89,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/AltcoinSherpa/status/1996660457357398469",
+      "processed": false,
+      "addedAt": "2025-12-05T07:24:14.395Z",
+      "expiresAt": "2025-12-12T07:24:14.395Z",
+      "source": "timeline_monitor",
+      "contentCategory": "technical-analysis"
+    },
+    {
+      "id": "1996803546306818397",
+      "text": "#BITCOIN: THIS IS THE NEXT MOVE...\n\nWatch NOW:\nhttps://youtu.be/80ZA2jW9K70",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "retweet_count": 15,
+        "reply_count": 56,
+        "like_count": 141,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoRover/status/1996803546306818397",
+      "processed": false,
+      "addedAt": "2025-12-05T07:24:36.301Z",
+      "expiresAt": "2025-12-12T07:24:36.301Z",
+      "source": "timeline_monitor",
+      "contentCategory": "price-speculation"
+    },
+    {
+      "id": "1996766732133048477",
+      "text": "BREAKING:\n\nTom Lee's Bitmine buys another 41,946 $ETH worth 130.78M.",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "retweet_count": 108,
+        "reply_count": 118,
+        "like_count": 1095,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoRover/status/1996766732133048477",
+      "processed": false,
+      "addedAt": "2025-12-05T07:24:40.269Z",
+      "expiresAt": "2025-12-12T07:24:40.269Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "1996712444232904768",
+      "text": "BREAKING:\n\nTOM LEE SAYS BITCOIN AND CRYPTO HAVE BOTTOMED\n\n\"WE'RE GOING TO SHATTER THE BITCOIN 4-YEAR CYCLE OVER THE NEXT 8 WEEKS.\"",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "retweet_count": 306,
+        "reply_count": 175,
+        "like_count": 2229,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoRover/status/1996712444232904768",
+      "processed": false,
+      "addedAt": "2025-12-05T07:24:44.195Z",
+      "expiresAt": "2025-12-12T07:24:44.195Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "1996702697374822574",
+      "text": "BREAKING:\n\nBINANCE FOUNDER CZ MEETS MICHAEL SAYLOR FOR THE FIRST TIME.",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "retweet_count": 100,
+        "reply_count": 152,
+        "like_count": 954,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoRover/status/1996702697374822574",
+      "processed": false,
+      "addedAt": "2025-12-05T07:24:46.339Z",
+      "expiresAt": "2025-12-12T07:24:46.339Z",
+      "source": "timeline_monitor",
+      "contentCategory": "news"
+    },
+    {
+      "id": "1996679148950245701",
+      "text": "Lower rates. \n\nHigher Bitcoin. \n\nIt's that simple. \n\nPatience is key now.",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "retweet_count": 38,
+        "reply_count": 93,
+        "like_count": 351,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoRover/status/1996679148950245701",
+      "processed": false,
+      "addedAt": "2025-12-05T07:24:49.982Z",
+      "expiresAt": "2025-12-12T07:24:49.982Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "1996814037510987801",
+      "text": "The Aster buyback wallet burned 77.86 million $ASTER tokens (worth about $79.81 million) 4 hour ago.",
+      "author": {
+        "id": "crawlee_search_cryptopatel",
+        "username": "CryptoPatel"
+      },
+      "public_metrics": {
+        "retweet_count": 10,
+        "reply_count": 11,
+        "like_count": 83,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoPatel/status/1996814037510987801",
+      "processed": false,
+      "addedAt": "2025-12-05T07:27:30.446Z",
+      "expiresAt": "2025-12-12T07:27:30.446Z",
+      "source": "timeline_monitor",
+      "contentCategory": "project-discussion"
+    },
+    {
+      "id": "1996799189720678700",
+      "text": "Banks Are Quietly Turning Pro-Bitcoin\n\nMichael Saylor says the pace of Bitcoin adoption among major banks is accelerating, noting that “8 out of 10 have shifted their position in just the last six months.”\n\nThe institutional pivot toward $BTC is happening faster than most",
+      "author": {
+        "id": "crawlee_search_cryptopatel",
+        "username": "CryptoPatel"
+      },
+      "public_metrics": {
+        "retweet_count": 21,
+        "reply_count": 10,
+        "like_count": 159,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoPatel/status/1996799189720678700",
+      "processed": false,
+      "addedAt": "2025-12-05T07:27:32.236Z",
+      "expiresAt": "2025-12-12T07:27:32.236Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "1996784091300032639",
+      "text": "Bitcoin’s Scarcity Signal Just Got Louder\n\nOver 95.03% of all Bitcoin is now mined, leaving less than 5% of supply still to enter circulation.\n\nA powerful reminder of BTC’s built-in scarcity and why long-term holders treat it like digital gold.",
+      "author": {
+        "id": "crawlee_search_cryptopatel",
+        "username": "CryptoPatel"
+      },
+      "public_metrics": {
+        "retweet_count": 15,
+        "reply_count": 11,
+        "like_count": 164,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoPatel/status/1996784091300032639",
+      "processed": false,
+      "addedAt": "2025-12-05T07:27:34.174Z",
+      "expiresAt": "2025-12-12T07:27:34.174Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "1996824513036836868",
+      "text": "$CLO | TP2 coming! \n\nLocked in.",
+      "author": {
+        "id": "crawlee_search_nihilusbtc",
+        "username": "NihilusBTC"
+      },
+      "public_metrics": {
+        "retweet_count": 13,
+        "reply_count": 29,
+        "like_count": 50,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/NihilusBTC/status/1996824513036836868",
+      "processed": false,
+      "addedAt": "2025-12-05T07:28:07.688Z",
+      "expiresAt": "2025-12-12T07:28:07.688Z",
+      "source": "timeline_monitor",
+      "contentCategory": "altcoin-talk"
+    },
+    {
+      "id": "1996823433158807681",
+      "text": "$RESOLV | H I G H E R !!",
+      "author": {
+        "id": "crawlee_search_nihilusbtc",
+        "username": "NihilusBTC"
+      },
+      "public_metrics": {
+        "retweet_count": 17,
+        "reply_count": 31,
+        "like_count": 62,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/NihilusBTC/status/1996823433158807681",
+      "processed": false,
+      "addedAt": "2025-12-05T07:28:09.589Z",
+      "expiresAt": "2025-12-12T07:28:09.589Z",
+      "source": "timeline_monitor",
+      "contentCategory": "altcoin-talk"
+    },
+    {
+      "id": "1996823164194902104",
+      "text": "$KGEN | Send it back.",
+      "author": {
+        "id": "crawlee_search_nihilusbtc",
+        "username": "NihilusBTC"
+      },
+      "public_metrics": {
+        "retweet_count": 16,
+        "reply_count": 27,
+        "like_count": 56,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/NihilusBTC/status/1996823164194902104",
+      "processed": false,
+      "addedAt": "2025-12-05T07:28:11.697Z",
+      "expiresAt": "2025-12-12T07:28:11.697Z",
+      "source": "timeline_monitor",
+      "contentCategory": "altcoin-talk"
+    },
+    {
+      "id": "1996755132776927480",
+      "text": "JPMorgan said Bitcoin’s short-term trend hinges on whether Strategy (MSTR) can keep its EV/BTC ratio above 1 to avoid selling. The ratio is 1.13, supported by a $1.44B reserve covering two years of payouts. If MSCI retains MSTR on Jan. 15, BTC may rebound; if not, the impact is",
+      "author": {
+        "id": "111533746",
+        "username": "WuBlockchain"
+      },
+      "public_metrics": {
+        "retweet_count": 19,
+        "reply_count": 16,
+        "like_count": 50,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/WuBlockchain/status/1996755132776927480",
+      "processed": false,
+      "addedAt": "2025-12-05T07:28:21.385Z",
+      "expiresAt": "2025-12-12T07:28:21.385Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "1996746345131258224",
+      "text": "COINBASE CEO: THE ENTIRE FINANCIAL SYSTEM IS GOING ON-CHAIN\n\nBrian Armstrong says private companies are staying private longer, demand for capital keeps rising, and crypto is the tech that will modernize how money is raised -- just like it already reinvented payments.\n\nHe says",
+      "author": {
+        "id": "877357064724520961",
+        "username": "CryptosR_Us"
+      },
+      "public_metrics": {
+        "retweet_count": 41,
+        "reply_count": 21,
+        "like_count": 174,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptosR_Us/status/1996746345131258224",
+      "processed": false,
+      "addedAt": "2025-12-05T07:31:09.303Z",
+      "expiresAt": "2025-12-12T07:31:09.303Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "1996725222217531571",
+      "text": "SOLANA + BASE + CHAINLINK = THE NEW DEFI POWER TRIO\n\nChainlink’s CCIP integration and the Solana - Base bridge were just announced, instantly connecting these ecosystems and unlocking $19B+ in assets that can move safely between them.\n\nWhy it matters:\n$SOL gets more liquidity and",
+      "author": {
+        "id": "877357064724520961",
+        "username": "CryptosR_Us"
+      },
+      "public_metrics": {
+        "retweet_count": 24,
+        "reply_count": 19,
+        "like_count": 212,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptosR_Us/status/1996725222217531571",
+      "processed": false,
+      "addedAt": "2025-12-05T07:31:13.734Z",
+      "expiresAt": "2025-12-12T07:31:13.734Z",
+      "source": "timeline_monitor",
+      "contentCategory": "project-discussion"
+    },
+    {
+      "id": "1996702318557872311",
+      "text": "TOM LEE ADDS ANOTHER $150M $ETH \n\nYesterday, two fresh wallets withdrew:\n$92M of ETH from Kraken\n$58M from Bitgo\nThese transactions match prior Bitmine purchase patterns.\n\nBitMine continues to aggressively accumulate $ETH at an unmatched pace, while many other treasuries have",
+      "author": {
+        "id": "877357064724520961",
+        "username": "CryptosR_Us"
+      },
+      "public_metrics": {
+        "retweet_count": 27,
+        "reply_count": 27,
+        "like_count": 171,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptosR_Us/status/1996702318557872311",
+      "processed": false,
+      "addedAt": "2025-12-05T07:31:15.692Z",
+      "expiresAt": "2025-12-12T07:31:15.692Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
     }
   ],
   "metadata": {
-    "lastUpdated": "2025-12-04T22:16:05.657Z",
-    "totalPosts": 124,
+    "lastUpdated": "2025-12-05T07:32:44.588Z",
+    "totalPosts": 144,
     "bySource": {
-      "timeline_monitor": 124,
+      "timeline_monitor": 144,
       "search_discovery": 0
     }
   },
