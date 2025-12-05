@@ -419,10 +419,21 @@ Create an engaging X post with this EXACT structure:
 
    a) Product title enclosed in brackets: "[Product Name]"
 
-   b) Bullet list of 10-15 specific updates
-      - Be specific: "MetaMask wallet integration", "DM purchase privacy", "ETH swap flow"
-      - NOT vague: "improvements", "enhancements", "updates"
-      - Use bullet symbol "•" for a clean look
+   b) PARAGRAPH SUMMARY (NOT bullet list):
+      - Write a single, cohesive paragraph (3-5 sentences) summarizing the key updates
+      - Focus ONLY on customer-relevant changes:
+        ✅ New features or product improvements
+        ✅ User-facing enhancements
+        ✅ Performance improvements users will notice
+        ❌ Small bug fixes
+        ❌ Internal refactoring
+        ❌ Infrastructure/DevOps changes
+        ❌ Security patches (unless major)
+        ❌ Documentation fixes (unless it's the docs repo itself)
+      - Group related changes into themes (e.g., "wallet integration improvements", "analytics enhancements")
+      - Be specific but concise: "MetaMask wallet integration", "DM purchase privacy", "ETH swap flow"
+      - Frame positively: focus on capabilities added, not problems fixed
+      - For documentation repos: Always note "documentation improvements" or "API documentation updates" as these enhance how users understand and use BWS solutions
 
    c) Short product description sentence (1-2 lines)
       - Generate this dynamically from the PRODUCT DOCUMENTATION provided for each product
@@ -481,24 +492,21 @@ GENERAL RULES:
 EXAMPLE FORMAT:
 "BWS | Coding
 
-This week we deployed 76 updates to X Bot in production, delivering major improvements to crypto purchase flows, MetaMask wallet integration, and comprehensive platform documentation.
+This week we deployed major improvements to X Bot and BWS Documentation, focusing on crypto purchase flows, wallet integration, and comprehensive platform guides.
 
 [X Bot]
-• Private notification system for account monitoring
-• Enhanced purchase privacy with DM routing
-• MetaMask transaction flow improvements
-• Payment confirmation visibility enhancements
-• Chat-specific analytics filtering
-• Advanced validation logic
-• AWS SDK v3 compatibility upgrade
-• Database optimization for chat operations
-• Documentation infrastructure improvements
-• Enhanced permissions management
-• Comprehensive platform documentation
+We enhanced the crypto purchase experience with a new private notification system for account monitoring and improved DM-based purchase privacy. MetaMask integration received comprehensive improvements including streamlined transaction flows and better payment confirmation visibility. The platform now offers chat-specific analytics filtering and enhanced validation logic, while database operations have been optimized for faster performance.
 
 X Bot is an AI-powered Telegram analytics platform providing accurate X (Twitter) engagement metrics using the official X API, helping crypto projects measure community impact, KOLs showcase their performance, and investors discover authentic projects with real traction.
 
 📚 https://docs.bws.ninja/telegram-bots/x-bot
+
+[BWS Documentation]
+Our documentation platform received extensive updates to help developers better understand and integrate BWS solutions. We added comprehensive API reference guides, improved setup instructions for all BWS products, and created detailed integration examples for common use cases. The documentation now includes troubleshooting guides and best practices for production deployments.
+
+BWS Documentation provides complete technical guides, API references, and integration examples for all Blockchain Web Services products and platform APIs.
+
+📚 https://docs.bws.ninja/
 
 $BWS #Web3 #Blockchain #BWS"
 

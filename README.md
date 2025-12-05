@@ -129,19 +129,19 @@ BWS Website includes several X/Twitter automations for content discovery, KOL en
 
 | Automation | Status | Success Rate | Strategy | Schedule | Credentials |
 |------------|--------|--------------|----------|----------|-------------|
-| KOL Reply Cycle | ✅ | 100% (with fallback) | Twitter API v2 + Auto-fallback (@BWSXAI → @BWSCommunity) | 2x daily (09:00, 21:00 UTC) | `BWSXAI_TWITTER_*` (5 vars), `TWITTER_*` (4 vars fallback), `ANTHROPIC_API_KEY`, `OXYLABS_*` (2 vars), `SEARCH1_*` (2 vars), `PAT_REPOS_AND_WORKFLOW` |
+| KOL Reply Cycle | ✅ | 100% | Twitter API v2 (@BWSCommunity) | 4x daily (randomized) | `TWITTER_*` (4 vars), `ANTHROPIC_API_KEY`, `OXYLABS_*` (2 vars), `SEARCH1_*` (2 vars), `PAT_REPOS_AND_WORKFLOW` |
 
 ### Analytics & Reporting
 
 | Automation | Status | Success Rate | Strategy | Schedule | Credentials |
 |------------|--------|--------------|----------|----------|-------------|
-| Weekly KOL Analytics | ✅ | 100% (1/1) | Twitter API v2 | Sunday 21:00 UTC | `ANTHROPIC_API_KEY`, `GH_TOKEN` (GitHub auto) |
+| Weekly KOL Analytics | ❌ | DEPRECATED | N/A | Removed Dec 4, 2025 | N/A |
 
 ### Content Posting
 
 | Automation | Status | Success Rate | Strategy | Schedule | Credentials |
 |------------|--------|--------------|----------|----------|-------------|
-| Post Article Content | 🔴 | 0% (0/4) | Twitter API v2 (403 errors) | Daily 12:00 UTC | `BWSXAI_TWITTER_*` (4 vars), `ANTHROPIC_API_KEY`, `OXYLABS_*` (2 vars), `PAT_REPOS_AND_WORKFLOW` |
+| Post Article Content | ✅ | 100% (4/4) | Twitter API v2 (@BWSCommunity) | Daily (randomized) | `TWITTER_*` (4 vars), `ANTHROPIC_API_KEY`, `OXYLABS_*` (2 vars), `PAT_REPOS_AND_WORKFLOW` |
 | Weekly X Post | ⚠️ | 25% (1/4) | Twitter API v2 (403 errors) | Monday 15:00 UTC | `TWITTER_*` (4 vars), `ANTHROPIC_API_KEY`, `PAT_REPOS_AND_WORKFLOW`, `PAT_GITHUB_ACTIONS` |
 
 ### Infrastructure
@@ -508,32 +508,32 @@ Reply Automation processes the tweet queue populated by Script 2.2.1, evaluating
 
 **Overview**: Processes the `engaging-posts.json` queue populated by Script 2.2.1. Evaluates each unprocessed tweet with Claude AI and posts contextual replies via Twitter API v2.
 
-**Schedule**: 2x daily (09:00, 21:00 UTC)
+**Schedule**: 4x daily (randomized between 6:00-22:00 UTC)
 
 **Scripts Used**:
-- `scripts/crawling/production/reply-to-kol-posts.js` (queue processor with automatic fallback)
-- `scripts/crawling/utils/twitter-client.js` (Twitter API v2 posting with dual-account support)
+- `scripts/crawling/production/reply-to-kol-posts.js` (queue processor)
+- `scripts/crawling/utils/twitter-client.js` (Twitter API v2 posting)
 - `scripts/crawling/utils/claude-client.js` (AI evaluation & reply generation with template system)
 - `scripts/crawling/utils/kol-utils.js` (KOL data management & freshness filtering)
 - `scripts/crawling/utils/schedule-randomizer.js` (anti-spam delays)
 - `scripts/crawling/utils/zapier-webhook.js` (reply notifications)
 
-**Strategy**: **Queue-Based Processing + Twitter API v2 + Automatic Account Fallback**
+**Strategy**: **Queue-Based Processing + Twitter API v2**
 - Reads unprocessed posts from `engaging-posts.json` (populated by Script 2.2.1)
 - **NEW (2025-12-04): 24-hour freshness filter** - Only replies to tweets < 24 hours old for maximum engagement
 - AI evaluation per tweet (relevance scoring + product matching)
 - **NEW (2025-12-04): Structural diversity templates** - 7 reply templates with varied $BWS positioning
 - **NEW (2025-12-04): Image attachments** - Automatically attaches product images when available
 - **NEW (2025-12-04): Link rotation** - 75% product docs, 25% main site (https://www.bws.ninja)
+- **NEW (2025-12-05): Single account (@BWSCommunity)** - Simplified from dual-account fallback system
 - AI-generated contextual replies via Claude API
 - Posts via Twitter API v2 with anti-spam actions (follow KOL, like tweet)
-- Automatic fallback - Switches from @BWSXAI to @BWSCommunity on 403 errors
 - Marks posts as `processed: true` to prevent duplicate replies
 - Rate limiting: Max 1-3 replies per run (configurable)
 - Continue-until-reply logic: Evaluates up to 2x limit if no replies posted
-- Randomized scheduling to avoid spam detection
+- Randomized scheduling to avoid spam detection (4 random times per day)
 
-**Status**: ✅ **PRODUCTION** - Multi-account fallback, structural diversity, image attachments, and 24h freshness filter active
+**Status**: ✅ **PRODUCTION** - Structural diversity, image attachments, 24h freshness filter, and @BWSCommunity posting active
 
 **Recent Feature Updates (December 2025)**:
 
@@ -583,12 +583,12 @@ Reply Automation processes the tweet queue populated by Script 2.2.1, evaluating
 - **Enforcement**: Links required in every reply (placed at end after @BWSCommunity and hashtags)
 - **Impact**: Drive traffic to both docs and main site, provide value to readers
 
-**5. Multi-Account Fallback System** (2025-12-01):
-- **Primary Account**: @BWSXAI (BWSXAI_TWITTER_* credentials)
-- **Fallback Account**: @BWSCommunity (TWITTER_* credentials)
-- **Automatic Switching**: Detects 403 errors and switches accounts mid-operation
-- **Retry Logic**: Automatically retries follow/like/reply with fallback account
-- **Success Tracking**: Records which account posted each reply
+**5. Single Account System** (2025-12-05):
+- **Account**: @BWSCommunity (TWITTER_* credentials)
+- **Previous**: Multi-account fallback system (@BWSXAI → @BWSCommunity) deprecated Dec 5, 2025
+- **Reason**: @BWSXAI credentials resulted in 403 Forbidden errors
+- **Simplification**: Removed ~140 lines of fallback logic
+- **Result**: 100% success rate with @BWSCommunity, cleaner codebase
 
 **Recent Outputs**:
 - **Template Distribution**: Varied structures (Classic, Feature List, Emoji-Enhanced, etc.)
@@ -615,42 +615,47 @@ Reply Automation processes the tweet queue populated by Script 2.2.1, evaluating
 
 **Workflow File**: `.github/workflows/post-article-content.yml`
 
-**Overview**: 🔴 **NOT WORKING** - Automatically posts newly published blog articles to @BWSXAI Twitter account. Currently blocked by Twitter API restrictions.
+**Overview**: ✅ **WORKING** - Automatically posts newly published blog articles to @BWSCommunity Twitter account.
 
-**Schedule**: Daily at 12:00 UTC + after article generation completes
+**Schedule**: Daily (randomized between 6:00-22:00 UTC) + after article generation completes
 
 **Scripts Used**:
 - `scripts/generate-article-posts.js` (generates post text)
-- `scripts/post-article-content.js` (posts to X)
+- `scripts/crawling/production/post-article-content.js` (posts to X)
 - `scripts/crawling/utils/twitter-client.js` (Twitter API v2)
 - `scripts/crawling/utils/claude-client.js` (AI post generation)
 
 **Strategy**: **Twitter API v2 + Claude AI**
-- Scans `src/pages/` for new blog articles
+- Scans `src/data/articles.ts` for new blog articles
 - AI-generated promotional posts via Claude
-- Includes article link, emoji, hashtags
+- Includes article link, docs link, hashtags
+- Posts up to 4 articles per run with 60s delays
 - Tracks posted articles to avoid duplicates
 
-**Recent Failures**: **4/4 failures** (0% success rate)
+**Recent Success**: **4/4 success** (100% success rate - Dec 5, 2025)
 
-**Failure Details**:
-```
-Error: Request failed with code 403 (Forbidden)
-Root Cause: Same Twitter API blocking issue as KOL Reply Cycle
-```
+**Recent Changes** (Dec 5, 2025):
+- ✅ Fixed all path issues (script location, imports, data file paths)
+- ✅ Switched from @BWSXAI to @BWSCommunity account
+- ✅ Removed fallback logic (simplified to single account)
+- ✅ Added schedule randomization to avoid detection
 
-**Recommended Fix**: Migrate to browser automation (Crawlee + Playwright) for posting.
+**Recent Outputs**:
+- ESG Credits (Feature): Tweet ID 1996982223996645653
+- ESG Credits (Implementation): Tweet ID 1996982477869420803
+- Fan Game Cube (Feature): Tweet ID 1996982731176067204
+- Fan Game Cube (Implementation): Tweet ID 1996982984751153279
 
-**Recent Outputs** (When Working): None (never succeeded in last 3 days)
-
-**Expected Outputs**:
-- Article posts promoting new blog content
-- Format: "[Emoji] Article Title - [Summary] [Link] [Hashtags]"
-- Example: "🚀 New Guide: Building Web3 Marketplaces with BWS NFT Platform https://bws.ninja/article-slug #Web3 #Blockchain #NFT"
+**Post Format**:
+- Technical features with blockchain implementation details
+- Product name + feature description + @BWSCommunity + $BWS
+- Article URL and docs URL included
+- Hashtags: 2 relevant tags per post
+- Example: "The platform includes immutable audit trails for ESG data, automated compliance checking against disclosure frameworks, and investor-grade report generation. Built on blockchain for transparent verification. @BWSCommunity $BWS"
 
 **Data Files**:
-- Input: Article files in `src/pages/`
-- Output: `scripts/data/article-x-posts.json`
+- Input: Article data in `src/data/articles.ts`
+- Output: `scripts/data/article-x-posts.json` (24 posts total, 5 posted, 8 pending, 11 failed from old @BWSXAI attempts)
 
 **Note**: Section 2.4 (Weekly KOL Analytics) has been deprecated and removed. Analytics can be manually generated from `kol-replies.json` data when needed.
 
@@ -660,35 +665,74 @@ Root Cause: Same Twitter API blocking issue as KOL Reply Cycle
 
 **Workflow File**: `.github/workflows/weekly-x-post.yml`
 
-**Overview**: ⚠️ **UNSTABLE** - Posts weekly update summaries about BWS development progress, new features, and community highlights.
+**Overview**: ⚠️ **UNSTABLE** - Posts weekly update summaries about BWS development progress, focusing on customer-relevant improvements and new features.
 
-**Schedule**: Daily at 14:00 UTC (checks if week summary needed)
+**Schedule**: Daily at 14:00 UTC (checks if sufficient content since last post)
 
 **Scripts Used**:
-- `scripts/generate-weekly-x-post.js` (main script)
+- `scripts/crawling/production/generate-weekly-x-post.js` (main script)
 - `scripts/crawling/utils/twitter-client.js` (Twitter API v2)
 - `scripts/crawling/utils/claude-client.js` (AI content generation)
 
 **Strategy**: **Twitter API v2 + GitHub API + Claude AI**
-- Fetches GitHub activity (PRs, commits, releases)
-- AI-generated weekly summaries via Claude
-- Posts to @BWSXAI with project updates
+- Fetches commits from tracked GitHub repositories (bws-api-telegram-xbot, bws-backoffice-website-esg, docs.bws.ninja)
+- Filters for customer-relevant changes only (new features, improvements, documentation updates)
+- AI-generated paragraph summaries via Claude (not bullet lists)
+- Posts to @BWSCommunity with project updates
 - Tracks posted weeks to avoid duplicates
+- Dynamic lookback window (extends if insufficient content)
 
-**Recent Failures**: **3/4 failures** (25% success rate)
+**Content Focus** (Updated Dec 5, 2025):
+- ✅ **Include**: New features, product improvements, user-facing enhancements, documentation updates
+- ❌ **Exclude**: Small bug fixes, internal refactoring, infrastructure changes, security patches
+- **Format**: Paragraph summaries (3-5 sentences) per product, grouped by theme
+- **Special Handling**: Documentation repo updates always included (enhance user understanding)
+
+**Posting Criteria**:
+- Minimum 4 customer-relevant changes across all products
+- Minimum 5 days since last post
+- Lookback window: 14 days (extends up to 60 days if needed)
+
+**Recent Status**: **3/4 failures** (25% success rate)
 
 **Failure Details**:
 ```
 Error: Request failed with code 403 (Forbidden)
-Root Cause: Twitter API restrictions (same as other posting workflows)
-Occasional Success: Suggests intermittent account access or rate limit recovery
+Root Cause: Twitter API restrictions
+Occasional Success: Suggests intermittent access or rate limit recovery
+Note: May be resolved with switch to @BWSCommunity (needs testing)
 ```
 
-**Recent Outputs** (When Working):
-- 1 successful weekly update post (details not in logs)
-- Format: "📊 BWS Weekly Update - [Highlights] [Stats] [Links]"
+**Recent Updates** (Dec 5, 2025):
+- Added docs.bws.ninja repository tracking
+- Changed format from bullet lists to paragraph summaries
+- Added customer-relevance filtering
+- Updated example to show paragraph format
+- Added special handling for documentation repos
+
+**Post Format**:
+```
+BWS | Coding
+
+This week we deployed [N] updates across [X] BWS products to production, focusing on [key themes].
+
+[Product Name]
+[Paragraph summary of customer-relevant changes, 3-5 sentences, grouped by theme]
+
+[Product description from docs]
+
+📚 [product docs URL]
+
+$BWS #Web3 #Blockchain #BWS
+```
+
+**Tracked Repositories**:
+- bws-api-telegram-xbot (prod) - X Bot
+- bws-backoffice-website-esg (staging) - ESG Credits
+- docs.bws.ninja (main) - BWS Documentation
 
 **Data Files**:
+- Input: `scripts/data/repos-to-track.json`
 - Output: `scripts/data/weekly-x-posts-state.json`
 
 ---
@@ -715,9 +759,9 @@ Occasional Success: Suggests intermittent account access or rate limit recovery
 **Recent Failures**: None (16/16 success)
 
 **Recent Outputs**:
-- **Total Workflows Monitored**: 17
+- **Total Workflows Monitored**: 16 (Weekly KOL Analytics removed Dec 4, 2025)
 - **Health Check**: All monitoring functions operational
-- **Recent Alerts**: 403 errors on KOL Reply Cycle, Post Article Content, Weekly X Post
+- **Recent Alerts**: 403 errors on Weekly X Post (KOL Reply Cycle and Post Article Content resolved Dec 5, 2025)
 
 **Data Files**: None (status only)
 
@@ -751,28 +795,37 @@ Complete automation documentation in [`scripts/crawling/docs/`](./scripts/crawli
 
 ---
 
-## Critical Issues & Recommended Actions
+## Recent Updates & Fixes
 
-### Issue #1: Twitter API 403 Forbidden Errors
+### December 5, 2025: Switch to @BWSCommunity Account
 
-**Affected Workflows:**
-- KOL Reply Cycle (33% success)
-- Post Article Content (0% success)
-- Weekly X Post (25% success)
+**Problem**: @BWSXAI account credentials resulted in 403 Forbidden errors on all Twitter API v2 posting attempts.
 
-**Root Cause**: @BWSXAI account flagged by Twitter for automated posting patterns.
+**Solution**: Switched all workflows to use @BWSCommunity account exclusively.
 
-**Recommended Solution**: Migrate from Twitter API v2 to **Crawlee + Playwright + Cookie Auth** (same approach used successfully in Content Discovery).
+**Changes Made**:
+1. **KOL Reply Cycle** - Now uses @BWSCommunity (TWITTER_* credentials)
+2. **Post Article Content** - Now uses @BWSCommunity (TWITTER_* credentials)
+3. **Code Simplification** - Removed ~140 lines of multi-account fallback logic
+4. **Path Fixes** - Fixed script locations and import paths in Post Article Content workflow
 
-**Action Plan**:
-1. Extract @BWSXAI cookies manually (see `scripts/crawling/docs/README-AUTH.md`)
-2. Update posting scripts to use browser automation
-3. Test locally with Playwright
-4. Deploy to GitHub Actions
+**Results**:
+- ✅ KOL Reply Cycle: 100% success rate with @BWSCommunity
+- ✅ Post Article Content: 100% success rate (4/4 posts on Dec 5, 2025)
+- ✅ Cleaner, more maintainable codebase
+- ✅ Single account path eliminates complexity
 
-**Timeline**: 3-5 days implementation
+**Remaining Issue**:
+- ⚠️ Weekly X Post: Still experiencing 403 errors (25% success rate) - needs investigation
 
-**Reference**: See `scripts/crawling/docs/GITHUB_ACTIONS_STATUS_REPORT.md` for detailed analysis and action items.
+### December 4, 2025: Workflow Cleanup
+
+**Removed**: Weekly KOL Analytics workflow
+- **Reason**: Not actively used, analytics can be generated manually when needed
+- **Files Deleted**:
+  - `.github/workflows/analyze-kols-weekly.yml`
+  - `scripts/crawling/production/analyze-kol-engagement.js`
+  - Helper functions from `kol-utils.js`
 
 ---
 
