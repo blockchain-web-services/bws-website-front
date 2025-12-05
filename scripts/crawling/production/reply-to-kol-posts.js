@@ -336,20 +336,16 @@ async function replyToKolPosts() {
 `);
 
   // Initialize write client for posting replies and anti-spam actions
+  // Using @BWSCommunity account exclusively
   let writeClient = null;
   let accountName = null;
-  let fallbackClient = null;
-  let fallbackAccountName = null;
-  let usingFallback = false;
 
   if (!dryRun) {
     try {
-      // Use @BWSCommunity account directly (primary @BWSXAI tokens expired)
-      console.log('   🔄 Using @BWSCommunity account for posting...');
-      const result = createReadWriteClient(true);  // Use fallback=true
+      console.log('   ✅ Using @BWSCommunity account for posting...');
+      const result = createReadWriteClient(true);  // Use fallback=true to get BWSCommunity
       writeClient = result.client;
       accountName = result.accountName;
-      usingFallback = true;
       console.log(`✅ [${Math.round((Date.now() - scriptStartTime) / 1000)}s] Write client initialized (${accountName})\n`);
     } catch (error) {
       console.error('❌ Failed to initialize write client.');
@@ -357,19 +353,6 @@ async function replyToKolPosts() {
       console.error('   Cannot continue without write client for posting replies.');
       process.exit(1);
     }
-  }
-
-  // Helper function to switch to fallback on 403 errors
-  function switchToFallbackIfNeeded(error) {
-    if (error.message && error.message.includes('403') && fallbackClient && !usingFallback) {
-      console.warn(`\n⚠️  403 error detected with ${accountName}. Switching to fallback account...`);
-      writeClient = fallbackClient;
-      accountName = fallbackAccountName;
-      usingFallback = true;
-      console.log(`✅ Now using fallback account: ${accountName}\n`);
-      return true; // Indicate fallback occurred
-    }
-    return false; // No fallback needed or available
   }
 
   currentPhase = 'initializing_claude_client';
@@ -721,111 +704,10 @@ async function replyToKolPosts() {
 
     } catch (error) {
       console.error(`❌ Error processing post ${post.id}:`, error.message);
-
-      // Try fallback account if 403 error and fallback available
-      const fallbackSwitched = switchToFallbackIfNeeded(error);
-
-      if (fallbackSwitched) {
-        try {
-          console.log(`🔄 Retrying post ${post.id} with fallback account...`);
-
-          // Retry anti-spam actions with fallback client
-          if (antiSpam.followKolBeforeReply) {
-            try {
-              await sleep(1000);
-              const followResult = await followUser(writeClient, kol.id, antiSpam.onlyIfNotAlreadyFollowing);
-              if (followResult.success) {
-                console.log(`✅ Followed @${kol.username} (${accountName})`);
-              } else {
-                console.log(`ℹ️  ${followResult.message}`);
-              }
-            } catch (followError) {
-              console.warn(`⚠️  Failed to follow with fallback:`, followError.message);
-              if (!antiSpam.skipOnError) {
-                throw followError;
-              }
-            }
-          }
-
-          if (antiSpam.likeTweetBeforeReply) {
-            try {
-              await sleep(1000);
-              const likeResult = await likeTweet(writeClient, tweet.id);
-              if (likeResult.success) {
-                console.log(`✅ Liked tweet ${tweet.id} (${accountName})`);
-              }
-            } catch (likeError) {
-              console.warn(`⚠️  Failed to like with fallback:`, likeError.message);
-              if (!antiSpam.skipOnError) {
-                throw likeError;
-              }
-            }
-          }
-
-          // Retry posting reply with fallback client
-          await sleep(2000);
-          console.log(`\n📤 Posting reply to tweet ${tweet.id} with ${accountName}...`);
-          if (uploadedMediaId) {
-            console.log(`   📎 Attaching media ID: ${uploadedMediaId}`);
-          }
-
-          // Post reply with optional media attachment
-          const replyOptions = { media: uploadedMediaId ? { media_ids: [uploadedMediaId] } : undefined };
-          const replyResponse = await writeClient.v2.reply(replyText, tweet.id, replyOptions);
-          const replyTweetId = replyResponse.data.id;
-
-          console.log(`✅ Reply posted with fallback! Tweet ID: ${replyTweetId}`);
-          console.log(`   Account: ${accountName}`);
-          console.log(`   URL: https://twitter.com/${accountName.replace('@', '')}/status/${replyTweetId}\n`);
-
-          // Record reply (with fallback account info)
-          const replyRecord = {
-            id: `${kol.id}-${tweet.id}-${Date.now()}`,
-            tweetId: tweet.id,
-            tweetUrl: `https://twitter.com/${kol.username}/status/${tweet.id}`,
-            kolId: kol.id,
-            kolUsername: kol.username,
-            originalTweetText: tweet.text,
-            replyTweetId,
-            replyText,
-            productMentioned: evaluation.bestMatchingProduct || productSelection.productNames[0] || 'BWS',
-            relevanceScore: evaluation.relevanceScore,
-            templateUsed: replyResult.templateUsed || null,
-            templateName: replyResult.templateName || null,
-            imageAttached: uploadedMediaId ? true : false,
-            imagePath: selectedImage ? selectedImage.localPath : null,
-            timestamp: new Date().toISOString(),
-            status: 'posted',
-            dryRun: false,
-            accountUsed: accountName // Track which account posted
-          };
-
-          repliesData.replies.push(replyRecord);
-          saveRepliesData(repliesData);
-
-          // Mark post as processed
-          post.processed = true;
-          repliesPosted++;
-          lastReplyDetails = replyRecord;
-
-          // Log to persistent usage tracker
-          await usageLogger.logReply(replyRecord);
-
-          console.log(`✅ Successfully posted with fallback account!`);
-        } catch (fallbackError) {
-          console.error(`❌ Fallback also failed:`, fallbackError.message);
-          if (fallbackError.stack) {
-            console.error(fallbackError.stack);
-          }
-          tweetsSkipped++;
-        }
-      } else {
-        // No fallback available or not a 403 error
-        if (error.stack) {
-          console.error(error.stack);
-        }
-        tweetsSkipped++;
+      if (error.stack) {
+        console.error(error.stack);
       }
+      tweetsSkipped++;
     }
   }
 
