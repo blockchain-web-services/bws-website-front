@@ -1162,6 +1162,25 @@
       "timestamp": "2025-12-05T19:52:34.145Z",
       "status": "posted",
       "dryRun": false
+    },
+    {
+      "id": "1353384573435056128-1994142556071031079-1764976687516",
+      "tweetId": "1994142556071031079",
+      "tweetUrl": "https://twitter.com/CryptoRover/status/1994142556071031079",
+      "kolId": "1353384573435056128",
+      "kolUsername": "CryptoRover",
+      "originalTweetText": "BREAKING:\n\nBLACKROCK CEO LARRY FINK: IT DOESN'T MATTER IF MARKETS RISE AND FALL. BUBBLES COME AND GO.\n\nWHAT MATTERS MOST IS STAYING IN THE MARKET THROUGH ALL CYCLES.",
+      "replyTweetId": "1997083089592287532",
+      "replyText": "Staying invested long-term works when fundamentals exist beneath volatility.\n\n$BWS X Bot tracks engagement rates across 100+ KOLs simultaneously with bot farm detection through pattern analysis - helps investors verify authentic community traction during accumulation phases.\n\n@BWSCommunity #microcap #crypto #fundamentals https://docs.bws.ninja/marketplace-solutions/bws.x.bot",
+      "productMentioned": "Multiple products (X Bot, Blockchain Badges, ESG Credits)",
+      "relevanceScore": 82,
+      "templateUsed": "classic",
+      "templateName": "Classic Structure",
+      "imageAttached": true,
+      "imagePath": "/assets/images/docs/x-bot/x-bot-0.png",
+      "timestamp": "2025-12-05T23:18:07.516Z",
+      "status": "posted",
+      "dryRun": false
     }
   ],
   "dailyStats": {
@@ -1236,10 +1255,10 @@
     }
   },
   "metadata": {
-    "totalReplies": 53,
-    "successfulReplies": 19,
+    "totalReplies": 54,
+    "successfulReplies": 20,
     "failedReplies": 34,
-    "lastReplyAt": "2025-12-05T19:52:34.145Z",
+    "lastReplyAt": "2025-12-05T23:18:07.516Z",
     "todayRepliesCount": 0,
     "lastUpdateBy": "kol-system"
   }
