@@ -326,36 +326,7 @@ export function saveProcessedPosts(data) {
   return saveDataFile('processed-posts.json', data);
 }
 
-/**
- * Load metrics data
- */
-export function loadMetricsData() {
-  return loadDataFile('kol-metrics.json', {
-    weeklyReports: [],
-    overallMetrics: {
-      totalKols: 0,
-      activeKols: 0,
-      totalReplies: 0,
-      successRate: 0,
-      averageEngagement: 0,
-      spamScore: 0,
-      lastCalculated: null
-    },
-    metadata: {
-      lastAnalysisRun: null,
-      lastUpdateBy: null
-    }
-  });
-}
-
-/**
- * Save metrics data
- */
-export function saveMetricsData(data) {
-  data.metadata.lastUpdateBy = 'kol-system';
-  data.metadata.lastAnalysisRun = new Date().toISOString();
-  return saveDataFile('kol-metrics.json', data);
-}
+// Note: loadMetricsData() and saveMetricsData() removed - analytics workflow deprecated (Dec 4, 2025)
 
 /**
  * Rate limiter class
@@ -752,8 +723,7 @@ export default {
   saveRepliesData,
   loadProcessedPosts,
   saveProcessedPosts,
-  loadMetricsData,
-  saveMetricsData,
+  // loadMetricsData, saveMetricsData - removed (analytics deprecated Dec 4, 2025)
   RateLimiter,
   calculateEngagementRate,
   meetsKolCriteria,

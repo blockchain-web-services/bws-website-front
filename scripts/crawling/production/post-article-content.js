@@ -2,8 +2,8 @@ import { readFileSync, writeFileSync, existsSync } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import dotenv from 'dotenv';
-import { sendArticlePostNotification } from './kols/utils/zapier-webhook.js';
-import { createReadWriteClient } from './kols/utils/twitter-client.js';
+import { sendArticlePostNotification } from '../utils/zapier-webhook.js';
+import { createReadWriteClient } from '../utils/twitter-client.js';
 import { recordRun } from '../utils/schedule-randomizer.js';
 import { updateAndCommitSchedule, isGitHubActions } from '../utils/workflow-updater.js';
 
@@ -11,10 +11,10 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 // Load environment variables
-dotenv.config({ path: join(__dirname, '..', '.env') });
+dotenv.config({ path: join(__dirname, '..', '..', '..', '.env') });
 
 // Configuration
-const ARTICLE_X_POSTS_FILE = join(__dirname, 'data', 'article-x-posts.json');
+const ARTICLE_X_POSTS_FILE = join(__dirname, '..', '..', 'data', 'article-x-posts.json');
 const MAX_POSTS_PER_RUN = 4; // Conservative limit per execution
 const DELAY_BETWEEN_POSTS_MS = 60000; // 60 seconds (1 minute) between posts
 
@@ -222,17 +222,25 @@ async function main() {
   // STEP 2: Main Article Posting Process
   // ========================================================================
 
-  // Check for Twitter credentials
-  if (!process.env.BWSXAI_TWITTER_API_KEY) {
-    console.error('❌ Twitter credentials not set');
-    console.error('   Please set BWSXAI_TWITTER_API_KEY and related env vars\n');
-    process.exit(1);
+  // Check for Twitter credentials (try primary, fallback to BWSCommunity)
+  const useFallback = !process.env.BWSXAI_TWITTER_API_KEY;
+
+  if (useFallback) {
+    if (!process.env.TWITTER_API_KEY) {
+      console.error('❌ Twitter credentials not set');
+      console.error('   Neither BWSXAI_TWITTER_API_KEY nor TWITTER_API_KEY (BWSCommunity) available\n');
+      process.exit(1);
+    }
+    console.log('⚠️  Primary account (@BWSXAI) credentials not found');
+    console.log('🔄 Using fallback account: @BWSCommunity\n');
+  } else {
+    console.log('✅ Using primary account: @BWSXAI\n');
   }
 
   try {
     // Initialize Twitter client (with proxy support on CI)
-    const twitterClient = createReadWriteClient();
-    console.log('✅ Twitter client initialized\n');
+    const { client: twitterClient, accountName } = createReadWriteClient(useFallback);
+    console.log(`✅ Twitter client initialized for ${accountName}\n`);
 
     // Load posts data
     const postsData = loadPostsData();
@@ -317,7 +325,7 @@ async function main() {
     console.log(`\n📝 Data saved to: ${ARTICLE_X_POSTS_FILE}\n`);
 
     if (successCount > 0) {
-      console.log(`🎉 Check your posts at: https://twitter.com/BWSXAI\n`);
+      console.log(`🎉 Check your posts at: https://twitter.com/${accountName.replace('@', '')}\n`);
     }
 
   } catch (error) {
