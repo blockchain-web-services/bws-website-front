@@ -42,14 +42,14 @@ jobs:
           TWITTER_BEARER_TOKEN: ${{ secrets.TWITTER_BEARER_TOKEN }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: |
-          node scripts/fetch-twitter-partnerships.js
+          node scripts/crawling/production/fetch-twitter-partnerships.js
           echo "fetch_status=success" >> $GITHUB_OUTPUT
         continue-on-error: true
 
       - name: Check for changes
         id: changes
         run: |
-          if git diff --quiet src/data/news.ts public/assets/images/news/ public/partnerships.css scripts/data/processed-tweets.json; then
+          if git diff --quiet src/data/news.ts public/assets/images/news/ public/partnerships.css scripts/crawling/production/data/processed-tweets.json; then
             echo "has_changes=false" >> $GITHUB_OUTPUT
             echo "ℹ️  No changes detected"
           else
@@ -62,7 +62,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add src/data/news.ts public/assets/images/news/ public/partnerships.css scripts/data/processed-tweets.json
+          git add src/data/news.ts public/assets/images/news/ public/partnerships.css scripts/crawling/production/data/processed-tweets.json
           git commit -m "Add new partnership announcement from X
 
           🤖 Generated with [Claude Code](https://claude.com/claude-code)
@@ -155,7 +155,7 @@ jobs:
               '',
               `1. Check the [workflow logs](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})`,
               '2. Verify TWITTER_BEARER_TOKEN secret is valid',
-              '3. Test script manually: `node scripts/fetch-twitter-partnerships.js`',
+              '3. Test script manually: `node scripts/crawling/production/fetch-twitter-partnerships.js`',
               '4. Fix the issue and push to this branch',
               '',
               '---',
