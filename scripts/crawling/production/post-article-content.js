@@ -2,8 +2,8 @@ import { readFileSync, writeFileSync, existsSync } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import dotenv from 'dotenv';
-import { sendArticlePostNotification } from './kols/utils/zapier-webhook.js';
-import { createReadWriteClient } from './kols/utils/twitter-client.js';
+import { sendArticlePostNotification } from '../utils/zapier-webhook.js';
+import { createReadWriteClient } from '../utils/twitter-client.js';
 import { recordRun } from '../utils/schedule-randomizer.js';
 import { updateAndCommitSchedule, isGitHubActions } from '../utils/workflow-updater.js';
 
@@ -11,10 +11,10 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 // Load environment variables
-dotenv.config({ path: join(__dirname, '..', '.env') });
+dotenv.config({ path: join(__dirname, '..', '..', '..', '.env') });
 
 // Configuration
-const ARTICLE_X_POSTS_FILE = join(__dirname, 'data', 'article-x-posts.json');
+const ARTICLE_X_POSTS_FILE = join(__dirname, '..', '..', 'data', 'article-x-posts.json');
 const MAX_POSTS_PER_RUN = 4; // Conservative limit per execution
 const DELAY_BETWEEN_POSTS_MS = 60000; // 60 seconds (1 minute) between posts
 

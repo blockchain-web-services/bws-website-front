@@ -63,8 +63,7 @@ jobs:
           OXYLABS_PASSWORD: ${{ secrets.OXYLABS_PASSWORD }}
           PAT_REPOS_AND_WORKFLOW: ${{ secrets.PAT_REPOS_AND_WORKFLOW }}
         run: |
-          cd scripts
-          node post-article-content.js
+          node scripts/crawling/production/post-article-content.js
 
       - name: Commit updated posts data
         run: |
