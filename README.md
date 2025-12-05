@@ -706,9 +706,11 @@ Reply Automation processes the tweet queue populated by Script 2.2.1, evaluating
 
 **Workflow File**: `.github/workflows/weekly-x-post.yml`
 
-**Overview**: ⚠️ **UNSTABLE** - Posts weekly update summaries about BWS development progress, focusing on customer-relevant improvements and new features.
+**Overview**: ✅ **STABLE** - Posts weekly update summaries about BWS development progress, focusing on customer-relevant improvements and new features.
 
 **Schedule**: Daily at 14:00 UTC (checks if sufficient content since last post)
+
+**Status**: ✅ Working correctly after fixes (Dec 5, 2025)
 
 **Scripts Used**:
 - `scripts/crawling/production/generate-weekly-x-post.js` (main script)
@@ -734,14 +736,24 @@ Reply Automation processes the tweet queue populated by Script 2.2.1, evaluating
 - Minimum 5 days since last post
 - Lookback window: 14 days (extends up to 60 days if needed)
 
-**Recent Status**: **3/4 failures** (25% success rate)
+**Recent Status**: ✅ **STABLE** (Successfully tested and deployed Dec 5, 2025)
 
-**Failure Details**:
+**Recent Fixes** (Dec 5, 2025):
 ```
-Error: Request failed with code 403 (Forbidden)
-Root Cause: Twitter API restrictions
-Occasional Success: Suggests intermittent access or rate limit recovery
-Note: May be resolved with switch to @BWSCommunity (needs testing)
+Issue #1: Wrong script path in workflow file
+Fix: Updated .github/workflows/weekly-x-post.yml with correct path
+Commit: c61e90a
+
+Issue #2: Data file location mismatch
+Fix: Moved repos-to-track.json to scripts/crawling/production/data/
+Commit: f9af4c8
+
+Issue #3: docs.bws.ninja branch name incorrect (main → master)
+Fix: Updated repos-to-track.json with correct branch name
+Commit: c571ddb
+
+Result: Successfully posted to @BWSCommunity
+Tweet URL: https://x.com/BWSCommunity/status/1996991473686835656
 ```
 
 **Recent Updates** (Dec 5, 2025):
@@ -770,11 +782,11 @@ $BWS #Web3 #Blockchain #BWS
 **Tracked Repositories**:
 - bws-api-telegram-xbot (prod) - X Bot
 - bws-backoffice-website-esg (staging) - ESG Credits
-- docs.bws.ninja (main) - BWS Documentation
+- docs.bws.ninja (master) - BWS Documentation
 
 **Data Files**:
-- Input: `scripts/data/repos-to-track.json`
-- Output: `scripts/data/weekly-x-posts-state.json`
+- Input: `scripts/crawling/production/data/repos-to-track.json`
+- Output: `scripts/crawling/production/data/weekly-x-posts-state.json`
 
 ---
 
