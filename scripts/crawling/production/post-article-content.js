@@ -325,7 +325,7 @@ async function main() {
     console.log(`\n📝 Data saved to: ${ARTICLE_X_POSTS_FILE}\n`);
 
     if (successCount > 0) {
-      console.log(`🎉 Check your posts at: https://twitter.com/BWSXAI\n`);
+      console.log(`🎉 Check your posts at: https://twitter.com/${accountName.replace('@', '')}\n`);
     }
 
   } catch (error) {
