@@ -15,7 +15,7 @@
     {
       "owner": "blockchain-web-services",
       "repo": "docs.bws.ninja",
-      "branch": "main",
+      "branch": "master",
       "product": "BWS Documentation",
       "isDocumentationRepo": true,
       "note": "Documentation repository - updates here improve how users understand and integrate BWS solutions, not new features"
