@@ -706,35 +706,74 @@ Reply Automation processes the tweet queue populated by Script 2.2.1, evaluating
 
 **Workflow File**: `.github/workflows/weekly-x-post.yml`
 
-**Overview**: ⚠️ **UNSTABLE** - Posts weekly update summaries about BWS development progress, new features, and community highlights.
+**Overview**: ⚠️ **UNSTABLE** - Posts weekly update summaries about BWS development progress, focusing on customer-relevant improvements and new features.
 
-**Schedule**: Daily at 14:00 UTC (checks if week summary needed)
+**Schedule**: Daily at 14:00 UTC (checks if sufficient content since last post)
 
 **Scripts Used**:
-- `scripts/generate-weekly-x-post.js` (main script)
+- `scripts/crawling/production/generate-weekly-x-post.js` (main script)
 - `scripts/crawling/utils/twitter-client.js` (Twitter API v2)
 - `scripts/crawling/utils/claude-client.js` (AI content generation)
 
 **Strategy**: **Twitter API v2 + GitHub API + Claude AI**
-- Fetches GitHub activity (PRs, commits, releases)
-- AI-generated weekly summaries via Claude
-- Posts to @BWSXAI with project updates
+- Fetches commits from tracked GitHub repositories (bws-api-telegram-xbot, bws-backoffice-website-esg, docs.bws.ninja)
+- Filters for customer-relevant changes only (new features, improvements, documentation updates)
+- AI-generated paragraph summaries via Claude (not bullet lists)
+- Posts to @BWSCommunity with project updates
 - Tracks posted weeks to avoid duplicates
+- Dynamic lookback window (extends if insufficient content)
 
-**Recent Failures**: **3/4 failures** (25% success rate)
+**Content Focus** (Updated Dec 5, 2025):
+- ✅ **Include**: New features, product improvements, user-facing enhancements, documentation updates
+- ❌ **Exclude**: Small bug fixes, internal refactoring, infrastructure changes, security patches
+- **Format**: Paragraph summaries (3-5 sentences) per product, grouped by theme
+- **Special Handling**: Documentation repo updates always included (enhance user understanding)
+
+**Posting Criteria**:
+- Minimum 4 customer-relevant changes across all products
+- Minimum 5 days since last post
+- Lookback window: 14 days (extends up to 60 days if needed)
+
+**Recent Status**: **3/4 failures** (25% success rate)
 
 **Failure Details**:
 ```
 Error: Request failed with code 403 (Forbidden)
-Root Cause: Twitter API restrictions (same as other posting workflows)
-Occasional Success: Suggests intermittent account access or rate limit recovery
+Root Cause: Twitter API restrictions
+Occasional Success: Suggests intermittent access or rate limit recovery
+Note: May be resolved with switch to @BWSCommunity (needs testing)
 ```
 
-**Recent Outputs** (When Working):
-- 1 successful weekly update post (details not in logs)
-- Format: "📊 BWS Weekly Update - [Highlights] [Stats] [Links]"
+**Recent Updates** (Dec 5, 2025):
+- Added docs.bws.ninja repository tracking
+- Changed format from bullet lists to paragraph summaries
+- Added customer-relevance filtering
+- Updated example to show paragraph format
+- Added special handling for documentation repos
+
+**Post Format**:
+```
+BWS | Coding
+
+This week we deployed [N] updates across [X] BWS products to production, focusing on [key themes].
+
+[Product Name]
+[Paragraph summary of customer-relevant changes, 3-5 sentences, grouped by theme]
+
+[Product description from docs]
+
+📚 [product docs URL]
+
+$BWS #Web3 #Blockchain #BWS
+```
+
+**Tracked Repositories**:
+- bws-api-telegram-xbot (prod) - X Bot
+- bws-backoffice-website-esg (staging) - ESG Credits
+- docs.bws.ninja (main) - BWS Documentation
 
 **Data Files**:
+- Input: `scripts/data/repos-to-track.json`
 - Output: `scripts/data/weekly-x-posts-state.json`
 
 ---
