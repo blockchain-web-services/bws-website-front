@@ -3,9 +3,9 @@
     "lastGenerated": "2025-12-05T16:18:50.507Z",
     "totalPosts": 24,
     "totalArticles": 8,
-    "pendingPosts": 12,
-    "postedCount": 1,
-    "lastPosted": "2025-12-05T16:21:51.097Z",
+    "pendingPosts": 8,
+    "postedCount": 5,
+    "lastPosted": "2025-12-05T16:40:20.585Z",
     "failedCount": 11
   },
   "posts": [
@@ -254,17 +254,19 @@
         "ESGReporting"
       ],
       "priority": "medium",
-      "status": "pending",
+      "status": "posted",
       "scheduledFor": null,
-      "postedAt": null,
-      "tweetId": null,
+      "postedAt": "2025-12-05T16:37:19.213Z",
+      "tweetId": "1996982223996645653",
       "generatedAt": "2025-11-11T17:14:17.445Z",
       "metadata": {
         "articleTitle": "ESG Credits: Blockchain-Powered Green Finance and Impact Reporting",
         "articlePublishDate": "2025-11-10T10:04:58.377Z",
         "mainTextLength": 226,
         "fullTextLength": 395
-      }
+      },
+      "tweetUrl": "https://twitter.com/i/web/status/1996982223996645653",
+      "error": null
     },
     {
       "id": "e8d5170b-2e66-4e17-a431-47d18d890c39",
@@ -280,17 +282,19 @@
         "Web3"
       ],
       "priority": "medium",
-      "status": "pending",
+      "status": "posted",
       "scheduledFor": null,
-      "postedAt": null,
-      "tweetId": null,
+      "postedAt": "2025-12-05T16:38:19.659Z",
+      "tweetId": "1996982477869420803",
       "generatedAt": "2025-11-11T17:14:17.445Z",
       "metadata": {
         "articleTitle": "ESG Credits: Blockchain-Powered Green Finance and Impact Reporting",
         "articlePublishDate": "2025-11-10T10:04:58.377Z",
         "mainTextLength": 220,
         "fullTextLength": 378
-      }
+      },
+      "tweetUrl": "https://twitter.com/i/web/status/1996982477869420803",
+      "error": null
     },
     {
       "id": "e4ab51b2-7f0b-46d8-a653-0e2830a78456",
@@ -334,17 +338,19 @@
         "BlockchainGaming"
       ],
       "priority": "medium",
-      "status": "pending",
+      "status": "posted",
       "scheduledFor": null,
-      "postedAt": null,
-      "tweetId": null,
+      "postedAt": "2025-12-05T16:39:20.097Z",
+      "tweetId": "1996982731176067204",
       "generatedAt": "2025-11-11T17:14:26.605Z",
       "metadata": {
         "articleTitle": "Fan Game Cube: NFT-Powered Sports Fan Engagement Platform",
         "articlePublishDate": "2025-11-10T10:05:20.761Z",
         "mainTextLength": 202,
         "fullTextLength": 373
-      }
+      },
+      "tweetUrl": "https://twitter.com/i/web/status/1996982731176067204",
+      "error": null
     },
     {
       "id": "990ff338-7cac-4553-974e-a5d5df80e3f9",
@@ -360,17 +366,19 @@
         "FanEngagement"
       ],
       "priority": "medium",
-      "status": "pending",
+      "status": "posted",
       "scheduledFor": null,
-      "postedAt": null,
-      "tweetId": null,
+      "postedAt": "2025-12-05T16:40:20.535Z",
+      "tweetId": "1996982984751153279",
       "generatedAt": "2025-11-11T17:14:26.605Z",
       "metadata": {
         "articleTitle": "Fan Game Cube: NFT-Powered Sports Fan Engagement Platform",
         "articlePublishDate": "2025-11-10T10:05:20.761Z",
         "mainTextLength": 188,
         "fullTextLength": 356
-      }
+      },
+      "tweetUrl": "https://twitter.com/i/web/status/1996982984751153279",
+      "error": null
     },
     {
       "id": "e054ee54-f365-4d1b-b806-d891f6021df2",
