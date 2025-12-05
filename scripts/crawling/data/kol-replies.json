@@ -1105,6 +1105,44 @@
       "timestamp": "2025-12-05T11:47:44.266Z",
       "status": "posted",
       "dryRun": false
+    },
+    {
+      "id": "1353384573435056128-1994142556071031079-1764948564099",
+      "tweetId": "1994142556071031079",
+      "tweetUrl": "https://twitter.com/CryptoRover/status/1994142556071031079",
+      "kolId": "1353384573435056128",
+      "kolUsername": "CryptoRover",
+      "originalTweetText": "BREAKING:\n\nBLACKROCK CEO LARRY FINK: IT DOESN'T MATTER IF MARKETS RISE AND FALL. BUBBLES COME AND GO.\n\nWHAT MATTERS MOST IS STAYING IN THE MARKET THROUGH ALL CYCLES.",
+      "replyTweetId": "1996965132010659877",
+      "replyText": "🎯 Fink's philosophy rewards builders who compound through volatility.\n\n💡 ESG Credits enables financial institutions to integrate blockchain-verified environmental impact reporting directly into banking apps - supporting ICMA frameworks and preventing double-counting. $BWS built this for banks at microcap valuation.\n\n@BWSCommunity #microcap #ESG #fintech https://docs.bws.ninja/marketplace-solutions/bws.esg.credits",
+      "productMentioned": "Multiple products (X Bot, ESG Credits, Blockchain Badges)",
+      "relevanceScore": 82,
+      "templateUsed": "emoji_enhanced",
+      "templateName": "Emoji-Enhanced Structure",
+      "imageAttached": false,
+      "imagePath": null,
+      "timestamp": "2025-12-05T15:29:24.099Z",
+      "status": "posted",
+      "dryRun": false
+    },
+    {
+      "id": "1068237257977544704-1996404865929822313-1764948609388",
+      "tweetId": "1996404865929822313",
+      "tweetUrl": "https://twitter.com/AltcoinSherpa/status/1996404865929822313",
+      "kolId": "1068237257977544704",
+      "kolUsername": "AltcoinSherpa",
+      "originalTweetText": "If $BTC legs up then coins like $FARTCOIN are going to full send",
+      "replyTweetId": "1996965320569839903",
+      "replyText": "Memecoins have their moment when liquidity flows in. Different risk profile when fundamentals disappear.\n\nIPFS Upload enables decentralized NFT metadata and media storage without running your own node - content-addressed files replicated across network. $BWS delivers this at microcap valuation.\n\n@BWSCommunity #microcap #NFT #altcoins https://docs.bws.ninja/solutions/bws.ipfs.upload",
+      "productMentioned": "BWS IPFS",
+      "relevanceScore": 72,
+      "templateUsed": "delayed_cashtag",
+      "templateName": "Delayed $BWS Mention",
+      "imageAttached": true,
+      "imagePath": "/assets/images/docs/bws-ipfs/bws-ipfs-0.png",
+      "timestamp": "2025-12-05T15:30:09.388Z",
+      "status": "posted",
+      "dryRun": false
     }
   ],
   "dailyStats": {
@@ -1179,10 +1217,10 @@
     }
   },
   "metadata": {
-    "totalReplies": 50,
-    "successfulReplies": 16,
+    "totalReplies": 52,
+    "successfulReplies": 18,
     "failedReplies": 34,
-    "lastReplyAt": "2025-12-05T11:47:44.266Z",
+    "lastReplyAt": "2025-12-05T15:30:09.388Z",
     "todayRepliesCount": 0,
     "lastUpdateBy": "kol-system"
   }
