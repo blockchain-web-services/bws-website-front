@@ -1143,6 +1143,25 @@
       "timestamp": "2025-12-05T15:30:09.388Z",
       "status": "posted",
       "dryRun": false
+    },
+    {
+      "id": "1353384573435056128-1994142556071031079-1764964354145",
+      "tweetId": "1994142556071031079",
+      "tweetUrl": "https://twitter.com/CryptoRover/status/1994142556071031079",
+      "kolId": "1353384573435056128",
+      "kolUsername": "CryptoRover",
+      "originalTweetText": "BREAKING:\n\nBLACKROCK CEO LARRY FINK: IT DOESN'T MATTER IF MARKETS RISE AND FALL. BUBBLES COME AND GO.\n\nWHAT MATTERS MOST IS STAYING IN THE MARKET THROUGH ALL CYCLES.",
+      "replyTweetId": "1997031360222073321",
+      "replyText": "What separates microcaps that survive cycles from those that fade?\n\n$BWS Blockchain Save creates tamper-proof records with automated Certificate of Trust generation - no wallet management required. Legal compliance infrastructure that compounds value regardless of market conditions.\n\n@BWSCommunity #microcap #blockchain #infrastructure https://docs.bws.ninja/solutions/bws.blockchain.save",
+      "productMentioned": "Multiple products (Blockchain Badges, ESG Credits, Fan Game Cube, X Bot)",
+      "relevanceScore": 82,
+      "templateUsed": "question_led",
+      "templateName": "Question-Led Structure",
+      "imageAttached": false,
+      "imagePath": null,
+      "timestamp": "2025-12-05T19:52:34.145Z",
+      "status": "posted",
+      "dryRun": false
     }
   ],
   "dailyStats": {
@@ -1217,10 +1236,10 @@
     }
   },
   "metadata": {
-    "totalReplies": 52,
-    "successfulReplies": 18,
+    "totalReplies": 53,
+    "successfulReplies": 19,
     "failedReplies": 34,
-    "lastReplyAt": "2025-12-05T15:30:09.388Z",
+    "lastReplyAt": "2025-12-05T19:52:34.145Z",
     "todayRepliesCount": 0,
     "lastUpdateBy": "kol-system"
   }
