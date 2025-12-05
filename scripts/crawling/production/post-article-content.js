@@ -222,17 +222,25 @@ async function main() {
   // STEP 2: Main Article Posting Process
   // ========================================================================
 
-  // Check for Twitter credentials
-  if (!process.env.BWSXAI_TWITTER_API_KEY) {
-    console.error('❌ Twitter credentials not set');
-    console.error('   Please set BWSXAI_TWITTER_API_KEY and related env vars\n');
-    process.exit(1);
+  // Check for Twitter credentials (try primary, fallback to BWSCommunity)
+  const useFallback = !process.env.BWSXAI_TWITTER_API_KEY;
+
+  if (useFallback) {
+    if (!process.env.TWITTER_API_KEY) {
+      console.error('❌ Twitter credentials not set');
+      console.error('   Neither BWSXAI_TWITTER_API_KEY nor TWITTER_API_KEY (BWSCommunity) available\n');
+      process.exit(1);
+    }
+    console.log('⚠️  Primary account (@BWSXAI) credentials not found');
+    console.log('🔄 Using fallback account: @BWSCommunity\n');
+  } else {
+    console.log('✅ Using primary account: @BWSXAI\n');
   }
 
   try {
     // Initialize Twitter client (with proxy support on CI)
-    const twitterClient = createReadWriteClient();
-    console.log('✅ Twitter client initialized\n');
+    const { client: twitterClient, accountName } = createReadWriteClient(useFallback);
+    console.log(`✅ Twitter client initialized for ${accountName}\n`);
 
     // Load posts data
     const postsData = loadPostsData();
