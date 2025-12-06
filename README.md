@@ -150,6 +150,13 @@ BWS Website includes several X/Twitter automations for content discovery, KOL en
 | Weekly X Post | ✅ | 100% (3/3) | Twitter API v2 (@BWSCommunity) | Weekly (Sunday) | `TWITTER_*` (4 vars), `ANTHROPIC_API_KEY`, `PAT_REPOS_AND_WORKFLOW`, `PAT_GITHUB_ACTIONS` |
 | Fetch Twitter Partnerships | ✅ | 100% (2/2) | Twitter API v2 + Claude AI | Daily 09:00 UTC | `TWITTER_BEARER_TOKEN`, `ANTHROPIC_API_KEY` |
 
+### Product Education (NEW - Dec 6, 2025)
+
+| Automation | Status | Success Rate | Strategy | Schedule | Credentials |
+|------------|--------|--------------|----------|----------|-------------|
+| Discover Product Tweets | 🆕 | Not yet run | Crawlee + Playwright + Oxylabs | Daily 08:00 UTC | `OXYLABS_USERNAME`, `OXYLABS_PASSWORD`, `ANTHROPIC_API_KEY` |
+| Reply to Product Tweets | 🆕 | Not yet run | Twitter API v2 + Multi-Tweet Threads | 2x daily (10 AM, 4 PM UTC) | `TWITTER_*` (4 vars), `ANTHROPIC_API_KEY` |
+
 ### Content Discovery
 
 | Automation | Status | Success Rate | Strategy | Schedule | Credentials |
@@ -939,6 +946,147 @@ Verified: 4 partnerships added and deployed successfully
 - Tracks failure count in state file
 - Continues workflow with `continue-on-error: true`
 - Auto-creates GitHub issue for tracking
+
+---
+
+## 2.9 Product-Specific Educational Threads
+
+**Workflow Files**:
+- `.github/workflows/discover-product-tweets.yml` (Discovery)
+- `.github/workflows/reply-to-product-tweets.yml` (Reply Automation)
+
+**Overview**: ✅ **NEW** (Dec 6, 2025) - Discovers tweets about specific BWS products and posts educational multi-tweet threads to drive customer acquisition. Unlike general KOL engagement (2.3), this automation targets users discussing specific pain points that BWS products solve.
+
+**Schedule**:
+- Discovery: Daily at 8:00 AM UTC
+- Replies: Twice daily at 10:00 AM and 4:00 PM UTC
+
+**Status**: ✅ Implemented and ready for deployment
+
+**Products Covered**:
+1. **Blockchain Badges** - Verifiable digital credentials
+2. **BWS IPFS** - Decentralized file storage
+3. **NFT.zK** - Wallet-free NFT distribution
+4. **Blockchain Hash** - Mutable blockchain database
+
+**Scripts Used**:
+- `scripts/crawling/production/discover-product-tweets.js` - Product-specific tweet discovery
+- `scripts/crawling/production/reply-to-product-tweets.js` - Educational thread processor
+- `scripts/crawling/utils/thread-generator.js` - Multi-tweet thread generation (3 templates)
+- `scripts/crawling/utils/twitter-thread-client.js` - Thread posting client
+- `scripts/crawling/utils/docs-fetcher.js` - Documentation content loader
+
+**Strategy**: **Product-Specific Search + Multi-Tweet Educational Threads + Conversion Focus**
+
+**Discovery Approach**:
+- 20 search queries across 4 products (5 queries each)
+- Query categories:
+  - **Blockchain Badges**: credentials, education, fraud, professional badges, digital identity
+  - **BWS IPFS**: IPFS storage, NFT metadata, decentralized storage, setup problems
+  - **NFT.zK**: NFT collections, distribution, wallet friction, utility, brand NFTs
+  - **Blockchain Hash**: blockchain database, Web3 development, wallets, on-chain storage
+- Engagement filtering: minimum likes (3-5), retweets (1), views (50-100)
+- Product tagging and isolation
+- 24-hour freshness filter
+
+**Thread Structure** (3-4 tweets per thread):
+Three template types with weighted rotation:
+1. **How-To Guide** (40%):
+   - Tweet 1: Hook - Acknowledge pain point
+   - Tweet 2: Solution features with $BWS
+   - Tweet 3: Getting started steps
+   - Tweet 4: CTA + docs link
+
+2. **Problem-Solution** (40%):
+   - Tweet 1: Amplify the problem
+   - Tweet 2: Solution features
+   - Tweet 3: Real-world use case
+   - Tweet 4: CTA + docs link
+
+3. **Feature Showcase** (20%):
+   - Tweet 1: Hook with specific feature
+   - Tweet 2: Technical details
+   - Tweet 3: Business benefits
+   - Tweet 4: CTA + docs link
+
+**Content Generation**:
+- Claude AI evaluates tweet relevance (70+ threshold)
+- Loads product documentation for context
+- Generates educational thread matching template
+- Strict product isolation (only one BWS product per thread)
+- Includes call-to-action and docs.bws.ninja link
+- Mentions @BWSCommunity and $BWS cashtag
+
+**Product Isolation**:
+- Each thread focuses on exactly one BWS product
+- Validation before posting prevents mixed products
+- AI prompt emphasizes single-product focus
+- Automated checks scan for other product mentions
+
+**Anti-Spam Measures**:
+- 2-minute delay between threads
+- 5-second delay between tweets in thread
+- Follow author and like tweet before replying
+- Product rotation to balance coverage
+
+**Target Volume**:
+- 2-4 educational threads per day total
+- 0.5-1 thread per product daily
+- Smart product rotation prevents consecutive threads about same product
+
+**Recent Execution**: Not yet deployed (implementation completed Dec 6, 2025)
+
+**Configuration Files**:
+- `scripts/crawling/config/product-search-queries.json` - 20 search queries across 4 products
+- `scripts/crawling/config/product-reply-config.json` - Reply automation settings
+
+**Data Files**:
+- Queue: `scripts/crawling/data/product-discovery-queue.json` (discovered tweets by product)
+- Tracking: `scripts/crawling/data/product-replies.json` (posted threads and stats)
+- Cache: `scripts/crawling/data/docs-cache/*.json` (24h documentation cache)
+
+**Thread Example** (Blockchain Badges - How-To template):
+```
+Tweet 1:
+Credential fraud costs organizations $10B annually. Universities need
+verifiable proof that can't be faked.
+
+Tweet 2:
+Blockchain Badges by $BWS solves this:
+• Issue certificates on blockchain
+• Immutable proof of achievements
+• Public verification URLs
+• Integrates with existing LMS
+
+Tweet 3:
+Getting started (3 steps):
+1. Connect your LMS via API
+2. Design badge templates
+3. Issue to students
+
+No blockchain expertise needed.
+
+Tweet 4:
+See how universities are preventing diploma fraud with blockchain credentials.
+
+📚 Full docs: https://docs.bws.ninja/marketplace-solutions/bws.blockchain.badges
+
+@BWSCommunity $BWS
+```
+
+**Success Metrics**:
+- Discovery: 10-20 relevant tweets per product per day
+- Relevance: >70% of discovered tweets pass threshold
+- Threads: 2-4 posted daily with balanced product rotation
+- Quality: 100% product isolation, 100% CTA inclusion
+- Engagement: >5 likes average per thread
+
+**Key Differences from KOL Reply (2.3)**:
+- **Focus**: Product education vs. general engagement
+- **Format**: 3-4 tweet threads vs. single reply
+- **Content**: How-to guides and conversion focus vs. contextual mentions
+- **Search**: Product-specific queries vs. general crypto/token discussions
+- **Goal**: Customer acquisition vs. brand awareness
 
 ---
 
