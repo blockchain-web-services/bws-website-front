@@ -1276,6 +1276,25 @@
       "timestamp": "2025-12-06T15:27:21.674Z",
       "status": "posted",
       "dryRun": false
+    },
+    {
+      "id": "1353384573435056128-1994142556071031079-1765050711735",
+      "tweetId": "1994142556071031079",
+      "tweetUrl": "https://twitter.com/CryptoRover/status/1994142556071031079",
+      "kolId": "1353384573435056128",
+      "kolUsername": "CryptoRover",
+      "originalTweetText": "BREAKING:\n\nBLACKROCK CEO LARRY FINK: IT DOESN'T MATTER IF MARKETS RISE AND FALL. BUBBLES COME AND GO.\n\nWHAT MATTERS MOST IS STAYING IN THE MARKET THROUGH ALL CYCLES.",
+      "replyTweetId": "1997393569200406715",
+      "replyText": "🎯 Long-term thinking rewards builders with actual products shipping.\n\n💡 IPFS Upload from $BWS: decentralized NFT metadata and media storage without running your own node - content-addressed files replicated across network for permanent availability.\n🔧 Survives cycles because infrastructure doesn't depend on speculation.\n\n@BWSCommunity #microcap #NFT #Web3 https://docs.bws.ninja/solutions/bws.ipfs.upload",
+      "productMentioned": "Multiple products (X Bot, Blockchain Badges, Fan Game Cube)",
+      "relevanceScore": 82,
+      "templateUsed": "emoji_enhanced",
+      "templateName": "Emoji-Enhanced Structure",
+      "imageAttached": true,
+      "imagePath": "/assets/images/docs/bws-ipfs/bws-ipfs-0.png",
+      "timestamp": "2025-12-06T19:51:51.735Z",
+      "status": "posted",
+      "dryRun": false
     }
   ],
   "dailyStats": {
@@ -1350,10 +1369,10 @@
     }
   },
   "metadata": {
-    "totalReplies": 59,
-    "successfulReplies": 25,
+    "totalReplies": 60,
+    "successfulReplies": 26,
     "failedReplies": 34,
-    "lastReplyAt": "2025-12-06T15:27:21.674Z",
+    "lastReplyAt": "2025-12-06T19:51:51.735Z",
     "todayRepliesCount": 0,
     "lastUpdateBy": "kol-system"
   }
