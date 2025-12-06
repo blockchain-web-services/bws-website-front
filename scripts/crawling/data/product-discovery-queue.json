@@ -25,7 +25,10 @@
       "product": "Blockchain Badges",
       "queryName": "educational-credentials",
       "queryPriority": "high",
-      "discoveredAt": "2025-12-06T09:11:04.142Z"
+      "discoveredAt": "2025-12-06T09:11:04.142Z",
+      "processed": true,
+      "processedAt": "2025-12-06T10:04:20.803Z",
+      "processedStatus": "error"
     },
     {
       "id": "1995907374930899301",
@@ -484,7 +487,10 @@
       "product": "BWS IPFS",
       "queryName": "nft-metadata",
       "queryPriority": "high",
-      "discoveredAt": "2025-12-06T09:11:52.753Z"
+      "discoveredAt": "2025-12-06T09:11:52.753Z",
+      "processed": true,
+      "processedAt": "2025-12-06T10:04:20.804Z",
+      "processedStatus": "error"
     },
     {
       "id": "1996577227211952231",
@@ -1497,13 +1503,13 @@
     "byProduct": {
       "Blockchain Badges": {
         "total": 17,
-        "unprocessed": 17,
-        "processed": 0
+        "unprocessed": 16,
+        "processed": 1
       },
       "BWS IPFS": {
         "total": 13,
-        "unprocessed": 13,
-        "processed": 0
+        "unprocessed": 12,
+        "processed": 1
       },
       "NFT.zK": {
         "total": 13,
@@ -1516,6 +1522,6 @@
         "processed": 0
       }
     },
-    "lastRun": "2025-12-06T09:13:53.915Z"
+    "lastRun": "2025-12-06T10:04:20.804Z"
   }
 }
