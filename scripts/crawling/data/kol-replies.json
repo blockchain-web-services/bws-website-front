@@ -1257,6 +1257,25 @@
       "timestamp": "2025-12-06T11:48:19.652Z",
       "status": "posted",
       "dryRun": false
+    },
+    {
+      "id": "1353384573435056128-1994142556071031079-1765034841674",
+      "tweetId": "1994142556071031079",
+      "tweetUrl": "https://twitter.com/CryptoRover/status/1994142556071031079",
+      "kolId": "1353384573435056128",
+      "kolUsername": "CryptoRover",
+      "originalTweetText": "BREAKING:\n\nBLACKROCK CEO LARRY FINK: IT DOESN'T MATTER IF MARKETS RISE AND FALL. BUBBLES COME AND GO.\n\nWHAT MATTERS MOST IS STAYING IN THE MARKET THROUGH ALL CYCLES.",
+      "replyTweetId": "1997327005692678610",
+      "replyText": "Conviction investing requires identifying builders who execute through volatility, not narratives.\n\n$BWS ESG Credits delivers blockchain-verified environmental impact reporting for banks - ICMA framework compliance, double-counting prevention, and integration into existing digital channels. Real fintech infrastructure at microcap valuation.\n\n@BWSCommunity #microcap #ESG #fintech https://docs.bws.ninja/marketplace-solutions/bws.esg.credits",
+      "productMentioned": "Multiple products (X Bot, Blockchain Badges, ESG Credits, Fan Game Cube)",
+      "relevanceScore": 82,
+      "templateUsed": "classic",
+      "templateName": "Classic Structure",
+      "imageAttached": false,
+      "imagePath": null,
+      "timestamp": "2025-12-06T15:27:21.674Z",
+      "status": "posted",
+      "dryRun": false
     }
   ],
   "dailyStats": {
@@ -1331,10 +1350,10 @@
     }
   },
   "metadata": {
-    "totalReplies": 58,
-    "successfulReplies": 24,
+    "totalReplies": 59,
+    "successfulReplies": 25,
     "failedReplies": 34,
-    "lastReplyAt": "2025-12-06T11:48:19.652Z",
+    "lastReplyAt": "2025-12-06T15:27:21.674Z",
     "todayRepliesCount": 0,
     "lastUpdateBy": "kol-system"
   }
