@@ -4051,13 +4051,475 @@
       "expiresAt": "2025-12-12T22:15:47.527Z",
       "source": "timeline_monitor",
       "contentCategory": "market-trends"
+    },
+    {
+      "id": "1997049025267134914",
+      "text": "$FARTCOIN dips are always bought up and a gift. Fartcoin can be hard to trade while it comes down but it always bounces with a vengeance lately. Higher.",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "retweet_count": 14,
+        "reply_count": 15,
+        "like_count": 127,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/AltcoinSherpa/status/1997049025267134914",
+      "processed": false,
+      "addedAt": "2025-12-06T07:22:38.475Z",
+      "expiresAt": "2025-12-13T07:22:38.475Z",
+      "source": "timeline_monitor",
+      "contentCategory": "altcoin-talk"
+    },
+    {
+      "id": "1997037934030344341",
+      "text": "$BTC This would be bullish short term price action filling out this inefficiency a bit and then going higher",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "retweet_count": 19,
+        "reply_count": 29,
+        "like_count": 129,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/AltcoinSherpa/status/1997037934030344341",
+      "processed": false,
+      "addedAt": "2025-12-06T07:22:40.627Z",
+      "expiresAt": "2025-12-13T07:22:40.627Z",
+      "source": "timeline_monitor",
+      "contentCategory": "technical-analysis"
+    },
+    {
+      "id": "1997022266421661928",
+      "text": "If the market goes in the opposite direction that people want it's manipulation. I didn't see many say Bitcoin was manipulated from $15k to $125k.",
+      "author": {
+        "id": "4441279246",
+        "username": "IncomeSharks"
+      },
+      "public_metrics": {
+        "retweet_count": 20,
+        "reply_count": 86,
+        "like_count": 668,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/IncomeSharks/status/1997022266421661928",
+      "processed": false,
+      "addedAt": "2025-12-06T07:23:09.667Z",
+      "expiresAt": "2025-12-13T07:23:09.667Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "1997015261195772342",
+      "text": "$KGEN\n\nHIGHER!",
+      "author": {
+        "id": "crawlee_search_nihilusbtc",
+        "username": "NihilusBTC"
+      },
+      "public_metrics": {
+        "retweet_count": 20,
+        "reply_count": 39,
+        "like_count": 78,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/NihilusBTC/status/1997015261195772342",
+      "processed": false,
+      "addedAt": "2025-12-06T07:24:12.062Z",
+      "expiresAt": "2025-12-13T07:24:12.062Z",
+      "source": "timeline_monitor",
+      "contentCategory": "price-speculation"
+    },
+    {
+      "id": "1997166555034276138",
+      "text": "#BITCOIN: SHOULD WE BE WORRIED?\n\nWatch NOW:\nhttps://youtu.be/EV1K0s1iw1U",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "retweet_count": 30,
+        "reply_count": 61,
+        "like_count": 137,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoRover/status/1997166555034276138",
+      "processed": false,
+      "addedAt": "2025-12-06T07:24:56.647Z",
+      "expiresAt": "2025-12-13T07:24:56.647Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "1997129763128005104",
+      "text": "BREAKING:\n\n Shark Tank's Kevin O'Leary says \"most of these altcoins, what I call poopoo coins, are done.\"",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "retweet_count": 69,
+        "reply_count": 112,
+        "like_count": 327,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoRover/status/1997129763128005104",
+      "processed": false,
+      "addedAt": "2025-12-06T07:25:00.403Z",
+      "expiresAt": "2025-12-13T07:25:00.403Z",
+      "source": "timeline_monitor",
+      "contentCategory": "altcoin-talk"
+    },
+    {
+      "id": "1997128723435495702",
+      "text": "BREAKING:\n\n BILLIONAIRE TRUMP BACKER TO UNVEIL NEW FEDERALLY CHARTERED CRYPTO BANK CALLED MONET BANK.",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "retweet_count": 111,
+        "reply_count": 73,
+        "like_count": 785,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoRover/status/1997128723435495702",
+      "processed": false,
+      "addedAt": "2025-12-06T07:25:02.732Z",
+      "expiresAt": "2025-12-13T07:25:02.732Z",
+      "source": "timeline_monitor",
+      "contentCategory": "project-discussion"
+    },
+    {
+      "id": "1997049086722122226",
+      "text": "MASSIVE QE COULD BE COMING AGAIN FOR BITCOIN...",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "retweet_count": 122,
+        "reply_count": 102,
+        "like_count": 562,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoRover/status/1997049086722122226",
+      "processed": false,
+      "addedAt": "2025-12-06T07:25:07.769Z",
+      "expiresAt": "2025-12-13T07:25:07.769Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "1996891501737967818",
+      "text": "Yi He: Why is Binance launching a Co-CEO system at this time?\n\nOn December 3, after being named Binance's Co-CEO, He Yi told PANews and ChainCatcher that the co-CEO model is common in finance and can deliver a \"1+1>2\" collaboration effect. She said the arrangement serves a larger",
+      "author": {
+        "id": "111533746",
+        "username": "WuBlockchain"
+      },
+      "public_metrics": {
+        "retweet_count": 16,
+        "reply_count": 15,
+        "like_count": 62,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/WuBlockchain/status/1996891501737967818",
+      "processed": false,
+      "addedAt": "2025-12-06T07:25:19.841Z",
+      "expiresAt": "2025-12-13T07:25:19.841Z",
+      "source": "timeline_monitor",
+      "contentCategory": "news"
+    },
+    {
+      "id": "1997036882862264759",
+      "text": "WE ARE LIVE! \nCome hang out with me @Ajwritescrypto and @Belly0x \nas we break down UFC 323, talk VeChain, dive into crypto markets, AND host a massive giveaway \n\nPLUS… a UFC Champion is pulling up!\n\nDon’t miss it",
+      "author": {
+        "id": "935742315389444096",
+        "username": "CryptoWendyO"
+      },
+      "public_metrics": {
+        "retweet_count": 15,
+        "reply_count": 27,
+        "like_count": 51,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoWendyO/status/1997036882862264759",
+      "processed": false,
+      "addedAt": "2025-12-06T07:26:08.546Z",
+      "expiresAt": "2025-12-13T07:26:08.546Z",
+      "source": "timeline_monitor",
+      "contentCategory": "altcoin-talk"
+    },
+    {
+      "id": "1997009549337768318",
+      "text": "Crypto things you might have missed:\n\n-CFTC legalizes crypto ETF trading\n-BlackRock secretly attacks DeFi\n-XRP hits highest fear levels since October\n-@BNBCHAIN is top chain by active addresses \n-Tom Lee says crypto has bottomed\n\nJOIN THE DAILY 10:30 AM LIVESTREAM ON YOUTUBE + X",
+      "author": {
+        "id": "935742315389444096",
+        "username": "CryptoWendyO"
+      },
+      "public_metrics": {
+        "retweet_count": 25,
+        "reply_count": 45,
+        "like_count": 83,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoWendyO/status/1997009549337768318",
+      "processed": false,
+      "addedAt": "2025-12-06T07:26:10.500Z",
+      "expiresAt": "2025-12-13T07:26:10.500Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "1997022989335122018",
+      "text": "The Santa Rally is real.\n\nBitcoin under $90K is a gift.",
+      "author": {
+        "id": "906234475604037637",
+        "username": "CryptoKaleo"
+      },
+      "public_metrics": {
+        "retweet_count": 28,
+        "reply_count": 109,
+        "like_count": 656,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoKaleo/status/1997022989335122018",
+      "processed": false,
+      "addedAt": "2025-12-06T07:26:21.575Z",
+      "expiresAt": "2025-12-13T07:26:21.575Z",
+      "source": "timeline_monitor",
+      "contentCategory": "price-speculation"
+    },
+    {
+      "id": "1997107471668715601",
+      "text": "SCARAMUCCI BULLISH ON SOLANA RISING\n\nAnthony Scaramucci believes $SOL will be one of the top industry-standard platforms over the next five years -- right alongside Bitcoin.\n\nHe said Solana’s tech is built for real adoption: fast, cheap, easy for developers, and designed using",
+      "author": {
+        "id": "877357064724520961",
+        "username": "CryptosR_Us"
+      },
+      "public_metrics": {
+        "retweet_count": 19,
+        "reply_count": 20,
+        "like_count": 125,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptosR_Us/status/1997107471668715601",
+      "processed": false,
+      "addedAt": "2025-12-06T07:26:39.427Z",
+      "expiresAt": "2025-12-13T07:26:39.427Z",
+      "source": "timeline_monitor",
+      "contentCategory": "altcoin-talk"
+    },
+    {
+      "id": "1997086106320249312",
+      "text": "INSIGHT: MOST $ETH DATs EASE BUYING; BITMINE CONTINUES TO BUY\n\nMonthly acquisitions continue to decline since the August high, falling 81% in the past 3 months. \n\nDespite the slowdown, BitMine continues to aggressively accumulate $ETH (679,000 Ether worth $2.13 billion over",
+      "author": {
+        "id": "877357064724520961",
+        "username": "CryptosR_Us"
+      },
+      "public_metrics": {
+        "retweet_count": 20,
+        "reply_count": 13,
+        "like_count": 92,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptosR_Us/status/1997086106320249312",
+      "processed": false,
+      "addedAt": "2025-12-06T07:26:41.486Z",
+      "expiresAt": "2025-12-13T07:26:41.486Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "1997080331489325158",
+      "text": "BIG MOVE: BILLIONAIRE TRUMP BACKER JUST WENT FULL CRYPTO\n\nAndy Beal -- worth over $9B and known for making some of the biggest distressed-asset wins in U.S. banking -- is unveiling a federally chartered crypto bank called Monet Bank.\n\nThis is the guy who turned crisis trades into",
+      "author": {
+        "id": "877357064724520961",
+        "username": "CryptosR_Us"
+      },
+      "public_metrics": {
+        "retweet_count": 89,
+        "reply_count": 24,
+        "like_count": 352,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptosR_Us/status/1997080331489325158",
+      "processed": false,
+      "addedAt": "2025-12-06T07:26:43.444Z",
+      "expiresAt": "2025-12-13T07:26:43.444Z",
+      "source": "timeline_monitor",
+      "contentCategory": "project-discussion"
+    },
+    {
+      "id": "1997062180277977408",
+      "text": "NEW: WISDOM TREE LAUNCHES FIRST 100% STAKED $ETH ETP USING LIDO\n\n @WisdomTreeEU introduced an Ethereum-based ETP (ticker: LIST) in Europe that earns staking rewards using the decentralized @LidoFinance.\n\nThis is the first European ETP to hold only stETH minted via the Lido",
+      "author": {
+        "id": "877357064724520961",
+        "username": "CryptosR_Us"
+      },
+      "public_metrics": {
+        "retweet_count": 12,
+        "reply_count": 8,
+        "like_count": 77,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptosR_Us/status/1997062180277977408",
+      "processed": false,
+      "addedAt": "2025-12-06T07:26:45.436Z",
+      "expiresAt": "2025-12-13T07:26:45.436Z",
+      "source": "timeline_monitor",
+      "contentCategory": "project-discussion"
+    },
+    {
+      "id": "1997039783927833054",
+      "text": "NO, STRATEGY IS NOT GOING TO SELL ITS BITCOIN — BITWISE CIO RESPONDS TO MSCI CONCERNS\n\nMatt Hougan said no mechanism would force Strategy to sell its $BTC, despite market concerns, in response to MSCI weighing whether to remove companies whose digital-asset holdings exceed 50% of",
+      "author": {
+        "id": "877357064724520961",
+        "username": "CryptosR_Us"
+      },
+      "public_metrics": {
+        "retweet_count": 43,
+        "reply_count": 26,
+        "like_count": 223,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptosR_Us/status/1997039783927833054",
+      "processed": false,
+      "addedAt": "2025-12-06T07:26:47.370Z",
+      "expiresAt": "2025-12-13T07:26:47.370Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "1997176678754537726",
+      "text": "Whales Are Back in Buy Mode\n\nGlassnode’s Bitcoin Accumulation Trend Score is nearing peak levels, indicating heavy buying from nearly all major whale groups.\n\nThis accumulation pattern closely resembles July, right before BTC rallied from below $100K to its previous all-time",
+      "author": {
+        "id": "crawlee_search_cryptopatel",
+        "username": "CryptoPatel"
+      },
+      "public_metrics": {
+        "retweet_count": 18,
+        "reply_count": 14,
+        "like_count": 173,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoPatel/status/1997176678754537726",
+      "processed": false,
+      "addedAt": "2025-12-06T07:29:18.752Z",
+      "expiresAt": "2025-12-13T07:29:18.752Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "1997161577724641763",
+      "text": "UPDATE — Terra Case\n\nUS prosecutors are pushing for a 12-year prison sentence for Terraform Labs co-founder Do Kwon, calling the TerraUSD crash a “colossal fraud” that wiped out $40B.\n\nHis final sentencing is set for Dec 11 in New York.",
+      "author": {
+        "id": "crawlee_search_cryptopatel",
+        "username": "CryptoPatel"
+      },
+      "public_metrics": {
+        "retweet_count": 19,
+        "reply_count": 12,
+        "like_count": 176,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoPatel/status/1997161577724641763",
+      "processed": false,
+      "addedAt": "2025-12-06T07:29:20.524Z",
+      "expiresAt": "2025-12-13T07:29:20.524Z",
+      "source": "timeline_monitor",
+      "contentCategory": "project-discussion"
+    },
+    {
+      "id": "1997146478922338710",
+      "text": "JUST IN — Kevin O’Leary on Altcoins\n\nShark Tank’s Kevin O’Leary says the majority of altcoins, which he refers to as “poopoo coins” — are effectively finished.\n\nAccording to him, only Bitcoin and Ethereum have the long-term fundamentals to survive in the market.",
+      "author": {
+        "id": "crawlee_search_cryptopatel",
+        "username": "CryptoPatel"
+      },
+      "public_metrics": {
+        "retweet_count": 20,
+        "reply_count": 13,
+        "like_count": 171,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoPatel/status/1997146478922338710",
+      "processed": false,
+      "addedAt": "2025-12-06T07:29:22.561Z",
+      "expiresAt": "2025-12-13T07:29:22.561Z",
+      "source": "timeline_monitor",
+      "contentCategory": "altcoin-talk"
+    },
+    {
+      "id": "1997025683105546285",
+      "text": "If $SUI Sustains Above $1.18 support, Will it flip and fuel the Rext run to $10?\n\n@SuiNetwork #SUI",
+      "author": {
+        "id": "crawlee_search_cryptopatel",
+        "username": "CryptoPatel"
+      },
+      "public_metrics": {
+        "retweet_count": 21,
+        "reply_count": 16,
+        "like_count": 193,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoPatel/status/1997025683105546285",
+      "processed": false,
+      "addedAt": "2025-12-06T07:29:24.746Z",
+      "expiresAt": "2025-12-13T07:29:24.746Z",
+      "source": "timeline_monitor",
+      "contentCategory": "altcoin-talk"
+    },
+    {
+      "id": "1997010331718078891",
+      "text": "BREAKING: U.S. JUST APPROVED REGULATED SPOT CRYPTO TRADING\n\nFor the first time ever, leveraged spot crypto will trade on federally regulated U.S. exchanges.\n\nBitnomial goes live Dec 8, 2025\nMore CFTC-registered exchanges (Coinbase, Kalshi, Polymarket) could follow.\n\nThis brings",
+      "author": {
+        "id": "crawlee_search_cryptopatel",
+        "username": "CryptoPatel"
+      },
+      "public_metrics": {
+        "retweet_count": 11,
+        "reply_count": 14,
+        "like_count": 219,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoPatel/status/1997010331718078891",
+      "processed": false,
+      "addedAt": "2025-12-06T07:29:28.135Z",
+      "expiresAt": "2025-12-13T07:29:28.135Z",
+      "source": "timeline_monitor",
+      "contentCategory": "news"
     }
   ],
   "metadata": {
-    "lastUpdated": "2025-12-05T22:15:50.498Z",
-    "totalPosts": 193,
+    "lastUpdated": "2025-12-06T07:29:28.135Z",
+    "totalPosts": 215,
     "bySource": {
-      "timeline_monitor": 193,
+      "timeline_monitor": 215,
       "search_discovery": 0
     }
   },
