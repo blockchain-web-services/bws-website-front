@@ -112,24 +112,29 @@ BWS Website includes several X/Twitter automations for content discovery, KOL en
 
 ## Automation Status Overview
 
+**Last Updated**: December 6, 2025
+
 **Legend:**
-- ✅ **Working** - 100% success rate
-- ⚠️ **Partial** - 25-75% success rate
-- 🔴 **Failing** - 0-25% success rate
+- ✅ **Working** - 100% success rate (last 3 runs)
+- ⚠️ **Partial** - 33-67% success rate (last 3 runs)
+- 🔴 **Failing** - 0-33% success rate (last 3 runs)
+- ❌ **Deprecated** - Removed or disabled
 
 ### Discovery Workflows
 
 | Automation | Status | Success Rate | Strategy | Schedule | Credentials |
 |------------|--------|--------------|----------|----------|-------------|
-| Morning Discovery (Seed-Based) | ⚠️ | Debugging | Oxylabs Web Unblocker + HTML Parsing | Mon/Wed/Fri 09:09 UTC | `OXYLABS_USERNAME`, `OXYLABS_PASSWORD`, `ANTHROPIC_API_KEY` |
+| Daily KOL Discovery | ✅ | 100% (3/3) | Oxylabs Web Unblocker + HTML Parsing | Daily 06:11 UTC | `OXYLABS_USERNAME`, `OXYLABS_PASSWORD`, `ANTHROPIC_API_KEY` |
 | Search-Based Discovery (Dynamic) | ✅ | Fixed (2025-11-17) | Crawlee + Playwright | Tue/Thu/Sat 14:00 UTC | `OXYLABS_USERNAME`, `OXYLABS_PASSWORD`, `ANTHROPIC_API_KEY` |
-| Content Discovery - Crawlee | ✅ | 100% (15/15) | Crawlee + Playwright | 4x daily (6hr intervals) | `OXYLABS_USERNAME`, `OXYLABS_PASSWORD`, `ANTHROPIC_API_KEY` |
+| Content Discovery - Crawlee | ✅ | 100% (3/3) | Crawlee + Playwright | 4x daily (6hr intervals) | `OXYLABS_USERNAME`, `OXYLABS_PASSWORD`, `ANTHROPIC_API_KEY` |
+| KOL Timeline Monitoring | ⚠️ | 67% (2/3) | Crawlee + Playwright | Every 5 hours | `OXYLABS_USERNAME`, `OXYLABS_PASSWORD`, `ANTHROPIC_API_KEY` |
+| Discover Documentation Pages | ✅ | 100% (3/3) | Crawlee + Playwright | Daily 02:35 UTC | `OXYLABS_USERNAME`, `OXYLABS_PASSWORD` |
 
 ### Engagement Workflows
 
 | Automation | Status | Success Rate | Strategy | Schedule | Credentials |
 |------------|--------|--------------|----------|----------|-------------|
-| KOL Reply Cycle | ✅ | 100% | Twitter API v2 (@BWSCommunity) | 4x daily (randomized) | `TWITTER_*` (4 vars), `ANTHROPIC_API_KEY`, `OXYLABS_*` (2 vars), `SEARCH1_*` (2 vars), `PAT_REPOS_AND_WORKFLOW` |
+| KOL Reply Cycle | ✅ | 100% (3/3) | Twitter API v2 (@BWSCommunity) | 4x daily (randomized) | `TWITTER_*` (4 vars), `ANTHROPIC_API_KEY`, `OXYLABS_*` (2 vars), `SEARCH1_*` (2 vars), `PAT_REPOS_AND_WORKFLOW` |
 
 ### Analytics & Reporting
 
@@ -141,14 +146,21 @@ BWS Website includes several X/Twitter automations for content discovery, KOL en
 
 | Automation | Status | Success Rate | Strategy | Schedule | Credentials |
 |------------|--------|--------------|----------|----------|-------------|
-| Post Article Content | ✅ | 100% (4/4) | Twitter API v2 (@BWSCommunity) | Daily (randomized) | `TWITTER_*` (4 vars), `ANTHROPIC_API_KEY`, `OXYLABS_*` (2 vars), `PAT_REPOS_AND_WORKFLOW` |
-| Weekly X Post | ⚠️ | 25% (1/4) | Twitter API v2 (403 errors) | Monday 15:00 UTC | `TWITTER_*` (4 vars), `ANTHROPIC_API_KEY`, `PAT_REPOS_AND_WORKFLOW`, `PAT_GITHUB_ACTIONS` |
+| Post Article Content | ⚠️ | 67% (2/3) | Twitter API v2 (@BWSCommunity) | Daily (randomized) | `TWITTER_*` (4 vars), `ANTHROPIC_API_KEY`, `OXYLABS_*` (2 vars), `PAT_REPOS_AND_WORKFLOW` |
+| Weekly X Post | ✅ | 100% (3/3) | Twitter API v2 (@BWSCommunity) | Weekly (Sunday) | `TWITTER_*` (4 vars), `ANTHROPIC_API_KEY`, `PAT_REPOS_AND_WORKFLOW`, `PAT_GITHUB_ACTIONS` |
+| Fetch Twitter Partnerships | ✅ | 100% (2/2) | Twitter API v2 + Claude AI | Daily 09:00 UTC | `TWITTER_BEARER_TOKEN`, `ANTHROPIC_API_KEY` |
+
+### Content Discovery
+
+| Automation | Status | Success Rate | Strategy | Schedule | Credentials |
+|------------|--------|--------------|----------|----------|-------------|
+| Fetch Success Stories | 🔴 | 0% (0/3) | Web scraping | Daily 11:02 UTC | None |
 
 ### Infrastructure
 
 | Automation | Status | Success Rate | Strategy | Schedule | Credentials |
 |------------|--------|--------------|----------|----------|-------------|
-| Production Monitoring | ✅ | 100% (16/16) | Internal | Hourly | None (GitHub API) |
+| Production Monitoring | ✅ | 100% (3/3) | Internal | Every 6 hours | None (GitHub API) |
 
 ---
 
@@ -611,7 +623,52 @@ Reply Automation processes the tweet queue populated by Script 2.2.1, evaluating
 
 ---
 
-## 2.4 Post Article Content to X
+## 2.4 Weekly KOL Analytics
+
+**Workflow File**: `.github/workflows/analyze-kols-weekly.yml` (REMOVED)
+
+**Overview**: ❌ **DEPRECATED** - This workflow has been removed as of December 4, 2025.
+
+**Status**: Workflow and script removed from repository
+
+**Previous Schedule**: Every Sunday at 21:00 UTC (no longer active)
+
+**Scripts Used**:
+- `scripts/crawling/production/analyze-kol-engagement.js`
+- `scripts/crawling/utils/claude-client.js` (AI analysis)
+- `scripts/crawling/utils/kol-utils.js`
+
+**Strategy**: **Data Analysis + Claude AI**
+- Analyzes reply performance metrics from `kol-replies.json`
+- Calculates engagement rates, success rates, relevance scores
+- AI-powered insights and recommendations via Claude
+- Creates GitHub issue with formatted report
+- Tracks product mention performance
+
+**Recent Failures**: None (1/1 success)
+
+**Recent Outputs** (Latest Weekly Report):
+- **Period**: Last 7 days
+- **Total Replies**: 6
+- **Success Rate**: 100% (when not blocked by 403 errors)
+- **Average Relevance Score**: 72/100
+- **Top KOLs Engaged**:
+  - @IncomeSharks (3 replies, 688K followers)
+  - @AltcoinSherpa (1 reply, 257K followers)
+- **Product Performance**:
+  - Fan Game Cube: 2 mentions
+  - X Bot: 2 mentions
+  - NFT Solutions: 1 mention
+- **AI Assessment**: "Engagement quality high, but volume limited by API restrictions. Focus on top-performing KOLs."
+
+**Data Files**:
+- Input: `scripts/crawling/data/kol-replies.json`
+- Output: `scripts/crawling/data/kol-metrics.json`
+- Creates GitHub issue with report
+
+---
+
+## 2.5 Post Article Content to X
 
 **Workflow File**: `.github/workflows/post-article-content.yml`
 
@@ -696,6 +753,11 @@ Reply Automation processes the tweet queue populated by Script 2.2.1, evaluating
 - Lookback window: 14 days (extends up to 60 days if needed)
 
 **Recent Status**: ✅ **STABLE** (Successfully tested and deployed Dec 5, 2025)
+
+**Latest Runs** (Dec 5-6, 2025):
+- Dec 5, 17:13 UTC: ✅ SUCCESS
+- Dec 5, 17:08 UTC: ✅ SUCCESS
+- Dec 5, 17:05 UTC: ✅ SUCCESS
 
 **Recent Fixes** (Dec 5, 2025):
 ```
@@ -807,6 +869,11 @@ $BWS #Web3 #Blockchain #BWS
 
 **Recent Status**: ✅ **STABLE** (Fixed, tested, and deployed Dec 5, 2025)
 
+**Latest Runs** (Dec 5, 2025):
+- Dec 5, 17:49 UTC: ✅ SUCCESS - No new partnerships (correctly skipped processed tweets)
+- Dec 5, 17:40 UTC: ✅ SUCCESS - Added 4 partnerships
+- Dec 5, 09:02 UTC: ❌ FAILURE - Path issues (before fixes)
+
 **Recent Execution** (Dec 5, 2025):
 ```
 Run #19971119201: Successfully added 4 partnerships to website
@@ -818,6 +885,7 @@ Run #19971119201: Successfully added 4 partnerships to website
 Status: ✅ All 4 partnerships live on bws.ninja
 Commit: 1f46594 (auto-committed by workflow)
 Deployment: Successful (Run #19971605178)
+Verification: All partnerships confirmed visible on production site
 ```
 
 **Recent Fixes** (Dec 5, 2025):
