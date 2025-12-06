@@ -1219,6 +1219,25 @@
       "timestamp": "2025-12-06T02:48:19.375Z",
       "status": "posted",
       "dryRun": false
+    },
+    {
+      "id": "1353384573435056128-1994142556071031079-1765006478743",
+      "tweetId": "1994142556071031079",
+      "tweetUrl": "https://twitter.com/CryptoRover/status/1994142556071031079",
+      "kolId": "1353384573435056128",
+      "kolUsername": "CryptoRover",
+      "originalTweetText": "BREAKING:\n\nBLACKROCK CEO LARRY FINK: IT DOESN'T MATTER IF MARKETS RISE AND FALL. BUBBLES COME AND GO.\n\nWHAT MATTERS MOST IS STAYING IN THE MARKET THROUGH ALL CYCLES.",
+      "replyTweetId": "1997208043038376287",
+      "replyText": "What if brands could distribute NFTs to customers without forcing wallet setup?\n\n$BWS NFT.zK addresses this: transfer NFTs via email to non-technical users, bulk mint collections with single API call, metadata management included. Real onboarding infrastructure at microcap valuation.\n\n@BWSCommunity #microcap #NFT #Web3 https://www.bws.ninja",
+      "productMentioned": "Multiple products (X Bot, Blockchain Badges, Fan Game Cube)",
+      "relevanceScore": 82,
+      "templateUsed": "question_led",
+      "templateName": "Question-Led Structure",
+      "imageAttached": true,
+      "imagePath": "/assets/images/docs/nftzk/nftzk-0.png",
+      "timestamp": "2025-12-06T07:34:38.743Z",
+      "status": "posted",
+      "dryRun": false
     }
   ],
   "dailyStats": {
@@ -1293,10 +1312,10 @@
     }
   },
   "metadata": {
-    "totalReplies": 56,
-    "successfulReplies": 22,
+    "totalReplies": 57,
+    "successfulReplies": 23,
     "failedReplies": 34,
-    "lastReplyAt": "2025-12-06T02:48:19.375Z",
+    "lastReplyAt": "2025-12-06T07:34:38.743Z",
     "todayRepliesCount": 0,
     "lastUpdateBy": "kol-system"
   }
