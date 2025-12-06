@@ -1181,6 +1181,44 @@
       "timestamp": "2025-12-05T23:18:07.516Z",
       "status": "posted",
       "dryRun": false
+    },
+    {
+      "id": "1353384573435056128-1994142556071031079-1764989261446",
+      "tweetId": "1994142556071031079",
+      "tweetUrl": "https://twitter.com/CryptoRover/status/1994142556071031079",
+      "kolId": "1353384573435056128",
+      "kolUsername": "CryptoRover",
+      "originalTweetText": "BREAKING:\n\nBLACKROCK CEO LARRY FINK: IT DOESN'T MATTER IF MARKETS RISE AND FALL. BUBBLES COME AND GO.\n\nWHAT MATTERS MOST IS STAYING IN THE MARKET THROUGH ALL CYCLES.",
+      "replyTweetId": "1997135828422893803",
+      "replyText": "🎯 Larry's principle holds when you're positioned in builders, not narratives.\n\n💡 Fan Game Cube lets sports fans own NFT field zones, earning points from real-time match events at their coordinates. $BWS built this for clubs across football, chess, tennis - revenue infrastructure that compounds.\n\n@BWSCommunity #microcap #sports #NFT https://www.bws.ninja",
+      "productMentioned": "Multiple products (X Bot, ESG Credits, Blockchain Badges)",
+      "relevanceScore": 82,
+      "templateUsed": "emoji_enhanced",
+      "templateName": "Emoji-Enhanced Structure",
+      "imageAttached": true,
+      "imagePath": "/assets/images/docs/fan-game-cube/fan-game-cube-0.png",
+      "timestamp": "2025-12-06T02:47:41.446Z",
+      "status": "posted",
+      "dryRun": false
+    },
+    {
+      "id": "1068237257977544704-1996404865929822313-1764989299375",
+      "tweetId": "1996404865929822313",
+      "tweetUrl": "https://twitter.com/AltcoinSherpa/status/1996404865929822313",
+      "kolId": "1068237257977544704",
+      "kolUsername": "AltcoinSherpa",
+      "originalTweetText": "If $BTC legs up then coins like $FARTCOIN are going to full send",
+      "replyTweetId": "1997135988062380070",
+      "replyText": "True - memecoins ride pure momentum.\n\nConsider this: Blockchain Hash enables developers to store mutable data on-chain through key-value pairs with zero wallet management or gas fees. $BWS delivers real database infrastructure at microcap valuation.\n\n@BWSCommunity #microcap #altcoins #builders https://docs.bws.ninja/solutions/bws.blockchain.hash",
+      "productMentioned": "X Bot",
+      "relevanceScore": 78,
+      "templateUsed": "stat_driven",
+      "templateName": "Stat/Fact-Driven Structure",
+      "imageAttached": false,
+      "imagePath": null,
+      "timestamp": "2025-12-06T02:48:19.375Z",
+      "status": "posted",
+      "dryRun": false
     }
   ],
   "dailyStats": {
@@ -1255,10 +1293,10 @@
     }
   },
   "metadata": {
-    "totalReplies": 54,
-    "successfulReplies": 20,
+    "totalReplies": 56,
+    "successfulReplies": 22,
     "failedReplies": 34,
-    "lastReplyAt": "2025-12-05T23:18:07.516Z",
+    "lastReplyAt": "2025-12-06T02:48:19.375Z",
     "todayRepliesCount": 0,
     "lastUpdateBy": "kol-system"
   }
