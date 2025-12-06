@@ -3,9 +3,9 @@
     "lastGenerated": "2025-12-05T16:18:50.507Z",
     "totalPosts": 24,
     "totalArticles": 8,
-    "pendingPosts": 8,
-    "postedCount": 5,
-    "lastPosted": "2025-12-05T16:40:20.585Z",
+    "pendingPosts": 4,
+    "postedCount": 9,
+    "lastPosted": "2025-12-06T12:14:26.645Z",
     "failedCount": 11
   },
   "posts": [
@@ -427,17 +427,19 @@
         "Web3Analytics"
       ],
       "priority": "medium",
-      "status": "pending",
+      "status": "posted",
       "scheduledFor": null,
-      "postedAt": null,
-      "tweetId": null,
+      "postedAt": "2025-12-06T12:11:25.261Z",
+      "tweetId": "1997277695982391503",
       "generatedAt": "2025-12-05T16:18:22.809Z",
       "metadata": {
         "articleTitle": "X Bot: Real-Time Community Analytics for Crypto Projects on X and Telegram",
         "articlePublishDate": "2025-12-05T10:04:24.694Z",
         "mainTextLength": 195,
         "fullTextLength": 350
-      }
+      },
+      "tweetUrl": "https://twitter.com/i/web/status/1997277695982391503",
+      "error": null
     },
     {
       "id": "1d789cc8-36d6-4bc6-8a04-197dac043eae",
@@ -453,17 +455,19 @@
         "Web3"
       ],
       "priority": "medium",
-      "status": "pending",
+      "status": "posted",
       "scheduledFor": null,
-      "postedAt": null,
-      "tweetId": null,
+      "postedAt": "2025-12-06T12:12:25.645Z",
+      "tweetId": "1997277949725208584",
       "generatedAt": "2025-12-05T16:18:22.809Z",
       "metadata": {
         "articleTitle": "X Bot: Real-Time Community Analytics for Crypto Projects on X and Telegram",
         "articlePublishDate": "2025-12-05T10:04:24.694Z",
         "mainTextLength": 201,
         "fullTextLength": 351
-      }
+      },
+      "tweetUrl": "https://twitter.com/i/web/status/1997277949725208584",
+      "error": null
     },
     {
       "id": "1d712eb8-5510-4cfc-b7c4-84b04c33158b",
@@ -512,17 +516,19 @@
         "Cryptography"
       ],
       "priority": "medium",
-      "status": "pending",
+      "status": "posted",
       "scheduledFor": null,
-      "postedAt": null,
-      "tweetId": null,
+      "postedAt": "2025-12-06T12:13:25.998Z",
+      "tweetId": "1997278202838847589",
       "generatedAt": "2025-12-05T16:18:32.404Z",
       "metadata": {
         "articleTitle": "Blockchain Badges: Tamper-Proof Digital Credentials with Immutable Verification",
         "articlePublishDate": "2025-12-05T10:04:37.095Z",
         "mainTextLength": 210,
         "fullTextLength": 398
-      }
+      },
+      "tweetUrl": "https://twitter.com/i/web/status/1997278202838847589",
+      "error": null
     },
     {
       "id": "2e453d2b-8953-47f9-a35d-e59c489733d6",
@@ -538,17 +544,19 @@
         "Credentialing"
       ],
       "priority": "medium",
-      "status": "pending",
+      "status": "posted",
       "scheduledFor": null,
-      "postedAt": null,
-      "tweetId": null,
+      "postedAt": "2025-12-06T12:14:26.499Z",
+      "tweetId": "1997278456602616060",
       "generatedAt": "2025-12-05T16:18:32.404Z",
       "metadata": {
         "articleTitle": "Blockchain Badges: Tamper-Proof Digital Credentials with Immutable Verification",
         "articlePublishDate": "2025-12-05T10:04:37.095Z",
         "mainTextLength": 213,
         "fullTextLength": 389
-      }
+      },
+      "tweetUrl": "https://twitter.com/i/web/status/1997278456602616060",
+      "error": null
     },
     {
       "id": "4ce873ca-280a-4a59-9134-3cd21f507970",
