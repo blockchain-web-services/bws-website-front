@@ -1,0 +1,30 @@
+{
+  "tweets": [],
+  "lastDiscovery": {},
+  "stats": {
+    "totalDiscovered": 0,
+    "byProduct": {
+      "Blockchain Badges": {
+        "total": 0,
+        "unprocessed": 0,
+        "processed": 0
+      },
+      "BWS IPFS": {
+        "total": 0,
+        "unprocessed": 0,
+        "processed": 0
+      },
+      "NFT.zK": {
+        "total": 0,
+        "unprocessed": 0,
+        "processed": 0
+      },
+      "Blockchain Hash": {
+        "total": 0,
+        "unprocessed": 0,
+        "processed": 0
+      }
+    },
+    "lastRun": null
+  }
+}
