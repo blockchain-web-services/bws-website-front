@@ -17,6 +17,7 @@ const worktreeRoot = path.resolve(__scriptsDir, '../../..');
 dotenv.config({ path: path.join(worktreeRoot, '.env') });
 
 import fs from 'fs/promises';
+import fsSync from 'fs';
 import { searchTweetsWebUnblocker } from '../crawlers/twitter-crawler.js';
 import authManager from '../utils/x-auth-manager.js';
 import { sleep } from '../utils/kol-utils.js';
@@ -30,7 +31,7 @@ function loadProductQueries() {
   const configPath = path.join(__dirname, '..', 'config', 'product-search-queries.json');
 
   try {
-    const data = fs.readFileSync(configPath, 'utf-8');
+    const data = fsSync.readFileSync(configPath, 'utf-8');
     return JSON.parse(data);
   } catch (error) {
     console.error(`❌ Error loading product queries: ${error.message}`);
