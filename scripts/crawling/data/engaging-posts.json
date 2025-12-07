@@ -3925,9 +3925,10 @@
       "BWS IPFS",
       "Blockchain Save"
     ],
-    "currentIndex": 3,
-    "lastProductUsed": "Blockchain Hash",
+    "currentIndex": 5,
+    "lastProductUsed": "Blockchain Badges",
     "positioningPhraseIndex": 0,
-    "replyCount": 35
-  }
+    "replyCount": 37
+  },
+  "_removedStale": false
 }
