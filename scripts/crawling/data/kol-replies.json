@@ -1485,6 +1485,44 @@
       "timestamp": "2025-12-07T19:52:23.465Z",
       "status": "posted",
       "dryRun": false
+    },
+    {
+      "id": "1353384573435056128-1994142556071031079-1765149494853",
+      "tweetId": "1994142556071031079",
+      "tweetUrl": "https://twitter.com/CryptoRover/status/1994142556071031079",
+      "kolId": "1353384573435056128",
+      "kolUsername": "CryptoRover",
+      "originalTweetText": "BREAKING:\n\nBLACKROCK CEO LARRY FINK: IT DOESN'T MATTER IF MARKETS RISE AND FALL. BUBBLES COME AND GO.\n\nWHAT MATTERS MOST IS STAYING IN THE MARKET THROUGH ALL CYCLES.",
+      "replyTweetId": "1997807896386752676",
+      "replyText": "What separates microcaps that survive cycles from those that vanish?\n\n$BWS Fan Game Cube delivers tokenized field zones where fans earn points from real match events at owned coordinates - sports clubs generate new revenue streams through NFT-based engagement. Expanding into iGaming domain.\n\nReal fundamentals at microcap valuation.\n\n@BWSCommunity #microcap #sports #fundamentals https://docs.bws.ninja/marketplace-solutions/bws.nft.gamecube",
+      "productMentioned": "X Bot, Blockchain Badges",
+      "relevanceScore": 82,
+      "templateUsed": "question_led",
+      "templateName": "Question-Led Structure",
+      "imageAttached": true,
+      "imagePath": "/assets/images/docs/fan-game-cube/fan-game-cube-0.png",
+      "timestamp": "2025-12-07T23:18:14.853Z",
+      "status": "posted",
+      "dryRun": false
+    },
+    {
+      "id": "1068237257977544704-1996404865929822313-1765149533876",
+      "tweetId": "1996404865929822313",
+      "tweetUrl": "https://twitter.com/AltcoinSherpa/status/1996404865929822313",
+      "kolId": "1068237257977544704",
+      "kolUsername": "AltcoinSherpa",
+      "originalTweetText": "If $BTC legs up then coins like $FARTCOIN are going to full send",
+      "replyTweetId": "1997808060430221776",
+      "replyText": "BTC momentum creates opportunities beyond memecoins - microcaps with actual products get overlooked.\n\n$BWS Blockchain Hash provides REST API that writes mutable data to blockchain without wallet management or gas fees for developers - key-value storage model with simple Web2 interface.\n\n@BWSCommunity #microcap #altcoins #blockchain https://docs.bws.ninja/solutions/bws.blockchain.hash",
+      "productMentioned": "X Bot",
+      "relevanceScore": 78,
+      "templateUsed": "classic",
+      "templateName": "Classic Structure",
+      "imageAttached": false,
+      "imagePath": null,
+      "timestamp": "2025-12-07T23:18:53.876Z",
+      "status": "posted",
+      "dryRun": false
     }
   ],
   "dailyStats": {
@@ -1559,10 +1597,10 @@
     }
   },
   "metadata": {
-    "totalReplies": 70,
-    "successfulReplies": 36,
+    "totalReplies": 72,
+    "successfulReplies": 38,
     "failedReplies": 34,
-    "lastReplyAt": "2025-12-07T19:52:23.465Z",
+    "lastReplyAt": "2025-12-07T23:18:53.876Z",
     "todayRepliesCount": 0,
     "lastUpdateBy": "kol-system"
   }
