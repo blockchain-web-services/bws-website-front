@@ -1333,6 +1333,44 @@
       "timestamp": "2025-12-07T02:55:48.619Z",
       "status": "posted",
       "dryRun": false
+    },
+    {
+      "id": "1353384573435056128-1994142556071031079-1765092876079",
+      "tweetId": "1994142556071031079",
+      "tweetUrl": "https://twitter.com/CryptoRover/status/1994142556071031079",
+      "kolId": "1353384573435056128",
+      "kolUsername": "CryptoRover",
+      "originalTweetText": "BREAKING:\n\nBLACKROCK CEO LARRY FINK: IT DOESN'T MATTER IF MARKETS RISE AND FALL. BUBBLES COME AND GO.\n\nWHAT MATTERS MOST IS STAYING IN THE MARKET THROUGH ALL CYCLES.",
+      "replyTweetId": "1997570419948188025",
+      "replyText": "Long-term investors win by finding utility before valuations reflect it.\n\n$BWS Fan Game Cube enables sports clubs to monetize fan engagement through NFT field zones - fans earn points when real match events occur at their owned coordinates. Expanding into iGaming domain.\n\n@BWSCommunity #microcap #sports #fundamentals https://www.bws.ninja",
+      "productMentioned": "X Bot, Blockchain Badges",
+      "relevanceScore": 82,
+      "templateUsed": "classic",
+      "templateName": "Classic Structure",
+      "imageAttached": true,
+      "imagePath": "/assets/images/docs/fan-game-cube/fan-game-cube-0.png",
+      "timestamp": "2025-12-07T07:34:36.079Z",
+      "status": "posted",
+      "dryRun": false
+    },
+    {
+      "id": "1068237257977544704-1996404865929822313-1765092915357",
+      "tweetId": "1996404865929822313",
+      "tweetUrl": "https://twitter.com/AltcoinSherpa/status/1996404865929822313",
+      "kolId": "1068237257977544704",
+      "kolUsername": "AltcoinSherpa",
+      "originalTweetText": "If $BTC legs up then coins like $FARTCOIN are going to full send",
+      "replyTweetId": "1997570585077993972",
+      "replyText": "Memecoins pump on speculation, but microcaps with fundamentals survive cycles.\n\nBlockchain Hash delivers:\n• REST API writes mutable data to blockchain\n• Zero wallet management for developers\n• No gas fees - included in API pricing\n\nReal infrastructure at microcap valuation. $BWS\n\n@BWSCommunity #microcap #altcoins #builders https://docs.bws.ninja/solutions/bws.blockchain.hash",
+      "productMentioned": "X Bot",
+      "relevanceScore": 78,
+      "templateUsed": "feature_list",
+      "templateName": "Feature List Structure",
+      "imageAttached": false,
+      "imagePath": null,
+      "timestamp": "2025-12-07T07:35:15.357Z",
+      "status": "posted",
+      "dryRun": false
     }
   ],
   "dailyStats": {
@@ -1407,10 +1445,10 @@
     }
   },
   "metadata": {
-    "totalReplies": 62,
-    "successfulReplies": 28,
+    "totalReplies": 64,
+    "successfulReplies": 30,
     "failedReplies": 34,
-    "lastReplyAt": "2025-12-07T02:55:48.619Z",
+    "lastReplyAt": "2025-12-07T07:35:15.357Z",
     "todayRepliesCount": 0,
     "lastUpdateBy": "kol-system"
   }
