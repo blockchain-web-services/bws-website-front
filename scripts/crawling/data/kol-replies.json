@@ -1561,6 +1561,44 @@
       "timestamp": "2025-12-08T07:39:23.216Z",
       "status": "posted",
       "dryRun": false
+    },
+    {
+      "id": "1353384573435056128-1994142556071031079-1765194524375",
+      "tweetId": "1994142556071031079",
+      "tweetUrl": "https://twitter.com/CryptoRover/status/1994142556071031079",
+      "kolId": "1353384573435056128",
+      "kolUsername": "CryptoRover",
+      "originalTweetText": "BREAKING:\n\nBLACKROCK CEO LARRY FINK: IT DOESN'T MATTER IF MARKETS RISE AND FALL. BUBBLES COME AND GO.\n\nWHAT MATTERS MOST IS STAYING IN THE MARKET THROUGH ALL CYCLES.",
+      "replyTweetId": "1997996764163363315",
+      "replyText": "Long-term conviction separates survivors from exit liquidity.\n\nConsider this: $BWS ESG Credits enables financial institutions to integrate blockchain-verified environmental impact reporting into banking apps - preventing double-counting of green investments through ICMA framework compliance. Microcap with enterprise adoption path.\n\n@BWSCommunity #microcap #fintech #ESG https://docs.bws.ninja/marketplace-solutions/bws.esg.credits",
+      "productMentioned": "Multiple products (X Bot, Blockchain Badges, ESG Credits, Fan Game Cube)",
+      "relevanceScore": 82,
+      "templateUsed": "stat_driven",
+      "templateName": "Stat/Fact-Driven Structure",
+      "imageAttached": false,
+      "imagePath": null,
+      "timestamp": "2025-12-08T11:48:44.375Z",
+      "status": "posted",
+      "dryRun": false
+    },
+    {
+      "id": "1068237257977544704-1996404865929822313-1765194563120",
+      "tweetId": "1996404865929822313",
+      "tweetUrl": "https://twitter.com/AltcoinSherpa/status/1996404865929822313",
+      "kolId": "1068237257977544704",
+      "kolUsername": "AltcoinSherpa",
+      "originalTweetText": "If $BTC legs up then coins like $FARTCOIN are going to full send",
+      "replyTweetId": "1997996925434397180",
+      "replyText": "Agreed on BTC correlation driving altcoin momentum. Memecoins will run, but fundamentals get mispriced during rallies.\n\nBWS IPFS Upload handles decentralized file storage through simple API - NFT metadata and images replicated across IPFS network without running your own node. $BWS ships this at microcap valuation.\n\n@BWSCommunity #altcoins #microcap #NFT https://docs.bws.ninja/solutions/bws.ipfs.upload",
+      "productMentioned": "X Bot",
+      "relevanceScore": 78,
+      "templateUsed": "delayed_cashtag",
+      "templateName": "Delayed $BWS Mention",
+      "imageAttached": true,
+      "imagePath": "/assets/images/docs/bws-ipfs/bws-ipfs-0.png",
+      "timestamp": "2025-12-08T11:49:23.120Z",
+      "status": "posted",
+      "dryRun": false
     }
   ],
   "dailyStats": {
@@ -1635,10 +1673,10 @@
     }
   },
   "metadata": {
-    "totalReplies": 74,
-    "successfulReplies": 40,
+    "totalReplies": 76,
+    "successfulReplies": 42,
     "failedReplies": 34,
-    "lastReplyAt": "2025-12-08T07:39:23.216Z",
+    "lastReplyAt": "2025-12-08T11:49:23.120Z",
     "todayRepliesCount": 0,
     "lastUpdateBy": "kol-system"
   }
