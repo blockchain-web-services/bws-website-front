@@ -1637,6 +1637,44 @@
       "timestamp": "2025-12-08T15:30:39.334Z",
       "status": "posted",
       "dryRun": false
+    },
+    {
+      "id": "1353384573435056128-1994142556071031079-1765223550119",
+      "tweetId": "1994142556071031079",
+      "tweetUrl": "https://twitter.com/CryptoRover/status/1994142556071031079",
+      "kolId": "1353384573435056128",
+      "kolUsername": "CryptoRover",
+      "originalTweetText": "BREAKING:\n\nBLACKROCK CEO LARRY FINK: IT DOESN'T MATTER IF MARKETS RISE AND FALL. BUBBLES COME AND GO.\n\nWHAT MATTERS MOST IS STAYING IN THE MARKET THROUGH ALL CYCLES.",
+      "replyTweetId": "1998118506609467431",
+      "replyText": "Markets reward patience, but microcap diligence means finding what actually ships products during downturns.\n\nFan Game Cube from $BWS tokenizes sports field sections where fans earn rewards from real match events at owned coordinates - clubs generate new revenue streams through blockchain engagement.\n\nFundamentals matter when playing long.\n\n@BWSCommunity #microcap #fundamentals #sports https://www.bws.ninja",
+      "productMentioned": "X Bot, Blockchain Badges",
+      "relevanceScore": 82,
+      "templateUsed": "problem_solution",
+      "templateName": "Problem-Solution Structure",
+      "imageAttached": true,
+      "imagePath": "/assets/images/docs/fan-game-cube/fan-game-cube-0.png",
+      "timestamp": "2025-12-08T19:52:30.119Z",
+      "status": "posted",
+      "dryRun": false
+    },
+    {
+      "id": "1068237257977544704-1996404865929822313-1765223590020",
+      "tweetId": "1996404865929822313",
+      "tweetUrl": "https://twitter.com/AltcoinSherpa/status/1996404865929822313",
+      "kolId": "1068237257977544704",
+      "kolUsername": "AltcoinSherpa",
+      "originalTweetText": "If $BTC legs up then coins like $FARTCOIN are going to full send",
+      "replyTweetId": "1998118674348044418",
+      "replyText": "Memecoins will full send, but what survives the cycle?\n\nConsider this: $BWS Blockchain Hash provides mutable on-chain database functionality through simple REST API - developers update blockchain data after initial save without wallet management. Microcap shipping infrastructure while memes pump.\n\n@BWSCommunity #microcap #altcoins #blockchain https://www.bws.ninja",
+      "productMentioned": "X Bot",
+      "relevanceScore": 78,
+      "templateUsed": "stat_driven",
+      "templateName": "Stat/Fact-Driven Structure",
+      "imageAttached": false,
+      "imagePath": null,
+      "timestamp": "2025-12-08T19:53:10.020Z",
+      "status": "posted",
+      "dryRun": false
     }
   ],
   "dailyStats": {
@@ -1711,10 +1749,10 @@
     }
   },
   "metadata": {
-    "totalReplies": 78,
-    "successfulReplies": 44,
+    "totalReplies": 80,
+    "successfulReplies": 46,
     "failedReplies": 34,
-    "lastReplyAt": "2025-12-08T15:30:39.334Z",
+    "lastReplyAt": "2025-12-08T19:53:10.020Z",
     "todayRepliesCount": 0,
     "lastUpdateBy": "kol-system"
   }
