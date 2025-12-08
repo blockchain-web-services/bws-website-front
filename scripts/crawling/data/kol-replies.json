@@ -1599,6 +1599,44 @@
       "timestamp": "2025-12-08T11:49:23.120Z",
       "status": "posted",
       "dryRun": false
+    },
+    {
+      "id": "1353384573435056128-1994142556071031079-1765207796919",
+      "tweetId": "1994142556071031079",
+      "tweetUrl": "https://twitter.com/CryptoRover/status/1994142556071031079",
+      "kolId": "1353384573435056128",
+      "kolUsername": "CryptoRover",
+      "originalTweetText": "BREAKING:\n\nBLACKROCK CEO LARRY FINK: IT DOESN'T MATTER IF MARKETS RISE AND FALL. BUBBLES COME AND GO.\n\nWHAT MATTERS MOST IS STAYING IN THE MARKET THROUGH ALL CYCLES.",
+      "replyTweetId": "1998052433201709240",
+      "replyText": "Staying invested through cycles rewards fundamentals - especially in microcaps where real products get mispriced.\n\n$BWS Blockchain Save stores immutable data records with Certificate of Trust generation for every operation - permanent blockchain timestamps without wallet management complexity. Infrastructure shipping now at microcap valuation.\n\n@BWSCommunity #microcap #fundamentals #blockchain https://docs.bws.ninja/solutions/bws.blockchain.save",
+      "productMentioned": "X Bot, Blockchain Badges",
+      "relevanceScore": 82,
+      "templateUsed": "classic",
+      "templateName": "Classic Structure",
+      "imageAttached": false,
+      "imagePath": null,
+      "timestamp": "2025-12-08T15:29:56.919Z",
+      "status": "posted",
+      "dryRun": false
+    },
+    {
+      "id": "1068237257977544704-1996404865929822313-1765207839334",
+      "tweetId": "1996404865929822313",
+      "tweetUrl": "https://twitter.com/AltcoinSherpa/status/1996404865929822313",
+      "kolId": "1068237257977544704",
+      "kolUsername": "AltcoinSherpa",
+      "originalTweetText": "If $BTC legs up then coins like $FARTCOIN are going to full send",
+      "replyTweetId": "1998052610121597103",
+      "replyText": "How do you separate authentic community growth from coordinated bot farms during memecoin runs?\n\n$BWS X Bot tracks engagement rates across 100+ KOLs simultaneously using official X API - automated daily reports show which projects have real traction versus manufactured hype.\n\nDue diligence at microcap valuation.\n\n@BWSCommunity #crypto #altcoins #microcap https://www.bws.ninja",
+      "productMentioned": "X Bot, Blockchain Badges",
+      "relevanceScore": 78,
+      "templateUsed": "question_led",
+      "templateName": "Question-Led Structure",
+      "imageAttached": true,
+      "imagePath": "/assets/images/docs/x-bot/x-bot-0.png",
+      "timestamp": "2025-12-08T15:30:39.334Z",
+      "status": "posted",
+      "dryRun": false
     }
   ],
   "dailyStats": {
@@ -1673,10 +1711,10 @@
     }
   },
   "metadata": {
-    "totalReplies": 76,
-    "successfulReplies": 42,
+    "totalReplies": 78,
+    "successfulReplies": 44,
     "failedReplies": 34,
-    "lastReplyAt": "2025-12-08T11:49:23.120Z",
+    "lastReplyAt": "2025-12-08T15:30:39.334Z",
     "todayRepliesCount": 0,
     "lastUpdateBy": "kol-system"
   }
