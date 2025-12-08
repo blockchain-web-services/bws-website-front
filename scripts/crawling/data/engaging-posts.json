@@ -4534,13 +4534,559 @@
       "expiresAt": "2025-12-15T12:53:45.964Z",
       "source": "timeline_monitor",
       "contentCategory": "project-discussion"
+    },
+    {
+      "id": "1997994509272011174",
+      "text": "$BTC I think we're roughly here",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "retweet_count": 30,
+        "reply_count": 51,
+        "like_count": 309,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/AltcoinSherpa/status/1997994509272011174",
+      "processed": false,
+      "addedAt": "2025-12-08T17:51:17.873Z",
+      "expiresAt": "2025-12-15T17:51:17.873Z",
+      "source": "timeline_monitor",
+      "contentCategory": "technical-analysis"
+    },
+    {
+      "id": "1997993605441487234",
+      "text": "$FARTCOIN knock knock",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "retweet_count": 13,
+        "reply_count": 24,
+        "like_count": 148,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/AltcoinSherpa/status/1997993605441487234",
+      "processed": false,
+      "addedAt": "2025-12-08T17:51:19.782Z",
+      "expiresAt": "2025-12-15T17:51:19.782Z",
+      "source": "timeline_monitor",
+      "contentCategory": "altcoin-talk"
+    },
+    {
+      "id": "1992939843572388120",
+      "text": "[SBF says:]\n\nFree @rsalame7926 \n\nhttps://youtube.com/watch?v=dN1CR2dyfo8&t=2305s…",
+      "author": {
+        "id": "1110877798820777986",
+        "username": "SBF_FTX"
+      },
+      "public_metrics": {
+        "retweet_count": 60,
+        "reply_count": 468,
+        "like_count": 525,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/SBF_FTX/status/1992939843572388120",
+      "processed": false,
+      "addedAt": "2025-12-08T17:53:08.167Z",
+      "expiresAt": "2025-12-15T17:53:08.167Z",
+      "source": "timeline_monitor",
+      "contentCategory": "news"
+    },
+    {
+      "id": "1998016804766298581",
+      "text": "Strategy has acquired 10,624 BTC for ~$962.7 million at ~$90,615 per bitcoin and has achieved BTC Yield of 24.7% YTD 2025. As of 12/7/2025, Strategy hodl 660,624 BTC acquired for ~$49.35 billion at ~$74,696 per bitcoin.\nhttps://strategy.com/press/strategy-acquires-10624-btc-and-now-holds-660624-btc_12-08-2025…",
+      "author": {
+        "id": "111533746",
+        "username": "WuBlockchain"
+      },
+      "public_metrics": {
+        "retweet_count": 12,
+        "reply_count": 11,
+        "like_count": 55,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/WuBlockchain/status/1998016804766298581",
+      "processed": false,
+      "addedAt": "2025-12-08T17:54:52.818Z",
+      "expiresAt": "2025-12-15T17:54:52.818Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "1998015619904483341",
+      "text": "The SEC has closed its two-year investigation into Ondo Finance without recommending any charges, after reviewing whether its tokenized Treasury products and ONDO token fell under securities rules. Ondo said it received formal notice in late November confirming the inquiry’s",
+      "author": {
+        "id": "111533746",
+        "username": "WuBlockchain"
+      },
+      "public_metrics": {
+        "retweet_count": 28,
+        "reply_count": 9,
+        "like_count": 139,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/WuBlockchain/status/1998015619904483341",
+      "processed": false,
+      "addedAt": "2025-12-08T17:54:56.307Z",
+      "expiresAt": "2025-12-15T17:54:56.307Z",
+      "source": "timeline_monitor",
+      "contentCategory": "project-discussion"
+    },
+    {
+      "id": "1997999932117033080",
+      "text": "Binance reported that an employee has been suspended and will face legal action for allegedly using insider information for personal gain. A whistleblower noted matching details between an on-chain token issuance and a Binance post one minute later yesterday. Binance confirmed",
+      "author": {
+        "id": "111533746",
+        "username": "WuBlockchain"
+      },
+      "public_metrics": {
+        "retweet_count": 13,
+        "reply_count": 31,
+        "like_count": 79,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/WuBlockchain/status/1997999932117033080",
+      "processed": false,
+      "addedAt": "2025-12-08T17:54:58.836Z",
+      "expiresAt": "2025-12-15T17:54:58.836Z",
+      "source": "timeline_monitor",
+      "contentCategory": "news"
+    },
+    {
+      "id": "1997997613996474535",
+      "text": "ZachXBT criticized InfoFi projects such as Kaito Yaps, Galxe, Layer3, Cookie, and Wallchain for incentivizing AI bots to flood platforms with low-quality interactions, calling it ecosystem pollution. He urged platforms to allow country-level content/account hiding, noting that",
+      "author": {
+        "id": "111533746",
+        "username": "WuBlockchain"
+      },
+      "public_metrics": {
+        "retweet_count": 15,
+        "reply_count": 23,
+        "like_count": 183,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/WuBlockchain/status/1997997613996474535",
+      "processed": false,
+      "addedAt": "2025-12-08T17:54:59.838Z",
+      "expiresAt": "2025-12-15T17:54:59.838Z",
+      "source": "timeline_monitor",
+      "contentCategory": "project-discussion"
+    },
+    {
+      "id": "1998042293253951799",
+      "text": "Strategy bought more Bitcoin while you were FUD posting on the mobile internet application. \n\nHIGHER",
+      "author": {
+        "id": "935742315389444096",
+        "username": "CryptoWendyO"
+      },
+      "public_metrics": {
+        "retweet_count": 11,
+        "reply_count": 22,
+        "like_count": 69,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoWendyO/status/1998042293253951799",
+      "processed": false,
+      "addedAt": "2025-12-08T17:55:09.655Z",
+      "expiresAt": "2025-12-15T17:55:09.655Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "1998034784011104666",
+      "text": "$RESOLV | PUMPING!",
+      "author": {
+        "id": "crawlee_search_nihilusbtc",
+        "username": "NihilusBTC"
+      },
+      "public_metrics": {
+        "retweet_count": 10,
+        "reply_count": 40,
+        "like_count": 72,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/NihilusBTC/status/1998034784011104666",
+      "processed": false,
+      "addedAt": "2025-12-08T17:55:41.354Z",
+      "expiresAt": "2025-12-15T17:55:41.354Z",
+      "source": "timeline_monitor",
+      "contentCategory": "altcoin-talk/price-speculation"
+    },
+    {
+      "id": "1998022483858059298",
+      "text": "$KGEN now 0.18110\n\nGod candle is coming.",
+      "author": {
+        "id": "crawlee_search_nihilusbtc",
+        "username": "NihilusBTC"
+      },
+      "public_metrics": {
+        "retweet_count": 20,
+        "reply_count": 47,
+        "like_count": 87,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/NihilusBTC/status/1998022483858059298",
+      "processed": false,
+      "addedAt": "2025-12-08T17:55:42.924Z",
+      "expiresAt": "2025-12-15T17:55:42.924Z",
+      "source": "timeline_monitor",
+      "contentCategory": "price-speculation"
+    },
+    {
+      "id": "1998018162424422497",
+      "text": "$BRETT buying until 0.02\n\nTP: 0.04-0.06\n\nRemember my $PIPPIN call, im giving you bottoms always",
+      "author": {
+        "id": "crawlee_search_nihilusbtc",
+        "username": "NihilusBTC"
+      },
+      "public_metrics": {
+        "retweet_count": 24,
+        "reply_count": 45,
+        "like_count": 100,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/NihilusBTC/status/1998018162424422497",
+      "processed": false,
+      "addedAt": "2025-12-08T17:55:45.386Z",
+      "expiresAt": "2025-12-15T17:55:45.386Z",
+      "source": "timeline_monitor",
+      "contentCategory": "price-speculation"
+    },
+    {
+      "id": "1998003357999362175",
+      "text": "$KGEN | Open long.",
+      "author": {
+        "id": "crawlee_search_nihilusbtc",
+        "username": "NihilusBTC"
+      },
+      "public_metrics": {
+        "retweet_count": 18,
+        "reply_count": 34,
+        "like_count": 91,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/NihilusBTC/status/1998003357999362175",
+      "processed": false,
+      "addedAt": "2025-12-08T17:55:46.753Z",
+      "expiresAt": "2025-12-15T17:55:46.753Z",
+      "source": "timeline_monitor",
+      "contentCategory": "price-speculation"
+    },
+    {
+      "id": "1997989541785829393",
+      "text": "$BRETT | Pump is inevitable.",
+      "author": {
+        "id": "crawlee_search_nihilusbtc",
+        "username": "NihilusBTC"
+      },
+      "public_metrics": {
+        "retweet_count": 22,
+        "reply_count": 43,
+        "like_count": 103,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/NihilusBTC/status/1997989541785829393",
+      "processed": false,
+      "addedAt": "2025-12-08T17:55:48.892Z",
+      "expiresAt": "2025-12-15T17:55:48.892Z",
+      "source": "timeline_monitor",
+      "contentCategory": "altcoin-talk"
+    },
+    {
+      "id": "1997989199643857388",
+      "text": "$MOODENG | Reversal.",
+      "author": {
+        "id": "crawlee_search_nihilusbtc",
+        "username": "NihilusBTC"
+      },
+      "public_metrics": {
+        "retweet_count": 26,
+        "reply_count": 43,
+        "like_count": 115,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/NihilusBTC/status/1997989199643857388",
+      "processed": false,
+      "addedAt": "2025-12-08T17:55:50.770Z",
+      "expiresAt": "2025-12-15T17:55:50.770Z",
+      "source": "timeline_monitor",
+      "contentCategory": "technical-analysis"
+    },
+    {
+      "id": "1998040805647286526",
+      "text": "JUST IN: BLACKROCK DOUBLES DOWN ON ETHEREUM\n\niShares has filed a new S-1 with the SEC for the iShares Staked Ethereum Trust ETF -- proposed ticker $ETHB.\n\nThis would sit beside their spot $BTC, spot $ETH and BTC income products as the 4th iShares crypto ETF.\n\nIdea here?",
+      "author": {
+        "id": "877357064724520961",
+        "username": "CryptosR_Us"
+      },
+      "public_metrics": {
+        "retweet_count": 87,
+        "reply_count": 24,
+        "like_count": 470,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptosR_Us/status/1998040805647286526",
+      "processed": false,
+      "addedAt": "2025-12-08T17:56:09.305Z",
+      "expiresAt": "2025-12-15T17:56:09.305Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "1998017640443290010",
+      "text": "JUST IN: Michael Saylor's company Strategy Buys  10,624 #Bitcoin worth $962M & now Holding 660,624 $BTC !\n\nMichael Saylor continues to accumulate Bitcoin through market volatility, viewing every dip as an opportunity to dollar-cost average",
+      "author": {
+        "id": "877357064724520961",
+        "username": "CryptosR_Us"
+      },
+      "public_metrics": {
+        "retweet_count": 31,
+        "reply_count": 16,
+        "like_count": 195,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptosR_Us/status/1998017640443290010",
+      "processed": false,
+      "addedAt": "2025-12-08T17:56:10.730Z",
+      "expiresAt": "2025-12-15T17:56:10.730Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "1997960094995075211",
+      "text": "PHILIPPINES’ FASTEST-GROWING DIGITAL BANK ROLLS OUT CRYPTO \n\nGoTyme, one of the Philippines’ fastest-growing digital banks with 6.5M+ users, has launched crypto services following a partnership with U.S. fintech Alpaca. \n\nUsers can now buy and hold 11 crypto assets directly in",
+      "author": {
+        "id": "877357064724520961",
+        "username": "CryptosR_Us"
+      },
+      "public_metrics": {
+        "retweet_count": 57,
+        "reply_count": 49,
+        "like_count": 263,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptosR_Us/status/1997960094995075211",
+      "processed": false,
+      "addedAt": "2025-12-08T17:56:12.914Z",
+      "expiresAt": "2025-12-15T17:56:12.914Z",
+      "source": "timeline_monitor",
+      "contentCategory": "project-discussion/news"
+    },
+    {
+      "id": "1998067548584087758",
+      "text": "Crypto Alert: India Cracks Down on Unreported Crypto Transactions\n\nThe government has stepped up enforcement and tax detection in crypto:\n\nED Actions:\n ₹4,189.89 crore in crypto-related proceeds attached/frozen under PMLA\n 29 arrests & 22 prosecution complaints filed\n 1",
+      "author": {
+        "id": "crawlee_search_cryptopatel",
+        "username": "CryptoPatel"
+      },
+      "public_metrics": {
+        "retweet_count": 15,
+        "reply_count": 5,
+        "like_count": 187,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoPatel/status/1998067548584087758",
+      "processed": false,
+      "addedAt": "2025-12-08T17:56:31.403Z",
+      "expiresAt": "2025-12-15T17:56:31.403Z",
+      "source": "timeline_monitor",
+      "contentCategory": "news"
+    },
+    {
+      "id": "1998052196332732791",
+      "text": "MicroStrategy has acquired 10,624 $BTC for ~$963M at an average of ~$90,615 per #Bitcoin \n\nNow holding 660,624 BTC (~$74.7K each, ~$49.35B total)",
+      "author": {
+        "id": "crawlee_search_cryptopatel",
+        "username": "CryptoPatel"
+      },
+      "public_metrics": {
+        "retweet_count": 12,
+        "reply_count": 12,
+        "like_count": 233,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoPatel/status/1998052196332732791",
+      "processed": false,
+      "addedAt": "2025-12-08T17:56:32.951Z",
+      "expiresAt": "2025-12-15T17:56:32.951Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "1998037350413156702",
+      "text": "$SANTOS Just hit the Target!\n\nOur long trade delivered a strong +65% move from the $1.388 entry, reaching the $1.955 level with accuracy.\n\nClean setup, clear momentum, and bullish strength confirmed.\n\n#Santos @SantosFC",
+      "author": {
+        "id": "crawlee_search_cryptopatel",
+        "username": "CryptoPatel"
+      },
+      "public_metrics": {
+        "retweet_count": 15,
+        "reply_count": 9,
+        "like_count": 223,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoPatel/status/1998037350413156702",
+      "processed": false,
+      "addedAt": "2025-12-08T17:56:37.561Z",
+      "expiresAt": "2025-12-15T17:56:37.561Z",
+      "source": "timeline_monitor",
+      "contentCategory": "technical-analysis"
+    },
+    {
+      "id": "1998060753019081039",
+      "text": "The Purchasing Managers Index (PMI), also known as the US business cycle, aligns almost perfectly with the Altseason Index.\n\nCoincidence? I don’t think so.",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "retweet_count": 39,
+        "reply_count": 75,
+        "like_count": 238,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoRover/status/1998060753019081039",
+      "processed": false,
+      "addedAt": "2025-12-08T17:56:59.295Z",
+      "expiresAt": "2025-12-15T17:56:59.295Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "1998052495222857739",
+      "text": "BREAKING:\n\n ARGENTINA TO ALLOW BANKS TO PROVIDE CRYPTO SERVICES IN 2026.",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "retweet_count": 39,
+        "reply_count": 86,
+        "like_count": 377,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoRover/status/1998052495222857739",
+      "processed": false,
+      "addedAt": "2025-12-08T17:57:01.000Z",
+      "expiresAt": "2025-12-15T17:57:01.000Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "1998049428150645190",
+      "text": "FED IS PUMPING MONEY INTO THE BANKING SYSTEM!\n\nMake sure to own assets.",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "retweet_count": 94,
+        "reply_count": 135,
+        "like_count": 742,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoRover/status/1998049428150645190",
+      "processed": false,
+      "addedAt": "2025-12-08T17:57:05.114Z",
+      "expiresAt": "2025-12-15T17:57:05.114Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "1998045327845376470",
+      "text": "BREAKING:\n\nBlackRock submits filing for a staked $ETH ETF.\n\nSEND $ETH TO $10,000",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "retweet_count": 354,
+        "reply_count": 157,
+        "like_count": 2297,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoRover/status/1998045327845376470",
+      "processed": false,
+      "addedAt": "2025-12-08T17:57:07.323Z",
+      "expiresAt": "2025-12-15T17:57:07.323Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "1998040494136598676",
+      "text": "Bitcoin open interest wipe completed. \n\nSend it higher again!",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "retweet_count": 72,
+        "reply_count": 110,
+        "like_count": 356,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoRover/status/1998040494136598676",
+      "processed": false,
+      "addedAt": "2025-12-08T17:57:08.898Z",
+      "expiresAt": "2025-12-15T17:57:08.898Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "1998032715841737123",
+      "text": "BREAKING:\n\nLAMBORGHINI LAUNCHES NEW BITCOIN WALLET PROMO.",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "retweet_count": 68,
+        "reply_count": 72,
+        "like_count": 403,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoRover/status/1998032715841737123",
+      "processed": false,
+      "addedAt": "2025-12-08T17:57:12.117Z",
+      "expiresAt": "2025-12-15T17:57:12.117Z",
+      "source": "timeline_monitor",
+      "contentCategory": "news"
     }
   ],
   "metadata": {
-    "lastUpdated": "2025-12-08T12:53:45.964Z",
-    "totalPosts": 241,
+    "lastUpdated": "2025-12-08T17:57:12.117Z",
+    "totalPosts": 242,
     "bySource": {
-      "timeline_monitor": 241,
+      "timeline_monitor": 242,
       "search_discovery": 0
     }
   },
