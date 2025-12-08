@@ -1675,6 +1675,44 @@
       "timestamp": "2025-12-08T19:53:10.020Z",
       "status": "posted",
       "dryRun": false
+    },
+    {
+      "id": "1353384573435056128-1994142556071031079-1765235914837",
+      "tweetId": "1994142556071031079",
+      "tweetUrl": "https://twitter.com/CryptoRover/status/1994142556071031079",
+      "kolId": "1353384573435056128",
+      "kolUsername": "CryptoRover",
+      "originalTweetText": "BREAKING:\n\nBLACKROCK CEO LARRY FINK: IT DOESN'T MATTER IF MARKETS RISE AND FALL. BUBBLES COME AND GO.\n\nWHAT MATTERS MOST IS STAYING IN THE MARKET THROUGH ALL CYCLES.",
+      "replyTweetId": "1998170367802655205",
+      "replyText": "Long-term holds require separating builders from narratives.\n\n$BWS NFT.zK transfers NFTs to non-technical users via email without wallet setup - brands distribute collectibles through single API calls with managed infrastructure included. Microcap shipping mass-market onboarding.\n\n@BWSCommunity #microcap #NFT #fundamentals https://www.bws.ninja",
+      "productMentioned": "X Bot, Blockchain Badges",
+      "relevanceScore": 82,
+      "templateUsed": "classic",
+      "templateName": "Classic Structure",
+      "imageAttached": true,
+      "imagePath": "/assets/images/docs/nftzk/nftzk-0.png",
+      "timestamp": "2025-12-08T23:18:34.837Z",
+      "status": "posted",
+      "dryRun": false
+    },
+    {
+      "id": "1068237257977544704-1996404865929822313-1765235955211",
+      "tweetId": "1996404865929822313",
+      "tweetUrl": "https://twitter.com/AltcoinSherpa/status/1996404865929822313",
+      "kolId": "1068237257977544704",
+      "kolUsername": "AltcoinSherpa",
+      "originalTweetText": "If $BTC legs up then coins like $FARTCOIN are going to full send",
+      "replyTweetId": "1998170537172803603",
+      "replyText": "🔥 Memecoins chase narratives, but credential fraud is a billion-dollar enterprise problem.\n\n💡 Blockchain Badges from $BWS: universities and companies issue tamper-proof certificates with immutable blockchain proof - visual designer enables bulk issuance for institutions.\n🎯 Real market demand at microcap valuation.\n\n@BWSCommunity #microcap #blockchain #altcoins https://docs.bws.ninja/marketplace-solutions/bws.blockchain.badges",
+      "productMentioned": "X Bot, Blockchain Badges",
+      "relevanceScore": 78,
+      "templateUsed": "emoji_enhanced",
+      "templateName": "Emoji-Enhanced Structure",
+      "imageAttached": true,
+      "imagePath": "/assets/images/docs/blockchain-badges/blockchain-badges-0.png",
+      "timestamp": "2025-12-08T23:19:15.211Z",
+      "status": "posted",
+      "dryRun": false
     }
   ],
   "dailyStats": {
@@ -1749,10 +1787,10 @@
     }
   },
   "metadata": {
-    "totalReplies": 80,
-    "successfulReplies": 46,
+    "totalReplies": 82,
+    "successfulReplies": 48,
     "failedReplies": 34,
-    "lastReplyAt": "2025-12-08T19:53:10.020Z",
+    "lastReplyAt": "2025-12-08T23:19:15.211Z",
     "todayRepliesCount": 0,
     "lastUpdateBy": "kol-system"
   }
