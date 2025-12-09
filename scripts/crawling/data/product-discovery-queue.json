@@ -577,7 +577,10 @@
       "product": "Blockchain Badges",
       "queryName": "digital-identity",
       "queryPriority": "medium",
-      "discoveredAt": "2025-12-09T08:03:59.648Z"
+      "discoveredAt": "2025-12-09T08:03:59.648Z",
+      "processed": true,
+      "processedAt": "2025-12-09T08:28:02.365Z",
+      "processedStatus": "error"
     },
     {
       "id": "1997905721334419850",
@@ -997,7 +1000,10 @@
       "product": "BWS IPFS",
       "queryName": "ipfs-alternatives",
       "queryPriority": "medium",
-      "discoveredAt": "2025-12-09T08:04:58.114Z"
+      "discoveredAt": "2025-12-09T08:04:58.114Z",
+      "processed": true,
+      "processedAt": "2025-12-09T08:28:10.329Z",
+      "processedStatus": "error"
     },
     {
       "id": "1987917397634719973",
@@ -1821,13 +1827,13 @@
     "byProduct": {
       "Blockchain Badges": {
         "total": 19,
-        "unprocessed": 10,
-        "processed": 9
+        "unprocessed": 9,
+        "processed": 10
       },
       "BWS IPFS": {
         "total": 16,
-        "unprocessed": 7,
-        "processed": 9
+        "unprocessed": 6,
+        "processed": 10
       },
       "NFT.zK": {
         "total": 15,
@@ -1840,6 +1846,6 @@
         "processed": 0
       }
     },
-    "lastRun": "2025-12-09T08:23:02.856Z"
+    "lastRun": "2025-12-09T08:28:10.329Z"
   }
 }
