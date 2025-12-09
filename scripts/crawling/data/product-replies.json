@@ -1,19 +1,55 @@
 {
-  "replies": [],
+  "replies": [
+    {
+      "originalTweetId": "1998258891168338281",
+      "originalTweetAuthor": "ZahidGishkori",
+      "product": "Blockchain Badges",
+      "threadTweetIds": [
+        "1998313827423924453",
+        "1998313849276281251",
+        "1998313871040491955",
+        "1998313893203259663"
+      ],
+      "templateUsed": "how-to",
+      "templateName": "How-To Guide",
+      "approach": "how-to-guide",
+      "relevanceScore": 85,
+      "timestamp": "2025-12-09T08:48:53.848Z",
+      "threadPreview": "This is exactly why credential fraud is such a serious problem. Fake stamps and forged documents und"
+    },
+    {
+      "originalTweetId": "1985770851091038557",
+      "originalTweetAuthor": "Dogi1313",
+      "product": "BWS IPFS",
+      "threadTweetIds": [
+        "1998314436466229360",
+        "1998314458175963471",
+        "1998314480078651515",
+        "1998314501826105612"
+      ],
+      "templateUsed": "how-to",
+      "templateName": "How-To Guide",
+      "approach": "how-to-guide",
+      "relevanceScore": 85,
+      "timestamp": "2025-12-09T08:51:18.957Z",
+      "threadPreview": "Both chains have strengths, but here's something to consider: decentralized storage doesn't have to "
+    }
+  ],
   "stats": {
-    "totalThreads": 0,
+    "totalThreads": 2,
     "byProduct": {
-      "Blockchain Badges": 0,
-      "BWS IPFS": 0,
+      "Blockchain Badges": 1,
+      "BWS IPFS": 1,
       "NFT.zK": 0,
       "Blockchain Hash": 0
     },
     "byApproach": {
       "how-to": 0,
       "problem-solution": 0,
-      "feature-showcase": 0
+      "feature-showcase": 0,
+      "how-to-guide": 2
     },
-    "averageRelevanceScore": 0,
-    "lastReply": null
+    "averageRelevanceScore": 85,
+    "lastReply": "2025-12-09T08:51:18.957Z"
   }
 }
