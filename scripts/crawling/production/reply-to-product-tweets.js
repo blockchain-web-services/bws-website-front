@@ -229,7 +229,7 @@ async function replyToProductTweets() {
       console.log(`Tweet ID: ${tweet.id}`);
       console.log(`Author: @${tweet.author.username}`);
       console.log(`Text: "${tweet.text}"`);
-      console.log(`Engagement: ${tweet.engagement.likes} likes, ${tweet.engagement.retweets} RTs`);
+      console.log(`Engagement: ${tweet.public_metrics.like_count} likes, ${tweet.public_metrics.retweet_count} RTs`);
 
       // Load product information
       const productInfo = productsInfo.productHighlights[tweet.product];
