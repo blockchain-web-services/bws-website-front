@@ -593,6 +593,27 @@ function getImageSizeConstraint(imagePath) {
 function generateContentComponent(slug, articleData, images, publishDate, docsUrl) {
   let sectionsHTML = '';
   let imageIndex = 0;
+  let titleImageHTML = ''; // For image-after-title placement
+
+  // Check if first section has image-after-title placement
+  if (articleData.sections.length > 0 &&
+      articleData.sections[0].imagePlacement === 'image-after-title' &&
+      images.length > 0) {
+    const sizeConstraint = getImageSizeConstraint(images[0].src);
+    titleImageHTML = `    <div class="container-medium" style="margin-top: 2rem; margin-bottom: 2rem;">
+      <figure style="margin: 0 auto; text-align: center; ${sizeConstraint}">
+        <img
+          src="${images[0].src}"
+          alt="${images[0].alt}"
+          class="article-image-clickable"
+          data-image-src="${images[0].src}"
+          style="width: 100%; border-radius: 8px; cursor: pointer; display: block;"
+          loading="eager"
+        />
+      </figure>
+    </div>\n`;
+    imageIndex = 1; // Skip first image in section loop
+  }
 
   articleData.sections.forEach((section, index) => {
     const sectionType = section.sectionType || 'normal';
@@ -608,6 +629,8 @@ function generateContentComponent(slug, articleData, images, publishDate, docsUr
 
     // Add special section types
     if (sectionType === 'advantages' && section.advantages && section.advantages.length > 0) {
+      // Add clearfix before advantages section to prevent image overlap
+      sectionsHTML += `        <div style="clear: both;"></div>\n`;
       sectionsHTML += `        <div class="solution-advantages">\n`;
       sectionsHTML += `          <h4>Why Choose ${articleData.product}</h4>\n`;
       sectionsHTML += `          <ul>\n`;
@@ -709,7 +732,7 @@ const formattedDate = publishDate.toLocaleDateString("en-US", {
       </div>
     </div>
   </div>
-  <div class="container-medium">
+${titleImageHTML}  <div class="container-medium">
     <div class="blog-post-body-wrapper">
       <div class="rich-text w-richtext">
 ${sectionsHTML}

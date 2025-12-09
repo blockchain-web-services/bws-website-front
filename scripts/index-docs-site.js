@@ -162,8 +162,13 @@ function extractImages(html, baseUrl) {
     const altMatch = fullMatch.match(/alt=["']([^"']*)["']/i);
     const alt = altMatch ? altMatch[1] : '';
 
-    // Skip if it's a logo/icon (common in headers/footers)
-    if (imgUrl.includes('logo') || imgUrl.includes('icon') || alt.toLowerCase().includes('logo')) {
+    // For media-assets pages, we want ALL images (including those in gitbook image URLs)
+    // Skip only if it's explicitly a logo/icon in the filename AND not in a gitbook URL
+    const isGitbookImage = imgUrl.includes('gitbook.io') || imgUrl.includes('~gitbook/image');
+    const isLogoInFilename = imgUrl.includes('/logo') || imgUrl.includes('/icon');
+
+    // Skip logos/icons UNLESS they're in GitBook URLs (which are actual product screenshots)
+    if (!isGitbookImage && (isLogoInFilename || alt.toLowerCase().includes('logo'))) {
       continue;
     }
 
