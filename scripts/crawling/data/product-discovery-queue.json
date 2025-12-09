@@ -637,7 +637,10 @@
       "product": "Blockchain Badges",
       "queryName": "credential-fraud",
       "queryPriority": "high",
-      "discoveredAt": "2025-12-09T08:04:12.961Z"
+      "discoveredAt": "2025-12-09T08:04:12.961Z",
+      "processed": true,
+      "processedAt": "2025-12-09T08:46:03.518Z",
+      "processedStatus": "error"
     },
     {
       "id": "1998258891168338281",
@@ -1063,7 +1066,10 @@
       "product": "BWS IPFS",
       "queryName": "ipfs-alternatives",
       "queryPriority": "medium",
-      "discoveredAt": "2025-12-09T08:04:58.114Z"
+      "discoveredAt": "2025-12-09T08:04:58.114Z",
+      "processed": true,
+      "processedAt": "2025-12-09T08:46:14.771Z",
+      "processedStatus": "error"
     },
     {
       "id": "1985770851091038557",
@@ -1833,13 +1839,13 @@
     "byProduct": {
       "Blockchain Badges": {
         "total": 19,
-        "unprocessed": 8,
-        "processed": 11
+        "unprocessed": 7,
+        "processed": 12
       },
       "BWS IPFS": {
         "total": 16,
-        "unprocessed": 5,
-        "processed": 11
+        "unprocessed": 4,
+        "processed": 12
       },
       "NFT.zK": {
         "total": 15,
@@ -1852,6 +1858,6 @@
         "processed": 0
       }
     },
-    "lastRun": "2025-12-09T08:32:52.832Z"
+    "lastRun": "2025-12-09T08:46:14.771Z"
   }
 }
