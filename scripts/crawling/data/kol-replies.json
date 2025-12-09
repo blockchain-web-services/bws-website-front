@@ -1751,6 +1751,25 @@
       "timestamp": "2025-12-09T11:48:32.239Z",
       "status": "posted",
       "dryRun": false
+    },
+    {
+      "id": "1353384573435056128-1994142556071031079-1765294187994",
+      "tweetId": "1994142556071031079",
+      "tweetUrl": "https://twitter.com/CryptoRover/status/1994142556071031079",
+      "kolId": "1353384573435056128",
+      "kolUsername": "CryptoRover",
+      "originalTweetText": "BREAKING:\n\nBLACKROCK CEO LARRY FINK: IT DOESN'T MATTER IF MARKETS RISE AND FALL. BUBBLES COME AND GO.\n\nWHAT MATTERS MOST IS STAYING IN THE MARKET THROUGH ALL CYCLES.",
+      "replyTweetId": "1998414783742144996",
+      "replyText": "Surviving cycles means identifying mispriced fundamentals while others chase hype.\n\nBlockchain Save delivers:\n• Immutable data records with blockchain timestamps\n• Certificate of Trust generation for every save operation\n• No wallet management - BWS handles transactions\n\nReal infrastructure at microcap. $BWS\n\n@BWSCommunity #microcap #blockchain #fundamentals https://docs.bws.ninja/solutions/bws.blockchain.save",
+      "productMentioned": "Platform APIs (Blockchain Hash, Blockchain Save, IPFS, NFT.zK) + Marketplace Solutions",
+      "relevanceScore": 82,
+      "templateUsed": "feature_list",
+      "templateName": "Feature List Structure",
+      "imageAttached": false,
+      "imagePath": null,
+      "timestamp": "2025-12-09T15:29:47.994Z",
+      "status": "posted",
+      "dryRun": false
     }
   ],
   "dailyStats": {
@@ -1825,10 +1844,10 @@
     }
   },
   "metadata": {
-    "totalReplies": 84,
-    "successfulReplies": 50,
+    "totalReplies": 85,
+    "successfulReplies": 51,
     "failedReplies": 34,
-    "lastReplyAt": "2025-12-09T11:48:32.239Z",
+    "lastReplyAt": "2025-12-09T15:29:47.994Z",
     "todayRepliesCount": 0,
     "lastUpdateBy": "kol-system"
   }
