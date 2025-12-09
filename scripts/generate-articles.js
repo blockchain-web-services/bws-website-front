@@ -352,8 +352,8 @@ Output as JSON array:
       {
         "heading": "Section heading",
         "sectionType": "normal",
-        "content": "Main paragraph content with {{DOCS_URL}} and {{WEBSITE_URL}} placeholders",
-        "imagePlacement": "image-after-section"
+        "content": "Main paragraph content with {{DOCS_URL}} and {{WEBSITE_URL}} placeholders. First paragraph will be displayed next to the image in two-column layout.",
+        "imagePlacement": "image-after-title"
       },
       {
         "heading": "Key Benefits",
@@ -367,6 +367,12 @@ Output as JSON array:
     "imageTweetId": "single_tweet_id"
   }
 ]
+
+IMPORTANT IMAGE PLACEMENT:
+- ALWAYS use "imagePlacement": "image-after-title" for the FIRST section
+- This creates a two-column layout: Image (left) + First paragraph (right)
+- First paragraph should be a strong introduction to the product
+- Remaining sections: use "imagePlacement": null (no additional images)
 
 IMPORTANT:
 - Only include products that are actually mentioned in the tweets
