@@ -155,12 +155,137 @@ Located in `config/`:
 - ✅ Thread quality: All tweets <280 chars, proper formatting, includes docs links
 - 🎯 Target: 2-4 educational threads per day across 4 products
 
+## Article Posting System (Dynamic Scheduler - Dec 2025)
+
+A new **dynamic scheduling system** that spaces article posts naturally based on article generation frequency to avoid bot-like behavior.
+
+### How It Works
+
+**Problem**: Posting 4 articles in rapid succession (4 minutes) appears bot-like and risks spam detection.
+
+**Solution**: Dynamic interval-based scheduling that adapts to article generation frequency.
+
+#### 1. **Article Generation Tracking**
+- Tracks article generation events over 7-day rolling window
+- Records: timestamp, articles generated, workflow run
+- Data stored in: `scripts/crawling/data/article-generation-history.json`
+
+#### 2. **Dynamic Interval Calculation**
+- Formula: `posting_interval = 24 hours / articles_per_day`
+- Rounds to allowed intervals: [4, 6, 8, 12, 24] hours
+- Example scenarios:
+  - 4 articles/day → 6h interval → posts at 10 AM, 4 PM, 10 PM, 4 AM
+  - 4 articles/2 days → 12h interval → posts at 10 AM, 10 PM daily
+  - 2 articles/day → 12h interval → posts at 10 AM, 10 PM
+
+#### 3. **Posting Schedule Check**
+- Workflow runs every 4 hours (6x daily)
+- Script calculates time since last post
+- Posts 1 article if interval satisfied (with 30-minute grace period)
+- Skips if not time yet
+
+#### 4. **Natural Posting Pattern**
+- Posts **1 article per run** (not 4)
+- Spaced evenly across the generation window
+- Adapts automatically to frequency changes
+- Handles edge cases (failures, queue exhaustion)
+
+### Architecture
+
+**Scheduler Utility**: `scripts/crawling/utils/article-posting-scheduler.js`
+- `calculatePostingSchedule()` - Main decision logic
+- `recordArticleGeneration()` - Track generation events
+- Maintains 7-day rolling window metrics
+
+**Modified Posting Script**: `scripts/crawling/production/post-article-content.js`
+- Changed `MAX_POSTS_PER_RUN` from 4 to 1
+- Integrated scheduler check before posting
+- Early exit if interval not satisfied
+
+**Updated Workflow**: `.github/workflows/post-article-content.yml`
+- Schedule: `0 */4 * * *` (every 4 hours)
+- Trigger: After article generation OR schedule
+- Manual trigger: workflow_dispatch
+
+**Generation Recording**: `scripts/generate-article-posts.js`
+- Calls `recordArticleGeneration()` after generating articles
+- Updates generation history automatically
+
+### Configuration
+
+**Scheduler Config** (`article-posting-scheduler.js`):
+```javascript
+{
+  historyWindowDays: 7,         // Rolling window for metrics
+  allowedIntervals: [4,6,8,12,24], // Rounded intervals (hours)
+  gracePeriodHours: 0.5,        // Prevent double-posting
+  minIntervalHours: 4,          // Minimum interval
+  maxIntervalHours: 24,         // Maximum interval
+  defaultIntervalHours: 8       // Fallback when no history
+}
+```
+
+### Example Run (Dec 9, 2025)
+
+**Scheduler Output**:
+```
+📅 Calculating posting schedule...
+   📊 Article Generation Metrics (Last 7 Days):
+      Total Articles: 4
+      Articles/Day: 4
+      Days Elapsed: 1
+      Generation Runs: 1
+
+   ⏱️  Posting Schedule:
+      Recommended Interval: 6h
+      Last Post: 2025-11-11T17:17:43.603Z
+      Time Since Last Post: 666.2h
+      Hours Until Next Post: 0h
+
+   ✅ Time to post - 6h interval satisfied
+
+📊 Posting Summary:
+   Total posts in queue: 24
+   Pending posts: 16
+   Already posted: 1
+   Failed: 7
+   Will post now: 1
+
+✅ Posted successfully!
+   Tweet ID: 1998354862451380308
+```
+
+### Benefits
+
+- ✅ **Natural appearance**: Posts spaced across day, not clustered
+- ✅ **Adaptive**: Automatically adjusts to generation frequency changes
+- ✅ **Bot-detection resistant**: No rapid-fire posting patterns
+- ✅ **Resilient**: Handles failures gracefully with catch-up logic
+- ✅ **Configurable**: Easy to adjust intervals and thresholds
+
+### Monitoring
+
+**Check scheduler behavior**:
+- View `article-generation-history.json` for tracked generation events
+- Review workflow logs for schedule calculations
+- Monitor posting pattern over 7 days to verify natural spacing
+
+**Expected pattern** (4 articles/day, 6h interval):
+- Run 1 (12 AM): Check schedule → Skip (not time yet)
+- Run 2 (4 AM): Check schedule → Post article 1
+- Run 3 (8 AM): Check schedule → Skip
+- Run 4 (12 PM): Check schedule → Post article 2
+- Run 5 (4 PM): Check schedule → Skip
+- Run 6 (8 PM): Check schedule → Post article 3
+
 ## Important Notes
 
 1. All Twitter API credentials are stored as GitHub Secrets
 2. Multi-account approach separates search (scraper) from posting (API)
 3. Product replies use @BWSCommunity account (TWITTER_* credentials)
-4. Oxylabs proxy is used for API calls to avoid rate limiting
-5. Claude API is used for content evaluation and reply generation (Sonnet 4.5)
-6. Schedule randomization prevents spam detection
-7. Educational threads include documentation links to drive traffic to docs.bws.ninja
+4. Article posting uses @BWSCommunity account with dynamic scheduler
+5. Oxylabs proxy is used for API calls to avoid rate limiting
+6. Claude API is used for content evaluation and reply generation (Sonnet 4.5)
+7. Schedule randomization prevents spam detection (KOL replies)
+8. Dynamic interval scheduling prevents bot-like patterns (article posting)
+9. Educational threads include documentation links to drive traffic to docs.bws.ninja
