@@ -19,11 +19,18 @@ scripts/crawling/
 
 Located in `production/`:
 
+### KOL Reply Automation
 - **evaluate-and-reply-kols.js** - Main KOL reply generation and posting script
 - **analyze-kol-engagement.js** - Weekly analytics and metrics generation
 - **discover-crawlee-direct.js** - Direct Crawlee-based KOL discovery
 - **discover-by-engagement-crawlee.js** - Search-based KOL discovery
 - **discover-with-fallback.js** - Discovery with fallback strategies
+
+### Product-Specific Automation (NEW - Dec 2025)
+- **discover-product-tweets.js** - Discover tweets mentioning BWS products (daily)
+- **reply-to-product-tweets.js** - Reply with educational threads about products (2x daily)
+
+### Content Generation
 - **generate-weekly-x-post.js** - Weekly X post generation
 - **post-article-content.js** - Article content posting to X
 - **fetch-twitter-partnerships.js** - Partnership data fetching
@@ -33,9 +40,12 @@ Located in `production/`:
 Located in `utils/`:
 
 - **kol-utils.js** - Core KOL data management utilities
-- **twitter-client.js** - Twitter API v2 client
+- **twitter-client.js** - Twitter API v2 client (supports @BWSCommunity account)
+- **twitter-thread-client.js** - Thread posting utilities (multi-tweet threads)
+- **thread-generator.js** - Educational thread generation with Claude AI
+- **docs-fetcher.js** - Product documentation fetching and caching
 - **multi-account-scraper-client.js** - Multi-account scraping client
-- **claude-client.js** - Anthropic Claude API integration
+- **claude-client.js** - Anthropic Claude API integration (Sonnet 4.5)
 - **amplified-search.js** - Enhanced search capabilities
 - **api-usage-logger.js** - API usage tracking and logging
 - **schedule-randomizer.js** - Random scheduling to avoid detection
@@ -55,11 +65,16 @@ Located in `tests/`:
 
 Located in `data/`:
 
+### KOL Automation Data
 - **kols-data.json** - KOL profiles and metadata
 - **kol-replies.json** - Reply history and tracking
 - **engaging-posts.json** - Discovered engaging content
 - **processed-posts.json** - Processed post tracking
 - **kol-metrics.json** - Analytics and engagement metrics
+
+### Product Automation Data (NEW)
+- **product-discovery-queue.json** - Tweets discovered about BWS products
+- **product-replies.json** - Educational threads posted about products
 
 ## Documentation
 
@@ -78,15 +93,74 @@ Comprehensive documentation about:
 
 The scripts in this directory are used by several workflows:
 
+### KOL Automation Workflows
 - `.github/workflows/kol-reply-cycle.yml` - Main reply automation (4x daily)
 - `.github/workflows/analyze-kols-weekly.yml` - Weekly analytics
 - `.github/workflows/discover-content-scrapfly.yml` - Content discovery
 - `.github/workflows/test-h-multi-account-scraper.yml` - Testing workflow
 
+### Product Automation Workflows (NEW - Dec 2025)
+- `.github/workflows/discover-product-tweets.yml` - Discover product mentions (daily at 8:00 AM UTC)
+- `.github/workflows/reply-to-product-tweets.yml` - Post educational threads (2x daily: 10 AM, 4 PM UTC)
+
+## Product Automation System (Dec 2025)
+
+A new automated system for discovering and replying to tweets about BWS products with educational threads.
+
+### How It Works
+
+1. **Discovery Phase** (Daily at 8:00 AM UTC)
+   - Searches Twitter for mentions of 4 BWS products: Blockchain Badges, BWS IPFS, NFT.zK, Blockchain Hash
+   - Uses 8-12 targeted search queries per product
+   - Filters tweets by engagement (min 10 likes) and freshness (24 hours)
+   - Adds discovered tweets to `product-discovery-queue.json`
+
+2. **Reply Phase** (2x daily at 10:00 AM, 4:00 PM UTC)
+   - Processes 2-4 tweets from discovery queue
+   - Uses product rotation to ensure balanced coverage
+   - Generates educational 4-tweet threads with Claude AI (Sonnet 4.5)
+   - Posts threads via @BWSCommunity account
+   - Tracks posted threads in `product-replies.json`
+
+3. **Thread Structure**
+   - Tweet 1: Hook - Acknowledge pain point or need
+   - Tweet 2: Features - List key product capabilities (includes $BWS cashtag)
+   - Tweet 3: How-To - Getting started steps
+   - Tweet 4: CTA - Documentation link + @BWSCommunity mention
+
+4. **Anti-Spam Measures**
+   - Follows tweet author before replying
+   - Likes original tweet
+   - 5-second delay between thread tweets
+   - 3-minute delay between different threads
+   - Product isolation (only mentions one product per thread)
+
+### Configuration Files
+
+Located in `config/`:
+
+- **product-highlights.json** - Product features, use cases, technical details
+- **product-reply-config.json** - Reply automation settings (thresholds, timing, etc.)
+- **product-search-queries.json** - Search queries for each product
+
+### Monitoring
+
+- **WORKFLOW_STATUS_SUMMARY.md** - Current system status and performance
+- **DEBUGGING_FIXES_SUMMARY.md** - Debugging history and fixes applied (Dec 9, 2025)
+
+### Success Metrics (as of Dec 9, 2025)
+
+- ✅ Discovery: 100% success rate, 35 tweets in queue
+- ✅ Reply: First 2 threads posted successfully
+- ✅ Thread quality: All tweets <280 chars, proper formatting, includes docs links
+- 🎯 Target: 2-4 educational threads per day across 4 products
+
 ## Important Notes
 
 1. All Twitter API credentials are stored as GitHub Secrets
 2. Multi-account approach separates search (scraper) from posting (API)
-3. Oxylabs proxy is used for API calls to avoid rate limiting
-4. Claude API is used for content evaluation and reply generation
-5. Schedule randomization prevents spam detection
+3. Product replies use @BWSCommunity account (TWITTER_* credentials)
+4. Oxylabs proxy is used for API calls to avoid rate limiting
+5. Claude API is used for content evaluation and reply generation (Sonnet 4.5)
+6. Schedule randomization prevents spam detection
+7. Educational threads include documentation links to drive traffic to docs.bws.ninja
