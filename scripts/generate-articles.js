@@ -352,8 +352,8 @@ Output as JSON array:
       {
         "heading": "Section heading",
         "sectionType": "normal",
-        "content": "Main paragraph content with {{DOCS_URL}} and {{WEBSITE_URL}} placeholders",
-        "imagePlacement": "image-after-section"
+        "content": "Main paragraph content with {{DOCS_URL}} and {{WEBSITE_URL}} placeholders. First paragraph will be displayed next to the image in two-column layout.",
+        "imagePlacement": "image-after-title"
       },
       {
         "heading": "Key Benefits",
@@ -367,6 +367,12 @@ Output as JSON array:
     "imageTweetId": "single_tweet_id"
   }
 ]
+
+IMPORTANT IMAGE PLACEMENT:
+- ALWAYS use "imagePlacement": "image-after-title" for the FIRST section
+- This creates a two-column layout: Image (left) + First paragraph (right)
+- First paragraph should be a strong introduction to the product
+- Remaining sections: use "imagePlacement": null (no additional images)
 
 IMPORTANT:
 - Only include products that are actually mentioned in the tweets
@@ -593,6 +599,41 @@ function getImageSizeConstraint(imagePath) {
 function generateContentComponent(slug, articleData, images, publishDate, docsUrl) {
   let sectionsHTML = '';
   let imageIndex = 0;
+  let titleImageHTML = ''; // For image-after-title placement
+
+  // Check if first section has image-after-title placement
+  if (articleData.sections.length > 0 &&
+      articleData.sections[0].imagePlacement === 'image-after-title' &&
+      images.length > 0) {
+    const sizeConstraint = getImageSizeConstraint(images[0].src);
+
+    // Get first section's first paragraph as intro text for column layout
+    const firstSection = articleData.sections[0];
+    const firstParagraphs = firstSection.content.split('\n\n').filter(p => p.trim().length > 0);
+    const introParagraph = firstParagraphs[0] || '';
+
+    // Two-column layout: Image (left) + Intro text (right)
+    titleImageHTML = `    <div class="container-medium" style="margin-top: 2rem; margin-bottom: 2rem;">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start;">
+        <figure style="margin: 0;">
+          <img
+            src="${images[0].src}"
+            alt="${images[0].alt}"
+            class="article-image-clickable"
+            data-image-src="${images[0].src}"
+            style="width: 100%; border-radius: 8px; cursor: pointer; display: block;"
+            loading="eager"
+          />
+        </figure>
+        <div style="padding-top: 1rem;">
+          <p style="font-size: 1.125rem; line-height: 1.75; color: #374151; margin: 0;">
+            ${introParagraph.trim().replace(/\n/g, ' ')}
+          </p>
+        </div>
+      </div>
+    </div>\n`;
+    imageIndex = 1; // Skip first image in section loop
+  }
 
   articleData.sections.forEach((section, index) => {
     const sectionType = section.sectionType || 'normal';
@@ -602,12 +643,19 @@ function generateContentComponent(slug, articleData, images, publishDate, docsUr
 
     // Add main content - split into multiple paragraphs on double line breaks
     const paragraphs = section.content.split('\n\n').filter(p => p.trim().length > 0);
-    paragraphs.forEach(paragraph => {
+
+    // If this is the first section and it has image-after-title placement,
+    // skip the first paragraph since it's already shown in the column layout
+    const startIndex = (index === 0 && section.imagePlacement === 'image-after-title') ? 1 : 0;
+
+    paragraphs.slice(startIndex).forEach(paragraph => {
       sectionsHTML += `        <p>\n          ${paragraph.trim().replace(/\n/g, '\n          ')}\n        </p>\n`;
     });
 
     // Add special section types
     if (sectionType === 'advantages' && section.advantages && section.advantages.length > 0) {
+      // Add clearfix before advantages section to prevent image overlap
+      sectionsHTML += `        <div style="clear: both;"></div>\n`;
       sectionsHTML += `        <div class="solution-advantages">\n`;
       sectionsHTML += `          <h4>Why Choose ${articleData.product}</h4>\n`;
       sectionsHTML += `          <ul>\n`;
@@ -709,7 +757,7 @@ const formattedDate = publishDate.toLocaleDateString("en-US", {
       </div>
     </div>
   </div>
-  <div class="container-medium">
+${titleImageHTML}  <div class="container-medium">
     <div class="blog-post-body-wrapper">
       <div class="rich-text w-richtext">
 ${sectionsHTML}
