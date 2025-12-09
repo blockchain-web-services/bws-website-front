@@ -1789,6 +1789,25 @@
       "timestamp": "2025-12-09T19:52:53.546Z",
       "status": "posted",
       "dryRun": false
+    },
+    {
+      "id": "1353384573435056128-1994142556071031079-1765322313964",
+      "tweetId": "1994142556071031079",
+      "tweetUrl": "https://twitter.com/CryptoRover/status/1994142556071031079",
+      "kolId": "1353384573435056128",
+      "kolUsername": "CryptoRover",
+      "originalTweetText": "BREAKING:\n\nBLACKROCK CEO LARRY FINK: IT DOESN'T MATTER IF MARKETS RISE AND FALL. BUBBLES COME AND GO.\n\nWHAT MATTERS MOST IS STAYING IN THE MARKET THROUGH ALL CYCLES.",
+      "replyTweetId": "1998532752589619703",
+      "replyText": "💡 Long-term mindset reveals mispriced fundamentals in microcaps.\n\nFan Game Cube tokenizes sports field sections where fans earn points from real match events at owned coordinates. $BWS enables clubs to generate new revenue streams through blockchain fan engagement across multiple sports.\n\n@BWSCommunity #microcap #sports #fundamentals https://docs.bws.ninja/marketplace-solutions/bws.nft.gamecube",
+      "productMentioned": "Multiple products (Blockchain Badges, ESG Credits, X Bot)",
+      "relevanceScore": 82,
+      "templateUsed": "emoji_enhanced",
+      "templateName": "Emoji-Enhanced Structure",
+      "imageAttached": false,
+      "imagePath": "/assets/images/docs/fan-game-cube/fan-game-cube-0.png",
+      "timestamp": "2025-12-09T23:18:33.964Z",
+      "status": "posted",
+      "dryRun": false
     }
   ],
   "dailyStats": {
@@ -1863,10 +1882,10 @@
     }
   },
   "metadata": {
-    "totalReplies": 86,
-    "successfulReplies": 52,
+    "totalReplies": 87,
+    "successfulReplies": 53,
     "failedReplies": 34,
-    "lastReplyAt": "2025-12-09T19:52:53.546Z",
+    "lastReplyAt": "2025-12-09T23:18:33.964Z",
     "todayRepliesCount": 0,
     "lastUpdateBy": "kol-system"
   }
