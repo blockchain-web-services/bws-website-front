@@ -275,10 +275,13 @@ async function replyToProductTweets() {
       // Post thread to Twitter
       console.log(`\n📤 Posting thread to Twitter...`);
 
+      // Create Twitter client for anti-spam actions and posting
+      const twitterClient = createReadWriteClient(true); // Use @BWSCommunity credentials
+
       // Anti-spam actions: follow and like
       if (config.antiSpam.followAuthor) {
         try {
-          await followUser(tweet.author.username);
+          await followUser(twitterClient, tweet.author.id);
           console.log(`   ✅ Followed @${tweet.author.username}`);
         } catch (error) {
           console.warn(`   ⚠️  Could not follow user: ${error.message}`);
@@ -287,7 +290,7 @@ async function replyToProductTweets() {
 
       if (config.antiSpam.likeTweet) {
         try {
-          await likeTweet(tweet.id);
+          await likeTweet(twitterClient, tweet.id);
           console.log(`   ✅ Liked tweet ${tweet.id}`);
         } catch (error) {
           console.warn(`   ⚠️  Could not like tweet: ${error.message}`);
