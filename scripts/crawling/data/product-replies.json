@@ -33,23 +33,57 @@
       "relevanceScore": 85,
       "timestamp": "2025-12-09T08:51:18.957Z",
       "threadPreview": "Both chains have strengths, but here's something to consider: decentralized storage doesn't have to "
+    },
+    {
+      "originalTweetId": "1986321903473090905",
+      "originalTweetAuthor": "KyousouMidori",
+      "product": "NFT.zK",
+      "threadTweetIds": [
+        "1998423965610696927",
+        "1998423988037640341",
+        "1998424010179457104",
+        "1998424032161808505"
+      ],
+      "templateUsed": "problem-solution",
+      "templateName": "Problem-Solution",
+      "approach": "problem-solution",
+      "relevanceScore": 85,
+      "timestamp": "2025-12-09T16:06:33.019Z",
+      "threadPreview": "Creating and minting NFTs shouldn't require blockchain expertise. Most projects struggle with the te"
+    },
+    {
+      "originalTweetId": "1998197237969793420",
+      "originalTweetAuthor": "bulltom39",
+      "product": "Blockchain Hash",
+      "threadTweetIds": [
+        "1998424577618354679",
+        "1998424599877550298",
+        "1998424622036078716",
+        "1998424644056203362"
+      ],
+      "templateUsed": "problem-solution",
+      "templateName": "Problem-Solution",
+      "approach": "problem-solution",
+      "relevanceScore": 85,
+      "timestamp": "2025-12-09T16:08:58.921Z",
+      "threadPreview": "Privacy on-chain is crucial, but many devs face another barrier: blockchain complexity itself. Manag"
     }
   ],
   "stats": {
-    "totalThreads": 2,
+    "totalThreads": 4,
     "byProduct": {
       "Blockchain Badges": 1,
       "BWS IPFS": 1,
-      "NFT.zK": 0,
-      "Blockchain Hash": 0
+      "NFT.zK": 1,
+      "Blockchain Hash": 1
     },
     "byApproach": {
       "how-to": 0,
-      "problem-solution": 0,
+      "problem-solution": 2,
       "feature-showcase": 0,
       "how-to-guide": 2
     },
     "averageRelevanceScore": 85,
-    "lastReply": "2025-12-09T08:51:18.957Z"
+    "lastReply": "2025-12-09T16:08:58.921Z"
   }
 }

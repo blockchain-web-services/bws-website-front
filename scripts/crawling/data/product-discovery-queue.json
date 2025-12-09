@@ -1183,7 +1183,10 @@
       "product": "NFT.zK",
       "queryName": "nft-collections",
       "queryPriority": "high",
-      "discoveredAt": "2025-12-09T08:05:16.798Z"
+      "discoveredAt": "2025-12-09T08:05:16.798Z",
+      "processed": true,
+      "processedAt": "2025-12-09T16:06:33.020Z",
+      "processedStatus": "replied"
     },
     {
       "id": "1982794072923488365",
@@ -1534,7 +1537,10 @@
       "product": "Blockchain Hash",
       "queryName": "blockchain-without-wallets",
       "queryPriority": "high",
-      "discoveredAt": "2025-12-09T08:06:01.685Z"
+      "discoveredAt": "2025-12-09T08:06:01.685Z",
+      "processed": true,
+      "processedAt": "2025-12-09T16:08:58.921Z",
+      "processedStatus": "replied"
     },
     {
       "id": "1998108692554863019",
@@ -1855,15 +1861,15 @@
       },
       "NFT.zK": {
         "total": 15,
-        "unprocessed": 15,
-        "processed": 0
+        "unprocessed": 14,
+        "processed": 1
       },
       "Blockchain Hash": {
         "total": 15,
-        "unprocessed": 15,
-        "processed": 0
+        "unprocessed": 14,
+        "processed": 1
       }
     },
-    "lastRun": "2025-12-09T08:51:18.957Z"
+    "lastRun": "2025-12-09T16:08:58.921Z"
   }
 }
