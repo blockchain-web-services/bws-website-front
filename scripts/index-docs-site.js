@@ -15,9 +15,14 @@ import fs from 'fs';
 import https from 'https';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import dotenv from 'dotenv';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
+
+// Load environment variables from worktree root
+const worktreeRoot = path.join(__dirname, '..');
+dotenv.config({ path: path.join(worktreeRoot, '.env') });
 
 // Configuration
 const DOCS_BASE_URL = 'https://docs.bws.ninja';
