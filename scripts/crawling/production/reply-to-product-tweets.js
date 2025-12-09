@@ -22,7 +22,7 @@ import { generateEducationalThread } from '../utils/thread-generator.js';
 import { postThread, previewThread } from '../utils/twitter-thread-client.js';
 import { createReadWriteClient, followUser, likeTweet } from '../utils/twitter-client.js';
 import { evaluateTweetForReply } from '../utils/claude-client.js';
-import { sleep, loadBWSProducts } from '../utils/kol-utils.js';
+import { sleep } from '../utils/kol-utils.js';
 
 const __dirname = __scriptsDir;
 
@@ -180,7 +180,11 @@ async function replyToProductTweets() {
   const config = await loadReplyConfig();
   const queue = await loadProductQueue();
   const repliesData = await loadProductReplies();
-  const productsInfo = loadBWSProducts();
+
+  // Load product highlights for product information
+  const highlightsPath = path.join(__dirname, '..', 'config', 'product-highlights.json');
+  const highlightsData = await fs.readFile(highlightsPath, 'utf-8');
+  const productsInfo = JSON.parse(highlightsData);
 
   console.log('📋 Configuration:');
   console.log(`   - Replies per run: ${config.repliesPerRun}`);
