@@ -6,6 +6,7 @@ import { sendArticlePostNotification } from '../utils/zapier-webhook.js';
 import { createReadWriteClient } from '../utils/twitter-client.js';
 import { recordRun } from '../utils/schedule-randomizer.js';
 import { updateAndCommitSchedule, isGitHubActions } from '../utils/workflow-updater.js';
+import { calculatePostingSchedule } from '../utils/article-posting-scheduler.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -15,7 +16,7 @@ dotenv.config({ path: join(__dirname, '..', '..', '..', '.env') });
 
 // Configuration
 const ARTICLE_X_POSTS_FILE = join(__dirname, '..', '..', 'data', 'article-x-posts.json');
-const MAX_POSTS_PER_RUN = 4; // Conservative limit per execution
+const MAX_POSTS_PER_RUN = 1; // Post 1 article per run (natural spacing)
 const DELAY_BETWEEN_POSTS_MS = 60000; // 60 seconds (1 minute) between posts
 
 /**
@@ -219,7 +220,49 @@ async function main() {
   }
 
   // ========================================================================
-  // STEP 2: Main Article Posting Process
+  // STEP 2: Dynamic Posting Schedule Check
+  // ========================================================================
+
+  console.log('📅 Checking posting schedule...\n');
+
+  let schedule;
+  try {
+    schedule = await calculatePostingSchedule();
+
+    console.log('   📊 Article Generation Metrics (Last 7 Days):');
+    console.log(`      Total Articles: ${schedule.totalArticles}`);
+    console.log(`      Articles/Day: ${schedule.articlesPerDay}`);
+    console.log(`      Days Elapsed: ${schedule.daysElapsed}`);
+    console.log(`      Generation Runs: ${schedule.generationRuns}`);
+    console.log();
+    console.log('   ⏱️  Posting Schedule:');
+    console.log(`      Recommended Interval: ${schedule.intervalHours}h`);
+    console.log(`      Last Post: ${schedule.lastPostTime}`);
+    console.log(`      Time Since Last Post: ${schedule.hoursSinceLastPost}h`);
+    console.log(`      Hours Until Next Post: ${schedule.hoursUntilNextPost}h`);
+    console.log();
+
+    if (!schedule.shouldPost) {
+      console.log(`   ⏸️  Skipping - Not time to post yet`);
+      console.log(`      Next post scheduled: ${schedule.nextPostTime}`);
+      console.log(`      (Interval: ${schedule.intervalHours}h, Grace: ${schedule.gracePeriodHours}h)`);
+      console.log();
+      console.log('✅ Schedule check complete - no posting needed\n');
+      return;
+    }
+
+    console.log(`   ✅ Time to post - ${schedule.intervalHours}h interval satisfied\n`);
+
+  } catch (scheduleError) {
+    console.error('   ⚠️  Schedule calculation failed:', scheduleError.message);
+    console.error('   Falling back to default posting behavior\n');
+    // Continue with posting if schedule check fails
+  }
+
+  console.log('=' .repeat(60) + '\n');
+
+  // ========================================================================
+  // STEP 3: Main Article Posting Process
   // ========================================================================
 
   // Check for Twitter credentials (BWSCommunity only)

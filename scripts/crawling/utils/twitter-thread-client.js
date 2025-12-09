@@ -39,7 +39,7 @@ async function postThread(parentTweetId, threadTweets, config = {}) {
   }
 
   // Create Twitter client (use @BWSCommunity credentials)
-  const client = createReadWriteClient(true);
+  const { client } = createReadWriteClient(true);
 
   const postedTweetIds = [];
   let currentReplyTo = parentTweetId;
