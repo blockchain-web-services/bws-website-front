@@ -1713,6 +1713,25 @@
       "timestamp": "2025-12-08T23:19:15.211Z",
       "status": "posted",
       "dryRun": false
+    },
+    {
+      "id": "1353384573435056128-1994142556071031079-1765265882945",
+      "tweetId": "1994142556071031079",
+      "tweetUrl": "https://twitter.com/CryptoRover/status/1994142556071031079",
+      "kolId": "1353384573435056128",
+      "kolUsername": "CryptoRover",
+      "originalTweetText": "BREAKING:\n\nBLACKROCK CEO LARRY FINK: IT DOESN'T MATTER IF MARKETS RISE AND FALL. BUBBLES COME AND GO.\n\nWHAT MATTERS MOST IS STAYING IN THE MARKET THROUGH ALL CYCLES.",
+      "replyTweetId": "1998296063598625260",
+      "replyText": "Fink's patience philosophy applies to microcap diligence - finding what survives while others chase trends.\n\nESG Credits enables financial institutions to integrate blockchain-verified environmental impact reporting into banking apps with ICMA framework compliance. Built by $BWS at microcap valuation.\n\n@BWSCommunity #microcap #fintech #ESG https://docs.bws.ninja/marketplace-solutions/bws.esg.credits",
+      "productMentioned": "Multiple products (Blockchain Badges, ESG Credits, Fan Game Cube)",
+      "relevanceScore": 82,
+      "templateUsed": "delayed_cashtag",
+      "templateName": "Delayed $BWS Mention",
+      "imageAttached": false,
+      "imagePath": null,
+      "timestamp": "2025-12-09T07:38:02.945Z",
+      "status": "posted",
+      "dryRun": false
     }
   ],
   "dailyStats": {
@@ -1787,10 +1806,10 @@
     }
   },
   "metadata": {
-    "totalReplies": 82,
-    "successfulReplies": 48,
+    "totalReplies": 83,
+    "successfulReplies": 49,
     "failedReplies": 34,
-    "lastReplyAt": "2025-12-08T23:19:15.211Z",
+    "lastReplyAt": "2025-12-09T07:38:02.945Z",
     "todayRepliesCount": 0,
     "lastUpdateBy": "kol-system"
   }
