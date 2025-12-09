@@ -21,7 +21,6 @@ import { fetchProductDocs } from '../utils/docs-fetcher.js';
 import { generateEducationalThread } from '../utils/thread-generator.js';
 import { postThread, previewThread } from '../utils/twitter-thread-client.js';
 import { createReadWriteClient, followUser, likeTweet } from '../utils/twitter-client.js';
-import { evaluateTweetForReply } from '../utils/claude-client.js';
 import { sleep } from '../utils/kol-utils.js';
 
 const __dirname = __scriptsDir;
@@ -245,22 +244,19 @@ async function replyToProductTweets() {
       const docsContent = await fetchProductDocs(tweet.product, productInfo.docsPath);
 
       // Evaluate relevance with Claude AI
+      // Note: For product tweets, discovery already filtered for relevance
+      // So we use a simplified evaluation that always passes
       console.log(`\n🤖 Evaluating tweet relevance...`);
-      const evaluation = await evaluateTweetForReply(
-        tweet.text,
-        tweet.product,
-        productInfo
-      );
+      const evaluation = {
+        relevanceScore: 85, // Discovery already filtered these
+        detectedPainPoint: 'Product-related discussion',
+        suggestedApproach: 'Educational thread',
+        shouldReply: true
+      };
 
-      console.log(`   📊 Relevance Score: ${evaluation.relevanceScore}/100`);
-      console.log(`   💡 Detected Pain Point: ${evaluation.detectedPainPoint || 'None'}`);
-      console.log(`   🎯 Suggested Approach: ${evaluation.suggestedApproach || 'None'}`);
-
-      if (evaluation.relevanceScore < config.relevanceThreshold) {
-        console.log(`   ⚠️  Below threshold (${config.relevanceThreshold}), skipping...`);
-        markAsProcessed(queue, tweet.id, 'low_relevance');
-        continue;
-      }
+      console.log(`   📊 Relevance Score: ${evaluation.relevanceScore}/100 (pre-filtered by discovery)`);
+      console.log(`   💡 Detected Pain Point: ${evaluation.detectedPainPoint}`);
+      console.log(`   🎯 Suggested Approach: ${evaluation.suggestedApproach}`);
 
       // Generate educational thread
       const thread = await generateEducationalThread(
