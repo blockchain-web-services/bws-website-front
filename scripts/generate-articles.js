@@ -600,17 +600,31 @@ function generateContentComponent(slug, articleData, images, publishDate, docsUr
       articleData.sections[0].imagePlacement === 'image-after-title' &&
       images.length > 0) {
     const sizeConstraint = getImageSizeConstraint(images[0].src);
+
+    // Get first section's first paragraph as intro text for column layout
+    const firstSection = articleData.sections[0];
+    const firstParagraphs = firstSection.content.split('\n\n').filter(p => p.trim().length > 0);
+    const introParagraph = firstParagraphs[0] || '';
+
+    // Two-column layout: Image (left) + Intro text (right)
     titleImageHTML = `    <div class="container-medium" style="margin-top: 2rem; margin-bottom: 2rem;">
-      <figure style="margin: 0 auto; text-align: center; ${sizeConstraint}">
-        <img
-          src="${images[0].src}"
-          alt="${images[0].alt}"
-          class="article-image-clickable"
-          data-image-src="${images[0].src}"
-          style="width: 100%; border-radius: 8px; cursor: pointer; display: block;"
-          loading="eager"
-        />
-      </figure>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start;">
+        <figure style="margin: 0;">
+          <img
+            src="${images[0].src}"
+            alt="${images[0].alt}"
+            class="article-image-clickable"
+            data-image-src="${images[0].src}"
+            style="width: 100%; border-radius: 8px; cursor: pointer; display: block;"
+            loading="eager"
+          />
+        </figure>
+        <div style="padding-top: 1rem;">
+          <p style="font-size: 1.125rem; line-height: 1.75; color: #374151; margin: 0;">
+            ${introParagraph.trim().replace(/\n/g, ' ')}
+          </p>
+        </div>
+      </div>
     </div>\n`;
     imageIndex = 1; // Skip first image in section loop
   }
@@ -623,7 +637,12 @@ function generateContentComponent(slug, articleData, images, publishDate, docsUr
 
     // Add main content - split into multiple paragraphs on double line breaks
     const paragraphs = section.content.split('\n\n').filter(p => p.trim().length > 0);
-    paragraphs.forEach(paragraph => {
+
+    // If this is the first section and it has image-after-title placement,
+    // skip the first paragraph since it's already shown in the column layout
+    const startIndex = (index === 0 && section.imagePlacement === 'image-after-title') ? 1 : 0;
+
+    paragraphs.slice(startIndex).forEach(paragraph => {
       sectionsHTML += `        <p>\n          ${paragraph.trim().replace(/\n/g, '\n          ')}\n        </p>\n`;
     });
 
