@@ -238,7 +238,15 @@ async function generateEducationalThread(
       }]
     });
 
-    const responseText = response.content[0].text;
+    let responseText = response.content[0].text;
+
+    // Strip markdown code fences if present
+    responseText = responseText.trim();
+    if (responseText.startsWith('```json')) {
+      responseText = responseText.replace(/^```json\s*/, '').replace(/\s*```$/, '');
+    } else if (responseText.startsWith('```')) {
+      responseText = responseText.replace(/^```\s*/, '').replace(/\s*```$/, '');
+    }
 
     // Parse JSON response
     let threadData;
