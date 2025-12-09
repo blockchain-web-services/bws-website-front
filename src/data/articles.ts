@@ -21,57 +21,57 @@ export const articles: ArticleMetadata[] = [
 {
   slug: 'x-bot-2025-12-09',
   product: 'X Bot',
-  title: 'X Bot: Automated Community Analytics and KOL Tracking for Crypto Projects',
-  subtitle: 'Crypto projects face a critical challenge: distinguishing authentic community growth from coordinated bot farms and manufactured hype. X Bot solves this through official X API integration that tracks 100+ KOL accounts simultaneously, delivering automated engagement analytics and bot detection that separates real traction from artificial activity.',
-  publishDate: '2025-12-09T10:04:05.546Z',
+  title: 'X Bot: Automated Community Analytics for Web3 Projects and KOLs',
+  subtitle: 'Managing crypto community growth across multiple platforms requires verifiable engagement data. X Bot automates KOL tracking and engagement analytics across X and Telegram through official API integration, helping projects identify authentic community growth versus manufactured hype.',
+  publishDate: '2025-12-09T17:35:40.680Z',
   tweetId: '',
   featuredImage: {
     src: '/assets/images/docs/x-bot/x-bot-0.png',
     alt: 'Product screenshot',
     loading: 'eager'
   },
-  seoDescription: 'X Bot delivers automated community analytics for crypto projects. Track 100+ KOLs simultaneously, detect bot farms, and measure authentic engagement with official X API integration.'
+  seoDescription: 'X Bot automates KOL tracking and community analytics for Web3 projects. Monitor 100+ accounts simultaneously with verified engagement metrics across X and Telegram.'
 },
 {
   slug: 'blockchain-badges-2025-12-09',
   product: 'Blockchain Badges',
-  title: 'Blockchain Badges: Tamper-Proof Digital Credentials for Universities and Enterprises',
-  subtitle: 'Credential fraud undermines trust in educational and professional certification systems worldwide. Forged documents and fake stamps create billion-dollar verification problems that plague institutions and employers alike. Blockchain Badges solves this through cryptographic credential verification with immutable blockchain proof, enabling universities and organizations to issue certificates that cannot be forged, altered, or disputed.',
-  publishDate: '2025-12-09T10:04:19.191Z',
+  title: 'Blockchain Badges: Tamper-Proof Credential Verification for Educational Institutions',
+  subtitle: 'Credential fraud undermines trust across educational and professional systems worldwide. Blockchain Badges provides universities and organizations with immutable blockchain-backed certificates that enable instant verification while eliminating the possibility of forgery or alteration.',
+  publishDate: '2025-12-09T17:35:51.550Z',
   tweetId: '',
   featuredImage: {
     src: '/assets/images/docs/blockchain-badges/blockchain-badges-0.png',
-    alt: 'Cover',
+    alt: 'Product screenshot',
     loading: 'eager'
   },
-  seoDescription: 'Blockchain Badges creates tamper-proof credentials with blockchain verification. Universities issue degrees and certifications that employers can verify instantly, eliminating credential fraud.'
+  seoDescription: 'Blockchain Badges provides tamper-proof credential verification for universities and organizations. Issue blockchain-backed certificates with instant verification.'
 },
 {
   slug: 'esg-credits-2025-12-09',
   product: 'ESG Credits',
-  title: 'ESG Credits: ICMA-Compliant Blockchain Environmental Reporting for Banking Applications',
-  subtitle: 'Financial institutions struggle to track sustainable asset performance while preventing double-counting of green investments across portfolios. ESG Credits solves this with blockchain-verified environmental impact reporting that maintains ICMA framework compliance, enabling banks to integrate cryptographically-proven sustainability metrics directly into customer applications.',
-  publishDate: '2025-12-09T10:04:32.141Z',
+  title: 'ESG Credits: Blockchain-Verified Environmental Impact for Banking Applications',
+  subtitle: 'Financial institutions need verifiable environmental impact data for sustainable asset reporting. ESG Credits delivers blockchain-verified environmental tracking with ICMA framework compliance, enabling banks to integrate cryptographic proof directly into their applications.',
+  publishDate: '2025-12-09T17:36:03.283Z',
   tweetId: '',
   featuredImage: {
-    src: '/assets/images/marketplace/fallback/esg-credits/01-report.png',
-    alt: 'ESG Credits solution',
+    src: '/assets/images/docs/esg-credits/esg-credits-0.png',
+    alt: 'Product screenshot',
     loading: 'eager'
   },
-  seoDescription: 'ESG Credits delivers blockchain-verified environmental reporting for banks with ICMA compliance. Track sustainable asset performance and prevent double-counting of green investments.'
+  seoDescription: 'ESG Credits provides blockchain-verified environmental reporting for banks. ICMA framework compliance with cryptographic proof prevents green investment double-counting.'
 },
 {
   slug: 'fan-game-cube-2025-12-09',
   product: 'Fan Game Cube',
-  title: 'Fan Game Cube: NFT Field Tokenization and Event-Based Rewards for Sports',
-  subtitle: 'Sports clubs face a persistent challenge: how to monetize fan engagement beyond traditional ticket and merchandise sales. Fan Game Cube addresses this by tokenizing field sections as NFTs, enabling fans to own specific coordinates that earn points when real match events occur at their locations. This blockchain-based approach creates entirely new revenue streams across football, chess, tennis, and cricket.',
-  publishDate: '2025-12-09T10:04:41.475Z',
+  title: 'Fan Game Cube: Tokenized Field Sections Connecting Fans to Real Match Events',
+  subtitle: 'Traditional fan engagement offers passive viewing experiences without ownership stakes. Fan Game Cube transforms this dynamic by tokenizing specific field coordinates as NFTs across multiple sports, enabling fans to earn rewards when game events occur at their owned locations.',
+  publishDate: '2025-12-09T17:36:15.078Z',
   tweetId: '',
   featuredImage: {
     src: '/assets/images/docs/fan-game-cube/fan-game-cube-0.png',
     alt: 'Product screenshot',
     loading: 'eager'
   },
-  seoDescription: 'Fan Game Cube tokenizes sports field sections as NFTs. Fans own coordinates and earn rewards when game events occur at their locations across multiple sports.'
+  seoDescription: 'Fan Game Cube tokenizes field coordinates across football, chess, tennis, and cricket. Fans own NFT sections and earn rewards when match events occur at their locations.'
 }
 ];
