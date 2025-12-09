@@ -341,6 +341,7 @@ ${tweet.guidelines.map(g => `    - ${g}`).join('\n')}
 8. Focus on practical value and how to get started
 9. No emojis except for bullet points (•) if listing features
 10. Make each tweet standalone readable but part of coherent thread
+11. **FORMATTING**: When using bullet lists, ALWAYS add a blank line before the first bullet point for readability
 
 **Output Format**:
 Respond with valid JSON only (no markdown code blocks):
