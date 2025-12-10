@@ -1,7 +1,7 @@
 {
-  "discoveredAt": "2025-12-09T14:46:35.850Z",
+  "discoveredAt": "2025-12-10T02:41:25.718Z",
   "baseUrl": "https://docs.bws.ninja",
-  "totalPaths": 77,
+  "totalPaths": 73,
   "paths": [
     "/",
     "/api-how-tos",
@@ -75,11 +75,7 @@
     "/solutions/bws.nft.zk",
     "/solutions/bws.nft.zk/nft-attributes-traits",
     "/solutions/bws.nft.zk/operations",
-    "/solutions/bws.nft.zk/solution-overview",
-    "/media-assets/snapshots/marketplace-solutions/bws.blockchain.badges",
-    "/media-assets/snapshots/marketplace-solutions/bws.nft.gamecube",
-    "/media-assets/snapshots/marketplace-solutions/bws.x.bot",
-    "/media-assets/snapshots/marketplace-solutions/bws.esg.credits"
+    "/solutions/bws.nft.zk/solution-overview"
   ],
   "categories": {
     "root": [
