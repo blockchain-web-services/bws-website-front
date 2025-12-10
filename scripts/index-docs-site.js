@@ -167,14 +167,35 @@ function extractImages(html, baseUrl) {
     const altMatch = fullMatch.match(/alt=["']([^"']*)["']/i);
     const alt = altMatch ? altMatch[1] : '';
 
-    // For media-assets pages, we want ALL images (including those in gitbook image URLs)
-    // Skip only if it's explicitly a logo/icon in the filename AND not in a gitbook URL
+    // For GitBook images, check the actual content URL (in the url parameter), not the wrapper
     const isGitbookImage = imgUrl.includes('gitbook.io') || imgUrl.includes('~gitbook/image');
-    const isLogoInFilename = imgUrl.includes('/logo') || imgUrl.includes('/icon');
 
-    // Skip logos/icons UNLESS they're in GitBook URLs (which are actual product screenshots)
-    if (!isGitbookImage && (isLogoInFilename || alt.toLowerCase().includes('logo'))) {
-      continue;
+    if (isGitbookImage) {
+      // Decode the url parameter to check the actual content URL for logos/icons
+      try {
+        const urlParams = new URL(imgUrl).searchParams;
+        const actualUrl = urlParams.get('url');
+        if (actualUrl) {
+          const decodedUrl = decodeURIComponent(actualUrl);
+          // Skip if the actual content URL contains /icon/ or /logo (these are site logos, not product screenshots)
+          // Logo URLs typically look like: /organizations/.../icon/.../logo%20void.svg
+          // Product screenshots look like: /spaces/.../uploads/.../x-bot-desktop-2025-12-03-section-hero.png
+          if (decodedUrl.includes('/icon/') || decodedUrl.includes('/logo')) {
+            continue;
+          }
+        }
+      } catch (e) {
+        // If URL parsing fails, fall back to checking the raw URL
+        if (imgUrl.includes('/icon/') || imgUrl.includes('/logo')) {
+          continue;
+        }
+      }
+    } else {
+      // For non-GitBook images, check filename and alt text
+      const isLogoInFilename = imgUrl.includes('/logo') || imgUrl.includes('/icon');
+      if (isLogoInFilename || alt.toLowerCase().includes('logo')) {
+        continue;
+      }
     }
 
     // Make URL absolute if needed
