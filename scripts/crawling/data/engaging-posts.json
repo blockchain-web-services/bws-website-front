@@ -5038,9 +5038,10 @@
       "BWS IPFS",
       "Blockchain Save"
     ],
-    "currentIndex": 3,
-    "lastProductUsed": "Blockchain Hash",
+    "currentIndex": 4,
+    "lastProductUsed": "NFT.zK",
     "positioningPhraseIndex": 0,
-    "replyCount": 59
-  }
+    "replyCount": 60
+  },
+  "_removedStale": false
 }
