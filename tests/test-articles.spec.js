@@ -136,7 +136,6 @@ test.describe('Articles Pages', () => {
       });
 
       await page.goto(article.url, { waitUntil: 'networkidle' });
-      await page.waitForTimeout(1000);
 
       if (failed404s.length > 0) {
         console.error(`\n❌ ${article.url}: ${failed404s.length} image 404 error(s)`);
@@ -181,7 +180,6 @@ test.describe('Articles Pages', () => {
   test('Article images are visible and properly loaded', async ({ page }) => {
     for (const article of articles) {
       await page.goto(article.url, { waitUntil: 'networkidle' });
-      await page.waitForTimeout(1000);
 
       // Find all article images (excluding header/nav images)
       const articleImages = page.locator('.rich-text img, figure img').filter({ hasNot: page.locator('[class*="nav"], [class*="header"]') });
@@ -238,7 +236,6 @@ test.describe('Articles Pages', () => {
 
     for (const article of articles) {
       await page.goto(article.url, { waitUntil: 'networkidle' });
-      await page.waitForTimeout(1000);
 
       const figures = page.locator('figure');
       const figureCount = await figures.count();
