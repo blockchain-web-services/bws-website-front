@@ -1808,6 +1808,25 @@
       "timestamp": "2025-12-09T23:18:33.964Z",
       "status": "posted",
       "dryRun": false
+    },
+    {
+      "id": "1353384573435056128-1994142556071031079-1765352283881",
+      "tweetId": "1994142556071031079",
+      "tweetUrl": "https://twitter.com/CryptoRover/status/1994142556071031079",
+      "kolId": "1353384573435056128",
+      "kolUsername": "CryptoRover",
+      "originalTweetText": "BREAKING:\n\nBLACKROCK CEO LARRY FINK: IT DOESN'T MATTER IF MARKETS RISE AND FALL. BUBBLES COME AND GO.\n\nWHAT MATTERS MOST IS STAYING IN THE MARKET THROUGH ALL CYCLES.",
+      "replyTweetId": "1998658455603917043",
+      "replyText": "Fink's right - but microcap survivors need real utility, not just patience.\n\n$BWS Blockchain Hash: developers update blockchain data after initial save through simple REST API. Mutable database functionality without wallet management or gas fees for your team.\n\n@BWSCommunity #microcap #blockchain #fundamentals https://docs.bws.ninja/solutions/bws.blockchain.hash",
+      "productMentioned": "Multiple products (X Bot, Blockchain Badges, ESG Credits, Fan Game Cube)",
+      "relevanceScore": 82,
+      "templateUsed": "classic",
+      "templateName": "Classic Structure",
+      "imageAttached": false,
+      "imagePath": "/assets/images/docs/blockchain-hash/blockchain-hash-0.png",
+      "timestamp": "2025-12-10T07:38:03.881Z",
+      "status": "posted",
+      "dryRun": false
     }
   ],
   "dailyStats": {
@@ -1882,10 +1901,10 @@
     }
   },
   "metadata": {
-    "totalReplies": 87,
-    "successfulReplies": 53,
+    "totalReplies": 88,
+    "successfulReplies": 54,
     "failedReplies": 34,
-    "lastReplyAt": "2025-12-09T23:18:33.964Z",
+    "lastReplyAt": "2025-12-10T07:38:03.881Z",
     "todayRepliesCount": 0,
     "lastUpdateBy": "kol-system"
   }
