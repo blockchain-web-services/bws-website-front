@@ -1846,6 +1846,25 @@
       "timestamp": "2025-12-10T11:49:26.600Z",
       "status": "posted",
       "dryRun": false
+    },
+    {
+      "id": "1353384573435056128-1994142556071031079-1765380607447",
+      "tweetId": "1994142556071031079",
+      "tweetUrl": "https://twitter.com/CryptoRover/status/1994142556071031079",
+      "kolId": "1353384573435056128",
+      "kolUsername": "CryptoRover",
+      "originalTweetText": "BREAKING:\n\nBLACKROCK CEO LARRY FINK: IT DOESN'T MATTER IF MARKETS RISE AND FALL. BUBBLES COME AND GO.\n\nWHAT MATTERS MOST IS STAYING IN THE MARKET THROUGH ALL CYCLES.",
+      "replyTweetId": "1998777252377690149",
+      "replyText": "Building through cycles separates projects with substance from hype plays.\n\nBlockchain Badges delivers:\n• Issue tamper-proof credentials with immutable blockchain proof\n• Visual badge designer enables bulk issuance for institutions\n• Recipients control and share verified achievements across platforms\n\nReal infrastructure at microcap. $BWS\n\n@BWSCommunity #microcap #blockchain #fundamentals https://docs.bws.ninja/marketplace-solutions/bws.blockchain.badges",
+      "productMentioned": "Multiple products (Blockchain Badges, ESG Credits, X Bot, Fan Game Cube)",
+      "relevanceScore": 85,
+      "templateUsed": "feature_list",
+      "templateName": "Feature List Structure",
+      "imageAttached": true,
+      "imagePath": "/assets/images/docs/blockchain-badges/blockchain-badges-0.png",
+      "timestamp": "2025-12-10T15:30:07.447Z",
+      "status": "posted",
+      "dryRun": false
     }
   ],
   "dailyStats": {
@@ -1920,10 +1939,10 @@
     }
   },
   "metadata": {
-    "totalReplies": 89,
-    "successfulReplies": 55,
+    "totalReplies": 90,
+    "successfulReplies": 56,
     "failedReplies": 34,
-    "lastReplyAt": "2025-12-10T11:49:26.600Z",
+    "lastReplyAt": "2025-12-10T15:30:07.447Z",
     "todayRepliesCount": 0,
     "lastUpdateBy": "kol-system"
   }
