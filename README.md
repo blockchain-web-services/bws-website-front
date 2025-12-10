@@ -848,6 +848,55 @@ $BWS #Web3 #Blockchain #BWS
 
 ---
 
+## 2.7 Article Generation from X Posts
+
+**Workflow File**: `.github/workflows/generate-articles.yml`
+
+**Overview**: ✅ **WORKING** - Automatically generates blog articles from @BWSCommunity product tweets using Claude AI (Sonnet 4.5), with rich documentation images and optimized layouts.
+
+**Schedule**: Manually triggered via GitHub Actions
+
+**Status**: ✅ Fully operational with two-column layout (Dec 9, 2025)
+
+**Scripts Used**:
+- `scripts/generate-articles.js` (article generation with Claude AI)
+- `scripts/index-docs-site.js` (documentation image extraction)
+
+**Strategy**: **AI-Powered Content Generation + GitBook Image Extraction**
+1. Fetches recent tweets from @BWSCommunity X account
+2. Identifies product-specific tweets (X Bot, ESG Credits, Fan Game Cube, Blockchain Badges, etc.)
+3. Uses Claude AI (Sonnet 4.5) to generate comprehensive article content
+4. Extracts product screenshots from docs.bws.ninja documentation
+5. Generates Astro components with two-column grid layouts (image + intro paragraph)
+6. Applies clearfix to prevent image overlap with styled sections
+7. Commits generated articles and triggers deployment
+
+**Key Features**:
+- **Two-Column Layout**: Image on left (1fr), intro paragraph on right (1fr)
+- **Documentation Images**: 149 product screenshots from docs.bws.ninja (77MB)
+- **Image Overlap Prevention**: Clearfix before `.solution-advantages` sections
+- **AI Content Quality**: Claude Sonnet 4.5 generates technically accurate content
+- **Automated Deployment**: Triggers site rebuild after article generation
+
+**Recent Success** (Dec 9, 2025):
+- Generated 4 articles with two-column layouts
+- Deployed to production successfully
+- Workflow run: 20073234282
+- Articles: esg-credits, blockchain-badges, fan-game-cube, x-bot
+
+**Data Files**:
+- Input: @BWSCommunity tweets, `public/docs-index.json` (1.5MB, 76 pages)
+- Output: `src/components/articles/[Product][Date]MainContent.astro`
+- Images: `public/assets/images/docs/[product]/` (149 images, 77MB total)
+- Tracking: `scripts/data/processed-article-tweets.json`
+
+**Documentation**:
+- `.trees/xai-trackkols/ARTICLE_GENERATION_VERIFICATION_SUMMARY.md`
+- `.trees/xai-trackkols/DEPLOYMENT_VERIFICATION_SUMMARY.md`
+- `.trees/xai-trackkols/DOCUMENTATION_INDEXER_COMPLETION_SUMMARY.md`
+
+---
+
 ## 2.8 Partnership Announcements Fetch
 
 **Workflow File**: `.github/workflows/fetch-twitter-partnerships.yml`
