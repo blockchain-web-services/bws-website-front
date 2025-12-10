@@ -1,0 +1,604 @@
+{
+  "svg": [
+    {
+      "old": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/blockchain-badges/blockchain-badges-0.png",
+      "new": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/blockchain-badges/blockchain-badges-0.svg"
+    },
+    {
+      "old": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/blockchain-badges/blockchain-badges-1.png",
+      "new": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/blockchain-badges/blockchain-badges-1.svg"
+    },
+    {
+      "old": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/blockchain-badges/blockchain-badges-10.png",
+      "new": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/blockchain-badges/blockchain-badges-10.svg"
+    },
+    {
+      "old": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/blockchain-badges/blockchain-badges-11.png",
+      "new": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/blockchain-badges/blockchain-badges-11.svg"
+    },
+    {
+      "old": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/blockchain-badges/blockchain-badges-12.png",
+      "new": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/blockchain-badges/blockchain-badges-12.svg"
+    },
+    {
+      "old": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/blockchain-badges/blockchain-badges-13.png",
+      "new": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/blockchain-badges/blockchain-badges-13.svg"
+    },
+    {
+      "old": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/blockchain-badges/blockchain-badges-15.png",
+      "new": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/blockchain-badges/blockchain-badges-15.svg"
+    },
+    {
+      "old": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/blockchain-badges/blockchain-badges-16.png",
+      "new": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/blockchain-badges/blockchain-badges-16.svg"
+    },
+    {
+      "old": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/blockchain-badges/blockchain-badges-27.png",
+      "new": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/blockchain-badges/blockchain-badges-27.svg"
+    },
+    {
+      "old": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/blockchain-badges/blockchain-badges-28.png",
+      "new": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/blockchain-badges/blockchain-badges-28.svg"
+    },
+    {
+      "old": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/blockchain-badges/blockchain-badges-5.png",
+      "new": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/blockchain-badges/blockchain-badges-5.svg"
+    },
+    {
+      "old": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/blockchain-badges/blockchain-badges-6.png",
+      "new": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/blockchain-badges/blockchain-badges-6.svg"
+    },
+    {
+      "old": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/blockchain-badges/blockchain-badges-7.png",
+      "new": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/blockchain-badges/blockchain-badges-7.svg"
+    },
+    {
+      "old": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/blockchain-badges/blockchain-badges-8.png",
+      "new": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/blockchain-badges/blockchain-badges-8.svg"
+    },
+    {
+      "old": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/blockchain-hash/blockchain-hash-0.png",
+      "new": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/blockchain-hash/blockchain-hash-0.svg"
+    },
+    {
+      "old": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/blockchain-hash/blockchain-hash-1.png",
+      "new": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/blockchain-hash/blockchain-hash-1.svg"
+    },
+    {
+      "old": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/blockchain-hash/blockchain-hash-2.png",
+      "new": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/blockchain-hash/blockchain-hash-2.svg"
+    },
+    {
+      "old": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/blockchain-hash/blockchain-hash-3.png",
+      "new": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/blockchain-hash/blockchain-hash-3.svg"
+    },
+    {
+      "old": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/blockchain-hash/blockchain-hash-4.png",
+      "new": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/blockchain-hash/blockchain-hash-4.svg"
+    },
+    {
+      "old": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/blockchain-hash/blockchain-hash-5.png",
+      "new": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/blockchain-hash/blockchain-hash-5.svg"
+    },
+    {
+      "old": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/blockchain-save/blockchain-save-0.png",
+      "new": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/blockchain-save/blockchain-save-0.svg"
+    },
+    {
+      "old": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/blockchain-save/blockchain-save-1.png",
+      "new": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/blockchain-save/blockchain-save-1.svg"
+    },
+    {
+      "old": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/blockchain-save/blockchain-save-2.png",
+      "new": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/blockchain-save/blockchain-save-2.svg"
+    },
+    {
+      "old": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/blockchain-save/blockchain-save-3.png",
+      "new": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/blockchain-save/blockchain-save-3.svg"
+    },
+    {
+      "old": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/blockchain-save/blockchain-save-4.png",
+      "new": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/blockchain-save/blockchain-save-4.svg"
+    },
+    {
+      "old": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/blockchain-save/blockchain-save-5.png",
+      "new": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/blockchain-save/blockchain-save-5.svg"
+    },
+    {
+      "old": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/bws-ipfs/bws-ipfs-0.png",
+      "new": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/bws-ipfs/bws-ipfs-0.svg"
+    },
+    {
+      "old": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/bws-ipfs/bws-ipfs-1.png",
+      "new": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/bws-ipfs/bws-ipfs-1.svg"
+    },
+    {
+      "old": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/bws-ipfs/bws-ipfs-2.png",
+      "new": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/bws-ipfs/bws-ipfs-2.svg"
+    },
+    {
+      "old": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/bws-ipfs/bws-ipfs-3.png",
+      "new": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/bws-ipfs/bws-ipfs-3.svg"
+    },
+    {
+      "old": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/bws-ipfs/bws-ipfs-4.png",
+      "new": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/bws-ipfs/bws-ipfs-4.svg"
+    },
+    {
+      "old": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/bws-ipfs/bws-ipfs-5.png",
+      "new": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/bws-ipfs/bws-ipfs-5.svg"
+    },
+    {
+      "old": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/esg-credits/esg-credits-0.png",
+      "new": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/esg-credits/esg-credits-0.svg"
+    },
+    {
+      "old": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/esg-credits/esg-credits-1.png",
+      "new": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/esg-credits/esg-credits-1.svg"
+    },
+    {
+      "old": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/esg-credits/esg-credits-10.png",
+      "new": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/esg-credits/esg-credits-10.svg"
+    },
+    {
+      "old": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/esg-credits/esg-credits-11.png",
+      "new": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/esg-credits/esg-credits-11.svg"
+    },
+    {
+      "old": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/esg-credits/esg-credits-12.png",
+      "new": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/esg-credits/esg-credits-12.svg"
+    },
+    {
+      "old": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/esg-credits/esg-credits-13.png",
+      "new": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/esg-credits/esg-credits-13.svg"
+    },
+    {
+      "old": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/esg-credits/esg-credits-14.png",
+      "new": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/esg-credits/esg-credits-14.svg"
+    },
+    {
+      "old": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/esg-credits/esg-credits-15.png",
+      "new": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/esg-credits/esg-credits-15.svg"
+    },
+    {
+      "old": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/esg-credits/esg-credits-16.png",
+      "new": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/esg-credits/esg-credits-16.svg"
+    },
+    {
+      "old": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/esg-credits/esg-credits-17.png",
+      "new": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/esg-credits/esg-credits-17.svg"
+    },
+    {
+      "old": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/esg-credits/esg-credits-18.png",
+      "new": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/esg-credits/esg-credits-18.svg"
+    },
+    {
+      "old": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/esg-credits/esg-credits-19.png",
+      "new": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/esg-credits/esg-credits-19.svg"
+    },
+    {
+      "old": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/esg-credits/esg-credits-2.png",
+      "new": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/esg-credits/esg-credits-2.svg"
+    },
+    {
+      "old": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/esg-credits/esg-credits-20.png",
+      "new": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/esg-credits/esg-credits-20.svg"
+    },
+    {
+      "old": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/esg-credits/esg-credits-21.png",
+      "new": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/esg-credits/esg-credits-21.svg"
+    },
+    {
+      "old": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/esg-credits/esg-credits-22.png",
+      "new": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/esg-credits/esg-credits-22.svg"
+    },
+    {
+      "old": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/esg-credits/esg-credits-23.png",
+      "new": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/esg-credits/esg-credits-23.svg"
+    },
+    {
+      "old": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/esg-credits/esg-credits-24.png",
+      "new": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/esg-credits/esg-credits-24.svg"
+    },
+    {
+      "old": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/esg-credits/esg-credits-25.png",
+      "new": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/esg-credits/esg-credits-25.svg"
+    },
+    {
+      "old": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/esg-credits/esg-credits-26.png",
+      "new": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/esg-credits/esg-credits-26.svg"
+    },
+    {
+      "old": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/esg-credits/esg-credits-27.png",
+      "new": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/esg-credits/esg-credits-27.svg"
+    },
+    {
+      "old": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/esg-credits/esg-credits-28.png",
+      "new": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/esg-credits/esg-credits-28.svg"
+    },
+    {
+      "old": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/esg-credits/esg-credits-29.png",
+      "new": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/esg-credits/esg-credits-29.svg"
+    },
+    {
+      "old": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/esg-credits/esg-credits-3.png",
+      "new": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/esg-credits/esg-credits-3.svg"
+    },
+    {
+      "old": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/esg-credits/esg-credits-30.png",
+      "new": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/esg-credits/esg-credits-30.svg"
+    },
+    {
+      "old": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/esg-credits/esg-credits-31.png",
+      "new": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/esg-credits/esg-credits-31.svg"
+    },
+    {
+      "old": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/esg-credits/esg-credits-4.png",
+      "new": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/esg-credits/esg-credits-4.svg"
+    },
+    {
+      "old": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/esg-credits/esg-credits-5.png",
+      "new": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/esg-credits/esg-credits-5.svg"
+    },
+    {
+      "old": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/esg-credits/esg-credits-6.png",
+      "new": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/esg-credits/esg-credits-6.svg"
+    },
+    {
+      "old": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/esg-credits/esg-credits-7.png",
+      "new": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/esg-credits/esg-credits-7.svg"
+    },
+    {
+      "old": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/esg-credits/esg-credits-8.png",
+      "new": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/esg-credits/esg-credits-8.svg"
+    },
+    {
+      "old": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/esg-credits/esg-credits-9.png",
+      "new": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/esg-credits/esg-credits-9.svg"
+    },
+    {
+      "old": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/fan-game-cube/fan-game-cube-0.png",
+      "new": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/fan-game-cube/fan-game-cube-0.svg"
+    },
+    {
+      "old": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/fan-game-cube/fan-game-cube-1.png",
+      "new": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/fan-game-cube/fan-game-cube-1.svg"
+    },
+    {
+      "old": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/fan-game-cube/fan-game-cube-10.png",
+      "new": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/fan-game-cube/fan-game-cube-10.svg"
+    },
+    {
+      "old": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/fan-game-cube/fan-game-cube-11.png",
+      "new": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/fan-game-cube/fan-game-cube-11.svg"
+    },
+    {
+      "old": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/fan-game-cube/fan-game-cube-12.png",
+      "new": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/fan-game-cube/fan-game-cube-12.svg"
+    },
+    {
+      "old": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/fan-game-cube/fan-game-cube-13.png",
+      "new": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/fan-game-cube/fan-game-cube-13.svg"
+    },
+    {
+      "old": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/fan-game-cube/fan-game-cube-14.png",
+      "new": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/fan-game-cube/fan-game-cube-14.svg"
+    },
+    {
+      "old": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/fan-game-cube/fan-game-cube-15.png",
+      "new": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/fan-game-cube/fan-game-cube-15.svg"
+    },
+    {
+      "old": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/fan-game-cube/fan-game-cube-16.png",
+      "new": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/fan-game-cube/fan-game-cube-16.svg"
+    },
+    {
+      "old": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/fan-game-cube/fan-game-cube-17.png",
+      "new": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/fan-game-cube/fan-game-cube-17.svg"
+    },
+    {
+      "old": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/fan-game-cube/fan-game-cube-18.png",
+      "new": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/fan-game-cube/fan-game-cube-18.svg"
+    },
+    {
+      "old": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/fan-game-cube/fan-game-cube-19.png",
+      "new": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/fan-game-cube/fan-game-cube-19.svg"
+    },
+    {
+      "old": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/fan-game-cube/fan-game-cube-2.png",
+      "new": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/fan-game-cube/fan-game-cube-2.svg"
+    },
+    {
+      "old": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/fan-game-cube/fan-game-cube-20.png",
+      "new": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/fan-game-cube/fan-game-cube-20.svg"
+    },
+    {
+      "old": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/fan-game-cube/fan-game-cube-21.png",
+      "new": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/fan-game-cube/fan-game-cube-21.svg"
+    },
+    {
+      "old": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/fan-game-cube/fan-game-cube-26.png",
+      "new": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/fan-game-cube/fan-game-cube-26.svg"
+    },
+    {
+      "old": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/fan-game-cube/fan-game-cube-27.png",
+      "new": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/fan-game-cube/fan-game-cube-27.svg"
+    },
+    {
+      "old": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/fan-game-cube/fan-game-cube-3.png",
+      "new": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/fan-game-cube/fan-game-cube-3.svg"
+    },
+    {
+      "old": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/fan-game-cube/fan-game-cube-4.png",
+      "new": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/fan-game-cube/fan-game-cube-4.svg"
+    },
+    {
+      "old": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/fan-game-cube/fan-game-cube-5.png",
+      "new": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/fan-game-cube/fan-game-cube-5.svg"
+    },
+    {
+      "old": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/fan-game-cube/fan-game-cube-6.png",
+      "new": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/fan-game-cube/fan-game-cube-6.svg"
+    },
+    {
+      "old": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/fan-game-cube/fan-game-cube-7.png",
+      "new": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/fan-game-cube/fan-game-cube-7.svg"
+    },
+    {
+      "old": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/fan-game-cube/fan-game-cube-8.png",
+      "new": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/fan-game-cube/fan-game-cube-8.svg"
+    },
+    {
+      "old": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/fan-game-cube/fan-game-cube-9.png",
+      "new": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/fan-game-cube/fan-game-cube-9.svg"
+    },
+    {
+      "old": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/nftzk/nftzk-0.png",
+      "new": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/nftzk/nftzk-0.svg"
+    },
+    {
+      "old": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/nftzk/nftzk-1.png",
+      "new": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/nftzk/nftzk-1.svg"
+    },
+    {
+      "old": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/nftzk/nftzk-2.png",
+      "new": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/nftzk/nftzk-2.svg"
+    },
+    {
+      "old": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/nftzk/nftzk-3.png",
+      "new": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/nftzk/nftzk-3.svg"
+    },
+    {
+      "old": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/nftzk/nftzk-4.png",
+      "new": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/nftzk/nftzk-4.svg"
+    },
+    {
+      "old": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/nftzk/nftzk-5.png",
+      "new": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/nftzk/nftzk-5.svg"
+    },
+    {
+      "old": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/nftzk/nftzk-6.png",
+      "new": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/nftzk/nftzk-6.svg"
+    },
+    {
+      "old": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/nftzk/nftzk-7.png",
+      "new": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/nftzk/nftzk-7.svg"
+    },
+    {
+      "old": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/x-bot/x-bot-0.png",
+      "new": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/x-bot/x-bot-0.svg"
+    },
+    {
+      "old": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/x-bot/x-bot-1.png",
+      "new": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/x-bot/x-bot-1.svg"
+    },
+    {
+      "old": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/x-bot/x-bot-10.png",
+      "new": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/x-bot/x-bot-10.svg"
+    },
+    {
+      "old": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/x-bot/x-bot-12.png",
+      "new": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/x-bot/x-bot-12.svg"
+    },
+    {
+      "old": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/x-bot/x-bot-13.png",
+      "new": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/x-bot/x-bot-13.svg"
+    },
+    {
+      "old": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/x-bot/x-bot-14.png",
+      "new": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/x-bot/x-bot-14.svg"
+    },
+    {
+      "old": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/x-bot/x-bot-15.png",
+      "new": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/x-bot/x-bot-15.svg"
+    },
+    {
+      "old": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/x-bot/x-bot-3.png",
+      "new": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/x-bot/x-bot-3.svg"
+    },
+    {
+      "old": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/x-bot/x-bot-4.png",
+      "new": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/x-bot/x-bot-4.svg"
+    },
+    {
+      "old": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/x-bot/x-bot-5.png",
+      "new": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/x-bot/x-bot-5.svg"
+    },
+    {
+      "old": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/x-bot/x-bot-6.png",
+      "new": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/x-bot/x-bot-6.svg"
+    },
+    {
+      "old": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/x-bot/x-bot-7.png",
+      "new": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/x-bot/x-bot-7.svg"
+    },
+    {
+      "old": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/x-bot/x-bot-8.png",
+      "new": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/x-bot/x-bot-8.svg"
+    },
+    {
+      "old": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/x-bot/x-bot-9.png",
+      "new": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/x-bot/x-bot-9.svg"
+    }
+  ],
+  "jpg": [
+    {
+      "old": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/blockchain-badges/blockchain-badges-14.png",
+      "new": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/blockchain-badges/blockchain-badges-14.jpg"
+    },
+    {
+      "old": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/blockchain-badges/blockchain-badges-17.png",
+      "new": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/blockchain-badges/blockchain-badges-17.jpg"
+    },
+    {
+      "old": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/blockchain-badges/blockchain-badges-18.png",
+      "new": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/blockchain-badges/blockchain-badges-18.jpg"
+    },
+    {
+      "old": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/blockchain-badges/blockchain-badges-19.png",
+      "new": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/blockchain-badges/blockchain-badges-19.jpg"
+    },
+    {
+      "old": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/blockchain-badges/blockchain-badges-2.png",
+      "new": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/blockchain-badges/blockchain-badges-2.jpg"
+    },
+    {
+      "old": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/blockchain-badges/blockchain-badges-20.png",
+      "new": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/blockchain-badges/blockchain-badges-20.jpg"
+    },
+    {
+      "old": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/blockchain-badges/blockchain-badges-21.png",
+      "new": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/blockchain-badges/blockchain-badges-21.jpg"
+    },
+    {
+      "old": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/blockchain-badges/blockchain-badges-22.png",
+      "new": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/blockchain-badges/blockchain-badges-22.jpg"
+    },
+    {
+      "old": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/blockchain-badges/blockchain-badges-23.png",
+      "new": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/blockchain-badges/blockchain-badges-23.jpg"
+    },
+    {
+      "old": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/blockchain-badges/blockchain-badges-24.png",
+      "new": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/blockchain-badges/blockchain-badges-24.jpg"
+    },
+    {
+      "old": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/blockchain-badges/blockchain-badges-25.png",
+      "new": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/blockchain-badges/blockchain-badges-25.jpg"
+    },
+    {
+      "old": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/blockchain-badges/blockchain-badges-26.png",
+      "new": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/blockchain-badges/blockchain-badges-26.jpg"
+    },
+    {
+      "old": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/blockchain-badges/blockchain-badges-29.png",
+      "new": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/blockchain-badges/blockchain-badges-29.jpg"
+    },
+    {
+      "old": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/blockchain-badges/blockchain-badges-3.png",
+      "new": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/blockchain-badges/blockchain-badges-3.jpg"
+    },
+    {
+      "old": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/blockchain-badges/blockchain-badges-30.png",
+      "new": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/blockchain-badges/blockchain-badges-30.jpg"
+    },
+    {
+      "old": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/blockchain-badges/blockchain-badges-31.png",
+      "new": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/blockchain-badges/blockchain-badges-31.jpg"
+    },
+    {
+      "old": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/blockchain-badges/blockchain-badges-32.png",
+      "new": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/blockchain-badges/blockchain-badges-32.jpg"
+    },
+    {
+      "old": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/blockchain-badges/blockchain-badges-33.png",
+      "new": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/blockchain-badges/blockchain-badges-33.jpg"
+    },
+    {
+      "old": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/blockchain-badges/blockchain-badges-34.png",
+      "new": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/blockchain-badges/blockchain-badges-34.jpg"
+    },
+    {
+      "old": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/blockchain-badges/blockchain-badges-35.png",
+      "new": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/blockchain-badges/blockchain-badges-35.jpg"
+    },
+    {
+      "old": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/blockchain-badges/blockchain-badges-4.png",
+      "new": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/blockchain-badges/blockchain-badges-4.jpg"
+    },
+    {
+      "old": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/blockchain-badges/blockchain-badges-9.png",
+      "new": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/blockchain-badges/blockchain-badges-9.jpg"
+    },
+    {
+      "old": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/bws-ipfs/bws-ipfs-6.png",
+      "new": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/bws-ipfs/bws-ipfs-6.jpg"
+    },
+    {
+      "old": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/fan-game-cube/fan-game-cube-22.png",
+      "new": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/fan-game-cube/fan-game-cube-22.jpg"
+    },
+    {
+      "old": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/fan-game-cube/fan-game-cube-23.png",
+      "new": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/fan-game-cube/fan-game-cube-23.jpg"
+    },
+    {
+      "old": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/fan-game-cube/fan-game-cube-24.png",
+      "new": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/fan-game-cube/fan-game-cube-24.jpg"
+    },
+    {
+      "old": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/fan-game-cube/fan-game-cube-25.png",
+      "new": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/fan-game-cube/fan-game-cube-25.jpg"
+    },
+    {
+      "old": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/fan-game-cube/fan-game-cube-28.png",
+      "new": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/fan-game-cube/fan-game-cube-28.jpg"
+    },
+    {
+      "old": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/fan-game-cube/fan-game-cube-29.png",
+      "new": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/fan-game-cube/fan-game-cube-29.jpg"
+    },
+    {
+      "old": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/fan-game-cube/fan-game-cube-30.png",
+      "new": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/fan-game-cube/fan-game-cube-30.jpg"
+    },
+    {
+      "old": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/fan-game-cube/fan-game-cube-31.png",
+      "new": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/fan-game-cube/fan-game-cube-31.jpg"
+    },
+    {
+      "old": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/nftzk/nftzk-10.png",
+      "new": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/nftzk/nftzk-10.jpg"
+    },
+    {
+      "old": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/nftzk/nftzk-8.png",
+      "new": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/nftzk/nftzk-8.jpg"
+    },
+    {
+      "old": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/nftzk/nftzk-9.png",
+      "new": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/nftzk/nftzk-9.jpg"
+    },
+    {
+      "old": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/x-bot/x-bot-11.png",
+      "new": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/x-bot/x-bot-11.jpg"
+    },
+    {
+      "old": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/x-bot/x-bot-16.png",
+      "new": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/x-bot/x-bot-16.jpg"
+    },
+    {
+      "old": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/x-bot/x-bot-17.png",
+      "new": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/x-bot/x-bot-17.jpg"
+    },
+    {
+      "old": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/x-bot/x-bot-18.png",
+      "new": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/x-bot/x-bot-18.jpg"
+    },
+    {
+      "old": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/x-bot/x-bot-2.png",
+      "new": "/mnt/x/Git/blockchain-web-services/bws/bws-front/bws-website-front/.trees/xai-trackkols/public/assets/images/docs/x-bot/x-bot-2.jpg"
+    }
+  ],
+  "png": [],
+  "unknown": []
+}
