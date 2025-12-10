@@ -605,32 +605,19 @@ function generateContentComponent(slug, articleData, images, publishDate, docsUr
   if (articleData.sections.length > 0 &&
       articleData.sections[0].imagePlacement === 'image-after-title' &&
       images.length > 0) {
-    const sizeConstraint = getImageSizeConstraint(images[0].src);
-
-    // Get first section's first paragraph as intro text for column layout
-    const firstSection = articleData.sections[0];
-    const firstParagraphs = firstSection.content.split('\n\n').filter(p => p.trim().length > 0);
-    const introParagraph = firstParagraphs[0] || '';
-
-    // Two-column layout: Image (left) + Intro text (right)
+    // Single-column centered image with caption after title
     titleImageHTML = `    <div class="container-medium" style="margin-top: 2rem; margin-bottom: 2rem;">
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start;">
-        <figure style="margin: 0;">
-          <img
-            src="${images[0].src}"
-            alt="${images[0].alt}"
-            class="article-image-clickable"
-            data-image-src="${images[0].src}"
-            style="width: 100%; border-radius: 8px; cursor: pointer; display: block;"
-            loading="eager"
-          />
-        </figure>
-        <div style="padding-top: 1rem;">
-          <p style="font-size: 1.125rem; line-height: 1.75; color: #374151; margin: 0;">
-            ${introParagraph.trim().replace(/\n/g, ' ')}
-          </p>
-        </div>
-      </div>
+      <figure style="margin: 0; text-align: center;">
+        <img
+          src="${images[0].src}"
+          alt="${images[0].alt}"
+          class="article-image-clickable"
+          data-image-src="${images[0].src}"
+          style="max-width: 100%; height: auto; border-radius: 8px; cursor: pointer; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);"
+          loading="eager"
+        />
+        <figcaption style="margin-top: 0.75rem; font-size: 0.9rem; color: #666; font-style: italic;">${images[0].alt}</figcaption>
+      </figure>
     </div>\n`;
     imageIndex = 1; // Skip first image in section loop
   }
@@ -644,9 +631,8 @@ function generateContentComponent(slug, articleData, images, publishDate, docsUr
     // Add main content - split into multiple paragraphs on double line breaks
     const paragraphs = section.content.split('\n\n').filter(p => p.trim().length > 0);
 
-    // If this is the first section and it has image-after-title placement,
-    // skip the first paragraph since it's already shown in the column layout
-    const startIndex = (index === 0 && section.imagePlacement === 'image-after-title') ? 1 : 0;
+    // With single-column layout, show all paragraphs
+    const startIndex = 0;
 
     paragraphs.slice(startIndex).forEach(paragraph => {
       sectionsHTML += `        <p>\n          ${paragraph.trim().replace(/\n/g, '\n          ')}\n        </p>\n`;
@@ -654,8 +640,6 @@ function generateContentComponent(slug, articleData, images, publishDate, docsUr
 
     // Add special section types
     if (sectionType === 'advantages' && section.advantages && section.advantages.length > 0) {
-      // Add clearfix before advantages section to prevent image overlap
-      sectionsHTML += `        <div style="clear: both;"></div>\n`;
       sectionsHTML += `        <div class="solution-advantages">\n`;
       sectionsHTML += `          <h4>Why Choose ${articleData.product}</h4>\n`;
       sectionsHTML += `          <ul>\n`;
@@ -688,32 +672,33 @@ function generateContentComponent(slug, articleData, images, publishDate, docsUr
     // Add image if placement specified and images available
     // Note: Maximum ONE image per article - imageIndex ensures only first placement gets image
     if (section.imagePlacement === 'image-after-section' && imageIndex < images.length) {
-      const sizeConstraint = getImageSizeConstraint(images[imageIndex].src);
-      sectionsHTML += `        <figure style="float: right; margin: 0 0 1rem 1rem; ${sizeConstraint}">\n`;
+      // Single-column centered image with caption
+      sectionsHTML += `        <figure style="margin: 2rem 0; text-align: center;">\n`;
       sectionsHTML += `          <img\n`;
       sectionsHTML += `            src="${images[imageIndex].src}"\n`;
       sectionsHTML += `            alt="${images[imageIndex].alt}"\n`;
       sectionsHTML += `            class="article-image-clickable"\n`;
       sectionsHTML += `            data-image-src="${images[imageIndex].src}"\n`;
-      sectionsHTML += `            style="width: 100%; border-radius: 8px; cursor: pointer;"\n`;
+      sectionsHTML += `            style="max-width: 100%; height: auto; border-radius: 8px; cursor: pointer; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);"\n`;
       sectionsHTML += `            loading="lazy"\n`;
       sectionsHTML += `          />\n`;
+      sectionsHTML += `          <figcaption style="margin-top: 0.75rem; font-size: 0.9rem; color: #666; font-style: italic;">${images[imageIndex].alt}</figcaption>\n`;
       sectionsHTML += `        </figure>\n`;
       imageIndex++;
     } else if (section.imagePlacement === 'image-mid-section' && imageIndex < images.length) {
-      // Insert image mid-section by splitting content
+      // Insert image mid-section by splitting content - single column centered
       const paragraphs = section.content.split('\n\n');
       if (paragraphs.length > 1) {
-        const sizeConstraint = getImageSizeConstraint(images[imageIndex].src);
-        sectionsHTML += `        <figure style="float: right; margin: 0 0 1rem 1rem; ${sizeConstraint}">\n`;
+        sectionsHTML += `        <figure style="margin: 2rem 0; text-align: center;">\n`;
         sectionsHTML += `          <img\n`;
         sectionsHTML += `            src="${images[imageIndex].src}"\n`;
         sectionsHTML += `            alt="${images[imageIndex].alt}"\n`;
         sectionsHTML += `            class="article-image-clickable"\n`;
         sectionsHTML += `            data-image-src="${images[imageIndex].src}"\n`;
-        sectionsHTML += `            style="width: 100%; border-radius: 8px; cursor: pointer;"\n`;
+        sectionsHTML += `            style="max-width: 100%; height: auto; border-radius: 8px; cursor: pointer; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);"\n`;
         sectionsHTML += `            loading="lazy"\n`;
         sectionsHTML += `          />\n`;
+        sectionsHTML += `          <figcaption style="margin-top: 0.75rem; font-size: 0.9rem; color: #666; font-style: italic;">${images[imageIndex].alt}</figcaption>\n`;
         sectionsHTML += `        </figure>\n`;
         imageIndex++;
       }
