@@ -21,7 +21,8 @@ import { fetchProductDocs } from '../utils/docs-fetcher.js';
 import { generateEducationalThread } from '../utils/thread-generator.js';
 import { postThread, previewThread } from '../utils/twitter-thread-client.js';
 import { createReadWriteClient, followUser, likeTweet } from '../utils/twitter-client.js';
-import { sleep } from '../utils/kol-utils.js';
+import { evaluateTweetForReply } from '../utils/claude-client.js';
+import { sleep, loadBWSProducts } from '../utils/kol-utils.js';
 
 const __dirname = __scriptsDir;
 
@@ -179,11 +180,7 @@ async function replyToProductTweets() {
   const config = await loadReplyConfig();
   const queue = await loadProductQueue();
   const repliesData = await loadProductReplies();
-
-  // Load product highlights for product information
-  const highlightsPath = path.join(__dirname, '..', 'config', 'product-highlights.json');
-  const highlightsData = await fs.readFile(highlightsPath, 'utf-8');
-  const productsInfo = JSON.parse(highlightsData);
+  const productsInfo = loadBWSProducts();
 
   console.log('📋 Configuration:');
   console.log(`   - Replies per run: ${config.repliesPerRun}`);
@@ -232,7 +229,7 @@ async function replyToProductTweets() {
       console.log(`Tweet ID: ${tweet.id}`);
       console.log(`Author: @${tweet.author.username}`);
       console.log(`Text: "${tweet.text}"`);
-      console.log(`Engagement: ${tweet.public_metrics.like_count} likes, ${tweet.public_metrics.retweet_count} RTs`);
+      console.log(`Engagement: ${tweet.engagement.likes} likes, ${tweet.engagement.retweets} RTs`);
 
       // Load product information
       const productInfo = productsInfo.productHighlights[tweet.product];
@@ -244,19 +241,22 @@ async function replyToProductTweets() {
       const docsContent = await fetchProductDocs(tweet.product, productInfo.docsPath);
 
       // Evaluate relevance with Claude AI
-      // Note: For product tweets, discovery already filtered for relevance
-      // So we use a simplified evaluation that always passes
       console.log(`\n🤖 Evaluating tweet relevance...`);
-      const evaluation = {
-        relevanceScore: 85, // Discovery already filtered these
-        detectedPainPoint: 'Product-related discussion',
-        suggestedApproach: 'Educational thread',
-        shouldReply: true
-      };
+      const evaluation = await evaluateTweetForReply(
+        tweet.text,
+        tweet.product,
+        productInfo
+      );
 
-      console.log(`   📊 Relevance Score: ${evaluation.relevanceScore}/100 (pre-filtered by discovery)`);
-      console.log(`   💡 Detected Pain Point: ${evaluation.detectedPainPoint}`);
-      console.log(`   🎯 Suggested Approach: ${evaluation.suggestedApproach}`);
+      console.log(`   📊 Relevance Score: ${evaluation.relevanceScore}/100`);
+      console.log(`   💡 Detected Pain Point: ${evaluation.detectedPainPoint || 'None'}`);
+      console.log(`   🎯 Suggested Approach: ${evaluation.suggestedApproach || 'None'}`);
+
+      if (evaluation.relevanceScore < config.relevanceThreshold) {
+        console.log(`   ⚠️  Below threshold (${config.relevanceThreshold}), skipping...`);
+        markAsProcessed(queue, tweet.id, 'low_relevance');
+        continue;
+      }
 
       // Generate educational thread
       const thread = await generateEducationalThread(

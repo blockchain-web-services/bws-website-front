@@ -1,89 +1,19 @@
 {
-  "replies": [
-    {
-      "originalTweetId": "1998258891168338281",
-      "originalTweetAuthor": "ZahidGishkori",
-      "product": "Blockchain Badges",
-      "threadTweetIds": [
-        "1998313827423924453",
-        "1998313849276281251",
-        "1998313871040491955",
-        "1998313893203259663"
-      ],
-      "templateUsed": "how-to",
-      "templateName": "How-To Guide",
-      "approach": "how-to-guide",
-      "relevanceScore": 85,
-      "timestamp": "2025-12-09T08:48:53.848Z",
-      "threadPreview": "This is exactly why credential fraud is such a serious problem. Fake stamps and forged documents und"
-    },
-    {
-      "originalTweetId": "1985770851091038557",
-      "originalTweetAuthor": "Dogi1313",
-      "product": "BWS IPFS",
-      "threadTweetIds": [
-        "1998314436466229360",
-        "1998314458175963471",
-        "1998314480078651515",
-        "1998314501826105612"
-      ],
-      "templateUsed": "how-to",
-      "templateName": "How-To Guide",
-      "approach": "how-to-guide",
-      "relevanceScore": 85,
-      "timestamp": "2025-12-09T08:51:18.957Z",
-      "threadPreview": "Both chains have strengths, but here's something to consider: decentralized storage doesn't have to "
-    },
-    {
-      "originalTweetId": "1986321903473090905",
-      "originalTweetAuthor": "KyousouMidori",
-      "product": "NFT.zK",
-      "threadTweetIds": [
-        "1998423965610696927",
-        "1998423988037640341",
-        "1998424010179457104",
-        "1998424032161808505"
-      ],
-      "templateUsed": "problem-solution",
-      "templateName": "Problem-Solution",
-      "approach": "problem-solution",
-      "relevanceScore": 85,
-      "timestamp": "2025-12-09T16:06:33.019Z",
-      "threadPreview": "Creating and minting NFTs shouldn't require blockchain expertise. Most projects struggle with the te"
-    },
-    {
-      "originalTweetId": "1998197237969793420",
-      "originalTweetAuthor": "bulltom39",
-      "product": "Blockchain Hash",
-      "threadTweetIds": [
-        "1998424577618354679",
-        "1998424599877550298",
-        "1998424622036078716",
-        "1998424644056203362"
-      ],
-      "templateUsed": "problem-solution",
-      "templateName": "Problem-Solution",
-      "approach": "problem-solution",
-      "relevanceScore": 85,
-      "timestamp": "2025-12-09T16:08:58.921Z",
-      "threadPreview": "Privacy on-chain is crucial, but many devs face another barrier: blockchain complexity itself. Manag"
-    }
-  ],
+  "replies": [],
   "stats": {
-    "totalThreads": 4,
+    "totalThreads": 0,
     "byProduct": {
-      "Blockchain Badges": 1,
-      "BWS IPFS": 1,
-      "NFT.zK": 1,
-      "Blockchain Hash": 1
+      "Blockchain Badges": 0,
+      "BWS IPFS": 0,
+      "NFT.zK": 0,
+      "Blockchain Hash": 0
     },
     "byApproach": {
       "how-to": 0,
-      "problem-solution": 2,
-      "feature-showcase": 0,
-      "how-to-guide": 2
+      "problem-solution": 0,
+      "feature-showcase": 0
     },
-    "averageRelevanceScore": 85,
-    "lastReply": "2025-12-09T16:08:58.921Z"
+    "averageRelevanceScore": 0,
+    "lastReply": null
   }
 }

@@ -229,7 +229,7 @@ async function generateEducationalThread(
 
   try {
     const response = await claude.messages.create({
-      model: 'claude-sonnet-4-5-20250929',
+      model: 'claude-3-5-sonnet-20241022',
       max_tokens: 2000,
       temperature: 0.8,
       messages: [{
@@ -243,7 +243,7 @@ async function generateEducationalThread(
     // Strip markdown code fences if present
     responseText = responseText.trim();
     if (responseText.startsWith('```json')) {
-      responseText = responseText.replace(/^```json\s*/,  '').replace(/\s*```$/,  '');
+      responseText = responseText.replace(/^```json\s*/, '').replace(/\s*```$/, '');
     } else if (responseText.startsWith('```')) {
       responseText = responseText.replace(/^```\s*/, '').replace(/\s*```$/, '');
     }

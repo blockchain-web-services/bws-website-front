@@ -4,6 +4,7 @@ import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import crypto from 'crypto';
 import dotenv from 'dotenv';
+import { recordArticleGeneration } from './crawling/utils/article-posting-scheduler.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -401,6 +402,17 @@ async function main() {
 
     // Save all posts
     savePosts(existingPosts);
+
+    // Record article generation for dynamic scheduler
+    const newArticlesCount = articlesNeedingPosts.length;
+    if (newArticlesCount > 0) {
+      try {
+        await recordArticleGeneration(newArticlesCount);
+      } catch (recordError) {
+        console.error('⚠️  Failed to record article generation:', recordError.message);
+        // Non-critical error, continue
+      }
+    }
 
     console.log('=' .repeat(60));
     console.log('\n✅ Post generation complete!\n');
