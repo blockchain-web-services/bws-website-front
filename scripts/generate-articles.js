@@ -558,6 +558,22 @@ function sanitizeComponentName(slug) {
 }
 
 /**
+ * Generate descriptive caption for image based on product and article subtitle
+ * Avoids generic captions like "Product screenshot" or "cover"
+ */
+function generateImageCaption(productName, articleSubtitle) {
+  // Extract key benefit or feature from subtitle (first sentence before period)
+  const firstSentence = articleSubtitle.split(/[.!?]/)[0].trim();
+
+  // Create descriptive caption using product name and key benefit
+  // Format: "ProductName: brief benefit description"
+  const caption = `${productName}: ${firstSentence.charAt(0).toLowerCase() + firstSentence.slice(1)}`;
+
+  // Limit to reasonable length (max 100 chars)
+  return caption.length > 100 ? caption.substring(0, 97) + '...' : caption;
+}
+
+/**
  * Get image dimensions and determine appropriate min-size constraint
  * Returns style string with min-width or min-height based on image orientation
  */
@@ -606,6 +622,7 @@ function generateContentComponent(slug, articleData, images, publishDate, docsUr
       articleData.sections[0].imagePlacement === 'image-after-title' &&
       images.length > 0) {
     // Single-column centered image with caption after title
+    const caption = generateImageCaption(articleData.product, articleData.articleSubtitle);
     titleImageHTML = `    <div class="container-medium" style="margin-top: 2rem; margin-bottom: 2rem;">
       <figure style="margin: 0; text-align: center;">
         <img
@@ -616,7 +633,7 @@ function generateContentComponent(slug, articleData, images, publishDate, docsUr
           style="max-width: 100%; height: auto; border-radius: 8px; cursor: pointer; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);"
           loading="eager"
         />
-        <figcaption style="margin-top: 0.75rem; font-size: 0.9rem; color: #666; font-style: italic;">${images[0].alt}</figcaption>
+        <figcaption style="margin-top: 0.75rem; font-size: 0.9rem; color: #666; font-style: italic;">${caption}</figcaption>
       </figure>
     </div>\n`;
     imageIndex = 1; // Skip first image in section loop
@@ -673,6 +690,7 @@ function generateContentComponent(slug, articleData, images, publishDate, docsUr
     // Note: Maximum ONE image per article - imageIndex ensures only first placement gets image
     if (section.imagePlacement === 'image-after-section' && imageIndex < images.length) {
       // Single-column centered image with caption
+      const caption = generateImageCaption(articleData.product, articleData.articleSubtitle);
       sectionsHTML += `        <figure style="margin: 2rem 0; text-align: center;">\n`;
       sectionsHTML += `          <img\n`;
       sectionsHTML += `            src="${images[imageIndex].src}"\n`;
@@ -682,13 +700,14 @@ function generateContentComponent(slug, articleData, images, publishDate, docsUr
       sectionsHTML += `            style="max-width: 100%; height: auto; border-radius: 8px; cursor: pointer; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);"\n`;
       sectionsHTML += `            loading="lazy"\n`;
       sectionsHTML += `          />\n`;
-      sectionsHTML += `          <figcaption style="margin-top: 0.75rem; font-size: 0.9rem; color: #666; font-style: italic;">${images[imageIndex].alt}</figcaption>\n`;
+      sectionsHTML += `          <figcaption style="margin-top: 0.75rem; font-size: 0.9rem; color: #666; font-style: italic;">${caption}</figcaption>\n`;
       sectionsHTML += `        </figure>\n`;
       imageIndex++;
     } else if (section.imagePlacement === 'image-mid-section' && imageIndex < images.length) {
       // Insert image mid-section by splitting content - single column centered
       const paragraphs = section.content.split('\n\n');
       if (paragraphs.length > 1) {
+        const caption = generateImageCaption(articleData.product, articleData.articleSubtitle);
         sectionsHTML += `        <figure style="margin: 2rem 0; text-align: center;">\n`;
         sectionsHTML += `          <img\n`;
         sectionsHTML += `            src="${images[imageIndex].src}"\n`;
@@ -698,7 +717,7 @@ function generateContentComponent(slug, articleData, images, publishDate, docsUr
         sectionsHTML += `            style="max-width: 100%; height: auto; border-radius: 8px; cursor: pointer; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);"\n`;
         sectionsHTML += `            loading="lazy"\n`;
         sectionsHTML += `          />\n`;
-        sectionsHTML += `          <figcaption style="margin-top: 0.75rem; font-size: 0.9rem; color: #666; font-style: italic;">${images[imageIndex].alt}</figcaption>\n`;
+        sectionsHTML += `          <figcaption style="margin-top: 0.75rem; font-size: 0.9rem; color: #666; font-style: italic;">${caption}</figcaption>\n`;
         sectionsHTML += `        </figure>\n`;
         imageIndex++;
       }
