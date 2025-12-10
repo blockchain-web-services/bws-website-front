@@ -117,14 +117,35 @@ const {
           ("ontouchstart" in o || (o.DocumentTouch && c instanceof DocumentTouch)) && (n.className += t + "touch"));
       })(window, document);
     </script>
+    <!-- Favicon - SVG for light and dark mode support -->
+    <link
+      href="/assets/images/logo-void.svg"
+      rel="icon"
+      type="image/svg+xml"
+      media="(prefers-color-scheme: light)"
+    />
+    <link
+      href="/assets/images/logo-void.svg"
+      rel="icon"
+      type="image/svg+xml"
+      media="(prefers-color-scheme: dark)"
+    />
+    <!-- Fallback for browsers that don't support SVG favicons -->
     <link
       href="/assets/images/6474d385cfec71cb21a92251/6546cb1c2a1b5bd337733b38_logo-for-dark-32x32.png"
       rel="shortcut icon"
       type="image/x-icon"
     />
+    <!-- Apple touch icon -->
     <link
-      href="/assets/images/6474d385cfec71cb21a92251/6546cade4aea8f975475bc03_logo-for-dark-256x256.png"
+      href="/assets/images/logo-void.svg"
       rel="apple-touch-icon"
+      sizes="48x48"
+    />
+    <link
+      href="/assets/images/logo-void.svg"
+      rel="apple-touch-icon"
+      sizes="180x180"
     />
     <link href="https://www.bws.ninja" rel="canonical" />
     <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-TKTH70X52B"></script>
