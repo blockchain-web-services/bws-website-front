@@ -569,16 +569,19 @@ async function generateImageCaption(anthropic, productName, articleSubtitle) {
       temperature: 0.7,
       messages: [{
         role: 'user',
-        content: `Generate a short, complete sentence (40-60 characters) that summarizes this article about ${productName}.
+        content: `Generate a short, complete sentence that summarizes this article about ${productName}.
 
 Article summary: ${articleSubtitle}
 
-Requirements:
-- Must be a complete grammatically correct sentence
+CRITICAL REQUIREMENTS:
+- Must be a COMPLETE grammatically correct sentence (no incomplete endings like "with." or "through secure.")
 - Start with "${productName}" followed by an action verb
-- No truncation or "..."
-- Between 40-60 characters total
-- Format: "${productName} [verb] [object]."
+- STRICT length limit: 50-60 characters total (count carefully!)
+- If you cannot fit a complete thought in 60 chars, use a simpler verb/object combination
+- Format: "${productName} [verb] [object/description]."
+- Examples of good captions:
+  * "Fan Game Cube transforms digital fan engagement through NFT."
+  * "ESG Credits validates green asset performance via blockchain."
 
 Output only the caption sentence, nothing else.`
       }]
@@ -594,21 +597,8 @@ Output only the caption sentence, nothing else.`
       caption += '.';
     }
 
-    // Validate length (max 65 chars to be safe)
-    if (caption.length > 65) {
-      // Truncate at last complete word before 60 chars
-      const words = caption.split(' ');
-      let shortCaption = words[0];
-      for (let i = 1; i < words.length; i++) {
-        const test = shortCaption + ' ' + words[i];
-        if (test.length <= 60) {
-          shortCaption = test;
-        } else {
-          break;
-        }
-      }
-      caption = shortCaption.replace(/\.$/, '') + '.';
-    }
+    // No truncation - trust Claude to generate complete sentences
+    // User requirement: "sentence should be a final sentence. not a truncated one!"
 
     return caption;
   } catch (error) {
