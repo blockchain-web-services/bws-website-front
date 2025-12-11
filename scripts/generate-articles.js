@@ -562,15 +562,21 @@ function sanitizeComponentName(slug) {
  * Avoids generic captions like "Product screenshot" or "cover"
  */
 function generateImageCaption(productName, articleSubtitle) {
-  // Extract key benefit or feature from subtitle (first sentence before period)
-  const firstSentence = articleSubtitle.split(/[.!?]/)[0].trim();
+  // Extract key phrase from subtitle (first clause up to comma/semicolon, or first few words)
+  const firstClause = articleSubtitle.split(/[,;]/)[0].trim();
 
-  // Create descriptive caption using product name and key benefit
+  // Create concise caption using product name and key phrase
   // Format: "ProductName: brief benefit description"
-  const caption = `${productName}: ${firstSentence.charAt(0).toLowerCase() + firstSentence.slice(1)}`;
+  let caption = `${productName}: ${firstClause.charAt(0).toLowerCase() + firstClause.slice(1)}`;
 
-  // Limit to reasonable length (max 100 chars)
-  return caption.length > 100 ? caption.substring(0, 97) + '...' : caption;
+  // Limit to mid-to-short sentence (max 60 chars) and ensure word boundaries
+  if (caption.length > 60) {
+    // Find last space before character 57 to avoid mid-word truncation
+    const truncateAt = caption.lastIndexOf(' ', 57);
+    caption = caption.substring(0, truncateAt > 30 ? truncateAt : 57) + '...';
+  }
+
+  return caption;
 }
 
 /**
