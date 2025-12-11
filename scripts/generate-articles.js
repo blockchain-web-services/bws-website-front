@@ -559,32 +559,60 @@ function sanitizeComponentName(slug) {
 
 /**
  * Generate descriptive caption for image based on product and article subtitle
- * Creates a complete, concise sentence without truncation
+ * Creates a complete, concise sentence summarizing the article content
  */
 function generateImageCaption(productName, articleSubtitle) {
-  // Extract the core problem or benefit from the subtitle
-  // Format: "ProductName solves/provides/enables [key benefit]."
+  // Extract key verbs and nouns from subtitle to form a complete sentence
+  // Target: One short, complete sentence (40-60 chars) summarizing the article
 
-  // Common patterns to extract key action verbs and benefits
   const subtitle = articleSubtitle.toLowerCase();
 
-  // Simple complete sentence based on product name
-  // Keep it short and descriptive without truncation
-  let caption = `${productName} provides innovative solutions.`;
+  // Extract main action/benefit from subtitle
+  // Look for key patterns like "provides X", "enables Y", "transforms Z"
 
-  // Try to extract a more specific benefit if possible
-  if (subtitle.includes('blockchain')) {
-    caption = `${productName} uses blockchain technology.`;
-  } else if (subtitle.includes('nft') || subtitle.includes('tokeniz')) {
-    caption = `${productName} tokenizes digital assets.`;
-  } else if (subtitle.includes('track') || subtitle.includes('monitor')) {
-    caption = `${productName} tracks engagement metrics.`;
-  } else if (subtitle.includes('credential') || subtitle.includes('badge')) {
-    caption = `${productName} issues digital credentials.`;
-  } else if (subtitle.includes('environment') || subtitle.includes('esg')) {
-    caption = `${productName} provides ESG reporting.`;
-  } else if (subtitle.includes('sport') || subtitle.includes('fan')) {
-    caption = `${productName} engages sports fans.`;
+  // Try to identify the main verb and object from the subtitle
+  let caption = '';
+
+  // Pattern: "X provides/enables/offers/delivers Y"
+  const actionMatch = subtitle.match(/(provid\w+|enabl\w+|offer\w+|deliver\w+|transform\w+|creat\w+|generat\w+)\s+([^.,]+)/);
+  if (actionMatch) {
+    const action = actionMatch[1].replace(/s$/, 'es').replace(/e$/, 'es');
+    const object = actionMatch[2].trim().split(' ').slice(0, 4).join(' ');
+    caption = `${productName} ${action} ${object}.`;
+  }
+
+  // Pattern: "tokenizing X" -> "Product tokenizes X"
+  else if (subtitle.match(/tokeniz\w+\s+([^.,]+)/)) {
+    const object = subtitle.match(/tokeniz\w+\s+([^.,]+)/)[1].trim().split(' ').slice(0, 3).join(' ');
+    caption = `${productName} tokenizes ${object}.`;
+  }
+
+  // Pattern: "tracking X" -> "Product tracks X"
+  else if (subtitle.match(/(track\w+|monitor\w+)\s+([^.,]+)/)) {
+    const match = subtitle.match(/(track\w+|monitor\w+)\s+([^.,]+)/);
+    const object = match[2].trim().split(' ').slice(0, 3).join(' ');
+    caption = `${productName} tracks ${object}.`;
+  }
+
+  // Fallback: Use first few words of subtitle as basis
+  else {
+    const words = articleSubtitle.split(' ').slice(0, 6);
+    caption = `${productName} ${words.join(' ').toLowerCase()}.`;
+  }
+
+  // Ensure caption is not too long (max 65 chars for complete sentence)
+  if (caption.length > 65) {
+    // Find a natural break point (after a noun/verb)
+    const words = caption.split(' ');
+    let shortCaption = words[0]; // Start with product name
+    for (let i = 1; i < words.length - 1; i++) {
+      if ((shortCaption + ' ' + words[i]).length < 60) {
+        shortCaption += ' ' + words[i];
+      } else {
+        break;
+      }
+    }
+    caption = shortCaption + '.';
   }
 
   return caption;
