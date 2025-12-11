@@ -15,7 +15,7 @@ permissions:
 
 env:
   NODE_VERSION: "20"
-  MAX_REPLIES_PER_RUN: "1"  # Reduced to 1 to avoid spam detection (Twitter blocks multiple sequential replies)
+  # MAX_REPLIES_PER_RUN now comes from scripts/crawling/config/kol-config.json (currently set to 5)
 
 jobs:
   post-replies:

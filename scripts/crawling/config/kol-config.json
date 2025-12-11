@@ -12,9 +12,9 @@
   },
   "replySettings": {
     "enabled": true,
-    "maxRepliesPerRun": 3,
-    "maxTweetsToEvaluatePerRun": 5,
-    "maxRepliesPerDay": 10,
+    "maxRepliesPerRun": 5,
+    "maxTweetsToEvaluatePerRun": 10,
+    "maxRepliesPerDay": 30,
     "maxRepliesPerKolPerWeek": 2,
     "minRelevanceScoreForReply": 7,
     "minTimeBetweenRepliesMinutes": 60,
