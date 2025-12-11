@@ -23,6 +23,9 @@ const __dirname = path.dirname(__filename);
 const TWITTER_USERNAME = 'BWSCommunity';
 const MAX_TWEETS_TO_FETCH = 50;
 const PROCESSED_TWEETS_PATH = path.join(__dirname, 'data', 'processed-article-tweets.json');
+
+// Product rotation order (1 article per day, rotating through products)
+const PRODUCT_ROTATION = ['X Bot', 'Blockchain Badges', 'ESG Credits', 'Fan Game Cube'];
 const ARTICLES_FILE_PATH = path.join(__dirname, '..', 'src', 'data', 'articles.ts');
 const ARTICLE_IMAGES_DIR = path.join(__dirname, '..', 'public', 'assets', 'images', 'articles');
 const ARTICLE_PAGES_DIR = path.join(__dirname, '..', 'src', 'pages', 'articles');
@@ -1189,6 +1192,19 @@ function writeArticlesFile(articles) {
 }
 
 /**
+ * Get the next product to generate an article for, rotating through products
+ */
+function getNextProduct(processedData) {
+  const lastIndex = processedData.lastProductIndex ?? -1;
+  const nextIndex = (lastIndex + 1) % PRODUCT_ROTATION.length;
+  const product = PRODUCT_ROTATION[nextIndex];
+
+  console.log(`\n   🔄 Product rotation: ${product} (${nextIndex + 1}/${PRODUCT_ROTATION.length})`);
+
+  return { product, index: nextIndex };
+}
+
+/**
  * Main function
  */
 async function main() {
@@ -1245,6 +1261,9 @@ async function main() {
     const tweets = timeline.data.data;
     const includes = timeline.includes || {};
 
+    // Get next product in rotation (1 article per day)
+    const { product: selectedProduct, index: productIndex } = getNextProduct(processedData);
+
     // Generate article content with Claude
     const articleDataList = await generateArticleContent(tweets, includes);
 
@@ -1255,8 +1274,21 @@ async function main() {
       return;
     }
 
+    // Filter to only the selected product (1 article per day)
+    const filteredArticles = articleDataList.filter(article => article.product === selectedProduct);
+
+    if (filteredArticles.length === 0) {
+      console.log(`ℹ️  No tweets found for ${selectedProduct}, skipping for today`);
+      processedData.lastSuccess = new Date().toISOString();
+      processedData.lastProductIndex = productIndex; // Still advance rotation even if no tweets
+      saveProcessedTweets(processedData);
+      return;
+    }
+
+    console.log(`   ✅ Selected 1 article for ${selectedProduct} (filtered ${articleDataList.length - filteredArticles.length} other products)`);
+
     // Process articles (generate pages, components, download images)
-    const { articles } = await processArticles(articleDataList, tweets, includes);
+    const { articles } = await processArticles(filteredArticles, tweets, includes);
 
     if (articles.length === 0) {
       console.log('ℹ️  No articles generated');
@@ -1277,9 +1309,10 @@ async function main() {
       processedData.processedTweetIds = processedData.processedTweetIds.slice(-200);
     }
 
-    // Save state
+    // Save state with product rotation index
     processedData.lastSuccess = new Date().toISOString();
     processedData.failureCount = 0;
+    processedData.lastProductIndex = productIndex; // Save rotation index for next run
     saveProcessedTweets(processedData);
 
     console.log(`\n✨ Completed successfully!`);
