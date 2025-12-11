@@ -1960,6 +1960,44 @@
       "timestamp": "2025-12-11T19:54:07.523Z",
       "status": "posted",
       "dryRun": false
+    },
+    {
+      "id": "1353384573435056128-1994142556071031079-1765495134904",
+      "tweetId": "1994142556071031079",
+      "tweetUrl": "https://twitter.com/CryptoRover/status/1994142556071031079",
+      "kolId": "1353384573435056128",
+      "kolUsername": "CryptoRover",
+      "originalTweetText": "BREAKING:\n\nBLACKROCK CEO LARRY FINK: IT DOESN'T MATTER IF MARKETS RISE AND FALL. BUBBLES COME AND GO.\n\nWHAT MATTERS MOST IS STAYING IN THE MARKET THROUGH ALL CYCLES.",
+      "replyTweetId": "1999257616107864511",
+      "replyText": "What separates microcaps that survive cycles from those that don't?\n\n$BWS Blockchain Hash enables mutable on-chain databases through simple REST API - developers update blockchain data after initial save without wallet management or gas fee complexity.\n\n@BWSCommunity #microcap #blockchain #fundamentals https://docs.bws.ninja/solutions/bws.blockchain.hash",
+      "productMentioned": "Multiple products (Blockchain Badges, ESG Credits, X Bot)",
+      "relevanceScore": 82,
+      "templateUsed": "question_led",
+      "templateName": "Question-Led Structure",
+      "imageAttached": false,
+      "imagePath": null,
+      "timestamp": "2025-12-11T23:18:54.904Z",
+      "status": "posted",
+      "dryRun": false
+    },
+    {
+      "id": "2259434528-1998053731502375376-1765495220992",
+      "tweetId": "1998053731502375376",
+      "tweetUrl": "https://twitter.com/cobie/status/1998053731502375376",
+      "kolId": "2259434528",
+      "kolUsername": "cobie",
+      "originalTweetText": "Point to the last three pieces of alpha u found actionable from twitter",
+      "replyTweetId": "1999257976356634712",
+      "replyText": "Finding real alpha means identifying builders solving actual friction points, not just trading narratives.\n\nNFT.zK from $BWS lets brands distribute NFTs via email without requiring wallet setup - single API call handles custody and transfer complexity.\n\nOnboarding non-crypto users at microcap valuation.\n\n@BWSCommunity #microcap #NFT #gems https://docs.bws.ninja/solutions/bws.nft.zk",
+      "productMentioned": "X Bot, Blockchain Badges",
+      "relevanceScore": 88,
+      "templateUsed": "problem_solution",
+      "templateName": "Problem-Solution Structure",
+      "imageAttached": true,
+      "imagePath": "/assets/images/docs/nftzk/nftzk-0.png",
+      "timestamp": "2025-12-11T23:20:20.992Z",
+      "status": "posted",
+      "dryRun": false
     }
   ],
   "dailyStats": {
@@ -2034,10 +2072,10 @@
     }
   },
   "metadata": {
-    "totalReplies": 95,
-    "successfulReplies": 61,
+    "totalReplies": 97,
+    "successfulReplies": 63,
     "failedReplies": 34,
-    "lastReplyAt": "2025-12-11T19:54:07.523Z",
+    "lastReplyAt": "2025-12-11T23:20:20.992Z",
     "todayRepliesCount": 0,
     "lastUpdateBy": "kol-system"
   }
