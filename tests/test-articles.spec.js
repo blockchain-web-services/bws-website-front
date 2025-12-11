@@ -253,7 +253,8 @@ test.describe('Articles Pages', () => {
     for (const article of articles) {
       await page.goto(article.url, { waitUntil: 'networkidle' });
 
-      const figures = page.locator('figure');
+      // Only check figures within article content areas (not nav/header/footer)
+      const figures = page.locator('.page-top-section figure, .blog-post-body-wrapper figure, .rich-text figure');
       const figureCount = await figures.count();
 
       if (figureCount === 0) {
