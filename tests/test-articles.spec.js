@@ -40,6 +40,7 @@ function discoverArticles() {
   // Using a very short window to only test articles generated with latest caption code
   const oneDayAgo = new Date();
   oneDayAgo.setDate(oneDayAgo.getDate() - 1);
+  oneDayAgo.setHours(0, 0, 0, 0); // Normalize to midnight for accurate date comparison
 
   const articleFiles = fs.readdirSync(articlesDir)
     .filter(f => f.endsWith('.html'))
