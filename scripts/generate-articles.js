@@ -684,7 +684,7 @@ async function generateContentComponent(slug, articleData, images, publishDate, 
     imageIndex = 1; // Skip first image in section loop
   }
 
-  articleData.sections.forEach((section, index) => {
+  for (const section of articleData.sections) {
     const sectionType = section.sectionType || 'normal';
 
     // Add section heading
@@ -767,7 +767,7 @@ async function generateContentComponent(slug, articleData, images, publishDate, 
         imageIndex++;
       }
     }
-  });
+  }
 
   return `---
 // Main content for articles/${slug} page
