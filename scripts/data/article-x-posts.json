@@ -3,9 +3,9 @@
     "lastGenerated": "2025-12-10T12:10:10.034Z",
     "totalPosts": 36,
     "totalArticles": 12,
-    "pendingPosts": 24,
-    "postedCount": 5,
-    "lastPosted": "2025-12-11T04:16:03.772Z",
+    "pendingPosts": 23,
+    "postedCount": 6,
+    "lastPosted": "2025-12-11T12:09:53.088Z",
     "failedCount": 7
   },
   "posts": [
@@ -706,17 +706,19 @@
         "CryptoAnalytics"
       ],
       "priority": "high",
-      "status": "pending",
+      "status": "posted",
       "scheduledFor": null,
-      "postedAt": null,
-      "tweetId": null,
+      "postedAt": "2025-12-11T12:09:53.015Z",
+      "tweetId": "1999089248838840343",
       "generatedAt": "2025-12-10T12:09:38.938Z",
       "metadata": {
         "articleTitle": "X Bot: Automated Community Analytics for Crypto Projects on X and Telegram",
         "articlePublishDate": "2025-12-10T10:03:42.493Z",
         "mainTextLength": 221,
         "fullTextLength": 370
-      }
+      },
+      "tweetUrl": "https://twitter.com/i/web/status/1999089248838840343",
+      "error": null
     },
     {
       "id": "6814f9ae-e493-4f96-a877-2196b29086f5",
