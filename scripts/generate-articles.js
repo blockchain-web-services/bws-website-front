@@ -559,63 +559,63 @@ function sanitizeComponentName(slug) {
 
 /**
  * Generate descriptive caption for image based on product and article subtitle
- * Creates a complete, concise sentence summarizing the article content
+ * Uses Claude API to create a complete, concise sentence summarizing the article content
  */
-function generateImageCaption(productName, articleSubtitle) {
-  // Extract key verbs and nouns from subtitle to form a complete sentence
-  // Target: One short, complete sentence (40-60 chars) summarizing the article
+async function generateImageCaption(anthropic, productName, articleSubtitle) {
+  try {
+    const response = await anthropic.messages.create({
+      model: 'claude-3-5-haiku-20241022',
+      max_tokens: 100,
+      temperature: 0.7,
+      messages: [{
+        role: 'user',
+        content: `Generate a short, complete sentence (40-60 characters) that summarizes this article about ${productName}.
 
-  const subtitle = articleSubtitle.toLowerCase();
+Article summary: ${articleSubtitle}
 
-  // Extract main action/benefit from subtitle
-  // Look for key patterns like "provides X", "enables Y", "transforms Z"
+Requirements:
+- Must be a complete grammatically correct sentence
+- Start with "${productName}" followed by an action verb
+- No truncation or "..."
+- Between 40-60 characters total
+- Format: "${productName} [verb] [object]."
 
-  // Try to identify the main verb and object from the subtitle
-  let caption = '';
+Output only the caption sentence, nothing else.`
+      }]
+    });
 
-  // Pattern: "X provides/enables/offers/delivers Y"
-  const actionMatch = subtitle.match(/(provid\w+|enabl\w+|offer\w+|deliver\w+|transform\w+|creat\w+|generat\w+)\s+([^.,]+)/);
-  if (actionMatch) {
-    const action = actionMatch[1].replace(/s$/, 'es').replace(/e$/, 'es');
-    const object = actionMatch[2].trim().split(' ').slice(0, 4).join(' ');
-    caption = `${productName} ${action} ${object}.`;
-  }
+    let caption = response.content[0].text.trim();
 
-  // Pattern: "tokenizing X" -> "Product tokenizes X"
-  else if (subtitle.match(/tokeniz\w+\s+([^.,]+)/)) {
-    const object = subtitle.match(/tokeniz\w+\s+([^.,]+)/)[1].trim().split(' ').slice(0, 3).join(' ');
-    caption = `${productName} tokenizes ${object}.`;
-  }
+    // Remove quotes if Claude added them
+    caption = caption.replace(/^["']|["']$/g, '');
 
-  // Pattern: "tracking X" -> "Product tracks X"
-  else if (subtitle.match(/(track\w+|monitor\w+)\s+([^.,]+)/)) {
-    const match = subtitle.match(/(track\w+|monitor\w+)\s+([^.,]+)/);
-    const object = match[2].trim().split(' ').slice(0, 3).join(' ');
-    caption = `${productName} tracks ${object}.`;
-  }
-
-  // Fallback: Use first few words of subtitle as basis
-  else {
-    const words = articleSubtitle.split(' ').slice(0, 6);
-    caption = `${productName} ${words.join(' ').toLowerCase()}.`;
-  }
-
-  // Ensure caption is not too long (max 65 chars for complete sentence)
-  if (caption.length > 65) {
-    // Find a natural break point (after a noun/verb)
-    const words = caption.split(' ');
-    let shortCaption = words[0]; // Start with product name
-    for (let i = 1; i < words.length - 1; i++) {
-      if ((shortCaption + ' ' + words[i]).length < 60) {
-        shortCaption += ' ' + words[i];
-      } else {
-        break;
-      }
+    // Ensure it ends with a period
+    if (!caption.endsWith('.')) {
+      caption += '.';
     }
-    caption = shortCaption + '.';
-  }
 
-  return caption;
+    // Validate length (max 65 chars to be safe)
+    if (caption.length > 65) {
+      // Truncate at last complete word before 60 chars
+      const words = caption.split(' ');
+      let shortCaption = words[0];
+      for (let i = 1; i < words.length; i++) {
+        const test = shortCaption + ' ' + words[i];
+        if (test.length <= 60) {
+          shortCaption = test;
+        } else {
+          break;
+        }
+      }
+      caption = shortCaption.replace(/\.$/, '') + '.';
+    }
+
+    return caption;
+  } catch (error) {
+    console.error(`Error generating caption: ${error.message}`);
+    // Fallback to simple caption
+    return `${productName} solution.`;
+  }
 }
 
 /**
@@ -657,7 +657,7 @@ function getImageSizeConstraint(imagePath) {
 /**
  * Generate article content component with image integration
  */
-function generateContentComponent(slug, articleData, images, publishDate, docsUrl) {
+async function generateContentComponent(slug, articleData, images, publishDate, docsUrl, anthropic) {
   let sectionsHTML = '';
   let imageIndex = 0;
   let titleImageHTML = ''; // For image-after-title placement
@@ -667,7 +667,7 @@ function generateContentComponent(slug, articleData, images, publishDate, docsUr
       articleData.sections[0].imagePlacement === 'image-after-title' &&
       images.length > 0) {
     // Single-column centered image with caption after title
-    const caption = generateImageCaption(articleData.product, articleData.articleSubtitle);
+    const caption = await generateImageCaption(anthropic, articleData.product, articleData.articleSubtitle);
     titleImageHTML = `    <div class="container-medium" style="margin-top: 2rem; margin-bottom: 2rem;">
       <figure style="margin: 0; text-align: center;">
         <img
@@ -735,7 +735,7 @@ function generateContentComponent(slug, articleData, images, publishDate, docsUr
     // Note: Maximum ONE image per article - imageIndex ensures only first placement gets image
     if (section.imagePlacement === 'image-after-section' && imageIndex < images.length) {
       // Single-column centered image with caption
-      const caption = generateImageCaption(articleData.product, articleData.articleSubtitle);
+      const caption = await generateImageCaption(anthropic, articleData.product, articleData.articleSubtitle);
       sectionsHTML += `        <figure style="margin: 2rem 0; text-align: center;">\n`;
       sectionsHTML += `          <img\n`;
       sectionsHTML += `            src="${images[imageIndex].src}"\n`;
@@ -752,7 +752,7 @@ function generateContentComponent(slug, articleData, images, publishDate, docsUr
       // Insert image mid-section by splitting content - single column centered
       const paragraphs = section.content.split('\n\n');
       if (paragraphs.length > 1) {
-        const caption = generateImageCaption(articleData.product, articleData.articleSubtitle);
+        const caption = await generateImageCaption(anthropic, articleData.product, articleData.articleSubtitle);
         sectionsHTML += `        <figure style="margin: 2rem 0; text-align: center;">\n`;
         sectionsHTML += `          <img\n`;
         sectionsHTML += `            src="${images[imageIndex].src}"\n`;
@@ -983,6 +983,13 @@ async function processArticles(articleDataList, tweets, includes) {
   const docsIndex = loadDocsIndex();
   const articles = [];
 
+  // Initialize Anthropic client for caption generation
+  const apiKey = process.env.ANTHROPIC_API_KEY;
+  if (!apiKey) {
+    throw new Error('ANTHROPIC_API_KEY environment variable is required');
+  }
+  const anthropic = new Anthropic({ apiKey });
+
   for (let articleData of articleDataList) {
     console.log(`\n   📦 Processing article for ${articleData.product}...`);
 
@@ -1112,7 +1119,7 @@ async function processArticles(articleDataList, tweets, includes) {
     }
 
     // Generate content component
-    const contentComponent = generateContentComponent(slug, articleData, images, publishDate, docsUrl);
+    const contentComponent = await generateContentComponent(slug, articleData, images, publishDate, docsUrl, anthropic);
     const contentPath = path.join(ARTICLE_COMPONENTS_DIR, `${componentName}MainContent.astro`);
     fs.writeFileSync(contentPath, contentComponent);
     console.log(`   ✅ Generated content component: ${componentName}MainContent.astro`);
