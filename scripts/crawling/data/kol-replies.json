@@ -1922,6 +1922,44 @@
       "timestamp": "2025-12-11T19:32:24.030Z",
       "status": "posted",
       "dryRun": false
+    },
+    {
+      "id": "1353384573435056128-1994142556071031079-1765482753251",
+      "tweetId": "1994142556071031079",
+      "tweetUrl": "https://twitter.com/CryptoRover/status/1994142556071031079",
+      "kolId": "1353384573435056128",
+      "kolUsername": "CryptoRover",
+      "originalTweetText": "BREAKING:\n\nBLACKROCK CEO LARRY FINK: IT DOESN'T MATTER IF MARKETS RISE AND FALL. BUBBLES COME AND GO.\n\nWHAT MATTERS MOST IS STAYING IN THE MARKET THROUGH ALL CYCLES.",
+      "replyTweetId": "1999205682533560682",
+      "replyText": "Larry Fink's advice applies equally to microcap discovery - long-term positioning reveals mispriced opportunities.\n\nX Bot tracks engagement rates across 100+ KOLs simultaneously with official X API integration. $BWS ships this to separate authentic traction from bot farms at microcap valuation.\n\n@BWSCommunity #crypto #microcap #analytics https://docs.bws.ninja/marketplace-solutions/bws.x.bot",
+      "productMentioned": "Platform APIs (Blockchain Save, IPFS, NFT.zK) + Marketplace Solutions",
+      "relevanceScore": 82,
+      "templateUsed": "delayed_cashtag",
+      "templateName": "Delayed $BWS Mention",
+      "imageAttached": true,
+      "imagePath": "/assets/images/docs/x-bot/x-bot-0.png",
+      "timestamp": "2025-12-11T19:52:33.251Z",
+      "status": "posted",
+      "dryRun": false
+    },
+    {
+      "id": "2259434528-1998053731502375376-1765482847523",
+      "tweetId": "1998053731502375376",
+      "tweetUrl": "https://twitter.com/cobie/status/1998053731502375376",
+      "kolId": "2259434528",
+      "kolUsername": "cobie",
+      "originalTweetText": "Point to the last three pieces of alpha u found actionable from twitter",
+      "replyTweetId": "1999206078605852861",
+      "replyText": "Fair challenge - most Twitter alpha is recycled narratives.\n\nConsider this: Fan Game Cube from $BWS tokenizes field sections where fans earn points from live match events at owned coordinates. Sports clubs generate revenue through blockchain engagement across football, cricket, chess. Sub-$5M mcap, already shipping.\n\n@BWSCommunity #microcap #sports #gems https://docs.bws.ninja/marketplace-solutions/bws.nft.gamecube",
+      "productMentioned": "X Bot, Blockchain Badges",
+      "relevanceScore": 88,
+      "templateUsed": "stat_driven",
+      "templateName": "Stat/Fact-Driven Structure",
+      "imageAttached": true,
+      "imagePath": "/assets/images/docs/fan-game-cube/fan-game-cube-0.png",
+      "timestamp": "2025-12-11T19:54:07.523Z",
+      "status": "posted",
+      "dryRun": false
     }
   ],
   "dailyStats": {
@@ -1996,10 +2034,10 @@
     }
   },
   "metadata": {
-    "totalReplies": 93,
-    "successfulReplies": 59,
+    "totalReplies": 95,
+    "successfulReplies": 61,
     "failedReplies": 34,
-    "lastReplyAt": "2025-12-11T19:32:24.030Z",
+    "lastReplyAt": "2025-12-11T19:54:07.523Z",
     "todayRepliesCount": 0,
     "lastUpdateBy": "kol-system"
   }
