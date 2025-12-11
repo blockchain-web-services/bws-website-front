@@ -5416,13 +5416,643 @@
       "expiresAt": "2025-12-18T07:28:12.323Z",
       "source": "timeline_monitor",
       "contentCategory": "error"
+    },
+    {
+      "id": "1998935349595353297",
+      "text": "$BTC should have noticed this 200ema on the 4h, usually a good stopping point. Can't really trade this on the EMA alone but its helpful with other indicators/price action",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "retweet_count": 23,
+        "reply_count": 30,
+        "like_count": 147,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/AltcoinSherpa/status/1998935349595353297",
+      "processed": false,
+      "addedAt": "2025-12-11T12:47:48.269Z",
+      "expiresAt": "2025-12-18T12:47:48.269Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "1998910416198750593",
+      "text": "$BTC this doesn't look great on the lower timeframes",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "retweet_count": 15,
+        "reply_count": 24,
+        "like_count": 106,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/AltcoinSherpa/status/1998910416198750593",
+      "processed": false,
+      "addedAt": "2025-12-11T12:47:50.064Z",
+      "expiresAt": "2025-12-18T12:47:50.064Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "1998842643544158209",
+      "text": "Bitcoin and Ethereum have 21 days to close the year in the green.",
+      "author": {
+        "id": "4441279246",
+        "username": "IncomeSharks"
+      },
+      "public_metrics": {
+        "retweet_count": 11,
+        "reply_count": 20,
+        "like_count": 275,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/IncomeSharks/status/1998842643544158209",
+      "processed": false,
+      "addedAt": "2025-12-11T12:48:08.238Z",
+      "expiresAt": "2025-12-18T12:48:08.238Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "1999082233538515426",
+      "text": "If rate cuts trigger dumps too....\n\nWhat’s left to save this cycle?",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "retweet_count": 36,
+        "reply_count": 222,
+        "like_count": 310,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoRover/status/1999082233538515426",
+      "processed": false,
+      "addedAt": "2025-12-11T12:48:16.794Z",
+      "expiresAt": "2025-12-18T12:48:16.794Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "1999081175336309090",
+      "text": "BINANCE LISTINGS: WHERE THE ALLOCATION REALLY GOES\n\nWe reviewed 20 recent listings, the pattern is clear: most allocation flows back to users, not Binance.\n\nProjects like Morpho, WAL, 2Z allocate under 1%, while mid-tier projects use slightly more for user rewards + liquidity",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "retweet_count": 20,
+        "reply_count": 78,
+        "like_count": 153,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoRover/status/1999081175336309090",
+      "processed": false,
+      "addedAt": "2025-12-11T12:48:18.669Z",
+      "expiresAt": "2025-12-18T12:48:18.669Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "1999061094174974443",
+      "text": "This is exactly where we are in the easing cycle right now.\n\nThe Fed is back to buying assets.",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "retweet_count": 48,
+        "reply_count": 107,
+        "like_count": 277,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoRover/status/1999061094174974443",
+      "processed": false,
+      "addedAt": "2025-12-11T12:48:20.662Z",
+      "expiresAt": "2025-12-18T12:48:20.662Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "1999042220142526737",
+      "text": "THE T-BILL PURCHASES ANNOUNCED BY THE FED ARE NOT OFFICIAL QE.\n\nReal QE occurs during crisis and very tight situations.\n\nThese are the times we saw real QE and what it meant for the stock market.",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "retweet_count": 53,
+        "reply_count": 85,
+        "like_count": 294,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoRover/status/1999042220142526737",
+      "processed": false,
+      "addedAt": "2025-12-11T12:48:22.670Z",
+      "expiresAt": "2025-12-18T12:48:22.670Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "1999030895160725670",
+      "text": "What do you think, was the FOMC dovish or hawkish?",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "retweet_count": 17,
+        "reply_count": 97,
+        "like_count": 189,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoRover/status/1999030895160725670",
+      "processed": false,
+      "addedAt": "2025-12-11T12:48:24.664Z",
+      "expiresAt": "2025-12-18T12:48:24.664Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "1999021835284029661",
+      "text": "Another day, another yearly open Bitcoin rejection.\n\nIt’s getting exhausting…",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "retweet_count": 39,
+        "reply_count": 98,
+        "like_count": 312,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoRover/status/1999021835284029661",
+      "processed": false,
+      "addedAt": "2025-12-11T12:48:26.674Z",
+      "expiresAt": "2025-12-18T12:48:26.674Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "1999021801423425688",
+      "text": "BREAKING:\n\nCONGRESSMAN BEGICH SAID THE U.S. WILL BE BUYING 1 MILLION $BTC SOON\n\nYOU'RE NOT BULLISH ENOUGH!",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "retweet_count": 217,
+        "reply_count": 148,
+        "like_count": 1413,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoRover/status/1999021801423425688",
+      "processed": false,
+      "addedAt": "2025-12-11T12:48:28.719Z",
+      "expiresAt": "2025-12-18T12:48:28.719Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "1998935665157829114",
+      "text": "Gm Fam \n\nReal AI Growth Comes from Real Use\n\nSome projects chase hype. Some focus on building real value. @IOPn_io is firmly in the second camp. \n\nThey are teaching users while rewarding them, and doing it in a way that actually matters.\n\nTheir Learn and Earn program on the OPN",
+      "author": {
+        "id": "crawlee_search_crypt0_defi",
+        "username": "Crypt0_DeFi"
+      },
+      "public_metrics": {
+        "retweet_count": 18,
+        "reply_count": 58,
+        "like_count": 66,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/Crypt0_DeFi/status/1998935665157829114",
+      "processed": false,
+      "addedAt": "2025-12-11T12:51:05.955Z",
+      "expiresAt": "2025-12-18T12:51:05.955Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "1998934080474280324",
+      "text": "The 2025 Grand Tournament: 1500 USDC Trading Campaign\n\nA big PvP trading tournament is live on Stimpak Duels, sponsored by @GMX_IO. The total prize pool is 1500 USDC, with rewards for top performers, random participants, and bonus community tasks. This is one of the highest value",
+      "author": {
+        "id": "crawlee_search_crypt0_defi",
+        "username": "Crypt0_DeFi"
+      },
+      "public_metrics": {
+        "retweet_count": 16,
+        "reply_count": 43,
+        "like_count": 58,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/Crypt0_DeFi/status/1998934080474280324",
+      "processed": false,
+      "addedAt": "2025-12-11T12:51:07.878Z",
+      "expiresAt": "2025-12-18T12:51:07.878Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "1998932741426192764",
+      "text": "RocketX x Arbitrum: ZERO FEE DECEMBER is officially live\n\nFor the first time in DeFi history, moving assets into @arbitrum is completely free. No fees, no markups, no hidden costs, everything is truly zero.\n\nThis is more than just a promotion. It’s the cheapest, easiest on-ramp",
+      "author": {
+        "id": "crawlee_search_crypt0_defi",
+        "username": "Crypt0_DeFi"
+      },
+      "public_metrics": {
+        "retweet_count": 71,
+        "reply_count": 27,
+        "like_count": 91,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/Crypt0_DeFi/status/1998932741426192764",
+      "processed": false,
+      "addedAt": "2025-12-11T12:51:09.910Z",
+      "expiresAt": "2025-12-18T12:51:09.910Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "1998931229463269491",
+      "text": "What is Stylus and why does it matter for Arbitrum?\n\n@arbitrum’s Stylus adds a WebAssembly (WASM) virtual machine alongside the traditional EVM. This allows developers to write smart contracts in Rust, C, or C++ while still working seamlessly with EVM contracts. The result is",
+      "author": {
+        "id": "crawlee_search_crypt0_defi",
+        "username": "Crypt0_DeFi"
+      },
+      "public_metrics": {
+        "retweet_count": 36,
+        "reply_count": 43,
+        "like_count": 74,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/Crypt0_DeFi/status/1998931229463269491",
+      "processed": false,
+      "addedAt": "2025-12-11T12:51:11.904Z",
+      "expiresAt": "2025-12-18T12:51:11.904Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "1998927964528955772",
+      "text": "The AI space is full of noise, and the projects shouting the loudest usually have the least to show for it.\n\nThat’s why @Xyberinc stands out. They’re doing the hard work most networks ignore, actually building infrastructure that matters. While everyone else is chasing flashy",
+      "author": {
+        "id": "crawlee_search_crypt0_defi",
+        "username": "Crypt0_DeFi"
+      },
+      "public_metrics": {
+        "retweet_count": 39,
+        "reply_count": 36,
+        "like_count": 69,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/Crypt0_DeFi/status/1998927964528955772",
+      "processed": false,
+      "addedAt": "2025-12-11T12:51:13.894Z",
+      "expiresAt": "2025-12-18T12:51:13.894Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "1999016510564798659",
+      "text": "$XPL | Longed here.",
+      "author": {
+        "id": "crawlee_search_nihilusbtc",
+        "username": "NihilusBTC"
+      },
+      "public_metrics": {
+        "retweet_count": 11,
+        "reply_count": 44,
+        "like_count": 108,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/NihilusBTC/status/1999016510564798659",
+      "processed": false,
+      "addedAt": "2025-12-11T12:51:22.770Z",
+      "expiresAt": "2025-12-18T12:51:22.770Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "1999009464482234755",
+      "text": "Let’s start again.\n\n20k.",
+      "author": {
+        "id": "crawlee_search_nihilusbtc",
+        "username": "NihilusBTC"
+      },
+      "public_metrics": {
+        "retweet_count": 27,
+        "reply_count": 77,
+        "like_count": 257,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/NihilusBTC/status/1999009464482234755",
+      "processed": false,
+      "addedAt": "2025-12-11T12:51:24.724Z",
+      "expiresAt": "2025-12-18T12:51:24.724Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "1998850346303762471",
+      "text": "$RECALL \n\nOpen long\nThank me later\n\nNFA",
+      "author": {
+        "id": "crawlee_search_nihilusbtc",
+        "username": "NihilusBTC"
+      },
+      "public_metrics": {
+        "retweet_count": 10,
+        "reply_count": 28,
+        "like_count": 80,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/NihilusBTC/status/1998850346303762471",
+      "processed": false,
+      "addedAt": "2025-12-11T12:51:26.731Z",
+      "expiresAt": "2025-12-18T12:51:26.731Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "1998849928622387468",
+      "text": "I said “Long”\n\nHere is the result.",
+      "author": {
+        "id": "crawlee_search_nihilusbtc",
+        "username": "NihilusBTC"
+      },
+      "public_metrics": {
+        "retweet_count": 10,
+        "reply_count": 26,
+        "like_count": 109,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/NihilusBTC/status/1998849928622387468",
+      "processed": false,
+      "addedAt": "2025-12-11T12:51:28.809Z",
+      "expiresAt": "2025-12-18T12:51:28.809Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "1999090977278140619",
+      "text": "[SBF says:]\n\n1) What made it so clear to me that @JuanOrlandoH was innocent? And how could he have been convicted anyway?\n\nThe short answer, of course, is 'cooperating witnesses.'\n\nBut there's a longer answer, too.",
+      "author": {
+        "id": "1110877798820777986",
+        "username": "SBF_FTX"
+      },
+      "public_metrics": {
+        "retweet_count": 14,
+        "reply_count": 61,
+        "like_count": 78,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/SBF_FTX/status/1999090977278140619",
+      "processed": false,
+      "addedAt": "2025-12-11T12:52:07.540Z",
+      "expiresAt": "2025-12-18T12:52:07.540Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "1999041477444313486",
+      "text": "CZ: Simply Holding Bitcoin Is the Best Investment Strategy\n\nOn December 3rd, during a group media interview at Binance Blockchain Week, Binance founder CZ stated that simply holding Bitcoin over the past decade and more has been the best-performing investment strategy, with its",
+      "author": {
+        "id": "111533746",
+        "username": "WuBlockchain"
+      },
+      "public_metrics": {
+        "retweet_count": 12,
+        "reply_count": 18,
+        "like_count": 58,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/WuBlockchain/status/1999041477444313486",
+      "processed": false,
+      "addedAt": "2025-12-11T12:52:55.578Z",
+      "expiresAt": "2025-12-18T12:52:55.578Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "1998986850057465959",
+      "text": "According to SoSoValue, on December 10 (ET), U.S. spot Bitcoin ETFs recorded total net inflows of $224 million. The BlackRock spot Bitcoin ETF IBIT saw the largest single-day net inflow at $193 million. Spot Ethereum ETFs posted total net inflows of $57.58 million, Solana spot",
+      "author": {
+        "id": "111533746",
+        "username": "WuBlockchain"
+      },
+      "public_metrics": {
+        "retweet_count": 10,
+        "reply_count": 13,
+        "like_count": 52,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/WuBlockchain/status/1998986850057465959",
+      "processed": false,
+      "addedAt": "2025-12-11T12:52:57.426Z",
+      "expiresAt": "2025-12-18T12:52:57.426Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "1999064117009948842",
+      "text": "Macro Update:\n\nJames Lavish highlights why the US Treasury is pushing hard for more rate cuts: with a huge portion of government debt tied to short-term T-bills, every 25 bps cut trims about $25 billion from annual interest costs.\n\nLower rates = Lower debt costs. The math",
+      "author": {
+        "id": "crawlee_search_cryptopatel",
+        "username": "CryptoPatel"
+      },
+      "public_metrics": {
+        "retweet_count": 11,
+        "reply_count": 10,
+        "like_count": 134,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoPatel/status/1999064117009948842",
+      "processed": false,
+      "addedAt": "2025-12-11T12:53:15.000Z",
+      "expiresAt": "2025-12-18T12:53:15.000Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "1999049015141249313",
+      "text": "$BTC Whale Accumulation Alert\n\nOn-chain data shows whales quietly stacking Bitcoin, even as retail demand sinks to the year’s lowest levels.\n\nThis divergence signals smart money positioning ahead of potential market shifts, A trend every trader should watch.",
+      "author": {
+        "id": "crawlee_search_cryptopatel",
+        "username": "CryptoPatel"
+      },
+      "public_metrics": {
+        "retweet_count": 11,
+        "reply_count": 10,
+        "like_count": 205,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoPatel/status/1999049015141249313",
+      "processed": false,
+      "addedAt": "2025-12-11T12:53:16.928Z",
+      "expiresAt": "2025-12-18T12:53:16.928Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "1999033916741857477",
+      "text": "The New York Stock Exchange has revealed a statue of Satoshi Nakamoto.\n\nA reminder of how a simple idea on the internet grew into a force strong enough to reshape global finance.",
+      "author": {
+        "id": "crawlee_search_cryptopatel",
+        "username": "CryptoPatel"
+      },
+      "public_metrics": {
+        "retweet_count": 10,
+        "reply_count": 10,
+        "like_count": 178,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoPatel/status/1999033916741857477",
+      "processed": false,
+      "addedAt": "2025-12-11T12:53:19.074Z",
+      "expiresAt": "2025-12-18T12:53:19.074Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "1999018815649362338",
+      "text": "Red November, Red December?\n\n$BTC usually follows November’s trend, but this time it’s different.\n\nDecember is -0.64% so far. Could a rebound be coming?",
+      "author": {
+        "id": "crawlee_search_cryptopatel",
+        "username": "CryptoPatel"
+      },
+      "public_metrics": {
+        "retweet_count": 16,
+        "reply_count": 11,
+        "like_count": 221,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoPatel/status/1999018815649362338",
+      "processed": false,
+      "addedAt": "2025-12-11T12:53:20.969Z",
+      "expiresAt": "2025-12-18T12:53:20.969Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "1999003464358310392",
+      "text": "$BTC Update: Post-Fed Rate Cut Dump\n\nBitcoin got rejected again at Inducement $93k–$94k → now bearish below this level.\n\n If it breaks above → $100k FVG target possible.\n If it fails → lower levels likely toward $76K\n\nNever trade blindly. Always wait for confirmations.\nNFA",
+      "author": {
+        "id": "crawlee_search_cryptopatel",
+        "username": "CryptoPatel"
+      },
+      "public_metrics": {
+        "retweet_count": 15,
+        "reply_count": 14,
+        "like_count": 223,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoPatel/status/1999003464358310392",
+      "processed": false,
+      "addedAt": "2025-12-11T12:53:22.984Z",
+      "expiresAt": "2025-12-18T12:53:22.984Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "1999022338810196437",
+      "text": "PHONG LE: ARE BITCOIN COMPANIES BEING UNFAIRLY TARGETED?\n\nStrategy CEO Phong Le says MSCI’s proposal to exclude companies holding over 50% of their balance sheet in Bitcoin would unfairly penalize Strategy and other $BTC treasury firms.\n\nHe compares it to removing Chevron for",
+      "author": {
+        "id": "877357064724520961",
+        "username": "CryptosR_Us"
+      },
+      "public_metrics": {
+        "retweet_count": 29,
+        "reply_count": 33,
+        "like_count": 162,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptosR_Us/status/1999022338810196437",
+      "processed": false,
+      "addedAt": "2025-12-11T12:53:31.877Z",
+      "expiresAt": "2025-12-18T12:53:31.877Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "1998992424287248464",
+      "text": "AMERICA CAN GROW 20 TO 25% IF THE FED GETS OUT OF THE WAY\n\nPresident Trump said that strong economic data shouldn’t trigger rate hikes -- it should fuel growth. He argued the U.S. could hit 20–25% GDP if the Fed stopped “killing it” every time the economy shows strength.\n\nIf",
+      "author": {
+        "id": "877357064724520961",
+        "username": "CryptosR_Us"
+      },
+      "public_metrics": {
+        "retweet_count": 25,
+        "reply_count": 34,
+        "like_count": 157,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptosR_Us/status/1998992424287248464",
+      "processed": false,
+      "addedAt": "2025-12-11T12:53:33.837Z",
+      "expiresAt": "2025-12-18T12:53:33.837Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "1998973547843092942",
+      "text": "NVIDIA CEO JUST FLIPPED THE SCRIPT ON BITCOIN'S BIGGEST CRITICISM\n\n“Bitcoin is taking excess energy, storing it into a new form — it's called currency.” \n\nIs the energy debate finally over?",
+      "author": {
+        "id": "877357064724520961",
+        "username": "CryptosR_Us"
+      },
+      "public_metrics": {
+        "retweet_count": 42,
+        "reply_count": 22,
+        "like_count": 218,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptosR_Us/status/1998973547843092942",
+      "processed": false,
+      "addedAt": "2025-12-11T12:53:35.870Z",
+      "expiresAt": "2025-12-18T12:53:35.870Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
     }
   ],
   "metadata": {
-    "lastUpdated": "2025-12-11T07:30:06.754Z",
-    "totalPosts": 258,
+    "lastUpdated": "2025-12-11T12:53:44.619Z",
+    "totalPosts": 288,
     "bySource": {
-      "timeline_monitor": 258,
+      "timeline_monitor": 288,
       "search_discovery": 0
     }
   },
