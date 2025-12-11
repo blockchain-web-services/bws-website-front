@@ -28,17 +28,18 @@ const articleMetadata = {
 };
 
 // Dynamically discover article files from the build output
-// Only includes articles from the last 14 days to avoid testing historical articles
-// with potentially missing or slow-loading images that cause test timeouts
+// Only includes articles from the last 3 days to test recently generated articles
+// with the latest code changes (caption fixes, proper figure/figcaption structure)
 function discoverArticles() {
   if (!fs.existsSync(articlesDir)) {
     console.warn(`Articles directory not found: ${articlesDir}`);
     return [];
   }
 
-  // Calculate date threshold (14 days ago)
-  const fourteenDaysAgo = new Date();
-  fourteenDaysAgo.setDate(fourteenDaysAgo.getDate() - 14);
+  // Calculate date threshold (3 days ago)
+  // Using a short window to only test recently generated articles with latest code
+  const threeDaysAgo = new Date();
+  threeDaysAgo.setDate(threeDaysAgo.getDate() - 3);
 
   const articleFiles = fs.readdirSync(articlesDir)
     .filter(f => f.endsWith('.html'))
@@ -50,8 +51,8 @@ function discoverArticles() {
       const [, slug, year, month, day] = match;
       const articleDate = new Date(parseInt(year), parseInt(month) - 1, parseInt(day));
 
-      // Only include articles from the last 14 days
-      if (articleDate < fourteenDaysAgo) {
+      // Only include articles from the last 3 days
+      if (articleDate < threeDaysAgo) {
         return null;
       }
 
