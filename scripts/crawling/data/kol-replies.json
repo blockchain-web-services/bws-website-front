@@ -1865,6 +1865,63 @@
       "timestamp": "2025-12-10T15:30:07.447Z",
       "status": "posted",
       "dryRun": false
+    },
+    {
+      "id": "1353384573435056128-1994142556071031079-1765481437633",
+      "tweetId": "1994142556071031079",
+      "tweetUrl": "https://twitter.com/CryptoRover/status/1994142556071031079",
+      "kolId": "1353384573435056128",
+      "kolUsername": "CryptoRover",
+      "originalTweetText": "BREAKING:\n\nBLACKROCK CEO LARRY FINK: IT DOESN'T MATTER IF MARKETS RISE AND FALL. BUBBLES COME AND GO.\n\nWHAT MATTERS MOST IS STAYING IN THE MARKET THROUGH ALL CYCLES.",
+      "replyTweetId": "1999200165601616102",
+      "replyText": "🌱 Riding cycles requires fundamentals that survive regulatory scrutiny.\n\n💡 ESG Credits from $BWS: financial institutions integrate blockchain-verified environmental impact reporting into banking apps with ICMA framework compliance and immutable storage preventing double-counting.\n🔧 Real fintech infrastructure at microcap valuation.\n\n@BWSCommunity #microcap #fintech #ESG https://docs.bws.ninja/marketplace-solutions/bws.esg.credits",
+      "productMentioned": "X Bot, Blockchain Badges",
+      "relevanceScore": 82,
+      "templateUsed": "emoji_enhanced",
+      "templateName": "Emoji-Enhanced Structure",
+      "imageAttached": false,
+      "imagePath": null,
+      "timestamp": "2025-12-11T19:30:37.633Z",
+      "status": "posted",
+      "dryRun": false
+    },
+    {
+      "id": "1068237257977544704-1996404865929822313-1765481483652",
+      "tweetId": "1996404865929822313",
+      "tweetUrl": "https://twitter.com/AltcoinSherpa/status/1996404865929822313",
+      "kolId": "1068237257977544704",
+      "kolUsername": "AltcoinSherpa",
+      "originalTweetText": "If $BTC legs up then coins like $FARTCOIN are going to full send",
+      "replyTweetId": "1999200358216700265",
+      "replyText": "Memecoins run on momentum - different game than microcaps with actual utility.\n\n$BWS IPFS Upload handles decentralized file storage through simple API - NFT creators upload metadata to distributed network without running their own IPFS node, with content addressing preventing censorship.\n\n@BWSCommunity #microcap #NFT #altcoins https://docs.bws.ninja/solutions/bws.ipfs.upload",
+      "productMentioned": "BWS IPFS",
+      "relevanceScore": 78,
+      "templateUsed": "classic",
+      "templateName": "Classic Structure",
+      "imageAttached": true,
+      "imagePath": "/assets/images/docs/bws-ipfs/bws-ipfs-0.png",
+      "timestamp": "2025-12-11T19:31:23.652Z",
+      "status": "posted",
+      "dryRun": false
+    },
+    {
+      "id": "2259434528-1998053731502375376-1765481544030",
+      "tweetId": "1998053731502375376",
+      "tweetUrl": "https://twitter.com/cobie/status/1998053731502375376",
+      "kolId": "2259434528",
+      "kolUsername": "cobie",
+      "originalTweetText": "Point to the last three pieces of alpha u found actionable from twitter",
+      "replyTweetId": "1999200611863052611",
+      "replyText": "Alpha isn't about tips - it's about finding underpriced fundamentals before the market does.\n\nBlockchain Save from $BWS creates tamper-proof document records with blockchain timestamps. Developers get Certificate of Trust generation without wallet management complexity.\n\nReal infrastructure at microcap valuation.\n\n@BWSCommunity #microcap #blockchain #gems https://docs.bws.ninja/solutions/bws.blockchain.save",
+      "productMentioned": "X Bot, Blockchain Badges",
+      "relevanceScore": 85,
+      "templateUsed": "problem_solution",
+      "templateName": "Problem-Solution Structure",
+      "imageAttached": false,
+      "imagePath": null,
+      "timestamp": "2025-12-11T19:32:24.030Z",
+      "status": "posted",
+      "dryRun": false
     }
   ],
   "dailyStats": {
@@ -1939,10 +1996,10 @@
     }
   },
   "metadata": {
-    "totalReplies": 90,
-    "successfulReplies": 56,
+    "totalReplies": 93,
+    "successfulReplies": 59,
     "failedReplies": 34,
-    "lastReplyAt": "2025-12-10T15:30:07.447Z",
+    "lastReplyAt": "2025-12-11T19:32:24.030Z",
     "todayRepliesCount": 0,
     "lastUpdateBy": "kol-system"
   }
