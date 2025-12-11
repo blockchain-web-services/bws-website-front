@@ -28,20 +28,33 @@ const articleMetadata = {
 };
 
 // Dynamically discover article files from the build output
+// Only includes articles from the last 14 days to avoid testing historical articles
+// with potentially missing or slow-loading images that cause test timeouts
 function discoverArticles() {
   if (!fs.existsSync(articlesDir)) {
     console.warn(`Articles directory not found: ${articlesDir}`);
     return [];
   }
 
+  // Calculate date threshold (14 days ago)
+  const fourteenDaysAgo = new Date();
+  fourteenDaysAgo.setDate(fourteenDaysAgo.getDate() - 14);
+
   const articleFiles = fs.readdirSync(articlesDir)
     .filter(f => f.endsWith('.html'))
     .map(filename => {
-      // Extract slug from filename (e.g., "blockchain-badges-2025-10-20.html" -> "blockchain-badges")
-      const match = filename.match(/^(.+?)-\d{4}-\d{2}-\d{2}\.html$/);
+      // Extract slug and date from filename (e.g., "blockchain-badges-2025-10-20.html")
+      const match = filename.match(/^(.+?)-(\d{4})-(\d{2})-(\d{2})\.html$/);
       if (!match) return null;
 
-      const slug = match[1];
+      const [, slug, year, month, day] = match;
+      const articleDate = new Date(parseInt(year), parseInt(month) - 1, parseInt(day));
+
+      // Only include articles from the last 14 days
+      if (articleDate < fourteenDaysAgo) {
+        return null;
+      }
+
       const metadata = articleMetadata[slug];
 
       if (!metadata) {
@@ -53,7 +66,8 @@ function discoverArticles() {
         url: `/articles/${filename}`,
         slug: slug,
         filename: filename,
-        title: metadata.title
+        title: metadata.title,
+        date: articleDate
       };
     })
     .filter(Boolean); // Remove null entries
