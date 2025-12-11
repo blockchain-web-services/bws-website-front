@@ -559,21 +559,32 @@ function sanitizeComponentName(slug) {
 
 /**
  * Generate descriptive caption for image based on product and article subtitle
- * Avoids generic captions like "Product screenshot" or "cover"
+ * Creates a complete, concise sentence without truncation
  */
 function generateImageCaption(productName, articleSubtitle) {
-  // Extract key phrase from subtitle (first clause up to comma/semicolon, or first few words)
-  const firstClause = articleSubtitle.split(/[,;]/)[0].trim();
+  // Extract the core problem or benefit from the subtitle
+  // Format: "ProductName solves/provides/enables [key benefit]."
 
-  // Create concise caption using product name and key phrase
-  // Format: "ProductName: brief benefit description"
-  let caption = `${productName}: ${firstClause.charAt(0).toLowerCase() + firstClause.slice(1)}`;
+  // Common patterns to extract key action verbs and benefits
+  const subtitle = articleSubtitle.toLowerCase();
 
-  // Limit to mid-to-short sentence (max 60 chars) and ensure word boundaries
-  if (caption.length > 60) {
-    // Find last space before character 57 to avoid mid-word truncation
-    const truncateAt = caption.lastIndexOf(' ', 57);
-    caption = caption.substring(0, truncateAt > 30 ? truncateAt : 57) + '...';
+  // Simple complete sentence based on product name
+  // Keep it short and descriptive without truncation
+  let caption = `${productName} provides innovative solutions.`;
+
+  // Try to extract a more specific benefit if possible
+  if (subtitle.includes('blockchain')) {
+    caption = `${productName} uses blockchain technology.`;
+  } else if (subtitle.includes('nft') || subtitle.includes('tokeniz')) {
+    caption = `${productName} tokenizes digital assets.`;
+  } else if (subtitle.includes('track') || subtitle.includes('monitor')) {
+    caption = `${productName} tracks engagement metrics.`;
+  } else if (subtitle.includes('credential') || subtitle.includes('badge')) {
+    caption = `${productName} issues digital credentials.`;
+  } else if (subtitle.includes('environment') || subtitle.includes('esg')) {
+    caption = `${productName} provides ESG reporting.`;
+  } else if (subtitle.includes('sport') || subtitle.includes('fan')) {
+    caption = `${productName} engages sports fans.`;
   }
 
   return caption;
