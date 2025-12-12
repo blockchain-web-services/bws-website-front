@@ -189,22 +189,28 @@ We run **product-specific searches** for 4 BWS products, targeting users discuss
 
 ### Implementation Status
 
-**⚠️ IMPORTANT**: The product-specific customer acquisition workflow described above is **CONFIGURED but NOT YET ACTIVE** due to a bug in the discovery script (`fs.readFileSync is not a function` - Dec 12, 2025).
+**✅ FIXED (Dec 12, 2025)**: Product-specific customer acquisition workflow bug has been resolved. The workflow will activate on the next scheduled run at **08:00 UTC daily**.
+
+**Bug Fixed**:
+- **Issue**: `fs.readFileSync is not a function` in discover-product-tweets.js
+- **Root Cause**: Script imported `fs` from 'fs/promises' (async) but called synchronous `fs.readFileSync()`
+- **Fix**: Changed `loadProductQueries()` to async function using `await fs.readFile()`
+- **Commit**: 927b2d0 (Dec 12, 2025)
 
 **Current Status**:
-- ❌ **Product Discovery**: Failing (code bug needs fix)
-- ❌ **Product-Specific Threads**: 0 threads posted
+- ✅ **Product Discovery**: Fixed, awaiting next run (08:00 UTC)
+- ⏳ **Product-Specific Threads**: Will start after first successful discovery
 - ✅ **General KOL Engagement**: Active (see below)
 
-**Queue Status**:
-- Blockchain Badges: 0 tweets discovered
-- BWS IPFS: 0 tweets discovered
-- NFT.zK: 0 tweets discovered
-- Blockchain Hash: 0 tweets discovered
+**Queue Status** (will populate after next discovery run):
+- Blockchain Badges: 0 tweets (pending discovery)
+- BWS IPFS: 0 tweets (pending discovery)
+- NFT.zK: 0 tweets (pending discovery)
+- Blockchain Hash: 0 tweets (pending discovery)
 
 ### Current Active System: General KOL Engagement
 
-**While product-specific targeting is being debugged**, the general KOL engagement workflow is active and working:
+**In parallel with product-specific targeting**, the general KOL engagement workflow is active and working:
 
 **How It Works**:
 - Monitors 36 crypto KOLs (@IncomeSharks, @cobie, @CryptoRover, etc.)
@@ -240,7 +246,7 @@ We run **product-specific searches** for 4 BWS products, targeting users discuss
 | **Reply Format** | 3-4 tweet educational threads | Single contextual reply |
 | **Goal** | Customer acquisition | Brand awareness/engagement |
 | **Volume** | 2-4 threads/day | 2-5 replies/day |
-| **Status** | 🔴 Failing (needs bug fix) | ✅ Active |
+| **Status** | ✅ Fixed (awaiting next run) | ✅ Active |
 
 ---
 
@@ -273,7 +279,7 @@ We run **product-specific searches** for 4 BWS products, targeting users discuss
 | Search-Based Discovery (Dynamic) | 🔴 | 0% (1/3) | Dec 12, 06:42 UTC | **FAILURE** - Needs investigation | Tue/Thu/Sat 14:00 UTC | `OXYLABS_USERNAME`, `OXYLABS_PASSWORD`, `ANTHROPIC_API_KEY` |
 | Discover Documentation Pages | ✅ | 100% (3/3) | Dec 12, 02:40 UTC | Documentation index maintained | Daily 02:35 UTC | `OXYLABS_USERNAME`, `OXYLABS_PASSWORD` |
 | Index Documentation Site | ✅ | 100% (3/3) | Dec 12, 03:34 UTC | **73 pages indexed**, 8 products categorized | After docs discovery | `ANTHROPIC_API_KEY` |
-| Discover Product Tweets | 🔴 | 0% (0/3) | Dec 12, 08:01 UTC | **FAILING** - Code bug: `fs.readFileSync is not a function`, 0 tweets discovered | Daily 08:00 UTC | `OXYLABS_USERNAME`, `OXYLABS_PASSWORD`, `ANTHROPIC_API_KEY` |
+| Discover Product Tweets | ✅ | Fixed | Dec 12, 08:01 UTC | **FIXED** - Bug resolved (commit 927b2d0), awaiting next run at 08:00 UTC | Daily 08:00 UTC | `OXYLABS_USERNAME`, `OXYLABS_PASSWORD`, `ANTHROPIC_API_KEY` |
 
 ### Engagement Workflows
 
@@ -294,7 +300,7 @@ We run **product-specific searches** for 4 BWS products, targeting users discuss
 
 | Automation | Status | Success Rate | Last Run | Details | Schedule | Credentials |
 |------------|--------|--------------|----------|---------|----------|-------------|
-| Reply to Product Tweets | ⚠️ | N/A | Dec 11, 16:05 UTC | **0 threads posted** - Waiting for discovery workflow fix, queue empty | 2x daily (10 AM, 4 PM UTC) | `TWITTER_*` (4 vars), `ANTHROPIC_API_KEY` |
+| Reply to Product Tweets | ✅ | Ready | Dec 11, 16:05 UTC | **Ready to activate** - Discovery workflow fixed, will post threads after tweets discovered | 2x daily (10 AM, 4 PM UTC) | `TWITTER_*` (4 vars), `ANTHROPIC_API_KEY` |
 
 ### Infrastructure
 
