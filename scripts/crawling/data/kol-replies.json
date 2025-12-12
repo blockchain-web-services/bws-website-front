@@ -2112,6 +2112,44 @@
       "timestamp": "2025-12-12T15:31:04.465Z",
       "status": "posted",
       "dryRun": false
+    },
+    {
+      "id": "1353384573435056128-1994142556071031079-1765569147452",
+      "tweetId": "1994142556071031079",
+      "tweetUrl": "https://twitter.com/CryptoRover/status/1994142556071031079",
+      "kolId": "1353384573435056128",
+      "kolUsername": "CryptoRover",
+      "originalTweetText": "BREAKING:\n\nBLACKROCK CEO LARRY FINK: IT DOESN'T MATTER IF MARKETS RISE AND FALL. BUBBLES COME AND GO.\n\nWHAT MATTERS MOST IS STAYING IN THE MARKET THROUGH ALL CYCLES.",
+      "replyTweetId": "1999568047183696148",
+      "replyText": "Staying through cycles matters most when positioned in fundamentals the market hasn't priced yet.\n\nBlockchain Hash enables mutable on-chain databases through simple REST API - developers update blockchain data after initial save without wallet management or gas fee complexity. Built by $BWS at microcap valuation.\n\n@BWSCommunity #microcap #blockchain #fundamentals https://docs.bws.ninja/solutions/bws.blockchain.hash",
+      "productMentioned": "Multiple BWS Products (X Bot, Blockchain Badges, ESG Credits)",
+      "relevanceScore": 82,
+      "templateUsed": "delayed_cashtag",
+      "templateName": "Delayed $BWS Mention",
+      "imageAttached": false,
+      "imagePath": null,
+      "timestamp": "2025-12-12T19:52:27.452Z",
+      "status": "posted",
+      "dryRun": false
+    },
+    {
+      "id": "2259434528-1998053731502375376-1765569239546",
+      "tweetId": "1998053731502375376",
+      "tweetUrl": "https://twitter.com/cobie/status/1998053731502375376",
+      "kolId": "2259434528",
+      "kolUsername": "cobie",
+      "originalTweetText": "Point to the last three pieces of alpha u found actionable from twitter",
+      "replyTweetId": "1999568432971530701",
+      "replyText": "Most alpha on Twitter is recycled narratives - actionable gems ship products solving real friction.\n\nNFT.zK delivers:\n• Brands distribute NFTs via email without wallet setup\n• Bulk minting with metadata management included\n• Transfer to non-technical users seamlessly\n\nReal onboarding infrastructure. $BWS\n\n@BWSCommunity #microcap #NFT #gems https://docs.bws.ninja/solutions/bws.nft.zk",
+      "productMentioned": "X Bot + Blockchain Badges",
+      "relevanceScore": 85,
+      "templateUsed": "feature_list",
+      "templateName": "Feature List Structure",
+      "imageAttached": true,
+      "imagePath": "/assets/images/docs/nftzk/nftzk-0.png",
+      "timestamp": "2025-12-12T19:53:59.546Z",
+      "status": "posted",
+      "dryRun": false
     }
   ],
   "dailyStats": {
@@ -2186,10 +2224,10 @@
     }
   },
   "metadata": {
-    "totalReplies": 103,
-    "successfulReplies": 69,
+    "totalReplies": 105,
+    "successfulReplies": 71,
     "failedReplies": 34,
-    "lastReplyAt": "2025-12-12T15:31:04.465Z",
+    "lastReplyAt": "2025-12-12T19:53:59.546Z",
     "todayRepliesCount": 0,
     "lastUpdateBy": "kol-system"
   }
