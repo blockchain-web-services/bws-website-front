@@ -1,30 +1,1644 @@
 {
-  "tweets": [],
-  "lastDiscovery": {},
+  "tweets": [
+    {
+      "id": "1997999309904916667",
+      "text": "Halal certificates \nWorlds biggest Duplicate Certificate Raid, Certificate of any Degree,  in Malappuram area, Kerala, pls verify certificates with University, before appointing for Job",
+      "author": {
+        "id": "",
+        "username": "GanKanchi",
+        "name": "Dr Mouth Matters",
+        "profile_image_url": "",
+        "public_metrics": {
+          "followers_count": 0,
+          "following_count": 0,
+          "tweet_count": 0
+        }
+      },
+      "public_metrics": {
+        "like_count": 32,
+        "retweet_count": 10,
+        "reply_count": 1,
+        "impression_count": 510
+      },
+      "created_at": "",
+      "extraction_method": "HTML parsing",
+      "product": "Blockchain Badges",
+      "queryName": "educational-credentials",
+      "queryPriority": "high",
+      "discoveredAt": "2025-12-12T08:48:50.688Z",
+      "processed": true,
+      "processedAt": "2025-12-12T08:52:14.595Z",
+      "processedStatus": "error"
+    },
+    {
+      "id": "1997589022466523577",
+      "text": "The Higher Education Commission (HEC) is set to launch a fully automated degree attestation system using blockchain technology within six months. \n\nImage is Ai generated and is just for reference \n\n#HEC #Blockchain #DegreeVerification #DigitalPakistan #HigherEducation #Innovation",
+      "author": {
+        "id": "",
+        "username": "PakStartup",
+        "name": "Startup Pakistan",
+        "profile_image_url": "",
+        "public_metrics": {
+          "followers_count": 0,
+          "following_count": 0,
+          "tweet_count": 0
+        }
+      },
+      "public_metrics": {
+        "like_count": 292,
+        "retweet_count": 34,
+        "reply_count": 2,
+        "impression_count": 3501
+      },
+      "created_at": "",
+      "extraction_method": "HTML parsing",
+      "product": "Blockchain Badges",
+      "queryName": "educational-credentials",
+      "queryPriority": "high",
+      "discoveredAt": "2025-12-12T08:48:50.688Z",
+      "processed": true,
+      "processedAt": "2025-12-12T08:53:53.721Z",
+      "processedStatus": "error"
+    },
+    {
+      "id": "1997181712745353236",
+      "text": "When I prove an achievement in real life (like a university degree), I can't sell that credential. It’s permanently tied to me.\n\nSoulbound Tokens (SBTs) do the same for your digital identity. They are non-transferable tokens linked to your Identity NFT. By binding multiple",
+      "author": {
+        "id": "",
+        "username": "Dev3Nity",
+        "name": "DEV3NITY",
+        "profile_image_url": "",
+        "public_metrics": {
+          "followers_count": 0,
+          "following_count": 0,
+          "tweet_count": 0
+        }
+      },
+      "public_metrics": {
+        "like_count": 52,
+        "retweet_count": 1,
+        "reply_count": 54,
+        "impression_count": 766
+      },
+      "created_at": "",
+      "extraction_method": "HTML parsing",
+      "product": "Blockchain Badges",
+      "queryName": "educational-credentials",
+      "queryPriority": "high",
+      "discoveredAt": "2025-12-12T08:48:50.688Z",
+      "processed": true,
+      "processedAt": "2025-12-12T08:55:27.691Z",
+      "processedStatus": "error"
+    },
+    {
+      "id": "1996829132299403750",
+      "text": "The Higher Education Commission (HEC) has finalized the project to revamp its degree attestation system by integrating blockchain technology, aiming to enhance efficiency and transparency while eliminating the need for applicants’ physical presence.",
+      "author": {
+        "id": "",
+        "username": "hecpkofficial",
+        "name": "HEC Pakistan",
+        "profile_image_url": "",
+        "public_metrics": {
+          "followers_count": 0,
+          "following_count": 0,
+          "tweet_count": 0
+        }
+      },
+      "public_metrics": {
+        "like_count": 238,
+        "retweet_count": 48,
+        "reply_count": 17,
+        "impression_count": 10816
+      },
+      "created_at": "",
+      "extraction_method": "HTML parsing",
+      "product": "Blockchain Badges",
+      "queryName": "educational-credentials",
+      "queryPriority": "high",
+      "discoveredAt": "2025-12-12T08:48:50.688Z",
+      "processed": true,
+      "processedAt": "2025-12-12T09:09:15.546Z",
+      "processedStatus": "error"
+    },
+    {
+      "id": "1996078703076671544",
+      "text": "Depends on the job, but if they require a degree and you claim to have one, the background screening will connect with the university’s database and verify. Source: I worked for a background screener for nearly 4 years and did this all the time",
+      "author": {
+        "id": "",
+        "username": "LijSams",
+        "name": "Elijah",
+        "profile_image_url": "",
+        "public_metrics": {
+          "followers_count": 0,
+          "following_count": 0,
+          "tweet_count": 0
+        }
+      },
+      "public_metrics": {
+        "like_count": 97,
+        "retweet_count": 2,
+        "reply_count": 0,
+        "impression_count": 4644
+      },
+      "created_at": "",
+      "extraction_method": "HTML parsing",
+      "product": "Blockchain Badges",
+      "queryName": "educational-credentials",
+      "queryPriority": "high",
+      "discoveredAt": "2025-12-12T08:48:50.688Z",
+      "processed": true,
+      "processedAt": "2025-12-12T09:09:49.820Z",
+      "processedStatus": "error"
+    },
+    {
+      "id": "1995907374930899301",
+      "text": "As someone in HR who reviews the background check, I promise if it says required we’re checking for it. I had a doctor, licensed in NY, and I still had to reach out to his German university to verify his degree. If the company doesn’t hold the same standard for all roles, run.",
+      "author": {
+        "id": "",
+        "username": "okidokibichota",
+        "name": "silly billy",
+        "profile_image_url": "",
+        "public_metrics": {
+          "followers_count": 0,
+          "following_count": 0,
+          "tweet_count": 0
+        }
+      },
+      "public_metrics": {
+        "like_count": 77,
+        "retweet_count": 3,
+        "reply_count": 1,
+        "impression_count": 3088
+      },
+      "created_at": "",
+      "extraction_method": "HTML parsing",
+      "product": "Blockchain Badges",
+      "queryName": "educational-credentials",
+      "queryPriority": "high",
+      "discoveredAt": "2025-12-12T08:48:50.688Z",
+      "processed": true,
+      "processedAt": "2025-12-12T09:10:42.928Z",
+      "processedStatus": "error"
+    },
+    {
+      "id": "1999315340623511799",
+      "text": "gQuack  CT\n\n‣ Why Reusable Verifiable Credentials Change Everything\n @idOS_network\n\nWhat's the slowest part of the onboarding process?\n\nRepeating the same verification process in every app.\n\nEvery platform treats you as a new user.\n\nVerifiable Credentials solve this problem.",
+      "author": {
+        "id": "",
+        "username": "FinalxFase",
+        "name": "MST WEB3",
+        "profile_image_url": "",
+        "public_metrics": {
+          "followers_count": 0,
+          "following_count": 0,
+          "tweet_count": 0
+        }
+      },
+      "public_metrics": {
+        "like_count": 41,
+        "retweet_count": 1,
+        "reply_count": 46,
+        "impression_count": 1297
+      },
+      "created_at": "",
+      "extraction_method": "HTML parsing",
+      "product": "Blockchain Badges",
+      "queryName": "credentials-general",
+      "queryPriority": "high",
+      "discoveredAt": "2025-12-12T08:49:04.278Z",
+      "processed": true,
+      "processedAt": "2025-12-12T09:12:25.142Z",
+      "processedStatus": "replied"
+    },
+    {
+      "id": "1999277462954606982",
+      "text": "Blockchain banking deployment with @idOS_network\n\nFirst: starting at the identity layer.\n\nKYC information, residency, income, and risk assessment are stored as cryptographic certificates, under the user's private key, ensuring absolute identity control.\n\nThe on-chain banking",
+      "author": {
+        "id": "",
+        "username": "Tinweb_3",
+        "name": "Kutin",
+        "profile_image_url": "",
+        "public_metrics": {
+          "followers_count": 0,
+          "following_count": 0,
+          "tweet_count": 0
+        }
+      },
+      "public_metrics": {
+        "like_count": 72,
+        "retweet_count": 3,
+        "reply_count": 69,
+        "impression_count": 506
+      },
+      "created_at": "",
+      "extraction_method": "HTML parsing",
+      "product": "Blockchain Badges",
+      "queryName": "credentials-general",
+      "queryPriority": "high",
+      "discoveredAt": "2025-12-12T08:49:04.278Z"
+    },
+    {
+      "id": "1999235470782300189",
+      "text": "The @IOPn_io is pushing identity into a new era, where users finally own and control their digital footprint.\n\n•With NeoID and NeoCard, credentials and reputation live on-chain in a portable and verifiable way, without relying on intermediaries.\n\n•This cuts fraud, simplifies",
+      "author": {
+        "id": "",
+        "username": "EnzioSantos",
+        "name": "Zito.btc",
+        "profile_image_url": "",
+        "public_metrics": {
+          "followers_count": 0,
+          "following_count": 0,
+          "tweet_count": 0
+        }
+      },
+      "public_metrics": {
+        "like_count": 53,
+        "retweet_count": 1,
+        "reply_count": 54,
+        "impression_count": 1568
+      },
+      "created_at": "",
+      "extraction_method": "HTML parsing",
+      "product": "Blockchain Badges",
+      "queryName": "credentials-general",
+      "queryPriority": "high",
+      "discoveredAt": "2025-12-12T08:49:04.278Z"
+    },
+    {
+      "id": "1999195600055648395",
+      "text": "\"The GC Wallet, in beta trial, is a mobile app developed by the Canadian government for storing and presenting official digital credentials (such as temporary visas and pilot licenses) in a standards-based digital format, allowing offline access, automatic updates, and expiry",
+      "author": {
+        "id": "",
+        "username": "cbcwatcher",
+        "name": "cbcwatcher",
+        "profile_image_url": "",
+        "public_metrics": {
+          "followers_count": 0,
+          "following_count": 0,
+          "tweet_count": 0
+        }
+      },
+      "public_metrics": {
+        "like_count": 34,
+        "retweet_count": 16,
+        "reply_count": 4,
+        "impression_count": 2328
+      },
+      "created_at": "",
+      "extraction_method": "HTML parsing",
+      "product": "Blockchain Badges",
+      "queryName": "credentials-general",
+      "queryPriority": "high",
+      "discoveredAt": "2025-12-12T08:49:04.278Z"
+    },
+    {
+      "id": "1999033917811089887",
+      "text": "IdOS shows that true decentralized identity needs complete privacy and user control. I'm really excited about @idOS_network because it's fully decentralized. It uses decentralized storage, encrypted keys, & verifiable credentials, so you're in charge of your own digital identity.",
+      "author": {
+        "id": "",
+        "username": "WindGems",
+        "name": "Brain",
+        "profile_image_url": "",
+        "public_metrics": {
+          "followers_count": 0,
+          "following_count": 0,
+          "tweet_count": 0
+        }
+      },
+      "public_metrics": {
+        "like_count": 6,
+        "retweet_count": 3,
+        "reply_count": 3,
+        "impression_count": 101
+      },
+      "created_at": "",
+      "extraction_method": "HTML parsing",
+      "product": "Blockchain Badges",
+      "queryName": "digital-identity",
+      "queryPriority": "medium",
+      "discoveredAt": "2025-12-12T08:49:19.472Z"
+    },
+    {
+      "id": "1999010761587437948",
+      "text": "@ADIChain_ is collaborating with Kenyan health - tech partner why?\n\nTo deploy secure blockchain based portable health records  building on Kenya's digital health strategy\n\n,which uses (SSI) principles + verifiable credentials + (DIDs) + Hyperledger Indy =what ???????????",
+      "author": {
+        "id": "",
+        "username": "N44326N",
+        "name": "DAVE",
+        "profile_image_url": "",
+        "public_metrics": {
+          "followers_count": 0,
+          "following_count": 0,
+          "tweet_count": 0
+        }
+      },
+      "public_metrics": {
+        "like_count": 33,
+        "retweet_count": 28,
+        "reply_count": 0,
+        "impression_count": 241
+      },
+      "created_at": "",
+      "extraction_method": "HTML parsing",
+      "product": "Blockchain Badges",
+      "queryName": "digital-identity",
+      "queryPriority": "medium",
+      "discoveredAt": "2025-12-12T08:49:19.472Z"
+    },
+    {
+      "id": "1998857673370939784",
+      "text": "A Web3 ecosystem combining self sovereign digital identity with tokenized real-world assets and blockchain infrastructure.\n\n@IOPn_io is building a comprehensive Web3 ecosystem that combines self sovereign digital identity, tokenized ownership of real-world assets and compliance",
+      "author": {
+        "id": "",
+        "username": "Bitrance__",
+        "name": "Bitrance",
+        "profile_image_url": "",
+        "public_metrics": {
+          "followers_count": 0,
+          "following_count": 0,
+          "tweet_count": 0
+        }
+      },
+      "public_metrics": {
+        "like_count": 29,
+        "retweet_count": 1,
+        "reply_count": 17,
+        "impression_count": 676
+      },
+      "created_at": "",
+      "extraction_method": "HTML parsing",
+      "product": "Blockchain Badges",
+      "queryName": "digital-identity",
+      "queryPriority": "medium",
+      "discoveredAt": "2025-12-12T08:49:19.472Z"
+    },
+    {
+      "id": "1999379069117366328",
+      "text": "Another powerful step forward for the @dagama_world ecosystem, the partnership with Hyra Network isn’t just another collab, it’s a sign of where Web3 intelligence is heading. \n\nHyra is building decentralized AI on top of DePIN, meaning compute, models, and data are no longer",
+      "author": {
+        "id": "",
+        "username": "Tywice_O",
+        "name": "MadaraOnChain",
+        "profile_image_url": "",
+        "public_metrics": {
+          "followers_count": 0,
+          "following_count": 0,
+          "tweet_count": 0
+        }
+      },
+      "public_metrics": {
+        "like_count": 8,
+        "retweet_count": 8,
+        "reply_count": 2,
+        "impression_count": 1076
+      },
+      "created_at": "",
+      "extraction_method": "HTML parsing",
+      "product": "BWS IPFS",
+      "queryName": "decentralized-storage",
+      "queryPriority": "medium",
+      "discoveredAt": "2025-12-12T08:49:39.282Z",
+      "processed": true,
+      "processedAt": "2025-12-12T08:52:14.596Z",
+      "processedStatus": "error"
+    },
+    {
+      "id": "1999363571466272838",
+      "text": "Introducing the second runner-up…\nCivitas’s DeCoMan, a decentralized layer for consent and document management that provides users full data ownership while offering organizations tamper-proof, blockchain-verified consent records. The application features the Intermezzo",
+      "author": {
+        "id": "",
+        "username": "Algo_Bharat",
+        "name": "AlgoBharat",
+        "profile_image_url": "",
+        "public_metrics": {
+          "followers_count": 0,
+          "following_count": 0,
+          "tweet_count": 0
+        }
+      },
+      "public_metrics": {
+        "like_count": 6,
+        "retweet_count": 1,
+        "reply_count": 1,
+        "impression_count": 90
+      },
+      "created_at": "",
+      "extraction_method": "HTML parsing",
+      "product": "BWS IPFS",
+      "queryName": "decentralized-storage",
+      "queryPriority": "medium",
+      "discoveredAt": "2025-12-12T08:49:39.282Z",
+      "processed": true,
+      "processedAt": "2025-12-12T08:53:53.722Z",
+      "processedStatus": "error"
+    },
+    {
+      "id": "1999360278249566215",
+      "text": "The blockchain depression is real.\n10 years after Ethereum, we’re waking up to a hard truth: something’s deeply off with what we believed.\n\nThe “world computer” was a bold experiment… and for sure a necessary one.\n\nBut storing data on-chain? It sounded perfect: decentralized,",
+      "author": {
+        "id": "",
+        "username": "MohrWom",
+        "name": "Melanie Mohr",
+        "profile_image_url": "",
+        "public_metrics": {
+          "followers_count": 0,
+          "following_count": 0,
+          "tweet_count": 0
+        }
+      },
+      "public_metrics": {
+        "like_count": 5,
+        "retweet_count": 3,
+        "reply_count": 0,
+        "impression_count": 128
+      },
+      "created_at": "",
+      "extraction_method": "HTML parsing",
+      "product": "BWS IPFS",
+      "queryName": "decentralized-storage",
+      "queryPriority": "medium",
+      "discoveredAt": "2025-12-12T08:49:39.282Z",
+      "processed": true,
+      "processedAt": "2025-12-12T08:55:27.725Z",
+      "processedStatus": "error"
+    },
+    {
+      "id": "1999353036414595084",
+      "text": "gBillions fam\n\nDid you know? @billions_ntwk is making huge waves in web3 space with their decentralized, AI powered ecosystem.\n\nwith zk-proof privacy, decentralized identities and real ownership of data, this is the future of web3 that we’ve been waiting for\n\nthe revolution",
+      "author": {
+        "id": "",
+        "username": "Tajudeen_10",
+        "name": "Tajudeen",
+        "profile_image_url": "",
+        "public_metrics": {
+          "followers_count": 0,
+          "following_count": 0,
+          "tweet_count": 0
+        }
+      },
+      "public_metrics": {
+        "like_count": 16,
+        "retweet_count": 1,
+        "reply_count": 9,
+        "impression_count": 292
+      },
+      "created_at": "",
+      "extraction_method": "HTML parsing",
+      "product": "BWS IPFS",
+      "queryName": "decentralized-storage",
+      "queryPriority": "medium",
+      "discoveredAt": "2025-12-12T08:49:39.282Z",
+      "processed": true,
+      "processedAt": "2025-12-12T09:09:15.774Z",
+      "processedStatus": "error"
+    },
+    {
+      "id": "1998409758827581923",
+      "text": "Other NFTs suffer from link rot and off-chain files.\nBitcoin inscriptions lack metadata and programmability.\nEven Solana stores token data on Arweave for permanence.\n\nAtomic Assets put everything under one permanent ID.\n\nNo servers.\nNo expiration.\nJust ownership.\n\nAvailable on",
+      "author": {
+        "id": "",
+        "username": "OurBazAR",
+        "name": "Bazar",
+        "profile_image_url": "",
+        "public_metrics": {
+          "followers_count": 0,
+          "following_count": 0,
+          "tweet_count": 0
+        }
+      },
+      "public_metrics": {
+        "like_count": 16,
+        "retweet_count": 5,
+        "reply_count": 0,
+        "impression_count": 1945
+      },
+      "created_at": "",
+      "extraction_method": "HTML parsing",
+      "product": "BWS IPFS",
+      "queryName": "nft-metadata",
+      "queryPriority": "high",
+      "discoveredAt": "2025-12-12T08:49:54.136Z",
+      "processed": true,
+      "processedAt": "2025-12-12T09:09:50.076Z",
+      "processedStatus": "error"
+    },
+    {
+      "id": "1998384638700781642",
+      "text": "Live at 10A ET with @fservin of @bitplx to cover NFT metadata standards on Spark (Bitcoin L2) and how ARIO provides the permanent, verifiable storage layer for Bitcoin-native collectibles \n\nGood session for builders and collectors!\n\nRegister",
+      "author": {
+        "id": "",
+        "username": "ar_io_network",
+        "name": "ar.io network",
+        "profile_image_url": "",
+        "public_metrics": {
+          "followers_count": 0,
+          "following_count": 0,
+          "tweet_count": 0
+        }
+      },
+      "public_metrics": {
+        "like_count": 19,
+        "retweet_count": 4,
+        "reply_count": 2,
+        "impression_count": 554
+      },
+      "created_at": "",
+      "extraction_method": "HTML parsing",
+      "product": "BWS IPFS",
+      "queryName": "nft-metadata",
+      "queryPriority": "high",
+      "discoveredAt": "2025-12-12T08:49:54.136Z",
+      "processed": true,
+      "processedAt": "2025-12-12T09:10:49.973Z",
+      "processedStatus": "error"
+    },
+    {
+      "id": "1998055556045586590",
+      "text": "Live Demo Tomorrow at 10a ET \n\nWe're hosting a live demo with @bitplx about how they are bringing NFT capabilities to Spark, the #Bitcoin Layer 2, & how ARIO enables permanent, verifiable storage for Bitcoin-native digital collectibles.",
+      "author": {
+        "id": "",
+        "username": "ar_io_network",
+        "name": "ar.io network",
+        "profile_image_url": "",
+        "public_metrics": {
+          "followers_count": 0,
+          "following_count": 0,
+          "tweet_count": 0
+        }
+      },
+      "public_metrics": {
+        "like_count": 39,
+        "retweet_count": 9,
+        "reply_count": 6,
+        "impression_count": 2880
+      },
+      "created_at": "",
+      "extraction_method": "HTML parsing",
+      "product": "BWS IPFS",
+      "queryName": "nft-metadata",
+      "queryPriority": "high",
+      "discoveredAt": "2025-12-12T08:49:54.136Z",
+      "processed": true,
+      "processedAt": "2025-12-12T09:14:51.724Z",
+      "processedStatus": "replied"
+    },
+    {
+      "id": "1997887192765436232",
+      "text": "The Orange explorer doesn’t yet index NFT collections or metadata — so names aren’t shown yet.\nBut the logs are permanent on-chain data. They can’t be faked.",
+      "author": {
+        "id": "",
+        "username": "Gregor101477942",
+        "name": "George74",
+        "profile_image_url": "",
+        "public_metrics": {
+          "followers_count": 0,
+          "following_count": 0,
+          "tweet_count": 0
+        }
+      },
+      "public_metrics": {
+        "like_count": 5,
+        "retweet_count": 2,
+        "reply_count": 1,
+        "impression_count": 59
+      },
+      "created_at": "",
+      "extraction_method": "HTML parsing",
+      "product": "BWS IPFS",
+      "queryName": "nft-metadata",
+      "queryPriority": "high",
+      "discoveredAt": "2025-12-12T08:49:54.136Z"
+    },
+    {
+      "id": "1997563675981345000",
+      "text": "GM \n\nhappy Sunday \n\nstarting my day with @rainbowdotme a simple non custodial ethereum wallet for managing tokens nfts and dapps \n\nwalrus provides decentralized sui storage keeping data permanent secure and always available\n\nmoremarkets activates idle crypto through simple cross",
+      "author": {
+        "id": "",
+        "username": "topehsol",
+        "name": "TOPEH",
+        "profile_image_url": "",
+        "public_metrics": {
+          "followers_count": 0,
+          "following_count": 0,
+          "tweet_count": 0
+        }
+      },
+      "public_metrics": {
+        "like_count": 12,
+        "retweet_count": 1,
+        "reply_count": 11,
+        "impression_count": 98
+      },
+      "created_at": "",
+      "extraction_method": "HTML parsing",
+      "product": "BWS IPFS",
+      "queryName": "nft-metadata",
+      "queryPriority": "high",
+      "discoveredAt": "2025-12-12T08:49:54.136Z"
+    },
+    {
+      "id": "1997207916298846625",
+      "text": "Gm Gm Ct , \n\n How the integration works:\n\n User verifies identity through idOS (KYC Basic or Plus)\n\n idOS stores the encrypted data in its decentralized storage layer\n\n Radix receives only a yes/no verification signal\n\n A POP NFT is minted to the user’s Radix wallet as",
+      "author": {
+        "id": "",
+        "username": "web30xyass",
+        "name": "Web3Warden",
+        "profile_image_url": "",
+        "public_metrics": {
+          "followers_count": 0,
+          "following_count": 0,
+          "tweet_count": 0
+        }
+      },
+      "public_metrics": {
+        "like_count": 77,
+        "retweet_count": 1,
+        "reply_count": 92,
+        "impression_count": 1729
+      },
+      "created_at": "",
+      "extraction_method": "HTML parsing",
+      "product": "BWS IPFS",
+      "queryName": "nft-metadata",
+      "queryPriority": "high",
+      "discoveredAt": "2025-12-12T08:49:54.136Z"
+    },
+    {
+      "id": "1996958388337488068",
+      "text": "A New Power Move in the U2U NFT Campaign.\n\nThe @u2u_xyz ecosystem just got a major upgrade. @CrustNetwork  is officially joining the U2U NFT Campaign, bringing decentralized storage muscle to one of the fastest-growing NFT movements in Web3.\n\n#U2U #NFTs",
+      "author": {
+        "id": "",
+        "username": "Kemat04",
+        "name": "Kemat",
+        "profile_image_url": "",
+        "public_metrics": {
+          "followers_count": 0,
+          "following_count": 0,
+          "tweet_count": 0
+        }
+      },
+      "public_metrics": {
+        "like_count": 35,
+        "retweet_count": 1,
+        "reply_count": 1,
+        "impression_count": 4115
+      },
+      "created_at": "",
+      "extraction_method": "HTML parsing",
+      "product": "BWS IPFS",
+      "queryName": "nft-metadata",
+      "queryPriority": "high",
+      "discoveredAt": "2025-12-12T08:49:54.136Z"
+    },
+    {
+      "id": "1974142485304623212",
+      "text": "Fully on-chain art isn’t just a technical choice. It’s a cultural one.\n\nMost NFTs you see aren’t actually “forever.” They’re off-chain images often stored on IPFS. Sounds decentralized, but there’s a problem: IPFS isn’t free. Someone has to pay the pinning costs. If the platform",
+      "author": {
+        "id": "",
+        "username": "mintbay_co",
+        "name": "mintbay",
+        "profile_image_url": "",
+        "public_metrics": {
+          "followers_count": 0,
+          "following_count": 0,
+          "tweet_count": 0
+        }
+      },
+      "public_metrics": {
+        "like_count": 13,
+        "retweet_count": 5,
+        "reply_count": 2,
+        "impression_count": 1020
+      },
+      "created_at": "",
+      "extraction_method": "HTML parsing",
+      "product": "BWS IPFS",
+      "queryName": "ipfs-setup-problems",
+      "queryPriority": "high",
+      "discoveredAt": "2025-12-12T08:50:07.598Z"
+    },
+    {
+      "id": "1968637769451725304",
+      "text": "IPFS deserves credit for moving decentralized storage forward, but the gaps are hard to ignore: no incentives for permanence, unpredictable retrieval times, and weak discovery. \n\nThat’s why so many teams end up relying on pinning services that recreate the same centralization",
+      "author": {
+        "id": "",
+        "username": "AryaWeb3",
+        "name": "Arya",
+        "profile_image_url": "",
+        "public_metrics": {
+          "followers_count": 0,
+          "following_count": 0,
+          "tweet_count": 0
+        }
+      },
+      "public_metrics": {
+        "like_count": 6,
+        "retweet_count": 1,
+        "reply_count": 1,
+        "impression_count": 99
+      },
+      "created_at": "",
+      "extraction_method": "HTML parsing",
+      "product": "BWS IPFS",
+      "queryName": "ipfs-setup-problems",
+      "queryPriority": "high",
+      "discoveredAt": "2025-12-12T08:50:07.598Z"
+    },
+    {
+      "id": "1954093141436342580",
+      "text": "Most Web3 builders use IPFS.\n\nBut here’s the problem,\n\n Files can disappear\n\n Pinning costs pile up\n\n Data is not guaranteed to stay online\n\nWith Irys you can solve all of these.\n\nYou upload once.\nThe data stays on Arweave permanently.\nNo extra fees and no missing content.",
+      "author": {
+        "id": "",
+        "username": "nivlek_smada",
+        "name": "smada ♰",
+        "profile_image_url": "",
+        "public_metrics": {
+          "followers_count": 0,
+          "following_count": 0,
+          "tweet_count": 0
+        }
+      },
+      "public_metrics": {
+        "like_count": 27,
+        "retweet_count": 2,
+        "reply_count": 24,
+        "impression_count": 1243
+      },
+      "created_at": "",
+      "extraction_method": "HTML parsing",
+      "product": "BWS IPFS",
+      "queryName": "ipfs-setup-problems",
+      "queryPriority": "high",
+      "discoveredAt": "2025-12-12T08:50:07.598Z"
+    },
+    {
+      "id": "1954030478308307046",
+      "text": "3/ Problem #1: Disappearing Artwork \n• IPFS requires perpetual payment for pinning \n• Marketplaces shut down, taking your art with them \n• @Nahiiko's \"Bit Rot\" collection brilliantly demonstrates this: https://opensea.io/collection/bitrot-by-nahiko…",
+      "author": {
+        "id": "",
+        "username": "TheDigitalCoy",
+        "name": "Coy | TheDigitalCoy",
+        "profile_image_url": "",
+        "public_metrics": {
+          "followers_count": 0,
+          "following_count": 0,
+          "tweet_count": 0
+        }
+      },
+      "public_metrics": {
+        "like_count": 3,
+        "retweet_count": 2,
+        "reply_count": 1,
+        "impression_count": 244
+      },
+      "created_at": "",
+      "extraction_method": "HTML parsing",
+      "product": "BWS IPFS",
+      "queryName": "ipfs-setup-problems",
+      "queryPriority": "high",
+      "discoveredAt": "2025-12-12T08:50:07.598Z"
+    },
+    {
+      "id": "1953472242483925433",
+      "text": "Affordable on chain storage is a game changer. Today, Web3 projects often hit a wall with storage costs. Whether you’re pinning data to IPFS or paying heavy Arweave fees, unpredictable costs make scaling hard. @Irys_xyz tackles this head on with a simple promise: low, stable",
+      "author": {
+        "id": "",
+        "username": "JibsonDGreatGuy",
+        "name": "Jibson",
+        "profile_image_url": "",
+        "public_metrics": {
+          "followers_count": 0,
+          "following_count": 0,
+          "tweet_count": 0
+        }
+      },
+      "public_metrics": {
+        "like_count": 45,
+        "retweet_count": 2,
+        "reply_count": 41,
+        "impression_count": 377
+      },
+      "created_at": "",
+      "extraction_method": "HTML parsing",
+      "product": "BWS IPFS",
+      "queryName": "ipfs-setup-problems",
+      "queryPriority": "high",
+      "discoveredAt": "2025-12-12T08:50:07.598Z"
+    },
+    {
+      "id": "1984805531052068980",
+      "text": "In case you’re wondering why you should mint the Foxx NFT \n\nHere’s the real alpha:\n\n- Exclusive Access: Unlock premium community spaces & insider perks.\n- Boosted Rewards: Earn extra $FAPS and special engagement bonuses.\n- Ecosystem Utility: Your key to deeper use across",
+      "author": {
+        "id": "",
+        "username": "_GCFR",
+        "name": "Og",
+        "profile_image_url": "",
+        "public_metrics": {
+          "followers_count": 0,
+          "following_count": 0,
+          "tweet_count": 0
+        }
+      },
+      "public_metrics": {
+        "like_count": 79,
+        "retweet_count": 65,
+        "reply_count": 26,
+        "impression_count": 1856
+      },
+      "created_at": "",
+      "extraction_method": "HTML parsing",
+      "product": "NFT.zK",
+      "queryName": "nft-utility",
+      "queryPriority": "medium",
+      "discoveredAt": "2025-12-12T08:50:27.171Z"
+    },
+    {
+      "id": "1980508093843636703",
+      "text": "In case you’re wondering why you should mint the Foxx NFT \n\nHere’s the real alpha:\n\n Exclusive Access: Unlock premium community spaces & insider perks.\n Boosted Rewards: Earn extra $FAPS and special engagement bonuses.\n Ecosystem Utility: Your key to deeper use across",
+      "author": {
+        "id": "",
+        "username": "_GCFR",
+        "name": "Og",
+        "profile_image_url": "",
+        "public_metrics": {
+          "followers_count": 0,
+          "following_count": 0,
+          "tweet_count": 0
+        }
+      },
+      "public_metrics": {
+        "like_count": 69,
+        "retweet_count": 67,
+        "reply_count": 25,
+        "impression_count": 1010
+      },
+      "created_at": "",
+      "extraction_method": "HTML parsing",
+      "product": "NFT.zK",
+      "queryName": "nft-utility",
+      "queryPriority": "medium",
+      "discoveredAt": "2025-12-12T08:50:27.171Z"
+    },
+    {
+      "id": "1974378471423086604",
+      "text": "-@genome_protocol omnichain design means items and rewards can move across chains,reduces      fragmentation and boosts long-term utility.\n\n&\n\n-@HeyElsaAI use case for NFT collectors: ask Elsa to find floor dips and auto-execute buys when conditions match your rules.",
+      "author": {
+        "id": "",
+        "username": "web3_fawaz",
+        "name": "0xFawaz (❖,❖)",
+        "profile_image_url": "",
+        "public_metrics": {
+          "followers_count": 0,
+          "following_count": 0,
+          "tweet_count": 0
+        }
+      },
+      "public_metrics": {
+        "like_count": 21,
+        "retweet_count": 4,
+        "reply_count": 20,
+        "impression_count": 87
+      },
+      "created_at": "",
+      "extraction_method": "HTML parsing",
+      "product": "NFT.zK",
+      "queryName": "nft-utility",
+      "queryPriority": "medium",
+      "discoveredAt": "2025-12-12T08:50:27.171Z"
+    },
+    {
+      "id": "1950168269257621677",
+      "text": "Gilliquid Believoors.\n\n@illiquid_nft has just announced a partnership with @prjx_hl to unlock real post-mint utility for holders.\n\n➤ It’s a real use case for NFT-native liquidity one that directly rewards participation while preserving ownership.",
+      "author": {
+        "id": "",
+        "username": "_tweettunde_",
+        "name": "Tunde",
+        "profile_image_url": "",
+        "public_metrics": {
+          "followers_count": 0,
+          "following_count": 0,
+          "tweet_count": 0
+        }
+      },
+      "public_metrics": {
+        "like_count": 11,
+        "retweet_count": 1,
+        "reply_count": 9,
+        "impression_count": 81
+      },
+      "created_at": "",
+      "extraction_method": "HTML parsing",
+      "product": "NFT.zK",
+      "queryName": "nft-utility",
+      "queryPriority": "medium",
+      "discoveredAt": "2025-12-12T08:50:27.171Z"
+    },
+    {
+      "id": "1945321875325800796",
+      "text": "Create NFT collections on NEBULA to bring your use case on-chain. Create a market around your big idea on a full utility platform that exists to facilitate true decentralisation.\n\nNEBULA is perfect for tokenising photography, art, music, IP, loyalty rewards, token-gated",
+      "author": {
+        "id": "",
+        "username": "137Devs",
+        "name": "OneThirtySeven",
+        "profile_image_url": "",
+        "public_metrics": {
+          "followers_count": 0,
+          "following_count": 0,
+          "tweet_count": 0
+        }
+      },
+      "public_metrics": {
+        "like_count": 16,
+        "retweet_count": 6,
+        "reply_count": 0,
+        "impression_count": 258
+      },
+      "created_at": "",
+      "extraction_method": "HTML parsing",
+      "product": "NFT.zK",
+      "queryName": "nft-utility",
+      "queryPriority": "medium",
+      "discoveredAt": "2025-12-12T08:50:27.171Z"
+    },
+    {
+      "id": "1944063252716978373",
+      "text": "A lot of people buying the Composable NFT from @EspressoSys are sleeping on the real use case. It’s not just a jpeg.\n\nThese NFTs come with cross-chain multipliers. Moving them across Espresso-integrated chains could unlock rewards, new traits, and real utility.\n\nThis is why",
+      "author": {
+        "id": "",
+        "username": "Phantomk88",
+        "name": "Phantomk (❖,❖)",
+        "profile_image_url": "",
+        "public_metrics": {
+          "followers_count": 0,
+          "following_count": 0,
+          "tweet_count": 0
+        }
+      },
+      "public_metrics": {
+        "like_count": 24,
+        "retweet_count": 1,
+        "reply_count": 17,
+        "impression_count": 920
+      },
+      "created_at": "",
+      "extraction_method": "HTML parsing",
+      "product": "NFT.zK",
+      "queryName": "nft-utility",
+      "queryPriority": "medium",
+      "discoveredAt": "2025-12-12T08:50:27.171Z"
+    },
+    {
+      "id": "1936092132361781260",
+      "text": "Real utility and true value. The best NFT use case on @Aptos: PingoPond by @penguinonaptos  \n\nPingoPond is a platform that rewards actual creativity. It allows brands and creators to post content challenges and submit entries, rewarding creators onchain in $APT",
+      "author": {
+        "id": "",
+        "username": "dheiyvheed",
+        "name": "Kassper",
+        "profile_image_url": "",
+        "public_metrics": {
+          "followers_count": 0,
+          "following_count": 0,
+          "tweet_count": 0
+        }
+      },
+      "public_metrics": {
+        "like_count": 24,
+        "retweet_count": 4,
+        "reply_count": 10,
+        "impression_count": 756
+      },
+      "created_at": "",
+      "extraction_method": "HTML parsing",
+      "product": "NFT.zK",
+      "queryName": "nft-utility",
+      "queryPriority": "medium",
+      "discoveredAt": "2025-12-12T08:50:27.171Z"
+    },
+    {
+      "id": "1999072423740612778",
+      "text": "You can use your Ape to build or enhance a brand. You can place it on consumer products, apparel, physical packaging, or marketing materials. You can develop a character for content, licensing deals, partnerships, or brand campaigns. Your NFT becomes part of a structured business",
+      "author": {
+        "id": "",
+        "username": "AndreWGMI",
+        "name": "AndreWGMI",
+        "profile_image_url": "",
+        "public_metrics": {
+          "followers_count": 0,
+          "following_count": 0,
+          "tweet_count": 0
+        }
+      },
+      "public_metrics": {
+        "like_count": 23,
+        "retweet_count": 1,
+        "reply_count": 1,
+        "impression_count": 1719
+      },
+      "created_at": "",
+      "extraction_method": "HTML parsing",
+      "product": "NFT.zK",
+      "queryName": "brand-nfts",
+      "queryPriority": "medium",
+      "discoveredAt": "2025-12-12T08:50:41.016Z"
+    },
+    {
+      "id": "1998879258589147221",
+      "text": "Chad is already one of the most recognizable memes online.  Based Chad takes that ubiquity and turns it into an actual project: cross-chain integrations, NFT collections, meme pipelines, cross-project marketing, and a scalable brand that grows with the culture.\n\nMost tokens chase",
+      "author": {
+        "id": "",
+        "username": "basedchad",
+        "name": "Chad",
+        "profile_image_url": "",
+        "public_metrics": {
+          "followers_count": 0,
+          "following_count": 0,
+          "tweet_count": 0
+        }
+      },
+      "public_metrics": {
+        "like_count": 32,
+        "retweet_count": 16,
+        "reply_count": 6,
+        "impression_count": 396
+      },
+      "created_at": "",
+      "extraction_method": "HTML parsing",
+      "product": "NFT.zK",
+      "queryName": "brand-nfts",
+      "queryPriority": "medium",
+      "discoveredAt": "2025-12-12T08:50:41.016Z"
+    },
+    {
+      "id": "1998783856481083404",
+      "text": "Good morning, Meta Muses! \nA brand new day to create, connect & shine! \n\nToday we proudly feature our Muse of the Golden Tulip, enjoying a warm coffee and a classic Dutch stroopwafel \nGolden vibes, sweet energy… that’s how we start the day! \n\nDrop a  or  if you’re ready to",
+      "author": {
+        "id": "",
+        "username": "MetaMuses_NFT",
+        "name": "META MUSES NFT",
+        "profile_image_url": "",
+        "public_metrics": {
+          "followers_count": 0,
+          "following_count": 0,
+          "tweet_count": 0
+        }
+      },
+      "public_metrics": {
+        "like_count": 11,
+        "retweet_count": 4,
+        "reply_count": 7,
+        "impression_count": 177
+      },
+      "created_at": "",
+      "extraction_method": "HTML parsing",
+      "product": "NFT.zK",
+      "queryName": "brand-nfts",
+      "queryPriority": "medium",
+      "discoveredAt": "2025-12-12T08:50:41.016Z"
+    },
+    {
+      "id": "1998768268341920187",
+      "text": "A team-treasury–aligned strategy token is currently the closest mechanism we have for creating a direct positive correlation between an NFT collection’s floor price and the success of its underlying business.\n\nHere’s the loop:\n\nThe project generates revenue -> The team allocates",
+      "author": {
+        "id": "",
+        "username": "tylerdurdeth",
+        "name": "Tyler DurdΞth",
+        "profile_image_url": "",
+        "public_metrics": {
+          "followers_count": 0,
+          "following_count": 0,
+          "tweet_count": 0
+        }
+      },
+      "public_metrics": {
+        "like_count": 55,
+        "retweet_count": 13,
+        "reply_count": 13,
+        "impression_count": 3705
+      },
+      "created_at": "",
+      "extraction_method": "HTML parsing",
+      "product": "NFT.zK",
+      "queryName": "brand-nfts",
+      "queryPriority": "medium",
+      "discoveredAt": "2025-12-12T08:50:41.016Z"
+    },
+    {
+      "id": "1998755056070389949",
+      "text": "Besides Strategy tokens, another method to align NFT ecosystem assets for one brand could be for the team to allow for burn-redeems of their secondary assets for new ones or for their fungible coin.\n\nFrom a business perspective it’s a smart way to re-introduce royalties without",
+      "author": {
+        "id": "",
+        "username": "sergitosergito",
+        "name": "Sergito ❚ ❚",
+        "profile_image_url": "",
+        "public_metrics": {
+          "followers_count": 0,
+          "following_count": 0,
+          "tweet_count": 0
+        }
+      },
+      "public_metrics": {
+        "like_count": 68,
+        "retweet_count": 2,
+        "reply_count": 18,
+        "impression_count": 3119
+      },
+      "created_at": "",
+      "extraction_method": "HTML parsing",
+      "product": "NFT.zK",
+      "queryName": "brand-nfts",
+      "queryPriority": "medium",
+      "discoveredAt": "2025-12-12T08:50:41.016Z"
+    },
+    {
+      "id": "1998731673589227620",
+      "text": "PBED NFTs solves the post-launch stagnation in tokens by transforming passive holdings into dynamically growing equity stakes tied to real company revenue, fostering long-term alignment between investors and projects.",
+      "author": {
+        "id": "",
+        "username": "tweetonium_xyz",
+        "name": "Tweetonium | NFT-Powered DAO",
+        "profile_image_url": "",
+        "public_metrics": {
+          "followers_count": 0,
+          "following_count": 0,
+          "tweet_count": 0
+        }
+      },
+      "public_metrics": {
+        "like_count": 11,
+        "retweet_count": 4,
+        "reply_count": 0,
+        "impression_count": 664
+      },
+      "created_at": "",
+      "extraction_method": "HTML parsing",
+      "product": "NFT.zK",
+      "queryName": "brand-nfts",
+      "queryPriority": "medium",
+      "discoveredAt": "2025-12-12T08:50:41.016Z"
+    },
+    {
+      "id": "1998704789115244841",
+      "text": "Focus on the input\n\n(stealth launch, on-and off-chain proofs, portfolio companies, hackathon, publications, interviews, track record, brand, bot, community, interactions, timing, developments, NFTs, network, distribution)\n\nand the output will take care of itself\n\n$TIBBIR",
+      "author": {
+        "id": "",
+        "username": "tibbiracer",
+        "name": "TibbiЯacer",
+        "profile_image_url": "",
+        "public_metrics": {
+          "followers_count": 0,
+          "following_count": 0,
+          "tweet_count": 0
+        }
+      },
+      "public_metrics": {
+        "like_count": 38,
+        "retweet_count": 6,
+        "reply_count": 5,
+        "impression_count": 769
+      },
+      "created_at": "",
+      "extraction_method": "HTML parsing",
+      "product": "NFT.zK",
+      "queryName": "brand-nfts",
+      "queryPriority": "medium",
+      "discoveredAt": "2025-12-12T08:50:41.016Z"
+    },
+    {
+      "id": "1984815238567600180",
+      "text": "Claynosaurz isn’t an NFT, it’s a global IP company\n\nIn this video, CEO @AndrewsaurP breaks down:\n- Building sticky IP\n- Expanding into mainstream media\n- Lessons from top animation studios\n- Web3 vs traditional distribution\n\nMasterclass in brand, story, and collectibles\n\nLink",
+      "author": {
+        "id": "",
+        "username": "youfadedwealth",
+        "name": "Faded",
+        "profile_image_url": "",
+        "public_metrics": {
+          "followers_count": 0,
+          "following_count": 0,
+          "tweet_count": 0
+        }
+      },
+      "public_metrics": {
+        "like_count": 123,
+        "retweet_count": 40,
+        "reply_count": 48,
+        "impression_count": 3820
+      },
+      "created_at": "",
+      "extraction_method": "HTML parsing",
+      "product": "NFT.zK",
+      "queryName": "nft-distribution",
+      "queryPriority": "high",
+      "discoveredAt": "2025-12-12T08:50:55.941Z"
+    },
+    {
+      "id": "1982825390457622598",
+      "text": "Zama is on a mission to make Fully Homomorphic Encryption (FHE) mainstream!!\n\nZama Creators Campaign Season 3 is up and running!! \n\nZama OG NFT claim page is live but claiming isn’t open yet.\n$150M+ raised by Zama so far.\nTotal supply: 1,750 OG NFTs (till Season 3).",
+      "author": {
+        "id": "",
+        "username": "Arshad_Khaaan",
+        "name": "arshadkhan.base.eth",
+        "profile_image_url": "",
+        "public_metrics": {
+          "followers_count": 0,
+          "following_count": 0,
+          "tweet_count": 0
+        }
+      },
+      "public_metrics": {
+        "like_count": 19,
+        "retweet_count": 2,
+        "reply_count": 14,
+        "impression_count": 192
+      },
+      "created_at": "",
+      "extraction_method": "HTML parsing",
+      "product": "NFT.zK",
+      "queryName": "nft-distribution",
+      "queryPriority": "high",
+      "discoveredAt": "2025-12-12T08:50:55.941Z"
+    },
+    {
+      "id": "1966161328235807197",
+      "text": "If you’re new to Web3, you’re probably making the 1 mistake that wrecks most beginners\n\nWe’re breaking it down TOMORROW @ 5PM WAT\nCivil NFT Giveaway live\n\nCome learn the mistakes,the solutions&win while you’re at it\n\nRT for giveaway entry\nWinners picked live\nSet your reminders",
+      "author": {
+        "id": "",
+        "username": "mrsbn001",
+        "name": "Mr. SBN",
+        "profile_image_url": "",
+        "public_metrics": {
+          "followers_count": 0,
+          "following_count": 0,
+          "tweet_count": 0
+        }
+      },
+      "public_metrics": {
+        "like_count": 7,
+        "retweet_count": 1,
+        "reply_count": 2,
+        "impression_count": 146
+      },
+      "created_at": "",
+      "extraction_method": "HTML parsing",
+      "product": "NFT.zK",
+      "queryName": "nft-distribution",
+      "queryPriority": "high",
+      "discoveredAt": "2025-12-12T08:50:55.941Z"
+    },
+    {
+      "id": "1966123796378615916",
+      "text": "The trojan horse that finally ends NFT vs mainstream. Built by @ChimpersHQ \n\nForget equity\nPeople want moments they can open, trade, and flex. Rip a pack. Hit a rare. Claim the physical twin. That’s not IR that’s gameplay.\n\nHere’s the unlock: a parallel collecting system with",
+      "author": {
+        "id": "",
+        "username": "everyonebpup",
+        "name": "BP",
+        "profile_image_url": "",
+        "public_metrics": {
+          "followers_count": 0,
+          "following_count": 0,
+          "tweet_count": 0
+        }
+      },
+      "public_metrics": {
+        "like_count": 43,
+        "retweet_count": 15,
+        "reply_count": 11,
+        "impression_count": 1343
+      },
+      "created_at": "",
+      "extraction_method": "HTML parsing",
+      "product": "NFT.zK",
+      "queryName": "nft-distribution",
+      "queryPriority": "high",
+      "discoveredAt": "2025-12-12T08:50:55.941Z"
+    },
+    {
+      "id": "1999325281530638538",
+      "text": "GM CT!\nLet's unpack @ConfidentialLyr, the privacy layer that's actually fixing Web3's biggest exposure problem.\n\nCore Tech: zk-SNARKs\nZero-Knowledge Succinct Non-Interactive Arguments of Knowledge. Verifies transactions without revealing sensitive data. Your wallet history,",
+      "author": {
+        "id": "",
+        "username": "drizzyinka16",
+        "name": "CryptoKnight",
+        "profile_image_url": "",
+        "public_metrics": {
+          "followers_count": 0,
+          "following_count": 0,
+          "tweet_count": 0
+        }
+      },
+      "public_metrics": {
+        "like_count": 15,
+        "retweet_count": 4,
+        "reply_count": 15,
+        "impression_count": 692
+      },
+      "created_at": "",
+      "extraction_method": "HTML parsing",
+      "product": "Blockchain Hash",
+      "queryName": "blockchain-without-wallets",
+      "queryPriority": "high",
+      "discoveredAt": "2025-12-12T08:51:15.029Z"
+    },
+    {
+      "id": "1999288103568339210",
+      "text": "Kolo opens up crypto spending in a straightforward way by connecting to seven key blockchain networks right from your phone. \n\nYou can transfer in Bitcoin or Ethereum directly, and the process skips any fees that slow things down. This means your wallet stays full without",
+      "author": {
+        "id": "",
+        "username": "Inayerhweb3",
+        "name": "inayerh",
+        "profile_image_url": "",
+        "public_metrics": {
+          "followers_count": 0,
+          "following_count": 0,
+          "tweet_count": 0
+        }
+      },
+      "public_metrics": {
+        "like_count": 34,
+        "retweet_count": 2,
+        "reply_count": 30,
+        "impression_count": 689
+      },
+      "created_at": "",
+      "extraction_method": "HTML parsing",
+      "product": "Blockchain Hash",
+      "queryName": "blockchain-without-wallets",
+      "queryPriority": "high",
+      "discoveredAt": "2025-12-12T08:51:15.029Z"
+    },
+    {
+      "id": "1999205318744752180",
+      "text": "The @rainbowdotme is dedicated to simplifying and securing on-chain access for everyone.\n\nIt provides intuitive tools that help users navigate the complexities of Web3 without confusion.\n\nThe wallet experience is specifically designed for clarity, moving away from unnecessary",
+      "author": {
+        "id": "",
+        "username": "olutundee001",
+        "name": "𝑳𝑼𝑴𝑨𝑿",
+        "profile_image_url": "",
+        "public_metrics": {
+          "followers_count": 0,
+          "following_count": 0,
+          "tweet_count": 0
+        }
+      },
+      "public_metrics": {
+        "like_count": 50,
+        "retweet_count": 3,
+        "reply_count": 53,
+        "impression_count": 925
+      },
+      "created_at": "",
+      "extraction_method": "HTML parsing",
+      "product": "Blockchain Hash",
+      "queryName": "blockchain-without-wallets",
+      "queryPriority": "high",
+      "discoveredAt": "2025-12-12T08:51:15.029Z"
+    },
+    {
+      "id": "1999194364812067251",
+      "text": "Do you know @rainbowdotme is built to make onchain access simple, safe, and empowering?\n\n➜ Tools that help anyone navigate Web3 without confusion.\n\n➜ A wallet experience designed for clarity, not complexity.\n\n➜ Features that keep users protected while staying fully in control.",
+      "author": {
+        "id": "",
+        "username": "Meekofweb3",
+        "name": "Meek",
+        "profile_image_url": "",
+        "public_metrics": {
+          "followers_count": 0,
+          "following_count": 0,
+          "tweet_count": 0
+        }
+      },
+      "public_metrics": {
+        "like_count": 19,
+        "retweet_count": 3,
+        "reply_count": 14,
+        "impression_count": 790
+      },
+      "created_at": "",
+      "extraction_method": "HTML parsing",
+      "product": "Blockchain Hash",
+      "queryName": "blockchain-without-wallets",
+      "queryPriority": "high",
+      "discoveredAt": "2025-12-12T08:51:15.029Z"
+    },
+    {
+      "id": "1962764800913477812",
+      "text": "$OPUS x @0G_labs:\n- Every model, dataset, and update is tracked on-chain.\n- Anyone can verify where an AI came from and how it evolves.\n- Built on ØG’s AI-native blockchain with compute, storage, and EVM tools.\n\nWe get #AI that’s transparent, auditable & decentralized.",
+      "author": {
+        "id": "",
+        "username": "arvl_furvl",
+        "name": "Arvl",
+        "profile_image_url": "",
+        "public_metrics": {
+          "followers_count": 0,
+          "following_count": 0,
+          "tweet_count": 0
+        }
+      },
+      "public_metrics": {
+        "like_count": 22,
+        "retweet_count": 3,
+        "reply_count": 1,
+        "impression_count": 2760
+      },
+      "created_at": "",
+      "extraction_method": "HTML parsing",
+      "product": "Blockchain Hash",
+      "queryName": "blockchain-database",
+      "queryPriority": "high",
+      "discoveredAt": "2025-12-12T08:51:29.416Z"
+    },
+    {
+      "id": "1961822753331282195",
+      "text": "DAY 2 of saying Hirys until @irys_xyz Mainnet\n\nUnlike centralized storage solutions that rely on mutable servers, Irys stores data directly on its Layer-1 blockchain. \n\nThis ensures that data is not subject to deletion, downtime, or third-party control.\n\nOn-chain storage",
+      "author": {
+        "id": "",
+        "username": "blessingcathy_",
+        "name": "CHÎ VÌ TÀ (✧ᴗ✧)",
+        "profile_image_url": "",
+        "public_metrics": {
+          "followers_count": 0,
+          "following_count": 0,
+          "tweet_count": 0
+        }
+      },
+      "public_metrics": {
+        "like_count": 78,
+        "retweet_count": 3,
+        "reply_count": 75,
+        "impression_count": 2288
+      },
+      "created_at": "",
+      "extraction_method": "HTML parsing",
+      "product": "Blockchain Hash",
+      "queryName": "blockchain-database",
+      "queryPriority": "high",
+      "discoveredAt": "2025-12-12T08:51:29.416Z"
+    },
+    {
+      "id": "1956269201879966168",
+      "text": "Irys (Blockchain Datachain)\n\n@irys_xyz isn’t just storing data like Filecoin or Arweave, they’ve made data itself programmable.\n\nThis means AI agents and smart contracts can read, update, and act on data directly on-chain, at very high speed and low cost.\n\nIt’s storage + compute",
+      "author": {
+        "id": "",
+        "username": "Muh__Toyeeb",
+        "name": "OŁA wif Richmond",
+        "profile_image_url": "",
+        "public_metrics": {
+          "followers_count": 0,
+          "following_count": 0,
+          "tweet_count": 0
+        }
+      },
+      "public_metrics": {
+        "like_count": 21,
+        "retweet_count": 1,
+        "reply_count": 22,
+        "impression_count": 372
+      },
+      "created_at": "",
+      "extraction_method": "HTML parsing",
+      "product": "Blockchain Hash",
+      "queryName": "blockchain-database",
+      "queryPriority": "high",
+      "discoveredAt": "2025-12-12T08:51:29.416Z"
+    },
+    {
+      "id": "1955197340928839867",
+      "text": ".@IrysRealms recently launched Update 14 with open access and permanent on-chain score storage via @irys_xyz, offering immutable gaming achievements and first-person mode capabilities. It's subtle but significant, signaling a shift toward blockchain gaming built for permanence.",
+      "author": {
+        "id": "",
+        "username": "AdriansCryptoo",
+        "name": "Adrian",
+        "profile_image_url": "",
+        "public_metrics": {
+          "followers_count": 0,
+          "following_count": 0,
+          "tweet_count": 0
+        }
+      },
+      "public_metrics": {
+        "like_count": 148,
+        "retweet_count": 1,
+        "reply_count": 170,
+        "impression_count": 1335
+      },
+      "created_at": "",
+      "extraction_method": "HTML parsing",
+      "product": "Blockchain Hash",
+      "queryName": "blockchain-database",
+      "queryPriority": "high",
+      "discoveredAt": "2025-12-12T08:51:29.416Z"
+    },
+    {
+      "id": "1918307488819990733",
+      "text": "$QS just dropped a massive update, new Upload API now live on the @Quick_Sync framework.\n\nS3 style interface, fully powered by IPFS, making decentralised storage seamless for Web2 devs.\n\nMultipart uploads, secure links, file management, all on-chain.\n\nThis is real builder tech.",
+      "author": {
+        "id": "",
+        "username": "blockchain_goat",
+        "name": "𝕷𝖆 𝕮𝖆𝖇𝖗𝖆",
+        "profile_image_url": "",
+        "public_metrics": {
+          "followers_count": 0,
+          "following_count": 0,
+          "tweet_count": 0
+        }
+      },
+      "public_metrics": {
+        "like_count": 34,
+        "retweet_count": 12,
+        "reply_count": 29,
+        "impression_count": 8744
+      },
+      "created_at": "",
+      "extraction_method": "HTML parsing",
+      "product": "Blockchain Hash",
+      "queryName": "blockchain-database",
+      "queryPriority": "high",
+      "discoveredAt": "2025-12-12T08:51:29.416Z"
+    },
+    {
+      "id": "1986634599796252879",
+      "text": "Tria solves the problem of blockchain being too difficult. It automates bridges, gas fees, and complex operations. You can use cutting-edge Web3 technology with the same ease as a regular smartphone app.\n\nuseTria\n@useTria",
+      "author": {
+        "id": "",
+        "username": "miraitomiraiko",
+        "name": "みらい miraiko.base.eth.edgeRIVER",
+        "profile_image_url": "",
+        "public_metrics": {
+          "followers_count": 0,
+          "following_count": 0,
+          "tweet_count": 0
+        }
+      },
+      "public_metrics": {
+        "like_count": 8,
+        "retweet_count": 1,
+        "reply_count": 6,
+        "impression_count": 146
+      },
+      "created_at": "",
+      "extraction_method": "HTML parsing",
+      "product": "Blockchain Hash",
+      "queryName": "web3-development",
+      "queryPriority": "high",
+      "discoveredAt": "2025-12-12T08:51:45.103Z"
+    },
+    {
+      "id": "1939298108640198994",
+      "text": "Let’s talk about the biggest barrier to Web3 adoption: onboarding.\n\nSeed phrases.\nWallet downloads.\nGas fees.\n\nIt feels like asking your grandma to build a rocket just to send an email.\n\nThat’s where zkLogin changes the game. \n\nImagine if you could sign into a blockchain app",
+      "author": {
+        "id": "",
+        "username": "web_3Boss",
+        "name": "web3Boss",
+        "profile_image_url": "",
+        "public_metrics": {
+          "followers_count": 0,
+          "following_count": 0,
+          "tweet_count": 0
+        }
+      },
+      "public_metrics": {
+        "like_count": 9,
+        "retweet_count": 1,
+        "reply_count": 2,
+        "impression_count": 110
+      },
+      "created_at": "",
+      "extraction_method": "HTML parsing",
+      "product": "Blockchain Hash",
+      "queryName": "web3-development",
+      "queryPriority": "high",
+      "discoveredAt": "2025-12-12T08:51:45.103Z"
+    }
+  ],
+  "lastDiscovery": {
+    "Blockchain Badges": "2025-12-12T08:49:19.472Z",
+    "BWS IPFS": "2025-12-12T08:50:07.598Z",
+    "NFT.zK": "2025-12-12T08:50:55.941Z",
+    "Blockchain Hash": "2025-12-12T08:51:45.103Z"
+  },
   "stats": {
-    "totalDiscovered": 0,
+    "totalDiscovered": 58,
     "byProduct": {
       "Blockchain Badges": {
-        "total": 0,
-        "unprocessed": 0,
-        "processed": 0
+        "total": 13,
+        "unprocessed": 6,
+        "processed": 7
       },
       "BWS IPFS": {
-        "total": 0,
-        "unprocessed": 0,
-        "processed": 0
+        "total": 16,
+        "unprocessed": 9,
+        "processed": 7
       },
       "NFT.zK": {
-        "total": 0,
-        "unprocessed": 0,
+        "total": 18,
+        "unprocessed": 18,
         "processed": 0
       },
       "Blockchain Hash": {
-        "total": 0,
-        "unprocessed": 0,
+        "total": 11,
+        "unprocessed": 11,
         "processed": 0
       }
     },
-    "lastRun": null
+    "lastRun": "2025-12-12T09:14:51.724Z"
   }
 }

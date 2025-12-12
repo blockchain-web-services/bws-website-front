@@ -1,19 +1,54 @@
 {
-  "replies": [],
+  "replies": [
+    {
+      "originalTweetId": "1999315340623511799",
+      "originalTweetAuthor": "FinalxFase",
+      "product": "Blockchain Badges",
+      "threadTweetIds": [
+        "1999406909959381044",
+        "1999406931107106918",
+        "1999406952284037606",
+        "1999406973356257527"
+      ],
+      "templateUsed": "problem-solution",
+      "templateName": "Problem-Solution",
+      "approach": "problem-solution",
+      "relevanceScore": 75,
+      "timestamp": "2025-12-12T09:12:25.142Z",
+      "threadPreview": "Exactly this. And it's not just inconvenient - it's a security risk. Every time you re-upload creden"
+    },
+    {
+      "originalTweetId": "1998055556045586590",
+      "originalTweetAuthor": "ar_io_network",
+      "product": "BWS IPFS",
+      "threadTweetIds": [
+        "1999407523531542641",
+        "1999407544771449008",
+        "1999407565872988299",
+        "1999407586966188466"
+      ],
+      "templateUsed": "problem-solution",
+      "templateName": "Problem-Solution",
+      "approach": "problem-solution",
+      "relevanceScore": 72,
+      "timestamp": "2025-12-12T09:14:51.724Z",
+      "threadPreview": "Permanent storage is critical for Bitcoin NFTs. If your metadata or images disappear from centralize"
+    }
+  ],
   "stats": {
-    "totalThreads": 0,
+    "totalThreads": 2,
     "byProduct": {
-      "Blockchain Badges": 0,
-      "BWS IPFS": 0,
+      "Blockchain Badges": 1,
+      "BWS IPFS": 1,
       "NFT.zK": 0,
       "Blockchain Hash": 0
     },
     "byApproach": {
       "how-to": 0,
-      "problem-solution": 0,
+      "problem-solution": 2,
       "feature-showcase": 0
     },
-    "averageRelevanceScore": 0,
-    "lastReply": null
+    "averageRelevanceScore": 74,
+    "lastReply": "2025-12-12T09:14:51.724Z"
   }
 }
