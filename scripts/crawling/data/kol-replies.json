@@ -2036,6 +2036,44 @@
       "timestamp": "2025-12-12T07:39:40.276Z",
       "status": "posted",
       "dryRun": false
+    },
+    {
+      "id": "1353384573435056128-1994142556071031079-1765540146150",
+      "tweetId": "1994142556071031079",
+      "tweetUrl": "https://twitter.com/CryptoRover/status/1994142556071031079",
+      "kolId": "1353384573435056128",
+      "kolUsername": "CryptoRover",
+      "originalTweetText": "BREAKING:\n\nBLACKROCK CEO LARRY FINK: IT DOESN'T MATTER IF MARKETS RISE AND FALL. BUBBLES COME AND GO.\n\nWHAT MATTERS MOST IS STAYING IN THE MARKET THROUGH ALL CYCLES.",
+      "replyTweetId": "1999446406436966789",
+      "replyText": "💎 Long-term positioning reveals mispriced infrastructure plays.\n\n🔧 BWS IPFS Upload handles decentralized file storage through simple API - NFT creators upload metadata to distributed network without running their own IPFS node. Content addressing prevents censorship.\n💡 Building permanent storage at microcap. $BWS\n\n@BWSCommunity #microcap #NFT #infrastructure https://docs.bws.ninja/solutions/bws.ipfs.upload",
+      "productMentioned": "Multiple products (X Bot, Blockchain Badges, ESG Credits, Fan Game Cube)",
+      "relevanceScore": 82,
+      "templateUsed": "emoji_enhanced",
+      "templateName": "Emoji-Enhanced Structure",
+      "imageAttached": true,
+      "imagePath": "/assets/images/docs/bws-ipfs/bws-ipfs-0.png",
+      "timestamp": "2025-12-12T11:49:06.150Z",
+      "status": "posted",
+      "dryRun": false
+    },
+    {
+      "id": "2259434528-1998053731502375376-1765540236033",
+      "tweetId": "1998053731502375376",
+      "tweetUrl": "https://twitter.com/cobie/status/1998053731502375376",
+      "kolId": "2259434528",
+      "kolUsername": "cobie",
+      "originalTweetText": "Point to the last three pieces of alpha u found actionable from twitter",
+      "replyTweetId": "1999446783886524884",
+      "replyText": "Fair challenge - substance beats hype every time.\n\nConsider this: $BWS Blockchain Save creates tamper-proof document records with blockchain timestamps and Certificate of Trust generation for every save operation. No wallet management required - API handles all transaction complexity.\n\n@BWSCommunity #microcap #infrastructure #gems https://docs.bws.ninja/solutions/bws.blockchain.save",
+      "productMentioned": "X Bot, Blockchain Badges",
+      "relevanceScore": 85,
+      "templateUsed": "stat_driven",
+      "templateName": "Stat/Fact-Driven Structure",
+      "imageAttached": false,
+      "imagePath": null,
+      "timestamp": "2025-12-12T11:50:36.033Z",
+      "status": "posted",
+      "dryRun": false
     }
   ],
   "dailyStats": {
@@ -2110,10 +2148,10 @@
     }
   },
   "metadata": {
-    "totalReplies": 99,
-    "successfulReplies": 65,
+    "totalReplies": 101,
+    "successfulReplies": 67,
     "failedReplies": 34,
-    "lastReplyAt": "2025-12-12T07:39:40.276Z",
+    "lastReplyAt": "2025-12-12T11:50:36.033Z",
     "todayRepliesCount": 0,
     "lastUpdateBy": "kol-system"
   }

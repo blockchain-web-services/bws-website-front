@@ -4975,9 +4975,10 @@
       "BWS IPFS",
       "Blockchain Save"
     ],
-    "currentIndex": 6,
-    "lastProductUsed": "ESG Credits",
+    "currentIndex": 0,
+    "lastProductUsed": "Blockchain Save",
     "positioningPhraseIndex": 0,
-    "replyCount": 70
-  }
+    "replyCount": 72
+  },
+  "_removedStale": false
 }
