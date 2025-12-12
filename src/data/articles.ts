@@ -19,17 +19,17 @@ export interface ArticleMetadata {
 
 export const articles: ArticleMetadata[] = [
 {
-  slug: 'x-bot-2025-12-11',
-  product: 'X Bot',
-  title: 'X Bot: Automated Community Analytics for Web3 Projects',
-  subtitle: 'Managing crypto communities across X and Telegram while detecting authentic engagement versus bot activity is challenging. X Bot automates community tracking with real-time analytics, KOL monitoring, and verified engagement metrics using official API integration.',
-  publishDate: '2025-12-11T19:35:08.986Z',
+  slug: 'blockchain-badges-2025-12-12',
+  product: 'Blockchain Badges',
+  title: 'Blockchain Badges: Issue Tamper-Proof Digital Credentials with Blockchain Verification',
+  subtitle: 'Traditional credential verification traps organizations in a cycle of repetitive processes, document uploads, and manual verification calls that waste time and create security vulnerabilities. Blockchain Badges breaks this cycle by issuing tamper-proof digital credentials with immutable blockchain proof—enabling instant verification by anyone, anywhere, without the friction.',
+  publishDate: '2025-12-12T10:04:02.390Z',
   tweetId: '',
   featuredImage: {
-    src: '/assets/images/docs/x-bot/x-bot-0.png',
-    alt: 'Product screenshot',
+    src: '/assets/images/docs/blockchain-badges/blockchain-badges-0.png',
+    alt: 'Cover',
     loading: 'eager'
   },
-  seoDescription: 'X Bot automates crypto community analytics across X and Telegram with KOL tracking, bot detection, and real-time engagement metrics using official APIs.'
+  seoDescription: 'Blockchain Badges creates verifiable digital credentials with immutable blockchain proof for universities and organizations, eliminating repetitive verification.'
 }
 ];
