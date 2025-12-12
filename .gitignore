@@ -48,3 +48,4 @@ test/docker-compose.worktree.yml
 
 # Ignore worktree directories (worktrees are in .trees/)
 .trees/
+scripts/crawling/data/docs-cache/
