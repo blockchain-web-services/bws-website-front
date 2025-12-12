@@ -629,7 +629,7 @@ export async function sendProductReplyNotification(options) {
     queueSize = 0,
     error = null,
     runUrl = null,
-    lastThreadDetails = null  // { product, threadPreview, threadUrl, originalTweetText, originalTweetUrl, originalAuthor, relevanceScore, approach }
+    allThreadDetails = []  // Array of all threads posted this run
   } = options;
 
   const emoji = success ? '✅' : '❌';
@@ -675,26 +675,35 @@ export async function sendProductReplyNotification(options) {
     }
   }
 
-  // If successful thread with details, show them
-  if (success && lastThreadDetails && threadsPosted > 0) {
+  // Show all threads posted this run in detail
+  if (success && allThreadDetails.length > 0) {
     textParts.push('');
     textParts.push('');
-    textParts.push('*Latest Thread Posted:*');
-    textParts.push(`*Product:* ${lastThreadDetails.product}`);
-    textParts.push(`*Relevance Score:* ${lastThreadDetails.relevanceScore}/100`);
-    textParts.push(`*Approach:* ${lastThreadDetails.approach}`);
-    textParts.push('');
-    textParts.push(`*Our Thread Preview:*`);
-    textParts.push(`"${lastThreadDetails.threadPreview}"`);
-    if (lastThreadDetails.threadUrl) {
-      textParts.push(`<${lastThreadDetails.threadUrl}|View Thread on X>`);
-    }
-    textParts.push('');
-    textParts.push(`*Replying to @${lastThreadDetails.originalAuthor}:*`);
-    textParts.push(`"${lastThreadDetails.originalTweetText}"`);
-    if (lastThreadDetails.originalTweetUrl) {
-      textParts.push(`<${lastThreadDetails.originalTweetUrl}|View Original Tweet>`);
-    }
+    textParts.push(`🧵 *Threads Posted (${allThreadDetails.length} Educational Threads):*`);
+
+    allThreadDetails.forEach((thread, index) => {
+      textParts.push('');
+      textParts.push(`*Thread ${index + 1}:* ${thread.product} → @${thread.originalAuthor}`);
+
+      // Add star emoji for high relevance
+      const relevanceEmoji = thread.relevanceScore >= 75 ? ' 🌟' : '';
+      textParts.push(`  • *Relevance:* ${thread.relevanceScore}/100${relevanceEmoji}`);
+      textParts.push(`  • *Approach:* ${thread.approach}`);
+
+      // Preview (truncate to 100 chars)
+      const preview = thread.threadPreview.substring(0, 100);
+      textParts.push(`  • *Preview:* "${preview}..."`);
+
+      // Thread URL
+      if (thread.threadUrl) {
+        textParts.push(`  • <${thread.threadUrl}|View Thread on X>`);
+      }
+
+      // Original tweet context
+      if (thread.originalTweetUrl) {
+        textParts.push(`  • <${thread.originalTweetUrl}|Original Tweet>`);
+      }
+    });
   }
 
   if (error) {

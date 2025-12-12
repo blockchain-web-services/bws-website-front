@@ -259,7 +259,7 @@ async function replyToProductTweets() {
   let threadsPosted = 0;
   let tweetsEvaluated = 0;
   const errors = [];
-  let lastReplyDetails = null;
+  const allThreadDetails = [];
 
   for (const tweet of tweetsToProcess) {
     tweetsEvaluated++;
@@ -392,8 +392,8 @@ async function replyToProductTweets() {
 
       threadsPosted++;
 
-      // Save last reply details for notification
-      lastReplyDetails = {
+      // Save thread details for notification
+      allThreadDetails.push({
         product: tweet.product,
         threadPreview: thread.tweets[0].text,
         threadUrl: threadIds[0] ? `https://x.com/BWSCommunity/status/${threadIds[0]}` : null,
@@ -402,7 +402,7 @@ async function replyToProductTweets() {
         originalAuthor: tweet.author.username,
         relevanceScore: evaluation.relevanceScore,
         approach: thread.approach
-      };
+      });
 
       console.log(`\n✅ Thread posted successfully!`);
 
@@ -464,7 +464,7 @@ async function replyToProductTweets() {
       byProduct: repliesData.stats.byProduct,
       byApproach: repliesData.stats.byApproach,
       queueSize: queue.tweets.filter(t => !t.processed).length,
-      lastThreadDetails: lastReplyDetails,
+      allThreadDetails,
       runUrl: process.env.GITHUB_SERVER_URL && process.env.GITHUB_REPOSITORY && process.env.GITHUB_RUN_ID
         ? `${process.env.GITHUB_SERVER_URL}/${process.env.GITHUB_REPOSITORY}/actions/runs/${process.env.GITHUB_RUN_ID}`
         : null
