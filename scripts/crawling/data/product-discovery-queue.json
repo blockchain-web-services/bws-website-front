@@ -235,7 +235,10 @@
       "product": "Blockchain Badges",
       "queryName": "credentials-general",
       "queryPriority": "high",
-      "discoveredAt": "2025-12-12T08:49:04.278Z"
+      "discoveredAt": "2025-12-12T08:49:04.278Z",
+      "processed": true,
+      "processedAt": "2025-12-12T10:28:59.323Z",
+      "processedStatus": "replied"
     },
     {
       "id": "1999235470782300189",
@@ -262,7 +265,10 @@
       "product": "Blockchain Badges",
       "queryName": "credentials-general",
       "queryPriority": "high",
-      "discoveredAt": "2025-12-12T08:49:04.278Z"
+      "discoveredAt": "2025-12-12T08:49:04.278Z",
+      "processed": true,
+      "processedAt": "2025-12-12T10:34:20.359Z",
+      "processedStatus": "replied"
     },
     {
       "id": "1999195600055648395",
@@ -607,7 +613,10 @@
       "product": "BWS IPFS",
       "queryName": "nft-metadata",
       "queryPriority": "high",
-      "discoveredAt": "2025-12-12T08:49:54.136Z"
+      "discoveredAt": "2025-12-12T08:49:54.136Z",
+      "processed": true,
+      "processedAt": "2025-12-12T10:31:33.193Z",
+      "processedStatus": "replied"
     },
     {
       "id": "1997563675981345000",
@@ -634,7 +643,10 @@
       "product": "BWS IPFS",
       "queryName": "nft-metadata",
       "queryPriority": "high",
-      "discoveredAt": "2025-12-12T08:49:54.136Z"
+      "discoveredAt": "2025-12-12T08:49:54.136Z",
+      "processed": true,
+      "processedAt": "2025-12-12T10:36:53.330Z",
+      "processedStatus": "replied"
     },
     {
       "id": "1997207916298846625",
@@ -850,7 +862,10 @@
       "product": "NFT.zK",
       "queryName": "nft-utility",
       "queryPriority": "medium",
-      "discoveredAt": "2025-12-12T08:50:27.171Z"
+      "discoveredAt": "2025-12-12T08:50:27.171Z",
+      "processed": true,
+      "processedAt": "2025-12-12T10:28:19.412Z",
+      "processedStatus": "low_relevance"
     },
     {
       "id": "1980508093843636703",
@@ -877,7 +892,10 @@
       "product": "NFT.zK",
       "queryName": "nft-utility",
       "queryPriority": "medium",
-      "discoveredAt": "2025-12-12T08:50:27.171Z"
+      "discoveredAt": "2025-12-12T08:50:27.171Z",
+      "processed": true,
+      "processedAt": "2025-12-12T10:33:40.262Z",
+      "processedStatus": "low_relevance"
     },
     {
       "id": "1974378471423086604",
@@ -1336,7 +1354,10 @@
       "product": "Blockchain Hash",
       "queryName": "blockchain-without-wallets",
       "queryPriority": "high",
-      "discoveredAt": "2025-12-12T08:51:15.029Z"
+      "discoveredAt": "2025-12-12T08:51:15.029Z",
+      "processed": true,
+      "processedAt": "2025-12-12T10:28:26.106Z",
+      "processedStatus": "low_relevance"
     },
     {
       "id": "1999288103568339210",
@@ -1363,7 +1384,10 @@
       "product": "Blockchain Hash",
       "queryName": "blockchain-without-wallets",
       "queryPriority": "high",
-      "discoveredAt": "2025-12-12T08:51:15.029Z"
+      "discoveredAt": "2025-12-12T08:51:15.029Z",
+      "processed": true,
+      "processedAt": "2025-12-12T10:33:47.323Z",
+      "processedStatus": "low_relevance"
     },
     {
       "id": "1999205318744752180",
@@ -1620,25 +1644,25 @@
     "byProduct": {
       "Blockchain Badges": {
         "total": 13,
-        "unprocessed": 6,
-        "processed": 7
+        "unprocessed": 4,
+        "processed": 9
       },
       "BWS IPFS": {
         "total": 16,
-        "unprocessed": 9,
-        "processed": 7
+        "unprocessed": 7,
+        "processed": 9
       },
       "NFT.zK": {
         "total": 18,
-        "unprocessed": 18,
-        "processed": 0
+        "unprocessed": 16,
+        "processed": 2
       },
       "Blockchain Hash": {
         "total": 11,
-        "unprocessed": 11,
-        "processed": 0
+        "unprocessed": 9,
+        "processed": 2
       }
     },
-    "lastRun": "2025-12-12T09:14:51.724Z"
+    "lastRun": "2025-12-12T10:38:53.408Z"
   }
 }

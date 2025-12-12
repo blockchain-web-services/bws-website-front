@@ -33,22 +33,90 @@
       "relevanceScore": 72,
       "timestamp": "2025-12-12T09:14:51.724Z",
       "threadPreview": "Permanent storage is critical for Bitcoin NFTs. If your metadata or images disappear from centralize"
+    },
+    {
+      "originalTweetId": "1999277462954606982",
+      "originalTweetAuthor": "Tinweb_3",
+      "product": "Blockchain Badges",
+      "threadTweetIds": [
+        "1999426178961256758",
+        "1999426201115599061",
+        "1999426223152464154",
+        "1999426245650763781"
+      ],
+      "templateUsed": "feature-showcase",
+      "templateName": "Feature Showcase",
+      "approach": "feature-showcase",
+      "relevanceScore": 72,
+      "timestamp": "2025-12-12T10:28:59.323Z",
+      "threadPreview": "Perfect timing for this! Blockchain Badges enables exactly this - cryptographic certificates under u"
+    },
+    {
+      "originalTweetId": "1997887192765436232",
+      "originalTweetAuthor": "Gregor101477942",
+      "product": "BWS IPFS",
+      "threadTweetIds": [
+        "1999426824858972558",
+        "1999426846866509825",
+        "1999426869050192073",
+        "1999426891070287922"
+      ],
+      "templateUsed": "problem-solution",
+      "templateName": "Problem-Solution",
+      "approach": "problem-solution",
+      "relevanceScore": 72,
+      "timestamp": "2025-12-12T10:31:33.193Z",
+      "threadPreview": "This is exactly why NFT metadata storage matters. On-chain logs are permanent, but without proper de"
+    },
+    {
+      "originalTweetId": "1999235470782300189",
+      "originalTweetAuthor": "EnzioSantos",
+      "product": "Blockchain Badges",
+      "threadTweetIds": [
+        "1999427526041772328",
+        "1999427548045025345",
+        "1999427570161566136",
+        "1999427592202625027"
+      ],
+      "templateUsed": "feature-showcase",
+      "templateName": "Feature Showcase",
+      "approach": "feature-showcase",
+      "relevanceScore": 75,
+      "timestamp": "2025-12-12T10:34:20.359Z",
+      "threadPreview": "Exactly right! Blockchain Badges takes this further by letting institutions issue tamper-proof crede"
+    },
+    {
+      "originalTweetId": "1997563675981345000",
+      "originalTweetAuthor": "topehsol",
+      "product": "BWS IPFS",
+      "threadTweetIds": [
+        "1999428167891923098",
+        "1999428189920329984",
+        "1999428211864928713",
+        "1999428233834676408"
+      ],
+      "templateUsed": "feature-showcase",
+      "templateName": "Feature Showcase",
+      "approach": "feature-showcase",
+      "relevanceScore": 72,
+      "timestamp": "2025-12-12T10:36:53.330Z",
+      "threadPreview": "Love seeing decentralized storage getting attention! If you're exploring permanent data solutions be"
     }
   ],
   "stats": {
-    "totalThreads": 2,
+    "totalThreads": 6,
     "byProduct": {
-      "Blockchain Badges": 1,
-      "BWS IPFS": 1,
+      "Blockchain Badges": 3,
+      "BWS IPFS": 3,
       "NFT.zK": 0,
       "Blockchain Hash": 0
     },
     "byApproach": {
       "how-to": 0,
-      "problem-solution": 2,
-      "feature-showcase": 0
+      "problem-solution": 3,
+      "feature-showcase": 3
     },
-    "averageRelevanceScore": 74,
-    "lastReply": "2025-12-12T09:14:51.724Z"
+    "averageRelevanceScore": 73,
+    "lastReply": "2025-12-12T10:36:53.330Z"
   }
 }
