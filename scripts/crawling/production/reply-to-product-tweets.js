@@ -110,7 +110,7 @@ function isTweetFresh(tweet, maxHours) {
  * Select tweets to process (product rotation logic)
  */
 function selectTweetsToProcess(unprocessed, config, recentReplies) {
-  const { repliesPerRun, productRotation } = config;
+  const { evaluatePerRun, productRotation } = config;
 
   // Get recently replied products
   const recentProducts = recentReplies
@@ -136,9 +136,9 @@ function selectTweetsToProcess(unprocessed, config, recentReplies) {
     return aRecent - bRecent; // Products with fewer recent replies first
   });
 
-  // Select tweets, rotating through products
+  // Select tweets for evaluation, rotating through products
   let productIndex = 0;
-  while (selected.length < repliesPerRun && products.length > 0) {
+  while (selected.length < evaluatePerRun && products.length > 0) {
     const product = products[productIndex % products.length];
     const productTweets = byProduct[product];
 
@@ -179,6 +179,17 @@ function markAsProcessed(queue, tweetId, status) {
 }
 
 /**
+ * Count threads posted today
+ */
+function getTodayThreadCount(repliesData) {
+  const today = new Date().toISOString().split('T')[0]; // YYYY-MM-DD
+  return repliesData.replies.filter(r => {
+    const replyDate = new Date(r.timestamp).toISOString().split('T')[0];
+    return replyDate === today;
+  }).length;
+}
+
+/**
  * Main reply automation
  */
 async function replyToProductTweets() {
@@ -195,7 +206,9 @@ async function replyToProductTweets() {
   const productHighlights = await loadProductHighlights();
 
   console.log('📋 Configuration:');
-  console.log(`   - Replies per run: ${config.repliesPerRun}`);
+  console.log(`   - Evaluate per run: ${config.evaluatePerRun} tweets`);
+  console.log(`   - Max threads per run: ${config.maxThreadsPerRun}`);
+  console.log(`   - Max threads per day: ${config.maxThreadsPerDay}`);
   console.log(`   - Relevance threshold: ${config.relevanceThreshold}`);
   console.log(`   - Freshness: ${config.freshnessFilter.maxTweetAgeHours}h max age`);
   console.log(`   - Product isolation: ${config.productIsolation.enforceStrictly ? 'STRICT' : 'lenient'}\n`);
@@ -216,6 +229,19 @@ async function replyToProductTweets() {
     return;
   }
 
+  // Check daily limit
+  const todayThreadCount = getTodayThreadCount(repliesData);
+  console.log(`📊 Today's threads: ${todayThreadCount}/${config.maxThreadsPerDay}`);
+
+  if (todayThreadCount >= config.maxThreadsPerDay) {
+    console.log(`⚠️  Daily thread limit reached (${todayThreadCount}/${config.maxThreadsPerDay}). Exiting...\n`);
+    return;
+  }
+
+  const remainingToday = config.maxThreadsPerDay - todayThreadCount;
+  const maxThreadsThisRun = Math.min(config.maxThreadsPerRun, remainingToday);
+  console.log(`📍 Max threads this run: ${maxThreadsThisRun} (remaining today: ${remainingToday})\n`);
+
   // Select tweets to process (with product rotation)
   const tweetsToProcess = selectTweetsToProcess(
     unprocessed,
@@ -223,20 +249,31 @@ async function replyToProductTweets() {
     repliesData.replies
   );
 
-  console.log(`🎯 Selected ${tweetsToProcess.length} tweets for processing:`);
+  console.log(`🎯 Selected ${tweetsToProcess.length} tweets for evaluation:`);
   tweetsToProcess.forEach((t, i) => {
     console.log(`   ${i + 1}. ${t.product} - ${t.text.substring(0, 60)}...`);
   });
+  console.log(`   Will post up to ${maxThreadsThisRun} threads (based on relevance scores)\n`);
 
   // Process each tweet
   let threadsPosted = 0;
+  let tweetsEvaluated = 0;
   const errors = [];
   let lastReplyDetails = null;
 
   for (const tweet of tweetsToProcess) {
+    tweetsEvaluated++;
+
+    // Check if we've reached the posting limit for this run
+    if (threadsPosted >= maxThreadsThisRun) {
+      console.log(`\n✅ Reached max threads for this run (${maxThreadsThisRun}). Marking remaining tweets as skipped...\n`);
+      // Mark remaining tweets as processed with low_relevance to allow re-evaluation later
+      break;
+    }
+
     try {
       console.log(`\n${'='.repeat(70)}`);
-      console.log(`Processing Tweet ${threadsPosted + 1}/${tweetsToProcess.length}`);
+      console.log(`Evaluating Tweet ${tweetsEvaluated}/${tweetsToProcess.length} (Threads posted: ${threadsPosted}/${maxThreadsThisRun})`);
       console.log(`${'='.repeat(70)}`);
       console.log(`Product: ${tweet.product}`);
       console.log(`Tweet ID: ${tweet.id}`);
@@ -418,9 +455,9 @@ async function replyToProductTweets() {
     console.log('\n🔔 Sending Zapier notification...');
 
     await sendProductReplyNotification({
-      success: threadsPosted > 0,
-      tweetsEvaluated: tweetsToProcess.length,
-      tweetsSkipped: tweetsToProcess.length - threadsPosted,
+      success: errors.length === 0,
+      tweetsEvaluated,
+      tweetsSkipped: tweetsEvaluated - threadsPosted,
       threadsPosted,
       totalThreads: repliesData.stats.totalThreads,
       averageRelevance: repliesData.stats.averageRelevanceScore,
@@ -444,7 +481,9 @@ async function replyToProductTweets() {
   console.log(`✅ Reply Automation Complete (${duration}s)`);
   console.log(`${'='.repeat(70)}`);
   console.log(`\n📊 Session Stats:`);
-  console.log(`   - Threads posted: ${threadsPosted}/${tweetsToProcess.length}`);
+  console.log(`   - Tweets evaluated: ${tweetsEvaluated}`);
+  console.log(`   - Threads posted: ${threadsPosted}/${maxThreadsThisRun} (this run)`);
+  console.log(`   - Today total: ${todayThreadCount + threadsPosted}/${config.maxThreadsPerDay}`);
   console.log(`   - Errors: ${errors.length}`);
 
   if (errors.length > 0) {

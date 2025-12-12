@@ -1,5 +1,7 @@
 {
-  "repliesPerRun": 2,
+  "evaluatePerRun": 10,
+  "maxThreadsPerRun": 4,
+  "maxThreadsPerDay": 12,
   "maxThreadLength": 4,
   "minThreadLength": 3,
   "freshnessFilter": {
@@ -49,5 +51,5 @@
     "maxConsecutiveSameProduct": 2,
     "description": "Rotate through products to avoid posting too many threads about same product consecutively"
   },
-  "description": "Configuration for product-specific educational thread replies. Target: 2-4 threads per day across 4 products (Blockchain Badges, BWS IPFS, NFT.zK, Blockchain Hash)."
+  "description": "Configuration for product-specific educational thread replies. Evaluates 10 tweets per run, posts 2-4 threads per run (max 12/day), runs 2x daily (10 AM, 4 PM UTC). Target: 8-12 educational threads per day across 4 products (Blockchain Badges, BWS IPFS, NFT.zK, Blockchain Hash)."
 }
