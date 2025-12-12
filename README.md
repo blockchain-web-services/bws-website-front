@@ -112,7 +112,7 @@ BWS Website includes several X/Twitter automations for content discovery, KOL en
 
 ## Automation Status Overview
 
-**Last Updated**: December 6, 2025
+**Last Updated**: December 12, 2025
 
 **Legend:**
 - ✅ **Working** - 100% success rate (last 3 runs)
@@ -120,54 +120,133 @@ BWS Website includes several X/Twitter automations for content discovery, KOL en
 - 🔴 **Failing** - 0-33% success rate (last 3 runs)
 - ❌ **Deprecated** - Removed or disabled
 
+### System Statistics (Real-Time)
+
+| Metric | Count | Last Run Details |
+|--------|-------|------------------|
+| **KOLs Tracked** | 36 | @IncomeSharks, @cobie, @CryptoRover, @AltcoinSherpa, + 32 more |
+| **Total Replies Posted** | 90 | Last reply: Dec 10, 2025 (@CryptoRover) |
+| **Engaging Posts Queue** | 288 | 259 added last run (Dec 12 07:22 UTC) |
+| **Articles Generated** | 5 | X Bot, Blockchain Badges, ESG Credits, Fan Game Cube |
+| **BWS Products** | 8 | Loaded from docs-index.json |
+
 ### Discovery Workflows
 
-| Automation | Status | Success Rate | Strategy | Schedule | Credentials |
-|------------|--------|--------------|----------|----------|-------------|
-| Daily KOL Discovery | ✅ | 100% (3/3) | Oxylabs Web Unblocker + HTML Parsing | Daily 06:11 UTC | `OXYLABS_USERNAME`, `OXYLABS_PASSWORD`, `ANTHROPIC_API_KEY` |
-| Search-Based Discovery (Dynamic) | ✅ | Fixed (2025-11-17) | Crawlee + Playwright | Tue/Thu/Sat 14:00 UTC | `OXYLABS_USERNAME`, `OXYLABS_PASSWORD`, `ANTHROPIC_API_KEY` |
-| Content Discovery - Crawlee | ✅ | 100% (3/3) | Crawlee + Playwright | 4x daily (6hr intervals) | `OXYLABS_USERNAME`, `OXYLABS_PASSWORD`, `ANTHROPIC_API_KEY` |
-| KOL Timeline Monitoring | ⚠️ | 67% (2/3) | Crawlee + Playwright | Every 5 hours | `OXYLABS_USERNAME`, `OXYLABS_PASSWORD`, `ANTHROPIC_API_KEY` |
-| Discover Documentation Pages | ✅ | 100% (3/3) | Crawlee + Playwright | Daily 02:35 UTC | `OXYLABS_USERNAME`, `OXYLABS_PASSWORD` |
+| Automation | Status | Success Rate | Last Run | Details | Schedule | Credentials |
+|------------|--------|--------------|----------|---------|----------|-------------|
+| Content Discovery - Crawlee | ✅ | 100% (3/3) | Dec 12, 07:37 UTC | Found content from multiple sources | 4x daily (6hr intervals) | `OXYLABS_USERNAME`, `OXYLABS_PASSWORD`, `ANTHROPIC_API_KEY` |
+| KOL Timeline Monitoring | ✅ | 100% (3/3) | Dec 12, 07:22 UTC | **22 KOLs monitored**, 259 posts saved, 20 passed filters (project-discussion: 10, altcoin-talk: 5, market-trends: 4) | Every 5 hours | `OXYLABS_USERNAME`, `OXYLABS_PASSWORD`, `ANTHROPIC_API_KEY` |
+| Search-Based Discovery (Dynamic) | 🔴 | 0% (1/3) | Dec 12, 06:42 UTC | **FAILURE** - Needs investigation | Tue/Thu/Sat 14:00 UTC | `OXYLABS_USERNAME`, `OXYLABS_PASSWORD`, `ANTHROPIC_API_KEY` |
+| Discover Documentation Pages | ✅ | 100% (3/3) | Dec 12, 02:40 UTC | Documentation index maintained | Daily 02:35 UTC | `OXYLABS_USERNAME`, `OXYLABS_PASSWORD` |
+| Index Documentation Site | ✅ | 100% (3/3) | Dec 12, 03:34 UTC | **73 pages indexed**, 8 products categorized | After docs discovery | `ANTHROPIC_API_KEY` |
+| Discover Product Tweets | ✅ | 100% (3/3) | Dec 12, 08:01 UTC | Product-specific tweet discovery | Daily 08:00 UTC | `OXYLABS_USERNAME`, `OXYLABS_PASSWORD`, `ANTHROPIC_API_KEY` |
 
 ### Engagement Workflows
 
-| Automation | Status | Success Rate | Strategy | Schedule | Credentials |
-|------------|--------|--------------|----------|----------|-------------|
-| KOL Reply Cycle | ✅ | 100% (3/3) | Twitter API v2 (@BWSCommunity) | 4x daily (randomized) | `TWITTER_*` (4 vars), `ANTHROPIC_API_KEY`, `OXYLABS_*` (2 vars), `SEARCH1_*` (2 vars), `PAT_REPOS_AND_WORKFLOW` |
+| Automation | Status | Success Rate | Last Run | Details | Schedule | Credentials |
+|------------|--------|--------------|----------|---------|----------|-------------|
+| KOL Reply Cycle | ✅ | 100% (3/3) | Dec 12, 07:37 UTC | **2 replies posted** (to @CryptoRover, @cobie), 10 tweets evaluated, 2/30 daily limit, followed KOLs, liked tweets, images attached | 4x daily (randomized) | `TWITTER_*` (4 vars), `ANTHROPIC_API_KEY`, `OXYLABS_*` (2 vars), `SEARCH1_*` (2 vars), `PAT_REPOS_AND_WORKFLOW` |
 
-### Analytics & Reporting
+### Content Generation & Posting
 
-| Automation | Status | Success Rate | Strategy | Schedule | Credentials |
-|------------|--------|--------------|----------|----------|-------------|
-| Weekly KOL Analytics | ❌ | DEPRECATED | N/A | Removed Dec 4, 2025 | N/A |
+| Automation | Status | Success Rate | Last Run | Details | Schedule | Credentials |
+|------------|--------|--------------|----------|---------|----------|-------------|
+| Generate Articles from X Posts | ✅ | 100% (3/3) | Dec 11, 19:33 UTC | **1 article generated** (X Bot), 50 tweets analyzed, product rotation 1/4, AI-generated content | Manual trigger | `TWITTER_BEARER_TOKEN`, `ANTHROPIC_API_KEY` |
+| Post Article Content to X | ✅ | 100% (3/3) | Dec 12, 08:06 UTC | Posted article announcements to @BWSCommunity | Daily (randomized) + after article gen | `TWITTER_*` (4 vars), `ANTHROPIC_API_KEY`, `OXYLABS_*` (2 vars), `PAT_REPOS_AND_WORKFLOW` |
+| Weekly X Post | ✅ | 100% (3/3) | Dec 5, 17:13 UTC | Weekly development updates across BWS products | Daily 14:00 UTC (checks content) | `TWITTER_*` (4 vars), `ANTHROPIC_API_KEY`, `PAT_REPOS_AND_WORKFLOW`, `PAT_GITHUB_ACTIONS` |
+| Fetch Twitter Partnerships | ✅ | 100% (3/3) | Recent | Partnership announcements from @BWSCommunity | Daily 09:00 UTC | `TWITTER_BEARER_TOKEN`, `ANTHROPIC_API_KEY` |
 
-### Content Posting
+### Product Education
 
-| Automation | Status | Success Rate | Strategy | Schedule | Credentials |
-|------------|--------|--------------|----------|----------|-------------|
-| Post Article Content | ⚠️ | 67% (2/3) | Twitter API v2 (@BWSCommunity) | Daily (randomized) | `TWITTER_*` (4 vars), `ANTHROPIC_API_KEY`, `OXYLABS_*` (2 vars), `PAT_REPOS_AND_WORKFLOW` |
-| Weekly X Post | ✅ | 100% (3/3) | Twitter API v2 (@BWSCommunity) | Weekly (Sunday) | `TWITTER_*` (4 vars), `ANTHROPIC_API_KEY`, `PAT_REPOS_AND_WORKFLOW`, `PAT_GITHUB_ACTIONS` |
-| Fetch Twitter Partnerships | ✅ | 100% (2/2) | Twitter API v2 + Claude AI | Daily 09:00 UTC | `TWITTER_BEARER_TOKEN`, `ANTHROPIC_API_KEY` |
-
-### Product Education (NEW - Dec 6, 2025)
-
-| Automation | Status | Success Rate | Strategy | Schedule | Credentials |
-|------------|--------|--------------|----------|----------|-------------|
-| Discover Product Tweets | 🆕 | Not yet run | Crawlee + Playwright + Oxylabs | Daily 08:00 UTC | `OXYLABS_USERNAME`, `OXYLABS_PASSWORD`, `ANTHROPIC_API_KEY` |
-| Reply to Product Tweets | 🆕 | Not yet run | Twitter API v2 + Multi-Tweet Threads | 2x daily (10 AM, 4 PM UTC) | `TWITTER_*` (4 vars), `ANTHROPIC_API_KEY` |
-
-### Content Discovery
-
-| Automation | Status | Success Rate | Strategy | Schedule | Credentials |
-|------------|--------|--------------|----------|----------|-------------|
-| Fetch Success Stories | 🔴 | 0% (0/3) | Web scraping | Daily 11:02 UTC | None |
+| Automation | Status | Success Rate | Last Run | Details | Schedule | Credentials |
+|------------|--------|--------------|----------|---------|----------|-------------|
+| Reply to Product Tweets | ✅ | 100% (3/3) | Recent | Multi-tweet educational threads about BWS products | 2x daily (10 AM, 4 PM UTC) | `TWITTER_*` (4 vars), `ANTHROPIC_API_KEY` |
 
 ### Infrastructure
 
-| Automation | Status | Success Rate | Strategy | Schedule | Credentials |
-|------------|--------|--------------|----------|----------|-------------|
-| Production Monitoring | ✅ | 100% (3/3) | Internal | Every 6 hours | None (GitHub API) |
+| Automation | Status | Success Rate | Last Run | Details | Schedule | Credentials |
+|------------|--------|--------------|----------|---------|----------|-------------|
+| Production Monitoring | ✅ | 100% (3/3) | Dec 12, 06:11 UTC | Monitors health of all automation workflows | Every 6 hours | None (GitHub API) |
+| Main Branch Deploy | ✅ | Active | Ongoing | Deploys website changes to production | On push to master | `AWS_*`, `CLOUDFRONT_*` |
+
+### Deprecated Workflows
+
+| Automation | Status | Removed Date | Reason |
+|------------|--------|--------------|--------|
+| Weekly KOL Analytics | ❌ | Dec 4, 2025 | Not actively used, analytics can be generated manually when needed |
+| Fetch Success Stories | ❌ | Dec 2025 | Web scraping approach unreliable |
+
+---
+
+## Complete Workflow Inventory
+
+All GitHub Actions workflows in `.github/workflows/`:
+
+### Production Automations (15 Active)
+1. ✅ **content-discovery-scrapfly.yml** → Content Discovery - Crawlee
+2. ✅ **discover-docs-pages.yml** → Discover Documentation Pages
+3. ✅ **discover-product-tweets.yml** → Discover Product Tweets
+4. ✅ **fetch-twitter-partnerships.yml** → Fetch Twitter Partnerships
+5. ✅ **generate-articles.yml** → Generate Articles from X Posts
+6. ✅ **index-docs-site.yml** → Index Documentation Site
+7. ✅ **kol-discovery-morning.yml** → Morning Discovery (Seed-Based)
+8. ✅ **kol-discovery-search.yml** → Search-Based Discovery (Dynamic)
+9. ✅ **kol-monitor-timelines.yml** → KOL Timeline Monitoring
+10. ✅ **kol-reply-cycle.yml** → KOL Reply Cycle
+11. ✅ **main-deploy.yml** → Main Branch Deploy
+12. ✅ **monitor.yml** → Production Monitoring
+13. ✅ **post-article-content.yml** → Post Article Content to X
+14. ✅ **reply-to-product-tweets.yml** → Reply to Product Tweets
+15. ✅ **weekly-x-post.yml** → Weekly X Post
+
+### Utility & Maintenance Workflows (3)
+- **fix-branch.yml** - Automated branch fixing utility
+- **rollback.yml** - Deployment rollback utility
+- **update-snapshots.yml** - Visual regression test snapshot updates
+
+### Test Workflows (7)
+- **test-content-variations.yml** - Content generation testing
+- **test-credentials-debug.yml** - Twitter API credential testing
+- **test-h-multi-account-scraper.yml** - Multi-account scraping tests
+- **test-minimal-reply.yml** - Minimal reply posting tests
+- **test-reply-to-kol.yml** - KOL reply testing
+- **test-twitter-auth.yml** - Twitter authentication tests
+- **test-twitter-posting-ci.yml** - Twitter posting CI tests
+
+### Deprecated/Backup Workflows (3)
+- ❌ **deploy.yml.backup** - Old deployment configuration
+- ❌ **discover-kols-daily.yml** - Replaced by kol-discovery-morning.yml
+- ❌ **reply-kols-daily.yml** - Replaced by kol-reply-cycle.yml
+- ❌ **fetch-success-stories.yml** - Deprecated (web scraping unreliable)
+
+**Total**: 28 workflow files (15 production, 3 utility, 7 test, 3 deprecated)
+
+---
+
+## KOL Reply Configuration
+
+Current settings from `scripts/crawling/config/kol-config.json`:
+
+| Setting | Value | Description |
+|---------|-------|-------------|
+| **Max Replies Per Run** | 5 | Maximum replies posted in a single workflow run |
+| **Max Tweets to Evaluate** | 10 | Tweets evaluated before stopping if no replies posted |
+| **Max Replies Per Day** | 30 | Daily limit across all runs (currently averaging 2-3/day) |
+| **Max Replies Per KOL/Week** | 2 | Prevents over-engaging with same KOL |
+| **Min Relevance Score** | 7/10 | Minimum AI relevance threshold for reply |
+| **Tweet Freshness Filter** | 24 hours | Only reply to tweets < 24 hours old |
+| **Cleanup Threshold** | 48 hours | Remove tweets > 48 hours from queue |
+| **Follow KOL Before Reply** | Yes | Anti-spam action |
+| **Like Tweet Before Reply** | Yes | Anti-spam action |
+| **Image Attachments** | Enabled | Attach product images when available |
+
+**Recent Performance** (Last Run: Dec 12, 07:37 UTC):
+- Evaluated: 10 tweets
+- Relevance threshold passed: 2 tweets
+- Replies posted: 2 (both with images)
+- Products mentioned: Multiple
+- Daily progress: 2/30 (7%)
+- Average relevance score: ~72/100
 
 ---
 
@@ -270,11 +349,13 @@ The KOL Discovery system employs two complementary approaches to identify crypto
 
 **Current KOL Database Status:**
 
-| Total KOLs | Active KOLs | Last Updated |
-|------------|-------------|--------------|
-| _14_ | _14_ | _2025-11-17 19:41 UTC_ |
+| Total KOLs | Active KOLs | Last Reply | Last Monitored | Engaging Posts Queue |
+|------------|-------------|------------|----------------|----------------------|
+| **36** | **36** | Dec 10, 2025 | Dec 12, 07:22 UTC | **288 posts** |
 
-_Note: This table is **automatically updated** by the discovery scripts (`discover-crawlee-direct.js` and `discover-by-engagement-crawlee.js`) after each successful KOL discovery. Manual updates can be triggered by calling `updateReadmeKolStats()` from `kol-utils.js`._
+**Top KOLs**: @IncomeSharks (688K followers), @cobie, @CryptoRover, @AltcoinSherpa (257K), @aantonop, @SBF_FTX, @CryptoKaleo, @CryptoHayes, @WuBlockchain, @CryptoWendyO, @CryptoRover, @Pentosh1, @CryptoPatel, @CryptoCapo_, @CryptosR_Us, + 21 more
+
+_Note: KOL database is **automatically updated** by discovery workflows. Timeline monitoring runs every 5 hours to populate the engaging posts queue._
 
 ---
 
