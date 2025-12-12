@@ -189,24 +189,38 @@ We run **product-specific searches** for 4 BWS products, targeting users discuss
 
 ### Implementation Status
 
-**✅ FIXED (Dec 12, 2025)**: Product-specific customer acquisition workflow bug has been resolved. The workflow will activate on the next scheduled run at **08:00 UTC daily**.
+**✅ DISCOVERY WORKING | ⚠️ REPLIES NEED WORK (Dec 12, 2025)**
 
-**Bug Fixed**:
+**Product Discovery** - ✅ **TESTED & WORKING**:
 - **Issue**: `fs.readFileSync is not a function` in discover-product-tweets.js
-- **Root Cause**: Script imported `fs` from 'fs/promises' (async) but called synchronous `fs.readFileSync()`
-- **Fix**: Changed `loadProductQueries()` to async function using `await fs.readFile()`
-- **Commit**: 927b2d0 (Dec 12, 2025)
+- **Fix**: Changed to async/await pattern (commit 927b2d0)
+- **Manual Test Result**: **58 tweets discovered** across 4 products
+  - Blockchain Badges: 13 tweets (credential fraud, degree verification)
+  - BWS IPFS: 16 tweets (decentralized storage, NFT metadata)
+  - NFT.zK: 18 tweets (wallet friction, NFT distribution)
+  - Blockchain Hash: 11 tweets (Web3 dev complexity, gasless solutions)
+- **Tweet Quality**: Highly relevant from target customer groups (universities, developers, NFT creators)
+
+**Product Reply System** - ⚠️ **NEEDS COMPLETION**:
+- **Fixed Issues**:
+  1. Data structure mismatch (`public_metrics` vs `engagement`) - commit 47425c0
+  2. Product configuration loading (`productHighlights`) - commit cbebcff
+- **Remaining Issue**: Product-specific evaluation function not yet implemented
+  - Current: Uses KOL evaluation function (wrong parameters)
+  - Needed: Product-specific evaluation for customer acquisition tweets
+  - Status: Core infrastructure working, evaluation logic needs implementation
 
 **Current Status**:
-- ✅ **Product Discovery**: Fixed, awaiting next run (08:00 UTC)
-- ⏳ **Product-Specific Threads**: Will start after first successful discovery
-- ✅ **General KOL Engagement**: Active (see below)
+- ✅ **Product Discovery**: Working (58 tweets in queue)
+- ⚠️ **Product Evaluation**: Needs product-specific function
+- ⏳ **Product Threads**: Blocked pending evaluation function
+- ✅ **General KOL Engagement**: Active (parallel system)
 
-**Queue Status** (will populate after next discovery run):
-- Blockchain Badges: 0 tweets (pending discovery)
-- BWS IPFS: 0 tweets (pending discovery)
-- NFT.zK: 0 tweets (pending discovery)
-- Blockchain Hash: 0 tweets (pending discovery)
+**Queue Status** (from manual test run Dec 12, 2025):
+- Blockchain Badges: 13 unprocessed tweets
+- BWS IPFS: 16 unprocessed tweets
+- NFT.zK: 18 unprocessed tweets
+- Blockchain Hash: 11 unprocessed tweets
 
 ### Current Active System: General KOL Engagement
 
@@ -246,7 +260,7 @@ We run **product-specific searches** for 4 BWS products, targeting users discuss
 | **Reply Format** | 3-4 tweet educational threads | Single contextual reply |
 | **Goal** | Customer acquisition | Brand awareness/engagement |
 | **Volume** | 2-4 threads/day | 2-5 replies/day |
-| **Status** | ✅ Fixed (awaiting next run) | ✅ Active |
+| **Status** | ✅ Discovery working / ⚠️ Replies in dev | ✅ Active |
 
 ---
 
@@ -279,7 +293,7 @@ We run **product-specific searches** for 4 BWS products, targeting users discuss
 | Search-Based Discovery (Dynamic) | 🔴 | 0% (1/3) | Dec 12, 06:42 UTC | **FAILURE** - Needs investigation | Tue/Thu/Sat 14:00 UTC | `OXYLABS_USERNAME`, `OXYLABS_PASSWORD`, `ANTHROPIC_API_KEY` |
 | Discover Documentation Pages | ✅ | 100% (3/3) | Dec 12, 02:40 UTC | Documentation index maintained | Daily 02:35 UTC | `OXYLABS_USERNAME`, `OXYLABS_PASSWORD` |
 | Index Documentation Site | ✅ | 100% (3/3) | Dec 12, 03:34 UTC | **73 pages indexed**, 8 products categorized | After docs discovery | `ANTHROPIC_API_KEY` |
-| Discover Product Tweets | ✅ | Fixed | Dec 12, 08:01 UTC | **FIXED** - Bug resolved (commit 927b2d0), awaiting next run at 08:00 UTC | Daily 08:00 UTC | `OXYLABS_USERNAME`, `OXYLABS_PASSWORD`, `ANTHROPIC_API_KEY` |
+| Discover Product Tweets | ✅ | Working | Manual test (Dec 12) | **WORKING** - 58 tweets discovered across 4 products, queue populated | Daily 08:00 UTC | `OXYLABS_USERNAME`, `OXYLABS_PASSWORD`, `ANTHROPIC_API_KEY` |
 
 ### Engagement Workflows
 
@@ -300,7 +314,7 @@ We run **product-specific searches** for 4 BWS products, targeting users discuss
 
 | Automation | Status | Success Rate | Last Run | Details | Schedule | Credentials |
 |------------|--------|--------------|----------|---------|----------|-------------|
-| Reply to Product Tweets | ✅ | Ready | Dec 11, 16:05 UTC | **Ready to activate** - Discovery workflow fixed, will post threads after tweets discovered | 2x daily (10 AM, 4 PM UTC) | `TWITTER_*` (4 vars), `ANTHROPIC_API_KEY` |
+| Reply to Product Tweets | ⚠️ | In Development | Manual test (Dec 12) | **Needs work** - Discovery working, reply system needs product-specific evaluation function | 2x daily (10 AM, 4 PM UTC) | `TWITTER_*` (4 vars), `ANTHROPIC_API_KEY` |
 
 ### Infrastructure
 
