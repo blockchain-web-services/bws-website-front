@@ -36,6 +36,16 @@ async function loadReplyConfig() {
 }
 
 /**
+ * Load product highlights configuration
+ */
+async function loadProductHighlights() {
+  const configPath = path.join(__dirname, '..', 'config', 'product-highlights.json');
+  const data = await fs.readFile(configPath, 'utf-8');
+  const config = JSON.parse(data);
+  return config.productHighlights;
+}
+
+/**
  * Load product discovery queue
  */
 async function loadProductQueue() {
@@ -181,6 +191,7 @@ async function replyToProductTweets() {
   const queue = await loadProductQueue();
   const repliesData = await loadProductReplies();
   const productsInfo = loadBWSProducts();
+  const productHighlights = await loadProductHighlights();
 
   console.log('📋 Configuration:');
   console.log(`   - Replies per run: ${config.repliesPerRun}`);
@@ -234,20 +245,21 @@ async function replyToProductTweets() {
       console.log(`Engagement: ${likes} likes, ${retweets} RTs`);
 
       // Load product information
-      const productInfo = productsInfo.productHighlights[tweet.product];
-      if (!productInfo) {
+      const productInfo = productsInfo[tweet.product];
+      const productHighlight = productHighlights[tweet.product];
+      if (!productInfo || !productHighlight) {
         throw new Error(`Product info not found for: ${tweet.product}`);
       }
 
       // Fetch documentation
-      const docsContent = await fetchProductDocs(tweet.product, productInfo.docsPath);
+      const docsContent = await fetchProductDocs(tweet.product, productHighlight.docsPath);
 
       // Evaluate relevance with Claude AI
       console.log(`\n🤖 Evaluating tweet relevance...`);
       const evaluation = await evaluateTweetForReply(
         tweet.text,
         tweet.product,
-        productInfo
+        productHighlight
       );
 
       console.log(`   📊 Relevance Score: ${evaluation.relevanceScore}/100`);
@@ -265,7 +277,7 @@ async function replyToProductTweets() {
         tweet.id,
         tweet.text,
         tweet.product,
-        productInfo,
+        productHighlight,
         docsContent,
         evaluation,
         config
