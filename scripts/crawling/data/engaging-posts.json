@@ -4933,13 +4933,349 @@
       "expiresAt": "2025-12-19T12:53:03.363Z",
       "source": "timeline_monitor",
       "contentCategory": "market-trends"
+    },
+    {
+      "id": "1999518755169149103",
+      "text": "JUST IN: The OCC grants conditional approval to @Ripple, @BitGo, @DigitalAssets, and @Paxos to become national trust banks.\n\nIn response, Ripple's Brad Garlinghouse makes a statement directed to the banking lobbyists:\n\n\"You’ve complained that crypto isn’t playing by the same",
+      "author": {
+        "id": "877357064724520961",
+        "username": "CryptosR_Us"
+      },
+      "public_metrics": {
+        "retweet_count": 18,
+        "reply_count": 18,
+        "like_count": 124,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptosR_Us/status/1999518755169149103",
+      "processed": false,
+      "addedAt": "2025-12-12T17:55:02.217Z",
+      "expiresAt": "2025-12-19T17:55:02.217Z",
+      "source": "timeline_monitor",
+      "contentCategory": "project-discussion"
+    },
+    {
+      "id": "1999474831465627901",
+      "text": "PREDICTION MARKETS RISING FAST AS CFTC GIVES GREENLIGHT \n\nThe CFTC, led by Chair Gary Gensler, issued “no-action” letters to Polymarket US, LedgerX, PredictIt, and Gemini Titan, easing certain swap data reporting and record-keeping rules. \n\n“These letters provide relief while",
+      "author": {
+        "id": "877357064724520961",
+        "username": "CryptosR_Us"
+      },
+      "public_metrics": {
+        "retweet_count": 11,
+        "reply_count": 20,
+        "like_count": 57,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptosR_Us/status/1999474831465627901",
+      "processed": false,
+      "addedAt": "2025-12-12T17:55:05.384Z",
+      "expiresAt": "2025-12-19T17:55:05.384Z",
+      "source": "timeline_monitor",
+      "contentCategory": "news"
+    },
+    {
+      "id": "1999444873036923059",
+      "text": "DTCC LAUNCHES TOKENIZED SECURITIES PILOT APPROVED BY SEC\n\n“These tokenized securities will allow us to bridge traditional markets with blockchain technology while maintaining full investor protections,” said DTCC CEO Chris Concannon.\n\n“A stock is still a stock whether it is a",
+      "author": {
+        "id": "877357064724520961",
+        "username": "CryptosR_Us"
+      },
+      "public_metrics": {
+        "retweet_count": 30,
+        "reply_count": 17,
+        "like_count": 150,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptosR_Us/status/1999444873036923059",
+      "processed": false,
+      "addedAt": "2025-12-12T17:55:06.399Z",
+      "expiresAt": "2025-12-19T17:55:06.399Z",
+      "source": "timeline_monitor",
+      "contentCategory": "project-discussion"
+    },
+    {
+      "id": "1999415177696190938",
+      "text": "GAMESTOP HOLDS THE LINE: ZERO $BTC SOLD IN Q3\n\nGameStop $GME confirmed they didn’t sell a single sat in Q3, continuing to hodl 4,710 BTC ; the same stack they acquired between early May and mid-June using proceeds from their $1.3B debt raise.\n\nCEO Ryan Cohen is opting to ride out",
+      "author": {
+        "id": "877357064724520961",
+        "username": "CryptosR_Us"
+      },
+      "public_metrics": {
+        "retweet_count": 13,
+        "reply_count": 37,
+        "like_count": 96,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptosR_Us/status/1999415177696190938",
+      "processed": false,
+      "addedAt": "2025-12-12T17:55:08.325Z",
+      "expiresAt": "2025-12-19T17:55:08.325Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "1999513096180601128",
+      "text": "BREAKING:\n\nTECH STOCKS ARE SELLING OFF DUE TO $AVGO.\n\nOTHER SECTORS ARE IN THE GREEN, BUT WHEN TECH DROPS, CRYPTO USUALLY FOLLOWS.",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "retweet_count": 24,
+        "reply_count": 85,
+        "like_count": 199,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoRover/status/1999513096180601128",
+      "processed": false,
+      "addedAt": "2025-12-12T17:55:26.333Z",
+      "expiresAt": "2025-12-19T17:55:26.333Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "1999510306159042743",
+      "text": "Once altseason makes its comeback, it will be aggressive.",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "retweet_count": 36,
+        "reply_count": 135,
+        "like_count": 332,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoRover/status/1999510306159042743",
+      "processed": false,
+      "addedAt": "2025-12-12T17:55:28.530Z",
+      "expiresAt": "2025-12-19T17:55:28.530Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "1999508317870157844",
+      "text": "BREAKING:\n\n$140,000,000 worth of crypto longs liquidated in the past 60 minutes.",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "retweet_count": 66,
+        "reply_count": 147,
+        "like_count": 488,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoRover/status/1999508317870157844",
+      "processed": false,
+      "addedAt": "2025-12-12T17:55:34.752Z",
+      "expiresAt": "2025-12-19T17:55:34.752Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "1999489920084377918",
+      "text": "$ETH could surpass $3,500 in the relief rally.\n\nFrom there, it gets tricky.\n\nPatience remains key.",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "retweet_count": 82,
+        "reply_count": 124,
+        "like_count": 424,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoRover/status/1999489920084377918",
+      "processed": false,
+      "addedAt": "2025-12-12T17:55:39.233Z",
+      "expiresAt": "2025-12-19T17:55:39.233Z",
+      "source": "timeline_monitor",
+      "contentCategory": "price-speculation"
+    },
+    {
+      "id": "1999484605976760375",
+      "text": "BREAKING: \n\nINTERACTIVE BROKERS TO ALLOW BROKERAGE ACCOUNTS TO BE FUNDED BY STABLECOINS - BBG",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "retweet_count": 32,
+        "reply_count": 71,
+        "like_count": 319,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoRover/status/1999484605976760375",
+      "processed": false,
+      "addedAt": "2025-12-12T17:55:41.122Z",
+      "expiresAt": "2025-12-19T17:55:41.122Z",
+      "source": "timeline_monitor",
+      "contentCategory": "news"
+    },
+    {
+      "id": "1999488723839516779",
+      "text": "$LYN pump is coming.",
+      "author": {
+        "id": "crawlee_search_nihilusbtc",
+        "username": "NihilusBTC"
+      },
+      "public_metrics": {
+        "retweet_count": 10,
+        "reply_count": 29,
+        "like_count": 83,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/NihilusBTC/status/1999488723839516779",
+      "processed": false,
+      "addedAt": "2025-12-12T17:58:18.165Z",
+      "expiresAt": "2025-12-19T17:58:18.165Z",
+      "source": "timeline_monitor",
+      "contentCategory": "price-speculation"
+    },
+    {
+      "id": "1999454132667842789",
+      "text": "$XPL | UP",
+      "author": {
+        "id": "crawlee_search_nihilusbtc",
+        "username": "NihilusBTC"
+      },
+      "public_metrics": {
+        "retweet_count": 11,
+        "reply_count": 32,
+        "like_count": 86,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/NihilusBTC/status/1999454132667842789",
+      "processed": false,
+      "addedAt": "2025-12-12T17:58:22.024Z",
+      "expiresAt": "2025-12-19T17:58:22.024Z",
+      "source": "timeline_monitor",
+      "contentCategory": "altcoin-talk"
+    },
+    {
+      "id": "1999403851569385970",
+      "text": "Tom Lee: $3,000 ETH Is the Most Undervalued Asset\n\nBitmine Chairman Tom Lee stated at the Binance Blockchain Week on December 4th that $3,000 Ethereum is grossly undervalued, and that the current decline in the crypto market is mainly related to deleveraging, rather than the",
+      "author": {
+        "id": "111533746",
+        "username": "WuBlockchain"
+      },
+      "public_metrics": {
+        "retweet_count": 10,
+        "reply_count": 11,
+        "like_count": 79,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/WuBlockchain/status/1999403851569385970",
+      "processed": false,
+      "addedAt": "2025-12-12T17:58:34.447Z",
+      "expiresAt": "2025-12-19T17:58:34.447Z",
+      "source": "timeline_monitor",
+      "contentCategory": "price-speculation"
+    },
+    {
+      "id": "1999517225557066034",
+      "text": "$BGB CRITICAL BREAKDOWN - 4 YEAR BULL PHASE AT RISK\n\nReality check:\n $4 support BROKEN\n Officially bearish \n 4 year bull Phase at risk\n\nRight now? BEARISH below $4.00\nNeed RECLAIM $4+ for bulls to wake up for $10-$12 Targets\n\n$3.20 Support is your LAST HOPE for $10 Dreams.",
+      "author": {
+        "id": "crawlee_search_cryptopatel",
+        "username": "CryptoPatel"
+      },
+      "public_metrics": {
+        "retweet_count": 12,
+        "reply_count": 9,
+        "like_count": 164,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoPatel/status/1999517225557066034",
+      "processed": false,
+      "addedAt": "2025-12-12T17:58:43.970Z",
+      "expiresAt": "2025-12-19T17:58:43.970Z",
+      "source": "timeline_monitor",
+      "contentCategory": "price-speculation/technical-analysis"
+    },
+    {
+      "id": "1999501999818018991",
+      "text": "24 HOURS TO DEC 13 EXPIRY\n\n$361M in $BTC options\n$121M in $ETH options\n$377K in $SOL options\n$309K in $XRP options\n\nMax pain zones: \nBITCOIN: $92K\nETHEREUM: $3,250\nSOLANA: $134\nXRP: $2.03\n\nTotal notional: $500M+\n\nMarket expects consolidation but that call wall says traders are",
+      "author": {
+        "id": "crawlee_search_cryptopatel",
+        "username": "CryptoPatel"
+      },
+      "public_metrics": {
+        "retweet_count": 10,
+        "reply_count": 9,
+        "like_count": 169,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoPatel/status/1999501999818018991",
+      "processed": false,
+      "addedAt": "2025-12-12T17:58:46.018Z",
+      "expiresAt": "2025-12-19T17:58:46.018Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "1999486902437839316",
+      "text": "$POLYX/USDT – LONG SETUP (TA BREAKDOWN)\n\nPrice is rotating into a high-probability reversal zone.\n\nWhy #POLYX Setup is Bullish:\nPrice swept prior monthly lows → liquidity collected\nMSS at $0.0668 = bullish structure shift confirmation\nExpectation: HL formation → displacement",
+      "author": {
+        "id": "crawlee_search_cryptopatel",
+        "username": "CryptoPatel"
+      },
+      "public_metrics": {
+        "retweet_count": 12,
+        "reply_count": 8,
+        "like_count": 181,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoPatel/status/1999486902437839316",
+      "processed": false,
+      "addedAt": "2025-12-12T17:58:48.611Z",
+      "expiresAt": "2025-12-19T17:58:48.611Z",
+      "source": "timeline_monitor",
+      "contentCategory": "technical-analysis"
+    },
+    {
+      "id": "1999471928785129720",
+      "text": "$GMX/USDT – LONG SETUP (4H TA BREAKDOWN)\n\nWhy this setup?\nMSS confirms a shift in directional bias to the upside.\nExpectation: Sell-side sweep → bullish displacement.\nThe $8.40 OB sits perfectly below liquidity, ideal mitigation zone.\nClean R:R inside 4H structure with buyside",
+      "author": {
+        "id": "crawlee_search_cryptopatel",
+        "username": "CryptoPatel"
+      },
+      "public_metrics": {
+        "retweet_count": 12,
+        "reply_count": 9,
+        "like_count": 176,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoPatel/status/1999471928785129720",
+      "processed": false,
+      "addedAt": "2025-12-12T17:58:49.913Z",
+      "expiresAt": "2025-12-19T17:58:49.913Z",
+      "source": "timeline_monitor",
+      "contentCategory": "technical-analysis"
     }
   ],
   "metadata": {
-    "lastUpdated": "2025-12-12T12:53:12.425Z",
-    "totalPosts": 257,
+    "lastUpdated": "2025-12-12T17:58:49.913Z",
+    "totalPosts": 251,
     "bySource": {
-      "timeline_monitor": 257,
+      "timeline_monitor": 251,
       "search_discovery": 0
     }
   },
