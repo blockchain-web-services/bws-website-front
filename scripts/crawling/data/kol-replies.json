@@ -2150,6 +2150,44 @@
       "timestamp": "2025-12-12T19:53:59.546Z",
       "status": "posted",
       "dryRun": false
+    },
+    {
+      "id": "1353384573435056128-1994142556071031079-1765581520910",
+      "tweetId": "1994142556071031079",
+      "tweetUrl": "https://twitter.com/CryptoRover/status/1994142556071031079",
+      "kolId": "1353384573435056128",
+      "kolUsername": "CryptoRover",
+      "originalTweetText": "BREAKING:\n\nBLACKROCK CEO LARRY FINK: IT DOESN'T MATTER IF MARKETS RISE AND FALL. BUBBLES COME AND GO.\n\nWHAT MATTERS MOST IS STAYING IN THE MARKET THROUGH ALL CYCLES.",
+      "replyTweetId": "1999619944942829974",
+      "replyText": "📊 Fink's right - surviving cycles requires actual fundamentals, not just narratives.\n\n💡 Blockchain Badges lets universities and companies issue tamper-proof credentials with immutable blockchain proof. Recipients share verified achievements across platforms. $BWS ships this at microcap valuation while others chase hype.\n\n@BWSCommunity #microcap #blockchain #gems https://docs.bws.ninja/marketplace-solutions/bws.blockchain.badges",
+      "productMentioned": "X Bot, Blockchain Badges",
+      "relevanceScore": 82,
+      "templateUsed": "emoji_enhanced",
+      "templateName": "Emoji-Enhanced Structure",
+      "imageAttached": true,
+      "imagePath": "/assets/images/docs/blockchain-badges/blockchain-badges-0.png",
+      "timestamp": "2025-12-12T23:18:40.910Z",
+      "status": "posted",
+      "dryRun": false
+    },
+    {
+      "id": "2259434528-1998053731502375376-1765581613349",
+      "tweetId": "1998053731502375376",
+      "tweetUrl": "https://twitter.com/cobie/status/1998053731502375376",
+      "kolId": "2259434528",
+      "kolUsername": "cobie",
+      "originalTweetText": "Point to the last three pieces of alpha u found actionable from twitter",
+      "replyTweetId": "1999620332928553444",
+      "replyText": "Actionable alpha means spotting mispriced fundamentals before the market catches up.\n\n$BWS ESG Credits: financial institutions generate blockchain-verified environmental impact reports with ICMA framework compliance and immutable storage preventing double-counting. Sub-$5M mcap solving real enterprise friction.\n\n@BWSCommunity #microcap #fintech #ESG https://docs.bws.ninja/marketplace-solutions/bws.esg.credits",
+      "productMentioned": "X Bot, Blockchain Badges",
+      "relevanceScore": 88,
+      "templateUsed": "classic",
+      "templateName": "Classic Structure",
+      "imageAttached": false,
+      "imagePath": null,
+      "timestamp": "2025-12-12T23:20:13.349Z",
+      "status": "posted",
+      "dryRun": false
     }
   ],
   "dailyStats": {
@@ -2224,10 +2262,10 @@
     }
   },
   "metadata": {
-    "totalReplies": 105,
-    "successfulReplies": 71,
+    "totalReplies": 107,
+    "successfulReplies": 73,
     "failedReplies": 34,
-    "lastReplyAt": "2025-12-12T19:53:59.546Z",
+    "lastReplyAt": "2025-12-12T23:20:13.349Z",
     "todayRepliesCount": 0,
     "lastUpdateBy": "kol-system"
   }
