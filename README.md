@@ -110,6 +110,109 @@ Complete documentation in [`docs/`](./docs/):
 
 BWS Website includes several X/Twitter automations for content discovery, KOL engagement, and analytics. Below is a detailed overview of each automation.
 
+## TL;DR: Product-Targeted Customer Acquisition
+
+**Goal**: Find potential customers discussing specific problems that BWS products solve, and reply with educational content about relevant solutions.
+
+### Product Targeting Strategy
+
+We run **product-specific searches** for 4 BWS products, targeting users discussing pain points each product solves:
+
+| Product | Target Customer Pain Points | Search Focus | Key Features in Replies |
+|---------|---------------------------|--------------|------------------------|
+| **Blockchain Badges** | Credential fraud, diploma verification, professional certifications | Universities, HR departments, credential issuers | Tamper-proof credentials, immutable blockchain proof, combat fraud |
+| **BWS IPFS** | IPFS setup complexity, NFT metadata storage, decentralized hosting | NFT creators, Web3 developers, content hosts | Simple API, no node management, BWS-hosted gateway |
+| **NFT.zK** | Wallet setup friction, NFT distribution to non-crypto users | Brands, marketers, NFT projects | Wallet-free claiming, managed infrastructure, bulk minting |
+| **Blockchain Hash** | Web3 development complexity, gas fees, wallet management | dApp developers, blockchain builders | Mutable on-chain database, no wallets/gas, simple REST API |
+
+### How We Select Tweets (20 Search Queries)
+
+**Blockchain Badges** (5 queries):
+- Credential verification discussions (certificates, diplomas, degrees)
+- Educational credentials (universities, courses, training certificates)
+- Professional badges (skill endorsements, achievements)
+- Credential fraud problems (fake degrees, counterfeit diplomas)
+- Digital identity solutions (verifiable credentials, SSI)
+
+**BWS IPFS** (5 queries):
+- IPFS storage needs (upload, hosting, gateway setup)
+- NFT metadata storage (permanent, decentralized)
+- Decentralized storage discussions (Web3, censorship-resistant)
+- IPFS setup problems (difficult, complex, node management)
+- IPFS alternatives (vs Arweave, Filecoin, Storj)
+
+**NFT.zK** (5 queries):
+- NFT collection creation (minting, launching, no-code)
+- NFT distribution challenges (airdrops, claims, mainstream adoption)
+- Wallet friction (MetaMask setup, user barriers)
+- NFT utility (membership, tickets, rewards, loyalty)
+- Brand NFT strategies (marketing, business use cases)
+
+**Blockchain Hash** (5 queries):
+- Mutable blockchain database needs (update on-chain data)
+- Web3 development pain points (wallet complexity, gas fees)
+- Blockchain without wallets (gasless, wallet-free)
+- On-chain storage needs (data, records, information)
+- Simple blockchain APIs (REST, easy integration)
+
+**Engagement Thresholds**: Min 3-5 likes, 1 retweet, 50-100 views, <24 hours old
+
+### Reply Content Structure (3-4 Tweet Threads)
+
+**Three Educational Templates** (weighted rotation):
+
+1. **How-To Guide** (40%):
+   - Tweet 1: Acknowledge pain point
+   - Tweet 2: Solution features with $BWS
+   - Tweet 3: Getting started steps
+   - Tweet 4: CTA + docs link
+
+2. **Problem-Solution** (40%):
+   - Tweet 1: Amplify the problem
+   - Tweet 2: Solution features
+   - Tweet 3: Real-world use case
+   - Tweet 4: CTA + docs link
+
+3. **Feature Showcase** (20%):
+   - Tweet 1: Specific feature hook
+   - Tweet 2: Technical details
+   - Tweet 3: Business benefits
+   - Tweet 4: CTA + docs link
+
+**Every Thread Includes**:
+- ✅ **Product isolation**: Only ONE BWS product per thread
+- ✅ **Call-to-action**: Clear next steps
+- ✅ **Documentation link**: `https://docs.bws.ninja/[product-path]`
+- ✅ **Brand mentions**: @BWSCommunity and $BWS cashtag
+- ✅ **Anti-spam actions**: Follow author, like tweet before replying
+- ✅ **Relevance threshold**: Minimum 70/100 AI score
+
+### Recent Reply Performance (Last 10 Replies - Dec 11-12, 2025)
+
+**Target KOLs Engaged**:
+- @CryptoRover (5 replies) - Microcap discussions
+- @cobie (4 replies) - Alpha/fundamentals discussions
+- @AltcoinSherpa (1 reply) - Memecoin vs utility
+
+**Products Mentioned**:
+1. **X Bot** - 7 mentions (community analytics, engagement tracking)
+2. **Blockchain Badges** - 7 mentions (credential verification)
+3. **ESG Credits** - 5 mentions (sustainable finance verification)
+4. **Fan Game Cube** - 3 mentions (NFT stadium sections)
+5. **NFT.zK** - 2 mentions (wallet-free NFT distribution)
+6. **BWS IPFS** - 2 mentions (decentralized storage)
+7. **Blockchain Hash** - 2 mentions (mutable on-chain database)
+8. **Blockchain Save** - 2 mentions (document proof)
+
+**Reply Examples**:
+- **@cobie** (score: 88/100): "Real alpha means identifying fundamentals the market hasn't priced yet - products solving actual enterprise friction. ESG Credits enables financial institutions to verify green asset compliance..."
+- **@CryptoRover** (score: 85/100): "Building through cycles separates projects with substance from hype plays. Blockchain Badges delivers: tamper-proof credentials with immutable blockchain proof..."
+- **@AltcoinSherpa** (score: 78/100): "Memecoins run on momentum - different game than microcaps with actual utility. $BWS IPFS Upload handles decentralized file storage through simple API..."
+
+**Current Volume**: 2-4 replies/day (targeting potential customers with relevant solutions)
+
+---
+
 ## Automation Status Overview
 
 **Last Updated**: December 12, 2025
