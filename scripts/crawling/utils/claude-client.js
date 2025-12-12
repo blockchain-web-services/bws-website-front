@@ -806,10 +806,81 @@ Provide analysis in JSON:
   }
 }
 
+/**
+ * Evaluate tweet for product-specific reply (customer acquisition)
+ * Analyzes if tweet discusses pain points that a BWS product solves
+ */
+export async function evaluateTweetForProductReply(tweetText, productName, productHighlight) {
+  const client = createClaudeClient();
+
+  const specificFeatures = productHighlight.specificFeatures?.join('\n• ') || '';
+  const technicalDetails = productHighlight.technicalDetails?.join('\n• ') || '';
+  const uniqueAngles = productHighlight.uniqueAngles?.join('\n• ') || '';
+
+  const prompt = `You are analyzing a tweet to determine if it's a good opportunity to reply with educational content about ${productName}, a BWS product.
+
+**${productName} Overview:**
+${productHighlight.docsPath ? `Documentation: https://docs.bws.ninja${productHighlight.docsPath}` : ''}
+
+**Key Features:**
+• ${specificFeatures}
+
+**Technical Details:**
+• ${technicalDetails}
+
+**Value Propositions:**
+• ${uniqueAngles}
+
+**Tweet to Analyze:**
+"${tweetText}"
+
+**Task:** Evaluate if this tweet presents a good opportunity for educational outreach about ${productName}.
+
+**Consider:**
+1. Does the tweet discuss a problem that ${productName} solves?
+2. Is the author expressing frustration, asking questions, or seeking solutions?
+3. Is the context professional/technical (vs. casual/meme)?
+4. Would a helpful educational thread about ${productName} be valuable and relevant?
+
+**Scoring Guidelines:**
+- 90-100: Perfect match - tweet directly discusses the exact problem ${productName} solves
+- 70-89: Good match - tweet discusses related problems or expresses clear need
+- 50-69: Moderate match - tangentially related but connection requires explanation
+- 30-49: Weak match - very indirect connection, forced fit
+- 0-29: Poor match - unrelated or inappropriate context
+
+Respond with JSON only:
+{
+  "relevanceScore": <0-100>,
+  "detectedPainPoint": "<specific problem mentioned in tweet>",
+  "howProductHelps": "<how ${productName} addresses this specific pain point>",
+  "suggestedApproach": "how-to" | "problem-solution" | "feature-showcase",
+  "reasoning": "<brief explanation of score>"
+}`;
+
+  try {
+    const message = await client.messages.create({
+      model: 'claude-3-5-sonnet-20241022',
+      max_tokens: 1000,
+      messages: [{
+        role: 'user',
+        content: prompt
+      }]
+    });
+
+    const responseText = message.content[0].text.trim();
+    return extractJSON(responseText);
+  } catch (error) {
+    console.error(`Claude API error evaluating product tweet: ${error.message}`);
+    throw error;
+  }
+}
+
 export default {
   createClaudeClient,
   evaluateUserAsCryptoKOL,
   evaluateTweetForReply,
+  evaluateTweetForProductReply,
   generateReplyText,
   analyzeEngagementPatterns,
   selectProductImage,

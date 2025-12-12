@@ -21,7 +21,7 @@ import { fetchProductDocs } from '../utils/docs-fetcher.js';
 import { generateEducationalThread } from '../utils/thread-generator.js';
 import { postThread, previewThread } from '../utils/twitter-thread-client.js';
 import { createReadWriteClient, followUser, likeTweet } from '../utils/twitter-client.js';
-import { evaluateTweetForReply } from '../utils/claude-client.js';
+import { evaluateTweetForProductReply } from '../utils/claude-client.js';
 import { sleep, loadBWSProducts } from '../utils/kol-utils.js';
 
 const __dirname = __scriptsDir;
@@ -256,7 +256,7 @@ async function replyToProductTweets() {
 
       // Evaluate relevance with Claude AI
       console.log(`\n🤖 Evaluating tweet relevance...`);
-      const evaluation = await evaluateTweetForReply(
+      const evaluation = await evaluateTweetForProductReply(
         tweet.text,
         tweet.product,
         productHighlight
