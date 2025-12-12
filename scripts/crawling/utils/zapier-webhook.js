@@ -611,6 +611,133 @@ export async function sendMonitorNotification(options) {
   }
 }
 
+/**
+ * Send product-specific reply notification
+ * For educational thread replies targeting customer acquisition
+ * @param {Object} options - Notification options
+ */
+export async function sendProductReplyNotification(options) {
+  const {
+    success = true,
+    tweetsEvaluated = 0,
+    tweetsSkipped = 0,
+    threadsPosted = 0,
+    totalThreads = 0,
+    averageRelevance = 0,
+    byProduct = {},
+    byApproach = {},
+    queueSize = 0,
+    error = null,
+    runUrl = null,
+    lastThreadDetails = null  // { product, threadPreview, threadUrl, originalTweetText, originalTweetUrl, originalAuthor, relevanceScore, approach }
+  } = options;
+
+  const emoji = success ? '✅' : '❌';
+  const statusText = success ? 'SUCCESS' : 'FAILURE';
+
+  // Calculate selection rate
+  const tweetsConsidered = tweetsEvaluated > 0 ? tweetsEvaluated : 1;
+  const selectionRate = ((threadsPosted / tweetsConsidered) * 100).toFixed(1);
+
+  // Build formatted message
+  const textParts = [];
+  textParts.push(`${emoji} *Product-Specific Reply Automation* - ${statusText}`);
+  textParts.push('');
+  textParts.push('*Customer Acquisition via Educational Threads*');
+
+  textParts.push('');
+  textParts.push('*Tweet Processing:*');
+  textParts.push(`  📊 Tweets evaluated: ${tweetsEvaluated}`);
+  textParts.push(`  ✅ Threads posted: ${threadsPosted} (${selectionRate}%)`);
+  textParts.push(`  ⏭️  Skipped (low relevance): ${tweetsSkipped}`);
+
+  textParts.push('');
+  textParts.push('*Overall Stats:*');
+  textParts.push(`  Total threads all-time: ${totalThreads}`);
+  textParts.push(`  Average relevance score: ${averageRelevance}/100`);
+  textParts.push(`  Queue size: ${queueSize} unprocessed tweets`);
+
+  // Product breakdown
+  if (Object.keys(byProduct).length > 0) {
+    textParts.push('');
+    textParts.push('*By Product:*');
+    for (const [product, count] of Object.entries(byProduct)) {
+      textParts.push(`  ${product}: ${count} threads`);
+    }
+  }
+
+  // Approach breakdown
+  if (Object.keys(byApproach).length > 0) {
+    textParts.push('');
+    textParts.push('*By Approach:*');
+    for (const [approach, count] of Object.entries(byApproach)) {
+      textParts.push(`  ${approach}: ${count} threads`);
+    }
+  }
+
+  // If successful thread with details, show them
+  if (success && lastThreadDetails && threadsPosted > 0) {
+    textParts.push('');
+    textParts.push('');
+    textParts.push('*Latest Thread Posted:*');
+    textParts.push(`*Product:* ${lastThreadDetails.product}`);
+    textParts.push(`*Relevance Score:* ${lastThreadDetails.relevanceScore}/100`);
+    textParts.push(`*Approach:* ${lastThreadDetails.approach}`);
+    textParts.push('');
+    textParts.push(`*Our Thread Preview:*`);
+    textParts.push(`"${lastThreadDetails.threadPreview}"`);
+    if (lastThreadDetails.threadUrl) {
+      textParts.push(`<${lastThreadDetails.threadUrl}|View Thread on X>`);
+    }
+    textParts.push('');
+    textParts.push(`*Replying to @${lastThreadDetails.originalAuthor}:*`);
+    textParts.push(`"${lastThreadDetails.originalTweetText}"`);
+    if (lastThreadDetails.originalTweetUrl) {
+      textParts.push(`<${lastThreadDetails.originalTweetUrl}|View Original Tweet>`);
+    }
+  }
+
+  if (error) {
+    textParts.push('');
+    textParts.push('');
+    const errorMessage = typeof error === 'object'
+      ? (error.message || JSON.stringify(error, Object.getOwnPropertyNames(error)))
+      : String(error);
+    textParts.push(`*Error:* ${errorMessage}`);
+
+    if (error && error.stack) {
+      textParts.push('');
+      textParts.push('*Stack Trace:*');
+      textParts.push('```');
+      textParts.push(error.stack.substring(0, 500));
+      textParts.push('```');
+    }
+  }
+
+  if (runUrl) {
+    textParts.push('');
+    textParts.push('');
+    textParts.push(`<${runUrl}|View Workflow Run>`);
+  }
+
+  // Enhanced payload with Process field
+  const payload = {
+    Message: textParts.join('\n'),
+    Timestamp: new Date().toISOString(),
+    Type: success ? 'SUCCESS' : 'ERROR',
+    Process: 'product_reply'
+  };
+
+  try {
+    const result = await sendToZapier(payload);
+    console.log('✅ Sent product reply notification to Zapier/Slack');
+    return result;
+  } catch (err) {
+    console.error('❌ Failed to send product reply notification to Zapier:', err.message);
+    return { success: false, error: err.message };
+  }
+}
+
 // Named export for ScrapFly error handler compatibility
 export const sendRequest = sendToZapier;
 
@@ -621,5 +748,6 @@ export default {
   sendReplyNotification,
   sendArticlePostNotification,
   sendErrorNotification,
-  sendMonitorNotification
+  sendMonitorNotification,
+  sendProductReplyNotification
 };

@@ -23,6 +23,7 @@ import { postThread, previewThread } from '../utils/twitter-thread-client.js';
 import { createReadWriteClient, followUser, likeTweet } from '../utils/twitter-client.js';
 import { evaluateTweetForProductReply } from '../utils/claude-client.js';
 import { sleep, loadBWSProducts } from '../utils/kol-utils.js';
+import { sendProductReplyNotification } from '../utils/zapier-webhook.js';
 
 const __dirname = __scriptsDir;
 
@@ -230,6 +231,7 @@ async function replyToProductTweets() {
   // Process each tweet
   let threadsPosted = 0;
   const errors = [];
+  let lastReplyDetails = null;
 
   for (const tweet of tweetsToProcess) {
     try {
@@ -353,6 +355,18 @@ async function replyToProductTweets() {
 
       threadsPosted++;
 
+      // Save last reply details for notification
+      lastReplyDetails = {
+        product: tweet.product,
+        threadPreview: thread.tweets[0].text,
+        threadUrl: threadIds[0] ? `https://x.com/BWSCommunity/status/${threadIds[0]}` : null,
+        originalTweetText: tweet.text,
+        originalTweetUrl: `https://x.com/${tweet.author.username}/status/${tweet.id}`,
+        originalAuthor: tweet.author.username,
+        relevanceScore: evaluation.relevanceScore,
+        approach: thread.approach
+      };
+
       console.log(`\n✅ Thread posted successfully!`);
 
       // Delay before next thread
@@ -398,6 +412,31 @@ async function replyToProductTweets() {
   // Save updates
   await saveProductQueue(queue);
   await saveProductReplies(repliesData);
+
+  // Send Zapier notification
+  try {
+    console.log('\n🔔 Sending Zapier notification...');
+
+    await sendProductReplyNotification({
+      success: threadsPosted > 0,
+      tweetsEvaluated: tweetsToProcess.length,
+      tweetsSkipped: tweetsToProcess.length - threadsPosted,
+      threadsPosted,
+      totalThreads: repliesData.stats.totalThreads,
+      averageRelevance: repliesData.stats.averageRelevanceScore,
+      byProduct: repliesData.stats.byProduct,
+      byApproach: repliesData.stats.byApproach,
+      queueSize: queue.tweets.filter(t => !t.processed).length,
+      lastThreadDetails: lastReplyDetails,
+      runUrl: process.env.GITHUB_SERVER_URL && process.env.GITHUB_REPOSITORY && process.env.GITHUB_RUN_ID
+        ? `${process.env.GITHUB_SERVER_URL}/${process.env.GITHUB_REPOSITORY}/actions/runs/${process.env.GITHUB_RUN_ID}`
+        : null
+    });
+
+    console.log('✅ Zapier notification sent successfully');
+  } catch (notificationError) {
+    console.error('⚠️  Failed to send Zapier notification:', notificationError.message);
+  }
 
   // Summary
   const duration = ((Date.now() - startTime) / 1000).toFixed(1);
