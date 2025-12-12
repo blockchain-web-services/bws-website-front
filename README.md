@@ -187,29 +187,60 @@ We run **product-specific searches** for 4 BWS products, targeting users discuss
 - ✅ **Anti-spam actions**: Follow author, like tweet before replying
 - ✅ **Relevance threshold**: Minimum 70/100 AI score
 
-### Recent Reply Performance (Last 10 Replies - Dec 11-12, 2025)
+### Implementation Status
 
-**Target KOLs Engaged**:
-- @CryptoRover (5 replies) - Microcap discussions
-- @cobie (4 replies) - Alpha/fundamentals discussions
-- @AltcoinSherpa (1 reply) - Memecoin vs utility
+**⚠️ IMPORTANT**: The product-specific customer acquisition workflow described above is **CONFIGURED but NOT YET ACTIVE** due to a bug in the discovery script (`fs.readFileSync is not a function` - Dec 12, 2025).
 
-**Products Mentioned**:
-1. **X Bot** - 7 mentions (community analytics, engagement tracking)
+**Current Status**:
+- ❌ **Product Discovery**: Failing (code bug needs fix)
+- ❌ **Product-Specific Threads**: 0 threads posted
+- ✅ **General KOL Engagement**: Active (see below)
+
+**Queue Status**:
+- Blockchain Badges: 0 tweets discovered
+- BWS IPFS: 0 tweets discovered
+- NFT.zK: 0 tweets discovered
+- Blockchain Hash: 0 tweets discovered
+
+### Current Active System: General KOL Engagement
+
+**While product-specific targeting is being debugged**, the general KOL engagement workflow is active and working:
+
+**How It Works**:
+- Monitors 36 crypto KOLs (@IncomeSharks, @cobie, @CryptoRover, etc.)
+- Replies to high-engagement tweets about crypto/Web3 topics
+- Mentions BWS products contextually in replies
+- Single-tweet replies (not educational threads)
+- 2-5 replies/day, 30/day limit
+
+**Recent Performance (Last 10 Replies - Dec 11-12, 2025)**:
+
+**Target KOLs**:
+- @CryptoRover (5 replies) - Microcap/fundamentals discussions
+- @cobie (4 replies) - Alpha/investment discussions
+- @AltcoinSherpa (1 reply) - Memecoin analysis
+
+**Products Mentioned** (contextually within general crypto discussions):
+1. **X Bot** - 7 mentions (community analytics)
 2. **Blockchain Badges** - 7 mentions (credential verification)
-3. **ESG Credits** - 5 mentions (sustainable finance verification)
-4. **Fan Game Cube** - 3 mentions (NFT stadium sections)
-5. **NFT.zK** - 2 mentions (wallet-free NFT distribution)
-6. **BWS IPFS** - 2 mentions (decentralized storage)
-7. **Blockchain Hash** - 2 mentions (mutable on-chain database)
-8. **Blockchain Save** - 2 mentions (document proof)
+3. **ESG Credits** - 5 mentions (sustainable finance)
+4. **Fan Game Cube** - 3 mentions (NFT gaming)
+5. **NFT.zK, BWS IPFS, Blockchain Hash, Blockchain Save** - 2 each
 
-**Reply Examples**:
+**Example Replies**:
 - **@cobie** (score: 88/100): "Real alpha means identifying fundamentals the market hasn't priced yet - products solving actual enterprise friction. ESG Credits enables financial institutions to verify green asset compliance..."
 - **@CryptoRover** (score: 85/100): "Building through cycles separates projects with substance from hype plays. Blockchain Badges delivers: tamper-proof credentials with immutable blockchain proof..."
-- **@AltcoinSherpa** (score: 78/100): "Memecoins run on momentum - different game than microcaps with actual utility. $BWS IPFS Upload handles decentralized file storage through simple API..."
 
-**Current Volume**: 2-4 replies/day (targeting potential customers with relevant solutions)
+**Difference Between Approaches**:
+
+| Aspect | Product-Specific (Planned) | General KOL (Active) |
+|--------|---------------------------|---------------------|
+| **Target** | Users with specific pain points | Crypto KOLs with large followings |
+| **Discovery** | Search for problem keywords | Monitor KOL timelines |
+| **Reply Format** | 3-4 tweet educational threads | Single contextual reply |
+| **Goal** | Customer acquisition | Brand awareness/engagement |
+| **Volume** | 2-4 threads/day | 2-5 replies/day |
+| **Status** | 🔴 Failing (needs bug fix) | ✅ Active |
 
 ---
 
@@ -242,7 +273,7 @@ We run **product-specific searches** for 4 BWS products, targeting users discuss
 | Search-Based Discovery (Dynamic) | 🔴 | 0% (1/3) | Dec 12, 06:42 UTC | **FAILURE** - Needs investigation | Tue/Thu/Sat 14:00 UTC | `OXYLABS_USERNAME`, `OXYLABS_PASSWORD`, `ANTHROPIC_API_KEY` |
 | Discover Documentation Pages | ✅ | 100% (3/3) | Dec 12, 02:40 UTC | Documentation index maintained | Daily 02:35 UTC | `OXYLABS_USERNAME`, `OXYLABS_PASSWORD` |
 | Index Documentation Site | ✅ | 100% (3/3) | Dec 12, 03:34 UTC | **73 pages indexed**, 8 products categorized | After docs discovery | `ANTHROPIC_API_KEY` |
-| Discover Product Tweets | ✅ | 100% (3/3) | Dec 12, 08:01 UTC | Product-specific tweet discovery | Daily 08:00 UTC | `OXYLABS_USERNAME`, `OXYLABS_PASSWORD`, `ANTHROPIC_API_KEY` |
+| Discover Product Tweets | 🔴 | 0% (0/3) | Dec 12, 08:01 UTC | **FAILING** - Code bug: `fs.readFileSync is not a function`, 0 tweets discovered | Daily 08:00 UTC | `OXYLABS_USERNAME`, `OXYLABS_PASSWORD`, `ANTHROPIC_API_KEY` |
 
 ### Engagement Workflows
 
@@ -263,7 +294,7 @@ We run **product-specific searches** for 4 BWS products, targeting users discuss
 
 | Automation | Status | Success Rate | Last Run | Details | Schedule | Credentials |
 |------------|--------|--------------|----------|---------|----------|-------------|
-| Reply to Product Tweets | ✅ | 100% (3/3) | Recent | Multi-tweet educational threads about BWS products | 2x daily (10 AM, 4 PM UTC) | `TWITTER_*` (4 vars), `ANTHROPIC_API_KEY` |
+| Reply to Product Tweets | ⚠️ | N/A | Dec 11, 16:05 UTC | **0 threads posted** - Waiting for discovery workflow fix, queue empty | 2x daily (10 AM, 4 PM UTC) | `TWITTER_*` (4 vars), `ANTHROPIC_API_KEY` |
 
 ### Infrastructure
 
