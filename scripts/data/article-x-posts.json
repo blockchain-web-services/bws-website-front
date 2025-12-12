@@ -1,12 +1,10 @@
 {
   "metadata": {
-    "lastGenerated": "2025-12-11T20:09:58.065Z",
-    "totalPosts": 39,
-    "totalArticles": 13,
-    "pendingPosts": 24,
-    "postedCount": 8,
-    "lastPosted": "2025-12-12T08:07:47.107Z",
-    "failedCount": 7
+    "lastGenerated": "2025-12-12T12:10:06.915Z",
+    "totalPosts": 42,
+    "totalArticles": 14,
+    "pendingPosts": 27,
+    "postedCount": 8
   },
   "posts": [
     {
@@ -1086,6 +1084,84 @@
         "articlePublishDate": "2025-12-11T19:35:08.986Z",
         "mainTextLength": 177,
         "fullTextLength": 330
+      }
+    },
+    {
+      "id": "49797887-73c4-49a2-a4c1-f7e5c931c6dc",
+      "articleSlug": "blockchain-badges-2025-12-12",
+      "product": "Blockchain Badges",
+      "type": "overview",
+      "text": "Blockchain Badges issues digital credentials with immutable blockchain verification. Recipients receive tamper-proof badges that can be instantly verified by anyone without manual processes. @BWSCommunity $BWS\n\n📖 Article: https://www.bws.ninja/articles/blockchain-badges-2025-12-12\n📚 Docs: https://docs.bws.ninja/marketplace-solutions/bws.blockchain.badges\n\n#BlockchainBadges #DigitalCredentials",
+      "mainText": "Blockchain Badges issues digital credentials with immutable blockchain verification. Recipients receive tamper-proof badges that can be instantly verified by anyone without manual processes. @BWSCommunity $BWS",
+      "articleUrl": "https://www.bws.ninja/articles/blockchain-badges-2025-12-12",
+      "docsUrl": "https://docs.bws.ninja/marketplace-solutions/bws.blockchain.badges",
+      "hashtags": [
+        "BlockchainBadges",
+        "DigitalCredentials"
+      ],
+      "priority": "high",
+      "status": "pending",
+      "scheduledFor": null,
+      "postedAt": null,
+      "tweetId": null,
+      "generatedAt": "2025-12-12T12:10:06.914Z",
+      "metadata": {
+        "articleTitle": "Blockchain Badges: Issue Tamper-Proof Digital Credentials with Blockchain Verification",
+        "articlePublishDate": "2025-12-12T10:04:02.390Z",
+        "mainTextLength": 209,
+        "fullTextLength": 397
+      }
+    },
+    {
+      "id": "0ffcf8b3-9fd9-49ce-8ccf-7a4134fbb4d8",
+      "articleSlug": "blockchain-badges-2025-12-12",
+      "product": "Blockchain Badges",
+      "type": "feature",
+      "text": "The platform records credential data on-chain with cryptographic proof. Each badge includes a verification link that confirms authenticity against blockchain records. Integration via API or web interface. @BWSCommunity $BWS\n\n📖 Article: https://www.bws.ninja/articles/blockchain-badges-2025-12-12\n📚 Docs: https://docs.bws.ninja/marketplace-solutions/bws.blockchain.badges\n\n#BlockchainVerification #CredentialManagement",
+      "mainText": "The platform records credential data on-chain with cryptographic proof. Each badge includes a verification link that confirms authenticity against blockchain records. Integration via API or web interface. @BWSCommunity $BWS",
+      "articleUrl": "https://www.bws.ninja/articles/blockchain-badges-2025-12-12",
+      "docsUrl": "https://docs.bws.ninja/marketplace-solutions/bws.blockchain.badges",
+      "hashtags": [
+        "BlockchainVerification",
+        "CredentialManagement"
+      ],
+      "priority": "medium",
+      "status": "pending",
+      "scheduledFor": null,
+      "postedAt": null,
+      "tweetId": null,
+      "generatedAt": "2025-12-12T12:10:06.914Z",
+      "metadata": {
+        "articleTitle": "Blockchain Badges: Issue Tamper-Proof Digital Credentials with Blockchain Verification",
+        "articlePublishDate": "2025-12-12T10:04:02.390Z",
+        "mainTextLength": 223,
+        "fullTextLength": 419
+      }
+    },
+    {
+      "id": "ebad6d59-62bf-4e88-9186-4a99d59eb5fe",
+      "articleSlug": "blockchain-badges-2025-12-12",
+      "product": "Blockchain Badges",
+      "type": "implementation",
+      "text": "Organizations issue certificates, training completions, or membership credentials as blockchain badges. Employers verify credentials by checking the blockchain record rather than contacting issuers. @BWSCommunity $BWS\n\n📖 Article: https://www.bws.ninja/articles/blockchain-badges-2025-12-12\n📚 Docs: https://docs.bws.ninja/marketplace-solutions/bws.blockchain.badges\n\n#Credentialing #Web3",
+      "mainText": "Organizations issue certificates, training completions, or membership credentials as blockchain badges. Employers verify credentials by checking the blockchain record rather than contacting issuers. @BWSCommunity $BWS",
+      "articleUrl": "https://www.bws.ninja/articles/blockchain-badges-2025-12-12",
+      "docsUrl": "https://docs.bws.ninja/marketplace-solutions/bws.blockchain.badges",
+      "hashtags": [
+        "Credentialing",
+        "Web3"
+      ],
+      "priority": "medium",
+      "status": "pending",
+      "scheduledFor": null,
+      "postedAt": null,
+      "tweetId": null,
+      "generatedAt": "2025-12-12T12:10:06.914Z",
+      "metadata": {
+        "articleTitle": "Blockchain Badges: Issue Tamper-Proof Digital Credentials with Blockchain Verification",
+        "articlePublishDate": "2025-12-12T10:04:02.390Z",
+        "mainTextLength": 217,
+        "fullTextLength": 388
       }
     }
   ]
