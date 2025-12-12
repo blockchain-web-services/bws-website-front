@@ -26,11 +26,11 @@ const __dirname = __scriptsDir;
 /**
  * Load product search queries configuration
  */
-function loadProductQueries() {
+async function loadProductQueries() {
   const configPath = path.join(__dirname, '..', 'config', 'product-search-queries.json');
 
   try {
-    const data = fs.readFileSync(configPath, 'utf-8');
+    const data = await fs.readFile(configPath, 'utf-8');
     return JSON.parse(data);
   } catch (error) {
     console.error(`❌ Error loading product queries: ${error.message}`);
@@ -169,7 +169,7 @@ async function discoverProductTweets() {
   const startTime = Date.now();
 
   // Load configuration
-  const config = loadProductQueries();
+  const config = await loadProductQueries();
   const queue = await loadProductQueue();
 
   // Get CLI argument for specific product (optional)
