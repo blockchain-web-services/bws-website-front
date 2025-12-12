@@ -3,8 +3,10 @@
     "lastGenerated": "2025-12-11T20:09:58.065Z",
     "totalPosts": 39,
     "totalArticles": 13,
-    "pendingPosts": 26,
-    "postedCount": 6
+    "pendingPosts": 25,
+    "postedCount": 7,
+    "lastPosted": "2025-12-12T00:20:51.430Z",
+    "failedCount": 7
   },
   "posts": [
     {
@@ -784,17 +786,19 @@
         "DigitalCredentials"
       ],
       "priority": "high",
-      "status": "pending",
+      "status": "posted",
       "scheduledFor": null,
-      "postedAt": null,
-      "tweetId": null,
+      "postedAt": "2025-12-12T00:20:51.322Z",
+      "tweetId": "1999273203894460765",
       "generatedAt": "2025-12-10T12:09:48.674Z",
       "metadata": {
         "articleTitle": "Blockchain Badges: Tamper-Proof Credential Verification for Universities and Organizations",
         "articlePublishDate": "2025-12-10T10:03:53.920Z",
         "mainTextLength": 227,
         "fullTextLength": 415
-      }
+      },
+      "tweetUrl": "https://twitter.com/i/web/status/1999273203894460765",
+      "error": null
     },
     {
       "id": "63a4be7b-a383-4e64-b14b-f18a1a43a71b",
