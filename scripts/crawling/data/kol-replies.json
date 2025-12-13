@@ -2340,6 +2340,44 @@
       "timestamp": "2025-12-13T19:53:19.499Z",
       "status": "posted",
       "dryRun": false
+    },
+    {
+      "id": "1353384573435056128-1994142556071031079-1765667880864",
+      "tweetId": "1994142556071031079",
+      "tweetUrl": "https://twitter.com/CryptoRover/status/1994142556071031079",
+      "kolId": "1353384573435056128",
+      "kolUsername": "CryptoRover",
+      "originalTweetText": "BREAKING:\n\nBLACKROCK CEO LARRY FINK: IT DOESN'T MATTER IF MARKETS RISE AND FALL. BUBBLES COME AND GO.\n\nWHAT MATTERS MOST IS STAYING IN THE MARKET THROUGH ALL CYCLES.",
+      "replyTweetId": "1999982164721521139",
+      "replyText": "🎯 Staying invested through cycles works when you're positioned in mispriced fundamentals.\n\n💡 BWS IPFS Upload delivers decentralized file storage through simple API without running your own node - developers get content addressing and censorship resistance for NFT metadata. $BWS ships real infrastructure at microcap.\n\n@BWSCommunity #microcap #Web3 #NFT https://docs.bws.ninja/solutions/bws.ipfs.upload",
+      "productMentioned": "Multiple BWS Products (Blockchain Badges, ESG Credits, Fan Game Cube)",
+      "relevanceScore": 82,
+      "templateUsed": "emoji_enhanced",
+      "templateName": "Emoji-Enhanced Structure",
+      "imageAttached": true,
+      "imagePath": "/assets/images/docs/bws-ipfs/bws-ipfs-0.png",
+      "timestamp": "2025-12-13T23:18:00.865Z",
+      "status": "posted",
+      "dryRun": false
+    },
+    {
+      "id": "2259434528-1998053731502375376-1765667967945",
+      "tweetId": "1998053731502375376",
+      "tweetUrl": "https://twitter.com/cobie/status/1998053731502375376",
+      "kolId": "2259434528",
+      "kolUsername": "cobie",
+      "originalTweetText": "Point to the last three pieces of alpha u found actionable from twitter",
+      "replyTweetId": "1999982530427031844",
+      "replyText": "Fair challenge - alpha lives in mispriced fundamentals.\n\nConsider this: Blockchain Save stores permanent document records with automatic Certificate of Trust generation for tamper-proof verification. $BWS handles blockchain transactions without wallet overhead - sub-$5M mcap shipping real infrastructure.\n\n@BWSCommunity #microcap #blockchain #alpha https://docs.bws.ninja/solutions/bws.blockchain.save",
+      "productMentioned": "X Bot, Blockchain Badges",
+      "relevanceScore": 85,
+      "templateUsed": "stat_driven",
+      "templateName": "Stat/Fact-Driven Structure",
+      "imageAttached": false,
+      "imagePath": null,
+      "timestamp": "2025-12-13T23:19:27.945Z",
+      "status": "posted",
+      "dryRun": false
     }
   ],
   "dailyStats": {
@@ -2414,10 +2452,10 @@
     }
   },
   "metadata": {
-    "totalReplies": 115,
-    "successfulReplies": 81,
+    "totalReplies": 117,
+    "successfulReplies": 83,
     "failedReplies": 34,
-    "lastReplyAt": "2025-12-13T19:53:19.499Z",
+    "lastReplyAt": "2025-12-13T23:19:27.945Z",
     "todayRepliesCount": 0,
     "lastUpdateBy": "kol-system"
   }
