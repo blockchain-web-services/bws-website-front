@@ -19,17 +19,17 @@ export interface ArticleMetadata {
 
 export const articles: ArticleMetadata[] = [
 {
-  slug: 'blockchain-badges-2025-12-12',
-  product: 'Blockchain Badges',
-  title: 'Blockchain Badges: Issue Tamper-Proof Digital Credentials with Blockchain Verification',
-  subtitle: 'Traditional credential verification traps organizations in a cycle of repetitive processes, document uploads, and manual verification calls that waste time and create security vulnerabilities. Blockchain Badges breaks this cycle by issuing tamper-proof digital credentials with immutable blockchain proof—enabling instant verification by anyone, anywhere, without the friction.',
-  publishDate: '2025-12-12T10:04:02.390Z',
+  slug: 'esg-credits-2025-12-13',
+  product: 'ESG Credits',
+  title: 'ESG Credits: ICMA-Compliant Environmental Impact Reports with Blockchain Verification',
+  subtitle: 'Financial institutions struggle to prove the authenticity of their environmental impact while preventing double-counting in sustainability reporting. ESG Credits solves this challenge by generating blockchain-verified environmental impact reports with ICMA framework compliance and immutable storage, delivering transparent and verifiable sustainability data that stakeholders can trust.',
+  publishDate: '2025-12-13T10:03:11.530Z',
   tweetId: '',
   featuredImage: {
-    src: '/assets/images/docs/blockchain-badges/blockchain-badges-0.png',
-    alt: 'Cover',
+    src: '/assets/images/marketplace/fallback/esg-credits/01-report.png',
+    alt: 'ESG Credits solution',
     loading: 'eager'
   },
-  seoDescription: 'Blockchain Badges creates verifiable digital credentials with immutable blockchain proof for universities and organizations, eliminating repetitive verification.'
+  seoDescription: 'ESG Credits provides blockchain-verified environmental impact reporting for financial institutions with ICMA compliance and immutable storage preventing double-counting.'
 }
 ];
