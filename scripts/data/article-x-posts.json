@@ -1,12 +1,10 @@
 {
   "metadata": {
-    "lastGenerated": "2025-12-12T12:10:06.915Z",
-    "totalPosts": 42,
-    "totalArticles": 14,
-    "pendingPosts": 25,
-    "postedCount": 10,
-    "lastPosted": "2025-12-13T04:09:19.765Z",
-    "failedCount": 7
+    "lastGenerated": "2025-12-13T12:08:06.054Z",
+    "totalPosts": 45,
+    "totalArticles": 15,
+    "pendingPosts": 28,
+    "postedCount": 10
   },
   "posts": [
     {
@@ -1168,6 +1166,84 @@
         "articlePublishDate": "2025-12-12T10:04:02.390Z",
         "mainTextLength": 217,
         "fullTextLength": 388
+      }
+    },
+    {
+      "id": "0c2116fa-5570-4a6a-831a-77e6f8000ca0",
+      "articleSlug": "esg-credits-2025-12-13",
+      "product": "ESG Credits",
+      "type": "overview",
+      "text": "ESG Credits generates ICMA-compliant environmental impact reports with blockchain verification. The platform stores sustainability data on-chain for transparent reporting. Built by @BWSCommunity using $BWS\n\n📖 Article: https://www.bws.ninja/articles/esg-credits-2025-12-13\n📚 Docs: https://docs.bws.ninja/marketplace-solutions/bws.esg.credits\n\n#ESGCredits #SustainabilityReporting",
+      "mainText": "ESG Credits generates ICMA-compliant environmental impact reports with blockchain verification. The platform stores sustainability data on-chain for transparent reporting. Built by @BWSCommunity using $BWS",
+      "articleUrl": "https://www.bws.ninja/articles/esg-credits-2025-12-13",
+      "docsUrl": "https://docs.bws.ninja/marketplace-solutions/bws.esg.credits",
+      "hashtags": [
+        "ESGCredits",
+        "SustainabilityReporting"
+      ],
+      "priority": "high",
+      "status": "pending",
+      "scheduledFor": null,
+      "postedAt": null,
+      "tweetId": null,
+      "generatedAt": "2025-12-13T12:08:06.053Z",
+      "metadata": {
+        "articleTitle": "ESG Credits: ICMA-Compliant Environmental Impact Reports with Blockchain Verification",
+        "articlePublishDate": "2025-12-13T10:03:11.530Z",
+        "mainTextLength": 205,
+        "fullTextLength": 380
+      }
+    },
+    {
+      "id": "a3523502-0759-471e-8b3a-814c29767445",
+      "articleSlug": "esg-credits-2025-12-13",
+      "product": "ESG Credits",
+      "type": "feature",
+      "text": "The system includes ICMA framework alignment, blockchain verification, and double-counting prevention. Environmental impact data is recorded immutably on-chain. @BWSCommunity $BWS\n\n📖 Article: https://www.bws.ninja/articles/esg-credits-2025-12-13\n📚 Docs: https://docs.bws.ninja/marketplace-solutions/bws.esg.credits\n\n#BlockchainVerification #ESGCompliance",
+      "mainText": "The system includes ICMA framework alignment, blockchain verification, and double-counting prevention. Environmental impact data is recorded immutably on-chain. @BWSCommunity $BWS",
+      "articleUrl": "https://www.bws.ninja/articles/esg-credits-2025-12-13",
+      "docsUrl": "https://docs.bws.ninja/marketplace-solutions/bws.esg.credits",
+      "hashtags": [
+        "BlockchainVerification",
+        "ESGCompliance"
+      ],
+      "priority": "medium",
+      "status": "pending",
+      "scheduledFor": null,
+      "postedAt": null,
+      "tweetId": null,
+      "generatedAt": "2025-12-13T12:08:06.053Z",
+      "metadata": {
+        "articleTitle": "ESG Credits: ICMA-Compliant Environmental Impact Reports with Blockchain Verification",
+        "articlePublishDate": "2025-12-13T10:03:11.530Z",
+        "mainTextLength": 179,
+        "fullTextLength": 356
+      }
+    },
+    {
+      "id": "f755dd10-95bc-497a-b7b1-4c654cc7eb6c",
+      "articleSlug": "esg-credits-2025-12-13",
+      "product": "ESG Credits",
+      "type": "implementation",
+      "text": "Financial institutions use ESG Credits to document environmental impact with verifiable on-chain records. The platform provides stakeholders access to authenticated sustainability metrics. @BWSCommunity $BWS\n\n📖 Article: https://www.bws.ninja/articles/esg-credits-2025-12-13\n📚 Docs: https://docs.bws.ninja/marketplace-solutions/bws.esg.credits\n\n#GreenFinance #ESG",
+      "mainText": "Financial institutions use ESG Credits to document environmental impact with verifiable on-chain records. The platform provides stakeholders access to authenticated sustainability metrics. @BWSCommunity $BWS",
+      "articleUrl": "https://www.bws.ninja/articles/esg-credits-2025-12-13",
+      "docsUrl": "https://docs.bws.ninja/marketplace-solutions/bws.esg.credits",
+      "hashtags": [
+        "GreenFinance",
+        "ESG"
+      ],
+      "priority": "medium",
+      "status": "pending",
+      "scheduledFor": null,
+      "postedAt": null,
+      "tweetId": null,
+      "generatedAt": "2025-12-13T12:08:06.053Z",
+      "metadata": {
+        "articleTitle": "ESG Credits: ICMA-Compliant Environmental Impact Reports with Blockchain Verification",
+        "articlePublishDate": "2025-12-13T10:03:11.530Z",
+        "mainTextLength": 207,
+        "fullTextLength": 364
       }
     }
   ]
