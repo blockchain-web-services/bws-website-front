@@ -2264,6 +2264,44 @@
       "timestamp": "2025-12-13T11:49:40.660Z",
       "status": "posted",
       "dryRun": false
+    },
+    {
+      "id": "1353384573435056128-1994142556071031079-1765639681922",
+      "tweetId": "1994142556071031079",
+      "tweetUrl": "https://twitter.com/CryptoRover/status/1994142556071031079",
+      "kolId": "1353384573435056128",
+      "kolUsername": "CryptoRover",
+      "originalTweetText": "BREAKING:\n\nBLACKROCK CEO LARRY FINK: IT DOESN'T MATTER IF MARKETS RISE AND FALL. BUBBLES COME AND GO.\n\nWHAT MATTERS MOST IS STAYING IN THE MARKET THROUGH ALL CYCLES.",
+      "replyTweetId": "1999863890209800218",
+      "replyText": "Long-term conviction works when fundamentals compound regardless of market sentiment.\n\n$BWS Blockchain Hash: developers build mutable on-chain databases through REST API without wallet management overhead or gas fees - update blockchain data after initial save using simple key-value calls.\n\n@BWSCommunity #microcap #blockchain #fundamentals https://docs.bws.ninja/solutions/bws.blockchain.hash",
+      "productMentioned": "Multiple BWS Products (Platform approach)",
+      "relevanceScore": 82,
+      "templateUsed": "classic",
+      "templateName": "Classic Structure",
+      "imageAttached": false,
+      "imagePath": null,
+      "timestamp": "2025-12-13T15:28:01.922Z",
+      "status": "posted",
+      "dryRun": false
+    },
+    {
+      "id": "2259434528-1998053731502375376-1765639773576",
+      "tweetId": "1998053731502375376",
+      "tweetUrl": "https://twitter.com/cobie/status/1998053731502375376",
+      "kolId": "2259434528",
+      "kolUsername": "cobie",
+      "originalTweetText": "Point to the last three pieces of alpha u found actionable from twitter",
+      "replyTweetId": "1999864273997074826",
+      "replyText": "Most brands struggle to onboard mainstream users to NFTs because wallet setup creates massive friction.\n\nNFT.zK from $BWS lets companies transfer NFTs via email without recipients needing crypto knowledge - managed wallet infrastructure handles complexity.\n\nSub-$5M mcap solving real enterprise adoption barriers.\n\n@BWSCommunity #microcap #NFT #gems https://docs.bws.ninja/solutions/bws.nft.zk",
+      "productMentioned": "X Bot, Blockchain Badges",
+      "relevanceScore": 85,
+      "templateUsed": "problem_solution",
+      "templateName": "Problem-Solution Structure",
+      "imageAttached": true,
+      "imagePath": "/assets/images/docs/nftzk/nftzk-0.png",
+      "timestamp": "2025-12-13T15:29:33.576Z",
+      "status": "posted",
+      "dryRun": false
     }
   ],
   "dailyStats": {
@@ -2338,10 +2376,10 @@
     }
   },
   "metadata": {
-    "totalReplies": 111,
-    "successfulReplies": 77,
+    "totalReplies": 113,
+    "successfulReplies": 79,
     "failedReplies": 34,
-    "lastReplyAt": "2025-12-13T11:49:40.660Z",
+    "lastReplyAt": "2025-12-13T15:29:33.576Z",
     "todayRepliesCount": 0,
     "lastUpdateBy": "kol-system"
   }
