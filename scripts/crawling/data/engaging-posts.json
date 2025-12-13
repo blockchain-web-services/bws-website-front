@@ -4471,13 +4471,412 @@
       "expiresAt": "2025-12-19T22:15:40.146Z",
       "source": "timeline_monitor",
       "contentCategory": "market-trends"
+    },
+    {
+      "id": "1999531386395324667",
+      "text": "$BTC price action has been insane the last several days. Huge inefficient moves in both directions = lots of traders rekt",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "retweet_count": 20,
+        "reply_count": 28,
+        "like_count": 106,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/AltcoinSherpa/status/1999531386395324667",
+      "processed": false,
+      "addedAt": "2025-12-13T07:24:10.387Z",
+      "expiresAt": "2025-12-20T07:24:10.387Z",
+      "source": "timeline_monitor",
+      "contentCategory": "price-speculation/technical-analysis"
+    },
+    {
+      "id": "1999620360598442373",
+      "text": "$ETH - Weekly OBV matches sentiment about the confusing year it's been. Making a bullish higher low with a nice breakout but then absolutely no re-test, but then still pulls out a bullish HL, fakeout trap, then instant breakout. Somehow, after everything, still bullish though.",
+      "author": {
+        "id": "4441279246",
+        "username": "IncomeSharks"
+      },
+      "public_metrics": {
+        "retweet_count": 69,
+        "reply_count": 55,
+        "like_count": 878,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/IncomeSharks/status/1999620360598442373",
+      "processed": false,
+      "addedAt": "2025-12-13T07:24:20.376Z",
+      "expiresAt": "2025-12-20T07:24:20.376Z",
+      "source": "timeline_monitor",
+      "contentCategory": "technical-analysis"
+    },
+    {
+      "id": "1999601597350080868",
+      "text": "$BTC - It's ok to stop trading when the weekly candles look like this. This doesn't mean increase leverage because things are moving slow, it means find another market to trade or enjoy the rest of the year without doing anything.",
+      "author": {
+        "id": "4441279246",
+        "username": "IncomeSharks"
+      },
+      "public_metrics": {
+        "retweet_count": 64,
+        "reply_count": 54,
+        "like_count": 684,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/IncomeSharks/status/1999601597350080868",
+      "processed": false,
+      "addedAt": "2025-12-13T07:24:26.040Z",
+      "expiresAt": "2025-12-20T07:24:26.040Z",
+      "source": "timeline_monitor",
+      "contentCategory": "technical-analysis"
+    },
+    {
+      "id": "1999591317966577800",
+      "text": "It's amazing how much panic being within 1% of an ATH high can cause in the markets.",
+      "author": {
+        "id": "4441279246",
+        "username": "IncomeSharks"
+      },
+      "public_metrics": {
+        "retweet_count": 15,
+        "reply_count": 38,
+        "like_count": 333,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/IncomeSharks/status/1999591317966577800",
+      "processed": false,
+      "addedAt": "2025-12-13T07:24:31.485Z",
+      "expiresAt": "2025-12-20T07:24:31.485Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "1999363455640568055",
+      "text": "According to KBS, Binance was asked by South Korean police to freeze crypto assets stolen from Upbit but froze only part of the funds. Authorities requested a freeze on about 470 million KRW in Solana tokens, but Binance, citing the need for further verification, froze only 17%",
+      "author": {
+        "id": "111533746",
+        "username": "WuBlockchain"
+      },
+      "public_metrics": {
+        "retweet_count": 10,
+        "reply_count": 15,
+        "like_count": 52,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/WuBlockchain/status/1999363455640568055",
+      "processed": false,
+      "addedAt": "2025-12-13T07:27:45.058Z",
+      "expiresAt": "2025-12-20T07:27:45.058Z",
+      "source": "timeline_monitor",
+      "contentCategory": "news"
+    },
+    {
+      "id": "1999668147633201388",
+      "text": "TOM LEE: THERE IS NO SCENARIO WHERE WE SELL ETHEREUM\n\nBitmine has accumulated ~4% of ETH’s total supply in ~5 months and they don’t plan to sell any of it.\n\nInstead, they’re staking it. That stack alone is expected to generate $1M+ per day in net income once fully staked.\n\nThis",
+      "author": {
+        "id": "877357064724520961",
+        "username": "CryptosR_Us"
+      },
+      "public_metrics": {
+        "retweet_count": 55,
+        "reply_count": 36,
+        "like_count": 459,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptosR_Us/status/1999668147633201388",
+      "processed": false,
+      "addedAt": "2025-12-13T07:27:55.361Z",
+      "expiresAt": "2025-12-20T07:27:55.361Z",
+      "source": "timeline_monitor",
+      "contentCategory": "project-discussion"
+    },
+    {
+      "id": "1999659294782799935",
+      "text": "KALSHI IS BEATING POLYMARKET ON DISTRIBUTION RIGHT NOW\n\nKalshi just locked up two of the biggest consumer funnels in crypto:\n\n Phantom Wallet (20M+ users) - prediction markets going live inside the wallet over the next week\n Coinbase (100M+ users) - building prediction",
+      "author": {
+        "id": "877357064724520961",
+        "username": "CryptosR_Us"
+      },
+      "public_metrics": {
+        "retweet_count": 15,
+        "reply_count": 15,
+        "like_count": 86,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptosR_Us/status/1999659294782799935",
+      "processed": false,
+      "addedAt": "2025-12-13T07:27:57.179Z",
+      "expiresAt": "2025-12-20T07:27:57.179Z",
+      "source": "timeline_monitor",
+      "contentCategory": "project-discussion"
+    },
+    {
+      "id": "1999637975760552314",
+      "text": "THE BITCOIN ETF WAS THE NO. 1 ETF LAUNCH OF ALL TIME\n\nWhen the first Bitcoin ETF launched, there had only ever been 9000 ETF launches in U.S. history. Bitcoin was number one!\n\n  \"It pulled in $36 billion in assets in its first year.\" —Matt Hougan, Bitwise\n\nNumber 2 on the",
+      "author": {
+        "id": "877357064724520961",
+        "username": "CryptosR_Us"
+      },
+      "public_metrics": {
+        "retweet_count": 14,
+        "reply_count": 17,
+        "like_count": 79,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptosR_Us/status/1999637975760552314",
+      "processed": false,
+      "addedAt": "2025-12-13T07:27:59.035Z",
+      "expiresAt": "2025-12-20T07:27:59.035Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "1999614993927749958",
+      "text": "LILY LIU: THIS IS ALREADY THE MOST USED NETWORK AND IT’S NOT EVEN CLOSE\n\nThis stat is insane, Lily Liu says Solana is used more than the rest of crypto combined, by 2x to 3x.\n\nUsage -> fees -> revenue -> value back to $SOL holders.\n\nThat’s not crypto math, that’s tech platform",
+      "author": {
+        "id": "877357064724520961",
+        "username": "CryptosR_Us"
+      },
+      "public_metrics": {
+        "retweet_count": 15,
+        "reply_count": 34,
+        "like_count": 154,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptosR_Us/status/1999614993927749958",
+      "processed": false,
+      "addedAt": "2025-12-13T07:28:01.013Z",
+      "expiresAt": "2025-12-20T07:28:01.013Z",
+      "source": "timeline_monitor",
+      "contentCategory": "project-discussion"
+    },
+    {
+      "id": "1999586808284549145",
+      "text": "LATEST: CHAINLINK x BACKED FINANCE UNLEASH GAME-CHANGING BRIDGE TO MOVE TOKENIZED STOCKS BETWEEN CHAINS\n\nBacked Finance launched xBridge → move bStocks (like bAAPL, bTSLA) seamlessly between Ethereum  Solana while perfectly mirroring real-world corporate actions.",
+      "author": {
+        "id": "877357064724520961",
+        "username": "CryptosR_Us"
+      },
+      "public_metrics": {
+        "retweet_count": 17,
+        "reply_count": 13,
+        "like_count": 128,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptosR_Us/status/1999586808284549145",
+      "processed": false,
+      "addedAt": "2025-12-13T07:28:05.234Z",
+      "expiresAt": "2025-12-20T07:28:05.234Z",
+      "source": "timeline_monitor",
+      "contentCategory": "project-discussion"
+    },
+    {
+      "id": "1999634949591212202",
+      "text": "BREAKING:\n\n$USDT ISSUER TETHER SUBMITS PROPOSAL TO ACQUIRE JUVENTUS FOOTBALL CLUB.",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "retweet_count": 45,
+        "reply_count": 69,
+        "like_count": 209,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoRover/status/1999634949591212202",
+      "processed": false,
+      "addedAt": "2025-12-13T07:28:38.035Z",
+      "expiresAt": "2025-12-20T07:28:38.035Z",
+      "source": "timeline_monitor",
+      "contentCategory": "news"
+    },
+    {
+      "id": "1999579006648348931",
+      "text": "Less than 7% of the world population owns crypto.  \n\nYou're still early!",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "retweet_count": 43,
+        "reply_count": 170,
+        "like_count": 452,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoRover/status/1999579006648348931",
+      "processed": false,
+      "addedAt": "2025-12-13T07:28:42.271Z",
+      "expiresAt": "2025-12-20T07:28:42.271Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "1999570702337220630",
+      "text": "BITCOIN WHALE DEMAND IS RETURNING NOW!",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "retweet_count": 94,
+        "reply_count": 134,
+        "like_count": 500,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoRover/status/1999570702337220630",
+      "processed": false,
+      "addedAt": "2025-12-13T07:28:44.492Z",
+      "expiresAt": "2025-12-20T07:28:44.492Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "1999550317973614860",
+      "text": "GLOBAL LIQUIDITY TRENDING HIGHER, BULLISH FOR BITCOIN & CRYPTO!",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "retweet_count": 46,
+        "reply_count": 116,
+        "like_count": 363,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoRover/status/1999550317973614860",
+      "processed": false,
+      "addedAt": "2025-12-13T07:28:48.478Z",
+      "expiresAt": "2025-12-20T07:28:48.478Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "1999454898996543528",
+      "text": "Many will fade this but $AIC will give multiples from here. Just look at the chart. Every time it touched this trend-line it exploded 5-20x shortly after. \n\n#BTC #Crypto #كريبتو",
+      "author": {
+        "id": "crawlee_search_bitcoinhabebe",
+        "username": "Bitcoinhabebe"
+      },
+      "public_metrics": {
+        "retweet_count": 27,
+        "reply_count": 24,
+        "like_count": 95,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/Bitcoinhabebe/status/1999454898996543528",
+      "processed": false,
+      "addedAt": "2025-12-13T07:29:21.186Z",
+      "expiresAt": "2025-12-20T07:29:21.186Z",
+      "source": "timeline_monitor",
+      "contentCategory": "price-speculation"
+    },
+    {
+      "id": "1999713140662050961",
+      "text": "US SPOT ETFs Yesterday Flows Data update (12-12-2025):\n\n  Bitcoin ETFs: +531 $BTC (+$49.16M)\n  Ethereum ETFs: -5,995 $ETH (-$19.41M)\n Solana ETFs: +18,334 $SOL (+$2.50M)\n XRP ETFs: +9.92M $XRP (+$20.17M)\n CHAINLINK ETFs: ZERO\n DOGECOIN ETFs: ZERO\n LTC ETFs: ZERO",
+      "author": {
+        "id": "crawlee_search_cryptopatel",
+        "username": "CryptoPatel"
+      },
+      "public_metrics": {
+        "retweet_count": 15,
+        "reply_count": 10,
+        "like_count": 150,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoPatel/status/1999713140662050961",
+      "processed": false,
+      "addedAt": "2025-12-13T07:29:41.265Z",
+      "expiresAt": "2025-12-20T07:29:41.265Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "1999698041180422376",
+      "text": "Bitcoin Top Confirmed: Bitcoin Enters Macro Retracement Phase\n\n$BTC has broken key bullish support and is trading below it, confirming a bearish market phase.\n\nHead & Shoulders\nThe Head & Shoulders pattern is fully completed.\nAs per classical rules, the 162% downside target has",
+      "author": {
+        "id": "crawlee_search_cryptopatel",
+        "username": "CryptoPatel"
+      },
+      "public_metrics": {
+        "retweet_count": 17,
+        "reply_count": 10,
+        "like_count": 160,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoPatel/status/1999698041180422376",
+      "processed": false,
+      "addedAt": "2025-12-13T07:29:42.960Z",
+      "expiresAt": "2025-12-20T07:29:42.960Z",
+      "source": "timeline_monitor",
+      "contentCategory": "technical-analysis"
+    },
+    {
+      "id": "1999683906493382813",
+      "text": "News: Tether has sent a proposal to buy Juventus Football Club.\n\nThat means a major crypto company could own one of the world’s biggest football teams.\n\nThis goes beyond ads and sponsorships, it’s about real ownership.\n\nCrypto and global sports are coming closer than ever.\n\nMore",
+      "author": {
+        "id": "crawlee_search_cryptopatel",
+        "username": "CryptoPatel"
+      },
+      "public_metrics": {
+        "retweet_count": 11,
+        "reply_count": 9,
+        "like_count": 170,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoPatel/status/1999683906493382813",
+      "processed": false,
+      "addedAt": "2025-12-13T07:29:44.876Z",
+      "expiresAt": "2025-12-20T07:29:44.876Z",
+      "source": "timeline_monitor",
+      "contentCategory": "news"
+    },
+    {
+      "id": "1999570650894115156",
+      "text": "$BTC | CRT",
+      "author": {
+        "id": "crawlee_search_nihilusbtc",
+        "username": "NihilusBTC"
+      },
+      "public_metrics": {
+        "retweet_count": 14,
+        "reply_count": 15,
+        "like_count": 90,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/NihilusBTC/status/1999570650894115156",
+      "processed": false,
+      "addedAt": "2025-12-13T07:30:15.609Z",
+      "expiresAt": "2025-12-20T07:30:15.609Z",
+      "source": "timeline_monitor",
+      "contentCategory": "price-speculation"
     }
   ],
   "metadata": {
-    "lastUpdated": "2025-12-12T22:15:40.146Z",
-    "totalPosts": 276,
+    "lastUpdated": "2025-12-13T07:30:45.918Z",
+    "totalPosts": 232,
     "bySource": {
-      "timeline_monitor": 276,
+      "timeline_monitor": 232,
       "search_discovery": 0
     }
   },
