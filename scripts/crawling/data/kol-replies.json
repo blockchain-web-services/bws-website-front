@@ -2226,6 +2226,44 @@
       "timestamp": "2025-12-13T07:37:31.773Z",
       "status": "posted",
       "dryRun": false
+    },
+    {
+      "id": "1353384573435056128-1994142556071031079-1765626492892",
+      "tweetId": "1994142556071031079",
+      "tweetUrl": "https://twitter.com/CryptoRover/status/1994142556071031079",
+      "kolId": "1353384573435056128",
+      "kolUsername": "CryptoRover",
+      "originalTweetText": "BREAKING:\n\nBLACKROCK CEO LARRY FINK: IT DOESN'T MATTER IF MARKETS RISE AND FALL. BUBBLES COME AND GO.\n\nWHAT MATTERS MOST IS STAYING IN THE MARKET THROUGH ALL CYCLES.",
+      "replyTweetId": "1999808570842300691",
+      "replyText": "Surviving cycles requires infrastructure that generates measurable value regardless of sentiment.\n\nX Bot delivers:\n• Track multiple KOLs simultaneously with official X API integration\n• Identify authentic community traction vs bot farms through engagement patterns\n• Automated daily Telegram reports with historical trend analysis\n\nReal analytics at microcap. $BWS\n\n@BWSCommunity #crypto #microcap #fundamentals https://docs.bws.ninja/marketplace-solutions/bws.x.bot",
+      "productMentioned": "Platform APIs (Blockchain Save, IPFS, NFT.zK) + Marketplace Solutions",
+      "relevanceScore": 82,
+      "templateUsed": "feature_list",
+      "templateName": "Feature List Structure",
+      "imageAttached": true,
+      "imagePath": "/assets/images/docs/x-bot/x-bot-0.png",
+      "timestamp": "2025-12-13T11:48:12.892Z",
+      "status": "posted",
+      "dryRun": false
+    },
+    {
+      "id": "2259434528-1998053731502375376-1765626580660",
+      "tweetId": "1998053731502375376",
+      "tweetUrl": "https://twitter.com/cobie/status/1998053731502375376",
+      "kolId": "2259434528",
+      "kolUsername": "cobie",
+      "originalTweetText": "Point to the last three pieces of alpha u found actionable from twitter",
+      "replyTweetId": "1999808939139997918",
+      "replyText": "🎯 Alpha means finding utility the market hasn't priced.\n\n💡 Fan Game Cube tokenizes sports fields into NFT zones - fans earn points when goals, passes, or moves happen at their owned coordinates. $BWS enables clubs to create new revenue streams across football, cricket, chess.\n🔧 Real B2B product at sub-$5M mcap.\n\n@BWSCommunity #microcap #sports #gems https://docs.bws.ninja/marketplace-solutions/bws.nft.gamecube",
+      "productMentioned": "X Bot, Blockchain Badges",
+      "relevanceScore": 88,
+      "templateUsed": "emoji_enhanced",
+      "templateName": "Emoji-Enhanced Structure",
+      "imageAttached": true,
+      "imagePath": "/assets/images/docs/fan-game-cube/fan-game-cube-0.png",
+      "timestamp": "2025-12-13T11:49:40.660Z",
+      "status": "posted",
+      "dryRun": false
     }
   ],
   "dailyStats": {
@@ -2300,10 +2338,10 @@
     }
   },
   "metadata": {
-    "totalReplies": 109,
-    "successfulReplies": 75,
+    "totalReplies": 111,
+    "successfulReplies": 77,
     "failedReplies": 34,
-    "lastReplyAt": "2025-12-13T07:37:31.773Z",
+    "lastReplyAt": "2025-12-13T11:49:40.660Z",
     "todayRepliesCount": 0,
     "lastUpdateBy": "kol-system"
   }
