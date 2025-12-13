@@ -4387,13 +4387,580 @@
       "expiresAt": "2025-12-20T12:53:32.938Z",
       "source": "timeline_monitor",
       "contentCategory": "project-discussion"
+    },
+    {
+      "id": "1999879486775636236",
+      "text": "$ETH is leaving exchanges but not running away.\n\n#Ethereum exchange balances are dropping, yet Binance’s share stays steady at ~22–25%.\n\nThat means this isn’t fear or an exchange issue.\nIt’s holders moving ETH to self-custody.\n\nLess supply on exchanges = less sell pressure.",
+      "author": {
+        "id": "crawlee_search_cryptopatel",
+        "username": "CryptoPatel"
+      },
+      "public_metrics": {
+        "retweet_count": 10,
+        "reply_count": 11,
+        "like_count": 149,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoPatel/status/1999879486775636236",
+      "processed": false,
+      "addedAt": "2025-12-13T17:51:14.912Z",
+      "expiresAt": "2025-12-20T17:51:14.912Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "1999864135757017317",
+      "text": "BREAKING: Corporate Bitcoin holdings have jumped from 197K → 1.08M $BTC since January 2023: 448% increase.",
+      "author": {
+        "id": "crawlee_search_cryptopatel",
+        "username": "CryptoPatel"
+      },
+      "public_metrics": {
+        "retweet_count": 10,
+        "reply_count": 11,
+        "like_count": 206,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoPatel/status/1999864135757017317",
+      "processed": false,
+      "addedAt": "2025-12-13T17:51:16.939Z",
+      "expiresAt": "2025-12-20T17:51:16.939Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "1999834191417278730",
+      "text": "$TAO Reset Complete? This One Level Decides the Next 5x\n\nAfter a 200% rally, price dumped ~50% from $539 and is now ~65% below ATH, classic HTF reset.\n\nMake or break/Bullish OB: 0.618-0.786 Fib: $262-$215\nHold = bullish continuation setup & Accumulation.\n\n Lose $262 → $215",
+      "author": {
+        "id": "crawlee_search_cryptopatel",
+        "username": "CryptoPatel"
+      },
+      "public_metrics": {
+        "retweet_count": 21,
+        "reply_count": 14,
+        "like_count": 272,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoPatel/status/1999834191417278730",
+      "processed": false,
+      "addedAt": "2025-12-13T17:51:21.050Z",
+      "expiresAt": "2025-12-20T17:51:21.050Z",
+      "source": "timeline_monitor",
+      "contentCategory": "altcoin-talk/price-speculation/technical-analysis"
+    },
+    {
+      "id": "1999819567539879957",
+      "text": "My advice to everyone is buy as much $ICE as you can at these insanely cheap prices, then directly send it to Online+, & wait for the 17th of Dec to migrate it to ION. \n\nThis is the cheapest price level you will ever see for $ICE & once it migrates to ION in a few days the price",
+      "author": {
+        "id": "crawlee_search_bitcoinhabebe",
+        "username": "Bitcoinhabebe"
+      },
+      "public_metrics": {
+        "retweet_count": 55,
+        "reply_count": 91,
+        "like_count": 291,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/Bitcoinhabebe/status/1999819567539879957",
+      "processed": false,
+      "addedAt": "2025-12-13T17:52:44.784Z",
+      "expiresAt": "2025-12-20T17:52:44.784Z",
+      "source": "timeline_monitor",
+      "contentCategory": "altcoin-talk"
+    },
+    {
+      "id": "1999800279223742965",
+      "text": "$AGT is starting with a big breakout that is preparing to send it even further for us. \n\nThose who are holding with me are printing\n\nCurrently up 30% & thats just the breakout",
+      "author": {
+        "id": "crawlee_search_bitcoinhabebe",
+        "username": "Bitcoinhabebe"
+      },
+      "public_metrics": {
+        "retweet_count": 18,
+        "reply_count": 17,
+        "like_count": 61,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/Bitcoinhabebe/status/1999800279223742965",
+      "processed": false,
+      "addedAt": "2025-12-13T17:52:46.751Z",
+      "expiresAt": "2025-12-20T17:52:46.751Z",
+      "source": "timeline_monitor",
+      "contentCategory": "price-speculation"
+    },
+    {
+      "id": "1999509571845410871",
+      "text": "Do you know the target of this bearish penant on $BTC if it breaks down from here?",
+      "author": {
+        "id": "crawlee_search_bitcoinhabebe",
+        "username": "Bitcoinhabebe"
+      },
+      "public_metrics": {
+        "retweet_count": 89,
+        "reply_count": 103,
+        "like_count": 375,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/Bitcoinhabebe/status/1999509571845410871",
+      "processed": false,
+      "addedAt": "2025-12-13T17:52:49.865Z",
+      "expiresAt": "2025-12-20T17:52:49.865Z",
+      "source": "timeline_monitor",
+      "contentCategory": "technical-analysis"
+    },
+    {
+      "id": "1999741507910402323",
+      "text": "Research firm Kaiko said in its latest report that crypto market liquidity is increasingly concentrated in a small number of centralized exchanges, with reliance on Binance particularly pronounced. The report noted that during periods of high volatility, such concentration could",
+      "author": {
+        "id": "111533746",
+        "username": "WuBlockchain"
+      },
+      "public_metrics": {
+        "retweet_count": 11,
+        "reply_count": 20,
+        "like_count": 59,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/WuBlockchain/status/1999741507910402323",
+      "processed": false,
+      "addedAt": "2025-12-13T17:53:10.982Z",
+      "expiresAt": "2025-12-20T17:53:10.982Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "1999866654218731977",
+      "text": "Oh hello there.\n\nIt’s been a busy week and I’m very happy for the $XRP army. \n\nEvery time I meet one of you in the wild it’s always a pleasure.",
+      "author": {
+        "id": "935742315389444096",
+        "username": "CryptoWendyO"
+      },
+      "public_metrics": {
+        "retweet_count": 10,
+        "reply_count": 32,
+        "like_count": 148,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoWendyO/status/1999866654218731977",
+      "processed": false,
+      "addedAt": "2025-12-13T17:53:30.961Z",
+      "expiresAt": "2025-12-20T17:53:30.961Z",
+      "source": "timeline_monitor",
+      "contentCategory": "altcoin-talk"
+    },
+    {
+      "id": "1999892672073633950",
+      "text": "$FOLKS \n\n$MOODENG",
+      "author": {
+        "id": "crawlee_search_nihilusbtc",
+        "username": "NihilusBTC"
+      },
+      "public_metrics": {
+        "retweet_count": 14,
+        "reply_count": 26,
+        "like_count": 52,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/NihilusBTC/status/1999892672073633950",
+      "processed": false,
+      "addedAt": "2025-12-13T17:54:34.132Z",
+      "expiresAt": "2025-12-20T17:54:34.132Z",
+      "source": "timeline_monitor",
+      "contentCategory": "altcoin-talk"
+    },
+    {
+      "id": "1999888363084820700",
+      "text": "$USELESS | Buy.\n\n$folks $beta $btc",
+      "author": {
+        "id": "crawlee_search_nihilusbtc",
+        "username": "NihilusBTC"
+      },
+      "public_metrics": {
+        "retweet_count": 17,
+        "reply_count": 31,
+        "like_count": 55,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/NihilusBTC/status/1999888363084820700",
+      "processed": false,
+      "addedAt": "2025-12-13T17:54:36.088Z",
+      "expiresAt": "2025-12-20T17:54:36.088Z",
+      "source": "timeline_monitor",
+      "contentCategory": "altcoin-talk"
+    },
+    {
+      "id": "1999885394532339893",
+      "text": "$USELESS buying until @ 0.0948",
+      "author": {
+        "id": "crawlee_search_nihilusbtc",
+        "username": "NihilusBTC"
+      },
+      "public_metrics": {
+        "retweet_count": 19,
+        "reply_count": 22,
+        "like_count": 60,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/NihilusBTC/status/1999885394532339893",
+      "processed": false,
+      "addedAt": "2025-12-13T17:54:38.028Z",
+      "expiresAt": "2025-12-20T17:54:38.028Z",
+      "source": "timeline_monitor",
+      "contentCategory": "price-speculation"
+    },
+    {
+      "id": "1999883606617956839",
+      "text": "New $FOLKS is $MOODENG",
+      "author": {
+        "id": "crawlee_search_nihilusbtc",
+        "username": "NihilusBTC"
+      },
+      "public_metrics": {
+        "retweet_count": 17,
+        "reply_count": 21,
+        "like_count": 53,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/NihilusBTC/status/1999883606617956839",
+      "processed": false,
+      "addedAt": "2025-12-13T17:54:40.181Z",
+      "expiresAt": "2025-12-20T17:54:40.181Z",
+      "source": "timeline_monitor",
+      "contentCategory": "altcoin-talk"
+    },
+    {
+      "id": "1999883412178354203",
+      "text": "$TAG | RISK FREE!",
+      "author": {
+        "id": "crawlee_search_nihilusbtc",
+        "username": "NihilusBTC"
+      },
+      "public_metrics": {
+        "retweet_count": 13,
+        "reply_count": 22,
+        "like_count": 57,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/NihilusBTC/status/1999883412178354203",
+      "processed": false,
+      "addedAt": "2025-12-13T17:54:42.102Z",
+      "expiresAt": "2025-12-20T17:54:42.102Z",
+      "source": "timeline_monitor",
+      "contentCategory": "price-speculation"
+    },
+    {
+      "id": "1999883116425683304",
+      "text": "$FOLKS | +420%",
+      "author": {
+        "id": "crawlee_search_nihilusbtc",
+        "username": "NihilusBTC"
+      },
+      "public_metrics": {
+        "retweet_count": 17,
+        "reply_count": 23,
+        "like_count": 61,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/NihilusBTC/status/1999883116425683304",
+      "processed": false,
+      "addedAt": "2025-12-13T17:54:44.217Z",
+      "expiresAt": "2025-12-20T17:54:44.217Z",
+      "source": "timeline_monitor",
+      "contentCategory": "altcoin-talk"
+    },
+    {
+      "id": "1999882409517728192",
+      "text": "$MOODENG | Total invested 67k here.",
+      "author": {
+        "id": "crawlee_search_nihilusbtc",
+        "username": "NihilusBTC"
+      },
+      "public_metrics": {
+        "retweet_count": 16,
+        "reply_count": 20,
+        "like_count": 59,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/NihilusBTC/status/1999882409517728192",
+      "processed": false,
+      "addedAt": "2025-12-13T17:54:46.245Z",
+      "expiresAt": "2025-12-20T17:54:46.245Z",
+      "source": "timeline_monitor",
+      "contentCategory": "altcoin-talk"
+    },
+    {
+      "id": "1999881053390123051",
+      "text": "$USELESS | Going to long.",
+      "author": {
+        "id": "crawlee_search_nihilusbtc",
+        "username": "NihilusBTC"
+      },
+      "public_metrics": {
+        "retweet_count": 16,
+        "reply_count": 19,
+        "like_count": 60,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/NihilusBTC/status/1999881053390123051",
+      "processed": false,
+      "addedAt": "2025-12-13T17:54:48.004Z",
+      "expiresAt": "2025-12-20T17:54:48.004Z",
+      "source": "timeline_monitor",
+      "contentCategory": "price-speculation"
+    },
+    {
+      "id": "1999876850647204130",
+      "text": "$MOODENG \n\nGIVE ME GOD CANDLE!",
+      "author": {
+        "id": "crawlee_search_nihilusbtc",
+        "username": "NihilusBTC"
+      },
+      "public_metrics": {
+        "retweet_count": 17,
+        "reply_count": 32,
+        "like_count": 69,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/NihilusBTC/status/1999876850647204130",
+      "processed": false,
+      "addedAt": "2025-12-13T17:54:50.047Z",
+      "expiresAt": "2025-12-20T17:54:50.047Z",
+      "source": "timeline_monitor",
+      "contentCategory": "altcoin-talk"
+    },
+    {
+      "id": "1999872336758239654",
+      "text": "$MOODENG longed more.\n\nIt will follow $FOLKS",
+      "author": {
+        "id": "crawlee_search_nihilusbtc",
+        "username": "NihilusBTC"
+      },
+      "public_metrics": {
+        "retweet_count": 15,
+        "reply_count": 29,
+        "like_count": 73,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/NihilusBTC/status/1999872336758239654",
+      "processed": false,
+      "addedAt": "2025-12-13T17:54:52.502Z",
+      "expiresAt": "2025-12-20T17:54:52.502Z",
+      "source": "timeline_monitor",
+      "contentCategory": "altcoin-talk"
+    },
+    {
+      "id": "1999861367499637104",
+      "text": "$IBIT DEATH CROSS!",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "retweet_count": 33,
+        "reply_count": 99,
+        "like_count": 253,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoRover/status/1999861367499637104",
+      "processed": false,
+      "addedAt": "2025-12-13T17:57:10.056Z",
+      "expiresAt": "2025-12-20T17:57:10.056Z",
+      "source": "timeline_monitor",
+      "contentCategory": "technical-analysis"
+    },
+    {
+      "id": "1999852307945546090",
+      "text": "Like of you think Altseason will make a comeback in 2026!",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "retweet_count": 69,
+        "reply_count": 154,
+        "like_count": 497,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoRover/status/1999852307945546090",
+      "processed": false,
+      "addedAt": "2025-12-13T17:57:11.814Z",
+      "expiresAt": "2025-12-20T17:57:11.814Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "1999842493362258253",
+      "text": "Gold → Silver → Copper is waking up.\n\nThere’s a strong correlation between copper and altcoins $OTHERS.",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "retweet_count": 85,
+        "reply_count": 141,
+        "like_count": 392,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoRover/status/1999842493362258253",
+      "processed": false,
+      "addedAt": "2025-12-13T17:57:15.191Z",
+      "expiresAt": "2025-12-20T17:57:15.191Z",
+      "source": "timeline_monitor",
+      "contentCategory": "altcoin-talk"
+    },
+    {
+      "id": "1999833685919432976",
+      "text": "BREAKING:\n\nBLACKROCK SAYS “ENORMOUS GROWTH AHEAD” FOR BITCOIN, “IT WILL GROW FASTER THAN THE INTERNET DID!”",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "retweet_count": 224,
+        "reply_count": 201,
+        "like_count": 1244,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoRover/status/1999833685919432976",
+      "processed": false,
+      "addedAt": "2025-12-13T17:57:16.245Z",
+      "expiresAt": "2025-12-20T17:57:16.245Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "1999816068806898158",
+      "text": "Global Liquidity is hitting new all-time highs. \n\nLong term, I remain bullish on Crypto. \n\nShort-term I'm cautious.",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "retweet_count": 72,
+        "reply_count": 228,
+        "like_count": 383,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoRover/status/1999816068806898158",
+      "processed": false,
+      "addedAt": "2025-12-13T17:57:21.059Z",
+      "expiresAt": "2025-12-20T17:57:21.059Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "1999836705067528697",
+      "text": "ROYAL BANK OF CANADA BUYS THE DIP : 77,700 SHARES OF TRUMP-FAMILY BITCOIN MINER $ABTC\n\nRBC acquired approximately $150K in American Bitcoin Corp. ($ABTC), highlighting growing institutional interest in crypto mining and digital assets.\n\nThis move shows institutions buying at",
+      "author": {
+        "id": "877357064724520961",
+        "username": "CryptosR_Us"
+      },
+      "public_metrics": {
+        "retweet_count": 11,
+        "reply_count": 26,
+        "like_count": 64,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptosR_Us/status/1999836705067528697",
+      "processed": false,
+      "addedAt": "2025-12-13T17:57:42.259Z",
+      "expiresAt": "2025-12-20T17:57:42.259Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "1999807014961115567",
+      "text": "JUST IN: STRATEGY RETAINS SPOT IN NASDAQ 100 \n\nDec 12 (Reuters) - $BTC treasury giant Strategy has remained in the Nasdaq 100, extending its year-long presence in the benchmark despite scrutiny.",
+      "author": {
+        "id": "877357064724520961",
+        "username": "CryptosR_Us"
+      },
+      "public_metrics": {
+        "retweet_count": 55,
+        "reply_count": 34,
+        "like_count": 431,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptosR_Us/status/1999807014961115567",
+      "processed": false,
+      "addedAt": "2025-12-13T17:57:45.652Z",
+      "expiresAt": "2025-12-20T17:57:45.652Z",
+      "source": "timeline_monitor",
+      "contentCategory": "news"
+    },
+    {
+      "id": "1999777313500672191",
+      "text": "BITTENSOR ETF APPROVED AND JUST WENT LIVE $GTAO\n\nGrayscale has launched its Bittensor Trust on OTCQX under the ticker GTAO, converting it from a private vehicle into a publicly traded trust.\n\nThe listing went live Dec. 11, 2025, just days before Bittensor’s first-ever halving on",
+      "author": {
+        "id": "877357064724520961",
+        "username": "CryptosR_Us"
+      },
+      "public_metrics": {
+        "retweet_count": 52,
+        "reply_count": 44,
+        "like_count": 241,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptosR_Us/status/1999777313500672191",
+      "processed": false,
+      "addedAt": "2025-12-13T17:57:46.638Z",
+      "expiresAt": "2025-12-20T17:57:46.638Z",
+      "source": "timeline_monitor",
+      "contentCategory": "project-discussion"
+    },
+    {
+      "id": "1999717198810558966",
+      "text": "MAX KEISER CELEBRATES BECOMING A BTC MILLIONAIRE -- NOW HE’S A BTC BILLIONAIRE\n\nYears ago on RT, Keiser was laughing on air about becoming a #Bitcoin millionaire while calling a financial meltdown before most people were paying attention.\n\nBack then, Bitcoin was mocked.",
+      "author": {
+        "id": "877357064724520961",
+        "username": "CryptosR_Us"
+      },
+      "public_metrics": {
+        "retweet_count": 20,
+        "reply_count": 27,
+        "like_count": 262,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptosR_Us/status/1999717198810558966",
+      "processed": false,
+      "addedAt": "2025-12-13T17:57:51.888Z",
+      "expiresAt": "2025-12-20T17:57:51.888Z",
+      "source": "timeline_monitor",
+      "contentCategory": "news"
     }
   ],
   "metadata": {
-    "lastUpdated": "2025-12-13T12:53:44.404Z",
-    "totalPosts": 239,
+    "lastUpdated": "2025-12-13T17:57:51.888Z",
+    "totalPosts": 236,
     "bySource": {
-      "timeline_monitor": 239,
+      "timeline_monitor": 236,
       "search_discovery": 0
     }
   },
