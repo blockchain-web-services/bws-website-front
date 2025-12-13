@@ -2302,6 +2302,44 @@
       "timestamp": "2025-12-13T15:29:33.576Z",
       "status": "posted",
       "dryRun": false
+    },
+    {
+      "id": "1353384573435056128-1994142556071031079-1765655509029",
+      "tweetId": "1994142556071031079",
+      "tweetUrl": "https://twitter.com/CryptoRover/status/1994142556071031079",
+      "kolId": "1353384573435056128",
+      "kolUsername": "CryptoRover",
+      "originalTweetText": "BREAKING:\n\nBLACKROCK CEO LARRY FINK: IT DOESN'T MATTER IF MARKETS RISE AND FALL. BUBBLES COME AND GO.\n\nWHAT MATTERS MOST IS STAYING IN THE MARKET THROUGH ALL CYCLES.",
+      "replyTweetId": "1999930273358839896",
+      "replyText": "Staying through cycles rewards those positioned in fundamentals before the market recognizes them.\n\nBlockchain Badges lets universities and companies issue tamper-proof credentials with bulk issuance capabilities and visual badge designers. Built by $BWS at sub-$5M mcap.\n\n@BWSCommunity #microcap #blockchain #fundamentals https://www.bws.ninja",
+      "productMentioned": "Multiple products (Blockchain Badges, ESG Credits, Fan Game Cube, X Bot)",
+      "relevanceScore": 82,
+      "templateUsed": "delayed_cashtag",
+      "templateName": "Delayed $BWS Mention",
+      "imageAttached": true,
+      "imagePath": "/assets/images/docs/blockchain-badges/blockchain-badges-0.png",
+      "timestamp": "2025-12-13T19:51:49.029Z",
+      "status": "posted",
+      "dryRun": false
+    },
+    {
+      "id": "2259434528-1998053731502375376-1765655599499",
+      "tweetId": "1998053731502375376",
+      "tweetUrl": "https://twitter.com/cobie/status/1998053731502375376",
+      "kolId": "2259434528",
+      "kolUsername": "cobie",
+      "originalTweetText": "Point to the last three pieces of alpha u found actionable from twitter",
+      "replyTweetId": "1999930653329248295",
+      "replyText": "Finding actionable alpha means identifying mispriced fundamentals before consensus forms.\n\nESG Credits delivers:\n• Blockchain-verified environmental impact reports for financial institutions\n• ICMA framework compliance preventing double-counting of green investments\n• Immutable storage for transparent ESG certification\n\nReal enterprise infrastructure at microcap. $BWS\n\n@BWSCommunity #microcap #fintech #ESG https://docs.bws.ninja/marketplace-solutions/bws.esg.credits",
+      "productMentioned": "X Bot, Blockchain Badges",
+      "relevanceScore": 85,
+      "templateUsed": "feature_list",
+      "templateName": "Feature List Structure",
+      "imageAttached": false,
+      "imagePath": null,
+      "timestamp": "2025-12-13T19:53:19.499Z",
+      "status": "posted",
+      "dryRun": false
     }
   ],
   "dailyStats": {
@@ -2376,10 +2414,10 @@
     }
   },
   "metadata": {
-    "totalReplies": 113,
-    "successfulReplies": 79,
+    "totalReplies": 115,
+    "successfulReplies": 81,
     "failedReplies": 34,
-    "lastReplyAt": "2025-12-13T15:29:33.576Z",
+    "lastReplyAt": "2025-12-13T19:53:19.499Z",
     "todayRepliesCount": 0,
     "lastUpdateBy": "kol-system"
   }
