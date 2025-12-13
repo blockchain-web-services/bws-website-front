@@ -2188,6 +2188,44 @@
       "timestamp": "2025-12-12T23:20:13.349Z",
       "status": "posted",
       "dryRun": false
+    },
+    {
+      "id": "1353384573435056128-1994142556071031079-1765611365985",
+      "tweetId": "1994142556071031079",
+      "tweetUrl": "https://twitter.com/CryptoRover/status/1994142556071031079",
+      "kolId": "1353384573435056128",
+      "kolUsername": "CryptoRover",
+      "originalTweetText": "BREAKING:\n\nBLACKROCK CEO LARRY FINK: IT DOESN'T MATTER IF MARKETS RISE AND FALL. BUBBLES COME AND GO.\n\nWHAT MATTERS MOST IS STAYING IN THE MARKET THROUGH ALL CYCLES.",
+      "replyTweetId": "1999745124071346531",
+      "replyText": "Fink's philosophy resonates deeply - cycles test conviction, fundamentals outlast narratives.\n\nBWS IPFS Upload enables decentralized file storage through simple API without running your own node - NFT creators get content addressing and censorship resistance at 5MB capacity. This infrastructure approach is what $BWS delivers at microcap.\n\n@BWSCommunity #microcap #NFT #Web3 https://www.bws.ninja",
+      "productMentioned": "Multiple products (Blockchain Badges, ESG Credits, Fan Game Cube, X Bot)",
+      "relevanceScore": 82,
+      "templateUsed": "delayed_cashtag",
+      "templateName": "Delayed $BWS Mention",
+      "imageAttached": true,
+      "imagePath": "/assets/images/docs/bws-ipfs/bws-ipfs-0.png",
+      "timestamp": "2025-12-13T07:36:05.985Z",
+      "status": "posted",
+      "dryRun": false
+    },
+    {
+      "id": "2259434528-1998053731502375376-1765611451773",
+      "tweetId": "1998053731502375376",
+      "tweetUrl": "https://twitter.com/cobie/status/1998053731502375376",
+      "kolId": "2259434528",
+      "kolUsername": "cobie",
+      "originalTweetText": "Point to the last three pieces of alpha u found actionable from twitter",
+      "replyTweetId": "1999745484517195798",
+      "replyText": "What separates actionable alpha from noise?\n\nBlockchain Save stores immutable document records with blockchain timestamps and automatic Certificate of Trust generation for every save operation. No wallet management overhead - real infrastructure at microcap valuation.\n\n$BWS ships utility.\n\n@BWSCommunity #microcap #blockchain #alpha https://www.bws.ninja",
+      "productMentioned": "X Bot, Blockchain Badges",
+      "relevanceScore": 88,
+      "templateUsed": "question_led",
+      "templateName": "Question-Led Structure",
+      "imageAttached": false,
+      "imagePath": null,
+      "timestamp": "2025-12-13T07:37:31.773Z",
+      "status": "posted",
+      "dryRun": false
     }
   ],
   "dailyStats": {
@@ -2262,10 +2300,10 @@
     }
   },
   "metadata": {
-    "totalReplies": 107,
-    "successfulReplies": 73,
+    "totalReplies": 109,
+    "successfulReplies": 75,
     "failedReplies": 34,
-    "lastReplyAt": "2025-12-12T23:20:13.349Z",
+    "lastReplyAt": "2025-12-13T07:37:31.773Z",
     "todayRepliesCount": 0,
     "lastUpdateBy": "kol-system"
   }
