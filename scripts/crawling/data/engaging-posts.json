@@ -4450,13 +4450,496 @@
       "expiresAt": "2025-12-21T12:51:25.464Z",
       "source": "timeline_monitor",
       "contentCategory": "market-trends"
+    },
+    {
+      "id": "2000187570517389701",
+      "text": "BUY $ICE now while its still cheap, transfer it to your own custodial wallet on Online+, migrate it to ION on the 17th & print insane profits when everything goes live on the 17th. \n\nMigration, burns, monetisation, tokenised communities, exchange listings, Pumpit browser",
+      "author": {
+        "id": "crawlee_search_bitcoinhabebe",
+        "username": "Bitcoinhabebe"
+      },
+      "public_metrics": {
+        "retweet_count": 49,
+        "reply_count": 50,
+        "like_count": 272,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/Bitcoinhabebe/status/2000187570517389701",
+      "processed": false,
+      "addedAt": "2025-12-14T17:52:09.882Z",
+      "expiresAt": "2025-12-21T17:52:09.882Z",
+      "source": "timeline_monitor",
+      "contentCategory": "altcoin-talk"
+    },
+    {
+      "id": "2000182991742550035",
+      "text": "Vitalik Buterin: If TRON Beats Ethereum，Humanity is Doomed\n\nOn March 20, 2019, during an interview on the Unchained Podcast, Ethereum co-founder Vitalik Buterin was asked if he would be upset if another public chain took the lead. Vitalik replied that it depended on which chain,",
+      "author": {
+        "id": "111533746",
+        "username": "WuBlockchain"
+      },
+      "public_metrics": {
+        "retweet_count": 30,
+        "reply_count": 37,
+        "like_count": 144,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/WuBlockchain/status/2000182991742550035",
+      "processed": false,
+      "addedAt": "2025-12-14T17:53:25.613Z",
+      "expiresAt": "2025-12-21T17:53:25.613Z",
+      "source": "timeline_monitor",
+      "contentCategory": "project-discussion"
+    },
+    {
+      "id": "2000151072065589651",
+      "text": "The Consensus Between Musk and Huang: Bitcoin is an Energy Currency\n\nOn November 30th, SpaceX founder Elon Musk, during an interview with Nikhil Kamath, stated that \"energy is the true currency,\" and characterized Bitcoin as an energy currency. He asserted that it is impossible",
+      "author": {
+        "id": "111533746",
+        "username": "WuBlockchain"
+      },
+      "public_metrics": {
+        "retweet_count": 13,
+        "reply_count": 24,
+        "like_count": 56,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/WuBlockchain/status/2000151072065589651",
+      "processed": false,
+      "addedAt": "2025-12-14T17:53:27.581Z",
+      "expiresAt": "2025-12-21T17:53:27.581Z",
+      "source": "timeline_monitor",
+      "contentCategory": "news"
+    },
+    {
+      "id": "2000178331770106341",
+      "text": "$COAI | ENJOY THE GOD CANDLES!\n\nMy signals pumping one by one. Some people don’t understand trading and they knows nothing about patience.\n\nKind regards.",
+      "author": {
+        "id": "crawlee_search_nihilusbtc",
+        "username": "NihilusBTC"
+      },
+      "public_metrics": {
+        "retweet_count": 57,
+        "reply_count": 64,
+        "like_count": 170,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/NihilusBTC/status/2000178331770106341",
+      "processed": false,
+      "addedAt": "2025-12-14T17:53:40.183Z",
+      "expiresAt": "2025-12-21T17:53:40.183Z",
+      "source": "timeline_monitor",
+      "contentCategory": "price-speculation"
+    },
+    {
+      "id": "2000173947669610854",
+      "text": "$MAGIC",
+      "author": {
+        "id": "crawlee_search_nihilusbtc",
+        "username": "NihilusBTC"
+      },
+      "public_metrics": {
+        "retweet_count": 45,
+        "reply_count": 47,
+        "like_count": 124,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/NihilusBTC/status/2000173947669610854",
+      "processed": false,
+      "addedAt": "2025-12-14T17:53:43.501Z",
+      "expiresAt": "2025-12-21T17:53:43.501Z",
+      "source": "timeline_monitor",
+      "contentCategory": "altcoin-talk"
+    },
+    {
+      "id": "2000224664950300715",
+      "text": "BREAKING:\n\nCOINBASE CEO BRIAN ARMSTRONG SAYS THE LARGEST FINANCIAL INSTITUTIONS IN THE WORLD ARE ALL INTEGRATING CRYPTO.\n\n“THE UNITED STATES GOVERNMENT NOW HAS A STRATEGIC BITCOIN RESERVE. WHAT BIGGER ENDORSEMENT COULD THERE BE THAT THIS IS HERE TO STAY?”",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "retweet_count": 94,
+        "reply_count": 116,
+        "like_count": 607,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoRover/status/2000224664950300715",
+      "processed": false,
+      "addedAt": "2025-12-14T17:54:49.653Z",
+      "expiresAt": "2025-12-21T17:54:49.653Z",
+      "source": "timeline_monitor",
+      "contentCategory": "news"
+    },
+    {
+      "id": "2000223251881205977",
+      "text": "CZ thinks crypto could enter a supercycle by 2026.",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "retweet_count": 147,
+        "reply_count": 216,
+        "like_count": 1223,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoRover/status/2000223251881205977",
+      "processed": false,
+      "addedAt": "2025-12-14T17:54:51.643Z",
+      "expiresAt": "2025-12-21T17:54:51.643Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "2000212179392307639",
+      "text": "Is the #Bitcoin 4 years cycle dead or alive?",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "retweet_count": 21,
+        "reply_count": 198,
+        "like_count": 267,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoRover/status/2000212179392307639",
+      "processed": false,
+      "addedAt": "2025-12-14T17:54:53.476Z",
+      "expiresAt": "2025-12-21T17:54:53.476Z",
+      "source": "timeline_monitor",
+      "contentCategory": "technical-analysis"
+    },
+    {
+      "id": "2000204162244440449",
+      "text": "BREAKING:\n\nMICHAEL SAYLOR HINTS AT BUYING MORE BITCOIN.",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "retweet_count": 63,
+        "reply_count": 73,
+        "like_count": 490,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoRover/status/2000204162244440449",
+      "processed": false,
+      "addedAt": "2025-12-14T17:54:59.532Z",
+      "expiresAt": "2025-12-21T17:54:59.532Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "2000194482617393551",
+      "text": "PRESIDENT TRUMP IS CALLING FOR 1% INTEREST RATE.\n\nAND PEOPLE ARE STILL UNDERESTIMATING ITS IMPACT.\n\nIf Trump succeeds in pushing interest rates down to 1%, it will force global capital to move into Bitcoin.\n\nAt 1% rates, traditional investments will stop doing their job.\n\nU.S.",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "retweet_count": 107,
+        "reply_count": 97,
+        "like_count": 538,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoRover/status/2000194482617393551",
+      "processed": false,
+      "addedAt": "2025-12-14T17:55:04.212Z",
+      "expiresAt": "2025-12-21T17:55:04.213Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends/price-speculation"
+    },
+    {
+      "id": "2000189907403509769",
+      "text": "BITCOIN CME CHART: FIRST DEATH CROSS OF THIS CYCLE!",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "retweet_count": 84,
+        "reply_count": 125,
+        "like_count": 471,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoRover/status/2000189907403509769",
+      "processed": false,
+      "addedAt": "2025-12-14T17:55:06.197Z",
+      "expiresAt": "2025-12-21T17:55:06.197Z",
+      "source": "timeline_monitor",
+      "contentCategory": "technical-analysis"
+    },
+    {
+      "id": "1995417602085261565",
+      "text": "$ETH view",
+      "author": {
+        "id": "988796804446769153",
+        "username": "CryptoCapo_"
+      },
+      "public_metrics": {
+        "retweet_count": 221,
+        "reply_count": 0,
+        "like_count": 1484,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoCapo_/status/1995417602085261565",
+      "processed": false,
+      "addedAt": "2025-12-14T17:55:15.986Z",
+      "expiresAt": "2025-12-21T17:55:15.986Z",
+      "source": "timeline_monitor",
+      "contentCategory": "technical-analysis"
+    },
+    {
+      "id": "2000241623943549220",
+      "text": "Everyone Asking Why $PIPPIN Did a 30x in a Few Days Is Already Late (Read Before You Trade)\n\n#PIPPIN did not rally 30x because of innovation.\nIt rallied because market structure allowed it to.\n\nNo presale.\nNo venture capital.\nNo team allocation.\n\nFrom http://Pump.fun to",
+      "author": {
+        "id": "crawlee_search_cryptopatel",
+        "username": "CryptoPatel"
+      },
+      "public_metrics": {
+        "retweet_count": 10,
+        "reply_count": 4,
+        "like_count": 122,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoPatel/status/2000241623943549220",
+      "processed": false,
+      "addedAt": "2025-12-14T17:55:35.603Z",
+      "expiresAt": "2025-12-21T17:55:35.603Z",
+      "source": "timeline_monitor",
+      "contentCategory": "altcoin-talk/price-speculation"
+    },
+    {
+      "id": "2000226523601604929",
+      "text": "Why $FET Long Setup:\n\nPrice reacting from a daily order block.\nSellside liquidity already swept.\nCompression = accumulation.\nClear HTF buyside liquidity overhead.\nStrong R:R if $0.24 holds.\n\nEntry: $0.2412 | SL: $0.1900 | Targets: $0.2842/$0.3425/$0.3900 /$0.4600\n\nPlan: Scale",
+      "author": {
+        "id": "crawlee_search_cryptopatel",
+        "username": "CryptoPatel"
+      },
+      "public_metrics": {
+        "retweet_count": 18,
+        "reply_count": 12,
+        "like_count": 203,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoPatel/status/2000226523601604929",
+      "processed": false,
+      "addedAt": "2025-12-14T17:55:37.461Z",
+      "expiresAt": "2025-12-21T17:55:37.461Z",
+      "source": "timeline_monitor",
+      "contentCategory": "price-speculation"
+    },
+    {
+      "id": "2000211424040079845",
+      "text": "JUST IN: Michael Saylor Hints MicroStrategy will buy more #Bitcoin tomorrow.\n\nCurrent holdings: 660,624 $BTC\nValue: $59.14B\nUnrealized PnL: +$10B (~20%)\nAvg entry: $74,696 / BTC\n\nNo hesitation | No market timing | Pure conviction",
+      "author": {
+        "id": "crawlee_search_cryptopatel",
+        "username": "CryptoPatel"
+      },
+      "public_metrics": {
+        "retweet_count": 16,
+        "reply_count": 13,
+        "like_count": 199,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoPatel/status/2000211424040079845",
+      "processed": false,
+      "addedAt": "2025-12-14T17:55:39.421Z",
+      "expiresAt": "2025-12-21T17:55:39.421Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "2000177954312143287",
+      "text": "What meme coins and altcoins should I look at during the stream this week?",
+      "author": {
+        "id": "935742315389444096",
+        "username": "CryptoWendyO"
+      },
+      "public_metrics": {
+        "retweet_count": 20,
+        "reply_count": 240,
+        "like_count": 157,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoWendyO/status/2000177954312143287",
+      "processed": false,
+      "addedAt": "2025-12-14T17:56:22.737Z",
+      "expiresAt": "2025-12-21T17:56:22.737Z",
+      "source": "timeline_monitor",
+      "contentCategory": "altcoin-talk"
+    },
+    {
+      "id": "1998456005701627979",
+      "text": "$PEPE one year after launch\n\nvs.\n\n$PENGU one year after launch.\n\nYou aren't bullish enough on flightless birds.",
+      "author": {
+        "id": "906234475604037637",
+        "username": "CryptoKaleo"
+      },
+      "public_metrics": {
+        "retweet_count": 77,
+        "reply_count": 107,
+        "like_count": 651,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoKaleo/status/1998456005701627979",
+      "processed": false,
+      "addedAt": "2025-12-14T17:56:41.100Z",
+      "expiresAt": "2025-12-21T17:56:41.100Z",
+      "source": "timeline_monitor",
+      "contentCategory": "altcoin-talk"
+    },
+    {
+      "id": "1998454468631785786",
+      "text": "Alt season is coming.",
+      "author": {
+        "id": "906234475604037637",
+        "username": "CryptoKaleo"
+      },
+      "public_metrics": {
+        "retweet_count": 88,
+        "reply_count": 106,
+        "like_count": 881,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoKaleo/status/1998454468631785786",
+      "processed": false,
+      "addedAt": "2025-12-14T17:56:42.659Z",
+      "expiresAt": "2025-12-21T17:56:42.659Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "1998453750827200925",
+      "text": "$ETH / $BTC\n\nINITIATE THE SEND",
+      "author": {
+        "id": "906234475604037637",
+        "username": "CryptoKaleo"
+      },
+      "public_metrics": {
+        "retweet_count": 12,
+        "reply_count": 7,
+        "like_count": 226,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoKaleo/status/1998453750827200925",
+      "processed": false,
+      "addedAt": "2025-12-14T17:56:44.665Z",
+      "expiresAt": "2025-12-21T17:56:44.665Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "2000214675816878119",
+      "text": "MICHAEL SAYLOR SET TO BUY MORE $BTC TOMORROW! \n\nStrategy Tracker chart updated \n660,624 BTC held | Avg price $74.7K\n\nOrange dots = past buys → another major purchase tomorrow!  \n\n\"₿ack to More Orange Dots.\"",
+      "author": {
+        "id": "877357064724520961",
+        "username": "CryptosR_Us"
+      },
+      "public_metrics": {
+        "retweet_count": 28,
+        "reply_count": 25,
+        "like_count": 265,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptosR_Us/status/2000214675816878119",
+      "processed": false,
+      "addedAt": "2025-12-14T17:56:54.427Z",
+      "expiresAt": "2025-12-21T17:56:54.427Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "2000199344679452686",
+      "text": "DR. SAIFEDEAN: BITCOIN IS THE HARDEST MONEY; AND HOPE FOR THE FUTURE  \n\nAmmous is best known for his book The Bitcoin Standard, which explains the economics of Bitcoin\n\nIn 2017 shared on X:  \n\"Bitcoin won't be adopted like the iPhone because it's cool. It will be adopted like",
+      "author": {
+        "id": "877357064724520961",
+        "username": "CryptosR_Us"
+      },
+      "public_metrics": {
+        "retweet_count": 15,
+        "reply_count": 13,
+        "like_count": 61,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptosR_Us/status/2000199344679452686",
+      "processed": false,
+      "addedAt": "2025-12-14T17:56:56.240Z",
+      "expiresAt": "2025-12-21T17:56:56.240Z",
+      "source": "timeline_monitor",
+      "contentCategory": "news"
+    },
+    {
+      "id": "2000169397261074605",
+      "text": "KEY U.S. DATA THIS WEEK, INCLUDING CPI, COULD SHAPE CRYPTO’S NEXT MOVE \n\nU.S. Jobs data + CPI drop next week ; the same numbers that drive Fed rate cuts, liquidity, and crypto prices.\n\n Key releases (8:30 AM ET):  \n• Jobs Report: Tue, Dec 16  \n• CPI Inflation: Thu, Dec 18",
+      "author": {
+        "id": "877357064724520961",
+        "username": "CryptosR_Us"
+      },
+      "public_metrics": {
+        "retweet_count": 20,
+        "reply_count": 39,
+        "like_count": 107,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptosR_Us/status/2000169397261074605",
+      "processed": false,
+      "addedAt": "2025-12-14T17:56:58.139Z",
+      "expiresAt": "2025-12-21T17:56:58.139Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "2000139449707925889",
+      "text": "SAYLOR RESPONDS TO NASDAQ SCRUTINY \n\nMichael Saylor’s Strategy recently faced NASDAQ scrutiny over its business model. Despite the noise, the company remains listed ; and Saylor isn’t backing down.\n\nSAYLOR: “The Bitcoin hoarding will continue until the complaining stops.”\n\nNo",
+      "author": {
+        "id": "877357064724520961",
+        "username": "CryptosR_Us"
+      },
+      "public_metrics": {
+        "retweet_count": 18,
+        "reply_count": 39,
+        "like_count": 162,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptosR_Us/status/2000139449707925889",
+      "processed": false,
+      "addedAt": "2025-12-14T17:57:00.042Z",
+      "expiresAt": "2025-12-21T17:57:00.042Z",
+      "source": "timeline_monitor",
+      "contentCategory": "news"
     }
   ],
   "metadata": {
-    "lastUpdated": "2025-12-14T12:53:24.173Z",
-    "totalPosts": 233,
+    "lastUpdated": "2025-12-14T17:57:02.086Z",
+    "totalPosts": 235,
     "bySource": {
-      "timeline_monitor": 233,
+      "timeline_monitor": 235,
       "search_discovery": 0
     }
   },
