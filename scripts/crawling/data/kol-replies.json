@@ -2492,6 +2492,44 @@
       "timestamp": "2025-12-14T15:29:25.950Z",
       "status": "posted",
       "dryRun": false
+    },
+    {
+      "id": "1353384573435056128-1994142556071031079-1765741946412",
+      "tweetId": "1994142556071031079",
+      "tweetUrl": "https://twitter.com/CryptoRover/status/1994142556071031079",
+      "kolId": "1353384573435056128",
+      "kolUsername": "CryptoRover",
+      "originalTweetText": "BREAKING:\n\nBLACKROCK CEO LARRY FINK: IT DOESN'T MATTER IF MARKETS RISE AND FALL. BUBBLES COME AND GO.\n\nWHAT MATTERS MOST IS STAYING IN THE MARKET THROUGH ALL CYCLES.",
+      "replyTweetId": "2000292817814323208",
+      "replyText": "🎯 Larry's philosophy applies perfectly to builders ignoring hype cycles.\n\n💡 BWS IPFS Upload enables developers to store NFT metadata and media on decentralized storage through simple API without running their own IPFS node. $BWS provides content addressing and censorship resistance at microcap valuation.\n\n@BWSCommunity #microcap #Web3 #NFT https://docs.bws.ninja/solutions/bws.ipfs.upload",
+      "productMentioned": "X Bot, Blockchain Badges",
+      "relevanceScore": 82,
+      "templateUsed": "emoji_enhanced",
+      "templateName": "Emoji-Enhanced Structure",
+      "imageAttached": true,
+      "imagePath": "/assets/images/docs/bws-ipfs/bws-ipfs-0.png",
+      "timestamp": "2025-12-14T19:52:26.412Z",
+      "status": "posted",
+      "dryRun": false
+    },
+    {
+      "id": "2259434528-1998053731502375376-1765742032243",
+      "tweetId": "1998053731502375376",
+      "tweetUrl": "https://twitter.com/cobie/status/1998053731502375376",
+      "kolId": "2259434528",
+      "kolUsername": "cobie",
+      "originalTweetText": "Point to the last three pieces of alpha u found actionable from twitter",
+      "replyTweetId": "2000293178428010866",
+      "replyText": "Alpha hides in infrastructure most overlook during narrative churn.\n\nBlockchain Save delivers:\n• Immutable data storage with automatic Certificate of Trust\n• Document hash verification without wallet management\n• Permanent audit trails with blockchain timestamps\n\nReal B2B infrastructure at microcap. $BWS\n\n@BWSCommunity #microcap #alpha #blockchain https://docs.bws.ninja/solutions/bws.blockchain.save",
+      "productMentioned": "X Bot, Blockchain Badges",
+      "relevanceScore": 85,
+      "templateUsed": "feature_list",
+      "templateName": "Feature List Structure",
+      "imageAttached": false,
+      "imagePath": null,
+      "timestamp": "2025-12-14T19:53:52.243Z",
+      "status": "posted",
+      "dryRun": false
     }
   ],
   "dailyStats": {
@@ -2566,10 +2604,10 @@
     }
   },
   "metadata": {
-    "totalReplies": 123,
-    "successfulReplies": 89,
+    "totalReplies": 125,
+    "successfulReplies": 91,
     "failedReplies": 34,
-    "lastReplyAt": "2025-12-14T15:29:25.950Z",
+    "lastReplyAt": "2025-12-14T19:53:52.243Z",
     "todayRepliesCount": 0,
     "lastUpdateBy": "kol-system"
   }
