@@ -2416,6 +2416,44 @@
       "timestamp": "2025-12-14T07:36:47.743Z",
       "status": "posted",
       "dryRun": false
+    },
+    {
+      "id": "1353384573435056128-1994142556071031079-1765712901499",
+      "tweetId": "1994142556071031079",
+      "tweetUrl": "https://twitter.com/CryptoRover/status/1994142556071031079",
+      "kolId": "1353384573435056128",
+      "kolUsername": "CryptoRover",
+      "originalTweetText": "BREAKING:\n\nBLACKROCK CEO LARRY FINK: IT DOESN'T MATTER IF MARKETS RISE AND FALL. BUBBLES COME AND GO.\n\nWHAT MATTERS MOST IS STAYING IN THE MARKET THROUGH ALL CYCLES.",
+      "replyTweetId": "2000170995454242931",
+      "replyText": "🎯 Fink's right - compounding through cycles beats timing the noise.\n\n🔧 Blockchain Hash from BWS: developers build mutable on-chain databases through REST API. $BWS handles wallet management and gas fees - just simple key-value calls to update blockchain data.\n💡 Real infrastructure at microcap valuation.\n\n@BWSCommunity #microcap #blockchain #fundamentals https://docs.bws.ninja/solutions/bws.blockchain.hash",
+      "productMentioned": "Multiple products (Blockchain Badges, ESG Credits, X Bot)",
+      "relevanceScore": 82,
+      "templateUsed": "emoji_enhanced",
+      "templateName": "Emoji-Enhanced Structure",
+      "imageAttached": false,
+      "imagePath": null,
+      "timestamp": "2025-12-14T11:48:21.499Z",
+      "status": "posted",
+      "dryRun": false
+    },
+    {
+      "id": "2259434528-1998053731502375376-1765712996494",
+      "tweetId": "1998053731502375376",
+      "tweetUrl": "https://twitter.com/cobie/status/1998053731502375376",
+      "kolId": "2259434528",
+      "kolUsername": "cobie",
+      "originalTweetText": "Point to the last three pieces of alpha u found actionable from twitter",
+      "replyTweetId": "2000171392109613561",
+      "replyText": "Real alpha lives in products solving actual friction points before market recognition.\n\nNFT.zK delivers:\n• Transfer NFTs via email without wallet requirements\n• Bulk minting through single API call\n• Managed infrastructure handles blockchain complexity\n\nEnterprise adoption infrastructure at microcap. $BWS\n\n@BWSCommunity #microcap #NFT #gems https://docs.bws.ninja/solutions/bws.nft.zk",
+      "productMentioned": "X Bot, Blockchain Badges",
+      "relevanceScore": 85,
+      "templateUsed": "feature_list",
+      "templateName": "Feature List Structure",
+      "imageAttached": true,
+      "imagePath": "/assets/images/docs/nftzk/nftzk-0.png",
+      "timestamp": "2025-12-14T11:49:56.494Z",
+      "status": "posted",
+      "dryRun": false
     }
   ],
   "dailyStats": {
@@ -2490,10 +2528,10 @@
     }
   },
   "metadata": {
-    "totalReplies": 119,
-    "successfulReplies": 85,
+    "totalReplies": 121,
+    "successfulReplies": 87,
     "failedReplies": 34,
-    "lastReplyAt": "2025-12-14T07:36:47.743Z",
+    "lastReplyAt": "2025-12-14T11:49:56.494Z",
     "todayRepliesCount": 0,
     "lastUpdateBy": "kol-system"
   }
