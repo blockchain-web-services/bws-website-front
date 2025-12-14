@@ -3,9 +3,9 @@
     "lastGenerated": "2025-12-13T12:08:06.054Z",
     "totalPosts": 45,
     "totalArticles": 15,
-    "pendingPosts": 27,
-    "postedCount": 11,
-    "lastPosted": "2025-12-13T16:06:17.537Z",
+    "pendingPosts": 26,
+    "postedCount": 12,
+    "lastPosted": "2025-12-14T00:22:45.732Z",
     "failedCount": 7
   },
   "posts": [
@@ -1186,17 +1186,19 @@
         "SustainabilityReporting"
       ],
       "priority": "high",
-      "status": "pending",
+      "status": "posted",
       "scheduledFor": null,
-      "postedAt": null,
-      "tweetId": null,
+      "postedAt": "2025-12-14T00:22:45.611Z",
+      "tweetId": "1999998458930094117",
       "generatedAt": "2025-12-13T12:08:06.053Z",
       "metadata": {
         "articleTitle": "ESG Credits: ICMA-Compliant Environmental Impact Reports with Blockchain Verification",
         "articlePublishDate": "2025-12-13T10:03:11.530Z",
         "mainTextLength": 205,
         "fullTextLength": 380
-      }
+      },
+      "tweetUrl": "https://twitter.com/i/web/status/1999998458930094117",
+      "error": null
     },
     {
       "id": "a3523502-0759-471e-8b3a-814c29767445",
