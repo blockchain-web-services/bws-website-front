@@ -2454,6 +2454,44 @@
       "timestamp": "2025-12-14T11:49:56.494Z",
       "status": "posted",
       "dryRun": false
+    },
+    {
+      "id": "1353384573435056128-1994142556071031079-1765726075448",
+      "tweetId": "1994142556071031079",
+      "tweetUrl": "https://twitter.com/CryptoRover/status/1994142556071031079",
+      "kolId": "1353384573435056128",
+      "kolUsername": "CryptoRover",
+      "originalTweetText": "BREAKING:\n\nBLACKROCK CEO LARRY FINK: IT DOESN'T MATTER IF MARKETS RISE AND FALL. BUBBLES COME AND GO.\n\nWHAT MATTERS MOST IS STAYING IN THE MARKET THROUGH ALL CYCLES.",
+      "replyTweetId": "2000226250279817229",
+      "replyText": "Market cycles separate projects shipping infrastructure from those chasing hype.\n\nConsider this: Blockchain Badges from $BWS enables bulk credential issuance with immutable blockchain verification - universities issue tamper-proof certificates at scale. Real enterprise utility at sub-$5M valuation.\n\n@BWSCommunity #microcap #blockchain #fundamentals https://docs.bws.ninja/marketplace-solutions/bws.blockchain.badges",
+      "productMentioned": "Multiple products (Blockchain Badges, ESG Credits, X Bot)",
+      "relevanceScore": 82,
+      "templateUsed": "stat_driven",
+      "templateName": "Stat/Fact-Driven Structure",
+      "imageAttached": true,
+      "imagePath": "/assets/images/docs/blockchain-badges/blockchain-badges-0.png",
+      "timestamp": "2025-12-14T15:27:55.448Z",
+      "status": "posted",
+      "dryRun": false
+    },
+    {
+      "id": "2259434528-1998053731502375376-1765726165950",
+      "tweetId": "1998053731502375376",
+      "tweetUrl": "https://twitter.com/cobie/status/1998053731502375376",
+      "kolId": "2259434528",
+      "kolUsername": "cobie",
+      "originalTweetText": "Point to the last three pieces of alpha u found actionable from twitter",
+      "replyTweetId": "2000226630501839265",
+      "replyText": "Actionable microcap: $BWS ESG Credits delivers blockchain-verified environmental impact reports for financial institutions with ICMA framework compliance. Banks integrate verified sustainability metrics into digital channels while ensuring transparent, immutable green investment tracking.\n\n@BWSCommunity #microcap #fintech #ESG https://docs.bws.ninja/marketplace-solutions/bws.esg.credits",
+      "productMentioned": "X Bot, Blockchain Badges",
+      "relevanceScore": 82,
+      "templateUsed": "classic",
+      "templateName": "Classic Structure",
+      "imageAttached": false,
+      "imagePath": null,
+      "timestamp": "2025-12-14T15:29:25.950Z",
+      "status": "posted",
+      "dryRun": false
     }
   ],
   "dailyStats": {
@@ -2528,10 +2566,10 @@
     }
   },
   "metadata": {
-    "totalReplies": 121,
-    "successfulReplies": 87,
+    "totalReplies": 123,
+    "successfulReplies": 89,
     "failedReplies": 34,
-    "lastReplyAt": "2025-12-14T11:49:56.494Z",
+    "lastReplyAt": "2025-12-14T15:29:25.950Z",
     "todayRepliesCount": 0,
     "lastUpdateBy": "kol-system"
   }
