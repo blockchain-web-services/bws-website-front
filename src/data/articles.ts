@@ -19,17 +19,17 @@ export interface ArticleMetadata {
 
 export const articles: ArticleMetadata[] = [
 {
-  slug: 'esg-credits-2025-12-13',
-  product: 'ESG Credits',
-  title: 'ESG Credits: ICMA-Compliant Environmental Impact Reports with Blockchain Verification',
-  subtitle: 'Financial institutions struggle to prove the authenticity of their environmental impact while preventing double-counting in sustainability reporting. ESG Credits solves this challenge by generating blockchain-verified environmental impact reports with ICMA framework compliance and immutable storage, delivering transparent and verifiable sustainability data that stakeholders can trust.',
-  publishDate: '2025-12-13T10:03:11.530Z',
+  slug: 'fan-game-cube-2025-12-14',
+  product: 'Fan Game Cube',
+  title: 'Fan Game Cube: NFT Zones That Turn Sports Fields Into Revenue',
+  subtitle: 'Sports clubs leave millions in untapped revenue because fan monetization remains limited to merchandise and tickets. Fan Game Cube transforms this landscape by tokenizing sports fields into NFT zones, where fans earn points as real-time match events—goals, passes, and strategic moves—occur at their owned coordinates, unlocking new revenue streams for clubs across multiple sports.',
+  publishDate: '2025-12-14T10:03:08.133Z',
   tweetId: '',
   featuredImage: {
-    src: '/assets/images/marketplace/fallback/esg-credits/01-report.png',
-    alt: 'ESG Credits solution',
+    src: '/assets/images/docs/fan-game-cube/fan-game-cube-0.png',
+    alt: 'Product screenshot',
     loading: 'eager'
   },
-  seoDescription: 'ESG Credits provides blockchain-verified environmental impact reporting for financial institutions with ICMA compliance and immutable storage preventing double-counting.'
+  seoDescription: 'Fan Game Cube tokenizes sports fields into NFT zones where fans earn rewards from real-time match events, creating new revenue for sports clubs.'
 }
 ];
