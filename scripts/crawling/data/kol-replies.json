@@ -2530,6 +2530,44 @@
       "timestamp": "2025-12-14T19:53:52.243Z",
       "status": "posted",
       "dryRun": false
+    },
+    {
+      "id": "1353384573435056128-1994142556071031079-1765754282191",
+      "tweetId": "1994142556071031079",
+      "tweetUrl": "https://twitter.com/CryptoRover/status/1994142556071031079",
+      "kolId": "1353384573435056128",
+      "kolUsername": "CryptoRover",
+      "originalTweetText": "BREAKING:\n\nBLACKROCK CEO LARRY FINK: IT DOESN'T MATTER IF MARKETS RISE AND FALL. BUBBLES COME AND GO.\n\nWHAT MATTERS MOST IS STAYING IN THE MARKET THROUGH ALL CYCLES.",
+      "replyTweetId": "2000344557746090240",
+      "replyText": "What separates microcaps that survive cycles from those that don't?\n\n$BWS X Bot tracks KOL engagement metrics through official X API with historical trend analysis across multiple accounts simultaneously. Verifiable performance data helps investors identify authentic community traction versus manufactured hype.\n\n@BWSCommunity #microcap #crypto #fundamentals https://www.bws.ninja",
+      "productMentioned": "Multiple products (Blockchain Badges, ESG Credits, X Bot)",
+      "relevanceScore": 82,
+      "templateUsed": "question_led",
+      "templateName": "Question-Led Structure",
+      "imageAttached": true,
+      "imagePath": "/assets/images/docs/x-bot/x-bot-0.png",
+      "timestamp": "2025-12-14T23:18:02.191Z",
+      "status": "posted",
+      "dryRun": false
+    },
+    {
+      "id": "2259434528-1998053731502375376-1765754382288",
+      "tweetId": "1998053731502375376",
+      "tweetUrl": "https://twitter.com/cobie/status/1998053731502375376",
+      "kolId": "2259434528",
+      "kolUsername": "cobie",
+      "originalTweetText": "Point to the last three pieces of alpha u found actionable from twitter",
+      "replyTweetId": "2000344977977553135",
+      "replyText": "Finding builders before market recognition is the real edge.\n\nConsider this: Fan Game Cube from $BWS tokenizes stadium fields into NFT zones where fans earn points as goals and passes occur at their owned coordinates. Sports clubs gain new revenue streams across football, cricket, chess - expanding into iGaming.\n\n@BWSCommunity #microcap #alpha #gems https://docs.bws.ninja/marketplace-solutions/bws.nft.gamecube",
+      "productMentioned": "X Bot",
+      "relevanceScore": 85,
+      "templateUsed": "stat_driven",
+      "templateName": "Stat/Fact-Driven Structure",
+      "imageAttached": true,
+      "imagePath": "/assets/images/docs/fan-game-cube/fan-game-cube-0.png",
+      "timestamp": "2025-12-14T23:19:42.288Z",
+      "status": "posted",
+      "dryRun": false
     }
   ],
   "dailyStats": {
@@ -2604,10 +2642,10 @@
     }
   },
   "metadata": {
-    "totalReplies": 125,
-    "successfulReplies": 91,
+    "totalReplies": 127,
+    "successfulReplies": 93,
     "failedReplies": 34,
-    "lastReplyAt": "2025-12-14T19:53:52.243Z",
+    "lastReplyAt": "2025-12-14T23:19:42.288Z",
     "todayRepliesCount": 0,
     "lastUpdateBy": "kol-system"
   }
