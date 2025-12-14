@@ -4366,13 +4366,538 @@
       "expiresAt": "2025-12-21T07:29:08.594Z",
       "source": "timeline_monitor",
       "contentCategory": "project-discussion"
+    },
+    {
+      "id": "1999896164720955850",
+      "text": "Market top to the bottom in January to April was about 2.5 months. We're currently around 2 months for $BTC",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "retweet_count": 19,
+        "reply_count": 36,
+        "like_count": 157,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/AltcoinSherpa/status/1999896164720955850",
+      "processed": false,
+      "addedAt": "2025-12-14T12:45:49.480Z",
+      "expiresAt": "2025-12-21T12:45:49.480Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends/technical-analysis"
+    },
+    {
+      "id": "1998449893053223313",
+      "text": "May sound crazy now -\n\nbut I'm still a big believer it's only a matter of time before OG NFT art on ETH makes a massive comeback.\n\nThe art & collectible industry isn't going anywhere - and in that world, provenance matters.\n\nThe beautiful thing about art is - its utility doesn't",
+      "author": {
+        "id": "906234475604037637",
+        "username": "CryptoKaleo"
+      },
+      "public_metrics": {
+        "retweet_count": 18,
+        "reply_count": 51,
+        "like_count": 146,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoKaleo/status/1998449893053223313",
+      "processed": false,
+      "addedAt": "2025-12-14T12:46:29.877Z",
+      "expiresAt": "2025-12-21T12:46:29.877Z",
+      "source": "timeline_monitor",
+      "contentCategory": "project-discussion"
+    },
+    {
+      "id": "1998446852950171955",
+      "text": "ETH szn is back.",
+      "author": {
+        "id": "906234475604037637",
+        "username": "CryptoKaleo"
+      },
+      "public_metrics": {
+        "retweet_count": 44,
+        "reply_count": 121,
+        "like_count": 1169,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoKaleo/status/1998446852950171955",
+      "processed": false,
+      "addedAt": "2025-12-14T12:46:32.066Z",
+      "expiresAt": "2025-12-21T12:46:32.066Z",
+      "source": "timeline_monitor",
+      "contentCategory": "altcoin-talk"
+    },
+    {
+      "id": "2000079303426580977",
+      "text": "U.S. BANKS ARE PANICKING OVER CRYPTO -- AND THEY’RE SAYING IT OUT LOUD\n\nThe American Bankers Association (ABA) and the Independent Community Bankers of America (ICBA) just blasted the OCC for approving bank charters for crypto firms.\n\nTheir complaint? That crypto companies are",
+      "author": {
+        "id": "877357064724520961",
+        "username": "CryptosR_Us"
+      },
+      "public_metrics": {
+        "retweet_count": 78,
+        "reply_count": 38,
+        "like_count": 378,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptosR_Us/status/2000079303426580977",
+      "processed": false,
+      "addedAt": "2025-12-14T12:46:43.507Z",
+      "expiresAt": "2025-12-21T12:46:43.508Z",
+      "source": "timeline_monitor",
+      "contentCategory": "news"
+    },
+    {
+      "id": "2000053168265204222",
+      "text": "WHY MARKETS GOT CHOPPY THIS WEEK\n\nThis week’s volatility didn’t come out of nowhere.\n\nMarkets are reacting to expectations that the Bank of Japan is moving away from ultra-loose policy, and that’s a short-term headwind for Bitcoin.\n\nWe’ve seen this movie before.\n\n Jan 24, 2025",
+      "author": {
+        "id": "877357064724520961",
+        "username": "CryptosR_Us"
+      },
+      "public_metrics": {
+        "retweet_count": 11,
+        "reply_count": 24,
+        "like_count": 114,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptosR_Us/status/2000053168265204222",
+      "processed": false,
+      "addedAt": "2025-12-14T12:46:45.552Z",
+      "expiresAt": "2025-12-21T12:46:45.552Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "2000138129882095680",
+      "text": "ICE Will most probably go another 100%  before migration to attack 0.006$ then when migration, utilities, burns, & listings happen from the 17th we go for more multiples. \n\nThe best time to buy? Is to buy $ICE now at any exchange that still supports it before it gets delisted &",
+      "author": {
+        "id": "crawlee_search_bitcoinhabebe",
+        "username": "Bitcoinhabebe"
+      },
+      "public_metrics": {
+        "retweet_count": 45,
+        "reply_count": 52,
+        "like_count": 224,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/Bitcoinhabebe/status/2000138129882095680",
+      "processed": false,
+      "addedAt": "2025-12-14T12:48:05.078Z",
+      "expiresAt": "2025-12-21T12:48:05.078Z",
+      "source": "timeline_monitor",
+      "contentCategory": "altcoin-talk"
+    },
+    {
+      "id": "2000135140471640190",
+      "text": "$ICE IS SHOWING INSANE STRENGTH AS BIG PLAYERS ACCUMULATE! \n\nEvery dip is being eaten up FAST. Doubters are in disbelief. I am not kidding When i tell you 1 billion marktcap is coming. \n\nIts just a matter of time !",
+      "author": {
+        "id": "crawlee_search_bitcoinhabebe",
+        "username": "Bitcoinhabebe"
+      },
+      "public_metrics": {
+        "retweet_count": 49,
+        "reply_count": 53,
+        "like_count": 240,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/Bitcoinhabebe/status/2000135140471640190",
+      "processed": false,
+      "addedAt": "2025-12-14T12:48:07.069Z",
+      "expiresAt": "2025-12-21T12:48:07.069Z",
+      "source": "timeline_monitor",
+      "contentCategory": "altcoin-talk"
+    },
+    {
+      "id": "2000106860943155412",
+      "text": "I hope you took my advice yesterday cause $ICE is leaving everyone who doubted it behind and going straight to billions !\n\nMigration didn’t even happen & we are exploding. Imagine what’s coming after when Utilities , burns, the X browser, tokenised communities, BIG LISTINGS,",
+      "author": {
+        "id": "crawlee_search_bitcoinhabebe",
+        "username": "Bitcoinhabebe"
+      },
+      "public_metrics": {
+        "retweet_count": 70,
+        "reply_count": 79,
+        "like_count": 281,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/Bitcoinhabebe/status/2000106860943155412",
+      "processed": false,
+      "addedAt": "2025-12-14T12:48:09.334Z",
+      "expiresAt": "2025-12-21T12:48:09.334Z",
+      "source": "timeline_monitor",
+      "contentCategory": "altcoin-talk"
+    },
+    {
+      "id": "2000007395569811941",
+      "text": "$HANA is Breaking out again on lower time frames after a clean bullish retest as you can see in the chart below  .  This usually signals a continuation of the uptrend.\n\nDont forget that @HanaNetwork is making a 1 million dollar buyback as we speak\n\nChart Looks like it wants to",
+      "author": {
+        "id": "crawlee_search_bitcoinhabebe",
+        "username": "Bitcoinhabebe"
+      },
+      "public_metrics": {
+        "retweet_count": 19,
+        "reply_count": 19,
+        "like_count": 112,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/Bitcoinhabebe/status/2000007395569811941",
+      "processed": false,
+      "addedAt": "2025-12-14T12:48:11.133Z",
+      "expiresAt": "2025-12-21T12:48:11.133Z",
+      "source": "timeline_monitor",
+      "contentCategory": "altcoin-talk"
+    },
+    {
+      "id": "1999943279186682266",
+      "text": "EPIC BREAKING OUT !\n\nLook at how HANA Blew up 40% after breaking out & you will know Whats coming for EPIC.",
+      "author": {
+        "id": "crawlee_search_bitcoinhabebe",
+        "username": "Bitcoinhabebe"
+      },
+      "public_metrics": {
+        "retweet_count": 26,
+        "reply_count": 29,
+        "like_count": 123,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/Bitcoinhabebe/status/1999943279186682266",
+      "processed": false,
+      "addedAt": "2025-12-14T12:48:13.021Z",
+      "expiresAt": "2025-12-21T12:48:13.021Z",
+      "source": "timeline_monitor",
+      "contentCategory": "altcoin-talk"
+    },
+    {
+      "id": "2000121079168455135",
+      "text": "$VET: Short Setup | 4H\n\nWhy:\nLiquidity sweep below prior lows\nBearish reaction from 4H OB\nLower highs = weak structure\nClear sell-side liquidity draw\n\nEntry: $0.01235 | SL: $0.01338 | Targets: → $0.01170 → $0.01080 → $0.00982\n\nWait for OB tap + confirmation before entry.\n\n#VET",
+      "author": {
+        "id": "crawlee_search_cryptopatel",
+        "username": "CryptoPatel"
+      },
+      "public_metrics": {
+        "retweet_count": 12,
+        "reply_count": 13,
+        "like_count": 230,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoPatel/status/2000121079168455135",
+      "processed": false,
+      "addedAt": "2025-12-14T12:49:40.074Z",
+      "expiresAt": "2025-12-21T12:49:40.074Z",
+      "source": "timeline_monitor",
+      "contentCategory": "technical-analysis"
+    },
+    {
+      "id": "2000171811460313215",
+      "text": "$BTC\n\nScam dump \nScam pump",
+      "author": {
+        "id": "crawlee_search_nihilusbtc",
+        "username": "NihilusBTC"
+      },
+      "public_metrics": {
+        "retweet_count": 36,
+        "reply_count": 46,
+        "like_count": 109,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/NihilusBTC/status/2000171811460313215",
+      "processed": false,
+      "addedAt": "2025-12-14T12:50:31.509Z",
+      "expiresAt": "2025-12-21T12:50:31.509Z",
+      "source": "timeline_monitor",
+      "contentCategory": "price-speculation"
+    },
+    {
+      "id": "2000147644266508457",
+      "text": "$TURBO longed huge.",
+      "author": {
+        "id": "crawlee_search_nihilusbtc",
+        "username": "NihilusBTC"
+      },
+      "public_metrics": {
+        "retweet_count": 51,
+        "reply_count": 61,
+        "like_count": 116,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/NihilusBTC/status/2000147644266508457",
+      "processed": false,
+      "addedAt": "2025-12-14T12:50:33.719Z",
+      "expiresAt": "2025-12-21T12:50:33.719Z",
+      "source": "timeline_monitor",
+      "contentCategory": "price-speculation"
+    },
+    {
+      "id": "2000135264790856025",
+      "text": "$TURBO",
+      "author": {
+        "id": "crawlee_search_nihilusbtc",
+        "username": "NihilusBTC"
+      },
+      "public_metrics": {
+        "retweet_count": 57,
+        "reply_count": 48,
+        "like_count": 119,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/NihilusBTC/status/2000135264790856025",
+      "processed": false,
+      "addedAt": "2025-12-14T12:50:35.840Z",
+      "expiresAt": "2025-12-21T12:50:35.840Z",
+      "source": "timeline_monitor",
+      "contentCategory": "altcoin-talk"
+    },
+    {
+      "id": "2000118800226591013",
+      "text": "$KGEN | Liquidated longs and pumping now!\n\nENJOY.",
+      "author": {
+        "id": "crawlee_search_nihilusbtc",
+        "username": "NihilusBTC"
+      },
+      "public_metrics": {
+        "retweet_count": 54,
+        "reply_count": 61,
+        "like_count": 144,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/NihilusBTC/status/2000118800226591013",
+      "processed": false,
+      "addedAt": "2025-12-14T12:50:37.754Z",
+      "expiresAt": "2025-12-21T12:50:37.754Z",
+      "source": "timeline_monitor",
+      "contentCategory": "price-speculation"
+    },
+    {
+      "id": "2000117413443146061",
+      "text": "Friday dump \nSaturday chop \nSunday pump on $BTC and $LAB",
+      "author": {
+        "id": "crawlee_search_nihilusbtc",
+        "username": "NihilusBTC"
+      },
+      "public_metrics": {
+        "retweet_count": 48,
+        "reply_count": 63,
+        "like_count": 146,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/NihilusBTC/status/2000117413443146061",
+      "processed": false,
+      "addedAt": "2025-12-14T12:50:39.709Z",
+      "expiresAt": "2025-12-21T12:50:39.709Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends/price-speculation"
+    },
+    {
+      "id": "2000066131856433434",
+      "text": "$FOLKS \n\n$LAB",
+      "author": {
+        "id": "crawlee_search_nihilusbtc",
+        "username": "NihilusBTC"
+      },
+      "public_metrics": {
+        "retweet_count": 23,
+        "reply_count": 43,
+        "like_count": 114,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/NihilusBTC/status/2000066131856433434",
+      "processed": false,
+      "addedAt": "2025-12-14T12:50:43.608Z",
+      "expiresAt": "2025-12-21T12:50:43.608Z",
+      "source": "timeline_monitor",
+      "contentCategory": "altcoin-talk"
+    },
+    {
+      "id": "1999921472685715510",
+      "text": "Just saw the posts in my timeline\n\n90% of bearish posts\n\nYes, we thinking same thing",
+      "author": {
+        "id": "crawlee_search_nihilusbtc",
+        "username": "NihilusBTC"
+      },
+      "public_metrics": {
+        "retweet_count": 19,
+        "reply_count": 33,
+        "like_count": 131,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/NihilusBTC/status/1999921472685715510",
+      "processed": false,
+      "addedAt": "2025-12-14T12:50:45.665Z",
+      "expiresAt": "2025-12-21T12:50:45.665Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "2000037737395876221",
+      "text": "Ethereum consensus client Prysm released a post-mortem on the Dec. 4 Fusaka mainnet incident, attributing the outage to resource exhaustion caused by costly state recomputation when processing certain attestations. The issue led to 41 missed epochs, network participation dropping",
+      "author": {
+        "id": "111533746",
+        "username": "WuBlockchain"
+      },
+      "public_metrics": {
+        "retweet_count": 12,
+        "reply_count": 17,
+        "like_count": 58,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/WuBlockchain/status/2000037737395876221",
+      "processed": false,
+      "addedAt": "2025-12-14T12:50:57.645Z",
+      "expiresAt": "2025-12-21T12:50:57.645Z",
+      "source": "timeline_monitor",
+      "contentCategory": "project-discussion"
+    },
+    {
+      "id": "2000022491079819622",
+      "text": "SEC releases crypto wallet and custody investor guide, outlining best practices and key risks across different custody models. The bulletin compares self-custody with third-party custody and warns investors to assess whether custodians rehypothecate assets or commingle client",
+      "author": {
+        "id": "111533746",
+        "username": "WuBlockchain"
+      },
+      "public_metrics": {
+        "retweet_count": 14,
+        "reply_count": 8,
+        "like_count": 53,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/WuBlockchain/status/2000022491079819622",
+      "processed": false,
+      "addedAt": "2025-12-14T12:50:59.422Z",
+      "expiresAt": "2025-12-21T12:50:59.422Z",
+      "source": "timeline_monitor",
+      "contentCategory": "news"
+    },
+    {
+      "id": "2000164974807982300",
+      "text": "BREAKING:\n\n TOM LEE SAYS BITMINE IS NEARING OWNERSHIP OF ROUGHLY 4% OF $ETH’S TOTAL SUPPLY AND DOES NOT EXPECT THE FIRM TO SELL!",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "retweet_count": 66,
+        "reply_count": 122,
+        "like_count": 514,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoRover/status/2000164974807982300",
+      "processed": false,
+      "addedAt": "2025-12-14T12:51:10.264Z",
+      "expiresAt": "2025-12-21T12:51:10.264Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "2000125866605719919",
+      "text": "BREAKING:\n\nTOM LEE BELIEVES BITCOIN COULD BREAK THE FOUR-YEAR CYCLE AND REACH $180,000 BY THE END OF JANUARY 2026.",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "retweet_count": 88,
+        "reply_count": 178,
+        "like_count": 631,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoRover/status/2000125866605719919",
+      "processed": false,
+      "addedAt": "2025-12-14T12:51:17.286Z",
+      "expiresAt": "2025-12-21T12:51:17.286Z",
+      "source": "timeline_monitor",
+      "contentCategory": "price-speculation"
+    },
+    {
+      "id": "2000118058635989276",
+      "text": "The position of the new Fed chair is likely to go to either Hassett or Warsh.\n\nBoth are highly dovish.\n\nBoth would be bullish for crypto markets.",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "retweet_count": 46,
+        "reply_count": 96,
+        "like_count": 316,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoRover/status/2000118058635989276",
+      "processed": false,
+      "addedAt": "2025-12-14T12:51:20.718Z",
+      "expiresAt": "2025-12-21T12:51:20.718Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "2000108998859837442",
+      "text": "BOJ RATE HIKES HAVE CONSISTENTLY CAUSED BITCOIN TO DUMP HARD SINCE 2024.\n\nNext interest rate decision: 19 December.",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "retweet_count": 42,
+        "reply_count": 96,
+        "like_count": 301,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoRover/status/2000108998859837442",
+      "processed": false,
+      "addedAt": "2025-12-14T12:51:21.552Z",
+      "expiresAt": "2025-12-21T12:51:21.552Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "2000094392900522166",
+      "text": "I will DCA into Bitcoin aggressively throughout the bear market.\n\nJoin the VIP TG to stay up to date. \nhttp://t.me/cryptorover_weex_bot…",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "retweet_count": 18,
+        "reply_count": 55,
+        "like_count": 159,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoRover/status/2000094392900522166",
+      "processed": false,
+      "addedAt": "2025-12-14T12:51:25.464Z",
+      "expiresAt": "2025-12-21T12:51:25.464Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
     }
   ],
   "metadata": {
-    "lastUpdated": "2025-12-14T07:30:21.597Z",
-    "totalPosts": 238,
+    "lastUpdated": "2025-12-14T12:53:24.173Z",
+    "totalPosts": 233,
     "bySource": {
-      "timeline_monitor": 238,
+      "timeline_monitor": 233,
       "search_discovery": 0
     }
   },
