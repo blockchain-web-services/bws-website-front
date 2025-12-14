@@ -4597,13 +4597,328 @@
       "expiresAt": "2025-12-21T17:57:00.042Z",
       "source": "timeline_monitor",
       "contentCategory": "news"
+    },
+    {
+      "id": "2000250290948468765",
+      "text": "$WET I still like this setup tbh. I was shaken out of the position before but might just buy some and look away. I like how its chopping near the .618 fib and consolidating. Observing for now",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "retweet_count": 19,
+        "reply_count": 37,
+        "like_count": 58,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/AltcoinSherpa/status/2000250290948468765",
+      "processed": false,
+      "addedAt": "2025-12-14T22:08:15.375Z",
+      "expiresAt": "2025-12-21T22:08:15.375Z",
+      "source": "timeline_monitor",
+      "contentCategory": "price-speculation"
+    },
+    {
+      "id": "2000287174076375371",
+      "text": "El Salvador has increased its #Bitcoin holdings to 7,500 BTC, now valued at approximately $669 million, according to government data.\n\nThe country added 1,120.19 $BTC over the past 30 days, including a 1,090.19 BTC purchase on Nov. 18, underscoring its continued accumulation",
+      "author": {
+        "id": "crawlee_search_cryptopatel",
+        "username": "CryptoPatel"
+      },
+      "public_metrics": {
+        "retweet_count": 11,
+        "reply_count": 0,
+        "like_count": 51,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoPatel/status/2000287174076375371",
+      "processed": false,
+      "addedAt": "2025-12-14T22:09:21.818Z",
+      "expiresAt": "2025-12-21T22:09:21.818Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends/news"
+    },
+    {
+      "id": "2000271821770498164",
+      "text": "Simple question: Do you hold $TON to $15, or panic-sell before the real move? \n\n@ton_blockchain",
+      "author": {
+        "id": "crawlee_search_cryptopatel",
+        "username": "CryptoPatel"
+      },
+      "public_metrics": {
+        "retweet_count": 10,
+        "reply_count": 1,
+        "like_count": 63,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoPatel/status/2000271821770498164",
+      "processed": false,
+      "addedAt": "2025-12-14T22:09:23.826Z",
+      "expiresAt": "2025-12-21T22:09:23.826Z",
+      "source": "timeline_monitor",
+      "contentCategory": "price-speculation"
+    },
+    {
+      "id": "1995283427046875203",
+      "text": "Monday vibes , it’s time for Up Only!",
+      "author": {
+        "id": "983993370048630785",
+        "username": "CryptoHayes"
+      },
+      "public_metrics": {
+        "retweet_count": 726,
+        "reply_count": 1180,
+        "like_count": 4475,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoHayes/status/1995283427046875203",
+      "processed": false,
+      "addedAt": "2025-12-14T22:10:47.389Z",
+      "expiresAt": "2025-12-21T22:10:47.389Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "2000169677562274269",
+      "text": "$BTC is breaking down from the bearish penant I previously warned about. Do you know what are its targets ?",
+      "author": {
+        "id": "crawlee_search_bitcoinhabebe",
+        "username": "Bitcoinhabebe"
+      },
+      "public_metrics": {
+        "retweet_count": 101,
+        "reply_count": 156,
+        "like_count": 353,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/Bitcoinhabebe/status/2000169677562274269",
+      "processed": false,
+      "addedAt": "2025-12-14T22:10:57.468Z",
+      "expiresAt": "2025-12-21T22:10:57.468Z",
+      "source": "timeline_monitor",
+      "contentCategory": "technical-analysis"
+    },
+    {
+      "id": "2000284153086984455",
+      "text": "Bitcoin vs. Silver is now at the most oversold levels EVER!",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "retweet_count": 54,
+        "reply_count": 90,
+        "like_count": 381,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoRover/status/2000284153086984455",
+      "processed": false,
+      "addedAt": "2025-12-14T22:12:28.380Z",
+      "expiresAt": "2025-12-21T22:12:28.380Z",
+      "source": "timeline_monitor",
+      "contentCategory": "technical-analysis"
+    },
+    {
+      "id": "2000275093558038577",
+      "text": "Money printing is coming.\n\nPatience is key now.",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "retweet_count": 84,
+        "reply_count": 169,
+        "like_count": 667,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoRover/status/2000275093558038577",
+      "processed": false,
+      "addedAt": "2025-12-14T22:12:32.575Z",
+      "expiresAt": "2025-12-21T22:12:32.575Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "2000265278970875934",
+      "text": "ETHEREUM IS RECORDING ITS SECOND-WORST YEAR ON RECORD.\n\nThis is clearly not what we expected from what is usually the most bullish year of the four-year cycle.",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "retweet_count": 93,
+        "reply_count": 141,
+        "like_count": 535,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoRover/status/2000265278970875934",
+      "processed": false,
+      "addedAt": "2025-12-14T22:12:34.380Z",
+      "expiresAt": "2025-12-21T22:12:34.380Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "2000253954039656558",
+      "text": "Which Altcoin(s) will do this in 2026?",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "retweet_count": 79,
+        "reply_count": 401,
+        "like_count": 598,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoRover/status/2000253954039656558",
+      "processed": false,
+      "addedAt": "2025-12-14T22:12:36.388Z",
+      "expiresAt": "2025-12-21T22:12:36.388Z",
+      "source": "timeline_monitor",
+      "contentCategory": "altcoin-talk"
+    },
+    {
+      "id": "2000244894787342659",
+      "text": "Once altseason makes its comeback, it will be aggressive!",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "retweet_count": 99,
+        "reply_count": 161,
+        "like_count": 659,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoRover/status/2000244894787342659",
+      "processed": false,
+      "addedAt": "2025-12-14T22:12:38.468Z",
+      "expiresAt": "2025-12-21T22:12:38.468Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "2000235080330129529",
+      "text": "The US10Y yield and the Fed funds rate are at their highest levels since 2022. \n\nThe Fed has cut rates over the last three meetings, yet the US 10Y yield remains elevated.\n\nThis signals that markets don’t believe in real monetary easing.\n\nThis is dangerous for Crypto.",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "retweet_count": 41,
+        "reply_count": 109,
+        "like_count": 237,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoRover/status/2000235080330129529",
+      "processed": false,
+      "addedAt": "2025-12-14T22:12:41.062Z",
+      "expiresAt": "2025-12-21T22:12:41.062Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "2000260769494016127",
+      "text": "HOW MUCH BITCOIN DO YOU NEED TO RETIRE IN 2035? \n\nSminston With's Bitcoin Retirement Guide uses a 5th percentile power law model for BTC price in 2035, 7% annual inflation adjustment\n\nThe results may surprise you:\n\n Monaco requires the most $BTC to retire by 2035, approx 3-7",
+      "author": {
+        "id": "877357064724520961",
+        "username": "CryptosR_Us"
+      },
+      "public_metrics": {
+        "retweet_count": 20,
+        "reply_count": 35,
+        "like_count": 116,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptosR_Us/status/2000260769494016127",
+      "processed": false,
+      "addedAt": "2025-12-14T22:12:50.736Z",
+      "expiresAt": "2025-12-21T22:12:50.736Z",
+      "source": "timeline_monitor",
+      "contentCategory": "price-speculation"
+    },
+    {
+      "id": "2000234073495613590",
+      "text": "STANDARD CHARTERED & COINBASE EXPAND CRYPTO PARTNERSHIP    \n\nStandard Chartered and Coinbase are deepening their collaboration to offer trading, custody, staking, and lending solutions for institutional clients.   \n\nMargaret Harwood-Jones, Standard Chartered’s global head of",
+      "author": {
+        "id": "877357064724520961",
+        "username": "CryptosR_Us"
+      },
+      "public_metrics": {
+        "retweet_count": 22,
+        "reply_count": 34,
+        "like_count": 107,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptosR_Us/status/2000234073495613590",
+      "processed": false,
+      "addedAt": "2025-12-14T22:12:52.739Z",
+      "expiresAt": "2025-12-21T22:12:52.739Z",
+      "source": "timeline_monitor",
+      "contentCategory": "news"
+    },
+    {
+      "id": "2000223660133535926",
+      "text": "$TURBO | BREAKOUT!",
+      "author": {
+        "id": "crawlee_search_nihilusbtc",
+        "username": "NihilusBTC"
+      },
+      "public_metrics": {
+        "retweet_count": 37,
+        "reply_count": 55,
+        "like_count": 124,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/NihilusBTC/status/2000223660133535926",
+      "processed": false,
+      "addedAt": "2025-12-14T22:13:02.655Z",
+      "expiresAt": "2025-12-21T22:13:02.655Z",
+      "source": "timeline_monitor",
+      "contentCategory": "altcoin-talk"
+    },
+    {
+      "id": "2000200228004049333",
+      "text": "$MAGIC | Reversal zone.",
+      "author": {
+        "id": "crawlee_search_nihilusbtc",
+        "username": "NihilusBTC"
+      },
+      "public_metrics": {
+        "retweet_count": 45,
+        "reply_count": 66,
+        "like_count": 137,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/NihilusBTC/status/2000200228004049333",
+      "processed": false,
+      "addedAt": "2025-12-14T22:13:04.662Z",
+      "expiresAt": "2025-12-21T22:13:04.662Z",
+      "source": "timeline_monitor",
+      "contentCategory": "technical-analysis"
     }
   ],
   "metadata": {
-    "lastUpdated": "2025-12-14T17:57:02.086Z",
-    "totalPosts": 235,
+    "lastUpdated": "2025-12-14T22:13:07.341Z",
+    "totalPosts": 234,
     "bySource": {
-      "timeline_monitor": 235,
+      "timeline_monitor": 234,
       "search_discovery": 0
     }
   },
