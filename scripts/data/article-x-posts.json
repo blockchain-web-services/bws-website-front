@@ -3,8 +3,10 @@
     "lastGenerated": "2025-12-14T12:08:05.937Z",
     "totalPosts": 48,
     "totalArticles": 16,
-    "pendingPosts": 28,
-    "postedCount": 13
+    "pendingPosts": 27,
+    "postedCount": 14,
+    "lastPosted": "2025-12-14T16:05:52.668Z",
+    "failedCount": 7
   },
   "posts": [
     {
@@ -1266,17 +1268,19 @@
         "SportsNFT"
       ],
       "priority": "high",
-      "status": "pending",
+      "status": "posted",
       "scheduledFor": null,
-      "postedAt": null,
-      "tweetId": null,
+      "postedAt": "2025-12-14T16:05:52.561Z",
+      "tweetId": "2000235801741815901",
       "generatedAt": "2025-12-14T12:08:05.936Z",
       "metadata": {
         "articleTitle": "Fan Game Cube: NFT Zones That Turn Sports Fields Into Revenue",
         "articlePublishDate": "2025-12-14T10:03:08.133Z",
         "mainTextLength": 166,
         "fullTextLength": 331
-      }
+      },
+      "tweetUrl": "https://twitter.com/i/web/status/2000235801741815901",
+      "error": null
     },
     {
       "id": "c38cf6a8-0cad-404f-bd18-d333839ebdd0",
