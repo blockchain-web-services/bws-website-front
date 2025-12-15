@@ -2568,6 +2568,44 @@
       "timestamp": "2025-12-14T23:19:42.288Z",
       "status": "posted",
       "dryRun": false
+    },
+    {
+      "id": "1353384573435056128-1994142556071031079-1765784360718",
+      "tweetId": "1994142556071031079",
+      "tweetUrl": "https://twitter.com/CryptoRover/status/1994142556071031079",
+      "kolId": "1353384573435056128",
+      "kolUsername": "CryptoRover",
+      "originalTweetText": "BREAKING:\n\nBLACKROCK CEO LARRY FINK: IT DOESN'T MATTER IF MARKETS RISE AND FALL. BUBBLES COME AND GO.\n\nWHAT MATTERS MOST IS STAYING IN THE MARKET THROUGH ALL CYCLES.",
+      "replyTweetId": "2000470717154943409",
+      "replyText": "Staying power through cycles comes down to builders shipping products, not pitching roadmaps.\n\nBlockchain Hash lets developers build mutable databases on blockchain through REST API without handling wallets or gas fees. Built by $BWS at microcap valuation.\n\n@BWSCommunity #microcap #blockchain #fundamentals https://docs.bws.ninja/solutions/bws.blockchain.hash",
+      "productMentioned": "Multiple products (X Bot, Blockchain Badges, ESG Credits, Fan Game Cube)",
+      "relevanceScore": 82,
+      "templateUsed": "delayed_cashtag",
+      "templateName": "Delayed $BWS Mention",
+      "imageAttached": false,
+      "imagePath": null,
+      "timestamp": "2025-12-15T07:39:20.718Z",
+      "status": "posted",
+      "dryRun": false
+    },
+    {
+      "id": "2259434528-1998053731502375376-1765784446989",
+      "tweetId": "1998053731502375376",
+      "tweetUrl": "https://twitter.com/cobie/status/1998053731502375376",
+      "kolId": "2259434528",
+      "kolUsername": "cobie",
+      "originalTweetText": "Point to the last three pieces of alpha u found actionable from twitter",
+      "replyTweetId": "2000471078104142156",
+      "replyText": "🎯 Alpha lives where technical friction blocks adoption.\n\n💡 NFT.zK from $BWS: transfer NFTs to customers via email without wallet setup - bulk minting through single API call while managing all blockchain complexity.\n🔧 Perfect for brands launching membership programs or event tickets at scale.\n\n@BWSCommunity #microcap #NFT #gems https://docs.bws.ninja/solutions/bws.nft.zk",
+      "productMentioned": "X Bot",
+      "relevanceScore": 88,
+      "templateUsed": "emoji_enhanced",
+      "templateName": "Emoji-Enhanced Structure",
+      "imageAttached": true,
+      "imagePath": "/assets/images/docs/nftzk/nftzk-0.png",
+      "timestamp": "2025-12-15T07:40:46.989Z",
+      "status": "posted",
+      "dryRun": false
     }
   ],
   "dailyStats": {
@@ -2642,10 +2680,10 @@
     }
   },
   "metadata": {
-    "totalReplies": 127,
-    "successfulReplies": 93,
+    "totalReplies": 129,
+    "successfulReplies": 95,
     "failedReplies": 34,
-    "lastReplyAt": "2025-12-14T23:19:42.288Z",
+    "lastReplyAt": "2025-12-15T07:40:46.989Z",
     "todayRepliesCount": 0,
     "lastUpdateBy": "kol-system"
   }
