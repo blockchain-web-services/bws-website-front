@@ -3,9 +3,9 @@
     "lastGenerated": "2025-12-14T12:08:05.937Z",
     "totalPosts": 48,
     "totalArticles": 16,
-    "pendingPosts": 27,
-    "postedCount": 14,
-    "lastPosted": "2025-12-14T16:05:52.668Z",
+    "pendingPosts": 26,
+    "postedCount": 15,
+    "lastPosted": "2025-12-15T00:22:25.866Z",
     "failedCount": 7
   },
   "posts": [
@@ -282,17 +282,19 @@
         "Web3"
       ],
       "priority": "medium",
-      "status": "pending",
+      "status": "posted",
       "scheduledFor": null,
-      "postedAt": null,
-      "tweetId": null,
+      "postedAt": "2025-12-15T00:22:25.797Z",
+      "tweetId": "2000360763806937500",
       "generatedAt": "2025-11-11T17:14:17.445Z",
       "metadata": {
         "articleTitle": "ESG Credits: Blockchain-Powered Green Finance and Impact Reporting",
         "articlePublishDate": "2025-11-10T10:04:58.377Z",
         "mainTextLength": 220,
         "fullTextLength": 378
-      }
+      },
+      "tweetUrl": "https://twitter.com/i/web/status/2000360763806937500",
+      "error": null
     },
     {
       "id": "e4ab51b2-7f0b-46d8-a653-0e2830a78456",
