@@ -1,12 +1,10 @@
 {
   "metadata": {
-    "lastGenerated": "2025-12-14T12:08:05.937Z",
-    "totalPosts": 48,
-    "totalArticles": 16,
-    "pendingPosts": 25,
-    "postedCount": 16,
-    "lastPosted": "2025-12-15T08:08:09.251Z",
-    "failedCount": 7
+    "lastGenerated": "2025-12-15T12:09:44.806Z",
+    "totalPosts": 51,
+    "totalArticles": 17,
+    "pendingPosts": 28,
+    "postedCount": 16
   },
   "posts": [
     {
@@ -1336,6 +1334,84 @@
         "articlePublishDate": "2025-12-14T10:03:08.133Z",
         "mainTextLength": 188,
         "fullTextLength": 356
+      }
+    },
+    {
+      "id": "d780766d-bd31-4629-907d-5d5ec0a3856a",
+      "articleSlug": "x-bot-2025-12-15",
+      "product": "X Bot",
+      "type": "overview",
+      "text": "X Bot tracks community mentions across X and Telegram platforms. The system provides real-time analytics, engagement metrics, and KOL performance monitoring for Web3 projects. @BWSCommunity $BWS\n\n📖 Article: https://www.bws.ninja/articles/x-bot-2025-12-15\n📚 Docs: https://docs.bws.ninja/marketplace-solutions/bws.x.bot\n\n#XBot #Web3Analytics",
+      "mainText": "X Bot tracks community mentions across X and Telegram platforms. The system provides real-time analytics, engagement metrics, and KOL performance monitoring for Web3 projects. @BWSCommunity $BWS",
+      "articleUrl": "https://www.bws.ninja/articles/x-bot-2025-12-15",
+      "docsUrl": "https://docs.bws.ninja/marketplace-solutions/bws.x.bot",
+      "hashtags": [
+        "XBot",
+        "Web3Analytics"
+      ],
+      "priority": "high",
+      "status": "pending",
+      "scheduledFor": null,
+      "postedAt": null,
+      "tweetId": null,
+      "generatedAt": "2025-12-15T12:09:44.805Z",
+      "metadata": {
+        "articleTitle": "X Bot: Advanced Community Analytics for Web3 Projects",
+        "articlePublishDate": "2025-12-15T10:04:03.666Z",
+        "mainTextLength": 194,
+        "fullTextLength": 341
+      }
+    },
+    {
+      "id": "5f29b1bb-41a6-4b6c-bfb8-5377fcb50064",
+      "articleSlug": "x-bot-2025-12-15",
+      "product": "X Bot",
+      "type": "feature",
+      "text": "X Bot includes automated mention detection with customizable engagement scoring algorithms. Leaderboards update in real-time and integrate via REST API. Technical docs available from @BWSCommunity $BWS\n\n📖 Article: https://www.bws.ninja/articles/x-bot-2025-12-15\n📚 Docs: https://docs.bws.ninja/marketplace-solutions/bws.x.bot\n\n#CommunityAnalytics #APIIntegration",
+      "mainText": "X Bot includes automated mention detection with customizable engagement scoring algorithms. Leaderboards update in real-time and integrate via REST API. Technical docs available from @BWSCommunity $BWS",
+      "articleUrl": "https://www.bws.ninja/articles/x-bot-2025-12-15",
+      "docsUrl": "https://docs.bws.ninja/marketplace-solutions/bws.x.bot",
+      "hashtags": [
+        "CommunityAnalytics",
+        "APIIntegration"
+      ],
+      "priority": "medium",
+      "status": "pending",
+      "scheduledFor": null,
+      "postedAt": null,
+      "tweetId": null,
+      "generatedAt": "2025-12-15T12:09:44.806Z",
+      "metadata": {
+        "articleTitle": "X Bot: Advanced Community Analytics for Web3 Projects",
+        "articlePublishDate": "2025-12-15T10:04:03.666Z",
+        "mainTextLength": 201,
+        "fullTextLength": 363
+      }
+    },
+    {
+      "id": "ab67bd20-143f-4e57-9e30-716b00d78436",
+      "articleSlug": "x-bot-2025-12-15",
+      "product": "X Bot",
+      "type": "implementation",
+      "text": "The platform aggregates social activity from X and Telegram channels into unified dashboards. Projects track contributor engagement and identify active community advocates. Built by @BWSCommunity $BWS\n\n📖 Article: https://www.bws.ninja/articles/x-bot-2025-12-15\n📚 Docs: https://docs.bws.ninja/marketplace-solutions/bws.x.bot\n\n#Web3Community #SocialAnalytics",
+      "mainText": "The platform aggregates social activity from X and Telegram channels into unified dashboards. Projects track contributor engagement and identify active community advocates. Built by @BWSCommunity $BWS",
+      "articleUrl": "https://www.bws.ninja/articles/x-bot-2025-12-15",
+      "docsUrl": "https://docs.bws.ninja/marketplace-solutions/bws.x.bot",
+      "hashtags": [
+        "Web3Community",
+        "SocialAnalytics"
+      ],
+      "priority": "medium",
+      "status": "pending",
+      "scheduledFor": null,
+      "postedAt": null,
+      "tweetId": null,
+      "generatedAt": "2025-12-15T12:09:44.806Z",
+      "metadata": {
+        "articleTitle": "X Bot: Advanced Community Analytics for Web3 Projects",
+        "articlePublishDate": "2025-12-15T10:04:03.666Z",
+        "mainTextLength": 200,
+        "fullTextLength": 358
       }
     }
   ]
