@@ -3,9 +3,9 @@
     "lastGenerated": "2025-12-14T12:08:05.937Z",
     "totalPosts": 48,
     "totalArticles": 16,
-    "pendingPosts": 26,
-    "postedCount": 15,
-    "lastPosted": "2025-12-15T00:22:25.866Z",
+    "pendingPosts": 25,
+    "postedCount": 16,
+    "lastPosted": "2025-12-15T08:08:09.251Z",
     "failedCount": 7
   },
   "posts": [
@@ -338,17 +338,19 @@
         "BlockchainGaming"
       ],
       "priority": "medium",
-      "status": "pending",
+      "status": "posted",
       "scheduledFor": null,
-      "postedAt": null,
-      "tweetId": null,
+      "postedAt": "2025-12-15T08:08:09.098Z",
+      "tweetId": "2000477966116286810",
       "generatedAt": "2025-11-11T17:14:26.605Z",
       "metadata": {
         "articleTitle": "Fan Game Cube: NFT-Powered Sports Fan Engagement Platform",
         "articlePublishDate": "2025-11-10T10:05:20.761Z",
         "mainTextLength": 202,
         "fullTextLength": 373
-      }
+      },
+      "tweetUrl": "https://twitter.com/i/web/status/2000477966116286810",
+      "error": null
     },
     {
       "id": "990ff338-7cac-4553-974e-a5d5df80e3f9",
