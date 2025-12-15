@@ -2682,6 +2682,44 @@
       "timestamp": "2025-12-15T15:31:48.146Z",
       "status": "posted",
       "dryRun": false
+    },
+    {
+      "id": "1353384573435056128-1994142556071031079-1765828298787",
+      "tweetId": "1994142556071031079",
+      "tweetUrl": "https://twitter.com/CryptoRover/status/1994142556071031079",
+      "kolId": "1353384573435056128",
+      "kolUsername": "CryptoRover",
+      "originalTweetText": "BREAKING:\n\nBLACKROCK CEO LARRY FINK: IT DOESN'T MATTER IF MARKETS RISE AND FALL. BUBBLES COME AND GO.\n\nWHAT MATTERS MOST IS STAYING IN THE MARKET THROUGH ALL CYCLES.",
+      "replyTweetId": "2000655006102372518",
+      "replyText": "Surviving cycles requires products that generate value independent of price action.\n\nX Bot delivers:\n• Official X API tracking for 100+ KOLs simultaneously\n• Bot farm detection through engagement pattern analysis\n• Historical trend data for ROI verification\n\nRevenue tools at microcap. $BWS\n\n@BWSCommunity #microcap #crypto #gems https://docs.bws.ninja/marketplace-solutions/bws.x.bot",
+      "productMentioned": "Multiple products (X Bot, Blockchain Badges, ESG Credits, Fan Game Cube)",
+      "relevanceScore": 82,
+      "templateUsed": "feature_list",
+      "templateName": "Feature List Structure",
+      "imageAttached": true,
+      "imagePath": "/assets/images/docs/x-bot/x-bot-0.png",
+      "timestamp": "2025-12-15T19:51:38.787Z",
+      "status": "posted",
+      "dryRun": false
+    },
+    {
+      "id": "2259434528-1998053731502375376-1765828393897",
+      "tweetId": "1998053731502375376",
+      "tweetUrl": "https://twitter.com/cobie/status/1998053731502375376",
+      "kolId": "2259434528",
+      "kolUsername": "cobie",
+      "originalTweetText": "Point to the last three pieces of alpha u found actionable from twitter",
+      "replyTweetId": "2000655405362430185",
+      "replyText": "Actionable alpha often surfaces in overlooked verticals where existing solutions create friction for mainstream adoption.\n\nFan Game Cube tokenizes stadium fields into NFT zones where fans earn points as real events unfold at their owned coordinates. Built by $BWS at microcap valuation.\n\n@BWSCommunity #microcap #alpha #NFT https://docs.bws.ninja/marketplace-solutions/bws.nft.gamecube",
+      "productMentioned": "X Bot",
+      "relevanceScore": 85,
+      "templateUsed": "delayed_cashtag",
+      "templateName": "Delayed $BWS Mention",
+      "imageAttached": true,
+      "imagePath": "/assets/images/docs/fan-game-cube/fan-game-cube-0.png",
+      "timestamp": "2025-12-15T19:53:13.897Z",
+      "status": "posted",
+      "dryRun": false
     }
   ],
   "dailyStats": {
@@ -2756,10 +2794,10 @@
     }
   },
   "metadata": {
-    "totalReplies": 133,
-    "successfulReplies": 99,
+    "totalReplies": 135,
+    "successfulReplies": 101,
     "failedReplies": 34,
-    "lastReplyAt": "2025-12-15T15:31:48.146Z",
+    "lastReplyAt": "2025-12-15T19:53:13.897Z",
     "todayRepliesCount": 0,
     "lastUpdateBy": "kol-system"
   }
