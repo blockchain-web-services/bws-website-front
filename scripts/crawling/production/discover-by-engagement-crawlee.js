@@ -15,7 +15,7 @@ const worktreeRoot = path.resolve(__scriptsDir, '../../..');
 dotenv.config({ path: path.join(worktreeRoot, '.env') });
 
 import fs from 'fs';
-import { searchTweetsWebUnblocker, getUserProfileWebUnblocker } from '../crawlers/twitter-crawler.js';
+import { searchTweetsWebUnblocker, getUserProfileWebUnblocker, getUserProfile } from '../crawlers/twitter-crawler.js';
 import { runAmplifiedKolSearch } from '../utils/amplified-search.js';
 import {
   loadConfig,
@@ -375,7 +375,13 @@ async function discoverByEngagementCrawlee() {
 
     try {
       // Fetch profile with Web Unblocker (FREE, better parsing)
-      const profile = await getUserProfileWebUnblocker(username);
+      let profile = await getUserProfileWebUnblocker(username);
+
+      // Fallback to direct connection if proxy fails
+      if (!profile) {
+        console.log(`   ⚠️  Web Unblocker failed, trying direct connection...`);
+        profile = await getUserProfile(username);
+      }
 
       if (!profile) {
         console.log(`   ❌ Profile not found`);
