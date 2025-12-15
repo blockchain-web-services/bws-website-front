@@ -2720,6 +2720,44 @@
       "timestamp": "2025-12-15T19:53:13.897Z",
       "status": "posted",
       "dryRun": false
+    },
+    {
+      "id": "1353384573435056128-1994142556071031079-1765840718856",
+      "tweetId": "1994142556071031079",
+      "tweetUrl": "https://twitter.com/CryptoRover/status/1994142556071031079",
+      "kolId": "1353384573435056128",
+      "kolUsername": "CryptoRover",
+      "originalTweetText": "BREAKING:\n\nBLACKROCK CEO LARRY FINK: IT DOESN'T MATTER IF MARKETS RISE AND FALL. BUBBLES COME AND GO.\n\nWHAT MATTERS MOST IS STAYING IN THE MARKET THROUGH ALL CYCLES.",
+      "replyTweetId": "2000707100188815431",
+      "replyText": "Fink's right - conviction in fundamentals beats timing volatility.\n\n$BWS Blockchain Hash enables developers to build mutable databases on blockchain through REST API without handling wallets or gas fees - key-value storage with updatable records at microcap valuation.\n\n@BWSCommunity #microcap #blockchain #fundamentals https://docs.bws.ninja/solutions/bws.blockchain.hash",
+      "productMentioned": "X Bot, Blockchain Badges",
+      "relevanceScore": 82,
+      "templateUsed": "classic",
+      "templateName": "Classic Structure",
+      "imageAttached": false,
+      "imagePath": null,
+      "timestamp": "2025-12-15T23:18:38.856Z",
+      "status": "posted",
+      "dryRun": false
+    },
+    {
+      "id": "2259434528-1998053731502375376-1765840814263",
+      "tweetId": "1998053731502375376",
+      "tweetUrl": "https://twitter.com/cobie/status/1998053731502375376",
+      "kolId": "2259434528",
+      "kolUsername": "cobie",
+      "originalTweetText": "Point to the last three pieces of alpha u found actionable from twitter",
+      "replyTweetId": "2000707499679473872",
+      "replyText": "🎯 Last actionable find: microcap shipping real B2B infrastructure instead of promises.\n\n💡 NFT.zK lets brands distribute NFTs via email without requiring wallet setup - bulk minting with single API call. $BWS handles all blockchain complexity.\n🔧 Perfect for membership programs and reward systems at scale.\n\n@BWSCommunity #microcap #NFT #gems https://www.bws.ninja",
+      "productMentioned": "X Bot",
+      "relevanceScore": 85,
+      "templateUsed": "emoji_enhanced",
+      "templateName": "Emoji-Enhanced Structure",
+      "imageAttached": true,
+      "imagePath": "/assets/images/docs/nftzk/nftzk-0.png",
+      "timestamp": "2025-12-15T23:20:14.263Z",
+      "status": "posted",
+      "dryRun": false
     }
   ],
   "dailyStats": {
@@ -2794,10 +2832,10 @@
     }
   },
   "metadata": {
-    "totalReplies": 135,
-    "successfulReplies": 101,
+    "totalReplies": 137,
+    "successfulReplies": 103,
     "failedReplies": 34,
-    "lastReplyAt": "2025-12-15T19:53:13.897Z",
+    "lastReplyAt": "2025-12-15T23:20:14.263Z",
     "todayRepliesCount": 0,
     "lastUpdateBy": "kol-system"
   }
