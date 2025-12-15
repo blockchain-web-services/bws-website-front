@@ -2644,6 +2644,44 @@
       "timestamp": "2025-12-15T11:50:39.775Z",
       "status": "posted",
       "dryRun": false
+    },
+    {
+      "id": "1353384573435056128-1994142556071031079-1765812618883",
+      "tweetId": "1994142556071031079",
+      "tweetUrl": "https://twitter.com/CryptoRover/status/1994142556071031079",
+      "kolId": "1353384573435056128",
+      "kolUsername": "CryptoRover",
+      "originalTweetText": "BREAKING:\n\nBLACKROCK CEO LARRY FINK: IT DOESN'T MATTER IF MARKETS RISE AND FALL. BUBBLES COME AND GO.\n\nWHAT MATTERS MOST IS STAYING IN THE MARKET THROUGH ALL CYCLES.",
+      "replyTweetId": "2000589239961211227",
+      "replyText": "What separates speculation from utility in microcaps through cycles?\n\nBWS IPFS Upload from $BWS delivers decentralized file storage through simple API without running your own node - content addressing with censorship resistance for NFT metadata and media.\n\nReal infrastructure at microcap valuation.\n\n@BWSCommunity #microcap #Web3 #NFT https://docs.bws.ninja/solutions/bws.ipfs.upload",
+      "productMentioned": "X Bot, Blockchain Badges",
+      "relevanceScore": 82,
+      "templateUsed": "question_led",
+      "templateName": "Question-Led Structure",
+      "imageAttached": true,
+      "imagePath": "/assets/images/docs/bws-ipfs/bws-ipfs-0.png",
+      "timestamp": "2025-12-15T15:30:18.883Z",
+      "status": "posted",
+      "dryRun": false
+    },
+    {
+      "id": "2259434528-1998053731502375376-1765812708146",
+      "tweetId": "1998053731502375376",
+      "tweetUrl": "https://twitter.com/cobie/status/1998053731502375376",
+      "kolId": "2259434528",
+      "kolUsername": "cobie",
+      "originalTweetText": "Point to the last three pieces of alpha u found actionable from twitter",
+      "replyTweetId": "2000589614776717651",
+      "replyText": "🎯 Twitter alpha often surfaces where technical friction meets real demand.\n\n💡 Blockchain Save from $BWS: store immutable data on blockchain without wallet management - automatic Certificate of Trust generation for every save operation.\n🔧 Legal compliance and timestamp verification at microcap valuation.\n\n@BWSCommunity #microcap #blockchain #gems https://docs.bws.ninja/solutions/bws.blockchain.save",
+      "productMentioned": "X Bot, Blockchain Badges",
+      "relevanceScore": 88,
+      "templateUsed": "emoji_enhanced",
+      "templateName": "Emoji-Enhanced Structure",
+      "imageAttached": false,
+      "imagePath": null,
+      "timestamp": "2025-12-15T15:31:48.146Z",
+      "status": "posted",
+      "dryRun": false
     }
   ],
   "dailyStats": {
@@ -2718,10 +2756,10 @@
     }
   },
   "metadata": {
-    "totalReplies": 131,
-    "successfulReplies": 97,
+    "totalReplies": 133,
+    "successfulReplies": 99,
     "failedReplies": 34,
-    "lastReplyAt": "2025-12-15T11:50:39.775Z",
+    "lastReplyAt": "2025-12-15T15:31:48.146Z",
     "todayRepliesCount": 0,
     "lastUpdateBy": "kol-system"
   }
