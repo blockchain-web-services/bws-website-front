@@ -4366,13 +4366,349 @@
       "expiresAt": "2025-12-22T18:07:47.404Z",
       "source": "timeline_monitor",
       "contentCategory": "altcoin-talk"
+    },
+    {
+      "id": "2000610737278890442",
+      "text": "$SOL 120 still support but if we lose this area its prob going to $100 or something quickly",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "retweet_count": 12,
+        "reply_count": 16,
+        "like_count": 69,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/AltcoinSherpa/status/2000610737278890442",
+      "processed": false,
+      "addedAt": "2025-12-15T22:08:33.181Z",
+      "expiresAt": "2025-12-22T22:08:33.181Z",
+      "source": "timeline_monitor",
+      "contentCategory": "price-speculation"
+    },
+    {
+      "id": "2000643191897514053",
+      "text": "Bitcoin back into the box of despair. Every bottom will give you plenty of time to build a position but will wear you out mentally before it goes back up.",
+      "author": {
+        "id": "4441279246",
+        "username": "IncomeSharks"
+      },
+      "public_metrics": {
+        "retweet_count": 44,
+        "reply_count": 41,
+        "like_count": 625,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/IncomeSharks/status/2000643191897514053",
+      "processed": false,
+      "addedAt": "2025-12-15T22:08:59.281Z",
+      "expiresAt": "2025-12-22T22:08:59.281Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "2000649686806589688",
+      "text": "Do Kwon’s Trouble Isn’t Over: 15 Years in the US and 30+ More Possible in Korea\n\nDo Kwon, co-founder of Terra (LUNA/UST), Sentenced to 15 years in the US for the Terra collapse but South Korea still has charges that could add 30+ more years.\n\nDecentralization ≠ no",
+      "author": {
+        "id": "crawlee_search_cryptopatel",
+        "username": "CryptoPatel"
+      },
+      "public_metrics": {
+        "retweet_count": 10,
+        "reply_count": 0,
+        "like_count": 82,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoPatel/status/2000649686806589688",
+      "processed": false,
+      "addedAt": "2025-12-15T22:09:16.715Z",
+      "expiresAt": "2025-12-22T22:09:16.715Z",
+      "source": "timeline_monitor",
+      "contentCategory": "project-discussion"
+    },
+    {
+      "id": "2000634461973627175",
+      "text": "Long-term $BTC holders continue to sell their Bitcoin heavily.",
+      "author": {
+        "id": "crawlee_search_cryptopatel",
+        "username": "CryptoPatel"
+      },
+      "public_metrics": {
+        "retweet_count": 10,
+        "reply_count": 2,
+        "like_count": 73,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoPatel/status/2000634461973627175",
+      "processed": false,
+      "addedAt": "2025-12-15T22:09:18.512Z",
+      "expiresAt": "2025-12-22T22:09:18.512Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "2000620047342112954",
+      "text": "BREAKING: $3.4T Bank of America says U.S. banks are entering a multi-year shift to blockchain & on-chain finance\n\n Regulation is moving from talk → Action\n Focus: stablecoins, tokenized deposits, RWA\n 5 major crypto firms just received federal bank charters\n The GENIUS",
+      "author": {
+        "id": "crawlee_search_cryptopatel",
+        "username": "CryptoPatel"
+      },
+      "public_metrics": {
+        "retweet_count": 10,
+        "reply_count": 12,
+        "like_count": 140,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoPatel/status/2000620047342112954",
+      "processed": false,
+      "addedAt": "2025-12-15T22:09:21.984Z",
+      "expiresAt": "2025-12-22T22:09:21.984Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "2000623344262295980",
+      "text": "Crypto things you might have missed: \n\n-Small-cap cryptos dumping\n-CME Group to launch spot-quoted $XRP & $SOL futures\n-User-friendly gateway to Web3 on Cardano @lace_io \n-Sub $100,000 #Bitcoin odds on @Polymarket \n-Trump $18T Tarrifs\n\nJOIN THE 10:30 AM LIVESTREAM ON YOUTUBE + X",
+      "author": {
+        "id": "935742315389444096",
+        "username": "CryptoWendyO"
+      },
+      "public_metrics": {
+        "retweet_count": 14,
+        "reply_count": 23,
+        "like_count": 56,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoWendyO/status/2000623344262295980",
+      "processed": false,
+      "addedAt": "2025-12-15T22:10:02.313Z",
+      "expiresAt": "2025-12-22T22:10:02.313Z",
+      "source": "timeline_monitor",
+      "contentCategory": "altcoin-talk"
+    },
+    {
+      "id": "2000582043512570054",
+      "text": "TODAY: CME Group launches spot-quoted $XRP and $SOL futures",
+      "author": {
+        "id": "935742315389444096",
+        "username": "CryptoWendyO"
+      },
+      "public_metrics": {
+        "retweet_count": 15,
+        "reply_count": 20,
+        "like_count": 88,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoWendyO/status/2000582043512570054",
+      "processed": false,
+      "addedAt": "2025-12-15T22:10:05.070Z",
+      "expiresAt": "2025-12-22T22:10:05.070Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "2000566718603853844",
+      "text": "NEW: JPMorgan launches first tokenized money-market fund on Ethereum",
+      "author": {
+        "id": "935742315389444096",
+        "username": "CryptoWendyO"
+      },
+      "public_metrics": {
+        "retweet_count": 11,
+        "reply_count": 29,
+        "like_count": 115,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoWendyO/status/2000566718603853844",
+      "processed": false,
+      "addedAt": "2025-12-15T22:10:06.302Z",
+      "expiresAt": "2025-12-22T22:10:06.302Z",
+      "source": "timeline_monitor",
+      "contentCategory": "project-discussion"
+    },
+    {
+      "id": "2000613082490339387",
+      "text": "THE U.S. BANKING SYSTEM IS ABOUT TO GO BLOCKCHAIN.\n\nA new report from Bank of America says the regulatory “talk phase” is OVER -- implementation is here.\n\nKey moves driving the shift:\n• OCC’s conditional approval of trust bank charters for five digital-asset firms\n• FDIC’s",
+      "author": {
+        "id": "877357064724520961",
+        "username": "CryptosR_Us"
+      },
+      "public_metrics": {
+        "retweet_count": 58,
+        "reply_count": 24,
+        "like_count": 228,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptosR_Us/status/2000613082490339387",
+      "processed": false,
+      "addedAt": "2025-12-15T22:10:43.867Z",
+      "expiresAt": "2025-12-22T22:10:43.867Z",
+      "source": "timeline_monitor",
+      "contentCategory": "news"
+    },
+    {
+      "id": "2000631677547327526",
+      "text": "$PTB | Bottom.",
+      "author": {
+        "id": "crawlee_search_nihilusbtc",
+        "username": "NihilusBTC"
+      },
+      "public_metrics": {
+        "retweet_count": 15,
+        "reply_count": 20,
+        "like_count": 55,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/NihilusBTC/status/2000631677547327526",
+      "processed": false,
+      "addedAt": "2025-12-15T22:11:27.046Z",
+      "expiresAt": "2025-12-22T22:11:27.046Z",
+      "source": "timeline_monitor",
+      "contentCategory": "price-speculation"
+    },
+    {
+      "id": "2000672965655179717",
+      "text": "Bitcoin interest is insanely low.\n\nWe’re getting close to DCA and buying the dip.",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "retweet_count": 18,
+        "reply_count": 54,
+        "like_count": 143,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoRover/status/2000672965655179717",
+      "processed": false,
+      "addedAt": "2025-12-15T22:11:41.060Z",
+      "expiresAt": "2025-12-22T22:11:41.060Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends/price-speculation"
+    },
+    {
+      "id": "2000657739887075598",
+      "text": "This is not what we expected from Q4 2025 for crypto…",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "retweet_count": 49,
+        "reply_count": 119,
+        "like_count": 296,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoRover/status/2000657739887075598",
+      "processed": false,
+      "addedAt": "2025-12-15T22:11:47.033Z",
+      "expiresAt": "2025-12-22T22:11:47.033Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "2000646541162262991",
+      "text": "BITCOIN SUPPLY SHOCK INCOMING!",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "retweet_count": 53,
+        "reply_count": 108,
+        "like_count": 365,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoRover/status/2000646541162262991",
+      "processed": false,
+      "addedAt": "2025-12-15T22:11:49.098Z",
+      "expiresAt": "2025-12-22T22:11:49.098Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "2000637481247744490",
+      "text": "The BOJ is expected to hike rates next Friday.\n\nHistorically, this isn’t good for Bitcoin.",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "retweet_count": 38,
+        "reply_count": 103,
+        "like_count": 250,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoRover/status/2000637481247744490",
+      "processed": false,
+      "addedAt": "2025-12-15T22:11:53.909Z",
+      "expiresAt": "2025-12-22T22:11:53.909Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "1977691041680531952",
+      "text": "That’s a possibility too.\n\nIn my opinion, we’ll see several crashes over the next months, with strong bounces in between when prices hit support zones.\n\nThe first one could happen soon, with the first stop around $60k.",
+      "author": {
+        "id": "988796804446769153",
+        "username": "CryptoCapo_"
+      },
+      "public_metrics": {
+        "retweet_count": 12,
+        "reply_count": 0,
+        "like_count": 93,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoCapo_/status/1977691041680531952",
+      "processed": false,
+      "addedAt": "2025-12-15T22:13:17.828Z",
+      "expiresAt": "2025-12-22T22:13:17.828Z",
+      "source": "timeline_monitor",
+      "contentCategory": "technical-analysis"
+    },
+    {
+      "id": "2000374788359876921",
+      "text": "Infrastructure Updates by @ETCGrantsDao\n\nEthereum Classic Grants DAO has been building the infrastructure needed to make Ethereum Classic (ETC) easier to use, more connected, and ready for real-world applications. \n\nIn their 2024–2025 recap (posted November 2025), they",
+      "author": {
+        "id": "crawlee_search_crypt0_defi",
+        "username": "Crypt0_DeFi"
+      },
+      "public_metrics": {
+        "retweet_count": 48,
+        "reply_count": 56,
+        "like_count": 80,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/Crypt0_DeFi/status/2000374788359876921",
+      "processed": false,
+      "addedAt": "2025-12-15T22:14:33.542Z",
+      "expiresAt": "2025-12-22T22:14:33.542Z",
+      "source": "timeline_monitor",
+      "contentCategory": "project-discussion"
     }
   ],
   "metadata": {
-    "lastUpdated": "2025-12-15T18:08:11.036Z",
-    "totalPosts": 235,
+    "lastUpdated": "2025-12-15T22:14:33.543Z",
+    "totalPosts": 224,
     "bySource": {
-      "timeline_monitor": 235,
+      "timeline_monitor": 224,
       "search_discovery": 0
     }
   },
