@@ -19,17 +19,17 @@ export interface ArticleMetadata {
 
 export const articles: ArticleMetadata[] = [
 {
-  slug: 'fan-game-cube-2025-12-14',
-  product: 'Fan Game Cube',
-  title: 'Fan Game Cube: NFT Zones That Turn Sports Fields Into Revenue',
-  subtitle: 'Sports clubs leave millions in untapped revenue because fan monetization remains limited to merchandise and tickets. Fan Game Cube transforms this landscape by tokenizing sports fields into NFT zones, where fans earn points as real-time match events—goals, passes, and strategic moves—occur at their owned coordinates, unlocking new revenue streams for clubs across multiple sports.',
-  publishDate: '2025-12-14T10:03:08.133Z',
+  slug: 'x-bot-2025-12-15',
+  product: 'X Bot',
+  title: 'X Bot: Advanced Community Analytics for Web3 Projects',
+  subtitle: 'Managing crypto communities across multiple platforms requires constant monitoring and analysis. X Bot automates community tracking with real-time analytics, engagement metrics, and KOL performance monitoring, helping Web3 projects identify authentic traction without manual overhead.',
+  publishDate: '2025-12-15T10:04:03.666Z',
   tweetId: '',
   featuredImage: {
-    src: '/assets/images/docs/fan-game-cube/fan-game-cube-0.png',
+    src: '/assets/images/docs/x-bot/x-bot-0.png',
     alt: 'Product screenshot',
     loading: 'eager'
   },
-  seoDescription: 'Fan Game Cube tokenizes sports fields into NFT zones where fans earn rewards from real-time match events, creating new revenue for sports clubs.'
+  seoDescription: 'X Bot automates Web3 community analytics across X and Telegram with KOL tracking, engagement metrics, and daily reports using official API integration.'
 }
 ];
