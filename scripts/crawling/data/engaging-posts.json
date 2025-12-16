@@ -224,7 +224,7 @@
       },
       "created_at": "",
       "url": "https://twitter.com/AltcoinSherpa/status/1999896164720955850",
-      "processed": false,
+      "processed": true,
       "addedAt": "2025-12-14T12:45:49.480Z",
       "expiresAt": "2025-12-21T12:45:49.480Z",
       "source": "timeline_monitor",
@@ -245,7 +245,7 @@
       },
       "created_at": "",
       "url": "https://twitter.com/CryptoKaleo/status/1998449893053223313",
-      "processed": false,
+      "processed": true,
       "addedAt": "2025-12-14T12:46:29.877Z",
       "expiresAt": "2025-12-21T12:46:29.877Z",
       "source": "timeline_monitor",
@@ -266,7 +266,7 @@
       },
       "created_at": "",
       "url": "https://twitter.com/CryptoKaleo/status/1998446852950171955",
-      "processed": false,
+      "processed": true,
       "addedAt": "2025-12-14T12:46:32.066Z",
       "expiresAt": "2025-12-21T12:46:32.066Z",
       "source": "timeline_monitor",
@@ -4198,9 +4198,10 @@
       "BWS IPFS",
       "Blockchain Save"
     ],
-    "currentIndex": 6,
-    "lastProductUsed": "ESG Credits",
+    "currentIndex": 0,
+    "lastProductUsed": "Blockchain Save",
     "positioningPhraseIndex": 0,
-    "replyCount": 110
-  }
+    "replyCount": 112
+  },
+  "_removedStale": false
 }

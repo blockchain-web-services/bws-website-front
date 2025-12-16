@@ -2796,6 +2796,44 @@
       "timestamp": "2025-12-16T07:39:43.761Z",
       "status": "posted",
       "dryRun": false
+    },
+    {
+      "id": "1068237257977544704-1999896164720955850-1765885817725",
+      "tweetId": "1999896164720955850",
+      "tweetUrl": "https://twitter.com/AltcoinSherpa/status/1999896164720955850",
+      "kolId": "1068237257977544704",
+      "kolUsername": "AltcoinSherpa",
+      "originalTweetText": "Market top to the bottom in January to April was about 2.5 months. We're currently around 2 months for $BTC",
+      "replyTweetId": "2000896258131571093",
+      "replyText": "Bear markets separate builders from speculators - perfect time to accumulate fundamentals.\n\n$BWS IPFS Upload enables decentralized file storage through simple API without running your own node - content addressing with censorship resistance for NFT metadata and media at microcap valuation.\n\n@BWSCommunity #microcap #Web3 #fundamentals https://docs.bws.ninja/solutions/bws.ipfs.upload",
+      "productMentioned": "BWS IPFS",
+      "relevanceScore": 72,
+      "templateUsed": "classic",
+      "templateName": "Classic Structure",
+      "imageAttached": true,
+      "imagePath": "/assets/images/docs/bws-ipfs/bws-ipfs-0.png",
+      "timestamp": "2025-12-16T11:50:17.725Z",
+      "status": "posted",
+      "dryRun": false
+    },
+    {
+      "id": "906234475604037637-1998446852950171955-1765885851452",
+      "tweetId": "1998446852950171955",
+      "tweetUrl": "https://twitter.com/CryptoKaleo/status/1998446852950171955",
+      "kolId": "906234475604037637",
+      "kolUsername": "CryptoKaleo",
+      "originalTweetText": "ETH szn is back.",
+      "replyTweetId": "2000896400117100769",
+      "replyText": "ETH rising usually lifts quality microcaps with actual infrastructure. Opportunity to find fundamentals before momentum chasers arrive.\n\nBlockchain Save stores immutable data with automatic Certificate of Trust generation - no wallet management required. $BWS ships this at sub-$5M valuation.\n\n@BWSCommunity #ETH #microcap #blockchain https://docs.bws.ninja/solutions/bws.blockchain.save",
+      "productMentioned": "X Bot",
+      "relevanceScore": 78,
+      "templateUsed": "delayed_cashtag",
+      "templateName": "Delayed $BWS Mention",
+      "imageAttached": false,
+      "imagePath": null,
+      "timestamp": "2025-12-16T11:50:51.452Z",
+      "status": "posted",
+      "dryRun": false
     }
   ],
   "dailyStats": {
@@ -2870,10 +2908,10 @@
     }
   },
   "metadata": {
-    "totalReplies": 139,
-    "successfulReplies": 105,
+    "totalReplies": 141,
+    "successfulReplies": 107,
     "failedReplies": 34,
-    "lastReplyAt": "2025-12-16T07:39:43.761Z",
+    "lastReplyAt": "2025-12-16T11:50:51.452Z",
     "todayRepliesCount": 0,
     "lastUpdateBy": "kol-system"
   }
