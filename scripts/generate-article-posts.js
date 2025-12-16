@@ -180,7 +180,7 @@ TARGET AUDIENCE:
 - Web3 project managers and technical leads
 - Blockchain technology enthusiasts`;
 
-  const userPrompt = `Generate 3 X posts for this article:
+  const userPrompt = `Generate 1 X post for this article:
 
 ARTICLE DETAILS:
 - Product: ${article.product}
@@ -190,8 +190,8 @@ ARTICLE DETAILS:
 - Docs URL: ${docsUrl}
 - SEO Description: ${article.seoDescription}
 
-REQUIRED POSTS:
-1. **Overview Post** (High Priority)
+REQUIRED POST:
+**Overview Post** (High Priority)
    - Describe what the product/feature does
    - Use neutral, factual language
    - NO promotional phrases or pain points
@@ -200,25 +200,7 @@ REQUIRED POSTS:
    - Must include $BWS
    - 2 hashtags: product-related + industry
 
-2. **Feature Description Post** (Medium Priority)
-   - Explain ONE specific capability or function
-   - Use technical but accessible language
-   - Include a concrete implementation example
-   - Include BOTH article link AND docs link
-   - Must include @BWSCommunity
-   - Must include $BWS
-   - 2 hashtags: feature-specific + technical
-
-3. **Implementation Example Post** (Medium Priority)
-   - Describe a practical usage scenario
-   - Focus on HOW it works, not WHY you need it
-   - Use descriptive, educational tone
-   - Include BOTH article link AND docs link
-   - Must include @BWSCommunity
-   - Must include $BWS
-   - 2 hashtags: industry + application-specific
-
-Return ONLY a JSON array with exactly 3 posts in this format:
+Return ONLY a JSON array with exactly 1 post in this format:
 [
   {
     "type": "overview",
@@ -227,22 +209,6 @@ Return ONLY a JSON array with exactly 3 posts in this format:
     "docsUrl": "${docsUrl}",
     "hashtags": ["XBot", "Web3Community"],
     "priority": "high"
-  },
-  {
-    "type": "feature",
-    "text": "The platform includes mention detection, engagement scoring, and customizable leaderboards. Integration available via REST API. @BWSCommunity $BWS",
-    "articleUrl": "${articleUrl}",
-    "docsUrl": "${docsUrl}",
-    "hashtags": ["APIIntegration", "Analytics"],
-    "priority": "medium"
-  },
-  {
-    "type": "implementation",
-    "text": "Projects use X Bot to track advocate activity and reward contributors. The system aggregates data from multiple social platforms. @BWSCommunity $BWS",
-    "articleUrl": "${articleUrl}",
-    "docsUrl": "${docsUrl}",
-    "hashtags": ["CommunityTools", "Web3"],
-    "priority": "medium"
   }
 ]
 
