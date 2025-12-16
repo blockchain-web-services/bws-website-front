@@ -2853,6 +2853,25 @@
       "timestamp": "2025-12-16T15:32:41.120Z",
       "status": "posted",
       "dryRun": false
+    },
+    {
+      "id": "983993370048630785-1995283427046875203-1765914923326",
+      "tweetId": "1995283427046875203",
+      "tweetUrl": "https://twitter.com/CryptoHayes/status/1995283427046875203",
+      "kolId": "983993370048630785",
+      "kolUsername": "CryptoHayes",
+      "originalTweetText": "Monday vibes , it’s time for Up Only!",
+      "replyTweetId": "2001018335777943729",
+      "replyText": "Sports clubs leave massive revenue on the table because traditional fan engagement models don't scale beyond merchandise and tickets.\n\nThe solution: Fan Game Cube enables fans to own digital field sections as NFTs and earn rewards when real game events happen at their location. $BWS delivers new monetization for clubs across multiple sports.\n\nUnder-the-radar microcap with shipping products.\n\n@BWSCommunity #microcap #sports #NFT https://docs.bws.ninja/marketplace-solutions/bws.nft.gamecube",
+      "productMentioned": "X Bot",
+      "relevanceScore": 72,
+      "templateUsed": "problem_solution",
+      "templateName": "Problem-Solution Structure",
+      "imageAttached": true,
+      "imagePath": "/assets/images/docs/fan-game-cube/fan-game-cube-0.png",
+      "timestamp": "2025-12-16T19:55:23.326Z",
+      "status": "posted",
+      "dryRun": false
     }
   ],
   "dailyStats": {
@@ -2927,10 +2946,10 @@
     }
   },
   "metadata": {
-    "totalReplies": 142,
-    "successfulReplies": 108,
+    "totalReplies": 143,
+    "successfulReplies": 109,
     "failedReplies": 34,
-    "lastReplyAt": "2025-12-16T15:32:41.120Z",
+    "lastReplyAt": "2025-12-16T19:55:23.326Z",
     "todayRepliesCount": 0,
     "lastUpdateBy": "kol-system"
   }
