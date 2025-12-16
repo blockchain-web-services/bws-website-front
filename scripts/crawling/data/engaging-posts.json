@@ -4387,13 +4387,538 @@
       "expiresAt": "2025-12-22T22:14:33.542Z",
       "source": "timeline_monitor",
       "contentCategory": "project-discussion"
+    },
+    {
+      "id": "2000705646367531285",
+      "text": "Let's see if we can go 5 green Tuesdays in a row. Will be interesting to see play out, as we got the red Monday.",
+      "author": {
+        "id": "4441279246",
+        "username": "IncomeSharks"
+      },
+      "public_metrics": {
+        "retweet_count": 28,
+        "reply_count": 26,
+        "like_count": 641,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/IncomeSharks/status/2000705646367531285",
+      "processed": false,
+      "addedAt": "2025-12-16T07:24:00.259Z",
+      "expiresAt": "2025-12-23T07:24:00.259Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends/technical-analysis"
+    },
+    {
+      "id": "2000770357293408541",
+      "text": "JUST IN\n\nVisa has launched a Stablecoins Advisory Practice to help institutions design, deploy, and scale stablecoin strategies.\n\nAnother major signal that global payment giants are accelerating stablecoin adoption.",
+      "author": {
+        "id": "crawlee_search_cryptopatel",
+        "username": "CryptoPatel"
+      },
+      "public_metrics": {
+        "retweet_count": 10,
+        "reply_count": 11,
+        "like_count": 174,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoPatel/status/2000770357293408541",
+      "processed": false,
+      "addedAt": "2025-12-16T07:26:14.884Z",
+      "expiresAt": "2025-12-23T07:26:14.884Z",
+      "source": "timeline_monitor",
+      "contentCategory": "news"
+    },
+    {
+      "id": "2000823960255263166",
+      "text": "Bitfinex longs are moving sideways.\n\nSmart money is patiently waiting.",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "retweet_count": 10,
+        "reply_count": 41,
+        "like_count": 94,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoRover/status/2000823960255263166",
+      "processed": false,
+      "addedAt": "2025-12-16T07:26:24.344Z",
+      "expiresAt": "2025-12-23T07:26:24.344Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "2000793761232908389",
+      "text": "I stay patient until the perfect trading setup appears.    \n\nClaim a 50% deposit bonus on WEEX and start trading yourself.    \n\nOnly with this link:\nhttps://weex.com/events/welcome-event?vipCode=00dt&qrType=activity…",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "retweet_count": 16,
+        "reply_count": 50,
+        "like_count": 120,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoRover/status/2000793761232908389",
+      "processed": false,
+      "addedAt": "2025-12-16T07:26:30.979Z",
+      "expiresAt": "2025-12-23T07:26:30.979Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "2000764919176945771",
+      "text": "RUMOR:\n\nMAJOR PARTNERSHIP MAY BE FORMING BETWEEN THE LARGEST U.S. BANKS AND STRATEGY",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "retweet_count": 88,
+        "reply_count": 88,
+        "like_count": 758,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoRover/status/2000764919176945771",
+      "processed": false,
+      "addedAt": "2025-12-16T07:26:34.910Z",
+      "expiresAt": "2025-12-23T07:26:34.910Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "2000764569174589746",
+      "text": "$MSTR has bought over 21,000 #Bitcoin in December so far.\n\nThey're not slowing down.",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "retweet_count": 50,
+        "reply_count": 78,
+        "like_count": 457,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoRover/status/2000764569174589746",
+      "processed": false,
+      "addedAt": "2025-12-16T07:26:36.698Z",
+      "expiresAt": "2025-12-23T07:26:36.698Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "2000683308955386165",
+      "text": "BREAKING:\n\n PAYPAL SUBMITS APPLICATION TO BECOME A US BANK.",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "retweet_count": 94,
+        "reply_count": 61,
+        "like_count": 611,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoRover/status/2000683308955386165",
+      "processed": false,
+      "addedAt": "2025-12-16T07:26:39.942Z",
+      "expiresAt": "2025-12-23T07:26:39.942Z",
+      "source": "timeline_monitor",
+      "contentCategory": "news"
+    },
+    {
+      "id": "2000586496655479244",
+      "text": "Terra founder Do Kwon may face a separate criminal trial in South Korea despite 15-year U.S. prison sentence, as Korean prosecutors seek to prosecute him for Capital Markets Act violations. He could receive an additional sentence of over 30 years, with authorities citing around",
+      "author": {
+        "id": "111533746",
+        "username": "WuBlockchain"
+      },
+      "public_metrics": {
+        "retweet_count": 18,
+        "reply_count": 18,
+        "like_count": 87,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/WuBlockchain/status/2000586496655479244",
+      "processed": false,
+      "addedAt": "2025-12-16T07:26:54.682Z",
+      "expiresAt": "2025-12-23T07:26:54.682Z",
+      "source": "timeline_monitor",
+      "contentCategory": "news"
+    },
+    {
+      "id": "1995179590583828730",
+      "text": "Y'all make a fuck ton of money ... jelly\n\nDo you have a specific dividend policy, or a target over collateralisation ratio based on the type of asset discounted by it's volatility? Obvi when your liability is a dollar and your asset is a T-bill no issue, but if your asset is an",
+      "author": {
+        "id": "983993370048630785",
+        "username": "CryptoHayes"
+      },
+      "public_metrics": {
+        "retweet_count": 16,
+        "reply_count": 80,
+        "like_count": 350,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoHayes/status/1995179590583828730",
+      "processed": false,
+      "addedAt": "2025-12-16T07:28:42.415Z",
+      "expiresAt": "2025-12-23T07:28:42.415Z",
+      "source": "timeline_monitor",
+      "contentCategory": "technical-analysis"
+    },
+    {
+      "id": "2000593716646699133",
+      "text": "$BTC Confirmed breakdown from a bearish penant with targets ranging from 60-78k. \n\nNote that i gave a clear warning & #BTC short on my free VIP telegram channel at the price of 120-123k which marked the top of Bitcoin. Today bitcoin sits 30% below that short entry. \n\nIts",
+      "author": {
+        "id": "crawlee_search_bitcoinhabebe",
+        "username": "Bitcoinhabebe"
+      },
+      "public_metrics": {
+        "retweet_count": 26,
+        "reply_count": 40,
+        "like_count": 173,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/Bitcoinhabebe/status/2000593716646699133",
+      "processed": false,
+      "addedAt": "2025-12-16T07:28:53.322Z",
+      "expiresAt": "2025-12-23T07:28:53.322Z",
+      "source": "timeline_monitor",
+      "contentCategory": "technical-analysis"
+    },
+    {
+      "id": "2000822365052453095",
+      "text": "$XNY | Pump is coming in short term.",
+      "author": {
+        "id": "crawlee_search_nihilusbtc",
+        "username": "NihilusBTC"
+      },
+      "public_metrics": {
+        "retweet_count": 18,
+        "reply_count": 28,
+        "like_count": 60,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/NihilusBTC/status/2000822365052453095",
+      "processed": false,
+      "addedAt": "2025-12-16T07:29:03.024Z",
+      "expiresAt": "2025-12-23T07:29:03.024Z",
+      "source": "timeline_monitor",
+      "contentCategory": "price-speculation"
+    },
+    {
+      "id": "2000820360967807062",
+      "text": "$Q buying until 0.015\n\nRemember my $FOLKS and $PTB signals \n\n3/3 coming",
+      "author": {
+        "id": "crawlee_search_nihilusbtc",
+        "username": "NihilusBTC"
+      },
+      "public_metrics": {
+        "retweet_count": 18,
+        "reply_count": 35,
+        "like_count": 70,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/NihilusBTC/status/2000820360967807062",
+      "processed": false,
+      "addedAt": "2025-12-16T07:29:05.009Z",
+      "expiresAt": "2025-12-23T07:29:05.009Z",
+      "source": "timeline_monitor",
+      "contentCategory": "price-speculation"
+    },
+    {
+      "id": "2000815104485704081",
+      "text": "$DOOD \n$Q",
+      "author": {
+        "id": "crawlee_search_nihilusbtc",
+        "username": "NihilusBTC"
+      },
+      "public_metrics": {
+        "retweet_count": 15,
+        "reply_count": 35,
+        "like_count": 59,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/NihilusBTC/status/2000815104485704081",
+      "processed": false,
+      "addedAt": "2025-12-16T07:29:07.025Z",
+      "expiresAt": "2025-12-23T07:29:07.025Z",
+      "source": "timeline_monitor",
+      "contentCategory": "altcoin-talk"
+    },
+    {
+      "id": "2000812933652353139",
+      "text": "$Q | Breakout!",
+      "author": {
+        "id": "crawlee_search_nihilusbtc",
+        "username": "NihilusBTC"
+      },
+      "public_metrics": {
+        "retweet_count": 14,
+        "reply_count": 28,
+        "like_count": 57,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/NihilusBTC/status/2000812933652353139",
+      "processed": false,
+      "addedAt": "2025-12-16T07:29:09.229Z",
+      "expiresAt": "2025-12-23T07:29:09.229Z",
+      "source": "timeline_monitor",
+      "contentCategory": "price-speculation"
+    },
+    {
+      "id": "2000812426359660833",
+      "text": "$DOOD | Will pump like my $PTB signal!",
+      "author": {
+        "id": "crawlee_search_nihilusbtc",
+        "username": "NihilusBTC"
+      },
+      "public_metrics": {
+        "retweet_count": 17,
+        "reply_count": 38,
+        "like_count": 68,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/NihilusBTC/status/2000812426359660833",
+      "processed": false,
+      "addedAt": "2025-12-16T07:29:11.144Z",
+      "expiresAt": "2025-12-23T07:29:11.144Z",
+      "source": "timeline_monitor",
+      "contentCategory": "price-speculation"
+    },
+    {
+      "id": "2000810945984303404",
+      "text": "$PTB | I warned you.\n\nENJOYYYYYYY!",
+      "author": {
+        "id": "crawlee_search_nihilusbtc",
+        "username": "NihilusBTC"
+      },
+      "public_metrics": {
+        "retweet_count": 21,
+        "reply_count": 49,
+        "like_count": 96,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/NihilusBTC/status/2000810945984303404",
+      "processed": false,
+      "addedAt": "2025-12-16T07:29:13.985Z",
+      "expiresAt": "2025-12-23T07:29:13.985Z",
+      "source": "timeline_monitor",
+      "contentCategory": "altcoin-talk"
+    },
+    {
+      "id": "2000810237797060849",
+      "text": "$Q open long, thank me later.",
+      "author": {
+        "id": "crawlee_search_nihilusbtc",
+        "username": "NihilusBTC"
+      },
+      "public_metrics": {
+        "retweet_count": 17,
+        "reply_count": 29,
+        "like_count": 52,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/NihilusBTC/status/2000810237797060849",
+      "processed": false,
+      "addedAt": "2025-12-16T07:29:15.231Z",
+      "expiresAt": "2025-12-23T07:29:15.231Z",
+      "source": "timeline_monitor",
+      "contentCategory": "price-speculation"
+    },
+    {
+      "id": "2000680210753007718",
+      "text": "$NIGHT",
+      "author": {
+        "id": "crawlee_search_nihilusbtc",
+        "username": "NihilusBTC"
+      },
+      "public_metrics": {
+        "retweet_count": 19,
+        "reply_count": 29,
+        "like_count": 107,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/NihilusBTC/status/2000680210753007718",
+      "processed": false,
+      "addedAt": "2025-12-16T07:29:17.187Z",
+      "expiresAt": "2025-12-23T07:29:17.187Z",
+      "source": "timeline_monitor",
+      "contentCategory": "altcoin-talk"
+    },
+    {
+      "id": "2000677955622560152",
+      "text": "$Q | 2x move will start soon i think. Long it.",
+      "author": {
+        "id": "crawlee_search_nihilusbtc",
+        "username": "NihilusBTC"
+      },
+      "public_metrics": {
+        "retweet_count": 15,
+        "reply_count": 18,
+        "like_count": 65,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/NihilusBTC/status/2000677955622560152",
+      "processed": false,
+      "addedAt": "2025-12-16T07:29:19.146Z",
+      "expiresAt": "2025-12-23T07:29:19.146Z",
+      "source": "timeline_monitor",
+      "contentCategory": "price-speculation"
+    },
+    {
+      "id": "2000668836689846657",
+      "text": "$Q | 0.05 is coming.\n\n$folks $fhe $beta",
+      "author": {
+        "id": "crawlee_search_nihilusbtc",
+        "username": "NihilusBTC"
+      },
+      "public_metrics": {
+        "retweet_count": 14,
+        "reply_count": 16,
+        "like_count": 53,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/NihilusBTC/status/2000668836689846657",
+      "processed": false,
+      "addedAt": "2025-12-16T07:29:21.207Z",
+      "expiresAt": "2025-12-23T07:29:21.207Z",
+      "source": "timeline_monitor",
+      "contentCategory": "price-speculation"
+    },
+    {
+      "id": "2000642822731345975",
+      "text": "I haven't really posted about the @stablekwon sentencing.  But HCC literally called into the sentencing as a victim (I was there irl) to promote his validator.  It was surreal.  \n\nEveryone from the judge to the people in the benches were totally confused by his ramble.",
+      "author": {
+        "id": "crawlee_search_senpai_gideon",
+        "username": "Senpai_Gideon"
+      },
+      "public_metrics": {
+        "retweet_count": 13,
+        "reply_count": 17,
+        "like_count": 72,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/Senpai_Gideon/status/2000642822731345975",
+      "processed": false,
+      "addedAt": "2025-12-16T07:29:32.280Z",
+      "expiresAt": "2025-12-23T07:29:32.280Z",
+      "source": "timeline_monitor",
+      "contentCategory": "project-discussion"
+    },
+    {
+      "id": "2000747758123102408",
+      "text": "SOLANA JUST WON THE MINDSHARE WAR IN 2025 \n\nFor the second year in a row, $SOL is the #1 most talked-about blockchain on the planet, according to CoinGecko.\n\n26.79% of global crypto mindshare. That’s more than Ethereum + Base combined.\n\nThis isn’t price, nor narratives pushed by",
+      "author": {
+        "id": "877357064724520961",
+        "username": "CryptosR_Us"
+      },
+      "public_metrics": {
+        "retweet_count": 27,
+        "reply_count": 14,
+        "like_count": 106,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptosR_Us/status/2000747758123102408",
+      "processed": false,
+      "addedAt": "2025-12-16T07:29:42.094Z",
+      "expiresAt": "2025-12-23T07:29:42.094Z",
+      "source": "timeline_monitor",
+      "contentCategory": "project-discussion"
+    },
+    {
+      "id": "2000717514024620533",
+      "text": "THE SEC JUST ADMITTED BLOCKCHAINS ARE MORE TRANSPARENT THAN WALL STREET\n\nSEC Commissioner Paul Atkins said public blockchains are more transparent than any financial system ever built.\n\nEvery transaction is auditable. Law enforcement already relies on on-chain analytics. And with",
+      "author": {
+        "id": "877357064724520961",
+        "username": "CryptosR_Us"
+      },
+      "public_metrics": {
+        "retweet_count": 37,
+        "reply_count": 12,
+        "like_count": 173,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptosR_Us/status/2000717514024620533",
+      "processed": false,
+      "addedAt": "2025-12-16T07:29:44.357Z",
+      "expiresAt": "2025-12-23T07:29:44.357Z",
+      "source": "timeline_monitor",
+      "contentCategory": "news"
+    },
+    {
+      "id": "2000692646457512303",
+      "text": "BREAKING: NASDAQ SHIFTS TO 23-HOUR TRADING AS TRADFI COPIES CRYPTO\n\nNasdaq is moving toward 23-hour trading and will file with the SEC on Monday.\n\n Sunday 9pm -> Friday 8pm\n Day + night sessions launching 2H 2026\n\nCrypto has been 24/7 since day one. \nGlobal access. Continuous",
+      "author": {
+        "id": "877357064724520961",
+        "username": "CryptosR_Us"
+      },
+      "public_metrics": {
+        "retweet_count": 34,
+        "reply_count": 16,
+        "like_count": 145,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptosR_Us/status/2000692646457512303",
+      "processed": false,
+      "addedAt": "2025-12-16T07:29:48.066Z",
+      "expiresAt": "2025-12-23T07:29:48.066Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "2000679832963678275",
+      "text": "FOR YEARS HOLDING $XRP OFFERED 0%, NOW TARGETING 8-12% YIELD\n\nXRPFi went LIVE this month, giving holders more than just a speculative asset to hold!\n\n@HugoPhilion, Cofounder of @flarenetworks, breaks down how to maximize returns on your $XRP holdings.  \n\n  Initial Staking",
+      "author": {
+        "id": "877357064724520961",
+        "username": "CryptosR_Us"
+      },
+      "public_metrics": {
+        "retweet_count": 134,
+        "reply_count": 26,
+        "like_count": 558,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptosR_Us/status/2000679832963678275",
+      "processed": false,
+      "addedAt": "2025-12-16T07:29:49.251Z",
+      "expiresAt": "2025-12-23T07:29:49.251Z",
+      "source": "timeline_monitor",
+      "contentCategory": "project-discussion"
     }
   ],
   "metadata": {
-    "lastUpdated": "2025-12-15T22:14:33.543Z",
-    "totalPosts": 224,
+    "lastUpdated": "2025-12-16T07:30:25.205Z",
+    "totalPosts": 234,
     "bySource": {
-      "timeline_monitor": 224,
+      "timeline_monitor": 234,
       "search_discovery": 0
     }
   },
