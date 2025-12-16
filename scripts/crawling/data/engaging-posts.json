@@ -504,237 +504,6 @@
       "contentCategory": "market-trends"
     },
     {
-      "id": "2000169677562274269",
-      "text": "$BTC is breaking down from the bearish penant I previously warned about. Do you know what are its targets ?",
-      "author": {
-        "id": "crawlee_search_bitcoinhabebe",
-        "username": "Bitcoinhabebe"
-      },
-      "public_metrics": {
-        "retweet_count": 101,
-        "reply_count": 156,
-        "like_count": 353,
-        "quote_count": 0
-      },
-      "created_at": "",
-      "url": "https://twitter.com/Bitcoinhabebe/status/2000169677562274269",
-      "processed": false,
-      "addedAt": "2025-12-14T22:10:57.468Z",
-      "expiresAt": "2025-12-21T22:10:57.468Z",
-      "source": "timeline_monitor",
-      "contentCategory": "technical-analysis"
-    },
-    {
-      "id": "2000284153086984455",
-      "text": "Bitcoin vs. Silver is now at the most oversold levels EVER!",
-      "author": {
-        "id": "1353384573435056128",
-        "username": "CryptoRover"
-      },
-      "public_metrics": {
-        "retweet_count": 54,
-        "reply_count": 90,
-        "like_count": 381,
-        "quote_count": 0
-      },
-      "created_at": "",
-      "url": "https://twitter.com/CryptoRover/status/2000284153086984455",
-      "processed": false,
-      "addedAt": "2025-12-14T22:12:28.380Z",
-      "expiresAt": "2025-12-21T22:12:28.380Z",
-      "source": "timeline_monitor",
-      "contentCategory": "technical-analysis"
-    },
-    {
-      "id": "2000275093558038577",
-      "text": "Money printing is coming.\n\nPatience is key now.",
-      "author": {
-        "id": "1353384573435056128",
-        "username": "CryptoRover"
-      },
-      "public_metrics": {
-        "retweet_count": 84,
-        "reply_count": 169,
-        "like_count": 667,
-        "quote_count": 0
-      },
-      "created_at": "",
-      "url": "https://twitter.com/CryptoRover/status/2000275093558038577",
-      "processed": false,
-      "addedAt": "2025-12-14T22:12:32.575Z",
-      "expiresAt": "2025-12-21T22:12:32.575Z",
-      "source": "timeline_monitor",
-      "contentCategory": "market-trends"
-    },
-    {
-      "id": "2000265278970875934",
-      "text": "ETHEREUM IS RECORDING ITS SECOND-WORST YEAR ON RECORD.\n\nThis is clearly not what we expected from what is usually the most bullish year of the four-year cycle.",
-      "author": {
-        "id": "1353384573435056128",
-        "username": "CryptoRover"
-      },
-      "public_metrics": {
-        "retweet_count": 93,
-        "reply_count": 141,
-        "like_count": 535,
-        "quote_count": 0
-      },
-      "created_at": "",
-      "url": "https://twitter.com/CryptoRover/status/2000265278970875934",
-      "processed": false,
-      "addedAt": "2025-12-14T22:12:34.380Z",
-      "expiresAt": "2025-12-21T22:12:34.380Z",
-      "source": "timeline_monitor",
-      "contentCategory": "market-trends"
-    },
-    {
-      "id": "2000253954039656558",
-      "text": "Which Altcoin(s) will do this in 2026?",
-      "author": {
-        "id": "1353384573435056128",
-        "username": "CryptoRover"
-      },
-      "public_metrics": {
-        "retweet_count": 79,
-        "reply_count": 401,
-        "like_count": 598,
-        "quote_count": 0
-      },
-      "created_at": "",
-      "url": "https://twitter.com/CryptoRover/status/2000253954039656558",
-      "processed": false,
-      "addedAt": "2025-12-14T22:12:36.388Z",
-      "expiresAt": "2025-12-21T22:12:36.388Z",
-      "source": "timeline_monitor",
-      "contentCategory": "altcoin-talk"
-    },
-    {
-      "id": "2000244894787342659",
-      "text": "Once altseason makes its comeback, it will be aggressive!",
-      "author": {
-        "id": "1353384573435056128",
-        "username": "CryptoRover"
-      },
-      "public_metrics": {
-        "retweet_count": 99,
-        "reply_count": 161,
-        "like_count": 659,
-        "quote_count": 0
-      },
-      "created_at": "",
-      "url": "https://twitter.com/CryptoRover/status/2000244894787342659",
-      "processed": false,
-      "addedAt": "2025-12-14T22:12:38.468Z",
-      "expiresAt": "2025-12-21T22:12:38.468Z",
-      "source": "timeline_monitor",
-      "contentCategory": "market-trends"
-    },
-    {
-      "id": "2000235080330129529",
-      "text": "The US10Y yield and the Fed funds rate are at their highest levels since 2022. \n\nThe Fed has cut rates over the last three meetings, yet the US 10Y yield remains elevated.\n\nThis signals that markets don’t believe in real monetary easing.\n\nThis is dangerous for Crypto.",
-      "author": {
-        "id": "1353384573435056128",
-        "username": "CryptoRover"
-      },
-      "public_metrics": {
-        "retweet_count": 41,
-        "reply_count": 109,
-        "like_count": 237,
-        "quote_count": 0
-      },
-      "created_at": "",
-      "url": "https://twitter.com/CryptoRover/status/2000235080330129529",
-      "processed": false,
-      "addedAt": "2025-12-14T22:12:41.062Z",
-      "expiresAt": "2025-12-21T22:12:41.062Z",
-      "source": "timeline_monitor",
-      "contentCategory": "market-trends"
-    },
-    {
-      "id": "2000260769494016127",
-      "text": "HOW MUCH BITCOIN DO YOU NEED TO RETIRE IN 2035? \n\nSminston With's Bitcoin Retirement Guide uses a 5th percentile power law model for BTC price in 2035, 7% annual inflation adjustment\n\nThe results may surprise you:\n\n Monaco requires the most $BTC to retire by 2035, approx 3-7",
-      "author": {
-        "id": "877357064724520961",
-        "username": "CryptosR_Us"
-      },
-      "public_metrics": {
-        "retweet_count": 20,
-        "reply_count": 35,
-        "like_count": 116,
-        "quote_count": 0
-      },
-      "created_at": "",
-      "url": "https://twitter.com/CryptosR_Us/status/2000260769494016127",
-      "processed": false,
-      "addedAt": "2025-12-14T22:12:50.736Z",
-      "expiresAt": "2025-12-21T22:12:50.736Z",
-      "source": "timeline_monitor",
-      "contentCategory": "price-speculation"
-    },
-    {
-      "id": "2000234073495613590",
-      "text": "STANDARD CHARTERED & COINBASE EXPAND CRYPTO PARTNERSHIP    \n\nStandard Chartered and Coinbase are deepening their collaboration to offer trading, custody, staking, and lending solutions for institutional clients.   \n\nMargaret Harwood-Jones, Standard Chartered’s global head of",
-      "author": {
-        "id": "877357064724520961",
-        "username": "CryptosR_Us"
-      },
-      "public_metrics": {
-        "retweet_count": 22,
-        "reply_count": 34,
-        "like_count": 107,
-        "quote_count": 0
-      },
-      "created_at": "",
-      "url": "https://twitter.com/CryptosR_Us/status/2000234073495613590",
-      "processed": false,
-      "addedAt": "2025-12-14T22:12:52.739Z",
-      "expiresAt": "2025-12-21T22:12:52.739Z",
-      "source": "timeline_monitor",
-      "contentCategory": "news"
-    },
-    {
-      "id": "2000223660133535926",
-      "text": "$TURBO | BREAKOUT!",
-      "author": {
-        "id": "crawlee_search_nihilusbtc",
-        "username": "NihilusBTC"
-      },
-      "public_metrics": {
-        "retweet_count": 37,
-        "reply_count": 55,
-        "like_count": 124,
-        "quote_count": 0
-      },
-      "created_at": "",
-      "url": "https://twitter.com/NihilusBTC/status/2000223660133535926",
-      "processed": false,
-      "addedAt": "2025-12-14T22:13:02.655Z",
-      "expiresAt": "2025-12-21T22:13:02.655Z",
-      "source": "timeline_monitor",
-      "contentCategory": "altcoin-talk"
-    },
-    {
-      "id": "2000200228004049333",
-      "text": "$MAGIC | Reversal zone.",
-      "author": {
-        "id": "crawlee_search_nihilusbtc",
-        "username": "NihilusBTC"
-      },
-      "public_metrics": {
-        "retweet_count": 45,
-        "reply_count": 66,
-        "like_count": 137,
-        "quote_count": 0
-      },
-      "created_at": "",
-      "url": "https://twitter.com/NihilusBTC/status/2000200228004049333",
-      "processed": false,
-      "addedAt": "2025-12-14T22:13:04.662Z",
-      "expiresAt": "2025-12-21T22:13:04.662Z",
-      "source": "timeline_monitor",
-      "contentCategory": "technical-analysis"
-    },
-    {
       "id": "1999590993310679334",
       "text": "$ETH - Supertrend rejection. Will see if if it can consolidate and make another attempt or if that was the best rally it could put together for now.",
       "author": {
@@ -749,7 +518,7 @@
       },
       "created_at": "",
       "url": "https://twitter.com/IncomeSharks/status/1999590993310679334",
-      "processed": false,
+      "processed": true,
       "addedAt": "2025-12-15T07:24:14.704Z",
       "expiresAt": "2025-12-22T07:24:14.704Z",
       "source": "timeline_monitor",
@@ -770,7 +539,7 @@
       },
       "created_at": "",
       "url": "https://twitter.com/AltcoinSherpa/status/2000324570637861276",
-      "processed": false,
+      "processed": true,
       "addedAt": "2025-12-15T07:24:23.927Z",
       "expiresAt": "2025-12-22T07:24:23.927Z",
       "source": "timeline_monitor",
@@ -791,7 +560,7 @@
       },
       "created_at": "",
       "url": "https://twitter.com/Pentosh1/status/1994129377035182177",
-      "processed": false,
+      "processed": true,
       "addedAt": "2025-12-15T07:25:31.547Z",
       "expiresAt": "2025-12-22T07:25:31.547Z",
       "source": "timeline_monitor",
