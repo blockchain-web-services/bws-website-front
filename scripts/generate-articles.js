@@ -1148,9 +1148,11 @@ async function processArticles(articleDataList, tweets, includes) {
 
 /**
  * Load existing articles from JSON metadata file
+ * Falls back to parsing articles.ts if JSON doesn't exist yet (migration)
  */
 function loadArticlesMetadata() {
   try {
+    // Try loading from JSON metadata file first (source of truth)
     if (fs.existsSync(ARTICLES_METADATA_PATH)) {
       const data = JSON.parse(fs.readFileSync(ARTICLES_METADATA_PATH, 'utf-8'));
       console.log(`   📚 Loaded ${data.articles.length} existing articles from metadata file`);
@@ -1160,7 +1162,70 @@ function loadArticlesMetadata() {
     console.warn(`   ⚠️  Error loading articles metadata: ${error.message}`);
   }
 
-  console.log('   ℹ️  No existing articles metadata found, starting fresh');
+  // Fallback: Parse existing articles from articles.ts (for initial migration)
+  try {
+    console.log('   ℹ️  No JSON metadata found, attempting to parse articles.ts...');
+    if (fs.existsSync(ARTICLES_FILE_PATH)) {
+      const content = fs.readFileSync(ARTICLES_FILE_PATH, 'utf-8');
+
+      // Extract the articles array content
+      const arrayMatch = content.match(/export const articles: ArticleMetadata\[\] = \[([\s\S]*?)\];/);
+      if (arrayMatch && arrayMatch[1].trim()) {
+        // Convert TypeScript object notation to JSON-like format
+        const arrayContent = arrayMatch[1];
+
+        // Simple regex-based extraction (handles single-line and multi-line objects)
+        const articles = [];
+        const objectMatches = arrayContent.matchAll(/\{([^}]+)\}/gs);
+
+        for (const match of objectMatches) {
+          const objectContent = match[1];
+          const article = {};
+
+          // Extract each field
+          const extractField = (fieldName) => {
+            const regex = new RegExp(`${fieldName}:\\s*'([^']*)'`, 'g');
+            const fieldMatch = regex.exec(objectContent);
+            return fieldMatch ? fieldMatch[1] : '';
+          };
+
+          article.slug = extractField('slug');
+          article.product = extractField('product');
+          article.title = extractField('title').replace(/\\'/g, "'");
+          article.subtitle = extractField('subtitle').replace(/\\'/g, "'");
+          article.publishDate = extractField('publishDate');
+          article.tweetId = extractField('tweetId');
+          article.seoDescription = extractField('seoDescription').replace(/\\'/g, "'");
+
+          // Extract featuredImage (nested object)
+          const imageMatch = objectContent.match(/featuredImage:\s*\{([^}]+)\}/);
+          if (imageMatch) {
+            const imageSrc = extractField('src');
+            const imageAlt = extractField('alt').replace(/\\'/g, "'");
+            const imageLoading = extractField('loading');
+            article.featuredImage = {
+              src: imageSrc,
+              alt: imageAlt,
+              loading: imageLoading
+            };
+          }
+
+          if (article.slug) {
+            articles.push(article);
+          }
+        }
+
+        if (articles.length > 0) {
+          console.log(`   📚 Parsed ${articles.length} existing articles from articles.ts`);
+          return articles;
+        }
+      }
+    }
+  } catch (error) {
+    console.warn(`   ⚠️  Error parsing articles.ts: ${error.message}`);
+  }
+
+  console.log('   ℹ️  No existing articles found, starting fresh');
   return [];
 }
 
