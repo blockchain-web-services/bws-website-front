@@ -3,8 +3,10 @@
     "lastGenerated": "2025-12-16T12:09:43.049Z",
     "totalPosts": 54,
     "totalArticles": 18,
-    "pendingPosts": 28,
-    "postedCount": 19
+    "pendingPosts": 27,
+    "postedCount": 20,
+    "lastPosted": "2025-12-16T16:07:07.303Z",
+    "failedCount": 7
   },
   "posts": [
     {
@@ -1434,17 +1436,19 @@
         "SportsNFT"
       ],
       "priority": "high",
-      "status": "pending",
+      "status": "posted",
       "scheduledFor": null,
-      "postedAt": null,
-      "tweetId": null,
+      "postedAt": "2025-12-16T16:07:07.129Z",
+      "tweetId": "2000960890032804267",
       "generatedAt": "2025-12-16T12:09:43.049Z",
       "metadata": {
         "articleTitle": "Fan Game Cube: Tokenize Sports Fields into Interactive NFT Zones",
         "articlePublishDate": "2025-12-16T10:36:57.300Z",
         "mainTextLength": 195,
         "fullTextLength": 360
-      }
+      },
+      "tweetUrl": "https://twitter.com/i/web/status/2000960890032804267",
+      "error": null
     },
     {
       "id": "060542c2-ee62-4940-9e90-5ef3256c1662",
