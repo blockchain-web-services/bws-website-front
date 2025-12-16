@@ -59,7 +59,7 @@ async function loadEngagingPosts() {
     const data = JSON.parse(await fs.readFile(ENGAGING_POSTS_PATH, 'utf-8'));
 
     const now = new Date().getTime();
-    const TWENTY_FOUR_HOURS = 24 * 60 * 60 * 1000;
+    const THIRTY_SIX_HOURS = 36 * 60 * 60 * 1000;
     const FORTY_EIGHT_HOURS = 48 * 60 * 60 * 1000;
 
     // Separate posts into valid (fresh) and stale (to remove)
@@ -86,8 +86,8 @@ async function loadEngagingPosts() {
           return;
         }
 
-        // Skip (but keep in file) posts between 24-48 hours old
-        if (tweetAge > TWENTY_FOUR_HOURS) {
+        // Skip (but keep in file) posts between 36-48 hours old
+        if (tweetAge > THIRTY_SIX_HOURS) {
           validPosts.push(post);
           skippedOld++;
           return;
@@ -103,7 +103,7 @@ async function loadEngagingPosts() {
           return;
         }
 
-        if (tweetAge > TWENTY_FOUR_HOURS) {
+        if (tweetAge > THIRTY_SIX_HOURS) {
           validPosts.push(post);
           skippedOld++;
           return;
@@ -128,7 +128,7 @@ async function loadEngagingPosts() {
       console.log(`🧹 Removing ${stalePosts.length} stale posts (>48 hours old)`);
     }
     if (skippedOld > 0) {
-      console.log(`⏭️  Skipping ${skippedOld} posts between 24-48 hours old (too old to reply)`);
+      console.log(`⏭️  Skipping ${skippedOld} posts between 36-48 hours old (too old to reply)`);
     }
 
     // Calculate fresh posts available for reply
@@ -136,10 +136,10 @@ async function loadEngagingPosts() {
       if (p.processed) return false;
       if (!p.created_at) return true; // Legacy posts
       const createdAt = new Date(p.created_at).getTime();
-      return (now - createdAt) <= TWENTY_FOUR_HOURS;
+      return (now - createdAt) <= THIRTY_SIX_HOURS;
     });
 
-    console.log(`📋 Found ${freshPosts.length} fresh posts (<24h old) available for reply`);
+    console.log(`📋 Found ${freshPosts.length} fresh posts (<36h old) available for reply`);
 
     return {
       ...data,
@@ -406,9 +406,9 @@ async function replyToKolPosts() {
   // This ensures rotation persists across workflow runs
   processedPosts.productRotation = engagingPostsData.productRotation;
 
-  // Note: engagingPostsData.posts is already filtered for freshness (<24h old) and unprocessed status
+  // Note: engagingPostsData.posts is already filtered for freshness (<36h old) and unprocessed status
   const unprocessedCount = engagingPostsData.posts.filter(p => !p.processed).length;
-  console.log(`📋 Loaded ${engagingPostsData.posts.length} total posts (${unprocessedCount} unprocessed, fresh < 24h)\n`);
+  console.log(`📋 Loaded ${engagingPostsData.posts.length} total posts (${unprocessedCount} unprocessed, fresh < 36h)\n`);
 
   if (engagingPostsData.posts.length === 0) {
     console.log('⚠️  No engaging posts to process. Exiting...');
@@ -505,6 +505,15 @@ async function replyToKolPosts() {
       kol = kolsData.kols.find(k => k.username === post.author.username);
       if (!kol) {
         console.log(`⚠️  KOL @${post.author.username} not found in database. Skipping...`);
+        post.processed = true;
+        tweetsSkipped++;
+        continue;
+      }
+
+      // CRITICAL: Check if we've already replied to this specific tweet
+      const alreadyRepliedToTweet = repliesData.replies.some(r => r.tweetId === post.id);
+      if (alreadyRepliedToTweet) {
+        console.log(`⏭️  Already replied to this specific tweet (${post.id}). Skipping...`);
         post.processed = true;
         tweetsSkipped++;
         continue;
