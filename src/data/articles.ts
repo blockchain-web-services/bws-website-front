@@ -19,17 +19,31 @@ export interface ArticleMetadata {
 
 export const articles: ArticleMetadata[] = [
 {
-  slug: 'blockchain-badges-2025-12-16',
+  slug: 'fan-game-cube-2025-12-16',
+  product: 'Fan Game Cube',
+  title: 'Fan Game Cube: Tokenize Sports Fields into Interactive NFT Zones',
+  subtitle: 'Sports clubs face a persistent challenge: monetizing fan engagement beyond traditional merchandise and tickets. Fan Game Cube offers a breakthrough solution by tokenizing stadium fields into NFT zones, where fans own specific coordinates and earn points as real-time match events unfold at their locations—creating entirely new revenue streams.',
+  publishDate: '2025-12-16T10:36:57.300Z',
+  tweetId: '',
+  featuredImage: {
+    src: '/assets/images/docs/fan-game-cube/fan-game-cube-0.png',
+    alt: 'Product screenshot',
+    loading: 'eager'
+  },
+  seoDescription: 'Fan Game Cube tokenizes sports fields into interactive NFT zones where fans earn rewards from real-time match events at their owned coordinates.'
+},
+{
+  slug: 'blockchain-badges-2025-12-12',
   product: 'Blockchain Badges',
-  title: 'Blockchain Badges: Immutable Digital Credentials with Instant Verification',
-  subtitle: 'Universities and enterprises lose billions annually to credential fraud, while manual verification processes drain resources and delay critical hiring decisions. Blockchain Badges transforms this broken system by providing immutable proof of achievements with instant verification, intuitive visual design tools, and bulk issuance capabilities that scale with organizational needs.',
-  publishDate: '2025-12-16T10:03:24.725Z',
+  title: 'Blockchain Badges: Issue Tamper-Proof Digital Credentials with Blockchain Verification',
+  subtitle: 'Traditional credential verification traps organizations in a cycle of repetitive processes, document uploads, and manual verification calls that waste time and create security vulnerabilities. Blockchain Badges breaks this cycle by issuing tamper-proof digital credentials with immutable blockchain proof—enabling instant verification by anyone, anywhere, without the friction.',
+  publishDate: '2025-12-12T10:04:02.390Z',
   tweetId: '',
   featuredImage: {
     src: '/assets/images/docs/blockchain-badges/blockchain-badges-0.png',
     alt: 'Cover',
     loading: 'eager'
   },
-  seoDescription: 'Blockchain Badges delivers immutable digital credentials with instant verification, visual badge design, and bulk issuance for universities and enterprises fighting credential fraud.'
+  seoDescription: 'Blockchain Badges creates verifiable digital credentials with immutable blockchain proof for universities and organizations, eliminating repetitive verification.'
 }
 ];
