@@ -111,6 +111,12 @@ jobs:
             -m "" \
             -m "Co-Authored-By: Claude <noreply@anthropic.com>"
 
+          # Pull latest changes to avoid race condition with other workflows
+          git pull --rebase origin master || {
+            echo "⚠️  Failed to rebase, attempting merge..."
+            git pull --no-rebase origin master
+          }
+
           git push
 
       - name: Summary

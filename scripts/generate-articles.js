@@ -27,6 +27,7 @@ const PROCESSED_TWEETS_PATH = path.join(__dirname, 'data', 'processed-article-tw
 // Product rotation order (1 article per day, rotating through products)
 const PRODUCT_ROTATION = ['X Bot', 'Blockchain Badges', 'ESG Credits', 'Fan Game Cube'];
 const ARTICLES_FILE_PATH = path.join(__dirname, '..', 'src', 'data', 'articles.ts');
+const ARTICLES_METADATA_PATH = path.join(__dirname, 'data', 'articles-metadata.json'); // JSON source of truth
 const ARTICLE_IMAGES_DIR = path.join(__dirname, '..', 'public', 'assets', 'images', 'articles');
 const ARTICLE_PAGES_DIR = path.join(__dirname, '..', 'src', 'pages', 'articles');
 const ARTICLE_COMPONENTS_DIR = path.join(__dirname, '..', 'src', 'components', 'articles');
@@ -1146,12 +1147,143 @@ async function processArticles(articleDataList, tweets, includes) {
 }
 
 /**
- * Write articles metadata to articles.ts
+ * Load existing articles from JSON metadata file
+ * Falls back to parsing articles.ts if JSON doesn't exist yet (migration)
  */
-function writeArticlesFile(articles) {
+function loadArticlesMetadata() {
+  try {
+    // Try loading from JSON metadata file first (source of truth)
+    if (fs.existsSync(ARTICLES_METADATA_PATH)) {
+      const data = JSON.parse(fs.readFileSync(ARTICLES_METADATA_PATH, 'utf-8'));
+      console.log(`   📚 Loaded ${data.articles.length} existing articles from metadata file`);
+      return data.articles;
+    }
+  } catch (error) {
+    console.warn(`   ⚠️  Error loading articles metadata: ${error.message}`);
+  }
+
+  // Fallback: Parse existing articles from articles.ts (for initial migration)
+  try {
+    console.log('   ℹ️  No JSON metadata found, attempting to parse articles.ts...');
+    if (fs.existsSync(ARTICLES_FILE_PATH)) {
+      const content = fs.readFileSync(ARTICLES_FILE_PATH, 'utf-8');
+
+      // Extract the articles array content
+      const arrayMatch = content.match(/export const articles: ArticleMetadata\[\] = \[([\s\S]*?)\];/);
+      if (arrayMatch && arrayMatch[1].trim()) {
+        // Convert TypeScript object notation to JSON-like format
+        const arrayContent = arrayMatch[1];
+
+        // Simple regex-based extraction (handles single-line and multi-line objects)
+        const articles = [];
+        const objectMatches = arrayContent.matchAll(/\{([^}]+)\}/gs);
+
+        for (const match of objectMatches) {
+          const objectContent = match[1];
+          const article = {};
+
+          // Extract each field
+          const extractField = (fieldName) => {
+            const regex = new RegExp(`${fieldName}:\\s*'([^']*)'`, 'g');
+            const fieldMatch = regex.exec(objectContent);
+            return fieldMatch ? fieldMatch[1] : '';
+          };
+
+          article.slug = extractField('slug');
+          article.product = extractField('product');
+          article.title = extractField('title').replace(/\\'/g, "'");
+          article.subtitle = extractField('subtitle').replace(/\\'/g, "'");
+          article.publishDate = extractField('publishDate');
+          article.tweetId = extractField('tweetId');
+          article.seoDescription = extractField('seoDescription').replace(/\\'/g, "'");
+
+          // Extract featuredImage (nested object)
+          const imageMatch = objectContent.match(/featuredImage:\s*\{([^}]+)\}/);
+          if (imageMatch) {
+            const imageSrc = extractField('src');
+            const imageAlt = extractField('alt').replace(/\\'/g, "'");
+            const imageLoading = extractField('loading');
+            article.featuredImage = {
+              src: imageSrc,
+              alt: imageAlt,
+              loading: imageLoading
+            };
+          }
+
+          if (article.slug) {
+            articles.push(article);
+          }
+        }
+
+        if (articles.length > 0) {
+          console.log(`   📚 Parsed ${articles.length} existing articles from articles.ts`);
+          return articles;
+        }
+      }
+    }
+  } catch (error) {
+    console.warn(`   ⚠️  Error parsing articles.ts: ${error.message}`);
+  }
+
+  console.log('   ℹ️  No existing articles found, starting fresh');
+  return [];
+}
+
+/**
+ * Save articles metadata to JSON file
+ */
+function saveArticlesMetadata(articles) {
+  const data = {
+    lastUpdated: new Date().toISOString(),
+    totalArticles: articles.length,
+    articles: articles
+  };
+
+  fs.writeFileSync(ARTICLES_METADATA_PATH, JSON.stringify(data, null, 2));
+  console.log(`   ✅ Saved ${articles.length} articles to metadata file`);
+}
+
+/**
+ * Write articles metadata to articles.ts
+ * IMPORTANT: This function now APPENDS new articles instead of replacing all
+ */
+function writeArticlesFile(newArticles) {
   console.log('\n   📝 Writing articles metadata to file...');
 
-  // Read current file to preserve interfaces
+  // Load existing articles from JSON metadata file
+  const existingArticles = loadArticlesMetadata();
+  const existingSlugs = new Set(existingArticles.map(a => a.slug));
+
+  // Filter out duplicates from new articles
+  const uniqueNewArticles = newArticles.filter(article => {
+    if (existingSlugs.has(article.slug)) {
+      console.log(`   ⏭️  Skipping duplicate article: ${article.slug}`);
+      return false;
+    }
+    return true;
+  });
+
+  if (uniqueNewArticles.length === 0) {
+    console.log('   ℹ️  No new articles to add (all duplicates)');
+    return;
+  }
+
+  // Merge: existing articles + new unique articles
+  const allArticles = [...existingArticles, ...uniqueNewArticles];
+
+  // Sort by publishDate (newest first)
+  allArticles.sort((a, b) => {
+    const dateA = new Date(a.publishDate).getTime();
+    const dateB = new Date(b.publishDate).getTime();
+    return dateB - dateA; // Descending (newest first)
+  });
+
+  console.log(`   📊 Total articles after merge: ${allArticles.length} (${existingArticles.length} existing + ${uniqueNewArticles.length} new)`);
+
+  // Save to JSON metadata file (source of truth)
+  saveArticlesMetadata(allArticles);
+
+  // Read current TypeScript file to preserve interfaces
   const currentContent = fs.readFileSync(ARTICLES_FILE_PATH, 'utf-8');
 
   // Find where the export starts
@@ -1162,8 +1294,8 @@ function writeArticlesFile(articles) {
 
   const beforeExport = currentContent.substring(0, exportMatch.index + exportMatch[0].length);
 
-  // Generate articles code
-  const articlesCode = articles.map(article => {
+  // Generate articles code for ALL articles
+  const articlesCode = allArticles.map(article => {
     let code = `\n{\n`;
     code += `  slug: '${article.slug}',\n`;
     code += `  product: '${article.product}',\n`;
@@ -1188,7 +1320,7 @@ function writeArticlesFile(articles) {
 
   const newContent = beforeExport + articlesCode + '\n];\n';
   fs.writeFileSync(ARTICLES_FILE_PATH, newContent);
-  console.log(`   ✅ Written ${articles.length} articles to ${ARTICLES_FILE_PATH}`);
+  console.log(`   ✅ Written ${allArticles.length} articles to ${ARTICLES_FILE_PATH}`);
 }
 
 /**

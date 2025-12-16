@@ -286,12 +286,12 @@ Stats:
 
 ## Automation Status Overview
 
-**Last Updated**: December 12, 2025
+**Last Updated**: December 15, 2025 at 18:56 UTC (Automated check of last 3 days)
 
 **Legend:**
-- ✅ **Working** - 100% success rate (last 3 runs)
-- ⚠️ **Partial** - 33-67% success rate (last 3 runs)
-- 🔴 **Failing** - 0-33% success rate (last 3 runs)
+- ✅ **Working** - 100% success rate (last 3 days)
+- ⚠️ **Partial** - 33-99% success rate (last 3 days)
+- 🔴 **Failing** - 0-33% success rate (last 3 days)
 - ❌ **Deprecated** - Removed or disabled
 
 ### System Statistics (Real-Time)
@@ -308,10 +308,10 @@ Stats:
 
 | Automation | Status | Success Rate | Last Run | Details | Schedule | Credentials |
 |------------|--------|--------------|----------|---------|----------|-------------|
-| Content Discovery - Crawlee | ✅ | 100% (3/3) | Dec 12, 07:37 UTC | Found content from multiple sources | 4x daily (6hr intervals) | `OXYLABS_USERNAME`, `OXYLABS_PASSWORD`, `ANTHROPIC_API_KEY` |
-| KOL Timeline Monitoring | ✅ | 100% (3/3) | Dec 12, 07:22 UTC | **22 KOLs monitored**, 259 posts saved, 20 passed filters (project-discussion: 10, altcoin-talk: 5, market-trends: 4) | Every 5 hours | `OXYLABS_USERNAME`, `OXYLABS_PASSWORD`, `ANTHROPIC_API_KEY` |
-| Search-Based Discovery (Dynamic) | 🔴 | 0% (1/3) | Dec 12, 06:42 UTC | **FAILURE** - Needs investigation | Tue/Thu/Sat 14:00 UTC | `OXYLABS_USERNAME`, `OXYLABS_PASSWORD`, `ANTHROPIC_API_KEY` |
-| Discover Documentation Pages | ✅ | 100% (3/3) | Dec 12, 02:40 UTC | Documentation index maintained | Daily 02:35 UTC | `OXYLABS_USERNAME`, `OXYLABS_PASSWORD` |
+| Content Discovery - Crawlee | ✅ | 100% (12/12) | Dec 15, 13:09 UTC | Found content from multiple sources | 4x daily (6hr intervals) | `OXYLABS_USERNAME`, `OXYLABS_PASSWORD`, `ANTHROPIC_API_KEY` |
+| KOL Timeline Monitoring | ⚠️ | 91.7% (11/12) | Dec 15, 13:45 UTC | **22 KOLs monitored**, 1 run in progress | Every 5 hours | `OXYLABS_USERNAME`, `OXYLABS_PASSWORD`, `ANTHROPIC_API_KEY` |
+| Search-Based Discovery (Dynamic) | 🔴 | 0% (0/1) | Dec 15, 07:43 UTC | **FAILURE** - Run #20223003469 failed, needs investigation | Tue/Thu/Sat 14:00 UTC | `OXYLABS_USERNAME`, `OXYLABS_PASSWORD`, `ANTHROPIC_API_KEY` |
+| Discover Documentation Pages | ✅ | 100% (3/3) | Dec 15, 03:44 UTC | Documentation index maintained | Daily 02:35 UTC | `OXYLABS_USERNAME`, `OXYLABS_PASSWORD` |
 | Index Documentation Site | ✅ | 100% (3/3) | Dec 12, 03:34 UTC | **73 pages indexed**, 8 products categorized | After docs discovery | `ANTHROPIC_API_KEY` |
 | Discover Product Tweets | ✅ | 100% (1/1) | Dec 12, 09:00 UTC | **WORKING** - 58 tweets discovered (Blockchain Badges: 13, BWS IPFS: 16, NFT.zK: 18, Blockchain Hash: 11), queue populated | Daily 08:00 UTC | `OXYLABS_USERNAME`, `OXYLABS_PASSWORD`, `ANTHROPIC_API_KEY` |
 
@@ -319,14 +319,14 @@ Stats:
 
 | Automation | Status | Success Rate | Last Run | Details | Schedule | Credentials |
 |------------|--------|--------------|----------|---------|----------|-------------|
-| KOL Reply Cycle | ✅ | 100% (3/3) | Dec 12, 07:37 UTC | **2 replies posted** (to @CryptoRover, @cobie), 10 tweets evaluated, 2/30 daily limit, followed KOLs, liked tweets, images attached | 4x daily (randomized) | `TWITTER_*` (4 vars), `ANTHROPIC_API_KEY`, `OXYLABS_*` (2 vars), `SEARCH1_*` (2 vars), `PAT_REPOS_AND_WORKFLOW` |
+| KOL Reply Cycle | ⚠️ | 83.3% (15/18) | Dec 15, 13:57 UTC | **3 failures in last 3 days** - Runs #20218960217, #20218959884, #20219006026 failed, needs investigation | 4x daily (randomized) | `TWITTER_*` (4 vars), `ANTHROPIC_API_KEY`, `OXYLABS_*` (2 vars), `SEARCH1_*` (2 vars), `PAT_REPOS_AND_WORKFLOW` |
 
 ### Content Generation & Posting
 
 | Automation | Status | Success Rate | Last Run | Details | Schedule | Credentials |
 |------------|--------|--------------|----------|---------|----------|-------------|
 | Generate Articles from X Posts | ✅ | 100% (3/3) | Dec 11, 19:33 UTC | **1 article generated** (X Bot), 50 tweets analyzed, product rotation 1/4, AI-generated content | Manual trigger | `TWITTER_BEARER_TOKEN`, `ANTHROPIC_API_KEY` |
-| Post Article Content to X | ✅ | 100% (3/3) | Dec 12, 08:06 UTC | Posted article announcements to @BWSCommunity | Daily (randomized) + after article gen | `TWITTER_*` (4 vars), `ANTHROPIC_API_KEY`, `OXYLABS_*` (2 vars), `PAT_REPOS_AND_WORKFLOW` |
+| Post Article Content to X | ✅ | 100% (18/18) | Dec 15, 14:02 UTC | Posted article announcements to @BWSCommunity | Daily (randomized) + after article gen | `TWITTER_*` (4 vars), `ANTHROPIC_API_KEY`, `OXYLABS_*` (2 vars), `PAT_REPOS_AND_WORKFLOW` |
 | Weekly X Post | ✅ | 100% (3/3) | Dec 5, 17:13 UTC | Weekly development updates across BWS products | Daily 14:00 UTC (checks content) | `TWITTER_*` (4 vars), `ANTHROPIC_API_KEY`, `PAT_REPOS_AND_WORKFLOW`, `PAT_GITHUB_ACTIONS` |
 | Fetch Twitter Partnerships | ✅ | 100% (3/3) | Recent | Partnership announcements from @BWSCommunity | Daily 09:00 UTC | `TWITTER_BEARER_TOKEN`, `ANTHROPIC_API_KEY` |
 
