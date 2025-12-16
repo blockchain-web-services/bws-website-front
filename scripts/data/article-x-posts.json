@@ -1,12 +1,10 @@
 {
   "metadata": {
-    "lastGenerated": "2025-12-15T12:09:44.806Z",
-    "totalPosts": 51,
-    "totalArticles": 17,
-    "pendingPosts": 25,
-    "postedCount": 19,
-    "lastPosted": "2025-12-16T08:07:55.550Z",
-    "failedCount": 7
+    "lastGenerated": "2025-12-16T12:09:43.049Z",
+    "totalPosts": 54,
+    "totalArticles": 18,
+    "pendingPosts": 28,
+    "postedCount": 19
   },
   "posts": [
     {
@@ -1420,6 +1418,84 @@
         "articlePublishDate": "2025-12-15T10:04:03.666Z",
         "mainTextLength": 200,
         "fullTextLength": 358
+      }
+    },
+    {
+      "id": "1eda1cc8-d4cd-4725-9d58-12c8a0bd5f9d",
+      "articleSlug": "fan-game-cube-2025-12-16",
+      "product": "Fan Game Cube",
+      "type": "overview",
+      "text": "Fan Game Cube tokenizes stadium fields into NFT coordinate zones. Fans own specific field locations and earn points when match events occur at their coordinates. Built by @BWSCommunity using $BWS\n\n📖 Article: https://www.bws.ninja/articles/fan-game-cube-2025-12-16\n📚 Docs: https://docs.bws.ninja/marketplace-solutions/bws.nft.gamecube\n\n#FanGameCube #SportsNFT",
+      "mainText": "Fan Game Cube tokenizes stadium fields into NFT coordinate zones. Fans own specific field locations and earn points when match events occur at their coordinates. Built by @BWSCommunity using $BWS",
+      "articleUrl": "https://www.bws.ninja/articles/fan-game-cube-2025-12-16",
+      "docsUrl": "https://docs.bws.ninja/marketplace-solutions/bws.nft.gamecube",
+      "hashtags": [
+        "FanGameCube",
+        "SportsNFT"
+      ],
+      "priority": "high",
+      "status": "pending",
+      "scheduledFor": null,
+      "postedAt": null,
+      "tweetId": null,
+      "generatedAt": "2025-12-16T12:09:43.049Z",
+      "metadata": {
+        "articleTitle": "Fan Game Cube: Tokenize Sports Fields into Interactive NFT Zones",
+        "articlePublishDate": "2025-12-16T10:36:57.300Z",
+        "mainTextLength": 195,
+        "fullTextLength": 360
+      }
+    },
+    {
+      "id": "060542c2-ee62-4940-9e90-5ef3256c1662",
+      "articleSlug": "fan-game-cube-2025-12-16",
+      "product": "Fan Game Cube",
+      "type": "feature",
+      "text": "The platform tracks real-time match events and maps them to field coordinates. NFT owners at event locations automatically receive points through smart contract execution. @BWSCommunity $BWS\n\n📖 Article: https://www.bws.ninja/articles/fan-game-cube-2025-12-16\n📚 Docs: https://docs.bws.ninja/marketplace-solutions/bws.nft.gamecube\n\n#NFTUtility #SmartContracts",
+      "mainText": "The platform tracks real-time match events and maps them to field coordinates. NFT owners at event locations automatically receive points through smart contract execution. @BWSCommunity $BWS",
+      "articleUrl": "https://www.bws.ninja/articles/fan-game-cube-2025-12-16",
+      "docsUrl": "https://docs.bws.ninja/marketplace-solutions/bws.nft.gamecube",
+      "hashtags": [
+        "NFTUtility",
+        "SmartContracts"
+      ],
+      "priority": "medium",
+      "status": "pending",
+      "scheduledFor": null,
+      "postedAt": null,
+      "tweetId": null,
+      "generatedAt": "2025-12-16T12:09:43.049Z",
+      "metadata": {
+        "articleTitle": "Fan Game Cube: Tokenize Sports Fields into Interactive NFT Zones",
+        "articlePublishDate": "2025-12-16T10:36:57.300Z",
+        "mainTextLength": 190,
+        "fullTextLength": 359
+      }
+    },
+    {
+      "id": "27228a56-468d-4590-beb0-debb8088fe7c",
+      "articleSlug": "fan-game-cube-2025-12-16",
+      "product": "Fan Game Cube",
+      "type": "implementation",
+      "text": "Sports clubs mint coordinate-based NFTs representing sections of their field. During matches, goals or penalties trigger point allocation to NFT holders at those field positions. @BWSCommunity $BWS\n\n📖 Article: https://www.bws.ninja/articles/fan-game-cube-2025-12-16\n📚 Docs: https://docs.bws.ninja/marketplace-solutions/bws.nft.gamecube\n\n#SportsWeb3 #FanEngagement",
+      "mainText": "Sports clubs mint coordinate-based NFTs representing sections of their field. During matches, goals or penalties trigger point allocation to NFT holders at those field positions. @BWSCommunity $BWS",
+      "articleUrl": "https://www.bws.ninja/articles/fan-game-cube-2025-12-16",
+      "docsUrl": "https://docs.bws.ninja/marketplace-solutions/bws.nft.gamecube",
+      "hashtags": [
+        "SportsWeb3",
+        "FanEngagement"
+      ],
+      "priority": "medium",
+      "status": "pending",
+      "scheduledFor": null,
+      "postedAt": null,
+      "tweetId": null,
+      "generatedAt": "2025-12-16T12:09:43.049Z",
+      "metadata": {
+        "articleTitle": "Fan Game Cube: Tokenize Sports Fields into Interactive NFT Zones",
+        "articlePublishDate": "2025-12-16T10:36:57.300Z",
+        "mainTextLength": 197,
+        "fullTextLength": 365
       }
     }
   ]
