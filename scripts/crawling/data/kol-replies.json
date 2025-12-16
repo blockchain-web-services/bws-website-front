@@ -2758,6 +2758,44 @@
       "timestamp": "2025-12-15T23:20:14.263Z",
       "status": "posted",
       "dryRun": false
+    },
+    {
+      "id": "1353384573435056128-1994142556071031079-1765870688607",
+      "tweetId": "1994142556071031079",
+      "tweetUrl": "https://twitter.com/CryptoRover/status/1994142556071031079",
+      "kolId": "1353384573435056128",
+      "kolUsername": "CryptoRover",
+      "originalTweetText": "BREAKING:\n\nBLACKROCK CEO LARRY FINK: IT DOESN'T MATTER IF MARKETS RISE AND FALL. BUBBLES COME AND GO.\n\nWHAT MATTERS MOST IS STAYING IN THE MARKET THROUGH ALL CYCLES.",
+      "replyTweetId": "2000832802070155502",
+      "replyText": "Universities and enterprises struggle with credential fraud while manual verification processes drain resources and delay hiring decisions.\n\nThe solution: Blockchain Badges from $BWS provides immutable proof of achievements with visual badge designer and bulk issuance for institutions.\n\nTamper-proof credentials that last through every market cycle.\n\n@BWSCommunity #microcap #blockchain #fundamentals https://docs.bws.ninja/marketplace-solutions/bws.blockchain.badges",
+      "productMentioned": "X Bot, Blockchain Badges",
+      "relevanceScore": 82,
+      "templateUsed": "problem_solution",
+      "templateName": "Problem-Solution Structure",
+      "imageAttached": true,
+      "imagePath": "/assets/images/docs/blockchain-badges/blockchain-badges-0.png",
+      "timestamp": "2025-12-16T07:38:08.607Z",
+      "status": "posted",
+      "dryRun": false
+    },
+    {
+      "id": "2259434528-1998053731502375376-1765870783761",
+      "tweetId": "1998053731502375376",
+      "tweetUrl": "https://twitter.com/cobie/status/1998053731502375376",
+      "kolId": "2259434528",
+      "kolUsername": "cobie",
+      "originalTweetText": "Point to the last three pieces of alpha u found actionable from twitter",
+      "replyTweetId": "2000833201619558861",
+      "replyText": "Fair challenge - most Twitter alpha is noise.\n\nConsider this: $BWS ESG Credits enables banks to deliver blockchain-verified environmental impact reporting with ICMA framework compliance through REST API. Financial institutions get regulatory-ready green investment tracking at microcap valuation.\n\n@BWSCommunity #microcap #fintech #ESG https://docs.bws.ninja/marketplace-solutions/bws.esg.credits",
+      "productMentioned": "X Bot (Twitter Analytics), Blockchain Badges",
+      "relevanceScore": 88,
+      "templateUsed": "stat_driven",
+      "templateName": "Stat/Fact-Driven Structure",
+      "imageAttached": false,
+      "imagePath": null,
+      "timestamp": "2025-12-16T07:39:43.761Z",
+      "status": "posted",
+      "dryRun": false
     }
   ],
   "dailyStats": {
@@ -2832,10 +2870,10 @@
     }
   },
   "metadata": {
-    "totalReplies": 137,
-    "successfulReplies": 103,
+    "totalReplies": 139,
+    "successfulReplies": 105,
     "failedReplies": 34,
-    "lastReplyAt": "2025-12-15T23:20:14.263Z",
+    "lastReplyAt": "2025-12-16T07:39:43.761Z",
     "todayRepliesCount": 0,
     "lastUpdateBy": "kol-system"
   }
