@@ -78,7 +78,8 @@ jobs:
             src/pages/articles/ \
             src/components/articles/ \
             public/assets/images/articles/ \
-            scripts/data/processed-article-tweets.json
+            scripts/data/processed-article-tweets.json \
+            scripts/data/articles-metadata.json
           git commit -m "Generate articles from X posts
 
           🤖 Generated with [Claude Code](https://claude.com/claude-code)
