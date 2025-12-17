@@ -2872,6 +2872,63 @@
       "timestamp": "2025-12-16T19:55:23.326Z",
       "status": "posted",
       "dryRun": false
+    },
+    {
+      "id": "877357064724520961-2000571806491496650-1765985412116",
+      "tweetId": "2000571806491496650",
+      "tweetUrl": "https://twitter.com/CryptosR_Us/status/2000571806491496650",
+      "kolId": "877357064724520961",
+      "kolUsername": "CryptosR_Us",
+      "originalTweetText": "Jim Cramer Says Buy $BTC ; No Derivatives! Altcoin Season Just Got a Green Light \n\nJim Cramer:\n\"I like Bitcoin and I think you should just own Bitcoin. I don't want any derivative of Bitcoin. I just want Bitcoin.\"  \n\nCramer indicator usually works in reverse… Could this be the",
+      "replyTweetId": "2001313987745472763",
+      "replyText": "Derivatives vs fundamentals - good lens for evaluating opportunities.\n\nConsider this: $BWS Blockchain Hash lets developers build updatable databases on blockchain through REST API - key-value storage with no wallet management or gas fees required. Real infrastructure at microcap valuation.\n\n@BWSCommunity #microcap #blockchain #fundamentals https://docs.bws.ninja/solutions/bws.blockchain.hash",
+      "productMentioned": "X Bot",
+      "relevanceScore": 85,
+      "templateUsed": "stat_driven",
+      "templateName": "Stat/Fact-Driven Structure",
+      "imageAttached": false,
+      "imagePath": null,
+      "timestamp": "2025-12-17T15:30:12.116Z",
+      "status": "posted",
+      "dryRun": false
+    },
+    {
+      "id": "877357064724520961-2000471895502729654-1765985474460",
+      "tweetId": "2000471895502729654",
+      "tweetUrl": "https://twitter.com/CryptosR_Us/status/2000471895502729654",
+      "kolId": "877357064724520961",
+      "kolUsername": "CryptosR_Us",
+      "originalTweetText": "NATE GERACI ON BITCOIN & CRYPTO: 2026 IS THE MAINSTREAM YEAR  \n\nNate Geraci, prominent ETF expert and financial strategist, just tweeted: \n\n“2026 will be the year crypto truly goes mainstream IMO… Full regulatory framework will be implemented. Rapidly growing institutional",
+      "replyTweetId": "2001314248564035643",
+      "replyText": "Regulatory clarity will separate infrastructure providers from hype projects.\n\n$BWS NFT.zK enables brands to distribute NFTs via email without requiring wallet setup - bulk minting with single API call while BWS handles all blockchain complexity behind the scenes.\n\n@BWSCommunity #microcap #NFT #fundamentals https://docs.bws.ninja/solutions/bws.nft.zk",
+      "productMentioned": "X Bot, Blockchain Badges",
+      "relevanceScore": 82,
+      "templateUsed": "classic",
+      "templateName": "Classic Structure",
+      "imageAttached": true,
+      "imagePath": "/assets/images/docs/nftzk/nftzk-0.png",
+      "timestamp": "2025-12-17T15:31:14.460Z",
+      "status": "posted",
+      "dryRun": false
+    },
+    {
+      "id": "1138993163706753029-1994121080458629611-1765985511122",
+      "tweetId": "1994121080458629611",
+      "tweetUrl": "https://twitter.com/Pentosh1/status/1994121080458629611",
+      "kolId": "1138993163706753029",
+      "kolUsername": "Pentosh1",
+      "originalTweetText": "The biggest difference between the stock market and crypto is the stock market basically goes up every day of the year\n\nWhile the alt market cap of crypto has been in this same range for 5 years this Feb. Or close to 2,000 days. More than 10-20% of our lives.",
+      "replyTweetId": "2001314402687951173",
+      "replyText": "Range-bound markets separate builders from tourists. Most microcaps vanish when attention fades.\n\nBlockchain Badges issues tamper-proof credentials with bulk issuance for institutions - verifiable achievements that outlast market cycles. $BWS delivers real infrastructure at microcap valuation.\n\n@BWSCommunity #microcap #altcoins #fundamentals https://www.bws.ninja",
+      "productMentioned": "X Bot, Blockchain Badges",
+      "relevanceScore": 82,
+      "templateUsed": "delayed_cashtag",
+      "templateName": "Delayed $BWS Mention",
+      "imageAttached": true,
+      "imagePath": "/assets/images/docs/blockchain-badges/blockchain-badges-0.png",
+      "timestamp": "2025-12-17T15:31:51.122Z",
+      "status": "posted",
+      "dryRun": false
     }
   ],
   "dailyStats": {
@@ -2946,10 +3003,10 @@
     }
   },
   "metadata": {
-    "totalReplies": 143,
-    "successfulReplies": 109,
+    "totalReplies": 146,
+    "successfulReplies": 112,
     "failedReplies": 34,
-    "lastReplyAt": "2025-12-16T19:55:23.326Z",
+    "lastReplyAt": "2025-12-17T15:31:51.122Z",
     "todayRepliesCount": 0,
     "lastUpdateBy": "kol-system"
   }
