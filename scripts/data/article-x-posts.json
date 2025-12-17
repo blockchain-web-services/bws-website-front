@@ -3,9 +3,9 @@
     "lastGenerated": "2025-12-16T12:09:43.049Z",
     "totalPosts": 54,
     "totalArticles": 18,
-    "pendingPosts": 27,
-    "postedCount": 20,
-    "lastPosted": "2025-12-16T16:07:07.303Z",
+    "pendingPosts": 26,
+    "postedCount": 21,
+    "lastPosted": "2025-12-17T00:35:17.057Z",
     "failedCount": 7
   },
   "posts": [
@@ -450,17 +450,19 @@
         "CommunityManagement"
       ],
       "priority": "medium",
-      "status": "pending",
+      "status": "posted",
       "scheduledFor": null,
-      "postedAt": null,
-      "tweetId": null,
+      "postedAt": "2025-12-17T00:35:16.950Z",
+      "tweetId": "2001088773669707995",
       "generatedAt": "2025-12-09T11:31:12.936Z",
       "metadata": {
         "articleTitle": "X Bot: Real-Time Community Analytics for Crypto Projects",
         "articlePublishDate": "2025-12-04T10:04:10.714Z",
         "mainTextLength": 207,
         "fullTextLength": 369
-      }
+      },
+      "tweetUrl": "https://twitter.com/i/web/status/2001088773669707995",
+      "error": null
     },
     {
       "id": "27e74551-63ee-45ae-9c4f-698edfa4cbb4",
