@@ -2929,6 +2929,25 @@
       "timestamp": "2025-12-17T15:31:51.122Z",
       "status": "posted",
       "dryRun": false
+    },
+    {
+      "id": "4441279246-2000643191897514053-1766001249647",
+      "tweetId": "2000643191897514053",
+      "tweetUrl": "https://twitter.com/IncomeSharks/status/2000643191897514053",
+      "kolId": "4441279246",
+      "kolUsername": "IncomeSharks",
+      "originalTweetText": "Bitcoin back into the box of despair. Every bottom will give you plenty of time to build a position but will wear you out mentally before it goes back up.",
+      "replyTweetId": "2001380415194427713",
+      "replyText": "Building during despair separates real projects from vaporware.\n\nESG Credits delivers:\n• Environmental impact reporting for financial institutions\n• ICMA framework compliance through REST API\n• Blockchain-verified sustainability claims\n\nReal B2B infrastructure at microcap valuation. $BWS\n\n@BWSCommunity #microcap #fundamentals #fintech https://www.bws.ninja",
+      "productMentioned": "X Bot, ESG Credits",
+      "relevanceScore": 78,
+      "templateUsed": "feature_list",
+      "templateName": "Feature List Structure",
+      "imageAttached": false,
+      "imagePath": null,
+      "timestamp": "2025-12-17T19:54:09.647Z",
+      "status": "posted",
+      "dryRun": false
     }
   ],
   "dailyStats": {
@@ -3003,10 +3022,10 @@
     }
   },
   "metadata": {
-    "totalReplies": 146,
-    "successfulReplies": 112,
+    "totalReplies": 147,
+    "successfulReplies": 113,
     "failedReplies": 34,
-    "lastReplyAt": "2025-12-17T15:31:51.122Z",
+    "lastReplyAt": "2025-12-17T19:54:09.647Z",
     "todayRepliesCount": 0,
     "lastUpdateBy": "kol-system"
   }
