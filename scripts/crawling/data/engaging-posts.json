@@ -4493,13 +4493,433 @@
       "expiresAt": "2025-12-24T12:52:33.009Z",
       "source": "timeline_monitor",
       "contentCategory": "market-trends"
+    },
+    {
+      "id": "2001110998489473080",
+      "text": "Scanning the entire altcoin market is harrowing. These things continue dumping with no floor whatsoever and every single coin is down anywhere from 70-90% from the last 3-5 months. Wild stuff tbh",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "retweet_count": 16,
+        "reply_count": 58,
+        "like_count": 312,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/AltcoinSherpa/status/2001110998489473080",
+      "processed": false,
+      "addedAt": "2025-12-17T17:53:13.407Z",
+      "expiresAt": "2025-12-24T17:53:13.407Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "2001340405150040531",
+      "text": "BREAKING:\n\nBEARS AND BULLS GOT REKT TODAY BY THE MARKET MAKERS! \n\n$249,000,000 IN LONGS LIQUIDATED AND $153,000,000 IN SHORTS!",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "retweet_count": 36,
+        "reply_count": 95,
+        "like_count": 242,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoRover/status/2001340405150040531",
+      "processed": false,
+      "addedAt": "2025-12-17T17:53:36.668Z",
+      "expiresAt": "2025-12-24T17:53:36.668Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "2001332058095075708",
+      "text": "Crypto interest is low again.\n\nRetail is largely absent from the market.\n\nThat’s when it gets interesting.",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "retweet_count": 41,
+        "reply_count": 114,
+        "like_count": 268,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoRover/status/2001332058095075708",
+      "processed": false,
+      "addedAt": "2025-12-17T17:53:38.727Z",
+      "expiresAt": "2025-12-24T17:53:38.727Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "2001323726210814150",
+      "text": "BREAKING:\n\nMICHAEL SAYLOR SAYS, “GUESS THE ₿ANK.”",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "retweet_count": 31,
+        "reply_count": 72,
+        "like_count": 319,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoRover/status/2001323726210814150",
+      "processed": false,
+      "addedAt": "2025-12-17T17:53:44.775Z",
+      "expiresAt": "2025-12-24T17:53:44.775Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "2001322243742392633",
+      "text": "Based on the four-year cycle theory, this Bitcoin cycle already ended some time ago.",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "retweet_count": 28,
+        "reply_count": 59,
+        "like_count": 191,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoRover/status/2001322243742392633",
+      "processed": false,
+      "addedAt": "2025-12-17T17:53:46.062Z",
+      "expiresAt": "2025-12-24T17:53:46.062Z",
+      "source": "timeline_monitor",
+      "contentCategory": "technical-analysis"
+    },
+    {
+      "id": "2001315142320214315",
+      "text": "WATCH WHERE THE MONEY FLOWS\n\nBinance just hit $1.17T in capital inflows, up 31% YoY, showing where users prefer to enter the crypto market. \n\nPerps volume reached $24.6T, spot volume is nearing $7T, and with 300M users, Binance remains a key liquidity hub for crypto.",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "retweet_count": 22,
+        "reply_count": 81,
+        "like_count": 191,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoRover/status/2001315142320214315",
+      "processed": false,
+      "addedAt": "2025-12-17T17:53:49.876Z",
+      "expiresAt": "2025-12-24T17:53:49.876Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "2001310918987186420",
+      "text": "Which team are you on now? \n\nBulls or Bears.",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "retweet_count": 34,
+        "reply_count": 172,
+        "like_count": 356,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoRover/status/2001310918987186420",
+      "processed": false,
+      "addedAt": "2025-12-17T17:53:51.848Z",
+      "expiresAt": "2025-12-24T17:53:51.848Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "2001308515017633935",
+      "text": "BREAKING:      \n\n$105,000,000 worth of crypto shorts liquidated in the past 60 minutes.",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "retweet_count": 65,
+        "reply_count": 130,
+        "like_count": 510,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoRover/status/2001308515017633935",
+      "processed": false,
+      "addedAt": "2025-12-17T17:53:53.975Z",
+      "expiresAt": "2025-12-24T17:53:53.975Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "2001256612460191915",
+      "text": "BITCOIN ADOPTION GROWS AMONG U.S. BUSINESSES ; CALIFORNIA LEADS \n\nThe map shows where businesses accept $BTC as payment. California dominates, followed by Florida and Texas. \n\nSince 2013, the number of U.S. businesses embracing Bitcoin has exploded exponentially and it’s only",
+      "author": {
+        "id": "877357064724520961",
+        "username": "CryptosR_Us"
+      },
+      "public_metrics": {
+        "retweet_count": 19,
+        "reply_count": 47,
+        "like_count": 107,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptosR_Us/status/2001256612460191915",
+      "processed": false,
+      "addedAt": "2025-12-17T17:55:20.768Z",
+      "expiresAt": "2025-12-24T17:55:20.768Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "2001226631625482373",
+      "text": "BILLIONAIRE DAN MOREHEAD: BITCOIN COULD HIT $750,000 WITHIN 4–5 YEARS \n\nDan Morehead, founder and managing partner of Pantera Capital, says $BTC could reach $750,000 over the next four to five years. \n\nMorehead argued that Bitcoin remains in the early stages of adoption, adding",
+      "author": {
+        "id": "877357064724520961",
+        "username": "CryptosR_Us"
+      },
+      "public_metrics": {
+        "retweet_count": 42,
+        "reply_count": 43,
+        "like_count": 233,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptosR_Us/status/2001226631625482373",
+      "processed": false,
+      "addedAt": "2025-12-17T17:55:23.130Z",
+      "expiresAt": "2025-12-24T17:55:23.130Z",
+      "source": "timeline_monitor",
+      "contentCategory": "price-speculation"
+    },
+    {
+      "id": "1996936449543782844",
+      "text": "Likely up until the next Fed meeting / interest rate decision (December 9–10).\n\nLooking at these targets for a lower high:\n\n$BTC: $100k–$105k\n$ETH: $3.7k–$4k",
+      "author": {
+        "id": "988796804446769153",
+        "username": "CryptoCapo_"
+      },
+      "public_metrics": {
+        "retweet_count": 225,
+        "reply_count": 3,
+        "like_count": 2562,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoCapo_/status/1996936449543782844",
+      "processed": false,
+      "addedAt": "2025-12-17T17:56:20.888Z",
+      "expiresAt": "2025-12-24T17:56:20.888Z",
+      "source": "timeline_monitor",
+      "contentCategory": "price-speculation"
+    },
+    {
+      "id": "2001262330915721568",
+      "text": "Tom Lee at BBW2025: Why I'm Still Bullish on Crypto\n\nAt Binance Blockchain Week 2025, Tom Lee said the crypto supercycle remains intact, with tokenization as the core theme of 2025. He argued Bitcoin and Ethereum have likely bottomed as traditional four-year cycles weaken,",
+      "author": {
+        "id": "111533746",
+        "username": "WuBlockchain"
+      },
+      "public_metrics": {
+        "retweet_count": 11,
+        "reply_count": 22,
+        "like_count": 57,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/WuBlockchain/status/2001262330915721568",
+      "processed": false,
+      "addedAt": "2025-12-17T17:58:16.571Z",
+      "expiresAt": "2025-12-24T17:58:16.571Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "2001181343078834223",
+      "text": "Tom Lee: The implied value of Elon Musk himself can also be priced through tokenization\n\nTom Lee spoke at the 2025 Binance Blockchain Week, stating that tokenization will revolutionize Wall Street by decomposing enterprise elements, moving beyond simple asset fractionalization.",
+      "author": {
+        "id": "111533746",
+        "username": "WuBlockchain"
+      },
+      "public_metrics": {
+        "retweet_count": 14,
+        "reply_count": 23,
+        "like_count": 66,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/WuBlockchain/status/2001181343078834223",
+      "processed": false,
+      "addedAt": "2025-12-17T17:58:18.073Z",
+      "expiresAt": "2025-12-24T17:58:18.073Z",
+      "source": "timeline_monitor",
+      "contentCategory": "project-discussion"
+    },
+    {
+      "id": "2001170233017663899",
+      "text": "Yi He: The Prerequisite for Web3 Success Is Building Products Users Truly Need and Are Willing to Pay For\n\nOn December 3, Binance co-founder Yi He stated at the 2025 Binance Blockchain Week in Dubai that crypto’s first step must be to transform finance rather than confront it.",
+      "author": {
+        "id": "111533746",
+        "username": "WuBlockchain"
+      },
+      "public_metrics": {
+        "retweet_count": 10,
+        "reply_count": 22,
+        "like_count": 52,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/WuBlockchain/status/2001170233017663899",
+      "processed": false,
+      "addedAt": "2025-12-17T17:58:20.262Z",
+      "expiresAt": "2025-12-24T17:58:20.262Z",
+      "source": "timeline_monitor",
+      "contentCategory": "project-discussion"
+    },
+    {
+      "id": "2001311005033521513",
+      "text": "$MITO Is exploding with HUGE Buy volume & is starting its pump by jumping to #Binance top gainers list to join EPIC only 2 hours after shared entry. \n\nMany missed when i shared 40% & 30% on HANA, many missed 30% on EPIC. I hope many dont miss MITO. \n\nI am sharing with you instant",
+      "author": {
+        "id": "crawlee_search_bitcoinhabebe",
+        "username": "Bitcoinhabebe"
+      },
+      "public_metrics": {
+        "retweet_count": 22,
+        "reply_count": 17,
+        "like_count": 81,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/Bitcoinhabebe/status/2001311005033521513",
+      "processed": false,
+      "addedAt": "2025-12-17T17:59:04.687Z",
+      "expiresAt": "2025-12-24T17:59:04.687Z",
+      "source": "timeline_monitor",
+      "contentCategory": "price-speculation"
+    },
+    {
+      "id": "2001291017790595534",
+      "text": "$MITO Is leaving the station ! \n\nLook at the similarities in price action between last pump & now.  See you above 0.09$-0.1$ \n\n$BTC #Bitcoin",
+      "author": {
+        "id": "crawlee_search_bitcoinhabebe",
+        "username": "Bitcoinhabebe"
+      },
+      "public_metrics": {
+        "retweet_count": 15,
+        "reply_count": 20,
+        "like_count": 59,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/Bitcoinhabebe/status/2001291017790595534",
+      "processed": false,
+      "addedAt": "2025-12-17T17:59:06.398Z",
+      "expiresAt": "2025-12-24T17:59:06.398Z",
+      "source": "timeline_monitor",
+      "contentCategory": "price-speculation"
+    },
+    {
+      "id": "2001277045809320111",
+      "text": "You can see in the chart last time MITO exploded 40%+ started with a breakout , retest, bullish engulfing candle & then pump. \n\nIt is now following the exact same process. \n\nWe are currently in the bullish engulfing candle right before the pump starts.\n\n$BTC $MITO $ETH",
+      "author": {
+        "id": "crawlee_search_bitcoinhabebe",
+        "username": "Bitcoinhabebe"
+      },
+      "public_metrics": {
+        "retweet_count": 18,
+        "reply_count": 21,
+        "like_count": 91,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/Bitcoinhabebe/status/2001277045809320111",
+      "processed": false,
+      "addedAt": "2025-12-17T17:59:08.515Z",
+      "expiresAt": "2025-12-24T17:59:08.515Z",
+      "source": "timeline_monitor",
+      "contentCategory": "technical-analysis"
+    },
+    {
+      "id": "2001274023305674835",
+      "text": "$MITO is the gem of the day & is next i line to give insane results like HANA & EPIC\n\nChart is very bullish as it broke out of a perfect double bottom, retested & is currently in the process of bouncing of the retest which is considered perfect entry.",
+      "author": {
+        "id": "crawlee_search_bitcoinhabebe",
+        "username": "Bitcoinhabebe"
+      },
+      "public_metrics": {
+        "retweet_count": 23,
+        "reply_count": 24,
+        "like_count": 59,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/Bitcoinhabebe/status/2001274023305674835",
+      "processed": false,
+      "addedAt": "2025-12-17T17:59:10.499Z",
+      "expiresAt": "2025-12-24T17:59:10.499Z",
+      "source": "timeline_monitor",
+      "contentCategory": "altcoin-talk"
+    },
+    {
+      "id": "2001264084352946469",
+      "text": "New GEM that will follow HANA & EPIC incoming . \n\nLike, RT & prepare to make some . \n\nBoth Last 2 gems shared printed 30-40%.",
+      "author": {
+        "id": "crawlee_search_bitcoinhabebe",
+        "username": "Bitcoinhabebe"
+      },
+      "public_metrics": {
+        "retweet_count": 32,
+        "reply_count": 29,
+        "like_count": 157,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/Bitcoinhabebe/status/2001264084352946469",
+      "processed": false,
+      "addedAt": "2025-12-17T17:59:13.375Z",
+      "expiresAt": "2025-12-24T17:59:13.375Z",
+      "source": "timeline_monitor",
+      "contentCategory": "price-speculation"
+    },
+    {
+      "id": "2001268641195814982",
+      "text": "\"I'm not at a loss, I'm at a long-term investment\"\n\n Guy who bought #Bitcoin at $125K and Now watching $87K",
+      "author": {
+        "id": "crawlee_search_cryptopatel",
+        "username": "CryptoPatel"
+      },
+      "public_metrics": {
+        "retweet_count": 10,
+        "reply_count": 9,
+        "like_count": 183,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoPatel/status/2001268641195814982",
+      "processed": false,
+      "addedAt": "2025-12-17T18:00:06.553Z",
+      "expiresAt": "2025-12-24T18:00:06.553Z",
+      "source": "timeline_monitor",
+      "contentCategory": "price-speculation"
     }
   ],
   "metadata": {
-    "lastUpdated": "2025-12-17T12:53:42.029Z",
-    "totalPosts": 241,
+    "lastUpdated": "2025-12-17T18:00:06.554Z",
+    "totalPosts": 234,
     "bySource": {
-      "timeline_monitor": 241,
+      "timeline_monitor": 234,
       "search_discovery": 0
     }
   },
