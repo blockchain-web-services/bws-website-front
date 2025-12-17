@@ -5185,13 +5185,307 @@
       "expiresAt": "2025-12-23T22:15:58.879Z",
       "source": "timeline_monitor",
       "contentCategory": "price-speculation"
+    },
+    {
+      "id": "1999090977278140619",
+      "text": "[SBF says:]\n\n1) What made it so clear to me that @JuanOrlandoH was innocent? And how could he have been convicted anyway?\n\nThe short answer, of course, is 'cooperating witnesses.'\n\nBut there's a longer answer, too.",
+      "author": {
+        "id": "1110877798820777986",
+        "username": "SBF_FTX"
+      },
+      "public_metrics": {
+        "retweet_count": 94,
+        "reply_count": 143,
+        "like_count": 308,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/SBF_FTX/status/1999090977278140619",
+      "processed": false,
+      "addedAt": "2025-12-17T07:25:44.910Z",
+      "expiresAt": "2025-12-24T07:25:44.910Z",
+      "source": "timeline_monitor",
+      "contentCategory": "news"
+    },
+    {
+      "id": "2001117897037328495",
+      "text": "SCARAMUCCI ASKS IF 55% BITCOIN IS TOO MUCH -- TOM LEE SAYS HOLD THE WINNER \n\nAnthony Scaramucci admits $BTC grew from a 6-7% position into 55% of his net worth. \n\nTom Lee’s response was simple: When you have a winner, don’t rush to diversify out of it. If the thesis still",
+      "author": {
+        "id": "877357064724520961",
+        "username": "CryptosR_Us"
+      },
+      "public_metrics": {
+        "retweet_count": 25,
+        "reply_count": 15,
+        "like_count": 268,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptosR_Us/status/2001117897037328495",
+      "processed": false,
+      "addedAt": "2025-12-17T07:26:41.306Z",
+      "expiresAt": "2025-12-24T07:26:41.306Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "2001102581360156814",
+      "text": "BITWISE: TOP 10 CRYPTO PREDICTIONS FOR 2026\n\n Bitcoin breaks its historic 4-year cycle and posts a new all-time high -- BTC’s structural behavior shifts in 2026. \n\n Bitcoin’s volatility shrinks -- possibly staying lower than Nvidia’s as institutional participation deepens.",
+      "author": {
+        "id": "877357064724520961",
+        "username": "CryptosR_Us"
+      },
+      "public_metrics": {
+        "retweet_count": 13,
+        "reply_count": 11,
+        "like_count": 86,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptosR_Us/status/2001102581360156814",
+      "processed": false,
+      "addedAt": "2025-12-17T07:26:43.275Z",
+      "expiresAt": "2025-12-24T07:26:43.275Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "2001061100691837142",
+      "text": "RAOUL PAL ISSUES WARNING FOR 2026!\n\n\"The hardest thing that will probably happen in 2026 is Altcoin Season, and you'll see endless posts on X that I've made a 20X in a month and you'll be chasing everybody else's returns. Most of those people don't make it.\"\n\nRaoul's tips:",
+      "author": {
+        "id": "877357064724520961",
+        "username": "CryptosR_Us"
+      },
+      "public_metrics": {
+        "retweet_count": 117,
+        "reply_count": 61,
+        "like_count": 924,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptosR_Us/status/2001061100691837142",
+      "processed": false,
+      "addedAt": "2025-12-17T07:26:45.365Z",
+      "expiresAt": "2025-12-24T07:26:45.365Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "2001034636059660574",
+      "text": "SOLANA BEGINS QUANTUM PROOFING PROCESS WITH PROJECT ELEVEN\n\n@solana partnered with @qdayclock to develop and test quantum-proof cryptographic solutions.\n\nWhile quantum computers are not an immediate danger to cryptocurrencies, Solana aims to ensure its long-term security and",
+      "author": {
+        "id": "877357064724520961",
+        "username": "CryptosR_Us"
+      },
+      "public_metrics": {
+        "retweet_count": 20,
+        "reply_count": 23,
+        "like_count": 110,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptosR_Us/status/2001034636059660574",
+      "processed": false,
+      "addedAt": "2025-12-17T07:26:47.328Z",
+      "expiresAt": "2025-12-24T07:26:47.328Z",
+      "source": "timeline_monitor",
+      "contentCategory": "project-discussion"
+    },
+    {
+      "id": "2001067007932842370",
+      "text": "BREAKING:\n\n NEW YORK STATE PENSION FUND JUST REVEALED BUYING $50,000,000 WORTH OF MICROSTRATEGY",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "retweet_count": 233,
+        "reply_count": 119,
+        "like_count": 1737,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoRover/status/2001067007932842370",
+      "processed": false,
+      "addedAt": "2025-12-17T07:28:26.504Z",
+      "expiresAt": "2025-12-24T07:28:26.504Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "2001162691948503300",
+      "text": "US SPOT ETFs Yesterday Flows Data update (16-12-2025):\n\n  Bitcoin ETFs: -3,210 $BTC (-$277.09M)\n  Ethereum ETFs: -75,660 $ETH (-$224.26M)\n Solana ETFs: +28,187 $SOL (+$3.64M)\n XRP ETFs: +4.50M $XRP (+$8.54M)\n CHAINLINK ETFs: +106.53K $LINK (+$1.38M)\n DOGECOIN ETFs:",
+      "author": {
+        "id": "crawlee_search_cryptopatel",
+        "username": "CryptoPatel"
+      },
+      "public_metrics": {
+        "retweet_count": 12,
+        "reply_count": 8,
+        "like_count": 110,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoPatel/status/2001162691948503300",
+      "processed": false,
+      "addedAt": "2025-12-17T07:29:20.018Z",
+      "expiresAt": "2025-12-24T07:29:20.018Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "2001147592462491812",
+      "text": "BREAKING: Marshall Islands just became the FIRST country to distribute Universal Basic Income on-chain.\n\nUsing Stellar blockchain + USDM1 (backed 1:1 by U.S. Treasuries).\nNot a pilot. Not a test. A live national program paying real citizens.\n\nThis is what actual crypto",
+      "author": {
+        "id": "crawlee_search_cryptopatel",
+        "username": "CryptoPatel"
+      },
+      "public_metrics": {
+        "retweet_count": 12,
+        "reply_count": 9,
+        "like_count": 136,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoPatel/status/2001147592462491812",
+      "processed": false,
+      "addedAt": "2025-12-17T07:29:22.102Z",
+      "expiresAt": "2025-12-24T07:29:22.102Z",
+      "source": "timeline_monitor",
+      "contentCategory": "project-discussion"
+    },
+    {
+      "id": "2001132745221636104",
+      "text": "#BTC On-Chain Insight | LTH Activity\n\nThere’s a notable surge in BTC selling by long-term holders (LTHs) — among the largest seen in the past 5 years.\n\n These spikes typically occur closer to market highs, not lows\n LTH supply is declining from record levels\n BTC price",
+      "author": {
+        "id": "crawlee_search_cryptopatel",
+        "username": "CryptoPatel"
+      },
+      "public_metrics": {
+        "retweet_count": 15,
+        "reply_count": 9,
+        "like_count": 156,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoPatel/status/2001132745221636104",
+      "processed": false,
+      "addedAt": "2025-12-17T07:29:24.166Z",
+      "expiresAt": "2025-12-24T07:29:24.166Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "2001011949681700953",
+      "text": "Tajikistan just Criminalized Crypto mining with Stolen Electricity\n\nPenalties:\nUp to 8 YEARS prison\nFines up to $8,200\n\nWhy? Illegal miners caused power blackouts across the country. Some regions now get only 2-4 hours of electricity daily.\n190 cases, 4,000 people involved,",
+      "author": {
+        "id": "crawlee_search_cryptopatel",
+        "username": "CryptoPatel"
+      },
+      "public_metrics": {
+        "retweet_count": 13,
+        "reply_count": 11,
+        "like_count": 181,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoPatel/status/2001011949681700953",
+      "processed": false,
+      "addedAt": "2025-12-17T07:29:27.669Z",
+      "expiresAt": "2025-12-24T07:29:27.669Z",
+      "source": "timeline_monitor",
+      "contentCategory": "news"
+    },
+    {
+      "id": "1752410125791555918",
+      "text": "Often, when people start really looking at their crypto security, they realize they aren't as far along the path of self custody as they hoped. Last day to save $ on our Path to Self Custody Workshop Bundle. Use coupon code: selfcustody4me at checkout\nhttps://aantonop.com/workshops",
+      "author": {
+        "id": "1469101279",
+        "username": "aantonop"
+      },
+      "public_metrics": {
+        "retweet_count": 77,
+        "reply_count": 0,
+        "like_count": 120,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/aantonop/status/1752410125791555918",
+      "processed": false,
+      "addedAt": "2025-12-17T07:29:41.375Z",
+      "expiresAt": "2025-12-24T07:29:41.375Z",
+      "source": "timeline_monitor",
+      "contentCategory": "project-discussion"
+    },
+    {
+      "id": "2001144402110972224",
+      "text": "$COOKIE\n\nLONG",
+      "author": {
+        "id": "crawlee_search_nihilusbtc",
+        "username": "NihilusBTC"
+      },
+      "public_metrics": {
+        "retweet_count": 24,
+        "reply_count": 57,
+        "like_count": 91,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/NihilusBTC/status/2001144402110972224",
+      "processed": false,
+      "addedAt": "2025-12-17T07:30:20.361Z",
+      "expiresAt": "2025-12-24T07:30:20.361Z",
+      "source": "timeline_monitor",
+      "contentCategory": "altcoin-talk"
+    },
+    {
+      "id": "2001033648565575687",
+      "text": "$COOKIE",
+      "author": {
+        "id": "crawlee_search_nihilusbtc",
+        "username": "NihilusBTC"
+      },
+      "public_metrics": {
+        "retweet_count": 21,
+        "reply_count": 30,
+        "like_count": 85,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/NihilusBTC/status/2001033648565575687",
+      "processed": false,
+      "addedAt": "2025-12-17T07:30:22.478Z",
+      "expiresAt": "2025-12-24T07:30:22.478Z",
+      "source": "timeline_monitor",
+      "contentCategory": "altcoin-talk"
+    },
+    {
+      "id": "2001033188383371284",
+      "text": "$RAVE",
+      "author": {
+        "id": "crawlee_search_nihilusbtc",
+        "username": "NihilusBTC"
+      },
+      "public_metrics": {
+        "retweet_count": 19,
+        "reply_count": 37,
+        "like_count": 83,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/NihilusBTC/status/2001033188383371284",
+      "processed": false,
+      "addedAt": "2025-12-17T07:30:24.441Z",
+      "expiresAt": "2025-12-24T07:30:24.441Z",
+      "source": "timeline_monitor",
+      "contentCategory": "altcoin-talk"
     }
   ],
   "metadata": {
-    "lastUpdated": "2025-12-16T22:16:00.272Z",
-    "totalPosts": 258,
+    "lastUpdated": "2025-12-17T07:30:37.069Z",
+    "totalPosts": 261,
     "bySource": {
-      "timeline_monitor": 258,
+      "timeline_monitor": 261,
       "search_discovery": 0
     }
   },
