@@ -64,6 +64,32 @@ async function saveEngagingPosts(data) {
 }
 
 /**
+ * Clean up old engaging posts (keep only last 48 hours)
+ * Tweets older than 36 hours cannot be replied to, so 48h buffer ensures relevancy
+ */
+function cleanupOldEngagingPosts(data) {
+  const MAX_AGE_HOURS = 48;
+  const now = Date.now();
+  const cutoffTime = now - (MAX_AGE_HOURS * 60 * 60 * 1000);
+
+  const originalCount = data.posts.length;
+
+  // Keep only posts added within the last 48 hours
+  data.posts = data.posts.filter(post => {
+    const addedTime = new Date(post.addedAt).getTime();
+    return addedTime >= cutoffTime;
+  });
+
+  const removedCount = originalCount - data.posts.length;
+
+  if (removedCount > 0) {
+    console.log(`🧹 Cleaned up ${removedCount} old posts (kept ${data.posts.length} posts from last ${MAX_AGE_HOURS}h)`);
+  }
+
+  return data;
+}
+
+/**
  * Main Timeline Monitoring Function
  */
 async function monitorKolTimelines() {
@@ -168,7 +194,14 @@ async function monitorKolTimelines() {
   currentPhase = 'loading_data';
   console.log(`⏰ [${Math.round((Date.now() - scriptStartTime) / 1000)}s] 📍 Phase: ${currentPhase}`);
   const kolsData = loadKolsData();
-  const engagingPostsData = await loadEngagingPosts();
+  let engagingPostsData = await loadEngagingPosts();
+
+  // Clean up old posts (keep only last 48 hours for relevancy)
+  console.log(`\n📋 Engaging Posts Queue:`);
+  console.log(`   Total posts before cleanup: ${engagingPostsData.posts.length}`);
+  engagingPostsData = cleanupOldEngagingPosts(engagingPostsData);
+  console.log(`   Total posts after cleanup: ${engagingPostsData.posts.length}\n`);
+
   const processedPosts = loadProcessedPosts();
 
   const activeKols = kolsData.kols.filter(k => k.status === 'active');
