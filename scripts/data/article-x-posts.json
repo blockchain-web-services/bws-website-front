@@ -3,9 +3,9 @@
     "lastGenerated": "2025-12-16T12:09:43.049Z",
     "totalPosts": 54,
     "totalArticles": 18,
-    "pendingPosts": 24,
-    "postedCount": 23,
-    "lastPosted": "2025-12-18T00:32:48.138Z",
+    "pendingPosts": 23,
+    "postedCount": 24,
+    "lastPosted": "2025-12-18T12:15:26.790Z",
     "failedCount": 7
   },
   "posts": [
@@ -590,17 +590,19 @@
         "ImpactReporting"
       ],
       "priority": "medium",
-      "status": "pending",
+      "status": "posted",
       "scheduledFor": null,
-      "postedAt": null,
-      "tweetId": null,
+      "postedAt": "2025-12-18T12:15:26.619Z",
+      "tweetId": "2001627362937446814",
       "generatedAt": "2025-12-09T11:31:31.154Z",
       "metadata": {
         "articleTitle": "ESG Credits: Blockchain-Verified Green Asset Impact Reporting",
         "articlePublishDate": "2025-12-04T10:04:39.136Z",
         "mainTextLength": 196,
         "fullTextLength": 375
-      }
+      },
+      "tweetUrl": "https://twitter.com/i/web/status/2001627362937446814",
+      "error": null
     },
     {
       "id": "fe4f5284-2205-4c63-894b-7d57bbd26989",
