@@ -2986,6 +2986,63 @@
       "timestamp": "2025-12-18T15:33:15.623Z",
       "status": "posted",
       "dryRun": false
+    },
+    {
+      "id": "877357064724520961-2001117897037328495-1766099956324",
+      "tweetId": "2001117897037328495",
+      "tweetUrl": "https://twitter.com/CryptosR_Us/status/2001117897037328495",
+      "kolId": "877357064724520961",
+      "kolUsername": "CryptosR_Us",
+      "originalTweetText": "SCARAMUCCI ASKS IF 55% BITCOIN IS TOO MUCH -- TOM LEE SAYS HOLD THE WINNER \n\nAnthony Scaramucci admits $BTC grew from a 6-7% position into 55% of his net worth. \n\nTom Lee’s response was simple: When you have a winner, don’t rush to diversify out of it. If the thesis still",
+      "replyTweetId": "2001794421038387337",
+      "replyText": "Tom Lee's philosophy applies to microcaps too - hold quality builders with intact theses.\n\nConsider this: $BWS Blockchain Hash enables key-value storage on blockchain through REST API - developers update data after initial save without wallet management or gas fees. Real infrastructure at microcap valuation.\n\n@BWSCommunity #microcap #blockchain #fundamentals https://docs.bws.ninja/solutions/bws.blockchain.hash",
+      "productMentioned": "Multiple products (Blockchain Badges, ESG Credits, Fan Game Cube, X Bot)",
+      "relevanceScore": 82,
+      "templateUsed": "stat_driven",
+      "templateName": "Stat/Fact-Driven Structure",
+      "imageAttached": false,
+      "imagePath": null,
+      "timestamp": "2025-12-18T23:19:16.324Z",
+      "status": "posted",
+      "dryRun": false
+    },
+    {
+      "id": "877357064724520961-2001102581360156814-1766099980418",
+      "tweetId": "2001102581360156814",
+      "tweetUrl": "https://twitter.com/CryptosR_Us/status/2001102581360156814",
+      "kolId": "877357064724520961",
+      "kolUsername": "CryptosR_Us",
+      "originalTweetText": "BITWISE: TOP 10 CRYPTO PREDICTIONS FOR 2026\n\n Bitcoin breaks its historic 4-year cycle and posts a new all-time high -- BTC’s structural behavior shifts in 2026. \n\n Bitcoin’s volatility shrinks -- possibly staying lower than Nvidia’s as institutional participation deepens.",
+      "replyTweetId": "2001794521533972729",
+      "replyText": "What if non-crypto users could receive NFTs without ever touching a wallet?\n\nNFT.zK from $BWS enables brands to distribute NFTs via email - bulk minting with single API call while BWS handles all blockchain complexity. Perfect for reward programs and event tickets.\n\n@BWSCommunity #microcap #NFT #fundamentals https://docs.bws.ninja/solutions/bws.nft.zk",
+      "productMentioned": "Multiple BWS products (X Bot, Blockchain Badges, ESG Credits, Fan Game Cube)",
+      "relevanceScore": 82,
+      "templateUsed": "question_led",
+      "templateName": "Question-Led Structure",
+      "imageAttached": true,
+      "imagePath": "/assets/images/docs/nftzk/nftzk-0.png",
+      "timestamp": "2025-12-18T23:19:40.418Z",
+      "status": "posted",
+      "dryRun": false
+    },
+    {
+      "id": "877357064724520961-2001061100691837142-1766100004562",
+      "tweetId": "2001061100691837142",
+      "tweetUrl": "https://twitter.com/CryptosR_Us/status/2001061100691837142",
+      "kolId": "877357064724520961",
+      "kolUsername": "CryptosR_Us",
+      "originalTweetText": "RAOUL PAL ISSUES WARNING FOR 2026!\n\n\"The hardest thing that will probably happen in 2026 is Altcoin Season, and you'll see endless posts on X that I've made a 20X in a month and you'll be chasing everybody else's returns. Most of those people don't make it.\"\n\nRaoul's tips:",
+      "replyTweetId": "2001794623031906749",
+      "replyText": "Chasing 20x pumps means you already missed the research phase. Real opportunities get identified before altcoin season hits.\n\nBlockchain Badges from $BWS issues tamper-proof credentials with bulk issuance for institutions - immutable proof that outlasts market cycles.\n\nMicrocap with shipping products, not vaporware.\n\n@BWSCommunity #microcap #altcoins #fundamentals https://docs.bws.ninja/marketplace-solutions/bws.blockchain.badges",
+      "productMentioned": "X Bot, Blockchain Badges",
+      "relevanceScore": 88,
+      "templateUsed": "problem_solution",
+      "templateName": "Problem-Solution Structure",
+      "imageAttached": true,
+      "imagePath": "/assets/images/docs/blockchain-badges/blockchain-badges-0.png",
+      "timestamp": "2025-12-18T23:20:04.562Z",
+      "status": "posted",
+      "dryRun": false
     }
   ],
   "dailyStats": {
@@ -3060,10 +3117,10 @@
     }
   },
   "metadata": {
-    "totalReplies": 149,
-    "successfulReplies": 115,
+    "totalReplies": 152,
+    "successfulReplies": 118,
     "failedReplies": 34,
-    "lastReplyAt": "2025-12-18T15:33:15.623Z",
+    "lastReplyAt": "2025-12-18T23:20:04.562Z",
     "todayRepliesCount": 0,
     "lastUpdateBy": "kol-system"
   }
