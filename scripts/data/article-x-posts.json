@@ -3,9 +3,9 @@
     "lastGenerated": "2025-12-16T12:09:43.049Z",
     "totalPosts": 54,
     "totalArticles": 18,
-    "pendingPosts": 25,
-    "postedCount": 22,
-    "lastPosted": "2025-12-17T12:15:25.215Z",
+    "pendingPosts": 24,
+    "postedCount": 23,
+    "lastPosted": "2025-12-18T00:32:48.138Z",
     "failedCount": 7
   },
   "posts": [
@@ -534,17 +534,19 @@
         "Education"
       ],
       "priority": "medium",
-      "status": "pending",
+      "status": "posted",
       "scheduledFor": null,
-      "postedAt": null,
-      "tweetId": null,
+      "postedAt": "2025-12-18T00:32:48.007Z",
+      "tweetId": "2001450537087128051",
       "generatedAt": "2025-12-09T11:31:22.101Z",
       "metadata": {
         "articleTitle": "Blockchain Badges: Verifiable Digital Credentials for Organizations",
         "articlePublishDate": "2025-12-04T10:04:25.155Z",
         "mainTextLength": 191,
         "fullTextLength": 374
-      }
+      },
+      "tweetUrl": "https://twitter.com/i/web/status/2001450537087128051",
+      "error": null
     },
     {
       "id": "1ab5b960-993f-475a-b5a3-d21a32d74c27",
