@@ -2948,6 +2948,25 @@
       "timestamp": "2025-12-17T19:54:09.647Z",
       "status": "posted",
       "dryRun": false
+    },
+    {
+      "id": "1068237257977544704-2000694731676733556-1766043726607",
+      "tweetId": "2000694731676733556",
+      "tweetUrl": "https://twitter.com/AltcoinSherpa/status/2000694731676733556",
+      "kolId": "1068237257977544704",
+      "kolUsername": "AltcoinSherpa",
+      "originalTweetText": "I'm not a total token doomer; my name is AltcoinSherpa for fcks sake. However, it's getting harder and harder to justify buying many altcoins on a 'fundamental' level:\n\n-High fdv/VC heavy insider coins/ launch mechanisms result in down only price action from TGE (see every big",
+      "replyTweetId": "2001558576469520619",
+      "replyText": "You're right - high FDV launches killed fundamental analysis for most altcoins. Token structure matters more than tech for most new projects.\n\nThe counterexample: Blockchain Save from $BWS stores immutable data with automatic Certificate of Trust generation - no wallet management required.\n\nShipping infrastructure at microcap valuation.\n\n@BWSCommunity #altcoins #microcap #fundamentals https://www.bws.ninja",
+      "productMentioned": "Blockchain Badges, ESG Credits",
+      "relevanceScore": 92,
+      "templateUsed": "problem_solution",
+      "templateName": "Problem-Solution Structure",
+      "imageAttached": false,
+      "imagePath": null,
+      "timestamp": "2025-12-18T07:42:06.607Z",
+      "status": "posted",
+      "dryRun": false
     }
   ],
   "dailyStats": {
@@ -3022,10 +3041,10 @@
     }
   },
   "metadata": {
-    "totalReplies": 147,
-    "successfulReplies": 113,
+    "totalReplies": 148,
+    "successfulReplies": 114,
     "failedReplies": 34,
-    "lastReplyAt": "2025-12-17T19:54:09.647Z",
+    "lastReplyAt": "2025-12-18T07:42:06.607Z",
     "todayRepliesCount": 0,
     "lastUpdateBy": "kol-system"
   }

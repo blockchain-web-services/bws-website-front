@@ -379,153 +379,6 @@
       "contentCategory": "altcoin-talk"
     },
     {
-      "id": "2000677955622560152",
-      "text": "$Q | 2x move will start soon i think. Long it.",
-      "author": {
-        "id": "crawlee_search_nihilusbtc",
-        "username": "NihilusBTC"
-      },
-      "public_metrics": {
-        "retweet_count": 15,
-        "reply_count": 18,
-        "like_count": 65,
-        "quote_count": 0
-      },
-      "created_at": "",
-      "url": "https://twitter.com/NihilusBTC/status/2000677955622560152",
-      "processed": false,
-      "addedAt": "2025-12-16T07:29:19.146Z",
-      "expiresAt": "2025-12-23T07:29:19.146Z",
-      "source": "timeline_monitor",
-      "contentCategory": "price-speculation"
-    },
-    {
-      "id": "2000668836689846657",
-      "text": "$Q | 0.05 is coming.\n\n$folks $fhe $beta",
-      "author": {
-        "id": "crawlee_search_nihilusbtc",
-        "username": "NihilusBTC"
-      },
-      "public_metrics": {
-        "retweet_count": 14,
-        "reply_count": 16,
-        "like_count": 53,
-        "quote_count": 0
-      },
-      "created_at": "",
-      "url": "https://twitter.com/NihilusBTC/status/2000668836689846657",
-      "processed": false,
-      "addedAt": "2025-12-16T07:29:21.207Z",
-      "expiresAt": "2025-12-23T07:29:21.207Z",
-      "source": "timeline_monitor",
-      "contentCategory": "price-speculation"
-    },
-    {
-      "id": "2000642822731345975",
-      "text": "I haven't really posted about the @stablekwon sentencing.  But HCC literally called into the sentencing as a victim (I was there irl) to promote his validator.  It was surreal.  \n\nEveryone from the judge to the people in the benches were totally confused by his ramble.",
-      "author": {
-        "id": "crawlee_search_senpai_gideon",
-        "username": "Senpai_Gideon"
-      },
-      "public_metrics": {
-        "retweet_count": 13,
-        "reply_count": 17,
-        "like_count": 72,
-        "quote_count": 0
-      },
-      "created_at": "",
-      "url": "https://twitter.com/Senpai_Gideon/status/2000642822731345975",
-      "processed": false,
-      "addedAt": "2025-12-16T07:29:32.280Z",
-      "expiresAt": "2025-12-23T07:29:32.280Z",
-      "source": "timeline_monitor",
-      "contentCategory": "project-discussion"
-    },
-    {
-      "id": "2000747758123102408",
-      "text": "SOLANA JUST WON THE MINDSHARE WAR IN 2025 \n\nFor the second year in a row, $SOL is the #1 most talked-about blockchain on the planet, according to CoinGecko.\n\n26.79% of global crypto mindshare. That’s more than Ethereum + Base combined.\n\nThis isn’t price, nor narratives pushed by",
-      "author": {
-        "id": "877357064724520961",
-        "username": "CryptosR_Us"
-      },
-      "public_metrics": {
-        "retweet_count": 27,
-        "reply_count": 14,
-        "like_count": 106,
-        "quote_count": 0
-      },
-      "created_at": "",
-      "url": "https://twitter.com/CryptosR_Us/status/2000747758123102408",
-      "processed": false,
-      "addedAt": "2025-12-16T07:29:42.094Z",
-      "expiresAt": "2025-12-23T07:29:42.094Z",
-      "source": "timeline_monitor",
-      "contentCategory": "project-discussion"
-    },
-    {
-      "id": "2000717514024620533",
-      "text": "THE SEC JUST ADMITTED BLOCKCHAINS ARE MORE TRANSPARENT THAN WALL STREET\n\nSEC Commissioner Paul Atkins said public blockchains are more transparent than any financial system ever built.\n\nEvery transaction is auditable. Law enforcement already relies on on-chain analytics. And with",
-      "author": {
-        "id": "877357064724520961",
-        "username": "CryptosR_Us"
-      },
-      "public_metrics": {
-        "retweet_count": 37,
-        "reply_count": 12,
-        "like_count": 173,
-        "quote_count": 0
-      },
-      "created_at": "",
-      "url": "https://twitter.com/CryptosR_Us/status/2000717514024620533",
-      "processed": false,
-      "addedAt": "2025-12-16T07:29:44.357Z",
-      "expiresAt": "2025-12-23T07:29:44.357Z",
-      "source": "timeline_monitor",
-      "contentCategory": "news"
-    },
-    {
-      "id": "2000692646457512303",
-      "text": "BREAKING: NASDAQ SHIFTS TO 23-HOUR TRADING AS TRADFI COPIES CRYPTO\n\nNasdaq is moving toward 23-hour trading and will file with the SEC on Monday.\n\n Sunday 9pm -> Friday 8pm\n Day + night sessions launching 2H 2026\n\nCrypto has been 24/7 since day one. \nGlobal access. Continuous",
-      "author": {
-        "id": "877357064724520961",
-        "username": "CryptosR_Us"
-      },
-      "public_metrics": {
-        "retweet_count": 34,
-        "reply_count": 16,
-        "like_count": 145,
-        "quote_count": 0
-      },
-      "created_at": "",
-      "url": "https://twitter.com/CryptosR_Us/status/2000692646457512303",
-      "processed": false,
-      "addedAt": "2025-12-16T07:29:48.066Z",
-      "expiresAt": "2025-12-23T07:29:48.066Z",
-      "source": "timeline_monitor",
-      "contentCategory": "market-trends"
-    },
-    {
-      "id": "2000679832963678275",
-      "text": "FOR YEARS HOLDING $XRP OFFERED 0%, NOW TARGETING 8-12% YIELD\n\nXRPFi went LIVE this month, giving holders more than just a speculative asset to hold!\n\n@HugoPhilion, Cofounder of @flarenetworks, breaks down how to maximize returns on your $XRP holdings.  \n\n  Initial Staking",
-      "author": {
-        "id": "877357064724520961",
-        "username": "CryptosR_Us"
-      },
-      "public_metrics": {
-        "retweet_count": 134,
-        "reply_count": 26,
-        "like_count": 558,
-        "quote_count": 0
-      },
-      "created_at": "",
-      "url": "https://twitter.com/CryptosR_Us/status/2000679832963678275",
-      "processed": false,
-      "addedAt": "2025-12-16T07:29:49.251Z",
-      "expiresAt": "2025-12-23T07:29:49.251Z",
-      "source": "timeline_monitor",
-      "contentCategory": "project-discussion"
-    },
-    {
       "id": "2000694731676733556",
       "text": "I'm not a total token doomer; my name is AltcoinSherpa for fcks sake. However, it's getting harder and harder to justify buying many altcoins on a 'fundamental' level:\n\n-High fdv/VC heavy insider coins/ launch mechanisms result in down only price action from TGE (see every big",
       "author": {
@@ -540,7 +393,7 @@
       },
       "created_at": "",
       "url": "https://twitter.com/AltcoinSherpa/status/2000694731676733556",
-      "processed": false,
+      "processed": true,
       "addedAt": "2025-12-16T12:47:41.375Z",
       "expiresAt": "2025-12-23T12:47:41.375Z",
       "source": "timeline_monitor",
@@ -5375,10 +5228,9 @@
       "BWS IPFS",
       "Blockchain Save"
     ],
-    "currentIndex": 6,
-    "lastProductUsed": "ESG Credits",
+    "currentIndex": 0,
+    "lastProductUsed": "Blockchain Save",
     "positioningPhraseIndex": 0,
-    "replyCount": 118
-  },
-  "_removedStale": false
+    "replyCount": 120
+  }
 }
