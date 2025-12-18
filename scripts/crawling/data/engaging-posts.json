@@ -414,7 +414,7 @@
       },
       "created_at": "",
       "url": "https://twitter.com/AltcoinSherpa/status/2000646395120746652",
-      "processed": false,
+      "processed": true,
       "addedAt": "2025-12-16T12:47:43.156Z",
       "expiresAt": "2025-12-23T12:47:43.156Z",
       "source": "timeline_monitor",
@@ -435,7 +435,7 @@
       },
       "created_at": "",
       "url": "https://twitter.com/Bitcoinhabebe/status/2000889290172326064",
-      "processed": false,
+      "processed": true,
       "addedAt": "2025-12-16T12:47:52.789Z",
       "expiresAt": "2025-12-23T12:47:52.789Z",
       "source": "timeline_monitor",
@@ -5228,9 +5228,10 @@
       "BWS IPFS",
       "Blockchain Save"
     ],
-    "currentIndex": 0,
-    "lastProductUsed": "Blockchain Save",
+    "currentIndex": 1,
+    "lastProductUsed": "X Bot",
     "positioningPhraseIndex": 0,
-    "replyCount": 120
-  }
+    "replyCount": 121
+  },
+  "_removedStale": false
 }
