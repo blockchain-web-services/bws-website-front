@@ -2967,6 +2967,25 @@
       "timestamp": "2025-12-18T07:42:06.607Z",
       "status": "posted",
       "dryRun": false
+    },
+    {
+      "id": "crawlee_search_cryptopatel-2000966652297445391-1766071995623",
+      "tweetId": "2000966652297445391",
+      "tweetUrl": "https://twitter.com/CryptoPatel/status/2000966652297445391",
+      "kolId": "crawlee_search_cryptopatel",
+      "kolUsername": "CryptoPatel",
+      "originalTweetText": "Bitcoin weekly RSI is near levels that have only appeared at major market bottoms.\n\n 2018–19: end of the Bear market\n March 2020: COVID Crash bottom\n 2022: capitulation phase\n\nEach time, sentiment was extremely bearish.\nEach time, long-term accumulation followed.\nData over",
+      "replyTweetId": "2001677145018413140",
+      "replyText": "Smart accumulation thesis - bottom zones reward patience and research.\n\n$BWS Fan Game Cube enables fans to own digital field sections as NFTs and earn points when real game events happen at their location - creating new revenue streams for clubs across multiple sports.\n\n@BWSCommunity #microcap #accumulation #NFT https://docs.bws.ninja/marketplace-solutions/bws.nft.gamecube",
+      "productMentioned": "Multiple products (Blockchain Badges, ESG Credits, Fan Game Cube, X Bot)",
+      "relevanceScore": 82,
+      "templateUsed": "classic",
+      "templateName": "Classic Structure",
+      "imageAttached": true,
+      "imagePath": "/assets/images/docs/fan-game-cube/fan-game-cube-0.png",
+      "timestamp": "2025-12-18T15:33:15.623Z",
+      "status": "posted",
+      "dryRun": false
     }
   ],
   "dailyStats": {
@@ -3041,10 +3060,10 @@
     }
   },
   "metadata": {
-    "totalReplies": 148,
-    "successfulReplies": 114,
+    "totalReplies": 149,
+    "successfulReplies": 115,
     "failedReplies": 34,
-    "lastReplyAt": "2025-12-18T07:42:06.607Z",
+    "lastReplyAt": "2025-12-18T15:33:15.623Z",
     "todayRepliesCount": 0,
     "lastUpdateBy": "kol-system"
   }
