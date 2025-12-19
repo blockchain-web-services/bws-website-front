@@ -1634,10 +1634,10 @@
     }
   ],
   "lastDiscovery": {
-    "Blockchain Badges": "2025-12-18T08:02:22.988Z",
-    "BWS IPFS": "2025-12-18T08:02:43.002Z",
-    "NFT.zK": "2025-12-18T08:03:03.031Z",
-    "Blockchain Hash": "2025-12-18T08:03:23.051Z"
+    "Blockchain Badges": "2025-12-19T08:02:38.105Z",
+    "BWS IPFS": "2025-12-19T08:02:58.119Z",
+    "NFT.zK": "2025-12-19T08:03:18.146Z",
+    "Blockchain Hash": "2025-12-19T08:03:38.166Z"
   },
   "stats": {
     "totalDiscovered": 58,
@@ -1663,6 +1663,6 @@
         "processed": 2
       }
     },
-    "lastRun": "2025-12-18T08:03:23.052Z"
+    "lastRun": "2025-12-19T08:03:38.166Z"
   }
 }
