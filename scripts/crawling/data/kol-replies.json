@@ -3043,6 +3043,25 @@
       "timestamp": "2025-12-18T23:20:04.562Z",
       "status": "posted",
       "dryRun": false
+    },
+    {
+      "id": "1353384573435056128-2001256560631407095-1766130017002",
+      "tweetId": "2001256560631407095",
+      "tweetUrl": "https://twitter.com/CryptoRover/status/2001256560631407095",
+      "kolId": "1353384573435056128",
+      "kolUsername": "CryptoRover",
+      "originalTweetText": "FEAR AND GREED INDEX FOR BITCOIN.\n\nWe are still at insanely high fear levels, even higher than during the 2022 bear market bottom forming.",
+      "replyTweetId": "2001920504668598317",
+      "replyText": "High fear creates opportunity for projects with real substance behind them.\n\n$BWS ESG Credits delivers blockchain-verified environmental impact reporting through REST API - ICMA framework compliance for financial institutions needing regulatory-grade sustainability tracking. Microcap building real B2B infrastructure.\n\n@BWSCommunity #microcap #fintech #fundamentals https://docs.bws.ninja/marketplace-solutions/bws.esg.credits",
+      "productMentioned": "Multiple BWS products (Blockchain Badges, ESG Credits, Fan Game Cube)",
+      "relevanceScore": 72,
+      "templateUsed": "classic",
+      "templateName": "Classic Structure",
+      "imageAttached": false,
+      "imagePath": null,
+      "timestamp": "2025-12-19T07:40:17.002Z",
+      "status": "posted",
+      "dryRun": false
     }
   ],
   "dailyStats": {
@@ -3117,10 +3136,10 @@
     }
   },
   "metadata": {
-    "totalReplies": 152,
-    "successfulReplies": 118,
+    "totalReplies": 153,
+    "successfulReplies": 119,
     "failedReplies": 34,
-    "lastReplyAt": "2025-12-18T23:20:04.562Z",
+    "lastReplyAt": "2025-12-19T07:40:17.002Z",
     "todayRepliesCount": 0,
     "lastUpdateBy": "kol-system"
   }
