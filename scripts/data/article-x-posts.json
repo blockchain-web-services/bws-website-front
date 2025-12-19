@@ -3,9 +3,9 @@
     "lastGenerated": "2025-12-16T12:09:43.049Z",
     "totalPosts": 54,
     "totalArticles": 18,
-    "pendingPosts": 22,
-    "postedCount": 25,
-    "lastPosted": "2025-12-19T00:36:10.414Z",
+    "pendingPosts": 21,
+    "postedCount": 26,
+    "lastPosted": "2025-12-19T12:14:46.819Z",
     "failedCount": 7
   },
   "posts": [
@@ -674,17 +674,19 @@
         "NFTUtility"
       ],
       "priority": "medium",
-      "status": "pending",
+      "status": "posted",
       "scheduledFor": null,
-      "postedAt": null,
-      "tweetId": null,
+      "postedAt": "2025-12-19T12:14:46.774Z",
+      "tweetId": "2001989583722906028",
       "generatedAt": "2025-12-09T11:31:41.144Z",
       "metadata": {
         "articleTitle": "Fan Game Cube: NFT-Powered Sports Engagement and Monetization",
         "articlePublishDate": "2025-12-04T10:04:51.742Z",
         "mainTextLength": 200,
         "fullTextLength": 369
-      }
+      },
+      "tweetUrl": "https://twitter.com/i/web/status/2001989583722906028",
+      "error": null
     },
     {
       "id": "5ed4958c-3507-4358-8f27-5a00357c84d9",
