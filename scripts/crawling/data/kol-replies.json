@@ -3062,6 +3062,25 @@
       "timestamp": "2025-12-19T07:40:17.002Z",
       "status": "posted",
       "dryRun": false
+    },
+    {
+      "id": "1353384573435056128-2001254492835123460-1766145064207",
+      "tweetId": "2001254492835123460",
+      "tweetUrl": "https://twitter.com/CryptoRover/status/2001254492835123460",
+      "kolId": "1353384573435056128",
+      "kolUsername": "CryptoRover",
+      "originalTweetText": "Most crypto launches will fail this cycle.\n\nNot because of markets — but because there is nothing underneath them.\n\nNEFE will take a different path.\nIt will be built as a low-noise, product-first ecosystem focused on yield, utility, and delivery — not speculation.\n\nWhat NEFE will",
+      "replyTweetId": "2001983616704754162",
+      "replyText": "💡 Product-first ecosystems separate signal from noise this cycle.\n\n🔧 BWS IPFS enables decentralized file storage via simple REST API - upload images, JSON, and documents without running your own IPFS node. $BWS hosts the gateway for reliable HTTP access.\n📊 Content addressing means files referenced by hash, not location - permanent storage for NFT metadata.\n\n@BWSCommunity #microcap #Web3 #IPFS https://docs.bws.ninja/solutions/bws.ipfs.upload",
+      "productMentioned": "Blockchain Badges, ESG Credits",
+      "relevanceScore": 88,
+      "templateUsed": "emoji_enhanced",
+      "templateName": "Emoji-Enhanced Structure",
+      "imageAttached": true,
+      "imagePath": "/assets/images/docs/bws-ipfs/bws-ipfs-0.png",
+      "timestamp": "2025-12-19T11:51:04.207Z",
+      "status": "posted",
+      "dryRun": false
     }
   ],
   "dailyStats": {
@@ -3136,10 +3155,10 @@
     }
   },
   "metadata": {
-    "totalReplies": 153,
-    "successfulReplies": 119,
+    "totalReplies": 154,
+    "successfulReplies": 120,
     "failedReplies": 34,
-    "lastReplyAt": "2025-12-19T07:40:17.002Z",
+    "lastReplyAt": "2025-12-19T11:51:04.207Z",
     "todayRepliesCount": 0,
     "lastUpdateBy": "kol-system"
   }
