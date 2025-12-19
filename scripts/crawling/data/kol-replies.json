@@ -3176,6 +3176,25 @@
       "timestamp": "2025-12-19T19:54:29.476Z",
       "status": "posted",
       "dryRun": false
+    },
+    {
+      "id": "crawlee_search_bitcoinhabebe-2001360280035692614-1766186492943",
+      "tweetId": "2001360280035692614",
+      "tweetUrl": "https://twitter.com/Bitcoinhabebe/status/2001360280035692614",
+      "kolId": "crawlee_search_bitcoinhabebe",
+      "kolUsername": "Bitcoinhabebe",
+      "originalTweetText": "Adding a nice bag of $OG here. 77MC coin with one of the cleanest charts out there.",
+      "replyTweetId": "2002157381598523452",
+      "replyText": "Clean charts matter less than revenue-generating products when microcap hunting.\n\nBlockchain Badges delivers:\n• Verifiable digital credentials on immutable blockchain\n• Bulk issuance for institutions combating credential fraud\n• Cross-platform verification with shareable links\n\nReal fundamentals at microcap. $BWS\n\n@BWSCommunity #microcap #gems #fundamentals https://docs.bws.ninja/marketplace-solutions/bws.blockchain.badges",
+      "productMentioned": "Multiple products (Blockchain Badges, ESG Credits, Fan Game Cube)",
+      "relevanceScore": 82,
+      "templateUsed": "feature_list",
+      "templateName": "Feature List Structure",
+      "imageAttached": true,
+      "imagePath": "/assets/images/docs/blockchain-badges/blockchain-badges-0.png",
+      "timestamp": "2025-12-19T23:21:32.943Z",
+      "status": "posted",
+      "dryRun": false
     }
   ],
   "dailyStats": {
@@ -3250,10 +3269,10 @@
     }
   },
   "metadata": {
-    "totalReplies": 159,
-    "successfulReplies": 125,
+    "totalReplies": 160,
+    "successfulReplies": 126,
     "failedReplies": 34,
-    "lastReplyAt": "2025-12-19T19:54:29.476Z",
+    "lastReplyAt": "2025-12-19T23:21:32.943Z",
     "todayRepliesCount": 0,
     "lastUpdateBy": "kol-system"
   }
