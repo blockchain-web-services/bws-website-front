@@ -3157,6 +3157,25 @@
       "timestamp": "2025-12-19T15:31:57.683Z",
       "status": "posted",
       "dryRun": false
+    },
+    {
+      "id": "877357064724520961-2001359489459524022-1766174069476",
+      "tweetId": "2001359489459524022",
+      "tweetUrl": "https://twitter.com/CryptosR_Us/status/2001359489459524022",
+      "kolId": "877357064724520961",
+      "kolUsername": "CryptosR_Us",
+      "originalTweetText": "BITCOIN'S 4-YEAR CYCLE MAY BE DEAD.\n\nCathie Wood of ARK Invest says #Bitcoin is acting like a risk-on asset again and climbing a new wall of worry.\n\nEarly on, $BTC would experience drops of 75-90% but we are seeing that volatility decline.\n\nWith institutions piling into this",
+      "replyTweetId": "2002105273612448191",
+      "replyText": "Institutions entering means infrastructure plays matter more than pure speculation trades.\n\n$BWS NFT.zK lets brands distribute NFTs via email without requiring wallet setup - bulk minting with single API call while BWS handles all blockchain complexity, perfect for non-crypto customer onboarding.\n\n@BWSCommunity #microcap #NFT #fundamentals https://docs.bws.ninja/solutions/bws.nft.zk",
+      "productMentioned": "Blockchain Badges, ESG Credits",
+      "relevanceScore": 82,
+      "templateUsed": "classic",
+      "templateName": "Classic Structure",
+      "imageAttached": true,
+      "imagePath": "/assets/images/docs/nftzk/nftzk-0.png",
+      "timestamp": "2025-12-19T19:54:29.476Z",
+      "status": "posted",
+      "dryRun": false
     }
   ],
   "dailyStats": {
@@ -3231,10 +3250,10 @@
     }
   },
   "metadata": {
-    "totalReplies": 158,
-    "successfulReplies": 124,
+    "totalReplies": 159,
+    "successfulReplies": 125,
     "failedReplies": 34,
-    "lastReplyAt": "2025-12-19T15:31:57.683Z",
+    "lastReplyAt": "2025-12-19T19:54:29.476Z",
     "todayRepliesCount": 0,
     "lastUpdateBy": "kol-system"
   }
