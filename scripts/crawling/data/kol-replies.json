@@ -3252,6 +3252,25 @@
       "timestamp": "2025-12-20T11:51:09.898Z",
       "status": "posted",
       "dryRun": false
+    },
+    {
+      "id": "1353384573435056128-2001744374921920940-1766260485892",
+      "tweetId": "2001744374921920940",
+      "tweetUrl": "https://twitter.com/CryptoRover/status/2001744374921920940",
+      "kolId": "1353384573435056128",
+      "kolUsername": "CryptoRover",
+      "originalTweetText": "Real wealth is built in bear markets, not in bull markets.\n\nThe lower prices go, the more interested you should become.\n\nUnfortunately, most people leave the market during downturns and only return 1–2 years later, once prices are already moving back up.",
+      "replyTweetId": "2002467730147221637",
+      "replyText": "Bear markets reward patience and due diligence on fundamentals over narratives.\n\nX Bot tracks KOL performance with official X API integration - historical engagement data reveals which influencers drive authentic community growth versus bot farms. Built by $BWS at microcap valuation.\n\n@BWSCommunity #microcap #crypto #fundamentals https://www.bws.ninja",
+      "productMentioned": "Multiple products (Blockchain Badges, ESG Credits, X Bot)",
+      "relevanceScore": 88,
+      "templateUsed": "delayed_cashtag",
+      "templateName": "Delayed $BWS Mention",
+      "imageAttached": true,
+      "imagePath": "/assets/images/docs/x-bot/x-bot-0.png",
+      "timestamp": "2025-12-20T19:54:45.892Z",
+      "status": "posted",
+      "dryRun": false
     }
   ],
   "dailyStats": {
@@ -3326,10 +3345,10 @@
     }
   },
   "metadata": {
-    "totalReplies": 163,
-    "successfulReplies": 129,
+    "totalReplies": 164,
+    "successfulReplies": 130,
     "failedReplies": 34,
-    "lastReplyAt": "2025-12-20T11:51:09.898Z",
+    "lastReplyAt": "2025-12-20T19:54:45.892Z",
     "todayRepliesCount": 0,
     "lastUpdateBy": "kol-system"
   }

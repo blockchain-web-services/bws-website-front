@@ -253,279 +253,6 @@
       "contentCategory": "market-trends"
     },
     {
-      "id": "1994455703134580867",
-      "text": "yup, 93-94k \n\nNot sure whats next now. We'll see. Dont know",
-      "author": {
-        "id": "1138993163706753029",
-        "username": "Pentosh1"
-      },
-      "public_metrics": {
-        "retweet_count": 25,
-        "reply_count": 37,
-        "like_count": 212,
-        "quote_count": 0
-      },
-      "created_at": "",
-      "url": "https://twitter.com/Pentosh1/status/1994455703134580867",
-      "processed": false,
-      "addedAt": "2025-12-18T17:56:23.724Z",
-      "expiresAt": "2025-12-25T17:56:23.724Z",
-      "source": "timeline_monitor",
-      "contentCategory": "price-speculation"
-    },
-    {
-      "id": "2001584980238176470",
-      "text": "Michael Saylor recently tweeted in support of the introduction and upgrade of post-quantum cryptography to the Bitcoin network. Active users can migrate their funds to new addresses, while approximately 20-25% of dormant or lost Bitcoins (including those in early P2PK addresses)",
-      "author": {
-        "id": "111533746",
-        "username": "WuBlockchain"
-      },
-      "public_metrics": {
-        "retweet_count": 10,
-        "reply_count": 34,
-        "like_count": 72,
-        "quote_count": 0
-      },
-      "created_at": "",
-      "url": "https://twitter.com/WuBlockchain/status/2001584980238176470",
-      "processed": false,
-      "addedAt": "2025-12-18T17:56:54.677Z",
-      "expiresAt": "2025-12-25T17:56:54.677Z",
-      "source": "timeline_monitor",
-      "contentCategory": "project-discussion"
-    },
-    {
-      "id": "2001620970692301253",
-      "text": "JUST IN: $XRP WEEKLY RSI HITS 33! \n\nThe weekly RSI dropping to 33 signals that $XRP is approaching oversold territory, a level where historically strong bounces often occur. \n\nInvestors could be eyeing this as a potential buying opportunity, especially as broader crypto sentiment",
-      "author": {
-        "id": "877357064724520961",
-        "username": "CryptosR_Us"
-      },
-      "public_metrics": {
-        "retweet_count": 95,
-        "reply_count": 35,
-        "like_count": 406,
-        "quote_count": 0
-      },
-      "created_at": "",
-      "url": "https://twitter.com/CryptosR_Us/status/2001620970692301253",
-      "processed": false,
-      "addedAt": "2025-12-18T17:57:13.472Z",
-      "expiresAt": "2025-12-25T17:57:13.472Z",
-      "source": "timeline_monitor",
-      "contentCategory": "technical-analysis"
-    },
-    {
-      "id": "2001597631257006395",
-      "text": "WORLD’S HIGHEST IQ CALLS $XRP FLIPPENING IN 2026  \n\nYoungHoon Kim, the world’s highest IQ (276) , predicts $XRP will surpass $ETH ’s market cap by 2026.   \n\n Current Market Caps  \nXRP: ~$129 B USD  \nETH: ~$342 B USD   \n\nKim says rising interest in XRP is being driven by recent",
-      "author": {
-        "id": "877357064724520961",
-        "username": "CryptosR_Us"
-      },
-      "public_metrics": {
-        "retweet_count": 60,
-        "reply_count": 56,
-        "like_count": 235,
-        "quote_count": 0
-      },
-      "created_at": "",
-      "url": "https://twitter.com/CryptosR_Us/status/2001597631257006395",
-      "processed": false,
-      "addedAt": "2025-12-18T17:57:15.516Z",
-      "expiresAt": "2025-12-25T17:57:15.516Z",
-      "source": "timeline_monitor",
-      "contentCategory": "altcoin-talk"
-    },
-    {
-      "id": "2001646127666401761",
-      "text": "Stablecoin Boom\n\nTotal stablecoin supply has surged 33% this year to over $304B.\n\nA major milestone — monthly adjusted volumes are now exceeding Visa and PayPal, per Delphi Digital.\n\nThis signals accelerating adoption and growing real-world usage across the crypto economy.",
-      "author": {
-        "id": "crawlee_search_cryptopatel",
-        "username": "CryptoPatel"
-      },
-      "public_metrics": {
-        "retweet_count": 34,
-        "reply_count": 11,
-        "like_count": 186,
-        "quote_count": 0
-      },
-      "created_at": "",
-      "url": "https://twitter.com/CryptoPatel/status/2001646127666401761",
-      "processed": false,
-      "addedAt": "2025-12-18T17:57:46.955Z",
-      "expiresAt": "2025-12-25T17:57:46.955Z",
-      "source": "timeline_monitor",
-      "contentCategory": "market-trends"
-    },
-    {
-      "id": "2001630776673374445",
-      "text": "Bitcoin vs Gold is Telling a Macro Story\n\nThe BTC/Gold ratio is down nearly 50% in 2025 as gold absorbs reserve flows and $BTC faces cycle pressure.\n\nRisk-off rotation is live. Watch liquidity closely.",
-      "author": {
-        "id": "crawlee_search_cryptopatel",
-        "username": "CryptoPatel"
-      },
-      "public_metrics": {
-        "retweet_count": 11,
-        "reply_count": 13,
-        "like_count": 153,
-        "quote_count": 0
-      },
-      "created_at": "",
-      "url": "https://twitter.com/CryptoPatel/status/2001630776673374445",
-      "processed": false,
-      "addedAt": "2025-12-18T17:57:48.886Z",
-      "expiresAt": "2025-12-25T17:57:48.886Z",
-      "source": "timeline_monitor",
-      "contentCategory": "market-trends"
-    },
-    {
-      "id": "2001615827330867614",
-      "text": "FALCON FINANCE: QUICK BREAKDOWN\n\n$FF is a synthetic dollar DeFi protocol backed by DWF Labs. Users deposit BTC, ETH, SOL, stables, or RWAs to mint USDf, then stake it to earn sUSDf (~9–10% APY).\n\nProducts:\n$USDf – synthetic dollar\n$sUSDf – yield-bearing USDf\n$FF – governance",
-      "author": {
-        "id": "crawlee_search_cryptopatel",
-        "username": "CryptoPatel"
-      },
-      "public_metrics": {
-        "retweet_count": 11,
-        "reply_count": 18,
-        "like_count": 188,
-        "quote_count": 0
-      },
-      "created_at": "",
-      "url": "https://twitter.com/CryptoPatel/status/2001615827330867614",
-      "processed": false,
-      "addedAt": "2025-12-18T17:57:51.389Z",
-      "expiresAt": "2025-12-25T17:57:51.389Z",
-      "source": "timeline_monitor",
-      "contentCategory": "project-discussion"
-    },
-    {
-      "id": "2001698059651289269",
-      "text": "BREAKING:\n\nTOM LEE PREDICTS BITCOIN WILL HIT A NEW ALL-TIME HIGH BEFORE THE END OF JANUARY 2026.",
-      "author": {
-        "id": "1353384573435056128",
-        "username": "CryptoRover"
-      },
-      "public_metrics": {
-        "retweet_count": 53,
-        "reply_count": 155,
-        "like_count": 405,
-        "quote_count": 0
-      },
-      "created_at": "",
-      "url": "https://twitter.com/CryptoRover/status/2001698059651289269",
-      "processed": false,
-      "addedAt": "2025-12-18T17:58:11.849Z",
-      "expiresAt": "2025-12-25T17:58:11.849Z",
-      "source": "timeline_monitor",
-      "contentCategory": "price-speculation"
-    },
-    {
-      "id": "2001694446031605994",
-      "text": "What's your Crypto prediction 2026?",
-      "author": {
-        "id": "1353384573435056128",
-        "username": "CryptoRover"
-      },
-      "public_metrics": {
-        "retweet_count": 13,
-        "reply_count": 119,
-        "like_count": 135,
-        "quote_count": 0
-      },
-      "created_at": "",
-      "url": "https://twitter.com/CryptoRover/status/2001694446031605994",
-      "processed": false,
-      "addedAt": "2025-12-18T17:58:13.764Z",
-      "expiresAt": "2025-12-25T17:58:13.764Z",
-      "source": "timeline_monitor",
-      "contentCategory": "price-speculation"
-    },
-    {
-      "id": "2001673307268296985",
-      "text": "DESPITE BITCOIN’S DIP, EXCHANGE RESERVES CONTINUE TO DECLINE!",
-      "author": {
-        "id": "1353384573435056128",
-        "username": "CryptoRover"
-      },
-      "public_metrics": {
-        "retweet_count": 30,
-        "reply_count": 85,
-        "like_count": 276,
-        "quote_count": 0
-      },
-      "created_at": "",
-      "url": "https://twitter.com/CryptoRover/status/2001673307268296985",
-      "processed": false,
-      "addedAt": "2025-12-18T17:58:17.804Z",
-      "expiresAt": "2025-12-25T17:58:17.804Z",
-      "source": "timeline_monitor",
-      "contentCategory": "market-trends"
-    },
-    {
-      "id": "2001664247378661721",
-      "text": "Bitcoin remains in extreme FEAR!",
-      "author": {
-        "id": "1353384573435056128",
-        "username": "CryptoRover"
-      },
-      "public_metrics": {
-        "retweet_count": 41,
-        "reply_count": 118,
-        "like_count": 319,
-        "quote_count": 0
-      },
-      "created_at": "",
-      "url": "https://twitter.com/CryptoRover/status/2001664247378661721",
-      "processed": false,
-      "addedAt": "2025-12-18T17:58:21.885Z",
-      "expiresAt": "2025-12-25T17:58:21.885Z",
-      "source": "timeline_monitor",
-      "contentCategory": "market-trends"
-    },
-    {
-      "id": "2001654723368141268",
-      "text": "BREAKING:      \n\n$66,000,000 worth of crypto shorts liquidated in the past 60 minutes.",
-      "author": {
-        "id": "1353384573435056128",
-        "username": "CryptoRover"
-      },
-      "public_metrics": {
-        "retweet_count": 43,
-        "reply_count": 102,
-        "like_count": 317,
-        "quote_count": 0
-      },
-      "created_at": "",
-      "url": "https://twitter.com/CryptoRover/status/2001654723368141268",
-      "processed": false,
-      "addedAt": "2025-12-18T17:58:23.829Z",
-      "expiresAt": "2025-12-25T17:58:23.829Z",
-      "source": "timeline_monitor",
-      "contentCategory": "market-trends"
-    },
-    {
-      "id": "2001654432778588438",
-      "text": "BITCOIN WILL FALL DEEPER IN THE BEAR MARKET!",
-      "author": {
-        "id": "1353384573435056128",
-        "username": "CryptoRover"
-      },
-      "public_metrics": {
-        "retweet_count": 41,
-        "reply_count": 87,
-        "like_count": 313,
-        "quote_count": 0
-      },
-      "created_at": "",
-      "url": "https://twitter.com/CryptoRover/status/2001654432778588438",
-      "processed": false,
-      "addedAt": "2025-12-18T17:58:25.742Z",
-      "expiresAt": "2025-12-25T17:58:25.742Z",
-      "source": "timeline_monitor",
-      "contentCategory": "price-speculation"
-    },
-    {
       "id": "2001578192331833591",
       "text": "Michael Saylor: The U.S. Dollar Is the Biggest Winner in the Stablecoin Wave\n\nStrategy co-founder Michael Saylor told CNBC on Nov. 29 that stablecoins and Bitcoin are in “completely different lanes.” He said stablecoins compete with Visa, Mastercard, and the traditional banking",
       "author": {
@@ -540,7 +267,7 @@
       },
       "created_at": "",
       "url": "https://twitter.com/WuBlockchain/status/2001578192331833591",
-      "processed": false,
+      "processed": true,
       "addedAt": "2025-12-18T22:09:11.190Z",
       "expiresAt": "2025-12-25T22:09:11.190Z",
       "source": "timeline_monitor",
@@ -561,7 +288,7 @@
       },
       "created_at": "",
       "url": "https://twitter.com/aantonop/status/1762988232969490689",
-      "processed": false,
+      "processed": true,
       "addedAt": "2025-12-18T22:10:50.970Z",
       "expiresAt": "2025-12-25T22:10:50.970Z",
       "source": "timeline_monitor",
@@ -582,7 +309,7 @@
       },
       "created_at": "",
       "url": "https://twitter.com/aantonop/status/1752790565178245159",
-      "processed": false,
+      "processed": true,
       "addedAt": "2025-12-18T22:10:54.651Z",
       "expiresAt": "2025-12-25T22:10:54.651Z",
       "source": "timeline_monitor",
@@ -603,7 +330,7 @@
       },
       "created_at": "",
       "url": "https://twitter.com/CryptoRover/status/2001745029346324671",
-      "processed": false,
+      "processed": true,
       "addedAt": "2025-12-18T22:11:07.613Z",
       "expiresAt": "2025-12-25T22:11:07.614Z",
       "source": "timeline_monitor",
@@ -624,7 +351,7 @@
       },
       "created_at": "",
       "url": "https://twitter.com/CryptoRover/status/2001744374921920940",
-      "processed": false,
+      "processed": true,
       "addedAt": "2025-12-18T22:11:08.788Z",
       "expiresAt": "2025-12-25T22:11:08.788Z",
       "source": "timeline_monitor",
@@ -4892,9 +4619,9 @@
       "BWS IPFS",
       "Blockchain Save"
     ],
-    "currentIndex": 0,
-    "lastProductUsed": "Blockchain Save",
+    "currentIndex": 1,
+    "lastProductUsed": "X Bot",
     "positioningPhraseIndex": 0,
-    "replyCount": 136
+    "replyCount": 137
   }
 }
