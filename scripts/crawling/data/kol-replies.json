@@ -3214,6 +3214,25 @@
       "timestamp": "2025-12-20T02:53:03.424Z",
       "status": "posted",
       "dryRun": false
+    },
+    {
+      "id": "877357064724520961-2001509985809805780-1766216213400",
+      "tweetId": "2001509985809805780",
+      "tweetUrl": "https://twitter.com/CryptosR_Us/status/2001509985809805780",
+      "kolId": "877357064724520961",
+      "kolUsername": "CryptosR_Us",
+      "originalTweetText": "ALTCOIN SEASON SETUP IS STARTING TO LOOK VERY FAMILIAR\n\nThis is TOTAL crypto market cap excluding $BTC & $ETH.\n\nSame structure as past cycles:\n- Multi-year support held\n- Liquidity tightening near the lows\n- Previous breakouts came after the Fed ended QT\n\nLast time this happened",
+      "replyTweetId": "2002282038091546730",
+      "replyText": "What separates microcaps with staying power from the ones that vanish when liquidity shifts?\n\n$BWS IPFS enables decentralized file storage through simple REST API - upload images, JSON, and documents without running your own node. Content addressing means files referenced by hash for permanent NFT metadata storage.\n\nReal infrastructure before the rush.\n\n@BWSCommunity #microcap #altcoins #Web3 https://docs.bws.ninja/solutions/bws.ipfs.upload",
+      "productMentioned": "X Bot, Blockchain Badges",
+      "relevanceScore": 88,
+      "templateUsed": "question_led",
+      "templateName": "Question-Led Structure",
+      "imageAttached": true,
+      "imagePath": "/assets/images/docs/bws-ipfs/bws-ipfs-0.png",
+      "timestamp": "2025-12-20T07:36:53.400Z",
+      "status": "posted",
+      "dryRun": false
     }
   ],
   "dailyStats": {
@@ -3288,10 +3307,10 @@
     }
   },
   "metadata": {
-    "totalReplies": 161,
-    "successfulReplies": 127,
+    "totalReplies": 162,
+    "successfulReplies": 128,
     "failedReplies": 34,
-    "lastReplyAt": "2025-12-20T02:53:03.424Z",
+    "lastReplyAt": "2025-12-20T07:36:53.400Z",
     "todayRepliesCount": 0,
     "lastUpdateBy": "kol-system"
   }
