@@ -3233,6 +3233,25 @@
       "timestamp": "2025-12-20T07:36:53.400Z",
       "status": "posted",
       "dryRun": false
+    },
+    {
+      "id": "crawlee_search_cryptopatel-2001555278995595452-1766231469898",
+      "tweetId": "2001555278995595452",
+      "tweetUrl": "https://twitter.com/CryptoPatel/status/2001555278995595452",
+      "kolId": "crawlee_search_cryptopatel",
+      "kolUsername": "CryptoPatel",
+      "originalTweetText": "Bitcoin just hit a critical level most traders are watching\n\nPrice is testing every major moving average at once. Sounds scary, right?\n\nBut here's what history tells us: These exact moments have created some of the best DCA entry points for long-term holders.\n\nVolatility is real.",
+      "replyTweetId": "2002346028796895389",
+      "replyText": "Smart DCA approach - volatility separates builders from hype.\n\nConsider this: Blockchain Save from $BWS writes immutable data to blockchain with Certificate of Trust generation - no wallet management required. Developers get tamper-proof audit trails at microcap valuation.\n\n@BWSCommunity #microcap #fundamentals #blockchain https://www.bws.ninja",
+      "productMentioned": "Multiple products (Blockchain Badges, ESG Credits, X Bot)",
+      "relevanceScore": 78,
+      "templateUsed": "stat_driven",
+      "templateName": "Stat/Fact-Driven Structure",
+      "imageAttached": false,
+      "imagePath": null,
+      "timestamp": "2025-12-20T11:51:09.898Z",
+      "status": "posted",
+      "dryRun": false
     }
   ],
   "dailyStats": {
@@ -3307,10 +3326,10 @@
     }
   },
   "metadata": {
-    "totalReplies": 162,
-    "successfulReplies": 128,
+    "totalReplies": 163,
+    "successfulReplies": 129,
     "failedReplies": 34,
-    "lastReplyAt": "2025-12-20T07:36:53.400Z",
+    "lastReplyAt": "2025-12-20T11:51:09.898Z",
     "todayRepliesCount": 0,
     "lastUpdateBy": "kol-system"
   }
