@@ -211,153 +211,6 @@
       "contentCategory": "technical-analysis"
     },
     {
-      "id": "2001540179316588947",
-      "text": "$SOL at $120 and everyone asking \"Will it hold?\"\n\nWrong question.\nRight question: Do you want cheaper bags before $500+ or not?\n\nBounce here = Good. Drop to $70-80 = better.\nBoth lead to the same place. Only difference is how heavy your bags are when we get there.\n\nNFA & DYOR",
-      "author": {
-        "id": "crawlee_search_cryptopatel",
-        "username": "CryptoPatel"
-      },
-      "public_metrics": {
-        "retweet_count": 11,
-        "reply_count": 12,
-        "like_count": 204,
-        "quote_count": 0
-      },
-      "created_at": "",
-      "url": "https://twitter.com/CryptoPatel/status/2001540179316588947",
-      "processed": false,
-      "addedAt": "2025-12-18T12:49:52.138Z",
-      "expiresAt": "2025-12-25T12:49:52.138Z",
-      "source": "timeline_monitor",
-      "contentCategory": "altcoin-talk/price-speculation"
-    },
-    {
-      "id": "2001601158218178863",
-      "text": "JPMorgan has migrated its tokenized deposit product, JPM Coin (JPMD), from its internal permissioned blockchain Kinexys to Coinbase’s Ethereum L2 network Base, in order to meet institutional clients’ needs for payments, collateral, and margin settlement on public blockchains.",
-      "author": {
-        "id": "111533746",
-        "username": "WuBlockchain"
-      },
-      "public_metrics": {
-        "retweet_count": 15,
-        "reply_count": 27,
-        "like_count": 84,
-        "quote_count": 0
-      },
-      "created_at": "",
-      "url": "https://twitter.com/WuBlockchain/status/2001601158218178863",
-      "processed": false,
-      "addedAt": "2025-12-18T12:50:11.893Z",
-      "expiresAt": "2025-12-25T12:50:11.893Z",
-      "source": "timeline_monitor",
-      "contentCategory": "project-discussion"
-    },
-    {
-      "id": "2001431075852321133",
-      "text": "Coinbase announced at its Dec. 17 System Update event that it will expand the range of tradable assets on its platform by adding stock trading, prediction markets, and perpetual futures. The company also plans to launch stock perpetuals for users outside the U.S., begin",
-      "author": {
-        "id": "111533746",
-        "username": "WuBlockchain"
-      },
-      "public_metrics": {
-        "retweet_count": 16,
-        "reply_count": 19,
-        "like_count": 50,
-        "quote_count": 0
-      },
-      "created_at": "",
-      "url": "https://twitter.com/WuBlockchain/status/2001431075852321133",
-      "processed": false,
-      "addedAt": "2025-12-18T12:50:15.004Z",
-      "expiresAt": "2025-12-25T12:50:15.004Z",
-      "source": "timeline_monitor",
-      "contentCategory": "news"
-    },
-    {
-      "id": "2001447629214155230",
-      "text": "Orbit Chains and Custom L3 Deployments: Enterprise-Ready Blockchain\n\nArbitrum’s Orbit framework allows enterprises to deploy custom Layer 3 blockchains with full control. This “your chain, your rules” model gives businesses flexibility, stronger privacy options, and scalable",
-      "author": {
-        "id": "crawlee_search_crypt0_defi",
-        "username": "Crypt0_DeFi"
-      },
-      "public_metrics": {
-        "retweet_count": 70,
-        "reply_count": 33,
-        "like_count": 88,
-        "quote_count": 0
-      },
-      "created_at": "",
-      "url": "https://twitter.com/Crypt0_DeFi/status/2001447629214155230",
-      "processed": false,
-      "addedAt": "2025-12-18T12:50:47.085Z",
-      "expiresAt": "2025-12-25T12:50:47.085Z",
-      "source": "timeline_monitor",
-      "contentCategory": "project-discussion"
-    },
-    {
-      "id": "2001597967371768121",
-      "text": "$LYN\n$WET",
-      "author": {
-        "id": "crawlee_search_nihilusbtc",
-        "username": "NihilusBTC"
-      },
-      "public_metrics": {
-        "retweet_count": 14,
-        "reply_count": 35,
-        "like_count": 63,
-        "quote_count": 0
-      },
-      "created_at": "",
-      "url": "https://twitter.com/NihilusBTC/status/2001597967371768121",
-      "processed": false,
-      "addedAt": "2025-12-18T12:51:09.777Z",
-      "expiresAt": "2025-12-25T12:51:09.777Z",
-      "source": "timeline_monitor",
-      "contentCategory": "altcoin-talk"
-    },
-    {
-      "id": "2001580094549299345",
-      "text": "$LYN will pump like $HMSTR",
-      "author": {
-        "id": "crawlee_search_nihilusbtc",
-        "username": "NihilusBTC"
-      },
-      "public_metrics": {
-        "retweet_count": 17,
-        "reply_count": 34,
-        "like_count": 69,
-        "quote_count": 0
-      },
-      "created_at": "",
-      "url": "https://twitter.com/NihilusBTC/status/2001580094549299345",
-      "processed": false,
-      "addedAt": "2025-12-18T12:51:12.004Z",
-      "expiresAt": "2025-12-25T12:51:12.004Z",
-      "source": "timeline_monitor",
-      "contentCategory": "price-speculation"
-    },
-    {
-      "id": "2001537987977568398",
-      "text": "$LYN | Pump possible.",
-      "author": {
-        "id": "crawlee_search_nihilusbtc",
-        "username": "NihilusBTC"
-      },
-      "public_metrics": {
-        "retweet_count": 22,
-        "reply_count": 40,
-        "like_count": 80,
-        "quote_count": 0
-      },
-      "created_at": "",
-      "url": "https://twitter.com/NihilusBTC/status/2001537987977568398",
-      "processed": false,
-      "addedAt": "2025-12-18T12:51:16.077Z",
-      "expiresAt": "2025-12-25T12:51:16.077Z",
-      "source": "timeline_monitor",
-      "contentCategory": "price-speculation"
-    },
-    {
       "id": "2001427449071144967",
       "text": "Not too long ago some banks were closing accounts for engaging in crypto.",
       "author": {
@@ -372,7 +225,7 @@
       },
       "created_at": "",
       "url": "https://twitter.com/IncomeSharks/status/2001427449071144967",
-      "processed": false,
+      "processed": true,
       "addedAt": "2025-12-18T17:53:11.818Z",
       "expiresAt": "2025-12-25T17:53:11.818Z",
       "source": "timeline_monitor",
@@ -393,7 +246,7 @@
       },
       "created_at": "",
       "url": "https://twitter.com/AltcoinSherpa/status/2001650745830150559",
-      "processed": false,
+      "processed": true,
       "addedAt": "2025-12-18T17:53:32.799Z",
       "expiresAt": "2025-12-25T17:53:32.799Z",
       "source": "timeline_monitor",
@@ -414,7 +267,7 @@
       },
       "created_at": "",
       "url": "https://twitter.com/Bitcoinhabebe/status/2001464289039912998",
-      "processed": false,
+      "processed": true,
       "addedAt": "2025-12-18T17:54:51.534Z",
       "expiresAt": "2025-12-25T17:54:51.534Z",
       "source": "timeline_monitor",
@@ -435,7 +288,7 @@
       },
       "created_at": "",
       "url": "https://twitter.com/aantonop/status/1763321484859027665",
-      "processed": false,
+      "processed": true,
       "addedAt": "2025-12-18T17:55:23.871Z",
       "expiresAt": "2025-12-25T17:55:23.871Z",
       "source": "timeline_monitor",
@@ -456,7 +309,7 @@
       },
       "created_at": "",
       "url": "https://twitter.com/aantonop/status/1763255504476774742",
-      "processed": false,
+      "processed": true,
       "addedAt": "2025-12-18T17:55:25.747Z",
       "expiresAt": "2025-12-25T17:55:25.747Z",
       "source": "timeline_monitor",
@@ -477,7 +330,7 @@
       },
       "created_at": "",
       "url": "https://twitter.com/aantonop/status/1763024925642604676",
-      "processed": false,
+      "processed": true,
       "addedAt": "2025-12-18T17:55:31.338Z",
       "expiresAt": "2025-12-25T17:55:31.338Z",
       "source": "timeline_monitor",
@@ -498,7 +351,7 @@
       },
       "created_at": "",
       "url": "https://twitter.com/aantonop/status/1752728668458336597",
-      "processed": false,
+      "processed": true,
       "addedAt": "2025-12-18T17:55:35.997Z",
       "expiresAt": "2025-12-25T17:55:35.997Z",
       "source": "timeline_monitor",
@@ -519,7 +372,7 @@
       },
       "created_at": "",
       "url": "https://twitter.com/aantonop/status/1752459918848975001",
-      "processed": false,
+      "processed": true,
       "addedAt": "2025-12-18T17:55:40.476Z",
       "expiresAt": "2025-12-25T17:55:40.476Z",
       "source": "timeline_monitor",
@@ -540,7 +393,7 @@
       },
       "created_at": "",
       "url": "https://twitter.com/NihilusBTC/status/2001627759672725975",
-      "processed": false,
+      "processed": true,
       "addedAt": "2025-12-18T17:55:51.668Z",
       "expiresAt": "2025-12-25T17:55:51.668Z",
       "source": "timeline_monitor",
@@ -561,7 +414,7 @@
       },
       "created_at": "",
       "url": "https://twitter.com/NihilusBTC/status/2001620721165123699",
-      "processed": false,
+      "processed": true,
       "addedAt": "2025-12-18T17:55:53.214Z",
       "expiresAt": "2025-12-25T17:55:53.214Z",
       "source": "timeline_monitor",
@@ -582,7 +435,7 @@
       },
       "created_at": "",
       "url": "https://twitter.com/CryptoHayes/status/1995513382942978510",
-      "processed": false,
+      "processed": true,
       "addedAt": "2025-12-18T17:56:07.732Z",
       "expiresAt": "2025-12-25T17:56:07.732Z",
       "source": "timeline_monitor",
@@ -603,7 +456,7 @@
       },
       "created_at": "",
       "url": "https://twitter.com/CryptoHayes/status/1995368658940612945",
-      "processed": false,
+      "processed": true,
       "addedAt": "2025-12-18T17:56:10.439Z",
       "expiresAt": "2025-12-25T17:56:10.439Z",
       "source": "timeline_monitor",
@@ -4896,6 +4749,5 @@
     "lastProductUsed": "Blockchain Save",
     "positioningPhraseIndex": 0,
     "replyCount": 136
-  },
-  "_removedStale": false
+  }
 }
