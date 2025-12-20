@@ -1,216 +1,6 @@
 {
   "posts": [
     {
-      "id": "2001532635596656679",
-      "text": "WHY BITCOIN IS DROPPING EVEN AS INSTITUTIONS KEEP BUYING\n\nU.S. institutions are still net buyers -- the Coinbase Premium stays positive.\n\nSo why is BTC under pressure? Because the selling isn’t coming from the U.S.\n\n Asia-based exchanges (Binance, OKX, Bybit) have seen",
-      "author": {
-        "id": "877357064724520961",
-        "username": "CryptosR_Us"
-      },
-      "public_metrics": {
-        "retweet_count": 57,
-        "reply_count": 46,
-        "like_count": 275,
-        "quote_count": 0
-      },
-      "created_at": "",
-      "url": "https://twitter.com/CryptosR_Us/status/2001532635596656679",
-      "processed": true,
-      "addedAt": "2025-12-18T12:47:31.636Z",
-      "expiresAt": "2025-12-25T12:47:31.636Z",
-      "source": "timeline_monitor",
-      "contentCategory": "market-trends"
-    },
-    {
-      "id": "2001509985809805780",
-      "text": "ALTCOIN SEASON SETUP IS STARTING TO LOOK VERY FAMILIAR\n\nThis is TOTAL crypto market cap excluding $BTC & $ETH.\n\nSame structure as past cycles:\n- Multi-year support held\n- Liquidity tightening near the lows\n- Previous breakouts came after the Fed ended QT\n\nLast time this happened",
-      "author": {
-        "id": "877357064724520961",
-        "username": "CryptosR_Us"
-      },
-      "public_metrics": {
-        "retweet_count": 107,
-        "reply_count": 84,
-        "like_count": 401,
-        "quote_count": 0
-      },
-      "created_at": "",
-      "url": "https://twitter.com/CryptosR_Us/status/2001509985809805780",
-      "processed": true,
-      "addedAt": "2025-12-18T12:47:33.465Z",
-      "expiresAt": "2025-12-25T12:47:33.465Z",
-      "source": "timeline_monitor",
-      "contentCategory": "market-trends/technical-analysis"
-    },
-    {
-      "id": "1995179590583828730",
-      "text": "Y'all make a fuck ton of money ... jelly\n\nDo you have a specific dividend policy, or a target over collateralisation ratio based on the type of asset discounted by it's volatility? Obvi when your liability is a dollar and your asset is a T-bill no issue, but if your asset is an",
-      "author": {
-        "id": "983993370048630785",
-        "username": "CryptoHayes"
-      },
-      "public_metrics": {
-        "retweet_count": 16,
-        "reply_count": 80,
-        "like_count": 351,
-        "quote_count": 0
-      },
-      "created_at": "",
-      "url": "https://twitter.com/CryptoHayes/status/1995179590583828730",
-      "processed": true,
-      "addedAt": "2025-12-18T12:47:52.242Z",
-      "expiresAt": "2025-12-25T12:47:52.242Z",
-      "source": "timeline_monitor",
-      "contentCategory": "technical-analysis"
-    },
-    {
-      "id": "2000642822731345975",
-      "text": "I haven't really posted about the @stablekwon sentencing.  But HCC literally called into the sentencing as a victim (I was there irl) to promote his validator.  It was surreal.  \n\nEveryone from the judge to the people in the benches were totally confused by his ramble.",
-      "author": {
-        "id": "crawlee_search_senpai_gideon",
-        "username": "Senpai_Gideon"
-      },
-      "public_metrics": {
-        "retweet_count": 14,
-        "reply_count": 22,
-        "like_count": 83,
-        "quote_count": 0
-      },
-      "created_at": "",
-      "url": "https://twitter.com/Senpai_Gideon/status/2000642822731345975",
-      "processed": true,
-      "addedAt": "2025-12-18T12:48:05.523Z",
-      "expiresAt": "2025-12-25T12:48:05.523Z",
-      "source": "timeline_monitor",
-      "contentCategory": "news"
-    },
-    {
-      "id": "2001601375629697350",
-      "text": "BREAKING:\n\n THE MINISTRY OF JUSTICE HAS JUST REVEALED THAT TAIWAN NOW HOLDS 210.45 BITCOIN IN SEIZED ASSETS.",
-      "author": {
-        "id": "1353384573435056128",
-        "username": "CryptoRover"
-      },
-      "public_metrics": {
-        "retweet_count": 35,
-        "reply_count": 108,
-        "like_count": 305,
-        "quote_count": 0
-      },
-      "created_at": "",
-      "url": "https://twitter.com/CryptoRover/status/2001601375629697350",
-      "processed": true,
-      "addedAt": "2025-12-18T12:48:46.756Z",
-      "expiresAt": "2025-12-25T12:48:46.756Z",
-      "source": "timeline_monitor",
-      "contentCategory": "news"
-    },
-    {
-      "id": "2001578935214391551",
-      "text": "Bitcoin retested the realized price for accumulation addresses again.\n\nThis appears to be a very important level for $ETH.",
-      "author": {
-        "id": "1353384573435056128",
-        "username": "CryptoRover"
-      },
-      "public_metrics": {
-        "retweet_count": 40,
-        "reply_count": 76,
-        "like_count": 261,
-        "quote_count": 0
-      },
-      "created_at": "",
-      "url": "https://twitter.com/CryptoRover/status/2001578935214391551",
-      "processed": true,
-      "addedAt": "2025-12-18T12:48:54.651Z",
-      "expiresAt": "2025-12-25T12:48:54.651Z",
-      "source": "timeline_monitor",
-      "contentCategory": "technical-analysis"
-    },
-    {
-      "id": "2001576549246472439",
-      "text": "BREAKING:\n\nVICE PRESIDENT OF THE UNITED STATES JD VANCE SAID 100 MILLION AMERICANS WILL OWN $BTC SOON",
-      "author": {
-        "id": "1353384573435056128",
-        "username": "CryptoRover"
-      },
-      "public_metrics": {
-        "retweet_count": 99,
-        "reply_count": 139,
-        "like_count": 670,
-        "quote_count": 0
-      },
-      "created_at": "",
-      "url": "https://twitter.com/CryptoRover/status/2001576549246472439",
-      "processed": true,
-      "addedAt": "2025-12-18T12:48:56.993Z",
-      "expiresAt": "2025-12-25T12:48:56.993Z",
-      "source": "timeline_monitor",
-      "contentCategory": "market-trends"
-    },
-    {
-      "id": "2001600831037280275",
-      "text": "BREAKING: Michael Saylor just dropped a nuclear take on quantum computing vs Bitcoin\n\n\"Quantum won't break Bitcoin: it will HARDEN it\"\n\nHis logic? $BTC protocol will upgrade its cryptography way before quantum becomes a real threat\nQuantum isn't a bug. It's a feature.\n\n$BTC was",
-      "author": {
-        "id": "crawlee_search_cryptopatel",
-        "username": "CryptoPatel"
-      },
-      "public_metrics": {
-        "retweet_count": 10,
-        "reply_count": 17,
-        "like_count": 176,
-        "quote_count": 0
-      },
-      "created_at": "",
-      "url": "https://twitter.com/CryptoPatel/status/2001600831037280275",
-      "processed": true,
-      "addedAt": "2025-12-18T12:49:45.692Z",
-      "expiresAt": "2025-12-25T12:49:45.692Z",
-      "source": "timeline_monitor",
-      "contentCategory": "project-discussion"
-    },
-    {
-      "id": "2001585732184608990",
-      "text": "AI didn’t Beat humans. It Exposed them.\n\nMost traders lost 30%.\nAI stayed alive.\nOne human turned 1 into 4 in 7 days.\n\nThe market isn’t human vs machine.\nIt’s average vs exceptional.",
-      "author": {
-        "id": "crawlee_search_cryptopatel",
-        "username": "CryptoPatel"
-      },
-      "public_metrics": {
-        "retweet_count": 10,
-        "reply_count": 13,
-        "like_count": 186,
-        "quote_count": 0
-      },
-      "created_at": "",
-      "url": "https://twitter.com/CryptoPatel/status/2001585732184608990",
-      "processed": true,
-      "addedAt": "2025-12-18T12:49:48.863Z",
-      "expiresAt": "2025-12-25T12:49:48.863Z",
-      "source": "timeline_monitor",
-      "contentCategory": "market-trends"
-    },
-    {
-      "id": "2001555278995595452",
-      "text": "Bitcoin just hit a critical level most traders are watching\n\nPrice is testing every major moving average at once. Sounds scary, right?\n\nBut here's what history tells us: These exact moments have created some of the best DCA entry points for long-term holders.\n\nVolatility is real.",
-      "author": {
-        "id": "crawlee_search_cryptopatel",
-        "username": "CryptoPatel"
-      },
-      "public_metrics": {
-        "retweet_count": 24,
-        "reply_count": 11,
-        "like_count": 193,
-        "quote_count": 0
-      },
-      "created_at": "",
-      "url": "https://twitter.com/CryptoPatel/status/2001555278995595452",
-      "processed": true,
-      "addedAt": "2025-12-18T12:49:49.928Z",
-      "expiresAt": "2025-12-25T12:49:49.928Z",
-      "source": "timeline_monitor",
-      "contentCategory": "technical-analysis"
-    },
-    {
       "id": "2001427449071144967",
       "text": "Not too long ago some banks were closing accounts for engaging in crypto.",
       "author": {
@@ -4724,10 +4514,367 @@
       "expiresAt": "2025-12-27T12:51:12.476Z",
       "source": "timeline_monitor",
       "contentCategory": "market-trends"
+    },
+    {
+      "id": "2002347989239497142",
+      "text": "If $D Follows TA, then it should start exploding within the next hours. Look at the price action of ANIME & compare it to $D.\n\nSeems like we are hours away from some gains .",
+      "author": {
+        "id": "crawlee_search_bitcoinhabebe",
+        "username": "Bitcoinhabebe"
+      },
+      "public_metrics": {
+        "retweet_count": 18,
+        "reply_count": 25,
+        "like_count": 83,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/Bitcoinhabebe/status/2002347989239497142",
+      "processed": false,
+      "addedAt": "2025-12-20T17:51:33.199Z",
+      "expiresAt": "2025-12-27T17:51:33.199Z",
+      "source": "timeline_monitor",
+      "contentCategory": "price-speculation"
+    },
+    {
+      "id": "2002401102809997686",
+      "text": "Fun Fact that breaks weak hands \n\n 2018: $BNB dumped -83% in 10 months\n 2020: $BNB dumped -83% in 9 months\n 2022: $BNB dumped -73% in 13 months\n\nEvery cycle looked dead.\nEvery cycle created millionaires.\n\nNow the part most people conveniently forget \n$BNB is still UP",
+      "author": {
+        "id": "crawlee_search_cryptopatel",
+        "username": "CryptoPatel"
+      },
+      "public_metrics": {
+        "retweet_count": 10,
+        "reply_count": 13,
+        "like_count": 147,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoPatel/status/2002401102809997686",
+      "processed": false,
+      "addedAt": "2025-12-20T17:52:11.040Z",
+      "expiresAt": "2025-12-27T17:52:11.040Z",
+      "source": "timeline_monitor",
+      "contentCategory": "altcoin-talk"
+    },
+    {
+      "id": "2002385751296578023",
+      "text": "Ethereum is now adding around 163K new wallets per day, up from 124K in July.\n\nMore new addresses = growing on-chain engagement.\n\nA trend worth watching for the #2 crypto.",
+      "author": {
+        "id": "crawlee_search_cryptopatel",
+        "username": "CryptoPatel"
+      },
+      "public_metrics": {
+        "retweet_count": 10,
+        "reply_count": 14,
+        "like_count": 190,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoPatel/status/2002385751296578023",
+      "processed": false,
+      "addedAt": "2025-12-20T17:52:12.971Z",
+      "expiresAt": "2025-12-27T17:52:12.971Z",
+      "source": "timeline_monitor",
+      "contentCategory": "project-discussion"
+    },
+    {
+      "id": "2002316693595643943",
+      "text": "Tom Lee's 2026 Outlook: The Start of Expansion After Three Years of Suppression\n\nIn interviews with The Prof G Pod (Dec 12) and Squawk Box (Dec 15), Bitmine Chairman Tom Lee shared his 2026 outlook.He argues markets have been suppressed by six \"extinction-level\" events and Fed",
+      "author": {
+        "id": "111533746",
+        "username": "WuBlockchain"
+      },
+      "public_metrics": {
+        "retweet_count": 15,
+        "reply_count": 26,
+        "like_count": 75,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/WuBlockchain/status/2002316693595643943",
+      "processed": false,
+      "addedAt": "2025-12-20T17:52:26.810Z",
+      "expiresAt": "2025-12-27T17:52:26.810Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "2002363239049380352",
+      "text": "$BLESS\n\nBuy more.",
+      "author": {
+        "id": "crawlee_search_nihilusbtc",
+        "username": "NihilusBTC"
+      },
+      "public_metrics": {
+        "retweet_count": 19,
+        "reply_count": 34,
+        "like_count": 70,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/NihilusBTC/status/2002363239049380352",
+      "processed": false,
+      "addedAt": "2025-12-20T17:52:54.786Z",
+      "expiresAt": "2025-12-27T17:52:54.786Z",
+      "source": "timeline_monitor",
+      "contentCategory": "altcoin-talk"
+    },
+    {
+      "id": "2002358988302655576",
+      "text": "$BLESS | Up.",
+      "author": {
+        "id": "crawlee_search_nihilusbtc",
+        "username": "NihilusBTC"
+      },
+      "public_metrics": {
+        "retweet_count": 22,
+        "reply_count": 36,
+        "like_count": 84,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/NihilusBTC/status/2002358988302655576",
+      "processed": false,
+      "addedAt": "2025-12-20T17:52:56.733Z",
+      "expiresAt": "2025-12-27T17:52:56.733Z",
+      "source": "timeline_monitor",
+      "contentCategory": "altcoin-talk"
+    },
+    {
+      "id": "2002352393640378558",
+      "text": "Yes, sometimes i make mistakes too.\n\n$folks",
+      "author": {
+        "id": "crawlee_search_nihilusbtc",
+        "username": "NihilusBTC"
+      },
+      "public_metrics": {
+        "retweet_count": 16,
+        "reply_count": 53,
+        "like_count": 109,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/NihilusBTC/status/2002352393640378558",
+      "processed": false,
+      "addedAt": "2025-12-20T17:52:58.655Z",
+      "expiresAt": "2025-12-27T17:52:58.655Z",
+      "source": "timeline_monitor",
+      "contentCategory": "altcoin-talk"
+    },
+    {
+      "id": "2002351413318267142",
+      "text": "$JELLYJELLY\n$BLESS\n\nPump is coming.",
+      "author": {
+        "id": "crawlee_search_nihilusbtc",
+        "username": "NihilusBTC"
+      },
+      "public_metrics": {
+        "retweet_count": 18,
+        "reply_count": 43,
+        "like_count": 89,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/NihilusBTC/status/2002351413318267142",
+      "processed": false,
+      "addedAt": "2025-12-20T17:53:00.676Z",
+      "expiresAt": "2025-12-27T17:53:00.676Z",
+      "source": "timeline_monitor",
+      "contentCategory": "price-speculation"
+    },
+    {
+      "id": "2002404122197438805",
+      "text": "BITCOIN MINER CAPITULATION IS OCCURRING EXACTLY AT THE END OF THE FOUR-YEAR CYCLE AGAIN...",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "retweet_count": 32,
+        "reply_count": 102,
+        "like_count": 290,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoRover/status/2002404122197438805",
+      "processed": false,
+      "addedAt": "2025-12-20T17:53:43.850Z",
+      "expiresAt": "2025-12-27T17:53:43.850Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends/technical-analysis"
+    },
+    {
+      "id": "2002394308037755296",
+      "text": "Is the four-year cycle playing out again, or is this just a coincidence?",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "retweet_count": 34,
+        "reply_count": 127,
+        "like_count": 257,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoRover/status/2002394308037755296",
+      "processed": false,
+      "addedAt": "2025-12-20T17:53:46.132Z",
+      "expiresAt": "2025-12-27T17:53:46.132Z",
+      "source": "timeline_monitor",
+      "contentCategory": "technical-analysis"
+    },
+    {
+      "id": "2002385923804123380",
+      "text": "BREAKING:  \n\nWINKLEVOSS BROTHERS SAID: “BITCOIN WILL REACH $1,000,000 WITHIN THE NEXT 5 YEARS.”",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "retweet_count": 62,
+        "reply_count": 136,
+        "like_count": 442,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoRover/status/2002385923804123380",
+      "processed": false,
+      "addedAt": "2025-12-20T17:53:47.750Z",
+      "expiresAt": "2025-12-27T17:53:47.750Z",
+      "source": "timeline_monitor",
+      "contentCategory": "price-speculation"
+    },
+    {
+      "id": "2002374175000866973",
+      "text": "BOJ HIKED THE RATES.\n\nBitcoin’s performance next week could be decisive.",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "retweet_count": 37,
+        "reply_count": 108,
+        "like_count": 295,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoRover/status/2002374175000866973",
+      "processed": false,
+      "addedAt": "2025-12-20T17:53:51.770Z",
+      "expiresAt": "2025-12-27T17:53:51.771Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "2002371846516113624",
+      "text": "BREAKING:\n\nCHINA INJECTED ¥1.05 TRILLION ($148 BILLION) INTO THE MARKET THIS WEEK!  \n\nBULLISH!",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "retweet_count": 90,
+        "reply_count": 138,
+        "like_count": 696,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoRover/status/2002371846516113624",
+      "processed": false,
+      "addedAt": "2025-12-20T17:53:55.655Z",
+      "expiresAt": "2025-12-27T17:53:55.655Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "2002364109216748009",
+      "text": "CRYPTO SOCIAL INTEREST IS ZERO NOW!",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "retweet_count": 99,
+        "reply_count": 182,
+        "like_count": 527,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoRover/status/2002364109216748009",
+      "processed": false,
+      "addedAt": "2025-12-20T17:53:56.659Z",
+      "expiresAt": "2025-12-27T17:53:56.659Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "2002352783815565485",
+      "text": "Potential Bitcoin trade(s) ahead.\n\nMore updates coming in the VIP TG group.\n\nLink below. \nhttp://t.me/cryptorover_weex_bot…",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "retweet_count": 24,
+        "reply_count": 60,
+        "like_count": 148,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoRover/status/2002352783815565485",
+      "processed": false,
+      "addedAt": "2025-12-20T17:53:58.592Z",
+      "expiresAt": "2025-12-27T17:53:58.592Z",
+      "source": "timeline_monitor",
+      "contentCategory": "price-speculation"
+    },
+    {
+      "id": "2002369652165390617",
+      "text": "STEVE COHEN TAKES A BIG STAKE IN MICROSTRATEGY \n\nSteve Cohen's Point72 Asset Management purchased 390,665 shares of MicroStrategy ($MSTR) for approximately $65 million. \n\nBig investors are buying the $BTC dip, setting the stage for the next rally.",
+      "author": {
+        "id": "877357064724520961",
+        "username": "CryptosR_Us"
+      },
+      "public_metrics": {
+        "retweet_count": 46,
+        "reply_count": 43,
+        "like_count": 322,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptosR_Us/status/2002369652165390617",
+      "processed": false,
+      "addedAt": "2025-12-20T17:55:31.289Z",
+      "expiresAt": "2025-12-27T17:55:31.289Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "2002339949496963460",
+      "text": "$BTC IS JUST GETTING STARTED ; THE INTERNET WAS HERE IN 1999\n\nBitcoin is at ~4.7% global adoption about where the internet was in 1999.\n\nThe adoption curve looks strikingly similar to the internet’s early days, before it became a global standard.\n\nWith ETF floodgates opening,",
+      "author": {
+        "id": "877357064724520961",
+        "username": "CryptosR_Us"
+      },
+      "public_metrics": {
+        "retweet_count": 21,
+        "reply_count": 34,
+        "like_count": 92,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptosR_Us/status/2002339949496963460",
+      "processed": false,
+      "addedAt": "2025-12-20T17:55:33.245Z",
+      "expiresAt": "2025-12-27T17:55:33.245Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
     }
   ],
   "metadata": {
-    "lastUpdated": "2025-12-20T12:51:14.603Z",
+    "lastUpdated": "2025-12-20T17:55:41.878Z",
     "totalPosts": 232,
     "bySource": {
       "timeline_monitor": 232,
