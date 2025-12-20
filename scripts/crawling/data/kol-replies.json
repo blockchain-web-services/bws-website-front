@@ -3271,6 +3271,44 @@
       "timestamp": "2025-12-20T19:54:45.892Z",
       "status": "posted",
       "dryRun": false
+    },
+    {
+      "id": "4441279246-2001746680916615278-1766272752058",
+      "tweetId": "2001746680916615278",
+      "tweetUrl": "https://twitter.com/IncomeSharks/status/2001746680916615278",
+      "kolId": "4441279246",
+      "kolUsername": "IncomeSharks",
+      "originalTweetText": "Some assets are for trading, some are for holding. Hold value (long term), trade hype (short term). Chances are if it's related to crypto you know the answer to what kind of asset it is.",
+      "replyTweetId": "2002519177756573875",
+      "replyText": "Exactly - the distinction between hype cycles and sustainable value is everything.\n\n$BWS Fan Game Cube lets sports clubs tokenize field sections into fan-owned NFTs that earn rewards from real match events. Multi-sport platform with actual revenue sharing between clubs and fans.\n\n@BWSCommunity #microcap #fundamentals #sports https://docs.bws.ninja/marketplace-solutions/bws.nft.gamecube",
+      "productMentioned": "Multiple products (Blockchain Badges, ESG Credits, Fan Game Cube)",
+      "relevanceScore": 78,
+      "templateUsed": "classic",
+      "templateName": "Classic Structure",
+      "imageAttached": true,
+      "imagePath": "/assets/images/docs/fan-game-cube/fan-game-cube-0.png",
+      "timestamp": "2025-12-20T23:19:12.058Z",
+      "status": "posted",
+      "dryRun": false
+    },
+    {
+      "id": "935742315389444096-2001722623722733744-1766272784947",
+      "tweetId": "2001722623722733744",
+      "tweetUrl": "https://twitter.com/CryptoWendyO/status/2001722623722733744",
+      "kolId": "935742315389444096",
+      "kolUsername": "CryptoWendyO",
+      "originalTweetText": "WTF IT'S HAPPENING Rate Cut Incoming! Crypto Bulls Are Back?",
+      "replyTweetId": "2002519316843872623",
+      "replyText": "Rate cuts benefit microcaps that already have shipping products versus those still in whitepaper stage.\n\nBlockchain Hash from $BWS lets developers store and update on-chain data through REST API with no wallet management or gas fees required.\n\nRevenue-ready infrastructure at microcap entry.\n\n@BWSCommunity #microcap #altcoins #fundamentals https://docs.bws.ninja/solutions/bws.blockchain.hash",
+      "productMentioned": "Multiple (Blockchain Badges, ESG Credits, X Bot)",
+      "relevanceScore": 82,
+      "templateUsed": "problem_solution",
+      "templateName": "Problem-Solution Structure",
+      "imageAttached": false,
+      "imagePath": null,
+      "timestamp": "2025-12-20T23:19:44.947Z",
+      "status": "posted",
+      "dryRun": false
     }
   ],
   "dailyStats": {
@@ -3345,10 +3383,10 @@
     }
   },
   "metadata": {
-    "totalReplies": 164,
-    "successfulReplies": 130,
+    "totalReplies": 166,
+    "successfulReplies": 132,
     "failedReplies": 34,
-    "lastReplyAt": "2025-12-20T19:54:45.892Z",
+    "lastReplyAt": "2025-12-20T23:19:44.947Z",
     "todayRepliesCount": 0,
     "lastUpdateBy": "kol-system"
   }
