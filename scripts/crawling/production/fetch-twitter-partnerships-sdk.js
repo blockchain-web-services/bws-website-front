@@ -534,7 +534,9 @@ async function main() {
       },
 
       // Proxy for crawler mode (from config file or env vars)
-      proxy: crawlerConfig?.proxy?.enabled ? {
+      // NOTE: Proxy is DISABLED in GitHub Actions because direct access works better
+      // Working scripts (discover-by-engagement-crawlee.js) use "WITHOUT proxy - direct access works on GitHub Actions"
+      proxy: (crawlerConfig?.proxy?.enabled && !process.env.GITHUB_ACTIONS) ? {
         provider: crawlerConfig.proxy.provider,
         username: process.env.OXYLABS_USERNAME || crawlerConfig.proxy.username,
         password: process.env.OXYLABS_PASSWORD || crawlerConfig.proxy.password
