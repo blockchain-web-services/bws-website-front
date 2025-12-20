@@ -1,9 +1,0 @@
-{
-	"id": "xX1cALnr2RNhGEc",
-	"json": "{\"id\":\"xX1cALnr2RNhGEc\",\"url\":\"https://x.com/i/flow/login\",\"loadedUrl\":\"https://x.com/i/flow/login\",\"uniqueKey\":\"https://x.com/i/flow/login\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"state\":4}},\"handledAt\":\"2025-11-05T20:10:45.746Z\"}",
-	"method": "GET",
-	"orderNo": null,
-	"retryCount": 0,
-	"uniqueKey": "https://x.com/i/flow/login",
-	"url": "https://x.com/i/flow/login"
-}
