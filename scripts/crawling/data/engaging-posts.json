@@ -1,111 +1,6 @@
 {
   "posts": [
     {
-      "id": "2001578192331833591",
-      "text": "Michael Saylor: The U.S. Dollar Is the Biggest Winner in the Stablecoin Wave\n\nStrategy co-founder Michael Saylor told CNBC on Nov. 29 that stablecoins and Bitcoin are in “completely different lanes.” He said stablecoins compete with Visa, Mastercard, and the traditional banking",
-      "author": {
-        "id": "111533746",
-        "username": "WuBlockchain"
-      },
-      "public_metrics": {
-        "retweet_count": 61,
-        "reply_count": 72,
-        "like_count": 454,
-        "quote_count": 0
-      },
-      "created_at": "",
-      "url": "https://twitter.com/WuBlockchain/status/2001578192331833591",
-      "processed": true,
-      "addedAt": "2025-12-18T22:09:11.190Z",
-      "expiresAt": "2025-12-25T22:09:11.190Z",
-      "source": "timeline_monitor",
-      "contentCategory": "market-trends"
-    },
-    {
-      "id": "1762988232969490689",
-      "text": "Are ETFs better than Self Custody? Watch this 1 min video to hear my answer.",
-      "author": {
-        "id": "1469101279",
-        "username": "aantonop"
-      },
-      "public_metrics": {
-        "retweet_count": 176,
-        "reply_count": 0,
-        "like_count": 442,
-        "quote_count": 0
-      },
-      "created_at": "",
-      "url": "https://twitter.com/aantonop/status/1762988232969490689",
-      "processed": true,
-      "addedAt": "2025-12-18T22:10:50.970Z",
-      "expiresAt": "2025-12-25T22:10:50.970Z",
-      "source": "timeline_monitor",
-      "contentCategory": "investment-opportunities"
-    },
-    {
-      "id": "1752790565178245159",
-      "text": "Last chance to save on the Path to Self Custody Bundle. Includes a step-by-step hardware wallet demo. 14 day money back guarantee. Learn more https://patreon.com/posts/96124187",
-      "author": {
-        "id": "1469101279",
-        "username": "aantonop"
-      },
-      "public_metrics": {
-        "retweet_count": 84,
-        "reply_count": 0,
-        "like_count": 111,
-        "quote_count": 0
-      },
-      "created_at": "",
-      "url": "https://twitter.com/aantonop/status/1752790565178245159",
-      "processed": true,
-      "addedAt": "2025-12-18T22:10:54.651Z",
-      "expiresAt": "2025-12-25T22:10:54.651Z",
-      "source": "timeline_monitor",
-      "contentCategory": "technical-analysis"
-    },
-    {
-      "id": "2001745029346324671",
-      "text": "Bitcoin open interest has been completely wiped.\n\nThis pressure could continue into year-end as large funds rebalance and close positions.",
-      "author": {
-        "id": "1353384573435056128",
-        "username": "CryptoRover"
-      },
-      "public_metrics": {
-        "retweet_count": 31,
-        "reply_count": 71,
-        "like_count": 245,
-        "quote_count": 0
-      },
-      "created_at": "",
-      "url": "https://twitter.com/CryptoRover/status/2001745029346324671",
-      "processed": true,
-      "addedAt": "2025-12-18T22:11:07.613Z",
-      "expiresAt": "2025-12-25T22:11:07.614Z",
-      "source": "timeline_monitor",
-      "contentCategory": "market-trends"
-    },
-    {
-      "id": "2001744374921920940",
-      "text": "Real wealth is built in bear markets, not in bull markets.\n\nThe lower prices go, the more interested you should become.\n\nUnfortunately, most people leave the market during downturns and only return 1–2 years later, once prices are already moving back up.",
-      "author": {
-        "id": "1353384573435056128",
-        "username": "CryptoRover"
-      },
-      "public_metrics": {
-        "retweet_count": 28,
-        "reply_count": 71,
-        "like_count": 206,
-        "quote_count": 0
-      },
-      "created_at": "",
-      "url": "https://twitter.com/CryptoRover/status/2001744374921920940",
-      "processed": true,
-      "addedAt": "2025-12-18T22:11:08.788Z",
-      "expiresAt": "2025-12-25T22:11:08.788Z",
-      "source": "timeline_monitor",
-      "contentCategory": "market-trends"
-    },
-    {
       "id": "2001749385919787456",
       "text": "The whole point of trading is to realize profits but it's literally something that everyone struggles with. You stare at unrealized gains, sharing screenshots, spending money you don't have, forgetting the most important part of even being a trader is to walk away with profit.",
       "author": {
@@ -4493,13 +4388,916 @@
       "expiresAt": "2025-12-27T22:13:02.249Z",
       "source": "timeline_monitor",
       "contentCategory": "altcoin-talk"
+    },
+    {
+      "id": "2000728779816100255",
+      "text": "I have some stuff to fix first then yea",
+      "author": {
+        "id": "2259434528",
+        "username": "cobie"
+      },
+      "public_metrics": {
+        "retweet_count": 11,
+        "reply_count": 119,
+        "like_count": 808,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/cobie/status/2000728779816100255",
+      "processed": false,
+      "addedAt": "2025-12-21T07:23:18.144Z",
+      "expiresAt": "2025-12-28T07:23:18.144Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "1998429165356556542",
+      "text": "I pray you speak the truth child",
+      "author": {
+        "id": "2259434528",
+        "username": "cobie"
+      },
+      "public_metrics": {
+        "retweet_count": 33,
+        "reply_count": 95,
+        "like_count": 3521,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/cobie/status/1998429165356556542",
+      "processed": false,
+      "addedAt": "2025-12-21T07:23:20.026Z",
+      "expiresAt": "2025-12-28T07:23:20.026Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "1998062858303836433",
+      "text": "All of this stuff was also on telegram. I’m not saying twitter is dead, I’m just saying it’s replaceable",
+      "author": {
+        "id": "2259434528",
+        "username": "cobie"
+      },
+      "public_metrics": {
+        "retweet_count": 14,
+        "reply_count": 89,
+        "like_count": 552,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/cobie/status/1998062858303836433",
+      "processed": false,
+      "addedAt": "2025-12-21T07:23:22.202Z",
+      "expiresAt": "2025-12-28T07:23:22.202Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2001682705453392030",
+      "text": "$BTC bottom is around here (down to 75k) imo",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "retweet_count": 61,
+        "reply_count": 48,
+        "like_count": 378,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/AltcoinSherpa/status/2001682705453392030",
+      "processed": false,
+      "addedAt": "2025-12-21T07:23:31.557Z",
+      "expiresAt": "2025-12-28T07:23:31.557Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2002128939628834858",
+      "text": "$SEZL - Buy now pay later stock. Since 2023 has beat revenue estimates every quarter. Revenue expected to go up the next 4 quarters on top of continuing the streak of beating estimates. Makes more profit than Klarna which is 8x larger in marketcap.",
+      "author": {
+        "id": "4441279246",
+        "username": "IncomeSharks"
+      },
+      "public_metrics": {
+        "retweet_count": 10,
+        "reply_count": 16,
+        "like_count": 236,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/IncomeSharks/status/2002128939628834858",
+      "processed": false,
+      "addedAt": "2025-12-21T07:23:40.880Z",
+      "expiresAt": "2025-12-28T07:23:40.880Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2002570981915627812",
+      "text": "THE U.S. JUST DROPPED A CRYPTO TAX FRAMEWORK\n\nRep. Max Miller (R-Ohio) and Rep. Steven Horsford (D-Nev.) just released a draft crypto tax bill called the Digital Asset PARITY Act -- and it actually fixes real problems. \n\nIt hits the pain points directly:\n\n STABLECOIN SAFE",
+      "author": {
+        "id": "877357064724520961",
+        "username": "CryptosR_Us"
+      },
+      "public_metrics": {
+        "retweet_count": 67,
+        "reply_count": 35,
+        "like_count": 287,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptosR_Us/status/2002570981915627812",
+      "processed": false,
+      "addedAt": "2025-12-21T07:23:50.314Z",
+      "expiresAt": "2025-12-28T07:23:50.314Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2002544583184412879",
+      "text": "THE PRICE IS LYING ABOUT BITCOIN\n\nBlackRock’s Bitcoin ETF is one of the top inflow ETFs of 2025 even though it’s down on the year. That almost never happens. Funds don’t pull in that kind of money unless buyers are thinking long term.\n\nIt’s actually the only ETF on the flow",
+      "author": {
+        "id": "877357064724520961",
+        "username": "CryptosR_Us"
+      },
+      "public_metrics": {
+        "retweet_count": 15,
+        "reply_count": 23,
+        "like_count": 153,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptosR_Us/status/2002544583184412879",
+      "processed": false,
+      "addedAt": "2025-12-21T07:23:51.901Z",
+      "expiresAt": "2025-12-28T07:23:51.901Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2002514422376407449",
+      "text": "A $1.5 TRILLION ASSET MANAGER JUST CALLED BLOCKCHAINS THE FUTURE\n\nThis is Franklin Templeton talking, ~$1.5T under management.  \n\nTheir view is that in the future, no one is keeping separate books, accounts, or ledgers. Everything lives on public blockchains. Wallets replace",
+      "author": {
+        "id": "877357064724520961",
+        "username": "CryptosR_Us"
+      },
+      "public_metrics": {
+        "retweet_count": 34,
+        "reply_count": 28,
+        "like_count": 164,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptosR_Us/status/2002514422376407449",
+      "processed": false,
+      "addedAt": "2025-12-21T07:23:53.884Z",
+      "expiresAt": "2025-12-28T07:23:53.884Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2002484149530341654",
+      "text": "THIS IS A $100 TRILLION MOMENT FOR CRYPTO\n\nDTCC sits at the center of U.S. capital markets and custodies ~$100T in assets. It just began moving real assets onto blockchain rails -- with Canton Network as the first network, not the only one.\n\nThey’re starting with U.S. Treasuries,",
+      "author": {
+        "id": "877357064724520961",
+        "username": "CryptosR_Us"
+      },
+      "public_metrics": {
+        "retweet_count": 72,
+        "reply_count": 36,
+        "like_count": 296,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptosR_Us/status/2002484149530341654",
+      "processed": false,
+      "addedAt": "2025-12-21T07:23:55.905Z",
+      "expiresAt": "2025-12-28T07:23:55.905Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2002454024411337207",
+      "text": "THE CENTRAL BANK'S MONEY PRINTER CALLS THE SHOTS  \n\nAs Arthur Hayes nails it: \"Bitcoin goes up or down based on Fed, ECB, etc.—are they printing, cutting rates, expanding balance sheets?\"\n\nWhy? Money printing devalues fiat, turning $BTC into inflation-proof gold. Tightening?",
+      "author": {
+        "id": "877357064724520961",
+        "username": "CryptosR_Us"
+      },
+      "public_metrics": {
+        "retweet_count": 14,
+        "reply_count": 29,
+        "like_count": 128,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptosR_Us/status/2002454024411337207",
+      "processed": false,
+      "addedAt": "2025-12-21T07:23:57.871Z",
+      "expiresAt": "2025-12-28T07:23:57.871Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2002392305248919785",
+      "text": "JUST IN: SUPREME COURT COULD DEEM TRUMP TARIFFS ILLEGAL - MARKETS & CRYPTO ON WATCH \n\nPolymarket now puts a 71% chance that the U.S. Supreme Court rules President Trump’s tariffs illegal. \n\nMarkets still remember the dip last October after Trump announced new tariffs on China.",
+      "author": {
+        "id": "877357064724520961",
+        "username": "CryptosR_Us"
+      },
+      "public_metrics": {
+        "retweet_count": 46,
+        "reply_count": 80,
+        "like_count": 251,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptosR_Us/status/2002392305248919785",
+      "processed": false,
+      "addedAt": "2025-12-21T07:23:59.944Z",
+      "expiresAt": "2025-12-28T07:23:59.944Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2002341739907191065",
+      "text": "Do not miss the opportunity to trade privately with me FREE of charge. 1 simple step & you a permanent member of Habebe VIP where we offer classes, live trading, & insider valuable information in one place!\n\nRead the comments on the post",
+      "author": {
+        "id": "crawlee_search_bitcoinhabebe",
+        "username": "Bitcoinhabebe"
+      },
+      "public_metrics": {
+        "retweet_count": 14,
+        "reply_count": 21,
+        "like_count": 73,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/Bitcoinhabebe/status/2002341739907191065",
+      "processed": false,
+      "addedAt": "2025-12-21T07:24:08.752Z",
+      "expiresAt": "2025-12-28T07:24:08.752Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2002621722621850034",
+      "text": "BREAKING:\n\nBinance founder CZ says simply HOLDING #Bitcoin Is the BEST investment strategy.",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "retweet_count": 41,
+        "reply_count": 106,
+        "like_count": 291,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoRover/status/2002621722621850034",
+      "processed": false,
+      "addedAt": "2025-12-21T07:24:17.609Z",
+      "expiresAt": "2025-12-28T07:24:17.609Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2002620973212651907",
+      "text": "New Bitcoin and Crypto Tax Bill Proposed by House Lawmakers. \n\n• Stablecoin payments under $200 would be exempt from capital gains tax\n\n• Option to defer taxes on staking and mining earnings for up to five years\n\n• Crypto tax rules would be aligned with securities",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "retweet_count": 25,
+        "reply_count": 66,
+        "like_count": 172,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoRover/status/2002620973212651907",
+      "processed": false,
+      "addedAt": "2025-12-21T07:24:19.686Z",
+      "expiresAt": "2025-12-28T07:24:19.686Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2002618249494909295",
+      "text": "DANGEROUS #BITCOIN SIGNAL IS FLASHING...\n\nWatch NOW:\nhttps://youtu.be/dWBQUcXgkPo",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "retweet_count": 24,
+        "reply_count": 58,
+        "like_count": 145,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoRover/status/2002618249494909295",
+      "processed": false,
+      "addedAt": "2025-12-21T07:24:21.597Z",
+      "expiresAt": "2025-12-28T07:24:21.597Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2002545311554916739",
+      "text": "BREAKING:\n\nBITCOIN NOW USES OVER 50% CLEAN ENERGY!\n\nELON MUSK SAID TESLA WOULD ACCEPT BTC AGAIN ONCE THIS MILESTONE IS REACHED",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "retweet_count": 146,
+        "reply_count": 98,
+        "like_count": 808,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoRover/status/2002545311554916739",
+      "processed": false,
+      "addedAt": "2025-12-21T07:24:23.608Z",
+      "expiresAt": "2025-12-28T07:24:23.608Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2002531420829593900",
+      "text": "BREAKING:\n\nSAM ALTMAN: “I’M EXCITED ABOUT BITCOIN.”\n\n“THE IDEA OF A GLOBAL CURRENCY THAT OPERATES OUTSIDE THE CONTROL OF ANY GOVERNMENT IS A LOGICAL AND IMPORTANT STEP FORWARD.”",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "retweet_count": 69,
+        "reply_count": 69,
+        "like_count": 431,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoRover/status/2002531420829593900",
+      "processed": false,
+      "addedAt": "2025-12-21T07:24:25.579Z",
+      "expiresAt": "2025-12-28T07:24:25.579Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2002528523551113662",
+      "text": "BREAKING:\n\n US HOUSE REPRESENTATIVES DRAFT BILL TO EXEMPT CRYPTO STABLECOIN TRANSACTIONS UNDER $200 FROM CAPITAL GAINS TAXES.",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "retweet_count": 76,
+        "reply_count": 75,
+        "like_count": 447,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoRover/status/2002528523551113662",
+      "processed": false,
+      "addedAt": "2025-12-21T07:24:27.828Z",
+      "expiresAt": "2025-12-28T07:24:27.828Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2002484904550895815",
+      "text": "Decisive days ahead. \n\nHow does Bitcoin close the yearly candle?",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "retweet_count": 59,
+        "reply_count": 115,
+        "like_count": 251,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoRover/status/2002484904550895815",
+      "processed": false,
+      "addedAt": "2025-12-21T07:24:29.562Z",
+      "expiresAt": "2025-12-28T07:24:29.562Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2002473579636506973",
+      "text": "Money printing is coming.  \n\nPatience is key now.",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "retweet_count": 34,
+        "reply_count": 126,
+        "like_count": 413,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoRover/status/2002473579636506973",
+      "processed": false,
+      "addedAt": "2025-12-21T07:24:31.555Z",
+      "expiresAt": "2025-12-28T07:24:31.555Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2001921768366432759",
+      "text": "Oh baby - I wonder if these bonds are eligible collateral at the ECB? I bet yes, and now we have a great way to print money patriotically!!!!",
+      "author": {
+        "id": "983993370048630785",
+        "username": "CryptoHayes"
+      },
+      "public_metrics": {
+        "retweet_count": 45,
+        "reply_count": 72,
+        "like_count": 507,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoHayes/status/2001921768366432759",
+      "processed": false,
+      "addedAt": "2025-12-21T07:24:40.455Z",
+      "expiresAt": "2025-12-28T07:24:40.455Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "1995532222003380660",
+      "text": "How deep is your love?",
+      "author": {
+        "id": "983993370048630785",
+        "username": "CryptoHayes"
+      },
+      "public_metrics": {
+        "retweet_count": 118,
+        "reply_count": 388,
+        "like_count": 1356,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoHayes/status/1995532222003380660",
+      "processed": false,
+      "addedAt": "2025-12-21T07:24:42.520Z",
+      "expiresAt": "2025-12-28T07:24:42.520Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "1991219706317963740",
+      "text": "Local bottom likely in for a few days. Alts should bounce more than $BTC.\n\nThen bearish continuation.",
+      "author": {
+        "id": "988796804446769153",
+        "username": "CryptoCapo_"
+      },
+      "public_metrics": {
+        "retweet_count": 408,
+        "reply_count": 9,
+        "like_count": 3392,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoCapo_/status/1991219706317963740",
+      "processed": false,
+      "addedAt": "2025-12-21T07:24:51.344Z",
+      "expiresAt": "2025-12-28T07:24:51.344Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "1984563364358651940",
+      "text": "Yes.",
+      "author": {
+        "id": "988796804446769153",
+        "username": "CryptoCapo_"
+      },
+      "public_metrics": {
+        "retweet_count": 66,
+        "reply_count": 1,
+        "like_count": 831,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoCapo_/status/1984563364358651940",
+      "processed": false,
+      "addedAt": "2025-12-21T07:24:53.315Z",
+      "expiresAt": "2025-12-28T07:24:53.315Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "1977691041680531952",
+      "text": "That’s a possibility too.\n\nIn my opinion, we’ll see several crashes over the next months, with strong bounces in between when prices hit support zones.\n\nThe first one could happen soon, with the first stop around $60k.",
+      "author": {
+        "id": "988796804446769153",
+        "username": "CryptoCapo_"
+      },
+      "public_metrics": {
+        "retweet_count": 12,
+        "reply_count": 0,
+        "like_count": 94,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoCapo_/status/1977691041680531952",
+      "processed": false,
+      "addedAt": "2025-12-21T07:24:55.314Z",
+      "expiresAt": "2025-12-28T07:24:55.314Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "1977689796324843919",
+      "text": "#Gold update\n\nAs the hyperwave continues, gold keeps breaking all-time highs. Current price: $4,080\n\n#Silver also very strong, breaking the ATH above $50.",
+      "author": {
+        "id": "988796804446769153",
+        "username": "CryptoCapo_"
+      },
+      "public_metrics": {
+        "retweet_count": 57,
+        "reply_count": 2,
+        "like_count": 603,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoCapo_/status/1977689796324843919",
+      "processed": false,
+      "addedAt": "2025-12-21T07:24:57.314Z",
+      "expiresAt": "2025-12-28T07:24:57.314Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "1977686540592492695",
+      "text": "$BTC\n\nConfirmations needed, but the cycle top could be in.\n\nLoss of momentum, good news not having impact anymore, and a potential financial crisis incoming.\n\nReminder: Not financial advice. Just my opinion and observation.",
+      "author": {
+        "id": "988796804446769153",
+        "username": "CryptoCapo_"
+      },
+      "public_metrics": {
+        "retweet_count": 561,
+        "reply_count": 5,
+        "like_count": 2551,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoCapo_/status/1977686540592492695",
+      "processed": false,
+      "addedAt": "2025-12-21T07:24:59.417Z",
+      "expiresAt": "2025-12-28T07:24:59.417Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "1976935569499513001",
+      "text": "They say “he who laughs last, laughs best.” But wisdom is not in laughing at others.\n\nI genuinely empathize with everyone, even those who criticize me.\n\nPeace is the higher path.",
+      "author": {
+        "id": "988796804446769153",
+        "username": "CryptoCapo_"
+      },
+      "public_metrics": {
+        "retweet_count": 12,
+        "reply_count": 0,
+        "like_count": 268,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoCapo_/status/1976935569499513001",
+      "processed": false,
+      "addedAt": "2025-12-21T07:25:01.335Z",
+      "expiresAt": "2025-12-28T07:25:01.335Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "1999090977278140619",
+      "text": "[SBF says:]\n\n1) What made it so clear to me that @JuanOrlandoH was innocent? And how could he have been convicted anyway?\n\nThe short answer, of course, is 'cooperating witnesses.'\n\nBut there's a longer answer, too.",
+      "author": {
+        "id": "1110877798820777986",
+        "username": "SBF_FTX"
+      },
+      "public_metrics": {
+        "retweet_count": 95,
+        "reply_count": 156,
+        "like_count": 322,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/SBF_FTX/status/1999090977278140619",
+      "processed": false,
+      "addedAt": "2025-12-21T07:25:40.322Z",
+      "expiresAt": "2025-12-28T07:25:40.322Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "1998807292314329310",
+      "text": "[SBF says:]\n\nRyan Salame is serving a 7.5 year prison sentence for:\n\n1) Donating to Republicans in his own name\n2) Not getting a non-US co. a US license it didn't need\n3) Refusing to lie for the gov't in my trial\n\nAs he told @TuckerCarlson, he \"was very close to going to trial.\"",
+      "author": {
+        "id": "1110877798820777986",
+        "username": "SBF_FTX"
+      },
+      "public_metrics": {
+        "retweet_count": 122,
+        "reply_count": 198,
+        "like_count": 453,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/SBF_FTX/status/1998807292314329310",
+      "processed": false,
+      "addedAt": "2025-12-21T07:25:42.301Z",
+      "expiresAt": "2025-12-28T07:25:42.301Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "1763204181802840480",
+      "text": "Reminder to everyone new: you can find a FREE Introduction to #bitcoin workshop in English and Spanish on my website. Welcome! https://aantonop.com/workshops-page/",
+      "author": {
+        "id": "1469101279",
+        "username": "aantonop"
+      },
+      "public_metrics": {
+        "retweet_count": 115,
+        "reply_count": 0,
+        "like_count": 339,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/aantonop/status/1763204181802840480",
+      "processed": false,
+      "addedAt": "2025-12-21T07:25:51.677Z",
+      "expiresAt": "2025-12-28T07:25:51.677Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "1762988232969490689",
+      "text": "Are ETFs better than Self Custody? Watch this 1 min video to hear my answer.",
+      "author": {
+        "id": "1469101279",
+        "username": "aantonop"
+      },
+      "public_metrics": {
+        "retweet_count": 175,
+        "reply_count": 0,
+        "like_count": 443,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/aantonop/status/1762988232969490689",
+      "processed": false,
+      "addedAt": "2025-12-21T07:25:53.989Z",
+      "expiresAt": "2025-12-28T07:25:53.989Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "1752790565178245159",
+      "text": "Last chance to save on the Path to Self Custody Bundle. Includes a step-by-step hardware wallet demo. 14 day money back guarantee. Learn more https://patreon.com/posts/96124187",
+      "author": {
+        "id": "1469101279",
+        "username": "aantonop"
+      },
+      "public_metrics": {
+        "retweet_count": 83,
+        "reply_count": 0,
+        "like_count": 111,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/aantonop/status/1752790565178245159",
+      "processed": false,
+      "addedAt": "2025-12-21T07:25:55.874Z",
+      "expiresAt": "2025-12-28T07:25:55.874Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "1752006419874984223",
+      "text": "The third edition would not have happened without  @hrdng - thanks to him for his excellent work. Learn more about why open licensing matters and how it works with this book: https://patreon.com/posts/major-mastering-97367320…",
+      "author": {
+        "id": "1469101279",
+        "username": "aantonop"
+      },
+      "public_metrics": {
+        "retweet_count": 66,
+        "reply_count": 0,
+        "like_count": 103,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/aantonop/status/1752006419874984223",
+      "processed": false,
+      "addedAt": "2025-12-21T07:25:57.639Z",
+      "expiresAt": "2025-12-28T07:25:57.639Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2002597144016875919",
+      "text": "He made $21K shorting Bitcoin... then bet $1.24M it's going UP\n\nJames Wynn just flipped from short to long with a 40× leveraged position.\nIf $BTC drops to $87K, he gets liquidated.\n\nJames Wynn is now 40× LONG on 14.079 BTC ($1.238M)\nLiquidation at $87,112\n\nHigh risk. High",
+      "author": {
+        "id": "crawlee_search_cryptopatel",
+        "username": "CryptoPatel"
+      },
+      "public_metrics": {
+        "retweet_count": 10,
+        "reply_count": 21,
+        "like_count": 198,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoPatel/status/2002597144016875919",
+      "processed": false,
+      "addedAt": "2025-12-21T07:26:06.522Z",
+      "expiresAt": "2025-12-28T07:26:06.522Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2002582044602229045",
+      "text": "BREAKING: U.S. House Lawmakers just dropped a New Crypto Tax Framework\n\nHere's What You Need to Know:\n→ Stablecoin Transactions Under $200 exempt from Capital Gains Tax\n→ Staking and Mining Rewards can be Tax deferred for up to 5 years\n→ Wash sale loophole getting closed\n→",
+      "author": {
+        "id": "crawlee_search_cryptopatel",
+        "username": "CryptoPatel"
+      },
+      "public_metrics": {
+        "retweet_count": 11,
+        "reply_count": 7,
+        "like_count": 213,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoPatel/status/2002582044602229045",
+      "processed": false,
+      "addedAt": "2025-12-21T07:26:08.508Z",
+      "expiresAt": "2025-12-28T07:26:08.508Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2000620485646971118",
+      "text": "GOOD MORNING BULLS",
+      "author": {
+        "id": "906234475604037637",
+        "username": "CryptoKaleo"
+      },
+      "public_metrics": {
+        "retweet_count": 12,
+        "reply_count": 125,
+        "like_count": 310,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoKaleo/status/2000620485646971118",
+      "processed": false,
+      "addedAt": "2025-12-21T07:26:17.713Z",
+      "expiresAt": "2025-12-28T07:26:17.713Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "1998855104842375429",
+      "text": "This is your weekly reminder to be more bullish.",
+      "author": {
+        "id": "906234475604037637",
+        "username": "CryptoKaleo"
+      },
+      "public_metrics": {
+        "retweet_count": 26,
+        "reply_count": 100,
+        "like_count": 545,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/CryptoKaleo/status/1998855104842375429",
+      "processed": false,
+      "addedAt": "2025-12-21T07:26:19.697Z",
+      "expiresAt": "2025-12-28T07:26:19.697Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "1994129737992884329",
+      "text": "Im just so incredibly optimistic on the next decade",
+      "author": {
+        "id": "1138993163706753029",
+        "username": "Pentosh1"
+      },
+      "public_metrics": {
+        "retweet_count": 15,
+        "reply_count": 30,
+        "like_count": 375,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/Pentosh1/status/1994129737992884329",
+      "processed": false,
+      "addedAt": "2025-12-21T07:26:29.211Z",
+      "expiresAt": "2025-12-28T07:26:29.211Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2002478858956886435",
+      "text": "$KGEN TP: 0.50",
+      "author": {
+        "id": "crawlee_search_nihilusbtc",
+        "username": "NihilusBTC"
+      },
+      "public_metrics": {
+        "retweet_count": 13,
+        "reply_count": 19,
+        "like_count": 74,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/NihilusBTC/status/2002478858956886435",
+      "processed": false,
+      "addedAt": "2025-12-21T07:27:07.157Z",
+      "expiresAt": "2025-12-28T07:27:07.157Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2002469278138954230",
+      "text": "Give me scam pump.",
+      "author": {
+        "id": "crawlee_search_nihilusbtc",
+        "username": "NihilusBTC"
+      },
+      "public_metrics": {
+        "retweet_count": 18,
+        "reply_count": 24,
+        "like_count": 64,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/NihilusBTC/status/2002469278138954230",
+      "processed": false,
+      "addedAt": "2025-12-21T07:27:09.115Z",
+      "expiresAt": "2025-12-28T07:27:09.115Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2002467495597548031",
+      "text": "#币安人生 | TP: 0.20",
+      "author": {
+        "id": "crawlee_search_nihilusbtc",
+        "username": "NihilusBTC"
+      },
+      "public_metrics": {
+        "retweet_count": 13,
+        "reply_count": 24,
+        "like_count": 62,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/NihilusBTC/status/2002467495597548031",
+      "processed": false,
+      "addedAt": "2025-12-21T07:27:11.112Z",
+      "expiresAt": "2025-12-28T07:27:11.112Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2002395182420082896",
+      "text": "According to Ash from the Memento Research, new token TGEs in 2025 have been a “bloodbath.” Among 118 TGEs tracked this year, 84.7% (100 / 118) of tokens have an FDV below their TGE valuation, meaning roughly four-fifths of tokens have failed post-launch; the median FDV has",
+      "author": {
+        "id": "111533746",
+        "username": "WuBlockchain"
+      },
+      "public_metrics": {
+        "retweet_count": 30,
+        "reply_count": 24,
+        "like_count": 103,
+        "quote_count": 0
+      },
+      "created_at": "",
+      "url": "https://twitter.com/WuBlockchain/status/2002395182420082896",
+      "processed": false,
+      "addedAt": "2025-12-21T07:27:29.777Z",
+      "expiresAt": "2025-12-28T07:27:29.777Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
     }
   ],
   "metadata": {
-    "lastUpdated": "2025-12-20T22:13:27.955Z",
-    "totalPosts": 235,
+    "lastUpdated": "2025-12-21T07:28:35.725Z",
+    "totalPosts": 252,
     "bySource": {
-      "timeline_monitor": 235,
+      "timeline_monitor": 252,
       "search_discovery": 0
     }
   },
