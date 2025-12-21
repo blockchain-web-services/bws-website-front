@@ -26,21 +26,27 @@ jobs:
 
       - name: Install dependencies
         run: |
-          npm install crawlee playwright @anthropic-ai/sdk
+          npm install @blockchain-web-services/bws-x-sdk-node@1.6.0 @anthropic-ai/sdk
 
       - name: Install Playwright browsers
-        run: npx playwright install --with-deps chromium
+        run: npx playwright install chromium --with-deps
 
-      - name: Run search-based KOL discovery with Crawlee
+      - name: Run search-based KOL discovery with SDK
         id: discover
         env:
+          TWITTER_API_KEY: ${{ secrets.TWITTER_API_KEY }}
+          TWITTER_API_SECRET: ${{ secrets.TWITTER_API_SECRET }}
+          TWITTER_ACCESS_TOKEN: ${{ secrets.TWITTER_ACCESS_TOKEN }}
+          TWITTER_ACCESS_SECRET: ${{ secrets.TWITTER_ACCESS_SECRET }}
           OXYLABS_USERNAME: ${{ secrets.OXYLABS_USERNAME }}
           OXYLABS_PASSWORD: ${{ secrets.OXYLABS_PASSWORD }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          CI: true
+          GITHUB_ACTIONS: true
           GITHUB_RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
         run: |
-          echo "Starting search-based KOL discovery with Crawlee..."
-          node scripts/crawling/production/discover-by-engagement-crawlee.js
+          echo "Starting search-based KOL discovery with BWS X SDK..."
+          node scripts/crawling/production/discover-by-engagement-crawlee-sdk.js
           # Script exit code determines success (0 = success, 1 = failure)
 
       - name: Check for changes
@@ -73,11 +79,13 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add scripts/crawling/data/kols-data.json
-          git commit -m "Search-based KOL discovery - $(date +'%Y-%m-%d %H:%M UTC')
+          git commit -m "Search-based KOL discovery (SDK) - $(date +'%Y-%m-%d %H:%M UTC')
 
           Total: ${{ steps.stats.outputs.total }} | Active: ${{ steps.stats.outputs.active }}
 
-          🤖 Generated with [Claude Code](https://claude.com/claude-code)"
+          🤖 Generated with [Claude Code](https://claude.com/claude-code)
+
+          Co-Authored-By: Claude Sonnet 4.5 <noreply@anthropic.com>"
           git push
 
       - name: Summary
