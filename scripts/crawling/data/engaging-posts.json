@@ -1338,7 +1338,7 @@
       },
       "created_at": "",
       "url": "https://twitter.com/cobie/status/1998053731502375376",
-      "processed": false,
+      "processed": true,
       "addedAt": "2025-12-19T17:50:23.413Z",
       "expiresAt": "2025-12-26T17:50:23.413Z",
       "source": "timeline_monitor",
@@ -1758,7 +1758,7 @@
       },
       "created_at": "",
       "url": "https://twitter.com/CryptoKaleo/status/1998446852950171955",
-      "processed": false,
+      "processed": true,
       "addedAt": "2025-12-19T17:53:11.372Z",
       "expiresAt": "2025-12-26T17:53:11.372Z",
       "source": "timeline_monitor",
@@ -2031,7 +2031,7 @@
       },
       "created_at": "",
       "url": "https://twitter.com/CryptoHayes/status/1995283427046875203",
-      "processed": false,
+      "processed": true,
       "addedAt": "2025-12-19T17:55:55.401Z",
       "expiresAt": "2025-12-26T17:55:55.401Z",
       "source": "timeline_monitor",
@@ -2661,7 +2661,7 @@
       },
       "created_at": "",
       "url": "https://twitter.com/Pentosh1/status/1994121080458629611",
-      "processed": false,
+      "processed": true,
       "addedAt": "2025-12-20T07:24:35.121Z",
       "expiresAt": "2025-12-27T07:24:35.121Z",
       "source": "timeline_monitor",
@@ -4518,5 +4518,6 @@
     "lastProductUsed": "Blockchain Hash",
     "positioningPhraseIndex": 0,
     "replyCount": 139
-  }
+  },
+  "_removedStale": false
 }
