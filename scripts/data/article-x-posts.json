@@ -3,9 +3,9 @@
     "lastGenerated": "2025-12-16T12:09:43.049Z",
     "totalPosts": 54,
     "totalArticles": 18,
-    "pendingPosts": 16,
-    "postedCount": 31,
-    "lastPosted": "2025-12-22T00:38:11.048Z",
+    "pendingPosts": 15,
+    "postedCount": 32,
+    "lastPosted": "2025-12-22T12:15:47.826Z",
     "failedCount": 7
   },
   "posts": [
@@ -926,17 +926,19 @@
         "GreenInvestments"
       ],
       "priority": "medium",
-      "status": "pending",
+      "status": "posted",
       "scheduledFor": null,
-      "postedAt": null,
-      "tweetId": null,
+      "postedAt": "2025-12-22T12:15:47.734Z",
+      "tweetId": "2003077003012870308",
       "generatedAt": "2025-12-10T12:09:59.253Z",
       "metadata": {
         "articleTitle": "ESG Credits: Blockchain-Verified Environmental Impact Reporting for Financial Institutions",
         "articlePublishDate": "2025-12-10T10:04:11.715Z",
         "mainTextLength": 197,
         "fullTextLength": 377
-      }
+      },
+      "tweetUrl": "https://twitter.com/i/web/status/2003077003012870308",
+      "error": null
     },
     {
       "id": "570d9ca3-259d-46ec-ad6d-67a1c3e3fef5",
