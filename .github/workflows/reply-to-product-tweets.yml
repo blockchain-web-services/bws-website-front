@@ -40,7 +40,7 @@ jobs:
           TWITTER_ACCESS_SECRET: ${{ secrets.TWITTER_ACCESS_SECRET }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: |
-          node scripts/crawling/production/reply-to-product-tweets.js
+          node scripts/crawling/production/reply-to-product-tweets-sdk.js
           echo "reply_status=success" >> $GITHUB_OUTPUT
         continue-on-error: true
 

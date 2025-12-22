@@ -36,7 +36,7 @@ jobs:
           fi
 
       - name: Install script dependencies
-        run: npm install twitter-api-v2 @anthropic-ai/sdk
+        run: npm install @blockchain-web-services/bws-x-sdk-node @anthropic-ai/sdk
 
       - name: Check if KOLs exist
         id: check-kols
@@ -66,8 +66,8 @@ jobs:
           BWSXAI_TWITTER_ACCESS_SECRET: ${{ secrets.BWSXAI_TWITTER_ACCESS_SECRET }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: |
-          echo "Starting KOL reply evaluation..."
-          node scripts/crawling/production/evaluate-and-reply-kols.js
+          echo "Starting KOL reply evaluation (SDK)..."
+          node scripts/crawling/production/evaluate-and-reply-kols-sdk.js
           echo "reply_status=success" >> $GITHUB_OUTPUT
         continue-on-error: true
 
@@ -182,7 +182,7 @@ jobs:
              - BWSXAI_TWITTER_ACCESS_SECRET
           3. Check if KOLs exist in the database
           4. Review reply settings in kol-config.json
-          5. Test locally with: \`node scripts/crawling/production/test-kol-system.js\`
+          5. Test locally with: \`node scripts/crawling/production/evaluate-and-reply-kols-sdk.js\`
 
           ### Workflow Run
           [View failed run](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})
@@ -207,7 +207,7 @@ jobs:
           ### What to do
           1. Review the error logs
           2. Make necessary fixes
-          3. Test locally with: \`node scripts/crawling/production/evaluate-and-reply-kols.js\`
+          3. Test locally with: \`node scripts/crawling/production/evaluate-and-reply-kols-sdk.js\`
           4. Update this PR with your changes
 
           ---
