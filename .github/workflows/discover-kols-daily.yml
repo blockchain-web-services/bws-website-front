@@ -35,18 +35,26 @@ jobs:
           fi
 
       - name: Install script dependencies
-        run: npm install crawlee playwright @anthropic-ai/sdk
+        run: npm install @blockchain-web-services/bws-x-sdk-node@1.6.0 @anthropic-ai/sdk
 
       - name: Install Playwright browsers
-        run: npx playwright install --with-deps chromium
+        run: npx playwright install chromium --with-deps
 
       - name: Run KOL discovery
         id: discover
         env:
+          TWITTER_API_KEY: ${{ secrets.TWITTER_API_KEY }}
+          TWITTER_API_SECRET: ${{ secrets.TWITTER_API_SECRET }}
+          TWITTER_ACCESS_TOKEN: ${{ secrets.TWITTER_ACCESS_TOKEN }}
+          TWITTER_ACCESS_SECRET: ${{ secrets.TWITTER_ACCESS_SECRET }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          OXYLABS_USERNAME: ${{ secrets.OXYLABS_USERNAME }}
+          OXYLABS_PASSWORD: ${{ secrets.OXYLABS_PASSWORD }}
+          CI: true
+          GITHUB_ACTIONS: true
         run: |
-          echo "Starting KOL discovery with Crawlee..."
-          node scripts/crawling/production/discover-crawlee-direct.js
+          echo "Starting KOL discovery with BWS X SDK (Script 2.2 - SDK version)..."
+          node scripts/crawling/production/discover-crawlee-direct-sdk.js
           echo "discover_status=success" >> $GITHUB_OUTPUT
         continue-on-error: true
 
@@ -79,14 +87,14 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add scripts/crawling/data/kols-data.json
-          git commit -m "Update KOL discovery data - $(date +'%Y-%m-%d')
+          git add scripts/crawling/config/kol-candidates.json
+          git commit -m "KOL discovery (SDK) - $(date +'%Y-%m-%d %H:%M UTC')
 
-          Total KOLs: ${{ steps.stats.outputs.total_kols }}
-          Active KOLs: ${{ steps.stats.outputs.active_kols }}
+          Total KOLs: ${{ steps.stats.outputs.total_kols }} | Active: ${{ steps.stats.outputs.active_kols }}
 
           🤖 Generated with [Claude Code](https://claude.com/claude-code)
 
-          Co-Authored-By: Claude <noreply@anthropic.com>"
+          Co-Authored-By: Claude Sonnet 4.5 <noreply@anthropic.com>"
           git push
 
       - name: Create summary

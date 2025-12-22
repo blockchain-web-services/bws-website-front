@@ -42,19 +42,31 @@ jobs:
             npm install
           fi
 
+      - name: Install SDK
+        run: npm install @blockchain-web-services/bws-x-sdk-node@1.6.0
+
+      - name: Install Playwright browsers
+        run: npx playwright install chromium --with-deps
+
       - name: Discover product tweets
         id: discover
         env:
+          TWITTER_API_KEY: ${{ secrets.TWITTER_API_KEY }}
+          TWITTER_API_SECRET: ${{ secrets.TWITTER_API_SECRET }}
+          TWITTER_ACCESS_TOKEN: ${{ secrets.TWITTER_ACCESS_TOKEN }}
+          TWITTER_ACCESS_SECRET: ${{ secrets.TWITTER_ACCESS_SECRET }}
           OXYLABS_USERNAME: ${{ secrets.OXYLABS_USERNAME }}
           OXYLABS_PASSWORD: ${{ secrets.OXYLABS_PASSWORD }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          CI: true
+          GITHUB_ACTIONS: true
         run: |
           if [ -n "${{ github.event.inputs.product }}" ]; then
-            echo "Discovering tweets for: ${{ github.event.inputs.product }}"
-            node scripts/crawling/production/discover-product-tweets.js --product="${{ github.event.inputs.product }}"
+            echo "Discovering tweets for: ${{ github.event.inputs.product }} (SDK version)"
+            node scripts/crawling/production/discover-product-tweets-sdk.js --product="${{ github.event.inputs.product }}"
           else
-            echo "Discovering tweets for all products"
-            node scripts/crawling/production/discover-product-tweets.js
+            echo "Discovering tweets for all products (SDK version)"
+            node scripts/crawling/production/discover-product-tweets-sdk.js
           fi
           echo "discover_status=success" >> $GITHUB_OUTPUT
         continue-on-error: true
@@ -76,11 +88,11 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add scripts/crawling/data/product-discovery-queue.json
-          git commit -m "Update product discovery queue
+          git commit -m "Update product discovery queue (SDK) - $(date +'%Y-%m-%d %H:%M UTC')
 
           🤖 Generated with [Claude Code](https://claude.com/claude-code)
 
-          Co-Authored-By: Claude <noreply@anthropic.com>"
+          Co-Authored-By: Claude Sonnet 4.5 <noreply@anthropic.com>"
           git push
 
       - name: Summary
