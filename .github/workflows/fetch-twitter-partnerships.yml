@@ -163,7 +163,7 @@ jobs:
               '',
               `1. Check the [workflow logs](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})`,
               '2. Verify TWITTER_BEARER_TOKEN secret is valid',
-              '3. Test script manually: `node scripts/crawling/production/fetch-twitter-partnerships.js`',
+              '3. Test script manually: `node scripts/crawling/production/fetch-twitter-partnerships-sdk.js`',
               '4. Fix the issue and push to this branch',
               '',
               '---',
