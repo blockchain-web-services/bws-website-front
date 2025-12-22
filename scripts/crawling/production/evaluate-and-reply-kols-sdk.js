@@ -133,16 +133,12 @@ async function evaluateAndReply() {
   console.log(`📍 Script: evaluate-and-reply-kols.js`);
   console.log(`⏰ Start time: ${new Date().toISOString()}\n`);
 
-  // Reset API tracker for this execution
-  apiTracker.reset();
-
   // Setup timeout warnings
   const TIMEOUT_WARNINGS = [5, 10, 15, 20, 25]; // Minutes
   const timeoutWarnings = TIMEOUT_WARNINGS.map(minutes => {
     return setTimeout(() => {
       const elapsed = Math.round((Date.now() - scriptStartTime) / 1000 / 60);
       console.log(`\n⏰ TIMEOUT WARNING: Script has been running for ${elapsed} minutes`);
-      console.log(`   API Calls: ${apiTracker.exportStats().overall.totalCalls}`);
       console.log(`   Current phase: ${currentPhase || 'unknown'}`);
     }, minutes * 60 * 1000);
   });
@@ -749,9 +745,6 @@ async function evaluateAndReply() {
       // Check for rate limit errors
       if (error.message && (error.message.includes('429') || error.message.includes('rate limit'))) {
         console.error(`   ⚠️  RATE LIMIT HIT - Twitter API returned 429`);
-        console.error(`   API Tracker stats before error:`);
-        console.error(`   - Total calls: ${apiTracker.exportStats().overall.totalCalls}`);
-        console.error(`   - Calls/min: ${apiTracker.exportStats().overall.callsPerMinute}`);
 
         // If we hit rate limit, stop processing more KOLs
         console.log(`\n⏸️  Stopping due to rate limit. Will resume on next run.`);
@@ -1098,9 +1091,6 @@ ${dryRun ? '⚠️  DRY RUN MODE - No actual tweets posted' : ''}
 ${'='.repeat(60)}
 `);
 
-  // Display API consumption statistics
-  apiTracker.displayStats();
-
   // Display persistent usage tracking
   await usageLogger.displayTodayUsage();
 
@@ -1119,7 +1109,6 @@ ${'='.repeat(60)}
     kolsProcessed,  // NEW: Include how many KOLs were actually checked this run
     dryRun,
     replyDetails: lastReplyDetails,  // Include last successful reply details
-    apiStats: apiTracker.exportStats(),
     runUrl: process.env.GITHUB_SERVER_URL && process.env.GITHUB_REPOSITORY && process.env.GITHUB_RUN_ID
       ? `${process.env.GITHUB_SERVER_URL}/${process.env.GITHUB_REPOSITORY}/actions/runs/${process.env.GITHUB_RUN_ID}`
       : null
@@ -1189,13 +1178,6 @@ evaluateAndReply().catch(async (error) => {
   if (error.message && (error.message.includes('429') || error.message.includes('rate limit'))) {
     errorContext.is_rate_limit = true;
     errorContext.note = 'Twitter API rate limit exceeded. Will retry on next scheduled run.';
-  }
-
-  // Add API stats if available
-  try {
-    errorContext.api_stats = apiTracker.exportStats();
-  } catch (e) {
-    // Ignore if apiTracker not available
   }
 
   // Send error notification to Zapier/Slack
