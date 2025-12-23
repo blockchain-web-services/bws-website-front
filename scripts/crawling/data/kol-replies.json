@@ -2872,6 +2872,29 @@
       "timestamp": "2025-12-16T19:55:23.326Z",
       "status": "posted",
       "dryRun": false
+    },
+    {
+      "id": "1068237257977544704-2003470965523775982-1766516518828",
+      "tweetId": "2003470965523775982",
+      "tweetUrl": "https://twitter.com/AltcoinSherpa/status/2003470965523775982",
+      "kolId": "1068237257977544704",
+      "kolUsername": "AltcoinSherpa",
+      "originalTweetText": "agreed, there will always be these opportunities. they're just much more scarce these days",
+      "replyTweetId": null,
+      "replyText": "Exactly - real fundamentals separate the rare finds from endless vaporware.\n\n$BWS Blockchain Badges issues tamper-proof digital credentials on blockchain - universities and companies use it for verifiable certificates that recipients control and share across platforms.\n\n@BWSCommunity #microcap #gems #blockchain https://docs.bws.ninja/marketplace-solutions/bws.blockchain.badges",
+      "productMentioned": "Blockchain Badges (Marketplace Solution)",
+      "relevanceScore": 78,
+      "timestamp": "2025-12-23T19:01:58.828Z",
+      "status": "failed",
+      "dryRun": false,
+      "engagement": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "views": 0,
+        "lastChecked": "2025-12-23T19:01:58.828Z"
+      },
+      "error": "Tweet text too long: 379 characters (max: 280)"
     }
   ],
   "dailyStats": {
@@ -2943,13 +2966,21 @@
         "X Bot (Guide)": 1,
         "Fan Game Cube (Marketplace Solution)": 1
       }
+    },
+    "2025-12-23": {
+      "repliesPosted": 0,
+      "repliesFailed": 1,
+      "averageRelevance": 0,
+      "productDistribution": {
+        "Blockchain Badges (Marketplace Solution)": 1
+      }
     }
   },
   "metadata": {
-    "totalReplies": 143,
+    "totalReplies": 144,
     "successfulReplies": 109,
-    "failedReplies": 34,
-    "lastReplyAt": "2025-12-16T19:55:23.326Z",
+    "failedReplies": 35,
+    "lastReplyAt": "2025-12-23T19:01:58.828Z",
     "todayRepliesCount": 0,
     "lastUpdateBy": "kol-system"
   }
