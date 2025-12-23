@@ -1,12 +1,10 @@
 {
   "metadata": {
-    "lastGenerated": "2025-12-16T12:09:43.049Z",
-    "totalPosts": 54,
-    "totalArticles": 18,
-    "pendingPosts": 14,
-    "postedCount": 33,
-    "lastPosted": "2025-12-23T00:35:55.904Z",
-    "failedCount": 7
+    "lastGenerated": "2025-12-23T12:15:40.922Z",
+    "totalPosts": 55,
+    "totalArticles": 19,
+    "pendingPosts": 15,
+    "postedCount": 33
   },
   "posts": [
     {
@@ -1526,6 +1524,32 @@
         "articlePublishDate": "2025-12-16T10:36:57.300Z",
         "mainTextLength": 197,
         "fullTextLength": 365
+      }
+    },
+    {
+      "id": "1947a9df-adf1-4eee-99f1-c495f6ea6b13",
+      "articleSlug": "esg-credits-2025-12-23",
+      "product": "ESG Credits",
+      "type": "overview",
+      "text": "ESG Credits provides blockchain-verified environmental impact reporting for financial institutions. ICMA framework compliance with immutable tracking through REST API. Built by @BWSCommunity using $BWS\n\n📖 Article: https://www.bws.ninja/articles/esg-credits-2025-12-23\n📚 Docs: https://docs.bws.ninja/marketplace-solutions/bws.esg.credits\n\n#ESGReporting #BlockchainFinance",
+      "mainText": "ESG Credits provides blockchain-verified environmental impact reporting for financial institutions. ICMA framework compliance with immutable tracking through REST API. Built by @BWSCommunity using $BWS",
+      "articleUrl": "https://www.bws.ninja/articles/esg-credits-2025-12-23",
+      "docsUrl": "https://docs.bws.ninja/marketplace-solutions/bws.esg.credits",
+      "hashtags": [
+        "ESGReporting",
+        "BlockchainFinance"
+      ],
+      "priority": "high",
+      "status": "pending",
+      "scheduledFor": null,
+      "postedAt": null,
+      "tweetId": null,
+      "generatedAt": "2025-12-23T12:15:40.921Z",
+      "metadata": {
+        "articleTitle": "ESG Credits: Blockchain-Verified Environmental Impact Reporting for Financial Institutions",
+        "articlePublishDate": "2025-12-23T10:03:59.595Z",
+        "mainTextLength": 201,
+        "fullTextLength": 372
       }
     }
   ]
