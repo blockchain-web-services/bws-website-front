@@ -25,7 +25,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          npm install twitter-api-v2 @anthropic-ai/sdk @the-convocation/twitter-scraper
+          npm install @blockchain-web-services/bws-x-sdk-node @anthropic-ai/sdk
 
       - name: Run multi-account scraper test
         id: test
@@ -61,12 +61,12 @@ jobs:
           echo "🧪 Testing multi-account scraper reply system"
           echo ""
           echo "This test will:"
-          echo "1. Initialize multi-account scraper client (2-3 accounts)"
-          echo "2. Use twitter-scraper (NOT Twitter API) for searches"
-          echo "3. Use Twitter API v2 ONLY for posting from @BWSXAI"
+          echo "1. Initialize BWS X SDK client in hybrid mode"
+          echo "2. Use crawler accounts for searches (HTML parsing)"
+          echo "3. Use Twitter API v2 for write operations from @BWSCommunity"
           echo "4. Attempt to post 1 reply to verify system works"
           echo ""
-          node scripts/crawling/production/evaluate-and-reply-kols.js
+          node scripts/crawling/production/evaluate-and-reply-kols-sdk.js
         continue-on-error: true
 
       - name: Check for changes
