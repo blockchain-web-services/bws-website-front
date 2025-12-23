@@ -537,6 +537,15 @@ async function evaluateAndReply() {
         console.log(`      💬 Reply: "${replyGeneration.replyText}"`);
         console.log(`      Tone: ${replyGeneration.tone}`);
 
+        // Validate tweet length (Twitter limit is 280 characters)
+        if (replyGeneration.replyText.length > 280) {
+          console.error(`      ❌ Failed to post: Tweet text too long: ${replyGeneration.replyText.length} characters (max: 280)`);
+          console.error(`      TweetTooLongError: Tweet text too long: ${replyGeneration.replyText.length} characters (max: 280)`);
+          console.log(`      ⏭️  Skipping to next tweet...`);
+          tweetsSkipped++;
+          continue;
+        }
+
         // Post reply
         let replyStatus = 'pending';
         let replyTweetId = null;
@@ -901,6 +910,15 @@ async function evaluateAndReply() {
 
         console.log(`      💬 Reply: "${replyGeneration.replyText}"`);
         console.log(`      Tone: ${replyGeneration.tone}`);
+
+        // Validate tweet length (Twitter limit is 280 characters)
+        if (replyGeneration.replyText.length > 280) {
+          console.error(`      ❌ Failed to post: Tweet text too long: ${replyGeneration.replyText.length} characters (max: 280)`);
+          console.error(`      TweetTooLongError: Tweet text too long: ${replyGeneration.replyText.length} characters (max: 280)`);
+          console.log(`      ⏭️  Skipping to next tweet...`);
+          tweetsSkipped++;
+          continue;
+        }
 
         // Post reply
         let replyStatus = 'pending';
