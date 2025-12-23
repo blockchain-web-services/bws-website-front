@@ -19,6 +19,20 @@ export interface ArticleMetadata {
 
 export const articles: ArticleMetadata[] = [
 {
+  slug: 'esg-credits-2025-12-23',
+  product: 'ESG Credits',
+  title: 'ESG Credits: Blockchain-Verified Environmental Impact Reporting for Financial Institutions',
+  subtitle: 'Financial institutions face mounting pressure to prove environmental claims while navigating complex regulatory frameworks and multi-currency portfolios. ESG Credits delivers blockchain-verified environmental impact reporting with ICMA framework compliance through REST API, enabling banks to provide auditable sustainability metrics with immutable tracking and regulatory-grade transparency.',
+  publishDate: '2025-12-23T10:03:59.595Z',
+  tweetId: '',
+  featuredImage: {
+    src: '/assets/images/marketplace/fallback/esg-credits/01-report.png',
+    alt: 'ESG Credits solution',
+    loading: 'eager'
+  },
+  seoDescription: 'ESG Credits provides blockchain-verified environmental reporting with ICMA compliance for financial institutions requiring regulatory sustainability tracking.'
+},
+{
   slug: 'fan-game-cube-2025-12-16',
   product: 'Fan Game Cube',
   title: 'Fan Game Cube: Tokenize Sports Fields into Interactive NFT Zones',
