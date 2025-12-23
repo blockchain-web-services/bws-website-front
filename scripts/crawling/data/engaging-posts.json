@@ -1,153 +1,6 @@
 {
   "posts": [
     {
-      "id": "2002786820355215622",
-      "text": "BREAKING:\n\n WHITE HOUSE OFFICIAL SAYS THERE IS AN “ACCUMULATION PLAN” FOR THE US GOVERNMENT TO BUY MORE BITCOIN.",
-      "author": {
-        "id": "1353384573435056128",
-        "username": "CryptoRover"
-      },
-      "public_metrics": {
-        "retweet_count": 29,
-        "reply_count": 68,
-        "like_count": 200,
-        "quote_count": 0
-      },
-      "created_at": "",
-      "url": "https://twitter.com/CryptoRover/status/2002786820355215622",
-      "processed": true,
-      "addedAt": "2025-12-21T17:51:29.016Z",
-      "expiresAt": "2025-12-28T17:51:29.016Z",
-      "source": "timeline_monitor",
-      "contentCategory": "error"
-    },
-    {
-      "id": "2002779096997335397",
-      "text": "Like for $150,000 Bitcoin.      \n\nComment for $70,000 Bitcoin.",
-      "author": {
-        "id": "1353384573435056128",
-        "username": "CryptoRover"
-      },
-      "public_metrics": {
-        "retweet_count": 18,
-        "reply_count": 106,
-        "like_count": 375,
-        "quote_count": 0
-      },
-      "created_at": "",
-      "url": "https://twitter.com/CryptoRover/status/2002779096997335397",
-      "processed": true,
-      "addedAt": "2025-12-21T17:51:31.041Z",
-      "expiresAt": "2025-12-28T17:51:31.041Z",
-      "source": "timeline_monitor",
-      "contentCategory": "error"
-    },
-    {
-      "id": "2002751120188563869",
-      "text": "BREAKING:\n\nMICHAEL SAYLOR WILL BUY MORE BITCOIN TOMORROW!",
-      "author": {
-        "id": "1353384573435056128",
-        "username": "CryptoRover"
-      },
-      "public_metrics": {
-        "retweet_count": 59,
-        "reply_count": 121,
-        "like_count": 431,
-        "quote_count": 0
-      },
-      "created_at": "",
-      "url": "https://twitter.com/CryptoRover/status/2002751120188563869",
-      "processed": true,
-      "addedAt": "2025-12-21T17:51:37.019Z",
-      "expiresAt": "2025-12-28T17:51:37.019Z",
-      "source": "timeline_monitor",
-      "contentCategory": "error"
-    },
-    {
-      "id": "2002749900853801318",
-      "text": "Smart money is LONG on Bitcoin!",
-      "author": {
-        "id": "1353384573435056128",
-        "username": "CryptoRover"
-      },
-      "public_metrics": {
-        "retweet_count": 55,
-        "reply_count": 85,
-        "like_count": 349,
-        "quote_count": 0
-      },
-      "created_at": "",
-      "url": "https://twitter.com/CryptoRover/status/2002749900853801318",
-      "processed": true,
-      "addedAt": "2025-12-21T17:51:39.011Z",
-      "expiresAt": "2025-12-28T17:51:39.011Z",
-      "source": "timeline_monitor",
-      "contentCategory": "error"
-    },
-    {
-      "id": "2002740337543102922",
-      "text": "All I want for Christmas is this...",
-      "author": {
-        "id": "1353384573435056128",
-        "username": "CryptoRover"
-      },
-      "public_metrics": {
-        "retweet_count": 85,
-        "reply_count": 180,
-        "like_count": 536,
-        "quote_count": 0
-      },
-      "created_at": "",
-      "url": "https://twitter.com/CryptoRover/status/2002740337543102922",
-      "processed": true,
-      "addedAt": "2025-12-21T17:51:41.063Z",
-      "expiresAt": "2025-12-28T17:51:41.063Z",
-      "source": "timeline_monitor",
-      "contentCategory": "error"
-    },
-    {
-      "id": "2002730271762993462",
-      "text": "75% CHANCE AMERICANS RECEIVE STIMULUS CHECKS IN 2026.",
-      "author": {
-        "id": "1353384573435056128",
-        "username": "CryptoRover"
-      },
-      "public_metrics": {
-        "retweet_count": 49,
-        "reply_count": 95,
-        "like_count": 349,
-        "quote_count": 0
-      },
-      "created_at": "",
-      "url": "https://twitter.com/CryptoRover/status/2002730271762993462",
-      "processed": true,
-      "addedAt": "2025-12-21T17:51:43.032Z",
-      "expiresAt": "2025-12-28T17:51:43.032Z",
-      "source": "timeline_monitor",
-      "contentCategory": "error"
-    },
-    {
-      "id": "2002653557535781286",
-      "text": "Justin Sun: SBF Sought Billions in Rescue Funds Before FTX Collapse\n\nIn a CNBC interview on August 15, 2023, Justin Sun confirmed that SBF had reached out to him for assistance. Sun stated they discussed a preliminary rescue package worth at least $1 billion, which would have",
-      "author": {
-        "id": "111533746",
-        "username": "WuBlockchain"
-      },
-      "public_metrics": {
-        "retweet_count": 12,
-        "reply_count": 20,
-        "like_count": 87,
-        "quote_count": 0
-      },
-      "created_at": "",
-      "url": "https://twitter.com/WuBlockchain/status/2002653557535781286",
-      "processed": true,
-      "addedAt": "2025-12-21T17:52:02.026Z",
-      "expiresAt": "2025-12-28T17:52:02.026Z",
-      "source": "timeline_monitor",
-      "contentCategory": "error"
-    },
-    {
       "id": "1998053731502375376",
       "text": "Point to the last three pieces of alpha u found actionable from twitter",
       "author": {
@@ -2627,10 +2480,10 @@
     }
   ],
   "metadata": {
-    "lastUpdated": "2025-12-23T17:54:18.533Z",
-    "totalPosts": 141,
+    "lastUpdated": "2025-12-23T22:12:08.082Z",
+    "totalPosts": 118,
     "bySource": {
-      "timeline_monitor": 141,
+      "timeline_monitor": 118,
       "search_discovery": 0
     }
   },
