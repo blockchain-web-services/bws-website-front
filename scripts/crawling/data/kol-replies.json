@@ -3309,6 +3309,22 @@
       "timestamp": "2025-12-20T23:19:44.947Z",
       "status": "posted",
       "dryRun": false
+    },
+    {
+      "id": "877357064724520961-2002786144543776949-1766520426120-error",
+      "tweetId": "2002786144543776949",
+      "kolUsername": "CryptosR_Us",
+      "error": "Tweet text too long: 410 characters (max: 280)",
+      "timestamp": "2025-12-23T20:07:06.120Z",
+      "status": "skipped-too-long"
+    },
+    {
+      "id": "935742315389444096-2002729768194592987-1766520537313-error",
+      "tweetId": "2002729768194592987",
+      "kolUsername": "CryptoWendyO",
+      "error": "Tweet text too long: 400 characters (max: 280)",
+      "timestamp": "2025-12-23T20:08:57.313Z",
+      "status": "skipped-too-long"
     }
   ],
   "dailyStats": {
@@ -3383,10 +3399,10 @@
     }
   },
   "metadata": {
-    "totalReplies": 166,
+    "totalReplies": 168,
     "successfulReplies": 132,
     "failedReplies": 34,
-    "lastReplyAt": "2025-12-20T23:19:44.947Z",
+    "lastReplyAt": "2025-12-23T20:08:57.313Z",
     "todayRepliesCount": 0,
     "lastUpdateBy": "kol-system"
   }
