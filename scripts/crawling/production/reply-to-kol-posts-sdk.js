@@ -646,6 +646,27 @@ async function replyToKolPosts() {
       }
       console.log('');
 
+      // Validate tweet length (Twitter limit is 280 characters)
+      if (replyText.length > 280) {
+        console.error(`❌ Reply too long: ${replyText.length} characters (max: 280)`);
+        console.error(`   Skipping tweet ${tweet.id} to avoid posting error`);
+        tweetsSkipped++;
+
+        // Record failed attempt for debugging
+        const errorRecord = {
+          id: `${kol.id}-${tweet.id}-${Date.now()}-error`,
+          tweetId: tweet.id,
+          kolUsername: kol.username,
+          error: `Tweet text too long: ${replyText.length} characters (max: 280)`,
+          timestamp: new Date().toISOString(),
+          status: 'skipped-too-long'
+        };
+        repliesData.replies.push(errorRecord);
+        saveRepliesData(repliesData);
+
+        continue;
+      }
+
       // Select product image (if enabled and available)
       let selectedImage = null;
       let uploadedMediaId = null;
