@@ -4,6 +4,7 @@ import path from 'path';
 
 const MODEL = 'claude-sonnet-4-5-20250929';
 const QUICK_FILTER_MODEL = 'claude-3-5-haiku-20241022'; // Fast, cheap model for pre-filtering
+const REPLY_MODEL = process.env.USE_HAIKU_FOR_REPLIES === 'true' ? QUICK_FILTER_MODEL : MODEL; // Option C: Configurable model for replies
 
 /**
  * Create Anthropic client
@@ -537,7 +538,194 @@ function buildTemplateInstructions(template, recentTemplateIds, productHighlight
 }
 
 /**
+ * Option B: Intelligent truncation at word boundary
+ * Truncates text at word boundary near target length while preserving required elements
+ */
+function intelligentTruncate(text, maxLength = 270) {
+  // If already within limit, return as-is
+  if (text.length <= maxLength) {
+    return text;
+  }
+
+  // Extract required elements (these MUST be preserved)
+  const urlMatch = text.match(/https?:\/\/[^\s]+/);
+  const mentionMatch = text.match(/@\w+/);
+  const cashtagMatch = text.match(/\$BWS/);
+  const hashtagMatches = text.match(/#\w+/g) || [];
+
+  const requiredElements = [
+    urlMatch ? urlMatch[0] : '',
+    mentionMatch ? mentionMatch[0] : '',
+    cashtagMatch ? cashtagMatch[0] : '',
+    ...hashtagMatches.slice(0, 2) // Keep max 2 hashtags
+  ].filter(Boolean);
+
+  const requiredLength = requiredElements.join(' ').length + 2; // +2 for spaces
+
+  // Calculate available space for main content
+  const availableForContent = maxLength - requiredLength;
+
+  if (availableForContent < 50) {
+    // Not enough space - remove hashtags
+    const requiredElementsNoHashtags = [
+      urlMatch ? urlMatch[0] : '',
+      mentionMatch ? mentionMatch[0] : '',
+      cashtagMatch ? cashtagMatch[0] : ''
+    ].filter(Boolean);
+
+    const requiredLengthNoHashtags = requiredElementsNoHashtags.join(' ').length + 2;
+    const newAvailable = maxLength - requiredLengthNoHashtags;
+
+    // Extract main content (everything before required elements)
+    const mainContent = text
+      .replace(urlMatch ? urlMatch[0] : '', '')
+      .replace(mentionMatch ? mentionMatch[0] : '', '')
+      .replace(cashtagMatch ? cashtagMatch[0] : '', '')
+      .replace(/#\w+/g, '')
+      .trim();
+
+    // Truncate at word boundary
+    const truncated = truncateAtWordBoundary(mainContent, newAvailable);
+
+    // Reassemble
+    return `${truncated} ${requiredElementsNoHashtags.join(' ')}`.trim();
+  }
+
+  // Normal case: truncate main content and keep required elements
+  const mainContent = text
+    .replace(urlMatch ? urlMatch[0] : '', '')
+    .replace(mentionMatch ? mentionMatch[0] : '', '')
+    .replace(cashtagMatch ? cashtagMatch[0] : '', '')
+    .replace(/#\w+/g, '')
+    .trim();
+
+  const truncated = truncateAtWordBoundary(mainContent, availableForContent);
+
+  return `${truncated} ${requiredElements.join(' ')}`.trim();
+}
+
+/**
+ * Helper: Truncate text at word boundary
+ */
+function truncateAtWordBoundary(text, maxLength) {
+  if (text.length <= maxLength) {
+    return text;
+  }
+
+  // Find last space before maxLength
+  const truncated = text.substring(0, maxLength);
+  const lastSpace = truncated.lastIndexOf(' ');
+
+  if (lastSpace === -1) {
+    // No space found, hard truncate
+    return truncated.trim();
+  }
+
+  // Truncate at last space and add ellipsis if needed
+  const result = text.substring(0, lastSpace).trim();
+
+  // Don't add ellipsis if we're ending at sentence boundary
+  if (result.match(/[.!?]$/)) {
+    return result;
+  }
+
+  return result;
+}
+
+/**
+ * Option A: Retry with truncation instruction
+ * Makes a second API call with strict truncation requirements
+ */
+async function retryWithTruncationInstruction(client, originalReply, originalPrompt, model) {
+  const truncationPrompt = `Your previous reply was ${originalReply.length} characters (max: 280 for Twitter).
+
+PREVIOUS REPLY:
+"${originalReply}"
+
+TASK: Rewrite this reply to be EXACTLY under 270 characters while preserving:
+1. The $BWS cashtag
+2. The @BWSCommunity mention
+3. The URL at the end
+4. The core message
+
+STRATEGY:
+- Cut filler words ("really", "very", "actually", etc.)
+- Use shorter phrases
+- Reduce hashtags to 1-2 if needed
+- Make description ultra-concise (10-15 words max)
+- Keep technical specifics but remove adjectives
+
+Provide JSON response with the truncated version:
+{
+  "replyText": "The shortened reply (MUST be under 270 characters)",
+  "charactersRemoved": number,
+  "tone": "insightful/authentic/community-focused"
+}`;
+
+  try {
+    const message = await client.messages.create({
+      model: model,
+      max_tokens: 500,
+      messages: [{
+        role: 'user',
+        content: truncationPrompt
+      }]
+    });
+
+    const responseText = message.content[0].text.trim();
+    const result = extractJSON(responseText);
+
+    return result;
+  } catch (error) {
+    console.error(`Claude API error in retry: ${error.message}`);
+    throw error;
+  }
+}
+
+/**
+ * Option B: Use Claude to complete intelligently truncated text
+ * Takes a truncated reply and asks Claude to complete it naturally
+ */
+async function completeIntelligentTruncation(client, truncatedText, requiredElements, model) {
+  const completionPrompt = `Complete this truncated Twitter reply naturally. You have ${270 - truncatedText.length - requiredElements.join(' ').length} characters remaining.
+
+TRUNCATED TEXT:
+"${truncatedText}"
+
+REQUIRED ELEMENTS TO ADD:
+${requiredElements.join(', ')}
+
+TASK: Add a natural ending + required elements. Total must be under 270 characters.
+
+Provide JSON:
+{
+  "replyText": "The complete reply with natural ending + required elements",
+  "tone": "insightful/authentic/community-focused"
+}`;
+
+  try {
+    const message = await client.messages.create({
+      model: model,
+      max_tokens: 300,
+      messages: [{
+        role: 'user',
+        content: completionPrompt
+      }]
+    });
+
+    const responseText = message.content[0].text.trim();
+    const result = extractJSON(responseText);
+
+    return result;
+  } catch (error) {
+    console.error(`Claude API error in completion: ${error.message}`);
+    throw error;
+  }
+}
+
+/**
  * Generate a reply to a tweet with enhanced diversity and specific product features
+ * NOW WITH MULTI-STRATEGY CHARACTER LIMIT ENFORCEMENT (Options A, B, C)
  */
 export async function generateReplyText(client, tweet, kolProfile, product, evaluation, positioningPhrase = 'microcap opportunity with real fundamentals', recentReplies = [], specialNotes = '') {
   // Select structural template for this reply
@@ -714,9 +902,14 @@ Provide JSON response:
   "alternativeVersion": "A slightly different version if the first seems off"
 }`;
 
+  // === OPTION C: Use Haiku model if configured ===
+  const modelToUse = REPLY_MODEL;
+  console.log(`   📝 Using model: ${modelToUse === QUICK_FILTER_MODEL ? 'Haiku (fast/cheap)' : 'Sonnet (high-quality)'}`);
+
   try {
+    // === INITIAL GENERATION ===
     const message = await client.messages.create({
-      model: MODEL,
+      model: modelToUse,
       max_tokens: 800,
       messages: [{
         role: 'user',
@@ -725,7 +918,7 @@ Provide JSON response:
     });
 
     const responseText = message.content[0].text.trim();
-    const result = extractJSON(responseText);
+    let result = extractJSON(responseText);
 
     // Add template metadata to result
     if (selectedTemplate) {
@@ -733,7 +926,61 @@ Provide JSON response:
       result.templateName = selectedTemplate.name;
     }
 
+    // === CHARACTER LIMIT ENFORCEMENT WATERFALL ===
+    const initialLength = result.replyText.length;
+    console.log(`   📏 Initial reply length: ${initialLength} chars`);
+
+    if (initialLength > 280) {
+      console.log(`   ⚠️  Reply exceeds 280 chars - applying fix strategies...`);
+
+      // === OPTION A: Retry with truncation instruction ===
+      console.log(`   🔄 Strategy 1: Retry with truncation instruction...`);
+      try {
+        const retryResult = await retryWithTruncationInstruction(client, result.replyText, prompt, modelToUse);
+
+        if (retryResult.replyText.length <= 280) {
+          console.log(`   ✅ Retry successful! New length: ${retryResult.replyText.length} chars (saved ${retryResult.charactersRemoved || initialLength - retryResult.replyText.length} chars)`);
+          result.replyText = retryResult.replyText;
+          result.tone = retryResult.tone;
+          result.truncationMethod = 'retry_with_instruction';
+          return result;
+        } else {
+          console.log(`   ⚠️  Retry still too long (${retryResult.replyText.length} chars) - trying next strategy...`);
+        }
+      } catch (retryError) {
+        console.log(`   ⚠️  Retry failed: ${retryError.message} - trying next strategy...`);
+      }
+
+      // === OPTION B: Intelligent truncation ===
+      console.log(`   ✂️  Strategy 2: Intelligent truncation...`);
+      try {
+        const truncated = intelligentTruncate(result.replyText, 270);
+
+        if (truncated.length <= 280) {
+          console.log(`   ✅ Intelligent truncation successful! New length: ${truncated.length} chars`);
+          result.replyText = truncated;
+          result.truncationMethod = 'intelligent_truncation';
+          return result;
+        } else {
+          console.log(`   ⚠️  Truncation still too long (${truncated.length} chars) - applying fallback...`);
+        }
+      } catch (truncError) {
+        console.log(`   ⚠️  Truncation failed: ${truncError.message} - applying fallback...`);
+      }
+
+      // === FALLBACK: Hard truncation at 280 chars ===
+      console.log(`   🛑 Strategy 3: Hard truncation fallback at 280 chars...`);
+      result.replyText = result.replyText.substring(0, 280);
+      result.truncationMethod = 'hard_truncation';
+      console.log(`   ✅ Hard truncation applied - length: ${result.replyText.length} chars`);
+      return result;
+    }
+
+    // Reply is within limit - no fixes needed
+    console.log(`   ✅ Reply within limit - no truncation needed`);
+    result.truncationMethod = 'none';
     return result;
+
   } catch (error) {
     console.error(`Claude API error generating reply: ${error.message}`);
     throw error;
