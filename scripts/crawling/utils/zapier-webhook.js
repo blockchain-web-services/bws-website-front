@@ -306,7 +306,11 @@ export async function sendReplyNotification(options) {
   // Calculate selection rate
   const tweetsConsidered = tweetsEvaluated > 0 ? tweetsEvaluated : 1; // Avoid division by zero
   const selectionRate = ((repliesPosted / tweetsConsidered) * 100).toFixed(1);
-  const skipRate = ((tweetsSkipped / tweetsConsidered) * 100).toFixed(1);
+
+  // Fix: Skip rate can exceed 100% when tweetsSkipped > tweetsEvaluated due to multiple skip paths
+  // Cap at 100% for display purposes
+  const rawSkipRate = (tweetsSkipped / tweetsConsidered) * 100;
+  const skipRate = Math.min(rawSkipRate, 100).toFixed(1);
 
   // Build formatted message
   const textParts = [];
