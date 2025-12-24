@@ -112,12 +112,12 @@ return `${truncated} ${required.join(' ')}`
 
 ### **Option C: Haiku Model for Shorter Replies**
 
-**Location:** `scripts/crawling/utils/claude-client.js:7` (configuration)
+**Location:** `scripts/crawling/utils/claude-client.js:7-8` (configuration)
 
 **How it works:**
-1. Set environment variable: `USE_HAIKU_FOR_REPLIES=true`
-2. System uses `claude-3-5-haiku-20241022` instead of `claude-sonnet-4-5-20250929`
-3. Haiku naturally generates shorter, more concise responses
+1. **DEFAULT BEHAVIOR**: System uses `claude-3-5-haiku-20241022` (Haiku) for all replies
+2. Set environment variable `USE_SONNET_FOR_REPLIES=true` to upgrade to Sonnet for higher quality
+3. Haiku naturally generates shorter, more concise responses (240-270 chars avg)
 4. If Haiku output still > 280 chars, Options A & B kick in as fallbacks
 
 **Benefits:**
@@ -131,16 +131,17 @@ return `${truncated} ${required.join(' ')}`
 - ⚠️ Less variety in phrasing
 - ⚠️ May miss subtle positioning opportunities
 
-**When to use:**
-- **High-volume campaigns**: Save costs on 100+ daily replies
-- **Budget constraints**: Reduce Claude API costs by ~90%
-- **Speed priority**: Need faster turnaround
-- **Proven templates**: When reply structure is well-defined
+**When to upgrade to Sonnet:**
+- **VIP KOLs**: High-profile influencers (>500K followers) deserve maximum quality
+- **Complex positioning**: Nuanced market commentary or technical discussions
+- **Quality over cost**: When $15/month budget allows for premium responses
+- **Low volume**: <20 replies/day where cost difference is minimal
 
-**When NOT to use:**
-- **VIP KOLs**: High-profile influencers deserve best quality
-- **Complex positioning**: Nuanced market commentary
-- **Low volume**: Cost savings minimal for <20 replies/day
+**Haiku is recommended for:**
+- **Default production use**: Excellent quality at 91% cost savings
+- **High-volume campaigns**: 100+ daily replies
+- **Budget constraints**: Limited API budget
+- **Speed priority**: Faster response times matter
 
 ---
 
@@ -148,20 +149,39 @@ return `${truncated} ${required.join(' ')}`
 
 ### Environment Variable
 
+**DEFAULT: Haiku (cost-optimized, 91% savings)**
+
 **`.env` or GitHub Secrets:**
 ```bash
-USE_HAIKU_FOR_REPLIES=false  # Default: Use Sonnet for high quality
-USE_HAIKU_FOR_REPLIES=true   # Use Haiku for cost savings
+# Default behavior (Haiku - no env var needed):
+# - Cost: ~$1.40/month for 900 replies
+# - Quality: Excellent (GPT-4 class)
+# - Speed: ~500ms per reply
+
+# To upgrade to Sonnet for maximum quality:
+USE_SONNET_FOR_REPLIES=true
+# - Cost: ~$15/month for 900 replies
+# - Quality: Best (more creative/nuanced)
+# - Speed: ~2s per reply
 ```
 
 ### Workflow Setup
 
-**For GitHub Actions workflows:**
+**For GitHub Actions workflows (Haiku default):**
 ```yaml
 - name: Run KOL reply evaluation
   env:
     ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-    USE_HAIKU_FOR_REPLIES: 'true'  # ← Add this line
+    # No additional env var needed - uses Haiku by default
+  run: node scripts/crawling/production/evaluate-and-reply-kols-sdk.js
+```
+
+**To upgrade specific workflows to Sonnet:**
+```yaml
+- name: Run KOL reply evaluation (VIP tier)
+  env:
+    ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+    USE_SONNET_FOR_REPLIES: 'true'  # ← Upgrade to Sonnet
   run: node scripts/crawling/production/evaluate-and-reply-kols-sdk.js
 ```
 
@@ -217,27 +237,27 @@ Each reply includes `truncationMethod` field:
 
 ### Expected Results (Post-Implementation)
 
-| Metric | Before Fix | After Fix (Sonnet) | After Fix (Haiku) |
+| Metric | Before Fix | After Fix (Haiku - DEFAULT) | After Fix (Sonnet - Optional) |
 |--------|-----------|-------------------|-------------------|
-| **Success Rate** | 0% | ~95% | ~98% |
-| **Avg Reply Length** | 367 chars | 265 chars | 248 chars |
-| **Cost per Reply** | N/A (failed) | $0.015 | $0.0015 |
-| **Response Time** | ~2s | ~2.5s (w/ retry) | ~1s |
-| **Truncation Rate** | 100% rejected | ~10% need retry | ~2% need retry |
+| **Success Rate** | 0% | ~98% | ~95% |
+| **Avg Reply Length** | 367 chars (rejected) | 248 chars | 265 chars |
+| **Cost per Reply** | N/A (all failed) | $0.0015 | $0.015 |
+| **Response Time** | ~2s | ~1s | ~2.5s (w/ retry) |
+| **Truncation Rate** | 100% rejected | ~2% need retry | ~10% need retry |
 
 ### Cost Analysis (Monthly @ 900 replies)
 
 ```
-Sonnet (default):
+Haiku (DEFAULT - Cost Optimized):
+  - Base cost: 900 × $0.0015 = $1.35
+  - Retries (2%): 18 × $0.0015 = $0.03
+  - Total: ~$1.40/month ✅ RECOMMENDED
+
+Sonnet (USE_SONNET_FOR_REPLIES=true - Premium Quality):
   - Base cost: 900 × $0.015 = $13.50
   - Retries (10%): 90 × $0.015 = $1.35
   - Total: ~$15/month
-
-Haiku (USE_HAIKU_FOR_REPLIES=true):
-  - Base cost: 900 × $0.0015 = $1.35
-  - Retries (2%): 18 × $0.0015 = $0.03
-  - Total: ~$1.40/month
-  - Savings: $13.60/month (91% reduction)
+  - Additional cost: +$13.60/month vs Haiku
 ```
 
 ---
@@ -247,17 +267,18 @@ Haiku (USE_HAIKU_FOR_REPLIES=true):
 ### Manual Test (Local)
 
 ```bash
-# Test with Sonnet (default)
+# Test with Haiku (default - cost optimized)
 node scripts/crawling/production/evaluate-and-reply-kols-sdk.js
 
-# Test with Haiku
-USE_HAIKU_FOR_REPLIES=true node scripts/crawling/production/evaluate-and-reply-kols-sdk.js
+# Test with Sonnet (premium quality)
+USE_SONNET_FOR_REPLIES=true node scripts/crawling/production/evaluate-and-reply-kols-sdk.js
 ```
 
 ### Verify in Logs
 
 Look for these indicators:
-- ✅ `Using model: Haiku` or `Using model: Sonnet`
+- ✅ `Using model: Haiku (fast/cheap)` ← Default behavior
+- ✅ `Using model: Sonnet (high-quality)` ← Only if USE_SONNET_FOR_REPLIES=true
 - ✅ `Initial reply length: XXX chars`
 - ✅ `Truncation method: XXX`
 - ✅ No more "Tweet text too long" errors
@@ -292,19 +313,23 @@ git log -1 --oneline scripts/crawling/utils/claude-client.js
 - If showing `hard_truncation`, both Option A & B failed
 
 **Solution:**
+- Verify Haiku is being used (should be default - check logs for "Using model: Haiku")
 - Review original reply length (if consistently >400 chars, prompt needs adjustment)
-- Consider enabling `USE_HAIKU_FOR_REPLIES=true` for naturally shorter outputs
+- Haiku naturally generates shorter outputs (240-270 chars avg)
 
 ### Issue: Cost is too high
 
-**Solution:**
-Enable Haiku model:
+**Check default configuration:**
+System should already be using Haiku (default). Verify:
 ```bash
-# In .env or GitHub Secrets
-USE_HAIKU_FOR_REPLIES=true
+# Check logs for:
+# "Using model: Haiku (fast/cheap)"
+
+# If you see "Using model: Sonnet (high-quality)", remove this env var:
+# USE_SONNET_FOR_REPLIES=true
 ```
 
-Expected savings: ~91% reduction in Claude API costs
+Haiku is default and provides 91% cost savings vs Sonnet
 
 ---
 
@@ -329,12 +354,17 @@ Expected savings: ~91% reduction in Claude API costs
 ## Summary
 
 **All 3 options are ALWAYS active:**
-- **Option C** is configurable (env var) and affects initial generation
-- **Option A** automatically retries if initial output > 280 chars
-- **Option B** automatically truncates if retry fails
-- **Fallback** hard truncation guarantees no posting errors
+- **Option C**: Haiku model by DEFAULT (91% cost savings, naturally shorter replies)
+  - Override with `USE_SONNET_FOR_REPLIES=true` for premium quality
+- **Option A**: Automatically retries if initial output > 280 chars
+- **Option B**: Automatically truncates if retry fails
+- **Fallback**: Hard truncation guarantees no posting errors
 
-**This guarantees 100% success rate** while optimizing for quality and cost.
+**This guarantees 100% success rate** at ~$1.40/month (Haiku) while maintaining excellent quality.
+
+**Cost comparison:**
+- Haiku (default): $1.40/month for 900 replies ✅ RECOMMENDED
+- Sonnet (opt-in): $15/month for 900 replies (10x more expensive)
 
 ---
 
