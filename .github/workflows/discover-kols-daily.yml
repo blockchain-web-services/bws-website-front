@@ -35,7 +35,7 @@ jobs:
           fi
 
       - name: Install script dependencies
-        run: npm install @blockchain-web-services/bws-x-sdk-node@1.6.0 @anthropic-ai/sdk
+        run: npm install @blockchain-web-services/bws-x-sdk-node@1.7.0 @anthropic-ai/sdk
 
       - name: Install Playwright browsers
         run: npx playwright install chromium --with-deps

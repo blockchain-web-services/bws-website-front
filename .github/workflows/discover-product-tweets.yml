@@ -43,7 +43,7 @@ jobs:
           fi
 
       - name: Install SDK
-        run: npm install @blockchain-web-services/bws-x-sdk-node@1.6.0
+        run: npm install @blockchain-web-services/bws-x-sdk-node@1.7.0
 
       - name: Install Playwright browsers
         run: npx playwright install chromium --with-deps

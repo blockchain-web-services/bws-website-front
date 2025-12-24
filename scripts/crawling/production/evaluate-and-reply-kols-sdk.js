@@ -1069,6 +1069,17 @@ async function evaluateAndReply() {
   const todayRepliesArray = repliesData.replies.filter(r => r.timestamp.startsWith(today));
   if (todayRepliesArray.length > 0) {
     const avgRelevance = todayRepliesArray.reduce((sum, r) => sum + r.relevanceScore, 0) / todayRepliesArray.length;
+
+    // Ensure dailyStats[today] exists before setting averageRelevance
+    if (!repliesData.dailyStats[today]) {
+      repliesData.dailyStats[today] = {
+        repliesPosted: 0,
+        repliesFailed: 0,
+        averageRelevance: 0,
+        productDistribution: {}
+      };
+    }
+
     repliesData.dailyStats[today].averageRelevance = Math.round(avgRelevance);
   }
 
