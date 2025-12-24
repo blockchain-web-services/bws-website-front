@@ -3397,6 +3397,26 @@
       "error": "Tweet text too long: 385 characters (max: 280)",
       "timestamp": "2025-12-24T07:41:45.142Z",
       "status": "skipped-too-long"
+    },
+    {
+      "id": "1353384573435056128-2003033015921103349-1766565813973",
+      "tweetId": "2003033015921103349",
+      "tweetUrl": "https://twitter.com/CryptoRover/status/2003033015921103349",
+      "kolId": "1353384573435056128",
+      "kolUsername": "CryptoRover",
+      "originalTweetText": "BITCOIN SOCIAL VOLUME DROPPING HARD. \n\nThere’s almost no interest in crypto right now.",
+      "replyTweetId": "2003748369273905457",
+      "replyText": "📉 Low volume = best time for fundamentals research.\n\n💡 Blockchain Badges from $BWS enables institutions to issue tamper-proof digital credentials with cross-platform verification - combat degree fraud at scale.\n\n@BWSCommunity #microcap #fundamentals https://www.bws.ninja",
+      "productMentioned": "X Bot",
+      "relevanceScore": 82,
+      "templateUsed": "emoji_enhanced",
+      "templateName": "Emoji-Enhanced Structure",
+      "imageAttached": true,
+      "imagePath": "/assets/images/docs/blockchain-badges/blockchain-badges-0.png",
+      "timestamp": "2025-12-24T08:43:33.973Z",
+      "status": "posted",
+      "dryRun": false,
+      "sdkVersion": "1.7.0"
     }
   ],
   "dailyStats": {
@@ -3471,10 +3491,10 @@
     }
   },
   "metadata": {
-    "totalReplies": 177,
-    "successfulReplies": 132,
+    "totalReplies": 178,
+    "successfulReplies": 133,
     "failedReplies": 34,
-    "lastReplyAt": "2025-12-24T07:41:45.142Z",
+    "lastReplyAt": "2025-12-24T08:43:33.973Z",
     "todayRepliesCount": 0,
     "lastUpdateBy": "kol-system"
   }
