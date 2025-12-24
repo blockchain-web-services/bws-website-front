@@ -4,7 +4,8 @@ import path from 'path';
 
 const MODEL = 'claude-sonnet-4-5-20250929';
 const QUICK_FILTER_MODEL = 'claude-3-5-haiku-20241022'; // Fast, cheap model for pre-filtering
-const REPLY_MODEL = process.env.USE_HAIKU_FOR_REPLIES === 'true' ? QUICK_FILTER_MODEL : MODEL; // Option C: Configurable model for replies
+// Option C: Use Haiku by default (91% cost savings), opt-in to Sonnet for high quality
+const REPLY_MODEL = process.env.USE_SONNET_FOR_REPLIES === 'true' ? MODEL : QUICK_FILTER_MODEL;
 
 /**
  * Create Anthropic client
