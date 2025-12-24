@@ -351,7 +351,7 @@
       },
       "created_at": "",
       "url": "https://twitter.com/CryptoCapo_/status/1996936449543782844",
-      "processed": false,
+      "processed": true,
       "addedAt": "2025-12-22T07:24:53.902Z",
       "expiresAt": "2025-12-29T07:24:53.902Z",
       "source": "timeline_monitor",
@@ -372,7 +372,7 @@
       },
       "created_at": "",
       "url": "https://twitter.com/CryptosR_Us/status/2002934366326964632",
-      "processed": false,
+      "processed": true,
       "addedAt": "2025-12-22T07:25:03.088Z",
       "expiresAt": "2025-12-29T07:25:03.088Z",
       "source": "timeline_monitor",
@@ -393,7 +393,7 @@
       },
       "created_at": "",
       "url": "https://twitter.com/CryptosR_Us/status/2002904456157893000",
-      "processed": false,
+      "processed": true,
       "addedAt": "2025-12-22T07:25:05.089Z",
       "expiresAt": "2025-12-29T07:25:05.089Z",
       "source": "timeline_monitor",
@@ -414,7 +414,7 @@
       },
       "created_at": "",
       "url": "https://twitter.com/CryptosR_Us/status/2002875735778664748",
-      "processed": false,
+      "processed": true,
       "addedAt": "2025-12-22T07:25:07.176Z",
       "expiresAt": "2025-12-29T07:25:07.176Z",
       "source": "timeline_monitor",
@@ -456,7 +456,7 @@
       },
       "created_at": "",
       "url": "https://twitter.com/CryptosR_Us/status/2002816366592528435",
-      "processed": false,
+      "processed": true,
       "addedAt": "2025-12-22T07:25:11.086Z",
       "expiresAt": "2025-12-29T07:25:11.086Z",
       "source": "timeline_monitor",
@@ -498,7 +498,7 @@
       },
       "created_at": "",
       "url": "https://twitter.com/CryptoPatel/status/2002959783641682198",
-      "processed": false,
+      "processed": true,
       "addedAt": "2025-12-22T07:27:34.417Z",
       "expiresAt": "2025-12-29T07:27:34.417Z",
       "source": "timeline_monitor",
@@ -2288,9 +2288,10 @@
       "BWS IPFS",
       "Blockchain Save"
     ],
-    "currentIndex": 7,
-    "lastProductUsed": "BWS IPFS",
+    "currentIndex": 2,
+    "lastProductUsed": "Fan Game Cube",
     "positioningPhraseIndex": 0,
-    "replyCount": 151
-  }
+    "replyCount": 154
+  },
+  "_removedStale": false
 }

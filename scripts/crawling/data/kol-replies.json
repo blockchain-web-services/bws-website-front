@@ -3357,6 +3357,30 @@
       "error": "Tweet text too long: 370 characters (max: 280)",
       "timestamp": "2025-12-23T23:21:56.039Z",
       "status": "skipped-too-long"
+    },
+    {
+      "id": "111533746-2002773682268348755-1766545009945-error",
+      "tweetId": "2002773682268348755",
+      "kolUsername": "WuBlockchain",
+      "error": "Tweet text too long: 409 characters (max: 280)",
+      "timestamp": "2025-12-24T02:56:49.945Z",
+      "status": "skipped-too-long"
+    },
+    {
+      "id": "935742315389444096-2002929002588287018-1766545053754-error",
+      "tweetId": "2002929002588287018",
+      "kolUsername": "CryptoWendyO",
+      "error": "Tweet text too long: 398 characters (max: 280)",
+      "timestamp": "2025-12-24T02:57:33.754Z",
+      "status": "skipped-too-long"
+    },
+    {
+      "id": "crawlee_search_cryptopatel-2002944685493657943-1766545092642-error",
+      "tweetId": "2002944685493657943",
+      "kolUsername": "CryptoPatel",
+      "error": "Tweet text too long: 361 characters (max: 280)",
+      "timestamp": "2025-12-24T02:58:12.642Z",
+      "status": "skipped-too-long"
     }
   ],
   "dailyStats": {
@@ -3431,10 +3455,10 @@
     }
   },
   "metadata": {
-    "totalReplies": 172,
+    "totalReplies": 175,
     "successfulReplies": 132,
     "failedReplies": 34,
-    "lastReplyAt": "2025-12-23T23:21:56.039Z",
+    "lastReplyAt": "2025-12-24T02:58:12.642Z",
     "todayRepliesCount": 0,
     "lastUpdateBy": "kol-system"
   }
