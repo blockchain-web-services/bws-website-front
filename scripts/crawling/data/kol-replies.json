@@ -3381,6 +3381,22 @@
       "error": "Tweet text too long: 361 characters (max: 280)",
       "timestamp": "2025-12-24T02:58:12.642Z",
       "status": "skipped-too-long"
+    },
+    {
+      "id": "1353384573435056128-2003047360486662372-1766562073830-error",
+      "tweetId": "2003047360486662372",
+      "kolUsername": "CryptoRover",
+      "error": "Tweet text too long: 403 characters (max: 280)",
+      "timestamp": "2025-12-24T07:41:13.830Z",
+      "status": "skipped-too-long"
+    },
+    {
+      "id": "1353384573435056128-2003038426627756266-1766562105142-error",
+      "tweetId": "2003038426627756266",
+      "kolUsername": "CryptoRover",
+      "error": "Tweet text too long: 385 characters (max: 280)",
+      "timestamp": "2025-12-24T07:41:45.142Z",
+      "status": "skipped-too-long"
     }
   ],
   "dailyStats": {
@@ -3455,10 +3471,10 @@
     }
   },
   "metadata": {
-    "totalReplies": 175,
+    "totalReplies": 177,
     "successfulReplies": 132,
     "failedReplies": 34,
-    "lastReplyAt": "2025-12-24T02:58:12.642Z",
+    "lastReplyAt": "2025-12-24T07:41:45.142Z",
     "todayRepliesCount": 0,
     "lastUpdateBy": "kol-system"
   }
