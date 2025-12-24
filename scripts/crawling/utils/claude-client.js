@@ -643,7 +643,7 @@ B) **PRODUCT-SPECIFIC** (when tweet clearly relates to ONE BWS product):
 ${templateInstructions}
 
 **GENERAL REPLY GUIDELINES** (Apply to all templates):
-1. Keep total reply under 280 characters including line breaks
+1. **CRITICAL - CHARACTER LIMIT**: Total reply MUST be under 270 characters (leaving 10-char buffer). Count EVERYTHING: text, spaces, line breaks, @mentions, $BWS, hashtags, URLs. If you cannot fit all elements under 270 chars, reduce description length or use fewer hashtags. This is NON-NEGOTIABLE.
 2. Use conversational brand voice - be transparent this is BWS (the company) speaking
 3. **CRITICAL**: NEVER use "I" - use "we" or third-person "BWS". This is BWS team/company account.
 4. **REQUIRED**: Include "$BWS" cashtag somewhere in the reply
@@ -655,9 +655,10 @@ ${templateInstructions}
 6. **CRITICAL - MUST INCLUDE LINK**: End reply with the URL provided above: ${replyLink}
    - Place link at the very end after @BWSCommunity and hashtags
    - This link is REQUIRED in every reply - do not omit it
-7. **HASHTAGS**: Choose 2-3 hashtags that relate to the tweet context (e.g., #altcoins #gems #microcap #blockchain #DeFi #Web3 #crypto)
+7. **HASHTAGS**: Use 2-3 SHORT hashtags max (e.g., #altcoins #gems #microcap #crypto). If approaching char limit, use only 1-2 hashtags.
 8. NO salesy language: avoid "amazing", "revolutionary", "don't miss", "moon"
 9. **CRITICAL**: Follow the TEMPLATE STRUCTURE above EXACTLY - especially the $BWS placement rule - this is the most important requirement
+10. **BREVITY**: Keep product description to ONE concise sentence (15-20 words max). Prioritize clarity over detail. Remove filler words.
 
 Examples of PLATFORM-LEVEL positioning (for general market/trends tweets):
 
