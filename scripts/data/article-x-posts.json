@@ -1,12 +1,10 @@
 {
   "metadata": {
-    "lastGenerated": "2025-12-24T12:15:04.522Z",
-    "totalPosts": 56,
-    "totalArticles": 20,
-    "pendingPosts": 14,
-    "postedCount": 35,
-    "lastPosted": "2025-12-25T00:35:50.715Z",
-    "failedCount": 7
+    "lastGenerated": "2025-12-25T12:14:58.687Z",
+    "totalPosts": 57,
+    "totalArticles": 21,
+    "pendingPosts": 15,
+    "postedCount": 35
   },
   "posts": [
     {
@@ -1583,6 +1581,32 @@
       },
       "tweetUrl": "https://twitter.com/i/web/status/2003988018047123737",
       "error": null
+    },
+    {
+      "id": "58b6cb6a-e4c7-4a56-9e9c-94345a022693",
+      "articleSlug": "x-bot-2025-12-25",
+      "product": "X Bot",
+      "type": "overview",
+      "text": "X Bot tracks community mentions across X and Telegram platforms. Provides automated leaderboards, engagement analytics, and KOL performance metrics. Built by @BWSCommunity using $BWS\n\n📖 Article: https://www.bws.ninja/articles/x-bot-2025-12-25\n📚 Docs: https://docs.bws.ninja/marketplace-solutions/bws.x.bot\n\n#XBot #CommunityAnalytics",
+      "mainText": "X Bot tracks community mentions across X and Telegram platforms. Provides automated leaderboards, engagement analytics, and KOL performance metrics. Built by @BWSCommunity using $BWS",
+      "articleUrl": "https://www.bws.ninja/articles/x-bot-2025-12-25",
+      "docsUrl": "https://docs.bws.ninja/marketplace-solutions/bws.x.bot",
+      "hashtags": [
+        "XBot",
+        "CommunityAnalytics"
+      ],
+      "priority": "high",
+      "status": "pending",
+      "scheduledFor": null,
+      "postedAt": null,
+      "tweetId": null,
+      "generatedAt": "2025-12-25T12:14:58.686Z",
+      "metadata": {
+        "articleTitle": "X Bot: Automate Community Tracking and KOL Performance Analysis",
+        "articlePublishDate": "2025-12-25T10:03:42.296Z",
+        "mainTextLength": 182,
+        "fullTextLength": 334
+      }
     }
   ]
 }
