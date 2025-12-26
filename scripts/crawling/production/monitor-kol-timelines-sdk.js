@@ -261,7 +261,7 @@ async function monitorKolTimelines() {
   lastSuccessfulOperation = 'config_loaded';
 
   const { minEngagementThreshold, maxTweetsPerKol, dryRun } = config.monitorSettings || {
-    minEngagementThreshold: { likes: 15, retweets: 3 },  // Lowered to capture early-stage engagement (6-24h tweets)
+    minEngagementThreshold: { likes: 10, retweets: 2 },  // Very low threshold for extremely fresh tweets (0-12h)
     maxTweetsPerKol: 10,
     dryRun: false
   };
