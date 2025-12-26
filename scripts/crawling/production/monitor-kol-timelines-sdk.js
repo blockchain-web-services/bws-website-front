@@ -261,7 +261,7 @@ async function monitorKolTimelines() {
   lastSuccessfulOperation = 'config_loaded';
 
   const { minEngagementThreshold, maxTweetsPerKol, dryRun } = config.monitorSettings || {
-    minEngagementThreshold: { likes: 50, retweets: 10 },
+    minEngagementThreshold: { likes: 25, retweets: 5 },  // Lowered from 50/10 for more opportunities
     maxTweetsPerKol: 10,
     dryRun: false
   };
@@ -307,6 +307,10 @@ async function monitorKolTimelines() {
   let tweetsSelected = 0;
   let tweetsSkipped = 0;
   let tweetsFilteredByContent = 0;
+  let tweetsFetched = 0;  // NEW: Total tweets fetched from Twitter
+  let tweetsPassedEngagement = 0;  // NEW: Tweets meeting engagement threshold
+  let crawlerSuccesses = 0;  // NEW: KOLs processed via crawler
+  let apiFallbacks = 0;  // NEW: KOLs that fell back to API
   const selectedTweets = [];
   const contentFilterStats = {
     'project-discussion': 0,
@@ -340,6 +344,9 @@ async function monitorKolTimelines() {
       });
       lastSuccessfulOperation = `fetched_tweets_for_${kol.username}`;
 
+      tweetsFetched += tweets.length;  // Track total tweets fetched
+      crawlerSuccesses++;  // Track successful crawler usage
+
       console.log(`📊 Fetched ${tweets.length} tweets from @${kol.username}`);
 
       if (tweets.length === 0) {
@@ -354,6 +361,8 @@ async function monitorKolTimelines() {
         const retweets = tweet.public_metrics?.retweet_count || 0;
         return likes >= minEngagementThreshold.likes && retweets >= minEngagementThreshold.retweets;
       });
+
+      tweetsPassedEngagement += engagingTweets.length;  // Track tweets meeting threshold
 
       console.log(`✨ Found ${engagingTweets.length} tweets meeting engagement threshold`);
 
@@ -416,6 +425,11 @@ async function monitorKolTimelines() {
     } catch (error) {
       console.error(`❌ Error processing KOL @${kol.username}:`, error.message);
       tweetsSkipped++;
+
+      // Track API fallback if error message indicates it
+      if (error.message.includes('rate limit') || error.message.includes('API')) {
+        apiFallbacks++;
+      }
     }
   }
 
@@ -452,6 +466,12 @@ async function monitorKolTimelines() {
       totalEngagingPosts: engagingPostsData.posts.length,
       duration,
       dryRun,
+      // NEW: Additional metrics for better visibility
+      tweetsFetched,
+      tweetsPassedEngagement,
+      crawlerSuccesses,
+      apiFallbacks,
+      engagementThreshold: minEngagementThreshold,
       runUrl: process.env.GITHUB_SERVER_URL && process.env.GITHUB_REPOSITORY && process.env.GITHUB_RUN_ID
         ? `${process.env.GITHUB_SERVER_URL}/${process.env.GITHUB_REPOSITORY}/actions/runs/${process.env.GITHUB_RUN_ID}`
         : null
@@ -465,11 +485,15 @@ async function monitorKolTimelines() {
   console.log(`📊 Timeline Monitoring Summary`);
   console.log(`${'='.repeat(60)}`);
   console.log(`KOLs processed: ${kolsProcessed}/${activeKols.length}`);
-  console.log(`Tweets evaluated: ${tweetsEvaluated}`);
+  console.log(`  - Via crawler: ${crawlerSuccesses}`);
+  console.log(`  - Via API (fallback): ${apiFallbacks}`);
+  console.log(`Tweets fetched from Twitter: ${tweetsFetched}`);
+  console.log(`Tweets meeting engagement threshold (${minEngagementThreshold.likes}L+${minEngagementThreshold.retweets}RT): ${tweetsPassedEngagement}`);
+  console.log(`Tweets evaluated by AI: ${tweetsEvaluated}`);
   console.log(`Tweets filtered by content: ${tweetsFilteredByContent}`);
   console.log(`Tweets selected: ${tweetsSelected}`);
-  console.log(`Tweets skipped (duplicates): ${tweetsSkipped}`);
-  console.log(`Total engaging posts: ${engagingPostsData.posts.length}`);
+  console.log(`Tweets skipped (duplicates/errors): ${tweetsSkipped}`);
+  console.log(`Total engaging posts in queue: ${engagingPostsData.posts.length}`);
   console.log(`Duration: ${duration}s`);
   console.log(`\n📊 Content Filter Breakdown:`);
   Object.entries(contentFilterStats).forEach(([category, count]) => {
