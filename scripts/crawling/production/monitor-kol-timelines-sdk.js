@@ -105,17 +105,17 @@ async function saveEngagingPosts(data) {
 }
 
 /**
- * Clean up old engaging posts (keep only last 48 hours)
- * Tweets older than 36 hours cannot be replied to, so 48h buffer ensures relevancy
+ * Clean up old engaging posts (keep only last 7 days)
+ * Aligns with post expiration time (expiresAt = addedAt + 7 days)
  */
 function cleanupOldEngagingPosts(data) {
-  const MAX_AGE_HOURS = 48;
+  const MAX_AGE_HOURS = 168;  // 7 days (matches expiresAt timeframe)
   const now = Date.now();
   const cutoffTime = now - (MAX_AGE_HOURS * 60 * 60 * 1000);
 
   const originalCount = data.posts.length;
 
-  // Keep only posts added within the last 48 hours
+  // Keep only posts added within the last 7 days (aligns with expiration)
   data.posts = data.posts.filter(post => {
     const addedTime = new Date(post.addedAt).getTime();
     return addedTime >= cutoffTime;
@@ -355,11 +355,11 @@ async function monitorKolTimelines() {
         continue;
       }
 
-      // Filter tweets by engagement threshold
+      // Filter tweets by engagement threshold (OR logic - either metric can qualify)
       const engagingTweets = tweets.filter(tweet => {
         const likes = tweet.public_metrics?.like_count || 0;
         const retweets = tweet.public_metrics?.retweet_count || 0;
-        return likes >= minEngagementThreshold.likes && retweets >= minEngagementThreshold.retweets;
+        return likes >= minEngagementThreshold.likes || retweets >= minEngagementThreshold.retweets;
       });
 
       tweetsPassedEngagement += engagingTweets.length;  // Track tweets meeting threshold
