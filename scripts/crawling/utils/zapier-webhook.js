@@ -558,13 +558,20 @@ export async function sendMonitorNotification(options) {
     totalEngagingPosts = 0,
     duration = '0',
     dryRun = false,
-    runUrl = null
+    runUrl = null,
+    // NEW: Additional metrics
+    tweetsFetched = 0,
+    tweetsPassedEngagement = 0,
+    crawlerSuccesses = 0,
+    apiFallbacks = 0,
+    engagementThreshold = null
   } = options;
 
   const emoji = success ? ':white_check_mark:' : ':x:';
   const statusText = success ? 'SUCCESS' : 'NO TWEETS SELECTED';
 
   const selectionRate = tweetsEvaluated > 0 ? ((tweetsSelected / tweetsEvaluated) * 100).toFixed(1) : '0.0';
+  const engagementPassRate = tweetsFetched > 0 ? ((tweetsPassedEngagement / tweetsFetched) * 100).toFixed(1) : '0.0';
 
   const textParts = [];
   textParts.push(`${emoji} *KOL Timeline Monitoring* - ${statusText}`);
@@ -572,12 +579,24 @@ export async function sendMonitorNotification(options) {
   textParts.push('');
   textParts.push('*KOLs Monitored:*');
   textParts.push(`  Processed: ${kolsProcessed}/${totalKols}`);
+  if (crawlerSuccesses > 0 || apiFallbacks > 0) {
+    textParts.push(`  :robot_face: Via crawler: ${crawlerSuccesses}`);
+    textParts.push(`  :cloud: Via API (fallback): ${apiFallbacks}`);
+  }
 
   textParts.push('');
   textParts.push('*Timeline Scanning:*');
-  textParts.push(`  :mag: Tweets scanned: ${tweetsEvaluated}`);
+  textParts.push(`  :bird: Tweets fetched from Twitter: ${tweetsFetched}`);
+
+  if (engagementThreshold) {
+    textParts.push(`  :fire: Engagement filter (${engagementThreshold.likes}L + ${engagementThreshold.retweets}RT): ${tweetsPassedEngagement} (${engagementPassRate}%)`);
+  } else {
+    textParts.push(`  :fire: Meeting engagement threshold: ${tweetsPassedEngagement} (${engagementPassRate}%)`);
+  }
+
+  textParts.push(`  :robot_face: Evaluated by AI: ${tweetsEvaluated}`);
   textParts.push(`  :white_check_mark: Selected for reply: ${tweetsSelected} (${selectionRate}%)`);
-  textParts.push(`  :no_entry_sign: Skipped: ${tweetsSkipped}`);
+  textParts.push(`  :no_entry_sign: Errors/Duplicates: ${tweetsSkipped}`);
 
   textParts.push('');
   textParts.push('*Engaging Posts Queue:*');
