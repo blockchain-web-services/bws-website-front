@@ -261,7 +261,7 @@ async function monitorKolTimelines() {
   lastSuccessfulOperation = 'config_loaded';
 
   const { minEngagementThreshold, maxTweetsPerKol, dryRun } = config.monitorSettings || {
-    minEngagementThreshold: { likes: 10, retweets: 2 },  // Very low threshold for extremely fresh tweets (0-12h)
+    minEngagementThreshold: { likes: 5, retweets: 1 },  // Ultra-low threshold - any early engagement qualifies
     maxTweetsPerKol: 10,
     dryRun: false
   };
@@ -355,6 +355,18 @@ async function monitorKolTimelines() {
         continue;
       }
 
+      // Debug: Show top 5 tweets by engagement to understand what we're working with
+      const tweetsWithEngagement = tweets.map(tweet => ({
+        likes: tweet.public_metrics?.like_count || 0,
+        retweets: tweet.public_metrics?.retweet_count || 0,
+        score: (tweet.public_metrics?.like_count || 0) + (tweet.public_metrics?.retweet_count || 0) * 5
+      })).sort((a, b) => b.score - a.score);
+
+      console.log(`📊 Top 5 tweets by engagement for @${kol.username}:`);
+      tweetsWithEngagement.slice(0, 5).forEach((t, i) => {
+        console.log(`   ${i+1}. ${t.likes}L + ${t.retweets}RT (score: ${t.score})`);
+      });
+
       // Filter tweets by engagement threshold (OR logic - either metric can qualify)
       const engagingTweets = tweets.filter(tweet => {
         const likes = tweet.public_metrics?.like_count || 0;
@@ -364,7 +376,7 @@ async function monitorKolTimelines() {
 
       tweetsPassedEngagement += engagingTweets.length;  // Track tweets meeting threshold
 
-      console.log(`✨ Found ${engagingTweets.length} tweets meeting engagement threshold`);
+      console.log(`✨ Found ${engagingTweets.length} tweets meeting engagement threshold (${minEngagementThreshold.likes}L OR ${minEngagementThreshold.retweets}RT)`);
 
       // Select top tweets (limit per KOL)
       const topTweets = engagingTweets.slice(0, maxTweetsPerKol);
