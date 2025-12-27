@@ -835,13 +835,935 @@
       "expiresAt": "2026-01-03T09:38:08.197Z",
       "source": "timeline_monitor",
       "contentCategory": "altcoin-talk"
+    },
+    {
+      "id": "1778242360713130435",
+      "text": "@Uniswap The SEC isn't here to protect us. It's to make sure they control us.",
+      "author": {
+        "id": "4441279246",
+        "username": "IncomeSharks"
+      },
+      "public_metrics": {
+        "likes": 1081,
+        "retweets": 122,
+        "replies": 27,
+        "quotes": 1,
+        "views": 37535
+      },
+      "url": "https://twitter.com/IncomeSharks/status/1778242360713130435",
+      "processed": false,
+      "addedAt": "2025-12-27T12:46:07.481Z",
+      "expiresAt": "2026-01-03T12:46:07.481Z",
+      "source": "timeline_monitor",
+      "contentCategory": "project-discussion"
+    },
+    {
+      "id": "1395441817563254784",
+      "text": "How to trade based on your Crypto Twitter feed\n\nBUY - Doomsday posts, FUD, memes, angry comments\nHOLD - Quality charts, good content, actual analysis\nSELL - Car pics, watch pics, wild price predictions",
+      "author": {
+        "id": "4441279246",
+        "username": "IncomeSharks"
+      },
+      "public_metrics": {
+        "likes": 5285,
+        "retweets": 1057,
+        "replies": 384,
+        "quotes": 131
+      },
+      "url": "https://twitter.com/IncomeSharks/status/1395441817563254784",
+      "processed": false,
+      "addedAt": "2025-12-27T12:46:08.510Z",
+      "expiresAt": "2026-01-03T12:46:08.510Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends/price-speculation"
+    },
+    {
+      "id": "1863717475168424230",
+      "text": "Over 43% of the $XRP tokens are still not even circulating. Imagine if you were on Pump Fun and saw the developer owned 43% of supply. There's a reason this space collectively dislikes this token because it's always pumping and dumping. https://t.co/n7wMvyU2nR",
+      "author": {
+        "id": "4441279246",
+        "username": "IncomeSharks"
+      },
+      "public_metrics": {
+        "likes": 5851,
+        "retweets": 386,
+        "replies": 623,
+        "quotes": 81,
+        "views": 858583
+      },
+      "url": "https://twitter.com/IncomeSharks/status/1863717475168424230",
+      "processed": false,
+      "addedAt": "2025-12-27T12:46:10.450Z",
+      "expiresAt": "2026-01-03T12:46:10.450Z",
+      "source": "timeline_monitor",
+      "contentCategory": "altcoin-talk"
+    },
+    {
+      "id": "1871631935078023487",
+      "text": "When cashing out on @coinbase always send profits with $USDC to avoid fees. It's wild that they charge as much as they do converting other stable coins to USD. https://t.co/gRTBLS2AgM",
+      "author": {
+        "id": "4441279246",
+        "username": "IncomeSharks"
+      },
+      "public_metrics": {
+        "likes": 5724,
+        "retweets": 404,
+        "replies": 324,
+        "quotes": 31,
+        "views": 960067
+      },
+      "url": "https://twitter.com/IncomeSharks/status/1871631935078023487",
+      "processed": false,
+      "addedAt": "2025-12-27T12:46:14.674Z",
+      "expiresAt": "2026-01-03T12:46:14.674Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "1509583498893484032",
+      "text": "Time to unfollow large verified accounts. All were screaming to buy #Bitcoin at another local top. And all 3 are verified... They speak in absolutes leading the sheep to the slaughterhouse. They can't trade, they only know how to farm for engagement and use emojis.🚀 https://t.co/NVkjTjWfGv",
+      "author": {
+        "id": "4441279246",
+        "username": "IncomeSharks"
+      },
+      "public_metrics": {
+        "likes": 4675,
+        "retweets": 487,
+        "replies": 456,
+        "quotes": 69
+      },
+      "url": "https://twitter.com/IncomeSharks/status/1509583498893484032",
+      "processed": false,
+      "addedAt": "2025-12-27T12:46:22.638Z",
+      "expiresAt": "2026-01-03T12:46:22.638Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "1898450757738955242",
+      "text": "It's not that people aren't bullish enough, most have nothing left to invest.",
+      "author": {
+        "id": "4441279246",
+        "username": "IncomeSharks"
+      },
+      "public_metrics": {
+        "likes": 5202,
+        "retweets": 264,
+        "replies": 556,
+        "quotes": 45,
+        "views": 298697
+      },
+      "url": "https://twitter.com/IncomeSharks/status/1898450757738955242",
+      "processed": false,
+      "addedAt": "2025-12-27T12:46:24.685Z",
+      "expiresAt": "2026-01-03T12:46:24.685Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "2004895408682905714",
+      "text": "there's something to be said about touching grass/resting when the market is choppy/boring but you also need to be locked in enough to recognize when the tides shift. logging off and only trading 3x a year is more of a whales game, not yours.",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "likes": 6,
+        "retweets": 0,
+        "replies": 3,
+        "quotes": 0,
+        "views": 441
+      },
+      "url": "https://twitter.com/AltcoinSherpa/status/2004895408682905714",
+      "processed": false,
+      "addedAt": "2025-12-27T12:47:27.417Z",
+      "expiresAt": "2026-01-03T12:47:27.417Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "2004878656913768888",
+      "text": "Watchlist today:\n\n$ZEC\n$AVNT\n$DOLO\n$CC\n$FARTCOIN",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "likes": 40,
+        "retweets": 0,
+        "replies": 13,
+        "quotes": 3,
+        "views": 4577
+      },
+      "url": "https://twitter.com/AltcoinSherpa/status/2004878656913768888",
+      "processed": false,
+      "addedAt": "2025-12-27T12:47:29.399Z",
+      "expiresAt": "2026-01-03T12:47:29.399Z",
+      "source": "timeline_monitor",
+      "contentCategory": "altcoin-talk"
+    },
+    {
+      "id": "2004876425200108031",
+      "text": "$MON I've been pretty interested in Monad the last few days for a trade but not a huge fan of this current price action. Not seeing any entries and will just wait on it. https://t.co/u72OGlEXMj",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "likes": 26,
+        "retweets": 0,
+        "replies": 16,
+        "quotes": 0,
+        "views": 3055
+      },
+      "url": "https://twitter.com/AltcoinSherpa/status/2004876425200108031",
+      "processed": false,
+      "addedAt": "2025-12-27T12:47:31.347Z",
+      "expiresAt": "2026-01-03T12:47:31.347Z",
+      "source": "timeline_monitor",
+      "contentCategory": "altcoin-talk"
+    },
+    {
+      "id": "2004863306486743505",
+      "text": "$ZEC looks like a breakout. If this is a clean move and we hold above here for a few days, I think we go to like $600 or something. This has had plenty of opportunities to retrace and die and it's held up strongly the last month. https://t.co/2GsWXUk3Bi",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "likes": 101,
+        "retweets": 4,
+        "replies": 19,
+        "quotes": 1,
+        "views": 10211
+      },
+      "url": "https://twitter.com/AltcoinSherpa/status/2004863306486743505",
+      "processed": false,
+      "addedAt": "2025-12-27T12:47:35.305Z",
+      "expiresAt": "2026-01-03T12:47:35.305Z",
+      "source": "timeline_monitor",
+      "contentCategory": "price-speculation"
+    },
+    {
+      "id": "2004735018019811664",
+      "text": "$ZEC no clear breakout here of this level for 1 month, waiting on it. I think it prob goes higher overall but I'm not going to buy quite yet https://t.co/uAXGJgRE3S",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "likes": 113,
+        "retweets": 7,
+        "replies": 34,
+        "quotes": 6,
+        "views": 22350
+      },
+      "url": "https://twitter.com/AltcoinSherpa/status/2004735018019811664",
+      "processed": false,
+      "addedAt": "2025-12-27T12:47:39.476Z",
+      "expiresAt": "2026-01-03T12:47:39.476Z",
+      "source": "timeline_monitor",
+      "contentCategory": "technical-analysis"
+    },
+    {
+      "id": "2004697601380127100",
+      "text": "You have danger EVERY STEP OF THE WAY as a retail investor. \n\nProjects: Buy on TGE, they dump ecosystem treasury on you ( $XPL)\n\nMMs: Run price up gigantic and dump ( $COAI)\n\nVCs: Shill you the 'next solana' and then dump relentlessly ( $TIA)\n\nExchanges: 10/10 enough said\n\nKOLs:",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "likes": 111,
+        "retweets": 3,
+        "replies": 38,
+        "quotes": 3,
+        "views": 13733
+      },
+      "url": "https://twitter.com/AltcoinSherpa/status/2004697601380127100",
+      "processed": false,
+      "addedAt": "2025-12-27T12:47:41.419Z",
+      "expiresAt": "2026-01-03T12:47:41.419Z",
+      "source": "timeline_monitor",
+      "contentCategory": "altcoin-talk"
+    },
+    {
+      "id": "2004696404451856469",
+      "text": "$AVNT I traded this one today but I sold too early clearly, huge run today. Very strong one and I'm not surprised it's near the highs. I'm guessing nearly all perp dexes reprice with Lighter coming soon. https://t.co/uy940PF4mp",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "likes": 48,
+        "retweets": 1,
+        "replies": 18,
+        "quotes": 0,
+        "views": 7184
+      },
+      "url": "https://twitter.com/AltcoinSherpa/status/2004696404451856469",
+      "processed": false,
+      "addedAt": "2025-12-27T12:47:43.384Z",
+      "expiresAt": "2026-01-03T12:47:43.384Z",
+      "source": "timeline_monitor",
+      "contentCategory": "altcoin-talk"
+    },
+    {
+      "id": "2004694425570787468",
+      "text": "$HYPE short term bottomed with $LIT coming? https://t.co/mSo5SyP8AW",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "likes": 55,
+        "retweets": 1,
+        "replies": 14,
+        "quotes": 0,
+        "views": 7463
+      },
+      "url": "https://twitter.com/AltcoinSherpa/status/2004694425570787468",
+      "processed": false,
+      "addedAt": "2025-12-27T12:47:45.417Z",
+      "expiresAt": "2026-01-03T12:47:45.417Z",
+      "source": "timeline_monitor",
+      "contentCategory": "technical-analysis"
+    },
+    {
+      "id": "2004892521495957522",
+      "text": "$HYPE / Hyperliquid: 2025 Snapshot\n\n$2.95T total trading volume\n$8.34B avg daily volume\n198.9B transactions\n~610K new users\n~$843M in annual revenue\n\nA standout year showing real scale, deep activity, and strong revenue generation. https://t.co/nj5wAlP1Hy",
+      "author": {
+        "id": "crawlee_search_cryptopatel",
+        "username": "CryptoPatel"
+      },
+      "public_metrics": {
+        "likes": 27,
+        "retweets": 11,
+        "replies": 8,
+        "quotes": 0,
+        "views": 2429
+      },
+      "url": "https://twitter.com/CryptoPatel/status/2004892521495957522",
+      "processed": false,
+      "addedAt": "2025-12-27T12:47:47.371Z",
+      "expiresAt": "2026-01-03T12:47:47.371Z",
+      "source": "timeline_monitor",
+      "contentCategory": "project-discussion"
+    },
+    {
+      "id": "2004877167851679941",
+      "text": "🇷🇺 BREAKING: Russia's Largest Stock Exchanges to Launch Crypto Trading\n\nRussia’s top Exchanges: MOEX and St. Petersburg Exchange, are preparing to launch crypto trading once regulations are finalized.\n\nCrypto will be investment-only, not payments. A big shift toward institutional https://t.co/yXg5ustYTl",
+      "author": {
+        "id": "crawlee_search_cryptopatel",
+        "username": "CryptoPatel"
+      },
+      "public_metrics": {
+        "likes": 77,
+        "retweets": 11,
+        "replies": 13,
+        "quotes": 0,
+        "views": 18669
+      },
+      "url": "https://twitter.com/CryptoPatel/status/2004877167851679941",
+      "processed": false,
+      "addedAt": "2025-12-27T12:47:49.345Z",
+      "expiresAt": "2026-01-03T12:47:49.345Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends/news"
+    },
+    {
+      "id": "2004862677110456641",
+      "text": "Big Red Candles don’t Scare me: They PAY ME.\n\nI’m Accumulating $BNB on every Major Pullback with $5K–$10K Upside Targets.\n\nPanic is Loud. Conviction is Profitable.\n\nJust my view. Not financial advice.\n\n@cz_binance https://t.co/Nl3V1Z1r34",
+      "author": {
+        "id": "crawlee_search_cryptopatel",
+        "username": "CryptoPatel"
+      },
+      "public_metrics": {
+        "likes": 122,
+        "retweets": 12,
+        "replies": 11,
+        "quotes": 0,
+        "views": 31001
+      },
+      "url": "https://twitter.com/CryptoPatel/status/2004862677110456641",
+      "processed": false,
+      "addedAt": "2025-12-27T12:47:51.398Z",
+      "expiresAt": "2026-01-03T12:47:51.398Z",
+      "source": "timeline_monitor",
+      "contentCategory": "price-speculation"
+    },
+    {
+      "id": "2004849023631720536",
+      "text": "@WhaleInsider Precious metals keep hitting ATH upon ATH. While $BTC can't even break 90k",
+      "author": {
+        "id": "crawlee_search_cryptopatel",
+        "username": "CryptoPatel"
+      },
+      "public_metrics": {
+        "likes": 7,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 89
+      },
+      "url": "https://twitter.com/CryptoPatel/status/2004849023631720536",
+      "processed": false,
+      "addedAt": "2025-12-27T12:47:53.911Z",
+      "expiresAt": "2026-01-03T12:47:53.911Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "2004847220647174467",
+      "text": "FED JUST TURNED ON THE LIQUIDITY TAP\n\nThe Federal Reserve injected $2.5B via overnight repo operations.\n\nKey signals 👇\n$120B+ added in 2025\nQT ended Dec 1\nRepo cap removed\n\nWhy it matters:\nWhen liquidity rises, risk assets like #Bitcoin tend to benefit.\n\nMore Dollars = More https://t.co/iJ4sC97OPV",
+      "author": {
+        "id": "crawlee_search_cryptopatel",
+        "username": "CryptoPatel"
+      },
+      "public_metrics": {
+        "likes": 183,
+        "retweets": 15,
+        "replies": 14,
+        "quotes": 0,
+        "views": 40107
+      },
+      "url": "https://twitter.com/CryptoPatel/status/2004847220647174467",
+      "processed": false,
+      "addedAt": "2025-12-27T12:47:55.442Z",
+      "expiresAt": "2026-01-03T12:47:55.442Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "2004832121714622774",
+      "text": "$BIFI Just Did a 69x Pump... Then Crashed 99% in Minutes\n\nHere's What Actually Happened 👇\nBeefy Finance went absolutely crazy today:\n1️⃣ $108 → $7,551 (69x in 1 minute)\n2️⃣ $7,551 → $20.7 (-99.71% crash)\n3️⃣ $20.7 → $2,830 (pumped again)\n4️⃣ $2,830 → $100 (dumped again)\n5️⃣ Now https://t.co/c7UNgbcdwj",
+      "author": {
+        "id": "crawlee_search_cryptopatel",
+        "username": "CryptoPatel"
+      },
+      "public_metrics": {
+        "likes": 175,
+        "retweets": 14,
+        "replies": 12,
+        "quotes": 0,
+        "views": 26361
+      },
+      "url": "https://twitter.com/CryptoPatel/status/2004832121714622774",
+      "processed": false,
+      "addedAt": "2025-12-27T12:47:57.339Z",
+      "expiresAt": "2026-01-03T12:47:57.339Z",
+      "source": "timeline_monitor",
+      "contentCategory": "altcoin-talk"
+    },
+    {
+      "id": "2004817022266597444",
+      "text": "Barron Trump Made $80 Million From Crypto – Forbes\n\nDonald Trump's 19-year-old son Barron has made around $80 million from cryptocurrency as a co-founder of World Liberty Financial (WLFI).\n\nHis total net worth now stands at $150 million.\nHe also holds 2.3 billion locked WLFI https://t.co/gD26atWPDC",
+      "author": {
+        "id": "crawlee_search_cryptopatel",
+        "username": "CryptoPatel"
+      },
+      "public_metrics": {
+        "likes": 201,
+        "retweets": 6,
+        "replies": 13,
+        "quotes": 0,
+        "views": 14894
+      },
+      "url": "https://twitter.com/CryptoPatel/status/2004817022266597444",
+      "processed": false,
+      "addedAt": "2025-12-27T12:47:59.347Z",
+      "expiresAt": "2026-01-03T12:47:59.347Z",
+      "source": "timeline_monitor",
+      "contentCategory": "project-discussion"
+    },
+    {
+      "id": "2004801670082093220",
+      "text": "After Months of Accumulation, Bitmine ( @BitMNR ) has staked 74,880 $ETH (~$219M).\n\nMeanwhile, SharpLink ( @SharpLink ) Unstaked 35,627 ETH (~$104M) from Liquid Staking. https://t.co/aNq42OoPCt",
+      "author": {
+        "id": "crawlee_search_cryptopatel",
+        "username": "CryptoPatel"
+      },
+      "public_metrics": {
+        "likes": 244,
+        "retweets": 13,
+        "replies": 12,
+        "quotes": 0,
+        "views": 8094
+      },
+      "url": "https://twitter.com/CryptoPatel/status/2004801670082093220",
+      "processed": false,
+      "addedAt": "2025-12-27T12:48:01.457Z",
+      "expiresAt": "2026-01-03T12:48:01.457Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "2004786822266978757",
+      "text": "A Large Wallet Bought 20,375 $AAVE worth $3.13M using $ETH, Even while sitting at a Loss.\n\nSince Dec 2024, the wallet has Accumulated 59,588 AAVE at an average Price of $226 and is currently down about $4.3M.\n\nStill buying despite losses shows strong conviction.\n\nWallet Address: https://t.co/96fq4ZtMYx",
+      "author": {
+        "id": "crawlee_search_cryptopatel",
+        "username": "CryptoPatel"
+      },
+      "public_metrics": {
+        "likes": 257,
+        "retweets": 14,
+        "replies": 14,
+        "quotes": 0,
+        "views": 20778
+      },
+      "url": "https://twitter.com/CryptoPatel/status/2004786822266978757",
+      "processed": false,
+      "addedAt": "2025-12-27T12:48:03.342Z",
+      "expiresAt": "2026-01-03T12:48:03.342Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "2004771471378231306",
+      "text": "Is $MONAD Bullish? Structure Points to 10x ?\n\nPrice is consolidating in a range, showing active accumulation.\n\n🟦 Demand: $0.020–$0.022\n🟥 Supply: $0.025–$0.027\n\nA clean break &amp; close above resistance confirms bullish continuation.\nBias stays bullish above $0.016 (swing low). https://t.co/f2v13s5wQz",
+      "author": {
+        "id": "crawlee_search_cryptopatel",
+        "username": "CryptoPatel"
+      },
+      "public_metrics": {
+        "likes": 258,
+        "retweets": 15,
+        "replies": 11,
+        "quotes": 0,
+        "views": 22762
+      },
+      "url": "https://twitter.com/CryptoPatel/status/2004771471378231306",
+      "processed": false,
+      "addedAt": "2025-12-27T12:48:05.368Z",
+      "expiresAt": "2026-01-03T12:48:05.368Z",
+      "source": "timeline_monitor",
+      "contentCategory": "price-speculation"
+    },
+    {
+      "id": "2002297468759806019",
+      "text": "Very bullish on privacy coins over the coming months.",
+      "author": {
+        "id": "988796804446769153",
+        "username": "CryptoCapo_"
+      },
+      "public_metrics": {
+        "likes": 1911,
+        "retweets": 144,
+        "replies": 2,
+        "quotes": 143,
+        "views": 324688
+      },
+      "url": "https://twitter.com/CryptoCapo_/status/2002297468759806019",
+      "processed": false,
+      "addedAt": "2025-12-27T12:48:24.530Z",
+      "expiresAt": "2026-01-03T12:48:24.530Z",
+      "source": "timeline_monitor",
+      "contentCategory": "altcoin-talk"
+    },
+    {
+      "id": "2001296469328875563",
+      "text": "@madak0x ''Up only'' is a very relative term. I expect to see a longer recovery rally after that potential capitulation event, likely during Q1 2026.",
+      "author": {
+        "id": "988796804446769153",
+        "username": "CryptoCapo_"
+      },
+      "public_metrics": {
+        "likes": 62,
+        "retweets": 5,
+        "replies": 2,
+        "quotes": 0,
+        "views": 7525
+      },
+      "url": "https://twitter.com/CryptoCapo_/status/2001296469328875563",
+      "processed": false,
+      "addedAt": "2025-12-27T12:48:26.515Z",
+      "expiresAt": "2026-01-03T12:48:26.515Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "2000623105396359428",
+      "text": "This looks like a bear trap. Bounce soon imo.",
+      "author": {
+        "id": "988796804446769153",
+        "username": "CryptoCapo_"
+      },
+      "public_metrics": {
+        "likes": 3108,
+        "retweets": 195,
+        "replies": 5,
+        "quotes": 311,
+        "views": 549759
+      },
+      "url": "https://twitter.com/CryptoCapo_/status/2000623105396359428",
+      "processed": false,
+      "addedAt": "2025-12-27T12:48:30.525Z",
+      "expiresAt": "2026-01-03T12:48:30.525Z",
+      "source": "timeline_monitor",
+      "contentCategory": "technical-analysis"
+    },
+    {
+      "id": "1996936449543782844",
+      "text": "Likely up until the next Fed meeting / interest rate decision (December 9–10).\n\nLooking at these targets for a lower high:\n\n$BTC: $100k–$105k\n$ETH: $3.7k–$4k",
+      "author": {
+        "id": "988796804446769153",
+        "username": "CryptoCapo_"
+      },
+      "public_metrics": {
+        "likes": 2562,
+        "retweets": 141,
+        "replies": 3,
+        "quotes": 74,
+        "views": 596820
+      },
+      "url": "https://twitter.com/CryptoCapo_/status/1996936449543782844",
+      "processed": false,
+      "addedAt": "2025-12-27T12:48:36.529Z",
+      "expiresAt": "2026-01-03T12:48:36.529Z",
+      "source": "timeline_monitor",
+      "contentCategory": "price-speculation"
+    },
+    {
+      "id": "2004876006696624533",
+      "text": "One Year Under the Trump Administration: Changes in the U.S. Crypto Industry\n\nU.S. crypto policy reached a major turning point in 2025 with the launch of the Trump administration. The executive branch, Congress, and regulators moved at the same time. Their focus was to reduce https://t.co/l5K5Ra0fXE",
+      "author": {
+        "id": "111533746",
+        "username": "WuBlockchain"
+      },
+      "public_metrics": {
+        "likes": 21,
+        "retweets": 4,
+        "replies": 16,
+        "quotes": 1,
+        "views": 5495
+      },
+      "url": "https://twitter.com/WuBlockchain/status/2004876006696624533",
+      "processed": false,
+      "addedAt": "2025-12-27T12:48:41.016Z",
+      "expiresAt": "2026-01-03T12:48:41.016Z",
+      "source": "timeline_monitor",
+      "contentCategory": "news"
+    },
+    {
+      "id": "2004865648669946358",
+      "text": "Pantera Capital researcher Jay Yu released 12 predictions for the crypto market in 2026: Capital-efficient consumer credit will become the next frontier in crypto lending; agent-based business using endpoints like x402 will expand into more service areas; AI-driven trading",
+      "author": {
+        "id": "111533746",
+        "username": "WuBlockchain"
+      },
+      "public_metrics": {
+        "likes": 70,
+        "retweets": 4,
+        "replies": 28,
+        "quotes": 2,
+        "views": 11088
+      },
+      "url": "https://twitter.com/WuBlockchain/status/2004865648669946358",
+      "processed": false,
+      "addedAt": "2025-12-27T12:48:43.029Z",
+      "expiresAt": "2026-01-03T12:48:43.029Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "2004854978004090910",
+      "text": "Galaxy Research released 26 predictions for the crypto market in 2026, along with a review of last year's predictions: Bitcoin still has the potential to reach a new all-time high in 2026; Solana's inflation reduction proposal in 2026 will not pass, and the current SIMD-0411",
+      "author": {
+        "id": "111533746",
+        "username": "WuBlockchain"
+      },
+      "public_metrics": {
+        "likes": 22,
+        "retweets": 5,
+        "replies": 11,
+        "quotes": 1,
+        "views": 7051
+      },
+      "url": "https://twitter.com/WuBlockchain/status/2004854978004090910",
+      "processed": false,
+      "addedAt": "2025-12-27T12:48:45.199Z",
+      "expiresAt": "2026-01-03T12:48:45.199Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "2004824246019829864",
+      "text": "Galaxy Digital CEO Mike Novogratz warned that XRP and Cardano (ADA) risk losing relevance if they fail to demonstrate real-world utility, arguing the crypto market is shifting from “narrative-driven tokens” to “business-driven tokens” with measurable value and profits. He expects",
+      "author": {
+        "id": "111533746",
+        "username": "WuBlockchain"
+      },
+      "public_metrics": {
+        "likes": 101,
+        "retweets": 10,
+        "replies": 42,
+        "quotes": 6,
+        "views": 12929
+      },
+      "url": "https://twitter.com/WuBlockchain/status/2004824246019829864",
+      "processed": false,
+      "addedAt": "2025-12-27T12:48:46.997Z",
+      "expiresAt": "2026-01-03T12:48:46.997Z",
+      "source": "timeline_monitor",
+      "contentCategory": "altcoin-talk"
+    },
+    {
+      "id": "2004806182519853525",
+      "text": "According to EmberCN, Bitmine—the largest Ethereum treasury company—has begun staking ETH for yield. This morning, it deposited 74,880 ETH (~$219M) into Ethereum PoS, marking its first staking move. Bitmine currently holds 4.066M ETH; at an estimated ~3.12% APY, fully staking",
+      "author": {
+        "id": "111533746",
+        "username": "WuBlockchain"
+      },
+      "public_metrics": {
+        "likes": 62,
+        "retweets": 6,
+        "replies": 27,
+        "quotes": 5,
+        "views": 12401
+      },
+      "url": "https://twitter.com/WuBlockchain/status/2004806182519853525",
+      "processed": false,
+      "addedAt": "2025-12-27T12:48:49.047Z",
+      "expiresAt": "2026-01-03T12:48:49.047Z",
+      "source": "timeline_monitor",
+      "contentCategory": "project-discussion"
+    },
+    {
+      "id": "2004793143292780950",
+      "text": "Balaji Srinivasan: The Third Phase of the Crypto Industry Is Privacy\n\nOn December 3, Balaji Srinivasan, former CTO of Coinbase, stated at Binance Blockchain Week 2025 in Dubai that the crypto industry can be broadly divided into three phases: an early phase centered on proof of https://t.co/ca2A6tSFAH",
+      "author": {
+        "id": "111533746",
+        "username": "WuBlockchain"
+      },
+      "public_metrics": {
+        "likes": 125,
+        "retweets": 27,
+        "replies": 27,
+        "quotes": 15,
+        "views": 15745
+      },
+      "url": "https://twitter.com/WuBlockchain/status/2004793143292780950",
+      "processed": false,
+      "addedAt": "2025-12-27T12:48:51.087Z",
+      "expiresAt": "2026-01-03T12:48:51.087Z",
+      "source": "timeline_monitor",
+      "contentCategory": "project-discussion"
+    },
+    {
+      "id": "2004781626157666472",
+      "text": "Bitmain has sharply cut prices on multiple Bitcoin ASIC miners, with S19e XP Hydro and 3U S19 XP Hydro reportedly as low as $3/TH/s, S19 XP+ Hydro around $4/TH/s, S21 immersion units near $7/TH/s, and S21+ Hydro about $8/TH/s. The firm is also pushing bundled “miner + hosting”",
+      "author": {
+        "id": "111533746",
+        "username": "WuBlockchain"
+      },
+      "public_metrics": {
+        "likes": 32,
+        "retweets": 4,
+        "replies": 10,
+        "quotes": 1,
+        "views": 9687
+      },
+      "url": "https://twitter.com/WuBlockchain/status/2004781626157666472",
+      "processed": false,
+      "addedAt": "2025-12-27T12:48:53.108Z",
+      "expiresAt": "2026-01-03T12:48:53.108Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "2004755941422702991",
+      "text": "Jack Ma: If Bitcoin Works, International Trade and Finance Rules Will Change\n\nIn a Dec 2017 CNBC interview, Jack Ma, founder of the e-commerce giant Alibaba, addressed the topic of Bitcoin. He noted that if Bitcoin works, existing international rules on trade and finance would https://t.co/EiFmrg8t1S",
+      "author": {
+        "id": "111533746",
+        "username": "WuBlockchain"
+      },
+      "public_metrics": {
+        "likes": 69,
+        "retweets": 11,
+        "replies": 26,
+        "quotes": 3,
+        "views": 17877
+      },
+      "url": "https://twitter.com/WuBlockchain/status/2004755941422702991",
+      "processed": false,
+      "addedAt": "2025-12-27T12:48:55.108Z",
+      "expiresAt": "2026-01-03T12:48:55.108Z",
+      "source": "timeline_monitor",
+      "contentCategory": "news"
+    },
+    {
+      "id": "2004742059492868166",
+      "text": "The Information reports that JPMorgan has frozen accounts used by at least two fast-growing stablecoin startups operating in high-risk markets such as Venezuela in recent months. The move underscores the compliance risks banks face from crypto transactions, including stringent",
+      "author": {
+        "id": "111533746",
+        "username": "WuBlockchain"
+      },
+      "public_metrics": {
+        "likes": 46,
+        "retweets": 9,
+        "replies": 19,
+        "quotes": 5,
+        "views": 10002
+      },
+      "url": "https://twitter.com/WuBlockchain/status/2004742059492868166",
+      "processed": false,
+      "addedAt": "2025-12-27T12:48:57.940Z",
+      "expiresAt": "2026-01-03T12:48:57.940Z",
+      "source": "timeline_monitor",
+      "contentCategory": "news"
+    },
+    {
+      "id": "2004643469617430685",
+      "text": "According to Bloomberg, Coinbase Global Inc. CEO Brian Armstrong said a former Coinbase customer service contractor has been arrested in India in connection with a hacking incident. In May, Coinbase disclosed that hackers bribed contractors or employees outside the U.S. to obtain",
+      "author": {
+        "id": "111533746",
+        "username": "WuBlockchain"
+      },
+      "public_metrics": {
+        "likes": 47,
+        "retweets": 7,
+        "replies": 18,
+        "quotes": 2,
+        "views": 13814
+      },
+      "url": "https://twitter.com/WuBlockchain/status/2004643469617430685",
+      "processed": false,
+      "addedAt": "2025-12-27T12:49:00.010Z",
+      "expiresAt": "2026-01-03T12:49:00.010Z",
+      "source": "timeline_monitor",
+      "contentCategory": "news"
+    },
+    {
+      "id": "2004884466075140331",
+      "text": "Ethereum/Bitcoin is still holding above the line of truth. 👇 https://t.co/evsN9jKefw",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "likes": 167,
+        "retweets": 17,
+        "replies": 73,
+        "quotes": 1,
+        "views": 7266
+      },
+      "url": "https://twitter.com/CryptoRover/status/2004884466075140331",
+      "processed": false,
+      "addedAt": "2025-12-27T12:49:07.876Z",
+      "expiresAt": "2026-01-03T12:49:07.876Z",
+      "source": "timeline_monitor",
+      "contentCategory": "technical-analysis"
+    },
+    {
+      "id": "2004874399619711107",
+      "text": "Start trading Bitcoin &amp; Altcoins yourself.             \n\nClaim a 50% deposit bonus on WEEX.                            \n\nOnly with THIS link 👇\nhttps://t.co/gfdd2MuXOA https://t.co/DL4bAwUTiS",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "likes": 97,
+        "retweets": 12,
+        "replies": 36,
+        "quotes": 0,
+        "views": 7984
+      },
+      "url": "https://twitter.com/CryptoRover/status/2004874399619711107",
+      "processed": false,
+      "addedAt": "2025-12-27T12:49:10.038Z",
+      "expiresAt": "2026-01-03T12:49:10.038Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "2004865339746910425",
+      "text": "THIS IS IMPORTANT! 🚨\n\nThe Bitcoin correction this cycle from low to LL usually takes about 30-40 days. \n\nWe’re now 35 days in. \n\nThe next few days will show whether this correction is following the usual pattern or something different. https://t.co/nfTOVoDPWz",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "likes": 304,
+        "retweets": 44,
+        "replies": 91,
+        "quotes": 5,
+        "views": 20488
+      },
+      "url": "https://twitter.com/CryptoRover/status/2004865339746910425",
+      "processed": false,
+      "addedAt": "2025-12-27T12:49:16.043Z",
+      "expiresAt": "2026-01-03T12:49:16.043Z",
+      "source": "timeline_monitor",
+      "contentCategory": "technical-analysis"
+    },
+    {
+      "id": "2004859300099809397",
+      "text": "Gold ATH  \nSilver ATH   \nS&amp;P500 ATH  \n\nBitcoin = Undervalued",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "likes": 283,
+        "retweets": 26,
+        "replies": 119,
+        "quotes": 3,
+        "views": 46649
+      },
+      "url": "https://twitter.com/CryptoRover/status/2004859300099809397",
+      "processed": false,
+      "addedAt": "2025-12-27T12:49:19.992Z",
+      "expiresAt": "2026-01-03T12:49:19.992Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "2004859032256086132",
+      "text": "💥BREAKING:\n\nBlackrock just sold $242.7M worth of Bitcoin... https://t.co/33Ihe8eqr4",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "likes": 770,
+        "retweets": 93,
+        "replies": 182,
+        "quotes": 14,
+        "views": 77032
+      },
+      "url": "https://twitter.com/CryptoRover/status/2004859032256086132",
+      "processed": false,
+      "addedAt": "2025-12-27T12:49:22.500Z",
+      "expiresAt": "2026-01-03T12:49:22.500Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "2004850240487149933",
+      "text": "What if this time IS different for Bitcoin. 👇 https://t.co/ZttX6xl9Lx",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "likes": 243,
+        "retweets": 31,
+        "replies": 92,
+        "quotes": 3,
+        "views": 23804
+      },
+      "url": "https://twitter.com/CryptoRover/status/2004850240487149933",
+      "processed": false,
+      "addedAt": "2025-12-27T12:49:24.005Z",
+      "expiresAt": "2026-01-03T12:49:24.005Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
     }
   ],
   "metadata": {
-    "lastUpdated": "2025-12-27T09:39:18.433Z",
-    "totalPosts": 40,
+    "lastUpdated": "2025-12-27T12:50:12.161Z",
+    "totalPosts": 84,
     "bySource": {
-      "timeline_monitor": 40,
+      "timeline_monitor": 84,
       "search_discovery": 0
     }
   },
