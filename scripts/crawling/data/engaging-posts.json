@@ -1757,13 +1757,160 @@
       "expiresAt": "2026-01-03T12:49:24.005Z",
       "source": "timeline_monitor",
       "contentCategory": "market-trends"
+    },
+    {
+      "id": "2004778062135869870",
+      "text": "@IOHK_Charles Is that a blow torch?",
+      "author": {
+        "id": "935742315389444096",
+        "username": "CryptoWendyO"
+      },
+      "public_metrics": {
+        "likes": 14,
+        "retweets": 0,
+        "replies": 8,
+        "quotes": 0,
+        "views": 2536
+      },
+      "url": "https://twitter.com/CryptoWendyO/status/2004778062135869870",
+      "processed": false,
+      "addedAt": "2025-12-27T17:52:25.086Z",
+      "expiresAt": "2026-01-03T17:52:25.086Z",
+      "source": "timeline_monitor",
+      "contentCategory": "project-discussion"
+    },
+    {
+      "id": "2004681740208738577",
+      "text": "@0xLofty Always good to be prepared, but it’s worth remembering that charts don’t account for liquidity flows, market-maker behavior, or macro catalysts. Manage risk, but don’t let fear dictate your trades.",
+      "author": {
+        "id": "965385625825406978",
+        "username": "profcryptotalks"
+      },
+      "public_metrics": {
+        "likes": 22,
+        "retweets": 0,
+        "replies": 4,
+        "quotes": 0,
+        "views": 4438
+      },
+      "url": "https://twitter.com/profcryptotalks/status/2004681740208738577",
+      "processed": false,
+      "addedAt": "2025-12-27T17:52:35.212Z",
+      "expiresAt": "2026-01-03T17:52:35.212Z",
+      "source": "timeline_monitor",
+      "contentCategory": "technical-analysis"
+    },
+    {
+      "id": "2004678012428845461",
+      "text": "@KillaXBT Commodities cycles can be brutal and drawn-out. Bitcoin offers a finite, digital alternative for long-term value preservation while traditional minerals face decades of structural headwinds.",
+      "author": {
+        "id": "965385625825406978",
+        "username": "profcryptotalks"
+      },
+      "public_metrics": {
+        "likes": 7,
+        "retweets": 0,
+        "replies": 7,
+        "quotes": 0,
+        "views": 2965
+      },
+      "url": "https://twitter.com/profcryptotalks/status/2004678012428845461",
+      "processed": false,
+      "addedAt": "2025-12-27T17:52:42.060Z",
+      "expiresAt": "2026-01-03T17:52:42.060Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "2004677454544429271",
+      "text": "@BladeDefi Looks like a full cycle mapped out, good to track, but remember markets rarely follow a perfect script. 2026 could surprise in timing or intensity.",
+      "author": {
+        "id": "965385625825406978",
+        "username": "profcryptotalks"
+      },
+      "public_metrics": {
+        "likes": 7,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 1,
+        "views": 2412
+      },
+      "url": "https://twitter.com/profcryptotalks/status/2004677454544429271",
+      "processed": false,
+      "addedAt": "2025-12-27T17:52:44.578Z",
+      "expiresAt": "2026-01-03T17:52:44.578Z",
+      "source": "timeline_monitor",
+      "contentCategory": "project-discussion"
+    },
+    {
+      "id": "2004676502491988152",
+      "text": "@cryptorover Yep, more liquidity usually means more fuel for risk assets. Historically, when the Fed’s balance sheet expands, Bitcoin and other speculative markets tend to benefit.",
+      "author": {
+        "id": "965385625825406978",
+        "username": "profcryptotalks"
+      },
+      "public_metrics": {
+        "likes": 2,
+        "retweets": 1,
+        "replies": 1,
+        "quotes": 1,
+        "views": 294
+      },
+      "url": "https://twitter.com/profcryptotalks/status/2004676502491988152",
+      "processed": false,
+      "addedAt": "2025-12-27T17:52:46.144Z",
+      "expiresAt": "2026-01-03T17:52:46.144Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "2004676196534288792",
+      "text": "@rektfencer That’s the scenario many are watching for. If the bear trap finishes, the market could flip quickly, with institutional and retail capital rotating into Bitcoin and crypto en masse. 2026 could be the start of a massive structural bull phase.",
+      "author": {
+        "id": "965385625825406978",
+        "username": "profcryptotalks"
+      },
+      "public_metrics": {
+        "likes": 5,
+        "retweets": 0,
+        "replies": 2,
+        "quotes": 1,
+        "views": 98
+      },
+      "url": "https://twitter.com/profcryptotalks/status/2004676196534288792",
+      "processed": false,
+      "addedAt": "2025-12-27T17:52:48.088Z",
+      "expiresAt": "2026-01-03T17:52:48.088Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends/technical-analysis/price-speculation"
+    },
+    {
+      "id": "2004332064737476682",
+      "text": "@KillaXBT These last few days are critical. A green close would keep the historical 4-year cycle intact, while a red close would signal a major shift. Every candle counts.",
+      "author": {
+        "id": "965385625825406978",
+        "username": "profcryptotalks"
+      },
+      "public_metrics": {
+        "likes": 5,
+        "retweets": 0,
+        "replies": 7,
+        "quotes": 0,
+        "views": 1596
+      },
+      "url": "https://twitter.com/profcryptotalks/status/2004332064737476682",
+      "processed": false,
+      "addedAt": "2025-12-27T17:52:54.283Z",
+      "expiresAt": "2026-01-03T17:52:54.283Z",
+      "source": "timeline_monitor",
+      "contentCategory": "technical-analysis"
     }
   ],
   "metadata": {
-    "lastUpdated": "2025-12-27T12:50:12.161Z",
-    "totalPosts": 84,
+    "lastUpdated": "2025-12-27T17:53:46.497Z",
+    "totalPosts": 91,
     "bySource": {
-      "timeline_monitor": 84,
+      "timeline_monitor": 91,
       "search_discovery": 0
     }
   },
