@@ -357,9 +357,9 @@ async function monitorKolTimelines() {
 
       // Debug: Show top 5 tweets by engagement to understand what we're working with
       const tweetsWithEngagement = tweets.map(tweet => ({
-        likes: tweet.public_metrics?.like_count || 0,
-        retweets: tweet.public_metrics?.retweet_count || 0,
-        score: (tweet.public_metrics?.like_count || 0) + (tweet.public_metrics?.retweet_count || 0) * 5
+        likes: tweet.metrics?.likes || 0,
+        retweets: tweet.metrics?.retweets || 0,
+        score: (tweet.metrics?.likes || 0) + (tweet.metrics?.retweets || 0) * 5
       })).sort((a, b) => b.score - a.score);
 
       console.log(`📊 Top 5 tweets by engagement for @${kol.username}:`);
@@ -369,8 +369,8 @@ async function monitorKolTimelines() {
 
       // Filter tweets by engagement threshold (OR logic - either metric can qualify)
       const engagingTweets = tweets.filter(tweet => {
-        const likes = tweet.public_metrics?.like_count || 0;
-        const retweets = tweet.public_metrics?.retweet_count || 0;
+        const likes = tweet.metrics?.likes || 0;
+        const retweets = tweet.metrics?.retweets || 0;
         return likes >= minEngagementThreshold.likes || retweets >= minEngagementThreshold.retweets;
       });
 
@@ -419,7 +419,7 @@ async function monitorKolTimelines() {
             username: kol.username,
             displayName: kol.displayName
           },
-          public_metrics: tweet.public_metrics,
+          public_metrics: tweet.metrics,  // SDK uses 'metrics' field
           created_at: tweet.created_at,
           url: `https://twitter.com/${kol.username}/status/${tweetId}`,
           processed: false,
