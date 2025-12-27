@@ -3,8 +3,10 @@
     "lastGenerated": "2025-12-26T12:15:02.560Z",
     "totalPosts": 58,
     "totalArticles": 22,
-    "pendingPosts": 15,
-    "postedCount": 36
+    "pendingPosts": 14,
+    "postedCount": 37,
+    "lastPosted": "2025-12-27T00:35:19.160Z",
+    "failedCount": 7
   },
   "posts": [
     {
@@ -1624,17 +1626,19 @@
         "DigitalCredentials"
       ],
       "priority": "high",
-      "status": "pending",
+      "status": "posted",
       "scheduledFor": null,
-      "postedAt": null,
-      "tweetId": null,
+      "postedAt": "2025-12-27T00:35:19.063Z",
+      "tweetId": "2004712661263811050",
       "generatedAt": "2025-12-26T12:15:02.560Z",
       "metadata": {
         "articleTitle": "Blockchain Badges: Issue Tamper-Proof Digital Credentials at Scale",
         "articlePublishDate": "2025-12-26T10:03:46.470Z",
         "mainTextLength": 239,
         "fullTextLength": 427
-      }
+      },
+      "tweetUrl": "https://twitter.com/i/web/status/2004712661263811050",
+      "error": null
     }
   ]
 }
