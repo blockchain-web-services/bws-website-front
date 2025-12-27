@@ -1,12 +1,10 @@
 {
   "metadata": {
-    "lastGenerated": "2025-12-26T12:15:02.560Z",
-    "totalPosts": 58,
-    "totalArticles": 22,
-    "pendingPosts": 14,
-    "postedCount": 37,
-    "lastPosted": "2025-12-27T00:35:19.160Z",
-    "failedCount": 7
+    "lastGenerated": "2025-12-27T12:13:45.363Z",
+    "totalPosts": 59,
+    "totalArticles": 23,
+    "pendingPosts": 15,
+    "postedCount": 37
   },
   "posts": [
     {
@@ -1639,6 +1637,32 @@
       },
       "tweetUrl": "https://twitter.com/i/web/status/2004712661263811050",
       "error": null
+    },
+    {
+      "id": "c9925742-d954-428c-a6e5-2d52b4dfc8ad",
+      "articleSlug": "esg-credits-2025-12-27",
+      "product": "ESG Credits",
+      "type": "overview",
+      "text": "ESG Credits provides blockchain-based environmental impact tracking with ICMA framework compliance. REST API delivers immutable audit trails for sustainability reporting. Built by @BWSCommunity using $BWS\n\n📖 Article: https://www.bws.ninja/articles/esg-credits-2025-12-27\n📚 Docs: https://docs.bws.ninja/marketplace-solutions/bws.esg.credits\n\n#ESGCredits #SustainabilityTech",
+      "mainText": "ESG Credits provides blockchain-based environmental impact tracking with ICMA framework compliance. REST API delivers immutable audit trails for sustainability reporting. Built by @BWSCommunity using $BWS",
+      "articleUrl": "https://www.bws.ninja/articles/esg-credits-2025-12-27",
+      "docsUrl": "https://docs.bws.ninja/marketplace-solutions/bws.esg.credits",
+      "hashtags": [
+        "ESGCredits",
+        "SustainabilityTech"
+      ],
+      "priority": "high",
+      "status": "pending",
+      "scheduledFor": null,
+      "postedAt": null,
+      "tweetId": null,
+      "generatedAt": "2025-12-27T12:13:45.362Z",
+      "metadata": {
+        "articleTitle": "ESG Credits: ICMA-Compliant Environmental Impact Tracking via Blockchain",
+        "articlePublishDate": "2025-12-27T10:03:38.507Z",
+        "mainTextLength": 204,
+        "fullTextLength": 374
+      }
     }
   ]
 }
