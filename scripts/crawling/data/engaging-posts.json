@@ -1318,13 +1318,746 @@
       "expiresAt": "2026-01-04T07:26:24.061Z",
       "source": "timeline_monitor",
       "contentCategory": "investment-opportunities"
+    },
+    {
+      "id": "1509583498893484032",
+      "text": "Time to unfollow large verified accounts. All were screaming to buy #Bitcoin at another local top. And all 3 are verified... They speak in absolutes leading the sheep to the slaughterhouse. They can't trade, they only know how to farm for engagement and use emojis.🚀 https://t.co/NVkjTjWfGv",
+      "author": {
+        "id": "4441279246",
+        "username": "IncomeSharks"
+      },
+      "public_metrics": {
+        "likes": 4673,
+        "retweets": 487,
+        "replies": 456,
+        "quotes": 69
+      },
+      "url": "https://twitter.com/IncomeSharks/status/1509583498893484032",
+      "processed": false,
+      "addedAt": "2025-12-28T12:46:13.127Z",
+      "expiresAt": "2026-01-04T12:46:13.127Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "1444628130426200067",
+      "text": "Me after #Bitcoin goes to $0 https://t.co/w45UpXROoh",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "likes": 2445,
+        "retweets": 288,
+        "replies": 89,
+        "quotes": 38
+      },
+      "url": "https://twitter.com/AltcoinSherpa/status/1444628130426200067",
+      "processed": false,
+      "addedAt": "2025-12-28T12:46:40.032Z",
+      "expiresAt": "2026-01-04T12:46:40.032Z",
+      "source": "timeline_monitor",
+      "contentCategory": "price-speculation"
+    },
+    {
+      "id": "1877748570524127495",
+      "text": "Succeeding in crypto is really just seeing how much pain you can take",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "likes": 2222,
+        "retweets": 238,
+        "replies": 172,
+        "quotes": 38,
+        "views": 183267
+      },
+      "url": "https://twitter.com/AltcoinSherpa/status/1877748570524127495",
+      "processed": false,
+      "addedAt": "2025-12-28T12:46:44.618Z",
+      "expiresAt": "2026-01-04T12:46:44.618Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "2005251694100086952",
+      "text": "Sberbank has issued the country’s first loan backed by crypto collateral to major Bitcoin miner Intelion Data. The pilot deal’s size, tenor, and collateral details were not disclosed, and the crypto assets are held in custody via Sberbank’s in-house Rutoken solution until https://t.co/LSj3cp8UPa",
+      "author": {
+        "id": "111533746",
+        "username": "WuBlockchain"
+      },
+      "public_metrics": {
+        "likes": 14,
+        "retweets": 2,
+        "replies": 4,
+        "quotes": 1,
+        "views": 4240
+      },
+      "url": "https://twitter.com/WuBlockchain/status/2005251694100086952",
+      "processed": false,
+      "addedAt": "2025-12-28T12:47:31.760Z",
+      "expiresAt": "2026-01-04T12:47:31.760Z",
+      "source": "timeline_monitor",
+      "contentCategory": "news"
+    },
+    {
+      "id": "2005249091245089037",
+      "text": "According to The Chosun Daily, Mirae Asset Group is in talks to acquire Korbit, South Korea’s fourth-largest crypto exchange. Mirae Asset Consulting has signed an MOU with major shareholders. Korbit is currently ~60.5% owned by NXC and subsidiaries, with SK Square holding ~31.5%.",
+      "author": {
+        "id": "111533746",
+        "username": "WuBlockchain"
+      },
+      "public_metrics": {
+        "likes": 18,
+        "retweets": 4,
+        "replies": 11,
+        "quotes": 1,
+        "views": 3925
+      },
+      "url": "https://twitter.com/WuBlockchain/status/2005249091245089037",
+      "processed": false,
+      "addedAt": "2025-12-28T12:47:35.042Z",
+      "expiresAt": "2026-01-04T12:47:35.042Z",
+      "source": "timeline_monitor",
+      "contentCategory": "news"
+    },
+    {
+      "id": "2005234763171311908",
+      "text": "Bitwise CIO Matt Hougan said on CNBC that Bitcoin is likely to see steadier, lower-volatility returns over the next decade rather than explosive gains, as sustained institutional buying supports prices. He remains bullish on 2026 but noted that most regulatory tailwinds are",
+      "author": {
+        "id": "111533746",
+        "username": "WuBlockchain"
+      },
+      "public_metrics": {
+        "likes": 38,
+        "retweets": 7,
+        "replies": 18,
+        "quotes": 1,
+        "views": 9979
+      },
+      "url": "https://twitter.com/WuBlockchain/status/2005234763171311908",
+      "processed": false,
+      "addedAt": "2025-12-28T12:47:35.978Z",
+      "expiresAt": "2026-01-04T12:47:35.978Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "2005212125522808944",
+      "text": "WuBlockchain Top 10 News of 2025: Bybit suffers a record $1.44B crypto hack; Oct. 11 “Black Tuesday” triggers up to $40B liquidations; Trump and Melania launch memecoins; crypto treasury narrative surges; CZ is pardoned as SEC drops Binance case; Circle completes landmark IPO; https://t.co/EJec0psjL3",
+      "author": {
+        "id": "111533746",
+        "username": "WuBlockchain"
+      },
+      "public_metrics": {
+        "likes": 36,
+        "retweets": 4,
+        "replies": 21,
+        "quotes": 1,
+        "views": 5846
+      },
+      "url": "https://twitter.com/WuBlockchain/status/2005212125522808944",
+      "processed": false,
+      "addedAt": "2025-12-28T12:47:38.038Z",
+      "expiresAt": "2026-01-04T12:47:38.038Z",
+      "source": "timeline_monitor",
+      "contentCategory": "news"
+    },
+    {
+      "id": "2005158637577404626",
+      "text": "On December 26, spot Bitcoin ETFs recorded $276 million in net outflows, marking the sixth consecutive day of outflows. Spot Ethereum ETFs saw $38.70 million in net outflows, extending their streak to three consecutive days of outflows.\n https://t.co/Hj2Gs49bWa https://t.co/uJpcRXOnOW",
+      "author": {
+        "id": "111533746",
+        "username": "WuBlockchain"
+      },
+      "public_metrics": {
+        "likes": 33,
+        "retweets": 4,
+        "replies": 13,
+        "quotes": 2,
+        "views": 9564
+      },
+      "url": "https://twitter.com/WuBlockchain/status/2005158637577404626",
+      "processed": false,
+      "addedAt": "2025-12-28T12:47:39.976Z",
+      "expiresAt": "2026-01-04T12:47:39.976Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "2005143336475402489",
+      "text": "Larry Fink on Bitcoin: From 'Index for Money Laundering and Thieves' to Leading the Largest Bitcoin ETF\n\nOn December 4, at the DealBook Summit 2025, BlackRock CEO Larry Fink addressed his significant shift in attitude toward Bitcoin. Fink admitted that in 2017 he indeed called https://t.co/yi9etwur9u",
+      "author": {
+        "id": "111533746",
+        "username": "WuBlockchain"
+      },
+      "public_metrics": {
+        "likes": 65,
+        "retweets": 7,
+        "replies": 24,
+        "quotes": 3,
+        "views": 13234
+      },
+      "url": "https://twitter.com/WuBlockchain/status/2005143336475402489",
+      "processed": false,
+      "addedAt": "2025-12-28T12:47:41.980Z",
+      "expiresAt": "2026-01-04T12:47:41.980Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "2005122559160078551",
+      "text": "According to @EmberCN, Pump fun transferred another 50 million USDC from its ICO proceeds to Kraken — the first such move in about a month. Since Nov. 15, Pump fun has transferred a total of 605 million USDC from ICO sales to Kraken. Pump fun sold PUMP to institutions at $0.004",
+      "author": {
+        "id": "111533746",
+        "username": "WuBlockchain"
+      },
+      "public_metrics": {
+        "likes": 43,
+        "retweets": 5,
+        "replies": 10,
+        "quotes": 5,
+        "views": 27405
+      },
+      "url": "https://twitter.com/WuBlockchain/status/2005122559160078551",
+      "processed": false,
+      "addedAt": "2025-12-28T12:47:44.027Z",
+      "expiresAt": "2026-01-04T12:47:44.027Z",
+      "source": "timeline_monitor",
+      "contentCategory": "project-discussion"
+    },
+    {
+      "id": "2005112093134258510",
+      "text": "According to @EmberCN, at around 04:30 UTC+8 today, the Uniswap treasury burned 100 million UNI worth approximately $596 million. This follows the recently approved Uniswap fee-burn proposal, under which future protocol fees collected by Uniswap will also be used to burn UNI",
+      "author": {
+        "id": "111533746",
+        "username": "WuBlockchain"
+      },
+      "public_metrics": {
+        "likes": 27,
+        "retweets": 6,
+        "replies": 10,
+        "quotes": 4,
+        "views": 24944
+      },
+      "url": "https://twitter.com/WuBlockchain/status/2005112093134258510",
+      "processed": false,
+      "addedAt": "2025-12-28T12:47:46.018Z",
+      "expiresAt": "2026-01-04T12:47:46.018Z",
+      "source": "timeline_monitor",
+      "contentCategory": "project-discussion"
+    },
+    {
+      "id": "2005108188736356693",
+      "text": "The Flow Foundation confirmed that on Dec. 27 an attacker exploited a vulnerability in Flow’s execution layer and moved approximately $3.9 million off-network before validators halted operations. The incident did not impact existing user balances, and all user deposits remain",
+      "author": {
+        "id": "111533746",
+        "username": "WuBlockchain"
+      },
+      "public_metrics": {
+        "likes": 9,
+        "retweets": 2,
+        "replies": 1,
+        "quotes": 1,
+        "views": 4270
+      },
+      "url": "https://twitter.com/WuBlockchain/status/2005108188736356693",
+      "processed": false,
+      "addedAt": "2025-12-28T12:47:48.032Z",
+      "expiresAt": "2026-01-04T12:47:48.032Z",
+      "source": "timeline_monitor",
+      "contentCategory": "project-discussion"
+    },
+    {
+      "id": "2005086807026004382",
+      "text": "Vitalik Buterin Reveals: Why Ethereum Abandoned eWASM for RISC-V?\n\nIn a fireside chat at Pragma Taipei in April 2025, Ethereum Co-founder Vitalik Buterin explained the pivot from eWASM to RISC-V. While eWASM was initially planned to replace the flawed EVM, delays in \"The Merge\" https://t.co/1iKZOYAv1L",
+      "author": {
+        "id": "111533746",
+        "username": "WuBlockchain"
+      },
+      "public_metrics": {
+        "likes": 100,
+        "retweets": 11,
+        "replies": 18,
+        "quotes": 3,
+        "views": 16925
+      },
+      "url": "https://twitter.com/WuBlockchain/status/2005086807026004382",
+      "processed": false,
+      "addedAt": "2025-12-28T12:47:50.314Z",
+      "expiresAt": "2026-01-04T12:47:50.314Z",
+      "source": "timeline_monitor",
+      "contentCategory": "project-discussion"
+    },
+    {
+      "id": "2004833396632023237",
+      "text": "Trust and Transparency in DeFi 🔒\n\nTrust is one of the hardest things to earn in crypto. Small hidden actions or conflicts of interest can damage a project very quickly. \n\nThat is why transparency matters for any DeFi project that wants to survive and grow. Without clear rules https://t.co/57VDwYv0Xk",
+      "author": {
+        "id": "crawlee_search_crypt0_defi",
+        "username": "Crypt0_DeFi"
+      },
+      "public_metrics": {
+        "likes": 25,
+        "retweets": 0,
+        "replies": 25,
+        "quotes": 0,
+        "views": 120
+      },
+      "url": "https://twitter.com/Crypt0_DeFi/status/2004833396632023237",
+      "processed": false,
+      "addedAt": "2025-12-28T12:47:56.305Z",
+      "expiresAt": "2026-01-04T12:47:56.305Z",
+      "source": "timeline_monitor",
+      "contentCategory": "project-discussion"
+    },
+    {
+      "id": "2004826980114370755",
+      "text": "The ETC Grants DAO Ambassador Program is designed to empower community builders and grow the Ethereum Classic ($ETC) ecosystem. \n\nIt focuses on ETC’s core values: immutability, decentralization, and Proof-of-Work security.\n\n▪️Program History\n\n• v1.0 (Early 2025): Small pilot https://t.co/dSkGQmh0S3",
+      "author": {
+        "id": "crawlee_search_crypt0_defi",
+        "username": "Crypt0_DeFi"
+      },
+      "public_metrics": {
+        "likes": 22,
+        "retweets": 0,
+        "replies": 25,
+        "quotes": 0,
+        "views": 280
+      },
+      "url": "https://twitter.com/Crypt0_DeFi/status/2004826980114370755",
+      "processed": false,
+      "addedAt": "2025-12-28T12:47:58.173Z",
+      "expiresAt": "2026-01-04T12:47:58.173Z",
+      "source": "timeline_monitor",
+      "contentCategory": "project-discussion"
+    },
+    {
+      "id": "2004818408882241807",
+      "text": "Alliance Games Arcade is a virtual gaming platform built on decentralized GaaS infrastructure. \n\nIt’s designed to make it easy and fun for anyone to play games, compete with others, and earn rewards. Every game you play helps support the wider Alliance network.\n\nHow it works:\n\n1. https://t.co/buYiryPFtp",
+      "author": {
+        "id": "crawlee_search_crypt0_defi",
+        "username": "Crypt0_DeFi"
+      },
+      "public_metrics": {
+        "likes": 16,
+        "retweets": 0,
+        "replies": 16,
+        "quotes": 0,
+        "views": 93
+      },
+      "url": "https://twitter.com/Crypt0_DeFi/status/2004818408882241807",
+      "processed": false,
+      "addedAt": "2025-12-28T12:48:00.136Z",
+      "expiresAt": "2026-01-04T12:48:00.136Z",
+      "source": "timeline_monitor",
+      "contentCategory": "project-discussion"
+    },
+    {
+      "id": "2004794208461238367",
+      "text": "DeFi trading is changing fast. Get ready 🚀\n\nAI trading agents now help people trade better in DeFi. \n\nThey check liquidity, find the best prices on different DEXs, place trades automatically, and manage risk across many chains. \n\nThey trade without emotions or human mistakes. https://t.co/3nDATO71N0",
+      "author": {
+        "id": "crawlee_search_crypt0_defi",
+        "username": "Crypt0_DeFi"
+      },
+      "public_metrics": {
+        "likes": 17,
+        "retweets": 0,
+        "replies": 20,
+        "quotes": 0,
+        "views": 92
+      },
+      "url": "https://twitter.com/Crypt0_DeFi/status/2004794208461238367",
+      "processed": false,
+      "addedAt": "2025-12-28T12:48:02.253Z",
+      "expiresAt": "2026-01-04T12:48:02.253Z",
+      "source": "timeline_monitor",
+      "contentCategory": "project-discussion"
+    },
+    {
+      "id": "2004476071626842343",
+      "text": "Importance of Communities in web3 \n\nCrypto has never been just about tokens or price action. Projects survive because people choose to stay, contribute and believe through uncertainty. When markets slow down communities are what keep builders building and users engaged.\n\n▪️What https://t.co/U9orh3AwdP",
+      "author": {
+        "id": "crawlee_search_crypt0_defi",
+        "username": "Crypt0_DeFi"
+      },
+      "public_metrics": {
+        "likes": 21,
+        "retweets": 0,
+        "replies": 22,
+        "quotes": 0,
+        "views": 175
+      },
+      "url": "https://twitter.com/Crypt0_DeFi/status/2004476071626842343",
+      "processed": false,
+      "addedAt": "2025-12-28T12:48:04.208Z",
+      "expiresAt": "2026-01-04T12:48:04.208Z",
+      "source": "timeline_monitor",
+      "contentCategory": "project-discussion"
+    },
+    {
+      "id": "2004345500112146897",
+      "text": "I found another alpha for DeFi traders 😁\n\nDo you always worry that everyone can see your crypto wallets, trades, and transaction patterns? \n\nThat visibility can put you at risk of phishing, front-running, or even doxxing.\n\n@baltexio ’s Private Mode fixes this by hiding your https://t.co/xtDvNFviFO",
+      "author": {
+        "id": "crawlee_search_crypt0_defi",
+        "username": "Crypt0_DeFi"
+      },
+      "public_metrics": {
+        "likes": 27,
+        "retweets": 0,
+        "replies": 30,
+        "quotes": 0,
+        "views": 161
+      },
+      "url": "https://twitter.com/Crypt0_DeFi/status/2004345500112146897",
+      "processed": false,
+      "addedAt": "2025-12-28T12:48:08.296Z",
+      "expiresAt": "2026-01-04T12:48:08.296Z",
+      "source": "timeline_monitor",
+      "contentCategory": "project-discussion"
+    },
+    {
+      "id": "2004335937955025003",
+      "text": "Here are my top list fam on @xeetdotai \n\nEven during the holidays, some top crypto projects are still building and making progress as we head into 2026.\n\n@TradeOnsight – Making prediction markets fun and easy on Telegram. From NFL drama to market results and holiday trading https://t.co/WIEcUoyn47",
+      "author": {
+        "id": "crawlee_search_crypt0_defi",
+        "username": "Crypt0_DeFi"
+      },
+      "public_metrics": {
+        "likes": 34,
+        "retweets": 0,
+        "replies": 37,
+        "quotes": 0,
+        "views": 259
+      },
+      "url": "https://twitter.com/Crypt0_DeFi/status/2004335937955025003",
+      "processed": false,
+      "addedAt": "2025-12-28T12:48:10.155Z",
+      "expiresAt": "2026-01-04T12:48:10.155Z",
+      "source": "timeline_monitor",
+      "contentCategory": "project-discussion"
+    },
+    {
+      "id": "2004334453720580132",
+      "text": "Hello I found a hidden gem in Web3 for creators, especially those who are interested in AI \n\nMost AI tools are controlled by big projects and don’t really represent the community? \n\nThat can make AI biased or unsafe.\n\n@dFusionAI changes that! \n\nThey are building a big shared book https://t.co/gLAMkehczM",
+      "author": {
+        "id": "crawlee_search_crypt0_defi",
+        "username": "Crypt0_DeFi"
+      },
+      "public_metrics": {
+        "likes": 24,
+        "retweets": 0,
+        "replies": 26,
+        "quotes": 0,
+        "views": 146
+      },
+      "url": "https://twitter.com/Crypt0_DeFi/status/2004334453720580132",
+      "processed": false,
+      "addedAt": "2025-12-28T12:48:12.321Z",
+      "expiresAt": "2026-01-04T12:48:12.321Z",
+      "source": "timeline_monitor",
+      "contentCategory": "project-discussion"
+    },
+    {
+      "id": "2004328868916703400",
+      "text": "Hey fam 👋\n\nA lot of people have been asking how @alliancegamesx works right now. \n\nRemember, we’re just in the beginning 👏👏👏\n\nWhat makes Alliance Games unique is how everything connects.\n\nAt the heart of it all is the Node Network . \n\nThese nodes aren’t just technical tools. https://t.co/oHHGQIjkd7",
+      "author": {
+        "id": "crawlee_search_crypt0_defi",
+        "username": "Crypt0_DeFi"
+      },
+      "public_metrics": {
+        "likes": 17,
+        "retweets": 0,
+        "replies": 18,
+        "quotes": 0,
+        "views": 106
+      },
+      "url": "https://twitter.com/Crypt0_DeFi/status/2004328868916703400",
+      "processed": false,
+      "addedAt": "2025-12-28T12:48:14.327Z",
+      "expiresAt": "2026-01-04T12:48:14.328Z",
+      "source": "timeline_monitor",
+      "contentCategory": "project-discussion"
+    },
+    {
+      "id": "2005254907285340237",
+      "text": "Uniswap just Burned 100M $UNI roughly $591M 16 hours ago After Uniswap’s fee burn Proposal was Approved\n\n@Uniswap https://t.co/KRfA0HHLHF",
+      "author": {
+        "id": "crawlee_search_cryptopatel",
+        "username": "CryptoPatel"
+      },
+      "public_metrics": {
+        "likes": 50,
+        "retweets": 13,
+        "replies": 11,
+        "quotes": 0,
+        "views": 207
+      },
+      "url": "https://twitter.com/CryptoPatel/status/2005254907285340237",
+      "processed": false,
+      "addedAt": "2025-12-28T12:48:16.268Z",
+      "expiresAt": "2026-01-04T12:48:16.268Z",
+      "source": "timeline_monitor",
+      "contentCategory": "project-discussion"
+    },
+    {
+      "id": "2005251452554690853",
+      "text": "@Coinvo Is this based on the Ethereum upgrade",
+      "author": {
+        "id": "crawlee_search_cryptopatel",
+        "username": "CryptoPatel"
+      },
+      "public_metrics": {
+        "likes": 1,
+        "retweets": 1,
+        "replies": 1,
+        "quotes": 0,
+        "views": 47
+      },
+      "url": "https://twitter.com/CryptoPatel/status/2005251452554690853",
+      "processed": false,
+      "addedAt": "2025-12-28T12:48:18.143Z",
+      "expiresAt": "2026-01-04T12:48:18.144Z",
+      "source": "timeline_monitor",
+      "contentCategory": "project-discussion"
+    },
+    {
+      "id": "2005239555973161138",
+      "text": "Why $POWR Long Setup (4H) 👇 \n\n✔ Market Structure Shift confirmed\n✔ Price holding orderflow demand after impulse\n✔ Clear upside liquidity draw\n✔ Buy-side liquidity stacked above\n✔ HTF range expansion favors continuation\n\nEntry: $0.0800 | SL: $0.0720 | Targets: https://t.co/vbkr8yp0uu",
+      "author": {
+        "id": "crawlee_search_cryptopatel",
+        "username": "CryptoPatel"
+      },
+      "public_metrics": {
+        "likes": 101,
+        "retweets": 11,
+        "replies": 9,
+        "quotes": 0,
+        "views": 8818
+      },
+      "url": "https://twitter.com/CryptoPatel/status/2005239555973161138",
+      "processed": false,
+      "addedAt": "2025-12-28T12:48:20.283Z",
+      "expiresAt": "2026-01-04T12:48:20.283Z",
+      "source": "timeline_monitor",
+      "contentCategory": "technical-analysis"
+    },
+    {
+      "id": "2005224707751289154",
+      "text": "$ETH ON-CHAIN WARNING ZONE\n\nEthereum is sitting on critical on-chain support.\n\nThree key metrics are being stress-tested 👇\n→ MVRV Z-Score\n→ Market Cap Growth\n→ Delta Growth\n\nIf These break, it signals speculative money exiting, Raising the risk of #ETH slipping below $2K as https://t.co/Qae6yCAkAC",
+      "author": {
+        "id": "crawlee_search_cryptopatel",
+        "username": "CryptoPatel"
+      },
+      "public_metrics": {
+        "likes": 131,
+        "retweets": 13,
+        "replies": 12,
+        "quotes": 0,
+        "views": 21491
+      },
+      "url": "https://twitter.com/CryptoPatel/status/2005224707751289154",
+      "processed": false,
+      "addedAt": "2025-12-28T12:48:23.142Z",
+      "expiresAt": "2026-01-04T12:48:23.142Z",
+      "source": "timeline_monitor",
+      "contentCategory": "technical-analysis"
+    },
+    {
+      "id": "2005209609133252988",
+      "text": "DON’T COUNT DECEMBER OUT YET\n\nDespite the Volatility, December can still close green.\n\nMonth-end momentum, flows, and macro signals will decide the move.\n\nThe close matters more than the noise https://t.co/YVsnKolafw",
+      "author": {
+        "id": "crawlee_search_cryptopatel",
+        "username": "CryptoPatel"
+      },
+      "public_metrics": {
+        "likes": 208,
+        "retweets": 10,
+        "replies": 12,
+        "quotes": 0,
+        "views": 19140
+      },
+      "url": "https://twitter.com/CryptoPatel/status/2005209609133252988",
+      "processed": false,
+      "addedAt": "2025-12-28T12:48:24.175Z",
+      "expiresAt": "2026-01-04T12:48:24.175Z",
+      "source": "timeline_monitor",
+      "contentCategory": "technical-analysis"
+    },
+    {
+      "id": "2005194635141152858",
+      "text": "A Pre-TGE Token With Real-World Utility Is Rare: This One Has It\n\n$PLUS Caught my eye for one Reason: Real Utility.\n\n▶️ ~$5 pre-TGE → ~$10 TGE\n▶️ $10–$150+ in-app value per token\n▶️ Merchant-funded rewards (gift cards, miles, travel)\n▶️ Team building since 2015\n\nNot hype. Not https://t.co/KDJ1EL5ZgH https://t.co/nPUBhSBJuY",
+      "author": {
+        "id": "crawlee_search_cryptopatel",
+        "username": "CryptoPatel"
+      },
+      "public_metrics": {
+        "likes": 208,
+        "retweets": 13,
+        "replies": 14,
+        "quotes": 0,
+        "views": 26904
+      },
+      "url": "https://twitter.com/CryptoPatel/status/2005194635141152858",
+      "processed": false,
+      "addedAt": "2025-12-28T12:48:26.174Z",
+      "expiresAt": "2026-01-04T12:48:26.174Z",
+      "source": "timeline_monitor",
+      "contentCategory": "project-discussion"
+    },
+    {
+      "id": "2005179410970751048",
+      "text": "MARKET CHECK: The Total Crypto Market Cap has Lost $1.33 TRILLION in Just 83 Days. https://t.co/FXRhpORU8L",
+      "author": {
+        "id": "crawlee_search_cryptopatel",
+        "username": "CryptoPatel"
+      },
+      "public_metrics": {
+        "likes": 245,
+        "retweets": 12,
+        "replies": 11,
+        "quotes": 0,
+        "views": 19592
+      },
+      "url": "https://twitter.com/CryptoPatel/status/2005179410970751048",
+      "processed": false,
+      "addedAt": "2025-12-28T12:48:29.088Z",
+      "expiresAt": "2026-01-04T12:48:29.088Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "2005164058002219423",
+      "text": "ON-CHAIN ALERT: #Pumpfun CASHING OUT BIG \n\nIt looks like Pumpfun just offloaded another $50M around few hours ago.\n\nHere’s the Bigger Picture 👇\n🔹 Since Oct 15, 617.5M $USDC sent from Pumpfun to Kraken\n🔹 In the same period, 1.1B USDC flowed from Kraken → Circle\n🔹 Between May https://t.co/5xvHmkeTZV",
+      "author": {
+        "id": "crawlee_search_cryptopatel",
+        "username": "CryptoPatel"
+      },
+      "public_metrics": {
+        "likes": 244,
+        "retweets": 13,
+        "replies": 10,
+        "quotes": 0,
+        "views": 22200
+      },
+      "url": "https://twitter.com/CryptoPatel/status/2005164058002219423",
+      "processed": false,
+      "addedAt": "2025-12-28T12:48:30.221Z",
+      "expiresAt": "2026-01-04T12:48:30.221Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "2005149210627502100",
+      "text": "US SPOT ETFs Friday Flows Data update (26-12-2025):\n\n🟥 Bitcoin ETF: -3,152 $BTC (-$275.88M)\n🟥 Ethereum ETF: -13,220 $ETH (-$38.70M)\n🟩 Solana ETF: ZERO\n🟩 XRP ETF: ZERO\n🟩 HBAR ETF: ZERO\n🟩 CHAINLINK ETF: ZERO\n🟩 DOGECOIN ETF: ZERO\n🟩 LTC ETF: ZERO\n\nTotal Net Flow: −$314.58M https://t.co/H51ncPpf5L https://t.co/sRQ3DgKEsg",
+      "author": {
+        "id": "crawlee_search_cryptopatel",
+        "username": "CryptoPatel"
+      },
+      "public_metrics": {
+        "likes": 239,
+        "retweets": 12,
+        "replies": 18,
+        "quotes": 0,
+        "views": 24442
+      },
+      "url": "https://twitter.com/CryptoPatel/status/2005149210627502100",
+      "processed": false,
+      "addedAt": "2025-12-28T12:48:32.238Z",
+      "expiresAt": "2026-01-04T12:48:32.238Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "2005133858820464778",
+      "text": "ROBINHOOD JUST DROPPED BIG REWARDS\n\n$HOOD announced HOOD Holidays, Day 2 prizes 👇\n\n🎁 5 winners: Trip to Hawaii for two\n🎒 1,000 winners: Away suitcases\n₿ Everyone else: Split $750K worth of Bitcoin\n\nDay 1 featured Dogecoin prizes and premium item giveaways. https://t.co/jTrib2kgfD",
+      "author": {
+        "id": "crawlee_search_cryptopatel",
+        "username": "CryptoPatel"
+      },
+      "public_metrics": {
+        "likes": 226,
+        "retweets": 11,
+        "replies": 15,
+        "quotes": 0,
+        "views": 23698
+      },
+      "url": "https://twitter.com/CryptoPatel/status/2005133858820464778",
+      "processed": false,
+      "addedAt": "2025-12-28T12:48:34.165Z",
+      "expiresAt": "2026-01-04T12:48:34.165Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "2005140906329190489",
+      "text": "Everyone in mass hysteria over everything \n\nBitcoin gold silver ai Pokémon cards prediction markets wtf",
+      "author": {
+        "id": "crawlee_search_habibivc",
+        "username": "habibivc"
+      },
+      "public_metrics": {
+        "likes": 12,
+        "retweets": 4,
+        "replies": 4,
+        "quotes": 0,
+        "views": 184
+      },
+      "url": "https://twitter.com/habibivc/status/2005140906329190489",
+      "processed": false,
+      "addedAt": "2025-12-28T12:48:40.509Z",
+      "expiresAt": "2026-01-04T12:48:40.509Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "2005112811660390710",
+      "text": "You realise crypto gonna turbo send once gold and silver stabilised 🫨😏",
+      "author": {
+        "id": "crawlee_search_habibivc",
+        "username": "habibivc"
+      },
+      "public_metrics": {
+        "likes": 11,
+        "retweets": 4,
+        "replies": 7,
+        "quotes": 0,
+        "views": 168
+      },
+      "url": "https://twitter.com/habibivc/status/2005112811660390710",
+      "processed": false,
+      "addedAt": "2025-12-28T12:48:42.159Z",
+      "expiresAt": "2026-01-04T12:48:42.159Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "2005040365330710842",
+      "text": "These prediction market bets gonna back fire for sure \n\nPeople really risking a few k for a few a dollars \n\nFastest way to blow their ports \n\nThe return should be same if not greater than the risk \n\nI.e risk 1000 to make 50 dumb \n\nRisk 50 to make 500 smart",
+      "author": {
+        "id": "crawlee_search_habibivc",
+        "username": "habibivc"
+      },
+      "public_metrics": {
+        "likes": 9,
+        "retweets": 2,
+        "replies": 6,
+        "quotes": 0,
+        "views": 191
+      },
+      "url": "https://twitter.com/habibivc/status/2005040365330710842",
+      "processed": false,
+      "addedAt": "2025-12-28T12:48:52.858Z",
+      "expiresAt": "2026-01-04T12:48:52.858Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
     }
   ],
   "metadata": {
-    "lastUpdated": "2025-12-28T07:27:16.333Z",
-    "totalPosts": 63,
+    "lastUpdated": "2025-12-28T12:49:56.857Z",
+    "totalPosts": 98,
     "bySource": {
-      "timeline_monitor": 63,
+      "timeline_monitor": 98,
       "search_discovery": 0
     }
   },
