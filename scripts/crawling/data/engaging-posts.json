@@ -712,13 +712,619 @@
       "expiresAt": "2026-01-03T22:11:17.228Z",
       "source": "timeline_monitor",
       "contentCategory": "market-trends"
+    },
+    {
+      "id": "1778242360713130435",
+      "text": "@Uniswap The SEC isn't here to protect us. It's to make sure they control us.",
+      "author": {
+        "id": "4441279246",
+        "username": "IncomeSharks"
+      },
+      "public_metrics": {
+        "likes": 1081,
+        "retweets": 122,
+        "replies": 27,
+        "quotes": 1,
+        "views": 37535
+      },
+      "url": "https://twitter.com/IncomeSharks/status/1778242360713130435",
+      "processed": false,
+      "addedAt": "2025-12-28T07:23:20.155Z",
+      "expiresAt": "2026-01-04T07:23:20.155Z",
+      "source": "timeline_monitor",
+      "contentCategory": "project-discussion"
+    },
+    {
+      "id": "1395441817563254784",
+      "text": "How to trade based on your Crypto Twitter feed\n\nBUY - Doomsday posts, FUD, memes, angry comments\nHOLD - Quality charts, good content, actual analysis\nSELL - Car pics, watch pics, wild price predictions",
+      "author": {
+        "id": "4441279246",
+        "username": "IncomeSharks"
+      },
+      "public_metrics": {
+        "likes": 5284,
+        "retweets": 1057,
+        "replies": 384,
+        "quotes": 131
+      },
+      "url": "https://twitter.com/IncomeSharks/status/1395441817563254784",
+      "processed": false,
+      "addedAt": "2025-12-28T07:23:21.175Z",
+      "expiresAt": "2026-01-04T07:23:21.175Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends/price-speculation"
+    },
+    {
+      "id": "1863717475168424230",
+      "text": "Over 43% of the $XRP tokens are still not even circulating. Imagine if you were on Pump Fun and saw the developer owned 43% of supply. There's a reason this space collectively dislikes this token because it's always pumping and dumping. https://t.co/n7wMvyU2nR",
+      "author": {
+        "id": "4441279246",
+        "username": "IncomeSharks"
+      },
+      "public_metrics": {
+        "likes": 5849,
+        "retweets": 386,
+        "replies": 623,
+        "quotes": 81,
+        "views": 858583
+      },
+      "url": "https://twitter.com/IncomeSharks/status/1863717475168424230",
+      "processed": false,
+      "addedAt": "2025-12-28T07:23:23.236Z",
+      "expiresAt": "2026-01-04T07:23:23.236Z",
+      "source": "timeline_monitor",
+      "contentCategory": "altcoin-talk"
+    },
+    {
+      "id": "1871631935078023487",
+      "text": "When cashing out on @coinbase always send profits with $USDC to avoid fees. It's wild that they charge as much as they do converting other stable coins to USD. https://t.co/gRTBLS2AgM",
+      "author": {
+        "id": "4441279246",
+        "username": "IncomeSharks"
+      },
+      "public_metrics": {
+        "likes": 5725,
+        "retweets": 404,
+        "replies": 324,
+        "quotes": 31,
+        "views": 960072
+      },
+      "url": "https://twitter.com/IncomeSharks/status/1871631935078023487",
+      "processed": false,
+      "addedAt": "2025-12-28T07:23:27.933Z",
+      "expiresAt": "2026-01-04T07:23:27.933Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "1898450757738955242",
+      "text": "It's not that people aren't bullish enough, most have nothing left to invest.",
+      "author": {
+        "id": "4441279246",
+        "username": "IncomeSharks"
+      },
+      "public_metrics": {
+        "likes": 5200,
+        "retweets": 264,
+        "replies": 556,
+        "quotes": 45,
+        "views": 298698
+      },
+      "url": "https://twitter.com/IncomeSharks/status/1898450757738955242",
+      "processed": false,
+      "addedAt": "2025-12-28T07:23:37.887Z",
+      "expiresAt": "2026-01-04T07:23:37.887Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "1953775859602530693",
+      "text": "$ETH : 6th time is a charm https://t.co/GsuiKzIwu1",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "likes": 2481,
+        "retweets": 174,
+        "replies": 162,
+        "quotes": 18,
+        "views": 202695
+      },
+      "url": "https://twitter.com/AltcoinSherpa/status/1953775859602530693",
+      "processed": false,
+      "addedAt": "2025-12-28T07:24:07.606Z",
+      "expiresAt": "2026-01-04T07:24:07.606Z",
+      "source": "timeline_monitor",
+      "contentCategory": "technical-analysis"
+    },
+    {
+      "id": "1452191804707778561",
+      "text": "If you are new (got in 2021), you are probably not going to make it this cycle for a whole variety of reasons. With that said, if I were trying to spin $ up (a small stack) into generational wealth, there are a few things you can do: https://t.co/2yqpr5O76B",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "likes": 2027,
+        "retweets": 390,
+        "replies": 102,
+        "quotes": 37
+      },
+      "url": "https://twitter.com/AltcoinSherpa/status/1452191804707778561",
+      "processed": false,
+      "addedAt": "2025-12-28T07:24:13.474Z",
+      "expiresAt": "2026-01-04T07:24:13.474Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "1513798244467605507",
+      "text": "ALTSEASON IS BACK GUYS!!! LETS GO $BTC https://t.co/C2wppFVDmI",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "likes": 1589,
+        "retweets": 97,
+        "replies": 100,
+        "quotes": 9
+      },
+      "url": "https://twitter.com/AltcoinSherpa/status/1513798244467605507",
+      "processed": false,
+      "addedAt": "2025-12-28T07:24:15.394Z",
+      "expiresAt": "2026-01-04T07:24:15.394Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "2004678012428845461",
+      "text": "@KillaXBT Commodities cycles can be brutal and drawn-out. Bitcoin offers a finite, digital alternative for long-term value preservation while traditional minerals face decades of structural headwinds.",
+      "author": {
+        "id": "965385625825406978",
+        "username": "profcryptotalks"
+      },
+      "public_metrics": {
+        "likes": 6,
+        "retweets": 0,
+        "replies": 7,
+        "quotes": 0,
+        "views": 3175
+      },
+      "url": "https://twitter.com/profcryptotalks/status/2004678012428845461",
+      "processed": false,
+      "addedAt": "2025-12-28T07:25:11.727Z",
+      "expiresAt": "2026-01-04T07:25:11.727Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "2004677454544429271",
+      "text": "@BladeDefi Looks like a full cycle mapped out, good to track, but remember markets rarely follow a perfect script. 2026 could surprise in timing or intensity.",
+      "author": {
+        "id": "965385625825406978",
+        "username": "profcryptotalks"
+      },
+      "public_metrics": {
+        "likes": 10,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 1,
+        "views": 2959
+      },
+      "url": "https://twitter.com/profcryptotalks/status/2004677454544429271",
+      "processed": false,
+      "addedAt": "2025-12-28T07:25:13.715Z",
+      "expiresAt": "2026-01-04T07:25:13.715Z",
+      "source": "timeline_monitor",
+      "contentCategory": "project-discussion"
+    },
+    {
+      "id": "2004676502491988152",
+      "text": "@cryptorover Yep, more liquidity usually means more fuel for risk assets. Historically, when the Fed’s balance sheet expands, Bitcoin and other speculative markets tend to benefit.",
+      "author": {
+        "id": "965385625825406978",
+        "username": "profcryptotalks"
+      },
+      "public_metrics": {
+        "likes": 2,
+        "retweets": 1,
+        "replies": 1,
+        "quotes": 1,
+        "views": 303
+      },
+      "url": "https://twitter.com/profcryptotalks/status/2004676502491988152",
+      "processed": false,
+      "addedAt": "2025-12-28T07:25:15.710Z",
+      "expiresAt": "2026-01-04T07:25:15.710Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "2004676196534288792",
+      "text": "@rektfencer That’s the scenario many are watching for. If the bear trap finishes, the market could flip quickly, with institutional and retail capital rotating into Bitcoin and crypto en masse. 2026 could be the start of a massive structural bull phase.",
+      "author": {
+        "id": "965385625825406978",
+        "username": "profcryptotalks"
+      },
+      "public_metrics": {
+        "likes": 5,
+        "retweets": 0,
+        "replies": 2,
+        "quotes": 1,
+        "views": 113
+      },
+      "url": "https://twitter.com/profcryptotalks/status/2004676196534288792",
+      "processed": false,
+      "addedAt": "2025-12-28T07:25:17.742Z",
+      "expiresAt": "2026-01-04T07:25:17.742Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends/price-speculation/technical-analysis"
+    },
+    {
+      "id": "2005134142770672032",
+      "text": "Bottomless pow brought to you by $ZEC. https://t.co/x2DGokTFGz",
+      "author": {
+        "id": "983993370048630785",
+        "username": "CryptoHayes"
+      },
+      "public_metrics": {
+        "likes": 390,
+        "retweets": 18,
+        "replies": 99,
+        "quotes": 3,
+        "views": 29988
+      },
+      "url": "https://twitter.com/CryptoHayes/status/2005134142770672032",
+      "processed": false,
+      "addedAt": "2025-12-28T07:25:24.329Z",
+      "expiresAt": "2026-01-04T07:25:24.329Z",
+      "source": "timeline_monitor",
+      "contentCategory": "project-discussion"
+    },
+    {
+      "id": "2002818665591558545",
+      "text": "I have enjoyed @nic_carter quest to get quantum threats taken seriously by bitcoiners and surprised by the response from the bitcoin community.  Far as I can tell, quantum poses an actual risk to bitcoin and should be taken seriously.",
+      "author": {
+        "id": "crawlee_search_senpai_gideon",
+        "username": "Senpai_Gideon"
+      },
+      "public_metrics": {
+        "likes": 15,
+        "retweets": 1,
+        "replies": 9,
+        "quotes": 0,
+        "views": 698
+      },
+      "url": "https://twitter.com/Senpai_Gideon/status/2002818665591558545",
+      "processed": false,
+      "addedAt": "2025-12-28T07:25:40.559Z",
+      "expiresAt": "2026-01-04T07:25:40.559Z",
+      "source": "timeline_monitor",
+      "contentCategory": "project-discussion"
+    },
+    {
+      "id": "2002138122801545582",
+      "text": "@_LunaRocket @stablekwon Yeah I think that was a regrettable decision.",
+      "author": {
+        "id": "crawlee_search_senpai_gideon",
+        "username": "Senpai_Gideon"
+      },
+      "public_metrics": {
+        "likes": 6,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 157
+      },
+      "url": "https://twitter.com/Senpai_Gideon/status/2002138122801545582",
+      "processed": false,
+      "addedAt": "2025-12-28T07:25:50.134Z",
+      "expiresAt": "2026-01-04T07:25:50.134Z",
+      "source": "timeline_monitor",
+      "contentCategory": "project-discussion"
+    },
+    {
+      "id": "2002137331860672542",
+      "text": "It's insane, but gotta do something with lunc.  And lunc is truly decentralised, so nothing is stopping us. https://t.co/61CNYww0c7",
+      "author": {
+        "id": "crawlee_search_senpai_gideon",
+        "username": "Senpai_Gideon"
+      },
+      "public_metrics": {
+        "likes": 40,
+        "retweets": 3,
+        "replies": 11,
+        "quotes": 2,
+        "views": 1860
+      },
+      "url": "https://twitter.com/Senpai_Gideon/status/2002137331860672542",
+      "processed": false,
+      "addedAt": "2025-12-28T07:25:52.439Z",
+      "expiresAt": "2026-01-04T07:25:52.439Z",
+      "source": "timeline_monitor",
+      "contentCategory": "altcoin-talk"
+    },
+    {
+      "id": "2005156513439011047",
+      "text": "ETF FLOWS AREN’T BREAKING BITCOIN -- THEY’RE GETTING ABSORBED\n\n$BTC isn’t weak right now. It’s doing something much more boring -- and much more important.\n\nETF inflows are still coming in at normal levels relative to total ETF AUM. There’s no surge. No collapse. Institutional https://t.co/2aCc4Fp78s",
+      "author": {
+        "id": "877357064724520961",
+        "username": "CryptosR_Us"
+      },
+      "public_metrics": {
+        "likes": 54,
+        "retweets": 15,
+        "replies": 17,
+        "quotes": 0,
+        "views": 3529
+      },
+      "url": "https://twitter.com/CryptosR_Us/status/2005156513439011047",
+      "processed": false,
+      "addedAt": "2025-12-28T07:25:54.028Z",
+      "expiresAt": "2026-01-04T07:25:54.028Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "2005126641568158016",
+      "text": "BITCOIN IS WHAT GOLD WISHES IT WAS\n\nIf you could redesign gold today, you’d cap the supply, make it impossible to debase, and let it move instantly anywhere in the world. You’d make it indestructible, portable, and programmable so software and machines could use it without https://t.co/i8G5HxxRnO",
+      "author": {
+        "id": "877357064724520961",
+        "username": "CryptosR_Us"
+      },
+      "public_metrics": {
+        "likes": 79,
+        "retweets": 20,
+        "replies": 24,
+        "quotes": 0,
+        "views": 5695
+      },
+      "url": "https://twitter.com/CryptosR_Us/status/2005126641568158016",
+      "processed": false,
+      "addedAt": "2025-12-28T07:25:56.156Z",
+      "expiresAt": "2026-01-04T07:25:56.156Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "2005099638722801879",
+      "text": "THE MOST BORING NARRATIVE MADE THE MOST MONEY\n\nCoinGecko analyzed the most profitable crypto narratives this year, and the top performer wasn’t memes, AI, or whatever dominated social media.\n\nIt was Real-World Assets (RWAs).\n\nAccording to the report, RWA tokens delivered ~186% https://t.co/exWiMvVl8m",
+      "author": {
+        "id": "877357064724520961",
+        "username": "CryptosR_Us"
+      },
+      "public_metrics": {
+        "likes": 74,
+        "retweets": 16,
+        "replies": 26,
+        "quotes": 2,
+        "views": 6531
+      },
+      "url": "https://twitter.com/CryptosR_Us/status/2005099638722801879",
+      "processed": false,
+      "addedAt": "2025-12-28T07:25:58.166Z",
+      "expiresAt": "2026-01-04T07:25:58.166Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "2005069945227403448",
+      "text": "ETH IS NOW BEING REMOVED, NOT SOLD \n\nOn-chain data shows BitMine moved ~154,000 $ETH into #Ethereum staking contracts over the last ~20 hours -- worth roughly $450–500M at current prices.\n\nWhat this confirms:\n💸 This ETH is now earning yield, not sitting idle\n💸 Supply just https://t.co/wRO2aaMASL",
+      "author": {
+        "id": "877357064724520961",
+        "username": "CryptosR_Us"
+      },
+      "public_metrics": {
+        "likes": 301,
+        "retweets": 50,
+        "replies": 26,
+        "quotes": 2,
+        "views": 15732
+      },
+      "url": "https://twitter.com/CryptosR_Us/status/2005069945227403448",
+      "processed": false,
+      "addedAt": "2025-12-28T07:26:00.202Z",
+      "expiresAt": "2026-01-04T07:26:00.202Z",
+      "source": "timeline_monitor",
+      "contentCategory": "project-discussion"
+    },
+    {
+      "id": "2005047352545988993",
+      "text": "SCOTT BESSENT: CRYPTO DOESN’T KILL THE DOLLAR -- IT LOCKS IT IN\n\nThrowback to a point Scott Bessent he said crypto, especially stablecoins, isn’t a threat to dollar dominance. It may actually reinforce it. Stablecoins backed by dollars end up becoming massive buyers of U.S. https://t.co/PCZvKTnxbp",
+      "author": {
+        "id": "877357064724520961",
+        "username": "CryptosR_Us"
+      },
+      "public_metrics": {
+        "likes": 190,
+        "retweets": 34,
+        "replies": 18,
+        "quotes": 3,
+        "views": 14940
+      },
+      "url": "https://twitter.com/CryptosR_Us/status/2005047352545988993",
+      "processed": false,
+      "addedAt": "2025-12-28T07:26:02.143Z",
+      "expiresAt": "2026-01-04T07:26:02.143Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "1868409198846804078",
+      "text": "Today I interviewed Kirk David Phillips CPA\nCBP about the IRS Safe Harbour process and the actions US citizens with #crypto assets must take in the remaining 2 weeks of the year to avoid an accounting and tax mess. \n\nAct before December 31st 2024\n\nhttps://t.co/UaDX9O43yu",
+      "author": {
+        "id": "1469101279",
+        "username": "aantonop"
+      },
+      "public_metrics": {
+        "likes": 1379,
+        "retweets": 479,
+        "replies": 0,
+        "quotes": 30,
+        "views": 205151
+      },
+      "url": "https://twitter.com/aantonop/status/1868409198846804078",
+      "processed": false,
+      "addedAt": "2025-12-28T07:26:05.747Z",
+      "expiresAt": "2026-01-04T07:26:05.747Z",
+      "source": "timeline_monitor",
+      "contentCategory": "news"
+    },
+    {
+      "id": "1780377650625945683",
+      "text": "Despite the clickbait headlines, the halving is unlikely to result in a Bitcoin Death Spiral - here's why https://t.co/dipIQU6xNq",
+      "author": {
+        "id": "1469101279",
+        "username": "aantonop"
+      },
+      "public_metrics": {
+        "likes": 1669,
+        "retweets": 549,
+        "replies": 0,
+        "quotes": 15,
+        "views": 194841
+      },
+      "url": "https://twitter.com/aantonop/status/1780377650625945683",
+      "processed": false,
+      "addedAt": "2025-12-28T07:26:08.249Z",
+      "expiresAt": "2026-01-04T07:26:08.249Z",
+      "source": "timeline_monitor",
+      "contentCategory": "technical-analysis"
+    },
+    {
+      "id": "1780278921227010076",
+      "text": "ICYMI             https://t.co/cB5i0ozYqC   \n#BitcoinHalving2024 #Bitcoin #HalvingBitcoin \n(yes, our team made the audio a bit too fast, but hey, maybe you'll learn how to reduce playback speed on youtube, if you've never done that before 😉)",
+      "author": {
+        "id": "1469101279",
+        "username": "aantonop"
+      },
+      "public_metrics": {
+        "likes": 1292,
+        "retweets": 420,
+        "replies": 0,
+        "quotes": 6,
+        "views": 149390
+      },
+      "url": "https://twitter.com/aantonop/status/1780278921227010076",
+      "processed": false,
+      "addedAt": "2025-12-28T07:26:10.490Z",
+      "expiresAt": "2026-01-04T07:26:10.490Z",
+      "source": "timeline_monitor",
+      "contentCategory": "news"
+    },
+    {
+      "id": "1780015259346202833",
+      "text": "My latest video: Bitcoin Halving 2024. What to expect, myth busting, and more. https://t.co/cB5i0ozYqC",
+      "author": {
+        "id": "1469101279",
+        "username": "aantonop"
+      },
+      "public_metrics": {
+        "likes": 1796,
+        "retweets": 540,
+        "replies": 0,
+        "quotes": 21,
+        "views": 168312
+      },
+      "url": "https://twitter.com/aantonop/status/1780015259346202833",
+      "processed": false,
+      "addedAt": "2025-12-28T07:26:11.560Z",
+      "expiresAt": "2026-01-04T07:26:11.560Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "1763321484859027665",
+      "text": "Videos to Learn How Bitcoin and Open Blockchains Might Change Our Lives (no ads): (1) A crowd fav about #Bitcoin📷  &amp; why it matters (20 min) https://t.co/tKhI90AkX1 1,000,000+ views: Intro to Bitcoin and Open Blockchains: https://t.co/uhflldL4ze\n📷",
+      "author": {
+        "id": "1469101279",
+        "username": "aantonop"
+      },
+      "public_metrics": {
+        "likes": 1376,
+        "retweets": 504,
+        "replies": 0,
+        "quotes": 5,
+        "views": 118278
+      },
+      "url": "https://twitter.com/aantonop/status/1763321484859027665",
+      "processed": false,
+      "addedAt": "2025-12-28T07:26:14.655Z",
+      "expiresAt": "2026-01-04T07:26:14.655Z",
+      "source": "timeline_monitor",
+      "contentCategory": "project-discussion"
+    },
+    {
+      "id": "1763255504476774742",
+      "text": "FREE resources to learn about #bitcoin https://t.co/xEYtcKP7mY",
+      "author": {
+        "id": "1469101279",
+        "username": "aantonop"
+      },
+      "public_metrics": {
+        "likes": 272,
+        "retweets": 96,
+        "replies": 0,
+        "quotes": 10,
+        "views": 66800
+      },
+      "url": "https://twitter.com/aantonop/status/1763255504476774742",
+      "processed": false,
+      "addedAt": "2025-12-28T07:26:15.639Z",
+      "expiresAt": "2026-01-04T07:26:15.639Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "1762988232969490689",
+      "text": "Are ETFs better than Self Custody? Watch this 1 min video to hear my answer. \nhttps://t.co/aZyYV0PB0q",
+      "author": {
+        "id": "1469101279",
+        "username": "aantonop"
+      },
+      "public_metrics": {
+        "likes": 443,
+        "retweets": 148,
+        "replies": 0,
+        "quotes": 25,
+        "views": 105924
+      },
+      "url": "https://twitter.com/aantonop/status/1762988232969490689",
+      "processed": false,
+      "addedAt": "2025-12-28T07:26:22.069Z",
+      "expiresAt": "2026-01-04T07:26:22.069Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "1752790565178245159",
+      "text": "Last chance to save on the Path to Self Custody Bundle. Includes a step-by-step hardware wallet demo. 14 day money back guarantee. Learn more https://t.co/7r8BbAwRWQ https://t.co/KikM28fnNX",
+      "author": {
+        "id": "1469101279",
+        "username": "aantonop"
+      },
+      "public_metrics": {
+        "likes": 111,
+        "retweets": 77,
+        "replies": 0,
+        "quotes": 2,
+        "views": 85938
+      },
+      "url": "https://twitter.com/aantonop/status/1752790565178245159",
+      "processed": false,
+      "addedAt": "2025-12-28T07:26:24.061Z",
+      "expiresAt": "2026-01-04T07:26:24.061Z",
+      "source": "timeline_monitor",
+      "contentCategory": "investment-opportunities"
     }
   ],
   "metadata": {
-    "lastUpdated": "2025-12-27T22:12:09.397Z",
-    "totalPosts": 109,
+    "lastUpdated": "2025-12-28T07:27:16.333Z",
+    "totalPosts": 63,
     "bySource": {
-      "timeline_monitor": 109,
+      "timeline_monitor": 63,
       "search_discovery": 0
     }
   },
