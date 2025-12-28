@@ -19,6 +19,20 @@ export interface ArticleMetadata {
 
 export const articles: ArticleMetadata[] = [
 {
+  slug: 'fan-game-cube-2025-12-28',
+  product: 'Fan Game Cube',
+  title: 'Fan Game Cube: NFT Stadium Tokenization with Real-Time Match Event Rewards',
+  subtitle: 'Sports clubs struggle to monetize fan engagement beyond traditional merchandise and tickets. Fan Game Cube transforms this dynamic by tokenizing stadium fields into NFT coordinate zones, enabling fans to own specific field locations and receive automated rewards when match events occur at their coordinates.',
+  publishDate: '2025-12-28T10:03:39.089Z',
+  tweetId: '',
+  featuredImage: {
+    src: '/assets/images/docs/fan-game-cube/fan-game-cube-0.png',
+    alt: 'Product screenshot',
+    loading: 'eager'
+  },
+  seoDescription: 'Fan Game Cube tokenizes stadium fields into NFT coordinates where fans earn rewards from real match events, creating new sports engagement revenue streams.'
+},
+{
   slug: 'esg-credits-2025-12-27',
   product: 'ESG Credits',
   title: 'ESG Credits: ICMA-Compliant Environmental Impact Tracking via Blockchain',
