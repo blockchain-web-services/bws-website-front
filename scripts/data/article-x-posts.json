@@ -3,8 +3,10 @@
     "lastGenerated": "2025-12-27T12:13:45.363Z",
     "totalPosts": 59,
     "totalArticles": 23,
-    "pendingPosts": 15,
-    "postedCount": 37
+    "pendingPosts": 14,
+    "postedCount": 38,
+    "lastPosted": "2025-12-28T00:41:00.020Z",
+    "failedCount": 7
   },
   "posts": [
     {
@@ -1652,17 +1654,19 @@
         "SustainabilityTech"
       ],
       "priority": "high",
-      "status": "pending",
+      "status": "posted",
       "scheduledFor": null,
-      "postedAt": null,
-      "tweetId": null,
+      "postedAt": "2025-12-28T00:40:59.896Z",
+      "tweetId": "2005076478711808220",
       "generatedAt": "2025-12-27T12:13:45.362Z",
       "metadata": {
         "articleTitle": "ESG Credits: ICMA-Compliant Environmental Impact Tracking via Blockchain",
         "articlePublishDate": "2025-12-27T10:03:38.507Z",
         "mainTextLength": 204,
         "fullTextLength": 374
-      }
+      },
+      "tweetUrl": "https://twitter.com/i/web/status/2005076478711808220",
+      "error": null
     }
   ]
 }
