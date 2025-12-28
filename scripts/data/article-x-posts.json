@@ -1,12 +1,10 @@
 {
   "metadata": {
-    "lastGenerated": "2025-12-27T12:13:45.363Z",
-    "totalPosts": 59,
-    "totalArticles": 23,
-    "pendingPosts": 14,
-    "postedCount": 38,
-    "lastPosted": "2025-12-28T00:41:00.020Z",
-    "failedCount": 7
+    "lastGenerated": "2025-12-28T12:13:55.036Z",
+    "totalPosts": 60,
+    "totalArticles": 24,
+    "pendingPosts": 15,
+    "postedCount": 38
   },
   "posts": [
     {
@@ -1667,6 +1665,32 @@
       },
       "tweetUrl": "https://twitter.com/i/web/status/2005076478711808220",
       "error": null
+    },
+    {
+      "id": "2f3589f4-54c8-4025-831d-50e6714704c1",
+      "articleSlug": "fan-game-cube-2025-12-28",
+      "product": "Fan Game Cube",
+      "type": "overview",
+      "text": "Fan Game Cube tokenizes stadium fields into NFT coordinate zones. Fans own specific field locations and receive automated rewards when match events occur at their coordinates. Built by @BWSCommunity using $BWS\n\n📖 Article: https://www.bws.ninja/articles/fan-game-cube-2025-12-28\n📚 Docs: https://docs.bws.ninja/marketplace-solutions/bws.nft.gamecube\n\n#FanGameCube #SportsNFT",
+      "mainText": "Fan Game Cube tokenizes stadium fields into NFT coordinate zones. Fans own specific field locations and receive automated rewards when match events occur at their coordinates. Built by @BWSCommunity using $BWS",
+      "articleUrl": "https://www.bws.ninja/articles/fan-game-cube-2025-12-28",
+      "docsUrl": "https://docs.bws.ninja/marketplace-solutions/bws.nft.gamecube",
+      "hashtags": [
+        "FanGameCube",
+        "SportsNFT"
+      ],
+      "priority": "high",
+      "status": "pending",
+      "scheduledFor": null,
+      "postedAt": null,
+      "tweetId": null,
+      "generatedAt": "2025-12-28T12:13:55.035Z",
+      "metadata": {
+        "articleTitle": "Fan Game Cube: NFT Stadium Tokenization with Real-Time Match Event Rewards",
+        "articlePublishDate": "2025-12-28T10:03:39.089Z",
+        "mainTextLength": 209,
+        "fullTextLength": 374
+      }
     }
   ]
 }
