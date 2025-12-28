@@ -2051,13 +2051,349 @@
       "expiresAt": "2026-01-04T12:48:52.858Z",
       "source": "timeline_monitor",
       "contentCategory": "market-trends"
+    },
+    {
+      "id": "1976788855006302686",
+      "text": "Probably one of the most severe flushes I’ve ever seen on alts, I didn’t even imagine alts had this much leverage in them. It feels like someone got hit very hard and will see a large body float to the surface soon, reminds me a little of summer 2021. \n\nGood reminder to myself to",
+      "author": {
+        "id": "2259434528",
+        "username": "cobie"
+      },
+      "public_metrics": {
+        "likes": 20452,
+        "retweets": 2651,
+        "replies": 1107,
+        "quotes": 280,
+        "views": 1888114
+      },
+      "url": "https://twitter.com/cobie/status/1976788855006302686",
+      "processed": false,
+      "addedAt": "2025-12-28T17:50:39.563Z",
+      "expiresAt": "2026-01-04T17:50:39.563Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "1855688118416109585",
+      "text": "#Bitcoin - The March prediction is complete! Every line drawn on here was back at the beginning of March and we finally hit $80k. https://t.co/ABFNhJhgiB",
+      "author": {
+        "id": "4441279246",
+        "username": "IncomeSharks"
+      },
+      "public_metrics": {
+        "likes": 4026,
+        "retweets": 869,
+        "replies": 812,
+        "quotes": 21,
+        "views": 3405927
+      },
+      "url": "https://twitter.com/IncomeSharks/status/1855688118416109585",
+      "processed": false,
+      "addedAt": "2025-12-28T17:51:09.534Z",
+      "expiresAt": "2026-01-04T17:51:09.534Z",
+      "source": "timeline_monitor",
+      "contentCategory": "technical-analysis"
+    },
+    {
+      "id": "2005306271126442257",
+      "text": "If $HYPE, the best project in crypto, has some uncertainty with the unlocks, you probably should not be buying any other project with ongoing unlocks unless you think crime is on the table (or just scalping). We are not in that environment right now. https://t.co/pHxsZwmTuZ",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "likes": 72,
+        "retweets": 2,
+        "replies": 12,
+        "quotes": 1,
+        "views": 9219
+      },
+      "url": "https://twitter.com/AltcoinSherpa/status/2005306271126442257",
+      "processed": false,
+      "addedAt": "2025-12-28T17:51:40.896Z",
+      "expiresAt": "2026-01-04T17:51:40.896Z",
+      "source": "timeline_monitor",
+      "contentCategory": "project-discussion"
+    },
+    {
+      "id": "2005233576837837044",
+      "text": "$ZEC I feel like ZEC is not going to full send from here with this current price action; feels almost like a free lunch if so. I have a small position in it now but lots more entries lower and hope I get filled. Will continue to reassess though. I think it eventually goes $600+ https://t.co/yqS9oRPsEg",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "likes": 136,
+        "retweets": 17,
+        "replies": 45,
+        "quotes": 3,
+        "views": 15957
+      },
+      "url": "https://twitter.com/AltcoinSherpa/status/2005233576837837044",
+      "processed": false,
+      "addedAt": "2025-12-28T17:51:45.369Z",
+      "expiresAt": "2026-01-04T17:51:45.369Z",
+      "source": "timeline_monitor",
+      "contentCategory": "altcoin-talk"
+    },
+    {
+      "id": "2005291818913566748",
+      "text": "meh looks like I'm wrong on this $ZEC move...never got fully filled. annoyed. Should have just bought way more in that consolidation range, this thing wasn't going to give me the pullback I wanted. https://t.co/ypqqq6zf7s",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "likes": 11,
+        "retweets": 1,
+        "replies": 4,
+        "quotes": 0,
+        "views": 3415
+      },
+      "url": "https://twitter.com/AltcoinSherpa/status/2005291818913566748",
+      "processed": false,
+      "addedAt": "2025-12-28T17:51:47.391Z",
+      "expiresAt": "2026-01-04T17:51:47.391Z",
+      "source": "timeline_monitor",
+      "contentCategory": "price-speculation"
+    },
+    {
+      "id": "2005269847480184853",
+      "text": "weird strong moves still from $DOLO, pretty hard to trade this one overall though https://t.co/u9ubToQKOc",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "likes": 18,
+        "retweets": 2,
+        "replies": 8,
+        "quotes": 0,
+        "views": 7172
+      },
+      "url": "https://twitter.com/AltcoinSherpa/status/2005269847480184853",
+      "processed": false,
+      "addedAt": "2025-12-28T17:51:49.367Z",
+      "expiresAt": "2026-01-04T17:51:49.367Z",
+      "source": "timeline_monitor",
+      "contentCategory": "technical-analysis"
+    },
+    {
+      "id": "2005241496002535729",
+      "text": "There are some weird charts that have been oddly strong the last few days that I've been watching. Total list =\n\n$CC\n$STABLE\n$XPL\n$ZEC\n$UNI\n$DOLO\n$AVNT",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "likes": 57,
+        "retweets": 2,
+        "replies": 23,
+        "quotes": 2,
+        "views": 6676
+      },
+      "url": "https://twitter.com/AltcoinSherpa/status/2005241496002535729",
+      "processed": false,
+      "addedAt": "2025-12-28T17:51:53.556Z",
+      "expiresAt": "2026-01-04T17:51:53.556Z",
+      "source": "timeline_monitor",
+      "contentCategory": "altcoin-talk"
+    },
+    {
+      "id": "2005100225514668437",
+      "text": "$UNI $AVNT $CC strong on the open",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "likes": 30,
+        "retweets": 1,
+        "replies": 14,
+        "quotes": 0,
+        "views": 5954
+      },
+      "url": "https://twitter.com/AltcoinSherpa/status/2005100225514668437",
+      "processed": false,
+      "addedAt": "2025-12-28T17:51:59.880Z",
+      "expiresAt": "2026-01-04T17:51:59.880Z",
+      "source": "timeline_monitor",
+      "contentCategory": "altcoin-talk"
+    },
+    {
+      "id": "2005333549663322439",
+      "text": "Smart money going LONG on Bitcoin! https://t.co/b9hrafhQbq",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "likes": 81,
+        "retweets": 8,
+        "replies": 52,
+        "quotes": 1,
+        "views": 7555
+      },
+      "url": "https://twitter.com/CryptoRover/status/2005333549663322439",
+      "processed": false,
+      "addedAt": "2025-12-28T17:52:48.270Z",
+      "expiresAt": "2026-01-04T17:52:48.270Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "2005316059696623873",
+      "text": "ACCORDING TO CYCLE HISTORY, POTENTIAL BITCOIN BOTTOM WINDOW COULD BE STARTING IN ABOUT 120 DAYS! \n\nPrepare accordingly. https://t.co/WnjYSBYhNa",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "likes": 201,
+        "retweets": 17,
+        "replies": 86,
+        "quotes": 1,
+        "views": 35223
+      },
+      "url": "https://twitter.com/CryptoRover/status/2005316059696623873",
+      "processed": false,
+      "addedAt": "2025-12-28T17:52:56.936Z",
+      "expiresAt": "2026-01-04T17:52:56.936Z",
+      "source": "timeline_monitor",
+      "contentCategory": "technical-analysis"
+    },
+    {
+      "id": "2005308510116946205",
+      "text": "2026: Bearish or Bullish? 👇",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "likes": 274,
+        "retweets": 18,
+        "replies": 230,
+        "quotes": 2,
+        "views": 43820
+      },
+      "url": "https://twitter.com/CryptoRover/status/2005308510116946205",
+      "processed": false,
+      "addedAt": "2025-12-28T17:52:59.131Z",
+      "expiresAt": "2026-01-04T17:52:59.131Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends/price-speculation"
+    },
+    {
+      "id": "2005288704131375152",
+      "text": "BITCOIN BREAKS ABOVE $88,000!\n\nSTART OF A SUNDAY PUMP? https://t.co/wwu8xmAxQp",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "likes": 964,
+        "retweets": 148,
+        "replies": 235,
+        "quotes": 4,
+        "views": 104030
+      },
+      "url": "https://twitter.com/CryptoRover/status/2005288704131375152",
+      "processed": false,
+      "addedAt": "2025-12-28T17:53:03.163Z",
+      "expiresAt": "2026-01-04T17:53:03.163Z",
+      "source": "timeline_monitor",
+      "contentCategory": "price-speculation"
+    },
+    {
+      "id": "2005288125510402330",
+      "text": "$ETH in the orange zone could be an excellent buying opportunity. https://t.co/6hFsJWjDRz",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "likes": 180,
+        "retweets": 24,
+        "replies": 64,
+        "quotes": 0,
+        "views": 21813
+      },
+      "url": "https://twitter.com/CryptoRover/status/2005288125510402330",
+      "processed": false,
+      "addedAt": "2025-12-28T17:53:05.217Z",
+      "expiresAt": "2026-01-04T17:53:05.217Z",
+      "source": "timeline_monitor",
+      "contentCategory": "technical-analysis"
+    },
+    {
+      "id": "2005284252724936870",
+      "text": "🇺🇸 On March 6, 2025, President Trump signed an executive order creating a $BTC strategic reserve.\n\nThe US government now holds 198,000 $BTC, worth over $18B.\n\nYou can't be bearish on Bitcoin! https://t.co/i5G7fFwEyz",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "likes": 492,
+        "retweets": 62,
+        "replies": 133,
+        "quotes": 6,
+        "views": 74726
+      },
+      "url": "https://twitter.com/CryptoRover/status/2005284252724936870",
+      "processed": false,
+      "addedAt": "2025-12-28T17:53:09.019Z",
+      "expiresAt": "2026-01-04T17:53:09.019Z",
+      "source": "timeline_monitor",
+      "contentCategory": "news"
+    },
+    {
+      "id": "2005315430647546235",
+      "text": "NEW: Standard Chartered analyst Geoffrey Kendrick says $XRP could hit $8 in 2026 due to ETF approvals and regulatory clarity",
+      "author": {
+        "id": "935742315389444096",
+        "username": "CryptoWendyO"
+      },
+      "public_metrics": {
+        "likes": 76,
+        "retweets": 4,
+        "replies": 32,
+        "quotes": 2,
+        "views": 3732
+      },
+      "url": "https://twitter.com/CryptoWendyO/status/2005315430647546235",
+      "processed": false,
+      "addedAt": "2025-12-28T17:53:21.775Z",
+      "expiresAt": "2026-01-04T17:53:21.775Z",
+      "source": "timeline_monitor",
+      "contentCategory": "price-speculation"
+    },
+    {
+      "id": "2005266483127943371",
+      "text": "What meme coins and altcoins should I look at during the stream this week?",
+      "author": {
+        "id": "935742315389444096",
+        "username": "CryptoWendyO"
+      },
+      "public_metrics": {
+        "likes": 137,
+        "retweets": 14,
+        "replies": 200,
+        "quotes": 3,
+        "views": 12721
+      },
+      "url": "https://twitter.com/CryptoWendyO/status/2005266483127943371",
+      "processed": false,
+      "addedAt": "2025-12-28T17:53:23.545Z",
+      "expiresAt": "2026-01-04T17:53:23.545Z",
+      "source": "timeline_monitor",
+      "contentCategory": "altcoin-talk"
     }
   ],
   "metadata": {
-    "lastUpdated": "2025-12-28T12:49:56.857Z",
-    "totalPosts": 98,
+    "lastUpdated": "2025-12-28T17:54:21.716Z",
+    "totalPosts": 114,
     "bySource": {
-      "timeline_monitor": 98,
+      "timeline_monitor": 114,
       "search_discovery": 0
     }
   },
