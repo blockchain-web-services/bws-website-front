@@ -409,7 +409,7 @@
         "views": 202695
       },
       "url": "https://twitter.com/AltcoinSherpa/status/1953775859602530693",
-      "processed": false,
+      "processed": true,
       "addedAt": "2025-12-29T12:46:32.944Z",
       "expiresAt": "2026-01-05T12:46:32.944Z",
       "source": "timeline_monitor",
@@ -540,10 +540,10 @@
       "BWS IPFS",
       "Blockchain Save"
     ],
-    "currentIndex": 1,
-    "lastProductUsed": "X Bot",
+    "currentIndex": 5,
+    "lastProductUsed": "Blockchain Badges",
     "positioningPhraseIndex": 0,
-    "replyCount": 225
+    "replyCount": 229
   },
   "_removedStale": false
 }
