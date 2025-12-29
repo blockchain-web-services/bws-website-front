@@ -393,13 +393,139 @@
       "expiresAt": "2026-01-05T07:26:36.139Z",
       "source": "timeline_monitor",
       "contentCategory": "price-speculation"
+    },
+    {
+      "id": "1953775859602530693",
+      "text": "$ETH : 6th time is a charm https://t.co/GsuiKzIwu1",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "likes": 2481,
+        "retweets": 174,
+        "replies": 162,
+        "quotes": 18,
+        "views": 202695
+      },
+      "url": "https://twitter.com/AltcoinSherpa/status/1953775859602530693",
+      "processed": false,
+      "addedAt": "2025-12-29T12:46:32.944Z",
+      "expiresAt": "2026-01-05T12:46:32.944Z",
+      "source": "timeline_monitor",
+      "contentCategory": "technical-analysis"
+    },
+    {
+      "id": "1877748570524127495",
+      "text": "Succeeding in crypto is really just seeing how much pain you can take",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "likes": 2221,
+        "retweets": 238,
+        "replies": 172,
+        "quotes": 38,
+        "views": 183267
+      },
+      "url": "https://twitter.com/AltcoinSherpa/status/1877748570524127495",
+      "processed": false,
+      "addedAt": "2025-12-29T12:46:35.912Z",
+      "expiresAt": "2026-01-05T12:46:35.912Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "2005089453816373706",
+      "text": "When Bitcoin goes on wild runs the community only talks about Bitcoin. When Gold and Silver goes up their communities still bring up Bitcoin. Most won't admit it but so many missed out on generational wealth chosing to hoard physical metals over Bitcoin the past decade.",
+      "author": {
+        "id": "4441279246",
+        "username": "IncomeSharks"
+      },
+      "public_metrics": {
+        "likes": 1003,
+        "retweets": 45,
+        "replies": 81,
+        "quotes": 2,
+        "views": 55633
+      },
+      "url": "https://twitter.com/IncomeSharks/status/2005089453816373706",
+      "processed": false,
+      "addedAt": "2025-12-29T12:47:47.801Z",
+      "expiresAt": "2026-01-05T12:47:47.801Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "2004683366227124334",
+      "text": "You'll never see Bitcoin included on a zoomed out chart because it would embarass all other assets.",
+      "author": {
+        "id": "4441279246",
+        "username": "IncomeSharks"
+      },
+      "public_metrics": {
+        "likes": 828,
+        "retweets": 56,
+        "replies": 85,
+        "quotes": 1,
+        "views": 91678
+      },
+      "url": "https://twitter.com/IncomeSharks/status/2004683366227124334",
+      "processed": false,
+      "addedAt": "2025-12-29T12:47:48.719Z",
+      "expiresAt": "2026-01-05T12:47:48.719Z",
+      "source": "timeline_monitor",
+      "contentCategory": "technical-analysis"
+    },
+    {
+      "id": "2004655139228189156",
+      "text": "$FET - If you had bought the stock with the same name as the crypto token $FET you'd have had a much better year. https://t.co/ayJIc0HRPJ",
+      "author": {
+        "id": "4441279246",
+        "username": "IncomeSharks"
+      },
+      "public_metrics": {
+        "likes": 571,
+        "retweets": 41,
+        "replies": 50,
+        "quotes": 1,
+        "views": 67525
+      },
+      "url": "https://twitter.com/IncomeSharks/status/2004655139228189156",
+      "processed": false,
+      "addedAt": "2025-12-29T12:47:56.696Z",
+      "expiresAt": "2026-01-05T12:47:56.696Z",
+      "source": "timeline_monitor",
+      "contentCategory": "altcoin-talk"
+    },
+    {
+      "id": "2004654729553674367",
+      "text": "You should have multiple reasons for buying an asset. Everyone being bearish might be one reason, but it's not enough on its own to take a trade.",
+      "author": {
+        "id": "4441279246",
+        "username": "IncomeSharks"
+      },
+      "public_metrics": {
+        "likes": 371,
+        "retweets": 10,
+        "replies": 36,
+        "quotes": 1,
+        "views": 37542
+      },
+      "url": "https://twitter.com/IncomeSharks/status/2004654729553674367",
+      "processed": false,
+      "addedAt": "2025-12-29T12:47:58.869Z",
+      "expiresAt": "2026-01-05T12:47:58.869Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
     }
   ],
   "metadata": {
-    "lastUpdated": "2025-12-29T07:27:48.290Z",
-    "totalPosts": 19,
+    "lastUpdated": "2025-12-29T12:49:10.954Z",
+    "totalPosts": 25,
     "bySource": {
-      "timeline_monitor": 19,
+      "timeline_monitor": 25,
       "search_discovery": 0
     }
   },
