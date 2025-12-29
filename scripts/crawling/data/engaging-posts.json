@@ -165,13 +165,199 @@
       "expiresAt": "2026-01-05T12:47:58.869Z",
       "source": "timeline_monitor",
       "contentCategory": "market-trends"
+    },
+    {
+      "id": "1444628130426200067",
+      "text": "Me after #Bitcoin goes to $0 https://t.co/w45UpXROoh",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "likes": 2443,
+        "retweets": 288,
+        "replies": 89,
+        "quotes": 38
+      },
+      "url": "https://twitter.com/AltcoinSherpa/status/1444628130426200067",
+      "processed": false,
+      "addedAt": "2025-12-29T17:50:57.114Z",
+      "expiresAt": "2026-01-05T17:50:57.114Z",
+      "source": "timeline_monitor",
+      "contentCategory": "price-speculation"
+    },
+    {
+      "id": "1953775859602530693",
+      "text": "$ETH : 6th time is a charm https://t.co/GsuiKzIwu1",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "likes": 2482,
+        "retweets": 174,
+        "replies": 162,
+        "quotes": 18,
+        "views": 202695
+      },
+      "url": "https://twitter.com/AltcoinSherpa/status/1953775859602530693",
+      "processed": false,
+      "addedAt": "2025-12-29T17:50:59.085Z",
+      "expiresAt": "2026-01-05T17:50:59.085Z",
+      "source": "timeline_monitor",
+      "contentCategory": "technical-analysis"
+    },
+    {
+      "id": "1778242360713130435",
+      "text": "@Uniswap The SEC isn't here to protect us. It's to make sure they control us.",
+      "author": {
+        "id": "4441279246",
+        "username": "IncomeSharks"
+      },
+      "public_metrics": {
+        "likes": 1080,
+        "retweets": 121,
+        "replies": 27,
+        "quotes": 1,
+        "views": 37536
+      },
+      "url": "https://twitter.com/IncomeSharks/status/1778242360713130435",
+      "processed": false,
+      "addedAt": "2025-12-29T17:51:29.327Z",
+      "expiresAt": "2026-01-05T17:51:29.327Z",
+      "source": "timeline_monitor",
+      "contentCategory": "project-discussion"
+    },
+    {
+      "id": "1395441817563254784",
+      "text": "How to trade based on your Crypto Twitter feed\n\nBUY - Doomsday posts, FUD, memes, angry comments\nHOLD - Quality charts, good content, actual analysis\nSELL - Car pics, watch pics, wild price predictions",
+      "author": {
+        "id": "4441279246",
+        "username": "IncomeSharks"
+      },
+      "public_metrics": {
+        "likes": 5284,
+        "retweets": 1057,
+        "replies": 384,
+        "quotes": 131
+      },
+      "url": "https://twitter.com/IncomeSharks/status/1395441817563254784",
+      "processed": false,
+      "addedAt": "2025-12-29T17:51:31.920Z",
+      "expiresAt": "2026-01-05T17:51:31.920Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "1863717475168424230",
+      "text": "Over 43% of the $XRP tokens are still not even circulating. Imagine if you were on Pump Fun and saw the developer owned 43% of supply. There's a reason this space collectively dislikes this token because it's always pumping and dumping. https://t.co/n7wMvyU2nR",
+      "author": {
+        "id": "4441279246",
+        "username": "IncomeSharks"
+      },
+      "public_metrics": {
+        "likes": 5845,
+        "retweets": 386,
+        "replies": 623,
+        "quotes": 81,
+        "views": 858587
+      },
+      "url": "https://twitter.com/IncomeSharks/status/1863717475168424230",
+      "processed": false,
+      "addedAt": "2025-12-29T17:51:32.923Z",
+      "expiresAt": "2026-01-05T17:51:32.923Z",
+      "source": "timeline_monitor",
+      "contentCategory": "altcoin-talk"
+    },
+    {
+      "id": "1871631935078023487",
+      "text": "When cashing out on @coinbase always send profits with $USDC to avoid fees. It's wild that they charge as much as they do converting other stable coins to USD. https://t.co/gRTBLS2AgM",
+      "author": {
+        "id": "4441279246",
+        "username": "IncomeSharks"
+      },
+      "public_metrics": {
+        "likes": 5723,
+        "retweets": 403,
+        "replies": 324,
+        "quotes": 31,
+        "views": 960079
+      },
+      "url": "https://twitter.com/IncomeSharks/status/1871631935078023487",
+      "processed": false,
+      "addedAt": "2025-12-29T17:51:37.038Z",
+      "expiresAt": "2026-01-05T17:51:37.038Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "1509583498893484032",
+      "text": "Time to unfollow large verified accounts. All were screaming to buy #Bitcoin at another local top. And all 3 are verified... They speak in absolutes leading the sheep to the slaughterhouse. They can't trade, they only know how to farm for engagement and use emojis.🚀 https://t.co/NVkjTjWfGv",
+      "author": {
+        "id": "4441279246",
+        "username": "IncomeSharks"
+      },
+      "public_metrics": {
+        "likes": 4672,
+        "retweets": 487,
+        "replies": 456,
+        "quotes": 69
+      },
+      "url": "https://twitter.com/IncomeSharks/status/1509583498893484032",
+      "processed": false,
+      "addedAt": "2025-12-29T17:51:46.451Z",
+      "expiresAt": "2026-01-05T17:51:46.451Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "1898450757738955242",
+      "text": "It's not that people aren't bullish enough, most have nothing left to invest.",
+      "author": {
+        "id": "4441279246",
+        "username": "IncomeSharks"
+      },
+      "public_metrics": {
+        "likes": 5199,
+        "retweets": 264,
+        "replies": 556,
+        "quotes": 45,
+        "views": 298698
+      },
+      "url": "https://twitter.com/IncomeSharks/status/1898450757738955242",
+      "processed": false,
+      "addedAt": "2025-12-29T17:51:48.460Z",
+      "expiresAt": "2026-01-05T17:51:48.460Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "1980579379244855384",
+      "text": "when i started building echo 2 years ago, i knew it had 95% chance of failing. to be honest, i couldnt really imagine any other outcome, but i thought at least it may be a noble failure worth attempting.\n\ni certainly didn't think echo would be sold to coinbase, but, here we are:",
+      "author": {
+        "id": "2259434528",
+        "username": "cobie"
+      },
+      "public_metrics": {
+        "likes": 20900,
+        "retweets": 1353,
+        "replies": 5182,
+        "quotes": 616,
+        "views": 2791585
+      },
+      "url": "https://twitter.com/cobie/status/1980579379244855384",
+      "processed": false,
+      "addedAt": "2025-12-29T17:52:24.649Z",
+      "expiresAt": "2026-01-05T17:52:24.649Z",
+      "source": "timeline_monitor",
+      "contentCategory": "project-discussion"
     }
   ],
   "metadata": {
-    "lastUpdated": "2025-12-29T12:49:10.954Z",
-    "totalPosts": 25,
+    "lastUpdated": "2025-12-29T17:53:43.378Z",
+    "totalPosts": 17,
     "bySource": {
-      "timeline_monitor": 25,
+      "timeline_monitor": 17,
       "search_discovery": 0
     }
   },
