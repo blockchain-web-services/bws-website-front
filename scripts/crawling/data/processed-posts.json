@@ -855,7 +855,11 @@
     "2004999189667959010",
     "2004998215222133048",
     "2004988375556915378",
-    "2004985507386982651"
+    "2004985507386982651",
+    "2005089453816373706",
+    "2004683366227124334",
+    "2004655139228189156",
+    "2004654729553674367"
   ],
   "productRotation": {
     "priorityProducts": [
@@ -870,16 +874,16 @@
       "BWS IPFS",
       "NFT.zK"
     ],
-    "priorityIndex": 2,
+    "priorityIndex": 6,
     "otherIndex": 4,
-    "replyCount": 402,
-    "lastProductUsed": "Fan Game Cube",
+    "replyCount": 406,
+    "lastProductUsed": "Blockchain Save",
     "positioningPhraseIndex": 0
   },
   "metadata": {
-    "lastCheck": "2025-12-29T06:49:21.987Z",
+    "lastCheck": "2025-12-29T17:31:55.756Z",
     "totalReplied": 5,
-    "totalSkipped": 849,
+    "totalSkipped": 853,
     "lastUpdateBy": "kol-system"
   }
 }
