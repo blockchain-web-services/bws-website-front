@@ -818,7 +818,7 @@ async function evaluateAndReply() {
 
         console.log(`\n   📝 Tweet ${post.id.slice(-6)}...`);
         console.log(`      "${post.text.substring(0, 100)}${post.text.length > 100 ? '...' : ''}"`);
-        console.log(`      Likes: ${post.likes || 0}, Retweets: ${post.retweets || 0}, Views: ${post.views || 0}`);
+        console.log(`      Likes: ${post.public_metrics?.likes || post.likes || 0}, Retweets: ${post.public_metrics?.retweets || post.retweets || 0}, Views: ${post.public_metrics?.views || post.views || 0}`);
 
         // Create a mock KOL object for evaluation (we don't have full KOL data)
         const mockKol = {

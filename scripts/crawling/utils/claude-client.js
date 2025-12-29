@@ -167,9 +167,9 @@ Tweet:
 "${tweet.text}"
 
 Posted: ${tweet.created_at}
-Likes: ${tweet.public_metrics?.like_count || 0}
-Retweets: ${tweet.public_metrics?.retweet_count || 0}
-Replies: ${tweet.public_metrics?.reply_count || 0}
+Likes: ${tweet.public_metrics?.likes || tweet.public_metrics?.like_count || 0}
+Retweets: ${tweet.public_metrics?.retweets || tweet.public_metrics?.retweet_count || 0}
+Replies: ${tweet.public_metrics?.replies || tweet.public_metrics?.reply_count || 0}
 
 BWS Products (real utility being built):
 ${productsInfo}
