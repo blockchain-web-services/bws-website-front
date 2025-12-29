@@ -15,7 +15,7 @@
         "views": 298698
       },
       "url": "https://twitter.com/IncomeSharks/status/1898450757738955242",
-      "processed": false,
+      "processed": true,
       "addedAt": "2025-12-28T07:23:37.887Z",
       "expiresAt": "2026-01-04T07:23:37.887Z",
       "source": "timeline_monitor",
@@ -97,7 +97,7 @@
         "views": 1888114
       },
       "url": "https://twitter.com/cobie/status/1976788855006302686",
-      "processed": false,
+      "processed": true,
       "addedAt": "2025-12-28T17:50:39.563Z",
       "expiresAt": "2026-01-04T17:50:39.563Z",
       "source": "timeline_monitor",
@@ -414,10 +414,10 @@
       "BWS IPFS",
       "Blockchain Save"
     ],
-    "currentIndex": 6,
-    "lastProductUsed": "ESG Credits",
+    "currentIndex": 1,
+    "lastProductUsed": "X Bot",
     "positioningPhraseIndex": 0,
-    "replyCount": 222
+    "replyCount": 225
   },
   "_removedStale": false
 }
