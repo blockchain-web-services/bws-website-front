@@ -283,7 +283,7 @@
         "views": 3405933
       },
       "url": "https://twitter.com/IncomeSharks/status/1855688118416109585",
-      "processed": false,
+      "processed": true,
       "addedAt": "2025-12-29T22:08:14.763Z",
       "expiresAt": "2026-01-05T22:08:14.763Z",
       "source": "timeline_monitor",
@@ -304,7 +304,7 @@
         "views": 2674432
       },
       "url": "https://twitter.com/cobie/status/2005418415310442957",
-      "processed": false,
+      "processed": true,
       "addedAt": "2025-12-29T22:09:20.524Z",
       "expiresAt": "2026-01-05T22:09:20.524Z",
       "source": "timeline_monitor",
@@ -330,10 +330,10 @@
       "BWS IPFS",
       "Blockchain Save"
     ],
-    "currentIndex": 4,
-    "lastProductUsed": "NFT.zK",
+    "currentIndex": 7,
+    "lastProductUsed": "BWS IPFS",
     "positioningPhraseIndex": 0,
-    "replyCount": 236
+    "replyCount": 239
   },
   "_removedStale": false
 }
