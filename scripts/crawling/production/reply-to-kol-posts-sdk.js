@@ -478,9 +478,9 @@ async function replyToKolPosts() {
   if (engagingPostsData.posts.length === 0) {
     console.log('⚠️  No engaging posts to process. Exiting...');
 
-    // Send notification about no posts
+    // Send notification about no posts (this is SUCCESS - not a failure)
     await sendReplyNotification({
-      success: false,
+      success: true,
       tweetsEvaluated: 0,
       tweetsSkipped: 0,
       repliesPosted: 0,
@@ -491,6 +491,7 @@ async function replyToKolPosts() {
       activeKols: kolsData.kols.filter(k => k.status === 'active').length,
       kolsProcessed: 0,
       dryRun,
+      zeroResultsReason: 'no_tweets_in_queue',
       runUrl: process.env.GITHUB_SERVER_URL && process.env.GITHUB_REPOSITORY && process.env.GITHUB_RUN_ID
         ? `${process.env.GITHUB_SERVER_URL}/${process.env.GITHUB_REPOSITORY}/actions/runs/${process.env.GITHUB_RUN_ID}`
         : null
@@ -826,9 +827,19 @@ async function replyToKolPosts() {
   const duration = ((Date.now() - scriptStartTime) / 1000).toFixed(1);
 
   // Send notification to Zapier/Slack
+  // Determine success and reason for 0 replies
+  const noQualifyingTweets = tweetEvaluated > 0 && repliesPosted === 0;
+  const success = true;  // Script completed without errors
+
+  // Determine reason for 0 replies (if applicable)
+  let zeroResultsReason = null;
+  if (repliesPosted === 0 && noQualifyingTweets) {
+    zeroResultsReason = 'quality_threshold_not_met';
+  }
+
   try {
     await sendReplyNotification({
-      success: repliesPosted > 0,
+      success,
       tweetsEvaluated: tweetEvaluated,
       tweetsSkipped,
       repliesPosted,
@@ -840,6 +851,7 @@ async function replyToKolPosts() {
       kolsProcessed: new Set(engagingPostsData.posts.map(p => p.author.username)).size,
       dryRun,
       replyDetails: lastReplyDetails,
+      zeroResultsReason,
       runUrl: process.env.GITHUB_SERVER_URL && process.env.GITHUB_REPOSITORY && process.env.GITHUB_RUN_ID
         ? `${process.env.GITHUB_SERVER_URL}/${process.env.GITHUB_REPOSITORY}/actions/runs/${process.env.GITHUB_RUN_ID}`
         : null

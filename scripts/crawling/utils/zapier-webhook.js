@@ -297,11 +297,39 @@ export async function sendReplyNotification(options) {
     error = null,
     dryRun = false,
     runUrl = null,
-    replyDetails = null  // { replyText, replyUrl, originalTweetText, originalTweetUrl, kolUsername }
+    replyDetails = null,  // { replyText, replyUrl, originalTweetText, originalTweetUrl, kolUsername }
+    zeroResultsReason = null  // NEW: Why there were 0 replies ('no_tweets_in_queue', 'quality_threshold_not_met', or null)
   } = options;
 
-  const emoji = success ? '✅' : '❌';
-  const statusText = success ? 'SUCCESS' : 'FAILURE';
+  // Determine status display based on results and reason
+  let emoji, statusText, messageType;
+
+  if (!success) {
+    // Actual failure (error occurred)
+    emoji = '❌';
+    statusText = 'FAILURE';
+    messageType = 'ERROR';
+  } else if (repliesPosted > 0) {
+    // Success with replies posted
+    emoji = '✅';
+    statusText = 'SUCCESS';
+    messageType = 'SUCCESS';
+  } else if (zeroResultsReason === 'no_tweets_in_queue') {
+    // Success but no tweets to evaluate
+    emoji = 'ℹ️';
+    statusText = 'NO TWEETS IN QUEUE';
+    messageType = 'INFO';
+  } else if (zeroResultsReason === 'quality_threshold_not_met') {
+    // Success but no tweets met quality bar
+    emoji = '✅';
+    statusText = 'SUCCESS - NO QUALIFYING TWEETS';
+    messageType = 'SUCCESS';
+  } else {
+    // Success but 0 replies for unknown reason
+    emoji = '✅';
+    statusText = 'SUCCESS - NO REPLIES POSTED';
+    messageType = 'SUCCESS';
+  }
 
   // Calculate selection rate
   const tweetsConsidered = tweetsEvaluated > 0 ? tweetsEvaluated : 1; // Avoid division by zero
@@ -395,11 +423,23 @@ export async function sendReplyNotification(options) {
     textParts.push(`<${runUrl}|View Workflow Run>`);
   }
 
+  // Add explanation for 0 results if applicable
+  if (repliesPosted === 0 && zeroResultsReason) {
+    textParts.push('');
+    textParts.push('*Reason for 0 Replies:*');
+    if (zeroResultsReason === 'no_tweets_in_queue') {
+      textParts.push('  Queue is empty - no tweets available to evaluate');
+    } else if (zeroResultsReason === 'quality_threshold_not_met') {
+      textParts.push('  All tweets were skipped - none met quality threshold for reply');
+      textParts.push('  This is normal operation - quality bar is working correctly');
+    }
+  }
+
   // Enhanced payload with Process field
   const payload = {
     Message: textParts.join('\n'),
     Timestamp: new Date().toISOString(),
-    Type: success ? 'SUCCESS' : 'ERROR',
+    Type: messageType,
     Process: 'reply'
   };
 

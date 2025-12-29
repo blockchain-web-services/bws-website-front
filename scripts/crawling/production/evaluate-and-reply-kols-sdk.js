@@ -1124,9 +1124,29 @@ ${'='.repeat(60)}
   await usageLogger.displayTodayUsage();
 
   // Send notification to Zapier/Slack
-  // SUCCESS = at least 1 reply posted, FAILURE = no replies posted
+  // Determine success and reason for 0 replies
+  const hasError = false;  // If we got here, no uncaught errors occurred
+  const noQualifyingTweets = tweetEvaluated > 0 && repliesPosted === 0;
+  const noTweetsToEvaluate = tweetEvaluated === 0;
+
+  // SUCCESS criteria: Script completed without errors
+  // - Replies posted: clear success
+  // - No qualifying tweets: success (quality bar working correctly)
+  // - No tweets to evaluate: success (queue empty or all processed)
+  const success = !hasError;
+
+  // Determine reason for 0 replies (if applicable)
+  let zeroResultsReason = null;
+  if (repliesPosted === 0) {
+    if (noTweetsToEvaluate) {
+      zeroResultsReason = 'no_tweets_in_queue';
+    } else if (noQualifyingTweets) {
+      zeroResultsReason = 'quality_threshold_not_met';
+    }
+  }
+
   await sendReplyNotification({
-    success: repliesPosted > 0,
+    success,
     tweetsEvaluated: tweetEvaluated,
     tweetsSkipped,
     repliesPosted,
@@ -1138,6 +1158,7 @@ ${'='.repeat(60)}
     kolsProcessed,  // NEW: Include how many KOLs were actually checked this run
     dryRun,
     replyDetails: lastReplyDetails,  // Include last successful reply details
+    zeroResultsReason,  // NEW: Why there were 0 replies (if applicable)
     runUrl: process.env.GITHUB_SERVER_URL && process.env.GITHUB_REPOSITORY && process.env.GITHUB_RUN_ID
       ? `${process.env.GITHUB_SERVER_URL}/${process.env.GITHUB_REPOSITORY}/actions/runs/${process.env.GITHUB_RUN_ID}`
       : null
