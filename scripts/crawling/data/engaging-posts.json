@@ -267,13 +267,55 @@
       "expiresAt": "2026-01-05T17:52:24.649Z",
       "source": "timeline_monitor",
       "contentCategory": "project-discussion"
+    },
+    {
+      "id": "1855688118416109585",
+      "text": "#Bitcoin - The March prediction is complete! Every line drawn on here was back at the beginning of March and we finally hit $80k. https://t.co/ABFNhJhgiB",
+      "author": {
+        "id": "4441279246",
+        "username": "IncomeSharks"
+      },
+      "public_metrics": {
+        "likes": 4026,
+        "retweets": 869,
+        "replies": 812,
+        "quotes": 21,
+        "views": 3405933
+      },
+      "url": "https://twitter.com/IncomeSharks/status/1855688118416109585",
+      "processed": false,
+      "addedAt": "2025-12-29T22:08:14.763Z",
+      "expiresAt": "2026-01-05T22:08:14.763Z",
+      "source": "timeline_monitor",
+      "contentCategory": "technical-analysis"
+    },
+    {
+      "id": "2005418415310442957",
+      "text": "$NXXT (NextNRG Inc.) — 5-Day Technical &amp; Price Action Analysis\n\n5-day move: +25.4% (from ~$1.26–1.30 area to $1.58 close)\n\nIntraday high: $1.88\n\nPullback: ~16% from the highs, still holding well above the breakout zone \n\nBounce Back ! \n\nMarket cap: ~$212M (small-cap = volatility https://t.co/j6uk6WqEj4",
+      "author": {
+        "id": "2259434528",
+        "username": "cobie"
+      },
+      "public_metrics": {
+        "likes": 278,
+        "retweets": 13,
+        "replies": 12,
+        "quotes": 1,
+        "views": 2674432
+      },
+      "url": "https://twitter.com/cobie/status/2005418415310442957",
+      "processed": false,
+      "addedAt": "2025-12-29T22:09:20.524Z",
+      "expiresAt": "2026-01-05T22:09:20.524Z",
+      "source": "timeline_monitor",
+      "contentCategory": "technical-analysis"
     }
   ],
   "metadata": {
-    "lastUpdated": "2025-12-29T17:53:43.378Z",
-    "totalPosts": 17,
+    "lastUpdated": "2025-12-29T22:10:46.556Z",
+    "totalPosts": 15,
     "bySource": {
-      "timeline_monitor": 17,
+      "timeline_monitor": 15,
       "search_discovery": 0
     }
   },
