@@ -3,9 +3,9 @@
     "lastGenerated": "2025-12-28T12:13:55.036Z",
     "totalPosts": 60,
     "totalArticles": 24,
-    "pendingPosts": 12,
-    "postedCount": 41,
-    "lastPosted": "2025-12-30T00:36:11.321Z",
+    "pendingPosts": 11,
+    "postedCount": 42,
+    "lastPosted": "2025-12-30T12:15:38.819Z",
     "failedCount": 7
   },
   "posts": [
@@ -1094,17 +1094,19 @@
         "CommunityMetrics"
       ],
       "priority": "medium",
-      "status": "pending",
+      "status": "posted",
       "scheduledFor": null,
-      "postedAt": null,
-      "tweetId": null,
+      "postedAt": "2025-12-30T12:15:38.671Z",
+      "tweetId": "2005976067962474807",
       "generatedAt": "2025-12-11T20:09:58.065Z",
       "metadata": {
         "articleTitle": "X Bot: Automated Community Analytics for Web3 Projects",
         "articlePublishDate": "2025-12-11T19:35:08.986Z",
         "mainTextLength": 188,
         "fullTextLength": 346
-      }
+      },
+      "tweetUrl": "https://twitter.com/i/web/status/2005976067962474807",
+      "error": null
     },
     {
       "id": "880a3f38-082c-4609-95b4-43d6cd390638",
