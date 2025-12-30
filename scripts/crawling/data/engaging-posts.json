@@ -282,7 +282,7 @@
         "quotes": 371
       },
       "url": "https://twitter.com/cobie/status/1358763044181078017",
-      "processed": false,
+      "processed": true,
       "addedAt": "2025-12-30T12:47:15.443Z",
       "expiresAt": "2026-01-06T12:47:15.443Z",
       "source": "timeline_monitor",
@@ -303,7 +303,7 @@
         "views": 1888611
       },
       "url": "https://twitter.com/cobie/status/1976788855006302686",
-      "processed": false,
+      "processed": true,
       "addedAt": "2025-12-30T12:47:17.937Z",
       "expiresAt": "2026-01-06T12:47:17.937Z",
       "source": "timeline_monitor",
@@ -324,7 +324,7 @@
         "views": 37053
       },
       "url": "https://twitter.com/IncomeSharks/status/2005748097117478972",
-      "processed": false,
+      "processed": true,
       "addedAt": "2025-12-30T12:47:47.327Z",
       "expiresAt": "2026-01-06T12:47:47.327Z",
       "source": "timeline_monitor",
@@ -366,7 +366,7 @@
         "views": 58456
       },
       "url": "https://twitter.com/IncomeSharks/status/2005089453816373706",
-      "processed": false,
+      "processed": true,
       "addedAt": "2025-12-30T12:48:03.466Z",
       "expiresAt": "2026-01-06T12:48:03.466Z",
       "source": "timeline_monitor",
@@ -387,7 +387,7 @@
         "views": 94414
       },
       "url": "https://twitter.com/IncomeSharks/status/2004683366227124334",
-      "processed": false,
+      "processed": true,
       "addedAt": "2025-12-30T12:48:05.609Z",
       "expiresAt": "2026-01-06T12:48:05.609Z",
       "source": "timeline_monitor",
@@ -413,10 +413,10 @@
       "BWS IPFS",
       "Blockchain Save"
     ],
-    "currentIndex": 2,
-    "lastProductUsed": "Fan Game Cube",
+    "currentIndex": 5,
+    "lastProductUsed": "Blockchain Badges",
     "positioningPhraseIndex": 0,
-    "replyCount": 242
+    "replyCount": 245
   },
   "_removedStale": false
 }
