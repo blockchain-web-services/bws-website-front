@@ -81,10 +81,342 @@
       "expiresAt": "2026-01-06T17:52:16.749Z",
       "source": "timeline_monitor",
       "contentCategory": "market-trends"
+    },
+    {
+      "id": "1358763044181078017",
+      "text": "ELON TOLD THE PLEBS TO BUY DOGECOIN AND THEN BOUGHT 1.5 BILLION DOLLARS OF BITCOIN \n\nLMFAO\n\nHE FUCKING HATES YOU",
+      "author": {
+        "id": "2259434528",
+        "username": "cobie"
+      },
+      "public_metrics": {
+        "likes": 19048,
+        "retweets": 2288,
+        "replies": 702,
+        "quotes": 371
+      },
+      "url": "https://twitter.com/cobie/status/1358763044181078017",
+      "processed": false,
+      "addedAt": "2025-12-30T22:08:14.668Z",
+      "expiresAt": "2026-01-06T22:08:14.668Z",
+      "source": "timeline_monitor",
+      "contentCategory": "altcoin-talk"
+    },
+    {
+      "id": "1980579379244855384",
+      "text": "when i started building echo 2 years ago, i knew it had 95% chance of failing. to be honest, i couldnt really imagine any other outcome, but i thought at least it may be a noble failure worth attempting.\n\ni certainly didn't think echo would be sold to coinbase, but, here we are:",
+      "author": {
+        "id": "2259434528",
+        "username": "cobie"
+      },
+      "public_metrics": {
+        "likes": 20893,
+        "retweets": 1352,
+        "replies": 5181,
+        "quotes": 616,
+        "views": 2792019
+      },
+      "url": "https://twitter.com/cobie/status/1980579379244855384",
+      "processed": false,
+      "addedAt": "2025-12-30T22:08:16.779Z",
+      "expiresAt": "2026-01-06T22:08:16.779Z",
+      "source": "timeline_monitor",
+      "contentCategory": "project-discussion"
+    },
+    {
+      "id": "1976788855006302686",
+      "text": "Probably one of the most severe flushes I’ve ever seen on alts, I didn’t even imagine alts had this much leverage in them. It feels like someone got hit very hard and will see a large body float to the surface soon, reminds me a little of summer 2021. \n\nGood reminder to myself to",
+      "author": {
+        "id": "2259434528",
+        "username": "cobie"
+      },
+      "public_metrics": {
+        "likes": 20450,
+        "retweets": 2648,
+        "replies": 1108,
+        "quotes": 280,
+        "views": 1888735
+      },
+      "url": "https://twitter.com/cobie/status/1976788855006302686",
+      "processed": false,
+      "addedAt": "2025-12-30T22:08:18.679Z",
+      "expiresAt": "2026-01-06T22:08:18.679Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "1778242360713130435",
+      "text": "@Uniswap The SEC isn't here to protect us. It's to make sure they control us.",
+      "author": {
+        "id": "4441279246",
+        "username": "IncomeSharks"
+      },
+      "public_metrics": {
+        "likes": 1080,
+        "retweets": 121,
+        "replies": 27,
+        "quotes": 1,
+        "views": 37536
+      },
+      "url": "https://twitter.com/IncomeSharks/status/1778242360713130435",
+      "processed": false,
+      "addedAt": "2025-12-30T22:08:48.040Z",
+      "expiresAt": "2026-01-06T22:08:48.040Z",
+      "source": "timeline_monitor",
+      "contentCategory": "project-discussion"
+    },
+    {
+      "id": "1395441817563254784",
+      "text": "How to trade based on your Crypto Twitter feed\n\nBUY - Doomsday posts, FUD, memes, angry comments\nHOLD - Quality charts, good content, actual analysis\nSELL - Car pics, watch pics, wild price predictions",
+      "author": {
+        "id": "4441279246",
+        "username": "IncomeSharks"
+      },
+      "public_metrics": {
+        "likes": 5283,
+        "retweets": 1057,
+        "replies": 384,
+        "quotes": 131
+      },
+      "url": "https://twitter.com/IncomeSharks/status/1395441817563254784",
+      "processed": false,
+      "addedAt": "2025-12-30T22:08:51.519Z",
+      "expiresAt": "2026-01-06T22:08:51.519Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "1863717475168424230",
+      "text": "Over 43% of the $XRP tokens are still not even circulating. Imagine if you were on Pump Fun and saw the developer owned 43% of supply. There's a reason this space collectively dislikes this token because it's always pumping and dumping. https://t.co/n7wMvyU2nR",
+      "author": {
+        "id": "4441279246",
+        "username": "IncomeSharks"
+      },
+      "public_metrics": {
+        "likes": 5842,
+        "retweets": 386,
+        "replies": 623,
+        "quotes": 81,
+        "views": 858587
+      },
+      "url": "https://twitter.com/IncomeSharks/status/1863717475168424230",
+      "processed": false,
+      "addedAt": "2025-12-30T22:08:52.557Z",
+      "expiresAt": "2026-01-06T22:08:52.557Z",
+      "source": "timeline_monitor",
+      "contentCategory": "altcoin-talk"
+    },
+    {
+      "id": "1871631935078023487",
+      "text": "When cashing out on @coinbase always send profits with $USDC to avoid fees. It's wild that they charge as much as they do converting other stable coins to USD. https://t.co/gRTBLS2AgM",
+      "author": {
+        "id": "4441279246",
+        "username": "IncomeSharks"
+      },
+      "public_metrics": {
+        "likes": 5722,
+        "retweets": 404,
+        "replies": 324,
+        "quotes": 31,
+        "views": 960084
+      },
+      "url": "https://twitter.com/IncomeSharks/status/1871631935078023487",
+      "processed": false,
+      "addedAt": "2025-12-30T22:08:56.908Z",
+      "expiresAt": "2026-01-06T22:08:56.908Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "1509583498893484032",
+      "text": "Time to unfollow large verified accounts. All were screaming to buy #Bitcoin at another local top. And all 3 are verified... They speak in absolutes leading the sheep to the slaughterhouse. They can't trade, they only know how to farm for engagement and use emojis.🚀 https://t.co/NVkjTjWfGv",
+      "author": {
+        "id": "4441279246",
+        "username": "IncomeSharks"
+      },
+      "public_metrics": {
+        "likes": 4672,
+        "retweets": 487,
+        "replies": 456,
+        "quotes": 69
+      },
+      "url": "https://twitter.com/IncomeSharks/status/1509583498893484032",
+      "processed": false,
+      "addedAt": "2025-12-30T22:09:05.837Z",
+      "expiresAt": "2026-01-06T22:09:05.837Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "1898450757738955242",
+      "text": "It's not that people aren't bullish enough, most have nothing left to invest.",
+      "author": {
+        "id": "4441279246",
+        "username": "IncomeSharks"
+      },
+      "public_metrics": {
+        "likes": 5198,
+        "retweets": 264,
+        "replies": 556,
+        "quotes": 45,
+        "views": 298698
+      },
+      "url": "https://twitter.com/IncomeSharks/status/1898450757738955242",
+      "processed": false,
+      "addedAt": "2025-12-30T22:09:06.875Z",
+      "expiresAt": "2026-01-06T22:09:06.875Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "2006053806916718821",
+      "text": "RT @hansolar21: Some exchanges are listing spot $LIT without actually holding the underlying tokens.\nBe aware of the risks with these synth…",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "likes": 0,
+        "retweets": 23,
+        "replies": 0,
+        "quotes": 0
+      },
+      "url": "https://twitter.com/AltcoinSherpa/status/2006053806916718821",
+      "processed": false,
+      "addedAt": "2025-12-30T22:09:31.079Z",
+      "expiresAt": "2026-01-06T22:09:31.079Z",
+      "source": "timeline_monitor",
+      "contentCategory": "altcoin-talk"
+    },
+    {
+      "id": "2006046756258111869",
+      "text": "Break this current level and $LIT goes back to the $3 area imo. I still think Lighter will get there eventually (I have a bag) https://t.co/WYRQrvoUvu",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "likes": 44,
+        "retweets": 2,
+        "replies": 19,
+        "quotes": 0,
+        "views": 5953
+      },
+      "url": "https://twitter.com/AltcoinSherpa/status/2006046756258111869",
+      "processed": false,
+      "addedAt": "2025-12-30T22:09:35.390Z",
+      "expiresAt": "2026-01-06T22:09:35.390Z",
+      "source": "timeline_monitor",
+      "contentCategory": "altcoin-talk"
+    },
+    {
+      "id": "2006046889926414725",
+      "text": "wouldn't ape here personally though, this is a bad spot to open a fresh position imo",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "likes": 15,
+        "retweets": 1,
+        "replies": 2,
+        "quotes": 0,
+        "views": 3303
+      },
+      "url": "https://twitter.com/AltcoinSherpa/status/2006046889926414725",
+      "processed": false,
+      "addedAt": "2025-12-30T22:09:37.356Z",
+      "expiresAt": "2026-01-06T22:09:37.356Z",
+      "source": "timeline_monitor",
+      "contentCategory": "price-speculation"
+    },
+    {
+      "id": "2006016857346551948",
+      "text": "I have a bag of $LIT so maybe biased but I would be shocked if $3 was the top and this doesn't eventually break that level.",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "likes": 48,
+        "retweets": 2,
+        "replies": 16,
+        "quotes": 1,
+        "views": 5466
+      },
+      "url": "https://twitter.com/AltcoinSherpa/status/2006016857346551948",
+      "processed": false,
+      "addedAt": "2025-12-30T22:09:39.523Z",
+      "expiresAt": "2026-01-06T22:09:39.523Z",
+      "source": "timeline_monitor",
+      "contentCategory": "price-speculation"
+    },
+    {
+      "id": "2005936652296810989",
+      "text": "Trying to find the 'next hyperliquid' is futile and these future dexes  are all going to trade to $0 in general. Hyperliquid and Lighter are top 2 and you'll decrease in fdv significantly with each step down. Dex #s 3-6 have little value imo and even worse beyond that",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "likes": 102,
+        "retweets": 3,
+        "replies": 40,
+        "quotes": 0,
+        "views": 8804
+      },
+      "url": "https://twitter.com/AltcoinSherpa/status/2005936652296810989",
+      "processed": false,
+      "addedAt": "2025-12-30T22:09:41.368Z",
+      "expiresAt": "2026-01-06T22:09:41.368Z",
+      "source": "timeline_monitor",
+      "contentCategory": "project-discussion"
+    },
+    {
+      "id": "2005909412578259409",
+      "text": "I think Lighter $LIT goes higher in the coming days. I have a bag but my current plan is to probably hold at these prices and ladder in buys down to $2. Still have to wait for USA to wake up and dump. I'd be surprised if this just dies altogether and that's that.",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "likes": 70,
+        "retweets": 3,
+        "replies": 34,
+        "quotes": 1,
+        "views": 8909
+      },
+      "url": "https://twitter.com/AltcoinSherpa/status/2005909412578259409",
+      "processed": false,
+      "addedAt": "2025-12-30T22:09:48.014Z",
+      "expiresAt": "2026-01-06T22:09:48.014Z",
+      "source": "timeline_monitor",
+      "contentCategory": "altcoin-talk"
+    },
+    {
+      "id": "2005908762511458574",
+      "text": "$LIT prob takes the spotlight for next few days in terms of volume, eyes on it and prob the only thing I'm interested in. That and $ZEC",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "likes": 55,
+        "retweets": 0,
+        "replies": 15,
+        "quotes": 0,
+        "views": 11445
+      },
+      "url": "https://twitter.com/AltcoinSherpa/status/2005908762511458574",
+      "processed": false,
+      "addedAt": "2025-12-30T22:09:49.836Z",
+      "expiresAt": "2026-01-06T22:09:49.836Z",
+      "source": "timeline_monitor",
+      "contentCategory": "altcoin-talk"
     }
   ],
   "metadata": {
-    "lastUpdated": "2025-12-30T17:54:44.130Z",
+    "lastUpdated": "2025-12-30T22:11:02.115Z",
     "totalPosts": 20,
     "bySource": {
       "timeline_monitor": 20,
