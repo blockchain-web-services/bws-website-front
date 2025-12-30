@@ -859,7 +859,9 @@
     "2005089453816373706",
     "2004683366227124334",
     "2004655139228189156",
-    "2004654729553674367"
+    "2004654729553674367",
+    "2005722919402721281",
+    "1979664324596773202"
   ],
   "productRotation": {
     "priorityProducts": [
@@ -874,16 +876,16 @@
       "BWS IPFS",
       "NFT.zK"
     ],
-    "priorityIndex": 6,
+    "priorityIndex": 0,
     "otherIndex": 4,
-    "replyCount": 406,
-    "lastProductUsed": "Blockchain Save",
+    "replyCount": 408,
+    "lastProductUsed": "NFT.zK",
     "positioningPhraseIndex": 0
   },
   "metadata": {
-    "lastCheck": "2025-12-30T06:48:17.047Z",
+    "lastCheck": "2025-12-30T18:47:40.702Z",
     "totalReplied": 5,
-    "totalSkipped": 853,
+    "totalSkipped": 855,
     "lastUpdateBy": "kol-system"
   }
 }
