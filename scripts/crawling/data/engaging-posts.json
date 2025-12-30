@@ -227,13 +227,178 @@
       "expiresAt": "2026-01-06T07:26:08.083Z",
       "source": "timeline_monitor",
       "contentCategory": "project-discussion"
+    },
+    {
+      "id": "1452191804707778561",
+      "text": "If you are new (got in 2021), you are probably not going to make it this cycle for a whole variety of reasons. With that said, if I were trying to spin $ up (a small stack) into generational wealth, there are a few things you can do: https://t.co/2yqpr5O76B",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "likes": 2027,
+        "retweets": 390,
+        "replies": 102,
+        "quotes": 37
+      },
+      "url": "https://twitter.com/AltcoinSherpa/status/1452191804707778561",
+      "processed": false,
+      "addedAt": "2025-12-30T12:46:39.129Z",
+      "expiresAt": "2026-01-06T12:46:39.129Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "1513798244467605507",
+      "text": "ALTSEASON IS BACK GUYS!!! LETS GO $BTC https://t.co/C2wppFVDmI",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "likes": 1589,
+        "retweets": 97,
+        "replies": 100,
+        "quotes": 9
+      },
+      "url": "https://twitter.com/AltcoinSherpa/status/1513798244467605507",
+      "processed": false,
+      "addedAt": "2025-12-30T12:46:40.382Z",
+      "expiresAt": "2026-01-06T12:46:40.382Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "1358763044181078017",
+      "text": "ELON TOLD THE PLEBS TO BUY DOGECOIN AND THEN BOUGHT 1.5 BILLION DOLLARS OF BITCOIN \n\nLMFAO\n\nHE FUCKING HATES YOU",
+      "author": {
+        "id": "2259434528",
+        "username": "cobie"
+      },
+      "public_metrics": {
+        "likes": 19049,
+        "retweets": 2288,
+        "replies": 702,
+        "quotes": 371
+      },
+      "url": "https://twitter.com/cobie/status/1358763044181078017",
+      "processed": false,
+      "addedAt": "2025-12-30T12:47:15.443Z",
+      "expiresAt": "2026-01-06T12:47:15.443Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "1976788855006302686",
+      "text": "Probably one of the most severe flushes I’ve ever seen on alts, I didn’t even imagine alts had this much leverage in them. It feels like someone got hit very hard and will see a large body float to the surface soon, reminds me a little of summer 2021. \n\nGood reminder to myself to",
+      "author": {
+        "id": "2259434528",
+        "username": "cobie"
+      },
+      "public_metrics": {
+        "likes": 20450,
+        "retweets": 2647,
+        "replies": 1107,
+        "quotes": 280,
+        "views": 1888611
+      },
+      "url": "https://twitter.com/cobie/status/1976788855006302686",
+      "processed": false,
+      "addedAt": "2025-12-30T12:47:17.937Z",
+      "expiresAt": "2026-01-06T12:47:17.937Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "2005748097117478972",
+      "text": "You might be able to get a better return than holding Bitcoin or Gold next year just by grabbing a position on Polymarket market to get over a 2x return. Bitcoin already the favorite to outperform. https://t.co/G0HX0pZLVe",
+      "author": {
+        "id": "4441279246",
+        "username": "IncomeSharks"
+      },
+      "public_metrics": {
+        "likes": 310,
+        "retweets": 17,
+        "replies": 41,
+        "quotes": 3,
+        "views": 37053
+      },
+      "url": "https://twitter.com/IncomeSharks/status/2005748097117478972",
+      "processed": false,
+      "addedAt": "2025-12-30T12:47:47.327Z",
+      "expiresAt": "2026-01-06T12:47:47.327Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends/investment-opportunities"
+    },
+    {
+      "id": "2005722919402721281",
+      "text": "Total crypto marketcap has been rejected 3 times now every time it reaches just above 3 trillion. https://t.co/Bt4ispyq4T",
+      "author": {
+        "id": "4441279246",
+        "username": "IncomeSharks"
+      },
+      "public_metrics": {
+        "likes": 655,
+        "retweets": 37,
+        "replies": 91,
+        "quotes": 5,
+        "views": 57272
+      },
+      "url": "https://twitter.com/IncomeSharks/status/2005722919402721281",
+      "processed": false,
+      "addedAt": "2025-12-30T12:47:51.362Z",
+      "expiresAt": "2026-01-06T12:47:51.362Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "2005089453816373706",
+      "text": "When Bitcoin goes on wild runs the community only talks about Bitcoin. When Gold and Silver goes up their communities still bring up Bitcoin. Most won't admit it but so many missed out on generational wealth chosing to hoard physical metals over Bitcoin the past decade.",
+      "author": {
+        "id": "4441279246",
+        "username": "IncomeSharks"
+      },
+      "public_metrics": {
+        "likes": 1029,
+        "retweets": 46,
+        "replies": 82,
+        "quotes": 2,
+        "views": 58456
+      },
+      "url": "https://twitter.com/IncomeSharks/status/2005089453816373706",
+      "processed": false,
+      "addedAt": "2025-12-30T12:48:03.466Z",
+      "expiresAt": "2026-01-06T12:48:03.466Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "2004683366227124334",
+      "text": "You'll never see Bitcoin included on a zoomed out chart because it would embarass all other assets.",
+      "author": {
+        "id": "4441279246",
+        "username": "IncomeSharks"
+      },
+      "public_metrics": {
+        "likes": 835,
+        "retweets": 56,
+        "replies": 84,
+        "quotes": 1,
+        "views": 94414
+      },
+      "url": "https://twitter.com/IncomeSharks/status/2004683366227124334",
+      "processed": false,
+      "addedAt": "2025-12-30T12:48:05.609Z",
+      "expiresAt": "2026-01-06T12:48:05.609Z",
+      "source": "timeline_monitor",
+      "contentCategory": "technical-analysis"
     }
   ],
   "metadata": {
-    "lastUpdated": "2025-12-30T07:27:26.694Z",
-    "totalPosts": 14,
+    "lastUpdated": "2025-12-30T12:49:17.762Z",
+    "totalPosts": 19,
     "bySource": {
-      "timeline_monitor": 14,
+      "timeline_monitor": 19,
       "search_discovery": 0
     }
   },
