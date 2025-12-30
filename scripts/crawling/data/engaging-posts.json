@@ -60,13 +60,241 @@
       "expiresAt": "2026-01-04T07:25:17.742Z",
       "source": "timeline_monitor",
       "contentCategory": "market-trends/price-speculation/technical-analysis"
+    },
+    {
+      "id": "1444628130426200067",
+      "text": "Me after #Bitcoin goes to $0 https://t.co/w45UpXROoh",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "likes": 2444,
+        "retweets": 288,
+        "replies": 89,
+        "quotes": 38
+      },
+      "url": "https://twitter.com/AltcoinSherpa/status/1444628130426200067",
+      "processed": false,
+      "addedAt": "2025-12-30T07:24:36.508Z",
+      "expiresAt": "2026-01-06T07:24:36.508Z",
+      "source": "timeline_monitor",
+      "contentCategory": "price-speculation"
+    },
+    {
+      "id": "1953775859602530693",
+      "text": "$ETH : 6th time is a charm https://t.co/GsuiKzIwu1",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "likes": 2482,
+        "retweets": 171,
+        "replies": 162,
+        "quotes": 18,
+        "views": 202695
+      },
+      "url": "https://twitter.com/AltcoinSherpa/status/1953775859602530693",
+      "processed": false,
+      "addedAt": "2025-12-30T07:24:38.581Z",
+      "expiresAt": "2026-01-06T07:24:38.581Z",
+      "source": "timeline_monitor",
+      "contentCategory": "price-speculation"
+    },
+    {
+      "id": "1877748570524127495",
+      "text": "Succeeding in crypto is really just seeing how much pain you can take",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "likes": 2221,
+        "retweets": 238,
+        "replies": 172,
+        "quotes": 38,
+        "views": 183268
+      },
+      "url": "https://twitter.com/AltcoinSherpa/status/1877748570524127495",
+      "processed": false,
+      "addedAt": "2025-12-30T07:24:43.355Z",
+      "expiresAt": "2026-01-06T07:24:43.355Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "1778242360713130435",
+      "text": "@Uniswap The SEC isn't here to protect us. It's to make sure they control us.",
+      "author": {
+        "id": "4441279246",
+        "username": "IncomeSharks"
+      },
+      "public_metrics": {
+        "likes": 1080,
+        "retweets": 121,
+        "replies": 27,
+        "quotes": 1,
+        "views": 37536
+      },
+      "url": "https://twitter.com/IncomeSharks/status/1778242360713130435",
+      "processed": false,
+      "addedAt": "2025-12-30T07:25:10.476Z",
+      "expiresAt": "2026-01-06T07:25:10.476Z",
+      "source": "timeline_monitor",
+      "contentCategory": "project-discussion"
+    },
+    {
+      "id": "1395441817563254784",
+      "text": "How to trade based on your Crypto Twitter feed\n\nBUY - Doomsday posts, FUD, memes, angry comments\nHOLD - Quality charts, good content, actual analysis\nSELL - Car pics, watch pics, wild price predictions",
+      "author": {
+        "id": "4441279246",
+        "username": "IncomeSharks"
+      },
+      "public_metrics": {
+        "likes": 5284,
+        "retweets": 1057,
+        "replies": 384,
+        "quotes": 131
+      },
+      "url": "https://twitter.com/IncomeSharks/status/1395441817563254784",
+      "processed": false,
+      "addedAt": "2025-12-30T07:25:12.452Z",
+      "expiresAt": "2026-01-06T07:25:12.452Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends/price-speculation"
+    },
+    {
+      "id": "1863717475168424230",
+      "text": "Over 43% of the $XRP tokens are still not even circulating. Imagine if you were on Pump Fun and saw the developer owned 43% of supply. There's a reason this space collectively dislikes this token because it's always pumping and dumping. https://t.co/n7wMvyU2nR",
+      "author": {
+        "id": "4441279246",
+        "username": "IncomeSharks"
+      },
+      "public_metrics": {
+        "likes": 5844,
+        "retweets": 386,
+        "replies": 623,
+        "quotes": 81,
+        "views": 858587
+      },
+      "url": "https://twitter.com/IncomeSharks/status/1863717475168424230",
+      "processed": false,
+      "addedAt": "2025-12-30T07:25:14.489Z",
+      "expiresAt": "2026-01-06T07:25:14.489Z",
+      "source": "timeline_monitor",
+      "contentCategory": "altcoin-talk"
+    },
+    {
+      "id": "1855688118416109585",
+      "text": "#Bitcoin - The March prediction is complete! Every line drawn on here was back at the beginning of March and we finally hit $80k. https://t.co/ABFNhJhgiB",
+      "author": {
+        "id": "4441279246",
+        "username": "IncomeSharks"
+      },
+      "public_metrics": {
+        "likes": 4024,
+        "retweets": 869,
+        "replies": 812,
+        "quotes": 21,
+        "views": 3405933
+      },
+      "url": "https://twitter.com/IncomeSharks/status/1855688118416109585",
+      "processed": false,
+      "addedAt": "2025-12-30T07:25:18.139Z",
+      "expiresAt": "2026-01-06T07:25:18.139Z",
+      "source": "timeline_monitor",
+      "contentCategory": "technical-analysis"
+    },
+    {
+      "id": "1871631935078023487",
+      "text": "When cashing out on @coinbase always send profits with $USDC to avoid fees. It's wild that they charge as much as they do converting other stable coins to USD. https://t.co/gRTBLS2AgM",
+      "author": {
+        "id": "4441279246",
+        "username": "IncomeSharks"
+      },
+      "public_metrics": {
+        "likes": 5723,
+        "retweets": 404,
+        "replies": 324,
+        "quotes": 31,
+        "views": 960079
+      },
+      "url": "https://twitter.com/IncomeSharks/status/1871631935078023487",
+      "processed": false,
+      "addedAt": "2025-12-30T07:25:19.141Z",
+      "expiresAt": "2026-01-06T07:25:19.141Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "1509583498893484032",
+      "text": "Time to unfollow large verified accounts. All were screaming to buy #Bitcoin at another local top. And all 3 are verified... They speak in absolutes leading the sheep to the slaughterhouse. They can't trade, they only know how to farm for engagement and use emojis.🚀 https://t.co/NVkjTjWfGv",
+      "author": {
+        "id": "4441279246",
+        "username": "IncomeSharks"
+      },
+      "public_metrics": {
+        "likes": 4671,
+        "retweets": 487,
+        "replies": 456,
+        "quotes": 69
+      },
+      "url": "https://twitter.com/IncomeSharks/status/1509583498893484032",
+      "processed": false,
+      "addedAt": "2025-12-30T07:25:27.458Z",
+      "expiresAt": "2026-01-06T07:25:27.458Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "1898450757738955242",
+      "text": "It's not that people aren't bullish enough, most have nothing left to invest.",
+      "author": {
+        "id": "4441279246",
+        "username": "IncomeSharks"
+      },
+      "public_metrics": {
+        "likes": 5198,
+        "retweets": 264,
+        "replies": 556,
+        "quotes": 45,
+        "views": 298698
+      },
+      "url": "https://twitter.com/IncomeSharks/status/1898450757738955242",
+      "processed": false,
+      "addedAt": "2025-12-30T07:25:29.476Z",
+      "expiresAt": "2026-01-06T07:25:29.476Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "1980579379244855384",
+      "text": "when i started building echo 2 years ago, i knew it had 95% chance of failing. to be honest, i couldnt really imagine any other outcome, but i thought at least it may be a noble failure worth attempting.\n\ni certainly didn't think echo would be sold to coinbase, but, here we are:",
+      "author": {
+        "id": "2259434528",
+        "username": "cobie"
+      },
+      "public_metrics": {
+        "likes": 20896,
+        "retweets": 1353,
+        "replies": 5182,
+        "quotes": 616,
+        "views": 2791757
+      },
+      "url": "https://twitter.com/cobie/status/1980579379244855384",
+      "processed": false,
+      "addedAt": "2025-12-30T07:26:08.083Z",
+      "expiresAt": "2026-01-06T07:26:08.083Z",
+      "source": "timeline_monitor",
+      "contentCategory": "project-discussion"
     }
   ],
   "metadata": {
-    "lastUpdated": "2025-12-29T22:10:46.556Z",
-    "totalPosts": 15,
+    "lastUpdated": "2025-12-30T07:27:26.694Z",
+    "totalPosts": 14,
     "bySource": {
-      "timeline_monitor": 15,
+      "timeline_monitor": 14,
       "search_discovery": 0
     }
   },
