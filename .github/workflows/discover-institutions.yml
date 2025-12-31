@@ -11,6 +11,10 @@ permissions:
 env:
   NODE_VERSION: "20"
 
+concurrency:
+  group: data-commit-${{ github.ref }}
+  cancel-in-progress: false
+
 jobs:
   discover:
     runs-on: ubuntu-latest
@@ -74,6 +78,10 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          # Pull latest changes to avoid push conflicts
+          git pull origin ${{ github.ref_name }} --rebase
+
           git add scripts/crawling/data/institution-accounts.json
           git commit -m "Update institution accounts database
 
