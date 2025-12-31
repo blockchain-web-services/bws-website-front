@@ -35,6 +35,9 @@ jobs:
             npm install
           fi
 
+      - name: Install Playwright browsers
+        run: npx playwright install chromium --with-deps
+
       - name: Monitor topic trends
         id: monitor
         env:
