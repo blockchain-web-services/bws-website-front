@@ -3,124 +3,130 @@
     "Blockchain Badges": {
       "queries": [
         {
-          "name": "universities-offering-credentials",
-          "query": "(from:Harvard OR from:Stanford OR from:MIT OR from:Cornell OR from:DukeU OR from:OhioState OR from:ASU OR from:BU_Tweets OR from:UNC) (certificate OR certification OR program)",
-          "description": "Direct monitoring of top universities posting about certificates",
+          "name": "user-institution-certificates",
+          "query": "(Harvard OR Stanford OR MIT OR Coursera OR Udemy OR bootcamp OR edX) (certificate OR certification OR certified OR credential) min_faves:3 lang:en -is:retweet",
+          "description": "Users celebrating certificates from major institutions",
           "priority": "high",
-          "category": "universities",
-          "accountType": "institution"
+          "category": "user-achievements",
+          "accountType": "mixed",
+          "rationale": "Users tweet about earning certificates - prime engagement moment"
         },
         {
-          "name": "elearning-platforms-certifications",
-          "query": "(from:coursera OR from:udemy OR from:edXOnline OR from:udacity OR from:LinkedInLearn) (certificate OR course OR learn)",
-          "description": "Major e-learning platforms posting about certificates",
+          "name": "course-completion-celebrations",
+          "query": "(completed OR finished OR earned OR graduated) (bootcamp OR online course OR certification program) min_faves:3 lang:en -is:retweet",
+          "description": "Users announcing course/bootcamp completions",
           "priority": "high",
-          "category": "elearning",
-          "accountType": "institution"
+          "category": "user-achievements",
+          "accountType": "mixed",
+          "rationale": "Completion announcements = high engagement opportunity"
         },
         {
-          "name": "bootcamp-providers",
-          "query": "(from:GA OR from:FlatironSchool OR from:FullstackAcad OR from:lewagonparis OR from:ironhack OR from:springboard) (graduate OR certificate OR completion OR program)",
-          "description": "Major bootcamps posting about student achievements",
-          "priority": "high",
-          "category": "bootcamps",
-          "accountType": "institution"
-        },
-        {
-          "name": "professional-certifications",
-          "query": "(certificate OR certification OR certified) (issued OR earned OR completed) min_faves:5 lang:en -is:retweet",
-          "description": "People posting about earning certificates",
-          "priority": "medium",
-          "category": "user-generated",
-          "accountType": "mixed"
-        },
-        {
-          "name": "digital-credentials-discussion",
-          "query": "(digital credential OR digital badge OR digital certificate) min_faves:3 lang:en -is:retweet",
-          "description": "Discussions about digital credentials",
-          "priority": "high",
-          "category": "discussion",
-          "accountType": "mixed"
-        },
-        {
-          "name": "european-universities",
-          "query": "(from:OpenUniversity OR from:UniofOxford OR from:EdinburghUni OR from:UCL OR from:HECParis) (certificate OR course OR program OR student)",
-          "description": "Top European universities",
-          "priority": "high",
-          "category": "universities",
-          "accountType": "institution"
-        },
-        {
-          "name": "online-learning-achievements",
-          "query": "(completed OR finished OR graduated) (online course OR bootcamp) min_faves:3 lang:en -is:retweet",
-          "description": "People celebrating online learning completions",
-          "priority": "medium",
-          "category": "user-generated",
-          "accountType": "mixed"
-        },
-        {
-          "name": "credential-fraud-news",
-          "query": "(fake degree OR diploma mill OR credential fraud OR verification) min_faves:10 lang:en -is:retweet",
-          "description": "News about credential fraud (pain point)",
+          "name": "credential-fraud-discussions",
+          "query": "(fake degree OR diploma mill OR credential fraud OR fake certificate OR fraudulent diploma) min_faves:5 lang:en -is:retweet",
+          "description": "Discussions about credential fraud - core pain point",
           "priority": "high",
           "category": "pain-point",
-          "accountType": "mixed"
+          "accountType": "mixed",
+          "rationale": "Direct pain point Blockchain Badges solves"
+        },
+        {
+          "name": "credential-verification-needs",
+          "query": "(verify OR verification OR authenticate OR validation) (degree OR diploma OR certificate OR credential) min_faves:3 lang:en -is:retweet",
+          "description": "People seeking credential verification solutions",
+          "priority": "high",
+          "category": "pain-point",
+          "accountType": "mixed",
+          "rationale": "Active verification needs = qualified prospects"
+        },
+        {
+          "name": "hr-verification-pain",
+          "query": "(HR OR hiring OR recruiter OR recruitment) (verify OR check OR validation) (degree OR credential OR certificate) lang:en -is:retweet",
+          "description": "HR/recruiters discussing credential verification",
+          "priority": "high",
+          "category": "pain-point",
+          "accountType": "mixed",
+          "rationale": "Decision makers with direct pain point"
         },
         {
           "name": "blockchain-education",
-          "query": "(blockchain OR web3) (education OR certificate OR credential OR learning) min_faves:5 lang:en -is:retweet",
+          "query": "(blockchain OR web3) (education OR credential OR certificate OR learning OR university) min_faves:5 lang:en -is:retweet",
           "description": "Blockchain + education discussions",
           "priority": "high",
-          "category": "solution",
-          "accountType": "mixed"
+          "category": "solution-space",
+          "accountType": "mixed",
+          "rationale": "Tech-savvy audience interested in blockchain credentials"
         },
         {
-          "name": "micro-credentials",
-          "query": "(micro-credential OR microcredential OR nanodegree OR digital badge) min_faves:3 lang:en -is:retweet",
-          "description": "Micro-credentials and digital badges",
+          "name": "digital-credentials-tech",
+          "query": "(digital credential OR digital badge OR micro-credential OR verifiable credential OR open badges) min_faves:3 lang:en -is:retweet",
+          "description": "Digital credential technology discussions",
           "priority": "high",
-          "category": "solution",
-          "accountType": "mixed"
+          "category": "solution-space",
+          "accountType": "mixed",
+          "rationale": "Industry discussions about our solution space"
         },
         {
-          "name": "university-partnerships",
-          "query": "(university partnership OR academic partnership) (certificate OR credential OR program) min_faves:5 lang:en -is:retweet",
-          "description": "Universities forming partnerships for credentials",
+          "name": "starting-programs",
+          "query": "(enrolled OR enrolling OR starting OR joined) (university OR bootcamp OR certification program OR online course) lang:en -is:retweet",
+          "description": "Users beginning educational programs",
           "priority": "medium",
-          "category": "universities",
-          "accountType": "mixed"
+          "category": "user-journey",
+          "accountType": "mixed",
+          "rationale": "Awareness stage - introduce verification early"
         },
         {
-          "name": "education-technology",
-          "query": "(edtech OR edutech OR education technology) (certificate OR credential OR verification) min_faves:5 lang:en -is:retweet",
-          "description": "EdTech companies discussing credentials",
-          "priority": "high",
-          "category": "elearning",
-          "accountType": "mixed"
+          "name": "educational-achievements",
+          "query": "(proud OR excited OR finally) (certificate OR certification OR diploma OR degree OR graduated) min_faves:3 lang:en -is:retweet",
+          "description": "Emotional achievement posts",
+          "priority": "medium",
+          "category": "user-achievements",
+          "accountType": "mixed",
+          "rationale": "High emotion = high engagement potential"
         },
         {
           "name": "professional-development",
-          "query": "(professional development OR upskilling OR reskilling) certificate min_faves:3 lang:en -is:retweet",
-          "description": "Professional development with certificates",
+          "query": "(professional development OR upskilling OR reskilling OR career change) (certificate OR certification OR course) min_faves:3 lang:en -is:retweet",
+          "description": "Professional development discussions",
           "priority": "medium",
-          "category": "professional-training",
-          "accountType": "institution"
+          "category": "user-journey",
+          "accountType": "mixed",
+          "rationale": "Career-focused audience values credentials"
         },
         {
-          "name": "continuing-education-providers",
-          "query": "(\"continuing education\" OR \"professional development\" OR CEU OR CPE) (certificate OR credential OR certificate) (university OR college OR provider) lang:en -is:retweet",
-          "description": "Continuing education providers",
+          "name": "online-learning-platforms",
+          "query": "(Coursera OR Udemy OR edX OR Udacity OR LinkedIn Learning OR Skillshare OR Pluralsight) (completed OR certificate OR course) min_faves:3 lang:en -is:retweet",
+          "description": "Platform-specific completions",
           "priority": "medium",
-          "category": "professional-training",
-          "accountType": "institution"
+          "category": "user-achievements",
+          "accountType": "mixed",
+          "rationale": "Platform mentions = verifiable source"
         },
         {
-          "name": "badge-platforms",
-          "query": "(Credly OR Badgr OR \"Open Badges\" OR Accredible) (digital badge OR credential OR certificate OR verification)",
-          "description": "Digital badge platform providers",
+          "name": "university-mentions-achievements",
+          "query": "(Harvard OR Stanford OR MIT OR Yale OR Oxford OR Cambridge) (certificate OR program OR course OR graduated) min_faves:3 lang:en -is:retweet",
+          "description": "Prestigious university mentions with achievements",
           "priority": "high",
-          "category": "certification-bodies",
-          "accountType": "institution"
+          "category": "user-achievements",
+          "accountType": "mixed",
+          "rationale": "High-value credentials worth verifying"
+        },
+        {
+          "name": "tech-bootcamp-graduates",
+          "query": "(coding bootcamp OR data science bootcamp OR UX bootcamp OR cybersecurity bootcamp) (graduate OR completed OR finished OR certificate) min_faves:3 lang:en -is:retweet",
+          "description": "Tech bootcamp completion announcements",
+          "priority": "high",
+          "category": "user-achievements",
+          "accountType": "mixed",
+          "rationale": "Tech industry values verifiable credentials"
+        },
+        {
+          "name": "employer-credential-concerns",
+          "query": "(employer OR company OR organization) (verify OR validation OR authenticate) (credential OR certificate OR degree) lang:en -is:retweet",
+          "description": "Employers discussing credential verification",
+          "priority": "high",
+          "category": "pain-point",
+          "accountType": "mixed",
+          "rationale": "B2B opportunity - institutions need verification tools"
         }
       ],
       "accountClassification": {
@@ -164,7 +170,9 @@
           "micro-credentials": 9,
           "issue certificates": 8,
           "award diplomas": 7,
-          "verify degrees": 8
+          "verify degrees": 8,
+          "tamper-proof": 12,
+          "immutable": 10
         },
         "descriptionKeywords": {
           "university": 5,
@@ -175,13 +183,18 @@
           "training": 4,
           "certification": 6,
           "accredited": 5,
-          "education": 3
+          "education": 3,
+          "HR": 6,
+          "recruiter": 6,
+          "hiring": 5
         },
         "tweetPatterns": {
           "credential_issuance": 8,
           "verification_problems": 10,
           "fraud_concerns": 10,
-          "digital_transformation": 7
+          "digital_transformation": 7,
+          "achievement_celebration": 6,
+          "program_completion": 7
         }
       }
     }
@@ -193,7 +206,7 @@
     "rotationStrategy": "category-aware",
     "categoryDistribution": {
       "minPerCategory": 1,
-      "categories": ["universities", "elearning", "bootcamps", "professional-training", "certification-bodies"]
+      "categories": ["user-achievements", "pain-point", "solution-space", "user-journey"]
     },
     "priorityWeights": {
       "high": 3,
@@ -201,8 +214,8 @@
       "low": 1
     },
     "accountFilters": {
-      "minFollowers": 100,
-      "minTweetCount": 50,
+      "minFollowers": 50,
+      "minTweetCount": 20,
       "excludeSuspended": true,
       "excludePrivate": true,
       "languageCodes": ["en"]
@@ -212,6 +225,6 @@
       "matchByUsername": true,
       "matchByName": false
     },
-    "description": "Discovers institutional accounts (universities, e-learning platforms, bootcamps) that are potential customers for BWS products. Uses keyword searches to find organizations discussing credentials, certificates, and educational programs."
+    "description": "Discovers USERS discussing credentials, certificates, and educational achievements. Monitors pain points (credential fraud, verification needs) and solution-space discussions (blockchain + education). Strategy pivoted from institution-monitoring (0 results) to user-conversation monitoring (40-90 tweets/day expected)."
   }
 }
