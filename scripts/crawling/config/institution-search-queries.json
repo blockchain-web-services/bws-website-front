@@ -13,7 +13,7 @@
         },
         {
           "name": "course-completion-celebrations",
-          "query": "(completed OR finished OR earned OR graduated) (bootcamp OR online course OR certification program) min_faves:3 lang:en -is:retweet",
+          "query": "(completed OR finished OR earned OR graduated) (bootcamp OR online course OR certification program) lang:en -is:retweet",
           "description": "Users announcing course/bootcamp completions",
           "priority": "high",
           "category": "user-achievements",
@@ -22,7 +22,7 @@
         },
         {
           "name": "credential-fraud-discussions",
-          "query": "(fake degree OR diploma mill OR credential fraud OR fake certificate OR fraudulent diploma) min_faves:5 lang:en -is:retweet",
+          "query": "(fake degree OR diploma mill OR credential fraud OR fake certificate OR fraudulent diploma) min_faves:2 lang:en -is:retweet",
           "description": "Discussions about credential fraud - core pain point",
           "priority": "high",
           "category": "pain-point",
@@ -200,7 +200,7 @@
     }
   },
   "settings": {
-    "maxAccountsPerQuery": 50,
+    "maxAccountsPerQuery": 30,
     "maxQueriesPerRun": 5,
     "maxAccountsPerProduct": 200,
     "rotationStrategy": "category-aware",
@@ -214,8 +214,8 @@
       "low": 1
     },
     "accountFilters": {
-      "minFollowers": 50,
-      "minTweetCount": 20,
+      "minFollowers": 20,
+      "minTweetCount": 10,
       "excludeSuspended": true,
       "excludePrivate": true,
       "languageCodes": ["en"]
