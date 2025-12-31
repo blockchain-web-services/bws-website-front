@@ -112,7 +112,21 @@
     },
     "Blockchain Badges": {
       "docsPath": "/marketplace-solutions/bws.blockchain.badges",
+      "productUrl": "https://blockchainbadges.com",
+      "salesMessaging": {
+        "free": true,
+        "stepsToCreate": 2,
+        "callToAction": "Create your first badge free at blockchainbadges.com - just 2 steps",
+        "valueProps": [
+          "100% free to create badges",
+          "Only 2 steps to issue verified credentials",
+          "No credit card required",
+          "Instant blockchain verification"
+        ]
+      },
       "specificFeatures": [
+        "FREE badge creation - create unlimited verifiable credentials at zero cost",
+        "2-step process - issue blockchain credentials in under 60 seconds",
         "Issue verifiable digital credentials on blockchain",
         "Immutable proof of achievements and certifications",
         "Shareable across platforms with verification links",
@@ -126,14 +140,17 @@
         "IPFS storage for badge metadata and images",
         "Public verification URLs for instant authenticity checks",
         "API and UI access for issuing/managing badges",
-        "Supports various credential types (certificates, licenses, memberships)"
+        "Supports various credential types (certificates, licenses, memberships)",
+        "Simple 2-step workflow: design badge → issue to recipients",
+        "No blockchain expertise required"
       ],
       "uniqueAngles": [
         "Combat credential fraud with immutable blockchain proof",
-        "Universities and companies issue tamper-proof certificates",
+        "Universities and companies issue tamper-proof certificates - 100% FREE",
         "Recipients control and share their verified achievements",
         "Employers instantly verify candidate credentials",
-        "Perfect for professional certifications, course completions, skill endorsements"
+        "Perfect for professional certifications, course completions, skill endorsements",
+        "Get started in 2 steps at blockchainbadges.com - no signup fee, no hidden costs"
       ]
     },
     "ESG Credits": {
