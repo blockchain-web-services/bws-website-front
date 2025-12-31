@@ -133,42 +133,125 @@ function tweetExistsInQueue(tweetId, queue) {
 }
 
 /**
- * Select queries for a product using weighted round-robin
+ * Select one query from an array using weighted random selection
  */
-function selectQueriesForProduct(productConfig, settings) {
-  const { queries } = productConfig;
-  const { maxQueriesPerRun, priorityWeights } = settings;
+function selectWeightedRandom(queries) {
+  if (queries.length === 0) return null;
 
-  // Sort by priority weight
+  // Calculate total weight
+  const totalWeight = queries.reduce((sum, q) => sum + (q.weight || 1), 0);
+
+  // Random selection weighted by priority
+  let random = Math.random() * totalWeight;
+
+  for (let i = 0; i < queries.length; i++) {
+    random -= (queries[i].weight || 1);
+    if (random <= 0) {
+      return queries[i];
+    }
+  }
+
+  // Fallback: return last query
+  return queries[queries.length - 1];
+}
+
+/**
+ * Select queries using weighted random (original algorithm, used as fallback)
+ */
+function selectQueriesWeightedRandom(queries, maxQueries, priorityWeights) {
   const weightedQueries = queries.map(q => ({
     ...q,
     weight: priorityWeights[q.priority] || 1
   }));
 
-  // Weighted random selection
   const selected = [];
   const available = [...weightedQueries];
 
-  for (let i = 0; i < Math.min(maxQueriesPerRun, queries.length); i++) {
+  for (let i = 0; i < Math.min(maxQueries, queries.length); i++) {
     if (available.length === 0) break;
 
-    // Calculate total weight
-    const totalWeight = available.reduce((sum, q) => sum + q.weight, 0);
+    const selectedQuery = selectWeightedRandom(available);
+    if (selectedQuery) {
+      selected.push(selectedQuery);
+      const index = available.findIndex(q => q.name === selectedQuery.name);
+      if (index !== -1) available.splice(index, 1);
+    }
+  }
 
-    // Random selection weighted by priority
-    let random = Math.random() * totalWeight;
-    let selectedIndex = 0;
+  return selected;
+}
 
-    for (let j = 0; j < available.length; j++) {
-      random -= available[j].weight;
-      if (random <= 0) {
-        selectedIndex = j;
+/**
+ * Select queries for a product using category-aware distribution
+ * Ensures diverse query selection across categories (general, institutions, pain-points, use-cases)
+ */
+function selectQueriesForProduct(productConfig, settings) {
+  const { queries } = productConfig;
+  const { maxQueriesPerRun, priorityWeights, rotationStrategy, categoryDistribution } = settings;
+
+  // If category-aware strategy is not enabled or no categories defined, use weighted random
+  if (rotationStrategy !== 'category-aware' || !categoryDistribution?.categories) {
+    return selectQueriesWeightedRandom(queries, maxQueriesPerRun, priorityWeights);
+  }
+
+  // Category-aware selection
+  const categories = categoryDistribution.categories;
+  const minPerCategory = categoryDistribution.minPerCategory || 1;
+
+  // Group queries by category
+  const queriesByCategory = {};
+  queries.forEach(q => {
+    const category = q.category || 'general';
+    if (!queriesByCategory[category]) {
+      queriesByCategory[category] = [];
+    }
+    queriesByCategory[category].push({
+      ...q,
+      weight: priorityWeights[q.priority] || 1
+    });
+  });
+
+  const selected = [];
+  const categoriesUsed = new Set();
+
+  // Phase 1: Ensure minimum queries per category
+  for (const category of categories) {
+    if (!queriesByCategory[category] || queriesByCategory[category].length === 0) {
+      continue;
+    }
+
+    // Select minPerCategory queries from this category
+    const categoryQueries = [...queriesByCategory[category]];
+    for (let i = 0; i < Math.min(minPerCategory, categoryQueries.length); i++) {
+      if (selected.length >= maxQueriesPerRun) break;
+
+      const selectedQuery = selectWeightedRandom(categoryQueries);
+      if (selectedQuery) {
+        selected.push(selectedQuery);
+        categoriesUsed.add(category);
+        // Remove from available pool
+        const index = categoryQueries.findIndex(q => q.name === selectedQuery.name);
+        if (index !== -1) categoryQueries.splice(index, 1);
+      }
+    }
+  }
+
+  // Phase 2: Fill remaining slots with weighted random from all categories
+  if (selected.length < maxQueriesPerRun) {
+    const remaining = queries
+      .map(q => ({ ...q, weight: priorityWeights[q.priority] || 1 }))
+      .filter(q => !selected.find(s => s.name === q.name));
+
+    while (selected.length < maxQueriesPerRun && remaining.length > 0) {
+      const selectedQuery = selectWeightedRandom(remaining);
+      if (selectedQuery) {
+        selected.push(selectedQuery);
+        const index = remaining.findIndex(q => q.name === selectedQuery.name);
+        if (index !== -1) remaining.splice(index, 1);
+      } else {
         break;
       }
     }
-
-    selected.push(available[selectedIndex]);
-    available.splice(selectedIndex, 1);
   }
 
   return selected;
