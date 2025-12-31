@@ -1,0 +1,3019 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>X Bot - XBot.ninja</title>
+    <link rel="stylesheet" href="styles.css?v=17643209">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Flatpickr Date Picker -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <!-- Local Development Configuration -->
+    <script>
+        // Detect localhost environment
+        if (window.location.protocol === 'file:' ||
+            window.location.hostname === 'localhost' ||
+            window.location.hostname === '127.0.0.1') {
+
+            // Check for LocalStack mode preference
+            const savedMode = localStorage.getItem('xbot_api_mode');
+            const urlParams = new URLSearchParams(window.location.search);
+            const urlMode = urlParams.get('mode');
+
+            if (savedMode === 'localstack' || urlMode === 'localstack') {
+                // LocalStack mode: don't set staging URL, let api-client detect proxy
+                window.LOCALSTACK_MODE = true;
+                console.log('LocalStack mode enabled - API requests will use local proxy');
+            } else {
+                // Default: use staging API directly (no proxy needed)
+                window.STAGING_API_URL = 'https://24qj5mtwhghhcnbb5plhlirjya0djkwd.lambda-url.us-east-1.on.aws/';
+                console.log('Local development mode: Using staging API URL:', window.STAGING_API_URL);
+            }
+        }
+    </script>
+<style>
+    .filter-badge-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex: 1;
+        min-width: 0;
+    }
+    
+    .chat-filter-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.5rem 1rem;
+        background: linear-gradient(135deg, rgba(225, 81, 175, 0.15) 0%, rgba(225, 81, 175, 0.08) 100%);
+        border: 2px solid transparent;
+        border-radius: 20px;
+        font-size: 0.875rem;
+        background-clip: padding-box;
+        position: relative;
+    }
+
+    .chat-filter-badge::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border-radius: 20px;
+        padding: 2px;
+        background: var(--primary-gradient);
+        -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+        pointer-events: none;
+    }
+
+    .filter-label {
+        color: var(--text-secondary);
+        font-weight: 500;
+    }
+
+    .filter-value {
+        color: var(--palette-pink);
+        font-weight: 600;
+    }
+
+    .filter-clear {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 20px;
+        height: 20px;
+        background: var(--primary-color);
+        color: white;
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: all 0.2s ease;
+    }
+
+    .filter-clear:hover {
+        background: var(--primary-dark);
+        transform: scale(1.1);
+    }
+
+    .filter-clear i {
+        font-size: 0.625rem;
+    }
+
+    @media (max-width: 768px) {
+        .chat-filter-badge {
+            padding: 0.375rem 0.75rem;
+            font-size: 0.8125rem;
+            margin-right: 0.5rem;
+        }
+    }
+</style><style>
+    @keyframes slideInFromRight {
+        from {
+            transform: translateX(100%);
+            opacity: 0;
+        }
+        to {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+    
+    @keyframes slideOutToRight {
+        from {
+            transform: translateX(0);
+            opacity: 1;
+        }
+        to {
+            transform: translateX(100%);
+            opacity: 0;
+        }
+    }
+    
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+    
+    @keyframes slideUp {
+        from {
+            transform: translateY(30px);
+            opacity: 0;
+        }
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+    
+    .empty-state {
+        text-align: center;
+        padding: 3rem;
+        color: var(--text-secondary);
+    }
+    
+    .empty-state p {
+        font-size: 1rem;
+        margin: 0;
+    }
+</style></head>
+
+<body>
+    <!-- Header Section -->
+    <header class="header">
+                <div class="container">
+                    <div class="nav-brand">
+                        <h1 class="brand-title">X Bot</h1>
+                        <p class="brand-subtitle">Analytics you can trust</p>
+                    </div>
+                    <div class="filter-badge-wrapper"></div>
+                    <div class="nav-actions">
+                        
+                            <div class="promo-message">
+                                <span class="promo-text">
+                                    Need to track your KOLs?
+                                </span>
+                            </div>
+                        
+                        
+                            <a href="install.html" class="btn btn-primary">
+                                <i class="fab fa-telegram"></i>
+                                <span>Install X Bot</span>
+                            </a>
+                        
+                    </div>
+                </div>
+            </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <div class="container">
+            <!-- Hero Section -->
+            <section class="hero" style="display: block;">
+                <div class="hero-content">
+                    <h1 class="hero-headline">
+                        <span class="hero-highlight" id="heroTitle">Evaluate Crypto Projects</span>
+                    </h1>
+                    <p class="hero-description" id="heroDescription">Analyze new crypto projects' traction on X with real community engagement, sentiment, and social metrics to gauge authentic growth.</p>
+                </div>
+            </section>
+
+            <!-- Trending Cashtags Carousel -->
+            <section class="trending-cashtags">
+                <div class="cashtags-carousel">
+                    <!-- Loading skeleton -->
+                    <div class="cashtags-loading" id="cashtagsCarouselLoading" style="display: none;">
+                        <div class="cashtag-skeleton" style="background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.1) 50%, rgba(255, 255, 255, 0.05) 100%);"></div>
+                        <div class="cashtag-skeleton" style="background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.1) 50%, rgba(255, 255, 255, 0.05) 100%);"></div>
+                        <div class="cashtag-skeleton" style="background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.1) 50%, rgba(255, 255, 255, 0.05) 100%);"></div>
+                        <div class="cashtag-skeleton" style="background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.1) 50%, rgba(255, 255, 255, 0.05) 100%);"></div>
+                        <div class="cashtag-skeleton" style="background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.1) 50%, rgba(255, 255, 255, 0.05) 100%);"></div>
+                    </div>
+                    <div class="cashtags-scroll-wrapper" id="cashtagsCarousel" style="display: block;">
+                        <div class="cashtags-scroll">
+                <a href="posts.html?type=cashtag&amp;value=GURU&amp;period=last30d" class="cashtag-card">
+                    <h3 class="cashtag-name">$GURU</h3>
+                    <div class="cashtag-score">
+                        <span class="cashtag-score-number">158</span>
+                        <span class="cashtag-score-label">Score</span>
+                    </div>
+                </a>
+            
+                <a href="posts.html?type=cashtag&amp;value=BWS&amp;period=last30d" class="cashtag-card">
+                    <h3 class="cashtag-name">$BWS</h3>
+                    <div class="cashtag-score">
+                        <span class="cashtag-score-number">129</span>
+                        <span class="cashtag-score-label">Score</span>
+                    </div>
+                </a>
+            
+                <a href="posts.html?type=cashtag&amp;value=QS&amp;period=last30d" class="cashtag-card">
+                    <h3 class="cashtag-name">$QS</h3>
+                    <div class="cashtag-score">
+                        <span class="cashtag-score-number">87</span>
+                        <span class="cashtag-score-label">Score</span>
+                    </div>
+                </a>
+            
+                <a href="posts.html?type=cashtag&amp;value=DAFTPUNK&amp;period=last30d" class="cashtag-card">
+                    <h3 class="cashtag-name">$DAFTPUNK</h3>
+                    <div class="cashtag-score">
+                        <span class="cashtag-score-number">71</span>
+                        <span class="cashtag-score-label">Score</span>
+                    </div>
+                </a>
+            
+                <a href="posts.html?type=cashtag&amp;value=GURU&amp;period=last30d" class="cashtag-card">
+                    <h3 class="cashtag-name">$GURU</h3>
+                    <div class="cashtag-score">
+                        <span class="cashtag-score-number">158</span>
+                        <span class="cashtag-score-label">Score</span>
+                    </div>
+                </a>
+            
+                <a href="posts.html?type=cashtag&amp;value=BWS&amp;period=last30d" class="cashtag-card">
+                    <h3 class="cashtag-name">$BWS</h3>
+                    <div class="cashtag-score">
+                        <span class="cashtag-score-number">129</span>
+                        <span class="cashtag-score-label">Score</span>
+                    </div>
+                </a>
+            
+                <a href="posts.html?type=cashtag&amp;value=QS&amp;period=last30d" class="cashtag-card">
+                    <h3 class="cashtag-name">$QS</h3>
+                    <div class="cashtag-score">
+                        <span class="cashtag-score-number">87</span>
+                        <span class="cashtag-score-label">Score</span>
+                    </div>
+                </a>
+            
+                <a href="posts.html?type=cashtag&amp;value=DAFTPUNK&amp;period=last30d" class="cashtag-card">
+                    <h3 class="cashtag-name">$DAFTPUNK</h3>
+                    <div class="cashtag-score">
+                        <span class="cashtag-score-number">71</span>
+                        <span class="cashtag-score-label">Score</span>
+                    </div>
+                </a>
+            </div>
+                    </div>
+                    <a href="https://xbot.ninja/install.html#other-use-cases" class="add-project-link">
+                        <i class="fas fa-plus-circle"></i> Add Your Project
+                    </a>
+                </div>
+            </section>
+
+            <!-- Leaderboards Section -->
+            <section class="leaderboards-wrapper">
+                <div class="leaderboards-header">
+                    <h2 class="section-title">Performance Leaderboards</h2>
+                    <p class="section-subtitle">Top performing accounts, hashtags, cashtags, and mentions</p>
+                    <div class="period-filter-links">
+                        <button class="period-link" data-period="last7d">Last 7 Days</button>
+                        <button class="period-link active" data-period="last30d">Last 30 Days</button>
+                        <button class="period-link" data-period="last90d">Last 90 Days</button>
+                        <!-- TODO: Custom Range for Users/Accounts - Backend Implementation Required
+                             Currently custom ranges only work for tags (cashtags, mentions, hashtags).
+                             To enable for users/accounts, need to:
+                             1. Update parseTimeRange() in src/utils/database/leaderboardCache.mjs to support "YYYY-MM-DD:YYYY-MM-DD" format
+                             2. Update getOrCalculateChatLeaderboard() to handle custom date ranges
+                             3. Consider adding on-demand calculation for global custom ranges (not just cached periods)
+                             4. Uncomment the button and date picker below
+                        -->
+                        <!-- <button class="period-link" data-period="custom">Custom Range</button> -->
+                    </div>
+                    <!-- Hidden date picker for custom range -->
+                    <!-- TODO: Uncomment when custom range backend support is added for users/accounts -->
+                    <!-- <div id="customDatePicker" style="display: none;">
+                        <input type="date" id="startDate" class="date-input">
+                        <input type="date" id="endDate" class="date-input">
+                        <button class="apply-range-btn" onclick="window.leaderboard && window.leaderboard.applyCustomRange()">Apply</button>
+                    </div> -->
+                </div>
+
+                <div class="leaderboards-section">
+                <div class="tabs">
+                    <button class="tab-btn active" data-tab="projects" id="projectsTabBtn" style="display: none;">Top Projects</button>
+                    <button class="tab-btn active" data-tab="users">Top Accounts</button>
+                    <button class="tab-btn" data-tab="cashtags">Cashtags</button>
+                    <button class="tab-btn" data-tab="mentions">Mentions</button>
+                    <button class="tab-btn" data-tab="hashtags">Hashtags</button>
+                </div>
+
+                <!-- Projects Leaderboard -->
+                <div class="tab-content" id="projects-tab">
+                    <div class="leaderboard-card">
+                        <div class="card-header">
+                            <h3 class="card-title">
+                                Top Projects by Composite Score<sup><i class="fas fa-info-circle score-info-icon" id="projectScoreInfoIcon" title="How is the project score calculated?"></i></sup>
+                            </h3>
+                        </div>
+                        <div class="leaderboard-content">
+                            <div class="loading-state" id="projectsLeaderboardLoading">
+                                <i class="fas fa-spinner fa-spin"></i>
+                                <p>Loading projects...</p>
+                            </div>
+                            <div class="leaderboard-list hidden" id="projectsLeaderboardList"></div>
+                            <div class="error-state hidden" id="projectsLeaderboardError">
+                                <p>Failed to load projects data. Please try again.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Accounts Leaderboard -->
+                <div class="tab-content active" id="users-tab">
+                    <div class="leaderboard-card">
+                        <div class="card-header">
+                            <h3 class="card-title">
+                                Top X Accounts by Performanc<span class="performance-e">e<sup><i class="fas fa-info-circle score-info-icon" id="scoreInfoIcon" title="How is the performance score calculated?"></i></sup></span>
+                            </h3>
+                        </div>
+                        <div class="leaderboard-content">
+                            <div class="loading-state hidden" id="usersLoading">
+                                <i class="fas fa-spinner fa-spin"></i>
+                                <p>Loading accounts...</p>
+                            </div>
+                            <div class="leaderboard-list fade-in" id="usersList">
+                    <div class="leaderboard-item slide-in-left clickable-item" onclick="window.location.href='posts.html?type=user&amp;value=piovincenzo_&amp;period=last30d'">
+                        
+            <div class="account-column">
+                <div class="account-top-section">
+                    <div class="account-avatar-small has-image">
+                        <img src="https://pbs.twimg.com/profile_images/1962922616047419392/N9Orkn7H_normal.jpg" alt="Pio" class="avatar-image" loading="lazy" onload="this.parentElement.classList.add('has-image'); this.nextElementSibling.style.display='none';" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'; this.parentElement.classList.remove('has-image');">
+               <div class="avatar-fallback" style="display: none;">PI</div>
+                    </div>
+                    <div class="account-names">
+                        <div class="account-username">@piovincenzo_ </div>
+                        <div class="account-display-name">Pio</div>
+                    </div>
+                </div>
+                
+                <div class="account-followers">
+                    <span class="followers-count">92.3k followers</span>
+                    <span class="followers-change positive">▲17</span>
+                </div>
+            </div>
+            
+            <div class="cashtags-column">
+                <div class="column-title">posting about</div>
+                <a href="posts.html?type=mention&amp;value=mambocowboy&amp;period=last30d" class="cashtag-link" style="font-size: 1.33rem" onclick="event.stopPropagation()">@mambocowboy</a><a href="posts.html?type=mention&amp;value=davidsacks&amp;period=last30d" class="cashtag-link" style="font-size: 1.20rem" onclick="event.stopPropagation()">@davidsacks</a><a href="posts.html?type=mention&amp;value=pmarca&amp;period=last30d" class="cashtag-link" style="font-size: 1.20rem" onclick="event.stopPropagation()">@pmarca</a>
+            </div>
+        
+                        
+            <div class="score-column">
+                <div class="score-main">
+                    <span class="score-number">3,716</span>
+                    <!-- <span class="score-change negative">▼57</span> -->
+                </div>
+                <div class="score-progress">
+                    <div class="progress-bar">
+                        <div class="progress-thumb" style="left: 100%;"></div>
+                    </div>
+                    <div class="progress-labels">
+                        <span style="position: absolute; left: 0%; transform: translateX(0);">0</span>
+                        <span style="position: absolute; left: 25%; transform: translateX(-50%);">500</span>
+                        <span style="position: absolute; left: 50%; transform: translateX(-50%);">1000</span>
+                        <span style="position: absolute; left: 75%; transform: translateX(-50%);">1500</span>
+                        <span style="position: absolute; left: 100%; transform: translateX(-100%);">2000</span>
+                    </div>
+                </div>
+                <div class="score-level">Boss</div>
+            </div>
+        
+                    </div>
+                
+                    <div class="leaderboard-item slide-in-left clickable-item" onclick="window.location.href='posts.html?type=user&amp;value=solanasensei&amp;period=last30d'">
+                        
+            <div class="account-column">
+                <div class="account-top-section">
+                    <div class="account-avatar-small has-image">
+                        <img src="https://pbs.twimg.com/profile_images/1905677431966429184/bOA0xu1w_normal.jpg" alt="Solana Sensei" class="avatar-image" loading="lazy" onload="this.parentElement.classList.add('has-image'); this.nextElementSibling.style.display='none';" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'; this.parentElement.classList.remove('has-image');">
+               <div class="avatar-fallback" style="display: none;">SS</div>
+                    </div>
+                    <div class="account-names">
+                        <div class="account-username">@solanasensei </div>
+                        <div class="account-display-name">Solana Sensei</div>
+                    </div>
+                </div>
+                
+                <div class="account-followers">
+                    <span class="followers-count">237.7k followers</span>
+                    <span class="followers-change positive">▲163</span>
+                </div>
+            </div>
+            
+            <div class="cashtags-column">
+                <div class="column-title">posting about</div>
+                <a href="posts.html?type=mention&amp;value=cryptobits72&amp;period=last30d" class="cashtag-link" style="font-size: 1.27rem" onclick="event.stopPropagation()">@cryptobits72</a><a href="posts.html?type=mention&amp;value=solflare&amp;period=last30d" class="cashtag-link" style="font-size: 1.27rem" onclick="event.stopPropagation()">@solflare</a><a href="posts.html?type=mention&amp;value=_breasoft&amp;period=last30d" class="cashtag-link" style="font-size: 1.20rem" onclick="event.stopPropagation()">@_breasoft</a>
+            </div>
+        
+                        
+            <div class="score-column">
+                <div class="score-main">
+                    <span class="score-number">2,516</span>
+                    <!-- <span class="score-change positive">▲107</span> -->
+                </div>
+                <div class="score-progress">
+                    <div class="progress-bar">
+                        <div class="progress-thumb" style="left: 100%;"></div>
+                    </div>
+                    <div class="progress-labels">
+                        <span style="position: absolute; left: 0%; transform: translateX(0);">0</span>
+                        <span style="position: absolute; left: 25%; transform: translateX(-50%);">500</span>
+                        <span style="position: absolute; left: 50%; transform: translateX(-50%);">1000</span>
+                        <span style="position: absolute; left: 75%; transform: translateX(-50%);">1500</span>
+                        <span style="position: absolute; left: 100%; transform: translateX(-100%);">2000</span>
+                    </div>
+                </div>
+                <div class="score-level">Candidate</div>
+            </div>
+        
+                    </div>
+                
+                    <div class="leaderboard-item slide-in-left clickable-item" onclick="window.location.href='posts.html?type=user&amp;value=cachewallet&amp;period=last30d'">
+                        
+            <div class="account-column">
+                <div class="account-top-section">
+                    <div class="account-avatar-small has-image">
+                        <img src="https://pbs.twimg.com/profile_images/1963240785286995968/cI_lCGh5_normal.jpg" alt="Cache Wallet" class="avatar-image" loading="lazy" onload="this.parentElement.classList.add('has-image'); this.nextElementSibling.style.display='none';" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'; this.parentElement.classList.remove('has-image');">
+               <div class="avatar-fallback" style="display: none;">CW</div>
+                    </div>
+                    <div class="account-names">
+                        <div class="account-username">@cachewallet </div>
+                        <div class="account-display-name">Cache Wallet</div>
+                    </div>
+                </div>
+                
+                <div class="account-followers">
+                    <span class="followers-count">64.1k followers</span>
+                    <span class="followers-change negative">▼50</span>
+                </div>
+            </div>
+            
+            <div class="cashtags-column">
+                <div class="column-title">posting about</div>
+                <a href="posts.html?type=mention&amp;value=abubakarbbg9&amp;period=last30d" class="cashtag-link" style="font-size: 1.33rem" onclick="event.stopPropagation()">@abubakarbbg9</a><a href="posts.html?type=mention&amp;value=amazing813765&amp;period=last30d" class="cashtag-link" style="font-size: 1.33rem" onclick="event.stopPropagation()">@amazing813765</a><a href="posts.html?type=mention&amp;value=cryptonik999&amp;period=last30d" class="cashtag-link" style="font-size: 1.33rem" onclick="event.stopPropagation()">@cryptonik999</a>
+            </div>
+        
+                        
+            <div class="score-column">
+                <div class="score-main">
+                    <span class="score-number">1,578</span>
+                    <!-- <span class="score-change negative">▼37</span> -->
+                </div>
+                <div class="score-progress">
+                    <div class="progress-bar">
+                        <div class="progress-thumb" style="left: 89.45%;"></div>
+                    </div>
+                    <div class="progress-labels">
+                        <span style="position: absolute; left: 0%; transform: translateX(0);">0</span>
+                        <span style="position: absolute; left: 25%; transform: translateX(-50%);">500</span>
+                        <span style="position: absolute; left: 50%; transform: translateX(-50%);">1000</span>
+                        <span style="position: absolute; left: 75%; transform: translateX(-50%);">1500</span>
+                        <span style="position: absolute; left: 100%; transform: translateX(-100%);">2000</span>
+                    </div>
+                </div>
+                <div class="score-level">Climber</div>
+            </div>
+        
+                    </div>
+                
+                    <div class="leaderboard-item slide-in-left clickable-item" onclick="window.location.href='posts.html?type=user&amp;value=bwscommunity&amp;period=last30d'">
+                        
+            <div class="account-column">
+                <div class="account-top-section">
+                    <div class="account-avatar-small has-image">
+                        <img src="https://pbs.twimg.com/profile_images/1982006799180906496/0M3C9gX7_normal.png" alt="Blockchain Web Services" class="avatar-image" loading="lazy" onload="this.parentElement.classList.add('has-image'); this.nextElementSibling.style.display='none';" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'; this.parentElement.classList.remove('has-image');">
+               <div class="avatar-fallback" style="display: none;">BW</div>
+                    </div>
+                    <div class="account-names">
+                        <div class="account-username">@bwscommunity </div>
+                        <div class="account-display-name">Blockchain Web ...</div>
+                    </div>
+                </div>
+                
+                <div class="account-followers">
+                    <span class="followers-count">1.6k followers</span>
+                    <span class="followers-change positive">▲5</span>
+                </div>
+            </div>
+            
+            <div class="cashtags-column">
+                <div class="column-title">posting about</div>
+                <a href="posts.html?type=mention&amp;value=bwscommunity&amp;period=last30d" class="cashtag-link" style="font-size: 1.80rem" onclick="event.stopPropagation()">@bwscommunity</a><a href="posts.html?type=cashtag&amp;value=BWS&amp;period=last30d" class="cashtag-link" style="font-size: 1.80rem" onclick="event.stopPropagation()">$BWS</a><a href="posts.html?type=mention&amp;value=cryptorover&amp;period=last30d" class="cashtag-link" style="font-size: 1.80rem" onclick="event.stopPropagation()">@cryptorover</a><a href="posts.html?type=hashtag&amp;value=MICROCAP&amp;period=last30d" class="cashtag-link" style="font-size: 1.73rem" onclick="event.stopPropagation()">#MICROCAP</a><a href="posts.html?type=hashtag&amp;value=XBOT&amp;period=last30d" class="cashtag-link" style="font-size: 1.47rem" onclick="event.stopPropagation()">#XBOT</a><a href="posts.html?type=mention&amp;value=idos_network&amp;period=last30d" class="cashtag-link" style="font-size: 1.40rem" onclick="event.stopPropagation()">@idos_network</a>
+            </div>
+        
+                        
+            <div class="score-column">
+                <div class="score-main">
+                    <span class="score-number">1,175</span>
+                    <!-- <span class="score-change negative">▼10</span> -->
+                </div>
+                <div class="score-progress">
+                    <div class="progress-bar">
+                        <div class="progress-thumb" style="left: 79.375%;"></div>
+                    </div>
+                    <div class="progress-labels">
+                        <span style="position: absolute; left: 0%; transform: translateX(0);">0</span>
+                        <span style="position: absolute; left: 25%; transform: translateX(-50%);">500</span>
+                        <span style="position: absolute; left: 50%; transform: translateX(-50%);">1000</span>
+                        <span style="position: absolute; left: 75%; transform: translateX(-50%);">1500</span>
+                        <span style="position: absolute; left: 100%; transform: translateX(-100%);">2000</span>
+                    </div>
+                </div>
+                <div class="score-level">Expert</div>
+            </div>
+        
+                    </div>
+                
+                    <div class="leaderboard-item slide-in-left clickable-item" onclick="window.location.href='posts.html?type=user&amp;value=0xgumshoe&amp;period=last30d'">
+                        
+            <div class="account-column">
+                <div class="account-top-section">
+                    <div class="account-avatar-small has-image">
+                        <img src="https://pbs.twimg.com/profile_images/1964443034822520832/pCBShtVe_normal.jpg" alt="gum" class="avatar-image" loading="lazy" onload="this.parentElement.classList.add('has-image'); this.nextElementSibling.style.display='none';" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'; this.parentElement.classList.remove('has-image');">
+               <div class="avatar-fallback" style="display: none;">GU</div>
+                    </div>
+                    <div class="account-names">
+                        <div class="account-username">@0xgumshoe </div>
+                        <div class="account-display-name">gum</div>
+                    </div>
+                </div>
+                
+                <div class="account-followers">
+                    <span class="followers-count">63.9k followers</span>
+                    <span class="followers-change negative">▼6</span>
+                </div>
+            </div>
+            
+            <div class="cashtags-column">
+                <div class="column-title">posting about</div>
+                <a href="posts.html?type=mention&amp;value=0x_kaize&amp;period=last30d" class="cashtag-link" style="font-size: 1.35rem" onclick="event.stopPropagation()">@0x_kaize</a><a href="posts.html?type=mention&amp;value=ranger_finance&amp;period=last30d" class="cashtag-link" style="font-size: 1.35rem" onclick="event.stopPropagation()">@ranger_finance</a>
+            </div>
+        
+                        
+            <div class="score-column">
+                <div class="score-main">
+                    <span class="score-number">1,033</span>
+                    <!-- <span class="score-change negative">▼7</span> -->
+                </div>
+                <div class="score-progress">
+                    <div class="progress-bar">
+                        <div class="progress-thumb" style="left: 75.825%;"></div>
+                    </div>
+                    <div class="progress-labels">
+                        <span style="position: absolute; left: 0%; transform: translateX(0);">0</span>
+                        <span style="position: absolute; left: 25%; transform: translateX(-50%);">500</span>
+                        <span style="position: absolute; left: 50%; transform: translateX(-50%);">1000</span>
+                        <span style="position: absolute; left: 75%; transform: translateX(-50%);">1500</span>
+                        <span style="position: absolute; left: 100%; transform: translateX(-100%);">2000</span>
+                    </div>
+                </div>
+                <div class="score-level">Expert</div>
+            </div>
+        
+                    </div>
+                
+                    <div class="leaderboard-item slide-in-left clickable-item" onclick="window.location.href='posts.html?type=user&amp;value=degenskilz&amp;period=last30d'">
+                        
+            <div class="account-column">
+                <div class="account-top-section">
+                    <div class="account-avatar-small">
+                        <img src="https://pbs.twimg.com/profile_images/1970115232811905024/0tQl4kJW_normal.jpg" alt="Victor" class="avatar-image" loading="lazy" onload="this.parentElement.classList.add('has-image'); this.nextElementSibling.style.display='none';" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'; this.parentElement.classList.remove('has-image');" style="display: none;">
+               <div class="avatar-fallback" style="display: flex;">VI</div>
+                    </div>
+                    <div class="account-names">
+                        <div class="account-username">@degenskilz </div>
+                        <div class="account-display-name">Victor</div>
+                    </div>
+                </div>
+                
+                <div class="account-followers">
+                    <span class="followers-count">323 followers</span>
+                    
+                </div>
+            </div>
+            
+            <div class="cashtags-column">
+                <div class="column-title">posting about</div>
+                <a href="posts.html?type=mention&amp;value=bwscommunity&amp;period=last30d" class="cashtag-link" style="font-size: 1.80rem" onclick="event.stopPropagation()">@bwscommunity</a><a href="posts.html?type=cashtag&amp;value=BWS&amp;period=last30d" class="cashtag-link" style="font-size: 1.67rem" onclick="event.stopPropagation()">$BWS</a><a href="posts.html?type=cashtag&amp;value=QS&amp;period=last30d" class="cashtag-link" style="font-size: 1.60rem" onclick="event.stopPropagation()">$QS</a><a href="posts.html?type=mention&amp;value=quick_sync&amp;period=last30d" class="cashtag-link" style="font-size: 1.60rem" onclick="event.stopPropagation()">@quick_sync</a><a href="posts.html?type=mention&amp;value=fexir1&amp;period=last30d" class="cashtag-link" style="font-size: 1.40rem" onclick="event.stopPropagation()">@fexir1</a>
+            </div>
+        
+                        
+            <div class="score-column">
+                <div class="score-main">
+                    <span class="score-number">726</span>
+                    <!-- <span class="score-change negative">▼27</span> -->
+                </div>
+                <div class="score-progress">
+                    <div class="progress-bar">
+                        <div class="progress-thumb" style="left: 61.3%;"></div>
+                    </div>
+                    <div class="progress-labels">
+                        <span style="position: absolute; left: 0%; transform: translateX(0);">0</span>
+                        <span style="position: absolute; left: 25%; transform: translateX(-50%);">500</span>
+                        <span style="position: absolute; left: 50%; transform: translateX(-50%);">1000</span>
+                        <span style="position: absolute; left: 75%; transform: translateX(-50%);">1500</span>
+                        <span style="position: absolute; left: 100%; transform: translateX(-100%);">2000</span>
+                    </div>
+                </div>
+                <div class="score-level">Advanced</div>
+            </div>
+        
+                    </div>
+                
+                    <div class="leaderboard-item slide-in-left clickable-item" onclick="window.location.href='posts.html?type=user&amp;value=jussy_world&amp;period=last30d'">
+                        
+            <div class="account-column">
+                <div class="account-top-section">
+                    <div class="account-avatar-small has-image">
+                        <img src="https://pbs.twimg.com/profile_images/1805882099993362433/ZS_9CBKb_normal.jpg" alt="jussy" class="avatar-image" loading="lazy" onload="this.parentElement.classList.add('has-image'); this.nextElementSibling.style.display='none';" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'; this.parentElement.classList.remove('has-image');">
+               <div class="avatar-fallback" style="display: none;">JU</div>
+                    </div>
+                    <div class="account-names">
+                        <div class="account-username">@jussy_world </div>
+                        <div class="account-display-name">jussy</div>
+                    </div>
+                </div>
+                
+                <div class="account-followers">
+                    <span class="followers-count">71.2k followers</span>
+                    <span class="followers-change positive">▲35</span>
+                </div>
+            </div>
+            
+            <div class="cashtags-column">
+                <div class="column-title">posting about</div>
+                <a href="posts.html?type=mention&amp;value=bulktrade&amp;period=last30d" class="cashtag-link" style="font-size: 1.20rem" onclick="event.stopPropagation()">@bulktrade</a><a href="posts.html?type=mention&amp;value=glowburger&amp;period=last30d" class="cashtag-link" style="font-size: 1.20rem" onclick="event.stopPropagation()">@glowburger</a><a href="posts.html?type=mention&amp;value=humafinance&amp;period=last30d" class="cashtag-link" style="font-size: 1.20rem" onclick="event.stopPropagation()">@humafinance</a>
+            </div>
+        
+                        
+            <div class="score-column">
+                <div class="score-main">
+                    <span class="score-number">690</span>
+                    <!-- <span class="score-change positive">▲1</span> -->
+                </div>
+                <div class="score-progress">
+                    <div class="progress-bar">
+                        <div class="progress-thumb" style="left: 59.5%;"></div>
+                    </div>
+                    <div class="progress-labels">
+                        <span style="position: absolute; left: 0%; transform: translateX(0);">0</span>
+                        <span style="position: absolute; left: 25%; transform: translateX(-50%);">500</span>
+                        <span style="position: absolute; left: 50%; transform: translateX(-50%);">1000</span>
+                        <span style="position: absolute; left: 75%; transform: translateX(-50%);">1500</span>
+                        <span style="position: absolute; left: 100%; transform: translateX(-100%);">2000</span>
+                    </div>
+                </div>
+                <div class="score-level">Advanced</div>
+            </div>
+        
+                    </div>
+                
+                    <div class="leaderboard-item slide-in-left clickable-item" onclick="window.location.href='posts.html?type=user&amp;value=4k_token&amp;period=last30d'">
+                        
+            <div class="account-column">
+                <div class="account-top-section">
+                    <div class="account-avatar-small">
+                        <img src="https://pbs.twimg.com/profile_images/1984712548180963328/rPL0JBx4_normal.jpg" alt="4K" class="avatar-image" loading="lazy" onload="this.parentElement.classList.add('has-image'); this.nextElementSibling.style.display='none';" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'; this.parentElement.classList.remove('has-image');" style="display: none;">
+               <div class="avatar-fallback" style="display: flex;">4K</div>
+                    </div>
+                    <div class="account-names">
+                        <div class="account-username">@4k_token </div>
+                        <div class="account-display-name">4K</div>
+                    </div>
+                </div>
+                
+                <div class="account-followers">
+                    <span class="followers-count">6.1k followers</span>
+                    <span class="followers-change negative">▼57</span>
+                </div>
+            </div>
+            
+            <div class="cashtags-column">
+                <div class="column-title">posting about</div>
+                <a href="posts.html?type=mention&amp;value=4k_token&amp;period=last30d" class="cashtag-link" style="font-size: 1.27rem" onclick="event.stopPropagation()">@4k_token</a><a href="posts.html?type=mention&amp;value=top100token&amp;period=last30d" class="cashtag-link" style="font-size: 1.20rem" onclick="event.stopPropagation()">@top100token</a><a href="posts.html?type=hashtag&amp;value=AIRDROP&amp;period=last30d" class="cashtag-link" style="font-size: 1.20rem" onclick="event.stopPropagation()">#AIRDROP</a>
+            </div>
+        
+                        
+            <div class="score-column">
+                <div class="score-main">
+                    <span class="score-number">674</span>
+                    <!-- <span class="score-change negative">▼1</span> -->
+                </div>
+                <div class="score-progress">
+                    <div class="progress-bar">
+                        <div class="progress-thumb" style="left: 58.7%;"></div>
+                    </div>
+                    <div class="progress-labels">
+                        <span style="position: absolute; left: 0%; transform: translateX(0);">0</span>
+                        <span style="position: absolute; left: 25%; transform: translateX(-50%);">500</span>
+                        <span style="position: absolute; left: 50%; transform: translateX(-50%);">1000</span>
+                        <span style="position: absolute; left: 75%; transform: translateX(-50%);">1500</span>
+                        <span style="position: absolute; left: 100%; transform: translateX(-100%);">2000</span>
+                    </div>
+                </div>
+                <div class="score-level">Advanced</div>
+            </div>
+        
+                    </div>
+                
+                    <div class="leaderboard-item slide-in-left clickable-item" onclick="window.location.href='posts.html?type=user&amp;value=anggi080894&amp;period=last30d'">
+                        
+            <div class="account-column">
+                <div class="account-top-section">
+                    <div class="account-avatar-small has-image">
+                        <img src="https://pbs.twimg.com/profile_images/1879436909392666624/Mxk9CCbA_normal.jpg" alt="anggi" class="avatar-image" loading="lazy" onload="this.parentElement.classList.add('has-image'); this.nextElementSibling.style.display='none';" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'; this.parentElement.classList.remove('has-image');">
+               <div class="avatar-fallback" style="display: none;">AN</div>
+                    </div>
+                    <div class="account-names">
+                        <div class="account-username">@anggi080894 </div>
+                        <div class="account-display-name">anggi</div>
+                    </div>
+                </div>
+                
+                <div class="account-followers">
+                    <span class="followers-count">815 followers</span>
+                    
+                </div>
+            </div>
+            
+            <div class="cashtags-column">
+                <div class="column-title">posting about</div>
+                <a href="posts.html?type=mention&amp;value=4k_token&amp;period=last30d" class="cashtag-link" style="font-size: 1.27rem" onclick="event.stopPropagation()">@4k_token</a><a href="posts.html?type=mention&amp;value=top100token&amp;period=last30d" class="cashtag-link" style="font-size: 1.20rem" onclick="event.stopPropagation()">@top100token</a><a href="posts.html?type=hashtag&amp;value=AIRDROP&amp;period=last30d" class="cashtag-link" style="font-size: 1.20rem" onclick="event.stopPropagation()">#AIRDROP</a>
+            </div>
+        
+                        
+            <div class="score-column">
+                <div class="score-main">
+                    <span class="score-number">668</span>
+                    <!-- <span class="score-change negative">▼10</span> -->
+                </div>
+                <div class="score-progress">
+                    <div class="progress-bar">
+                        <div class="progress-thumb" style="left: 58.4%;"></div>
+                    </div>
+                    <div class="progress-labels">
+                        <span style="position: absolute; left: 0%; transform: translateX(0);">0</span>
+                        <span style="position: absolute; left: 25%; transform: translateX(-50%);">500</span>
+                        <span style="position: absolute; left: 50%; transform: translateX(-50%);">1000</span>
+                        <span style="position: absolute; left: 75%; transform: translateX(-50%);">1500</span>
+                        <span style="position: absolute; left: 100%; transform: translateX(-100%);">2000</span>
+                    </div>
+                </div>
+                <div class="score-level">Advanced</div>
+            </div>
+        
+                    </div>
+                
+                    <div class="leaderboard-item slide-in-left clickable-item" onclick="window.location.href='posts.html?type=user&amp;value=donny_yulianto7&amp;period=last30d'">
+                        
+            <div class="account-column">
+                <div class="account-top-section">
+                    <div class="account-avatar-small has-image">
+                        <img src="https://pbs.twimg.com/profile_images/1973556345598255110/vSq2YcTa_normal.jpg" alt="Donny Yulianto" class="avatar-image" loading="lazy" onload="this.parentElement.classList.add('has-image'); this.nextElementSibling.style.display='none';" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'; this.parentElement.classList.remove('has-image');">
+               <div class="avatar-fallback" style="display: none;">DY</div>
+                    </div>
+                    <div class="account-names">
+                        <div class="account-username">@donny_yulianto7 </div>
+                        <div class="account-display-name">Donny Yulianto</div>
+                    </div>
+                </div>
+                
+                <div class="account-followers">
+                    <span class="followers-count">614 followers</span>
+                    <span class="followers-change negative">▼2</span>
+                </div>
+            </div>
+            
+            <div class="cashtags-column">
+                <div class="column-title">posting about</div>
+                <a href="posts.html?type=mention&amp;value=4k_token&amp;period=last30d" class="cashtag-link" style="font-size: 1.20rem" onclick="event.stopPropagation()">@4k_token</a><a href="posts.html?type=mention&amp;value=top100token&amp;period=last30d" class="cashtag-link" style="font-size: 1.20rem" onclick="event.stopPropagation()">@top100token</a><a href="posts.html?type=hashtag&amp;value=AIRDROP&amp;period=last30d" class="cashtag-link" style="font-size: 1.20rem" onclick="event.stopPropagation()">#AIRDROP</a>
+            </div>
+        
+                        
+            <div class="score-column">
+                <div class="score-main">
+                    <span class="score-number">640</span>
+                    <!-- <span class="score-change negative">▼3</span> -->
+                </div>
+                <div class="score-progress">
+                    <div class="progress-bar">
+                        <div class="progress-thumb" style="left: 57%;"></div>
+                    </div>
+                    <div class="progress-labels">
+                        <span style="position: absolute; left: 0%; transform: translateX(0);">0</span>
+                        <span style="position: absolute; left: 25%; transform: translateX(-50%);">500</span>
+                        <span style="position: absolute; left: 50%; transform: translateX(-50%);">1000</span>
+                        <span style="position: absolute; left: 75%; transform: translateX(-50%);">1500</span>
+                        <span style="position: absolute; left: 100%; transform: translateX(-100%);">2000</span>
+                    </div>
+                </div>
+                <div class="score-level">Advanced</div>
+            </div>
+        
+                    </div>
+                
+                    <div class="leaderboard-item slide-in-left clickable-item" onclick="window.location.href='posts.html?type=user&amp;value=alexrek44&amp;period=last30d'">
+                        
+            <div class="account-column">
+                <div class="account-top-section">
+                    <div class="account-avatar-small has-image">
+                        <img src="https://pbs.twimg.com/profile_images/1887028688442765312/4OiwzwmP_normal.jpg" alt="alex jr" class="avatar-image" loading="lazy" onload="this.parentElement.classList.add('has-image'); this.nextElementSibling.style.display='none';" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'; this.parentElement.classList.remove('has-image');">
+               <div class="avatar-fallback" style="display: none;">AJ</div>
+                    </div>
+                    <div class="account-names">
+                        <div class="account-username">@alexrek44 </div>
+                        <div class="account-display-name">alex jr</div>
+                    </div>
+                </div>
+                
+                <div class="account-followers">
+                    <span class="followers-count">12 followers</span>
+                    
+                </div>
+            </div>
+            
+            <div class="cashtags-column">
+                <div class="column-title">posting about</div>
+                <a href="posts.html?type=mention&amp;value=4k_token&amp;period=last30d" class="cashtag-link" style="font-size: 1.20rem" onclick="event.stopPropagation()">@4k_token</a><a href="posts.html?type=mention&amp;value=top100token&amp;period=last30d" class="cashtag-link" style="font-size: 1.20rem" onclick="event.stopPropagation()">@top100token</a><a href="posts.html?type=hashtag&amp;value=AIRDROP&amp;period=last30d" class="cashtag-link" style="font-size: 1.20rem" onclick="event.stopPropagation()">#AIRDROP</a>
+            </div>
+        
+                        
+            <div class="score-column">
+                <div class="score-main">
+                    <span class="score-number">640</span>
+                    <!-- <span class="score-change negative">▼26</span> -->
+                </div>
+                <div class="score-progress">
+                    <div class="progress-bar">
+                        <div class="progress-thumb" style="left: 57%;"></div>
+                    </div>
+                    <div class="progress-labels">
+                        <span style="position: absolute; left: 0%; transform: translateX(0);">0</span>
+                        <span style="position: absolute; left: 25%; transform: translateX(-50%);">500</span>
+                        <span style="position: absolute; left: 50%; transform: translateX(-50%);">1000</span>
+                        <span style="position: absolute; left: 75%; transform: translateX(-50%);">1500</span>
+                        <span style="position: absolute; left: 100%; transform: translateX(-100%);">2000</span>
+                    </div>
+                </div>
+                <div class="score-level">Advanced</div>
+            </div>
+        
+                    </div>
+                
+                    <div class="leaderboard-item slide-in-left clickable-item" onclick="window.location.href='posts.html?type=user&amp;value=puliy15&amp;period=last30d'">
+                        
+            <div class="account-column">
+                <div class="account-top-section">
+                    <div class="account-avatar-small has-image">
+                        <img src="https://pbs.twimg.com/profile_images/1827237458494550017/Nh5FL_La_normal.jpg" alt="Puliy" class="avatar-image" loading="lazy" onload="this.parentElement.classList.add('has-image'); this.nextElementSibling.style.display='none';" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'; this.parentElement.classList.remove('has-image');">
+               <div class="avatar-fallback" style="display: none;">PU</div>
+                    </div>
+                    <div class="account-names">
+                        <div class="account-username">@puliy15 </div>
+                        <div class="account-display-name">Puliy</div>
+                    </div>
+                </div>
+                
+                <div class="account-followers">
+                    <span class="followers-count">101 followers</span>
+                    <span class="followers-change negative">▼3</span>
+                </div>
+            </div>
+            
+            <div class="cashtags-column">
+                <div class="column-title">posting about</div>
+                <a href="posts.html?type=mention&amp;value=4k_token&amp;period=last30d" class="cashtag-link" style="font-size: 1.20rem" onclick="event.stopPropagation()">@4k_token</a><a href="posts.html?type=mention&amp;value=top100token&amp;period=last30d" class="cashtag-link" style="font-size: 1.20rem" onclick="event.stopPropagation()">@top100token</a><a href="posts.html?type=hashtag&amp;value=AIRDROP&amp;period=last30d" class="cashtag-link" style="font-size: 1.20rem" onclick="event.stopPropagation()">#AIRDROP</a>
+            </div>
+        
+                        
+            <div class="score-column">
+                <div class="score-main">
+                    <span class="score-number">640</span>
+                    <!-- <span class="score-change negative">▼2</span> -->
+                </div>
+                <div class="score-progress">
+                    <div class="progress-bar">
+                        <div class="progress-thumb" style="left: 57%;"></div>
+                    </div>
+                    <div class="progress-labels">
+                        <span style="position: absolute; left: 0%; transform: translateX(0);">0</span>
+                        <span style="position: absolute; left: 25%; transform: translateX(-50%);">500</span>
+                        <span style="position: absolute; left: 50%; transform: translateX(-50%);">1000</span>
+                        <span style="position: absolute; left: 75%; transform: translateX(-50%);">1500</span>
+                        <span style="position: absolute; left: 100%; transform: translateX(-100%);">2000</span>
+                    </div>
+                </div>
+                <div class="score-level">Advanced</div>
+            </div>
+        
+                    </div>
+                
+                    <div class="leaderboard-item slide-in-left clickable-item" onclick="window.location.href='posts.html?type=user&amp;value=kantong02&amp;period=last30d'">
+                        
+            <div class="account-column">
+                <div class="account-top-section">
+                    <div class="account-avatar-small has-image">
+                        <img src="https://pbs.twimg.com/profile_images/1850751409165344769/nlKi0N_n_normal.jpg" alt="kantong" class="avatar-image" loading="lazy" onload="this.parentElement.classList.add('has-image'); this.nextElementSibling.style.display='none';" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'; this.parentElement.classList.remove('has-image');">
+               <div class="avatar-fallback" style="display: none;">KA</div>
+                    </div>
+                    <div class="account-names">
+                        <div class="account-username">@kantong02 </div>
+                        <div class="account-display-name">kantong</div>
+                    </div>
+                </div>
+                
+                <div class="account-followers">
+                    <span class="followers-count">19 followers</span>
+                    
+                </div>
+            </div>
+            
+            <div class="cashtags-column">
+                <div class="column-title">posting about</div>
+                <a href="posts.html?type=mention&amp;value=4k_token&amp;period=last30d" class="cashtag-link" style="font-size: 1.20rem" onclick="event.stopPropagation()">@4k_token</a><a href="posts.html?type=mention&amp;value=top100token&amp;period=last30d" class="cashtag-link" style="font-size: 1.20rem" onclick="event.stopPropagation()">@top100token</a><a href="posts.html?type=hashtag&amp;value=AIRDROP&amp;period=last30d" class="cashtag-link" style="font-size: 1.20rem" onclick="event.stopPropagation()">#AIRDROP</a>
+            </div>
+        
+                        
+            <div class="score-column">
+                <div class="score-main">
+                    <span class="score-number">640</span>
+                    <!-- <span class="score-change negative">▼1</span> -->
+                </div>
+                <div class="score-progress">
+                    <div class="progress-bar">
+                        <div class="progress-thumb" style="left: 57%;"></div>
+                    </div>
+                    <div class="progress-labels">
+                        <span style="position: absolute; left: 0%; transform: translateX(0);">0</span>
+                        <span style="position: absolute; left: 25%; transform: translateX(-50%);">500</span>
+                        <span style="position: absolute; left: 50%; transform: translateX(-50%);">1000</span>
+                        <span style="position: absolute; left: 75%; transform: translateX(-50%);">1500</span>
+                        <span style="position: absolute; left: 100%; transform: translateX(-100%);">2000</span>
+                    </div>
+                </div>
+                <div class="score-level">Advanced</div>
+            </div>
+        
+                    </div>
+                
+                    <div class="leaderboard-item slide-in-left clickable-item" onclick="window.location.href='posts.html?type=user&amp;value=0xmervin&amp;period=last30d'">
+                        
+            <div class="account-column">
+                <div class="account-top-section">
+                    <div class="account-avatar-small">
+                        <img src="https://pbs.twimg.com/profile_images/1993900249790947328/R17xL-B-_normal.jpg" alt="0xMervin" class="avatar-image" loading="lazy" onload="this.parentElement.classList.add('has-image'); this.nextElementSibling.style.display='none';" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'; this.parentElement.classList.remove('has-image');" style="display: none;">
+               <div class="avatar-fallback" style="display: flex;">0X</div>
+                    </div>
+                    <div class="account-names">
+                        <div class="account-username">@0xmervin </div>
+                        <div class="account-display-name">0xMervin</div>
+                    </div>
+                </div>
+                
+                <div class="account-followers">
+                    <span class="followers-count">1.9k followers</span>
+                    <span class="followers-change negative">▼8</span>
+                </div>
+            </div>
+            
+            <div class="cashtags-column">
+                <div class="column-title">posting about</div>
+                <a href="posts.html?type=mention&amp;value=4k_token&amp;period=last30d" class="cashtag-link" style="font-size: 1.20rem" onclick="event.stopPropagation()">@4k_token</a><a href="posts.html?type=mention&amp;value=top100token&amp;period=last30d" class="cashtag-link" style="font-size: 1.20rem" onclick="event.stopPropagation()">@top100token</a><a href="posts.html?type=hashtag&amp;value=AIRDROP&amp;period=last30d" class="cashtag-link" style="font-size: 1.20rem" onclick="event.stopPropagation()">#AIRDROP</a>
+            </div>
+        
+                        
+            <div class="score-column">
+                <div class="score-main">
+                    <span class="score-number">640</span>
+                    <!-- <span class="score-change positive">▲31</span> -->
+                </div>
+                <div class="score-progress">
+                    <div class="progress-bar">
+                        <div class="progress-thumb" style="left: 57%;"></div>
+                    </div>
+                    <div class="progress-labels">
+                        <span style="position: absolute; left: 0%; transform: translateX(0);">0</span>
+                        <span style="position: absolute; left: 25%; transform: translateX(-50%);">500</span>
+                        <span style="position: absolute; left: 50%; transform: translateX(-50%);">1000</span>
+                        <span style="position: absolute; left: 75%; transform: translateX(-50%);">1500</span>
+                        <span style="position: absolute; left: 100%; transform: translateX(-100%);">2000</span>
+                    </div>
+                </div>
+                <div class="score-level">Advanced</div>
+            </div>
+        
+                    </div>
+                
+                    <div class="leaderboard-item slide-in-left clickable-item" onclick="window.location.href='posts.html?type=user&amp;value=doleng__&amp;period=last30d'">
+                        
+            <div class="account-column">
+                <div class="account-top-section">
+                    <div class="account-avatar-small has-image">
+                        <img src="https://pbs.twimg.com/profile_images/1985003198537711616/cwSYOjGO_normal.jpg" alt="SouthSide TTS 0,1" class="avatar-image" loading="lazy" onload="this.parentElement.classList.add('has-image'); this.nextElementSibling.style.display='none';" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'; this.parentElement.classList.remove('has-image');">
+               <div class="avatar-fallback" style="display: none;">ST</div>
+                    </div>
+                    <div class="account-names">
+                        <div class="account-username">@doleng__ </div>
+                        <div class="account-display-name">SouthSide TTS 0...</div>
+                    </div>
+                </div>
+                
+                <div class="account-followers">
+                    <span class="followers-count">349 followers</span>
+                    
+                </div>
+            </div>
+            
+            <div class="cashtags-column">
+                <div class="column-title">posting about</div>
+                <a href="posts.html?type=mention&amp;value=4k_token&amp;period=last30d" class="cashtag-link" style="font-size: 1.20rem" onclick="event.stopPropagation()">@4k_token</a><a href="posts.html?type=mention&amp;value=top100token&amp;period=last30d" class="cashtag-link" style="font-size: 1.20rem" onclick="event.stopPropagation()">@top100token</a><a href="posts.html?type=hashtag&amp;value=AIRDROP&amp;period=last30d" class="cashtag-link" style="font-size: 1.20rem" onclick="event.stopPropagation()">#AIRDROP</a>
+            </div>
+        
+                        
+            <div class="score-column">
+                <div class="score-main">
+                    <span class="score-number">640</span>
+                    
+                </div>
+                <div class="score-progress">
+                    <div class="progress-bar">
+                        <div class="progress-thumb" style="left: 57%;"></div>
+                    </div>
+                    <div class="progress-labels">
+                        <span style="position: absolute; left: 0%; transform: translateX(0);">0</span>
+                        <span style="position: absolute; left: 25%; transform: translateX(-50%);">500</span>
+                        <span style="position: absolute; left: 50%; transform: translateX(-50%);">1000</span>
+                        <span style="position: absolute; left: 75%; transform: translateX(-50%);">1500</span>
+                        <span style="position: absolute; left: 100%; transform: translateX(-100%);">2000</span>
+                    </div>
+                </div>
+                <div class="score-level">Advanced</div>
+            </div>
+        
+                    </div>
+                
+                    <div class="leaderboard-item slide-in-left clickable-item" onclick="window.location.href='posts.html?type=user&amp;value=airgelas25&amp;period=last30d'">
+                        
+            <div class="account-column">
+                <div class="account-top-section">
+                    <div class="account-avatar-small has-image">
+                        <img src="https://pbs.twimg.com/profile_images/1857626455368413185/ky-z-E8X_normal.jpg" alt="air gelas" class="avatar-image" loading="lazy" onload="this.parentElement.classList.add('has-image'); this.nextElementSibling.style.display='none';" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'; this.parentElement.classList.remove('has-image');">
+               <div class="avatar-fallback" style="display: none;">AG</div>
+                    </div>
+                    <div class="account-names">
+                        <div class="account-username">@airgelas25 </div>
+                        <div class="account-display-name">air gelas</div>
+                    </div>
+                </div>
+                
+                <div class="account-followers">
+                    <span class="followers-count">16 followers</span>
+                    
+                </div>
+            </div>
+            
+            <div class="cashtags-column">
+                <div class="column-title">posting about</div>
+                <a href="posts.html?type=mention&amp;value=4k_token&amp;period=last30d" class="cashtag-link" style="font-size: 1.20rem" onclick="event.stopPropagation()">@4k_token</a><a href="posts.html?type=mention&amp;value=top100token&amp;period=last30d" class="cashtag-link" style="font-size: 1.20rem" onclick="event.stopPropagation()">@top100token</a><a href="posts.html?type=hashtag&amp;value=AIRDROP&amp;period=last30d" class="cashtag-link" style="font-size: 1.20rem" onclick="event.stopPropagation()">#AIRDROP</a>
+            </div>
+        
+                        
+            <div class="score-column">
+                <div class="score-main">
+                    <span class="score-number">640</span>
+                    <!-- <span class="score-change negative">▼28</span> -->
+                </div>
+                <div class="score-progress">
+                    <div class="progress-bar">
+                        <div class="progress-thumb" style="left: 57%;"></div>
+                    </div>
+                    <div class="progress-labels">
+                        <span style="position: absolute; left: 0%; transform: translateX(0);">0</span>
+                        <span style="position: absolute; left: 25%; transform: translateX(-50%);">500</span>
+                        <span style="position: absolute; left: 50%; transform: translateX(-50%);">1000</span>
+                        <span style="position: absolute; left: 75%; transform: translateX(-50%);">1500</span>
+                        <span style="position: absolute; left: 100%; transform: translateX(-100%);">2000</span>
+                    </div>
+                </div>
+                <div class="score-level">Advanced</div>
+            </div>
+        
+                    </div>
+                
+                    <div class="leaderboard-item slide-in-left clickable-item" onclick="window.location.href='posts.html?type=user&amp;value=andri_perd44041&amp;period=last30d'">
+                        
+            <div class="account-column">
+                <div class="account-top-section">
+                    <div class="account-avatar-small has-image">
+                        <img src="https://pbs.twimg.com/profile_images/1995141056871182336/Qo2lp1ux_normal.jpg" alt="Momo91" class="avatar-image" loading="lazy" onload="this.parentElement.classList.add('has-image'); this.nextElementSibling.style.display='none';" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'; this.parentElement.classList.remove('has-image');">
+               <div class="avatar-fallback" style="display: none;">MO</div>
+                    </div>
+                    <div class="account-names">
+                        <div class="account-username">@andri_perd44041 </div>
+                        <div class="account-display-name">Momo91</div>
+                    </div>
+                </div>
+                
+                <div class="account-followers">
+                    <span class="followers-count">101 followers</span>
+                    <span class="followers-change negative">▼3</span>
+                </div>
+            </div>
+            
+            <div class="cashtags-column">
+                <div class="column-title">posting about</div>
+                <a href="posts.html?type=mention&amp;value=4k_token&amp;period=last30d" class="cashtag-link" style="font-size: 1.20rem" onclick="event.stopPropagation()">@4k_token</a><a href="posts.html?type=mention&amp;value=top100token&amp;period=last30d" class="cashtag-link" style="font-size: 1.20rem" onclick="event.stopPropagation()">@top100token</a><a href="posts.html?type=hashtag&amp;value=AIRDROP&amp;period=last30d" class="cashtag-link" style="font-size: 1.20rem" onclick="event.stopPropagation()">#AIRDROP</a>
+            </div>
+        
+                        
+            <div class="score-column">
+                <div class="score-main">
+                    <span class="score-number">640</span>
+                    <!-- <span class="score-change negative">▼4</span> -->
+                </div>
+                <div class="score-progress">
+                    <div class="progress-bar">
+                        <div class="progress-thumb" style="left: 57%;"></div>
+                    </div>
+                    <div class="progress-labels">
+                        <span style="position: absolute; left: 0%; transform: translateX(0);">0</span>
+                        <span style="position: absolute; left: 25%; transform: translateX(-50%);">500</span>
+                        <span style="position: absolute; left: 50%; transform: translateX(-50%);">1000</span>
+                        <span style="position: absolute; left: 75%; transform: translateX(-50%);">1500</span>
+                        <span style="position: absolute; left: 100%; transform: translateX(-100%);">2000</span>
+                    </div>
+                </div>
+                <div class="score-level">Advanced</div>
+            </div>
+        
+                    </div>
+                
+                    <div class="leaderboard-item slide-in-left clickable-item" onclick="window.location.href='posts.html?type=user&amp;value=igon901&amp;period=last30d'">
+                        
+            <div class="account-column">
+                <div class="account-top-section">
+                    <div class="account-avatar-small has-image">
+                        <img src="https://pbs.twimg.com/profile_images/1929804336856813568/Q-lpJV8e_normal.jpg" alt="igon" class="avatar-image" loading="lazy" onload="this.parentElement.classList.add('has-image'); this.nextElementSibling.style.display='none';" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'; this.parentElement.classList.remove('has-image');">
+               <div class="avatar-fallback" style="display: none;">IG</div>
+                    </div>
+                    <div class="account-names">
+                        <div class="account-username">@igon901 </div>
+                        <div class="account-display-name">igon</div>
+                    </div>
+                </div>
+                
+                <div class="account-followers">
+                    <span class="followers-count">49 followers</span>
+                    
+                </div>
+            </div>
+            
+            <div class="cashtags-column">
+                <div class="column-title">posting about</div>
+                <a href="posts.html?type=mention&amp;value=4k_token&amp;period=last30d" class="cashtag-link" style="font-size: 1.20rem" onclick="event.stopPropagation()">@4k_token</a><a href="posts.html?type=mention&amp;value=top100token&amp;period=last30d" class="cashtag-link" style="font-size: 1.20rem" onclick="event.stopPropagation()">@top100token</a><a href="posts.html?type=hashtag&amp;value=AIRDROP&amp;period=last30d" class="cashtag-link" style="font-size: 1.20rem" onclick="event.stopPropagation()">#AIRDROP</a>
+            </div>
+        
+                        
+            <div class="score-column">
+                <div class="score-main">
+                    <span class="score-number">640</span>
+                    <!-- <span class="score-change negative">▼14</span> -->
+                </div>
+                <div class="score-progress">
+                    <div class="progress-bar">
+                        <div class="progress-thumb" style="left: 57%;"></div>
+                    </div>
+                    <div class="progress-labels">
+                        <span style="position: absolute; left: 0%; transform: translateX(0);">0</span>
+                        <span style="position: absolute; left: 25%; transform: translateX(-50%);">500</span>
+                        <span style="position: absolute; left: 50%; transform: translateX(-50%);">1000</span>
+                        <span style="position: absolute; left: 75%; transform: translateX(-50%);">1500</span>
+                        <span style="position: absolute; left: 100%; transform: translateX(-100%);">2000</span>
+                    </div>
+                </div>
+                <div class="score-level">Advanced</div>
+            </div>
+        
+                    </div>
+                
+                    <div class="leaderboard-item slide-in-left clickable-item" onclick="window.location.href='posts.html?type=user&amp;value=apollo31121999&amp;period=last30d'">
+                        
+            <div class="account-column">
+                <div class="account-top-section">
+                    <div class="account-avatar-small has-image">
+                        <img src="https://pbs.twimg.com/profile_images/1988232080795529216/luV1Xyek_normal.jpg" alt="Viola Queen" class="avatar-image" loading="lazy" onload="this.parentElement.classList.add('has-image'); this.nextElementSibling.style.display='none';" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'; this.parentElement.classList.remove('has-image');">
+               <div class="avatar-fallback" style="display: none;">VQ</div>
+                    </div>
+                    <div class="account-names">
+                        <div class="account-username">@apollo31121999 </div>
+                        <div class="account-display-name">Viola Queen</div>
+                    </div>
+                </div>
+                
+                <div class="account-followers">
+                    <span class="followers-count">51 followers</span>
+                    <span class="followers-change negative">▼1</span>
+                </div>
+            </div>
+            
+            <div class="cashtags-column">
+                <div class="column-title">posting about</div>
+                <a href="posts.html?type=mention&amp;value=4k_token&amp;period=last30d" class="cashtag-link" style="font-size: 1.20rem" onclick="event.stopPropagation()">@4k_token</a><a href="posts.html?type=mention&amp;value=top100token&amp;period=last30d" class="cashtag-link" style="font-size: 1.20rem" onclick="event.stopPropagation()">@top100token</a><a href="posts.html?type=hashtag&amp;value=AIRDROP&amp;period=last30d" class="cashtag-link" style="font-size: 1.20rem" onclick="event.stopPropagation()">#AIRDROP</a>
+            </div>
+        
+                        
+            <div class="score-column">
+                <div class="score-main">
+                    <span class="score-number">640</span>
+                    <!-- <span class="score-change negative">▼26</span> -->
+                </div>
+                <div class="score-progress">
+                    <div class="progress-bar">
+                        <div class="progress-thumb" style="left: 57%;"></div>
+                    </div>
+                    <div class="progress-labels">
+                        <span style="position: absolute; left: 0%; transform: translateX(0);">0</span>
+                        <span style="position: absolute; left: 25%; transform: translateX(-50%);">500</span>
+                        <span style="position: absolute; left: 50%; transform: translateX(-50%);">1000</span>
+                        <span style="position: absolute; left: 75%; transform: translateX(-50%);">1500</span>
+                        <span style="position: absolute; left: 100%; transform: translateX(-100%);">2000</span>
+                    </div>
+                </div>
+                <div class="score-level">Advanced</div>
+            </div>
+        
+                    </div>
+                
+                    <div class="leaderboard-item slide-in-left clickable-item" onclick="window.location.href='posts.html?type=user&amp;value=jikso_sol&amp;period=last30d'">
+                        
+            <div class="account-column">
+                <div class="account-top-section">
+                    <div class="account-avatar-small has-image">
+                        <img src="https://pbs.twimg.com/profile_images/1929141476338089984/Q9AE_7Be_normal.jpg" alt="Jikso Arc." class="avatar-image" loading="lazy" onload="this.parentElement.classList.add('has-image'); this.nextElementSibling.style.display='none';" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'; this.parentElement.classList.remove('has-image');">
+               <div class="avatar-fallback" style="display: none;">JA</div>
+                    </div>
+                    <div class="account-names">
+                        <div class="account-username">@jikso_sol </div>
+                        <div class="account-display-name">Jikso Arc.</div>
+                    </div>
+                </div>
+                
+                <div class="account-followers">
+                    <span class="followers-count">189 followers</span>
+                    <span class="followers-change negative">▼3</span>
+                </div>
+            </div>
+            
+            <div class="cashtags-column">
+                <div class="column-title">posting about</div>
+                <a href="posts.html?type=mention&amp;value=4k_token&amp;period=last30d" class="cashtag-link" style="font-size: 1.20rem" onclick="event.stopPropagation()">@4k_token</a><a href="posts.html?type=mention&amp;value=top100token&amp;period=last30d" class="cashtag-link" style="font-size: 1.20rem" onclick="event.stopPropagation()">@top100token</a><a href="posts.html?type=hashtag&amp;value=AIRDROP&amp;period=last30d" class="cashtag-link" style="font-size: 1.20rem" onclick="event.stopPropagation()">#AIRDROP</a>
+            </div>
+        
+                        
+            <div class="score-column">
+                <div class="score-main">
+                    <span class="score-number">640</span>
+                    <!-- <span class="score-change negative">▼3</span> -->
+                </div>
+                <div class="score-progress">
+                    <div class="progress-bar">
+                        <div class="progress-thumb" style="left: 57%;"></div>
+                    </div>
+                    <div class="progress-labels">
+                        <span style="position: absolute; left: 0%; transform: translateX(0);">0</span>
+                        <span style="position: absolute; left: 25%; transform: translateX(-50%);">500</span>
+                        <span style="position: absolute; left: 50%; transform: translateX(-50%);">1000</span>
+                        <span style="position: absolute; left: 75%; transform: translateX(-50%);">1500</span>
+                        <span style="position: absolute; left: 100%; transform: translateX(-100%);">2000</span>
+                    </div>
+                </div>
+                <div class="score-level">Advanced</div>
+            </div>
+        
+                    </div>
+                
+                    <div class="leaderboard-item slide-in-left clickable-item" onclick="window.location.href='posts.html?type=user&amp;value=surkey153&amp;period=last30d'">
+                        
+            <div class="account-column">
+                <div class="account-top-section">
+                    <div class="account-avatar-small has-image">
+                        <img src="https://pbs.twimg.com/profile_images/1827327482200023040/LIs6u6q5_normal.png" alt="Surkey" class="avatar-image" loading="lazy" onload="this.parentElement.classList.add('has-image'); this.nextElementSibling.style.display='none';" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'; this.parentElement.classList.remove('has-image');">
+               <div class="avatar-fallback" style="display: none;">SU</div>
+                    </div>
+                    <div class="account-names">
+                        <div class="account-username">@surkey153 </div>
+                        <div class="account-display-name">Surkey</div>
+                    </div>
+                </div>
+                
+                <div class="account-followers">
+                    <span class="followers-count">100 followers</span>
+                    <span class="followers-change positive">▲1</span>
+                </div>
+            </div>
+            
+            <div class="cashtags-column">
+                <div class="column-title">posting about</div>
+                <a href="posts.html?type=mention&amp;value=4k_token&amp;period=last30d" class="cashtag-link" style="font-size: 1.20rem" onclick="event.stopPropagation()">@4k_token</a><a href="posts.html?type=mention&amp;value=top100token&amp;period=last30d" class="cashtag-link" style="font-size: 1.20rem" onclick="event.stopPropagation()">@top100token</a><a href="posts.html?type=hashtag&amp;value=AIRDROP&amp;period=last30d" class="cashtag-link" style="font-size: 1.20rem" onclick="event.stopPropagation()">#AIRDROP</a>
+            </div>
+        
+                        
+            <div class="score-column">
+                <div class="score-main">
+                    <span class="score-number">640</span>
+                    <!-- <span class="score-change positive">▲31</span> -->
+                </div>
+                <div class="score-progress">
+                    <div class="progress-bar">
+                        <div class="progress-thumb" style="left: 57%;"></div>
+                    </div>
+                    <div class="progress-labels">
+                        <span style="position: absolute; left: 0%; transform: translateX(0);">0</span>
+                        <span style="position: absolute; left: 25%; transform: translateX(-50%);">500</span>
+                        <span style="position: absolute; left: 50%; transform: translateX(-50%);">1000</span>
+                        <span style="position: absolute; left: 75%; transform: translateX(-50%);">1500</span>
+                        <span style="position: absolute; left: 100%; transform: translateX(-100%);">2000</span>
+                    </div>
+                </div>
+                <div class="score-level">Advanced</div>
+            </div>
+        
+                    </div>
+                
+                    <div class="leaderboard-item slide-in-left clickable-item" onclick="window.location.href='posts.html?type=user&amp;value=iimsumi4425&amp;period=last30d'">
+                        
+            <div class="account-column">
+                <div class="account-top-section">
+                    <div class="account-avatar-small has-image">
+                        <img src="https://pbs.twimg.com/profile_images/1959626599592230912/tE83Xdti_normal.jpg" alt="Iimsumi" class="avatar-image" loading="lazy" onload="this.parentElement.classList.add('has-image'); this.nextElementSibling.style.display='none';" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'; this.parentElement.classList.remove('has-image');">
+               <div class="avatar-fallback" style="display: none;">II</div>
+                    </div>
+                    <div class="account-names">
+                        <div class="account-username">@iimsumi4425 </div>
+                        <div class="account-display-name">Iimsumi</div>
+                    </div>
+                </div>
+                
+                <div class="account-followers">
+                    <span class="followers-count">67 followers</span>
+                    
+                </div>
+            </div>
+            
+            <div class="cashtags-column">
+                <div class="column-title">posting about</div>
+                <a href="posts.html?type=mention&amp;value=4k_token&amp;period=last30d" class="cashtag-link" style="font-size: 1.20rem" onclick="event.stopPropagation()">@4k_token</a><a href="posts.html?type=mention&amp;value=top100token&amp;period=last30d" class="cashtag-link" style="font-size: 1.20rem" onclick="event.stopPropagation()">@top100token</a><a href="posts.html?type=hashtag&amp;value=AIRDROP&amp;period=last30d" class="cashtag-link" style="font-size: 1.20rem" onclick="event.stopPropagation()">#AIRDROP</a>
+            </div>
+        
+                        
+            <div class="score-column">
+                <div class="score-main">
+                    <span class="score-number">640</span>
+                    <!-- <span class="score-change positive">▲20</span> -->
+                </div>
+                <div class="score-progress">
+                    <div class="progress-bar">
+                        <div class="progress-thumb" style="left: 57%;"></div>
+                    </div>
+                    <div class="progress-labels">
+                        <span style="position: absolute; left: 0%; transform: translateX(0);">0</span>
+                        <span style="position: absolute; left: 25%; transform: translateX(-50%);">500</span>
+                        <span style="position: absolute; left: 50%; transform: translateX(-50%);">1000</span>
+                        <span style="position: absolute; left: 75%; transform: translateX(-50%);">1500</span>
+                        <span style="position: absolute; left: 100%; transform: translateX(-100%);">2000</span>
+                    </div>
+                </div>
+                <div class="score-level">Advanced</div>
+            </div>
+        
+                    </div>
+                
+                    <div class="leaderboard-item slide-in-left clickable-item" onclick="window.location.href='posts.html?type=user&amp;value=alfa7909&amp;period=last30d'">
+                        
+            <div class="account-column">
+                <div class="account-top-section">
+                    <div class="account-avatar-small has-image">
+                        <img src="https://pbs.twimg.com/profile_images/1827233822897057792/IQAnI63K_normal.jpg" alt="Alfa" class="avatar-image" loading="lazy" onload="this.parentElement.classList.add('has-image'); this.nextElementSibling.style.display='none';" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'; this.parentElement.classList.remove('has-image');">
+               <div class="avatar-fallback" style="display: none;">AL</div>
+                    </div>
+                    <div class="account-names">
+                        <div class="account-username">@alfa7909 </div>
+                        <div class="account-display-name">Alfa</div>
+                    </div>
+                </div>
+                
+                <div class="account-followers">
+                    <span class="followers-count">59 followers</span>
+                    <span class="followers-change negative">▼1</span>
+                </div>
+            </div>
+            
+            <div class="cashtags-column">
+                <div class="column-title">posting about</div>
+                <a href="posts.html?type=mention&amp;value=4k_token&amp;period=last30d" class="cashtag-link" style="font-size: 1.20rem" onclick="event.stopPropagation()">@4k_token</a><a href="posts.html?type=mention&amp;value=top100token&amp;period=last30d" class="cashtag-link" style="font-size: 1.20rem" onclick="event.stopPropagation()">@top100token</a><a href="posts.html?type=hashtag&amp;value=AIRDROP&amp;period=last30d" class="cashtag-link" style="font-size: 1.20rem" onclick="event.stopPropagation()">#AIRDROP</a>
+            </div>
+        
+                        
+            <div class="score-column">
+                <div class="score-main">
+                    <span class="score-number">640</span>
+                    <!-- <span class="score-change positive">▲4</span> -->
+                </div>
+                <div class="score-progress">
+                    <div class="progress-bar">
+                        <div class="progress-thumb" style="left: 57%;"></div>
+                    </div>
+                    <div class="progress-labels">
+                        <span style="position: absolute; left: 0%; transform: translateX(0);">0</span>
+                        <span style="position: absolute; left: 25%; transform: translateX(-50%);">500</span>
+                        <span style="position: absolute; left: 50%; transform: translateX(-50%);">1000</span>
+                        <span style="position: absolute; left: 75%; transform: translateX(-50%);">1500</span>
+                        <span style="position: absolute; left: 100%; transform: translateX(-100%);">2000</span>
+                    </div>
+                </div>
+                <div class="score-level">Advanced</div>
+            </div>
+        
+                    </div>
+                
+                    <div class="leaderboard-item slide-in-left clickable-item" onclick="window.location.href='posts.html?type=user&amp;value=evans_eth&amp;period=last30d'">
+                        
+            <div class="account-column">
+                <div class="account-top-section">
+                    <div class="account-avatar-small has-image">
+                        <img src="https://pbs.twimg.com/profile_images/1994666199524020227/ZD-EueJd_normal.jpg" alt="Adrian revan" class="avatar-image" loading="lazy" onload="this.parentElement.classList.add('has-image'); this.nextElementSibling.style.display='none';" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'; this.parentElement.classList.remove('has-image');">
+               <div class="avatar-fallback" style="display: none;">AR</div>
+                    </div>
+                    <div class="account-names">
+                        <div class="account-username">@evans_eth </div>
+                        <div class="account-display-name">Adrian revan</div>
+                    </div>
+                </div>
+                
+                <div class="account-followers">
+                    <span class="followers-count">3 followers</span>
+                    
+                </div>
+            </div>
+            
+            <div class="cashtags-column">
+                <div class="column-title">posting about</div>
+                <a href="posts.html?type=mention&amp;value=4k_token&amp;period=last30d" class="cashtag-link" style="font-size: 1.20rem" onclick="event.stopPropagation()">@4k_token</a><a href="posts.html?type=mention&amp;value=top100token&amp;period=last30d" class="cashtag-link" style="font-size: 1.20rem" onclick="event.stopPropagation()">@top100token</a><a href="posts.html?type=hashtag&amp;value=AIRDROP&amp;period=last30d" class="cashtag-link" style="font-size: 1.20rem" onclick="event.stopPropagation()">#AIRDROP</a>
+            </div>
+        
+                        
+            <div class="score-column">
+                <div class="score-main">
+                    <span class="score-number">640</span>
+                    <!-- <span class="score-change positive">▲12</span> -->
+                </div>
+                <div class="score-progress">
+                    <div class="progress-bar">
+                        <div class="progress-thumb" style="left: 57%;"></div>
+                    </div>
+                    <div class="progress-labels">
+                        <span style="position: absolute; left: 0%; transform: translateX(0);">0</span>
+                        <span style="position: absolute; left: 25%; transform: translateX(-50%);">500</span>
+                        <span style="position: absolute; left: 50%; transform: translateX(-50%);">1000</span>
+                        <span style="position: absolute; left: 75%; transform: translateX(-50%);">1500</span>
+                        <span style="position: absolute; left: 100%; transform: translateX(-100%);">2000</span>
+                    </div>
+                </div>
+                <div class="score-level">Advanced</div>
+            </div>
+        
+                    </div>
+                
+                    <div class="leaderboard-item slide-in-left clickable-item" onclick="window.location.href='posts.html?type=user&amp;value=filip_577&amp;period=last30d'">
+                        
+            <div class="account-column">
+                <div class="account-top-section">
+                    <div class="account-avatar-small has-image">
+                        <img src="https://pbs.twimg.com/profile_images/1827246380223725568/kg4HW8Vk_normal.jpg" alt="Filip" class="avatar-image" loading="lazy" onload="this.parentElement.classList.add('has-image'); this.nextElementSibling.style.display='none';" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'; this.parentElement.classList.remove('has-image');">
+               <div class="avatar-fallback" style="display: none;">FI</div>
+                    </div>
+                    <div class="account-names">
+                        <div class="account-username">@filip_577 </div>
+                        <div class="account-display-name">Filip</div>
+                    </div>
+                </div>
+                
+                <div class="account-followers">
+                    <span class="followers-count">88 followers</span>
+                    <span class="followers-change negative">▼2</span>
+                </div>
+            </div>
+            
+            <div class="cashtags-column">
+                <div class="column-title">posting about</div>
+                <a href="posts.html?type=mention&amp;value=4k_token&amp;period=last30d" class="cashtag-link" style="font-size: 1.20rem" onclick="event.stopPropagation()">@4k_token</a><a href="posts.html?type=mention&amp;value=top100token&amp;period=last30d" class="cashtag-link" style="font-size: 1.20rem" onclick="event.stopPropagation()">@top100token</a><a href="posts.html?type=hashtag&amp;value=AIRDROP&amp;period=last30d" class="cashtag-link" style="font-size: 1.20rem" onclick="event.stopPropagation()">#AIRDROP</a>
+            </div>
+        
+                        
+            <div class="score-column">
+                <div class="score-main">
+                    <span class="score-number">640</span>
+                    <!-- <span class="score-change negative">▼5</span> -->
+                </div>
+                <div class="score-progress">
+                    <div class="progress-bar">
+                        <div class="progress-thumb" style="left: 57%;"></div>
+                    </div>
+                    <div class="progress-labels">
+                        <span style="position: absolute; left: 0%; transform: translateX(0);">0</span>
+                        <span style="position: absolute; left: 25%; transform: translateX(-50%);">500</span>
+                        <span style="position: absolute; left: 50%; transform: translateX(-50%);">1000</span>
+                        <span style="position: absolute; left: 75%; transform: translateX(-50%);">1500</span>
+                        <span style="position: absolute; left: 100%; transform: translateX(-100%);">2000</span>
+                    </div>
+                </div>
+                <div class="score-level">Advanced</div>
+            </div>
+        
+                    </div>
+                
+                    <div class="leaderboard-item slide-in-left clickable-item" onclick="window.location.href='posts.html?type=user&amp;value=zahra202555&amp;period=last30d'">
+                        
+            <div class="account-column">
+                <div class="account-top-section">
+                    <div class="account-avatar-small has-image">
+                        <img src="https://pbs.twimg.com/profile_images/1971148307817955340/8FN-RHpP_normal.jpg" alt="Zahra🐇" class="avatar-image" loading="lazy" onload="this.parentElement.classList.add('has-image'); this.nextElementSibling.style.display='none';" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'; this.parentElement.classList.remove('has-image');">
+               <div class="avatar-fallback" style="display: none;">ZA</div>
+                    </div>
+                    <div class="account-names">
+                        <div class="account-username">@zahra202555 </div>
+                        <div class="account-display-name">Zahra🐇</div>
+                    </div>
+                </div>
+                
+                <div class="account-followers">
+                    <span class="followers-count">1.1k followers</span>
+                    <span class="followers-change positive">▲22</span>
+                </div>
+            </div>
+            
+            <div class="cashtags-column">
+                <div class="column-title">posting about</div>
+                <a href="posts.html?type=mention&amp;value=4k_token&amp;period=last30d" class="cashtag-link" style="font-size: 1.20rem" onclick="event.stopPropagation()">@4k_token</a><a href="posts.html?type=mention&amp;value=top100token&amp;period=last30d" class="cashtag-link" style="font-size: 1.20rem" onclick="event.stopPropagation()">@top100token</a><a href="posts.html?type=hashtag&amp;value=AIRDROP&amp;period=last30d" class="cashtag-link" style="font-size: 1.20rem" onclick="event.stopPropagation()">#AIRDROP</a>
+            </div>
+        
+                        
+            <div class="score-column">
+                <div class="score-main">
+                    <span class="score-number">640</span>
+                    <!-- <span class="score-change positive">▲16</span> -->
+                </div>
+                <div class="score-progress">
+                    <div class="progress-bar">
+                        <div class="progress-thumb" style="left: 57%;"></div>
+                    </div>
+                    <div class="progress-labels">
+                        <span style="position: absolute; left: 0%; transform: translateX(0);">0</span>
+                        <span style="position: absolute; left: 25%; transform: translateX(-50%);">500</span>
+                        <span style="position: absolute; left: 50%; transform: translateX(-50%);">1000</span>
+                        <span style="position: absolute; left: 75%; transform: translateX(-50%);">1500</span>
+                        <span style="position: absolute; left: 100%; transform: translateX(-100%);">2000</span>
+                    </div>
+                </div>
+                <div class="score-level">Advanced</div>
+            </div>
+        
+                    </div>
+                
+                    <div class="leaderboard-item slide-in-left clickable-item" onclick="window.location.href='posts.html?type=user&amp;value=zahra_894&amp;period=last30d'">
+                        
+            <div class="account-column">
+                <div class="account-top-section">
+                    <div class="account-avatar-small has-image">
+                        <img src="https://pbs.twimg.com/profile_images/1827326242942521344/k2BVstrQ_normal.jpg" alt="Zahra" class="avatar-image" loading="lazy" onload="this.parentElement.classList.add('has-image'); this.nextElementSibling.style.display='none';" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'; this.parentElement.classList.remove('has-image');">
+               <div class="avatar-fallback" style="display: none;">ZA</div>
+                    </div>
+                    <div class="account-names">
+                        <div class="account-username">@zahra_894 </div>
+                        <div class="account-display-name">Zahra</div>
+                    </div>
+                </div>
+                
+                <div class="account-followers">
+                    <span class="followers-count">101 followers</span>
+                    <span class="followers-change positive">▲1</span>
+                </div>
+            </div>
+            
+            <div class="cashtags-column">
+                <div class="column-title">posting about</div>
+                <a href="posts.html?type=mention&amp;value=4k_token&amp;period=last30d" class="cashtag-link" style="font-size: 1.20rem" onclick="event.stopPropagation()">@4k_token</a><a href="posts.html?type=mention&amp;value=top100token&amp;period=last30d" class="cashtag-link" style="font-size: 1.20rem" onclick="event.stopPropagation()">@top100token</a><a href="posts.html?type=hashtag&amp;value=AIRDROP&amp;period=last30d" class="cashtag-link" style="font-size: 1.20rem" onclick="event.stopPropagation()">#AIRDROP</a>
+            </div>
+        
+                        
+            <div class="score-column">
+                <div class="score-main">
+                    <span class="score-number">640</span>
+                    <!-- <span class="score-change negative">▼23</span> -->
+                </div>
+                <div class="score-progress">
+                    <div class="progress-bar">
+                        <div class="progress-thumb" style="left: 57%;"></div>
+                    </div>
+                    <div class="progress-labels">
+                        <span style="position: absolute; left: 0%; transform: translateX(0);">0</span>
+                        <span style="position: absolute; left: 25%; transform: translateX(-50%);">500</span>
+                        <span style="position: absolute; left: 50%; transform: translateX(-50%);">1000</span>
+                        <span style="position: absolute; left: 75%; transform: translateX(-50%);">1500</span>
+                        <span style="position: absolute; left: 100%; transform: translateX(-100%);">2000</span>
+                    </div>
+                </div>
+                <div class="score-level">Advanced</div>
+            </div>
+        
+                    </div>
+                
+                    <div class="leaderboard-item slide-in-left clickable-item" onclick="window.location.href='posts.html?type=user&amp;value=your_host_harsh&amp;period=last30d'">
+                        
+            <div class="account-column">
+                <div class="account-top-section">
+                    <div class="account-avatar-small has-image">
+                        <img src="https://pbs.twimg.com/profile_images/1824082408934645760/YvO09Q-1_normal.jpg" alt="Harsh Shaw" class="avatar-image" loading="lazy" onload="this.parentElement.classList.add('has-image'); this.nextElementSibling.style.display='none';" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'; this.parentElement.classList.remove('has-image');">
+               <div class="avatar-fallback" style="display: none;">HS</div>
+                    </div>
+                    <div class="account-names">
+                        <div class="account-username">@your_host_harsh </div>
+                        <div class="account-display-name">Harsh Shaw</div>
+                    </div>
+                </div>
+                
+                <div class="account-followers">
+                    <span class="followers-count">22 followers</span>
+                    
+                </div>
+            </div>
+            
+            <div class="cashtags-column">
+                <div class="column-title">posting about</div>
+                <a href="posts.html?type=mention&amp;value=4k_token&amp;period=last30d" class="cashtag-link" style="font-size: 1.20rem" onclick="event.stopPropagation()">@4k_token</a><a href="posts.html?type=mention&amp;value=top100token&amp;period=last30d" class="cashtag-link" style="font-size: 1.20rem" onclick="event.stopPropagation()">@top100token</a><a href="posts.html?type=hashtag&amp;value=AIRDROP&amp;period=last30d" class="cashtag-link" style="font-size: 1.20rem" onclick="event.stopPropagation()">#AIRDROP</a>
+            </div>
+        
+                        
+            <div class="score-column">
+                <div class="score-main">
+                    <span class="score-number">640</span>
+                    <!-- <span class="score-change positive">▲15</span> -->
+                </div>
+                <div class="score-progress">
+                    <div class="progress-bar">
+                        <div class="progress-thumb" style="left: 57%;"></div>
+                    </div>
+                    <div class="progress-labels">
+                        <span style="position: absolute; left: 0%; transform: translateX(0);">0</span>
+                        <span style="position: absolute; left: 25%; transform: translateX(-50%);">500</span>
+                        <span style="position: absolute; left: 50%; transform: translateX(-50%);">1000</span>
+                        <span style="position: absolute; left: 75%; transform: translateX(-50%);">1500</span>
+                        <span style="position: absolute; left: 100%; transform: translateX(-100%);">2000</span>
+                    </div>
+                </div>
+                <div class="score-level">Advanced</div>
+            </div>
+        
+                    </div>
+                
+                    <div class="leaderboard-item slide-in-left clickable-item" onclick="window.location.href='posts.html?type=user&amp;value=zeelxzz&amp;period=last30d'">
+                        
+            <div class="account-column">
+                <div class="account-top-section">
+                    <div class="account-avatar-small">
+                        <img src="https://pbs.twimg.com/profile_images/1988166757849460737/2O9R1HqQ_normal.jpg" alt="Zeel4U赢 🟡" class="avatar-image" loading="lazy" onload="this.parentElement.classList.add('has-image'); this.nextElementSibling.style.display='none';" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'; this.parentElement.classList.remove('has-image');" style="display: none;">
+               <div class="avatar-fallback" style="display: flex;">Z�</div>
+                    </div>
+                    <div class="account-names">
+                        <div class="account-username">@zeelxzz </div>
+                        <div class="account-display-name">Zeel4U赢 🟡</div>
+                    </div>
+                </div>
+                
+                <div class="account-followers">
+                    <span class="followers-count">197 followers</span>
+                    <span class="followers-change positive">▲4</span>
+                </div>
+            </div>
+            
+            <div class="cashtags-column">
+                <div class="column-title">posting about</div>
+                <a href="posts.html?type=mention&amp;value=4k_token&amp;period=last30d" class="cashtag-link" style="font-size: 1.20rem" onclick="event.stopPropagation()">@4k_token</a><a href="posts.html?type=mention&amp;value=top100token&amp;period=last30d" class="cashtag-link" style="font-size: 1.20rem" onclick="event.stopPropagation()">@top100token</a><a href="posts.html?type=hashtag&amp;value=AIRDROP&amp;period=last30d" class="cashtag-link" style="font-size: 1.20rem" onclick="event.stopPropagation()">#AIRDROP</a>
+            </div>
+        
+                        
+            <div class="score-column">
+                <div class="score-main">
+                    <span class="score-number">640</span>
+                    <!-- <span class="score-change positive">▲4</span> -->
+                </div>
+                <div class="score-progress">
+                    <div class="progress-bar">
+                        <div class="progress-thumb" style="left: 57%;"></div>
+                    </div>
+                    <div class="progress-labels">
+                        <span style="position: absolute; left: 0%; transform: translateX(0);">0</span>
+                        <span style="position: absolute; left: 25%; transform: translateX(-50%);">500</span>
+                        <span style="position: absolute; left: 50%; transform: translateX(-50%);">1000</span>
+                        <span style="position: absolute; left: 75%; transform: translateX(-50%);">1500</span>
+                        <span style="position: absolute; left: 100%; transform: translateX(-100%);">2000</span>
+                    </div>
+                </div>
+                <div class="score-level">Advanced</div>
+            </div>
+        
+                    </div>
+                
+                    <div class="leaderboard-item slide-in-left clickable-item" onclick="window.location.href='posts.html?type=user&amp;value=cantika546&amp;period=last30d'">
+                        
+            <div class="account-column">
+                <div class="account-top-section">
+                    <div class="account-avatar-small has-image">
+                        <img src="https://pbs.twimg.com/profile_images/1827231915809587201/PQZtjmUo_normal.jpg" alt="Cantika" class="avatar-image" loading="lazy" onload="this.parentElement.classList.add('has-image'); this.nextElementSibling.style.display='none';" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'; this.parentElement.classList.remove('has-image');">
+               <div class="avatar-fallback" style="display: none;">CA</div>
+                    </div>
+                    <div class="account-names">
+                        <div class="account-username">@cantika546 </div>
+                        <div class="account-display-name">Cantika</div>
+                    </div>
+                </div>
+                
+                <div class="account-followers">
+                    <span class="followers-count">130 followers</span>
+                    <span class="followers-change negative">▼1</span>
+                </div>
+            </div>
+            
+            <div class="cashtags-column">
+                <div class="column-title">posting about</div>
+                <a href="posts.html?type=mention&amp;value=4k_token&amp;period=last30d" class="cashtag-link" style="font-size: 1.20rem" onclick="event.stopPropagation()">@4k_token</a><a href="posts.html?type=mention&amp;value=top100token&amp;period=last30d" class="cashtag-link" style="font-size: 1.20rem" onclick="event.stopPropagation()">@top100token</a><a href="posts.html?type=hashtag&amp;value=AIRDROP&amp;period=last30d" class="cashtag-link" style="font-size: 1.20rem" onclick="event.stopPropagation()">#AIRDROP</a>
+            </div>
+        
+                        
+            <div class="score-column">
+                <div class="score-main">
+                    <span class="score-number">640</span>
+                    <!-- <span class="score-change negative">▼3</span> -->
+                </div>
+                <div class="score-progress">
+                    <div class="progress-bar">
+                        <div class="progress-thumb" style="left: 57%;"></div>
+                    </div>
+                    <div class="progress-labels">
+                        <span style="position: absolute; left: 0%; transform: translateX(0);">0</span>
+                        <span style="position: absolute; left: 25%; transform: translateX(-50%);">500</span>
+                        <span style="position: absolute; left: 50%; transform: translateX(-50%);">1000</span>
+                        <span style="position: absolute; left: 75%; transform: translateX(-50%);">1500</span>
+                        <span style="position: absolute; left: 100%; transform: translateX(-100%);">2000</span>
+                    </div>
+                </div>
+                <div class="score-level">Advanced</div>
+            </div>
+        
+                    </div>
+                
+                    <div class="leaderboard-item slide-in-left clickable-item" onclick="window.location.href='posts.html?type=user&amp;value=maulaa_r_n&amp;period=last30d'">
+                        
+            <div class="account-column">
+                <div class="account-top-section">
+                    <div class="account-avatar-small has-image">
+                        <img src="https://pbs.twimg.com/profile_images/1988835299800330240/B3C5vfNB_normal.jpg" alt="chikko" class="avatar-image" loading="lazy" onload="this.parentElement.classList.add('has-image'); this.nextElementSibling.style.display='none';" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'; this.parentElement.classList.remove('has-image');">
+               <div class="avatar-fallback" style="display: none;">CH</div>
+                    </div>
+                    <div class="account-names">
+                        <div class="account-username">@maulaa_r_n </div>
+                        <div class="account-display-name">chikko</div>
+                    </div>
+                </div>
+                
+                <div class="account-followers">
+                    <span class="followers-count">876 followers</span>
+                    <span class="followers-change positive">▲2</span>
+                </div>
+            </div>
+            
+            <div class="cashtags-column">
+                <div class="column-title">posting about</div>
+                <a href="posts.html?type=mention&amp;value=4k_token&amp;period=last30d" class="cashtag-link" style="font-size: 1.20rem" onclick="event.stopPropagation()">@4k_token</a><a href="posts.html?type=mention&amp;value=top100token&amp;period=last30d" class="cashtag-link" style="font-size: 1.20rem" onclick="event.stopPropagation()">@top100token</a><a href="posts.html?type=hashtag&amp;value=AIRDROP&amp;period=last30d" class="cashtag-link" style="font-size: 1.20rem" onclick="event.stopPropagation()">#AIRDROP</a>
+            </div>
+        
+                        
+            <div class="score-column">
+                <div class="score-main">
+                    <span class="score-number">640</span>
+                    <!-- <span class="score-change positive">▲9</span> -->
+                </div>
+                <div class="score-progress">
+                    <div class="progress-bar">
+                        <div class="progress-thumb" style="left: 57%;"></div>
+                    </div>
+                    <div class="progress-labels">
+                        <span style="position: absolute; left: 0%; transform: translateX(0);">0</span>
+                        <span style="position: absolute; left: 25%; transform: translateX(-50%);">500</span>
+                        <span style="position: absolute; left: 50%; transform: translateX(-50%);">1000</span>
+                        <span style="position: absolute; left: 75%; transform: translateX(-50%);">1500</span>
+                        <span style="position: absolute; left: 100%; transform: translateX(-100%);">2000</span>
+                    </div>
+                </div>
+                <div class="score-level">Advanced</div>
+            </div>
+        
+                    </div>
+                
+                    <div class="leaderboard-item slide-in-left clickable-item" onclick="window.location.href='posts.html?type=user&amp;value=casperdrax&amp;period=last30d'">
+                        
+            <div class="account-column">
+                <div class="account-top-section">
+                    <div class="account-avatar-small has-image">
+                        <img src="https://pbs.twimg.com/profile_images/1775131452063227904/LvgVAsF9_normal.jpg" alt="Casper" class="avatar-image" loading="lazy" onload="this.parentElement.classList.add('has-image'); this.nextElementSibling.style.display='none';" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'; this.parentElement.classList.remove('has-image');">
+               <div class="avatar-fallback" style="display: none;">CA</div>
+                    </div>
+                    <div class="account-names">
+                        <div class="account-username">@casperdrax </div>
+                        <div class="account-display-name">Casper</div>
+                    </div>
+                </div>
+                
+                <div class="account-followers">
+                    <span class="followers-count">56 followers</span>
+                    <span class="followers-change negative">▼1</span>
+                </div>
+            </div>
+            
+            <div class="cashtags-column">
+                <div class="column-title">posting about</div>
+                <a href="posts.html?type=mention&amp;value=4k_token&amp;period=last30d" class="cashtag-link" style="font-size: 1.20rem" onclick="event.stopPropagation()">@4k_token</a><a href="posts.html?type=mention&amp;value=top100token&amp;period=last30d" class="cashtag-link" style="font-size: 1.20rem" onclick="event.stopPropagation()">@top100token</a><a href="posts.html?type=hashtag&amp;value=AIRDROP&amp;period=last30d" class="cashtag-link" style="font-size: 1.20rem" onclick="event.stopPropagation()">#AIRDROP</a>
+            </div>
+        
+                        
+            <div class="score-column">
+                <div class="score-main">
+                    <span class="score-number">640</span>
+                    <!-- <span class="score-change negative">▼10</span> -->
+                </div>
+                <div class="score-progress">
+                    <div class="progress-bar">
+                        <div class="progress-thumb" style="left: 57%;"></div>
+                    </div>
+                    <div class="progress-labels">
+                        <span style="position: absolute; left: 0%; transform: translateX(0);">0</span>
+                        <span style="position: absolute; left: 25%; transform: translateX(-50%);">500</span>
+                        <span style="position: absolute; left: 50%; transform: translateX(-50%);">1000</span>
+                        <span style="position: absolute; left: 75%; transform: translateX(-50%);">1500</span>
+                        <span style="position: absolute; left: 100%; transform: translateX(-100%);">2000</span>
+                    </div>
+                </div>
+                <div class="score-level">Advanced</div>
+            </div>
+        
+                    </div>
+                
+                    <div class="leaderboard-item slide-in-left clickable-item" onclick="window.location.href='posts.html?type=user&amp;value=kartun901&amp;period=last30d'">
+                        
+            <div class="account-column">
+                <div class="account-top-section">
+                    <div class="account-avatar-small has-image">
+                        <img src="https://pbs.twimg.com/profile_images/1827228591970492416/D1ITvV_y_normal.jpg" alt="Kartun" class="avatar-image" loading="lazy" onload="this.parentElement.classList.add('has-image'); this.nextElementSibling.style.display='none';" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'; this.parentElement.classList.remove('has-image');">
+               <div class="avatar-fallback" style="display: none;">KA</div>
+                    </div>
+                    <div class="account-names">
+                        <div class="account-username">@kartun901 </div>
+                        <div class="account-display-name">Kartun</div>
+                    </div>
+                </div>
+                
+                <div class="account-followers">
+                    <span class="followers-count">89 followers</span>
+                    <span class="followers-change negative">▼2</span>
+                </div>
+            </div>
+            
+            <div class="cashtags-column">
+                <div class="column-title">posting about</div>
+                <a href="posts.html?type=mention&amp;value=4k_token&amp;period=last30d" class="cashtag-link" style="font-size: 1.20rem" onclick="event.stopPropagation()">@4k_token</a><a href="posts.html?type=mention&amp;value=top100token&amp;period=last30d" class="cashtag-link" style="font-size: 1.20rem" onclick="event.stopPropagation()">@top100token</a><a href="posts.html?type=hashtag&amp;value=AIRDROP&amp;period=last30d" class="cashtag-link" style="font-size: 1.20rem" onclick="event.stopPropagation()">#AIRDROP</a>
+            </div>
+        
+                        
+            <div class="score-column">
+                <div class="score-main">
+                    <span class="score-number">640</span>
+                    <!-- <span class="score-change negative">▼14</span> -->
+                </div>
+                <div class="score-progress">
+                    <div class="progress-bar">
+                        <div class="progress-thumb" style="left: 57%;"></div>
+                    </div>
+                    <div class="progress-labels">
+                        <span style="position: absolute; left: 0%; transform: translateX(0);">0</span>
+                        <span style="position: absolute; left: 25%; transform: translateX(-50%);">500</span>
+                        <span style="position: absolute; left: 50%; transform: translateX(-50%);">1000</span>
+                        <span style="position: absolute; left: 75%; transform: translateX(-50%);">1500</span>
+                        <span style="position: absolute; left: 100%; transform: translateX(-100%);">2000</span>
+                    </div>
+                </div>
+                <div class="score-level">Advanced</div>
+            </div>
+        
+                    </div>
+                
+                    <div class="leaderboard-item slide-in-left clickable-item" onclick="window.location.href='posts.html?type=user&amp;value=eddiet62278&amp;period=last30d'">
+                        
+            <div class="account-column">
+                <div class="account-top-section">
+                    <div class="account-avatar-small has-image">
+                        <img src="https://pbs.twimg.com/profile_images/1968777796186198016/xr9otXKM_normal.jpg" alt="eddiiet" class="avatar-image" loading="lazy" onload="this.parentElement.classList.add('has-image'); this.nextElementSibling.style.display='none';" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'; this.parentElement.classList.remove('has-image');">
+               <div class="avatar-fallback" style="display: none;">ED</div>
+                    </div>
+                    <div class="account-names">
+                        <div class="account-username">@eddiet62278 </div>
+                        <div class="account-display-name">eddiiet</div>
+                    </div>
+                </div>
+                
+                <div class="account-followers">
+                    <span class="followers-count">434 followers</span>
+                    <span class="followers-change positive">▲13</span>
+                </div>
+            </div>
+            
+            <div class="cashtags-column">
+                <div class="column-title">posting about</div>
+                <a href="posts.html?type=mention&amp;value=4k_token&amp;period=last30d" class="cashtag-link" style="font-size: 1.20rem" onclick="event.stopPropagation()">@4k_token</a><a href="posts.html?type=mention&amp;value=top100token&amp;period=last30d" class="cashtag-link" style="font-size: 1.20rem" onclick="event.stopPropagation()">@top100token</a><a href="posts.html?type=hashtag&amp;value=AIRDROP&amp;period=last30d" class="cashtag-link" style="font-size: 1.20rem" onclick="event.stopPropagation()">#AIRDROP</a>
+            </div>
+        
+                        
+            <div class="score-column">
+                <div class="score-main">
+                    <span class="score-number">640</span>
+                    <!-- <span class="score-change negative">▼24</span> -->
+                </div>
+                <div class="score-progress">
+                    <div class="progress-bar">
+                        <div class="progress-thumb" style="left: 57%;"></div>
+                    </div>
+                    <div class="progress-labels">
+                        <span style="position: absolute; left: 0%; transform: translateX(0);">0</span>
+                        <span style="position: absolute; left: 25%; transform: translateX(-50%);">500</span>
+                        <span style="position: absolute; left: 50%; transform: translateX(-50%);">1000</span>
+                        <span style="position: absolute; left: 75%; transform: translateX(-50%);">1500</span>
+                        <span style="position: absolute; left: 100%; transform: translateX(-100%);">2000</span>
+                    </div>
+                </div>
+                <div class="score-level">Advanced</div>
+            </div>
+        
+                    </div>
+                
+                    <div class="leaderboard-item slide-in-left clickable-item" onclick="window.location.href='posts.html?type=user&amp;value=etiin211701&amp;period=last30d'">
+                        
+            <div class="account-column">
+                <div class="account-top-section">
+                    <div class="account-avatar-small has-image">
+                        <img src="https://pbs.twimg.com/profile_images/1959626433011257344/VBiOwlSr_normal.jpg" alt="Etiin" class="avatar-image" loading="lazy" onload="this.parentElement.classList.add('has-image'); this.nextElementSibling.style.display='none';" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'; this.parentElement.classList.remove('has-image');">
+               <div class="avatar-fallback" style="display: none;">ET</div>
+                    </div>
+                    <div class="account-names">
+                        <div class="account-username">@etiin211701 </div>
+                        <div class="account-display-name">Etiin</div>
+                    </div>
+                </div>
+                
+                <div class="account-followers">
+                    <span class="followers-count">82 followers</span>
+                    
+                </div>
+            </div>
+            
+            <div class="cashtags-column">
+                <div class="column-title">posting about</div>
+                <a href="posts.html?type=mention&amp;value=4k_token&amp;period=last30d" class="cashtag-link" style="font-size: 1.20rem" onclick="event.stopPropagation()">@4k_token</a><a href="posts.html?type=mention&amp;value=top100token&amp;period=last30d" class="cashtag-link" style="font-size: 1.20rem" onclick="event.stopPropagation()">@top100token</a><a href="posts.html?type=hashtag&amp;value=AIRDROP&amp;period=last30d" class="cashtag-link" style="font-size: 1.20rem" onclick="event.stopPropagation()">#AIRDROP</a>
+            </div>
+        
+                        
+            <div class="score-column">
+                <div class="score-main">
+                    <span class="score-number">640</span>
+                    <!-- <span class="score-change positive">▲17</span> -->
+                </div>
+                <div class="score-progress">
+                    <div class="progress-bar">
+                        <div class="progress-thumb" style="left: 57%;"></div>
+                    </div>
+                    <div class="progress-labels">
+                        <span style="position: absolute; left: 0%; transform: translateX(0);">0</span>
+                        <span style="position: absolute; left: 25%; transform: translateX(-50%);">500</span>
+                        <span style="position: absolute; left: 50%; transform: translateX(-50%);">1000</span>
+                        <span style="position: absolute; left: 75%; transform: translateX(-50%);">1500</span>
+                        <span style="position: absolute; left: 100%; transform: translateX(-100%);">2000</span>
+                    </div>
+                </div>
+                <div class="score-level">Advanced</div>
+            </div>
+        
+                    </div>
+                
+                    <div class="leaderboard-item slide-in-left clickable-item" onclick="window.location.href='posts.html?type=user&amp;value=optimus633&amp;period=last30d'">
+                        
+            <div class="account-column">
+                <div class="account-top-section">
+                    <div class="account-avatar-small has-image">
+                        <img src="https://pbs.twimg.com/profile_images/1929955401895948289/6pJaktxe_normal.jpg" alt="optimus" class="avatar-image" loading="lazy" onload="this.parentElement.classList.add('has-image'); this.nextElementSibling.style.display='none';" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'; this.parentElement.classList.remove('has-image');">
+               <div class="avatar-fallback" style="display: none;">OP</div>
+                    </div>
+                    <div class="account-names">
+                        <div class="account-username">@optimus633 </div>
+                        <div class="account-display-name">optimus</div>
+                    </div>
+                </div>
+                
+                <div class="account-followers">
+                    <span class="followers-count">37 followers</span>
+                    
+                </div>
+            </div>
+            
+            <div class="cashtags-column">
+                <div class="column-title">posting about</div>
+                <a href="posts.html?type=mention&amp;value=4k_token&amp;period=last30d" class="cashtag-link" style="font-size: 1.20rem" onclick="event.stopPropagation()">@4k_token</a><a href="posts.html?type=mention&amp;value=top100token&amp;period=last30d" class="cashtag-link" style="font-size: 1.20rem" onclick="event.stopPropagation()">@top100token</a><a href="posts.html?type=hashtag&amp;value=AIRDROP&amp;period=last30d" class="cashtag-link" style="font-size: 1.20rem" onclick="event.stopPropagation()">#AIRDROP</a>
+            </div>
+        
+                        
+            <div class="score-column">
+                <div class="score-main">
+                    <span class="score-number">640</span>
+                    <!-- <span class="score-change negative">▼26</span> -->
+                </div>
+                <div class="score-progress">
+                    <div class="progress-bar">
+                        <div class="progress-thumb" style="left: 57%;"></div>
+                    </div>
+                    <div class="progress-labels">
+                        <span style="position: absolute; left: 0%; transform: translateX(0);">0</span>
+                        <span style="position: absolute; left: 25%; transform: translateX(-50%);">500</span>
+                        <span style="position: absolute; left: 50%; transform: translateX(-50%);">1000</span>
+                        <span style="position: absolute; left: 75%; transform: translateX(-50%);">1500</span>
+                        <span style="position: absolute; left: 100%; transform: translateX(-100%);">2000</span>
+                    </div>
+                </div>
+                <div class="score-level">Advanced</div>
+            </div>
+        
+                    </div>
+                
+                    <div class="leaderboard-item slide-in-left clickable-item" onclick="window.location.href='posts.html?type=user&amp;value=hayatozatox&amp;period=last30d'">
+                        
+            <div class="account-column">
+                <div class="account-top-section">
+                    <div class="account-avatar-small has-image">
+                        <img src="https://pbs.twimg.com/profile_images/1772664215721091072/sa7I1EVK_normal.jpg" alt="hayato" class="avatar-image" loading="lazy" onload="this.parentElement.classList.add('has-image'); this.nextElementSibling.style.display='none';" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'; this.parentElement.classList.remove('has-image');">
+               <div class="avatar-fallback" style="display: none;">HA</div>
+                    </div>
+                    <div class="account-names">
+                        <div class="account-username">@hayatozatox </div>
+                        <div class="account-display-name">hayato</div>
+                    </div>
+                </div>
+                
+                <div class="account-followers">
+                    <span class="followers-count">51 followers</span>
+                    <span class="followers-change positive">▲1</span>
+                </div>
+            </div>
+            
+            <div class="cashtags-column">
+                <div class="column-title">posting about</div>
+                <a href="posts.html?type=mention&amp;value=4k_token&amp;period=last30d" class="cashtag-link" style="font-size: 1.20rem" onclick="event.stopPropagation()">@4k_token</a><a href="posts.html?type=mention&amp;value=top100token&amp;period=last30d" class="cashtag-link" style="font-size: 1.20rem" onclick="event.stopPropagation()">@top100token</a><a href="posts.html?type=hashtag&amp;value=AIRDROP&amp;period=last30d" class="cashtag-link" style="font-size: 1.20rem" onclick="event.stopPropagation()">#AIRDROP</a>
+            </div>
+        
+                        
+            <div class="score-column">
+                <div class="score-main">
+                    <span class="score-number">640</span>
+                    <!-- <span class="score-change negative">▼2</span> -->
+                </div>
+                <div class="score-progress">
+                    <div class="progress-bar">
+                        <div class="progress-thumb" style="left: 57%;"></div>
+                    </div>
+                    <div class="progress-labels">
+                        <span style="position: absolute; left: 0%; transform: translateX(0);">0</span>
+                        <span style="position: absolute; left: 25%; transform: translateX(-50%);">500</span>
+                        <span style="position: absolute; left: 50%; transform: translateX(-50%);">1000</span>
+                        <span style="position: absolute; left: 75%; transform: translateX(-50%);">1500</span>
+                        <span style="position: absolute; left: 100%; transform: translateX(-100%);">2000</span>
+                    </div>
+                </div>
+                <div class="score-level">Advanced</div>
+            </div>
+        
+                    </div>
+                
+                    <div class="leaderboard-item slide-in-left clickable-item" onclick="window.location.href='posts.html?type=user&amp;value=xxyieen&amp;period=last30d'">
+                        
+            <div class="account-column">
+                <div class="account-top-section">
+                    <div class="account-avatar-small has-image">
+                        <img src="https://pbs.twimg.com/profile_images/1889495453177356291/u1G6RZND_normal.jpg" alt="xxyien" class="avatar-image" loading="lazy" onload="this.parentElement.classList.add('has-image'); this.nextElementSibling.style.display='none';" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'; this.parentElement.classList.remove('has-image');">
+               <div class="avatar-fallback" style="display: none;">XX</div>
+                    </div>
+                    <div class="account-names">
+                        <div class="account-username">@xxyieen </div>
+                        <div class="account-display-name">xxyien</div>
+                    </div>
+                </div>
+                
+                <div class="account-followers">
+                    <span class="followers-count">16 followers</span>
+                    
+                </div>
+            </div>
+            
+            <div class="cashtags-column">
+                <div class="column-title">posting about</div>
+                <a href="posts.html?type=mention&amp;value=4k_token&amp;period=last30d" class="cashtag-link" style="font-size: 1.20rem" onclick="event.stopPropagation()">@4k_token</a><a href="posts.html?type=mention&amp;value=top100token&amp;period=last30d" class="cashtag-link" style="font-size: 1.20rem" onclick="event.stopPropagation()">@top100token</a><a href="posts.html?type=hashtag&amp;value=AIRDROP&amp;period=last30d" class="cashtag-link" style="font-size: 1.20rem" onclick="event.stopPropagation()">#AIRDROP</a>
+            </div>
+        
+                        
+            <div class="score-column">
+                <div class="score-main">
+                    <span class="score-number">640</span>
+                    <!-- <span class="score-change positive">▲13</span> -->
+                </div>
+                <div class="score-progress">
+                    <div class="progress-bar">
+                        <div class="progress-thumb" style="left: 57%;"></div>
+                    </div>
+                    <div class="progress-labels">
+                        <span style="position: absolute; left: 0%; transform: translateX(0);">0</span>
+                        <span style="position: absolute; left: 25%; transform: translateX(-50%);">500</span>
+                        <span style="position: absolute; left: 50%; transform: translateX(-50%);">1000</span>
+                        <span style="position: absolute; left: 75%; transform: translateX(-50%);">1500</span>
+                        <span style="position: absolute; left: 100%; transform: translateX(-100%);">2000</span>
+                    </div>
+                </div>
+                <div class="score-level">Advanced</div>
+            </div>
+        
+                    </div>
+                
+                    <div class="leaderboard-item slide-in-left clickable-item" onclick="window.location.href='posts.html?type=user&amp;value=21nrja&amp;period=last30d'">
+                        
+            <div class="account-column">
+                <div class="account-top-section">
+                    <div class="account-avatar-small has-image">
+                        <img src="https://pbs.twimg.com/profile_images/1993383384576647168/5pqUnD9__normal.jpg" alt="jayrond🟡" class="avatar-image" loading="lazy" onload="this.parentElement.classList.add('has-image'); this.nextElementSibling.style.display='none';" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'; this.parentElement.classList.remove('has-image');">
+               <div class="avatar-fallback" style="display: none;">JA</div>
+                    </div>
+                    <div class="account-names">
+                        <div class="account-username">@21nrja </div>
+                        <div class="account-display-name">jayrond🟡</div>
+                    </div>
+                </div>
+                
+                <div class="account-followers">
+                    <span class="followers-count">714 followers</span>
+                    <span class="followers-change positive">▲4</span>
+                </div>
+            </div>
+            
+            <div class="cashtags-column">
+                <div class="column-title">posting about</div>
+                <a href="posts.html?type=mention&amp;value=4k_token&amp;period=last30d" class="cashtag-link" style="font-size: 1.20rem" onclick="event.stopPropagation()">@4k_token</a><a href="posts.html?type=mention&amp;value=top100token&amp;period=last30d" class="cashtag-link" style="font-size: 1.20rem" onclick="event.stopPropagation()">@top100token</a><a href="posts.html?type=hashtag&amp;value=AIRDROP&amp;period=last30d" class="cashtag-link" style="font-size: 1.20rem" onclick="event.stopPropagation()">#AIRDROP</a>
+            </div>
+        
+                        
+            <div class="score-column">
+                <div class="score-main">
+                    <span class="score-number">640</span>
+                    <!-- <span class="score-change negative">▼16</span> -->
+                </div>
+                <div class="score-progress">
+                    <div class="progress-bar">
+                        <div class="progress-thumb" style="left: 57%;"></div>
+                    </div>
+                    <div class="progress-labels">
+                        <span style="position: absolute; left: 0%; transform: translateX(0);">0</span>
+                        <span style="position: absolute; left: 25%; transform: translateX(-50%);">500</span>
+                        <span style="position: absolute; left: 50%; transform: translateX(-50%);">1000</span>
+                        <span style="position: absolute; left: 75%; transform: translateX(-50%);">1500</span>
+                        <span style="position: absolute; left: 100%; transform: translateX(-100%);">2000</span>
+                    </div>
+                </div>
+                <div class="score-level">Advanced</div>
+            </div>
+        
+                    </div>
+                
+                    <div class="leaderboard-item slide-in-left clickable-item" onclick="window.location.href='posts.html?type=user&amp;value=reksi79&amp;period=last30d'">
+                        
+            <div class="account-column">
+                <div class="account-top-section">
+                    <div class="account-avatar-small has-image">
+                        <img src="https://pbs.twimg.com/profile_images/1827225855493574656/KVu_KE_u_normal.jpg" alt="Reksi" class="avatar-image" loading="lazy" onload="this.parentElement.classList.add('has-image'); this.nextElementSibling.style.display='none';" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'; this.parentElement.classList.remove('has-image');">
+               <div class="avatar-fallback" style="display: none;">RE</div>
+                    </div>
+                    <div class="account-names">
+                        <div class="account-username">@reksi79 </div>
+                        <div class="account-display-name">Reksi</div>
+                    </div>
+                </div>
+                
+                <div class="account-followers">
+                    <span class="followers-count">85 followers</span>
+                    <span class="followers-change negative">▼1</span>
+                </div>
+            </div>
+            
+            <div class="cashtags-column">
+                <div class="column-title">posting about</div>
+                <a href="posts.html?type=mention&amp;value=4k_token&amp;period=last30d" class="cashtag-link" style="font-size: 1.20rem" onclick="event.stopPropagation()">@4k_token</a><a href="posts.html?type=mention&amp;value=top100token&amp;period=last30d" class="cashtag-link" style="font-size: 1.20rem" onclick="event.stopPropagation()">@top100token</a><a href="posts.html?type=hashtag&amp;value=AIRDROP&amp;period=last30d" class="cashtag-link" style="font-size: 1.20rem" onclick="event.stopPropagation()">#AIRDROP</a>
+            </div>
+        
+                        
+            <div class="score-column">
+                <div class="score-main">
+                    <span class="score-number">640</span>
+                    <!-- <span class="score-change negative">▼15</span> -->
+                </div>
+                <div class="score-progress">
+                    <div class="progress-bar">
+                        <div class="progress-thumb" style="left: 57%;"></div>
+                    </div>
+                    <div class="progress-labels">
+                        <span style="position: absolute; left: 0%; transform: translateX(0);">0</span>
+                        <span style="position: absolute; left: 25%; transform: translateX(-50%);">500</span>
+                        <span style="position: absolute; left: 50%; transform: translateX(-50%);">1000</span>
+                        <span style="position: absolute; left: 75%; transform: translateX(-50%);">1500</span>
+                        <span style="position: absolute; left: 100%; transform: translateX(-100%);">2000</span>
+                    </div>
+                </div>
+                <div class="score-level">Advanced</div>
+            </div>
+        
+                    </div>
+                
+                    <div class="leaderboard-item slide-in-left clickable-item" onclick="window.location.href='posts.html?type=user&amp;value=crazyman807&amp;period=last30d'">
+                        
+            <div class="account-column">
+                <div class="account-top-section">
+                    <div class="account-avatar-small has-image">
+                        <img src="https://pbs.twimg.com/profile_images/1859567982952972289/LGyyZwX__normal.jpg" alt="Crazy Man" class="avatar-image" loading="lazy" onload="this.parentElement.classList.add('has-image'); this.nextElementSibling.style.display='none';" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'; this.parentElement.classList.remove('has-image');">
+               <div class="avatar-fallback" style="display: none;">CM</div>
+                    </div>
+                    <div class="account-names">
+                        <div class="account-username">@crazyman807 </div>
+                        <div class="account-display-name">Crazy Man</div>
+                    </div>
+                </div>
+                
+                <div class="account-followers">
+                    <span class="followers-count">199 followers</span>
+                    <span class="followers-change positive">▲1</span>
+                </div>
+            </div>
+            
+            <div class="cashtags-column">
+                <div class="column-title">posting about</div>
+                <a href="posts.html?type=mention&amp;value=4k_token&amp;period=last30d" class="cashtag-link" style="font-size: 1.20rem" onclick="event.stopPropagation()">@4k_token</a><a href="posts.html?type=mention&amp;value=top100token&amp;period=last30d" class="cashtag-link" style="font-size: 1.20rem" onclick="event.stopPropagation()">@top100token</a><a href="posts.html?type=hashtag&amp;value=AIRDROP&amp;period=last30d" class="cashtag-link" style="font-size: 1.20rem" onclick="event.stopPropagation()">#AIRDROP</a>
+            </div>
+        
+                        
+            <div class="score-column">
+                <div class="score-main">
+                    <span class="score-number">640</span>
+                    <!-- <span class="score-change negative">▼5</span> -->
+                </div>
+                <div class="score-progress">
+                    <div class="progress-bar">
+                        <div class="progress-thumb" style="left: 57%;"></div>
+                    </div>
+                    <div class="progress-labels">
+                        <span style="position: absolute; left: 0%; transform: translateX(0);">0</span>
+                        <span style="position: absolute; left: 25%; transform: translateX(-50%);">500</span>
+                        <span style="position: absolute; left: 50%; transform: translateX(-50%);">1000</span>
+                        <span style="position: absolute; left: 75%; transform: translateX(-50%);">1500</span>
+                        <span style="position: absolute; left: 100%; transform: translateX(-100%);">2000</span>
+                    </div>
+                </div>
+                <div class="score-level">Advanced</div>
+            </div>
+        
+                    </div>
+                
+                    <div class="leaderboard-item slide-in-left clickable-item" onclick="window.location.href='posts.html?type=user&amp;value=eruro18&amp;period=last30d'">
+                        
+            <div class="account-column">
+                <div class="account-top-section">
+                    <div class="account-avatar-small has-image">
+                        <img src="https://pbs.twimg.com/profile_images/1827344436210364416/1DdiwvIE_normal.jpg" alt="Eruro" class="avatar-image" loading="lazy" onload="this.parentElement.classList.add('has-image'); this.nextElementSibling.style.display='none';" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'; this.parentElement.classList.remove('has-image');">
+               <div class="avatar-fallback" style="display: none;">ER</div>
+                    </div>
+                    <div class="account-names">
+                        <div class="account-username">@eruro18 </div>
+                        <div class="account-display-name">Eruro</div>
+                    </div>
+                </div>
+                
+                <div class="account-followers">
+                    <span class="followers-count">75 followers</span>
+                    <span class="followers-change positive">▲1</span>
+                </div>
+            </div>
+            
+            <div class="cashtags-column">
+                <div class="column-title">posting about</div>
+                <a href="posts.html?type=mention&amp;value=4k_token&amp;period=last30d" class="cashtag-link" style="font-size: 1.20rem" onclick="event.stopPropagation()">@4k_token</a><a href="posts.html?type=mention&amp;value=top100token&amp;period=last30d" class="cashtag-link" style="font-size: 1.20rem" onclick="event.stopPropagation()">@top100token</a><a href="posts.html?type=hashtag&amp;value=AIRDROP&amp;period=last30d" class="cashtag-link" style="font-size: 1.20rem" onclick="event.stopPropagation()">#AIRDROP</a>
+            </div>
+        
+                        
+            <div class="score-column">
+                <div class="score-main">
+                    <span class="score-number">640</span>
+                    <!-- <span class="score-change negative">▼17</span> -->
+                </div>
+                <div class="score-progress">
+                    <div class="progress-bar">
+                        <div class="progress-thumb" style="left: 57%;"></div>
+                    </div>
+                    <div class="progress-labels">
+                        <span style="position: absolute; left: 0%; transform: translateX(0);">0</span>
+                        <span style="position: absolute; left: 25%; transform: translateX(-50%);">500</span>
+                        <span style="position: absolute; left: 50%; transform: translateX(-50%);">1000</span>
+                        <span style="position: absolute; left: 75%; transform: translateX(-50%);">1500</span>
+                        <span style="position: absolute; left: 100%; transform: translateX(-100%);">2000</span>
+                    </div>
+                </div>
+                <div class="score-level">Advanced</div>
+            </div>
+        
+                    </div>
+                
+                    <div class="leaderboard-item slide-in-left clickable-item" onclick="window.location.href='posts.html?type=user&amp;value=lancelot2281&amp;period=last30d'">
+                        
+            <div class="account-column">
+                <div class="account-top-section">
+                    <div class="account-avatar-small has-image">
+                        <img src="https://pbs.twimg.com/profile_images/1971265543320813568/4I6nbZOS_normal.jpg" alt="Ling.TRX" class="avatar-image" loading="lazy" onload="this.parentElement.classList.add('has-image'); this.nextElementSibling.style.display='none';" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'; this.parentElement.classList.remove('has-image');">
+               <div class="avatar-fallback" style="display: none;">LI</div>
+                    </div>
+                    <div class="account-names">
+                        <div class="account-username">@lancelot2281 </div>
+                        <div class="account-display-name">Ling.TRX</div>
+                    </div>
+                </div>
+                
+                <div class="account-followers">
+                    <span class="followers-count">259 followers</span>
+                    
+                </div>
+            </div>
+            
+            <div class="cashtags-column">
+                <div class="column-title">posting about</div>
+                <a href="posts.html?type=mention&amp;value=4k_token&amp;period=last30d" class="cashtag-link" style="font-size: 1.20rem" onclick="event.stopPropagation()">@4k_token</a><a href="posts.html?type=mention&amp;value=top100token&amp;period=last30d" class="cashtag-link" style="font-size: 1.20rem" onclick="event.stopPropagation()">@top100token</a><a href="posts.html?type=hashtag&amp;value=AIRDROP&amp;period=last30d" class="cashtag-link" style="font-size: 1.20rem" onclick="event.stopPropagation()">#AIRDROP</a>
+            </div>
+        
+                        
+            <div class="score-column">
+                <div class="score-main">
+                    <span class="score-number">640</span>
+                    <!-- <span class="score-change negative">▼13</span> -->
+                </div>
+                <div class="score-progress">
+                    <div class="progress-bar">
+                        <div class="progress-thumb" style="left: 57%;"></div>
+                    </div>
+                    <div class="progress-labels">
+                        <span style="position: absolute; left: 0%; transform: translateX(0);">0</span>
+                        <span style="position: absolute; left: 25%; transform: translateX(-50%);">500</span>
+                        <span style="position: absolute; left: 50%; transform: translateX(-50%);">1000</span>
+                        <span style="position: absolute; left: 75%; transform: translateX(-50%);">1500</span>
+                        <span style="position: absolute; left: 100%; transform: translateX(-100%);">2000</span>
+                    </div>
+                </div>
+                <div class="score-level">Advanced</div>
+            </div>
+        
+                    </div>
+                
+                    <div class="leaderboard-item slide-in-left clickable-item" onclick="window.location.href='posts.html?type=user&amp;value=tattu144732&amp;period=last30d'">
+                        
+            <div class="account-column">
+                <div class="account-top-section">
+                    <div class="account-avatar-small has-image">
+                        <img src="https://pbs.twimg.com/profile_images/1959626028458151936/2xyqlha__normal.jpg" alt="Tattu🚀" class="avatar-image" loading="lazy" onload="this.parentElement.classList.add('has-image'); this.nextElementSibling.style.display='none';" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'; this.parentElement.classList.remove('has-image');">
+               <div class="avatar-fallback" style="display: none;">TA</div>
+                    </div>
+                    <div class="account-names">
+                        <div class="account-username">@tattu144732 </div>
+                        <div class="account-display-name">Tattu🚀</div>
+                    </div>
+                </div>
+                
+                <div class="account-followers">
+                    <span class="followers-count">80 followers</span>
+                    <span class="followers-change negative">▼1</span>
+                </div>
+            </div>
+            
+            <div class="cashtags-column">
+                <div class="column-title">posting about</div>
+                <a href="posts.html?type=mention&amp;value=4k_token&amp;period=last30d" class="cashtag-link" style="font-size: 1.20rem" onclick="event.stopPropagation()">@4k_token</a><a href="posts.html?type=mention&amp;value=top100token&amp;period=last30d" class="cashtag-link" style="font-size: 1.20rem" onclick="event.stopPropagation()">@top100token</a><a href="posts.html?type=hashtag&amp;value=AIRDROP&amp;period=last30d" class="cashtag-link" style="font-size: 1.20rem" onclick="event.stopPropagation()">#AIRDROP</a>
+            </div>
+        
+                        
+            <div class="score-column">
+                <div class="score-main">
+                    <span class="score-number">640</span>
+                    <!-- <span class="score-change positive">▲1</span> -->
+                </div>
+                <div class="score-progress">
+                    <div class="progress-bar">
+                        <div class="progress-thumb" style="left: 57%;"></div>
+                    </div>
+                    <div class="progress-labels">
+                        <span style="position: absolute; left: 0%; transform: translateX(0);">0</span>
+                        <span style="position: absolute; left: 25%; transform: translateX(-50%);">500</span>
+                        <span style="position: absolute; left: 50%; transform: translateX(-50%);">1000</span>
+                        <span style="position: absolute; left: 75%; transform: translateX(-50%);">1500</span>
+                        <span style="position: absolute; left: 100%; transform: translateX(-100%);">2000</span>
+                    </div>
+                </div>
+                <div class="score-level">Advanced</div>
+            </div>
+        
+                    </div>
+                
+                    <div class="leaderboard-item slide-in-left clickable-item" onclick="window.location.href='posts.html?type=user&amp;value=ycrypto8192&amp;period=last30d'">
+                        
+            <div class="account-column">
+                <div class="account-top-section">
+                    <div class="account-avatar-small has-image">
+                        <img src="https://pbs.twimg.com/profile_images/1956185171314794503/vKlx_267_normal.jpg" alt="Yanto Crypto" class="avatar-image" loading="lazy" onload="this.parentElement.classList.add('has-image'); this.nextElementSibling.style.display='none';" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'; this.parentElement.classList.remove('has-image');">
+               <div class="avatar-fallback" style="display: none;">YC</div>
+                    </div>
+                    <div class="account-names">
+                        <div class="account-username">@ycrypto8192 </div>
+                        <div class="account-display-name">Yanto Crypto</div>
+                    </div>
+                </div>
+                
+                <div class="account-followers">
+                    <span class="followers-count">119 followers</span>
+                    
+                </div>
+            </div>
+            
+            <div class="cashtags-column">
+                <div class="column-title">posting about</div>
+                <a href="posts.html?type=mention&amp;value=4k_token&amp;period=last30d" class="cashtag-link" style="font-size: 1.20rem" onclick="event.stopPropagation()">@4k_token</a><a href="posts.html?type=mention&amp;value=top100token&amp;period=last30d" class="cashtag-link" style="font-size: 1.20rem" onclick="event.stopPropagation()">@top100token</a><a href="posts.html?type=hashtag&amp;value=AIRDROP&amp;period=last30d" class="cashtag-link" style="font-size: 1.20rem" onclick="event.stopPropagation()">#AIRDROP</a>
+            </div>
+        
+                        
+            <div class="score-column">
+                <div class="score-main">
+                    <span class="score-number">640</span>
+                    <!-- <span class="score-change positive">▲22</span> -->
+                </div>
+                <div class="score-progress">
+                    <div class="progress-bar">
+                        <div class="progress-thumb" style="left: 57%;"></div>
+                    </div>
+                    <div class="progress-labels">
+                        <span style="position: absolute; left: 0%; transform: translateX(0);">0</span>
+                        <span style="position: absolute; left: 25%; transform: translateX(-50%);">500</span>
+                        <span style="position: absolute; left: 50%; transform: translateX(-50%);">1000</span>
+                        <span style="position: absolute; left: 75%; transform: translateX(-50%);">1500</span>
+                        <span style="position: absolute; left: 100%; transform: translateX(-100%);">2000</span>
+                    </div>
+                </div>
+                <div class="score-level">Advanced</div>
+            </div>
+        
+                    </div>
+                
+                    <div class="leaderboard-item slide-in-left clickable-item" onclick="window.location.href='posts.html?type=user&amp;value=babangbertto&amp;period=last30d'">
+                        
+            <div class="account-column">
+                <div class="account-top-section">
+                    <div class="account-avatar-small has-image">
+                        <img src="https://pbs.twimg.com/profile_images/1996116684172918792/ShMms8JX_normal.jpg" alt="Babang Babang" class="avatar-image" loading="lazy" onload="this.parentElement.classList.add('has-image'); this.nextElementSibling.style.display='none';" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'; this.parentElement.classList.remove('has-image');">
+               <div class="avatar-fallback" style="display: none;">BB</div>
+                    </div>
+                    <div class="account-names">
+                        <div class="account-username">@babangbertto </div>
+                        <div class="account-display-name">Babang Babang</div>
+                    </div>
+                </div>
+                
+                <div class="account-followers">
+                    <span class="followers-count">5 followers</span>
+                    <span class="followers-change positive">▲1</span>
+                </div>
+            </div>
+            
+            <div class="cashtags-column">
+                <div class="column-title">posting about</div>
+                <a href="posts.html?type=mention&amp;value=4k_token&amp;period=last30d" class="cashtag-link" style="font-size: 1.20rem" onclick="event.stopPropagation()">@4k_token</a><a href="posts.html?type=mention&amp;value=top100token&amp;period=last30d" class="cashtag-link" style="font-size: 1.20rem" onclick="event.stopPropagation()">@top100token</a><a href="posts.html?type=hashtag&amp;value=AIRDROP&amp;period=last30d" class="cashtag-link" style="font-size: 1.20rem" onclick="event.stopPropagation()">#AIRDROP</a>
+            </div>
+        
+                        
+            <div class="score-column">
+                <div class="score-main">
+                    <span class="score-number">640</span>
+                    <!-- <span class="score-change negative">▼24</span> -->
+                </div>
+                <div class="score-progress">
+                    <div class="progress-bar">
+                        <div class="progress-thumb" style="left: 57%;"></div>
+                    </div>
+                    <div class="progress-labels">
+                        <span style="position: absolute; left: 0%; transform: translateX(0);">0</span>
+                        <span style="position: absolute; left: 25%; transform: translateX(-50%);">500</span>
+                        <span style="position: absolute; left: 50%; transform: translateX(-50%);">1000</span>
+                        <span style="position: absolute; left: 75%; transform: translateX(-50%);">1500</span>
+                        <span style="position: absolute; left: 100%; transform: translateX(-100%);">2000</span>
+                    </div>
+                </div>
+                <div class="score-level">Advanced</div>
+            </div>
+        
+                    </div>
+                
+                    <div class="leaderboard-item slide-in-left clickable-item" onclick="window.location.href='posts.html?type=user&amp;value=atia080894&amp;period=last30d'">
+                        
+            <div class="account-column">
+                <div class="account-top-section">
+                    <div class="account-avatar-small has-image">
+                        <img src="https://pbs.twimg.com/profile_images/1909987034741305345/Ka8FWt-d_normal.jpg" alt="Atia Rizky amanda" class="avatar-image" loading="lazy" onload="this.parentElement.classList.add('has-image'); this.nextElementSibling.style.display='none';" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'; this.parentElement.classList.remove('has-image');">
+               <div class="avatar-fallback" style="display: none;">AR</div>
+                    </div>
+                    <div class="account-names">
+                        <div class="account-username">@atia080894 </div>
+                        <div class="account-display-name">Atia Rizky aman...</div>
+                    </div>
+                </div>
+                
+                <div class="account-followers">
+                    <span class="followers-count">510 followers</span>
+                    <span class="followers-change negative">▼5</span>
+                </div>
+            </div>
+            
+            <div class="cashtags-column">
+                <div class="column-title">posting about</div>
+                <a href="posts.html?type=mention&amp;value=4k_token&amp;period=last30d" class="cashtag-link" style="font-size: 1.20rem" onclick="event.stopPropagation()">@4k_token</a><a href="posts.html?type=mention&amp;value=top100token&amp;period=last30d" class="cashtag-link" style="font-size: 1.20rem" onclick="event.stopPropagation()">@top100token</a><a href="posts.html?type=hashtag&amp;value=AIRDROP&amp;period=last30d" class="cashtag-link" style="font-size: 1.20rem" onclick="event.stopPropagation()">#AIRDROP</a>
+            </div>
+        
+                        
+            <div class="score-column">
+                <div class="score-main">
+                    <span class="score-number">640</span>
+                    <!-- <span class="score-change negative">▼12</span> -->
+                </div>
+                <div class="score-progress">
+                    <div class="progress-bar">
+                        <div class="progress-thumb" style="left: 57%;"></div>
+                    </div>
+                    <div class="progress-labels">
+                        <span style="position: absolute; left: 0%; transform: translateX(0);">0</span>
+                        <span style="position: absolute; left: 25%; transform: translateX(-50%);">500</span>
+                        <span style="position: absolute; left: 50%; transform: translateX(-50%);">1000</span>
+                        <span style="position: absolute; left: 75%; transform: translateX(-50%);">1500</span>
+                        <span style="position: absolute; left: 100%; transform: translateX(-100%);">2000</span>
+                    </div>
+                </div>
+                <div class="score-level">Advanced</div>
+            </div>
+        
+                    </div>
+                
+                    <div class="leaderboard-item slide-in-left clickable-item" onclick="window.location.href='posts.html?type=user&amp;value=aggung022853201&amp;period=last30d'">
+                        
+            <div class="account-column">
+                <div class="account-top-section">
+                    <div class="account-avatar-small has-image">
+                        <img src="https://pbs.twimg.com/profile_images/1959626221136056320/_1ZBHcQI_normal.jpg" alt="aggung" class="avatar-image" loading="lazy" onload="this.parentElement.classList.add('has-image'); this.nextElementSibling.style.display='none';" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'; this.parentElement.classList.remove('has-image');">
+               <div class="avatar-fallback" style="display: none;">AG</div>
+                    </div>
+                    <div class="account-names">
+                        <div class="account-username">@aggung022853201 </div>
+                        <div class="account-display-name">aggung</div>
+                    </div>
+                </div>
+                
+                <div class="account-followers">
+                    <span class="followers-count">81 followers</span>
+                    
+                </div>
+            </div>
+            
+            <div class="cashtags-column">
+                <div class="column-title">posting about</div>
+                <a href="posts.html?type=mention&amp;value=4k_token&amp;period=last30d" class="cashtag-link" style="font-size: 1.20rem" onclick="event.stopPropagation()">@4k_token</a><a href="posts.html?type=mention&amp;value=top100token&amp;period=last30d" class="cashtag-link" style="font-size: 1.20rem" onclick="event.stopPropagation()">@top100token</a><a href="posts.html?type=hashtag&amp;value=AIRDROP&amp;period=last30d" class="cashtag-link" style="font-size: 1.20rem" onclick="event.stopPropagation()">#AIRDROP</a>
+            </div>
+        
+                        
+            <div class="score-column">
+                <div class="score-main">
+                    <span class="score-number">640</span>
+                    <!-- <span class="score-change negative">▼15</span> -->
+                </div>
+                <div class="score-progress">
+                    <div class="progress-bar">
+                        <div class="progress-thumb" style="left: 57%;"></div>
+                    </div>
+                    <div class="progress-labels">
+                        <span style="position: absolute; left: 0%; transform: translateX(0);">0</span>
+                        <span style="position: absolute; left: 25%; transform: translateX(-50%);">500</span>
+                        <span style="position: absolute; left: 50%; transform: translateX(-50%);">1000</span>
+                        <span style="position: absolute; left: 75%; transform: translateX(-50%);">1500</span>
+                        <span style="position: absolute; left: 100%; transform: translateX(-100%);">2000</span>
+                    </div>
+                </div>
+                <div class="score-level">Advanced</div>
+            </div>
+        
+                    </div>
+                
+                    <div class="leaderboard-item slide-in-left clickable-item" onclick="window.location.href='posts.html?type=user&amp;value=valleria_na&amp;period=last30d'">
+                        
+            <div class="account-column">
+                <div class="account-top-section">
+                    <div class="account-avatar-small has-image">
+                        <img src="https://pbs.twimg.com/profile_images/1967655518186672128/Wtruvo4j_normal.jpg" alt="VALLERIANA" class="avatar-image" loading="lazy" onload="this.parentElement.classList.add('has-image'); this.nextElementSibling.style.display='none';" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'; this.parentElement.classList.remove('has-image');">
+               <div class="avatar-fallback" style="display: none;">VA</div>
+                    </div>
+                    <div class="account-names">
+                        <div class="account-username">@valleria_na </div>
+                        <div class="account-display-name">VALLERIANA</div>
+                    </div>
+                </div>
+                
+                <div class="account-followers">
+                    <span class="followers-count">434 followers</span>
+                    <span class="followers-change positive">▲1</span>
+                </div>
+            </div>
+            
+            <div class="cashtags-column">
+                <div class="column-title">posting about</div>
+                <a href="posts.html?type=mention&amp;value=4k_token&amp;period=last30d" class="cashtag-link" style="font-size: 1.20rem" onclick="event.stopPropagation()">@4k_token</a><a href="posts.html?type=mention&amp;value=top100token&amp;period=last30d" class="cashtag-link" style="font-size: 1.20rem" onclick="event.stopPropagation()">@top100token</a><a href="posts.html?type=hashtag&amp;value=AIRDROP&amp;period=last30d" class="cashtag-link" style="font-size: 1.20rem" onclick="event.stopPropagation()">#AIRDROP</a>
+            </div>
+        
+                        
+            <div class="score-column">
+                <div class="score-main">
+                    <span class="score-number">640</span>
+                    <!-- <span class="score-change negative">▼10</span> -->
+                </div>
+                <div class="score-progress">
+                    <div class="progress-bar">
+                        <div class="progress-thumb" style="left: 57%;"></div>
+                    </div>
+                    <div class="progress-labels">
+                        <span style="position: absolute; left: 0%; transform: translateX(0);">0</span>
+                        <span style="position: absolute; left: 25%; transform: translateX(-50%);">500</span>
+                        <span style="position: absolute; left: 50%; transform: translateX(-50%);">1000</span>
+                        <span style="position: absolute; left: 75%; transform: translateX(-50%);">1500</span>
+                        <span style="position: absolute; left: 100%; transform: translateX(-100%);">2000</span>
+                    </div>
+                </div>
+                <div class="score-level">Advanced</div>
+            </div>
+        
+                    </div>
+                
+                    <div class="leaderboard-item slide-in-left clickable-item" onclick="window.location.href='posts.html?type=user&amp;value=silvercuini&amp;period=last30d'">
+                        
+            <div class="account-column">
+                <div class="account-top-section">
+                    <div class="account-avatar-small has-image">
+                        <img src="https://pbs.twimg.com/profile_images/1898400572367360000/MfCMaEkJ_normal.jpg" alt="Marshmelo 🔭🌕🔭" class="avatar-image" loading="lazy" onload="this.parentElement.classList.add('has-image'); this.nextElementSibling.style.display='none';" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'; this.parentElement.classList.remove('has-image');">
+               <div class="avatar-fallback" style="display: none;">M�</div>
+                    </div>
+                    <div class="account-names">
+                        <div class="account-username">@silvercuini </div>
+                        <div class="account-display-name">Marshmelo 🔭🌕�...</div>
+                    </div>
+                </div>
+                
+                <div class="account-followers">
+                    <span class="followers-count">12 followers</span>
+                    <span class="followers-change positive">▲2</span>
+                </div>
+            </div>
+            
+            <div class="cashtags-column">
+                <div class="column-title">posting about</div>
+                <a href="posts.html?type=mention&amp;value=4k_token&amp;period=last30d" class="cashtag-link" style="font-size: 1.20rem" onclick="event.stopPropagation()">@4k_token</a><a href="posts.html?type=mention&amp;value=top100token&amp;period=last30d" class="cashtag-link" style="font-size: 1.20rem" onclick="event.stopPropagation()">@top100token</a><a href="posts.html?type=hashtag&amp;value=AIRDROP&amp;period=last30d" class="cashtag-link" style="font-size: 1.20rem" onclick="event.stopPropagation()">#AIRDROP</a>
+            </div>
+        
+                        
+            <div class="score-column">
+                <div class="score-main">
+                    <span class="score-number">640</span>
+                    <!-- <span class="score-change positive">▲20</span> -->
+                </div>
+                <div class="score-progress">
+                    <div class="progress-bar">
+                        <div class="progress-thumb" style="left: 57%;"></div>
+                    </div>
+                    <div class="progress-labels">
+                        <span style="position: absolute; left: 0%; transform: translateX(0);">0</span>
+                        <span style="position: absolute; left: 25%; transform: translateX(-50%);">500</span>
+                        <span style="position: absolute; left: 50%; transform: translateX(-50%);">1000</span>
+                        <span style="position: absolute; left: 75%; transform: translateX(-50%);">1500</span>
+                        <span style="position: absolute; left: 100%; transform: translateX(-100%);">2000</span>
+                    </div>
+                </div>
+                <div class="score-level">Advanced</div>
+            </div>
+        
+                    </div>
+                </div>
+                            <div class="error-state hidden" id="usersError">
+                                <p>Failed to load accounts data. Please try again.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cashtags Leaderboard -->
+                <div class="tab-content" id="cashtags-tab">
+                    <div class="leaderboard-card">
+                        <div class="card-header">
+                            <h3 class="card-title">Top Cashtags by Activity</h3>
+                        </div>
+                        <div class="leaderboard-content">
+                            <div class="loading-state" id="cashtagsLoading">
+                                <i class="fas fa-spinner fa-spin"></i>
+                                <p>Loading cashtags...</p>
+                            </div>
+                            <div class="leaderboard-list hidden" id="cashtagsList"></div>
+                            <div class="error-state hidden" id="cashtagsError">
+                                <p>Failed to load cashtags data. Please try again.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mentions Leaderboard -->
+                <div class="tab-content" id="mentions-tab">
+                    <div class="leaderboard-card">
+                        <div class="card-header">
+                            <h3 class="card-title">Top Mentions by Frequency</h3>
+                        </div>
+                        <div class="leaderboard-content">
+                            <div class="loading-state" id="mentionsLoading">
+                                <i class="fas fa-spinner fa-spin"></i>
+                                <p>Loading mentions...</p>
+                            </div>
+                            <div class="leaderboard-list hidden" id="mentionsList"></div>
+                            <div class="error-state hidden" id="mentionsError">
+                                <p>Failed to load mentions data. Please try again.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hashtags Leaderboard -->
+                <div class="tab-content" id="hashtags-tab">
+                    <div class="leaderboard-card">
+                        <div class="card-header">
+                            <h3 class="card-title">Top Hashtags by Engagement</h3>
+                        </div>
+                        <div class="leaderboard-content">
+                            <div class="loading-state" id="hashtagsLoading">
+                                <i class="fas fa-spinner fa-spin"></i>
+                                <p>Loading hashtags...</p>
+                            </div>
+                            <div class="leaderboard-list hidden" id="hashtagsList"></div>
+                            <div class="error-state hidden" id="hashtagsError">
+                                <p>Failed to load hashtags data. Please try again.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+                <div class="container">
+                    <p class="footer-text">
+                        Powered by <a href="https://www.bws.ninja" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: underline;">Blockchain Web Services</a> • X (Twitter) analytics from Telegram communities
+                    </p>
+                </div>
+            </footer>
+
+    <!-- Performance Score Info Modal -->
+    <div class="modal-overlay" id="scoreInfoModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Performance Score Calculation</h3>
+                <button class="modal-close" id="closeScoreModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="score-explanation">
+                    <h4>What is the Performance Score?</h4>
+                    <p>The Performance Score measures how well an X (Twitter) account performs based on engagement metrics from their posts. It combines multiple engagement types with different weights to reflect their relative importance in driving meaningful interactions.</p>
+                    
+                    <h4>Formula Used</h4>
+                    <div class="formula-box">
+                        <code>
+                            Performance Score = (Likes × 1) + (Retweets × 2) + (Replies × 1.5) + (Quotes × 3) + (Bookmarks × 2) + (Impressions × 0.001)
+                        </code>
+                    </div>
+                    
+                    <h4>Engagement Weights Explained</h4>
+                    <ul class="engagement-weights">
+                        <li>
+                            <strong>Likes (×1)</strong>
+                            <div class="weight-explanation">Basic engagement, shows content appreciation</div>
+                        </li>
+                        <li>
+                            <strong>Retweets (×2)</strong>
+                            <div class="weight-explanation">Amplification - user shares content with their followers</div>
+                        </li>
+                        <li>
+                            <strong>Replies (×1.5)</strong>
+                            <div class="weight-explanation">Active conversation starter</div>
+                        </li>
+                        <li>
+                            <strong>Quotes (×3)</strong>
+                            <div class="weight-explanation">High-value engagement - adds commentary while sharing</div>
+                        </li>
+                        <li>
+                            <strong>Bookmarks (×2)</strong>
+                            <div class="weight-explanation">Content worth saving for later reference</div>
+                        </li>
+                        <li>
+                            <strong>Impressions (×0.001)</strong>
+                            <div class="weight-explanation">Reach metric - how many people saw the post</div>
+                        </li>
+                    </ul>
+                    
+                    <h4>Example Calculation</h4>
+                    <div class="example-box">
+                        <p><strong>Post Example</strong></p>
+                        <div class="post-example-numbers">50 likes, 10 retweets, 8 replies, 3 quotes, 15 bookmarks, 5,000 impressions</div>
+                        <p><strong>Calculation</strong></p>
+                        <ul class="calculation-steps">
+                            <li>Likes: 50 × 1 = 50 points</li>
+                            <li>Retweets: 10 × 2 = 20 points</li>
+                            <li>Replies: 8 × 1.5 = 12 points</li>
+                            <li>Quotes: 3 × 3 = 9 points</li>
+                            <li>Bookmarks: 15 × 2 = 30 points</li>
+                            <li>Impressions: 5,000 × 0.001 = 5 points</li>
+                        </ul>
+                        <p><strong>Total Performance Score: 126 points</strong></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Project Score Info Modal -->
+    <div class="modal-overlay" id="projectScoreInfoModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Project Score Calculation</h3>
+                <button class="modal-close" id="closeProjectScoreModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="score-explanation">
+                    <h4>What is the Project Score?</h4>
+                    <p>The Project Score is a balanced composite metric that ranks projects based on three key dimensions: total community activity, user diversity, and content volume. This holistic approach ensures that projects with both high engagement and broad participation rank higher.</p>
+
+                    <h4>Formula Used</h4>
+                    <div class="formula-box">
+                        <code>
+                            Project Score = (Total User Score × 60%) + (Active Users × 50 × 20%) + (Total Posts × 2 × 20%)
+                        </code>
+                    </div>
+
+                    <h4>Components Explained</h4>
+                    <ul class="engagement-weights">
+                        <li>
+                            <strong>Total User Score (60% weight)</strong>
+                            <div class="weight-explanation">Sum of all individual user performance scores from the project's community. Reflects overall engagement quality.</div>
+                        </li>
+                        <li>
+                            <strong>Active Users Count (20% weight)</strong>
+                            <div class="weight-explanation">Number of unique users who posted during the period, multiplied by 50 points each. Rewards community diversity and broad participation.</div>
+                        </li>
+                        <li>
+                            <strong>Total Posts (20% weight)</strong>
+                            <div class="weight-explanation">Total number of posts fetched during the period, multiplied by 2 points each. Values consistent content production.</div>
+                        </li>
+                    </ul>
+
+                    <h4>Example Calculation</h4>
+                    <div class="example-box">
+                        <p><strong>Project Example</strong></p>
+                        <div class="post-example-numbers">Total User Score: 75,200 | Active Users: 37 | Total Posts: 156</div>
+                        <p><strong>Calculation</strong></p>
+                        <ul class="calculation-steps">
+                            <li>Total Activity: 75,200 × 0.6 = 45,120 points</li>
+                            <li>User Diversity: 37 × 50 × 0.2 = 370 points</li>
+                            <li>Content Volume: 156 × 2 × 0.2 = 62.4 points</li>
+                        </ul>
+                        <p><strong>Final Project Score: 45,552 points</strong></p>
+                    </div>
+
+                    <h4>Additional Metadata</h4>
+                    <p>Each project's leaderboard entry includes:</p>
+                    <ul class="benefits-list">
+                        <li><strong>Top 3 Users:</strong> Highest performing accounts in the project</li>
+                        <li><strong>Top Tag:</strong> Most frequently used hashtag/cashtag/mention</li>
+                        <li><strong>Average User Score:</strong> Mean performance across all active users</li>
+                        <li><strong>Rank Change:</strong> Movement compared to previous period</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Flatpickr Date Picker -->
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script>
+        // Initialize Flatpickr on date inputs when DOM is ready
+        document.addEventListener('DOMContentLoaded', function() {
+            const today = new Date();
+            // Default: last 30 days
+            const startDate30DaysAgo = new Date(today);
+            startDate30DaysAgo.setDate(today.getDate() - 30);
+
+            // Initialize start date picker with default value (30 days ago)
+            flatpickr("#startDate", {
+                dateFormat: "Y-m-d",
+                maxDate: today,
+                defaultDate: startDate30DaysAgo,
+                onChange: function(selectedDates, dateStr, instance) {
+                    // Update end date min to be after start date
+                    const endDatePicker = document.querySelector("#endDate")._flatpickr;
+                    if (endDatePicker) {
+                        endDatePicker.set('minDate', dateStr);
+                    }
+                }
+            });
+
+            // Initialize end date picker with default value (today)
+            flatpickr("#endDate", {
+                dateFormat: "Y-m-d",
+                maxDate: today,
+                defaultDate: today,
+                onChange: function(selectedDates, dateStr, instance) {
+                    // Update start date max to be before end date
+                    const startDatePicker = document.querySelector("#startDate")._flatpickr;
+                    if (startDatePicker) {
+                        startDatePicker.set('maxDate', dateStr);
+                    }
+                }
+            });
+        });
+    </script>
+
+    <script src="filter-manager.js?v=17643209"></script>
+    <script src="api-client.js?v=17643209"></script>
+    <script src="page-components.js?v=17643209"></script>
+    <script src="app.js?v=17643209"></script>
+
+
+</body></html>
