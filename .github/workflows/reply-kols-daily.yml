@@ -1,8 +1,8 @@
-name: KOL Reply (4x Daily)
+name: KOL Reply (6x Daily)
 
 on:
   schedule:
-    - cron: '30 0,6,12,18 * * *'  # 4x daily: 30min after each discovery cycle
+    - cron: '30 0,4,6,9,12,18 * * *'  # 6x daily: distributed throughout the day
   workflow_dispatch:  # Allow manual trigger
 
 permissions:

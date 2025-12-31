@@ -2,7 +2,7 @@ name: Reply to Product Tweets
 
 on:
   schedule:
-    - cron: '0 10,16 * * *'  # Twice daily: 10 AM, 4 PM UTC
+    - cron: '0 10,14,16 * * *'  # 3x daily: 10 AM, 2 PM, 4 PM UTC
   workflow_dispatch:
 
 permissions:

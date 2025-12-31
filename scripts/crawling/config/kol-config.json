@@ -12,12 +12,12 @@
   },
   "replySettings": {
     "enabled": true,
-    "maxRepliesPerRun": 5,
-    "maxTweetsToEvaluatePerRun": 10,
-    "maxRepliesPerDay": 30,
-    "maxRepliesPerKolPerWeek": 2,
-    "minRelevanceScoreForReply": 7,
-    "minTimeBetweenRepliesMinutes": 60,
+    "maxRepliesPerRun": 8,
+    "maxTweetsToEvaluatePerRun": 20,
+    "maxRepliesPerDay": 60,
+    "maxRepliesPerKolPerWeek": 3,
+    "minRelevanceScoreForReply": 6,
+    "minTimeBetweenRepliesMinutes": 45,
     "dryRun": false,
     "antiSpamActions": {
       "followKolBeforeReply": true,
@@ -30,7 +30,7 @@
       "attachOnlyWhenAvailable": true,
       "skipReplyOnUploadFailure": false
     },
-    "minTimeBetweenReplies": 3600,
+    "minTimeBetweenReplies": 2700,
     "replyTemplates": [
       "Insightful perspective on {topic}! Have you explored {bws_product}? It might complement your {use_case}.",
       "Great thread! {bws_product} could help with {problem}. Would love to hear your thoughts."
@@ -42,10 +42,10 @@
   },
   "freshnessFilter": {
     "enabled": true,
-    "maxTweetAgeHours": 24,
-    "cleanupThresholdHours": 48,
+    "maxTweetAgeHours": 36,
+    "cleanupThresholdHours": 72,
     "fallbackToAddedAt": true,
-    "description": "Only reply to tweets less than 24 hours old for maximum engagement impact"
+    "description": "Only reply to tweets less than 36 hours old for maximum engagement impact"
   },
   "monitoring": {
     "checkInterval": 21600,
