@@ -14,13 +14,17 @@
       "elearning": 0,
       "bootcamps": 0,
       "professional-training": 0,
-      "certification-bodies": 0
+      "certification-bodies": 0,
+      "user-achievements": 0,
+      "pain-point": 0,
+      "solution-space": 0,
+      "user-journey": 0
     },
-    "lastDiscovery": "2025-12-31T18:03:02.180Z"
+    "lastDiscovery": "2025-12-31T19:16:46.875Z"
   },
   "metadata": {
     "version": "1.0.0",
-    "lastUpdated": "2025-12-31T18:03:02.180Z",
-    "discoveryRuns": 3
+    "lastUpdated": "2025-12-31T19:16:46.875Z",
+    "discoveryRuns": 4
   }
 }
