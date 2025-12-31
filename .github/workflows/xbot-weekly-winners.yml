@@ -48,11 +48,14 @@ jobs:
       - name: Post X Bot Weekly Winners
         id: post
         env:
-          # Twitter API credentials (for posting)
-          BWSCOMMUNITY_TWITTER_API_KEY: ${{ secrets.BWSCOMMUNITY_TWITTER_API_KEY }}
-          BWSCOMMUNITY_TWITTER_API_SECRET: ${{ secrets.BWSCOMMUNITY_TWITTER_API_SECRET }}
-          BWSCOMMUNITY_TWITTER_ACCESS_TOKEN: ${{ secrets.BWSCOMMUNITY_TWITTER_ACCESS_TOKEN }}
-          BWSCOMMUNITY_TWITTER_ACCESS_SECRET: ${{ secrets.BWSCOMMUNITY_TWITTER_ACCESS_SECRET }}
+          # Twitter API credentials (for @BWSCommunity account)
+          TWITTER_API_KEY: ${{ secrets.TWITTER_API_KEY }}
+          TWITTER_API_SECRET: ${{ secrets.TWITTER_API_SECRET }}
+          TWITTER_ACCESS_TOKEN: ${{ secrets.TWITTER_ACCESS_TOKEN }}
+          TWITTER_ACCESS_SECRET: ${{ secrets.TWITTER_ACCESS_SECRET }}
+          # Proxy credentials (for GitHub Actions)
+          OXYLABS_USERNAME: ${{ secrets.OXYLABS_USERNAME }}
+          OXYLABS_PASSWORD: ${{ secrets.OXYLABS_PASSWORD }}
           # Dry run mode
           DRY_RUN: ${{ inputs.dry_run }}
         run: |
@@ -90,7 +93,7 @@ jobs:
             echo "**Workflow Run:** [View Logs](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})" >> $GITHUB_STEP_SUMMARY
             echo "" >> $GITHUB_STEP_SUMMARY
             echo "### Troubleshooting Steps:" >> $GITHUB_STEP_SUMMARY
-            echo "1. Check Twitter API credentials (BWSCOMMUNITY_* secrets)" >> $GITHUB_STEP_SUMMARY
+            echo "1. Check Twitter API credentials (TWITTER_* secrets)" >> $GITHUB_STEP_SUMMARY
             echo "2. Verify xbot.ninja is accessible" >> $GITHUB_STEP_SUMMARY
             echo "3. Review workflow logs for specific error" >> $GITHUB_STEP_SUMMARY
             echo "4. Test locally: \`node scripts/crawling/production/post-xbot-weekly.js\`" >> $GITHUB_STEP_SUMMARY
