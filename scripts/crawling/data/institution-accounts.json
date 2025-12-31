@@ -2,13 +2,25 @@
   "accounts": [],
   "stats": {
     "totalDiscovered": 0,
-    "byProduct": {},
-    "byCategory": {},
-    "lastDiscovery": null
+    "byProduct": {
+      "Blockchain Badges": {
+        "total": 0,
+        "highFit": 0,
+        "mediumFit": 0
+      }
+    },
+    "byCategory": {
+      "universities": 0,
+      "elearning": 0,
+      "bootcamps": 0,
+      "professional-training": 0,
+      "certification-bodies": 0
+    },
+    "lastDiscovery": "2025-12-31T17:55:10.521Z"
   },
   "metadata": {
     "version": "1.0.0",
-    "lastUpdated": null,
-    "discoveryRuns": 0
+    "lastUpdated": "2025-12-31T17:55:10.521Z",
+    "discoveryRuns": 1
   }
 }
