@@ -79,10 +79,13 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-          # Pull latest changes to avoid push conflicts
-          git pull origin ${{ github.ref_name }} --rebase
-
+          # Stage changes first
           git add scripts/crawling/data/institution-accounts.json
+
+          # Pull latest changes with autostash to avoid push conflicts
+          git pull origin ${{ github.ref_name }} --rebase --autostash
+
+          # Commit the changes (file is already staged)
           git commit -m "Update institution accounts database
 
           Discovery run #${{ steps.stats.outputs.discovery_runs }}
