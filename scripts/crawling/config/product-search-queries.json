@@ -6,31 +6,141 @@
           "name": "credentials-general",
           "query": "(credentials OR certificates OR certifications) (blockchain OR verifiable OR digital) lang:en -is:retweet min_faves:5",
           "description": "General credential discussions",
-          "priority": "high"
+          "priority": "high",
+          "category": "general"
         },
         {
           "name": "educational-credentials",
           "query": "(university OR course OR training OR education) (certificate OR certification OR diploma OR degree) (blockchain OR NFT OR verify) lang:en -is:retweet min_faves:5",
           "description": "Educational credential use cases",
-          "priority": "high"
+          "priority": "high",
+          "category": "general"
         },
         {
           "name": "professional-badges",
           "query": "(professional OR skill OR endorsement OR achievement) (badge OR certificate OR credential) (verify OR proof OR authentic) lang:en -is:retweet min_faves:3",
           "description": "Professional credential verification",
-          "priority": "medium"
+          "priority": "medium",
+          "category": "general"
         },
         {
           "name": "credential-fraud",
           "query": "(fake OR fraud OR counterfeit OR forged) (degree OR certificate OR diploma OR credential) lang:en -is:retweet min_faves:10",
           "description": "Credential fraud problem discussions",
-          "priority": "high"
+          "priority": "high",
+          "category": "pain-points"
         },
         {
           "name": "digital-identity",
           "query": "(digital identity OR verifiable credentials OR self-sovereign) (blockchain OR decentralized OR DID) lang:en -is:retweet min_faves:5",
           "description": "Digital identity and verifiable credentials",
-          "priority": "medium"
+          "priority": "medium",
+          "category": "general"
+        },
+        {
+          "name": "e-learning-platforms",
+          "query": "(Coursera OR Udemy OR edX OR Skillshare OR \"LinkedIn Learning\") (certificate OR certification OR credential) lang:en -is:retweet min_faves:3",
+          "description": "E-learning platform credential discussions",
+          "priority": "high",
+          "category": "institutions"
+        },
+        {
+          "name": "bootcamp-training",
+          "query": "(bootcamp OR \"coding bootcamp\" OR \"data science\" OR cybersecurity) (certificate OR completion OR credential) lang:en -is:retweet min_faves:3",
+          "description": "Bootcamp and intensive training programs",
+          "priority": "medium",
+          "category": "institutions"
+        },
+        {
+          "name": "university-programs",
+          "query": "(university OR college OR academic) (\"digital credential\" OR \"digital badge\" OR micro-credential OR microcredential) lang:en -is:retweet min_faves:3",
+          "description": "University digital credential programs",
+          "priority": "high",
+          "category": "institutions"
+        },
+        {
+          "name": "corporate-training",
+          "query": "(\"corporate training\" OR \"employee training\" OR \"L&D\" OR \"learning development\") (certificate OR credential OR badge) lang:en -is:retweet min_faves:3",
+          "description": "Corporate training and L&D credentials",
+          "priority": "medium",
+          "category": "institutions"
+        },
+        {
+          "name": "professional-cert-bodies",
+          "query": "(PMP OR \"AWS certification\" OR \"Google certified\" OR \"Microsoft certified\" OR CompTIA) (verify OR verification OR authentic) lang:en -is:retweet min_faves:5",
+          "description": "Professional certification verification",
+          "priority": "high",
+          "category": "institutions"
+        },
+        {
+          "name": "verification-problems",
+          "query": "(\"how to verify\" OR \"can't verify\" OR \"verify my\") (degree OR certificate OR diploma OR credential) lang:en -is:retweet min_faves:2",
+          "description": "Credential verification pain points",
+          "priority": "high",
+          "category": "pain-points"
+        },
+        {
+          "name": "fake-credential-concerns",
+          "query": "(worried OR concerned OR checking OR verifying) (\"fake degree\" OR \"fake certificate\" OR \"diploma mill\") lang:en -is:retweet min_faves:5",
+          "description": "Concerns about fake credentials",
+          "priority": "high",
+          "category": "pain-points"
+        },
+        {
+          "name": "international-recognition",
+          "query": "(international OR global OR cross-border) (\"credential recognition\" OR \"degree verification\" OR \"certificate validation\") lang:en -is:retweet min_faves:3",
+          "description": "International credential recognition issues",
+          "priority": "medium",
+          "category": "pain-points"
+        },
+        {
+          "name": "employer-trust",
+          "query": "(employer OR recruiter OR HR OR hiring) (\"verify education\" OR \"verify degree\" OR \"credential check\") lang:en -is:retweet min_faves:3",
+          "description": "Employer credential verification needs",
+          "priority": "high",
+          "category": "pain-points"
+        },
+        {
+          "name": "credential-sharing",
+          "query": "(\"share my\" OR sharing OR display OR showcase) (certificate OR credential OR badge OR achievement) (LinkedIn OR portfolio OR resume) lang:en -is:retweet min_faves:2",
+          "description": "Credential sharing and display needs",
+          "priority": "medium",
+          "category": "pain-points"
+        },
+        {
+          "name": "micro-credentials",
+          "query": "(micro-credential OR microcredential OR nanodegree OR \"digital badge\") lang:en -is:retweet min_faves:3",
+          "description": "Micro-credentials and alternative credentials",
+          "priority": "high",
+          "category": "use-cases"
+        },
+        {
+          "name": "continuing-education",
+          "query": "(\"continuing education\" OR CEU OR CPE OR \"professional development\") (certificate OR credential OR proof) lang:en -is:retweet min_faves:2",
+          "description": "Continuing education credentials",
+          "priority": "medium",
+          "category": "use-cases"
+        },
+        {
+          "name": "skills-based-hiring",
+          "query": "(\"skills-based hiring\" OR \"skill verification\" OR competency-based) (credential OR certificate OR proof) lang:en -is:retweet min_faves:3",
+          "description": "Skills-based hiring and verification",
+          "priority": "high",
+          "category": "use-cases"
+        },
+        {
+          "name": "alternative-credentials",
+          "query": "(\"alternative credential\" OR \"stackable credential\" OR \"open badge\" OR \"verifiable achievement\") lang:en -is:retweet min_faves:2",
+          "description": "Alternative credentialing systems",
+          "priority": "medium",
+          "category": "use-cases"
+        },
+        {
+          "name": "blockchain-education",
+          "query": "(\"blockchain education\" OR \"blockchain course\" OR \"learn blockchain\" OR \"Web3 course\") (certificate OR credential OR completion) lang:en -is:retweet min_faves:3",
+          "description": "Blockchain and Web3 education credentials",
+          "priority": "high",
+          "category": "use-cases"
         }
       ],
       "docsPath": "/marketplace-solutions/bws.blockchain.badges",
@@ -195,14 +305,18 @@
   },
   "settings": {
     "maxTweetsPerQuery": 30,
-    "maxQueriesPerRun": 3,
-    "maxTweetsPerProduct": 20,
-    "rotationStrategy": "round-robin",
+    "maxQueriesPerRun": 5,
+    "maxTweetsPerProduct": 50,
+    "rotationStrategy": "category-aware",
     "priorityWeights": {
       "high": 3,
       "medium": 2,
       "low": 1
     },
-    "description": "Product-specific searches for targeted educational replies. Discovers tweets about credential verification, decentralized storage, NFT distribution, and blockchain development to introduce BWS solutions."
+    "categoryDistribution": {
+      "minPerCategory": 1,
+      "categories": ["general", "institutions", "pain-points", "use-cases"]
+    },
+    "description": "Product-specific searches for targeted educational replies. Discovers tweets about credential verification, decentralized storage, NFT distribution, and blockchain development to introduce BWS solutions. Enhanced with institution discovery and topic-based search for broader reach."
   }
 }

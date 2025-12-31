@@ -1,0 +1,166 @@
+name: Monitor Topic Trends
+
+on:
+  schedule:
+    - cron: '0 */6 * * *'  # Every 6 hours
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+env:
+  NODE_VERSION: "20"
+
+jobs:
+  monitor:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: "npm"
+
+      - name: Install dependencies
+        run: |
+          if [ -f "package-lock.json" ]; then
+            npm ci
+          else
+            npm install
+          fi
+
+      - name: Monitor topic trends
+        id: monitor
+        env:
+          TWITTER_API_KEY: ${{ secrets.TWITTER_API_KEY }}
+          TWITTER_API_SECRET: ${{ secrets.TWITTER_API_SECRET }}
+          TWITTER_ACCESS_TOKEN: ${{ secrets.TWITTER_ACCESS_TOKEN }}
+          TWITTER_ACCESS_SECRET: ${{ secrets.TWITTER_ACCESS_SECRET }}
+        run: |
+          node scripts/crawling/production/monitor-topic-trends-sdk.js
+          echo "monitor_status=success" >> $GITHUB_OUTPUT
+        continue-on-error: true
+
+      - name: Check for changes
+        id: changes
+        run: |
+          if git diff --quiet scripts/crawling/data/topic-trends.json; then
+            echo "has_changes=false" >> $GITHUB_OUTPUT
+            echo "ℹ️  No new trends discovered"
+          else
+            echo "has_changes=true" >> $GITHUB_OUTPUT
+            echo "✅ New trends discovered"
+          fi
+
+      - name: Get stats
+        if: steps.monitor.outputs.monitor_status == 'success'
+        id: stats
+        run: |
+          if [ -f "scripts/crawling/data/topic-trends.json" ]; then
+            TOTAL_TRENDS=$(jq '.stats.totalDiscovered' scripts/crawling/data/topic-trends.json)
+            VIRAL_TRENDS=$(jq '.stats.byTrendType.viral // 0' scripts/crawling/data/topic-trends.json)
+            NEWS_TRENDS=$(jq '.stats.byTrendType.news // 0' scripts/crawling/data/topic-trends.json)
+            DISCOVERY_RUNS=$(jq '.metadata.discoveryRuns' scripts/crawling/data/topic-trends.json)
+
+            echo "total_trends=$TOTAL_TRENDS" >> $GITHUB_OUTPUT
+            echo "viral_trends=$VIRAL_TRENDS" >> $GITHUB_OUTPUT
+            echo "news_trends=$NEWS_TRENDS" >> $GITHUB_OUTPUT
+            echo "discovery_runs=$DISCOVERY_RUNS" >> $GITHUB_OUTPUT
+          else
+            echo "total_trends=0" >> $GITHUB_OUTPUT
+            echo "viral_trends=0" >> $GITHUB_OUTPUT
+            echo "news_trends=0" >> $GITHUB_OUTPUT
+            echo "discovery_runs=0" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Commit trend data
+        if: steps.changes.outputs.has_changes == 'true' && steps.monitor.outputs.monitor_status == 'success'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add scripts/crawling/data/topic-trends.json
+          git commit -m "Update topic trends database
+
+          Monitoring run #${{ steps.stats.outputs.discovery_runs }}
+          Total trends: ${{ steps.stats.outputs.total_trends }}
+          Viral: ${{ steps.stats.outputs.viral_trends }} | News: ${{ steps.stats.outputs.news_trends }}
+
+          🤖 Generated with [Claude Code](https://claude.com/claude-code)
+
+          Co-Authored-By: Claude Sonnet 4.5 <noreply@anthropic.com>"
+          git push
+
+      - name: Create summary
+        if: steps.monitor.outputs.monitor_status == 'success'
+        run: |
+          echo "## 📈 Topic Trend Monitoring Complete" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "- **Total Trends:** ${{ steps.stats.outputs.total_trends }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Viral Trends:** ${{ steps.stats.outputs.viral_trends }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Breaking News:** ${{ steps.stats.outputs.news_trends }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Monitoring Run:** #${{ steps.stats.outputs.discovery_runs }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **New Data Committed:** ${{ steps.changes.outputs.has_changes == 'true' && 'Yes' || 'No' }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Date:** $(date +'%Y-%m-%d %H:%M:%S UTC')" >> $GITHUB_STEP_SUMMARY
+
+  handle-failure:
+    needs: monitor
+    runs-on: ubuntu-latest
+    if: failure()
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Create failure issue
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const now = new Date();
+            const timestamp = now.toISOString();
+
+            const issueBody = `## Topic Trend Monitoring Failure
+
+            The topic trend monitoring workflow failed.
+
+            - **Workflow Run:** [View Logs](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})
+            - **Timestamp:** ${timestamp}
+
+            ### Possible Causes
+
+            1. **Twitter API Issues:**
+               - Rate limit exceeded
+               - Invalid/expired credentials
+               - API endpoint changes
+
+            2. **Script Issues:**
+               - Trend detection errors
+               - Thread detection failures
+               - Scoring calculation errors
+               - Database update errors
+
+            ### Action Required
+
+            1. Check the [workflow logs](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})
+            2. Verify Twitter API credentials in repository secrets
+            3. Check topic-trends.json for corruption
+            4. Test script manually if needed:
+               \`\`\`bash
+               node scripts/crawling/production/monitor-topic-trends-sdk.js
+               \`\`\`
+
+            ---
+            *Automated report from Topic Trend Monitoring workflow*`;
+
+            try {
+              const issue = await github.rest.issues.create({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                title: `Topic Trend Monitoring Failure - ${now.toISOString().split('T')[0]}`,
+                body: issueBody,
+                labels: ['automated', 'topic-trends', 'bug']
+              });
+              console.log(`Created issue #${issue.data.number}`);
+            } catch (error) {
+              console.error('Failed to create issue:', error.message);
+            }

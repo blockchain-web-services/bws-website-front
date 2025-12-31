@@ -1,0 +1,14 @@
+{
+  "accounts": [],
+  "stats": {
+    "totalDiscovered": 0,
+    "byProduct": {},
+    "byCategory": {},
+    "lastDiscovery": null
+  },
+  "metadata": {
+    "version": "1.0.0",
+    "lastUpdated": null,
+    "discoveryRuns": 0
+  }
+}
