@@ -226,13 +226,138 @@
       "expiresAt": "2026-01-07T17:52:14.392Z",
       "source": "timeline_monitor",
       "contentCategory": "market-trends"
+    },
+    {
+      "id": "1778242360713130435",
+      "text": "@Uniswap The SEC isn't here to protect us. It's to make sure they control us.",
+      "author": {
+        "id": "4441279246",
+        "username": "IncomeSharks"
+      },
+      "public_metrics": {
+        "likes": 1079,
+        "retweets": 121,
+        "replies": 27,
+        "quotes": 1,
+        "views": 37536
+      },
+      "url": "https://twitter.com/IncomeSharks/status/1778242360713130435",
+      "processed": false,
+      "addedAt": "2025-12-31T22:09:07.756Z",
+      "expiresAt": "2026-01-07T22:09:07.756Z",
+      "source": "timeline_monitor",
+      "contentCategory": "project-discussion"
+    },
+    {
+      "id": "1395441817563254784",
+      "text": "How to trade based on your Crypto Twitter feed\n\nBUY - Doomsday posts, FUD, memes, angry comments\nHOLD - Quality charts, good content, actual analysis\nSELL - Car pics, watch pics, wild price predictions",
+      "author": {
+        "id": "4441279246",
+        "username": "IncomeSharks"
+      },
+      "public_metrics": {
+        "likes": 5282,
+        "retweets": 1057,
+        "replies": 384,
+        "quotes": 131
+      },
+      "url": "https://twitter.com/IncomeSharks/status/1395441817563254784",
+      "processed": false,
+      "addedAt": "2025-12-31T22:09:10.205Z",
+      "expiresAt": "2026-01-07T22:09:10.205Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "1863717475168424230",
+      "text": "Over 43% of the $XRP tokens are still not even circulating. Imagine if you were on Pump Fun and saw the developer owned 43% of supply. There's a reason this space collectively dislikes this token because it's always pumping and dumping. https://t.co/n7wMvyU2nR",
+      "author": {
+        "id": "4441279246",
+        "username": "IncomeSharks"
+      },
+      "public_metrics": {
+        "likes": 5841,
+        "retweets": 386,
+        "replies": 623,
+        "quotes": 81,
+        "views": 858589
+      },
+      "url": "https://twitter.com/IncomeSharks/status/1863717475168424230",
+      "processed": false,
+      "addedAt": "2025-12-31T22:09:11.275Z",
+      "expiresAt": "2026-01-07T22:09:11.275Z",
+      "source": "timeline_monitor",
+      "contentCategory": "altcoin-talk"
+    },
+    {
+      "id": "1855688118416109585",
+      "text": "#Bitcoin - The March prediction is complete! Every line drawn on here was back at the beginning of March and we finally hit $80k. https://t.co/ABFNhJhgiB",
+      "author": {
+        "id": "4441279246",
+        "username": "IncomeSharks"
+      },
+      "public_metrics": {
+        "likes": 4021,
+        "retweets": 866,
+        "replies": 812,
+        "quotes": 21,
+        "views": 3405942
+      },
+      "url": "https://twitter.com/IncomeSharks/status/1855688118416109585",
+      "processed": false,
+      "addedAt": "2025-12-31T22:09:13.182Z",
+      "expiresAt": "2026-01-07T22:09:13.182Z",
+      "source": "timeline_monitor",
+      "contentCategory": "technical-analysis"
+    },
+    {
+      "id": "1871631935078023487",
+      "text": "When cashing out on @coinbase always send profits with $USDC to avoid fees. It's wild that they charge as much as they do converting other stable coins to USD. https://t.co/gRTBLS2AgM",
+      "author": {
+        "id": "4441279246",
+        "username": "IncomeSharks"
+      },
+      "public_metrics": {
+        "likes": 5722,
+        "retweets": 404,
+        "replies": 324,
+        "quotes": 31,
+        "views": 960090
+      },
+      "url": "https://twitter.com/IncomeSharks/status/1871631935078023487",
+      "processed": false,
+      "addedAt": "2025-12-31T22:09:15.463Z",
+      "expiresAt": "2026-01-07T22:09:15.463Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "1898450757738955242",
+      "text": "It's not that people aren't bullish enough, most have nothing left to invest.",
+      "author": {
+        "id": "4441279246",
+        "username": "IncomeSharks"
+      },
+      "public_metrics": {
+        "likes": 5197,
+        "retweets": 264,
+        "replies": 556,
+        "quotes": 45,
+        "views": 298698
+      },
+      "url": "https://twitter.com/IncomeSharks/status/1898450757738955242",
+      "processed": false,
+      "addedAt": "2025-12-31T22:09:25.945Z",
+      "expiresAt": "2026-01-07T22:09:25.945Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
     }
   ],
   "metadata": {
-    "lastUpdated": "2025-12-31T17:53:32.491Z",
-    "totalPosts": 11,
+    "lastUpdated": "2025-12-31T22:11:18.276Z",
+    "totalPosts": 17,
     "bySource": {
-      "timeline_monitor": 11,
+      "timeline_monitor": 17,
       "search_discovery": 0
     }
   },
