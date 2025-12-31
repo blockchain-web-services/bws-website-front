@@ -55,7 +55,7 @@
         "views": 1888735
       },
       "url": "https://twitter.com/cobie/status/1976788855006302686",
-      "processed": false,
+      "processed": true,
       "addedAt": "2025-12-30T22:08:18.679Z",
       "expiresAt": "2026-01-06T22:08:18.679Z",
       "source": "timeline_monitor",
@@ -81,10 +81,10 @@
       "BWS IPFS",
       "Blockchain Save"
     ],
-    "currentIndex": 4,
-    "lastProductUsed": "NFT.zK",
+    "currentIndex": 6,
+    "lastProductUsed": "ESG Credits",
     "positioningPhraseIndex": 0,
-    "replyCount": 252
+    "replyCount": 254
   },
   "_removedStale": false
 }
