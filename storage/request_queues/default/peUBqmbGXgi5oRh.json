@@ -1,0 +1,9 @@
+{
+	"id": "peUBqmbGXgi5oRh",
+	"json": "{\"id\":\"peUBqmbGXgi5oRh\",\"url\":\"https://x.com/search?q=%28PMP+OR+%22AWS+certification%22+OR+%22Google+certified%22+OR+%22Microsoft+certified%22+OR+CompTIA%29+%28verify+OR+verification+OR+authentic%29+lang%3Aen+-is%3Aretweet+min_faves%3A5&f=live\",\"loadedUrl\":\"https://x.com/search?q=%28PMP+OR+%22AWS+certification%22+OR+%22Google+certified%22+OR+%22Microsoft+certified%22+OR+CompTIA%29+%28verify+OR+verification+OR+authentic%29+lang%3Aen+-is%3Aretweet+min_faves%3A5&f=live\",\"uniqueKey\":\"https://x.com/search?f=live&q=%28PMP+OR+%22AWS+certification%22+OR+%22Google+certified%22+OR+%22Microsoft+certified%22+OR+CompTIA%29+%28verify+OR+verification+OR+authentic%29+lang%3Aen+-is%3Aretweet+min_faves%3A5\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"state\":4}},\"handledAt\":\"2025-12-31T15:59:14.546Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://x.com/search?f=live&q=%28PMP+OR+%22AWS+certification%22+OR+%22Google+certified%22+OR+%22Microsoft+certified%22+OR+CompTIA%29+%28verify+OR+verification+OR+authentic%29+lang%3Aen+-is%3Aretweet+min_faves%3A5",
+	"url": "https://x.com/search?q=%28PMP+OR+%22AWS+certification%22+OR+%22Google+certified%22+OR+%22Microsoft+certified%22+OR+CompTIA%29+%28verify+OR+verification+OR+authentic%29+lang%3Aen+-is%3Aretweet+min_faves%3A5&f=live"
+}
