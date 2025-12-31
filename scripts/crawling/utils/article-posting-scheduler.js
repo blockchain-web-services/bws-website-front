@@ -20,22 +20,22 @@ const __dirname = path.dirname(__filename);
 // Configuration
 const CONFIG = {
   // Rolling window for metrics calculation
-  historyWindowDays: 7,
+  historyWindowDays: 14,
 
   // Allowed posting intervals (hours) - rounded for predictability
-  allowedIntervals: [4, 6, 8, 12, 24],
+  allowedIntervals: [24, 48, 72],
 
   // Grace period to avoid double-posting (hours)
-  gracePeriodHours: 0.5,
+  gracePeriodHours: 2,
 
   // Minimum interval to prevent over-posting (hours)
-  minIntervalHours: 4,
+  minIntervalHours: 24,
 
   // Maximum interval to prevent under-posting (hours)
-  maxIntervalHours: 24,
+  maxIntervalHours: 72,
 
   // Default interval when no history available (hours)
-  defaultIntervalHours: 8
+  defaultIntervalHours: 48
 };
 
 // File paths
