@@ -21,6 +21,27 @@ export function createClaudeClient() {
 }
 
 /**
+ * Sanitize JSON string by removing unescaped control characters
+ * This handles cases where Claude returns JSON with literal control characters
+ * in tweet text (newlines, tabs, etc.)
+ */
+function sanitizeJSONString(jsonStr) {
+  // Remove ASCII control characters (0x00-0x1F) except already-escaped ones
+  // This regex matches control characters that aren't preceded by a backslash
+  return jsonStr.replace(/(?<!\\)[\x00-\x1F]/g, (match) => {
+    // Map control characters to their escape sequences
+    const escapeMap = {
+      '\n': '\\n',
+      '\r': '\\r',
+      '\t': '\\t',
+      '\b': '\\b',
+      '\f': '\\f'
+    };
+    return escapeMap[match] || ''; // Remove other control characters
+  });
+}
+
+/**
  * Extract JSON from Claude response
  */
 function extractJSON(text) {
@@ -31,10 +52,20 @@ function extractJSON(text) {
     throw new Error('No JSON found in response');
   }
 
+  const jsonStr = jsonMatch[0];
+
   try {
-    return JSON.parse(jsonMatch[0]);
+    // First attempt: parse as-is (Claude usually returns well-formed JSON)
+    return JSON.parse(jsonStr);
   } catch (error) {
-    throw new Error(`Failed to parse JSON: ${error.message}`);
+    // Second attempt: try with sanitization if first parse fails
+    try {
+      const sanitized = sanitizeJSONString(jsonStr);
+      return JSON.parse(sanitized);
+    } catch (sanitizeError) {
+      // If both fail, throw detailed error
+      throw new Error(`Failed to parse JSON: ${error.message}. Sanitization also failed: ${sanitizeError.message}`);
+    }
   }
 }
 
