@@ -4,15 +4,15 @@
       "queries": [
         {
           "name": "universities-offering-credentials",
-          "query": "(university OR college OR academic) (certificate OR credential OR diploma OR degree) (digital OR online OR blockchain OR verify) lang:en -is:retweet",
-          "description": "Universities discussing digital credentials",
+          "query": "from:(@Harvard OR @Stanford OR @MIT OR @Cornell OR @DukeU OR @OhioState OR @ASU OR @BU_Tweets OR @UNC) (certificate OR certification OR program)",
+          "description": "Direct monitoring of top universities posting about certificates",
           "priority": "high",
           "category": "universities",
           "accountType": "institution"
         },
         {
           "name": "elearning-platforms-certifications",
-          "query": "from:(coursera OR udemy OR edX OR udacity OR pluralsight OR skillshare OR linkedin_learning) (certificate OR certification OR credential OR completion)",
+          "query": "from:(@coursera OR @udemy OR @edXOnline OR @udacity OR @LinkedInLearn) (certificate OR course OR learn)",
           "description": "Major e-learning platforms posting about certificates",
           "priority": "high",
           "category": "elearning",
@@ -20,88 +20,88 @@
         },
         {
           "name": "bootcamp-providers",
-          "query": "(bootcamp OR \"coding bootcamp\" OR \"data science bootcamp\" OR \"cybersecurity bootcamp\") (certificate OR completion OR credential) lang:en -is:retweet",
-          "description": "Bootcamp providers offering credentials",
+          "query": "from:(@GA OR @FlatironSchool OR @FullstackAcad OR @lewagonparis OR @ironhack OR @springboard) (graduate OR certificate OR completion OR program)",
+          "description": "Major bootcamps posting about student achievements",
           "priority": "high",
           "category": "bootcamps",
           "accountType": "institution"
         },
         {
-          "name": "professional-training-providers",
-          "query": "(professional training OR corporate training OR skill development) (certificate OR credential OR badge OR certification) lang:en -is:retweet",
-          "description": "Professional training organizations",
+          "name": "professional-certifications",
+          "query": "(certificate OR certification OR certified) (issued OR earned OR completed) min_faves:5 lang:en -is:retweet",
+          "description": "People posting about earning certificates",
           "priority": "medium",
-          "category": "professional-training",
-          "accountType": "institution"
+          "category": "user-generated",
+          "accountType": "mixed"
         },
         {
-          "name": "certification-bodies",
-          "query": "(AWS OR Google OR Microsoft OR Cisco OR CompTIA OR PMI) (certification OR certified OR credential OR exam) lang:en -is:retweet",
-          "description": "Official certification bodies",
+          "name": "digital-credentials-discussion",
+          "query": "(digital credential OR digital badge OR digital certificate) min_faves:3 lang:en -is:retweet",
+          "description": "Discussions about digital credentials",
           "priority": "high",
-          "category": "certification-bodies",
-          "accountType": "institution"
+          "category": "discussion",
+          "accountType": "mixed"
         },
         {
-          "name": "online-universities",
-          "query": "(\"online university\" OR \"online college\" OR \"distance learning\" OR \"remote education\") (degree OR diploma OR certificate OR credential) lang:en -is:retweet",
-          "description": "Online universities and distance learning",
+          "name": "european-universities",
+          "query": "from:(@OpenUniversity OR @UniofOxford OR @EdinburghUni OR @UCL OR @HECParis) (certificate OR course OR program OR student)",
+          "description": "Top European universities",
           "priority": "high",
           "category": "universities",
           "accountType": "institution"
         },
         {
-          "name": "mooc-providers",
-          "query": "(MOOC OR \"massive open online course\" OR \"online learning platform\") (certificate OR completion OR credential) lang:en -is:retweet",
-          "description": "MOOC providers",
+          "name": "online-learning-achievements",
+          "query": "(completed OR finished OR graduated) (online course OR bootcamp) min_faves:3 lang:en -is:retweet",
+          "description": "People celebrating online learning completions",
           "priority": "medium",
+          "category": "user-generated",
+          "accountType": "mixed"
+        },
+        {
+          "name": "credential-fraud-news",
+          "query": "(fake degree OR diploma mill OR credential fraud OR verification) min_faves:10 lang:en -is:retweet",
+          "description": "News about credential fraud (pain point)",
+          "priority": "high",
+          "category": "pain-point",
+          "accountType": "mixed"
+        },
+        {
+          "name": "blockchain-education",
+          "query": "(blockchain OR web3) (education OR certificate OR credential OR learning) min_faves:5 lang:en -is:retweet",
+          "description": "Blockchain + education discussions",
+          "priority": "high",
+          "category": "solution",
+          "accountType": "mixed"
+        },
+        {
+          "name": "micro-credentials",
+          "query": "(micro-credential OR microcredential OR nanodegree OR digital badge) min_faves:3 lang:en -is:retweet",
+          "description": "Micro-credentials and digital badges",
+          "priority": "high",
+          "category": "solution",
+          "accountType": "mixed"
+        },
+        {
+          "name": "university-partnerships",
+          "query": "(university partnership OR academic partnership) (certificate OR credential OR program) min_faves:5 lang:en -is:retweet",
+          "description": "Universities forming partnerships for credentials",
+          "priority": "medium",
+          "category": "universities",
+          "accountType": "mixed"
+        },
+        {
+          "name": "education-technology",
+          "query": "(edtech OR edutech OR education technology) (certificate OR credential OR verification) min_faves:5 lang:en -is:retweet",
+          "description": "EdTech companies discussing credentials",
+          "priority": "high",
           "category": "elearning",
-          "accountType": "institution"
+          "accountType": "mixed"
         },
         {
-          "name": "tech-bootcamps",
-          "query": "(\"General Assembly\" OR \"Flatiron School\" OR \"Le Wagon\" OR \"Ironhack\" OR \"BrainStation\") (certificate OR completion OR graduate)",
-          "description": "Named tech bootcamps",
-          "priority": "high",
-          "category": "bootcamps",
-          "accountType": "institution"
-        },
-        {
-          "name": "higher-ed-digital-credentials",
-          "query": "(higher education OR academia) (\"digital credential\" OR \"digital badge\" OR \"micro-credential\" OR \"blockchain credential\") lang:en -is:retweet",
-          "description": "Higher education institutions discussing digital credentials",
-          "priority": "high",
-          "category": "universities",
-          "accountType": "institution"
-        },
-        {
-          "name": "learning-management-systems",
-          "query": "(LMS OR \"learning management system\" OR Moodle OR Canvas OR Blackboard) (certificate OR credential OR badge OR completion) lang:en -is:retweet",
-          "description": "LMS platforms that issue credentials",
-          "priority": "medium",
-          "category": "elearning",
-          "accountType": "institution"
-        },
-        {
-          "name": "credential-verification-talk",
-          "query": "(\"we verify\" OR \"we issue\" OR \"our certificates\" OR \"our credentials\") (diploma OR degree OR certificate OR credential) lang:en -is:retweet",
-          "description": "Institutions discussing their credential issuance",
-          "priority": "medium",
-          "category": "general",
-          "accountType": "institution"
-        },
-        {
-          "name": "accredited-institutions",
-          "query": "(accredited OR accreditation) (university OR college OR institution OR academy) (certificate OR degree OR diploma OR credential) lang:en -is:retweet",
-          "description": "Accredited educational institutions",
-          "priority": "high",
-          "category": "universities",
-          "accountType": "institution"
-        },
-        {
-          "name": "vocational-training",
-          "query": "(vocational OR \"trade school\" OR \"technical college\" OR \"career center\") (certificate OR diploma OR credential OR certification) lang:en -is:retweet",
-          "description": "Vocational and technical training institutions",
+          "name": "professional-development",
+          "query": "(professional development OR upskilling OR reskilling) certificate min_faves:3 lang:en -is:retweet",
+          "description": "Professional development with certificates",
           "priority": "medium",
           "category": "professional-training",
           "accountType": "institution"
