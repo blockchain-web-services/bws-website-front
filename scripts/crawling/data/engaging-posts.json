@@ -221,7 +221,7 @@
         "views": 65636
       },
       "url": "https://twitter.com/IncomeSharks/status/2005722919402721281",
-      "processed": false,
+      "processed": true,
       "addedAt": "2025-12-31T17:52:14.392Z",
       "expiresAt": "2026-01-07T17:52:14.392Z",
       "source": "timeline_monitor",
@@ -242,7 +242,7 @@
         "views": 37536
       },
       "url": "https://twitter.com/IncomeSharks/status/1778242360713130435",
-      "processed": false,
+      "processed": true,
       "addedAt": "2025-12-31T22:09:07.756Z",
       "expiresAt": "2026-01-07T22:09:07.756Z",
       "source": "timeline_monitor",
@@ -262,7 +262,7 @@
         "quotes": 131
       },
       "url": "https://twitter.com/IncomeSharks/status/1395441817563254784",
-      "processed": false,
+      "processed": true,
       "addedAt": "2025-12-31T22:09:10.205Z",
       "expiresAt": "2026-01-07T22:09:10.205Z",
       "source": "timeline_monitor",
@@ -283,7 +283,7 @@
         "views": 858589
       },
       "url": "https://twitter.com/IncomeSharks/status/1863717475168424230",
-      "processed": false,
+      "processed": true,
       "addedAt": "2025-12-31T22:09:11.275Z",
       "expiresAt": "2026-01-07T22:09:11.275Z",
       "source": "timeline_monitor",
@@ -304,7 +304,7 @@
         "views": 3405942
       },
       "url": "https://twitter.com/IncomeSharks/status/1855688118416109585",
-      "processed": false,
+      "processed": true,
       "addedAt": "2025-12-31T22:09:13.182Z",
       "expiresAt": "2026-01-07T22:09:13.182Z",
       "source": "timeline_monitor",
@@ -325,7 +325,7 @@
         "views": 960090
       },
       "url": "https://twitter.com/IncomeSharks/status/1871631935078023487",
-      "processed": false,
+      "processed": true,
       "addedAt": "2025-12-31T22:09:15.463Z",
       "expiresAt": "2026-01-07T22:09:15.463Z",
       "source": "timeline_monitor",
@@ -346,7 +346,7 @@
         "views": 298698
       },
       "url": "https://twitter.com/IncomeSharks/status/1898450757738955242",
-      "processed": false,
+      "processed": true,
       "addedAt": "2025-12-31T22:09:25.945Z",
       "expiresAt": "2026-01-07T22:09:25.945Z",
       "source": "timeline_monitor",
@@ -372,10 +372,10 @@
       "BWS IPFS",
       "Blockchain Save"
     ],
-    "currentIndex": 5,
-    "lastProductUsed": "Blockchain Badges",
+    "currentIndex": 1,
+    "lastProductUsed": "X Bot",
     "positioningPhraseIndex": 0,
-    "replyCount": 269
+    "replyCount": 273
   },
   "_removedStale": false
 }
