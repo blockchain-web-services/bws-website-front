@@ -2,14 +2,28 @@
   "trends": [],
   "stats": {
     "totalDiscovered": 0,
-    "byProduct": {},
-    "byCategory": {},
-    "byTrendType": {},
-    "lastDiscovery": null
+    "byProduct": {
+      "Blockchain Badges": 0
+    },
+    "byCategory": {
+      "viral": 0,
+      "news": 0,
+      "debate": 0,
+      "market": 0,
+      "solution": 0,
+      "pain-point": 0,
+      "use-case": 0
+    },
+    "byTrendType": {
+      "news": 0,
+      "conversation": 0,
+      "trend": 0
+    },
+    "lastDiscovery": "2025-12-31T16:27:04.594Z"
   },
   "metadata": {
     "version": "1.0.0",
-    "lastUpdated": null,
-    "discoveryRuns": 0
+    "lastUpdated": "2025-12-31T16:27:04.594Z",
+    "discoveryRuns": 1
   }
 }
