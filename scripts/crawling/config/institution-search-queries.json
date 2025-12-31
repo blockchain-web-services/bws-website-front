@@ -4,7 +4,7 @@
       "queries": [
         {
           "name": "universities-offering-credentials",
-          "query": "from:(@Harvard OR @Stanford OR @MIT OR @Cornell OR @DukeU OR @OhioState OR @ASU OR @BU_Tweets OR @UNC) (certificate OR certification OR program)",
+          "query": "(from:Harvard OR from:Stanford OR from:MIT OR from:Cornell OR from:DukeU OR from:OhioState OR from:ASU OR from:BU_Tweets OR from:UNC) (certificate OR certification OR program)",
           "description": "Direct monitoring of top universities posting about certificates",
           "priority": "high",
           "category": "universities",
@@ -12,7 +12,7 @@
         },
         {
           "name": "elearning-platforms-certifications",
-          "query": "from:(@coursera OR @udemy OR @edXOnline OR @udacity OR @LinkedInLearn) (certificate OR course OR learn)",
+          "query": "(from:coursera OR from:udemy OR from:edXOnline OR from:udacity OR from:LinkedInLearn) (certificate OR course OR learn)",
           "description": "Major e-learning platforms posting about certificates",
           "priority": "high",
           "category": "elearning",
@@ -20,7 +20,7 @@
         },
         {
           "name": "bootcamp-providers",
-          "query": "from:(@GA OR @FlatironSchool OR @FullstackAcad OR @lewagonparis OR @ironhack OR @springboard) (graduate OR certificate OR completion OR program)",
+          "query": "(from:GA OR from:FlatironSchool OR from:FullstackAcad OR from:lewagonparis OR from:ironhack OR from:springboard) (graduate OR certificate OR completion OR program)",
           "description": "Major bootcamps posting about student achievements",
           "priority": "high",
           "category": "bootcamps",
@@ -44,7 +44,7 @@
         },
         {
           "name": "european-universities",
-          "query": "from:(@OpenUniversity OR @UniofOxford OR @EdinburghUni OR @UCL OR @HECParis) (certificate OR course OR program OR student)",
+          "query": "(from:OpenUniversity OR from:UniofOxford OR from:EdinburghUni OR from:UCL OR from:HECParis) (certificate OR course OR program OR student)",
           "description": "Top European universities",
           "priority": "high",
           "category": "universities",
