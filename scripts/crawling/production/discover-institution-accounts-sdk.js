@@ -1,5 +1,5 @@
 /**
- * Blockchain Badges Prospect Discovery - BWS X SDK Version with Profile Enrichment
+ * Blockchain Badges Prospect Discovery - BWS X SDK v1.8.0 with enrichTweetAuthors()
  * Discovers BOTH institutional accounts AND engaged individual users
  * that are potential customers for Blockchain Badges
  *
@@ -7,13 +7,13 @@
  * - Institutions: Universities, e-learning platforms, bootcamps, certification bodies
  * - Engaged Users: HR professionals, students, educators, developers discussing credentials
  *
- * Uses BWS X SDK v1.7.0 with client.searchTweets() + client.getProfile()
+ * Uses BWS X SDK v1.8.0 with built-in enrichTweetAuthors() method
  * Mode: Hybrid (crawler-first with API fallback)
  *
  * Strategy:
  * 1. Search tweets using user-conversation queries (pain-points, achievements, discussions)
- * 2. Extract usernames from tweets
- * 3. Enrich with full profile data using getProfile() (bio, followers, verified status)
+ * 2. Enrich tweets with full author profile data using client.enrichTweetAuthors()
+ * 3. Extract enriched author accounts from tweets
  * 4. Classify accounts (institution, engaged_user, or irrelevant)
  * 5. Save BOTH institutions and engaged users (comprehensive audience building)
  * 6. Score accounts by product fit
@@ -274,185 +274,101 @@ function scoreProductFit(account, productName, productConfig) {
 }
 
 /**
- * Extract username from tweet object
- * Handles multiple scenarios where username might be available
- */
-function extractUsernameFromTweet(tweet) {
-  // Option 1: If tweet has author object with username (most reliable)
-  if (tweet.author?.username) {
-    return tweet.author.username;
-  }
-
-  // Option 2: Extract from tweet URL/permalink if available
-  // Tweet URLs follow pattern: https://twitter.com/username/status/123...
-  if (tweet.url) {
-    const urlMatch = tweet.url.match(/twitter\.com\/([^\/]+)\/status/);
-    if (urlMatch && urlMatch[1]) {
-      return urlMatch[1];
-    }
-  }
-
-  // Option 3: Parse from RT pattern "RT @username:"
-  if (tweet.text) {
-    const rtMatch = tweet.text.match(/^RT @([a-zA-Z0-9_]+):/);
-    if (rtMatch && rtMatch[1]) {
-      return rtMatch[1];
-    }
-
-    // Option 4: Parse from reply pattern "@username" at start
-    const replyMatch = tweet.text.match(/^@([a-zA-Z0-9_]+)/);
-    if (replyMatch && replyMatch[1]) {
-      return replyMatch[1];
-    }
-  }
-
-  // Option 5: Check if tweet has author_id (we'd need to handle this differently)
-  // For now, return null if no username found
-  return null;
-}
-
-/**
- * Search tweets and extract author accounts with profile enrichment
- * Uses client.getProfile() to fetch complete profile data
+ * Search tweets and extract author accounts using v1.8.0 enrichTweetAuthors()
+ * NEW: Uses SDK's built-in enrichment method for cleaner, more efficient code
  */
 async function searchAndExtractAccounts(client, product, query, config) {
   console.log(`\n🔍 Searching: ${query.name}`);
   console.log(`   Query: ${query.query}`);
 
-  // Enrichment statistics
-  const enrichmentStats = {
-    totalTweets: 0,
-    uniqueUsernames: 0,
-    profilesFetched: 0,
-    profilesFailed: 0,
-    failureReasons: {}
-  };
-
   try {
-    // Step 1: Search tweets (no expansions needed - crawler mode ignores them anyway)
+    // Step 1: Search tweets
     const tweets = await client.searchTweets(query.query, {
       maxResults: config.settings.maxAccountsPerQuery
     });
 
-    enrichmentStats.totalTweets = tweets.length;
     console.log(`   ✅ Found ${tweets.length} tweets`);
 
     if (tweets.length === 0) {
       return [];
     }
 
-    // Step 2: Extract unique usernames from tweets
-    const usernameMap = new Map();
-    const tweetsByUsername = new Map();
+    // Step 2: Enrich tweets with full author profile data using v1.8.0 method
+    console.log(`   🔍 Enriching with full author profiles (v1.8.0 enrichTweetAuthors)...`);
 
-    for (const tweet of tweets) {
-      const username = extractUsernameFromTweet(tweet);
+    // Access the crawler client (private but accessible in JavaScript)
+    const crawlerClient = client.crawlerClient;
 
-      if (!username) {
-        console.log(`   ⚠️  Could not extract username from tweet ${tweet.id}`);
-        continue;
-      }
-
-      // Store first occurrence for sample tweet
-      if (!usernameMap.has(username)) {
-        usernameMap.set(username, true);
-        tweetsByUsername.set(username, {
-          id: tweet.id,
-          text: tweet.text,
-          created_at: tweet.created_at
-        });
-      }
-    }
-
-    const usernames = Array.from(usernameMap.keys());
-    enrichmentStats.uniqueUsernames = usernames.length;
-    console.log(`   👥 ${usernames.length} unique authors identified`);
-
-    if (usernames.length === 0) {
-      console.log(`   ⚠️  No usernames extracted from tweets`);
-      return [];
-    }
-
-    // Step 3: Fetch profiles in parallel using getProfile() - ENRICHMENT!
-    console.log(`   🔍 Enriching profiles...`);
-
-    const profilePromises = usernames.map(username =>
-      client.getProfile(username)
-        .then(profile => {
-          enrichmentStats.profilesFetched++;
-          return profile;
-        })
-        .catch(error => {
-          enrichmentStats.profilesFailed++;
-
-          // Categorize failure reason
-          const reason = error.message.includes('rate limit') || error.message.includes('Too Many Requests') ? 'rate_limit' :
-                         error.message.includes('not found') || error.message.includes('404') ? 'not_found' :
-                         error.message.includes('suspended') || error.message.includes('403') ? 'suspended' :
-                         'other';
-
-          enrichmentStats.failureReasons[reason] = (enrichmentStats.failureReasons[reason] || 0) + 1;
-
-          console.log(`   ⚠️  Failed to fetch @${username}: ${error.message.substring(0, 100)}`);
-          return null;
-        })
-    );
-
-    const profiles = await Promise.all(profilePromises);
-
-    // Step 4: Filter out failed profiles and convert to account format
-    const accounts = profiles
-      .filter(profile => profile !== null)
-      .map(profile => {
-        // Map UserProfile fields to expected account structure
-        return {
-          id: profile.id,
-          username: profile.username,
-          name: profile.name,
-          description: profile.bio,  // Map bio → description
-          public_metrics: {
-            followers_count: profile.followers,
-            following_count: profile.following,
-            tweet_count: profile.tweetCount
-          },
-          verified: profile.verified,
-          profile_image_url: profile.profileImageUrl,
-          location: profile.location,
-          url: profile.url,
-          created_at: profile.createdAt,
-          _enriched: true,  // Flag to indicate enrichment was successful
-          _source: profile._source,  // Track if from API or crawler
-
-          // Add discovery context
-          discoveryContext: {
-            product,
-            query: query.name,
-            queryCategory: query.category,
-            discoveredAt: new Date().toISOString(),
-            sampleTweet: tweetsByUsername.get(profile.username)
-          }
-        };
+    let enrichedTweets;
+    if (crawlerClient && crawlerClient.enrichTweetAuthors) {
+      // Use v1.8.0's built-in enrichment method
+      enrichedTweets = await crawlerClient.enrichTweetAuthors(tweets, {
+        concurrency: 3  // Fetch 3 profiles at a time
       });
+    } else {
+      // Fallback: no enrichment available
+      console.log(`   ⚠️  enrichTweetAuthors not available, using tweets as-is`);
+      enrichedTweets = tweets;
+    }
+
+    // Step 3: Extract unique enriched author accounts
+    const accountsMap = new Map();
+
+    for (const tweet of enrichedTweets) {
+      const author = tweet.author;
+      if (!author || !author.username) continue;
+
+      // Skip if we've already seen this account
+      if (accountsMap.has(author.username)) continue;
+
+      // Map to expected account structure
+      accountsMap.set(author.username, {
+        id: author.id,
+        username: author.username,
+        name: author.name,
+        description: author.bio,  // v1.8.0 enriches this!
+        public_metrics: {
+          followers_count: author.followers || 0,  // v1.8.0 enriches this!
+          following_count: author.following || 0,  // v1.8.0 enriches this!
+          tweet_count: author.tweetCount || 0
+        },
+        verified: author.verified || false,
+        profile_image_url: author.profileImageUrl,
+        location: author.location,
+        url: author.url,
+        created_at: author.createdAt,
+        _enriched: !!(author.bio || author.followers),  // Flag if enrichment worked
+        _source: author._source || 'unknown',
+
+        // Add discovery context
+        discoveryContext: {
+          product,
+          query: query.name,
+          queryCategory: query.category,
+          discoveredAt: new Date().toISOString(),
+          sampleTweet: {
+            id: tweet.id,
+            text: tweet.text,
+            created_at: tweet.createdAt
+          }
+        }
+      });
+    }
+
+    const accounts = Array.from(accountsMap.values());
 
     // Log enrichment summary
-    console.log(`   ✅ Enriched ${enrichmentStats.profilesFetched}/${enrichmentStats.uniqueUsernames} profiles`);
-
-    if (enrichmentStats.profilesFailed > 0) {
-      console.log(`   ⚠️  ${enrichmentStats.profilesFailed} profiles failed:`);
-      for (const [reason, count] of Object.entries(enrichmentStats.failureReasons)) {
-        console.log(`      - ${reason}: ${count}`);
-      }
-    }
+    const enrichedCount = accounts.filter(a => a._enriched).length;
+    console.log(`   ✅ Extracted ${accounts.length} unique accounts (${enrichedCount} enriched)`);
 
     // Debug: Show sample enriched data
     if (accounts.length > 0) {
       const sample = accounts[0];
-      console.log(`   ✅ Sample enriched data:`, {
+      console.log(`   ✅ Sample account:`, {
         username: sample.username,
         bio: sample.description?.substring(0, 50) || '(none)',
         followers: sample.public_metrics?.followers_count || 0,
-        verified: sample.verified,
-        source: sample._source
+        enriched: sample._enriched
       });
     }
 
@@ -462,7 +378,6 @@ async function searchAndExtractAccounts(client, product, query, config) {
 
   } catch (error) {
     console.error(`   ❌ Error in discovery: ${error.message}`);
-    console.error(`   Stats at failure:`, enrichmentStats);
     return [];
   }
 }
@@ -572,7 +487,7 @@ function selectQueriesForProduct(productConfig, settings) {
  */
 async function discoverInstitutionAccounts() {
   console.log('🎯 Starting Blockchain Badges Prospect Discovery...');
-  console.log('📦 Using: BWS X SDK v1.7.0 with Profile Enrichment');
+  console.log('📦 Using: BWS X SDK v1.8.0 with enrichTweetAuthors()');
   console.log('🔍 Strategy: User-conversation monitoring (institutions + engaged users)');
   console.log(`📍 Script: discover-institution-accounts-sdk.js\n`);
 
