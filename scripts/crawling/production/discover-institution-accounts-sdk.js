@@ -537,7 +537,34 @@ async function discoverInstitutionAccounts() {
     logging: { level: 'info' }
   };
 
+  const webhookConfig = sdkConfig.webhook;  // Save webhook config before SDK strips it
   const client = new XTwitterClient(sdkConfig);
+
+  // WORKAROUND: SDK's ConfigManager.validate() strips webhook field (not in Zod schema)
+  // Manually inject webhook manager after initialization
+  if (webhookConfig) {
+    const { WebhookManager } = await import('@blockchain-web-services/bws-x-sdk-node/dist/webhook/WebhookManager.js');
+    const Logger = (await import('@blockchain-web-services/bws-x-sdk-node/dist/utils/Logger.js')).Logger;
+
+    const logger = new Logger({ level: 'info' });
+    const webhookManager = new WebhookManager(webhookConfig, logger);
+
+    // Inject webhook manager into client (private field but accessible in JS)
+    client.webhookManager = webhookManager;
+
+    // Also inject into crawler and API clients
+    if (client.crawlerClient) {
+      client.crawlerClient.webhookManager = webhookManager;
+    }
+    if (client.apiClient) {
+      client.apiClient.webhookManager = webhookManager;
+    }
+
+    console.log('\n✅ Webhook manager manually injected (SDK schema workaround)');
+    console.log(`   Enabled: ${webhookManager.isEnabled()}`);
+    console.log(`   URL: ${webhookConfig.url}`);
+    console.log(`   Events: ${webhookConfig.events.join(', ')}\n`);
+  }
 
   console.log(`\n✅ SDK client initialized in ${sdkConfig.mode} mode`);
   console.log(`   Has crawler: ${crawlerConfig ? '✅ Yes' : '❌ No'}`);
