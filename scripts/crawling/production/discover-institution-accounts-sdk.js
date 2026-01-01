@@ -181,20 +181,17 @@ function classifyAccount(account, config) {
     bio.includes(indicator) || name.includes(indicator)
   );
 
-  // FALLBACK LOGIC: If found via credential query, they're relevant by definition
-  // These users are actively tweeting about credentials - that's engagement!
-  const hasReasonableFollowing = followerCount >= 100; // Very low threshold
-  const hasContent = (bio.length > 0 || name.length > 0); // Has some profile info
+  // CRITICAL LOGIC: If found via credential query, they're tweeting about credentials
+  // This is THE engagement signal - save them!
+  // Only exclude obvious spam (suspended accounts have follower_count = 0)
+  const hasAnyProfile = account.username && account.username.length > 0;
+  const notSuspended = followerCount > 0 || account.public_metrics?.following_count > 0;
 
-  // Classify as engaged user if:
-  // 1. Has keyword matches OR
-  // 2. Found via credential query + has reasonable following + has profile
-  const isEngagedUser = engagedMatches.length > 0 || (hasReasonableFollowing && hasContent);
+  // Save everyone who was found via credential queries (unless obviously spam)
+  if (hasAnyProfile && notSuspended) {
+    let confidence = 50; // Base: tweeting about credentials
 
-  if (isEngagedUser) {
-    let confidence = 50; // Base confidence - they're tweeting about credentials
-
-    // Boost for keyword matches
+    // Boost for keyword matches in bio/name
     if (engagedMatches.length > 0) {
       confidence = Math.min(100, confidence + engagedMatches.length * 10);
     }
@@ -203,6 +200,7 @@ function classifyAccount(account, config) {
     if (account.verified) confidence = Math.min(100, confidence + 20);
 
     // Boost for follower count
+    if (followerCount >= 100) confidence = Math.min(100, confidence + 5);
     if (followerCount >= 500) confidence = Math.min(100, confidence + 10);
     if (followerCount >= 2000) confidence = Math.min(100, confidence + 15);
 
@@ -217,12 +215,12 @@ function classifyAccount(account, config) {
     };
   }
 
-  // Still not relevant (likely spam/bot accounts with no profile)
+  // Only reject suspended/deleted accounts
   return {
     accountType: 'unknown',
     isRelevant: false,
     confidence: 0,
-    reason: 'No profile content'
+    reason: 'Suspended or spam account'
   };
 }
 
