@@ -557,7 +557,8 @@ async function discoverInstitutionAccounts() {
       const { WebhookManager } = require(modulePath);
       const { Logger } = require(path.join(__dirname, '../../../node_modules/@blockchain-web-services/bws-x-sdk-node/dist/utils/Logger.js'));
 
-      const logger = new Logger({ level: 'info' });
+      // Use 'debug' level to see webhook delivery logs (webhook.debug: true requires this)
+      const logger = new Logger({ level: 'debug' });
       const webhookManager = new WebhookManager(webhookConfig, logger);
 
       // Inject webhook manager into clients
