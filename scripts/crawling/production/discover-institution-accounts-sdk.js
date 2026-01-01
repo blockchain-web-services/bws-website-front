@@ -524,6 +524,7 @@ async function discoverInstitutionAccounts() {
     webhook: {
       enabled: true,
       url: 'https://hooks.zapier.com/hooks/catch/15373826/us3spl5/',
+      secret: 'zapier-webhook-no-signature-required',  // Required by SDK (Zapier ignores HMAC)
       events: ['account_failure', 'api_rate_limit', 'error', 'warning'],  // All SDK events
       debug: true,  // Enable debug logging for webhooks
       retries: {
