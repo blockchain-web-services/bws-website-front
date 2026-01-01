@@ -281,8 +281,11 @@ async function searchAndExtractAccounts(client, product, query, config) {
 
   try {
     // SDK METHOD: client.searchTweets()
+    // CRITICAL: Must request author expansions to get account data!
     const tweets = await client.searchTweets(query.query, {
-      maxResults: config.settings.maxAccountsPerQuery
+      maxResults: config.settings.maxAccountsPerQuery,
+      expansions: 'author_id',
+      'user.fields': 'id,username,name,description,public_metrics,verified'
     });
 
     console.log(`   ✅ Found ${tweets.length} tweets`);
