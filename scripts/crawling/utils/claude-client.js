@@ -21,24 +21,37 @@ export function createClaudeClient() {
 }
 
 /**
- * Sanitize JSON string by removing unescaped control characters
+ * Sanitize JSON string by removing control characters that break JSON parsing
  * This handles cases where Claude returns JSON with literal control characters
  * in tweet text (newlines, tabs, etc.)
+ *
+ * Strategy: Simply REMOVE all problematic control characters rather than
+ * trying to escape them, as escaping can corrupt the JSON structure.
  */
 function sanitizeJSONString(jsonStr) {
-  // Remove ASCII control characters (0x00-0x1F) except already-escaped ones
-  // This regex matches control characters that aren't preceded by a backslash
-  return jsonStr.replace(/(?<!\\)[\x00-\x1F]/g, (match) => {
-    // Map control characters to their escape sequences
-    const escapeMap = {
-      '\n': '\\n',
-      '\r': '\\r',
-      '\t': '\\t',
-      '\b': '\\b',
-      '\f': '\\f'
-    };
-    return escapeMap[match] || ''; // Remove other control characters
+  // Remove all ASCII control characters (0x00-0x1F) EXCEPT:
+  // - Space (0x20) - needed for formatting
+  // - Tab, newline, carriage return when they appear OUTSIDE of string values
+
+  // Step 1: Remove control characters within JSON string values
+  // This regex finds content within quotes and cleans it
+  let cleaned = jsonStr.replace(/"([^"\\]*(\\.[^"\\]*)*)"/g, (match, content) => {
+    // Inside the string value, replace control characters with spaces
+    const cleanedContent = match.replace(/[\x00-\x1F]/g, ' ');
+    return cleanedContent;
   });
+
+  // Step 2: If that didn't work, use aggressive approach - remove ALL control chars
+  // except spaces and those that are clearly part of JSON structure
+  if (!cleaned) {
+    cleaned = jsonStr.replace(/[\x00-\x1F]/g, (char) => {
+      // Keep newlines/spaces that appear outside strings (between JSON elements)
+      // Replace everything else with space
+      return ' ';
+    });
+  }
+
+  return cleaned;
 }
 
 /**
@@ -58,12 +71,22 @@ function extractJSON(text) {
     // First attempt: parse as-is (Claude usually returns well-formed JSON)
     return JSON.parse(jsonStr);
   } catch (error) {
+    // Log the problematic position for debugging
+    console.log(`⚠️  JSON parse failed at position ${error.message.match(/position (\d+)/)?.[1] || 'unknown'}`);
+
     // Second attempt: try with sanitization if first parse fails
     try {
       const sanitized = sanitizeJSONString(jsonStr);
+
+      // Debug: show first 200 chars of sanitized JSON
+      console.log(`🔧 Sanitized JSON (first 200 chars): ${sanitized.substring(0, 200)}`);
+
       return JSON.parse(sanitized);
     } catch (sanitizeError) {
-      // If both fail, throw detailed error
+      // If both fail, log the raw JSON for debugging and throw detailed error
+      console.error(`❌ Raw JSON (first 300 chars): ${jsonStr.substring(0, 300)}`);
+      console.error(`❌ Sanitized JSON (first 300 chars): ${sanitizeJSONString(jsonStr).substring(0, 300)}`);
+
       throw new Error(`Failed to parse JSON: ${error.message}. Sanitization also failed: ${sanitizeError.message}`);
     }
   }
