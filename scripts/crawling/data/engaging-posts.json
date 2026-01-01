@@ -34,7 +34,7 @@
         "quotes": 9
       },
       "url": "https://twitter.com/AltcoinSherpa/status/1513798244467605507",
-      "processed": false,
+      "processed": true,
       "addedAt": "2025-12-30T12:46:40.382Z",
       "expiresAt": "2026-01-06T12:46:40.382Z",
       "source": "timeline_monitor",
@@ -54,7 +54,7 @@
         "quotes": 409
       },
       "url": "https://twitter.com/cobie/status/1542562195573297153",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-01-01T07:23:56.960Z",
       "expiresAt": "2026-01-08T07:23:56.960Z",
       "source": "timeline_monitor",
@@ -74,7 +74,7 @@
         "quotes": 371
       },
       "url": "https://twitter.com/cobie/status/1358763044181078017",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-01-01T07:23:59.950Z",
       "expiresAt": "2026-01-08T07:23:59.950Z",
       "source": "timeline_monitor",
@@ -95,7 +95,7 @@
         "views": 2792366
       },
       "url": "https://twitter.com/cobie/status/1980579379244855384",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-01-01T07:24:02.034Z",
       "expiresAt": "2026-01-08T07:24:02.034Z",
       "source": "timeline_monitor",
@@ -137,7 +137,7 @@
         "views": 37536
       },
       "url": "https://twitter.com/IncomeSharks/status/1778242360713130435",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-01-01T07:24:34.015Z",
       "expiresAt": "2026-01-08T07:24:34.015Z",
       "source": "timeline_monitor",
@@ -157,7 +157,7 @@
         "quotes": 131
       },
       "url": "https://twitter.com/IncomeSharks/status/1395441817563254784",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-01-01T07:24:35.036Z",
       "expiresAt": "2026-01-08T07:24:35.036Z",
       "source": "timeline_monitor",
@@ -178,7 +178,7 @@
         "views": 858589
       },
       "url": "https://twitter.com/IncomeSharks/status/1863717475168424230",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-01-01T07:24:37.325Z",
       "expiresAt": "2026-01-08T07:24:37.325Z",
       "source": "timeline_monitor",
@@ -199,7 +199,7 @@
         "views": 3405943
       },
       "url": "https://twitter.com/IncomeSharks/status/1855688118416109585",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-01-01T07:24:38.991Z",
       "expiresAt": "2026-01-08T07:24:38.991Z",
       "source": "timeline_monitor",
@@ -220,7 +220,7 @@
         "views": 960094
       },
       "url": "https://twitter.com/IncomeSharks/status/1871631935078023487",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-01-01T07:24:41.120Z",
       "expiresAt": "2026-01-08T07:24:41.120Z",
       "source": "timeline_monitor",
@@ -240,7 +240,7 @@
         "quotes": 69
       },
       "url": "https://twitter.com/IncomeSharks/status/1509583498893484032",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-01-01T07:24:49.324Z",
       "expiresAt": "2026-01-08T07:24:49.324Z",
       "source": "timeline_monitor",
@@ -261,7 +261,7 @@
         "views": 298698
       },
       "url": "https://twitter.com/IncomeSharks/status/1898450757738955242",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-01-01T07:24:51.223Z",
       "expiresAt": "2026-01-08T07:24:51.223Z",
       "source": "timeline_monitor",
@@ -302,7 +302,7 @@
         "quotes": 0
       },
       "url": "https://twitter.com/AltcoinSherpa/status/2006415011275538528",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-01-01T07:25:21.602Z",
       "expiresAt": "2026-01-08T07:25:21.602Z",
       "source": "timeline_monitor",
@@ -323,7 +323,7 @@
         "views": 18645
       },
       "url": "https://twitter.com/AltcoinSherpa/status/2006367242464960874",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-01-01T07:25:23.626Z",
       "expiresAt": "2026-01-08T07:25:23.626Z",
       "source": "timeline_monitor",
@@ -344,7 +344,7 @@
         "views": 319342
       },
       "url": "https://twitter.com/AltcoinSherpa/status/1998952629461024999",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-01-01T07:25:27.623Z",
       "expiresAt": "2026-01-08T07:25:27.623Z",
       "source": "timeline_monitor",
@@ -365,7 +365,7 @@
         "views": 8008
       },
       "url": "https://twitter.com/AltcoinSherpa/status/2006404817464275449",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-01-01T07:25:29.661Z",
       "expiresAt": "2026-01-08T07:25:29.661Z",
       "source": "timeline_monitor",
@@ -412,10 +412,10 @@
       "BWS IPFS",
       "Blockchain Save"
     ],
-    "currentIndex": 5,
-    "lastProductUsed": "Blockchain Badges",
+    "currentIndex": 1,
+    "lastProductUsed": "X Bot",
     "positioningPhraseIndex": 0,
-    "replyCount": 277
+    "replyCount": 281
   },
   "_removedStale": false
 }
