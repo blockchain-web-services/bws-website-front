@@ -3497,6 +3497,46 @@
       "status": "posted",
       "dryRun": false,
       "sdkVersion": "1.7.0"
+    },
+    {
+      "id": "4441279246-1898450757738955242-1767297223636",
+      "tweetId": "1898450757738955242",
+      "tweetUrl": "https://twitter.com/IncomeSharks/status/1898450757738955242",
+      "kolId": "4441279246",
+      "kolUsername": "IncomeSharks",
+      "originalTweetText": "It's not that people aren't bullish enough, most have nothing left to invest.",
+      "replyTweetId": "2006816123753476262",
+      "replyText": "$BWS Fan Game Cube tokenizes sports fields into NFT zones. Fans earn real-time points during match events across multiple sports. New revenue streams emerging. @BWSCommunity #crypto https://www.bws.ninja",
+      "productMentioned": "X Bot, Blockchain Badges",
+      "relevanceScore": 82,
+      "templateUsed": "stat_driven",
+      "templateName": "Stat/Fact-Driven Structure",
+      "imageAttached": true,
+      "imagePath": "/assets/images/docs/fan-game-cube/fan-game-cube-0.png",
+      "timestamp": "2026-01-01T19:53:43.636Z",
+      "status": "posted",
+      "dryRun": false,
+      "sdkVersion": "1.7.0"
+    },
+    {
+      "id": "1068237257977544704-2006782978253537676-1767297248287",
+      "tweetId": "2006782978253537676",
+      "tweetUrl": "https://twitter.com/AltcoinSherpa/status/2006782978253537676",
+      "kolId": "1068237257977544704",
+      "kolUsername": "AltcoinSherpa",
+      "originalTweetText": "Imo:\n\nDecent pump in early Q1 (so start sometime in next few weeks), retrace and consolidate for a month or so and then another leg up in late Q1 or early Q2",
+      "replyTweetId": "2006816227545755968",
+      "replyText": "Developers need blockchain without wallet hassle? $BWS Blockchain Hash solves it: save/update on-chain data via REST API, no gas fees, no wallet management. Simple dev infrastructure. @BWSCommunity https://docs.bws.ninja/solutions/bws.blockchain.hash",
+      "productMentioned": "Blockchain Hash",
+      "relevanceScore": 82,
+      "templateUsed": "question_led",
+      "templateName": "Question-Led Structure",
+      "imageAttached": false,
+      "imagePath": null,
+      "timestamp": "2026-01-01T19:54:08.287Z",
+      "status": "posted",
+      "dryRun": false,
+      "sdkVersion": "1.7.0"
     }
   ],
   "dailyStats": {
@@ -3583,10 +3623,10 @@
     }
   },
   "metadata": {
-    "totalReplies": 182,
-    "successfulReplies": 137,
+    "totalReplies": 184,
+    "successfulReplies": 139,
     "failedReplies": 34,
-    "lastReplyAt": "2026-01-01T11:25:18.217Z",
+    "lastReplyAt": "2026-01-01T19:54:08.287Z",
     "todayRepliesCount": 0,
     "lastUpdateBy": "kol-system"
   }

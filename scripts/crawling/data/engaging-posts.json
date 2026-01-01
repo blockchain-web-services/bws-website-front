@@ -14,7 +14,7 @@
         "quotes": 371
       },
       "url": "https://twitter.com/cobie/status/1358763044181078017",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-01-01T17:51:23.042Z",
       "expiresAt": "2026-01-08T17:51:23.042Z",
       "source": "timeline_monitor",
@@ -35,7 +35,7 @@
         "views": 2792509
       },
       "url": "https://twitter.com/cobie/status/1980579379244855384",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-01-01T17:51:24.852Z",
       "expiresAt": "2026-01-08T17:51:24.852Z",
       "source": "timeline_monitor",
@@ -56,7 +56,7 @@
         "views": 37536
       },
       "url": "https://twitter.com/IncomeSharks/status/1778242360713130435",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-01-01T17:51:54.660Z",
       "expiresAt": "2026-01-08T17:51:54.661Z",
       "source": "timeline_monitor",
@@ -76,7 +76,7 @@
         "quotes": 131
       },
       "url": "https://twitter.com/IncomeSharks/status/1395441817563254784",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-01-01T17:51:56.665Z",
       "expiresAt": "2026-01-08T17:51:56.665Z",
       "source": "timeline_monitor",
@@ -97,7 +97,7 @@
         "views": 858589
       },
       "url": "https://twitter.com/IncomeSharks/status/1863717475168424230",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-01-01T17:51:58.694Z",
       "expiresAt": "2026-01-08T17:51:58.694Z",
       "source": "timeline_monitor",
@@ -118,7 +118,7 @@
         "views": 960098
       },
       "url": "https://twitter.com/IncomeSharks/status/1871631935078023487",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-01-01T17:52:02.749Z",
       "expiresAt": "2026-01-08T17:52:02.749Z",
       "source": "timeline_monitor",
@@ -138,7 +138,7 @@
         "quotes": 69
       },
       "url": "https://twitter.com/IncomeSharks/status/1509583498893484032",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-01-01T17:52:11.756Z",
       "expiresAt": "2026-01-08T17:52:11.756Z",
       "source": "timeline_monitor",
@@ -159,7 +159,7 @@
         "views": 298698
       },
       "url": "https://twitter.com/IncomeSharks/status/1898450757738955242",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-01-01T17:52:13.401Z",
       "expiresAt": "2026-01-08T17:52:13.401Z",
       "source": "timeline_monitor",
@@ -310,10 +310,10 @@
       "BWS IPFS",
       "Blockchain Save"
     ],
-    "currentIndex": 1,
-    "lastProductUsed": "X Bot",
+    "currentIndex": 3,
+    "lastProductUsed": "Blockchain Hash",
     "positioningPhraseIndex": 0,
-    "replyCount": 289
+    "replyCount": 291
   },
   "_removedStale": false
 }
