@@ -1,17 +1,22 @@
 /**
- * Institution Account Discovery - BWS X SDK Version
- * Discovers institutional accounts (universities, e-learning platforms, bootcamps, etc.)
- * that are potential customers for BWS products
+ * Blockchain Badges Prospect Discovery - BWS X SDK Version
+ * Discovers BOTH institutional accounts AND engaged individual users
+ * that are potential customers for Blockchain Badges
+ *
+ * SALES APPROACH: User-conversation monitoring strategy
+ * - Institutions: Universities, e-learning platforms, bootcamps, certification bodies
+ * - Engaged Users: HR professionals, students, educators, developers discussing credentials
  *
  * Uses BWS X SDK v1.6.0 with client.searchTweets()
  * Mode: Hybrid (crawler-first with API fallback)
  *
  * Strategy:
- * 1. Search tweets using institution-specific queries
+ * 1. Search tweets using user-conversation queries (pain-points, achievements, discussions)
  * 2. Extract author accounts from tweets
- * 3. Classify accounts (institution vs individual)
- * 4. Score accounts by product fit
- * 5. Store in institution-accounts.json
+ * 3. Classify accounts (institution, engaged_user, or irrelevant)
+ * 4. Save BOTH institutions and engaged users (comprehensive audience building)
+ * 5. Score accounts by product fit
+ * 6. Store in institution-accounts.json
  */
 
 // Load environment variables from .env file (local dev only, GitHub Actions uses secrets)
@@ -118,58 +123,94 @@ async function saveInstitutionAccounts(database) {
 }
 
 /**
- * Classify account as institution or individual
+ * Classify account as institution, engaged user, or irrelevant
+ * SALES APPROACH: Save BOTH institutions and engaged individuals
  */
 function classifyAccount(account, config) {
   const { accountClassification } = config;
   const { institutionIndicators, excludeIndicators, minFollowers } = accountClassification;
 
-  // Check follower count
-  if (account.public_metrics?.followers_count < minFollowers) {
-    return { isInstitution: false, confidence: 0, reason: 'Below minimum followers' };
-  }
+  // Check follower count (relaxed for engaged users)
+  const followerCount = account.public_metrics?.followers_count || 0;
+  const meetsMinFollowers = followerCount >= minFollowers;
 
   // Check bio/description
   const bio = (account.description || '').toLowerCase();
   const name = (account.name || '').toLowerCase();
   const username = (account.username || '').toLowerCase();
 
-  // Exclude indicators (personal accounts)
-  const hasExcludeIndicator = excludeIndicators.some(indicator =>
-    bio.includes(indicator) || name.includes(indicator)
-  );
-
-  if (hasExcludeIndicator) {
-    return { isInstitution: false, confidence: 0, reason: 'Personal account indicators' };
-  }
-
   // Institution indicators
   const institutionMatches = institutionIndicators.filter(indicator =>
     bio.includes(indicator) || name.includes(indicator) || username.includes(indicator)
   );
 
-  if (institutionMatches.length === 0) {
-    return { isInstitution: false, confidence: 0, reason: 'No institution indicators' };
+  // If has institution indicators, classify as institution
+  if (institutionMatches.length > 0) {
+    let confidence = Math.min(100, institutionMatches.length * 20);
+
+    // Boost for verified accounts
+    if (account.verified && accountClassification.verifiedBonus) {
+      confidence = Math.min(100, confidence + 20);
+    }
+
+    // Boost for high follower count
+    if (followerCount > 10000) confidence = Math.min(100, confidence + 10);
+    if (followerCount > 50000) confidence = Math.min(100, confidence + 10);
+
+    return {
+      accountType: 'institution',
+      isRelevant: confidence >= 40,
+      confidence,
+      reason: `Institution: ${institutionMatches.join(', ')}`,
+      indicators: institutionMatches
+    };
   }
 
-  // Calculate confidence score
-  let confidence = Math.min(100, institutionMatches.length * 20);
+  // If no institution indicators, classify as engaged user
+  // SALES STRATEGY: These are users discussing credentials - valuable prospects!
+  const engagedIndicators = [
+    'hr', 'recruiter', 'hiring', 'talent',
+    'student', 'alumni', 'graduate', 'learner',
+    'educator', 'teacher', 'professor', 'instructor',
+    'developer', 'engineer', 'tech', 'blockchain',
+    'credential', 'certificate', 'certification',
+    'verification', 'identity', 'digital badge'
+  ];
 
-  // Boost for verified accounts
-  if (account.verified && accountClassification.verifiedBonus) {
-    confidence = Math.min(100, confidence + 20);
+  const engagedMatches = engagedIndicators.filter(indicator =>
+    bio.includes(indicator) || name.includes(indicator)
+  );
+
+  // Check if account is discussing relevant topics (based on discovery context)
+  const isEngagedUser = engagedMatches.length > 0 || followerCount >= 500;
+
+  if (isEngagedUser) {
+    let confidence = Math.min(100, engagedMatches.length * 15);
+
+    // Boost for verified
+    if (account.verified) confidence = Math.min(100, confidence + 15);
+
+    // Boost for reasonable following (engaged users)
+    if (followerCount >= 500) confidence = Math.min(100, confidence + 10);
+    if (followerCount >= 2000) confidence = Math.min(100, confidence + 10);
+
+    return {
+      accountType: 'engaged_user',
+      isRelevant: true, // Always save engaged users discussing credentials
+      confidence: Math.max(30, confidence), // Minimum 30% confidence
+      reason: engagedMatches.length > 0
+        ? `Engaged user: ${engagedMatches.join(', ')}`
+        : 'User discussing credentials',
+      indicators: engagedMatches
+    };
   }
 
-  // Boost for high follower count
-  const followerCount = account.public_metrics?.followers_count || 0;
-  if (followerCount > 10000) confidence = Math.min(100, confidence + 10);
-  if (followerCount > 50000) confidence = Math.min(100, confidence + 10);
-
+  // Not relevant
   return {
-    isInstitution: confidence >= 40,
-    confidence,
-    reason: `Matched: ${institutionMatches.join(', ')}`,
-    indicators: institutionMatches
+    accountType: 'unknown',
+    isRelevant: false,
+    confidence: 0,
+    reason: 'No relevant indicators'
   };
 }
 
@@ -377,8 +418,9 @@ function selectQueriesForProduct(productConfig, settings) {
  * Main discovery function
  */
 async function discoverInstitutionAccounts() {
-  console.log('🏫 Starting Institution Account Discovery...');
+  console.log('🎯 Starting Blockchain Badges Prospect Discovery...');
   console.log('📦 Using: BWS X SDK v1.6.0');
+  console.log('🔍 Strategy: User-conversation monitoring (institutions + engaged users)');
   console.log(`📍 Script: discover-institution-accounts-sdk.js\n`);
 
   const startTime = Date.now();
@@ -493,15 +535,18 @@ async function discoverInstitutionAccounts() {
           continue;
         }
 
-        // Classify as institution or individual
+        // Classify as institution, engaged user, or irrelevant
         const classification = classifyAccount(account, productConfig);
 
-        if (!classification.isInstitution) {
-          console.log(`   ⏭️  @${account.username} classified as individual (${classification.reason})`);
+        if (!classification.isRelevant) {
+          console.log(`   ⏭️  @${account.username} not relevant (${classification.reason})`);
           continue;
         }
 
-        console.log(`   ✅ @${account.username} classified as institution (${classification.confidence}% confidence)`);
+        const accountTypeLabel = classification.accountType === 'institution' ? 'institution' : 'engaged user';
+        console.log(`   ✅ @${account.username} classified as ${accountTypeLabel} (${classification.confidence}% confidence)`);
+        console.log(`      Reason: ${classification.reason}`);
+
         institutionsInQuery++;
         stats.institutionsClassified++;
         stats.byCategory[category].institutions++;
@@ -514,9 +559,10 @@ async function discoverInstitutionAccounts() {
           fitScore.reasons.forEach(r => console.log(`      - ${r}`));
         }
 
-        // Add to database
+        // Add to database with classification and account type
         database.accounts.push({
           ...account,
+          accountType: classification.accountType, // 'institution' or 'engaged_user'
           classification,
           productFit: {
             [productName]: fitScore
@@ -530,7 +576,7 @@ async function discoverInstitutionAccounts() {
         stats.newInstitutions++;
       }
 
-      console.log(`   📊 Query results: ${institutionsInQuery} institutions classified, ${newInQuery} new`);
+      console.log(`   📊 Query results: ${institutionsInQuery} relevant accounts, ${newInQuery} new (institutions + engaged users)`);
 
       // Delay between queries
       if (selectedQueries.indexOf(query) < selectedQueries.length - 1) {
@@ -555,14 +601,28 @@ async function discoverInstitutionAccounts() {
   database.stats.totalDiscovered = database.accounts.length;
   database.stats.lastDiscovery = new Date().toISOString();
 
+  // Calculate account type breakdown
+  const institutionCount = database.accounts.filter(a => a.accountType === 'institution').length;
+  const engagedUserCount = database.accounts.filter(a => a.accountType === 'engaged_user').length;
+
+  database.stats.byAccountType = {
+    institutions: institutionCount,
+    engagedUsers: engagedUserCount,
+    total: database.accounts.length
+  };
+
   // Calculate stats by product
   for (const product of Object.keys(productsToProcess)) {
+    const productAccounts = database.accounts.filter(a => a.discoveryContext.product === product);
+
     database.stats.byProduct[product] = {
-      total: database.accounts.filter(a => a.discoveryContext.product === product).length,
-      highFit: database.accounts.filter(a =>
+      total: productAccounts.length,
+      institutions: productAccounts.filter(a => a.accountType === 'institution').length,
+      engagedUsers: productAccounts.filter(a => a.accountType === 'engaged_user').length,
+      highFit: productAccounts.filter(a =>
         a.productFit[product]?.fitLevel === 'high'
       ).length,
-      mediumFit: database.accounts.filter(a =>
+      mediumFit: productAccounts.filter(a =>
         a.productFit[product]?.fitLevel === 'medium'
       ).length
     };
@@ -602,12 +662,20 @@ async function discoverInstitutionAccounts() {
   }
 
   console.log(`\n📚 Database Status:`);
-  console.log(`   - Total institutions: ${database.stats.totalDiscovered}`);
+  console.log(`   - Total accounts: ${database.stats.totalDiscovered}`);
+  console.log(`   - Institutions: ${database.stats.byAccountType?.institutions || 0}`);
+  console.log(`   - Engaged users: ${database.stats.byAccountType?.engagedUsers || 0}`);
+
   for (const [product, productStats] of Object.entries(database.stats.byProduct)) {
-    console.log(`   ${product}: ${productStats.total} total (${productStats.highFit} high fit, ${productStats.mediumFit} medium fit)`);
+    console.log(`\n   ${product}:`);
+    console.log(`     - Total: ${productStats.total}`);
+    console.log(`     - Institutions: ${productStats.institutions || 0}`);
+    console.log(`     - Engaged users: ${productStats.engagedUsers || 0}`);
+    console.log(`     - High fit: ${productStats.highFit}`);
+    console.log(`     - Medium fit: ${productStats.mediumFit}`);
   }
 
-  console.log('\n✨ Institution discovery complete!\n');
+  console.log('\n✨ Blockchain Badges prospect discovery complete!\n');
 }
 
 // Run if executed directly
