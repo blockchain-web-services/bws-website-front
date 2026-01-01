@@ -1,9 +1,0 @@
-{
-	"id": "vm379xh5AZRUgs2",
-	"json": "{\"id\":\"vm379xh5AZRUgs2\",\"url\":\"https://x.com/search?q=%28%22share+my%22+OR+sharing+OR+display+OR+showcase%29+%28certificate+OR+credential+OR+badge+OR+achievement%29+%28LinkedIn+OR+portfolio+OR+resume%29+lang%3Aen+-is%3Aretweet+min_faves%3A2&f=live\",\"loadedUrl\":\"https://x.com/search?q=%28%22share+my%22+OR+sharing+OR+display+OR+showcase%29+%28certificate+OR+credential+OR+badge+OR+achievement%29+%28LinkedIn+OR+portfolio+OR+resume%29+lang%3Aen+-is%3Aretweet+min_faves%3A2&f=live\",\"uniqueKey\":\"https://x.com/search?f=live&q=%28%22share+my%22+OR+sharing+OR+display+OR+showcase%29+%28certificate+OR+credential+OR+badge+OR+achievement%29+%28LinkedIn+OR+portfolio+OR+resume%29+lang%3Aen+-is%3Aretweet+min_faves%3A2\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"state\":4}},\"handledAt\":\"2025-12-31T15:59:51.485Z\"}",
-	"method": "GET",
-	"orderNo": null,
-	"retryCount": 0,
-	"uniqueKey": "https://x.com/search?f=live&q=%28%22share+my%22+OR+sharing+OR+display+OR+showcase%29+%28certificate+OR+credential+OR+badge+OR+achievement%29+%28LinkedIn+OR+portfolio+OR+resume%29+lang%3Aen+-is%3Aretweet+min_faves%3A2",
-	"url": "https://x.com/search?q=%28%22share+my%22+OR+sharing+OR+display+OR+showcase%29+%28certificate+OR+credential+OR+badge+OR+achievement%29+%28LinkedIn+OR+portfolio+OR+resume%29+lang%3Aen+-is%3Aretweet+min_faves%3A2&f=live"
-}

@@ -1,0 +1,9 @@
+{
+	"id": "3uWWKexXut9yMjZ",
+	"json": "{\"id\":\"3uWWKexXut9yMjZ\",\"url\":\"https://x.com/search?q=blockchain+education+min_faves%3A5+lang%3Aen+-is%3Aretweet&f=live\",\"loadedUrl\":\"https://x.com/search?q=blockchain+education+min_faves%3A5+lang%3Aen+-is%3Aretweet&f=live\",\"uniqueKey\":\"https://x.com/search?f=live&q=blockchain+education+min_faves%3A5+lang%3Aen+-is%3Aretweet\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"state\":4}},\"handledAt\":\"2026-01-01T18:09:51.970Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://x.com/search?f=live&q=blockchain+education+min_faves%3A5+lang%3Aen+-is%3Aretweet",
+	"url": "https://x.com/search?q=blockchain+education+min_faves%3A5+lang%3Aen+-is%3Aretweet&f=live"
+}

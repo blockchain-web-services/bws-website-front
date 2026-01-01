@@ -1,0 +1,9 @@
+{
+	"id": "P11cJzruddfUvCX",
+	"json": "{\"id\":\"P11cJzruddfUvCX\",\"url\":\"https://x.com/search?q=%28HR+OR+hiring+OR+recruiter+OR+recruitment%29+%28verify+OR+check+OR+validation%29+%28degree+OR+credential+OR+certificate%29+lang%3Aen+-is%3Aretweet&f=live\",\"loadedUrl\":\"https://x.com/search?q=%28HR+OR+hiring+OR+recruiter+OR+recruitment%29+%28verify+OR+check+OR+validation%29+%28degree+OR+credential+OR+certificate%29+lang%3Aen+-is%3Aretweet&f=live\",\"uniqueKey\":\"https://x.com/search?f=live&q=%28HR+OR+hiring+OR+recruiter+OR+recruitment%29+%28verify+OR+check+OR+validation%29+%28degree+OR+credential+OR+certificate%29+lang%3Aen+-is%3Aretweet\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"state\":4}},\"handledAt\":\"2026-01-01T18:09:56.545Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://x.com/search?f=live&q=%28HR+OR+hiring+OR+recruiter+OR+recruitment%29+%28verify+OR+check+OR+validation%29+%28degree+OR+credential+OR+certificate%29+lang%3Aen+-is%3Aretweet",
+	"url": "https://x.com/search?q=%28HR+OR+hiring+OR+recruiter+OR+recruitment%29+%28verify+OR+check+OR+validation%29+%28degree+OR+credential+OR+certificate%29+lang%3Aen+-is%3Aretweet&f=live"
+}
