@@ -17,13 +17,14 @@
     "byTrendType": {
       "news": 0,
       "conversation": 0,
-      "trend": 0
+      "trend": 0,
+      "thread": 0
     },
-    "lastDiscovery": "2025-12-31T18:12:25.770Z"
+    "lastDiscovery": "2026-01-01T00:36:26.177Z"
   },
   "metadata": {
     "version": "1.0.0",
-    "lastUpdated": "2025-12-31T18:12:25.770Z",
-    "discoveryRuns": 2
+    "lastUpdated": "2026-01-01T00:36:26.177Z",
+    "discoveryRuns": 3
   }
 }
