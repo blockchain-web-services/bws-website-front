@@ -545,6 +545,17 @@ async function discoverInstitutionAccounts() {
           continue;
         }
 
+        // DEBUG: Log account structure to understand what data we're getting
+        if (accounts.indexOf(account) === 0) {
+          console.log(`   🔍 DEBUG - Sample account data:`, {
+            username: account.username,
+            hasPublicMetrics: !!account.public_metrics,
+            publicMetrics: account.public_metrics,
+            name: account.name?.substring(0, 30),
+            bio: account.description?.substring(0, 50)
+          });
+        }
+
         // Classify as institution, engaged user, or irrelevant
         const classification = classifyAccount(account, productConfig);
 
