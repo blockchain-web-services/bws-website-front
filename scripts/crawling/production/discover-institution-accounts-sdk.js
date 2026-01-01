@@ -520,6 +520,19 @@ async function discoverInstitutionAccounts() {
       password: process.env.OXYLABS_PASSWORD || crawlerConfig.proxy.password
     } : undefined,
 
+    // Webhook configuration - sends real-time notifications to Zapier/Slack
+    webhook: {
+      enabled: true,
+      url: 'https://hooks.zapier.com/hooks/catch/15373826/us3spl5/',
+      events: ['account_failure', 'api_rate_limit', 'error', 'warning'],  // All SDK events
+      debug: true,  // Enable debug logging for webhooks
+      retries: {
+        maxAttempts: 3,
+        backoffMs: 1000,
+        backoffMultiplier: 2
+      }
+    },
+
     logging: { level: 'info' }
   };
 
