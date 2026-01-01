@@ -1,10 +1,64 @@
 {
-  "accounts": [],
+  "accounts": [
+    {
+      "id": "877807935493033984",
+      "username": "binance",
+      "name": "Binance",
+      "description": "The world’s leading blockchain ecosystem and digital asset exchange | #Binance #BNB | Support: @BinanceHelpDesk | Posts are not directed towards UK users.",
+      "public_metrics": {
+        "followers_count": 15271852,
+        "following_count": 574,
+        "tweet_count": 41504
+      },
+      "verified": true,
+      "profile_image_url": "https://pbs.twimg.com/profile_images/1940131561103347712/f5y2qENu_normal.jpg",
+      "url": "https://t.co/1not5QbiqF",
+      "created_at": "2017-06-22T08:38:15.000Z",
+      "_enriched": true,
+      "_source": "api",
+      "discoveryContext": {
+        "product": "Blockchain Badges",
+        "query": "blockchain-education",
+        "queryCategory": "solution-space",
+        "discoveredAt": "2026-01-01T15:30:33.998Z",
+        "sampleTweet": {
+          "id": "2006734580288835908",
+          "text": "@binance Great initiative! 👏 Bringing people together to learn blockchain and trading fundamentals is how real adoption starts. Well done on wrapping up the year with such a valuable Learning Lab"
+        }
+      },
+      "accountType": "engaged_user",
+      "classification": {
+        "accountType": "engaged_user",
+        "isRelevant": true,
+        "confidence": 100,
+        "reason": "Engaged user: blockchain",
+        "indicators": [
+          "blockchain"
+        ]
+      },
+      "productFit": {
+        "Blockchain Badges": {
+          "score": 5,
+          "maxScore": 100,
+          "percentage": 10,
+          "reasons": [
+            "Verified account (+3)",
+            "Large following (+2)"
+          ],
+          "fitLevel": "low"
+        }
+      },
+      "discoveredAt": "2026-01-01T15:30:34.002Z",
+      "lastUpdated": "2026-01-01T15:30:34.002Z"
+    }
+  ],
   "stats": {
-    "totalDiscovered": 0,
+    "totalDiscovered": 1,
     "byProduct": {
       "Blockchain Badges": {
-        "total": 0,
+        "total": 1,
+        "institutions": 0,
+        "engagedUsers": 1,
         "highFit": 0,
         "mediumFit": 0
       }
@@ -17,14 +71,19 @@
       "certification-bodies": 0,
       "user-achievements": 0,
       "pain-point": 0,
-      "solution-space": 0,
+      "solution-space": 1,
       "user-journey": 0
     },
-    "lastDiscovery": "2025-12-31T19:22:47.116Z"
+    "lastDiscovery": "2026-01-01T15:30:43.127Z",
+    "byAccountType": {
+      "institutions": 0,
+      "engagedUsers": 1,
+      "total": 1
+    }
   },
   "metadata": {
     "version": "1.0.0",
-    "lastUpdated": "2025-12-31T19:22:47.116Z",
-    "discoveryRuns": 5
+    "lastUpdated": "2026-01-01T15:30:43.127Z",
+    "discoveryRuns": 12
   }
 }

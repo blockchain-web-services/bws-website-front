@@ -1,17 +1,23 @@
 /**
- * Institution Account Discovery - BWS X SDK Version
- * Discovers institutional accounts (universities, e-learning platforms, bootcamps, etc.)
- * that are potential customers for BWS products
+ * Blockchain Badges Prospect Discovery - BWS X SDK v1.8.0 with enrichTweetAuthors()
+ * Discovers BOTH institutional accounts AND engaged individual users
+ * that are potential customers for Blockchain Badges
  *
- * Uses BWS X SDK v1.6.0 with client.searchTweets()
+ * SALES APPROACH: User-conversation monitoring strategy
+ * - Institutions: Universities, e-learning platforms, bootcamps, certification bodies
+ * - Engaged Users: HR professionals, students, educators, developers discussing credentials
+ *
+ * Uses BWS X SDK v1.8.0 with built-in enrichTweetAuthors() method
  * Mode: Hybrid (crawler-first with API fallback)
  *
  * Strategy:
- * 1. Search tweets using institution-specific queries
- * 2. Extract author accounts from tweets
- * 3. Classify accounts (institution vs individual)
- * 4. Score accounts by product fit
- * 5. Store in institution-accounts.json
+ * 1. Search tweets using user-conversation queries (pain-points, achievements, discussions)
+ * 2. Enrich tweets with full author profile data using client.enrichTweetAuthors()
+ * 3. Extract enriched author accounts from tweets
+ * 4. Classify accounts (institution, engaged_user, or irrelevant)
+ * 5. Save BOTH institutions and engaged users (comprehensive audience building)
+ * 6. Score accounts by product fit
+ * 7. Store in institution-accounts.json
  */
 
 // Load environment variables from .env file (local dev only, GitHub Actions uses secrets)
@@ -118,58 +124,104 @@ async function saveInstitutionAccounts(database) {
 }
 
 /**
- * Classify account as institution or individual
+ * Classify account as institution, engaged user, or irrelevant
+ * SALES APPROACH: Save BOTH institutions and engaged individuals
  */
 function classifyAccount(account, config) {
   const { accountClassification } = config;
   const { institutionIndicators, excludeIndicators, minFollowers } = accountClassification;
 
-  // Check follower count
-  if (account.public_metrics?.followers_count < minFollowers) {
-    return { isInstitution: false, confidence: 0, reason: 'Below minimum followers' };
-  }
+  // Check follower count (relaxed for engaged users)
+  const followerCount = account.public_metrics?.followers_count || 0;
+  const meetsMinFollowers = followerCount >= minFollowers;
 
   // Check bio/description
   const bio = (account.description || '').toLowerCase();
   const name = (account.name || '').toLowerCase();
   const username = (account.username || '').toLowerCase();
 
-  // Exclude indicators (personal accounts)
-  const hasExcludeIndicator = excludeIndicators.some(indicator =>
-    bio.includes(indicator) || name.includes(indicator)
-  );
-
-  if (hasExcludeIndicator) {
-    return { isInstitution: false, confidence: 0, reason: 'Personal account indicators' };
-  }
-
   // Institution indicators
   const institutionMatches = institutionIndicators.filter(indicator =>
     bio.includes(indicator) || name.includes(indicator) || username.includes(indicator)
   );
 
-  if (institutionMatches.length === 0) {
-    return { isInstitution: false, confidence: 0, reason: 'No institution indicators' };
+  // If has institution indicators, classify as institution
+  if (institutionMatches.length > 0) {
+    let confidence = Math.min(100, institutionMatches.length * 20);
+
+    // Boost for verified accounts
+    if (account.verified && accountClassification.verifiedBonus) {
+      confidence = Math.min(100, confidence + 20);
+    }
+
+    // Boost for high follower count
+    if (followerCount > 10000) confidence = Math.min(100, confidence + 10);
+    if (followerCount > 50000) confidence = Math.min(100, confidence + 10);
+
+    return {
+      accountType: 'institution',
+      isRelevant: confidence >= 40,
+      confidence,
+      reason: `Institution: ${institutionMatches.join(', ')}`,
+      indicators: institutionMatches
+    };
   }
 
-  // Calculate confidence score
-  let confidence = Math.min(100, institutionMatches.length * 20);
+  // If no institution indicators, classify as engaged user
+  // SALES STRATEGY: These are users discussing credentials - valuable prospects!
+  const engagedIndicators = [
+    'hr', 'recruiter', 'hiring', 'talent',
+    'student', 'alumni', 'graduate', 'learner',
+    'educator', 'teacher', 'professor', 'instructor',
+    'developer', 'engineer', 'tech', 'blockchain', 'web3', 'crypto',
+    'credential', 'certificate', 'certification',
+    'verification', 'identity', 'digital badge', 'education'
+  ];
 
-  // Boost for verified accounts
-  if (account.verified && accountClassification.verifiedBonus) {
-    confidence = Math.min(100, confidence + 20);
+  const engagedMatches = engagedIndicators.filter(indicator =>
+    bio.includes(indicator) || name.includes(indicator)
+  );
+
+  // CRITICAL LOGIC: If found via credential query, they're tweeting about credentials
+  // This is THE engagement signal - save them!
+  // Only exclude obvious spam (suspended accounts have follower_count = 0)
+  const hasAnyProfile = account.username && account.username.length > 0;
+  const notSuspended = followerCount > 0 || account.public_metrics?.following_count > 0;
+
+  // Save everyone who was found via credential queries (unless obviously spam)
+  if (hasAnyProfile && notSuspended) {
+    let confidence = 50; // Base: tweeting about credentials
+
+    // Boost for keyword matches in bio/name
+    if (engagedMatches.length > 0) {
+      confidence = Math.min(100, confidence + engagedMatches.length * 10);
+    }
+
+    // Boost for verified
+    if (account.verified) confidence = Math.min(100, confidence + 20);
+
+    // Boost for follower count
+    if (followerCount >= 100) confidence = Math.min(100, confidence + 5);
+    if (followerCount >= 500) confidence = Math.min(100, confidence + 10);
+    if (followerCount >= 2000) confidence = Math.min(100, confidence + 15);
+
+    return {
+      accountType: 'engaged_user',
+      isRelevant: true,
+      confidence,
+      reason: engagedMatches.length > 0
+        ? `Engaged user: ${engagedMatches.join(', ')}`
+        : 'Tweeting about credentials',
+      indicators: engagedMatches.length > 0 ? engagedMatches : ['query-context']
+    };
   }
 
-  // Boost for high follower count
-  const followerCount = account.public_metrics?.followers_count || 0;
-  if (followerCount > 10000) confidence = Math.min(100, confidence + 10);
-  if (followerCount > 50000) confidence = Math.min(100, confidence + 10);
-
+  // Only reject suspended/deleted accounts
   return {
-    isInstitution: confidence >= 40,
-    confidence,
-    reason: `Matched: ${institutionMatches.join(', ')}`,
-    indicators: institutionMatches
+    accountType: 'unknown',
+    isRelevant: false,
+    confidence: 0,
+    reason: 'Suspended or spam account'
   };
 }
 
@@ -222,33 +274,73 @@ function scoreProductFit(account, productName, productConfig) {
 }
 
 /**
- * Search tweets and extract author accounts
+ * Search tweets and extract author accounts using v1.8.0 enrichTweetAuthors()
+ * NEW: Uses SDK's built-in enrichment method for cleaner, more efficient code
  */
 async function searchAndExtractAccounts(client, product, query, config) {
   console.log(`\n🔍 Searching: ${query.name}`);
   console.log(`   Query: ${query.query}`);
 
   try {
-    // SDK METHOD: client.searchTweets()
+    // Step 1: Search tweets
     const tweets = await client.searchTweets(query.query, {
       maxResults: config.settings.maxAccountsPerQuery
     });
 
     console.log(`   ✅ Found ${tweets.length} tweets`);
 
-    // Extract unique author accounts
+    if (tweets.length === 0) {
+      return [];
+    }
+
+    // Step 2: Enrich tweets with full author profile data using v1.8.0 method
+    console.log(`   🔍 Enriching with full author profiles (v1.8.0 enrichTweetAuthors)...`);
+
+    // Access the crawler client (private but accessible in JavaScript)
+    const crawlerClient = client.crawlerClient;
+
+    let enrichedTweets;
+    if (crawlerClient && crawlerClient.enrichTweetAuthors) {
+      // Use v1.8.0's built-in enrichment method
+      enrichedTweets = await crawlerClient.enrichTweetAuthors(tweets, {
+        concurrency: 3  // Fetch 3 profiles at a time
+      });
+    } else {
+      // Fallback: no enrichment available
+      console.log(`   ⚠️  enrichTweetAuthors not available, using tweets as-is`);
+      enrichedTweets = tweets;
+    }
+
+    // Step 3: Extract unique enriched author accounts
     const accountsMap = new Map();
 
-    for (const tweet of tweets) {
-      // The author data should be in tweet.author
+    for (const tweet of enrichedTweets) {
       const author = tweet.author;
-      if (!author || !author.id) continue;
+      if (!author || !author.username) continue;
 
       // Skip if we've already seen this account
-      if (accountsMap.has(author.id)) continue;
+      if (accountsMap.has(author.username)) continue;
 
-      accountsMap.set(author.id, {
-        ...author,
+      // Map to expected account structure
+      accountsMap.set(author.username, {
+        id: author.id,
+        username: author.username,
+        name: author.name,
+        description: author.bio,  // v1.8.0 enriches this!
+        public_metrics: {
+          followers_count: author.followers || 0,  // v1.8.0 enriches this!
+          following_count: author.following || 0,  // v1.8.0 enriches this!
+          tweet_count: author.tweetCount || 0
+        },
+        verified: author.verified || false,
+        profile_image_url: author.profileImageUrl,
+        location: author.location,
+        url: author.url,
+        created_at: author.createdAt,
+        _enriched: !!(author.bio || author.followers),  // Flag if enrichment worked
+        _source: author._source || 'unknown',
+
+        // Add discovery context
         discoveryContext: {
           product,
           query: query.name,
@@ -257,18 +349,35 @@ async function searchAndExtractAccounts(client, product, query, config) {
           sampleTweet: {
             id: tweet.id,
             text: tweet.text,
-            created_at: tweet.created_at
+            created_at: tweet.createdAt
           }
         }
       });
     }
 
     const accounts = Array.from(accountsMap.values());
-    console.log(`   👥 ${accounts.length} unique accounts extracted`);
+
+    // Log enrichment summary
+    const enrichedCount = accounts.filter(a => a._enriched).length;
+    console.log(`   ✅ Extracted ${accounts.length} unique accounts (${enrichedCount} enriched)`);
+
+    // Debug: Show sample enriched data
+    if (accounts.length > 0) {
+      const sample = accounts[0];
+      console.log(`   ✅ Sample account:`, {
+        username: sample.username,
+        bio: sample.description?.substring(0, 50) || '(none)',
+        followers: sample.public_metrics?.followers_count || 0,
+        enriched: sample._enriched
+      });
+    }
+
+    console.log(`   👥 ${accounts.length} accounts ready for classification`);
 
     return accounts;
+
   } catch (error) {
-    console.error(`   ❌ Error searching ${product} - ${query.name}: ${error.message}`);
+    console.error(`   ❌ Error in discovery: ${error.message}`);
     return [];
   }
 }
@@ -377,8 +486,9 @@ function selectQueriesForProduct(productConfig, settings) {
  * Main discovery function
  */
 async function discoverInstitutionAccounts() {
-  console.log('🏫 Starting Institution Account Discovery...');
-  console.log('📦 Using: BWS X SDK v1.6.0');
+  console.log('🎯 Starting Blockchain Badges Prospect Discovery...');
+  console.log('📦 Using: BWS X SDK v1.8.0 with enrichTweetAuthors()');
+  console.log('🔍 Strategy: User-conversation monitoring (institutions + engaged users)');
   console.log(`📍 Script: discover-institution-accounts-sdk.js\n`);
 
   const startTime = Date.now();
@@ -409,6 +519,19 @@ async function discoverInstitutionAccounts() {
       username: process.env.OXYLABS_USERNAME || crawlerConfig.proxy.username,
       password: process.env.OXYLABS_PASSWORD || crawlerConfig.proxy.password
     } : undefined,
+
+    // Webhook configuration - sends real-time notifications to Zapier/Slack
+    webhook: {
+      enabled: true,
+      url: 'https://hooks.zapier.com/hooks/catch/15373826/us3spl5/',
+      events: ['account_failure', 'api_rate_limit', 'error', 'warning'],  // All SDK events
+      debug: true,  // Enable debug logging for webhooks
+      retries: {
+        maxAttempts: 3,
+        backoffMs: 1000,
+        backoffMultiplier: 2
+      }
+    },
 
     logging: { level: 'info' }
   };
@@ -493,15 +616,18 @@ async function discoverInstitutionAccounts() {
           continue;
         }
 
-        // Classify as institution or individual
+        // Classify as institution, engaged user, or irrelevant
         const classification = classifyAccount(account, productConfig);
 
-        if (!classification.isInstitution) {
-          console.log(`   ⏭️  @${account.username} classified as individual (${classification.reason})`);
+        if (!classification.isRelevant) {
+          console.log(`   ⏭️  @${account.username} not relevant (${classification.reason})`);
           continue;
         }
 
-        console.log(`   ✅ @${account.username} classified as institution (${classification.confidence}% confidence)`);
+        const accountTypeLabel = classification.accountType === 'institution' ? 'institution' : 'engaged user';
+        console.log(`   ✅ @${account.username} classified as ${accountTypeLabel} (${classification.confidence}% confidence)`);
+        console.log(`      Reason: ${classification.reason}`);
+
         institutionsInQuery++;
         stats.institutionsClassified++;
         stats.byCategory[category].institutions++;
@@ -514,9 +640,10 @@ async function discoverInstitutionAccounts() {
           fitScore.reasons.forEach(r => console.log(`      - ${r}`));
         }
 
-        // Add to database
+        // Add to database with classification and account type
         database.accounts.push({
           ...account,
+          accountType: classification.accountType, // 'institution' or 'engaged_user'
           classification,
           productFit: {
             [productName]: fitScore
@@ -530,7 +657,7 @@ async function discoverInstitutionAccounts() {
         stats.newInstitutions++;
       }
 
-      console.log(`   📊 Query results: ${institutionsInQuery} institutions classified, ${newInQuery} new`);
+      console.log(`   📊 Query results: ${institutionsInQuery} relevant accounts, ${newInQuery} new (institutions + engaged users)`);
 
       // Delay between queries
       if (selectedQueries.indexOf(query) < selectedQueries.length - 1) {
@@ -555,14 +682,28 @@ async function discoverInstitutionAccounts() {
   database.stats.totalDiscovered = database.accounts.length;
   database.stats.lastDiscovery = new Date().toISOString();
 
+  // Calculate account type breakdown
+  const institutionCount = database.accounts.filter(a => a.accountType === 'institution').length;
+  const engagedUserCount = database.accounts.filter(a => a.accountType === 'engaged_user').length;
+
+  database.stats.byAccountType = {
+    institutions: institutionCount,
+    engagedUsers: engagedUserCount,
+    total: database.accounts.length
+  };
+
   // Calculate stats by product
   for (const product of Object.keys(productsToProcess)) {
+    const productAccounts = database.accounts.filter(a => a.discoveryContext.product === product);
+
     database.stats.byProduct[product] = {
-      total: database.accounts.filter(a => a.discoveryContext.product === product).length,
-      highFit: database.accounts.filter(a =>
+      total: productAccounts.length,
+      institutions: productAccounts.filter(a => a.accountType === 'institution').length,
+      engagedUsers: productAccounts.filter(a => a.accountType === 'engaged_user').length,
+      highFit: productAccounts.filter(a =>
         a.productFit[product]?.fitLevel === 'high'
       ).length,
-      mediumFit: database.accounts.filter(a =>
+      mediumFit: productAccounts.filter(a =>
         a.productFit[product]?.fitLevel === 'medium'
       ).length
     };
@@ -602,12 +743,20 @@ async function discoverInstitutionAccounts() {
   }
 
   console.log(`\n📚 Database Status:`);
-  console.log(`   - Total institutions: ${database.stats.totalDiscovered}`);
+  console.log(`   - Total accounts: ${database.stats.totalDiscovered}`);
+  console.log(`   - Institutions: ${database.stats.byAccountType?.institutions || 0}`);
+  console.log(`   - Engaged users: ${database.stats.byAccountType?.engagedUsers || 0}`);
+
   for (const [product, productStats] of Object.entries(database.stats.byProduct)) {
-    console.log(`   ${product}: ${productStats.total} total (${productStats.highFit} high fit, ${productStats.mediumFit} medium fit)`);
+    console.log(`\n   ${product}:`);
+    console.log(`     - Total: ${productStats.total}`);
+    console.log(`     - Institutions: ${productStats.institutions || 0}`);
+    console.log(`     - Engaged users: ${productStats.engagedUsers || 0}`);
+    console.log(`     - High fit: ${productStats.highFit}`);
+    console.log(`     - Medium fit: ${productStats.mediumFit}`);
   }
 
-  console.log('\n✨ Institution discovery complete!\n');
+  console.log('\n✨ Blockchain Badges prospect discovery complete!\n');
 }
 
 // Run if executed directly
