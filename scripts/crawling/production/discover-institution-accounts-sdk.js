@@ -1,5 +1,5 @@
 /**
- * Blockchain Badges Prospect Discovery - BWS X SDK Version
+ * Blockchain Badges Prospect Discovery - BWS X SDK Version with Profile Enrichment
  * Discovers BOTH institutional accounts AND engaged individual users
  * that are potential customers for Blockchain Badges
  *
@@ -7,16 +7,17 @@
  * - Institutions: Universities, e-learning platforms, bootcamps, certification bodies
  * - Engaged Users: HR professionals, students, educators, developers discussing credentials
  *
- * Uses BWS X SDK v1.6.0 with client.searchTweets()
+ * Uses BWS X SDK v1.7.0 with client.searchTweets() + client.getProfile()
  * Mode: Hybrid (crawler-first with API fallback)
  *
  * Strategy:
  * 1. Search tweets using user-conversation queries (pain-points, achievements, discussions)
- * 2. Extract author accounts from tweets
- * 3. Classify accounts (institution, engaged_user, or irrelevant)
- * 4. Save BOTH institutions and engaged users (comprehensive audience building)
- * 5. Score accounts by product fit
- * 6. Store in institution-accounts.json
+ * 2. Extract usernames from tweets
+ * 3. Enrich with full profile data using getProfile() (bio, followers, verified status)
+ * 4. Classify accounts (institution, engaged_user, or irrelevant)
+ * 5. Save BOTH institutions and engaged users (comprehensive audience building)
+ * 6. Score accounts by product fit
+ * 7. Store in institution-accounts.json
  */
 
 // Load environment variables from .env file (local dev only, GitHub Actions uses secrets)
@@ -273,56 +274,195 @@ function scoreProductFit(account, productName, productConfig) {
 }
 
 /**
- * Search tweets and extract author accounts
+ * Extract username from tweet object
+ * Handles multiple scenarios where username might be available
+ */
+function extractUsernameFromTweet(tweet) {
+  // Option 1: If tweet has author object with username (most reliable)
+  if (tweet.author?.username) {
+    return tweet.author.username;
+  }
+
+  // Option 2: Extract from tweet URL/permalink if available
+  // Tweet URLs follow pattern: https://twitter.com/username/status/123...
+  if (tweet.url) {
+    const urlMatch = tweet.url.match(/twitter\.com\/([^\/]+)\/status/);
+    if (urlMatch && urlMatch[1]) {
+      return urlMatch[1];
+    }
+  }
+
+  // Option 3: Parse from RT pattern "RT @username:"
+  if (tweet.text) {
+    const rtMatch = tweet.text.match(/^RT @([a-zA-Z0-9_]+):/);
+    if (rtMatch && rtMatch[1]) {
+      return rtMatch[1];
+    }
+
+    // Option 4: Parse from reply pattern "@username" at start
+    const replyMatch = tweet.text.match(/^@([a-zA-Z0-9_]+)/);
+    if (replyMatch && replyMatch[1]) {
+      return replyMatch[1];
+    }
+  }
+
+  // Option 5: Check if tweet has author_id (we'd need to handle this differently)
+  // For now, return null if no username found
+  return null;
+}
+
+/**
+ * Search tweets and extract author accounts with profile enrichment
+ * Uses client.getProfile() to fetch complete profile data
  */
 async function searchAndExtractAccounts(client, product, query, config) {
   console.log(`\n🔍 Searching: ${query.name}`);
   console.log(`   Query: ${query.query}`);
 
+  // Enrichment statistics
+  const enrichmentStats = {
+    totalTweets: 0,
+    uniqueUsernames: 0,
+    profilesFetched: 0,
+    profilesFailed: 0,
+    failureReasons: {}
+  };
+
   try {
-    // SDK METHOD: client.searchTweets()
-    // CRITICAL: Must request author expansions to get account data!
+    // Step 1: Search tweets (no expansions needed - crawler mode ignores them anyway)
     const tweets = await client.searchTweets(query.query, {
-      maxResults: config.settings.maxAccountsPerQuery,
-      expansions: 'author_id',
-      'user.fields': 'id,username,name,description,public_metrics,verified'
+      maxResults: config.settings.maxAccountsPerQuery
     });
 
+    enrichmentStats.totalTweets = tweets.length;
     console.log(`   ✅ Found ${tweets.length} tweets`);
 
-    // Extract unique author accounts
-    const accountsMap = new Map();
+    if (tweets.length === 0) {
+      return [];
+    }
+
+    // Step 2: Extract unique usernames from tweets
+    const usernameMap = new Map();
+    const tweetsByUsername = new Map();
 
     for (const tweet of tweets) {
-      // The author data should be in tweet.author
-      const author = tweet.author;
-      if (!author || !author.id) continue;
+      const username = extractUsernameFromTweet(tweet);
 
-      // Skip if we've already seen this account
-      if (accountsMap.has(author.id)) continue;
+      if (!username) {
+        console.log(`   ⚠️  Could not extract username from tweet ${tweet.id}`);
+        continue;
+      }
 
-      accountsMap.set(author.id, {
-        ...author,
-        discoveryContext: {
-          product,
-          query: query.name,
-          queryCategory: query.category,
-          discoveredAt: new Date().toISOString(),
-          sampleTweet: {
-            id: tweet.id,
-            text: tweet.text,
-            created_at: tweet.created_at
+      // Store first occurrence for sample tweet
+      if (!usernameMap.has(username)) {
+        usernameMap.set(username, true);
+        tweetsByUsername.set(username, {
+          id: tweet.id,
+          text: tweet.text,
+          created_at: tweet.created_at
+        });
+      }
+    }
+
+    const usernames = Array.from(usernameMap.keys());
+    enrichmentStats.uniqueUsernames = usernames.length;
+    console.log(`   👥 ${usernames.length} unique authors identified`);
+
+    if (usernames.length === 0) {
+      console.log(`   ⚠️  No usernames extracted from tweets`);
+      return [];
+    }
+
+    // Step 3: Fetch profiles in parallel using getProfile() - ENRICHMENT!
+    console.log(`   🔍 Enriching profiles...`);
+
+    const profilePromises = usernames.map(username =>
+      client.getProfile(username)
+        .then(profile => {
+          enrichmentStats.profilesFetched++;
+          return profile;
+        })
+        .catch(error => {
+          enrichmentStats.profilesFailed++;
+
+          // Categorize failure reason
+          const reason = error.message.includes('rate limit') || error.message.includes('Too Many Requests') ? 'rate_limit' :
+                         error.message.includes('not found') || error.message.includes('404') ? 'not_found' :
+                         error.message.includes('suspended') || error.message.includes('403') ? 'suspended' :
+                         'other';
+
+          enrichmentStats.failureReasons[reason] = (enrichmentStats.failureReasons[reason] || 0) + 1;
+
+          console.log(`   ⚠️  Failed to fetch @${username}: ${error.message.substring(0, 100)}`);
+          return null;
+        })
+    );
+
+    const profiles = await Promise.all(profilePromises);
+
+    // Step 4: Filter out failed profiles and convert to account format
+    const accounts = profiles
+      .filter(profile => profile !== null)
+      .map(profile => {
+        // Map UserProfile fields to expected account structure
+        return {
+          id: profile.id,
+          username: profile.username,
+          name: profile.name,
+          description: profile.bio,  // Map bio → description
+          public_metrics: {
+            followers_count: profile.followers,
+            following_count: profile.following,
+            tweet_count: profile.tweetCount
+          },
+          verified: profile.verified,
+          profile_image_url: profile.profileImageUrl,
+          location: profile.location,
+          url: profile.url,
+          created_at: profile.createdAt,
+          _enriched: true,  // Flag to indicate enrichment was successful
+          _source: profile._source,  // Track if from API or crawler
+
+          // Add discovery context
+          discoveryContext: {
+            product,
+            query: query.name,
+            queryCategory: query.category,
+            discoveredAt: new Date().toISOString(),
+            sampleTweet: tweetsByUsername.get(profile.username)
           }
-        }
+        };
+      });
+
+    // Log enrichment summary
+    console.log(`   ✅ Enriched ${enrichmentStats.profilesFetched}/${enrichmentStats.uniqueUsernames} profiles`);
+
+    if (enrichmentStats.profilesFailed > 0) {
+      console.log(`   ⚠️  ${enrichmentStats.profilesFailed} profiles failed:`);
+      for (const [reason, count] of Object.entries(enrichmentStats.failureReasons)) {
+        console.log(`      - ${reason}: ${count}`);
+      }
+    }
+
+    // Debug: Show sample enriched data
+    if (accounts.length > 0) {
+      const sample = accounts[0];
+      console.log(`   ✅ Sample enriched data:`, {
+        username: sample.username,
+        bio: sample.description?.substring(0, 50) || '(none)',
+        followers: sample.public_metrics?.followers_count || 0,
+        verified: sample.verified,
+        source: sample._source
       });
     }
 
-    const accounts = Array.from(accountsMap.values());
-    console.log(`   👥 ${accounts.length} unique accounts extracted`);
+    console.log(`   👥 ${accounts.length} accounts ready for classification`);
 
     return accounts;
+
   } catch (error) {
-    console.error(`   ❌ Error searching ${product} - ${query.name}: ${error.message}`);
+    console.error(`   ❌ Error in discovery: ${error.message}`);
+    console.error(`   Stats at failure:`, enrichmentStats);
     return [];
   }
 }
@@ -432,7 +572,7 @@ function selectQueriesForProduct(productConfig, settings) {
  */
 async function discoverInstitutionAccounts() {
   console.log('🎯 Starting Blockchain Badges Prospect Discovery...');
-  console.log('📦 Using: BWS X SDK v1.6.0');
+  console.log('📦 Using: BWS X SDK v1.7.0 with Profile Enrichment');
   console.log('🔍 Strategy: User-conversation monitoring (institutions + engaged users)');
   console.log(`📍 Script: discover-institution-accounts-sdk.js\n`);
 
@@ -546,17 +686,6 @@ async function discoverInstitutionAccounts() {
         if (existingIndex !== -1) {
           console.log(`   ⏭️  Account @${account.username} already exists, skipping`);
           continue;
-        }
-
-        // DEBUG: Log account structure to understand what data we're getting
-        if (accounts.indexOf(account) === 0) {
-          console.log(`   🔍 DEBUG - Sample account data:`, {
-            username: account.username,
-            hasPublicMetrics: !!account.public_metrics,
-            publicMetrics: account.public_metrics,
-            name: account.name?.substring(0, 30),
-            bio: account.description?.substring(0, 50)
-          });
         }
 
         // Classify as institution, engaged user, or irrelevant
