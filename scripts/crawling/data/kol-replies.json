@@ -3574,6 +3574,12 @@
       "repliesFailed": 0,
       "averageRelevance": null,
       "productDistribution": {}
+    },
+    "2026-01-01": {
+      "repliesPosted": 0,
+      "repliesFailed": 0,
+      "averageRelevance": 87,
+      "productDistribution": {}
     }
   },
   "metadata": {
