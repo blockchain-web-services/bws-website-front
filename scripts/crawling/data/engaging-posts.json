@@ -82,13 +82,303 @@
       "expiresAt": "2026-01-08T07:25:33.620Z",
       "source": "timeline_monitor",
       "contentCategory": "altcoin-talk"
+    },
+    {
+      "id": "1358763044181078017",
+      "text": "ELON TOLD THE PLEBS TO BUY DOGECOIN AND THEN BOUGHT 1.5 BILLION DOLLARS OF BITCOIN \n\nLMFAO\n\nHE FUCKING HATES YOU",
+      "author": {
+        "id": "2259434528",
+        "username": "cobie"
+      },
+      "public_metrics": {
+        "likes": 19045,
+        "retweets": 2287,
+        "replies": 701,
+        "quotes": 371
+      },
+      "url": "https://twitter.com/cobie/status/1358763044181078017",
+      "processed": false,
+      "addedAt": "2026-01-01T17:51:23.042Z",
+      "expiresAt": "2026-01-08T17:51:23.042Z",
+      "source": "timeline_monitor",
+      "contentCategory": "altcoin-talk"
+    },
+    {
+      "id": "1980579379244855384",
+      "text": "when i started building echo 2 years ago, i knew it had 95% chance of failing. to be honest, i couldnt really imagine any other outcome, but i thought at least it may be a noble failure worth attempting.\n\ni certainly didn't think echo would be sold to coinbase, but, here we are:",
+      "author": {
+        "id": "2259434528",
+        "username": "cobie"
+      },
+      "public_metrics": {
+        "likes": 20885,
+        "retweets": 1354,
+        "replies": 5180,
+        "quotes": 616,
+        "views": 2792509
+      },
+      "url": "https://twitter.com/cobie/status/1980579379244855384",
+      "processed": false,
+      "addedAt": "2026-01-01T17:51:24.852Z",
+      "expiresAt": "2026-01-08T17:51:24.852Z",
+      "source": "timeline_monitor",
+      "contentCategory": "project-discussion"
+    },
+    {
+      "id": "1778242360713130435",
+      "text": "@Uniswap The SEC isn't here to protect us. It's to make sure they control us.",
+      "author": {
+        "id": "4441279246",
+        "username": "IncomeSharks"
+      },
+      "public_metrics": {
+        "likes": 1079,
+        "retweets": 121,
+        "replies": 27,
+        "quotes": 1,
+        "views": 37536
+      },
+      "url": "https://twitter.com/IncomeSharks/status/1778242360713130435",
+      "processed": false,
+      "addedAt": "2026-01-01T17:51:54.660Z",
+      "expiresAt": "2026-01-08T17:51:54.661Z",
+      "source": "timeline_monitor",
+      "contentCategory": "project-discussion"
+    },
+    {
+      "id": "1395441817563254784",
+      "text": "How to trade based on your Crypto Twitter feed\n\nBUY - Doomsday posts, FUD, memes, angry comments\nHOLD - Quality charts, good content, actual analysis\nSELL - Car pics, watch pics, wild price predictions",
+      "author": {
+        "id": "4441279246",
+        "username": "IncomeSharks"
+      },
+      "public_metrics": {
+        "likes": 5281,
+        "retweets": 1057,
+        "replies": 384,
+        "quotes": 131
+      },
+      "url": "https://twitter.com/IncomeSharks/status/1395441817563254784",
+      "processed": false,
+      "addedAt": "2026-01-01T17:51:56.665Z",
+      "expiresAt": "2026-01-08T17:51:56.665Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "1863717475168424230",
+      "text": "Over 43% of the $XRP tokens are still not even circulating. Imagine if you were on Pump Fun and saw the developer owned 43% of supply. There's a reason this space collectively dislikes this token because it's always pumping and dumping. https://t.co/n7wMvyU2nR",
+      "author": {
+        "id": "4441279246",
+        "username": "IncomeSharks"
+      },
+      "public_metrics": {
+        "likes": 5838,
+        "retweets": 386,
+        "replies": 623,
+        "quotes": 81,
+        "views": 858589
+      },
+      "url": "https://twitter.com/IncomeSharks/status/1863717475168424230",
+      "processed": false,
+      "addedAt": "2026-01-01T17:51:58.694Z",
+      "expiresAt": "2026-01-08T17:51:58.694Z",
+      "source": "timeline_monitor",
+      "contentCategory": "altcoin-talk"
+    },
+    {
+      "id": "1871631935078023487",
+      "text": "When cashing out on @coinbase always send profits with $USDC to avoid fees. It's wild that they charge as much as they do converting other stable coins to USD. https://t.co/gRTBLS2AgM",
+      "author": {
+        "id": "4441279246",
+        "username": "IncomeSharks"
+      },
+      "public_metrics": {
+        "likes": 5720,
+        "retweets": 404,
+        "replies": 324,
+        "quotes": 31,
+        "views": 960098
+      },
+      "url": "https://twitter.com/IncomeSharks/status/1871631935078023487",
+      "processed": false,
+      "addedAt": "2026-01-01T17:52:02.749Z",
+      "expiresAt": "2026-01-08T17:52:02.749Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "1509583498893484032",
+      "text": "Time to unfollow large verified accounts. All were screaming to buy #Bitcoin at another local top. And all 3 are verified... They speak in absolutes leading the sheep to the slaughterhouse. They can't trade, they only know how to farm for engagement and use emojis.🚀 https://t.co/NVkjTjWfGv",
+      "author": {
+        "id": "4441279246",
+        "username": "IncomeSharks"
+      },
+      "public_metrics": {
+        "likes": 4672,
+        "retweets": 487,
+        "replies": 456,
+        "quotes": 69
+      },
+      "url": "https://twitter.com/IncomeSharks/status/1509583498893484032",
+      "processed": false,
+      "addedAt": "2026-01-01T17:52:11.756Z",
+      "expiresAt": "2026-01-08T17:52:11.756Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "1898450757738955242",
+      "text": "It's not that people aren't bullish enough, most have nothing left to invest.",
+      "author": {
+        "id": "4441279246",
+        "username": "IncomeSharks"
+      },
+      "public_metrics": {
+        "likes": 5195,
+        "retweets": 263,
+        "replies": 556,
+        "quotes": 45,
+        "views": 298698
+      },
+      "url": "https://twitter.com/IncomeSharks/status/1898450757738955242",
+      "processed": false,
+      "addedAt": "2026-01-01T17:52:13.401Z",
+      "expiresAt": "2026-01-08T17:52:13.401Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "2006782978253537676",
+      "text": "Imo:\n\nDecent pump in early Q1 (so start sometime in next few weeks), retrace and consolidate for a month or so and then another leg up in late Q1 or early Q2",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "likes": 22,
+        "retweets": 2,
+        "replies": 12,
+        "quotes": 0,
+        "views": 881
+      },
+      "url": "https://twitter.com/AltcoinSherpa/status/2006782978253537676",
+      "processed": false,
+      "addedAt": "2026-01-01T17:52:37.500Z",
+      "expiresAt": "2026-01-08T17:52:37.500Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends/price-speculation/technical-analysis"
+    },
+    {
+      "id": "2006539727344959965",
+      "text": "Wanted to really grab your attention...\n\nHelp make this one the most liked Xandeum post ever - goal is 1,000 likes.\n\nAnyone wants to see a similar post but with males? Let us know! https://t.co/6eGIVdvpvE",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "likes": 109,
+        "retweets": 11,
+        "replies": 12,
+        "quotes": 2,
+        "views": 338957
+      },
+      "url": "https://twitter.com/AltcoinSherpa/status/2006539727344959965",
+      "processed": false,
+      "addedAt": "2026-01-01T17:52:40.350Z",
+      "expiresAt": "2026-01-08T17:52:40.350Z",
+      "source": "timeline_monitor",
+      "contentCategory": "project-discussion"
+    },
+    {
+      "id": "2006415011275538528",
+      "text": "RT @koolkrypto223: People are really letting comparison be the theft of joy with @Lighter_xyz vs @HyperliquidX.\n\n@Lighter_xyz built an $ETH…",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "likes": 0,
+        "retweets": 17,
+        "replies": 0,
+        "quotes": 0
+      },
+      "url": "https://twitter.com/AltcoinSherpa/status/2006415011275538528",
+      "processed": false,
+      "addedAt": "2026-01-01T17:52:47.431Z",
+      "expiresAt": "2026-01-08T17:52:47.431Z",
+      "source": "timeline_monitor",
+      "contentCategory": "project-discussion"
+    },
+    {
+      "id": "2006367242464960874",
+      "text": "get ready for some dogshit price action like this for $BTC soon https://t.co/q8V1cQIgWx",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "likes": 167,
+        "retweets": 12,
+        "replies": 38,
+        "quotes": 0,
+        "views": 20489
+      },
+      "url": "https://twitter.com/AltcoinSherpa/status/2006367242464960874",
+      "processed": false,
+      "addedAt": "2026-01-01T17:52:49.772Z",
+      "expiresAt": "2026-01-08T17:52:49.772Z",
+      "source": "timeline_monitor",
+      "contentCategory": "price-speculation"
+    },
+    {
+      "id": "2006405933023236118",
+      "text": "$BTC as expected...horrible price action. I actually had some big shorts on before but got shaken out https://t.co/vMzGmFDuQG",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "likes": 25,
+        "retweets": 1,
+        "replies": 4,
+        "quotes": 0,
+        "views": 4021
+      },
+      "url": "https://twitter.com/AltcoinSherpa/status/2006405933023236118",
+      "processed": false,
+      "addedAt": "2026-01-01T17:52:51.361Z",
+      "expiresAt": "2026-01-08T17:52:51.361Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends/price-speculation/technical-analysis"
+    },
+    {
+      "id": "2006404817464275449",
+      "text": "$ZEC BTC pair is a wild chart https://t.co/WW2l8VOGVa",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "likes": 138,
+        "retweets": 8,
+        "replies": 13,
+        "quotes": 1,
+        "views": 16000
+      },
+      "url": "https://twitter.com/AltcoinSherpa/status/2006404817464275449",
+      "processed": false,
+      "addedAt": "2026-01-01T17:52:53.229Z",
+      "expiresAt": "2026-01-08T17:52:53.229Z",
+      "source": "timeline_monitor",
+      "contentCategory": "technical-analysis"
     }
   ],
   "metadata": {
-    "lastUpdated": "2026-01-01T07:26:45.818Z",
-    "totalPosts": 19,
+    "lastUpdated": "2026-01-01T17:54:05.386Z",
+    "totalPosts": 18,
     "bySource": {
-      "timeline_monitor": 19,
+      "timeline_monitor": 18,
       "search_discovery": 0
     }
   },
