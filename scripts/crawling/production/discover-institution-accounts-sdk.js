@@ -172,45 +172,57 @@ function classifyAccount(account, config) {
     'hr', 'recruiter', 'hiring', 'talent',
     'student', 'alumni', 'graduate', 'learner',
     'educator', 'teacher', 'professor', 'instructor',
-    'developer', 'engineer', 'tech', 'blockchain',
+    'developer', 'engineer', 'tech', 'blockchain', 'web3', 'crypto',
     'credential', 'certificate', 'certification',
-    'verification', 'identity', 'digital badge'
+    'verification', 'identity', 'digital badge', 'education'
   ];
 
   const engagedMatches = engagedIndicators.filter(indicator =>
     bio.includes(indicator) || name.includes(indicator)
   );
 
-  // Check if account is discussing relevant topics (based on discovery context)
-  const isEngagedUser = engagedMatches.length > 0 || followerCount >= 500;
+  // FALLBACK LOGIC: If found via credential query, they're relevant by definition
+  // These users are actively tweeting about credentials - that's engagement!
+  const hasReasonableFollowing = followerCount >= 100; // Very low threshold
+  const hasContent = (bio.length > 0 || name.length > 0); // Has some profile info
+
+  // Classify as engaged user if:
+  // 1. Has keyword matches OR
+  // 2. Found via credential query + has reasonable following + has profile
+  const isEngagedUser = engagedMatches.length > 0 || (hasReasonableFollowing && hasContent);
 
   if (isEngagedUser) {
-    let confidence = Math.min(100, engagedMatches.length * 15);
+    let confidence = 50; // Base confidence - they're tweeting about credentials
+
+    // Boost for keyword matches
+    if (engagedMatches.length > 0) {
+      confidence = Math.min(100, confidence + engagedMatches.length * 10);
+    }
 
     // Boost for verified
-    if (account.verified) confidence = Math.min(100, confidence + 15);
+    if (account.verified) confidence = Math.min(100, confidence + 20);
 
-    // Boost for reasonable following (engaged users)
+    // Boost for follower count
     if (followerCount >= 500) confidence = Math.min(100, confidence + 10);
-    if (followerCount >= 2000) confidence = Math.min(100, confidence + 10);
+    if (followerCount >= 2000) confidence = Math.min(100, confidence + 15);
 
     return {
       accountType: 'engaged_user',
-      isRelevant: true, // Always save engaged users discussing credentials
-      confidence: Math.max(30, confidence), // Minimum 30% confidence
+      isRelevant: true,
+      confidence,
       reason: engagedMatches.length > 0
         ? `Engaged user: ${engagedMatches.join(', ')}`
-        : 'User discussing credentials',
-      indicators: engagedMatches
+        : 'Tweeting about credentials',
+      indicators: engagedMatches.length > 0 ? engagedMatches : ['query-context']
     };
   }
 
-  // Not relevant
+  // Still not relevant (likely spam/bot accounts with no profile)
   return {
     accountType: 'unknown',
     isRelevant: false,
     confidence: 0,
-    reason: 'No relevant indicators'
+    reason: 'No profile content'
   };
 }
 
