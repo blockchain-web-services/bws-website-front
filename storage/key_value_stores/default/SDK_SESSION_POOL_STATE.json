@@ -1,9 +1,9 @@
 {
-  "usableSessionsCount": 2,
+  "usableSessionsCount": 6,
   "retiredSessionsCount": 0,
   "sessions": [
     {
-      "id": "session_WrTw8ZyuDT",
+      "id": "session_dz4ONKugUe",
       "cookieJar": {
         "version": "tough-cookie@6.0.0",
         "storeType": "MemoryCookieStore",
@@ -16,14 +16,14 @@
       "userData": {},
       "maxErrorScore": 3,
       "errorScoreDecrement": 0.5,
-      "expiresAt": "2026-01-01T18:59:28.896Z",
-      "createdAt": "2026-01-01T18:09:28.896Z",
+      "expiresAt": "2026-01-01T20:00:00.211Z",
+      "createdAt": "2026-01-01T19:10:00.211Z",
       "usageCount": 0,
       "maxUsageCount": 50,
       "errorScore": 0
     },
     {
-      "id": "session_sds1NMQlIL",
+      "id": "session_gFnoQechfW",
       "cookieJar": {
         "version": "tough-cookie@6.0.0",
         "storeType": "MemoryCookieStore",
@@ -34,43 +34,258 @@
         "cookies": [
           {
             "key": "guest_id",
-            "value": "v1%3A176729097003773814",
-            "expires": "2027-02-01T18:09:31.317Z",
+            "value": "v1%3A176729459960703550",
+            "expires": "2027-02-01T19:10:00.975Z",
             "domain": "x.com",
             "path": "/",
             "secure": true,
             "hostOnly": false,
-            "creation": "2026-01-01T18:09:40.804Z",
-            "lastAccessed": "2026-01-01T18:09:40.804Z"
+            "creation": "2026-01-01T19:10:06.542Z",
+            "lastAccessed": "2026-01-01T19:10:06.542Z"
+          },
+          {
+            "key": "__cf_bm",
+            "value": "mbqkGm4NFlsYzvuME_Z3adwB4AHqBKYZKoB0UWvYCPg-1767294599.5496445-1.0.1.1-Xqkz0LXzVrYFxyIKZY4CtASOBmEJm7xHS4MSvQ4XUXOGcVywk9A2.O5gbxVWIkrfb3zkz9KzANQirYz7.6p9bnNFH9PmJXWOCzb9loaL1DjoIaENayv5OdxyBh08Nj12",
+            "expires": "2026-01-01T19:40:00.975Z",
+            "domain": "x.com",
+            "path": "/",
+            "secure": true,
+            "httpOnly": true,
+            "hostOnly": false,
+            "creation": "2026-01-01T19:10:06.543Z",
+            "lastAccessed": "2026-01-01T19:10:06.543Z"
           },
           {
             "key": "gt",
-            "value": "2006789895331692819",
-            "expires": "2026-01-01T20:39:31.424Z",
+            "value": "2006805118860066867",
+            "expires": "2026-01-01T21:40:01.046Z",
             "domain": "x.com",
             "path": "/",
             "secure": true,
             "hostOnly": false,
-            "creation": "2026-01-01T18:09:40.806Z",
-            "lastAccessed": "2026-01-01T18:09:40.806Z"
+            "creation": "2026-01-01T19:10:06.544Z",
+            "lastAccessed": "2026-01-01T19:10:06.544Z"
           },
           {
             "key": "__cuid",
-            "value": "df05bb8299c94615b6167216d1a978dd",
-            "expires": "2027-02-05T18:09:35.000Z",
+            "value": "b7e48c925b18416da8ded5481ca8f5df",
+            "expires": "2027-02-05T19:10:06.000Z",
             "domain": "x.com",
             "path": "/",
             "hostOnly": false,
-            "creation": "2026-01-01T18:09:40.806Z",
-            "lastAccessed": "2026-01-01T18:09:40.806Z"
+            "creation": "2026-01-01T19:10:06.544Z",
+            "lastAccessed": "2026-01-01T19:10:06.544Z"
           }
         ]
       },
       "userData": {},
       "maxErrorScore": 3,
       "errorScoreDecrement": 0.5,
-      "expiresAt": "2026-01-01T18:59:28.905Z",
-      "createdAt": "2026-01-01T18:09:28.905Z",
+      "expiresAt": "2026-01-01T20:00:00.216Z",
+      "createdAt": "2026-01-01T19:10:00.216Z",
+      "usageCount": 1,
+      "maxUsageCount": 50,
+      "errorScore": 0
+    },
+    {
+      "id": "session_kopugTmFhH",
+      "cookieJar": {
+        "version": "tough-cookie@6.0.0",
+        "storeType": "MemoryCookieStore",
+        "rejectPublicSuffixes": true,
+        "enableLooseMode": false,
+        "allowSpecialUseDomain": true,
+        "prefixSecurity": "silent",
+        "cookies": []
+      },
+      "userData": {},
+      "maxErrorScore": 3,
+      "errorScoreDecrement": 0.5,
+      "expiresAt": "2026-01-01T20:00:23.821Z",
+      "createdAt": "2026-01-01T19:10:23.821Z",
+      "usageCount": 0,
+      "maxUsageCount": 50,
+      "errorScore": 0
+    },
+    {
+      "id": "session_rMy2AG6ns8",
+      "cookieJar": {
+        "version": "tough-cookie@6.0.0",
+        "storeType": "MemoryCookieStore",
+        "rejectPublicSuffixes": true,
+        "enableLooseMode": false,
+        "allowSpecialUseDomain": true,
+        "prefixSecurity": "silent",
+        "cookies": [
+          {
+            "key": "guest_id",
+            "value": "v1%3A176729462353269269",
+            "expires": "2027-02-01T19:10:24.668Z",
+            "domain": "x.com",
+            "path": "/",
+            "secure": true,
+            "hostOnly": false,
+            "creation": "2026-01-01T19:10:32.588Z",
+            "lastAccessed": "2026-01-01T19:10:32.588Z"
+          },
+          {
+            "key": "__cf_bm",
+            "value": "ONDhthmU92fAaejWbNmYTHLvfRmTFSe.PJnFAPN6HJM-1767294623.474311-1.0.1.1-BWxWcqobtcGVXcioH34FUihBc0ZMj.vE9ZxPIMW23jCFLJGbrETQqWLp3gwKdMPegn.GxQW2nsiMt374wzeTHXkedK3U_ufz6c7b.lgtebkJ2fkrNrb82jGxtdk_w5vZ",
+            "expires": "2026-01-01T19:40:24.668Z",
+            "domain": "x.com",
+            "path": "/",
+            "secure": true,
+            "httpOnly": true,
+            "hostOnly": false,
+            "creation": "2026-01-01T19:10:32.589Z",
+            "lastAccessed": "2026-01-01T19:10:32.589Z"
+          },
+          {
+            "key": "gt",
+            "value": "2006805219229802752",
+            "expires": "2026-01-01T21:40:24.724Z",
+            "domain": "x.com",
+            "path": "/",
+            "secure": true,
+            "hostOnly": false,
+            "creation": "2026-01-01T19:10:32.589Z",
+            "lastAccessed": "2026-01-01T19:10:32.589Z"
+          },
+          {
+            "key": "__cuid",
+            "value": "53ef63b2de5d44e7bdae2a470c1e460f",
+            "expires": "2027-02-05T19:10:32.000Z",
+            "domain": "x.com",
+            "path": "/",
+            "hostOnly": false,
+            "creation": "2026-01-01T19:10:32.589Z",
+            "lastAccessed": "2026-01-01T19:10:32.589Z"
+          }
+        ]
+      },
+      "userData": {},
+      "maxErrorScore": 3,
+      "errorScoreDecrement": 0.5,
+      "expiresAt": "2026-01-01T20:00:23.823Z",
+      "createdAt": "2026-01-01T19:10:23.823Z",
+      "usageCount": 1,
+      "maxUsageCount": 50,
+      "errorScore": 0
+    },
+    {
+      "id": "session_jzugqNsHiV",
+      "cookieJar": {
+        "version": "tough-cookie@6.0.0",
+        "storeType": "MemoryCookieStore",
+        "rejectPublicSuffixes": true,
+        "enableLooseMode": false,
+        "allowSpecialUseDomain": true,
+        "prefixSecurity": "silent",
+        "cookies": []
+      },
+      "userData": {},
+      "maxErrorScore": 3,
+      "errorScoreDecrement": 0.5,
+      "expiresAt": "2026-01-01T20:00:48.000Z",
+      "createdAt": "2026-01-01T19:10:48.000Z",
+      "usageCount": 0,
+      "maxUsageCount": 50,
+      "errorScore": 0
+    },
+    {
+      "id": "session_c4TfKCPfLO",
+      "cookieJar": {
+        "version": "tough-cookie@6.0.0",
+        "storeType": "MemoryCookieStore",
+        "rejectPublicSuffixes": true,
+        "enableLooseMode": false,
+        "allowSpecialUseDomain": true,
+        "prefixSecurity": "silent",
+        "cookies": [
+          {
+            "key": "auth_token",
+            "value": "a27a09f9fcd37dbdc6bcd5f68cb9074d47b24034",
+            "expires": "2026-01-01T20:00:55.537Z",
+            "domain": "x.com",
+            "path": "/",
+            "secure": true,
+            "httpOnly": true,
+            "hostOnly": false,
+            "creation": "2026-01-01T19:10:55.537Z",
+            "lastAccessed": "2026-01-01T19:10:55.537Z"
+          },
+          {
+            "key": "ct0",
+            "value": "ddf3263e4b00953500b8be823fdb2c1170ebb0e8e243819e80d98da4335f0c0c31d2d46233c9607b6989cdcaac7693298757c95064b97d5c4fdebe91d0916521b8644f2c5cb1f58be268b2838f243507",
+            "expires": "2026-01-01T20:00:55.537Z",
+            "domain": "x.com",
+            "path": "/",
+            "secure": true,
+            "hostOnly": false,
+            "creation": "2026-01-01T19:10:55.537Z",
+            "lastAccessed": "2026-01-01T19:10:55.537Z"
+          },
+          {
+            "key": "lang",
+            "value": "en",
+            "expires": "2026-01-01T20:00:55.537Z",
+            "domain": "x.com",
+            "path": "/",
+            "hostOnly": true,
+            "creation": "2026-01-01T19:10:55.538Z",
+            "lastAccessed": "2026-01-01T19:10:55.538Z"
+          },
+          {
+            "key": "guest_id",
+            "value": "v1%3A176729464775966292",
+            "expires": "2027-02-01T19:10:48.707Z",
+            "domain": "x.com",
+            "path": "/",
+            "secure": true,
+            "hostOnly": false,
+            "creation": "2026-01-01T19:10:55.538Z",
+            "lastAccessed": "2026-01-01T19:10:55.538Z"
+          },
+          {
+            "key": "twid",
+            "value": "u%3D1993017631834882049",
+            "expires": "2027-01-01T19:10:48.707Z",
+            "domain": "x.com",
+            "path": "/",
+            "secure": true,
+            "hostOnly": false,
+            "creation": "2026-01-01T19:10:55.538Z",
+            "lastAccessed": "2026-01-01T19:10:55.538Z"
+          },
+          {
+            "key": "__cf_bm",
+            "value": "kLB_e4grpdH0rD1EwPGpIKbptSht28U5sK38Q1lIz4g-1767294647.6988425-1.0.1.1-sH72VmVaqjtygUNE6nqeZTjatc8h55OzM3mNKhmU.fAigIY0_Yf0IPkEsBUR3vGoNDzzLOXIOMRBQYJHaORFXglDmzLRKDotbEWyN8IkB13ppMVQwK6yiK5sVA7hcjwS",
+            "expires": "2026-01-01T19:40:48.707Z",
+            "domain": "x.com",
+            "path": "/",
+            "secure": true,
+            "httpOnly": true,
+            "hostOnly": false,
+            "creation": "2026-01-01T19:10:55.539Z",
+            "lastAccessed": "2026-01-01T19:10:55.539Z"
+          },
+          {
+            "key": "__cuid",
+            "value": "0238377218504971be0f3ed23f4eec1b",
+            "expires": "2027-02-05T19:10:55.000Z",
+            "domain": "x.com",
+            "path": "/",
+            "hostOnly": false,
+            "creation": "2026-01-01T19:10:55.539Z",
+            "lastAccessed": "2026-01-01T19:10:55.539Z"
+          }
+        ]
+      },
+      "userData": {},
+      "maxErrorScore": 3,
+      "errorScoreDecrement": 0.5,
+      "expiresAt": "2026-01-01T20:00:48.002Z",
+      "createdAt": "2026-01-01T19:10:48.002Z",
       "usageCount": 1,
       "maxUsageCount": 50,
       "errorScore": 0
