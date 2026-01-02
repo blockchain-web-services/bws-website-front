@@ -526,7 +526,7 @@ async function discoverInstitutionAccounts() {
       url: 'https://hooks.zapier.com/hooks/catch/15373826/us3spl5/',
       secret: 'zapier-webhook-no-signature-required',  // Required by SDK (Zapier ignores HMAC)
       events: ['account_failure', 'api_rate_limit', 'error', 'warning'],  // All SDK events
-      debug: true,  // Enable debug logging for webhooks
+      debug: false,  // Production mode: only log errors (validated webhooks work)
       retries: {
         maxAttempts: 3,
         backoffMs: 1000,
@@ -557,8 +557,8 @@ async function discoverInstitutionAccounts() {
       const { WebhookManager } = require(modulePath);
       const { Logger } = require(path.join(__dirname, '../../../node_modules/@blockchain-web-services/bws-x-sdk-node/dist/utils/Logger.js'));
 
-      // Use 'debug' level to see webhook delivery logs (webhook.debug: true requires this)
-      const logger = new Logger({ level: 'debug' });
+      // Production: Use 'error' level - only log webhook failures, not every delivery
+      const logger = new Logger({ level: 'error' });
       const webhookManager = new WebhookManager(webhookConfig, logger);
 
       // Inject webhook manager into clients
