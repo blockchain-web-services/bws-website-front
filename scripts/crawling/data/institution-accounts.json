@@ -71,10 +71,10 @@
       "certification-bodies": 0,
       "user-achievements": 0,
       "pain-point": 0,
-      "solution-space": 1,
+      "solution-space": 0,
       "user-journey": 0
     },
-    "lastDiscovery": "2026-01-01T15:30:43.127Z",
+    "lastDiscovery": "2026-01-01T19:11:17.393Z",
     "byAccountType": {
       "institutions": 0,
       "engagedUsers": 1,
@@ -83,7 +83,7 @@
   },
   "metadata": {
     "version": "1.0.0",
-    "lastUpdated": "2026-01-01T15:30:43.127Z",
-    "discoveryRuns": 12
+    "lastUpdated": "2026-01-01T19:11:17.393Z",
+    "discoveryRuns": 17
   }
 }

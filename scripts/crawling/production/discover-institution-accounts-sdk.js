@@ -524,8 +524,9 @@ async function discoverInstitutionAccounts() {
     webhook: {
       enabled: true,
       url: 'https://hooks.zapier.com/hooks/catch/15373826/us3spl5/',
+      secret: 'zapier-webhook-no-signature-required',  // Required by SDK (Zapier ignores HMAC)
       events: ['account_failure', 'api_rate_limit', 'error', 'warning'],  // All SDK events
-      debug: true,  // Enable debug logging for webhooks
+      debug: false,  // Production mode: only log errors (validated webhooks work)
       retries: {
         maxAttempts: 3,
         backoffMs: 1000,
@@ -536,7 +537,53 @@ async function discoverInstitutionAccounts() {
     logging: { level: 'info' }
   };
 
+  const webhookConfig = sdkConfig.webhook;  // Save webhook config before SDK strips it
   const client = new XTwitterClient(sdkConfig);
+
+  // WORKAROUND: SDK's ConfigManager.validate() strips webhook field (not in Zod schema)
+  // Manually inject webhook manager after initialization using CommonJS require
+  if (webhookConfig) {
+    try {
+      const path = await import('path');
+      const { fileURLToPath } = await import('url');
+      const __filename = fileURLToPath(import.meta.url);
+      const __dirname = path.dirname(__filename);
+
+      // Use require() to bypass ES module exports restrictions
+      const modulePath = path.join(__dirname, '../../../node_modules/@blockchain-web-services/bws-x-sdk-node/dist/webhook/WebhookManager.js');
+      const { createRequire } = await import('module');
+      const require = createRequire(import.meta.url);
+
+      const { WebhookManager } = require(modulePath);
+      const { Logger } = require(path.join(__dirname, '../../../node_modules/@blockchain-web-services/bws-x-sdk-node/dist/utils/Logger.js'));
+
+      // Production: Use 'error' level - only log webhook failures, not every delivery
+      const logger = new Logger({ level: 'error' });
+      const webhookManager = new WebhookManager(webhookConfig, logger);
+
+      // Inject webhook manager into clients
+      client.webhookManager = webhookManager;
+      if (client.crawlerClient) {
+        client.crawlerClient.webhookManager = webhookManager;
+
+        // CRITICAL: Also inject into AuthManager (it was constructed with undefined webhook)
+        if (client.crawlerClient.authManager) {
+          client.crawlerClient.authManager.webhookManager = webhookManager;
+        }
+      }
+      if (client.apiClient) {
+        client.apiClient.webhookManager = webhookManager;
+      }
+
+      console.log('\n✅ Webhook manager manually injected (SDK schema workaround)');
+      console.log(`   Enabled: ${webhookManager.isEnabled()}`);
+      console.log(`   URL: ${webhookConfig.url}`);
+      console.log(`   Events: ${webhookConfig.events.join(', ')}`);
+      console.log(`   Injected into: client, crawlerClient, authManager, apiClient\n`);
+    } catch (error) {
+      console.error('❌ Failed to inject webhook manager:', error.message);
+    }
+  }
 
   console.log(`\n✅ SDK client initialized in ${sdkConfig.mode} mode`);
   console.log(`   Has crawler: ${crawlerConfig ? '✅ Yes' : '❌ No'}`);

@@ -1,0 +1,9 @@
+{
+	"id": "zr1mgry95bjml9H",
+	"json": "{\"id\":\"zr1mgry95bjml9H\",\"url\":\"https://x.com/search?q=%28blockchain+OR+web3%29+%28education+OR+credential+OR+certificate+OR+learning+OR+university%29+min_faves%3A5+lang%3Aen+-is%3Aretweet&f=live\",\"loadedUrl\":\"https://x.com/search?q=%28blockchain+OR+web3%29+%28education+OR+credential+OR+certificate+OR+learning+OR+university%29+min_faves%3A5+lang%3Aen+-is%3Aretweet&f=live\",\"uniqueKey\":\"https://x.com/search?f=live&q=%28blockchain+OR+web3%29+%28education+OR+credential+OR+certificate+OR+learning+OR+university%29+min_faves%3A5+lang%3Aen+-is%3Aretweet\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"state\":4}},\"handledAt\":\"2026-01-01T19:11:06.527Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://x.com/search?f=live&q=%28blockchain+OR+web3%29+%28education+OR+credential+OR+certificate+OR+learning+OR+university%29+min_faves%3A5+lang%3Aen+-is%3Aretweet",
+	"url": "https://x.com/search?q=%28blockchain+OR+web3%29+%28education+OR+credential+OR+certificate+OR+learning+OR+university%29+min_faves%3A5+lang%3Aen+-is%3Aretweet&f=live"
+}
