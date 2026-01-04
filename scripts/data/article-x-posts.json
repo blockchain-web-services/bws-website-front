@@ -3,9 +3,9 @@
     "lastGenerated": "2025-12-28T12:13:55.036Z",
     "totalPosts": 60,
     "totalArticles": 24,
-    "pendingPosts": 10,
-    "postedCount": 43,
-    "lastPosted": "2025-12-31T00:37:14.304Z",
+    "pendingPosts": 9,
+    "postedCount": 44,
+    "lastPosted": "2026-01-04T20:09:02.584Z",
     "failedCount": 7
   },
   "posts": [
@@ -1178,17 +1178,19 @@
         "CredentialManagement"
       ],
       "priority": "medium",
-      "status": "pending",
+      "status": "posted",
       "scheduledFor": null,
-      "postedAt": null,
-      "tweetId": null,
+      "postedAt": "2026-01-04T20:09:02.377Z",
+      "tweetId": "2007907141206581668",
       "generatedAt": "2025-12-12T12:10:06.914Z",
       "metadata": {
         "articleTitle": "Blockchain Badges: Issue Tamper-Proof Digital Credentials with Blockchain Verification",
         "articlePublishDate": "2025-12-12T10:04:02.390Z",
         "mainTextLength": 223,
         "fullTextLength": 419
-      }
+      },
+      "tweetUrl": "https://twitter.com/i/web/status/2007907141206581668",
+      "error": null
     },
     {
       "id": "ebad6d59-62bf-4e88-9186-4a99d59eb5fe",
