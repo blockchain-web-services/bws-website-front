@@ -3537,6 +3537,26 @@
       "status": "posted",
       "dryRun": false,
       "sdkVersion": "1.7.0"
+    },
+    {
+      "id": "4441279246-1863717475168424230-1767503476136",
+      "tweetId": "1863717475168424230",
+      "tweetUrl": "https://twitter.com/IncomeSharks/status/1863717475168424230",
+      "kolId": "4441279246",
+      "kolUsername": "IncomeSharks",
+      "originalTweetText": "Over 43% of the $XRP tokens are still not even circulating. Imagine if you were on Pump Fun and saw the developer owned 43% of supply. There's a reason this space collectively dislikes this token because it's always pumping and dumping. https://t.co/n7wMvyU2nR",
+      "replyTweetId": "2007681208847659396",
+      "replyText": "🎯 Pump/dump tokens reveal infrastructure gaps. $BWS NFT.zK solves blockchain complexity - NFT creation & transfer for brands, seamless wallet/email integration. @BWSCommunity #NFT https://docs.bws.ninja/solutions/bws.nft.zk",
+      "productMentioned": "Multiple products (Blockchain Badges, ESG Credits, Fan Game Cube)",
+      "relevanceScore": 82,
+      "templateUsed": "emoji_enhanced",
+      "templateName": "Emoji-Enhanced Structure",
+      "imageAttached": true,
+      "imagePath": "/assets/images/docs/nftzk/nftzk-0.png",
+      "timestamp": "2026-01-04T05:11:16.136Z",
+      "status": "posted",
+      "dryRun": false,
+      "sdkVersion": "1.7.0"
     }
   ],
   "dailyStats": {
@@ -3623,10 +3643,10 @@
     }
   },
   "metadata": {
-    "totalReplies": 184,
-    "successfulReplies": 139,
+    "totalReplies": 185,
+    "successfulReplies": 140,
     "failedReplies": 34,
-    "lastReplyAt": "2026-01-01T19:54:08.287Z",
+    "lastReplyAt": "2026-01-04T05:11:16.136Z",
     "todayRepliesCount": 0,
     "lastUpdateBy": "kol-system"
   }
