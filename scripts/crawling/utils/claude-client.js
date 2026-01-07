@@ -200,66 +200,51 @@ NOT RELEVANT (return false):
  * Evaluate if a tweet is suitable for reply
  */
 export async function evaluateTweetForReply(client, tweet, kolProfile, bwsProducts, config) {
-  const productsInfo = Object.entries(bwsProducts).map(([name, prod]) => {
+  // ✂️ OPTIMIZED: Pre-filter products by keyword matching
+  const tweetLower = tweet.text.toLowerCase();
+  const relevantProducts = Object.entries(bwsProducts).filter(([name, prod]) => {
+    // Check if any product keyword appears in tweet
+    return prod.keywords.some(kw => tweetLower.includes(kw.toLowerCase()));
+  });
+
+  // If no products match, send top 3 general products, otherwise send matched products (max 3)
+  const productsToSend = relevantProducts.length > 0
+    ? relevantProducts.slice(0, 3)
+    : Object.entries(bwsProducts).slice(0, 3);
+
+  const productsInfo = productsToSend.map(([name, prod]) => {
+    // ✂️ OPTIMIZED: Limit to 2 use cases only
     const useCases = prod.useCases && prod.useCases.length > 0
-      ? `\nUse Cases: ${prod.useCases.slice(0, 3).join('; ')}`
+      ? ` | Use Cases: ${prod.useCases.slice(0, 2).join('; ')}`
       : '';
-    return `${name} (${prod.category}): ${prod.description}${useCases}\nKeywords: ${prod.keywords.join(', ')}`;
-  }).join('\n\n');
+    return `${name} (${prod.category}): ${prod.description}${useCases}`;
+  }).join('\n');
 
   const avoidKeywords = config.spamPrevention?.avoidKeywords || [];
   const competitors = config.spamPrevention?.avoidCompetitors || [];
 
-  const prompt = `Analyze this tweet from a crypto KOL and determine if it's appropriate to reply mentioning BWS as a microcap opportunity with real fundamentals.
+  // ✂️ OPTIMIZED: Convert engagement to tier instead of exact numbers
+  const likes = tweet.public_metrics?.likes || tweet.public_metrics?.like_count || 0;
+  const engagement = likes < 50 ? 'low' : likes < 500 ? 'medium' : 'high';
 
-KOL Profile:
-- Username: @${kolProfile.username}
-- Followers: ${kolProfile.followersCount || 0}
-- Topics: ${kolProfile.recentTopics?.join(', ') || 'N/A'}
+  const prompt = `Analyze if this tweet is suitable for replying with BWS as a microcap opportunity.
 
-Tweet:
-"${tweet.text}"
+KOL: @${kolProfile.username} (${kolProfile.followersCount || 0} followers)
+Tweet: "${tweet.text}"
+Engagement: ${engagement}
 
-Posted: ${tweet.created_at}
-Likes: ${tweet.public_metrics?.likes || tweet.public_metrics?.like_count || 0}
-Retweets: ${tweet.public_metrics?.retweets || tweet.public_metrics?.retweet_count || 0}
-Replies: ${tweet.public_metrics?.replies || tweet.public_metrics?.reply_count || 0}
-
-BWS Products (real utility being built):
+BWS Products:
 ${productsInfo}
 
-**NEW STRATEGY**: We are looking for tweets about MARKET TRENDS, ALTCOINS, GEM HUNTING, or PORTFOLIO BUILDING where we can naturally mention BWS as a microcap opportunity with real products and long-term vision.
+**HIGH RELEVANCE (75-95%)**: Market trends, altcoin season, microcap gems, portfolio building, crypto project launches, investment strategies
 
-HIGH RELEVANCE TOPICS (Score 75-95%):
-- Market trends and crypto market cycles
-- Altcoin discussions and altcoin season
-- Microcap gems / low-cap opportunities
-- Portfolio building and diversification
-- New crypto project launches or project discovery
-- Bull/bear market sentiment and positioning
-- "Hidden gem" or undervalued project discussions
-- Crypto investment strategies
-- Project fundamentals and team discussions
+**MEDIUM (40-70%)**: General crypto sentiment, trading psychology, blockchain tech
 
-MEDIUM RELEVANCE (Score 40-70%):
-- General crypto sentiment and market commentary
-- Trading psychology with long-term investment angle
-- Blockchain technology discussions
+**LOW (0-35%)**: Day trading only, stocks, off-topic, giveaways, tweets with [${avoidKeywords.slice(0, 3).join(', ')}], competitors [${competitors.slice(0, 2).join(', ')}]
 
-LOW RELEVANCE (Score 0-35%):
-- Pure day trading / technical analysis with no project discussion
-- Traditional stocks only (no crypto context)
-- Completely off-topic (politics, food, sports)
-- Promotional posts (giveaways, airdrops, shilling other projects)
-- Tweets containing: ${avoidKeywords.join(', ')}
-- Tweets mentioning competitors: ${competitors.join(', ')}
+**SKIP IF**: Negative crypto sentiment, pure price speculation, already shilling another project
 
-SPAM AVOIDANCE:
-- Skip if tweet is angry/negative sentiment toward crypto
-- Skip pure price speculation with no project discussion
-- Skip if KOL is shilling a specific project already (don't compete)
-
-Provide JSON response:
+JSON response:
 {
   "shouldReply": true/false,
   "relevanceScore": 0-100,
