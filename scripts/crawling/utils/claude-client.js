@@ -200,66 +200,51 @@ NOT RELEVANT (return false):
  * Evaluate if a tweet is suitable for reply
  */
 export async function evaluateTweetForReply(client, tweet, kolProfile, bwsProducts, config) {
-  const productsInfo = Object.entries(bwsProducts).map(([name, prod]) => {
+  // ✂️ OPTIMIZED: Pre-filter products by keyword matching
+  const tweetLower = tweet.text.toLowerCase();
+  const relevantProducts = Object.entries(bwsProducts).filter(([name, prod]) => {
+    // Check if any product keyword appears in tweet
+    return prod.keywords.some(kw => tweetLower.includes(kw.toLowerCase()));
+  });
+
+  // If no products match, send top 3 general products, otherwise send matched products (max 3)
+  const productsToSend = relevantProducts.length > 0
+    ? relevantProducts.slice(0, 3)
+    : Object.entries(bwsProducts).slice(0, 3);
+
+  const productsInfo = productsToSend.map(([name, prod]) => {
+    // ✂️ OPTIMIZED: Limit to 2 use cases only
     const useCases = prod.useCases && prod.useCases.length > 0
-      ? `\nUse Cases: ${prod.useCases.slice(0, 3).join('; ')}`
+      ? ` | Use Cases: ${prod.useCases.slice(0, 2).join('; ')}`
       : '';
-    return `${name} (${prod.category}): ${prod.description}${useCases}\nKeywords: ${prod.keywords.join(', ')}`;
-  }).join('\n\n');
+    return `${name} (${prod.category}): ${prod.description}${useCases}`;
+  }).join('\n');
 
   const avoidKeywords = config.spamPrevention?.avoidKeywords || [];
   const competitors = config.spamPrevention?.avoidCompetitors || [];
 
-  const prompt = `Analyze this tweet from a crypto KOL and determine if it's appropriate to reply mentioning BWS as a microcap opportunity with real fundamentals.
+  // ✂️ OPTIMIZED: Convert engagement to tier instead of exact numbers
+  const likes = tweet.public_metrics?.likes || tweet.public_metrics?.like_count || 0;
+  const engagement = likes < 50 ? 'low' : likes < 500 ? 'medium' : 'high';
 
-KOL Profile:
-- Username: @${kolProfile.username}
-- Followers: ${kolProfile.followersCount || 0}
-- Topics: ${kolProfile.recentTopics?.join(', ') || 'N/A'}
+  const prompt = `Analyze if this tweet is suitable for replying with BWS as a microcap opportunity.
 
-Tweet:
-"${tweet.text}"
+KOL: @${kolProfile.username} (${kolProfile.followersCount || 0} followers)
+Tweet: "${tweet.text}"
+Engagement: ${engagement}
 
-Posted: ${tweet.created_at}
-Likes: ${tweet.public_metrics?.likes || tweet.public_metrics?.like_count || 0}
-Retweets: ${tweet.public_metrics?.retweets || tweet.public_metrics?.retweet_count || 0}
-Replies: ${tweet.public_metrics?.replies || tweet.public_metrics?.reply_count || 0}
-
-BWS Products (real utility being built):
+BWS Products:
 ${productsInfo}
 
-**NEW STRATEGY**: We are looking for tweets about MARKET TRENDS, ALTCOINS, GEM HUNTING, or PORTFOLIO BUILDING where we can naturally mention BWS as a microcap opportunity with real products and long-term vision.
+**HIGH RELEVANCE (75-95%)**: Market trends, altcoin season, microcap gems, portfolio building, crypto project launches, investment strategies
 
-HIGH RELEVANCE TOPICS (Score 75-95%):
-- Market trends and crypto market cycles
-- Altcoin discussions and altcoin season
-- Microcap gems / low-cap opportunities
-- Portfolio building and diversification
-- New crypto project launches or project discovery
-- Bull/bear market sentiment and positioning
-- "Hidden gem" or undervalued project discussions
-- Crypto investment strategies
-- Project fundamentals and team discussions
+**MEDIUM (40-70%)**: General crypto sentiment, trading psychology, blockchain tech
 
-MEDIUM RELEVANCE (Score 40-70%):
-- General crypto sentiment and market commentary
-- Trading psychology with long-term investment angle
-- Blockchain technology discussions
+**LOW (0-35%)**: Day trading only, stocks, off-topic, giveaways, tweets with [${avoidKeywords.slice(0, 3).join(', ')}], competitors [${competitors.slice(0, 2).join(', ')}]
 
-LOW RELEVANCE (Score 0-35%):
-- Pure day trading / technical analysis with no project discussion
-- Traditional stocks only (no crypto context)
-- Completely off-topic (politics, food, sports)
-- Promotional posts (giveaways, airdrops, shilling other projects)
-- Tweets containing: ${avoidKeywords.join(', ')}
-- Tweets mentioning competitors: ${competitors.join(', ')}
+**SKIP IF**: Negative crypto sentiment, pure price speculation, already shilling another project
 
-SPAM AVOIDANCE:
-- Skip if tweet is angry/negative sentiment toward crypto
-- Skip pure price speculation with no project discussion
-- Skip if KOL is shilling a specific project already (don't compete)
-
-Provide JSON response:
+JSON response:
 {
   "shouldReply": true/false,
   "relevanceScore": 0-100,
@@ -787,36 +772,34 @@ export async function generateReplyText(client, tweet, kolProfile, product, eval
   const selectedTemplate = selectReplyTemplate(recentReplies);
   const recentTemplateIds = extractTemplateIds(recentReplies.slice(0, 5));
 
+  // ✂️ OPTIMIZED: Limit to top 2 use cases only
   const useCasesText = product.useCases && Array.isArray(product.useCases) && product.useCases.length > 0
-    ? `\nUse Cases:\n${product.useCases.slice(0, 4).map(u => `- ${u}`).join('\n')}`
+    ? `\nTop Use Cases: ${product.useCases.slice(0, 2).join('; ')}`
     : '';
 
-  const implementationText = product.implementationSteps && Array.isArray(product.implementationSteps) && product.implementationSteps.length > 0
-    ? `\nHow it works:\n${product.implementationSteps.slice(0, 3).map(s => `- ${s.title || s.description || s}`).join('\n')}`
-    : '';
+  // ✂️ OPTIMIZED: Remove implementation steps (not used in 270-char replies)
 
   // Load product highlights for more specific features
   const highlights = loadProductHighlights();
   const productHighlight = highlights.productHighlights[product.name];
 
+  // ✂️ OPTIMIZED: Limit to top 3 features only, no angles
   let specificFeaturesText = '';
   if (productHighlight) {
-    const features = productHighlight.specificFeatures.slice(0, 5).map(f => `- ${f}`).join('\n');
-    const angles = productHighlight.uniqueAngles.slice(0, 3).map(a => `- ${a}`).join('\n');
-    specificFeaturesText = `\n\n**Specific ${product.name} Features** (use 1-2 of these for variety):\n${features}\n\n**Unique Positioning Angles**:\n${angles}`;
+    const features = productHighlight.specificFeatures.slice(0, 3).map(f => `- ${f}`).join('\n');
+    specificFeaturesText = `\n**Key Features** (use 1-2):\n${features}`;
   }
 
-  const productInfo = `${product.description || product.name || 'BWS Product'}${useCasesText}${implementationText}${specificFeaturesText}
+  const productInfo = `${product.description || product.name || 'BWS Product'}${useCasesText}${specificFeaturesText}`;
 
-Documentation: ${product.url || 'https://docs.bws.ninja'}`;
+  const specialNotesSection = specialNotes ? `\n${specialNotes}` : '';
 
-  const specialNotesSection = specialNotes ? `\n\n${specialNotes}` : '';
-
-  // Build recent replies context for diversity (last 10 replies)
+  // ✂️ OPTIMIZED: Send only patterns from last 5 replies (not full text)
   const recentRepliesContext = recentReplies.length > 0
-    ? `\n\n**RECENT REPLIES CONTEXT** (CRITICAL - avoid these patterns/phrases/structures):\n${recentReplies.slice(0, 10).map((r, idx) =>
-      `${idx + 1}. [${r.timestamp ? new Date(r.timestamp).toLocaleDateString() : 'recent'}] Product: ${r.productMentioned}\n   Reply: "${r.replyText}"\n`
-    ).join('')}`
+    ? `\n**Recent Reply Patterns** (avoid repeating):\n${recentReplies.slice(0, 5).map((r, idx) => {
+      const opening = r.replyText ? r.replyText.split('\n')[0].substring(0, 30) + '...' : 'N/A';
+      return `${idx + 1}. Product: ${r.productMentioned || 'Platform'} | Opening: "${opening}"`;
+    }).join('\n')}`
     : '';
 
   // Select link URL (75% product docs, 25% main site)
@@ -825,136 +808,42 @@ Documentation: ${product.url || 'https://docs.bws.ninja'}`;
   // Build template-specific instructions
   const templateInstructions = buildTemplateInstructions(selectedTemplate, recentTemplateIds, highlights);
 
-  const prompt = `Generate a natural reply positioning BWS as a ${positioningPhrase}.
+  const prompt = `Generate a 270-character reply positioning BWS as a ${positioningPhrase}.
 
-KOL's Tweet:
-"${tweet.text}"
+Tweet: "${tweet.text}"
 
-BWS Product to Reference:
-${product.name || 'BWS Solution'}
-URL: ${replyLink}
-
-Product Details:
+Product: ${product.name || 'BWS Solution'}
 ${productInfo}${specialNotesSection}
 
-Context from Analysis:
-- Suggested Angle: ${evaluation.suggestedAngle}
-- Tweet Category: ${evaluation.tweetCategory}${recentRepliesContext}
+Context: ${evaluation.suggestedAngle} (${evaluation.tweetCategory})${recentRepliesContext}
 
-**CONTENT DIVERSITY REQUIREMENTS** (CRITICAL - read recent replies carefully):
-${recentReplies.length > 0 ? `
-You have ${recentReplies.length} recent replies above. Your NEW reply MUST:
-1. Use DIFFERENT opening phrases (don't start with same words as recent replies)
-2. Highlight DIFFERENT product features (pick specific features from the list, don't use generic statements)
-3. Use DIFFERENT sentence structures and flow
-4. Vary between problem-solution, feature-benefit, use-case, technical detail approaches
-5. Mix high-level platform positioning with specific technical capabilities
-
-**SPECIFIC vs GENERIC - USE SPECIFIC FEATURES**:
-❌ BAD (generic): "$BWS X Bot provides verifiable KOL analytics using official X API"
-✅ GOOD (specific): "$BWS X Bot tracks engagement rates across 100+ KOLs simultaneously with bot farm detection through pattern analysis"
-
-❌ BAD (generic): "$BWS Fan Game Cube creates revenue streams for sports clubs"
-✅ GOOD (specific): "Fans own digital field sections as NFTs - earn points when game events happen at their location, creating new monetization for clubs"
-
-USE THE SPECIFIC FEATURES LIST ABOVE - pick 1-2 unique features to highlight!
-` : 'Create a unique, engaging reply using specific product features from the list above.'}
-
-**POSITIONING STRATEGY**: Focus on the angle "${positioningPhrase}". Vary your approach based on:
-- The KOL's tweet context and sentiment
-- Recent replies (avoid repeating similar structures/products/phrases)
-- The specific BWS product's strengths and SPECIFIC FEATURES listed above
-- Natural conversation flow (don't force positioning if it doesn't fit)
-
-**CRITICAL: PLATFORM vs PRODUCT POSITIONING**
-Choose ONE approach per reply:
-
-A) **PLATFORM-LEVEL** (when tweet is about general market/trends/gems):
-   - Position BWS as "Blockchain Solutions Marketplace"
-   - Mention "platform containing multiple solutions targeting mass markets"
-   - Use phrases like: "multiple live products", "suite of blockchain solutions", "AWS-style platform for Web3"
-   - DO NOT mention single product details (sports clubs, credentials, etc.)
-   - Example: "$BWS operates a Blockchain Solutions Marketplace with multiple products targeting mass markets - real utility, consistent delivery"
-
-B) **PRODUCT-SPECIFIC** (when tweet clearly relates to ONE BWS product):
-   - Mention the specific product AND its specific features
-   - Include product-specific details (sports clubs for SportsBlock, credentials for CredBlock, etc.)
-   - Link directly to that product's docs page
-   - Example: "$BWS CredBlock enables verifiable credentials on-chain - sports clubs already using it for fan verification"
-
-**DEFAULT to PLATFORM-LEVEL unless the tweet is CLEARLY about a specific use case that matches ONE BWS product.**
 ${templateInstructions}
 
-**GENERAL REPLY GUIDELINES** (Apply to all templates):
-1. **CRITICAL - CHARACTER LIMIT**: Total reply MUST be under 270 characters (leaving 10-char buffer). Count EVERYTHING: text, spaces, line breaks, @mentions, $BWS, hashtags, URLs. If you cannot fit all elements under 270 chars, reduce description length or use fewer hashtags. This is NON-NEGOTIABLE.
-2. Use conversational brand voice - be transparent this is BWS (the company) speaking
-3. **CRITICAL**: NEVER use "I" - use "we" or third-person "BWS". This is BWS team/company account.
-4. **REQUIRED**: Include "$BWS" cashtag somewhere in the reply
-   ⚠️  **$BWS POSITIONING VARIES BY TEMPLATE** - Follow the template's cashtag placement instructions EXACTLY:
-   - Some templates start with "$BWS" immediately
-   - Some templates mention product name FIRST, then $BWS later
-   - Check the template instructions above for the EXACT positioning rule
-5. **REQUIRED**: Include "@BWSCommunity" in the closing line
-6. **CRITICAL - MUST INCLUDE LINK**: End reply with the URL provided above: ${replyLink}
-   - Place link at the very end after @BWSCommunity and hashtags
-   - This link is REQUIRED in every reply - do not omit it
-7. **HASHTAGS**: Use 2-3 SHORT hashtags max (e.g., #altcoins #gems #microcap #crypto). If approaching char limit, use only 1-2 hashtags.
-8. NO salesy language: avoid "amazing", "revolutionary", "don't miss", "moon"
-9. **CRITICAL**: Follow the TEMPLATE STRUCTURE above EXACTLY - especially the $BWS placement rule - this is the most important requirement
-10. **BREVITY**: Keep product description to ONE concise sentence (15-20 words max). Prioritize clarity over detail. Remove filler words.
+**REPLY RULES**:
+1. MUST be under 270 chars total
+2. Use "we" or "BWS" (never "I")
+3. Include: $BWS cashtag + @BWSCommunity + ${replyLink}
+4. Use 2-3 hashtags: #altcoins #gems #microcap #crypto
+5. ${recentReplies.length > 0 ? 'Use DIFFERENT opening/features than recent replies above' : 'Use specific features from Key Features list'}
+6. NO salesy language ("amazing", "revolutionary", "moon")
 
-Examples of PLATFORM-LEVEL positioning (for general market/trends tweets):
+**POSITIONING**: Default to PLATFORM-LEVEL ("Blockchain Solutions Marketplace with multiple products") unless tweet clearly matches ONE product use case.
 
-Example 1:
-"Great point about microcap opportunities in this market cycle.
+Examples:
 
-$BWS operates a Blockchain Solutions Marketplace with multiple products targeting mass markets - real utility, consistent delivery regardless of market conditions.
+Platform: "$BWS operates a Blockchain Solutions Marketplace - multiple products targeting mass markets with real utility and consistent delivery.
 
-@BWSCommunity #microcap #altcoins #crypto https://www.bws.ninja"
+@BWSCommunity #microcap #altcoins https://www.bws.ninja"
 
-Example 2:
-"Totally agree - fundamentals matter more than ever right now.
+Product-Specific: "$BWS Fan Game Cube: fans own digital field sections as NFTs, earn rewards during live games. Real utility for sports clubs.
 
-$BWS brings AWS-style reliability to blockchain with multiple live solutions including credentials, ESG reporting, NFT APIs, and fan engagement platforms.
+@BWSCommunity #sports #GameFi https://docs.bws.ninja/marketplace-solutions/bws.nft.gamecube"
 
-@BWSCommunity #blockchain #Web3 #gems https://www.bws.ninja"
-
-Example 3:
-"This is why projects with real revenue models stand out in bear markets.
-
-$BWS keeps shipping multiple blockchain solutions: API services, marketplace solutions, and mass-market tools. Building through all cycles.
-
-@BWSCommunity #DeFi #altcoins #fundamentals https://www.bws.ninja"
-
-Examples of PRODUCT-SPECIFIC positioning (when tweet matches a specific use case):
-
-Example 1 (Sports/Gaming):
-"Fan engagement is huge for sports clubs - totally underserved market.
-
-$BWS Fan Game Cube enables fans to own digital field sections and earn rewards during live games. Already live across multiple sports with real utility.
-
-@BWSCommunity #sports #GameFi #NFT https://docs.bws.ninja/marketplace-solutions/bws.nft.gamecube"
-
-Example 2 (Credentials/Identity):
-"Verifiable credentials are essential for Web3's next phase.
-
-$BWS Blockchain Badges provides secure digital credential issuance on blockchain - trusted, immutable, cross-platform. Used by educational institutions and enterprises.
-
-@BWSCommunity #Web3 #credentials #blockchain https://docs.bws.ninja/marketplace-solutions/bws.blockchain.badges"
-
-Example 3 (ESG/Enterprise):
-"ESG reporting transparency is a massive opportunity for blockchain adoption.
-
-$BWS ESG Credits helps financial institutions deliver environmental impact reporting with ICMA framework support - immutable, transparent, compliant.
-
-@BWSCommunity #ESG #blockchain #fintech https://docs.bws.ninja/marketplace-solutions/bws.esg.credits"
-
-Provide JSON response:
+JSON response:
 {
-  "replyText": "The actual reply text with URL",
+  "replyText": "Full reply with URL",
   "tone": "insightful/authentic/community-focused",
-  "primaryHook": "What makes this reply relevant to their tweet",
-  "alternativeVersion": "A slightly different version if the first seems off"
+  "primaryHook": "Why relevant to their tweet"
 }`;
 
   // === OPTION C: Use Haiku model if configured ===
