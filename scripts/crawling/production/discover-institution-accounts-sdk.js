@@ -378,6 +378,32 @@ async function searchAndExtractAccounts(client, product, query, config) {
 
   } catch (error) {
     console.error(`   ❌ Error in discovery: ${error.message}`);
+
+    // Detect Oxylabs data exhaustion (navigation timeouts, proxy connection failures)
+    const isOxylabsExhausted =
+      error.message?.includes('Navigation timed out') ||
+      error.message?.includes('Target page, context or browser has been closed') ||
+      error.message?.includes('net::ERR_PROXY_CONNECTION_FAILED') ||
+      error.message?.includes('net::ERR_TUNNEL_CONNECTION_FAILED');
+
+    if (isOxylabsExhausted && client.webhookManager) {
+      // Send Zapier notification about Oxylabs exhaustion
+      console.log(`   🚨 Detected Oxylabs proxy exhaustion - sending alert...`);
+      try {
+        await client.webhookManager.send('error', {
+          type: 'oxylabs_data_exhausted',
+          message: 'Oxylabs proxy bandwidth exhausted - navigation timeouts detected',
+          error: error.message,
+          product,
+          query: query.name,
+          timestamp: new Date().toISOString(),
+          action_required: 'Purchase more Oxylabs data or wait for bandwidth reset'
+        });
+      } catch (webhookError) {
+        console.error(`   ⚠️  Failed to send Oxylabs exhaustion alert: ${webhookError.message}`);
+      }
+    }
+
     return [];
   }
 }
@@ -515,7 +541,12 @@ async function discoverInstitutionAccounts() {
     },
 
     proxy: (crawlerConfig?.proxy?.enabled && !process.env.GITHUB_ACTIONS) ? {
+      enabled: true,
       provider: crawlerConfig.proxy.provider,
+      host: crawlerConfig.proxy.host,
+      port: crawlerConfig.proxy.port,
+      country: crawlerConfig.proxy.country,
+      stickySession: crawlerConfig.proxy.sessionType === 'sticky',
       username: process.env.OXYLABS_USERNAME || crawlerConfig.proxy.username,
       password: process.env.OXYLABS_PASSWORD || crawlerConfig.proxy.password
     } : undefined,
