@@ -7,8 +7,8 @@
     "port": 7777,
     "country": "es",
     "sessionType": "sticky",
-    "username": "github_ZDKqq",
-    "password": "G_xer7PTbXsBY38"
+    "username": "nachocoll_qX9vp",
+    "password": "Af2+qBDZnsZhj14="
   },
   "rotation": {
     "strategy": "round-robin",
@@ -23,9 +23,9 @@
       "status": "active",
       "suspended": false,
       "cookies": {
-        "auth_token": "9386fb4929bdcde93dde9ec5080be6c91d4d32b5",
-        "ct0": "b35eea4d4ca9739f01582cfcb86d9f0cd4ce7a6368efa4de1e7e2ec76e1761fadf22929b86bc982dddee227bc11cb2ea09e6203ecd2bd49e65ecbb992c8decc052bc38457a80858d43ef04edaab903b0",
-        "guest_id": "v1%3A176738265007624451"
+        "auth_token": "ef7857cc701a4d58c39327fa3f78f8d5696ea232",
+        "ct0": "ac5f9659e4d1cbe2bae581ec6d26723acc5a338baccc7298b88f369a4eec5dafaf21b2f0c166db3a6e6592747befc67dc919799666cdb98623c5364c709176f4a8135ce7c369c2f4bcd3ef0b88aa09ee",
+        "guest_id": "v1%3A176849878728461452"
       },
       "usageCount": 5,
       "lastUsed": "2025-11-24T10:43:15.448Z",
@@ -40,9 +40,9 @@
       "status": "active",
       "suspended": false,
       "cookies": {
-        "auth_token": "5c0e2a44ace6af3415293b40f29d3119723d77d3",
-        "ct0": "1828cca4c92133da15e80b392a7c7ace4c7bfb3c4abcd1d314b08ee98698acd0bca76a1a6ace969fc0de1a2db9f04569a577aa2883d2ad0d60912701138d64cdfbb4ffcc273256fe1539f15ef5e9acb7",
-        "guest_id": "v1%3A176738366719032825"
+        "auth_token": "7948e31fc3098c9a667b21cc64d0705d4f2c82fa",
+        "ct0": "0990510e5e7aceed5acfd80039aace86acfadd02bbaf576112548abddcc0c02c63ea6f8346a3e21ee7be1b0140d1102b1912a8c2f85267ebfacc81c66df276e41475c168182f2879a9aa797ce6bb1077",
+        "guest_id": "v1%3A176849903757973515"
       },
       "usageCount": 0,
       "lastUsed": "2025-11-24T10:43:15.448Z",
@@ -58,9 +58,9 @@
       "status": "active",
       "suspended": false,
       "cookies": {
-        "auth_token": "8d4698b14c3860c2410588ab1e574b341db22a09",
-        "ct0": "89c072e33f88f86fd61f1c6391d0884b6de8157e65f23b65ba9f54167c97f30740c006b308ff6b350399fa5d7cd4b62dbcc676a45dd8238ec97ec0e2a260a87b53c8b96f0f31ee9823b2cd12f7e8d5e6",
-        "guest_id": "v1%3A176738375832856985"
+        "auth_token": "1291881668a0e4f5c812b13df21482eca5fc8469",
+        "ct0": "3e04f9fd300aec7a7b5e40267e77890a9488a5f2d7fba32e5370d7cd664be792094641cafa105e686d8375167ed4cba1e84a08983275e32520a4ac290024743d002ea0ae40074eccb3af413b50f2eab5",
+        "guest_id": "v1%3A176849914574431131"
       },
       "usageCount": 0,
       "lastUsed": "2025-11-24T10:43:15.448Z",
