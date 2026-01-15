@@ -540,7 +540,7 @@ async function discoverInstitutionAccounts() {
       }]
     },
 
-    proxy: (crawlerConfig?.proxy?.enabled && !process.env.GITHUB_ACTIONS) ? {
+    proxy: crawlerConfig?.proxy?.enabled ? {
       enabled: true,
       provider: crawlerConfig.proxy.provider,
       host: crawlerConfig.proxy.host,
