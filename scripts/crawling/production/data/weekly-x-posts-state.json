@@ -1,7 +1,7 @@
 {
-  "lastPostTimestamp": "2026-01-09T14:07:54.540Z",
-  "lastPostUrl": "https://x.com/BWSCommunity/status/2009628199114948769",
-  "lastPostId": "2009628199114948769",
+  "lastPostTimestamp": "2026-01-15T14:08:43.754Z",
+  "lastPostUrl": "https://x.com/BWSCommunity/status/2011802732726776038",
+  "lastPostId": "2011802732726776038",
   "lookbackDays": 14,
   "posts": [
     {
@@ -144,6 +144,25 @@
       "daysSinceLastPost": 6,
       "lookbackDays": 14,
       "characterCount": 1121
+    },
+    {
+      "timestamp": "2026-01-15T14:08:43.754Z",
+      "postId": "2011802732726776038",
+      "url": "https://x.com/BWSCommunity/status/2011802732726776038",
+      "repositories": [
+        {
+          "repo": "blockchain-web-services/docs.bws.ninja",
+          "product": "BWS Documentation",
+          "commits": 8,
+          "features": 3,
+          "fixes": 0,
+          "improvements": 5
+        }
+      ],
+      "totalItems": 8,
+      "daysSinceLastPost": 6,
+      "lookbackDays": 14,
+      "characterCount": 1126
     }
   ]
 }
