@@ -377,13 +377,433 @@
       "expiresAt": "2026-01-28T07:26:42.817Z",
       "source": "timeline_monitor",
       "contentCategory": "market-trends"
+    },
+    {
+      "id": "2014029678130892936",
+      "text": "@CaptToblerone $SCRT will catch a bid next",
+      "author": {
+        "id": "4441279246",
+        "username": "IncomeSharks"
+      },
+      "public_metrics": {
+        "likes": 4,
+        "retweets": 1,
+        "replies": 0,
+        "quotes": 0,
+        "views": 892
+      },
+      "url": "https://twitter.com/IncomeSharks/status/2014029678130892936",
+      "processed": false,
+      "addedAt": "2026-01-21T18:06:23.637Z",
+      "expiresAt": "2026-01-28T18:06:23.637Z",
+      "source": "timeline_monitor",
+      "contentCategory": "altcoin-talk"
+    },
+    {
+      "id": "2014017974651457628",
+      "text": "@CryptoBoss1984 Think a lot are sidelined on this one, a lot of hate in the comments on a great entry.",
+      "author": {
+        "id": "4441279246",
+        "username": "IncomeSharks"
+      },
+      "public_metrics": {
+        "likes": 6,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 1161
+      },
+      "url": "https://twitter.com/IncomeSharks/status/2014017974651457628",
+      "processed": false,
+      "addedAt": "2026-01-21T18:06:33.753Z",
+      "expiresAt": "2026-01-28T18:06:33.753Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "2014015117227442221",
+      "text": "@eliz883 Not only retraced the dip but higher. Hard to fade that kind of volume, even if it's a mid to short term pump",
+      "author": {
+        "id": "4441279246",
+        "username": "IncomeSharks"
+      },
+      "public_metrics": {
+        "likes": 14,
+        "retweets": 0,
+        "replies": 2,
+        "quotes": 0,
+        "views": 2741
+      },
+      "url": "https://twitter.com/IncomeSharks/status/2014015117227442221",
+      "processed": false,
+      "addedAt": "2026-01-21T18:06:40.550Z",
+      "expiresAt": "2026-01-28T18:06:40.550Z",
+      "source": "timeline_monitor",
+      "contentCategory": "technical-analysis"
+    },
+    {
+      "id": "2013979302715421051",
+      "text": "Still pretty afk today, looks like there could be some relief move here but I'm still mostly out of active trades right now. Will fire soon though. Probably keeping trades short in general and not going for the Homerun",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "likes": 45,
+        "retweets": 2,
+        "replies": 10,
+        "quotes": 0,
+        "views": 3964
+      },
+      "url": "https://twitter.com/AltcoinSherpa/status/2013979302715421051",
+      "processed": false,
+      "addedAt": "2026-01-21T18:07:00.605Z",
+      "expiresAt": "2026-01-28T18:07:00.605Z",
+      "source": "timeline_monitor",
+      "contentCategory": "technical-analysis"
+    },
+    {
+      "id": "2013936925371937055",
+      "text": "1 coin I'm looking at is $CHZ. It's slowly grinding down but it's been one of the stronger coins the last few weeks and I think people are forgetting about it. I'm looking to buy around $0.049 area and see what happens. https://t.co/zvU5NHQPAt",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "likes": 53,
+        "retweets": 3,
+        "replies": 21,
+        "quotes": 0,
+        "views": 5307
+      },
+      "url": "https://twitter.com/AltcoinSherpa/status/2013936925371937055",
+      "processed": false,
+      "addedAt": "2026-01-21T18:07:03.748Z",
+      "expiresAt": "2026-01-28T18:07:03.748Z",
+      "source": "timeline_monitor",
+      "contentCategory": "price-speculation"
+    },
+    {
+      "id": "2013936646408847807",
+      "text": "@Arthur_0x Yeah but trading on there is horrific (but its still my primary trading venue )",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "likes": 7,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 1416
+      },
+      "url": "https://twitter.com/AltcoinSherpa/status/2013936646408847807",
+      "processed": false,
+      "addedAt": "2026-01-21T18:07:05.793Z",
+      "expiresAt": "2026-01-28T18:07:05.793Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "2013936152424628371",
+      "text": "Was looking at a few trades last night, $AXS and $PIPPIN were two of them but didn't take either. Both are doing pretty well and I think that PIPPIN could be one to watch (you have to look onchain though). I'm still currently pretty flat everywhere.\n \nTG=https://t.co/gqbPj8ihOe https://t.co/eGX2XAdXGv",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "likes": 22,
+        "retweets": 0,
+        "replies": 8,
+        "quotes": 0,
+        "views": 4185
+      },
+      "url": "https://twitter.com/AltcoinSherpa/status/2013936152424628371",
+      "processed": false,
+      "addedAt": "2026-01-21T18:07:07.763Z",
+      "expiresAt": "2026-01-28T18:07:07.763Z",
+      "source": "timeline_monitor",
+      "contentCategory": "altcoin-talk"
+    },
+    {
+      "id": "2014029978191458724",
+      "text": "MISSED GETTING IN ON KALSHI OR POLYMARKET AT THE GROUND FLOOR? 😤  \n\nWish you could’ve been the first degen to ape into the next big prediction market before it blew up?  \n\nThis is your shot.\n\n@ClashPicks BETA can be demo'd in person at @WallstBetsLive -- Miami Beach Convention https://t.co/vpdXsM3QRA https://t.co/m34MnmWTSX",
+      "author": {
+        "id": "877357064724520961",
+        "username": "CryptosR_Us"
+      },
+      "public_metrics": {
+        "likes": 11,
+        "retweets": 5,
+        "replies": 0,
+        "quotes": 0,
+        "views": 2721
+      },
+      "url": "https://twitter.com/CryptosR_Us/status/2014029978191458724",
+      "processed": false,
+      "addedAt": "2026-01-21T18:07:13.187Z",
+      "expiresAt": "2026-01-28T18:07:13.187Z",
+      "source": "timeline_monitor",
+      "contentCategory": "project-discussion"
+    },
+    {
+      "id": "2014008083836506195",
+      "text": "TRUMP’S CRYPTO CZAR PREDICTS MARKET STRUCTURE BILL WILL PASS ; BANKS TO EMBRACE CRYPTO\n\nDavid Sacks said live at Davos that once the market structure bill passes, banks will fully adopt crypto.\n\nWall Street moving toward $BTC isn’t a matter of if, but when.  \n\nOver time, https://t.co/D8nfCwp0lT https://t.co/jFl0zskALv",
+      "author": {
+        "id": "877357064724520961",
+        "username": "CryptosR_Us"
+      },
+      "public_metrics": {
+        "likes": 86,
+        "retweets": 16,
+        "replies": 9,
+        "quotes": 0,
+        "views": 9623
+      },
+      "url": "https://twitter.com/CryptosR_Us/status/2014008083836506195",
+      "processed": false,
+      "addedAt": "2026-01-21T18:07:15.242Z",
+      "expiresAt": "2026-01-28T18:07:15.242Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "2013995068437197208",
+      "text": "BTQ ISN'T WAITING FOR QUANTUM ATTACKS -- THEIR CHIP IS ALREADY IN VALIDATION\n\n$BTQ just hit a major milestone: Their QCIM post-quantum crypto chip is now entering silicon validation with ITRI -- the world-class Taiwanese research powerhouse that helped birth $TSMC.\n\nThis isn’t https://t.co/1iFHMK129B",
+      "author": {
+        "id": "877357064724520961",
+        "username": "CryptosR_Us"
+      },
+      "public_metrics": {
+        "likes": 29,
+        "retweets": 2,
+        "replies": 8,
+        "quotes": 0,
+        "views": 5527
+      },
+      "url": "https://twitter.com/CryptosR_Us/status/2013995068437197208",
+      "processed": false,
+      "addedAt": "2026-01-21T18:07:17.228Z",
+      "expiresAt": "2026-01-28T18:07:17.228Z",
+      "source": "timeline_monitor",
+      "contentCategory": "project-discussion"
+    },
+    {
+      "id": "2013986490263507332",
+      "text": "🚨 PRESIDENT TRUMP SAYS HE HOPES TO SIGN THE CRYPTO BILL SOON.\n\nSpeaking at the World Economic Forum, Trump emphasizes crypto's rising political appeal and the need for the U.S. to counter China's dominance.\n\n\"I am working to ensure that America remains the crypto capital of the https://t.co/5LOR97SHMw",
+      "author": {
+        "id": "877357064724520961",
+        "username": "CryptosR_Us"
+      },
+      "public_metrics": {
+        "likes": 357,
+        "retweets": 58,
+        "replies": 18,
+        "quotes": 5,
+        "views": 19615
+      },
+      "url": "https://twitter.com/CryptosR_Us/status/2013986490263507332",
+      "processed": false,
+      "addedAt": "2026-01-21T18:07:20.911Z",
+      "expiresAt": "2026-01-28T18:07:20.911Z",
+      "source": "timeline_monitor",
+      "contentCategory": "news"
+    },
+    {
+      "id": "2013964043493548504",
+      "text": "$MSTR MAY HAVE FOUND A BOTTOM: TD COWEN TARGETS $440  \n\n $15B investment bank TD Cowen analyst Lance Vitanza reiterates Buy on $BTC focused treasury company $MSTR, with a price target of $440.   \n\nTrading today at $160, that implies a potential 2.75x return. They clearly see https://t.co/WkZEcq9hw9 https://t.co/Mrb3QdbtAD",
+      "author": {
+        "id": "877357064724520961",
+        "username": "CryptosR_Us"
+      },
+      "public_metrics": {
+        "likes": 76,
+        "retweets": 22,
+        "replies": 7,
+        "quotes": 3,
+        "views": 8552
+      },
+      "url": "https://twitter.com/CryptosR_Us/status/2013964043493548504",
+      "processed": false,
+      "addedAt": "2026-01-21T18:07:21.970Z",
+      "expiresAt": "2026-01-28T18:07:21.970Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "2013935870202499121",
+      "text": "DELAWARE LIFE INSURANCE MAKES BITCOIN ANNUITIES REAL \n\nDelaware Life Insurance becomes the first insurer to offer $BTC exposure inside a Fixed Index Annuity (FIA), managing nearly $60B in assets. \n\n• Partnered with BlackRock\n• Allocation: ~74% S&amp;P 500 ETF, ~25% $IBIT , small https://t.co/XCn9S1v4OF",
+      "author": {
+        "id": "877357064724520961",
+        "username": "CryptosR_Us"
+      },
+      "public_metrics": {
+        "likes": 72,
+        "retweets": 24,
+        "replies": 17,
+        "quotes": 0,
+        "views": 4479
+      },
+      "url": "https://twitter.com/CryptosR_Us/status/2013935870202499121",
+      "processed": false,
+      "addedAt": "2026-01-21T18:07:24.457Z",
+      "expiresAt": "2026-01-28T18:07:24.457Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "2013876720492007751",
+      "text": "JUST IN: COINBASE CEO MEETS BIG BANKS AT DAVOS OVER CLARITY ACT   \n\n$90B Coinbase CEO Brian Armstrong is meeting with major bank CEOs to bring them on board with the CLARITY Act.   \n\nArmstrong says Coinbase is already providing crypto infrastructure to 5 of the top 20 banks, as https://t.co/wVsStq7AY4 https://t.co/6Km2URpBXF",
+      "author": {
+        "id": "877357064724520961",
+        "username": "CryptosR_Us"
+      },
+      "public_metrics": {
+        "likes": 268,
+        "retweets": 46,
+        "replies": 33,
+        "quotes": 3,
+        "views": 40358
+      },
+      "url": "https://twitter.com/CryptosR_Us/status/2013876720492007751",
+      "processed": false,
+      "addedAt": "2026-01-21T18:07:28.379Z",
+      "expiresAt": "2026-01-28T18:07:28.379Z",
+      "source": "timeline_monitor",
+      "contentCategory": "news"
+    },
+    {
+      "id": "2013846579904426478",
+      "text": "THIS IS A BIG SHIFT COMING FROM A BIG BANK 👀\n\nSergio Ermotti just said it on CNBC: Blockchain is the future of traditional banking.\n\nThis is the CEO of UBS -- a bank with $6 TRILLION in invested assets and one of the most systemically important banks in the world.\n\nHis framing https://t.co/u6UVC1x5A2",
+      "author": {
+        "id": "877357064724520961",
+        "username": "CryptosR_Us"
+      },
+      "public_metrics": {
+        "likes": 245,
+        "retweets": 49,
+        "replies": 23,
+        "quotes": 5,
+        "views": 17657
+      },
+      "url": "https://twitter.com/CryptosR_Us/status/2013846579904426478",
+      "processed": false,
+      "addedAt": "2026-01-21T18:07:29.858Z",
+      "expiresAt": "2026-01-28T18:07:29.858Z",
+      "source": "timeline_monitor",
+      "contentCategory": "news"
+    },
+    {
+      "id": "2013833334280139195",
+      "text": "Back-to-back #ClashRoyale tournaments 🔥\n\nPros &amp; experts battle and everyone can watch.  $SOL giveaways for spectators too.\n\nWed + Thu • 6PM CT 👑\n\nJoin us 👇\nTournaments: https://t.co/zkbGVYB7oF\nDiscord: https://t.co/fG05IFhRv5 https://t.co/bbsxjf5a8Y",
+      "author": {
+        "id": "877357064724520961",
+        "username": "CryptosR_Us"
+      },
+      "public_metrics": {
+        "likes": 32,
+        "retweets": 8,
+        "replies": 2,
+        "quotes": 0,
+        "views": 7578
+      },
+      "url": "https://twitter.com/CryptosR_Us/status/2013833334280139195",
+      "processed": false,
+      "addedAt": "2026-01-21T18:07:32.436Z",
+      "expiresAt": "2026-01-28T18:07:32.436Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "2013342725446262940",
+      "text": "NEW interviews from Maelstroms Chief  Arthur Hayes The latest insights on Digital Assets Financial Markets and Web3  IssueWire https://t.co/9ls1rc9faW",
+      "author": {
+        "id": "983993370048630785",
+        "username": "CryptoHayes"
+      },
+      "public_metrics": {
+        "likes": 240,
+        "retweets": 15,
+        "replies": 52,
+        "quotes": 2,
+        "views": 88139
+      },
+      "url": "https://twitter.com/CryptoHayes/status/2013342725446262940",
+      "processed": false,
+      "addedAt": "2026-01-21T18:07:41.121Z",
+      "expiresAt": "2026-01-28T18:07:41.121Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends/news"
+    },
+    {
+      "id": "2011696654106444206",
+      "text": "\"Frowny Cloud\" is a chart study of $BTC, gold, and stonks in 2025, and a prediction on how dollar liquidity will expand this year and send $BTC to Valhalla.\n\nhttps://t.co/UvagTQl219 https://t.co/nj5ja6DEmi",
+      "author": {
+        "id": "983993370048630785",
+        "username": "CryptoHayes"
+      },
+      "public_metrics": {
+        "likes": 472,
+        "retweets": 48,
+        "replies": 70,
+        "quotes": 18,
+        "views": 67980
+      },
+      "url": "https://twitter.com/CryptoHayes/status/2011696654106444206",
+      "processed": false,
+      "addedAt": "2026-01-21T18:07:47.237Z",
+      "expiresAt": "2026-01-28T18:07:47.237Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends/price-speculation/technical-analysis"
+    },
+    {
+      "id": "2011524725886103751",
+      "text": "The green dildos feel different.\n\n$RIVER = $100??? https://t.co/7y1jcun7MF",
+      "author": {
+        "id": "983993370048630785",
+        "username": "CryptoHayes"
+      },
+      "public_metrics": {
+        "likes": 411,
+        "retweets": 61,
+        "replies": 137,
+        "quotes": 29,
+        "views": 97555
+      },
+      "url": "https://twitter.com/CryptoHayes/status/2011524725886103751",
+      "processed": false,
+      "addedAt": "2026-01-21T18:07:51.055Z",
+      "expiresAt": "2026-01-28T18:07:51.055Z",
+      "source": "timeline_monitor",
+      "contentCategory": "price-speculation"
+    },
+    {
+      "id": "2011346295622144507",
+      "text": "Giddy up bitches! it's time for $ENA = $1 https://t.co/ECVIawjdb7",
+      "author": {
+        "id": "983993370048630785",
+        "username": "CryptoHayes"
+      },
+      "public_metrics": {
+        "likes": 623,
+        "retweets": 40,
+        "replies": 94,
+        "quotes": 10,
+        "views": 120799
+      },
+      "url": "https://twitter.com/CryptoHayes/status/2011346295622144507",
+      "processed": false,
+      "addedAt": "2026-01-21T18:07:52.956Z",
+      "expiresAt": "2026-01-28T18:07:52.956Z",
+      "source": "timeline_monitor",
+      "contentCategory": "price-speculation"
     }
   ],
   "metadata": {
-    "lastUpdated": "2026-01-21T07:27:46.990Z",
-    "totalPosts": 18,
+    "lastUpdated": "2026-01-21T18:08:57.163Z",
+    "totalPosts": 38,
     "bySource": {
-      "timeline_monitor": 18,
+      "timeline_monitor": 38,
       "search_discovery": 0
     }
   },
