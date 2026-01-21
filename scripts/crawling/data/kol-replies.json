@@ -3577,6 +3577,26 @@
       "status": "posted",
       "dryRun": false,
       "sdkVersion": "1.7.0"
+    },
+    {
+      "id": "877357064724520961-2013876720492007751-1769025553870",
+      "tweetId": "2013876720492007751",
+      "tweetUrl": "https://twitter.com/CryptosR_Us/status/2013876720492007751",
+      "kolId": "877357064724520961",
+      "kolUsername": "CryptosR_Us",
+      "originalTweetText": "JUST IN: COINBASE CEO MEETS BIG BANKS AT DAVOS OVER CLARITY ACT   \n\n$90B Coinbase CEO Brian Armstrong is meeting with major bank CEOs to bring them on board with the CLARITY Act.   \n\nArmstrong says Coinbase is already providing crypto infrastructure to 5 of the top 20 banks, as https://t.co/wVsStq7AY4 https://t.co/6Km2URpBXF",
+      "replyTweetId": "2014065266431300000",
+      "replyText": "$BWS ESG Credits delivers blockchain compliance for green investments. We build real tools financial institutions need, not just talk. @BWSCommunity #crypto https://docs.bws.ninja/marketplace-solutions/bws.esg.credits",
+      "productMentioned": "ESG Credits",
+      "relevanceScore": 78,
+      "templateUsed": "stat_driven",
+      "templateName": "Stat/Fact-Driven Structure",
+      "imageAttached": false,
+      "imagePath": null,
+      "timestamp": "2026-01-21T19:59:13.870Z",
+      "status": "posted",
+      "dryRun": false,
+      "sdkVersion": "1.7.0"
     }
   ],
   "dailyStats": {
@@ -3675,10 +3695,10 @@
     }
   },
   "metadata": {
-    "totalReplies": 186,
-    "successfulReplies": 141,
+    "totalReplies": 187,
+    "successfulReplies": 142,
     "failedReplies": 34,
-    "lastReplyAt": "2026-01-21T07:44:15.252Z",
+    "lastReplyAt": "2026-01-21T19:59:13.870Z",
     "todayRepliesCount": 0,
     "lastUpdateBy": "kol-system"
   }
