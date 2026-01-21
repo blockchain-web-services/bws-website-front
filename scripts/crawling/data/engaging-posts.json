@@ -1,10 +1,389 @@
 {
-  "posts": [],
+  "posts": [
+    {
+      "id": "2013857493676655072",
+      "text": "$ROSE - It's all over the timeline for good reason. The largest volume in a year on a diagonal break. Almost retraced the entire red candle too. https://t.co/n3Eh6RBrRr",
+      "author": {
+        "id": "4441279246",
+        "username": "IncomeSharks"
+      },
+      "public_metrics": {
+        "likes": 164,
+        "retweets": 13,
+        "replies": 38,
+        "quotes": 0,
+        "views": 13359
+      },
+      "url": "https://twitter.com/IncomeSharks/status/2013857493676655072",
+      "processed": false,
+      "addedAt": "2026-01-21T07:24:42.480Z",
+      "expiresAt": "2026-01-28T07:24:42.480Z",
+      "source": "timeline_monitor",
+      "contentCategory": "technical-analysis"
+    },
+    {
+      "id": "2013728623878889752",
+      "text": "@PeterSchiff Yeah what a shame for the people up over 100x who bought when you started trashing it. Gold has not changed any lives, unless you found a way to sell it charging premiums for a living.",
+      "author": {
+        "id": "4441279246",
+        "username": "IncomeSharks"
+      },
+      "public_metrics": {
+        "likes": 96,
+        "retweets": 0,
+        "replies": 5,
+        "quotes": 0,
+        "views": 12381
+      },
+      "url": "https://twitter.com/IncomeSharks/status/2013728623878889752",
+      "processed": false,
+      "addedAt": "2026-01-21T07:24:50.547Z",
+      "expiresAt": "2026-01-28T07:24:50.547Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "2013822458701176893",
+      "text": "@boldleonidas @Evan_ss6 I think the main thing was that they were going to raise $2m but then they kept the whole committed amount, no? And if you do a commitment-based sale then people over-sub because they think they’ll get diluted so ppl lost way more than they intended to risk",
+      "author": {
+        "id": "2259434528",
+        "username": "cobie"
+      },
+      "public_metrics": {
+        "likes": 179,
+        "retweets": 1,
+        "replies": 22,
+        "quotes": 1,
+        "views": 8477
+      },
+      "url": "https://twitter.com/cobie/status/2013822458701176893",
+      "processed": false,
+      "addedAt": "2026-01-21T07:25:13.624Z",
+      "expiresAt": "2026-01-28T07:25:13.624Z",
+      "source": "timeline_monitor",
+      "contentCategory": "project-discussion"
+    },
+    {
+      "id": "2013777155121946955",
+      "text": "Maybe I'm just washed or too tired of losing $ but I don't have any desire to try to knife catch in this current environment. I know a bounce is probably coming soon and it could be quite juicy but I'm happy to skip it and just wait for higher prices honestly. Losing $ in these",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "likes": 119,
+        "retweets": 0,
+        "replies": 24,
+        "quotes": 0,
+        "views": 8746
+      },
+      "url": "https://twitter.com/AltcoinSherpa/status/2013777155121946955",
+      "processed": false,
+      "addedAt": "2026-01-21T07:25:44.430Z",
+      "expiresAt": "2026-01-28T07:25:44.430Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends/price-speculation"
+    },
+    {
+      "id": "2013765203695984677",
+      "text": "Just came back to the desk after being afk all day long.\n\n$BTC Should probably bounce somewhat close to here imo, it's a high volume node on volume profile. Will probably be affected a bit by equities but overall, I think the local bottom is probably somewhat close. Still, I'm https://t.co/HlrZKrLTkz",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "likes": 94,
+        "retweets": 31,
+        "replies": 14,
+        "quotes": 1,
+        "views": 8780
+      },
+      "url": "https://twitter.com/AltcoinSherpa/status/2013765203695984677",
+      "processed": false,
+      "addedAt": "2026-01-21T07:25:46.461Z",
+      "expiresAt": "2026-01-28T07:25:46.461Z",
+      "source": "timeline_monitor",
+      "contentCategory": "technical-analysis"
+    },
+    {
+      "id": "2013603669032284572",
+      "text": "$HYPE was always such a great one because it is rooted in fundamentals, great community, has excellent PMF/cashflows, and a cracked team. This became the auto buy whenever there were strong dips in the market throughout 2025 and easy for most traders because they didn't have to https://t.co/LRxFHZAX3v",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "likes": 235,
+        "retweets": 20,
+        "replies": 23,
+        "quotes": 1,
+        "views": 23086
+      },
+      "url": "https://twitter.com/AltcoinSherpa/status/2013603669032284572",
+      "processed": false,
+      "addedAt": "2026-01-21T07:25:52.408Z",
+      "expiresAt": "2026-01-28T07:25:52.408Z",
+      "source": "timeline_monitor",
+      "contentCategory": "altcoin-talk"
+    },
+    {
+      "id": "2013601881361174638",
+      "text": "@Route2FI probably decent\n\nthen again I thought it was decent at $2 as well... https://t.co/vVPFNDwWjr",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "likes": 5,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 1151
+      },
+      "url": "https://twitter.com/AltcoinSherpa/status/2013601881361174638",
+      "processed": false,
+      "addedAt": "2026-01-21T07:25:54.577Z",
+      "expiresAt": "2026-01-28T07:25:54.577Z",
+      "source": "timeline_monitor",
+      "contentCategory": "price-speculation"
+    },
+    {
+      "id": "2013601404640796707",
+      "text": "you ever think about how toast we'd be if Saylor didn't buy....",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "likes": 212,
+        "retweets": 4,
+        "replies": 36,
+        "quotes": 2,
+        "views": 21313
+      },
+      "url": "https://twitter.com/AltcoinSherpa/status/2013601404640796707",
+      "processed": false,
+      "addedAt": "2026-01-21T07:25:56.382Z",
+      "expiresAt": "2026-01-28T07:25:56.382Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "2013598154592067972",
+      "text": "$AXS what a pump. I watched this last night with the same levels and thought about buying it when it was +6% but faded, mistake on my part. oh well, I'm ok not chasing in this environment. Wouldn't short this thing quite yet either personally https://t.co/uhlFXzB3TZ https://t.co/rmnqh6mY6I",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "likes": 21,
+        "retweets": 1,
+        "replies": 4,
+        "quotes": 1,
+        "views": 6482
+      },
+      "url": "https://twitter.com/AltcoinSherpa/status/2013598154592067972",
+      "processed": false,
+      "addedAt": "2026-01-21T07:25:58.375Z",
+      "expiresAt": "2026-01-28T07:25:58.375Z",
+      "source": "timeline_monitor",
+      "contentCategory": "altcoin-talk"
+    },
+    {
+      "id": "2013585047266226325",
+      "text": "$BTC: Price should theoretically bounce around here but I'm probably not going to fire given the potential equities stuff on the open today. just going to watch and be happy to buy higher if it comes https://t.co/IEuc6MXOdH",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "likes": 82,
+        "retweets": 12,
+        "replies": 21,
+        "quotes": 0,
+        "views": 7463
+      },
+      "url": "https://twitter.com/AltcoinSherpa/status/2013585047266226325",
+      "processed": false,
+      "addedAt": "2026-01-21T07:26:00.408Z",
+      "expiresAt": "2026-01-28T07:26:00.408Z",
+      "source": "timeline_monitor",
+      "contentCategory": "price-speculation"
+    },
+    {
+      "id": "2013569693685100839",
+      "text": "@StrongHedge @Aster_DEX @cz_binance haha you hate this coin",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "likes": 6,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 866
+      },
+      "url": "https://twitter.com/AltcoinSherpa/status/2013569693685100839",
+      "processed": false,
+      "addedAt": "2026-01-21T07:26:02.409Z",
+      "expiresAt": "2026-01-28T07:26:02.409Z",
+      "source": "timeline_monitor",
+      "contentCategory": "altcoin-talk"
+    },
+    {
+      "id": "2013861367120568430",
+      "text": "Q402 is now live on @BNBCHAIN \n\nQ402 introduces a simpler way to execute payments, governance, and automated actions for the Agent Economy.\n\nWhat used to require multiple approvals and transactions is now completed with a single signature.\n\nNo token upgrades.\nNo new approval https://t.co/Vw75AqbNtD https://t.co/Dn9dfcNsEq",
+      "author": {
+        "id": "crawlee_search_cryptopatel",
+        "username": "CryptoPatel"
+      },
+      "public_metrics": {
+        "likes": 101,
+        "retweets": 16,
+        "replies": 2,
+        "quotes": 0,
+        "views": 474
+      },
+      "url": "https://twitter.com/CryptoPatel/status/2013861367120568430",
+      "processed": false,
+      "addedAt": "2026-01-21T07:26:24.594Z",
+      "expiresAt": "2026-01-28T07:26:24.594Z",
+      "source": "timeline_monitor",
+      "contentCategory": "project-discussion"
+    },
+    {
+      "id": "2013846519414407350",
+      "text": "BREAKING: Grayscale has filed to convert its Grayscale Near Trust into a spot NEAR ETF ( $GSNR)\n\nGrayscale Trust holds ~$900K in $NEAR and Trades at a premium to NAV.\n\nIf Approved, it Would follow Bitcoin and Ethereum ETF moves, Highlighting Rising Institutional interest in https://t.co/NsB4YbMW88",
+      "author": {
+        "id": "crawlee_search_cryptopatel",
+        "username": "CryptoPatel"
+      },
+      "public_metrics": {
+        "likes": 118,
+        "retweets": 16,
+        "replies": 4,
+        "quotes": 0,
+        "views": 876
+      },
+      "url": "https://twitter.com/CryptoPatel/status/2013846519414407350",
+      "processed": false,
+      "addedAt": "2026-01-21T07:26:26.673Z",
+      "expiresAt": "2026-01-28T07:26:26.673Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "2013817174213960180",
+      "text": "Crypto Market Liquidation Alert\n\nBitcoin falls below $88,000 as US Stock Markets weaken and Japan bond market stress triggers a global risk-off move.\n\nAccording to CoinGlass, in the past 24 hours:\n▶️ 183,695 traders liquidated\n▶️ $1.08 BILLION wiped out from the crypto market\n▶️ https://t.co/0ruXTkivyG",
+      "author": {
+        "id": "crawlee_search_cryptopatel",
+        "username": "CryptoPatel"
+      },
+      "public_metrics": {
+        "likes": 173,
+        "retweets": 17,
+        "replies": 3,
+        "quotes": 0,
+        "views": 2985
+      },
+      "url": "https://twitter.com/CryptoPatel/status/2013817174213960180",
+      "processed": false,
+      "addedAt": "2026-01-21T07:26:30.717Z",
+      "expiresAt": "2026-01-28T07:26:30.717Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "2013695524613046715",
+      "text": "WHILE YOU PANIC SOLD EVERY DIP, THIS GUY HELD 909 BTC FOR 13 YEARS AND TURNED ~$63K INTO $84.6M\n\nA #Bitcoin OG Has Woken Up After 13 Years Of Dormancy, Moving 909.38 $BTC (~$84.62M) Into A New Wallet In A Single Transaction.\n\nThese Coins Were Bought When Bitcoin Traded Under https://t.co/QbC5kriVKc",
+      "author": {
+        "id": "crawlee_search_cryptopatel",
+        "username": "CryptoPatel"
+      },
+      "public_metrics": {
+        "likes": 137,
+        "retweets": 14,
+        "replies": 10,
+        "quotes": 0,
+        "views": 32056
+      },
+      "url": "https://twitter.com/CryptoPatel/status/2013695524613046715",
+      "processed": false,
+      "addedAt": "2026-01-21T07:26:32.741Z",
+      "expiresAt": "2026-01-28T07:26:32.741Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "2013680173309186113",
+      "text": "Just in: Tether and Circle Minted $1.5 Billion worth of Stablecoins in the Last Few Hours.\n\nLiquidity is Entering the Market.\n\n$USDT $USDC #Tether #Circle https://t.co/Qcu8ttTftq",
+      "author": {
+        "id": "crawlee_search_cryptopatel",
+        "username": "CryptoPatel"
+      },
+      "public_metrics": {
+        "likes": 132,
+        "retweets": 13,
+        "replies": 8,
+        "quotes": 0,
+        "views": 15956
+      },
+      "url": "https://twitter.com/CryptoPatel/status/2013680173309186113",
+      "processed": false,
+      "addedAt": "2026-01-21T07:26:34.703Z",
+      "expiresAt": "2026-01-28T07:26:34.703Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "2013649974341320741",
+      "text": "Risk Management Lecture #09: The Mathematics Of Ruin\n\n🔰 CORRELATION RISK\nHolding 10 Altcoins Isn't Diversification.\nIt's Concentrated Suicide.\n\n🔰 THE ILLUSION OF DIVERSIFICATION:\n\nYour \"Diversified\" Crypto Portfolio On A Bad Day:\n$BTC: -15%\n$ETH: -18%\n$SOL: -22%\n$ADA: -20% https://t.co/6ysLkbUNWq https://t.co/GqicBM6eVu",
+      "author": {
+        "id": "crawlee_search_cryptopatel",
+        "username": "CryptoPatel"
+      },
+      "public_metrics": {
+        "likes": 176,
+        "retweets": 7,
+        "replies": 8,
+        "quotes": 0,
+        "views": 13428
+      },
+      "url": "https://twitter.com/CryptoPatel/status/2013649974341320741",
+      "processed": false,
+      "addedAt": "2026-01-21T07:26:40.833Z",
+      "expiresAt": "2026-01-28T07:26:40.833Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "2013636151630856359",
+      "text": "@coinbureau Time to rotate into #Bitcoin as the ultimate safe haven",
+      "author": {
+        "id": "crawlee_search_cryptopatel",
+        "username": "CryptoPatel"
+      },
+      "public_metrics": {
+        "likes": 5,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 649
+      },
+      "url": "https://twitter.com/CryptoPatel/status/2013636151630856359",
+      "processed": false,
+      "addedAt": "2026-01-21T07:26:42.817Z",
+      "expiresAt": "2026-01-28T07:26:42.817Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    }
+  ],
   "metadata": {
-    "lastUpdated": "2026-01-20T22:10:45.170Z",
-    "totalPosts": 0,
+    "lastUpdated": "2026-01-21T07:27:46.990Z",
+    "totalPosts": 18,
     "bySource": {
-      "timeline_monitor": 0,
+      "timeline_monitor": 18,
       "search_discovery": 0
     }
   },
