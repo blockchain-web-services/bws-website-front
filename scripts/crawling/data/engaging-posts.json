@@ -419,13 +419,328 @@
       "expiresAt": "2026-01-28T18:07:52.956Z",
       "source": "timeline_monitor",
       "contentCategory": "price-speculation"
+    },
+    {
+      "id": "2013822458701176893",
+      "text": "@boldleonidas @Evan_ss6 I think the main thing was that they were going to raise $2m but then they kept the whole committed amount, no? And if you do a commitment-based sale then people over-sub because they think they’ll get diluted so ppl lost way more than they intended to risk",
+      "author": {
+        "id": "2259434528",
+        "username": "cobie"
+      },
+      "public_metrics": {
+        "likes": 298,
+        "retweets": 3,
+        "replies": 33,
+        "quotes": 4,
+        "views": 21721
+      },
+      "url": "https://twitter.com/cobie/status/2013822458701176893",
+      "processed": false,
+      "addedAt": "2026-01-21T22:10:00.169Z",
+      "expiresAt": "2026-01-28T22:10:00.169Z",
+      "source": "timeline_monitor",
+      "contentCategory": "project-discussion"
+    },
+    {
+      "id": "2013487244967821634",
+      "text": "@Polyhaline @Fuugle @R89Capital I don’t think I’ve even spoken about bitcoin cash since like 2018",
+      "author": {
+        "id": "2259434528",
+        "username": "cobie"
+      },
+      "public_metrics": {
+        "likes": 25,
+        "retweets": 1,
+        "replies": 2,
+        "quotes": 0,
+        "views": 3328
+      },
+      "url": "https://twitter.com/cobie/status/2013487244967821634",
+      "processed": false,
+      "addedAt": "2026-01-21T22:10:12.443Z",
+      "expiresAt": "2026-01-28T22:10:12.443Z",
+      "source": "timeline_monitor",
+      "contentCategory": "altcoin-talk"
+    },
+    {
+      "id": "2014065056905146799",
+      "text": "The privacy trio https://t.co/IijA77Qqnq https://t.co/WTODyjMiMA",
+      "author": {
+        "id": "4441279246",
+        "username": "IncomeSharks"
+      },
+      "public_metrics": {
+        "likes": 202,
+        "retweets": 10,
+        "replies": 25,
+        "quotes": 2,
+        "views": 31693
+      },
+      "url": "https://twitter.com/IncomeSharks/status/2014065056905146799",
+      "processed": false,
+      "addedAt": "2026-01-21T22:10:32.034Z",
+      "expiresAt": "2026-01-28T22:10:32.034Z",
+      "source": "timeline_monitor",
+      "contentCategory": "project-discussion"
+    },
+    {
+      "id": "2014057887958704395",
+      "text": "You will be wrong plenty when trading but what's important is to make sure your losses are controllable and that your reasoning for  an entry was thorough. Losing money on a large gamble with high leverage is different than being wrong on a HTF setup with risk management.",
+      "author": {
+        "id": "4441279246",
+        "username": "IncomeSharks"
+      },
+      "public_metrics": {
+        "likes": 253,
+        "retweets": 8,
+        "replies": 19,
+        "quotes": 0,
+        "views": 17594
+      },
+      "url": "https://twitter.com/IncomeSharks/status/2014057887958704395",
+      "processed": false,
+      "addedAt": "2026-01-21T22:10:34.106Z",
+      "expiresAt": "2026-01-28T22:10:34.106Z",
+      "source": "timeline_monitor",
+      "contentCategory": "technical-analysis"
+    },
+    {
+      "id": "2014057348017332474",
+      "text": "@Henk0De0Steen I'm usually too conservative on targets and sell early to lock in profits so mentally I'm raising them higher so that if I sell earlier at least I'm selling later than I would have.",
+      "author": {
+        "id": "4441279246",
+        "username": "IncomeSharks"
+      },
+      "public_metrics": {
+        "likes": 8,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 1324
+      },
+      "url": "https://twitter.com/IncomeSharks/status/2014057348017332474",
+      "processed": false,
+      "addedAt": "2026-01-21T22:10:37.732Z",
+      "expiresAt": "2026-01-28T22:10:37.732Z",
+      "source": "timeline_monitor",
+      "contentCategory": "price-speculation"
+    },
+    {
+      "id": "2014053492542038396",
+      "text": "$ROSE - The bull argument is strong. Largest volume candle in over a year on a breakout. Year long diagonal breakout, supertrend bullish, OBV breakout, OBV bullish divergence, and it's got mindshare and trading green on red days. Happy to be wrong taking a trade setup like this. https://t.co/Q0Eur0Ku70",
+      "author": {
+        "id": "4441279246",
+        "username": "IncomeSharks"
+      },
+      "public_metrics": {
+        "likes": 380,
+        "retweets": 37,
+        "replies": 37,
+        "quotes": 3,
+        "views": 30292
+      },
+      "url": "https://twitter.com/IncomeSharks/status/2014053492542038396",
+      "processed": false,
+      "addedAt": "2026-01-21T22:10:40.561Z",
+      "expiresAt": "2026-01-28T22:10:40.562Z",
+      "source": "timeline_monitor",
+      "contentCategory": "technical-analysis"
+    },
+    {
+      "id": "2014041861120466980",
+      "text": "$SOL - Green target if OBV breaks up, red target if OBV breaks now. Price and OBV both in a channel, waiting to make a decision. https://t.co/Rp6M9DLO85",
+      "author": {
+        "id": "4441279246",
+        "username": "IncomeSharks"
+      },
+      "public_metrics": {
+        "likes": 399,
+        "retweets": 22,
+        "replies": 35,
+        "quotes": 3,
+        "views": 28064
+      },
+      "url": "https://twitter.com/IncomeSharks/status/2014041861120466980",
+      "processed": false,
+      "addedAt": "2026-01-21T22:10:42.544Z",
+      "expiresAt": "2026-01-28T22:10:42.544Z",
+      "source": "timeline_monitor",
+      "contentCategory": "technical-analysis"
+    },
+    {
+      "id": "2014066800850358301",
+      "text": "I'm still currently long on spot but will add some perps positions if we get either of these two scenarios for $BTC. Hope we get some trending price action https://t.co/TQeAX8VdIq",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "likes": 52,
+        "retweets": 5,
+        "replies": 10,
+        "quotes": 0,
+        "views": 4819
+      },
+      "url": "https://twitter.com/AltcoinSherpa/status/2014066800850358301",
+      "processed": false,
+      "addedAt": "2026-01-21T22:11:05.154Z",
+      "expiresAt": "2026-01-28T22:11:05.154Z",
+      "source": "timeline_monitor",
+      "contentCategory": "price-speculation"
+    },
+    {
+      "id": "2014065299910222255",
+      "text": "VCs give $ to crypto companies, who then launch tokens. The crypto company sells said tokens to hedge funds at discounts + also dumps the tokens on the market for 'ecosystem', and then team+ founders get rich. VCs eventually also get rich when they OTC their tokens out + get",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "likes": 60,
+        "retweets": 1,
+        "replies": 13,
+        "quotes": 3,
+        "views": 17556
+      },
+      "url": "https://twitter.com/AltcoinSherpa/status/2014065299910222255",
+      "processed": false,
+      "addedAt": "2026-01-21T22:11:09.411Z",
+      "expiresAt": "2026-01-28T22:11:09.411Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "2014063592409035116",
+      "text": "solana coins looking the strongest right now; those usually are the best in risk on environments. we're not quite confirmed there yet but if btc starts bouncing hard, thats the area i'd look at",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "likes": 57,
+        "retweets": 2,
+        "replies": 11,
+        "quotes": 0,
+        "views": 4837
+      },
+      "url": "https://twitter.com/AltcoinSherpa/status/2014063592409035116",
+      "processed": false,
+      "addedAt": "2026-01-21T22:11:11.413Z",
+      "expiresAt": "2026-01-28T22:11:11.413Z",
+      "source": "timeline_monitor",
+      "contentCategory": "altcoin-talk"
+    },
+    {
+      "id": "2014062085617930625",
+      "text": "trump taco confirmed, up for now https://t.co/rD5luYITO8",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "likes": 31,
+        "retweets": 2,
+        "replies": 1,
+        "quotes": 0,
+        "views": 5092
+      },
+      "url": "https://twitter.com/AltcoinSherpa/status/2014062085617930625",
+      "processed": false,
+      "addedAt": "2026-01-21T22:11:13.585Z",
+      "expiresAt": "2026-01-28T22:11:13.585Z",
+      "source": "timeline_monitor",
+      "contentCategory": "altcoin-talk"
+    },
+    {
+      "id": "2007133618758635812",
+      "text": "@arush @rsalame7926 [SBF says:]\n\n100% agree—FTX US had US license; why would FTX Intl have US license?\n\n@rsalame7926 is in prison for things that obviously aren't crimes and aren't even his fault anyway.\n\nHe got 7.5 years for refusing to lie.\n\nhttps://t.co/bLdjudgxju https://t.co/h6HU6KZ4g5",
+      "author": {
+        "id": "1110877798820777986",
+        "username": "SBF_FTX"
+      },
+      "public_metrics": {
+        "likes": 21,
+        "retweets": 3,
+        "replies": 5,
+        "quotes": 0,
+        "views": 1788
+      },
+      "url": "https://twitter.com/SBF_FTX/status/2007133618758635812",
+      "processed": false,
+      "addedAt": "2026-01-21T22:11:35.007Z",
+      "expiresAt": "2026-01-28T22:11:35.007Z",
+      "source": "timeline_monitor",
+      "contentCategory": "news"
+    },
+    {
+      "id": "2013414086818627774",
+      "text": "Tbf I think $whitewhale @ 38m after a green dildo run to 200m isn’t a terrible bid 👀🐋\n\nIf you been in the trenches longer than 5 mins you would have seen huge rips followed by huge dips on major runners\n\nYou all had FOMO at 100m but don’t wanna bid at 38m 😹\n\nChat entry or gg https://t.co/uP9BsGzHjL",
+      "author": {
+        "id": "crawlee_search_habibivc",
+        "username": "habibivc"
+      },
+      "public_metrics": {
+        "likes": 28,
+        "retweets": 2,
+        "replies": 12,
+        "quotes": 0,
+        "views": 792
+      },
+      "url": "https://twitter.com/habibivc/status/2013414086818627774",
+      "processed": false,
+      "addedAt": "2026-01-21T22:11:56.051Z",
+      "expiresAt": "2026-01-28T22:11:56.051Z",
+      "source": "timeline_monitor",
+      "contentCategory": "price-speculation"
+    },
+    {
+      "id": "2013394151409099204",
+      "text": "Been out the trenches for a minute \n\nSeeing a lot of people talk about \n$COW $GAS $WHITEWHALE \n\nAre we bullish 🫡",
+      "author": {
+        "id": "crawlee_search_habibivc",
+        "username": "habibivc"
+      },
+      "public_metrics": {
+        "likes": 23,
+        "retweets": 8,
+        "replies": 17,
+        "quotes": 0,
+        "views": 513
+      },
+      "url": "https://twitter.com/habibivc/status/2013394151409099204",
+      "processed": false,
+      "addedAt": "2026-01-21T22:11:58.016Z",
+      "expiresAt": "2026-01-28T22:11:58.016Z",
+      "source": "timeline_monitor",
+      "contentCategory": "altcoin-talk"
+    },
+    {
+      "id": "2013262448342544494",
+      "text": "Maintain a diverse portfolio \n\nThe diversity: https://t.co/rWbMfO4wbB",
+      "author": {
+        "id": "crawlee_search_habibivc",
+        "username": "habibivc"
+      },
+      "public_metrics": {
+        "likes": 30,
+        "retweets": 5,
+        "replies": 25,
+        "quotes": 0,
+        "views": 476
+      },
+      "url": "https://twitter.com/habibivc/status/2013262448342544494",
+      "processed": false,
+      "addedAt": "2026-01-21T22:12:00.367Z",
+      "expiresAt": "2026-01-28T22:12:00.367Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
     }
   ],
   "metadata": {
-    "lastUpdated": "2026-01-21T18:08:57.163Z",
-    "totalPosts": 38,
+    "lastUpdated": "2026-01-21T22:13:04.611Z",
+    "totalPosts": 35,
     "bySource": {
-      "timeline_monitor": 38,
+      "timeline_monitor": 35,
       "search_discovery": 0
     }
   },
