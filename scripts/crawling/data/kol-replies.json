@@ -3557,6 +3557,26 @@
       "status": "posted",
       "dryRun": false,
       "sdkVersion": "1.7.0"
+    },
+    {
+      "id": "crawlee_search_cryptopatel-2013680173309186113-1768981455252",
+      "tweetId": "2013680173309186113",
+      "tweetUrl": "https://twitter.com/CryptoPatel/status/2013680173309186113",
+      "kolId": "crawlee_search_cryptopatel",
+      "kolUsername": "CryptoPatel",
+      "originalTweetText": "Just in: Tether and Circle Minted $1.5 Billion worth of Stablecoins in the Last Few Hours.\n\nLiquidity is Entering the Market.\n\n$USDT $USDC #Tether #Circle https://t.co/Qcu8ttTftq",
+      "replyTweetId": "2013880303077458198",
+      "replyText": "Institutional impact tracking needs blockchain verification. Blockchain Badges from $BWS enable transparent ESG credential management. Smart money finds real utility before the crowd. @BWSCommunity #microcap #gems https://docs.bws.ninja/marketplace-solutions/bws.blockchain.badges",
+      "productMentioned": "ESG Credits",
+      "relevanceScore": 72,
+      "templateUsed": "problem_solution",
+      "templateName": "Problem-Solution Structure",
+      "imageAttached": true,
+      "imagePath": "/assets/images/docs/blockchain-badges/blockchain-badges-0.png",
+      "timestamp": "2026-01-21T07:44:15.252Z",
+      "status": "posted",
+      "dryRun": false,
+      "sdkVersion": "1.7.0"
     }
   ],
   "dailyStats": {
@@ -3649,10 +3669,10 @@
     }
   },
   "metadata": {
-    "totalReplies": 185,
-    "successfulReplies": 140,
+    "totalReplies": 186,
+    "successfulReplies": 141,
     "failedReplies": 34,
-    "lastReplyAt": "2026-01-04T05:11:16.136Z",
+    "lastReplyAt": "2026-01-21T07:44:15.252Z",
     "todayRepliesCount": 0,
     "lastUpdateBy": "kol-system"
   }
