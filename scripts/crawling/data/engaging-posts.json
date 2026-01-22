@@ -1,195 +1,6 @@
 {
   "posts": [
     {
-      "id": "2014046358026539012",
-      "text": "@guru_trade3 @experts24166 i didn’t say “i won” \n\nalready it hit my tp and blood bath and 2x\n\nthis is why i said “casino”",
-      "author": {
-        "id": "crawlee_search_nihilusbtc",
-        "username": "NihilusBTC"
-      },
-      "public_metrics": {
-        "likes": 4,
-        "retweets": 2,
-        "replies": 2,
-        "quotes": 0,
-        "views": 93
-      },
-      "url": "https://twitter.com/NihilusBTC/status/2014046358026539012",
-      "processed": true,
-      "addedAt": "2026-01-22T07:26:00.765Z",
-      "expiresAt": "2026-01-29T07:26:00.765Z",
-      "source": "timeline_monitor",
-      "contentCategory": "price-speculation"
-    },
-    {
-      "id": "2012990112649330725",
-      "text": "$ARIA\n$VFY\n\nOpened more long.",
-      "author": {
-        "id": "crawlee_search_nihilusbtc",
-        "username": "NihilusBTC"
-      },
-      "public_metrics": {
-        "likes": 40,
-        "retweets": 9,
-        "replies": 20,
-        "quotes": 0,
-        "views": 6954
-      },
-      "url": "https://twitter.com/NihilusBTC/status/2012990112649330725",
-      "processed": true,
-      "addedAt": "2026-01-22T07:26:03.692Z",
-      "expiresAt": "2026-01-29T07:26:03.692Z",
-      "source": "timeline_monitor",
-      "contentCategory": "altcoin-talk"
-    },
-    {
-      "id": "2012976504246808936",
-      "text": "$ARIA \n$VFY\n\nLONG!🚀💪🏻",
-      "author": {
-        "id": "crawlee_search_nihilusbtc",
-        "username": "NihilusBTC"
-      },
-      "public_metrics": {
-        "likes": 40,
-        "retweets": 9,
-        "replies": 16,
-        "quotes": 0,
-        "views": 6552
-      },
-      "url": "https://twitter.com/NihilusBTC/status/2012976504246808936",
-      "processed": true,
-      "addedAt": "2026-01-22T07:26:05.642Z",
-      "expiresAt": "2026-01-29T07:26:05.642Z",
-      "source": "timeline_monitor",
-      "contentCategory": "altcoin-talk"
-    },
-    {
-      "id": "2012964129561035251",
-      "text": "$ARIA | Pump will continue. https://t.co/nphKZJYKa5",
-      "author": {
-        "id": "crawlee_search_nihilusbtc",
-        "username": "NihilusBTC"
-      },
-      "public_metrics": {
-        "likes": 49,
-        "retweets": 7,
-        "replies": 16,
-        "quotes": 0,
-        "views": 6561
-      },
-      "url": "https://twitter.com/NihilusBTC/status/2012964129561035251",
-      "processed": true,
-      "addedAt": "2026-01-22T07:26:07.683Z",
-      "expiresAt": "2026-01-29T07:26:07.683Z",
-      "source": "timeline_monitor",
-      "contentCategory": "price-speculation"
-    },
-    {
-      "id": "2012956367846347072",
-      "text": "$SPORTFUN https://t.co/rpZJ4ayNG8",
-      "author": {
-        "id": "crawlee_search_nihilusbtc",
-        "username": "NihilusBTC"
-      },
-      "public_metrics": {
-        "likes": 48,
-        "retweets": 10,
-        "replies": 14,
-        "quotes": 0,
-        "views": 5234
-      },
-      "url": "https://twitter.com/NihilusBTC/status/2012956367846347072",
-      "processed": true,
-      "addedAt": "2026-01-22T07:26:09.661Z",
-      "expiresAt": "2026-01-29T07:26:09.661Z",
-      "source": "timeline_monitor",
-      "contentCategory": "altcoin-talk"
-    },
-    {
-      "id": "2012952392560431426",
-      "text": "$VFY buying @ 0.03220 \n\nTP: 0.05",
-      "author": {
-        "id": "crawlee_search_nihilusbtc",
-        "username": "NihilusBTC"
-      },
-      "public_metrics": {
-        "likes": 31,
-        "retweets": 8,
-        "replies": 12,
-        "quotes": 0,
-        "views": 4585
-      },
-      "url": "https://twitter.com/NihilusBTC/status/2012952392560431426",
-      "processed": true,
-      "addedAt": "2026-01-22T07:26:11.747Z",
-      "expiresAt": "2026-01-29T07:26:11.747Z",
-      "source": "timeline_monitor",
-      "contentCategory": "price-speculation"
-    },
-    {
-      "id": "2012934728723169334",
-      "text": "$VFY\n$CC\n\nAdd long here.",
-      "author": {
-        "id": "crawlee_search_nihilusbtc",
-        "username": "NihilusBTC"
-      },
-      "public_metrics": {
-        "likes": 33,
-        "retweets": 8,
-        "replies": 17,
-        "quotes": 0,
-        "views": 4772
-      },
-      "url": "https://twitter.com/NihilusBTC/status/2012934728723169334",
-      "processed": true,
-      "addedAt": "2026-01-22T07:26:13.686Z",
-      "expiresAt": "2026-01-29T07:26:13.686Z",
-      "source": "timeline_monitor",
-      "contentCategory": "price-speculation"
-    },
-    {
-      "id": "2012932802111492381",
-      "text": "$VFY https://t.co/sKQprSiFL1",
-      "author": {
-        "id": "crawlee_search_nihilusbtc",
-        "username": "NihilusBTC"
-      },
-      "public_metrics": {
-        "likes": 38,
-        "retweets": 9,
-        "replies": 17,
-        "quotes": 0,
-        "views": 4877
-      },
-      "url": "https://twitter.com/NihilusBTC/status/2012932802111492381",
-      "processed": true,
-      "addedAt": "2026-01-22T07:26:15.710Z",
-      "expiresAt": "2026-01-29T07:26:15.710Z",
-      "source": "timeline_monitor",
-      "contentCategory": "altcoin-talk"
-    },
-    {
-      "id": "2012925929253728262",
-      "text": "$CC buying until 0.12\n\nTP: 0.20",
-      "author": {
-        "id": "crawlee_search_nihilusbtc",
-        "username": "NihilusBTC"
-      },
-      "public_metrics": {
-        "likes": 32,
-        "retweets": 9,
-        "replies": 14,
-        "quotes": 0,
-        "views": 4060
-      },
-      "url": "https://twitter.com/NihilusBTC/status/2012925929253728262",
-      "processed": true,
-      "addedAt": "2026-01-22T07:26:17.732Z",
-      "expiresAt": "2026-01-29T07:26:17.732Z",
-      "source": "timeline_monitor",
-      "contentCategory": "price-speculation"
-    },
-    {
       "id": "2014268087638609995",
       "text": "@Cointelegraph Based on @Spectre__AI it's actually been gaming oddly enough. Privacy still feels like it's at the top.",
       "author": {
@@ -204,7 +15,7 @@
         "views": 4193
       },
       "url": "https://twitter.com/IncomeSharks/status/2014268087638609995",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-01-22T17:55:38.873Z",
       "expiresAt": "2026-01-29T17:55:38.873Z",
       "source": "timeline_monitor",
@@ -225,7 +36,7 @@
         "views": 5692
       },
       "url": "https://twitter.com/IncomeSharks/status/2014267103965315089",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-01-22T17:55:40.882Z",
       "expiresAt": "2026-01-29T17:55:40.882Z",
       "source": "timeline_monitor",
@@ -246,7 +57,7 @@
         "views": 6839
       },
       "url": "https://twitter.com/IncomeSharks/status/2014266600011223324",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-01-22T17:55:42.752Z",
       "expiresAt": "2026-01-29T17:55:42.752Z",
       "source": "timeline_monitor",
@@ -267,7 +78,7 @@
         "views": 3800
       },
       "url": "https://twitter.com/IncomeSharks/status/2014266483917066572",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-01-22T17:55:44.794Z",
       "expiresAt": "2026-01-29T17:55:44.794Z",
       "source": "timeline_monitor",
@@ -288,7 +99,7 @@
         "views": 4958
       },
       "url": "https://twitter.com/IncomeSharks/status/2014266109906890805",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-01-22T17:55:46.827Z",
       "expiresAt": "2026-01-29T17:55:46.827Z",
       "source": "timeline_monitor",
@@ -309,7 +120,7 @@
         "views": 2170
       },
       "url": "https://twitter.com/AltcoinSherpa/status/2014383942766313491",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-01-22T17:56:02.716Z",
       "expiresAt": "2026-01-29T17:56:02.716Z",
       "source": "timeline_monitor",
@@ -330,7 +141,7 @@
         "views": 2934
       },
       "url": "https://twitter.com/AltcoinSherpa/status/2014359244628283641",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-01-22T17:56:04.746Z",
       "expiresAt": "2026-01-29T17:56:04.746Z",
       "source": "timeline_monitor",
@@ -351,7 +162,7 @@
         "views": 710
       },
       "url": "https://twitter.com/AltcoinSherpa/status/2014339638693945433",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-01-22T17:56:07.993Z",
       "expiresAt": "2026-01-29T17:56:07.993Z",
       "source": "timeline_monitor",
@@ -372,7 +183,7 @@
         "views": 3907
       },
       "url": "https://twitter.com/AltcoinSherpa/status/2014323195453596124",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-01-22T17:56:13.575Z",
       "expiresAt": "2026-01-29T17:56:13.575Z",
       "source": "timeline_monitor",
@@ -393,7 +204,7 @@
         "views": 6098
       },
       "url": "https://twitter.com/AltcoinSherpa/status/2014320440253001873",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-01-22T17:56:15.495Z",
       "expiresAt": "2026-01-29T17:56:15.495Z",
       "source": "timeline_monitor",
@@ -414,7 +225,7 @@
         "views": 11524
       },
       "url": "https://twitter.com/AltcoinSherpa/status/2014317912878686260",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-01-22T17:56:17.554Z",
       "expiresAt": "2026-01-29T17:56:17.554Z",
       "source": "timeline_monitor",
@@ -435,7 +246,7 @@
         "views": 4488
       },
       "url": "https://twitter.com/AltcoinSherpa/status/2014307005268152320",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-01-22T17:56:19.491Z",
       "expiresAt": "2026-01-29T17:56:19.491Z",
       "source": "timeline_monitor",
@@ -456,7 +267,7 @@
         "views": 1605
       },
       "url": "https://twitter.com/cobie/status/2014289628904194422",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-01-22T17:56:36.141Z",
       "expiresAt": "2026-01-29T17:56:36.141Z",
       "source": "timeline_monitor",
@@ -477,7 +288,7 @@
         "views": 3778
       },
       "url": "https://twitter.com/cobie/status/2014237846069039425",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-01-22T17:56:39.417Z",
       "expiresAt": "2026-01-29T17:56:39.417Z",
       "source": "timeline_monitor",
@@ -498,7 +309,7 @@
         "views": 23979
       },
       "url": "https://twitter.com/cobie/status/2013822458701176893",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-01-22T17:56:46.365Z",
       "expiresAt": "2026-01-29T17:56:46.365Z",
       "source": "timeline_monitor",
@@ -519,7 +330,7 @@
         "views": 2656
       },
       "url": "https://twitter.com/CryptosR_Us/status/2014382299408957470",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-01-22T17:56:54.458Z",
       "expiresAt": "2026-01-29T17:56:54.458Z",
       "source": "timeline_monitor",
@@ -540,7 +351,7 @@
         "views": 1519
       },
       "url": "https://twitter.com/CryptosR_Us/status/2014375717060939808",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-01-22T17:56:57.544Z",
       "expiresAt": "2026-01-29T17:56:57.544Z",
       "source": "timeline_monitor",
@@ -561,7 +372,7 @@
         "views": 9574
       },
       "url": "https://twitter.com/CryptosR_Us/status/2014357920763273298",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-01-22T17:56:59.396Z",
       "expiresAt": "2026-01-29T17:56:59.396Z",
       "source": "timeline_monitor",
@@ -582,7 +393,7 @@
         "views": 17389
       },
       "url": "https://twitter.com/CryptosR_Us/status/2014260496728469532",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-01-22T17:57:09.629Z",
       "expiresAt": "2026-01-29T17:57:09.629Z",
       "source": "timeline_monitor",
@@ -603,7 +414,7 @@
         "views": 9310
       },
       "url": "https://twitter.com/CryptosR_Us/status/2014245397150224778",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-01-22T17:57:10.612Z",
       "expiresAt": "2026-01-29T17:57:10.612Z",
       "source": "timeline_monitor",
@@ -624,7 +435,7 @@
         "views": 8120
       },
       "url": "https://twitter.com/CryptosR_Us/status/2014216210297098497",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-01-22T17:57:12.460Z",
       "expiresAt": "2026-01-29T17:57:12.460Z",
       "source": "timeline_monitor",
@@ -750,7 +561,7 @@
         "views": 83338
       },
       "url": "https://twitter.com/aantonop/status/1763024925642604676",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-01-22T17:57:29.295Z",
       "expiresAt": "2026-01-29T17:57:29.295Z",
       "source": "timeline_monitor",
