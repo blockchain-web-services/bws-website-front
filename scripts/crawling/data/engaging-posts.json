@@ -734,13 +734,328 @@
       "expiresAt": "2026-01-28T22:12:00.367Z",
       "source": "timeline_monitor",
       "contentCategory": "market-trends"
+    },
+    {
+      "id": "2014206402240401436",
+      "text": "@HolySmokas Not worth it. Insiders all sold, they overhyped it, retail took the bait, and we have a lot of bag holders now.",
+      "author": {
+        "id": "4441279246",
+        "username": "IncomeSharks"
+      },
+      "public_metrics": {
+        "likes": 24,
+        "retweets": 0,
+        "replies": 4,
+        "quotes": 0,
+        "views": 3110
+      },
+      "url": "https://twitter.com/IncomeSharks/status/2014206402240401436",
+      "processed": false,
+      "addedAt": "2026-01-22T07:24:49.412Z",
+      "expiresAt": "2026-01-29T07:24:49.412Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "2014154355159494859",
+      "text": "keeping trades pretty short rn to be honest, still dont know if we're in an environment where you can let trades run for a week and +100% moves (yet). taking profits aggressively and leaving trailing stops a lot of the time. will go back to buy and hold mode when the conditions",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "likes": 28,
+        "retweets": 0,
+        "replies": 10,
+        "quotes": 0,
+        "views": 3934
+      },
+      "url": "https://twitter.com/AltcoinSherpa/status/2014154355159494859",
+      "processed": false,
+      "addedAt": "2026-01-22T07:25:26.124Z",
+      "expiresAt": "2026-01-29T07:25:26.124Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends/technical-analysis"
+    },
+    {
+      "id": "2014152276835762305",
+      "text": "$AXS trend is so beautiful the last few days, been some great trading opportunities with it. in this one too on the open. prob goes to the mid $3s eventually but not sure i'd open a fresh position here. https://t.co/KEyHDew9Ee",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "likes": 25,
+        "retweets": 2,
+        "replies": 6,
+        "quotes": 0,
+        "views": 4331
+      },
+      "url": "https://twitter.com/AltcoinSherpa/status/2014152276835762305",
+      "processed": false,
+      "addedAt": "2026-01-22T07:25:27.590Z",
+      "expiresAt": "2026-01-29T07:25:27.590Z",
+      "source": "timeline_monitor",
+      "contentCategory": "price-speculation"
+    },
+    {
+      "id": "2014136932742140020",
+      "text": "$PENGU: 1 coin I'm still  watching is PENGU. I'd like to see it chop around like it did back in December to form a solid bottom and then move higher. I'm still a fan of this coin and have a bag of it that I plan on holding for a while. When Sol/memes pick back up, this one should https://t.co/q91j3g2VCy",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "likes": 102,
+        "retweets": 25,
+        "replies": 16,
+        "quotes": 0,
+        "views": 6266
+      },
+      "url": "https://twitter.com/AltcoinSherpa/status/2014136932742140020",
+      "processed": false,
+      "addedAt": "2026-01-22T07:25:29.689Z",
+      "expiresAt": "2026-01-29T07:25:29.689Z",
+      "source": "timeline_monitor",
+      "contentCategory": "altcoin-talk"
+    },
+    {
+      "id": "2014136178396504233",
+      "text": "alright I'm in $CHZ. Didn't buy the lows because I was out but just bought on the open today https://t.co/fPWy4tLRTK https://t.co/VAdWANrk2Q",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "likes": 28,
+        "retweets": 7,
+        "replies": 6,
+        "quotes": 0,
+        "views": 7048
+      },
+      "url": "https://twitter.com/AltcoinSherpa/status/2014136178396504233",
+      "processed": false,
+      "addedAt": "2026-01-22T07:25:31.636Z",
+      "expiresAt": "2026-01-29T07:25:31.636Z",
+      "source": "timeline_monitor",
+      "contentCategory": "altcoin-talk"
+    },
+    {
+      "id": "2014130540727701508",
+      "text": "bought some $ZRO , looks strong. others that look strong are pendle, axs, and a few others.",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "likes": 31,
+        "retweets": 0,
+        "replies": 16,
+        "quotes": 0,
+        "views": 4089
+      },
+      "url": "https://twitter.com/AltcoinSherpa/status/2014130540727701508",
+      "processed": false,
+      "addedAt": "2026-01-22T07:25:35.621Z",
+      "expiresAt": "2026-01-29T07:25:35.621Z",
+      "source": "timeline_monitor",
+      "contentCategory": "altcoin-talk"
+    },
+    {
+      "id": "2014046358026539012",
+      "text": "@guru_trade3 @experts24166 i didn’t say “i won” \n\nalready it hit my tp and blood bath and 2x\n\nthis is why i said “casino”",
+      "author": {
+        "id": "crawlee_search_nihilusbtc",
+        "username": "NihilusBTC"
+      },
+      "public_metrics": {
+        "likes": 4,
+        "retweets": 2,
+        "replies": 2,
+        "quotes": 0,
+        "views": 93
+      },
+      "url": "https://twitter.com/NihilusBTC/status/2014046358026539012",
+      "processed": false,
+      "addedAt": "2026-01-22T07:26:00.765Z",
+      "expiresAt": "2026-01-29T07:26:00.765Z",
+      "source": "timeline_monitor",
+      "contentCategory": "price-speculation"
+    },
+    {
+      "id": "2012990112649330725",
+      "text": "$ARIA\n$VFY\n\nOpened more long.",
+      "author": {
+        "id": "crawlee_search_nihilusbtc",
+        "username": "NihilusBTC"
+      },
+      "public_metrics": {
+        "likes": 40,
+        "retweets": 9,
+        "replies": 20,
+        "quotes": 0,
+        "views": 6954
+      },
+      "url": "https://twitter.com/NihilusBTC/status/2012990112649330725",
+      "processed": false,
+      "addedAt": "2026-01-22T07:26:03.692Z",
+      "expiresAt": "2026-01-29T07:26:03.692Z",
+      "source": "timeline_monitor",
+      "contentCategory": "altcoin-talk"
+    },
+    {
+      "id": "2012976504246808936",
+      "text": "$ARIA \n$VFY\n\nLONG!🚀💪🏻",
+      "author": {
+        "id": "crawlee_search_nihilusbtc",
+        "username": "NihilusBTC"
+      },
+      "public_metrics": {
+        "likes": 40,
+        "retweets": 9,
+        "replies": 16,
+        "quotes": 0,
+        "views": 6552
+      },
+      "url": "https://twitter.com/NihilusBTC/status/2012976504246808936",
+      "processed": false,
+      "addedAt": "2026-01-22T07:26:05.642Z",
+      "expiresAt": "2026-01-29T07:26:05.642Z",
+      "source": "timeline_monitor",
+      "contentCategory": "altcoin-talk"
+    },
+    {
+      "id": "2012964129561035251",
+      "text": "$ARIA | Pump will continue. https://t.co/nphKZJYKa5",
+      "author": {
+        "id": "crawlee_search_nihilusbtc",
+        "username": "NihilusBTC"
+      },
+      "public_metrics": {
+        "likes": 49,
+        "retweets": 7,
+        "replies": 16,
+        "quotes": 0,
+        "views": 6561
+      },
+      "url": "https://twitter.com/NihilusBTC/status/2012964129561035251",
+      "processed": false,
+      "addedAt": "2026-01-22T07:26:07.683Z",
+      "expiresAt": "2026-01-29T07:26:07.683Z",
+      "source": "timeline_monitor",
+      "contentCategory": "price-speculation"
+    },
+    {
+      "id": "2012956367846347072",
+      "text": "$SPORTFUN https://t.co/rpZJ4ayNG8",
+      "author": {
+        "id": "crawlee_search_nihilusbtc",
+        "username": "NihilusBTC"
+      },
+      "public_metrics": {
+        "likes": 48,
+        "retweets": 10,
+        "replies": 14,
+        "quotes": 0,
+        "views": 5234
+      },
+      "url": "https://twitter.com/NihilusBTC/status/2012956367846347072",
+      "processed": false,
+      "addedAt": "2026-01-22T07:26:09.661Z",
+      "expiresAt": "2026-01-29T07:26:09.661Z",
+      "source": "timeline_monitor",
+      "contentCategory": "altcoin-talk"
+    },
+    {
+      "id": "2012952392560431426",
+      "text": "$VFY buying @ 0.03220 \n\nTP: 0.05",
+      "author": {
+        "id": "crawlee_search_nihilusbtc",
+        "username": "NihilusBTC"
+      },
+      "public_metrics": {
+        "likes": 31,
+        "retweets": 8,
+        "replies": 12,
+        "quotes": 0,
+        "views": 4585
+      },
+      "url": "https://twitter.com/NihilusBTC/status/2012952392560431426",
+      "processed": false,
+      "addedAt": "2026-01-22T07:26:11.747Z",
+      "expiresAt": "2026-01-29T07:26:11.747Z",
+      "source": "timeline_monitor",
+      "contentCategory": "price-speculation"
+    },
+    {
+      "id": "2012934728723169334",
+      "text": "$VFY\n$CC\n\nAdd long here.",
+      "author": {
+        "id": "crawlee_search_nihilusbtc",
+        "username": "NihilusBTC"
+      },
+      "public_metrics": {
+        "likes": 33,
+        "retweets": 8,
+        "replies": 17,
+        "quotes": 0,
+        "views": 4772
+      },
+      "url": "https://twitter.com/NihilusBTC/status/2012934728723169334",
+      "processed": false,
+      "addedAt": "2026-01-22T07:26:13.686Z",
+      "expiresAt": "2026-01-29T07:26:13.686Z",
+      "source": "timeline_monitor",
+      "contentCategory": "price-speculation"
+    },
+    {
+      "id": "2012932802111492381",
+      "text": "$VFY https://t.co/sKQprSiFL1",
+      "author": {
+        "id": "crawlee_search_nihilusbtc",
+        "username": "NihilusBTC"
+      },
+      "public_metrics": {
+        "likes": 38,
+        "retweets": 9,
+        "replies": 17,
+        "quotes": 0,
+        "views": 4877
+      },
+      "url": "https://twitter.com/NihilusBTC/status/2012932802111492381",
+      "processed": false,
+      "addedAt": "2026-01-22T07:26:15.710Z",
+      "expiresAt": "2026-01-29T07:26:15.710Z",
+      "source": "timeline_monitor",
+      "contentCategory": "altcoin-talk"
+    },
+    {
+      "id": "2012925929253728262",
+      "text": "$CC buying until 0.12\n\nTP: 0.20",
+      "author": {
+        "id": "crawlee_search_nihilusbtc",
+        "username": "NihilusBTC"
+      },
+      "public_metrics": {
+        "likes": 32,
+        "retweets": 9,
+        "replies": 14,
+        "quotes": 0,
+        "views": 4060
+      },
+      "url": "https://twitter.com/NihilusBTC/status/2012925929253728262",
+      "processed": false,
+      "addedAt": "2026-01-22T07:26:17.732Z",
+      "expiresAt": "2026-01-29T07:26:17.732Z",
+      "source": "timeline_monitor",
+      "contentCategory": "price-speculation"
     }
   ],
   "metadata": {
-    "lastUpdated": "2026-01-21T22:13:04.611Z",
-    "totalPosts": 35,
+    "lastUpdated": "2026-01-22T07:27:17.878Z",
+    "totalPosts": 50,
     "bySource": {
-      "timeline_monitor": 35,
+      "timeline_monitor": 50,
       "search_discovery": 0
     }
   },
