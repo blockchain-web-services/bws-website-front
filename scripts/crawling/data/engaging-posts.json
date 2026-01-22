@@ -608,13 +608,118 @@
       "expiresAt": "2026-01-29T17:57:34.374Z",
       "source": "timeline_monitor",
       "contentCategory": "market-trends"
+    },
+    {
+      "id": "2014359343093653902",
+      "text": "@EasyEatsBodega @defidevcorp its prob going to go even higher",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "likes": 5,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 1370
+      },
+      "url": "https://twitter.com/AltcoinSherpa/status/2014359343093653902",
+      "processed": false,
+      "addedAt": "2026-01-22T22:09:27.787Z",
+      "expiresAt": "2026-01-29T22:09:27.787Z",
+      "source": "timeline_monitor",
+      "contentCategory": "price-speculation"
+    },
+    {
+      "id": "2014445596241793186",
+      "text": "Bullish @krakenfx announced listing @telcoin &amp; $TEL pumping 18% today https://t.co/XXYCT2Qaon",
+      "author": {
+        "id": "crawlee_search_habibivc",
+        "username": "habibivc"
+      },
+      "public_metrics": {
+        "likes": 11,
+        "retweets": 0,
+        "replies": 4,
+        "quotes": 0,
+        "views": 267
+      },
+      "url": "https://twitter.com/habibivc/status/2014445596241793186",
+      "processed": false,
+      "addedAt": "2026-01-22T22:10:20.138Z",
+      "expiresAt": "2026-01-29T22:10:20.138Z",
+      "source": "timeline_monitor",
+      "contentCategory": "altcoin-talk"
+    },
+    {
+      "id": "2014390130472055137",
+      "text": "@BONKRadio Bonkradio works on Apple car play btw https://t.co/VKeOIuznA6",
+      "author": {
+        "id": "crawlee_search_habibivc",
+        "username": "habibivc"
+      },
+      "public_metrics": {
+        "likes": 5,
+        "retweets": 1,
+        "replies": 2,
+        "quotes": 0,
+        "views": 43
+      },
+      "url": "https://twitter.com/habibivc/status/2014390130472055137",
+      "processed": false,
+      "addedAt": "2026-01-22T22:10:21.962Z",
+      "expiresAt": "2026-01-29T22:10:21.962Z",
+      "source": "timeline_monitor",
+      "contentCategory": "project-discussion"
+    },
+    {
+      "id": "2014375252411732426",
+      "text": "Chat did you listen $whitewhale https://t.co/kKJABSnx3b https://t.co/gmstAKD6cy",
+      "author": {
+        "id": "crawlee_search_habibivc",
+        "username": "habibivc"
+      },
+      "public_metrics": {
+        "likes": 24,
+        "retweets": 6,
+        "replies": 17,
+        "quotes": 0,
+        "views": 707
+      },
+      "url": "https://twitter.com/habibivc/status/2014375252411732426",
+      "processed": false,
+      "addedAt": "2026-01-22T22:10:26.023Z",
+      "expiresAt": "2026-01-29T22:10:26.023Z",
+      "source": "timeline_monitor",
+      "contentCategory": "altcoin-talk"
+    },
+    {
+      "id": "2014247524438012397",
+      "text": "Gm chat \n\nDo you still believe in alt season https://t.co/jiDy0KmqG0",
+      "author": {
+        "id": "crawlee_search_habibivc",
+        "username": "habibivc"
+      },
+      "public_metrics": {
+        "likes": 42,
+        "retweets": 6,
+        "replies": 41,
+        "quotes": 0,
+        "views": 653
+      },
+      "url": "https://twitter.com/habibivc/status/2014247524438012397",
+      "processed": false,
+      "addedAt": "2026-01-22T22:10:31.078Z",
+      "expiresAt": "2026-01-29T22:10:31.078Z",
+      "source": "timeline_monitor",
+      "contentCategory": "altcoin-talk"
     }
   ],
   "metadata": {
-    "lastUpdated": "2026-01-22T17:58:38.549Z",
-    "totalPosts": 38,
+    "lastUpdated": "2026-01-22T22:12:03.030Z",
+    "totalPosts": 34,
     "bySource": {
-      "timeline_monitor": 38,
+      "timeline_monitor": 34,
       "search_discovery": 0
     }
   },
