@@ -19,6 +19,20 @@ export interface ArticleMetadata {
 
 export const articles: ArticleMetadata[] = [
 {
+  slug: 'blockchain-badges-2026-01-22',
+  product: 'Blockchain Badges',
+  title: 'Blockchain Badges: Tamper-Proof Digital Credentials with Instant Verification',
+  subtitle: 'Credential fraud costs institutions billions annually while manual verification consumes significant resources. Blockchain Badges provides cryptographically verified digital credentials stored on-chain, enabling instant verification without contacting issuers while preventing credential tampering and fraud.',
+  publishDate: '2026-01-22T10:05:17.592Z',
+  tweetId: '',
+  featuredImage: {
+    src: '/assets/images/docs/blockchain-badges/blockchain-badges-0.png',
+    alt: 'Cover',
+    loading: 'eager'
+  },
+  seoDescription: 'Blockchain Badges provides tamper-proof digital credentials with blockchain verification. Institutions issue certificates with instant verification, preventing fraud at scale.'
+},
+{
   slug: 'x-bot-2026-01-21',
   product: 'X Bot',
   title: 'X Bot: Track KOL Performance and Community Engagement in Real-Time',
