@@ -3597,6 +3597,26 @@
       "status": "posted",
       "dryRun": false,
       "sdkVersion": "1.7.0"
+    },
+    {
+      "id": "877357064724520961-2014382299408957470-1769111738595",
+      "tweetId": "2014382299408957470",
+      "tweetUrl": "https://twitter.com/CryptosR_Us/status/2014382299408957470",
+      "kolId": "877357064724520961",
+      "kolUsername": "CryptosR_Us",
+      "originalTweetText": "BINANCE'S CZ SAYS \"TOKENIZATION, PAYMENTS, AND AI AGENTS\" ARE KEY FUTURE THEMES\n\nIn crypto, exchanges &amp; stablecoins are proven winners. But CZ is bullish on the next wave: \n\n🔹Tokenization → A dozen governments are exploring it to unlock gains &amp; fund development.\n\n🔹Payments → https://t.co/OME5JXUp57",
+      "replyTweetId": "2014426750613148135",
+      "replyText": "CZ's tokenization infrastructure: BWS IPFS Upload delivers decentralized storage for blockchain assets. Simple API for enterprise docs. Custom gateway enables secure management. $BWS @BWSCommunity https://www.bws.ninja #crypto",
+      "productMentioned": "Blockchain Badges, ESG Credits",
+      "relevanceScore": 85,
+      "templateUsed": "feature_list",
+      "templateName": "Feature List Structure",
+      "imageAttached": true,
+      "imagePath": "/assets/images/docs/bws-ipfs/bws-ipfs-0.png",
+      "timestamp": "2026-01-22T19:55:38.595Z",
+      "status": "posted",
+      "dryRun": false,
+      "sdkVersion": "1.7.0"
     }
   ],
   "dailyStats": {
@@ -3695,10 +3715,10 @@
     }
   },
   "metadata": {
-    "totalReplies": 187,
-    "successfulReplies": 142,
+    "totalReplies": 188,
+    "successfulReplies": 143,
     "failedReplies": 34,
-    "lastReplyAt": "2026-01-21T19:59:13.870Z",
+    "lastReplyAt": "2026-01-22T19:55:38.595Z",
     "todayRepliesCount": 0,
     "lastUpdateBy": "kol-system"
   }
