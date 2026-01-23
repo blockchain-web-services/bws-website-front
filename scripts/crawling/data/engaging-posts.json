@@ -1,447 +1,6 @@
 {
   "posts": [
     {
-      "id": "2014268087638609995",
-      "text": "@Cointelegraph Based on @Spectre__AI it's actually been gaming oddly enough. Privacy still feels like it's at the top.",
-      "author": {
-        "id": "4441279246",
-        "username": "IncomeSharks"
-      },
-      "public_metrics": {
-        "likes": 55,
-        "retweets": 18,
-        "replies": 15,
-        "quotes": 0,
-        "views": 4193
-      },
-      "url": "https://twitter.com/IncomeSharks/status/2014268087638609995",
-      "processed": true,
-      "addedAt": "2026-01-22T17:55:38.873Z",
-      "expiresAt": "2026-01-29T17:55:38.873Z",
-      "source": "timeline_monitor",
-      "contentCategory": "project-discussion"
-    },
-    {
-      "id": "2014267103965315089",
-      "text": "@AltcoinSherpa The first dip since the run started that offers a good entry. Next wave up should be exciting",
-      "author": {
-        "id": "4441279246",
-        "username": "IncomeSharks"
-      },
-      "public_metrics": {
-        "likes": 45,
-        "retweets": 2,
-        "replies": 3,
-        "quotes": 0,
-        "views": 5692
-      },
-      "url": "https://twitter.com/IncomeSharks/status/2014267103965315089",
-      "processed": true,
-      "addedAt": "2026-01-22T17:55:40.882Z",
-      "expiresAt": "2026-01-29T17:55:40.882Z",
-      "source": "timeline_monitor",
-      "contentCategory": "market-trends/price-speculation/technical-analysis"
-    },
-    {
-      "id": "2014266600011223324",
-      "text": "@stokdog $SMR",
-      "author": {
-        "id": "4441279246",
-        "username": "IncomeSharks"
-      },
-      "public_metrics": {
-        "likes": 48,
-        "retweets": 0,
-        "replies": 5,
-        "quotes": 0,
-        "views": 6839
-      },
-      "url": "https://twitter.com/IncomeSharks/status/2014266600011223324",
-      "processed": true,
-      "addedAt": "2026-01-22T17:55:42.752Z",
-      "expiresAt": "2026-01-29T17:55:42.752Z",
-      "source": "timeline_monitor",
-      "contentCategory": "altcoin-talk"
-    },
-    {
-      "id": "2014266483917066572",
-      "text": "@ReetikaTrades An inverse bart is more likely than downside",
-      "author": {
-        "id": "4441279246",
-        "username": "IncomeSharks"
-      },
-      "public_metrics": {
-        "likes": 29,
-        "retweets": 0,
-        "replies": 1,
-        "quotes": 0,
-        "views": 3800
-      },
-      "url": "https://twitter.com/IncomeSharks/status/2014266483917066572",
-      "processed": true,
-      "addedAt": "2026-01-22T17:55:44.794Z",
-      "expiresAt": "2026-01-29T17:55:44.794Z",
-      "source": "timeline_monitor",
-      "contentCategory": "technical-analysis"
-    },
-    {
-      "id": "2014266109906890805",
-      "text": "@markchadwickx It'll look different but stock alt season should benefit crypto",
-      "author": {
-        "id": "4441279246",
-        "username": "IncomeSharks"
-      },
-      "public_metrics": {
-        "likes": 59,
-        "retweets": 0,
-        "replies": 1,
-        "quotes": 0,
-        "views": 4958
-      },
-      "url": "https://twitter.com/IncomeSharks/status/2014266109906890805",
-      "processed": true,
-      "addedAt": "2026-01-22T17:55:46.827Z",
-      "expiresAt": "2026-01-29T17:55:46.827Z",
-      "source": "timeline_monitor",
-      "contentCategory": "market-trends"
-    },
-    {
-      "id": "2014383942766313491",
-      "text": "bit by bit, we're giving our hard earned crypto cash to outsiders.\n\nCelebrities\n\nTrump\n\nrandom Devs who work AI\n\nEvery rug takes a little more out of the native crypto liquidity and it's the same 6 guys at the poker table swapping the same pot around. Stop giving it up",
-      "author": {
-        "id": "1068237257977544704",
-        "username": "AltcoinSherpa"
-      },
-      "public_metrics": {
-        "likes": 37,
-        "retweets": 3,
-        "replies": 7,
-        "quotes": 1,
-        "views": 2170
-      },
-      "url": "https://twitter.com/AltcoinSherpa/status/2014383942766313491",
-      "processed": true,
-      "addedAt": "2026-01-22T17:56:02.716Z",
-      "expiresAt": "2026-01-29T17:56:02.716Z",
-      "source": "timeline_monitor",
-      "contentCategory": "market-trends"
-    },
-    {
-      "id": "2014359244628283641",
-      "text": "I'm completely flat on active positions, just watching new stuff like $SENT and $DONT but not in either of them. Not super interested in firing any longs yet https://t.co/KwlqDEeMzH",
-      "author": {
-        "id": "1068237257977544704",
-        "username": "AltcoinSherpa"
-      },
-      "public_metrics": {
-        "likes": 17,
-        "retweets": 0,
-        "replies": 3,
-        "quotes": 0,
-        "views": 2934
-      },
-      "url": "https://twitter.com/AltcoinSherpa/status/2014359244628283641",
-      "processed": true,
-      "addedAt": "2026-01-22T17:56:04.746Z",
-      "expiresAt": "2026-01-29T17:56:04.746Z",
-      "source": "timeline_monitor",
-      "contentCategory": "altcoin-talk"
-    },
-    {
-      "id": "2014339638693945433",
-      "text": "@XtineFang dont buy this shitcoin",
-      "author": {
-        "id": "1068237257977544704",
-        "username": "AltcoinSherpa"
-      },
-      "public_metrics": {
-        "likes": 5,
-        "retweets": 1,
-        "replies": 2,
-        "quotes": 0,
-        "views": 710
-      },
-      "url": "https://twitter.com/AltcoinSherpa/status/2014339638693945433",
-      "processed": true,
-      "addedAt": "2026-01-22T17:56:07.993Z",
-      "expiresAt": "2026-01-29T17:56:07.993Z",
-      "source": "timeline_monitor",
-      "contentCategory": "altcoin-talk"
-    },
-    {
-      "id": "2014323195453596124",
-      "text": "Times to size up: during risk on bullish environments where all dips are getting bought up quickly and everything is trending hard.\n\nWe are not there IMO. Manage risk appropriately for active trades",
-      "author": {
-        "id": "1068237257977544704",
-        "username": "AltcoinSherpa"
-      },
-      "public_metrics": {
-        "likes": 36,
-        "retweets": 0,
-        "replies": 7,
-        "quotes": 0,
-        "views": 3907
-      },
-      "url": "https://twitter.com/AltcoinSherpa/status/2014323195453596124",
-      "processed": true,
-      "addedAt": "2026-01-22T17:56:13.575Z",
-      "expiresAt": "2026-01-29T17:56:13.575Z",
-      "source": "timeline_monitor",
-      "contentCategory": "market-trends/technical-analysis"
-    },
-    {
-      "id": "2014320440253001873",
-      "text": "The leading memes all near retracing the entire move since Jan 1st. Memes are the best when $BTC is really strong and they're the worst otherwise. $BONK $PEPE $FARTCOIN will lead again; you just need a stronger btc environment first. https://t.co/tQztlHUcXU",
-      "author": {
-        "id": "1068237257977544704",
-        "username": "AltcoinSherpa"
-      },
-      "public_metrics": {
-        "likes": 84,
-        "retweets": 3,
-        "replies": 20,
-        "quotes": 1,
-        "views": 6098
-      },
-      "url": "https://twitter.com/AltcoinSherpa/status/2014320440253001873",
-      "processed": true,
-      "addedAt": "2026-01-22T17:56:15.495Z",
-      "expiresAt": "2026-01-29T17:56:15.495Z",
-      "source": "timeline_monitor",
-      "contentCategory": "altcoin-talk"
-    },
-    {
-      "id": "2014317912878686260",
-      "text": "So many $PENGU fans in the US government, how can you be bearish? (I have a bag of pengu + a pudgy myself, let's roll) https://t.co/8rPJxNa5Tj",
-      "author": {
-        "id": "1068237257977544704",
-        "username": "AltcoinSherpa"
-      },
-      "public_metrics": {
-        "likes": 137,
-        "retweets": 9,
-        "replies": 14,
-        "quotes": 0,
-        "views": 11524
-      },
-      "url": "https://twitter.com/AltcoinSherpa/status/2014317912878686260",
-      "processed": true,
-      "addedAt": "2026-01-22T17:56:17.554Z",
-      "expiresAt": "2026-01-29T17:56:17.554Z",
-      "source": "timeline_monitor",
-      "contentCategory": "altcoin-talk"
-    },
-    {
-      "id": "2014307005268152320",
-      "text": "$BTC wouldn't be surprised if this is some sort of higher time frame bottom being formed but expecting more chop first. Probably going to keep trades short in general until we see a big move in either direction https://t.co/zPM6Suorou",
-      "author": {
-        "id": "1068237257977544704",
-        "username": "AltcoinSherpa"
-      },
-      "public_metrics": {
-        "likes": 51,
-        "retweets": 2,
-        "replies": 10,
-        "quotes": 0,
-        "views": 4488
-      },
-      "url": "https://twitter.com/AltcoinSherpa/status/2014307005268152320",
-      "processed": true,
-      "addedAt": "2026-01-22T17:56:19.491Z",
-      "expiresAt": "2026-01-29T17:56:19.491Z",
-      "source": "timeline_monitor",
-      "contentCategory": "technical-analysis"
-    },
-    {
-      "id": "2014289628904194422",
-      "text": "@Parap38935571 @karbonbased If you pretend that happened for a minute, who owns the tokens now, and what does the chart look like? I don’t see how “everyone wins”. It would be down 99% and everyone would be here calling it a scam.",
-      "author": {
-        "id": "2259434528",
-        "username": "cobie"
-      },
-      "public_metrics": {
-        "likes": 23,
-        "retweets": 0,
-        "replies": 1,
-        "quotes": 0,
-        "views": 1605
-      },
-      "url": "https://twitter.com/cobie/status/2014289628904194422",
-      "processed": true,
-      "addedAt": "2026-01-22T17:56:36.141Z",
-      "expiresAt": "2026-01-29T17:56:36.141Z",
-      "source": "timeline_monitor",
-      "contentCategory": "price-speculation"
-    },
-    {
-      "id": "2014237846069039425",
-      "text": "@TheTakenUser @karbonbased They don’t get clawed back. Investors take risk, sometimes they lose. If farcaster was worth $50bn later the founder doesn’t get to claw back the sale in the opposite direction.",
-      "author": {
-        "id": "2259434528",
-        "username": "cobie"
-      },
-      "public_metrics": {
-        "likes": 33,
-        "retweets": 0,
-        "replies": 2,
-        "quotes": 0,
-        "views": 3778
-      },
-      "url": "https://twitter.com/cobie/status/2014237846069039425",
-      "processed": true,
-      "addedAt": "2026-01-22T17:56:39.417Z",
-      "expiresAt": "2026-01-29T17:56:39.417Z",
-      "source": "timeline_monitor",
-      "contentCategory": "project-discussion"
-    },
-    {
-      "id": "2013822458701176893",
-      "text": "@boldleonidas @Evan_ss6 I think the main thing was that they were going to raise $2m but then they kept the whole committed amount, no? And if you do a commitment-based sale then people over-sub because they think they’ll get diluted so ppl lost way more than they intended to risk",
-      "author": {
-        "id": "2259434528",
-        "username": "cobie"
-      },
-      "public_metrics": {
-        "likes": 306,
-        "retweets": 3,
-        "replies": 33,
-        "quotes": 4,
-        "views": 23979
-      },
-      "url": "https://twitter.com/cobie/status/2013822458701176893",
-      "processed": true,
-      "addedAt": "2026-01-22T17:56:46.365Z",
-      "expiresAt": "2026-01-29T17:56:46.365Z",
-      "source": "timeline_monitor",
-      "contentCategory": "project-discussion"
-    },
-    {
-      "id": "2014382299408957470",
-      "text": "BINANCE'S CZ SAYS \"TOKENIZATION, PAYMENTS, AND AI AGENTS\" ARE KEY FUTURE THEMES\n\nIn crypto, exchanges &amp; stablecoins are proven winners. But CZ is bullish on the next wave: \n\n🔹Tokenization → A dozen governments are exploring it to unlock gains &amp; fund development.\n\n🔹Payments → https://t.co/OME5JXUp57",
-      "author": {
-        "id": "877357064724520961",
-        "username": "CryptosR_Us"
-      },
-      "public_metrics": {
-        "likes": 38,
-        "retweets": 3,
-        "replies": 5,
-        "quotes": 2,
-        "views": 2656
-      },
-      "url": "https://twitter.com/CryptosR_Us/status/2014382299408957470",
-      "processed": true,
-      "addedAt": "2026-01-22T17:56:54.458Z",
-      "expiresAt": "2026-01-29T17:56:54.458Z",
-      "source": "timeline_monitor",
-      "contentCategory": "market-trends"
-    },
-    {
-      "id": "2014375717060939808",
-      "text": "@saylor You can never have enough Bitcoin.",
-      "author": {
-        "id": "877357064724520961",
-        "username": "CryptosR_Us"
-      },
-      "public_metrics": {
-        "likes": 13,
-        "retweets": 0,
-        "replies": 3,
-        "quotes": 1,
-        "views": 1519
-      },
-      "url": "https://twitter.com/CryptosR_Us/status/2014375717060939808",
-      "processed": true,
-      "addedAt": "2026-01-22T17:56:57.544Z",
-      "expiresAt": "2026-01-29T17:56:57.544Z",
-      "source": "timeline_monitor",
-      "contentCategory": "market-trends"
-    },
-    {
-      "id": "2014357920763273298",
-      "text": "🚨  CRYPTO GOES MAINSTREAM ON WALL STREET \n\nBitGo made its public market debut on the New York Stock Exchange this morning, marking another milestone for crypto’s integration into traditional finance. \n\nTo commemorate the listing, @BitGo presented the NYSE with a framed copy of https://t.co/IKT5aADD91",
-      "author": {
-        "id": "877357064724520961",
-        "username": "CryptosR_Us"
-      },
-      "public_metrics": {
-        "likes": 220,
-        "retweets": 39,
-        "replies": 16,
-        "quotes": 1,
-        "views": 9574
-      },
-      "url": "https://twitter.com/CryptosR_Us/status/2014357920763273298",
-      "processed": true,
-      "addedAt": "2026-01-22T17:56:59.396Z",
-      "expiresAt": "2026-01-29T17:56:59.396Z",
-      "source": "timeline_monitor",
-      "contentCategory": "news"
-    },
-    {
-      "id": "2014260496728469532",
-      "text": "🚨  CRYPTO MARKET STRUCTURE MARKUP SET FOR TUESDAY AT 3 PM ET  \n\nThe Senate Agriculture Committee unveiled its latest version of crypto market structure text.  \n\nChairman John Boozman said a deal with Democrats couldn’t be reached, but he still looks forward to the markup. https://t.co/BfkXAAI2EZ https://t.co/jM7hJORzcu",
-      "author": {
-        "id": "877357064724520961",
-        "username": "CryptosR_Us"
-      },
-      "public_metrics": {
-        "likes": 212,
-        "retweets": 39,
-        "replies": 33,
-        "quotes": 0,
-        "views": 17389
-      },
-      "url": "https://twitter.com/CryptosR_Us/status/2014260496728469532",
-      "processed": true,
-      "addedAt": "2026-01-22T17:57:09.629Z",
-      "expiresAt": "2026-01-29T17:57:09.629Z",
-      "source": "timeline_monitor",
-      "contentCategory": "news"
-    },
-    {
-      "id": "2014245397150224778",
-      "text": "THE BITCOIN STANDARD IS EMERGING  ₿ \n\nBrian Armstrong tells central bankers the global monetary system is shifting from the Gold Standard to the Bitcoin Standard.   \n\nHard money. \nInflation-resistant = $BTC https://t.co/YSfIn7y8CN https://t.co/90jIG3JPmX",
-      "author": {
-        "id": "877357064724520961",
-        "username": "CryptosR_Us"
-      },
-      "public_metrics": {
-        "likes": 80,
-        "retweets": 9,
-        "replies": 13,
-        "quotes": 1,
-        "views": 9310
-      },
-      "url": "https://twitter.com/CryptosR_Us/status/2014245397150224778",
-      "processed": true,
-      "addedAt": "2026-01-22T17:57:10.612Z",
-      "expiresAt": "2026-01-29T17:57:10.612Z",
-      "source": "timeline_monitor",
-      "contentCategory": "market-trends"
-    },
-    {
-      "id": "2014216210297098497",
-      "text": "THE BIGGEST BITCOIN SUPPLY SHIFT YOU’VE NEVER SEEN\n\nThis isn’t weak hands selling -- it’s some of the oldest $BTC finally moving.\n\n2024 to 2025 saw more long-term holders (2+ years) move coins than any period in #Bitcoin’s history. Not panic. Not forced selling. Just veterans https://t.co/cPDmq45RAo",
-      "author": {
-        "id": "877357064724520961",
-        "username": "CryptosR_Us"
-      },
-      "public_metrics": {
-        "likes": 110,
-        "retweets": 16,
-        "replies": 22,
-        "quotes": 1,
-        "views": 8120
-      },
-      "url": "https://twitter.com/CryptosR_Us/status/2014216210297098497",
-      "processed": true,
-      "addedAt": "2026-01-22T17:57:12.460Z",
-      "expiresAt": "2026-01-29T17:57:12.460Z",
-      "source": "timeline_monitor",
-      "contentCategory": "market-trends"
-    },
-    {
       "id": "1780377650625945683",
       "text": "Despite the clickbait headlines, the halving is unlikely to result in a Bitcoin Death Spiral - here's why https://t.co/dipIQU6xNq",
       "author": {
@@ -547,27 +106,6 @@
       "contentCategory": "news"
     },
     {
-      "id": "1763024925642604676",
-      "text": "My latest video: Buying Bitcoin Using Dollar Cost Averaging &amp; Avoiding Dust UTXO - Self Custody Series - Feb 2024 #bitcoin #UTXO #selfcustody \nhttps://t.co/VgzcHPTIUv",
-      "author": {
-        "id": "1469101279",
-        "username": "aantonop"
-      },
-      "public_metrics": {
-        "likes": 392,
-        "retweets": 101,
-        "replies": 0,
-        "quotes": 2,
-        "views": 83338
-      },
-      "url": "https://twitter.com/aantonop/status/1763024925642604676",
-      "processed": true,
-      "addedAt": "2026-01-22T17:57:29.295Z",
-      "expiresAt": "2026-01-29T17:57:29.295Z",
-      "source": "timeline_monitor",
-      "contentCategory": "market-trends"
-    },
-    {
       "id": "1762988232969490689",
       "text": "Are ETFs better than Self Custody? Watch this 1 min video to hear my answer. \nhttps://t.co/aZyYV0PB0q",
       "author": {
@@ -624,7 +162,7 @@
         "views": 1370
       },
       "url": "https://twitter.com/AltcoinSherpa/status/2014359343093653902",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-01-22T22:09:27.787Z",
       "expiresAt": "2026-01-29T22:09:27.787Z",
       "source": "timeline_monitor",
@@ -645,7 +183,7 @@
         "views": 267
       },
       "url": "https://twitter.com/habibivc/status/2014445596241793186",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-01-22T22:10:20.138Z",
       "expiresAt": "2026-01-29T22:10:20.138Z",
       "source": "timeline_monitor",
@@ -666,7 +204,7 @@
         "views": 43
       },
       "url": "https://twitter.com/habibivc/status/2014390130472055137",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-01-22T22:10:21.962Z",
       "expiresAt": "2026-01-29T22:10:21.962Z",
       "source": "timeline_monitor",
@@ -687,7 +225,7 @@
         "views": 707
       },
       "url": "https://twitter.com/habibivc/status/2014375252411732426",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-01-22T22:10:26.023Z",
       "expiresAt": "2026-01-29T22:10:26.023Z",
       "source": "timeline_monitor",
@@ -708,7 +246,7 @@
         "views": 653
       },
       "url": "https://twitter.com/habibivc/status/2014247524438012397",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-01-22T22:10:31.078Z",
       "expiresAt": "2026-01-29T22:10:31.078Z",
       "source": "timeline_monitor",
