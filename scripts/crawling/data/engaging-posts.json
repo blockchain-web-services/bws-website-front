@@ -267,7 +267,7 @@
         "views": 5193
       },
       "url": "https://twitter.com/AltcoinSherpa/status/2014546817132716158",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-01-23T07:24:08.104Z",
       "expiresAt": "2026-01-30T07:24:08.106Z",
       "source": "timeline_monitor",
@@ -288,7 +288,7 @@
         "views": 8642
       },
       "url": "https://twitter.com/AltcoinSherpa/status/2014383942766313491",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-01-23T07:24:13.883Z",
       "expiresAt": "2026-01-30T07:24:13.883Z",
       "source": "timeline_monitor",
@@ -309,7 +309,7 @@
         "views": 3800
       },
       "url": "https://twitter.com/AltcoinSherpa/status/2014359244628283641",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-01-23T07:24:15.939Z",
       "expiresAt": "2026-01-30T07:24:15.939Z",
       "source": "timeline_monitor",
@@ -330,7 +330,7 @@
         "views": 1442
       },
       "url": "https://twitter.com/AltcoinSherpa/status/2014339638693945433",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-01-23T07:24:19.882Z",
       "expiresAt": "2026-01-30T07:24:19.882Z",
       "source": "timeline_monitor",
@@ -351,7 +351,7 @@
         "views": 17540
       },
       "url": "https://twitter.com/cobie/status/2014473213003129038",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-01-23T07:24:39.797Z",
       "expiresAt": "2026-01-30T07:24:39.797Z",
       "source": "timeline_monitor",
@@ -372,7 +372,7 @@
         "views": 850
       },
       "url": "https://twitter.com/cobie/status/2014472955292492157",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-01-23T07:24:41.763Z",
       "expiresAt": "2026-01-30T07:24:41.763Z",
       "source": "timeline_monitor",
@@ -393,7 +393,7 @@
         "views": 36719
       },
       "url": "https://twitter.com/cobie/status/2014471157123026979",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-01-23T07:24:43.835Z",
       "expiresAt": "2026-01-30T07:24:43.835Z",
       "source": "timeline_monitor",
@@ -414,7 +414,7 @@
         "views": 988
       },
       "url": "https://twitter.com/cobie/status/2014438573458534409",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-01-23T07:24:53.225Z",
       "expiresAt": "2026-01-30T07:24:53.225Z",
       "source": "timeline_monitor",
@@ -435,7 +435,7 @@
         "views": 884
       },
       "url": "https://twitter.com/cobie/status/2014435731381293435",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-01-23T07:25:00.018Z",
       "expiresAt": "2026-01-30T07:25:00.018Z",
       "source": "timeline_monitor",
@@ -456,7 +456,7 @@
         "views": 19397
       },
       "url": "https://twitter.com/IncomeSharks/status/2014549526124875873",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-01-23T07:25:20.624Z",
       "expiresAt": "2026-01-30T07:25:20.624Z",
       "source": "timeline_monitor",
@@ -587,10 +587,10 @@
       "BWS IPFS",
       "Blockchain Save"
     ],
-    "currentIndex": 1,
-    "lastProductUsed": "X Bot",
+    "currentIndex": 2,
+    "lastProductUsed": "Fan Game Cube",
     "positioningPhraseIndex": 0,
-    "replyCount": 297
+    "replyCount": 298
   },
   "_removedStale": false
 }

@@ -3657,6 +3657,26 @@
       "status": "posted",
       "dryRun": false,
       "sdkVersion": "1.7.0"
+    },
+    {
+      "id": "1068237257977544704-2014383942766313491-1769154068750",
+      "tweetId": "2014383942766313491",
+      "tweetUrl": "https://twitter.com/AltcoinSherpa/status/2014383942766313491",
+      "kolId": "1068237257977544704",
+      "kolUsername": "AltcoinSherpa",
+      "originalTweetText": "bit by bit, we're giving our hard earned crypto cash to outsiders.\n\nCelebrities\n\nTrump\n\nrandom Devs who work AI\n\nEvery rug takes a little more out of the native crypto liquidity and it's the same 6 guys at the poker table swapping the same pot around. Stop giving it up",
+      "replyTweetId": "2014604296642351125",
+      "replyText": "Crypto hype? We solve real problems. $BWS Fan Game Cube creates new revenue streams for sports clubs via NFT fan engagement. @BWSCommunity https://docs.bws.ninja/marketplace-solutions/bws.nft.gamecube #crypto",
+      "productMentioned": "Blockchain Badges, ESG Credits",
+      "relevanceScore": 82,
+      "templateUsed": "question_led",
+      "templateName": "Question-Led Structure",
+      "imageAttached": true,
+      "imagePath": "/assets/images/docs/fan-game-cube/fan-game-cube-0.png",
+      "timestamp": "2026-01-23T07:41:08.750Z",
+      "status": "posted",
+      "dryRun": false,
+      "sdkVersion": "1.7.0"
     }
   ],
   "dailyStats": {
@@ -3761,10 +3781,10 @@
     }
   },
   "metadata": {
-    "totalReplies": 190,
-    "successfulReplies": 145,
+    "totalReplies": 191,
+    "successfulReplies": 146,
     "failedReplies": 34,
-    "lastReplyAt": "2026-01-23T05:11:27.051Z",
+    "lastReplyAt": "2026-01-23T07:41:08.750Z",
     "todayRepliesCount": 0,
     "lastUpdateBy": "kol-system"
   }
