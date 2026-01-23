@@ -3697,6 +3697,26 @@
       "status": "posted",
       "dryRun": false,
       "sdkVersion": "1.7.0"
+    },
+    {
+      "id": "111533746-2014708250143285718-1769198074195",
+      "tweetId": "2014708250143285718",
+      "tweetUrl": "https://twitter.com/WuBlockchain/status/2014708250143285718",
+      "kolId": "111533746",
+      "kolUsername": "WuBlockchain",
+      "originalTweetText": "CZ: Three Emerging Tracks in the Crypto Sector\n\nAt the World Economic Forum in Davos on January 22, 2026, Binance founder CZ highlighted three emerging tracks in the crypto sector: asset tokenization, the convergence of payment systems, and AI Agent–related applications. He noted https://t.co/7ltdy868aV",
+      "replyTweetId": "2014788868491333685",
+      "replyText": "CZ's tokenization insights ring true. $BWS NFT.zK simplifies NFT creation via email transfers, zero blockchain complexity. Real asset tokenization solved. @BWSCommunity https://docs.bws.ninja/solutions/bws.nft.zk #crypto",
+      "productMentioned": "Blockchain Badges, ESG Credits",
+      "relevanceScore": 85,
+      "templateUsed": "classic",
+      "templateName": "Classic Structure",
+      "imageAttached": true,
+      "imagePath": "/assets/images/docs/nftzk/nftzk-0.png",
+      "timestamp": "2026-01-23T19:54:34.195Z",
+      "status": "posted",
+      "dryRun": false,
+      "sdkVersion": "1.7.0"
     }
   ],
   "dailyStats": {
@@ -3801,10 +3821,10 @@
     }
   },
   "metadata": {
-    "totalReplies": 192,
-    "successfulReplies": 147,
+    "totalReplies": 193,
+    "successfulReplies": 148,
     "failedReplies": 34,
-    "lastReplyAt": "2026-01-23T10:25:37.619Z",
+    "lastReplyAt": "2026-01-23T19:54:34.195Z",
     "todayRepliesCount": 0,
     "lastUpdateBy": "kol-system"
   }
