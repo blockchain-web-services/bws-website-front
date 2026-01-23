@@ -251,13 +251,328 @@
       "expiresAt": "2026-01-29T22:10:31.078Z",
       "source": "timeline_monitor",
       "contentCategory": "altcoin-talk"
+    },
+    {
+      "id": "2014546817132716158",
+      "text": "I feel like the local bottom is in but I just can't prove it",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "likes": 79,
+        "retweets": 2,
+        "replies": 12,
+        "quotes": 0,
+        "views": 5193
+      },
+      "url": "https://twitter.com/AltcoinSherpa/status/2014546817132716158",
+      "processed": false,
+      "addedAt": "2026-01-23T07:24:08.104Z",
+      "expiresAt": "2026-01-30T07:24:08.106Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends/technical-analysis"
+    },
+    {
+      "id": "2014383942766313491",
+      "text": "bit by bit, we're giving our hard earned crypto cash to outsiders.\n\nCelebrities\n\nTrump\n\nrandom Devs who work AI\n\nEvery rug takes a little more out of the native crypto liquidity and it's the same 6 guys at the poker table swapping the same pot around. Stop giving it up",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "likes": 145,
+        "retweets": 25,
+        "replies": 51,
+        "quotes": 1,
+        "views": 8642
+      },
+      "url": "https://twitter.com/AltcoinSherpa/status/2014383942766313491",
+      "processed": false,
+      "addedAt": "2026-01-23T07:24:13.883Z",
+      "expiresAt": "2026-01-30T07:24:13.883Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "2014359244628283641",
+      "text": "I'm completely flat on active positions, just watching new stuff like $SENT and $DONT but not in either of them. Not super interested in firing any longs yet https://t.co/KwlqDEeMzH",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "likes": 21,
+        "retweets": 1,
+        "replies": 6,
+        "quotes": 0,
+        "views": 3800
+      },
+      "url": "https://twitter.com/AltcoinSherpa/status/2014359244628283641",
+      "processed": false,
+      "addedAt": "2026-01-23T07:24:15.939Z",
+      "expiresAt": "2026-01-30T07:24:15.939Z",
+      "source": "timeline_monitor",
+      "contentCategory": "altcoin-talk"
+    },
+    {
+      "id": "2014339638693945433",
+      "text": "@XtineFang dont buy this shitcoin",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "likes": 8,
+        "retweets": 1,
+        "replies": 2,
+        "quotes": 0,
+        "views": 1442
+      },
+      "url": "https://twitter.com/AltcoinSherpa/status/2014339638693945433",
+      "processed": false,
+      "addedAt": "2026-01-23T07:24:19.882Z",
+      "expiresAt": "2026-01-30T07:24:19.882Z",
+      "source": "timeline_monitor",
+      "contentCategory": "altcoin-talk"
+    },
+    {
+      "id": "2014473213003129038",
+      "text": "@KateClarkTweets Don’t like this. They didn’t give us an airdrop and just sold the equity??",
+      "author": {
+        "id": "2259434528",
+        "username": "cobie"
+      },
+      "public_metrics": {
+        "likes": 220,
+        "retweets": 3,
+        "replies": 19,
+        "quotes": 2,
+        "views": 17540
+      },
+      "url": "https://twitter.com/cobie/status/2014473213003129038",
+      "processed": false,
+      "addedAt": "2026-01-23T07:24:39.797Z",
+      "expiresAt": "2026-01-30T07:24:39.797Z",
+      "source": "timeline_monitor",
+      "contentCategory": "project-discussion"
+    },
+    {
+      "id": "2014472955292492157",
+      "text": "@cameldck @mirza They’re returning 100% of capital to investors, so it’s a rug?",
+      "author": {
+        "id": "2259434528",
+        "username": "cobie"
+      },
+      "public_metrics": {
+        "likes": 11,
+        "retweets": 1,
+        "replies": 1,
+        "quotes": 0,
+        "views": 850
+      },
+      "url": "https://twitter.com/cobie/status/2014472955292492157",
+      "processed": false,
+      "addedAt": "2026-01-23T07:24:41.763Z",
+      "expiresAt": "2026-01-30T07:24:41.763Z",
+      "source": "timeline_monitor",
+      "contentCategory": "project-discussion"
+    },
+    {
+      "id": "2014471157123026979",
+      "text": "@dwr How come you didn’t give your Coinbase IPO proceeds to farcaster users?????",
+      "author": {
+        "id": "2259434528",
+        "username": "cobie"
+      },
+      "public_metrics": {
+        "likes": 736,
+        "retweets": 4,
+        "replies": 33,
+        "quotes": 1,
+        "views": 36719
+      },
+      "url": "https://twitter.com/cobie/status/2014471157123026979",
+      "processed": false,
+      "addedAt": "2026-01-23T07:24:43.835Z",
+      "expiresAt": "2026-01-30T07:24:43.835Z",
+      "source": "timeline_monitor",
+      "contentCategory": "news"
+    },
+    {
+      "id": "2014438573458534409",
+      "text": "@cameldck @mirza If it’s a “rug” there needs to be a victim. Who is the victim?",
+      "author": {
+        "id": "2259434528",
+        "username": "cobie"
+      },
+      "public_metrics": {
+        "likes": 8,
+        "retweets": 0,
+        "replies": 4,
+        "quotes": 0,
+        "views": 988
+      },
+      "url": "https://twitter.com/cobie/status/2014438573458534409",
+      "processed": false,
+      "addedAt": "2026-01-23T07:24:53.225Z",
+      "expiresAt": "2026-01-30T07:24:53.225Z",
+      "source": "timeline_monitor",
+      "contentCategory": "project-discussion"
+    },
+    {
+      "id": "2014435731381293435",
+      "text": "@cameldck @mirza Professional venture investors (a16z is the biggest VC in the world) can do their own due diligence. Are you suggesting they are a victim? The second screenshot doesn’t even have anything to do with farcaster.",
+      "author": {
+        "id": "2259434528",
+        "username": "cobie"
+      },
+      "public_metrics": {
+        "likes": 10,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 884
+      },
+      "url": "https://twitter.com/cobie/status/2014435731381293435",
+      "processed": false,
+      "addedAt": "2026-01-23T07:25:00.018Z",
+      "expiresAt": "2026-01-30T07:25:00.018Z",
+      "source": "timeline_monitor",
+      "contentCategory": "project-discussion"
+    },
+    {
+      "id": "2014549526124875873",
+      "text": "$AXS - Not saying to buy here but pointing out this is yet another coin that flipped the Supertrend bullish, volume showed up, and it went to run 3x in a very short period. Things are moving. https://t.co/CF333u3Jci",
+      "author": {
+        "id": "4441279246",
+        "username": "IncomeSharks"
+      },
+      "public_metrics": {
+        "likes": 187,
+        "retweets": 8,
+        "replies": 29,
+        "quotes": 1,
+        "views": 19397
+      },
+      "url": "https://twitter.com/IncomeSharks/status/2014549526124875873",
+      "processed": false,
+      "addedAt": "2026-01-23T07:25:20.624Z",
+      "expiresAt": "2026-01-30T07:25:20.624Z",
+      "source": "timeline_monitor",
+      "contentCategory": "technical-analysis"
+    },
+    {
+      "id": "2014548646210203787",
+      "text": "Gaming is finally the leading sector in Crypto and I'm surprised people are so quiet about it. https://t.co/ZsMvFHVfVF",
+      "author": {
+        "id": "4441279246",
+        "username": "IncomeSharks"
+      },
+      "public_metrics": {
+        "likes": 295,
+        "retweets": 31,
+        "replies": 73,
+        "quotes": 8,
+        "views": 34808
+      },
+      "url": "https://twitter.com/IncomeSharks/status/2014548646210203787",
+      "processed": false,
+      "addedAt": "2026-01-23T07:25:22.616Z",
+      "expiresAt": "2026-01-30T07:25:22.616Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "2014547459125739559",
+      "text": "$SCRT - Supertrend flipped bullish, OBV broke resistance, increasing volume, and not a lot of resistance left to $.28. People are spending time complaining about crypto when there's plenty still going up. https://t.co/EnBLDf9O52",
+      "author": {
+        "id": "4441279246",
+        "username": "IncomeSharks"
+      },
+      "public_metrics": {
+        "likes": 101,
+        "retweets": 9,
+        "replies": 17,
+        "quotes": 0,
+        "views": 17352
+      },
+      "url": "https://twitter.com/IncomeSharks/status/2014547459125739559",
+      "processed": false,
+      "addedAt": "2026-01-23T07:25:26.555Z",
+      "expiresAt": "2026-01-30T07:25:26.555Z",
+      "source": "timeline_monitor",
+      "contentCategory": "price-speculation/technical-analysis"
+    },
+    {
+      "id": "2014542770221023248",
+      "text": "@deltan_eutral It's gone from $3k to $125k in a 5 years. The bigger cult is those hating on it.",
+      "author": {
+        "id": "4441279246",
+        "username": "IncomeSharks"
+      },
+      "public_metrics": {
+        "likes": 160,
+        "retweets": 1,
+        "replies": 6,
+        "quotes": 0,
+        "views": 4928
+      },
+      "url": "https://twitter.com/IncomeSharks/status/2014542770221023248",
+      "processed": false,
+      "addedAt": "2026-01-23T07:25:30.507Z",
+      "expiresAt": "2026-01-30T07:25:30.507Z",
+      "source": "timeline_monitor",
+      "contentCategory": "price-speculation"
+    },
+    {
+      "id": "2014542447330886068",
+      "text": "@Intel_degen @grok @BitcoinGojo @dcon__ The 800 million Department of Energy money says otherwise. It's the only one with approval in the US right now. It's at a 5 billion marketcap for a reason and it's already got some revenue coming in. Nuclear is a slow but big play, it takes a while to get people running on it.",
+      "author": {
+        "id": "4441279246",
+        "username": "IncomeSharks"
+      },
+      "public_metrics": {
+        "likes": 7,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 346
+      },
+      "url": "https://twitter.com/IncomeSharks/status/2014542447330886068",
+      "processed": false,
+      "addedAt": "2026-01-23T07:25:32.525Z",
+      "expiresAt": "2026-01-30T07:25:32.525Z",
+      "source": "timeline_monitor",
+      "contentCategory": "project-discussion"
+    },
+    {
+      "id": "2013700142046564592",
+      "text": "@tripledoublebtc @R89Capital What happens to crypto if markets risk off fren?",
+      "author": {
+        "id": "1138993163706753029",
+        "username": "Pentosh1"
+      },
+      "public_metrics": {
+        "likes": 17,
+        "retweets": 0,
+        "replies": 3,
+        "quotes": 0,
+        "views": 2049
+      },
+      "url": "https://twitter.com/Pentosh1/status/2013700142046564592",
+      "processed": false,
+      "addedAt": "2026-01-23T07:25:49.339Z",
+      "expiresAt": "2026-01-30T07:25:49.339Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
     }
   ],
   "metadata": {
-    "lastUpdated": "2026-01-22T22:12:03.030Z",
-    "totalPosts": 34,
+    "lastUpdated": "2026-01-23T07:27:18.490Z",
+    "totalPosts": 27,
     "bySource": {
-      "timeline_monitor": 34,
+      "timeline_monitor": 27,
       "search_discovery": 0
     }
   },
