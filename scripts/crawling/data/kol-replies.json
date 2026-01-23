@@ -3637,6 +3637,26 @@
       "status": "posted",
       "dryRun": false,
       "sdkVersion": "1.7.0"
+    },
+    {
+      "id": "crawlee_search_habibivc-2014247524438012397-1769145087051",
+      "tweetId": "2014247524438012397",
+      "tweetUrl": "https://twitter.com/habibivc/status/2014247524438012397",
+      "kolId": "crawlee_search_habibivc",
+      "kolUsername": "habibivc",
+      "originalTweetText": "Gm chat \n\nDo you still believe in alt season https://t.co/jiDy0KmqG0",
+      "replyTweetId": "2014566624460693547",
+      "replyText": "Most alt season 'winners' are empty hype. X Bot from $BWS uses official X API to prove real Twitter engagement - separating utility from noise. Authentic metrics for serious investors. @BWSCommunity #altcoins #microcap https://docs.bws.ninja/marketplace-solutions/bws.x.bot",
+      "productMentioned": "ESG Credits, Blockchain Badges",
+      "relevanceScore": 82,
+      "templateUsed": "problem_solution",
+      "templateName": "Problem-Solution Structure",
+      "imageAttached": true,
+      "imagePath": "/assets/images/docs/x-bot/x-bot-0.png",
+      "timestamp": "2026-01-23T05:11:27.051Z",
+      "status": "posted",
+      "dryRun": false,
+      "sdkVersion": "1.7.0"
     }
   ],
   "dailyStats": {
@@ -3735,10 +3755,10 @@
     }
   },
   "metadata": {
-    "totalReplies": 189,
-    "successfulReplies": 144,
+    "totalReplies": 190,
+    "successfulReplies": 145,
     "failedReplies": 34,
-    "lastReplyAt": "2026-01-22T23:19:18.602Z",
+    "lastReplyAt": "2026-01-23T05:11:27.051Z",
     "todayRepliesCount": 0,
     "lastUpdateBy": "kol-system"
   }
