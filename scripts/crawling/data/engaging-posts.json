@@ -440,13 +440,496 @@
       "expiresAt": "2026-01-30T17:54:42.099Z",
       "source": "timeline_monitor",
       "contentCategory": "market-trends"
+    },
+    {
+      "id": "2014812360457044097",
+      "text": "@Cryptoarena001 Always a fan of realizing profits. But what's funny to me with $ROSE is this is the first time I've seen many accounts saying they are closing. I've never seen that, most people never share exits so either everyone is being smart or it's running higher.",
+      "author": {
+        "id": "4441279246",
+        "username": "IncomeSharks"
+      },
+      "public_metrics": {
+        "likes": 16,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 1,
+        "views": 911
+      },
+      "url": "https://twitter.com/IncomeSharks/status/2014812360457044097",
+      "processed": false,
+      "addedAt": "2026-01-23T22:07:45.646Z",
+      "expiresAt": "2026-01-30T22:07:45.646Z",
+      "source": "timeline_monitor",
+      "contentCategory": "altcoin-talk"
+    },
+    {
+      "id": "2014810203997569260",
+      "text": "People hate buying charts when they look like this. But love buying when it's already ran. A bullish chart usually looks bearish, and a bearish chart is often one that looks really good. https://t.co/fxXT9NYu9y",
+      "author": {
+        "id": "4441279246",
+        "username": "IncomeSharks"
+      },
+      "public_metrics": {
+        "likes": 149,
+        "retweets": 1,
+        "replies": 20,
+        "quotes": 0,
+        "views": 11402
+      },
+      "url": "https://twitter.com/IncomeSharks/status/2014810203997569260",
+      "processed": false,
+      "addedAt": "2026-01-23T22:07:51.632Z",
+      "expiresAt": "2026-01-30T22:07:51.632Z",
+      "source": "timeline_monitor",
+      "contentCategory": "technical-analysis"
+    },
+    {
+      "id": "2014814125260431433",
+      "text": "@Nebraskangooner that money is going to go to bitcoin!!! https://t.co/3TvM2kZ5VA",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "likes": 16,
+        "retweets": 0,
+        "replies": 3,
+        "quotes": 0,
+        "views": 1085
+      },
+      "url": "https://twitter.com/AltcoinSherpa/status/2014814125260431433",
+      "processed": false,
+      "addedAt": "2026-01-23T22:08:46.041Z",
+      "expiresAt": "2026-01-30T22:08:46.041Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "2014772412982689896",
+      "text": "$BTC the difference between this current consolidation region and the last ones in August 2024 and March 2025 is that the 200d EMA and 100d EMA are still a bit extended. This leads me to believe that we're probably going to experience something similar to 2025, where we pump in https://t.co/a0bINFIepO",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "likes": 69,
+        "retweets": 5,
+        "replies": 9,
+        "quotes": 0,
+        "views": 8328
+      },
+      "url": "https://twitter.com/AltcoinSherpa/status/2014772412982689896",
+      "processed": false,
+      "addedAt": "2026-01-23T22:08:50.739Z",
+      "expiresAt": "2026-01-30T22:08:50.739Z",
+      "source": "timeline_monitor",
+      "contentCategory": "technical-analysis"
+    },
+    {
+      "id": "2014765667862327503",
+      "text": "$AXS is almost at $3. Just another 5500% to go before ATH at $165\n\n2021 was a wild time https://t.co/aRDOdATL3e",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "likes": 77,
+        "retweets": 4,
+        "replies": 12,
+        "quotes": 1,
+        "views": 10819
+      },
+      "url": "https://twitter.com/AltcoinSherpa/status/2014765667862327503",
+      "processed": false,
+      "addedAt": "2026-01-23T22:08:52.724Z",
+      "expiresAt": "2026-01-30T22:08:52.724Z",
+      "source": "timeline_monitor",
+      "contentCategory": "altcoin-talk"
+    },
+    {
+      "id": "2014762123482599819",
+      "text": "Hype ASTER LIT all look good and probably short term bottomed. No position yet but prob will just buy some",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "likes": 28,
+        "retweets": 0,
+        "replies": 4,
+        "quotes": 0,
+        "views": 3201
+      },
+      "url": "https://twitter.com/AltcoinSherpa/status/2014762123482599819",
+      "processed": false,
+      "addedAt": "2026-01-23T22:08:54.747Z",
+      "expiresAt": "2026-01-30T22:08:54.747Z",
+      "source": "timeline_monitor",
+      "contentCategory": "altcoin-talk"
+    },
+    {
+      "id": "2014812944169673149",
+      "text": "NASDAQ JUST REMOVED POSITION LIMITS ON BTC &amp; ETH ETF OPTIONS\n\nNasdaq filed a rule change with the SEC and the 25,000-contract cap on Bitcoin and Ethereum spot ETF options has been lifted -- effective immediately after the SEC waived the usual waiting period.\n\nThis applies to https://t.co/So0atAomJk",
+      "author": {
+        "id": "877357064724520961",
+        "username": "CryptosR_Us"
+      },
+      "public_metrics": {
+        "likes": 22,
+        "retweets": 6,
+        "replies": 2,
+        "quotes": 0,
+        "views": 1667
+      },
+      "url": "https://twitter.com/CryptosR_Us/status/2014812944169673149",
+      "processed": false,
+      "addedAt": "2026-01-23T22:09:03.732Z",
+      "expiresAt": "2026-01-30T22:09:03.732Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "2014790320601350333",
+      "text": "🚨 HOSKINSON SAYS CLARITY ACT DECIMATES DEFI\n\nAccording Input Output Founder Charles Hoskinson, the current draft of the market structure bill only offers clarity for big banks — NOT the crypto industry.\n\n⚔️ @IOHK_Charles publicly clashed with @Ripple CEO Brad Garlinghouse, who https://t.co/74dL0OrlRY",
+      "author": {
+        "id": "877357064724520961",
+        "username": "CryptosR_Us"
+      },
+      "public_metrics": {
+        "likes": 93,
+        "retweets": 17,
+        "replies": 17,
+        "quotes": 0,
+        "views": 8754
+      },
+      "url": "https://twitter.com/CryptosR_Us/status/2014790320601350333",
+      "processed": false,
+      "addedAt": "2026-01-23T22:09:05.667Z",
+      "expiresAt": "2026-01-30T22:09:05.667Z",
+      "source": "timeline_monitor",
+      "contentCategory": "news"
+    },
+    {
+      "id": "2014776442794451127",
+      "text": "⚡ LATEST FROM DAVOS: UK POLITICAL LEADER NIGEL FARAGE CALLS OUT THE BANK OF ENGLAND FOR \"LAGGING BEHIND\" ON CRYPTO\n\n\"If we don't do things differently, we're going to get poorer and poorer.\" https://t.co/rx7kMBeE6c",
+      "author": {
+        "id": "877357064724520961",
+        "username": "CryptosR_Us"
+      },
+      "public_metrics": {
+        "likes": 65,
+        "retweets": 9,
+        "replies": 10,
+        "quotes": 0,
+        "views": 5056
+      },
+      "url": "https://twitter.com/CryptosR_Us/status/2014776442794451127",
+      "processed": false,
+      "addedAt": "2026-01-23T22:09:09.230Z",
+      "expiresAt": "2026-01-30T22:09:09.230Z",
+      "source": "timeline_monitor",
+      "contentCategory": "news"
+    },
+    {
+      "id": "2014761325876940962",
+      "text": "CZ: THIS CYCLE DOESN’T HAVE TO END LIKE THE OTHERS\n\nOn CNBC, Changpeng Zhao said the long-term direction for Bitcoin is obvious.\n\nThe real debate is 2026. He thinks there’s a real chance this turns into a supercycle, not a textbook 4-year peak-and-drop.\n\nWhy? The U.S. has gone https://t.co/DIH3jE7cVQ",
+      "author": {
+        "id": "877357064724520961",
+        "username": "CryptosR_Us"
+      },
+      "public_metrics": {
+        "likes": 128,
+        "retweets": 18,
+        "replies": 15,
+        "quotes": 2,
+        "views": 10013
+      },
+      "url": "https://twitter.com/CryptosR_Us/status/2014761325876940962",
+      "processed": false,
+      "addedAt": "2026-01-23T22:09:10.008Z",
+      "expiresAt": "2026-01-30T22:09:10.008Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "2014757773649875214",
+      "text": "🤝 TRUST IS THE NEXT INTERNET BATTLEGROUND\n\nAI, bots, sybil attacks, and digital fraud are forcing the internet to answer one question:\n\n“How do we prove someone is human… without compromising privacy?”\n\nThat’s the problem Humanity is building for -- and now @Humanityprot is https://t.co/p7Sso3UsJo",
+      "author": {
+        "id": "877357064724520961",
+        "username": "CryptosR_Us"
+      },
+      "public_metrics": {
+        "likes": 16,
+        "retweets": 2,
+        "replies": 6,
+        "quotes": 0,
+        "views": 4868
+      },
+      "url": "https://twitter.com/CryptosR_Us/status/2014757773649875214",
+      "processed": false,
+      "addedAt": "2026-01-23T22:09:12.093Z",
+      "expiresAt": "2026-01-30T22:09:12.093Z",
+      "source": "timeline_monitor",
+      "contentCategory": "project-discussion"
+    },
+    {
+      "id": "2014723303580090648",
+      "text": "🚨 GRAYSCALE FILES S-1 WITH THE SEC FOR A SPOT BNB ETF\n\nMajor move today: Grayscale has officially submitted its S-1 registration statement to the SEC for a spot $BNB ETF.\n\nThis comes after VanEck's earlier push and Grayscale's recent Delaware trust step -- signaling serious https://t.co/7LH3NeZiUs",
+      "author": {
+        "id": "877357064724520961",
+        "username": "CryptosR_Us"
+      },
+      "public_metrics": {
+        "likes": 47,
+        "retweets": 5,
+        "replies": 3,
+        "quotes": 0,
+        "views": 4017
+      },
+      "url": "https://twitter.com/CryptosR_Us/status/2014723303580090648",
+      "processed": false,
+      "addedAt": "2026-01-23T22:09:16.135Z",
+      "expiresAt": "2026-01-30T22:09:16.135Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "2014715243814125832",
+      "text": "FORMER PAYPAL PRESIDENT SAYS BITCOIN WILL BE THE NATIVE CURRENCY FOR AI AGENTS\n\nMarcus ; former head of Meta’s crypto efforts and now CEO of Lightspark ; argues Bitcoin’s neutral, open, and code-controlled design makes it ideal for agent-to-agent value exchange.\n\nHe’s not alone. https://t.co/NJZduHdwe7 https://t.co/DD7YaEW0uF",
+      "author": {
+        "id": "877357064724520961",
+        "username": "CryptosR_Us"
+      },
+      "public_metrics": {
+        "likes": 57,
+        "retweets": 8,
+        "replies": 13,
+        "quotes": 1,
+        "views": 6452
+      },
+      "url": "https://twitter.com/CryptosR_Us/status/2014715243814125832",
+      "processed": false,
+      "addedAt": "2026-01-23T22:09:18.037Z",
+      "expiresAt": "2026-01-30T22:09:18.037Z",
+      "source": "timeline_monitor",
+      "contentCategory": "project-discussion"
+    },
+    {
+      "id": "2014687309556261072",
+      "text": "🚨 JUST IN: $6.9T UBS TO OFFER BITCOIN &amp; CRYPTO TRADING\n\nUBS ; the world’s largest wealth manager and a global banking giant overseeing roughly $6.9 trillion in assets ; just announced plans to roll out $BTC and crypto trading for its clients.\n\nThe initial phase will allow select https://t.co/GTQE6wyiUS https://t.co/qOadFl6aIw",
+      "author": {
+        "id": "877357064724520961",
+        "username": "CryptosR_Us"
+      },
+      "public_metrics": {
+        "likes": 123,
+        "retweets": 19,
+        "replies": 17,
+        "quotes": 1,
+        "views": 8637
+      },
+      "url": "https://twitter.com/CryptosR_Us/status/2014687309556261072",
+      "processed": false,
+      "addedAt": "2026-01-23T22:09:20.152Z",
+      "expiresAt": "2026-01-30T22:09:20.152Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends/news"
+    },
+    {
+      "id": "2014660633476923898",
+      "text": "🚀 CHAINLINK BUYS ATLAS TO PROTECT DEFI USERS   \n\n$LINK has acquired Atlas to stop unfair trading practices in DeFi and help protocols like Aave and Compound keep more of their money.    \n\nThe system has already processed $460M in transactions and returned $10M+ to users. https://t.co/aYP42CB4wF https://t.co/KwcR2LDWIP",
+      "author": {
+        "id": "877357064724520961",
+        "username": "CryptosR_Us"
+      },
+      "public_metrics": {
+        "likes": 144,
+        "retweets": 25,
+        "replies": 11,
+        "quotes": 0,
+        "views": 9183
+      },
+      "url": "https://twitter.com/CryptosR_Us/status/2014660633476923898",
+      "processed": false,
+      "addedAt": "2026-01-23T22:09:22.101Z",
+      "expiresAt": "2026-01-30T22:09:22.101Z",
+      "source": "timeline_monitor",
+      "contentCategory": "project-discussion"
+    },
+    {
+      "id": "2014736436843417712",
+      "text": "@PawelSynapse @CryptoGemRnld Not for us it isnt. Last gems given 👇, \n\nI have 26/26 proven successful back to back trades ✅. https://t.co/SLPSdIE2Ti",
+      "author": {
+        "id": "crawlee_search_bitcoinhabebe",
+        "username": "Bitcoinhabebe"
+      },
+      "public_metrics": {
+        "likes": 10,
+        "retweets": 4,
+        "replies": 5,
+        "quotes": 0,
+        "views": 119
+      },
+      "url": "https://twitter.com/Bitcoinhabebe/status/2014736436843417712",
+      "processed": false,
+      "addedAt": "2026-01-23T22:09:25.307Z",
+      "expiresAt": "2026-01-30T22:09:25.307Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "2014723165616836736",
+      "text": "Today “IN” pumped 80% with the same exact chart as $BULLA. BULLA Is already starting to follow. \n\nLets watch! https://t.co/zWe5vmVgl2",
+      "author": {
+        "id": "crawlee_search_bitcoinhabebe",
+        "username": "Bitcoinhabebe"
+      },
+      "public_metrics": {
+        "likes": 103,
+        "retweets": 51,
+        "replies": 30,
+        "quotes": 1,
+        "views": 3941
+      },
+      "url": "https://twitter.com/Bitcoinhabebe/status/2014723165616836736",
+      "processed": false,
+      "addedAt": "2026-01-23T22:09:26.168Z",
+      "expiresAt": "2026-01-30T22:09:26.168Z",
+      "source": "timeline_monitor",
+      "contentCategory": "price-speculation"
+    },
+    {
+      "id": "2014706194871648455",
+      "text": "$BULLA will start pumping from this point. Which is the exact same point it pumped 170% from last time. \n\nStrong support &amp; strong bounce = 💸\n\nThe chart speaks for itself 👇. All you need is good entry + little patience &amp; you will print https://t.co/mvMHSEhNQw",
+      "author": {
+        "id": "crawlee_search_bitcoinhabebe",
+        "username": "Bitcoinhabebe"
+      },
+      "public_metrics": {
+        "likes": 147,
+        "retweets": 64,
+        "replies": 49,
+        "quotes": 3,
+        "views": 8169
+      },
+      "url": "https://twitter.com/Bitcoinhabebe/status/2014706194871648455",
+      "processed": false,
+      "addedAt": "2026-01-23T22:09:28.163Z",
+      "expiresAt": "2026-01-30T22:09:28.163Z",
+      "source": "timeline_monitor",
+      "contentCategory": "price-speculation"
+    },
+    {
+      "id": "2014696137060495433",
+      "text": "$BULLA x FHE Before its 1000% pump👇 :\n\nBDXN had the same chart as well when i shared it with you &amp; it pumped 30% yesterday. today its retesting before continuing its major uptrend. \n\nThese kinds of charts always go up. So i know $BULLA Will go on a great run from here 💎! https://t.co/R7EFqUZ25F",
+      "author": {
+        "id": "crawlee_search_bitcoinhabebe",
+        "username": "Bitcoinhabebe"
+      },
+      "public_metrics": {
+        "likes": 114,
+        "retweets": 52,
+        "replies": 38,
+        "quotes": 2,
+        "views": 4835
+      },
+      "url": "https://twitter.com/Bitcoinhabebe/status/2014696137060495433",
+      "processed": false,
+      "addedAt": "2026-01-23T22:09:30.160Z",
+      "expiresAt": "2026-01-30T22:09:30.160Z",
+      "source": "timeline_monitor",
+      "contentCategory": "price-speculation"
+    },
+    {
+      "id": "2014689194707198363",
+      "text": "New gem of the day 💎:\n\n$BULLA LONG/SPOT https://t.co/gC75gmKAps",
+      "author": {
+        "id": "crawlee_search_bitcoinhabebe",
+        "username": "Bitcoinhabebe"
+      },
+      "public_metrics": {
+        "likes": 133,
+        "retweets": 63,
+        "replies": 52,
+        "quotes": 7,
+        "views": 8038
+      },
+      "url": "https://twitter.com/Bitcoinhabebe/status/2014689194707198363",
+      "processed": false,
+      "addedAt": "2026-01-23T22:09:32.168Z",
+      "expiresAt": "2026-01-30T22:09:32.169Z",
+      "source": "timeline_monitor",
+      "contentCategory": "price-speculation"
+    },
+    {
+      "id": "2014673738533355568",
+      "text": "In 2 months, we achieved 26/26 back to back successful trades which is truly historical. \n\ni’ve put insane effort to make sure to share nothing but the best to help as many make money. \n\nDo we want another gem 💎? Like &amp; RT\n\nSome of the gems i shared ran 100-300% and many between https://t.co/ATGnxoSLd2 https://t.co/Ocd77kku8J",
+      "author": {
+        "id": "crawlee_search_bitcoinhabebe",
+        "username": "Bitcoinhabebe"
+      },
+      "public_metrics": {
+        "likes": 204,
+        "retweets": 77,
+        "replies": 72,
+        "quotes": 2,
+        "views": 11641
+      },
+      "url": "https://twitter.com/Bitcoinhabebe/status/2014673738533355568",
+      "processed": false,
+      "addedAt": "2026-01-23T22:09:36.171Z",
+      "expiresAt": "2026-01-30T22:09:36.171Z",
+      "source": "timeline_monitor",
+      "contentCategory": "price-speculation"
+    },
+    {
+      "id": "2014459413227008068",
+      "text": "BOOOOM $BDXN is exploding💎! \n\nAnother day another successful trade. 26/26 ✅. \n\nKeep close eye on $GHST. It will explode soon. https://t.co/8RW5EuCCWh https://t.co/AfejpVzTiO",
+      "author": {
+        "id": "crawlee_search_bitcoinhabebe",
+        "username": "Bitcoinhabebe"
+      },
+      "public_metrics": {
+        "likes": 173,
+        "retweets": 77,
+        "replies": 57,
+        "quotes": 6,
+        "views": 14372
+      },
+      "url": "https://twitter.com/Bitcoinhabebe/status/2014459413227008068",
+      "processed": false,
+      "addedAt": "2026-01-23T22:09:40.105Z",
+      "expiresAt": "2026-01-30T22:09:40.105Z",
+      "source": "timeline_monitor",
+      "contentCategory": "price-speculation"
+    },
+    {
+      "id": "2014453394237255691",
+      "text": "It’s time for $GHST to run. DO NOT MISS. https://t.co/KaOBApCXjY",
+      "author": {
+        "id": "crawlee_search_bitcoinhabebe",
+        "username": "Bitcoinhabebe"
+      },
+      "public_metrics": {
+        "likes": 127,
+        "retweets": 58,
+        "replies": 55,
+        "quotes": 2,
+        "views": 5859
+      },
+      "url": "https://twitter.com/Bitcoinhabebe/status/2014453394237255691",
+      "processed": false,
+      "addedAt": "2026-01-23T22:09:42.363Z",
+      "expiresAt": "2026-01-30T22:09:42.363Z",
+      "source": "timeline_monitor",
+      "contentCategory": "altcoin-talk"
     }
   ],
   "metadata": {
-    "lastUpdated": "2026-01-23T17:55:42.241Z",
-    "totalPosts": 26,
+    "lastUpdated": "2026-01-23T22:10:46.516Z",
+    "totalPosts": 44,
     "bySource": {
-      "timeline_monitor": 26,
+      "timeline_monitor": 44,
       "search_discovery": 0
     }
   },
