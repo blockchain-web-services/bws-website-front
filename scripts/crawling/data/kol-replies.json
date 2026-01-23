@@ -3717,6 +3717,26 @@
       "status": "posted",
       "dryRun": false,
       "sdkVersion": "1.7.0"
+    },
+    {
+      "id": "1138993163706753029-2014422238389535209-1769210385261",
+      "tweetId": "2014422238389535209",
+      "tweetUrl": "https://twitter.com/Pentosh1/status/2014422238389535209",
+      "kolId": "1138993163706753029",
+      "kolUsername": "Pentosh1",
+      "originalTweetText": "It doesn’t matter where the bubble is \n\nYou should be chasing it \n\nYou already have most the skill set and experience",
+      "replyTweetId": "2014840505004118461",
+      "replyText": "Blockchain Badges: Instant credential verification & certification for pros. Create unlimited blockchain-backed credentials. Real utility for achievers. $BWS @BWSCommunity https://docs.bws.ninja/marketplace-solutions/bws.blockchain.badges #crypto",
+      "productMentioned": "Fan Game Cube",
+      "relevanceScore": 82,
+      "templateUsed": "feature_list",
+      "templateName": "Feature List Structure",
+      "imageAttached": true,
+      "imagePath": "/assets/images/docs/blockchain-badges/blockchain-badges-0.png",
+      "timestamp": "2026-01-23T23:19:45.261Z",
+      "status": "posted",
+      "dryRun": false,
+      "sdkVersion": "1.7.0"
     }
   ],
   "dailyStats": {
@@ -3821,10 +3841,10 @@
     }
   },
   "metadata": {
-    "totalReplies": 193,
-    "successfulReplies": 148,
+    "totalReplies": 194,
+    "successfulReplies": 149,
     "failedReplies": 34,
-    "lastReplyAt": "2026-01-23T19:54:34.195Z",
+    "lastReplyAt": "2026-01-23T23:19:45.261Z",
     "todayRepliesCount": 0,
     "lastUpdateBy": "kol-system"
   }
