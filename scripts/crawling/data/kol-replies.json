@@ -3677,6 +3677,26 @@
       "status": "posted",
       "dryRun": false,
       "sdkVersion": "1.7.0"
+    },
+    {
+      "id": "4441279246-2014548646210203787-1769163937619",
+      "tweetId": "2014548646210203787",
+      "tweetUrl": "https://twitter.com/IncomeSharks/status/2014548646210203787",
+      "kolId": "4441279246",
+      "kolUsername": "IncomeSharks",
+      "originalTweetText": "Gaming is finally the leading sector in Crypto and I'm surprised people are so quiet about it. https://t.co/ZsMvFHVfVF",
+      "replyTweetId": "2014645689876091356",
+      "replyText": "Gaming infrastructure matters more than tokens. $BWS Blockchain.Hash enables sports fans to timestamp digital collectibles with immutable proof, turning engagement into verifiable assets.  @BWSCommunity #microcap #crypto https://docs.bws.ninja/solutions/bws.blockchain.hash",
+      "productMentioned": "Fan Game Cube",
+      "relevanceScore": 85,
+      "templateUsed": "stat_driven",
+      "templateName": "Stat/Fact-Driven Structure",
+      "imageAttached": false,
+      "imagePath": null,
+      "timestamp": "2026-01-23T10:25:37.619Z",
+      "status": "posted",
+      "dryRun": false,
+      "sdkVersion": "1.7.0"
     }
   ],
   "dailyStats": {
@@ -3781,10 +3801,10 @@
     }
   },
   "metadata": {
-    "totalReplies": 191,
-    "successfulReplies": 146,
+    "totalReplies": 192,
+    "successfulReplies": 147,
     "failedReplies": 34,
-    "lastReplyAt": "2026-01-23T07:41:08.750Z",
+    "lastReplyAt": "2026-01-23T10:25:37.619Z",
     "todayRepliesCount": 0,
     "lastUpdateBy": "kol-system"
   }
