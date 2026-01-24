@@ -1,447 +1,6 @@
 {
   "posts": [
     {
-      "id": "2014716336153276489",
-      "text": "@LSDinmycoffee this has saved my portfolio....crypto is just chop and equities are up only",
-      "author": {
-        "id": "1068237257977544704",
-        "username": "AltcoinSherpa"
-      },
-      "public_metrics": {
-        "likes": 8,
-        "retweets": 0,
-        "replies": 0,
-        "quotes": 0,
-        "views": 569
-      },
-      "url": "https://twitter.com/AltcoinSherpa/status/2014716336153276489",
-      "processed": true,
-      "addedAt": "2026-01-23T17:52:44.565Z",
-      "expiresAt": "2026-01-30T17:52:44.565Z",
-      "source": "timeline_monitor",
-      "contentCategory": "market-trends"
-    },
-    {
-      "id": "2014704513081356454",
-      "text": "Not many altcoins I really am watching in this environment. $ZRO might eventually be a short but not doing so yet and $AXS is still pretty strong w/o any significant pullbacks. Also watching $HYPE too but not much else tbh for active trades. https://t.co/mHKnUbR8aO",
-      "author": {
-        "id": "1068237257977544704",
-        "username": "AltcoinSherpa"
-      },
-      "public_metrics": {
-        "likes": 31,
-        "retweets": 1,
-        "replies": 11,
-        "quotes": 0,
-        "views": 4534
-      },
-      "url": "https://twitter.com/AltcoinSherpa/status/2014704513081356454",
-      "processed": true,
-      "addedAt": "2026-01-23T17:52:53.423Z",
-      "expiresAt": "2026-01-30T17:52:53.423Z",
-      "source": "timeline_monitor",
-      "contentCategory": "altcoin-talk"
-    },
-    {
-      "id": "2014557950711627890",
-      "text": "@Cryptodilli The only thing missing from the chart is a magnet",
-      "author": {
-        "id": "4441279246",
-        "username": "IncomeSharks"
-      },
-      "public_metrics": {
-        "likes": 58,
-        "retweets": 1,
-        "replies": 7,
-        "quotes": 1,
-        "views": 5355
-      },
-      "url": "https://twitter.com/IncomeSharks/status/2014557950711627890",
-      "processed": true,
-      "addedAt": "2026-01-23T17:53:13.577Z",
-      "expiresAt": "2026-01-30T17:53:13.577Z",
-      "source": "timeline_monitor",
-      "contentCategory": "technical-analysis"
-    },
-    {
-      "id": "2014549526124875873",
-      "text": "$AXS - Not saying to buy here but pointing out this is yet another coin that flipped the Supertrend bullish, volume showed up, and it went to run 3x in a very short period. Things are moving. https://t.co/CF333u3Jci",
-      "author": {
-        "id": "4441279246",
-        "username": "IncomeSharks"
-      },
-      "public_metrics": {
-        "likes": 380,
-        "retweets": 25,
-        "replies": 48,
-        "quotes": 3,
-        "views": 46839
-      },
-      "url": "https://twitter.com/IncomeSharks/status/2014549526124875873",
-      "processed": true,
-      "addedAt": "2026-01-23T17:53:17.858Z",
-      "expiresAt": "2026-01-30T17:53:17.858Z",
-      "source": "timeline_monitor",
-      "contentCategory": "technical-analysis"
-    },
-    {
-      "id": "2014473213003129038",
-      "text": "@KateClarkTweets Don’t like this. They didn’t give us an airdrop and just sold the equity??",
-      "author": {
-        "id": "2259434528",
-        "username": "cobie"
-      },
-      "public_metrics": {
-        "likes": 237,
-        "retweets": 3,
-        "replies": 19,
-        "quotes": 2,
-        "views": 21503
-      },
-      "url": "https://twitter.com/cobie/status/2014473213003129038",
-      "processed": true,
-      "addedAt": "2026-01-23T17:53:39.692Z",
-      "expiresAt": "2026-01-30T17:53:39.692Z",
-      "source": "timeline_monitor",
-      "contentCategory": "project-discussion"
-    },
-    {
-      "id": "2014472955292492157",
-      "text": "@cameldck @mirza They’re returning 100% of capital to investors, so it’s a rug?",
-      "author": {
-        "id": "2259434528",
-        "username": "cobie"
-      },
-      "public_metrics": {
-        "likes": 12,
-        "retweets": 1,
-        "replies": 1,
-        "quotes": 0,
-        "views": 1084
-      },
-      "url": "https://twitter.com/cobie/status/2014472955292492157",
-      "processed": true,
-      "addedAt": "2026-01-23T17:53:41.795Z",
-      "expiresAt": "2026-01-30T17:53:41.795Z",
-      "source": "timeline_monitor",
-      "contentCategory": "project-discussion"
-    },
-    {
-      "id": "2014471157123026979",
-      "text": "@dwr How come you didn’t give your Coinbase IPO proceeds to farcaster users?????",
-      "author": {
-        "id": "2259434528",
-        "username": "cobie"
-      },
-      "public_metrics": {
-        "likes": 908,
-        "retweets": 6,
-        "replies": 35,
-        "quotes": 1,
-        "views": 49301
-      },
-      "url": "https://twitter.com/cobie/status/2014471157123026979",
-      "processed": true,
-      "addedAt": "2026-01-23T17:53:44.145Z",
-      "expiresAt": "2026-01-30T17:53:44.145Z",
-      "source": "timeline_monitor",
-      "contentCategory": "news"
-    },
-    {
-      "id": "2014438573458534409",
-      "text": "@cameldck @mirza If it’s a “rug” there needs to be a victim. Who is the victim?",
-      "author": {
-        "id": "2259434528",
-        "username": "cobie"
-      },
-      "public_metrics": {
-        "likes": 8,
-        "retweets": 0,
-        "replies": 4,
-        "quotes": 0,
-        "views": 1082
-      },
-      "url": "https://twitter.com/cobie/status/2014438573458534409",
-      "processed": true,
-      "addedAt": "2026-01-23T17:53:52.783Z",
-      "expiresAt": "2026-01-30T17:53:52.783Z",
-      "source": "timeline_monitor",
-      "contentCategory": "project-discussion"
-    },
-    {
-      "id": "2014437129162522677",
-      "text": "@mirza @mud2monarch What are the false pretences that Farcaster raised under?",
-      "author": {
-        "id": "2259434528",
-        "username": "cobie"
-      },
-      "public_metrics": {
-        "likes": 26,
-        "retweets": 0,
-        "replies": 2,
-        "quotes": 0,
-        "views": 1593
-      },
-      "url": "https://twitter.com/cobie/status/2014437129162522677",
-      "processed": true,
-      "addedAt": "2026-01-23T17:53:55.039Z",
-      "expiresAt": "2026-01-30T17:53:55.039Z",
-      "source": "timeline_monitor",
-      "contentCategory": "project-discussion"
-    },
-    {
-      "id": "2014435731381293435",
-      "text": "@cameldck @mirza Professional venture investors (a16z is the biggest VC in the world) can do their own due diligence. Are you suggesting they are a victim? The second screenshot doesn’t even have anything to do with farcaster.",
-      "author": {
-        "id": "2259434528",
-        "username": "cobie"
-      },
-      "public_metrics": {
-        "likes": 10,
-        "retweets": 0,
-        "replies": 1,
-        "quotes": 0,
-        "views": 969
-      },
-      "url": "https://twitter.com/cobie/status/2014435731381293435",
-      "processed": true,
-      "addedAt": "2026-01-23T17:53:59.856Z",
-      "expiresAt": "2026-01-30T17:53:59.856Z",
-      "source": "timeline_monitor",
-      "contentCategory": "project-discussion"
-    },
-    {
-      "id": "2014422238389535209",
-      "text": "It doesn’t matter where the bubble is \n\nYou should be chasing it \n\nYou already have most the skill set and experience",
-      "author": {
-        "id": "1138993163706753029",
-        "username": "Pentosh1"
-      },
-      "public_metrics": {
-        "likes": 442,
-        "retweets": 15,
-        "replies": 52,
-        "quotes": 7,
-        "views": 46249
-      },
-      "url": "https://twitter.com/Pentosh1/status/2014422238389535209",
-      "processed": true,
-      "addedAt": "2026-01-23T17:54:01.495Z",
-      "expiresAt": "2026-01-30T17:54:01.495Z",
-      "source": "timeline_monitor",
-      "contentCategory": "market-trends"
-    },
-    {
-      "id": "2013683107082141700",
-      "text": "@R89Capital Absolute Worst case scenario things just kinda bleed out or go sideways for years while people invest in asset classes that go up or require allocation like defense, ai, robotics, etc with tangible results and fiduciary duties. And have charts like $mu that never give pullbacks",
-      "author": {
-        "id": "1138993163706753029",
-        "username": "Pentosh1"
-      },
-      "public_metrics": {
-        "likes": 113,
-        "retweets": 3,
-        "replies": 11,
-        "quotes": 1,
-        "views": 38371
-      },
-      "url": "https://twitter.com/Pentosh1/status/2013683107082141700",
-      "processed": true,
-      "addedAt": "2026-01-23T17:54:15.734Z",
-      "expiresAt": "2026-01-30T17:54:15.734Z",
-      "source": "timeline_monitor",
-      "contentCategory": "market-trends"
-    },
-    {
-      "id": "2014753633817309250",
-      "text": "According to DL News, CertiK is planning to pursue an IPO, though past controversies have weighed on market confidence. The firm has faced scrutiny over its handling of a roughly $3 million vulnerability at Kraken and its audit work on a stablecoin project linked to Huione",
-      "author": {
-        "id": "111533746",
-        "username": "WuBlockchain"
-      },
-      "public_metrics": {
-        "likes": 8,
-        "retweets": 3,
-        "replies": 4,
-        "quotes": 0,
-        "views": 1429
-      },
-      "url": "https://twitter.com/WuBlockchain/status/2014753633817309250",
-      "processed": true,
-      "addedAt": "2026-01-23T17:54:23.928Z",
-      "expiresAt": "2026-01-30T17:54:23.928Z",
-      "source": "timeline_monitor",
-      "contentCategory": "project-discussion/news"
-    },
-    {
-      "id": "2014732356352147610",
-      "text": "CZ at Davos: Here, I Want to Offend Traditional Banks\n\nAt the World Economic Forum in Davos on January 22, 2026, Binance founder CZ said that with the development of cryptocurrencies, blockchain, e-KYC, and various digital processes, the need for people to visit physical bank https://t.co/QySFbE5rnM",
-      "author": {
-        "id": "111533746",
-        "username": "WuBlockchain"
-      },
-      "public_metrics": {
-        "likes": 22,
-        "retweets": 9,
-        "replies": 4,
-        "quotes": 0,
-        "views": 4711
-      },
-      "url": "https://twitter.com/WuBlockchain/status/2014732356352147610",
-      "processed": true,
-      "addedAt": "2026-01-23T17:54:25.238Z",
-      "expiresAt": "2026-01-30T17:54:25.238Z",
-      "source": "timeline_monitor",
-      "contentCategory": "news"
-    },
-    {
-      "id": "2014711864853205449",
-      "text": "Grayscale has filed a Form S-1 with the U.S. SEC on Jan. 23, 2026, to register the Grayscale BNB ETF, seeking approval to offer a publicly traded ETF tracking BNB. The fund is sponsored by Grayscale Investments Sponsors, LLC and incorporated in Delaware, with the offering planned https://t.co/a7IPxKnzqO",
-      "author": {
-        "id": "111533746",
-        "username": "WuBlockchain"
-      },
-      "public_metrics": {
-        "likes": 23,
-        "retweets": 5,
-        "replies": 12,
-        "quotes": 2,
-        "views": 4387
-      },
-      "url": "https://twitter.com/WuBlockchain/status/2014711864853205449",
-      "processed": true,
-      "addedAt": "2026-01-23T17:54:29.479Z",
-      "expiresAt": "2026-01-30T17:54:29.479Z",
-      "source": "timeline_monitor",
-      "contentCategory": "news"
-    },
-    {
-      "id": "2014708250143285718",
-      "text": "CZ: Three Emerging Tracks in the Crypto Sector\n\nAt the World Economic Forum in Davos on January 22, 2026, Binance founder CZ highlighted three emerging tracks in the crypto sector: asset tokenization, the convergence of payment systems, and AI Agent–related applications. He noted https://t.co/7ltdy868aV",
-      "author": {
-        "id": "111533746",
-        "username": "WuBlockchain"
-      },
-      "public_metrics": {
-        "likes": 18,
-        "retweets": 5,
-        "replies": 12,
-        "quotes": 0,
-        "views": 4733
-      },
-      "url": "https://twitter.com/WuBlockchain/status/2014708250143285718",
-      "processed": true,
-      "addedAt": "2026-01-23T17:54:31.488Z",
-      "expiresAt": "2026-01-30T17:54:31.488Z",
-      "source": "timeline_monitor",
-      "contentCategory": "market-trends"
-    },
-    {
-      "id": "2014669316726153265",
-      "text": "WuBlockchain Weekly: NYSE pushes tokenized stocks and on-chain settlement; ABA targets stablecoin yields as top 2026 priority; Trump says crypto market structure bill to be signed “soon”; U.S. Treasury reiterates Strategic Bitcoin Reserve plan;  Strategy buys $2.13B in BTC and https://t.co/7wFugMrz83",
-      "author": {
-        "id": "111533746",
-        "username": "WuBlockchain"
-      },
-      "public_metrics": {
-        "likes": 19,
-        "retweets": 7,
-        "replies": 5,
-        "quotes": 2,
-        "views": 4472
-      },
-      "url": "https://twitter.com/WuBlockchain/status/2014669316726153265",
-      "processed": true,
-      "addedAt": "2026-01-23T17:54:33.498Z",
-      "expiresAt": "2026-01-30T17:54:33.498Z",
-      "source": "timeline_monitor",
-      "contentCategory": "market-trends"
-    },
-    {
-      "id": "2014661300501061875",
-      "text": "According to Bloomberg, UBS Group plans to offer cryptocurrency investing to some of its private banking clients, marking a expansion into digital assets for the wealth manager.  The bank, which oversees about $4.7 trillion in assets, is still selecting partners and finalizing",
-      "author": {
-        "id": "111533746",
-        "username": "WuBlockchain"
-      },
-      "public_metrics": {
-        "likes": 41,
-        "retweets": 7,
-        "replies": 15,
-        "quotes": 0,
-        "views": 5694
-      },
-      "url": "https://twitter.com/WuBlockchain/status/2014661300501061875",
-      "processed": true,
-      "addedAt": "2026-01-23T17:54:35.593Z",
-      "expiresAt": "2026-01-30T17:54:35.593Z",
-      "source": "timeline_monitor",
-      "contentCategory": "news"
-    },
-    {
-      "id": "2014634673402449940",
-      "text": "Binance has applied for an EU-wide MiCA license, filing in Greece and setting up a local holding company. If approved by the Hellenic Capital Market Commission, the license would allow Binance to operate and market crypto services across the EU ahead of the July 1 deadline.",
-      "author": {
-        "id": "111533746",
-        "username": "WuBlockchain"
-      },
-      "public_metrics": {
-        "likes": 67,
-        "retweets": 13,
-        "replies": 17,
-        "quotes": 1,
-        "views": 8937
-      },
-      "url": "https://twitter.com/WuBlockchain/status/2014634673402449940",
-      "processed": true,
-      "addedAt": "2026-01-23T17:54:39.309Z",
-      "expiresAt": "2026-01-30T17:54:39.309Z",
-      "source": "timeline_monitor",
-      "contentCategory": "news"
-    },
-    {
-      "id": "2014627627491905727",
-      "text": "ZachXBT criticized the move, citing past data breaches has lead to targeted thefts and millions stolen, product issues such as Ledger Nano X battery problems, and recent plans to charge fees for Clear Signing.",
-      "author": {
-        "id": "111533746",
-        "username": "WuBlockchain"
-      },
-      "public_metrics": {
-        "likes": 20,
-        "retweets": 0,
-        "replies": 3,
-        "quotes": 0,
-        "views": 4437
-      },
-      "url": "https://twitter.com/WuBlockchain/status/2014627627491905727",
-      "processed": true,
-      "addedAt": "2026-01-23T17:54:41.198Z",
-      "expiresAt": "2026-01-30T17:54:41.198Z",
-      "source": "timeline_monitor",
-      "contentCategory": "project-discussion"
-    },
-    {
-      "id": "2014604839582363978",
-      "text": "According to SoSoValue, on Jan. 22 (ET), U.S. spot Bitcoin ETFs recorded total net outflows of $32.11 million. The BlackRock spot Bitcoin ETF IBIT saw the largest single-day net outflow at $22.35 million. Spot Ethereum ETFs posted total net outflows of $41.98 million, while https://t.co/0dSuc6CyvB",
-      "author": {
-        "id": "111533746",
-        "username": "WuBlockchain"
-      },
-      "public_metrics": {
-        "likes": 33,
-        "retweets": 7,
-        "replies": 12,
-        "quotes": 1,
-        "views": 5078
-      },
-      "url": "https://twitter.com/WuBlockchain/status/2014604839582363978",
-      "processed": true,
-      "addedAt": "2026-01-23T17:54:42.099Z",
-      "expiresAt": "2026-01-30T17:54:42.099Z",
-      "source": "timeline_monitor",
-      "contentCategory": "market-trends"
-    },
-    {
       "id": "2014812360457044097",
       "text": "@Cryptoarena001 Always a fan of realizing profits. But what's funny to me with $ROSE is this is the first time I've seen many accounts saying they are closing. I've never seen that, most people never share exits so either everyone is being smart or it's running higher.",
       "author": {
@@ -456,7 +15,7 @@
         "views": 911
       },
       "url": "https://twitter.com/IncomeSharks/status/2014812360457044097",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-01-23T22:07:45.646Z",
       "expiresAt": "2026-01-30T22:07:45.646Z",
       "source": "timeline_monitor",
@@ -477,7 +36,7 @@
         "views": 11402
       },
       "url": "https://twitter.com/IncomeSharks/status/2014810203997569260",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-01-23T22:07:51.632Z",
       "expiresAt": "2026-01-30T22:07:51.632Z",
       "source": "timeline_monitor",
@@ -498,7 +57,7 @@
         "views": 1085
       },
       "url": "https://twitter.com/AltcoinSherpa/status/2014814125260431433",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-01-23T22:08:46.041Z",
       "expiresAt": "2026-01-30T22:08:46.041Z",
       "source": "timeline_monitor",
@@ -519,7 +78,7 @@
         "views": 8328
       },
       "url": "https://twitter.com/AltcoinSherpa/status/2014772412982689896",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-01-23T22:08:50.739Z",
       "expiresAt": "2026-01-30T22:08:50.739Z",
       "source": "timeline_monitor",
@@ -540,7 +99,7 @@
         "views": 10819
       },
       "url": "https://twitter.com/AltcoinSherpa/status/2014765667862327503",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-01-23T22:08:52.724Z",
       "expiresAt": "2026-01-30T22:08:52.724Z",
       "source": "timeline_monitor",
@@ -561,7 +120,7 @@
         "views": 3201
       },
       "url": "https://twitter.com/AltcoinSherpa/status/2014762123482599819",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-01-23T22:08:54.747Z",
       "expiresAt": "2026-01-30T22:08:54.747Z",
       "source": "timeline_monitor",
@@ -582,7 +141,7 @@
         "views": 1667
       },
       "url": "https://twitter.com/CryptosR_Us/status/2014812944169673149",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-01-23T22:09:03.732Z",
       "expiresAt": "2026-01-30T22:09:03.732Z",
       "source": "timeline_monitor",
@@ -603,7 +162,7 @@
         "views": 8754
       },
       "url": "https://twitter.com/CryptosR_Us/status/2014790320601350333",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-01-23T22:09:05.667Z",
       "expiresAt": "2026-01-30T22:09:05.667Z",
       "source": "timeline_monitor",
@@ -624,7 +183,7 @@
         "views": 5056
       },
       "url": "https://twitter.com/CryptosR_Us/status/2014776442794451127",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-01-23T22:09:09.230Z",
       "expiresAt": "2026-01-30T22:09:09.230Z",
       "source": "timeline_monitor",
@@ -645,7 +204,7 @@
         "views": 10013
       },
       "url": "https://twitter.com/CryptosR_Us/status/2014761325876940962",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-01-23T22:09:10.008Z",
       "expiresAt": "2026-01-30T22:09:10.008Z",
       "source": "timeline_monitor",
@@ -666,7 +225,7 @@
         "views": 4868
       },
       "url": "https://twitter.com/CryptosR_Us/status/2014757773649875214",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-01-23T22:09:12.093Z",
       "expiresAt": "2026-01-30T22:09:12.093Z",
       "source": "timeline_monitor",
@@ -687,7 +246,7 @@
         "views": 4017
       },
       "url": "https://twitter.com/CryptosR_Us/status/2014723303580090648",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-01-23T22:09:16.135Z",
       "expiresAt": "2026-01-30T22:09:16.135Z",
       "source": "timeline_monitor",
@@ -708,7 +267,7 @@
         "views": 6452
       },
       "url": "https://twitter.com/CryptosR_Us/status/2014715243814125832",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-01-23T22:09:18.037Z",
       "expiresAt": "2026-01-30T22:09:18.037Z",
       "source": "timeline_monitor",
@@ -729,7 +288,7 @@
         "views": 8637
       },
       "url": "https://twitter.com/CryptosR_Us/status/2014687309556261072",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-01-23T22:09:20.152Z",
       "expiresAt": "2026-01-30T22:09:20.152Z",
       "source": "timeline_monitor",
@@ -750,7 +309,7 @@
         "views": 9183
       },
       "url": "https://twitter.com/CryptosR_Us/status/2014660633476923898",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-01-23T22:09:22.101Z",
       "expiresAt": "2026-01-30T22:09:22.101Z",
       "source": "timeline_monitor",
@@ -771,7 +330,7 @@
         "views": 119
       },
       "url": "https://twitter.com/Bitcoinhabebe/status/2014736436843417712",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-01-23T22:09:25.307Z",
       "expiresAt": "2026-01-30T22:09:25.307Z",
       "source": "timeline_monitor",
@@ -792,7 +351,7 @@
         "views": 3941
       },
       "url": "https://twitter.com/Bitcoinhabebe/status/2014723165616836736",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-01-23T22:09:26.168Z",
       "expiresAt": "2026-01-30T22:09:26.168Z",
       "source": "timeline_monitor",
@@ -813,7 +372,7 @@
         "views": 8169
       },
       "url": "https://twitter.com/Bitcoinhabebe/status/2014706194871648455",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-01-23T22:09:28.163Z",
       "expiresAt": "2026-01-30T22:09:28.163Z",
       "source": "timeline_monitor",
@@ -834,7 +393,7 @@
         "views": 4835
       },
       "url": "https://twitter.com/Bitcoinhabebe/status/2014696137060495433",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-01-23T22:09:30.160Z",
       "expiresAt": "2026-01-30T22:09:30.160Z",
       "source": "timeline_monitor",
@@ -855,7 +414,7 @@
         "views": 8038
       },
       "url": "https://twitter.com/Bitcoinhabebe/status/2014689194707198363",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-01-23T22:09:32.168Z",
       "expiresAt": "2026-01-30T22:09:32.169Z",
       "source": "timeline_monitor",
@@ -876,7 +435,7 @@
         "views": 11641
       },
       "url": "https://twitter.com/Bitcoinhabebe/status/2014673738533355568",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-01-23T22:09:36.171Z",
       "expiresAt": "2026-01-30T22:09:36.171Z",
       "source": "timeline_monitor",
@@ -897,7 +456,7 @@
         "views": 14372
       },
       "url": "https://twitter.com/Bitcoinhabebe/status/2014459413227008068",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-01-23T22:09:40.105Z",
       "expiresAt": "2026-01-30T22:09:40.105Z",
       "source": "timeline_monitor",
@@ -918,7 +477,7 @@
         "views": 5859
       },
       "url": "https://twitter.com/Bitcoinhabebe/status/2014453394237255691",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-01-23T22:09:42.363Z",
       "expiresAt": "2026-01-30T22:09:42.363Z",
       "source": "timeline_monitor",
