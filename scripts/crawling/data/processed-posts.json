@@ -976,7 +976,15 @@
     "2014689194707198363",
     "2014673738533355568",
     "2014459413227008068",
-    "2014453394237255691"
+    "2014453394237255691",
+    "2014903485280477541",
+    "2014894747177877611",
+    "2014782436379398275",
+    "2014767084723663191",
+    "2014752490231837052",
+    "2014737390938529991",
+    "2014722289938649486",
+    "2014814630745362447"
   ],
   "productRotation": {
     "priorityProducts": [
@@ -993,14 +1001,14 @@
     ],
     "priorityIndex": 3,
     "otherIndex": 4,
-    "replyCount": 523,
+    "replyCount": 531,
     "lastProductUsed": "Blockchain Badges",
     "positioningPhraseIndex": 0
   },
   "metadata": {
-    "lastCheck": "2026-01-24T06:46:10.033Z",
+    "lastCheck": "2026-01-24T09:39:02.919Z",
     "totalReplied": 5,
-    "totalSkipped": 970,
+    "totalSkipped": 978,
     "lastUpdateBy": "kol-system"
   }
 }
