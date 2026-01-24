@@ -57,7 +57,7 @@
         "views": 5982
       },
       "url": "https://twitter.com/AltcoinSherpa/status/2014814125260431433",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-01-24T17:50:25.178Z",
       "expiresAt": "2026-01-31T17:50:25.178Z",
       "source": "timeline_monitor",
@@ -162,7 +162,7 @@
         "views": 24092
       },
       "url": "https://twitter.com/cobie/status/2014473213003129038",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-01-24T17:51:21.385Z",
       "expiresAt": "2026-01-31T17:51:21.385Z",
       "source": "timeline_monitor",
@@ -183,7 +183,7 @@
         "views": 1310
       },
       "url": "https://twitter.com/cobie/status/2014472955292492157",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-01-24T17:51:23.375Z",
       "expiresAt": "2026-01-31T17:51:23.375Z",
       "source": "timeline_monitor",
@@ -204,7 +204,7 @@
         "views": 55156
       },
       "url": "https://twitter.com/cobie/status/2014471157123026979",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-01-24T17:51:26.962Z",
       "expiresAt": "2026-01-31T17:51:26.962Z",
       "source": "timeline_monitor",
@@ -225,7 +225,7 @@
         "views": 1163
       },
       "url": "https://twitter.com/cobie/status/2014438573458534409",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-01-24T17:51:36.111Z",
       "expiresAt": "2026-01-31T17:51:36.111Z",
       "source": "timeline_monitor",
@@ -650,10 +650,10 @@
       "BWS IPFS",
       "Blockchain Save"
     ],
-    "currentIndex": 7,
-    "lastProductUsed": "BWS IPFS",
+    "currentIndex": 0,
+    "lastProductUsed": "Blockchain Save",
     "positioningPhraseIndex": 0,
-    "replyCount": 303
+    "replyCount": 304
   },
   "_removedStale": false
 }

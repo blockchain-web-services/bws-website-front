@@ -3777,6 +3777,26 @@
       "status": "posted",
       "dryRun": false,
       "sdkVersion": "1.7.0"
+    },
+    {
+      "id": "111533746-2015048561722118234-1769284451404",
+      "tweetId": "2015048561722118234",
+      "tweetUrl": "https://twitter.com/WuBlockchain/status/2015048561722118234",
+      "kolId": "111533746",
+      "kolUsername": "WuBlockchain",
+      "originalTweetText": "NFT platform Nifty Gateway announced that it will officially close on February 23, 2026. Effective immediately, the platform has entered \"withdrawal-only mode.\" Nifty Gateway was one of the earliest NFT trading and management platforms and was acquired by cryptocurrency exchange",
+      "replyTweetId": "2015151161435729981",
+      "replyText": "Platform gaps persist. $BWS Blockchain.Save solves data storage reliability across chains. Permanent, verifiable document storage with Certificate of Trust ensures integrity. @BWSCommunity https://docs.bws.ninja/solutions/bws.blockchain.save #crypto",
+      "productMentioned": "NFT.zK (Platform API)",
+      "relevanceScore": 82,
+      "templateUsed": "classic",
+      "templateName": "Classic Structure",
+      "imageAttached": false,
+      "imagePath": null,
+      "timestamp": "2026-01-24T19:54:11.404Z",
+      "status": "posted",
+      "dryRun": false,
+      "sdkVersion": "1.7.0"
     }
   ],
   "dailyStats": {
@@ -3887,10 +3907,10 @@
     }
   },
   "metadata": {
-    "totalReplies": 196,
-    "successfulReplies": 151,
+    "totalReplies": 197,
+    "successfulReplies": 152,
     "failedReplies": 34,
-    "lastReplyAt": "2026-01-24T07:39:33.215Z",
+    "lastReplyAt": "2026-01-24T19:54:11.404Z",
     "todayRepliesCount": 0,
     "lastUpdateBy": "kol-system"
   }
