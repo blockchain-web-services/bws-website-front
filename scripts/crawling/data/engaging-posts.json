@@ -629,13 +629,538 @@
       "expiresAt": "2026-01-31T17:52:21.311Z",
       "source": "timeline_monitor",
       "contentCategory": "market-trends"
+    },
+    {
+      "id": "2014437129162522677",
+      "text": "@mirza @mud2monarch What are the false pretences that Farcaster raised under?",
+      "author": {
+        "id": "2259434528",
+        "username": "cobie"
+      },
+      "public_metrics": {
+        "likes": 28,
+        "retweets": 0,
+        "replies": 2,
+        "quotes": 0,
+        "views": 1735
+      },
+      "url": "https://twitter.com/cobie/status/2014437129162522677",
+      "processed": false,
+      "addedAt": "2026-01-24T22:08:12.075Z",
+      "expiresAt": "2026-01-31T22:08:12.075Z",
+      "source": "timeline_monitor",
+      "contentCategory": "project-discussion"
+    },
+    {
+      "id": "2015182728820670808",
+      "text": "I'm unsure of the ceiling for this $PENGUIN. $PEPE ran huge in 2023 when the environment was pretty dead. \n\nThere were countless runners in 2024 but that was peak onchain meme cycle w. decent liquidity everywhere. This is probably more like 2023 where everyone is much poorer than https://t.co/ixKHsIq675 https://t.co/mRNTb7CtLN",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "likes": 11,
+        "retweets": 2,
+        "replies": 3,
+        "quotes": 0,
+        "views": 1296
+      },
+      "url": "https://twitter.com/AltcoinSherpa/status/2015182728820670808",
+      "processed": false,
+      "addedAt": "2026-01-24T22:08:30.862Z",
+      "expiresAt": "2026-01-31T22:08:30.862Z",
+      "source": "timeline_monitor",
+      "contentCategory": "altcoin-talk"
+    },
+    {
+      "id": "2015171464979177592",
+      "text": "I still think that this is roughly the bottom for $BTC and the market in general. Hard to see those lows getting taken out again and if we lose 80k, I drastically rethink my idea. Probably more chop and then move up in the next few weeks imo https://t.co/vMCdsebNn8",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "likes": 49,
+        "retweets": 6,
+        "replies": 12,
+        "quotes": 0,
+        "views": 2690
+      },
+      "url": "https://twitter.com/AltcoinSherpa/status/2015171464979177592",
+      "processed": false,
+      "addedAt": "2026-01-24T22:08:35.105Z",
+      "expiresAt": "2026-01-31T22:08:35.105Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends/price-speculation/technical-analysis"
+    },
+    {
+      "id": "2015154657098645970",
+      "text": "always important to understand the narratives/leaders/beta of a sector. Group altcoins by sector and see what's moving and you can see which ones you like. $HYPE $LIT $ASTER $ORDER https://t.co/xj3YmCFhsQ",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "likes": 17,
+        "retweets": 4,
+        "replies": 5,
+        "quotes": 0,
+        "views": 3535
+      },
+      "url": "https://twitter.com/AltcoinSherpa/status/2015154657098645970",
+      "processed": false,
+      "addedAt": "2026-01-24T22:08:37.657Z",
+      "expiresAt": "2026-01-31T22:08:37.657Z",
+      "source": "timeline_monitor",
+      "contentCategory": "altcoin-talk"
+    },
+    {
+      "id": "2015140791065161821",
+      "text": "$PUMP in general looks really strong and has a high time frame bottom being created imo. Wouldn't necessarily top blast here but w. the move from penguin, risk on environments in the trenches will move this one forward imo. We still  need a healthy btc though https://t.co/2wLmWugFLF",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "likes": 30,
+        "retweets": 6,
+        "replies": 8,
+        "quotes": 0,
+        "views": 4765
+      },
+      "url": "https://twitter.com/AltcoinSherpa/status/2015140791065161821",
+      "processed": false,
+      "addedAt": "2026-01-24T22:08:38.975Z",
+      "expiresAt": "2026-01-31T22:08:38.975Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends/technical-analysis"
+    },
+    {
+      "id": "2015138821642354852",
+      "text": "$PENGUIN: Everyone in crypto should hope this goes up. Shows some life in the market and love seeing the move. I'm completely sidelined but let's see how high it goes. \n\n(like every other meme in existence, this will eventually die a fiery death but for now, enjoy it) https://t.co/M9l00PVaMo",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "likes": 151,
+        "retweets": 13,
+        "replies": 31,
+        "quotes": 3,
+        "views": 10942
+      },
+      "url": "https://twitter.com/AltcoinSherpa/status/2015138821642354852",
+      "processed": false,
+      "addedAt": "2026-01-24T22:08:40.990Z",
+      "expiresAt": "2026-01-31T22:08:40.990Z",
+      "source": "timeline_monitor",
+      "contentCategory": "altcoin-talk"
+    },
+    {
+      "id": "2015176753694822807",
+      "text": "@alexstanczyk You have to overpay to buy it, and then get undercut massively when selling. The biggest winners are the middle men taking their cuts.",
+      "author": {
+        "id": "4441279246",
+        "username": "IncomeSharks"
+      },
+      "public_metrics": {
+        "likes": 12,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 715
+      },
+      "url": "https://twitter.com/IncomeSharks/status/2015176753694822807",
+      "processed": false,
+      "addedAt": "2026-01-24T22:09:01.451Z",
+      "expiresAt": "2026-01-31T22:09:01.451Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "2015168028057739390",
+      "text": "@SatoshiFlipper We all know how hype cycles play out, crypto investors have years of experience seeing things end",
+      "author": {
+        "id": "4441279246",
+        "username": "IncomeSharks"
+      },
+      "public_metrics": {
+        "likes": 45,
+        "retweets": 0,
+        "replies": 6,
+        "quotes": 0,
+        "views": 2684
+      },
+      "url": "https://twitter.com/IncomeSharks/status/2015168028057739390",
+      "processed": false,
+      "addedAt": "2026-01-24T22:09:03.783Z",
+      "expiresAt": "2026-01-31T22:09:03.783Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "1868409198846804078",
+      "text": "Today I interviewed Kirk David Phillips CPA\nCBP about the IRS Safe Harbour process and the actions US citizens with #crypto assets must take in the remaining 2 weeks of the year to avoid an accounting and tax mess. \n\nAct before December 31st 2024\n\nhttps://t.co/UaDX9O43yu",
+      "author": {
+        "id": "1469101279",
+        "username": "aantonop"
+      },
+      "public_metrics": {
+        "likes": 1513,
+        "retweets": 535,
+        "replies": 0,
+        "quotes": 30,
+        "views": 210387
+      },
+      "url": "https://twitter.com/aantonop/status/1868409198846804078",
+      "processed": false,
+      "addedAt": "2026-01-24T22:09:14.344Z",
+      "expiresAt": "2026-01-31T22:09:14.344Z",
+      "source": "timeline_monitor",
+      "contentCategory": "news"
+    },
+    {
+      "id": "1780377650625945683",
+      "text": "Despite the clickbait headlines, the halving is unlikely to result in a Bitcoin Death Spiral - here's why https://t.co/dipIQU6xNq",
+      "author": {
+        "id": "1469101279",
+        "username": "aantonop"
+      },
+      "public_metrics": {
+        "likes": 1822,
+        "retweets": 636,
+        "replies": 0,
+        "quotes": 15,
+        "views": 198285
+      },
+      "url": "https://twitter.com/aantonop/status/1780377650625945683",
+      "processed": false,
+      "addedAt": "2026-01-24T22:09:15.881Z",
+      "expiresAt": "2026-01-31T22:09:15.881Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "1780278921227010076",
+      "text": "ICYMI             https://t.co/cB5i0ozYqC   \n#BitcoinHalving2024 #Bitcoin #HalvingBitcoin \n(yes, our team made the audio a bit too fast, but hey, maybe you'll learn how to reduce playback speed on youtube, if you've never done that before 😉)",
+      "author": {
+        "id": "1469101279",
+        "username": "aantonop"
+      },
+      "public_metrics": {
+        "likes": 1418,
+        "retweets": 474,
+        "replies": 0,
+        "quotes": 6,
+        "views": 152050
+      },
+      "url": "https://twitter.com/aantonop/status/1780278921227010076",
+      "processed": false,
+      "addedAt": "2026-01-24T22:09:19.199Z",
+      "expiresAt": "2026-01-31T22:09:19.199Z",
+      "source": "timeline_monitor",
+      "contentCategory": "news"
+    },
+    {
+      "id": "1780015259346202833",
+      "text": "My latest video: Bitcoin Halving 2024. What to expect, myth busting, and more. https://t.co/cB5i0ozYqC",
+      "author": {
+        "id": "1469101279",
+        "username": "aantonop"
+      },
+      "public_metrics": {
+        "likes": 1943,
+        "retweets": 602,
+        "replies": 0,
+        "quotes": 21,
+        "views": 170236
+      },
+      "url": "https://twitter.com/aantonop/status/1780015259346202833",
+      "processed": false,
+      "addedAt": "2026-01-24T22:09:19.952Z",
+      "expiresAt": "2026-01-31T22:09:19.952Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "1763321484859027665",
+      "text": "Videos to Learn How Bitcoin and Open Blockchains Might Change Our Lives (no ads): (1) A crowd fav about #Bitcoin📷  &amp; why it matters (20 min) https://t.co/tKhI90AkX1 1,000,000+ views: Intro to Bitcoin and Open Blockchains: https://t.co/uhflldL4ze\n📷",
+      "author": {
+        "id": "1469101279",
+        "username": "aantonop"
+      },
+      "public_metrics": {
+        "likes": 1522,
+        "retweets": 578,
+        "replies": 0,
+        "quotes": 5,
+        "views": 119612
+      },
+      "url": "https://twitter.com/aantonop/status/1763321484859027665",
+      "processed": false,
+      "addedAt": "2026-01-24T22:09:21.950Z",
+      "expiresAt": "2026-01-31T22:09:21.950Z",
+      "source": "timeline_monitor",
+      "contentCategory": "project-discussion"
+    },
+    {
+      "id": "1763024925642604676",
+      "text": "My latest video: Buying Bitcoin Using Dollar Cost Averaging &amp; Avoiding Dust UTXO - Self Custody Series - Feb 2024 #bitcoin #UTXO #selfcustody \nhttps://t.co/VgzcHPTIUv",
+      "author": {
+        "id": "1469101279",
+        "username": "aantonop"
+      },
+      "public_metrics": {
+        "likes": 391,
+        "retweets": 100,
+        "replies": 0,
+        "quotes": 2,
+        "views": 83377
+      },
+      "url": "https://twitter.com/aantonop/status/1763024925642604676",
+      "processed": false,
+      "addedAt": "2026-01-24T22:09:28.858Z",
+      "expiresAt": "2026-01-31T22:09:28.858Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "1762988232969490689",
+      "text": "Are ETFs better than Self Custody? Watch this 1 min video to hear my answer. \nhttps://t.co/aZyYV0PB0q",
+      "author": {
+        "id": "1469101279",
+        "username": "aantonop"
+      },
+      "public_metrics": {
+        "likes": 445,
+        "retweets": 144,
+        "replies": 0,
+        "quotes": 26,
+        "views": 106515
+      },
+      "url": "https://twitter.com/aantonop/status/1762988232969490689",
+      "processed": false,
+      "addedAt": "2026-01-24T22:09:31.507Z",
+      "expiresAt": "2026-01-31T22:09:31.507Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "2015089129382395937",
+      "text": "$LIT pump is coming.",
+      "author": {
+        "id": "crawlee_search_nihilusbtc",
+        "username": "NihilusBTC"
+      },
+      "public_metrics": {
+        "likes": 45,
+        "retweets": 4,
+        "replies": 11,
+        "quotes": 0,
+        "views": 3227
+      },
+      "url": "https://twitter.com/NihilusBTC/status/2015089129382395937",
+      "processed": false,
+      "addedAt": "2026-01-24T22:09:34.582Z",
+      "expiresAt": "2026-01-31T22:09:34.582Z",
+      "source": "timeline_monitor",
+      "contentCategory": "price-speculation"
+    },
+    {
+      "id": "2015059042176041456",
+      "text": "$LIT | 140k usdt invested here. https://t.co/pqmgT8ZgDg",
+      "author": {
+        "id": "crawlee_search_nihilusbtc",
+        "username": "NihilusBTC"
+      },
+      "public_metrics": {
+        "likes": 77,
+        "retweets": 19,
+        "replies": 22,
+        "quotes": 0,
+        "views": 6205
+      },
+      "url": "https://twitter.com/NihilusBTC/status/2015059042176041456",
+      "processed": false,
+      "addedAt": "2026-01-24T22:09:36.600Z",
+      "expiresAt": "2026-01-31T22:09:36.600Z",
+      "source": "timeline_monitor",
+      "contentCategory": "price-speculation"
+    },
+    {
+      "id": "2014726584553427452",
+      "text": "$LIT add long @ 1.72",
+      "author": {
+        "id": "crawlee_search_nihilusbtc",
+        "username": "NihilusBTC"
+      },
+      "public_metrics": {
+        "likes": 38,
+        "retweets": 6,
+        "replies": 9,
+        "quotes": 0,
+        "views": 4927
+      },
+      "url": "https://twitter.com/NihilusBTC/status/2014726584553427452",
+      "processed": false,
+      "addedAt": "2026-01-24T22:09:38.530Z",
+      "expiresAt": "2026-01-31T22:09:38.530Z",
+      "source": "timeline_monitor",
+      "contentCategory": "price-speculation"
+    },
+    {
+      "id": "2014605961172840607",
+      "text": "$lit\nlonged\nat\ncurrent market price",
+      "author": {
+        "id": "crawlee_search_nihilusbtc",
+        "username": "NihilusBTC"
+      },
+      "public_metrics": {
+        "likes": 45,
+        "retweets": 11,
+        "replies": 16,
+        "quotes": 0,
+        "views": 6140
+      },
+      "url": "https://twitter.com/NihilusBTC/status/2014605961172840607",
+      "processed": false,
+      "addedAt": "2026-01-24T22:09:40.537Z",
+      "expiresAt": "2026-01-31T22:09:40.537Z",
+      "source": "timeline_monitor",
+      "contentCategory": "price-speculation"
+    },
+    {
+      "id": "2014466780324884670",
+      "text": "$lit is the next $river 👌🏻",
+      "author": {
+        "id": "crawlee_search_nihilusbtc",
+        "username": "NihilusBTC"
+      },
+      "public_metrics": {
+        "likes": 62,
+        "retweets": 7,
+        "replies": 14,
+        "quotes": 0,
+        "views": 7277
+      },
+      "url": "https://twitter.com/NihilusBTC/status/2014466780324884670",
+      "processed": false,
+      "addedAt": "2026-01-24T22:09:42.618Z",
+      "expiresAt": "2026-01-31T22:09:42.618Z",
+      "source": "timeline_monitor",
+      "contentCategory": "altcoin-talk"
+    },
+    {
+      "id": "2014429591058759876",
+      "text": "$LIT add long @ 1.80",
+      "author": {
+        "id": "crawlee_search_nihilusbtc",
+        "username": "NihilusBTC"
+      },
+      "public_metrics": {
+        "likes": 41,
+        "retweets": 7,
+        "replies": 10,
+        "quotes": 0,
+        "views": 4718
+      },
+      "url": "https://twitter.com/NihilusBTC/status/2014429591058759876",
+      "processed": false,
+      "addedAt": "2026-01-24T22:09:44.537Z",
+      "expiresAt": "2026-01-31T22:09:44.537Z",
+      "source": "timeline_monitor",
+      "contentCategory": "price-speculation"
+    },
+    {
+      "id": "2014366335107494320",
+      "text": "$LIT | BREAKOUT!🚀 https://t.co/u2qFCBlenI",
+      "author": {
+        "id": "crawlee_search_nihilusbtc",
+        "username": "NihilusBTC"
+      },
+      "public_metrics": {
+        "likes": 71,
+        "retweets": 10,
+        "replies": 13,
+        "quotes": 0,
+        "views": 7796
+      },
+      "url": "https://twitter.com/NihilusBTC/status/2014366335107494320",
+      "processed": false,
+      "addedAt": "2026-01-24T22:09:46.604Z",
+      "expiresAt": "2026-01-31T22:09:46.604Z",
+      "source": "timeline_monitor",
+      "contentCategory": "price-speculation"
+    },
+    {
+      "id": "2014328694139990314",
+      "text": "$LIT | Longed.\n\nWeekly reversal. https://t.co/UhSanMRue5",
+      "author": {
+        "id": "crawlee_search_nihilusbtc",
+        "username": "NihilusBTC"
+      },
+      "public_metrics": {
+        "likes": 76,
+        "retweets": 10,
+        "replies": 17,
+        "quotes": 0,
+        "views": 8451
+      },
+      "url": "https://twitter.com/NihilusBTC/status/2014328694139990314",
+      "processed": false,
+      "addedAt": "2026-01-24T22:09:48.570Z",
+      "expiresAt": "2026-01-31T22:09:48.570Z",
+      "source": "timeline_monitor",
+      "contentCategory": "technical-analysis"
+    },
+    {
+      "id": "2014046358026539012",
+      "text": "@guru_trade3 @experts24166 i didn’t say “i won” \n\nalready it hit my tp and blood bath and 2x\n\nthis is why i said “casino”",
+      "author": {
+        "id": "crawlee_search_nihilusbtc",
+        "username": "NihilusBTC"
+      },
+      "public_metrics": {
+        "likes": 4,
+        "retweets": 2,
+        "replies": 2,
+        "quotes": 0,
+        "views": 121
+      },
+      "url": "https://twitter.com/NihilusBTC/status/2014046358026539012",
+      "processed": false,
+      "addedAt": "2026-01-24T22:09:50.558Z",
+      "expiresAt": "2026-01-31T22:09:50.558Z",
+      "source": "timeline_monitor",
+      "contentCategory": "price-speculation"
+    },
+    {
+      "id": "2013921043841155421",
+      "text": "$HANA | Best casino i have ever seen. https://t.co/QGxHvCiYma https://t.co/uA7TBal38R",
+      "author": {
+        "id": "crawlee_search_nihilusbtc",
+        "username": "NihilusBTC"
+      },
+      "public_metrics": {
+        "likes": 75,
+        "retweets": 13,
+        "replies": 21,
+        "quotes": 0,
+        "views": 11731
+      },
+      "url": "https://twitter.com/NihilusBTC/status/2013921043841155421",
+      "processed": false,
+      "addedAt": "2026-01-24T22:09:54.241Z",
+      "expiresAt": "2026-01-31T22:09:54.241Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
     }
   ],
   "metadata": {
-    "lastUpdated": "2026-01-24T17:53:25.462Z",
-    "totalPosts": 38,
+    "lastUpdated": "2026-01-24T22:10:58.433Z",
+    "totalPosts": 55,
     "bySource": {
-      "timeline_monitor": 38,
+      "timeline_monitor": 55,
       "search_discovery": 0
     }
   },
