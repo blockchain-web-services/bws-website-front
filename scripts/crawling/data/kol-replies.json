@@ -3737,6 +3737,26 @@
       "status": "posted",
       "dryRun": false,
       "sdkVersion": "1.7.0"
+    },
+    {
+      "id": "crawlee_search_bitcoinhabebe-2014673738533355568-1769223449619",
+      "tweetId": "2014673738533355568",
+      "tweetUrl": "https://twitter.com/Bitcoinhabebe/status/2014673738533355568",
+      "kolId": "crawlee_search_bitcoinhabebe",
+      "kolUsername": "Bitcoinhabebe",
+      "originalTweetText": "In 2 months, we achieved 26/26 back to back successful trades which is truly historical. \n\ni’ve put insane effort to make sure to share nothing but the best to help as many make money. \n\nDo we want another gem 💎? Like &amp; RT\n\nSome of the gems i shared ran 100-300% and many between https://t.co/ATGnxoSLd2 https://t.co/Ocd77kku8J",
+      "replyTweetId": "2014895301295854013",
+      "replyText": "ESG Credits transforms financial reporting with blockchain-verified sustainability tracking. $BWS delivers enterprise-grade solutions bridging green investments and transparent impact measurement.   @BWSCommunity #microcap #altcoins https://www.bws.ninja",
+      "productMentioned": "Blockchain Badges, ESG Credits",
+      "relevanceScore": 85,
+      "templateUsed": "delayed_cashtag",
+      "templateName": "Delayed $BWS Mention",
+      "imageAttached": false,
+      "imagePath": null,
+      "timestamp": "2026-01-24T02:57:29.619Z",
+      "status": "posted",
+      "dryRun": false,
+      "sdkVersion": "1.7.0"
     }
   ],
   "dailyStats": {
@@ -3841,10 +3861,10 @@
     }
   },
   "metadata": {
-    "totalReplies": 194,
-    "successfulReplies": 149,
+    "totalReplies": 195,
+    "successfulReplies": 150,
     "failedReplies": 34,
-    "lastReplyAt": "2026-01-23T23:19:45.261Z",
+    "lastReplyAt": "2026-01-24T02:57:29.619Z",
     "todayRepliesCount": 0,
     "lastUpdateBy": "kol-system"
   }
