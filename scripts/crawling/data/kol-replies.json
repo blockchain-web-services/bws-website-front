@@ -3757,6 +3757,26 @@
       "status": "posted",
       "dryRun": false,
       "sdkVersion": "1.7.0"
+    },
+    {
+      "id": "crawlee_search_cryptopatel-2014918331703197796-1769240373215",
+      "tweetId": "2014918331703197796",
+      "tweetUrl": "https://twitter.com/CryptoPatel/status/2014918331703197796",
+      "kolId": "crawlee_search_cryptopatel",
+      "kolUsername": "CryptoPatel",
+      "originalTweetText": "ALERT: The Chart Nobody Is Watching: BTC.D About To Trigger Biggest #Altseason Ever\n\nBitcoin Dominance Is Trading At A Major HTF Distribution Zone After Printing A Cycle High Near 66%, With Price Rejecting From Bearish OB + FVG Supply And Shifting Structure Bearish.\n\nTechnical https://t.co/sFUDFcx4yi https://t.co/O0pHtibF7e",
+      "replyTweetId": "2014966283654078560",
+      "replyText": "$BWS IPFS powers decentralized storage: 10K+ monthly file uploads via easy API. Solid infrastructure for NFT/document handling. @BWSCommunity https://docs.bws.ninja/solutions/bws.ipfs.upload #crypto",
+      "productMentioned": "ESG Credits, Blockchain Badges",
+      "relevanceScore": 85,
+      "templateUsed": "stat_driven",
+      "templateName": "Stat/Fact-Driven Structure",
+      "imageAttached": true,
+      "imagePath": "/assets/images/docs/bws-ipfs/bws-ipfs-0.png",
+      "timestamp": "2026-01-24T07:39:33.215Z",
+      "status": "posted",
+      "dryRun": false,
+      "sdkVersion": "1.7.0"
     }
   ],
   "dailyStats": {
@@ -3867,10 +3887,10 @@
     }
   },
   "metadata": {
-    "totalReplies": 195,
-    "successfulReplies": 150,
+    "totalReplies": 196,
+    "successfulReplies": 151,
     "failedReplies": 34,
-    "lastReplyAt": "2026-01-24T02:57:29.619Z",
+    "lastReplyAt": "2026-01-24T07:39:33.215Z",
     "todayRepliesCount": 0,
     "lastUpdateBy": "kol-system"
   }

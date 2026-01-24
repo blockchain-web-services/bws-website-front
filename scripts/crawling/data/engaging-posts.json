@@ -498,7 +498,7 @@
         "views": 3482
       },
       "url": "https://twitter.com/AltcoinSherpa/status/2014900765060460664",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-01-24T07:23:16.899Z",
       "expiresAt": "2026-01-31T07:23:16.899Z",
       "source": "timeline_monitor",
@@ -519,7 +519,7 @@
         "views": 2867
       },
       "url": "https://twitter.com/IncomeSharks/status/2014912910783606994",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-01-24T07:23:45.018Z",
       "expiresAt": "2026-01-31T07:23:45.018Z",
       "source": "timeline_monitor",
@@ -540,7 +540,7 @@
         "views": 2366
       },
       "url": "https://twitter.com/IncomeSharks/status/2014908076839862741",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-01-24T07:23:45.881Z",
       "expiresAt": "2026-01-31T07:23:45.881Z",
       "source": "timeline_monitor",
@@ -561,7 +561,7 @@
         "views": 2739
       },
       "url": "https://twitter.com/IncomeSharks/status/2014907476358136285",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-01-24T07:23:48.810Z",
       "expiresAt": "2026-01-31T07:23:48.810Z",
       "source": "timeline_monitor",
@@ -582,7 +582,7 @@
         "views": 1812
       },
       "url": "https://twitter.com/CryptoPatel/status/2014948278706831464",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-01-24T07:24:04.257Z",
       "expiresAt": "2026-01-31T07:24:04.257Z",
       "source": "timeline_monitor",
@@ -603,7 +603,7 @@
         "views": 8859
       },
       "url": "https://twitter.com/CryptoPatel/status/2014933682822250684",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-01-24T07:24:06.173Z",
       "expiresAt": "2026-01-31T07:24:06.173Z",
       "source": "timeline_monitor",
@@ -624,7 +624,7 @@
         "views": 15209
       },
       "url": "https://twitter.com/CryptoPatel/status/2014918331703197796",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-01-24T07:24:08.369Z",
       "expiresAt": "2026-01-31T07:24:08.369Z",
       "source": "timeline_monitor",
@@ -818,10 +818,10 @@
       "BWS IPFS",
       "Blockchain Save"
     ],
-    "currentIndex": 6,
-    "lastProductUsed": "ESG Credits",
+    "currentIndex": 7,
+    "lastProductUsed": "BWS IPFS",
     "positioningPhraseIndex": 0,
-    "replyCount": 302
+    "replyCount": 303
   },
   "_removedStale": false
 }
