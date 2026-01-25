@@ -1,11 +1,11 @@
 {
   "metadata": {
-    "lastGenerated": "2025-12-28T12:13:55.036Z",
-    "totalPosts": 60,
-    "totalArticles": 24,
-    "pendingPosts": 7,
-    "postedCount": 46,
-    "lastPosted": "2026-01-18T20:08:53.840Z",
+    "lastGenerated": "2026-01-25T20:09:44.849Z",
+    "totalPosts": 65,
+    "totalArticles": 29,
+    "pendingPosts": 11,
+    "postedCount": 47,
+    "lastPosted": "2026-01-25T20:09:45.452Z",
     "failedCount": 7
   },
   "posts": [
@@ -1709,6 +1709,138 @@
       },
       "tweetUrl": "https://twitter.com/i/web/status/2005438527346016448",
       "error": null
+    },
+    {
+      "id": "a79643cc-53cb-4acf-adac-28fc497aa9ca",
+      "articleSlug": "x-bot-2026-01-25",
+      "product": "X Bot",
+      "type": "overview",
+      "text": "X Bot tracks community mentions and engagement across X and Telegram platforms. Monitors KOL performance and filters bot activity through official API integration. Built by @BWSCommunity using $BWS\n\n📖 Article: https://www.bws.ninja/articles/x-bot-2026-01-25\n📚 Docs: https://docs.bws.ninja/marketplace-solutions/bws.x.bot\n\n#XBot #CryptoAnalytics",
+      "mainText": "X Bot tracks community mentions and engagement across X and Telegram platforms. Monitors KOL performance and filters bot activity through official API integration. Built by @BWSCommunity using $BWS",
+      "articleUrl": "https://www.bws.ninja/articles/x-bot-2026-01-25",
+      "docsUrl": "https://docs.bws.ninja/marketplace-solutions/bws.x.bot",
+      "hashtags": [
+        "XBot",
+        "CryptoAnalytics"
+      ],
+      "priority": "high",
+      "status": "posted",
+      "scheduledFor": null,
+      "postedAt": "2026-01-25T20:09:45.406Z",
+      "tweetId": "2015517466726645806",
+      "generatedAt": "2026-01-25T20:09:25.392Z",
+      "metadata": {
+        "articleTitle": "X Bot: Real-Time Community Analytics for Crypto Projects on X and Telegram",
+        "articlePublishDate": "2026-01-25T10:03:15.885Z",
+        "mainTextLength": 197,
+        "fullTextLength": 346
+      },
+      "tweetUrl": "https://twitter.com/i/web/status/2015517466726645806",
+      "error": null
+    },
+    {
+      "id": "e8c46222-8107-4bfd-918f-d2bb1008076f",
+      "articleSlug": "fan-game-cube-2026-01-24",
+      "product": "Fan Game Cube",
+      "type": "overview",
+      "text": "Fan Game Cube tokenizes stadium fields into NFT coordinate zones. Fans can own specific field locations and receive automated rewards when match events occur at their coordinates. Built by @BWSCommunity using $BWS\n\n📖 Article: https://www.bws.ninja/articles/fan-game-cube-2026-01-24\n📚 Docs: https://docs.bws.ninja/marketplace-solutions/bws.nft.gamecube\n\n#FanGameCube #SportsNFT",
+      "mainText": "Fan Game Cube tokenizes stadium fields into NFT coordinate zones. Fans can own specific field locations and receive automated rewards when match events occur at their coordinates. Built by @BWSCommunity using $BWS",
+      "articleUrl": "https://www.bws.ninja/articles/fan-game-cube-2026-01-24",
+      "docsUrl": "https://docs.bws.ninja/marketplace-solutions/bws.nft.gamecube",
+      "hashtags": [
+        "FanGameCube",
+        "SportsNFT"
+      ],
+      "priority": "high",
+      "status": "pending",
+      "scheduledFor": null,
+      "postedAt": null,
+      "tweetId": null,
+      "generatedAt": "2026-01-25T20:09:30.046Z",
+      "metadata": {
+        "articleTitle": "Fan Game Cube: NFT Coordinate Zones That Reward Fans During Live Matches",
+        "articlePublishDate": "2026-01-24T10:02:57.618Z",
+        "mainTextLength": 213,
+        "fullTextLength": 378
+      }
+    },
+    {
+      "id": "e83fe220-9b4d-4be2-a309-a4e99ee2497b",
+      "articleSlug": "esg-credits-2026-01-23",
+      "product": "ESG Credits",
+      "type": "overview",
+      "text": "ESG Credits tracks environmental impact for financial institutions using blockchain verification. ICMA framework compliance with immutable audit trails through REST API integration. Built by @BWSCommunity using $BWS\n\n📖 Article: https://www.bws.ninja/articles/esg-credits-2026-01-23\n📚 Docs: https://docs.bws.ninja/marketplace-solutions/bws.esg.credits\n\n#ESGCredits #SustainableFinance",
+      "mainText": "ESG Credits tracks environmental impact for financial institutions using blockchain verification. ICMA framework compliance with immutable audit trails through REST API integration. Built by @BWSCommunity using $BWS",
+      "articleUrl": "https://www.bws.ninja/articles/esg-credits-2026-01-23",
+      "docsUrl": "https://docs.bws.ninja/marketplace-solutions/bws.esg.credits",
+      "hashtags": [
+        "ESGCredits",
+        "SustainableFinance"
+      ],
+      "priority": "high",
+      "status": "pending",
+      "scheduledFor": null,
+      "postedAt": null,
+      "tweetId": null,
+      "generatedAt": "2026-01-25T20:09:34.695Z",
+      "metadata": {
+        "articleTitle": "ESG Credits: Blockchain Environmental Impact Tracking for Financial Institutions",
+        "articlePublishDate": "2026-01-23T10:03:31.732Z",
+        "mainTextLength": 215,
+        "fullTextLength": 385
+      }
+    },
+    {
+      "id": "abe74e4b-bbe1-4586-89d4-7567ccc47a00",
+      "articleSlug": "blockchain-badges-2026-01-22",
+      "product": "Blockchain Badges",
+      "type": "overview",
+      "text": "Blockchain Badges stores digital credentials on-chain with cryptographic verification. Each badge contains issuer data, recipient info, and achievement details that can be instantly verified without contacting the issuer. Built by @BWSCommunity using $BWS\n\n📖 Article: https://www.bws.ninja/articles/blockchain-badges-2026-01-22\n📚 Docs: https://docs.bws.ninja/marketplace-solutions/bws.blockchain.badges\n\n#BlockchainBadges #DigitalCredentials",
+      "mainText": "Blockchain Badges stores digital credentials on-chain with cryptographic verification. Each badge contains issuer data, recipient info, and achievement details that can be instantly verified without contacting the issuer. Built by @BWSCommunity using $BWS",
+      "articleUrl": "https://www.bws.ninja/articles/blockchain-badges-2026-01-22",
+      "docsUrl": "https://docs.bws.ninja/marketplace-solutions/bws.blockchain.badges",
+      "hashtags": [
+        "BlockchainBadges",
+        "DigitalCredentials"
+      ],
+      "priority": "high",
+      "status": "pending",
+      "scheduledFor": null,
+      "postedAt": null,
+      "tweetId": null,
+      "generatedAt": "2026-01-25T20:09:39.880Z",
+      "metadata": {
+        "articleTitle": "Blockchain Badges: Tamper-Proof Digital Credentials with Instant Verification",
+        "articlePublishDate": "2026-01-22T10:05:17.592Z",
+        "mainTextLength": 255,
+        "fullTextLength": 443
+      }
+    },
+    {
+      "id": "58055290-4d36-4d19-b69c-6bf16c89fa6a",
+      "articleSlug": "x-bot-2026-01-21",
+      "product": "X Bot",
+      "type": "overview",
+      "text": "X Bot monitors KOL performance and community engagement across X and Telegram. Features bot detection, real-time analytics, and automated daily reports via official X API. Built by @BWSCommunity using $BWS\n\n📖 Article: https://www.bws.ninja/articles/x-bot-2026-01-21\n📚 Docs: https://docs.bws.ninja/marketplace-solutions/bws.x.bot\n\n#XBot #CommunityAnalytics",
+      "mainText": "X Bot monitors KOL performance and community engagement across X and Telegram. Features bot detection, real-time analytics, and automated daily reports via official X API. Built by @BWSCommunity using $BWS",
+      "articleUrl": "https://www.bws.ninja/articles/x-bot-2026-01-21",
+      "docsUrl": "https://docs.bws.ninja/marketplace-solutions/bws.x.bot",
+      "hashtags": [
+        "XBot",
+        "CommunityAnalytics"
+      ],
+      "priority": "high",
+      "status": "pending",
+      "scheduledFor": null,
+      "postedAt": null,
+      "tweetId": null,
+      "generatedAt": "2026-01-25T20:09:44.849Z",
+      "metadata": {
+        "articleTitle": "X Bot: Track KOL Performance and Community Engagement in Real-Time",
+        "articlePublishDate": "2026-01-21T10:04:30.303Z",
+        "mainTextLength": 205,
+        "fullTextLength": 357
+      }
     }
   ]
 }
