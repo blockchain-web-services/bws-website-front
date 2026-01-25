@@ -419,13 +419,433 @@
       "expiresAt": "2026-02-01T17:52:57.110Z",
       "source": "timeline_monitor",
       "contentCategory": "news"
+    },
+    {
+      "id": "2015518046870466692",
+      "text": "@RowenOfPTS I've held 10 years for a 2.5x. I'd have 100 million dollars if I spent that on Bitcoin.",
+      "author": {
+        "id": "4441279246",
+        "username": "IncomeSharks"
+      },
+      "public_metrics": {
+        "likes": 19,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 2,
+        "views": 1013
+      },
+      "url": "https://twitter.com/IncomeSharks/status/2015518046870466692",
+      "processed": false,
+      "addedAt": "2026-01-25T22:08:51.629Z",
+      "expiresAt": "2026-02-01T22:08:51.629Z",
+      "source": "timeline_monitor",
+      "contentCategory": "price-speculation"
+    },
+    {
+      "id": "2015492245353595112",
+      "text": "$ROSE - This is why crypto always makes a comeback. You get setups and plays that can outperform entire industries and asset classes in short time frames. There's still no where else you can have opportunities like this, even in less than ideal conditions. https://t.co/6wY2iWFXgb",
+      "author": {
+        "id": "4441279246",
+        "username": "IncomeSharks"
+      },
+      "public_metrics": {
+        "likes": 610,
+        "retweets": 59,
+        "replies": 63,
+        "quotes": 5,
+        "views": 52575
+      },
+      "url": "https://twitter.com/IncomeSharks/status/2015492245353595112",
+      "processed": false,
+      "addedAt": "2026-01-25T22:09:03.916Z",
+      "expiresAt": "2026-02-01T22:09:03.916Z",
+      "source": "timeline_monitor",
+      "contentCategory": "price-speculation"
+    },
+    {
+      "id": "2015173624798347448",
+      "text": "Funny how trad fi is just like crypto, it moves down the risk curve\n\nGold moving? Go to Silver\n\nSilver moving? Time for Copper!\n\nObviously all of these things have real world functionality too but just funny to see the relationship. Not so different.",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "likes": 108,
+        "retweets": 7,
+        "replies": 15,
+        "quotes": 0,
+        "views": 16146
+      },
+      "url": "https://twitter.com/AltcoinSherpa/status/2015173624798347448",
+      "processed": false,
+      "addedAt": "2026-01-25T22:09:33.643Z",
+      "expiresAt": "2026-02-01T22:09:33.643Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "2015530867725099485",
+      "text": "If Silver can do this...\n\nBitcoin is undervalued. https://t.co/h934EQ3DsR",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "likes": 205,
+        "retweets": 32,
+        "replies": 82,
+        "quotes": 2,
+        "views": 14898
+      },
+      "url": "https://twitter.com/CryptoRover/status/2015530867725099485",
+      "processed": false,
+      "addedAt": "2026-01-25T22:09:37.121Z",
+      "expiresAt": "2026-02-01T22:09:37.121Z",
+      "source": "timeline_monitor",
+      "contentCategory": "price-speculation"
+    },
+    {
+      "id": "2015530582483095969",
+      "text": "11 days ago, our VIP Telegram members shorted the top.\n\nIf you want to start making money in this market,\n\nJoin us 👇\nhttps://t.co/CJzj521YV2 https://t.co/AEnWTKEFP6",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "likes": 103,
+        "retweets": 12,
+        "replies": 37,
+        "quotes": 0,
+        "views": 21679
+      },
+      "url": "https://twitter.com/CryptoRover/status/2015530582483095969",
+      "processed": false,
+      "addedAt": "2026-01-25T22:09:39.138Z",
+      "expiresAt": "2026-02-01T22:09:39.138Z",
+      "source": "timeline_monitor",
+      "contentCategory": "price-speculation"
+    },
+    {
+      "id": "2015510483189617147",
+      "text": "WHALES BUYING BITCOIN NOW!!! https://t.co/QPtyK1DXVN",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "likes": 651,
+        "retweets": 85,
+        "replies": 126,
+        "quotes": 7,
+        "views": 74348
+      },
+      "url": "https://twitter.com/CryptoRover/status/2015510483189617147",
+      "processed": false,
+      "addedAt": "2026-01-25T22:09:43.114Z",
+      "expiresAt": "2026-02-01T22:09:43.114Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "2015500668640059635",
+      "text": "Hey @Grok, is Bitcoin in Complacency? https://t.co/W1yjAf6OhK",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "likes": 237,
+        "retweets": 21,
+        "replies": 60,
+        "quotes": 2,
+        "views": 95239
+      },
+      "url": "https://twitter.com/CryptoRover/status/2015500668640059635",
+      "processed": false,
+      "addedAt": "2026-01-25T22:09:45.225Z",
+      "expiresAt": "2026-02-01T22:09:45.225Z",
+      "source": "timeline_monitor",
+      "contentCategory": "technical-analysis"
+    },
+    {
+      "id": "2015497047420387739",
+      "text": "💥CRASH:\n\n#BITCOIN FALLS BELOW $87,000! https://t.co/Wtj4G4W0mt",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "likes": 652,
+        "retweets": 58,
+        "replies": 156,
+        "quotes": 7,
+        "views": 78636
+      },
+      "url": "https://twitter.com/CryptoRover/status/2015497047420387739",
+      "processed": false,
+      "addedAt": "2026-01-25T22:09:47.101Z",
+      "expiresAt": "2026-02-01T22:09:47.101Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "2015489343750832290",
+      "text": "Interest in Crypto is insanely low. \n\nI smell opportunity.",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "likes": 754,
+        "retweets": 50,
+        "replies": 190,
+        "quotes": 5,
+        "views": 80677
+      },
+      "url": "https://twitter.com/CryptoRover/status/2015489343750832290",
+      "processed": false,
+      "addedAt": "2026-01-25T22:09:49.130Z",
+      "expiresAt": "2026-02-01T22:09:49.130Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "2015483557662060643",
+      "text": "@JimmySelarka Buying opportunity!",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "likes": 16,
+        "retweets": 0,
+        "replies": 2,
+        "quotes": 0,
+        "views": 5460
+      },
+      "url": "https://twitter.com/CryptoRover/status/2015483557662060643",
+      "processed": false,
+      "addedAt": "2026-01-25T22:09:53.204Z",
+      "expiresAt": "2026-02-01T22:09:53.204Z",
+      "source": "timeline_monitor",
+      "contentCategory": "price-speculation"
+    },
+    {
+      "id": "2015533822972977211",
+      "text": "$BDXN is an exact replica of RIVER Before 40x+ pump. https://t.co/evkmjhMNof",
+      "author": {
+        "id": "crawlee_search_bitcoinhabebe",
+        "username": "Bitcoinhabebe"
+      },
+      "public_metrics": {
+        "likes": 78,
+        "retweets": 30,
+        "replies": 26,
+        "quotes": 2,
+        "views": 3313
+      },
+      "url": "https://twitter.com/Bitcoinhabebe/status/2015533822972977211",
+      "processed": false,
+      "addedAt": "2026-01-25T22:09:55.136Z",
+      "expiresAt": "2026-02-01T22:09:55.136Z",
+      "source": "timeline_monitor",
+      "contentCategory": "price-speculation"
+    },
+    {
+      "id": "2015524128665825654",
+      "text": "New gem of the day💎: \n\n$BDXN LONG/SPOT https://t.co/esUVWcarOZ",
+      "author": {
+        "id": "crawlee_search_bitcoinhabebe",
+        "username": "Bitcoinhabebe"
+      },
+      "public_metrics": {
+        "likes": 77,
+        "retweets": 36,
+        "replies": 36,
+        "quotes": 3,
+        "views": 4984
+      },
+      "url": "https://twitter.com/Bitcoinhabebe/status/2015524128665825654",
+      "processed": false,
+      "addedAt": "2026-01-25T22:09:57.124Z",
+      "expiresAt": "2026-02-01T22:09:57.124Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "2015500651837489305",
+      "text": "A new gem of the day is incoming..💎 \n\nWhile $TURTLE dominates,  holds strong, &amp; makes it 27/27 successful trades, its time for a new gem. \n\nLike, RT, get ready 🔥. https://t.co/KRvckSUe28 https://t.co/upDiYYVbes",
+      "author": {
+        "id": "crawlee_search_bitcoinhabebe",
+        "username": "Bitcoinhabebe"
+      },
+      "public_metrics": {
+        "likes": 118,
+        "retweets": 50,
+        "replies": 28,
+        "quotes": 3,
+        "views": 8366
+      },
+      "url": "https://twitter.com/Bitcoinhabebe/status/2015500651837489305",
+      "processed": false,
+      "addedAt": "2026-01-25T22:09:59.600Z",
+      "expiresAt": "2026-02-01T22:09:59.600Z",
+      "source": "timeline_monitor",
+      "contentCategory": "altcoin-talk"
+    },
+    {
+      "id": "2015473506004123994",
+      "text": "BOOOM $TURTLE is exploding to the top gainers &amp; starting its uptrend exactly as promised making it our 27/27 consecutive successful trade 🔥✅. \n\nHISTORY is being made. \n\nLike &amp; RT to keep the free gems of the day coming. https://t.co/IVJ5bgt0yQ https://t.co/F2mOLH4wtA",
+      "author": {
+        "id": "crawlee_search_bitcoinhabebe",
+        "username": "Bitcoinhabebe"
+      },
+      "public_metrics": {
+        "likes": 138,
+        "retweets": 57,
+        "replies": 45,
+        "quotes": 4,
+        "views": 15213
+      },
+      "url": "https://twitter.com/Bitcoinhabebe/status/2015473506004123994",
+      "processed": false,
+      "addedAt": "2026-01-25T22:10:01.126Z",
+      "expiresAt": "2026-02-01T22:10:01.126Z",
+      "source": "timeline_monitor",
+      "contentCategory": "price-speculation"
+    },
+    {
+      "id": "2015467059895787715",
+      "text": "$TURTLE IS AN EXACT COPY OF HANA BEFORE 340% \n\nFasten your seatbelts. https://t.co/IWhU0ssv6L",
+      "author": {
+        "id": "crawlee_search_bitcoinhabebe",
+        "username": "Bitcoinhabebe"
+      },
+      "public_metrics": {
+        "likes": 112,
+        "retweets": 51,
+        "replies": 41,
+        "quotes": 1,
+        "views": 5023
+      },
+      "url": "https://twitter.com/Bitcoinhabebe/status/2015467059895787715",
+      "processed": false,
+      "addedAt": "2026-01-25T22:10:03.218Z",
+      "expiresAt": "2026-02-01T22:10:03.218Z",
+      "source": "timeline_monitor",
+      "contentCategory": "price-speculation"
+    },
+    {
+      "id": "2015461715110928865",
+      "text": "@Azrael_sy @FAHDSQ لا تخافوا ، صح في تاخير لكن الي جاي راح يعوض كلشيء 🫱🏻‍🫲🏼. \n\n@ice_z3us &amp; the team are working 24/7 &amp; you can see everything on github. Whats coming is great. Hold tight",
+      "author": {
+        "id": "crawlee_search_bitcoinhabebe",
+        "username": "Bitcoinhabebe"
+      },
+      "public_metrics": {
+        "likes": 6,
+        "retweets": 3,
+        "replies": 4,
+        "quotes": 0,
+        "views": 243
+      },
+      "url": "https://twitter.com/Bitcoinhabebe/status/2015461715110928865",
+      "processed": false,
+      "addedAt": "2026-01-25T22:10:05.189Z",
+      "expiresAt": "2026-02-01T22:10:05.189Z",
+      "source": "timeline_monitor",
+      "contentCategory": "project-discussion"
+    },
+    {
+      "id": "2015453197523939748",
+      "text": "According to Technical analysis, $TURTLE should start an explosive move from this exact point. \n\nI have given you 26/26 back to back successful trades based on my special indicators &amp; those indicators say the $Turtle pump will be soon ⏰💣. \n\nStudy the charts below 👇 https://t.co/udWUWPKNqV",
+      "author": {
+        "id": "crawlee_search_bitcoinhabebe",
+        "username": "Bitcoinhabebe"
+      },
+      "public_metrics": {
+        "likes": 112,
+        "retweets": 59,
+        "replies": 49,
+        "quotes": 4,
+        "views": 5241
+      },
+      "url": "https://twitter.com/Bitcoinhabebe/status/2015453197523939748",
+      "processed": false,
+      "addedAt": "2026-01-25T22:10:07.186Z",
+      "expiresAt": "2026-02-01T22:10:07.186Z",
+      "source": "timeline_monitor",
+      "contentCategory": "price-speculation"
+    },
+    {
+      "id": "2015419912412406175",
+      "text": "@CryptoGemRnld TURTLE will blow up 🇦🇪!",
+      "author": {
+        "id": "crawlee_search_bitcoinhabebe",
+        "username": "Bitcoinhabebe"
+      },
+      "public_metrics": {
+        "likes": 25,
+        "retweets": 8,
+        "replies": 5,
+        "quotes": 0,
+        "views": 979
+      },
+      "url": "https://twitter.com/Bitcoinhabebe/status/2015419912412406175",
+      "processed": false,
+      "addedAt": "2026-01-25T22:10:09.168Z",
+      "expiresAt": "2026-02-01T22:10:09.168Z",
+      "source": "timeline_monitor",
+      "contentCategory": "altcoin-talk"
+    },
+    {
+      "id": "2015419386983489787",
+      "text": "If you look at the coins that pumped 2-5x today NOM &amp; ZKC , you will see that $TURTLE is an exact copy of the chart with the same exact price action. \n\nI put for you the charts together to compare for yourselves 👇! https://t.co/JZE1KeY2SL",
+      "author": {
+        "id": "crawlee_search_bitcoinhabebe",
+        "username": "Bitcoinhabebe"
+      },
+      "public_metrics": {
+        "likes": 192,
+        "retweets": 93,
+        "replies": 77,
+        "quotes": 4,
+        "views": 6673
+      },
+      "url": "https://twitter.com/Bitcoinhabebe/status/2015419386983489787",
+      "processed": false,
+      "addedAt": "2026-01-25T22:10:11.148Z",
+      "expiresAt": "2026-02-01T22:10:11.148Z",
+      "source": "timeline_monitor",
+      "contentCategory": "price-speculation"
+    },
+    {
+      "id": "2015415575577547099",
+      "text": "New gem of the day 💎: \n\n$TURTLE LONG / SPOT https://t.co/1IDL3aJQhQ",
+      "author": {
+        "id": "crawlee_search_bitcoinhabebe",
+        "username": "Bitcoinhabebe"
+      },
+      "public_metrics": {
+        "likes": 133,
+        "retweets": 66,
+        "replies": 49,
+        "quotes": 6,
+        "views": 19190
+      },
+      "url": "https://twitter.com/Bitcoinhabebe/status/2015415575577547099",
+      "processed": false,
+      "addedAt": "2026-01-25T22:10:13.205Z",
+      "expiresAt": "2026-02-01T22:10:13.205Z",
+      "source": "timeline_monitor",
+      "contentCategory": "altcoin-talk"
     }
   ],
   "metadata": {
-    "lastUpdated": "2026-01-25T17:54:04.131Z",
-    "totalPosts": 21,
+    "lastUpdated": "2026-01-25T22:11:17.413Z",
+    "totalPosts": 40,
     "bySource": {
-      "timeline_monitor": 21,
+      "timeline_monitor": 40,
       "search_discovery": 0
     }
   },
