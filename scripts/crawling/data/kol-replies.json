@@ -3797,6 +3797,26 @@
       "status": "posted",
       "dryRun": false,
       "sdkVersion": "1.7.0"
+    },
+    {
+      "id": "crawlee_search_crypt0_defi-2014513899052146784-1769326918070",
+      "tweetId": "2014513899052146784",
+      "tweetUrl": "https://twitter.com/Crypt0_DeFi/status/2014513899052146784",
+      "kolId": "crawlee_search_crypt0_defi",
+      "kolUsername": "Crypt0_DeFi",
+      "originalTweetText": "The Open House NYC online Buildathon is almost here, starting January 29, and it’s bringing $60,000 in prizes and grants for builders ready to create on Arbitrum.\n\nThis Buildathon isn’t just about rewards. \n\nIt’s about giving developers the right support to turn ideas into real https://t.co/ArdhMiDUkl https://t.co/X5bFChUwq0",
+      "replyTweetId": "2015329279106781597",
+      "replyText": "$BWS builds key infrastructure: Blockchain Badges, ESG Credits, Fan Game Cube. Utility tech powering credentials, green finance, sports NFTs at microcap scale. @BWSCommunity #crypto https://docs.bws.ninja/marketplace-solutions/bws.x.bot",
+      "productMentioned": "Blockchain Badges",
+      "relevanceScore": 82,
+      "templateUsed": "feature_list",
+      "templateName": "Feature List Structure",
+      "imageAttached": true,
+      "imagePath": "/assets/images/docs/x-bot/x-bot-0.png",
+      "timestamp": "2026-01-25T07:41:58.070Z",
+      "status": "posted",
+      "dryRun": false,
+      "sdkVersion": "1.7.0"
     }
   ],
   "dailyStats": {
@@ -3907,10 +3927,10 @@
     }
   },
   "metadata": {
-    "totalReplies": 197,
-    "successfulReplies": 152,
+    "totalReplies": 198,
+    "successfulReplies": 153,
     "failedReplies": 34,
-    "lastReplyAt": "2026-01-24T19:54:11.404Z",
+    "lastReplyAt": "2026-01-25T07:41:58.070Z",
     "todayRepliesCount": 0,
     "lastUpdateBy": "kol-system"
   }
