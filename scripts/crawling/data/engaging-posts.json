@@ -435,7 +435,7 @@
         "views": 1013
       },
       "url": "https://twitter.com/IncomeSharks/status/2015518046870466692",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-01-25T22:08:51.629Z",
       "expiresAt": "2026-02-01T22:08:51.629Z",
       "source": "timeline_monitor",
@@ -456,7 +456,7 @@
         "views": 52575
       },
       "url": "https://twitter.com/IncomeSharks/status/2015492245353595112",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-01-25T22:09:03.916Z",
       "expiresAt": "2026-02-01T22:09:03.916Z",
       "source": "timeline_monitor",
@@ -477,7 +477,7 @@
         "views": 16146
       },
       "url": "https://twitter.com/AltcoinSherpa/status/2015173624798347448",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-01-25T22:09:33.643Z",
       "expiresAt": "2026-02-01T22:09:33.643Z",
       "source": "timeline_monitor",
@@ -498,7 +498,7 @@
         "views": 14898
       },
       "url": "https://twitter.com/CryptoRover/status/2015530867725099485",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-01-25T22:09:37.121Z",
       "expiresAt": "2026-02-01T22:09:37.121Z",
       "source": "timeline_monitor",
@@ -519,7 +519,7 @@
         "views": 21679
       },
       "url": "https://twitter.com/CryptoRover/status/2015530582483095969",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-01-25T22:09:39.138Z",
       "expiresAt": "2026-02-01T22:09:39.138Z",
       "source": "timeline_monitor",
@@ -540,7 +540,7 @@
         "views": 74348
       },
       "url": "https://twitter.com/CryptoRover/status/2015510483189617147",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-01-25T22:09:43.114Z",
       "expiresAt": "2026-02-01T22:09:43.114Z",
       "source": "timeline_monitor",
@@ -561,7 +561,7 @@
         "views": 95239
       },
       "url": "https://twitter.com/CryptoRover/status/2015500668640059635",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-01-25T22:09:45.225Z",
       "expiresAt": "2026-02-01T22:09:45.225Z",
       "source": "timeline_monitor",
@@ -582,7 +582,7 @@
         "views": 78636
       },
       "url": "https://twitter.com/CryptoRover/status/2015497047420387739",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-01-25T22:09:47.101Z",
       "expiresAt": "2026-02-01T22:09:47.101Z",
       "source": "timeline_monitor",
@@ -603,7 +603,7 @@
         "views": 80677
       },
       "url": "https://twitter.com/CryptoRover/status/2015489343750832290",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-01-25T22:09:49.130Z",
       "expiresAt": "2026-02-01T22:09:49.130Z",
       "source": "timeline_monitor",
@@ -860,10 +860,10 @@
       "BWS IPFS",
       "Blockchain Save"
     ],
-    "currentIndex": 2,
-    "lastProductUsed": "Fan Game Cube",
+    "currentIndex": 3,
+    "lastProductUsed": "Blockchain Hash",
     "positioningPhraseIndex": 0,
-    "replyCount": 306
+    "replyCount": 307
   },
   "_removedStale": false
 }
