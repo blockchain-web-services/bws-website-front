@@ -1,27 +1,6 @@
 {
   "posts": [
     {
-      "id": "2014376376095133936",
-      "text": "Gold-backed tokens on Baltex\n\nAs gold hit new highs in 2026, many crypto users looked for ways to protect their gains without moving funds back to banks. \n\nGold-backed tokens make this possible by letting users stay fully on-chain while holding a real-world asset.\n\nOn Baltex, https://t.co/I6naWhrF4Y",
-      "author": {
-        "id": "crawlee_search_crypt0_defi",
-        "username": "Crypt0_DeFi"
-      },
-      "public_metrics": {
-        "likes": 12,
-        "retweets": 0,
-        "replies": 15,
-        "quotes": 0,
-        "views": 143
-      },
-      "url": "https://twitter.com/Crypt0_DeFi/status/2014376376095133936",
-      "processed": true,
-      "addedAt": "2026-01-25T07:25:16.178Z",
-      "expiresAt": "2026-02-01T07:25:16.178Z",
-      "source": "timeline_monitor",
-      "contentCategory": "project-discussion"
-    },
-    {
       "id": "2015472737985433609",
       "text": "@Rager People with less than 1% of their networth getting a 3x acting like they are genius. I own it, and not once have I celebrated. We have altcoins that even in these terrible conditions doing that.",
       "author": {
@@ -36,7 +15,7 @@
         "views": 1114
       },
       "url": "https://twitter.com/IncomeSharks/status/2015472737985433609",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-01-25T17:50:51.387Z",
       "expiresAt": "2026-02-01T17:50:51.387Z",
       "source": "timeline_monitor",
@@ -57,7 +36,7 @@
         "views": 1161
       },
       "url": "https://twitter.com/IncomeSharks/status/2015472327971221535",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-01-25T17:50:53.289Z",
       "expiresAt": "2026-02-01T17:50:53.289Z",
       "source": "timeline_monitor",
@@ -78,7 +57,7 @@
         "views": 1349
       },
       "url": "https://twitter.com/IncomeSharks/status/2015471683730333974",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-01-25T17:50:58.866Z",
       "expiresAt": "2026-02-01T17:50:58.866Z",
       "source": "timeline_monitor",
@@ -99,7 +78,7 @@
         "views": 11286
       },
       "url": "https://twitter.com/IncomeSharks/status/2015283103842075106",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-01-25T17:51:05.977Z",
       "expiresAt": "2026-02-01T17:51:05.977Z",
       "source": "timeline_monitor",
@@ -120,7 +99,7 @@
         "views": 13116
       },
       "url": "https://twitter.com/IncomeSharks/status/2015282910132347250",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-01-25T17:51:08.062Z",
       "expiresAt": "2026-02-01T17:51:08.062Z",
       "source": "timeline_monitor",
@@ -141,7 +120,7 @@
         "views": 14843
       },
       "url": "https://twitter.com/AltcoinSherpa/status/2015398101108834675",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-01-25T17:51:30.085Z",
       "expiresAt": "2026-02-01T17:51:30.085Z",
       "source": "timeline_monitor",
@@ -162,7 +141,7 @@
         "views": 7551
       },
       "url": "https://twitter.com/AltcoinSherpa/status/2015394886523011470",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-01-25T17:51:34.109Z",
       "expiresAt": "2026-02-01T17:51:34.109Z",
       "source": "timeline_monitor",
@@ -183,7 +162,7 @@
         "views": 1225
       },
       "url": "https://twitter.com/AltcoinSherpa/status/2015239815860564127",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-01-25T17:51:38.103Z",
       "expiresAt": "2026-02-01T17:51:38.103Z",
       "source": "timeline_monitor",
@@ -204,7 +183,7 @@
         "views": 34455
       },
       "url": "https://twitter.com/AltcoinSherpa/status/2015182728820670808",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-01-25T17:51:40.211Z",
       "expiresAt": "2026-02-01T17:51:40.211Z",
       "source": "timeline_monitor",
@@ -225,7 +204,7 @@
         "views": 17275
       },
       "url": "https://twitter.com/AltcoinSherpa/status/2015171464979177592",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-01-25T17:51:44.410Z",
       "expiresAt": "2026-02-01T17:51:44.410Z",
       "source": "timeline_monitor",
@@ -351,7 +330,7 @@
         "views": 72
       },
       "url": "https://twitter.com/habibivc/status/2015422675171131691",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-01-25T17:52:29.419Z",
       "expiresAt": "2026-02-01T17:52:29.419Z",
       "source": "timeline_monitor",
@@ -372,7 +351,7 @@
         "views": 295
       },
       "url": "https://twitter.com/habibivc/status/2015406401162555798",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-01-25T17:52:31.566Z",
       "expiresAt": "2026-02-01T17:52:31.566Z",
       "source": "timeline_monitor",
@@ -393,7 +372,7 @@
         "views": 475
       },
       "url": "https://twitter.com/habibivc/status/2015399519668621335",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-01-25T17:52:37.578Z",
       "expiresAt": "2026-02-01T17:52:37.578Z",
       "source": "timeline_monitor",
@@ -414,7 +393,7 @@
         "views": 274861
       },
       "url": "https://twitter.com/CryptoHayes/status/2014802719119491353",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-01-25T17:52:42.607Z",
       "expiresAt": "2026-02-01T17:52:42.607Z",
       "source": "timeline_monitor",
