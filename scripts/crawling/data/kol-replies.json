@@ -3817,6 +3817,26 @@
       "status": "posted",
       "dryRun": false,
       "sdkVersion": "1.7.0"
+    },
+    {
+      "id": "crawlee_search_habibivc-2015399519668621335-1769370852635",
+      "tweetId": "2015399519668621335",
+      "tweetUrl": "https://twitter.com/habibivc/status/2015399519668621335",
+      "kolId": "crawlee_search_habibivc",
+      "kolUsername": "habibivc",
+      "originalTweetText": "Gm chat \n\nWhat’s today’s runner? https://t.co/OgsMyp2erH",
+      "replyTweetId": "2015513553948528908",
+      "replyText": "Fan Game Cube transforms sports engagement - digital field zones as tradable NFTs where fans earn real-time points during matches. $BWS delivers microcap infrastructure powering multi-sport virtual experiences.  @BWSCommunity #gamefi #altcoins https://www.bws.ninja",
+      "productMentioned": "Fan Game Cube",
+      "relevanceScore": 85,
+      "templateUsed": "delayed_cashtag",
+      "templateName": "Delayed $BWS Mention",
+      "imageAttached": true,
+      "imagePath": "/assets/images/docs/fan-game-cube/fan-game-cube-0.png",
+      "timestamp": "2026-01-25T19:54:12.635Z",
+      "status": "posted",
+      "dryRun": false,
+      "sdkVersion": "1.7.0"
     }
   ],
   "dailyStats": {
@@ -3933,10 +3953,10 @@
     }
   },
   "metadata": {
-    "totalReplies": 198,
-    "successfulReplies": 153,
+    "totalReplies": 199,
+    "successfulReplies": 154,
     "failedReplies": 34,
-    "lastReplyAt": "2026-01-25T07:41:58.070Z",
+    "lastReplyAt": "2026-01-25T19:54:12.635Z",
     "todayRepliesCount": 0,
     "lastUpdateBy": "kol-system"
   }
