@@ -3877,6 +3877,26 @@
       "status": "posted",
       "dryRun": false,
       "sdkVersion": "1.7.0"
+    },
+    {
+      "id": "crawlee_search_bitcoinhabebe-2015524128665825654-1769404484307",
+      "tweetId": "2015524128665825654",
+      "tweetUrl": "https://twitter.com/Bitcoinhabebe/status/2015524128665825654",
+      "kolId": "crawlee_search_bitcoinhabebe",
+      "kolUsername": "Bitcoinhabebe",
+      "originalTweetText": "New gem of the day💎: \n\n$BDXN LONG/SPOT https://t.co/esUVWcarOZ",
+      "replyTweetId": "2015654615111573594",
+      "replyText": "Digital credentials are broken. Blockchain Badges by $BWS solve credential fraud with instant, free verification. Trust rebuilt through blockchain tech. @BWSCommunity #crypto https://docs.bws.ninja/marketplace-solutions/bws.blockchain.badges",
+      "productMentioned": "Fan Game Cube",
+      "relevanceScore": 85,
+      "templateUsed": "problem_solution",
+      "templateName": "Problem-Solution Structure",
+      "imageAttached": true,
+      "imagePath": "/assets/images/docs/blockchain-badges/blockchain-badges-0.png",
+      "timestamp": "2026-01-26T05:14:44.307Z",
+      "status": "posted",
+      "dryRun": false,
+      "sdkVersion": "1.7.0"
     }
   ],
   "dailyStats": {
@@ -3999,10 +4019,10 @@
     }
   },
   "metadata": {
-    "totalReplies": 201,
-    "successfulReplies": 156,
+    "totalReplies": 202,
+    "successfulReplies": 157,
     "failedReplies": 34,
-    "lastReplyAt": "2026-01-26T03:05:17.513Z",
+    "lastReplyAt": "2026-01-26T05:14:44.307Z",
     "todayRepliesCount": 0,
     "lastUpdateBy": "kol-system"
   }
