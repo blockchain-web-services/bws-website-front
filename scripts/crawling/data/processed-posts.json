@@ -1044,7 +1044,16 @@
     "2015453197523939748",
     "2015419912412406175",
     "2015419386983489787",
-    "2015415575577547099"
+    "2015415575577547099",
+    "2015842437697003868",
+    "2015840189898276980",
+    "2015840339534479690",
+    "2015837254959370656",
+    "2015817230890795302",
+    "2015832207986684094",
+    "2015831592040636736",
+    "2015792818246082961",
+    "2015780516100812874"
   ],
   "productRotation": {
     "priorityProducts": [
@@ -1059,16 +1068,16 @@
       "BWS IPFS",
       "NFT.zK"
     ],
-    "priorityIndex": 7,
+    "priorityIndex": 0,
     "otherIndex": 4,
-    "replyCount": 591,
-    "lastProductUsed": "BWS IPFS",
+    "replyCount": 600,
+    "lastProductUsed": "NFT.zK",
     "positioningPhraseIndex": 0
   },
   "metadata": {
-    "lastCheck": "2026-01-26T12:48:56.976Z",
+    "lastCheck": "2026-01-26T18:48:43.940Z",
     "totalReplied": 5,
-    "totalSkipped": 1038,
+    "totalSkipped": 1047,
     "lastUpdateBy": "kol-system"
   }
 }
