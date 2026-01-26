@@ -3857,6 +3857,26 @@
       "status": "posted",
       "dryRun": false,
       "sdkVersion": "1.7.0"
+    },
+    {
+      "id": "crawlee_search_bitcoinhabebe-2015415575577547099-1769396717513",
+      "tweetId": "2015415575577547099",
+      "tweetUrl": "https://twitter.com/Bitcoinhabebe/status/2015415575577547099",
+      "kolId": "crawlee_search_bitcoinhabebe",
+      "kolUsername": "Bitcoinhabebe",
+      "originalTweetText": "New gem of the day 💎: \n\n$TURTLE LONG / SPOT https://t.co/1IDL3aJQhQ",
+      "replyTweetId": "2015622038971404440",
+      "replyText": "Gem hunting means finding infrastructure with real clients. $BWS NFT.zK enables enterprise NFT management without blockchain complexity - transfer NFTs by email, create collections instantly.  @BWSCommunity #gems #microcap #crypto https://www.bws.ninja",
+      "productMentioned": "Fan Game Cube, Blockchain Badges",
+      "relevanceScore": 85,
+      "templateUsed": "classic",
+      "templateName": "Classic Structure",
+      "imageAttached": true,
+      "imagePath": "/assets/images/docs/nftzk/nftzk-0.png",
+      "timestamp": "2026-01-26T03:05:17.513Z",
+      "status": "posted",
+      "dryRun": false,
+      "sdkVersion": "1.7.0"
     }
   ],
   "dailyStats": {
@@ -3973,10 +3993,10 @@
     }
   },
   "metadata": {
-    "totalReplies": 200,
-    "successfulReplies": 155,
+    "totalReplies": 201,
+    "successfulReplies": 156,
     "failedReplies": 34,
-    "lastReplyAt": "2026-01-25T23:21:15.916Z",
+    "lastReplyAt": "2026-01-26T03:05:17.513Z",
     "todayRepliesCount": 0,
     "lastUpdateBy": "kol-system"
   }
