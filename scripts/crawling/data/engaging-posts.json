@@ -792,7 +792,7 @@
         "views": 11269
       },
       "url": "https://twitter.com/IncomeSharks/status/2015940352436535360",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-01-27T07:24:31.690Z",
       "expiresAt": "2026-02-03T07:24:31.690Z",
       "source": "timeline_monitor",
@@ -813,7 +813,7 @@
         "views": 8857
       },
       "url": "https://twitter.com/IncomeSharks/status/2015939628952605065",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-01-27T07:24:37.020Z",
       "expiresAt": "2026-02-03T07:24:37.020Z",
       "source": "timeline_monitor",
@@ -834,7 +834,7 @@
         "views": 1265
       },
       "url": "https://twitter.com/IncomeSharks/status/2015939354473193723",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-01-27T07:24:37.859Z",
       "expiresAt": "2026-02-03T07:24:37.859Z",
       "source": "timeline_monitor",
@@ -1196,10 +1196,10 @@
       "BWS IPFS",
       "Blockchain Save"
     ],
-    "currentIndex": 6,
-    "lastProductUsed": "ESG Credits",
+    "currentIndex": 7,
+    "lastProductUsed": "BWS IPFS",
     "positioningPhraseIndex": 0,
-    "replyCount": 310
+    "replyCount": 311
   },
   "_removedStale": false
 }

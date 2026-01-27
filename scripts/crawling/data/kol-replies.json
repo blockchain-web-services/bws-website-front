@@ -3917,6 +3917,26 @@
       "status": "posted",
       "dryRun": false,
       "sdkVersion": "1.7.0"
+    },
+    {
+      "id": "4441279246-2015939354473193723-1769499938740",
+      "tweetId": "2015939354473193723",
+      "tweetUrl": "https://twitter.com/IncomeSharks/status/2015939354473193723",
+      "kolId": "4441279246",
+      "kolUsername": "IncomeSharks",
+      "originalTweetText": "@cousincrypt0 They don't understand that 100x gains are possible in crypto. They think a 2x is a big deal over a decade lol",
+      "replyTweetId": "2016054980575433126",
+      "replyText": "Want 100x without pure gambling? $BWS IPFS Upload solves real decentralized storage needs - B2B infrastructure for NFT/enterprise markets. Microcap with enterprise-grade tech.  @BWSCommunity https://docs.bws.ninja/solutions/bws.ipfs.upload #crypto #gems #microcap",
+      "productMentioned": "Blockchain Badges, ESG Credits",
+      "relevanceScore": 82,
+      "templateUsed": "question_led",
+      "templateName": "Question-Led Structure",
+      "imageAttached": true,
+      "imagePath": "/assets/images/docs/bws-ipfs/bws-ipfs-0.png",
+      "timestamp": "2026-01-27T07:45:38.740Z",
+      "status": "posted",
+      "dryRun": false,
+      "sdkVersion": "1.7.0"
     }
   ],
   "dailyStats": {
@@ -4039,10 +4059,10 @@
     }
   },
   "metadata": {
-    "totalReplies": 203,
-    "successfulReplies": 158,
+    "totalReplies": 204,
+    "successfulReplies": 159,
     "failedReplies": 34,
-    "lastReplyAt": "2026-01-26T19:54:06.614Z",
+    "lastReplyAt": "2026-01-27T07:45:38.740Z",
     "todayRepliesCount": 0,
     "lastUpdateBy": "kol-system"
   }
