@@ -776,13 +776,412 @@
       "expiresAt": "2026-02-02T22:10:37.024Z",
       "source": "timeline_monitor",
       "contentCategory": "technical-analysis"
+    },
+    {
+      "id": "2015940352436535360",
+      "text": "@BullNakedCrypto We have a legal catalyst coming too on Thursday.",
+      "author": {
+        "id": "4441279246",
+        "username": "IncomeSharks"
+      },
+      "public_metrics": {
+        "likes": 185,
+        "retweets": 1,
+        "replies": 9,
+        "quotes": 0,
+        "views": 11269
+      },
+      "url": "https://twitter.com/IncomeSharks/status/2015940352436535360",
+      "processed": false,
+      "addedAt": "2026-01-27T07:24:31.690Z",
+      "expiresAt": "2026-02-03T07:24:31.690Z",
+      "source": "timeline_monitor",
+      "contentCategory": "project-discussion"
+    },
+    {
+      "id": "2015939628952605065",
+      "text": "@KAIZ3NS It takes 3 to 5 business to go from Gold to cash back to Crypto. Let's not forget how old school and slow physical assets are to move...",
+      "author": {
+        "id": "4441279246",
+        "username": "IncomeSharks"
+      },
+      "public_metrics": {
+        "likes": 170,
+        "retweets": 0,
+        "replies": 13,
+        "quotes": 0,
+        "views": 8857
+      },
+      "url": "https://twitter.com/IncomeSharks/status/2015939628952605065",
+      "processed": false,
+      "addedAt": "2026-01-27T07:24:37.020Z",
+      "expiresAt": "2026-02-03T07:24:37.020Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "2015939354473193723",
+      "text": "@cousincrypt0 They don't understand that 100x gains are possible in crypto. They think a 2x is a big deal over a decade lol",
+      "author": {
+        "id": "4441279246",
+        "username": "IncomeSharks"
+      },
+      "public_metrics": {
+        "likes": 22,
+        "retweets": 1,
+        "replies": 3,
+        "quotes": 0,
+        "views": 1265
+      },
+      "url": "https://twitter.com/IncomeSharks/status/2015939354473193723",
+      "processed": false,
+      "addedAt": "2026-01-27T07:24:37.859Z",
+      "expiresAt": "2026-02-03T07:24:37.859Z",
+      "source": "timeline_monitor",
+      "contentCategory": "price-speculation"
+    },
+    {
+      "id": "2015937651980042592",
+      "text": "@cantonmeow Yup, this is the rotation where 10 to 20 trillion is able to then absolutely sky rocket the smaller caps.",
+      "author": {
+        "id": "4441279246",
+        "username": "IncomeSharks"
+      },
+      "public_metrics": {
+        "likes": 52,
+        "retweets": 0,
+        "replies": 3,
+        "quotes": 0,
+        "views": 4806
+      },
+      "url": "https://twitter.com/IncomeSharks/status/2015937651980042592",
+      "processed": false,
+      "addedAt": "2026-01-27T07:24:41.940Z",
+      "expiresAt": "2026-02-03T07:24:41.940Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "2015843332690153500",
+      "text": "@degenarcher28 Imagine if that existed but u had to actually submit a new element to get listed. Damn new metal discovered buy now guys it’s green and shiny … aww man it’s useless dump it",
+      "author": {
+        "id": "2259434528",
+        "username": "cobie"
+      },
+      "public_metrics": {
+        "likes": 167,
+        "retweets": 4,
+        "replies": 50,
+        "quotes": 12,
+        "views": 50665
+      },
+      "url": "https://twitter.com/cobie/status/2015843332690153500",
+      "processed": false,
+      "addedAt": "2026-01-27T07:25:07.718Z",
+      "expiresAt": "2026-02-03T07:25:07.718Z",
+      "source": "timeline_monitor",
+      "contentCategory": "altcoin-talk"
+    },
+    {
+      "id": "2015990383201656839",
+      "text": "$PUMP and $HYPE the only 2 coins that I like right now but don't have positions in either.  Great coins",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "likes": 54,
+        "retweets": 0,
+        "replies": 12,
+        "quotes": 0,
+        "views": 5008
+      },
+      "url": "https://twitter.com/AltcoinSherpa/status/2015990383201656839",
+      "processed": false,
+      "addedAt": "2026-01-27T07:25:25.001Z",
+      "expiresAt": "2026-02-03T07:25:25.001Z",
+      "source": "timeline_monitor",
+      "contentCategory": "altcoin-talk"
+    },
+    {
+      "id": "2015980715221926362",
+      "text": "@zinceth crushed it",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "likes": 6,
+        "retweets": 0,
+        "replies": 2,
+        "quotes": 0,
+        "views": 625
+      },
+      "url": "https://twitter.com/AltcoinSherpa/status/2015980715221926362",
+      "processed": false,
+      "addedAt": "2026-01-27T07:25:27.217Z",
+      "expiresAt": "2026-02-03T07:25:27.217Z",
+      "source": "timeline_monitor",
+      "contentCategory": "project-discussion"
+    },
+    {
+      "id": "2015963084234399946",
+      "text": "in the past, builders had the chance to make huge amounts of $$ by building something legit in a fair/legitimate way. Think about all of the DeFi 1.0 builders, they're all super rich and built useful things.\n\nThose days are mostly long gone IMO. I haven't seen too many of those",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "likes": 20,
+        "retweets": 0,
+        "replies": 12,
+        "quotes": 0,
+        "views": 4469
+      },
+      "url": "https://twitter.com/AltcoinSherpa/status/2015963084234399946",
+      "processed": false,
+      "addedAt": "2026-01-27T07:25:28.989Z",
+      "expiresAt": "2026-02-03T07:25:28.989Z",
+      "source": "timeline_monitor",
+      "contentCategory": "project-discussion"
+    },
+    {
+      "id": "2015952253778022423",
+      "text": "$CHZ went long a few hours ago, this 1 has been on my radar a while. Clean chart https://t.co/cTT1t0tmJC",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "likes": 24,
+        "retweets": 11,
+        "replies": 6,
+        "quotes": 0,
+        "views": 3786
+      },
+      "url": "https://twitter.com/AltcoinSherpa/status/2015952253778022423",
+      "processed": false,
+      "addedAt": "2026-01-27T07:25:31.012Z",
+      "expiresAt": "2026-02-03T07:25:31.012Z",
+      "source": "timeline_monitor",
+      "contentCategory": "altcoin-talk"
+    },
+    {
+      "id": "2015937962689573362",
+      "text": "Altcoins you should focus on if you want to buy for 'fundamentals': \n\n-Revenue\n\n-Zero unlocks and/or inflation (don't buy coins w. either, hype is exception)\n\n-Token utility and/or buyback\n\n-Relevant narrative \n\n99.9% of altcoins will be trash and underperform",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "likes": 72,
+        "retweets": 5,
+        "replies": 18,
+        "quotes": 1,
+        "views": 7529
+      },
+      "url": "https://twitter.com/AltcoinSherpa/status/2015937962689573362",
+      "processed": false,
+      "addedAt": "2026-01-27T07:25:32.949Z",
+      "expiresAt": "2026-02-03T07:25:32.949Z",
+      "source": "timeline_monitor",
+      "contentCategory": "altcoin-talk"
+    },
+    {
+      "id": "2015929633842098415",
+      "text": "I'd say 1 of the only reasons why shitcoins don't trade to literal $0 is that they always seem to go up whenever $BTC moves. Not sure why that is; either with the algos or something else but yeah. As much as these things are total vapor, they will still move when bitcoin does",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "likes": 28,
+        "retweets": 1,
+        "replies": 6,
+        "quotes": 0,
+        "views": 3437
+      },
+      "url": "https://twitter.com/AltcoinSherpa/status/2015929633842098415",
+      "processed": false,
+      "addedAt": "2026-01-27T07:25:34.969Z",
+      "expiresAt": "2026-02-03T07:25:34.969Z",
+      "source": "timeline_monitor",
+      "contentCategory": "altcoin-talk"
+    },
+    {
+      "id": "2015928993430540444",
+      "text": "$PENGU I don't see this as an area you should be shorting. It's a high volume area on volume profile and it still has a ton of great fundamentals (as much as there can be in crypto imo). You can probably accumulate in the green box\n\nYeah, there was a lot of hype with penguin and https://t.co/03IcRMTbMG",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "likes": 189,
+        "retweets": 22,
+        "replies": 20,
+        "quotes": 0,
+        "views": 11407
+      },
+      "url": "https://twitter.com/AltcoinSherpa/status/2015928993430540444",
+      "processed": false,
+      "addedAt": "2026-01-27T07:25:37.111Z",
+      "expiresAt": "2026-02-03T07:25:37.111Z",
+      "source": "timeline_monitor",
+      "contentCategory": "altcoin-talk"
+    },
+    {
+      "id": "2015927288441757773",
+      "text": "Gold/Silver is going to rotate to $BTC and we will all be rich again\n\n....please? https://t.co/Z5ToqLAXzs",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "likes": 41,
+        "retweets": 0,
+        "replies": 8,
+        "quotes": 0,
+        "views": 2894
+      },
+      "url": "https://twitter.com/AltcoinSherpa/status/2015927288441757773",
+      "processed": false,
+      "addedAt": "2026-01-27T07:25:38.917Z",
+      "expiresAt": "2026-02-03T07:25:38.917Z",
+      "source": "timeline_monitor",
+      "contentCategory": "price-speculation"
+    },
+    {
+      "id": "2015922288495853990",
+      "text": "@crypto_condom @tradexyz @HyperliquidX great trade",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "likes": 6,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 676
+      },
+      "url": "https://twitter.com/AltcoinSherpa/status/2015922288495853990",
+      "processed": false,
+      "addedAt": "2026-01-27T07:25:43.156Z",
+      "expiresAt": "2026-02-03T07:25:43.156Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
+    },
+    {
+      "id": "2015956888806916328",
+      "text": "Chat don't ignore \n\nYou're wallet will look like this 2026\n\nDrop a 💯 to lock in https://t.co/yfLzfNrC8B",
+      "author": {
+        "id": "crawlee_search_habibivc",
+        "username": "habibivc"
+      },
+      "public_metrics": {
+        "likes": 8,
+        "retweets": 1,
+        "replies": 7,
+        "quotes": 0,
+        "views": 220
+      },
+      "url": "https://twitter.com/habibivc/status/2015956888806916328",
+      "processed": false,
+      "addedAt": "2026-01-27T07:25:45.282Z",
+      "expiresAt": "2026-02-03T07:25:45.282Z",
+      "source": "timeline_monitor",
+      "contentCategory": "price-speculation"
+    },
+    {
+      "id": "2015911322672566758",
+      "text": "Lmao saw cardano trending \n\nThen realised why 🙂‍↔️😹 https://t.co/Hcd0gC0UpZ",
+      "author": {
+        "id": "crawlee_search_habibivc",
+        "username": "habibivc"
+      },
+      "public_metrics": {
+        "likes": 26,
+        "retweets": 0,
+        "replies": 4,
+        "quotes": 0,
+        "views": 677
+      },
+      "url": "https://twitter.com/habibivc/status/2015911322672566758",
+      "processed": false,
+      "addedAt": "2026-01-27T07:25:49.587Z",
+      "expiresAt": "2026-02-03T07:25:49.587Z",
+      "source": "timeline_monitor",
+      "contentCategory": "altcoin-talk"
+    },
+    {
+      "id": "2015867974775685286",
+      "text": "Crime continues \n\n$RIVER ran from $4 to $75 this month and not a single account bought or mentioned 🤣\n\nNo one even had FOMO cause there’s literally no one looking at alts 😹 https://t.co/8JFOUqQNet",
+      "author": {
+        "id": "crawlee_search_habibivc",
+        "username": "habibivc"
+      },
+      "public_metrics": {
+        "likes": 15,
+        "retweets": 2,
+        "replies": 12,
+        "quotes": 0,
+        "views": 856
+      },
+      "url": "https://twitter.com/habibivc/status/2015867974775685286",
+      "processed": false,
+      "addedAt": "2026-01-27T07:25:51.280Z",
+      "expiresAt": "2026-02-03T07:25:51.280Z",
+      "source": "timeline_monitor",
+      "contentCategory": "altcoin-talk"
+    },
+    {
+      "id": "2015828707043061906",
+      "text": "Wen Moon? 😫 https://t.co/IwbNw1cnXM",
+      "author": {
+        "id": "crawlee_search_habibivc",
+        "username": "habibivc"
+      },
+      "public_metrics": {
+        "likes": 7,
+        "retweets": 0,
+        "replies": 8,
+        "quotes": 0,
+        "views": 202
+      },
+      "url": "https://twitter.com/habibivc/status/2015828707043061906",
+      "processed": false,
+      "addedAt": "2026-01-27T07:25:55.181Z",
+      "expiresAt": "2026-02-03T07:25:55.181Z",
+      "source": "timeline_monitor",
+      "contentCategory": "price-speculation"
+    },
+    {
+      "id": "2015799789539979674",
+      "text": "Majority of CT made &amp; lost money this weekend \n\nThat’s the beauty of the trenches \n\nThere’s no easy way \n\nIt’s actually what people forget when there’s no volume people don’t trade so don’t lose\n\nBut when the trenches hot you win some you lose some\n\nJust gotta roll the dice again https://t.co/TRCxtu0NVi",
+      "author": {
+        "id": "crawlee_search_habibivc",
+        "username": "habibivc"
+      },
+      "public_metrics": {
+        "likes": 30,
+        "retweets": 5,
+        "replies": 23,
+        "quotes": 0,
+        "views": 303
+      },
+      "url": "https://twitter.com/habibivc/status/2015799789539979674",
+      "processed": false,
+      "addedAt": "2026-01-27T07:25:59.477Z",
+      "expiresAt": "2026-02-03T07:25:59.477Z",
+      "source": "timeline_monitor",
+      "contentCategory": "market-trends"
     }
   ],
   "metadata": {
-    "lastUpdated": "2026-01-26T22:11:45.946Z",
-    "totalPosts": 37,
+    "lastUpdated": "2026-01-27T07:27:28.494Z",
+    "totalPosts": 56,
     "bySource": {
-      "timeline_monitor": 37,
+      "timeline_monitor": 56,
       "search_discovery": 0
     }
   },
