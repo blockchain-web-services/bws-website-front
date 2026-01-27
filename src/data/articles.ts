@@ -19,6 +19,20 @@ export interface ArticleMetadata {
 
 export const articles: ArticleMetadata[] = [
 {
+  slug: 'esg-credits-2026-01-27',
+  product: 'ESG Credits',
+  title: 'ESG Credits: Blockchain-Verified Sustainability Reporting and Compliance',
+  subtitle: 'Financial institutions face mounting pressure for transparent ESG reporting and verifiable impact measurement. ESG Credits transforms this challenge with blockchain-verified environmental impact tracking and ICMA framework compliance, delivering immutable audit trails that bring unprecedented credibility to sustainability reporting for green investments.',
+  publishDate: '2026-01-27T10:04:55.417Z',
+  tweetId: '',
+  featuredImage: {
+    src: '/assets/images/articles/esg-credits-1769508310325.jpg',
+    alt: 'ESG Credits - ESG Credits: Blockchain-Verified Sustainability Reporting and Compliance',
+    loading: 'eager'
+  },
+  seoDescription: 'Learn how ESG Credits provides blockchain-verified environmental impact tracking and ICMA-compliant sustainability reporting for financial institutions.'
+},
+{
   slug: 'blockchain-badges-2026-01-26',
   product: 'Blockchain Badges',
   title: 'Blockchain Badges: Tamper-Proof Digital Credentials with Instant Verification',
