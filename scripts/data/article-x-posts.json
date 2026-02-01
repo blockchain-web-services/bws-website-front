@@ -1,11 +1,11 @@
 {
   "metadata": {
-    "lastGenerated": "2026-01-25T20:09:44.849Z",
-    "totalPosts": 65,
-    "totalArticles": 29,
-    "pendingPosts": 11,
-    "postedCount": 47,
-    "lastPosted": "2026-01-25T20:09:45.452Z",
+    "lastGenerated": "2026-02-01T20:09:45.830Z",
+    "totalPosts": 67,
+    "totalArticles": 31,
+    "pendingPosts": 12,
+    "postedCount": 48,
+    "lastPosted": "2026-02-01T20:09:46.447Z",
     "failedCount": 7
   },
   "posts": [
@@ -1752,17 +1752,19 @@
         "SportsNFT"
       ],
       "priority": "high",
-      "status": "pending",
+      "status": "posted",
       "scheduledFor": null,
-      "postedAt": null,
-      "tweetId": null,
+      "postedAt": "2026-02-01T20:09:46.392Z",
+      "tweetId": "2018054185988632755",
       "generatedAt": "2026-01-25T20:09:30.046Z",
       "metadata": {
         "articleTitle": "Fan Game Cube: NFT Coordinate Zones That Reward Fans During Live Matches",
         "articlePublishDate": "2026-01-24T10:02:57.618Z",
         "mainTextLength": 213,
         "fullTextLength": 378
-      }
+      },
+      "tweetUrl": "https://twitter.com/i/web/status/2018054185988632755",
+      "error": null
     },
     {
       "id": "e83fe220-9b4d-4be2-a309-a4e99ee2497b",
@@ -1840,6 +1842,58 @@
         "articlePublishDate": "2026-01-21T10:04:30.303Z",
         "mainTextLength": 205,
         "fullTextLength": 357
+      }
+    },
+    {
+      "id": "5e1b7a2a-f3aa-4e75-9acd-7ccc5292da8b",
+      "articleSlug": "esg-credits-2026-01-27",
+      "product": "ESG Credits",
+      "type": "overview",
+      "text": "ESG Credits provides blockchain-verified environmental impact tracking with ICMA framework compliance. Creates immutable audit trails for sustainability reporting. Built by @BWSCommunity using $BWS\n\n📖 Article: https://www.bws.ninja/articles/esg-credits-2026-01-27\n📚 Docs: https://docs.bws.ninja/marketplace-solutions/bws.esg.credits\n\n#ESGReporting #SustainabilityTech",
+      "mainText": "ESG Credits provides blockchain-verified environmental impact tracking with ICMA framework compliance. Creates immutable audit trails for sustainability reporting. Built by @BWSCommunity using $BWS",
+      "articleUrl": "https://www.bws.ninja/articles/esg-credits-2026-01-27",
+      "docsUrl": "https://docs.bws.ninja/marketplace-solutions/bws.esg.credits",
+      "hashtags": [
+        "ESGReporting",
+        "SustainabilityTech"
+      ],
+      "priority": "high",
+      "status": "pending",
+      "scheduledFor": null,
+      "postedAt": null,
+      "tweetId": null,
+      "generatedAt": "2026-02-01T20:09:41.278Z",
+      "metadata": {
+        "articleTitle": "ESG Credits: Blockchain-Verified Sustainability Reporting and Compliance",
+        "articlePublishDate": "2026-01-27T10:04:55.417Z",
+        "mainTextLength": 197,
+        "fullTextLength": 369
+      }
+    },
+    {
+      "id": "955ade35-c666-4fc3-b7fa-aa6d799c8bbf",
+      "articleSlug": "blockchain-badges-2026-01-26",
+      "product": "Blockchain Badges",
+      "type": "overview",
+      "text": "Blockchain Badges stores digital credentials on-chain with cryptographic verification. Organizations can issue certificates that are instantly verifiable without contacting issuers. Built by @BWSCommunity using $BWS\n\n📖 Article: https://www.bws.ninja/articles/blockchain-badges-2026-01-26\n📚 Docs: https://docs.bws.ninja/marketplace-solutions/bws.blockchain.badges\n\n#BlockchainBadges #DigitalCredentials",
+      "mainText": "Blockchain Badges stores digital credentials on-chain with cryptographic verification. Organizations can issue certificates that are instantly verifiable without contacting issuers. Built by @BWSCommunity using $BWS",
+      "articleUrl": "https://www.bws.ninja/articles/blockchain-badges-2026-01-26",
+      "docsUrl": "https://docs.bws.ninja/marketplace-solutions/bws.blockchain.badges",
+      "hashtags": [
+        "BlockchainBadges",
+        "DigitalCredentials"
+      ],
+      "priority": "high",
+      "status": "pending",
+      "scheduledFor": null,
+      "postedAt": null,
+      "tweetId": null,
+      "generatedAt": "2026-02-01T20:09:45.830Z",
+      "metadata": {
+        "articleTitle": "Blockchain Badges: Tamper-Proof Digital Credentials with Instant Verification",
+        "articlePublishDate": "2026-01-26T10:04:40.851Z",
+        "mainTextLength": 215,
+        "fullTextLength": 403
       }
     }
   ]
