@@ -3,9 +3,9 @@
     "lastGenerated": "2026-02-01T20:09:45.830Z",
     "totalPosts": 67,
     "totalArticles": 31,
-    "pendingPosts": 12,
-    "postedCount": 48,
-    "lastPosted": "2026-02-01T20:09:46.447Z",
+    "pendingPosts": 11,
+    "postedCount": 49,
+    "lastPosted": "2026-02-08T20:10:06.604Z",
     "failedCount": 7
   },
   "posts": [
@@ -1780,17 +1780,19 @@
         "SustainableFinance"
       ],
       "priority": "high",
-      "status": "pending",
+      "status": "posted",
       "scheduledFor": null,
-      "postedAt": null,
-      "tweetId": null,
+      "postedAt": "2026-02-08T20:10:06.384Z",
+      "tweetId": "2020590984820568427",
       "generatedAt": "2026-01-25T20:09:34.695Z",
       "metadata": {
         "articleTitle": "ESG Credits: Blockchain Environmental Impact Tracking for Financial Institutions",
         "articlePublishDate": "2026-01-23T10:03:31.732Z",
         "mainTextLength": 215,
         "fullTextLength": 385
-      }
+      },
+      "tweetUrl": "https://twitter.com/i/web/status/2020590984820568427",
+      "error": null
     },
     {
       "id": "abe74e4b-bbe1-4586-89d4-7567ccc47a00",
