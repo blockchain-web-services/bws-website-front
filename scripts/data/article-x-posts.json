@@ -3,9 +3,9 @@
     "lastGenerated": "2026-02-01T20:09:45.830Z",
     "totalPosts": 67,
     "totalArticles": 31,
-    "pendingPosts": 11,
-    "postedCount": 49,
-    "lastPosted": "2026-02-08T20:10:06.604Z",
+    "pendingPosts": 10,
+    "postedCount": 50,
+    "lastPosted": "2026-02-15T20:09:51.484Z",
     "failedCount": 7
   },
   "posts": [
@@ -1808,17 +1808,19 @@
         "DigitalCredentials"
       ],
       "priority": "high",
-      "status": "pending",
+      "status": "posted",
       "scheduledFor": null,
-      "postedAt": null,
-      "tweetId": null,
+      "postedAt": "2026-02-15T20:09:51.359Z",
+      "tweetId": "2023127637023969746",
       "generatedAt": "2026-01-25T20:09:39.880Z",
       "metadata": {
         "articleTitle": "Blockchain Badges: Tamper-Proof Digital Credentials with Instant Verification",
         "articlePublishDate": "2026-01-22T10:05:17.592Z",
         "mainTextLength": 255,
         "fullTextLength": 443
-      }
+      },
+      "tweetUrl": "https://twitter.com/i/web/status/2023127637023969746",
+      "error": null
     },
     {
       "id": "58055290-4d36-4d19-b69c-6bf16c89fa6a",
