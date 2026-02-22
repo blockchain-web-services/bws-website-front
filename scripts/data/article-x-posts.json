@@ -1,11 +1,11 @@
 {
   "metadata": {
-    "lastGenerated": "2026-02-01T20:09:45.830Z",
-    "totalPosts": 67,
-    "totalArticles": 31,
-    "pendingPosts": 10,
-    "postedCount": 50,
-    "lastPosted": "2026-02-15T20:09:51.484Z",
+    "lastGenerated": "2026-02-22T20:10:30.078Z",
+    "totalPosts": 69,
+    "totalArticles": 33,
+    "pendingPosts": 11,
+    "postedCount": 51,
+    "lastPosted": "2026-02-22T20:10:30.708Z",
     "failedCount": 7
   },
   "posts": [
@@ -1836,17 +1836,19 @@
         "CommunityAnalytics"
       ],
       "priority": "high",
-      "status": "pending",
+      "status": "posted",
       "scheduledFor": null,
-      "postedAt": null,
-      "tweetId": null,
+      "postedAt": "2026-02-22T20:10:30.603Z",
+      "tweetId": "2025664516445642937",
       "generatedAt": "2026-01-25T20:09:44.849Z",
       "metadata": {
         "articleTitle": "X Bot: Track KOL Performance and Community Engagement in Real-Time",
         "articlePublishDate": "2026-01-21T10:04:30.303Z",
         "mainTextLength": 205,
         "fullTextLength": 357
-      }
+      },
+      "tweetUrl": "https://twitter.com/i/web/status/2025664516445642937",
+      "error": null
     },
     {
       "id": "5e1b7a2a-f3aa-4e75-9acd-7ccc5292da8b",
@@ -1898,6 +1900,58 @@
         "articlePublishDate": "2026-01-26T10:04:40.851Z",
         "mainTextLength": 215,
         "fullTextLength": 403
+      }
+    },
+    {
+      "id": "edb71c2d-2816-478e-921e-42172af6886b",
+      "articleSlug": "x-bot-2026-02-22",
+      "product": "X Bot",
+      "type": "overview",
+      "text": "X Bot automates community engagement tracking across X and Telegram platforms. Monitors KOL performance, filters bot activity, and provides real-time analytics dashboards. Built by @BWSCommunity using $BWS\n\n📖 Article: https://www.bws.ninja/articles/x-bot-2026-02-22\n📚 Docs: https://docs.bws.ninja/marketplace-solutions/bws.x.bot\n\n#XBot #CommunityEngagement",
+      "mainText": "X Bot automates community engagement tracking across X and Telegram platforms. Monitors KOL performance, filters bot activity, and provides real-time analytics dashboards. Built by @BWSCommunity using $BWS",
+      "articleUrl": "https://www.bws.ninja/articles/x-bot-2026-02-22",
+      "docsUrl": "https://docs.bws.ninja/marketplace-solutions/bws.x.bot",
+      "hashtags": [
+        "XBot",
+        "CommunityEngagement"
+      ],
+      "priority": "high",
+      "status": "pending",
+      "scheduledFor": null,
+      "postedAt": null,
+      "tweetId": null,
+      "generatedAt": "2026-02-22T20:10:25.646Z",
+      "metadata": {
+        "articleTitle": "X Bot: Track Real KOL Performance and Community Engagement Across Platforms",
+        "articlePublishDate": "2026-02-22T10:04:07.073Z",
+        "mainTextLength": 205,
+        "fullTextLength": 358
+      }
+    },
+    {
+      "id": "f72e4b87-9c17-44bf-89cc-f9a852aed2ed",
+      "articleSlug": "fan-game-cube-2026-02-21",
+      "product": "Fan Game Cube",
+      "type": "overview",
+      "text": "Fan Game Cube tokenizes stadium fields into NFT coordinate zones. Fans own specific field locations and receive automated rewards when match events occur at their coordinates. Built by @BWSCommunity using $BWS\n\n📖 Article: https://www.bws.ninja/articles/fan-game-cube-2026-02-21\n📚 Docs: https://docs.bws.ninja/marketplace-solutions/bws.nft.gamecube\n\n#FanGameCube #SportsNFT",
+      "mainText": "Fan Game Cube tokenizes stadium fields into NFT coordinate zones. Fans own specific field locations and receive automated rewards when match events occur at their coordinates. Built by @BWSCommunity using $BWS",
+      "articleUrl": "https://www.bws.ninja/articles/fan-game-cube-2026-02-21",
+      "docsUrl": "https://docs.bws.ninja/marketplace-solutions/bws.nft.gamecube",
+      "hashtags": [
+        "FanGameCube",
+        "SportsNFT"
+      ],
+      "priority": "high",
+      "status": "pending",
+      "scheduledFor": null,
+      "postedAt": null,
+      "tweetId": null,
+      "generatedAt": "2026-02-22T20:10:30.078Z",
+      "metadata": {
+        "articleTitle": "Fan Game Cube: NFT Stadium Zone Ownership with Real-Time Match Event Rewards",
+        "articlePublishDate": "2026-02-21T10:04:29.200Z",
+        "mainTextLength": 209,
+        "fullTextLength": 374
       }
     }
   ]
