@@ -19,6 +19,20 @@ export interface ArticleMetadata {
 
 export const articles: ArticleMetadata[] = [
 {
+  slug: 'x-bot-2026-02-22',
+  product: 'X Bot',
+  title: 'X Bot: Track Real KOL Performance and Community Engagement Across Platforms',
+  subtitle: 'Managing crypto community engagement across X and Telegram while filtering authentic influence from bot activity presents a significant challenge. X Bot solves this by automating mention tracking, KOL performance monitoring, and engagement analytics through official API integration—helping projects identify and measure genuine community growth.',
+  publishDate: '2026-02-22T10:04:07.073Z',
+  tweetId: '',
+  featuredImage: {
+    src: '/assets/images/docs/x-bot/x-bot-0.png',
+    alt: 'Product screenshot',
+    loading: 'eager'
+  },
+  seoDescription: 'X Bot tracks KOL performance and community engagement across X and Telegram. Filter bot farms, monitor authentic influence metrics, and automate reporting.'
+},
+{
   slug: 'fan-game-cube-2026-02-21',
   product: 'Fan Game Cube',
   title: 'Fan Game Cube: NFT Stadium Zone Ownership with Real-Time Match Event Rewards',
