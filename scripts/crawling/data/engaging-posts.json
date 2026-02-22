@@ -986,13 +986,454 @@
       "expiresAt": "2026-03-01T17:56:13.020Z",
       "source": "timeline_monitor",
       "contentCategory": "error"
+    },
+    {
+      "id": "2025622124002447431",
+      "text": "@Nebraskangooner those look like chicken nuggets kek",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "likes": 5,
+        "retweets": 0,
+        "replies": 2,
+        "quotes": 0,
+        "views": 1860
+      },
+      "url": "https://twitter.com/AltcoinSherpa/status/2025622124002447431",
+      "processed": false,
+      "addedAt": "2026-02-22T22:09:49.144Z",
+      "expiresAt": "2026-03-01T22:09:49.144Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2025618397367579121",
+      "text": "Lmao so every EVM L2\n\nKaspa fixes this https://t.co/BO6gMm22lj",
+      "author": {
+        "id": "crawlee_search_habibivc",
+        "username": "habibivc"
+      },
+      "public_metrics": {
+        "likes": 14,
+        "retweets": 2,
+        "replies": 9,
+        "quotes": 0,
+        "views": 441
+      },
+      "url": "https://twitter.com/habibivc/status/2025618397367579121",
+      "processed": false,
+      "addedAt": "2026-02-22T22:10:03.918Z",
+      "expiresAt": "2026-03-01T22:10:03.919Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2025612311688311120",
+      "text": "Alt season they said https://t.co/GhJTt6Q309",
+      "author": {
+        "id": "crawlee_search_habibivc",
+        "username": "habibivc"
+      },
+      "public_metrics": {
+        "likes": 17,
+        "retweets": 1,
+        "replies": 14,
+        "quotes": 0,
+        "views": 325
+      },
+      "url": "https://twitter.com/habibivc/status/2025612311688311120",
+      "processed": false,
+      "addedAt": "2026-02-22T22:10:05.879Z",
+      "expiresAt": "2026-03-01T22:10:05.879Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2025574668267040938",
+      "text": "Lmao what went wrong $SOL $JUP https://t.co/zNMKukkEgx https://t.co/xM4fvqNAwv",
+      "author": {
+        "id": "crawlee_search_habibivc",
+        "username": "habibivc"
+      },
+      "public_metrics": {
+        "likes": 14,
+        "retweets": 1,
+        "replies": 11,
+        "quotes": 0,
+        "views": 421
+      },
+      "url": "https://twitter.com/habibivc/status/2025574668267040938",
+      "processed": false,
+      "addedAt": "2026-02-22T22:10:07.901Z",
+      "expiresAt": "2026-03-01T22:10:07.902Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2025565415682809971",
+      "text": "Fastest way to swap, burn, send multiple tokens back into sol @swappadex 🚀\n\nhttps://t.co/6AbxMRANMy",
+      "author": {
+        "id": "crawlee_search_habibivc",
+        "username": "habibivc"
+      },
+      "public_metrics": {
+        "likes": 30,
+        "retweets": 7,
+        "replies": 26,
+        "quotes": 0,
+        "views": 928
+      },
+      "url": "https://twitter.com/habibivc/status/2025565415682809971",
+      "processed": false,
+      "addedAt": "2026-02-22T22:10:09.879Z",
+      "expiresAt": "2026-03-01T22:10:09.879Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2025557381472510292",
+      "text": "Gm chat \n\nDon’t let your doubts hold you back \n\nPunch your way through 💥\n\n https://t.co/JSifDft3FQ",
+      "author": {
+        "id": "crawlee_search_habibivc",
+        "username": "habibivc"
+      },
+      "public_metrics": {
+        "likes": 30,
+        "retweets": 2,
+        "replies": 26,
+        "quotes": 0,
+        "views": 507
+      },
+      "url": "https://twitter.com/habibivc/status/2025557381472510292",
+      "processed": false,
+      "addedAt": "2026-02-22T22:10:11.889Z",
+      "expiresAt": "2026-03-01T22:10:11.889Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2025458391187902677",
+      "text": "oatmeal 🥣 😸 https://t.co/FkDEGjNz7O",
+      "author": {
+        "id": "crawlee_search_habibivc",
+        "username": "habibivc"
+      },
+      "public_metrics": {
+        "likes": 18,
+        "retweets": 1,
+        "replies": 6,
+        "quotes": 0,
+        "views": 548
+      },
+      "url": "https://twitter.com/habibivc/status/2025458391187902677",
+      "processed": false,
+      "addedAt": "2026-02-22T22:10:13.865Z",
+      "expiresAt": "2026-03-01T22:10:13.865Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2025451443600199859",
+      "text": "What’s alto 🥹",
+      "author": {
+        "id": "crawlee_search_habibivc",
+        "username": "habibivc"
+      },
+      "public_metrics": {
+        "likes": 29,
+        "retweets": 5,
+        "replies": 10,
+        "quotes": 0,
+        "views": 1297
+      },
+      "url": "https://twitter.com/habibivc/status/2025451443600199859",
+      "processed": false,
+      "addedAt": "2026-02-22T22:10:15.901Z",
+      "expiresAt": "2026-03-01T22:10:15.901Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2025336621185339787",
+      "text": "@BigFootMau5 @printworld @BigFootBambino @MC_BIGFOOT404 👌",
+      "author": {
+        "id": "crawlee_search_habibivc",
+        "username": "habibivc"
+      },
+      "public_metrics": {
+        "likes": 5,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 26
+      },
+      "url": "https://twitter.com/habibivc/status/2025336621185339787",
+      "processed": false,
+      "addedAt": "2026-02-22T22:10:17.869Z",
+      "expiresAt": "2026-03-01T22:10:17.869Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2025309797612999143",
+      "text": "havent minted any nfts in years \n\nfirst batch i picked up from the homie @BigFootMau5 \nvia @printworld \n\ngud alpha @BigFootBambino @MC_BIGFOOT404 https://t.co/QbsiAYaj4l",
+      "author": {
+        "id": "crawlee_search_habibivc",
+        "username": "habibivc"
+      },
+      "public_metrics": {
+        "likes": 40,
+        "retweets": 4,
+        "replies": 16,
+        "quotes": 0,
+        "views": 535
+      },
+      "url": "https://twitter.com/habibivc/status/2025309797612999143",
+      "processed": false,
+      "addedAt": "2026-02-22T22:10:19.891Z",
+      "expiresAt": "2026-03-01T22:10:19.891Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2025173956370526313",
+      "text": "Gm chat \n\nShout out to everyone trenchin trading vibe coding building improving https://t.co/ZV3TpLOLaa",
+      "author": {
+        "id": "crawlee_search_habibivc",
+        "username": "habibivc"
+      },
+      "public_metrics": {
+        "likes": 31,
+        "retweets": 3,
+        "replies": 21,
+        "quotes": 0,
+        "views": 363
+      },
+      "url": "https://twitter.com/habibivc/status/2025173956370526313",
+      "processed": false,
+      "addedAt": "2026-02-22T22:10:21.878Z",
+      "expiresAt": "2026-03-01T22:10:21.878Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2025587682861084749",
+      "text": "The crypto community &amp; by that i mean the PEOPLE. Not the exchanges, not the big corporations, not the big projects should stand hand in hand &amp; eliminate those who abuse their powers. \n\n•Exchanges are nothing without users.\n•Projects are nothing without users \n•Whole industry",
+      "author": {
+        "id": "crawlee_search_bitcoinhabebe",
+        "username": "Bitcoinhabebe"
+      },
+      "public_metrics": {
+        "likes": 149,
+        "retweets": 24,
+        "replies": 39,
+        "quotes": 5,
+        "views": 7763
+      },
+      "url": "https://twitter.com/Bitcoinhabebe/status/2025587682861084749",
+      "processed": false,
+      "addedAt": "2026-02-22T22:10:23.876Z",
+      "expiresAt": "2026-03-01T22:10:23.876Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2025572227475701925",
+      "text": "Big fan of how bullish $TAKE looks here. \n\nAlso note that last time TAKE pumped over 250%  $CLO followed shortly after &amp; gave us a clean 100% \n\nNow TAKE is breaking &amp; is looking bullish so i am doubling down on CLO. Expecting it to follow. https://t.co/oS2Ov8TXCT",
+      "author": {
+        "id": "crawlee_search_bitcoinhabebe",
+        "username": "Bitcoinhabebe"
+      },
+      "public_metrics": {
+        "likes": 110,
+        "retweets": 36,
+        "replies": 32,
+        "quotes": 2,
+        "views": 6631
+      },
+      "url": "https://twitter.com/Bitcoinhabebe/status/2025572227475701925",
+      "processed": false,
+      "addedAt": "2026-02-22T22:10:25.906Z",
+      "expiresAt": "2026-03-01T22:10:25.906Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2025525662522429722",
+      "text": "$CLO Break &amp; FLY ⏰💣…\n\nLast time I gave entry for it we printed a clean 100% &amp; now it’s about to breakout &amp; print again. \n\nAs always, good entry + some patience = 💰 https://t.co/SwUyHWXMEa",
+      "author": {
+        "id": "crawlee_search_bitcoinhabebe",
+        "username": "Bitcoinhabebe"
+      },
+      "public_metrics": {
+        "likes": 117,
+        "retweets": 45,
+        "replies": 31,
+        "quotes": 2,
+        "views": 6364
+      },
+      "url": "https://twitter.com/Bitcoinhabebe/status/2025525662522429722",
+      "processed": false,
+      "addedAt": "2026-02-22T22:10:27.904Z",
+      "expiresAt": "2026-03-01T22:10:27.904Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2025231046875209792",
+      "text": "$AGT is now sitting at a clean 40% profit✅\n\nAs i always say; good entry + patience is the only way to print. \n\nNext in line = $CLO , its breaking out! https://t.co/IsiHmLZIpi https://t.co/8INfVB1T76",
+      "author": {
+        "id": "crawlee_search_bitcoinhabebe",
+        "username": "Bitcoinhabebe"
+      },
+      "public_metrics": {
+        "likes": 106,
+        "retweets": 43,
+        "replies": 23,
+        "quotes": 1,
+        "views": 10297
+      },
+      "url": "https://twitter.com/Bitcoinhabebe/status/2025231046875209792",
+      "processed": false,
+      "addedAt": "2026-02-22T22:10:29.940Z",
+      "expiresAt": "2026-03-01T22:10:29.940Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2025201782654177449",
+      "text": "Watch $RIVER for a possible pump. I add here. https://t.co/DQhALkiC0b",
+      "author": {
+        "id": "crawlee_search_bitcoinhabebe",
+        "username": "Bitcoinhabebe"
+      },
+      "public_metrics": {
+        "likes": 151,
+        "retweets": 60,
+        "replies": 38,
+        "quotes": 2,
+        "views": 11395
+      },
+      "url": "https://twitter.com/Bitcoinhabebe/status/2025201782654177449",
+      "processed": false,
+      "addedAt": "2026-02-22T22:10:31.908Z",
+      "expiresAt": "2026-03-01T22:10:31.908Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2025040876477546533",
+      "text": "So many people will fade $CLO &amp; regret it. This is one of the most explosive charts out there..⏰💣 https://t.co/JObNDPKLIL",
+      "author": {
+        "id": "crawlee_search_bitcoinhabebe",
+        "username": "Bitcoinhabebe"
+      },
+      "public_metrics": {
+        "likes": 129,
+        "retweets": 55,
+        "replies": 35,
+        "quotes": 1,
+        "views": 14509
+      },
+      "url": "https://twitter.com/Bitcoinhabebe/status/2025040876477546533",
+      "processed": false,
+      "addedAt": "2026-02-22T22:10:33.888Z",
+      "expiresAt": "2026-03-01T22:10:33.888Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2024953267847905758",
+      "text": "@HassanMusa22 Weird",
+      "author": {
+        "id": "crawlee_search_bitcoinhabebe",
+        "username": "Bitcoinhabebe"
+      },
+      "public_metrics": {
+        "likes": 6,
+        "retweets": 1,
+        "replies": 2,
+        "quotes": 0,
+        "views": 328
+      },
+      "url": "https://twitter.com/Bitcoinhabebe/status/2024953267847905758",
+      "processed": false,
+      "addedAt": "2026-02-22T22:10:35.912Z",
+      "expiresAt": "2026-03-01T22:10:35.912Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2024952769157980512",
+      "text": "Good entry + some patience is the only way to print money 💰.  \n\n$TA Is now breaking out &amp; is in profit ✅\n\n$RLS Gave 25% ,retested &amp; bounced ✅\n\n$CLO Is now retesting ⏰..\n\nGood entry + patience is all you need. https://t.co/zvJL9AWyhN https://t.co/8BMS0P1vv9",
+      "author": {
+        "id": "crawlee_search_bitcoinhabebe",
+        "username": "Bitcoinhabebe"
+      },
+      "public_metrics": {
+        "likes": 118,
+        "retweets": 40,
+        "replies": 24,
+        "quotes": 2,
+        "views": 12315
+      },
+      "url": "https://twitter.com/Bitcoinhabebe/status/2024952769157980512",
+      "processed": false,
+      "addedAt": "2026-02-22T22:10:37.886Z",
+      "expiresAt": "2026-03-01T22:10:37.886Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2024821053529485788",
+      "text": "$CLO With a perfect bullish cup &amp; handle pattern breakout 🔥✅. I believe it starts running from here. https://t.co/2yGY6SFDUe",
+      "author": {
+        "id": "crawlee_search_bitcoinhabebe",
+        "username": "Bitcoinhabebe"
+      },
+      "public_metrics": {
+        "likes": 108,
+        "retweets": 46,
+        "replies": 29,
+        "quotes": 3,
+        "views": 6894
+      },
+      "url": "https://twitter.com/Bitcoinhabebe/status/2024821053529485788",
+      "processed": false,
+      "addedAt": "2026-02-22T22:10:39.891Z",
+      "expiresAt": "2026-03-01T22:10:39.891Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2024707528278307011",
+      "text": "@TiagoWillinger 💸",
+      "author": {
+        "id": "crawlee_search_bitcoinhabebe",
+        "username": "Bitcoinhabebe"
+      },
+      "public_metrics": {
+        "likes": 7,
+        "retweets": 2,
+        "replies": 0,
+        "quotes": 0,
+        "views": 168
+      },
+      "url": "https://twitter.com/Bitcoinhabebe/status/2024707528278307011",
+      "processed": false,
+      "addedAt": "2026-02-22T22:10:41.905Z",
+      "expiresAt": "2026-03-01T22:10:41.905Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
     }
   ],
   "metadata": {
-    "lastUpdated": "2026-02-22T17:57:17.196Z",
-    "totalPosts": 60,
+    "lastUpdated": "2026-02-22T22:11:46.065Z",
+    "totalPosts": 68,
     "bySource": {
-      "timeline_monitor": 60,
+      "timeline_monitor": 68,
       "search_discovery": 0
     }
   },
