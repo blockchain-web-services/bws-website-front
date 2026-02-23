@@ -50,15 +50,1161 @@
       },
       "discoveredAt": "2026-01-01T15:30:34.002Z",
       "lastUpdated": "2026-01-01T15:30:34.002Z"
+    },
+    {
+      "id": "1506366168180920332",
+      "username": "TheMalcolmz",
+      "name": "The Malcolmz Movement",
+      "description": "",
+      "public_metrics": {
+        "followers_count": 5,
+        "following_count": 39,
+        "tweet_count": 94
+      },
+      "verified": false,
+      "created_at": "2022-03-22T20:24:38.000Z",
+      "_enriched": true,
+      "_source": "api",
+      "discoveryContext": {
+        "product": "Blockchain Badges",
+        "query": "starting-programs",
+        "queryCategory": "user-journey",
+        "discoveredAt": "2026-02-23T08:28:48.161Z",
+        "sampleTweet": {
+          "id": "2025846606755451342",
+          "text": "I’m enrolled in Motion's Creative Strategy Bootcamp 📚 by @motionapp_\n\nWanna join? Register for free here: https://t.co/sukXB5W6mR",
+          "created_at": "2026-02-23T08:14:04.000Z"
+        }
+      },
+      "accountType": "engaged_user",
+      "classification": {
+        "accountType": "engaged_user",
+        "isRelevant": true,
+        "confidence": 50,
+        "reason": "Tweeting about credentials",
+        "indicators": [
+          "query-context"
+        ]
+      },
+      "productFit": {
+        "Blockchain Badges": {
+          "score": 0,
+          "maxScore": 100,
+          "percentage": 0,
+          "reasons": [],
+          "fitLevel": "none"
+        }
+      },
+      "discoveredAt": "2026-02-23T08:28:48.165Z",
+      "lastUpdated": "2026-02-23T08:28:48.165Z"
+    },
+    {
+      "id": "1481506531589996546",
+      "username": "WanjalDennis",
+      "name": "Dennis",
+      "description": "mjukuu wa busara",
+      "public_metrics": {
+        "followers_count": 11446,
+        "following_count": 59,
+        "tweet_count": 19038
+      },
+      "verified": false,
+      "created_at": "2022-01-13T06:01:12.000Z",
+      "_enriched": true,
+      "_source": "api",
+      "discoveryContext": {
+        "product": "Blockchain Badges",
+        "query": "starting-programs",
+        "queryCategory": "user-journey",
+        "discoveredAt": "2026-02-23T08:28:48.161Z",
+        "sampleTweet": {
+          "id": "2025846201132650616",
+          "text": "As part of Education Reforms, the Open University of Kenya enrolled 4,000 students, targeting 100,000 by February 2026. The aim is to expand flexible higher education opportunities for learners nationwide. https://t.co/mOb54Wicrb",
+          "created_at": "2026-02-23T08:12:27.000Z"
+        }
+      },
+      "accountType": "engaged_user",
+      "classification": {
+        "accountType": "engaged_user",
+        "isRelevant": true,
+        "confidence": 80,
+        "reason": "Tweeting about credentials",
+        "indicators": [
+          "query-context"
+        ]
+      },
+      "productFit": {
+        "Blockchain Badges": {
+          "score": 2,
+          "maxScore": 100,
+          "percentage": 4,
+          "reasons": [
+            "Large following (+2)"
+          ],
+          "fitLevel": "none"
+        }
+      },
+      "discoveredAt": "2026-02-23T08:28:48.165Z",
+      "lastUpdated": "2026-02-23T08:28:48.165Z"
+    },
+    {
+      "id": "1563609619426988032",
+      "username": "bungomaduke",
+      "name": "Samwel Wekesa",
+      "description": "Economist+ Statistician.\nGod above all🙏🙏",
+      "public_metrics": {
+        "followers_count": 9759,
+        "following_count": 3920,
+        "tweet_count": 429511
+      },
+      "verified": false,
+      "created_at": "2022-08-27T19:29:32.000Z",
+      "_enriched": true,
+      "_source": "api",
+      "discoveryContext": {
+        "product": "Blockchain Badges",
+        "query": "starting-programs",
+        "queryCategory": "user-journey",
+        "discoveredAt": "2026-02-23T08:28:48.161Z",
+        "sampleTweet": {
+          "id": "2025842536699338968",
+          "text": "As part of Education Reforms, the Open University of Kenya has enrolled 4,000 students, targeting 100,000 by February 2026. The aim is to expand flexible higher education opportunities nationwide. https://t.co/ySmX71W27F",
+          "created_at": "2026-02-23T07:57:53.000Z"
+        }
+      },
+      "accountType": "engaged_user",
+      "classification": {
+        "accountType": "engaged_user",
+        "isRelevant": true,
+        "confidence": 80,
+        "reason": "Tweeting about credentials",
+        "indicators": [
+          "query-context"
+        ]
+      },
+      "productFit": {
+        "Blockchain Badges": {
+          "score": 0,
+          "maxScore": 100,
+          "percentage": 0,
+          "reasons": [],
+          "fitLevel": "none"
+        }
+      },
+      "discoveredAt": "2026-02-23T08:28:48.165Z",
+      "lastUpdated": "2026-02-23T08:28:48.165Z"
+    },
+    {
+      "id": "1468239344142106626",
+      "username": "PLPAfrica",
+      "name": "Power Learn Project",
+      "description": "We train, provide knowledge and opportunities in smart technology for the underserved youth across Africa. #1MillionDevs4Africa. Join @plpcommunity👈🌍",
+      "public_metrics": {
+        "followers_count": 5457,
+        "following_count": 367,
+        "tweet_count": 3107
+      },
+      "verified": false,
+      "created_at": "2021-12-07T15:22:13.000Z",
+      "_enriched": true,
+      "_source": "api",
+      "discoveryContext": {
+        "product": "Blockchain Badges",
+        "query": "starting-programs",
+        "queryCategory": "user-journey",
+        "discoveredAt": "2026-02-23T08:28:48.161Z",
+        "sampleTweet": {
+          "id": "2025841916969939090",
+          "text": "When he joined our bootcamp, he was responding to a shift in Kenya’s Education System, CBC.\nHis solution: LMS designed to strengthen teacher-learner interaction making the CBC journey more seamless and structured.\n#PLP #1MillionDevs4Africa #CBC #EdTech #BuildInAfrica #TechForGood https://t.co/8YgWGGQ6EC",
+          "created_at": "2026-02-23T07:55:25.000Z"
+        }
+      },
+      "accountType": "engaged_user",
+      "classification": {
+        "accountType": "engaged_user",
+        "isRelevant": true,
+        "confidence": 90,
+        "reason": "Engaged user: tech",
+        "indicators": [
+          "tech"
+        ]
+      },
+      "productFit": {
+        "Blockchain Badges": {
+          "score": 0,
+          "maxScore": 100,
+          "percentage": 0,
+          "reasons": [],
+          "fitLevel": "none"
+        }
+      },
+      "discoveredAt": "2026-02-23T08:28:48.165Z",
+      "lastUpdated": "2026-02-23T08:28:48.165Z"
+    },
+    {
+      "id": "1109245419249258497",
+      "username": "ZiaMayz18",
+      "name": "Silent Voices",
+      "description": "yapping about anything, mostly about JUMP",
+      "public_metrics": {
+        "followers_count": 96,
+        "following_count": 229,
+        "tweet_count": 16900
+      },
+      "verified": false,
+      "created_at": "2019-03-23T00:08:11.000Z",
+      "_enriched": true,
+      "_source": "api",
+      "discoveryContext": {
+        "product": "Blockchain Badges",
+        "query": "starting-programs",
+        "queryCategory": "user-journey",
+        "discoveredAt": "2026-02-23T08:28:48.162Z",
+        "sampleTweet": {
+          "id": "2025841521120116909",
+          "text": "@basashichigo It really looks like we have enrolled into an university",
+          "created_at": "2026-02-23T07:53:51.000Z"
+        }
+      },
+      "accountType": "engaged_user",
+      "classification": {
+        "accountType": "engaged_user",
+        "isRelevant": true,
+        "confidence": 50,
+        "reason": "Tweeting about credentials",
+        "indicators": [
+          "query-context"
+        ]
+      },
+      "productFit": {
+        "Blockchain Badges": {
+          "score": 0,
+          "maxScore": 100,
+          "percentage": 0,
+          "reasons": [],
+          "fitLevel": "none"
+        }
+      },
+      "discoveredAt": "2026-02-23T08:28:48.165Z",
+      "lastUpdated": "2026-02-23T08:28:48.165Z"
+    },
+    {
+      "id": "42197010",
+      "username": "VinayDokania",
+      "name": "Vinay Kumar Dokania",
+      "description": "National Coordinator Social Media DEPT @INCIndia▪️Ex NAT Coordinator @IYC▪️Ex Executive Committee Memb @INCWestBengal▪️ 📧 vinay.dokania@inc.in▪️कट्टर कांग्रेसी",
+      "public_metrics": {
+        "followers_count": 54124,
+        "following_count": 6905,
+        "tweet_count": 572416
+      },
+      "verified": false,
+      "created_at": "2009-05-24T11:04:32.000Z",
+      "_enriched": true,
+      "_source": "api",
+      "discoveryContext": {
+        "product": "Blockchain Badges",
+        "query": "starting-programs",
+        "queryCategory": "user-journey",
+        "discoveredAt": "2026-02-23T08:28:48.162Z",
+        "sampleTweet": {
+          "id": "2025841365041709195",
+          "text": "He was 2 days late in joining BJP. \n\nHad he joined 2 days ago, Galgotias University clowns could have showcased Bhupen Borah as HimantasroboDawg! https://t.co/EVZdz3hKpa",
+          "created_at": "2026-02-23T07:53:14.000Z"
+        }
+      },
+      "accountType": "engaged_user",
+      "classification": {
+        "accountType": "engaged_user",
+        "isRelevant": true,
+        "confidence": 80,
+        "reason": "Tweeting about credentials",
+        "indicators": [
+          "query-context"
+        ]
+      },
+      "productFit": {
+        "Blockchain Badges": {
+          "score": 2,
+          "maxScore": 100,
+          "percentage": 4,
+          "reasons": [
+            "Large following (+2)"
+          ],
+          "fitLevel": "none"
+        }
+      },
+      "discoveredAt": "2026-02-23T08:28:48.166Z",
+      "lastUpdated": "2026-02-23T08:28:48.166Z"
+    },
+    {
+      "id": "1502373005451796482",
+      "username": "makoba_mathias",
+      "name": "Mathias Makoba",
+      "description": "",
+      "public_metrics": {
+        "followers_count": 112,
+        "following_count": 585,
+        "tweet_count": 530
+      },
+      "verified": false,
+      "created_at": "2022-03-11T19:58:07.000Z",
+      "_enriched": true,
+      "_source": "api",
+      "discoveryContext": {
+        "product": "Blockchain Badges",
+        "query": "starting-programs",
+        "queryCategory": "user-journey",
+        "discoveredAt": "2026-02-23T08:28:48.162Z",
+        "sampleTweet": {
+          "id": "2025837999213182993",
+          "text": "Hello Ugandans of good will.\nMy name is Mathias makoba a student of Uganda martyrs university-NKozi, I joined the university in 2025 but dropped out because of tuition amounting to 2,636,000/=. I have been paying for myself since I joined the university but I am currently… https://t.co/Q7wMGKLBuc",
+          "created_at": "2026-02-23T07:39:51.000Z"
+        }
+      },
+      "accountType": "engaged_user",
+      "classification": {
+        "accountType": "engaged_user",
+        "isRelevant": true,
+        "confidence": 55,
+        "reason": "Tweeting about credentials",
+        "indicators": [
+          "query-context"
+        ]
+      },
+      "productFit": {
+        "Blockchain Badges": {
+          "score": 0,
+          "maxScore": 100,
+          "percentage": 0,
+          "reasons": [],
+          "fitLevel": "none"
+        }
+      },
+      "discoveredAt": "2026-02-23T08:28:48.166Z",
+      "lastUpdated": "2026-02-23T08:28:48.166Z"
+    },
+    {
+      "id": "1692491741142945792",
+      "username": "Keval_IM",
+      "name": "Investment_ Mantra",
+      "description": "Value investor 🕵️‍♂️ Youtuber : 60k+  Sub 🎬 Ex-techie 🤖 SIF + Mutual Fund Distributor  👨‍💻\nPost are just for information purpose and no recommendation.",
+      "public_metrics": {
+        "followers_count": 10921,
+        "following_count": 76,
+        "tweet_count": 22314
+      },
+      "verified": false,
+      "created_at": "2023-08-18T11:01:15.000Z",
+      "_enriched": true,
+      "_source": "api",
+      "discoveryContext": {
+        "product": "Blockchain Badges",
+        "query": "starting-programs",
+        "queryCategory": "user-journey",
+        "discoveredAt": "2026-02-23T08:28:48.162Z",
+        "sampleTweet": {
+          "id": "2025837616621568150",
+          "text": "If your kids did not plan to join govt job, going for collage degree is useless now.\nGet him/her enrolled in multiple short course available online.",
+          "created_at": "2026-02-23T07:38:20.000Z"
+        }
+      },
+      "accountType": "engaged_user",
+      "classification": {
+        "accountType": "engaged_user",
+        "isRelevant": true,
+        "confidence": 90,
+        "reason": "Engaged user: tech",
+        "indicators": [
+          "tech"
+        ]
+      },
+      "productFit": {
+        "Blockchain Badges": {
+          "score": 2,
+          "maxScore": 100,
+          "percentage": 4,
+          "reasons": [
+            "Large following (+2)"
+          ],
+          "fitLevel": "none"
+        }
+      },
+      "discoveredAt": "2026-02-23T08:28:48.166Z",
+      "lastUpdated": "2026-02-23T08:28:48.166Z"
+    },
+    {
+      "id": "1207035828586848258",
+      "username": "JobHunters_pl",
+      "name": "Job Hunters",
+      "description": "Przeprowadzam zmiany, które budują kariery, firmy i życie. Wspieram ludzi w rozwoju zawodowym. Towarzyszę w procesie poszukiwania pracy.",
+      "public_metrics": {
+        "followers_count": 15,
+        "following_count": 82,
+        "tweet_count": 19
+      },
+      "verified": false,
+      "created_at": "2019-12-17T20:32:33.000Z",
+      "_enriched": true,
+      "_source": "api",
+      "discoveryContext": {
+        "product": "Blockchain Badges",
+        "query": "starting-programs",
+        "queryCategory": "user-journey",
+        "discoveredAt": "2026-02-23T08:28:48.162Z",
+        "sampleTweet": {
+          "id": "2025829819762839962",
+          "text": "I just joined Claude Cowork Bootcamp from @dickiebush, @nicolascole77, and @heymit_ch!\n\nCan't wait to turn Claude into my highest-performing employee by building .skills alongside hundreds of other bootcampers from around the world.\n\nCheck it out👇\nhttps://t.co/6Tgq0GanYs",
+          "created_at": "2026-02-23T07:07:21.000Z"
+        }
+      },
+      "accountType": "engaged_user",
+      "classification": {
+        "accountType": "engaged_user",
+        "isRelevant": true,
+        "confidence": 50,
+        "reason": "Tweeting about credentials",
+        "indicators": [
+          "query-context"
+        ]
+      },
+      "productFit": {
+        "Blockchain Badges": {
+          "score": 0,
+          "maxScore": 100,
+          "percentage": 0,
+          "reasons": [],
+          "fitLevel": "none"
+        }
+      },
+      "discoveredAt": "2026-02-23T08:28:48.166Z",
+      "lastUpdated": "2026-02-23T08:28:48.166Z"
+    },
+    {
+      "id": "1644815505121738752",
+      "username": "viosam18",
+      "name": "Mzalendo",
+      "description": "Sailing through the storm ✨️",
+      "public_metrics": {
+        "followers_count": 10898,
+        "following_count": 5543,
+        "tweet_count": 210132
+      },
+      "verified": false,
+      "created_at": "2023-04-08T21:32:52.000Z",
+      "_enriched": true,
+      "_source": "api",
+      "discoveryContext": {
+        "product": "Blockchain Badges",
+        "query": "starting-programs",
+        "queryCategory": "user-journey",
+        "discoveredAt": "2026-02-23T08:28:48.162Z",
+        "sampleTweet": {
+          "id": "2025825508764639636",
+          "text": "As part of Education Reforms, the Open University of Kenya has enrolled 4,000 students, targeting 100,000 by February 2026. The aim is to provide flexible higher education opportunities. This ensures more learners can study while balancing other commitments. https://t.co/h5IhDJBXSj",
+          "created_at": "2026-02-23T06:50:13.000Z"
+        }
+      },
+      "accountType": "engaged_user",
+      "classification": {
+        "accountType": "engaged_user",
+        "isRelevant": true,
+        "confidence": 90,
+        "reason": "Engaged user: hr",
+        "indicators": [
+          "hr"
+        ]
+      },
+      "productFit": {
+        "Blockchain Badges": {
+          "score": 8,
+          "maxScore": 100,
+          "percentage": 16,
+          "reasons": [
+            "Bio: \"HR\" (+6)",
+            "Large following (+2)"
+          ],
+          "fitLevel": "low"
+        }
+      },
+      "discoveredAt": "2026-02-23T08:28:48.166Z",
+      "lastUpdated": "2026-02-23T08:28:48.166Z"
+    },
+    {
+      "id": "1450100298396151809",
+      "username": "LordGabriel230",
+      "name": "Young Gabriel",
+      "description": "",
+      "public_metrics": {
+        "followers_count": 2,
+        "following_count": 20,
+        "tweet_count": 10
+      },
+      "verified": false,
+      "created_at": "2021-10-18T14:04:29.000Z",
+      "_enriched": true,
+      "_source": "api",
+      "discoveryContext": {
+        "product": "Blockchain Badges",
+        "query": "starting-programs",
+        "queryCategory": "user-journey",
+        "discoveredAt": "2026-02-23T08:28:48.162Z",
+        "sampleTweet": {
+          "id": "2025825452212806114",
+          "text": "@NELFUND Pls @NELFUND disbursed my institution fee exam is starting soon . University of Jos",
+          "created_at": "2026-02-23T06:50:00.000Z"
+        }
+      },
+      "accountType": "engaged_user",
+      "classification": {
+        "accountType": "engaged_user",
+        "isRelevant": true,
+        "confidence": 50,
+        "reason": "Tweeting about credentials",
+        "indicators": [
+          "query-context"
+        ]
+      },
+      "productFit": {
+        "Blockchain Badges": {
+          "score": 0,
+          "maxScore": 100,
+          "percentage": 0,
+          "reasons": [],
+          "fitLevel": "none"
+        }
+      },
+      "discoveredAt": "2026-02-23T08:28:48.166Z",
+      "lastUpdated": "2026-02-23T08:28:48.166Z"
+    },
+    {
+      "id": "2223527718",
+      "username": "SohaibKh",
+      "name": "EssKay",
+      "description": "Family - Football - Crypto In that order!! 🇨🇦🍁",
+      "public_metrics": {
+        "followers_count": 250,
+        "following_count": 1577,
+        "tweet_count": 8164
+      },
+      "verified": false,
+      "created_at": "2013-11-30T18:20:17.000Z",
+      "_enriched": true,
+      "_source": "api",
+      "discoveryContext": {
+        "product": "Blockchain Badges",
+        "query": "starting-programs",
+        "queryCategory": "user-journey",
+        "discoveredAt": "2026-02-23T08:28:48.162Z",
+        "sampleTweet": {
+          "id": "2025824925148418149",
+          "text": "I’m enrolled in Motion's Creative Strategy Bootcamp 📚 by @motionapp_\n\nWanna join? Register for free here: https://t.co/9fcaBCcOe3",
+          "created_at": "2026-02-23T06:47:54.000Z"
+        }
+      },
+      "accountType": "engaged_user",
+      "classification": {
+        "accountType": "engaged_user",
+        "isRelevant": true,
+        "confidence": 65,
+        "reason": "Engaged user: crypto",
+        "indicators": [
+          "crypto"
+        ]
+      },
+      "productFit": {
+        "Blockchain Badges": {
+          "score": 0,
+          "maxScore": 100,
+          "percentage": 0,
+          "reasons": [],
+          "fitLevel": "none"
+        }
+      },
+      "discoveredAt": "2026-02-23T08:28:48.166Z",
+      "lastUpdated": "2026-02-23T08:28:48.166Z"
+    },
+    {
+      "id": "1451149498508533763",
+      "username": "BugingoAlipe",
+      "name": "Alipe BUGINGO",
+      "description": "Clinical psychology Student\n@Uni_Rwanda / Research Commission President 26-27 at @cpsarwanda Research Enthusiast/ Transgenerational Trauma Associate",
+      "public_metrics": {
+        "followers_count": 228,
+        "following_count": 612,
+        "tweet_count": 125
+      },
+      "verified": false,
+      "created_at": "2021-10-21T11:37:21.000Z",
+      "_enriched": true,
+      "_source": "api",
+      "discoveryContext": {
+        "product": "Blockchain Badges",
+        "query": "starting-programs",
+        "queryCategory": "user-journey",
+        "discoveredAt": "2026-02-23T08:28:48.162Z",
+        "sampleTweet": {
+          "id": "2025824250553131052",
+          "text": "On 21 Feb 2026, I joined an Intellectual Property &amp; pitching training by the University of Rwanda Center for Innovation &amp; Entrepreneurship (UR-CIE). \n\nI pitched my project on sustainable mental health solution and gained valuable feedback for refinement\n #Innovation #MentalHealth https://t.co/o7XqZQb7qB",
+          "created_at": "2026-02-23T06:45:13.000Z"
+        }
+      },
+      "accountType": "engaged_user",
+      "classification": {
+        "accountType": "engaged_user",
+        "isRelevant": true,
+        "confidence": 65,
+        "reason": "Engaged user: student",
+        "indicators": [
+          "student"
+        ]
+      },
+      "productFit": {
+        "Blockchain Badges": {
+          "score": 0,
+          "maxScore": 100,
+          "percentage": 0,
+          "reasons": [],
+          "fitLevel": "none"
+        }
+      },
+      "discoveredAt": "2026-02-23T08:28:48.166Z",
+      "lastUpdated": "2026-02-23T08:28:48.166Z"
+    },
+    {
+      "id": "790911164683284480",
+      "username": "GeeksAcademyEu",
+      "name": "Geeks Academy",
+      "description": "🚀 Geeks Academy delivers courses, workshops, certifications in the field of #AI #DataAnalytics #Cybersecurity #Cloud #Blockchain  #Metaverse #AIsolutions",
+      "public_metrics": {
+        "followers_count": 1004,
+        "following_count": 3522,
+        "tweet_count": 37336
+      },
+      "verified": false,
+      "created_at": "2016-10-25T13:41:30.000Z",
+      "_enriched": true,
+      "_source": "api",
+      "discoveryContext": {
+        "product": "Blockchain Badges",
+        "query": "starting-programs",
+        "queryCategory": "user-journey",
+        "discoveredAt": "2026-02-23T08:28:48.162Z",
+        "sampleTweet": {
+          "id": "2025816896864415982",
+          "text": "Geeks Academy turns 10 and offers 10 scholarships worth €3,000.\n#Master in #Cybersecurity &amp; #Cloud: 4 #InternationalCertifications, #JobPlacement, and 5 years of #career coaching.\nLive online, max 15 students per class.\nStarting November\nhttps://t.co/ipLPqwqmXr https://t.co/iF7eCHAnm6",
+          "created_at": "2026-02-23T06:16:00.000Z"
+        }
+      },
+      "accountType": "institution",
+      "classification": {
+        "accountType": "institution",
+        "isRelevant": true,
+        "confidence": 40,
+        "reason": "Institution: academy, certification",
+        "indicators": [
+          "academy",
+          "certification"
+        ]
+      },
+      "productFit": {
+        "Blockchain Badges": {
+          "score": 6,
+          "maxScore": 100,
+          "percentage": 12,
+          "reasons": [
+            "Bio: \"certification\" (+6)"
+          ],
+          "fitLevel": "low"
+        }
+      },
+      "discoveredAt": "2026-02-23T08:28:48.166Z",
+      "lastUpdated": "2026-02-23T08:28:48.166Z"
+    },
+    {
+      "id": "1253098617717522435",
+      "username": "nik0thaone",
+      "name": "Niko☠️☠️",
+      "description": "just doing what a dude do",
+      "public_metrics": {
+        "followers_count": 37,
+        "following_count": 86,
+        "tweet_count": 3712
+      },
+      "verified": false,
+      "created_at": "2020-04-22T23:09:43.000Z",
+      "_enriched": true,
+      "_source": "api",
+      "discoveryContext": {
+        "product": "Blockchain Badges",
+        "query": "starting-programs",
+        "queryCategory": "user-journey",
+        "discoveredAt": "2026-02-23T08:28:48.162Z",
+        "sampleTweet": {
+          "id": "2025816307552133513",
+          "text": "@dreyfus04141314 @CursedK1NG_ \"Played College Ballet, yknow\"\n\n\"At some cushy Ivy League school.\"\n\n\"Try University of Spain. Could've gone pro, if I haven't joined the Cartel.\"",
+          "created_at": "2026-02-23T06:13:40.000Z"
+        }
+      },
+      "accountType": "engaged_user",
+      "classification": {
+        "accountType": "engaged_user",
+        "isRelevant": true,
+        "confidence": 50,
+        "reason": "Tweeting about credentials",
+        "indicators": [
+          "query-context"
+        ]
+      },
+      "productFit": {
+        "Blockchain Badges": {
+          "score": 0,
+          "maxScore": 100,
+          "percentage": 0,
+          "reasons": [],
+          "fitLevel": "none"
+        }
+      },
+      "discoveredAt": "2026-02-23T08:28:48.166Z",
+      "lastUpdated": "2026-02-23T08:28:48.166Z"
+    },
+    {
+      "id": "1890847986760011776",
+      "username": "misscarriejun34",
+      "name": "Carriejune Anne Bowlby",
+      "description": "Owner @minibeastofficial \nTraining | Apparel | Supps | Equipment | Gym",
+      "public_metrics": {
+        "followers_count": 341,
+        "following_count": 79,
+        "tweet_count": 612
+      },
+      "verified": false,
+      "created_at": "2025-02-15T19:37:52.000Z",
+      "_enriched": true,
+      "_source": "api",
+      "discoveryContext": {
+        "product": "Blockchain Badges",
+        "query": "starting-programs",
+        "queryCategory": "user-journey",
+        "discoveredAt": "2026-02-23T08:28:48.162Z",
+        "sampleTweet": {
+          "id": "2025806922906259565",
+          "text": "End the week strong 💪🏼 my winter bootcamp is starting soon (in bio) https://t.co/LNLeB0IsLN",
+          "created_at": "2026-02-23T05:36:22.000Z"
+        }
+      },
+      "accountType": "institution",
+      "classification": {
+        "accountType": "institution",
+        "isRelevant": true,
+        "confidence": 40,
+        "reason": "Institution: training, official",
+        "indicators": [
+          "training",
+          "official"
+        ]
+      },
+      "productFit": {
+        "Blockchain Badges": {
+          "score": 4,
+          "maxScore": 100,
+          "percentage": 8,
+          "reasons": [
+            "Bio: \"training\" (+4)"
+          ],
+          "fitLevel": "none"
+        }
+      },
+      "discoveredAt": "2026-02-23T08:28:48.167Z",
+      "lastUpdated": "2026-02-23T08:28:48.167Z"
+    },
+    {
+      "id": "111070881",
+      "username": "th0b3k4",
+      "name": "Thobeka",
+      "description": "",
+      "public_metrics": {
+        "followers_count": 638,
+        "following_count": 1538,
+        "tweet_count": 4740
+      },
+      "verified": false,
+      "created_at": "2010-02-03T18:25:21.000Z",
+      "_enriched": true,
+      "_source": "api",
+      "discoveryContext": {
+        "product": "Blockchain Badges",
+        "query": "starting-programs",
+        "queryCategory": "user-journey",
+        "discoveredAt": "2026-02-23T08:28:48.162Z",
+        "sampleTweet": {
+          "id": "2025806573730222427",
+          "text": "@Vikingcriollo @60Minutes You did not get into university because of your low APS, not because of your race. There are lots of whites enrolled in Uni, stop lying.",
+          "created_at": "2026-02-23T05:34:59.000Z"
+        }
+      },
+      "accountType": "engaged_user",
+      "classification": {
+        "accountType": "engaged_user",
+        "isRelevant": true,
+        "confidence": 65,
+        "reason": "Tweeting about credentials",
+        "indicators": [
+          "query-context"
+        ]
+      },
+      "productFit": {
+        "Blockchain Badges": {
+          "score": 0,
+          "maxScore": 100,
+          "percentage": 0,
+          "reasons": [],
+          "fitLevel": "none"
+        }
+      },
+      "discoveredAt": "2026-02-23T08:28:48.167Z",
+      "lastUpdated": "2026-02-23T08:28:48.167Z"
+    },
+    {
+      "id": "926752862",
+      "username": "RCM_Que",
+      "name": "Mandlakaise",
+      "description": "Free spirit, wild at heart.🔴",
+      "public_metrics": {
+        "followers_count": 1025,
+        "following_count": 1411,
+        "tweet_count": 4826
+      },
+      "verified": false,
+      "created_at": "2012-11-05T03:24:19.000Z",
+      "_enriched": true,
+      "_source": "api",
+      "discoveryContext": {
+        "product": "Blockchain Badges",
+        "query": "starting-programs",
+        "queryCategory": "user-journey",
+        "discoveredAt": "2026-02-23T08:28:48.162Z",
+        "sampleTweet": {
+          "id": "2025800302226518399",
+          "text": "@Retha_Skye I always asked myself this. My grandmother went to university in SA studied nursing and became assistant director and nursing tutor after getting her masters in the 1960s. She was self funded and not politically affiliated. However, my uncle joined MK and studied law in exile.",
+          "created_at": "2026-02-23T05:10:04.000Z"
+        }
+      },
+      "accountType": "engaged_user",
+      "classification": {
+        "accountType": "engaged_user",
+        "isRelevant": true,
+        "confidence": 65,
+        "reason": "Tweeting about credentials",
+        "indicators": [
+          "query-context"
+        ]
+      },
+      "productFit": {
+        "Blockchain Badges": {
+          "score": 0,
+          "maxScore": 100,
+          "percentage": 0,
+          "reasons": [],
+          "fitLevel": "none"
+        }
+      },
+      "discoveredAt": "2026-02-23T08:28:48.167Z",
+      "lastUpdated": "2026-02-23T08:28:48.167Z"
+    },
+    {
+      "id": "1608165791467290627",
+      "username": "rhennigantx",
+      "name": "Richard Hennigan",
+      "description": "",
+      "public_metrics": {
+        "followers_count": 831,
+        "following_count": 71,
+        "tweet_count": 9906
+      },
+      "verified": false,
+      "created_at": "2022-12-28T18:20:25.000Z",
+      "_enriched": true,
+      "_source": "api",
+      "discoveryContext": {
+        "product": "Blockchain Badges",
+        "query": "starting-programs",
+        "queryCategory": "user-journey",
+        "discoveredAt": "2026-02-23T08:28:48.162Z",
+        "sampleTweet": {
+          "id": "2025798602610602340",
+          "text": "@EndWokeness Newsom enrolled at Santa Clara University on a partial baseball scholarship, graduating in 1989 with a Bachelor of Science in political science.\n\nAverage SAT Scores\nAverage Composite Score: 1410\n25th Percentile: 1360",
+          "created_at": "2026-02-23T05:03:19.000Z"
+        }
+      },
+      "accountType": "engaged_user",
+      "classification": {
+        "accountType": "engaged_user",
+        "isRelevant": true,
+        "confidence": 65,
+        "reason": "Tweeting about credentials",
+        "indicators": [
+          "query-context"
+        ]
+      },
+      "productFit": {
+        "Blockchain Badges": {
+          "score": 0,
+          "maxScore": 100,
+          "percentage": 0,
+          "reasons": [],
+          "fitLevel": "none"
+        }
+      },
+      "discoveredAt": "2026-02-23T08:28:48.167Z",
+      "lastUpdated": "2026-02-23T08:28:48.167Z"
+    },
+    {
+      "id": "31516781",
+      "username": "jelimupa",
+      "name": "Jeli",
+      "description": "I need no flashes, I am the light",
+      "public_metrics": {
+        "followers_count": 394,
+        "following_count": 1685,
+        "tweet_count": 3307
+      },
+      "verified": false,
+      "created_at": "2009-04-15T20:52:58.000Z",
+      "_enriched": true,
+      "_source": "api",
+      "discoveryContext": {
+        "product": "Blockchain Badges",
+        "query": "starting-programs",
+        "queryCategory": "user-journey",
+        "discoveredAt": "2026-02-23T08:28:48.162Z",
+        "sampleTweet": {
+          "id": "2025785503669190693",
+          "text": "I’m enrolled in Motion's Creative Strategy Bootcamp 📚 by @motionapp_\n\nWanna join? Register for free here: https://t.co/pO7hGkJVjy",
+          "created_at": "2026-02-23T04:11:16.000Z"
+        }
+      },
+      "accountType": "engaged_user",
+      "classification": {
+        "accountType": "engaged_user",
+        "isRelevant": true,
+        "confidence": 55,
+        "reason": "Tweeting about credentials",
+        "indicators": [
+          "query-context"
+        ]
+      },
+      "productFit": {
+        "Blockchain Badges": {
+          "score": 0,
+          "maxScore": 100,
+          "percentage": 0,
+          "reasons": [],
+          "fitLevel": "none"
+        }
+      },
+      "discoveredAt": "2026-02-23T08:28:48.167Z",
+      "lastUpdated": "2026-02-23T08:28:48.167Z"
+    },
+    {
+      "id": "1163886315911491591",
+      "username": "LukeCharbonnea4",
+      "name": "Luke Charbonneau",
+      "description": "Retired CA/RCAF/RCN. Strong supporter of all serving and retired members of the CAF. Love my country. 🇨🇦🇨🇦🇨🇦🇨🇦🇨🇦🇨🇦🇨🇦🇨🇦",
+      "public_metrics": {
+        "followers_count": 999,
+        "following_count": 1559,
+        "tweet_count": 39006
+      },
+      "verified": false,
+      "created_at": "2019-08-20T18:51:51.000Z",
+      "_enriched": true,
+      "_source": "api",
+      "discoveryContext": {
+        "product": "Blockchain Badges",
+        "query": "starting-programs",
+        "queryCategory": "user-journey",
+        "discoveredAt": "2026-02-23T08:28:48.162Z",
+        "sampleTweet": {
+          "id": "2025783674944258127",
+          "text": "@judisommer1 @Brad76_ @acoyne Blah, blah, blah....  another little Liberal who wasted a university education by enrolling in Liberal arts. Drama, indeed.  Our previous PM was also a drama student and offered us only debt!  Exactly what examples do you want and, should I post them in Crayon?",
+          "created_at": "2026-02-23T04:04:00.000Z"
+        }
+      },
+      "accountType": "engaged_user",
+      "classification": {
+        "accountType": "engaged_user",
+        "isRelevant": true,
+        "confidence": 65,
+        "reason": "Tweeting about credentials",
+        "indicators": [
+          "query-context"
+        ]
+      },
+      "productFit": {
+        "Blockchain Badges": {
+          "score": 0,
+          "maxScore": 100,
+          "percentage": 0,
+          "reasons": [],
+          "fitLevel": "none"
+        }
+      },
+      "discoveredAt": "2026-02-23T08:28:48.167Z",
+      "lastUpdated": "2026-02-23T08:28:48.167Z"
+    },
+    {
+      "id": "1897052970048491520",
+      "username": "MoeinSalehix",
+      "name": "Moein Salehi",
+      "description": "Marketing enthusiast & tech lover. Founder of Lumiya Digital. Building Pix Media. Passionate about innovative strategies & digital solutions.",
+      "public_metrics": {
+        "followers_count": 6,
+        "following_count": 80,
+        "tweet_count": 146
+      },
+      "verified": false,
+      "created_at": "2025-03-04T22:34:25.000Z",
+      "_enriched": true,
+      "_source": "api",
+      "discoveryContext": {
+        "product": "Blockchain Badges",
+        "query": "starting-programs",
+        "queryCategory": "user-journey",
+        "discoveredAt": "2026-02-23T08:28:48.162Z",
+        "sampleTweet": {
+          "id": "2025783472913015001",
+          "text": "I’m enrolled in Motion's Creative Strategy Bootcamp 📚 by @motionapp_",
+          "created_at": "2026-02-23T04:03:11.000Z"
+        }
+      },
+      "accountType": "engaged_user",
+      "classification": {
+        "accountType": "engaged_user",
+        "isRelevant": true,
+        "confidence": 60,
+        "reason": "Engaged user: tech",
+        "indicators": [
+          "tech"
+        ]
+      },
+      "productFit": {
+        "Blockchain Badges": {
+          "score": 0,
+          "maxScore": 100,
+          "percentage": 0,
+          "reasons": [],
+          "fitLevel": "none"
+        }
+      },
+      "discoveredAt": "2026-02-23T08:28:48.167Z",
+      "lastUpdated": "2026-02-23T08:28:48.167Z"
+    },
+    {
+      "id": "1720665183188922368",
+      "username": "grok",
+      "name": "Grok",
+      "description": "https://t.co/fqNKQSiLQB\n@grok it",
+      "public_metrics": {
+        "followers_count": 8052545,
+        "following_count": 3,
+        "tweet_count": 107229247
+      },
+      "verified": true,
+      "created_at": "2023-11-04T04:52:34.000Z",
+      "_enriched": true,
+      "_source": "api",
+      "discoveryContext": {
+        "product": "Blockchain Badges",
+        "query": "starting-programs",
+        "queryCategory": "user-journey",
+        "discoveredAt": "2026-02-23T08:28:48.162Z",
+        "sampleTweet": {
+          "id": "2025782882518569110",
+          "text": "@PandersonArthur @MandalorianGe0 @ZaidJilani No, that's not true. West Coast schools like California's UC system required SAT scores for admissions for decades (phased out starting 2020). Santa Clara University, where Newsom attended in the 1980s, also considered SATs—his reported 960 score was public knowledge. SAT has",
+          "created_at": "2026-02-23T04:00:51.000Z"
+        }
+      },
+      "accountType": "engaged_user",
+      "classification": {
+        "accountType": "engaged_user",
+        "isRelevant": true,
+        "confidence": 100,
+        "reason": "Tweeting about credentials",
+        "indicators": [
+          "query-context"
+        ]
+      },
+      "productFit": {
+        "Blockchain Badges": {
+          "score": 5,
+          "maxScore": 100,
+          "percentage": 10,
+          "reasons": [
+            "Verified account (+3)",
+            "Large following (+2)"
+          ],
+          "fitLevel": "low"
+        }
+      },
+      "discoveredAt": "2026-02-23T08:28:48.167Z",
+      "lastUpdated": "2026-02-23T08:28:48.167Z"
+    },
+    {
+      "id": "1873363006534647808",
+      "username": "JustEddie__1",
+      "name": "🥀",
+      "description": "@lfc",
+      "public_metrics": {
+        "followers_count": 325,
+        "following_count": 917,
+        "tweet_count": 2556
+      },
+      "verified": false,
+      "created_at": "2024-12-29T13:39:00.000Z",
+      "_enriched": true,
+      "_source": "api",
+      "discoveryContext": {
+        "product": "Blockchain Badges",
+        "query": "starting-programs",
+        "queryCategory": "user-journey",
+        "discoveredAt": "2026-02-23T08:28:48.162Z",
+        "sampleTweet": {
+          "id": "2025779991670030348",
+          "text": "@dhareymu @abdusalamishere @Lilclassic12 @lordgradient @onedarkhorse_ How, I had a friend who was saving to start up a business before entering university,\nHe was sick and died 2 years ago \n  How was that his time, when his life was just starting?",
+          "created_at": "2026-02-23T03:49:21.000Z"
+        }
+      },
+      "accountType": "engaged_user",
+      "classification": {
+        "accountType": "engaged_user",
+        "isRelevant": true,
+        "confidence": 55,
+        "reason": "Tweeting about credentials",
+        "indicators": [
+          "query-context"
+        ]
+      },
+      "productFit": {
+        "Blockchain Badges": {
+          "score": 0,
+          "maxScore": 100,
+          "percentage": 0,
+          "reasons": [],
+          "fitLevel": "none"
+        }
+      },
+      "discoveredAt": "2026-02-23T08:28:48.167Z",
+      "lastUpdated": "2026-02-23T08:28:48.167Z"
     }
   ],
   "stats": {
-    "totalDiscovered": 1,
+    "totalDiscovered": 25,
     "byProduct": {
       "Blockchain Badges": {
-        "total": 1,
-        "institutions": 0,
-        "engagedUsers": 1,
+        "total": 25,
+        "institutions": 2,
+        "engagedUsers": 23,
         "highFit": 0,
         "mediumFit": 0
       }
@@ -72,18 +1218,18 @@
       "user-achievements": 0,
       "pain-point": 0,
       "solution-space": 0,
-      "user-journey": 0
+      "user-journey": 24
     },
-    "lastDiscovery": "2026-02-16T08:28:38.522Z",
+    "lastDiscovery": "2026-02-23T08:28:54.174Z",
     "byAccountType": {
-      "institutions": 0,
-      "engagedUsers": 1,
-      "total": 1
+      "institutions": 2,
+      "engagedUsers": 23,
+      "total": 25
     }
   },
   "metadata": {
     "version": "1.0.0",
-    "lastUpdated": "2026-02-16T08:28:38.522Z",
-    "discoveryRuns": 21
+    "lastUpdated": "2026-02-23T08:28:54.174Z",
+    "discoveryRuns": 22
   }
 }
