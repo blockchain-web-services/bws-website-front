@@ -1,993 +1,6 @@
 {
   "posts": [
     {
-      "id": "2024775779129704516",
-      "text": "@RigbyDEV @hotpot_dao Haven’t played since 2022",
-      "author": {
-        "id": "2259434528",
-        "username": "cobie"
-      },
-      "public_metrics": {
-        "likes": 8,
-        "retweets": 0,
-        "replies": 8,
-        "quotes": 0,
-        "views": 1739
-      },
-      "url": "https://twitter.com/cobie/status/2024775779129704516",
-      "processed": true,
-      "addedAt": "2026-02-22T17:54:17.330Z",
-      "expiresAt": "2026-03-01T17:54:17.330Z",
-      "source": "timeline_monitor",
-      "contentCategory": "error"
-    },
-    {
-      "id": "2024775526569660820",
-      "text": "@hotpot_dao Hard road? https://t.co/0C4boj6GvQ",
-      "author": {
-        "id": "2259434528",
-        "username": "cobie"
-      },
-      "public_metrics": {
-        "likes": 219,
-        "retweets": 2,
-        "replies": 13,
-        "quotes": 1,
-        "views": 10455
-      },
-      "url": "https://twitter.com/cobie/status/2024775526569660820",
-      "processed": true,
-      "addedAt": "2026-02-22T17:54:19.198Z",
-      "expiresAt": "2026-03-01T17:54:19.198Z",
-      "source": "timeline_monitor",
-      "contentCategory": "error"
-    },
-    {
-      "id": "2024674193573310975",
-      "text": "Oh?",
-      "author": {
-        "id": "2259434528",
-        "username": "cobie"
-      },
-      "public_metrics": {
-        "likes": 201,
-        "retweets": 10,
-        "replies": 60,
-        "quotes": 5,
-        "views": 17632
-      },
-      "url": "https://twitter.com/cobie/status/2024674193573310975",
-      "processed": true,
-      "addedAt": "2026-02-22T17:54:21.212Z",
-      "expiresAt": "2026-03-01T17:54:21.212Z",
-      "source": "timeline_monitor",
-      "contentCategory": "error"
-    },
-    {
-      "id": "2024631091223560421",
-      "text": "@Fibonathicc @Thomadsen @RangNFA @Lamar0985056592 Nope https://t.co/hFxZzS18fz",
-      "author": {
-        "id": "2259434528",
-        "username": "cobie"
-      },
-      "public_metrics": {
-        "likes": 31,
-        "retweets": 2,
-        "replies": 31,
-        "quotes": 3,
-        "views": 4075
-      },
-      "url": "https://twitter.com/cobie/status/2024631091223560421",
-      "processed": true,
-      "addedAt": "2026-02-22T17:54:23.220Z",
-      "expiresAt": "2026-03-01T17:54:23.220Z",
-      "source": "timeline_monitor",
-      "contentCategory": "error"
-    },
-    {
-      "id": "2024630351805464895",
-      "text": "@gorillapanics @Thomadsen @RangNFA @Lamar0985056592 Eh I think nobody with a brain really cares",
-      "author": {
-        "id": "2259434528",
-        "username": "cobie"
-      },
-      "public_metrics": {
-        "likes": 17,
-        "retweets": 0,
-        "replies": 19,
-        "quotes": 0,
-        "views": 1733
-      },
-      "url": "https://twitter.com/cobie/status/2024630351805464895",
-      "processed": true,
-      "addedAt": "2026-02-22T17:54:25.203Z",
-      "expiresAt": "2026-03-01T17:54:25.203Z",
-      "source": "timeline_monitor",
-      "contentCategory": "error"
-    },
-    {
-      "id": "2024630273497817247",
-      "text": "@PoorGoat_ @Thomadsen @RangNFA @Lamar0985056592 No, please see a neuroscientist asap",
-      "author": {
-        "id": "2259434528",
-        "username": "cobie"
-      },
-      "public_metrics": {
-        "likes": 25,
-        "retweets": 2,
-        "replies": 18,
-        "quotes": 1,
-        "views": 2161
-      },
-      "url": "https://twitter.com/cobie/status/2024630273497817247",
-      "processed": true,
-      "addedAt": "2026-02-22T17:54:27.195Z",
-      "expiresAt": "2026-03-01T17:54:27.195Z",
-      "source": "timeline_monitor",
-      "contentCategory": "error"
-    },
-    {
-      "id": "2024629993498624326",
-      "text": "@johnnyb0y111 @Fibonathicc @RangNFA @Lamar0985056592 @a1lon9 No",
-      "author": {
-        "id": "2259434528",
-        "username": "cobie"
-      },
-      "public_metrics": {
-        "likes": 8,
-        "retweets": 0,
-        "replies": 15,
-        "quotes": 0,
-        "views": 1274
-      },
-      "url": "https://twitter.com/cobie/status/2024629993498624326",
-      "processed": true,
-      "addedAt": "2026-02-22T17:54:29.229Z",
-      "expiresAt": "2026-03-01T17:54:29.229Z",
-      "source": "timeline_monitor",
-      "contentCategory": "error"
-    },
-    {
-      "id": "2024629900334727347",
-      "text": "@Thomadsen @RangNFA @Lamar0985056592 I have no idea, I don’t use pumpfun or care really",
-      "author": {
-        "id": "2259434528",
-        "username": "cobie"
-      },
-      "public_metrics": {
-        "likes": 18,
-        "retweets": 1,
-        "replies": 13,
-        "quotes": 0,
-        "views": 2080
-      },
-      "url": "https://twitter.com/cobie/status/2024629900334727347",
-      "processed": true,
-      "addedAt": "2026-02-22T17:54:31.218Z",
-      "expiresAt": "2026-03-01T17:54:31.218Z",
-      "source": "timeline_monitor",
-      "contentCategory": "error"
-    },
-    {
-      "id": "2024628655654109689",
-      "text": "@Thomadsen @RangNFA @Lamar0985056592 Not lying. Pumpfun confirmed it: https://t.co/0DZ2vlbRAC",
-      "author": {
-        "id": "2259434528",
-        "username": "cobie"
-      },
-      "public_metrics": {
-        "likes": 14,
-        "retweets": 1,
-        "replies": 17,
-        "quotes": 0,
-        "views": 2502
-      },
-      "url": "https://twitter.com/cobie/status/2024628655654109689",
-      "processed": true,
-      "addedAt": "2026-02-22T17:54:33.206Z",
-      "expiresAt": "2026-03-01T17:54:33.206Z",
-      "source": "timeline_monitor",
-      "contentCategory": "error"
-    },
-    {
-      "id": "2024628370890236001",
-      "text": "@Fibonathicc @RangNFA @Lamar0985056592 @a1lon9 No, it’s how pumpfun works https://t.co/0DZ2vlbRAC",
-      "author": {
-        "id": "2259434528",
-        "username": "cobie"
-      },
-      "public_metrics": {
-        "likes": 11,
-        "retweets": 0,
-        "replies": 18,
-        "quotes": 0,
-        "views": 1267
-      },
-      "url": "https://twitter.com/cobie/status/2024628370890236001",
-      "processed": true,
-      "addedAt": "2026-02-22T17:54:35.212Z",
-      "expiresAt": "2026-03-01T17:54:35.212Z",
-      "source": "timeline_monitor",
-      "contentCategory": "error"
-    },
-    {
-      "id": "2025387307197673874",
-      "text": "@Tradermayne @OrderBookShow Keep it going, love the show",
-      "author": {
-        "id": "4441279246",
-        "username": "IncomeSharks"
-      },
-      "public_metrics": {
-        "likes": 12,
-        "retweets": 0,
-        "replies": 2,
-        "quotes": 0,
-        "views": 5477
-      },
-      "url": "https://twitter.com/IncomeSharks/status/2025387307197673874",
-      "processed": true,
-      "addedAt": "2026-02-22T17:54:49.297Z",
-      "expiresAt": "2026-03-01T17:54:49.297Z",
-      "source": "timeline_monitor",
-      "contentCategory": "error"
-    },
-    {
-      "id": "2025356873311158651",
-      "text": "@BeardoTrader It's up 20x from lows on a correction still up 10x. Still absolutely dominating the entire market",
-      "author": {
-        "id": "4441279246",
-        "username": "IncomeSharks"
-      },
-      "public_metrics": {
-        "likes": 120,
-        "retweets": 4,
-        "replies": 8,
-        "quotes": 0,
-        "views": 14059
-      },
-      "url": "https://twitter.com/IncomeSharks/status/2025356873311158651",
-      "processed": true,
-      "addedAt": "2026-02-22T17:54:51.229Z",
-      "expiresAt": "2026-03-01T17:54:51.229Z",
-      "source": "timeline_monitor",
-      "contentCategory": "error"
-    },
-    {
-      "id": "2025356122585268472",
-      "text": "@FinanceJack44 Do you not see that they already do this? Insider trading, financials, earnings, analyst reports, etc. It's all there?",
-      "author": {
-        "id": "4441279246",
-        "username": "IncomeSharks"
-      },
-      "public_metrics": {
-        "likes": 29,
-        "retweets": 0,
-        "replies": 2,
-        "quotes": 0,
-        "views": 5387
-      },
-      "url": "https://twitter.com/IncomeSharks/status/2025356122585268472",
-      "processed": true,
-      "addedAt": "2026-02-22T17:54:53.168Z",
-      "expiresAt": "2026-03-01T17:54:53.168Z",
-      "source": "timeline_monitor",
-      "contentCategory": "error"
-    },
-    {
-      "id": "2025342155779424681",
-      "text": "@SubuTrade Still a long way to go to reach any of the previous levels we saw bottoms. https://t.co/neaq8yJfvv",
-      "author": {
-        "id": "4441279246",
-        "username": "IncomeSharks"
-      },
-      "public_metrics": {
-        "likes": 53,
-        "retweets": 5,
-        "replies": 1,
-        "quotes": 0,
-        "views": 5150
-      },
-      "url": "https://twitter.com/IncomeSharks/status/2025342155779424681",
-      "processed": true,
-      "addedAt": "2026-02-22T17:54:55.200Z",
-      "expiresAt": "2026-03-01T17:54:55.200Z",
-      "source": "timeline_monitor",
-      "contentCategory": "error"
-    },
-    {
-      "id": "2025337007166423383",
-      "text": "@TicTocTick Process starts earlier, long fasting periods increases it. Caloric restriction and stress on the body from working out also activate it.",
-      "author": {
-        "id": "4441279246",
-        "username": "IncomeSharks"
-      },
-      "public_metrics": {
-        "likes": 277,
-        "retweets": 5,
-        "replies": 11,
-        "quotes": 0,
-        "views": 51866
-      },
-      "url": "https://twitter.com/IncomeSharks/status/2025337007166423383",
-      "processed": true,
-      "addedAt": "2026-02-22T17:54:57.181Z",
-      "expiresAt": "2026-03-01T17:54:57.181Z",
-      "source": "timeline_monitor",
-      "contentCategory": "error"
-    },
-    {
-      "id": "2025336054186999916",
-      "text": "@HeroDividend Do you post anything that isn't click bait anymore?",
-      "author": {
-        "id": "4441279246",
-        "username": "IncomeSharks"
-      },
-      "public_metrics": {
-        "likes": 436,
-        "retweets": 1,
-        "replies": 7,
-        "quotes": 0,
-        "views": 33626
-      },
-      "url": "https://twitter.com/IncomeSharks/status/2025336054186999916",
-      "processed": true,
-      "addedAt": "2026-02-22T17:54:59.230Z",
-      "expiresAt": "2026-03-01T17:54:59.230Z",
-      "source": "timeline_monitor",
-      "contentCategory": "error"
-    },
-    {
-      "id": "2025334833300602933",
-      "text": "@CredibleCrypto One of my best trades last year was just bidding as ETH went down to that range and selling when it got to the top. It's boring and slow but agree with you",
-      "author": {
-        "id": "4441279246",
-        "username": "IncomeSharks"
-      },
-      "public_metrics": {
-        "likes": 266,
-        "retweets": 4,
-        "replies": 15,
-        "quotes": 0,
-        "views": 15668
-      },
-      "url": "https://twitter.com/IncomeSharks/status/2025334833300602933",
-      "processed": true,
-      "addedAt": "2026-02-22T17:55:01.188Z",
-      "expiresAt": "2026-03-01T17:55:01.188Z",
-      "source": "timeline_monitor",
-      "contentCategory": "error"
-    },
-    {
-      "id": "2025334426604122368",
-      "text": "@NOLABALLER Raising prices doesn't slow it down. It just raises the value of ebery graded card now",
-      "author": {
-        "id": "4441279246",
-        "username": "IncomeSharks"
-      },
-      "public_metrics": {
-        "likes": 10,
-        "retweets": 1,
-        "replies": 1,
-        "quotes": 0,
-        "views": 1737
-      },
-      "url": "https://twitter.com/IncomeSharks/status/2025334426604122368",
-      "processed": true,
-      "addedAt": "2026-02-22T17:55:03.184Z",
-      "expiresAt": "2026-03-01T17:55:03.184Z",
-      "source": "timeline_monitor",
-      "contentCategory": "error"
-    },
-    {
-      "id": "2025333614976827801",
-      "text": "@coinmamba Volatility is a traders best friend",
-      "author": {
-        "id": "4441279246",
-        "username": "IncomeSharks"
-      },
-      "public_metrics": {
-        "likes": 34,
-        "retweets": 0,
-        "replies": 3,
-        "quotes": 0,
-        "views": 6812
-      },
-      "url": "https://twitter.com/IncomeSharks/status/2025333614976827801",
-      "processed": true,
-      "addedAt": "2026-02-22T17:55:05.192Z",
-      "expiresAt": "2026-03-01T17:55:05.192Z",
-      "source": "timeline_monitor",
-      "contentCategory": "error"
-    },
-    {
-      "id": "2025333372634234956",
-      "text": "@AstroCryptoGuru Is it a crash if something goes up 500 to 1000% and then drops 50% though?",
-      "author": {
-        "id": "4441279246",
-        "username": "IncomeSharks"
-      },
-      "public_metrics": {
-        "likes": 82,
-        "retweets": 0,
-        "replies": 13,
-        "quotes": 0,
-        "views": 11549
-      },
-      "url": "https://twitter.com/IncomeSharks/status/2025333372634234956",
-      "processed": true,
-      "addedAt": "2026-02-22T17:55:07.219Z",
-      "expiresAt": "2026-03-01T17:55:07.219Z",
-      "source": "timeline_monitor",
-      "contentCategory": "error"
-    },
-    {
-      "id": "2025549878651175050",
-      "text": "great night for Garcia. Still don't think he has the skills to beat Shakur if they ever meet like they are talking about but would definitely be a big money fight https://t.co/yDiERKOJab",
-      "author": {
-        "id": "1068237257977544704",
-        "username": "AltcoinSherpa"
-      },
-      "public_metrics": {
-        "likes": 14,
-        "retweets": 1,
-        "replies": 5,
-        "quotes": 0,
-        "views": 6579
-      },
-      "url": "https://twitter.com/AltcoinSherpa/status/2025549878651175050",
-      "processed": true,
-      "addedAt": "2026-02-22T17:55:21.120Z",
-      "expiresAt": "2026-03-01T17:55:21.120Z",
-      "source": "timeline_monitor",
-      "contentCategory": "error"
-    },
-    {
-      "id": "2025549039580631179",
-      "text": "Here was my past post on how I play this:\n\nhttps://t.co/UMXTZQYqMk",
-      "author": {
-        "id": "1068237257977544704",
-        "username": "AltcoinSherpa"
-      },
-      "public_metrics": {
-        "likes": 4,
-        "retweets": 1,
-        "replies": 1,
-        "quotes": 0,
-        "views": 3453
-      },
-      "url": "https://twitter.com/AltcoinSherpa/status/2025549039580631179",
-      "processed": true,
-      "addedAt": "2026-02-22T17:55:23.013Z",
-      "expiresAt": "2026-03-01T17:55:23.013Z",
-      "source": "timeline_monitor",
-      "contentCategory": "error"
-    },
-    {
-      "id": "2025548973625209082",
-      "text": "$PIPPIN twap flipped positive last night, super tilting and I've been monitoring this trade like a hawk; pinging my good friend Momocrypto every 8 hours. It's having a nice move today and there's going to be a time where they take this thing huge. I top blasted here; every wallet https://t.co/N8plDQAYTE",
-      "author": {
-        "id": "1068237257977544704",
-        "username": "AltcoinSherpa"
-      },
-      "public_metrics": {
-        "likes": 23,
-        "retweets": 5,
-        "replies": 10,
-        "quotes": 0,
-        "views": 3721
-      },
-      "url": "https://twitter.com/AltcoinSherpa/status/2025548973625209082",
-      "processed": true,
-      "addedAt": "2026-02-22T17:55:24.960Z",
-      "expiresAt": "2026-03-01T17:55:24.960Z",
-      "source": "timeline_monitor",
-      "contentCategory": "error"
-    },
-    {
-      "id": "2025543716916568065",
-      "text": "GM CT have a fantastic Sunday! https://t.co/84Bll1rjYd",
-      "author": {
-        "id": "1068237257977544704",
-        "username": "AltcoinSherpa"
-      },
-      "public_metrics": {
-        "likes": 51,
-        "retweets": 2,
-        "replies": 27,
-        "quotes": 1,
-        "views": 2987
-      },
-      "url": "https://twitter.com/AltcoinSherpa/status/2025543716916568065",
-      "processed": true,
-      "addedAt": "2026-02-22T17:55:27.123Z",
-      "expiresAt": "2026-03-01T17:55:27.123Z",
-      "source": "timeline_monitor",
-      "contentCategory": "error"
-    },
-    {
-      "id": "2025416655153537027",
-      "text": "boring market https://t.co/DLvvJUrHVi",
-      "author": {
-        "id": "1068237257977544704",
-        "username": "AltcoinSherpa"
-      },
-      "public_metrics": {
-        "likes": 47,
-        "retweets": 2,
-        "replies": 19,
-        "quotes": 2,
-        "views": 13788
-      },
-      "url": "https://twitter.com/AltcoinSherpa/status/2025416655153537027",
-      "processed": true,
-      "addedAt": "2026-02-22T17:55:28.970Z",
-      "expiresAt": "2026-03-01T17:55:28.970Z",
-      "source": "timeline_monitor",
-      "contentCategory": "error"
-    },
-    {
-      "id": "2025361000312995905",
-      "text": "Bitcoin is at the 200W EMA, high volume node, -50% from the highs...seems like a decent area to scale in for longer term positions https://t.co/GCKvjMDEDR",
-      "author": {
-        "id": "1068237257977544704",
-        "username": "AltcoinSherpa"
-      },
-      "public_metrics": {
-        "likes": 185,
-        "retweets": 17,
-        "replies": 31,
-        "quotes": 3,
-        "views": 12501
-      },
-      "url": "https://twitter.com/AltcoinSherpa/status/2025361000312995905",
-      "processed": true,
-      "addedAt": "2026-02-22T17:55:30.981Z",
-      "expiresAt": "2026-03-01T17:55:30.981Z",
-      "source": "timeline_monitor",
-      "contentCategory": "error"
-    },
-    {
-      "id": "2025306464009515043",
-      "text": "Took a few bets tonight, Houston vs. Arizona is just watching some NCAA basketball for top teams before March Madness. I don't really have a great idea on this one but watched Houston earlier and thought they looked pretty good. They also were finalists last year.\n\nI'm more https://t.co/earRYGBUlR",
-      "author": {
-        "id": "1068237257977544704",
-        "username": "AltcoinSherpa"
-      },
-      "public_metrics": {
-        "likes": 20,
-        "retweets": 0,
-        "replies": 2,
-        "quotes": 0,
-        "views": 3780
-      },
-      "url": "https://twitter.com/AltcoinSherpa/status/2025306464009515043",
-      "processed": true,
-      "addedAt": "2026-02-22T17:55:33.356Z",
-      "expiresAt": "2026-03-01T17:55:33.356Z",
-      "source": "timeline_monitor",
-      "contentCategory": "error"
-    },
-    {
-      "id": "2025305668597522443",
-      "text": "$SOL I expect it to bounce around here. If it doesn't, it's gulag time down to $50 https://t.co/3sTywlbOPM",
-      "author": {
-        "id": "1068237257977544704",
-        "username": "AltcoinSherpa"
-      },
-      "public_metrics": {
-        "likes": 240,
-        "retweets": 32,
-        "replies": 33,
-        "quotes": 5,
-        "views": 14497
-      },
-      "url": "https://twitter.com/AltcoinSherpa/status/2025305668597522443",
-      "processed": true,
-      "addedAt": "2026-02-22T17:55:34.985Z",
-      "expiresAt": "2026-03-01T17:55:34.985Z",
-      "source": "timeline_monitor",
-      "contentCategory": "error"
-    },
-    {
-      "id": "2025226206447091731",
-      "text": "@pierre_crypt0 Mine is coming in a few weeks, already ordered",
-      "author": {
-        "id": "1068237257977544704",
-        "username": "AltcoinSherpa"
-      },
-      "public_metrics": {
-        "likes": 7,
-        "retweets": 0,
-        "replies": 1,
-        "quotes": 0,
-        "views": 1241
-      },
-      "url": "https://twitter.com/AltcoinSherpa/status/2025226206447091731",
-      "processed": true,
-      "addedAt": "2026-02-22T17:55:36.987Z",
-      "expiresAt": "2026-03-01T17:55:36.987Z",
-      "source": "timeline_monitor",
-      "contentCategory": "error"
-    },
-    {
-      "id": "2025216107859071389",
-      "text": "Another low vol boring day, go touch grass",
-      "author": {
-        "id": "1068237257977544704",
-        "username": "AltcoinSherpa"
-      },
-      "public_metrics": {
-        "likes": 62,
-        "retweets": 6,
-        "replies": 27,
-        "quotes": 1,
-        "views": 4804
-      },
-      "url": "https://twitter.com/AltcoinSherpa/status/2025216107859071389",
-      "processed": true,
-      "addedAt": "2026-02-22T17:55:38.967Z",
-      "expiresAt": "2026-03-01T17:55:38.967Z",
-      "source": "timeline_monitor",
-      "contentCategory": "error"
-    },
-    {
-      "id": "2024992484921668032",
-      "text": "\"FTX is the shadiest bankruptcy I have ever witnessed.\" — @MrPurple_DJ\n\nMr. Purple has been documenting the work of the bankruptcy lawyers for 3+ years.\n\nHe's super responsive to people who want to know details. https://t.co/RTOhrN17S3 https://t.co/bmpslsddjF",
-      "author": {
-        "id": "1110877798820777986",
-        "username": "SBF_FTX"
-      },
-      "public_metrics": {
-        "likes": 251,
-        "retweets": 47,
-        "replies": 117,
-        "quotes": 7,
-        "views": 77212
-      },
-      "url": "https://twitter.com/SBF_FTX/status/2024992484921668032",
-      "processed": true,
-      "addedAt": "2026-02-22T17:55:41.044Z",
-      "expiresAt": "2026-03-01T17:55:41.044Z",
-      "source": "timeline_monitor",
-      "contentCategory": "error"
-    },
-    {
-      "id": "2024840973960806628",
-      "text": "At least, if there were polycules/orgies, I wasn't invited.",
-      "author": {
-        "id": "1110877798820777986",
-        "username": "SBF_FTX"
-      },
-      "public_metrics": {
-        "likes": 107,
-        "retweets": 10,
-        "replies": 46,
-        "quotes": 13,
-        "views": 22632
-      },
-      "url": "https://twitter.com/SBF_FTX/status/2024840973960806628",
-      "processed": true,
-      "addedAt": "2026-02-22T17:55:42.970Z",
-      "expiresAt": "2026-03-01T17:55:42.970Z",
-      "source": "timeline_monitor",
-      "contentCategory": "error"
-    },
-    {
-      "id": "2024839454620369266",
-      "text": "10) Myth: Something about campaign contributions and Ukraine and Dems and lizard people\n\nTruth: The only things private were my contributions to Republicans https://t.co/aUy7yWJAYh",
-      "author": {
-        "id": "1110877798820777986",
-        "username": "SBF_FTX"
-      },
-      "public_metrics": {
-        "likes": 82,
-        "retweets": 15,
-        "replies": 40,
-        "quotes": 2,
-        "views": 19563
-      },
-      "url": "https://twitter.com/SBF_FTX/status/2024839454620369266",
-      "processed": true,
-      "addedAt": "2026-02-22T17:55:44.984Z",
-      "expiresAt": "2026-03-01T17:55:44.984Z",
-      "source": "timeline_monitor",
-      "contentCategory": "error"
-    },
-    {
-      "id": "2024839440095379619",
-      "text": "9) Myth: After Biden's SEC throttled crypto &amp; Biden's DOJ railroaded me, I remained center-left\n\nTruth: By late 2022, I was a Republican &amp; giving more to the Right than the Left https://t.co/5kWLoiL1MQ",
-      "author": {
-        "id": "1110877798820777986",
-        "username": "SBF_FTX"
-      },
-      "public_metrics": {
-        "likes": 69,
-        "retweets": 19,
-        "replies": 15,
-        "quotes": 2,
-        "views": 24037
-      },
-      "url": "https://twitter.com/SBF_FTX/status/2024839440095379619",
-      "processed": true,
-      "addedAt": "2026-02-22T17:55:46.978Z",
-      "expiresAt": "2026-03-01T17:55:46.978Z",
-      "source": "timeline_monitor",
-      "contentCategory": "error"
-    },
-    {
-      "id": "2024839433896251822",
-      "text": "8) Myth: Kaplan revoked my bail for trying to intimidate witnesses\n\nTruth: Kaplan revoked my bail for exercising my 1st Amendment rights &amp; for trying to help the Debtors\n\nThe ‘incidents’:\n\n- I referenced messages from Caroline to a reporter who apparently already knew about them. https://t.co/s8A5Qlkbl2",
-      "author": {
-        "id": "1110877798820777986",
-        "username": "SBF_FTX"
-      },
-      "public_metrics": {
-        "likes": 67,
-        "retweets": 20,
-        "replies": 5,
-        "quotes": 0,
-        "views": 17387
-      },
-      "url": "https://twitter.com/SBF_FTX/status/2024839433896251822",
-      "processed": true,
-      "addedAt": "2026-02-22T17:55:48.973Z",
-      "expiresAt": "2026-03-01T17:55:48.973Z",
-      "source": "timeline_monitor",
-      "contentCategory": "error"
-    },
-    {
-      "id": "2024839428217209325",
-      "text": "7) Myth: I had a fair trial\n\nTruth: The deck was stacked against me in many ways\n\nOnce Biden's DOJ and the Debtors had control of FTX, they had control of the narrative, the documentary evidence, and the witnesses. Potential defense witnesses were silenced with media attacks, https://t.co/WXYaZmq0tK",
-      "author": {
-        "id": "1110877798820777986",
-        "username": "SBF_FTX"
-      },
-      "public_metrics": {
-        "likes": 73,
-        "retweets": 20,
-        "replies": 7,
-        "quotes": 0,
-        "views": 17906
-      },
-      "url": "https://twitter.com/SBF_FTX/status/2024839428217209325",
-      "processed": true,
-      "addedAt": "2026-02-22T17:55:50.966Z",
-      "expiresAt": "2026-03-01T17:55:50.966Z",
-      "source": "timeline_monitor",
-      "contentCategory": "error"
-    },
-    {
-      "id": "2024839422454231095",
-      "text": "6) Myth: I made a backdoor to secretly steal funds\n\nTruth: There was no 'backdoor'\n\nAccount features all had legit purposes.\n\nThey were never used to let Alameda borrow more from other customers than it was lending to them.\n\nhttps://t.co/aY0gJO3uRo\nhttps://t.co/V9tieWa00W https://t.co/Udk4vYx8TP",
-      "author": {
-        "id": "1110877798820777986",
-        "username": "SBF_FTX"
-      },
-      "public_metrics": {
-        "likes": 62,
-        "retweets": 12,
-        "replies": 7,
-        "quotes": 0,
-        "views": 18753
-      },
-      "url": "https://twitter.com/SBF_FTX/status/2024839422454231095",
-      "processed": true,
-      "addedAt": "2026-02-22T17:55:52.977Z",
-      "expiresAt": "2026-03-01T17:55:52.977Z",
-      "source": "timeline_monitor",
-      "contentCategory": "error"
-    },
-    {
-      "id": "2024445456701440451",
-      "text": "@mark_cullen I honestly think this bear market will be longer than others, and different. Different because some alts might be reaching cycle bottoms, while BTC has probably reached a cycle top.",
-      "author": {
-        "id": "988796804446769153",
-        "username": "CryptoCapo_"
-      },
-      "public_metrics": {
-        "likes": 84,
-        "retweets": 4,
-        "replies": 0,
-        "quotes": 1,
-        "views": 11512
-      },
-      "url": "https://twitter.com/CryptoCapo_/status/2024445456701440451",
-      "processed": true,
-      "addedAt": "2026-02-22T17:55:55.014Z",
-      "expiresAt": "2026-03-01T17:55:55.014Z",
-      "source": "timeline_monitor",
-      "contentCategory": "error"
-    },
-    {
-      "id": "2024440472253444328",
-      "text": "I understand current market conditions aren't great for everyone, but we try to make the best out of it.\n\nBased on my analysis, and as said before, I'm bullish. A local bottom should be forming here, and with all the liquidity building up above, a strong short squeeze is likely.",
-      "author": {
-        "id": "988796804446769153",
-        "username": "CryptoCapo_"
-      },
-      "public_metrics": {
-        "likes": 1338,
-        "retweets": 72,
-        "replies": 4,
-        "quotes": 45,
-        "views": 162891
-      },
-      "url": "https://twitter.com/CryptoCapo_/status/2024440472253444328",
-      "processed": true,
-      "addedAt": "2026-02-22T17:55:57.086Z",
-      "expiresAt": "2026-03-01T17:55:57.086Z",
-      "source": "timeline_monitor",
-      "contentCategory": "error"
-    },
-    {
-      "id": "2019726750062936160",
-      "text": "The algos have switched.\n\nshortsqueeze.exe https://t.co/hi0972olyA",
-      "author": {
-        "id": "988796804446769153",
-        "username": "CryptoCapo_"
-      },
-      "public_metrics": {
-        "likes": 152,
-        "retweets": 10,
-        "replies": 1,
-        "quotes": 4,
-        "views": 64155
-      },
-      "url": "https://twitter.com/CryptoCapo_/status/2019726750062936160",
-      "processed": true,
-      "addedAt": "2026-02-22T17:55:59.082Z",
-      "expiresAt": "2026-03-01T17:55:59.082Z",
-      "source": "timeline_monitor",
-      "contentCategory": "error"
-    },
-    {
-      "id": "2019703351148253491",
-      "text": "@Crypto_Chase $85k-90k would be the first resistance yes, but $100k-110k could be the second, which would make it even a better short squeeze because not even bulls are expecting that now.\n\nIn any case, I agree we see bearish continuation after that.",
-      "author": {
-        "id": "988796804446769153",
-        "username": "CryptoCapo_"
-      },
-      "public_metrics": {
-        "likes": 89,
-        "retweets": 3,
-        "replies": 0,
-        "quotes": 1,
-        "views": 8863
-      },
-      "url": "https://twitter.com/CryptoCapo_/status/2019703351148253491",
-      "processed": true,
-      "addedAt": "2026-02-22T17:56:01.050Z",
-      "expiresAt": "2026-03-01T17:56:01.050Z",
-      "source": "timeline_monitor",
-      "contentCategory": "error"
-    },
-    {
-      "id": "2019434869001195948",
-      "text": "$BTC\n\nMain support zone reached. Confluence of OB + 2021 ATHs (November and April) + 2024 ATH. Most alts also at HTF support. \n\nLots of liquidity above, and shorts are aggressive here. Sentiment can't be more negative.\n\nThere's no better time for a strong bounce (short squeeze) https://t.co/1n6Sr7gjpi",
-      "author": {
-        "id": "988796804446769153",
-        "username": "CryptoCapo_"
-      },
-      "public_metrics": {
-        "likes": 3107,
-        "retweets": 316,
-        "replies": 4,
-        "quotes": 130,
-        "views": 470237
-      },
-      "url": "https://twitter.com/CryptoCapo_/status/2019434869001195948",
-      "processed": true,
-      "addedAt": "2026-02-22T17:56:02.984Z",
-      "expiresAt": "2026-03-01T17:56:02.984Z",
-      "source": "timeline_monitor",
-      "contentCategory": "error"
-    },
-    {
-      "id": "2017893883439419474",
-      "text": "Everything is lining up for a massive short squeeze.",
-      "author": {
-        "id": "988796804446769153",
-        "username": "CryptoCapo_"
-      },
-      "public_metrics": {
-        "likes": 3335,
-        "retweets": 209,
-        "replies": 4,
-        "quotes": 154,
-        "views": 666690
-      },
-      "url": "https://twitter.com/CryptoCapo_/status/2017893883439419474",
-      "processed": true,
-      "addedAt": "2026-02-22T17:56:05.082Z",
-      "expiresAt": "2026-03-01T17:56:05.082Z",
-      "source": "timeline_monitor",
-      "contentCategory": "error"
-    },
-    {
-      "id": "2017131068839657622",
-      "text": "Often, this is where the majority panics and turns bearish, and the market finds a local bottom. https://t.co/XQiF8PCJ0k",
-      "author": {
-        "id": "988796804446769153",
-        "username": "CryptoCapo_"
-      },
-      "public_metrics": {
-        "likes": 2088,
-        "retweets": 144,
-        "replies": 2,
-        "quotes": 58,
-        "views": 234030
-      },
-      "url": "https://twitter.com/CryptoCapo_/status/2017131068839657622",
-      "processed": true,
-      "addedAt": "2026-02-22T17:56:06.993Z",
-      "expiresAt": "2026-03-01T17:56:06.993Z",
-      "source": "timeline_monitor",
-      "contentCategory": "error"
-    },
-    {
-      "id": "2013902603122307370",
-      "text": "$XMR update\n\nPerfect retest (S/R flip) after a full week of waiting (context in the second image)\n\nI'm adding more here. Expecting $1,000+ next. https://t.co/QdY709IAeV",
-      "author": {
-        "id": "988796804446769153",
-        "username": "CryptoCapo_"
-      },
-      "public_metrics": {
-        "likes": 222,
-        "retweets": 15,
-        "replies": 1,
-        "quotes": 2,
-        "views": 44120
-      },
-      "url": "https://twitter.com/CryptoCapo_/status/2013902603122307370",
-      "processed": true,
-      "addedAt": "2026-02-22T17:56:08.984Z",
-      "expiresAt": "2026-03-01T17:56:08.984Z",
-      "source": "timeline_monitor",
-      "contentCategory": "error"
-    },
-    {
-      "id": "2013537734476935348",
-      "text": "$BTC\n\nSupport zone here. \n\nHold this and $100k levels should be next.\n\nThis could be an important higher low for the entire crypto market, before strong bullish continuation. https://t.co/IzR8HMr0wb",
-      "author": {
-        "id": "988796804446769153",
-        "username": "CryptoCapo_"
-      },
-      "public_metrics": {
-        "likes": 2415,
-        "retweets": 267,
-        "replies": 2,
-        "quotes": 152,
-        "views": 538067
-      },
-      "url": "https://twitter.com/CryptoCapo_/status/2013537734476935348",
-      "processed": true,
-      "addedAt": "2026-02-22T17:56:11.005Z",
-      "expiresAt": "2026-03-01T17:56:11.005Z",
-      "source": "timeline_monitor",
-      "contentCategory": "error"
-    },
-    {
-      "id": "2010641761597554858",
-      "text": "$XMR just reached a new ATH.\n\nSuch a strong breakout with volume.\n\nSame as with #Gold and #Silver, short-term corrections can happen, but this should go much higher. https://t.co/ktnBFbr3y5",
-      "author": {
-        "id": "988796804446769153",
-        "username": "CryptoCapo_"
-      },
-      "public_metrics": {
-        "likes": 240,
-        "retweets": 20,
-        "replies": 2,
-        "quotes": 2,
-        "views": 71243
-      },
-      "url": "https://twitter.com/CryptoCapo_/status/2010641761597554858",
-      "processed": true,
-      "addedAt": "2026-02-22T17:56:13.020Z",
-      "expiresAt": "2026-03-01T17:56:13.020Z",
-      "source": "timeline_monitor",
-      "contentCategory": "error"
-    },
-    {
       "id": "2025622124002447431",
       "text": "@Nebraskangooner those look like chicken nuggets kek",
       "author": {
@@ -1002,7 +15,7 @@
         "views": 1860
       },
       "url": "https://twitter.com/AltcoinSherpa/status/2025622124002447431",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-02-22T22:09:49.144Z",
       "expiresAt": "2026-03-01T22:09:49.144Z",
       "source": "timeline_monitor",
@@ -1023,7 +36,7 @@
         "views": 441
       },
       "url": "https://twitter.com/habibivc/status/2025618397367579121",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-02-22T22:10:03.918Z",
       "expiresAt": "2026-03-01T22:10:03.919Z",
       "source": "timeline_monitor",
@@ -1044,7 +57,7 @@
         "views": 325
       },
       "url": "https://twitter.com/habibivc/status/2025612311688311120",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-02-22T22:10:05.879Z",
       "expiresAt": "2026-03-01T22:10:05.879Z",
       "source": "timeline_monitor",
@@ -1065,7 +78,7 @@
         "views": 421
       },
       "url": "https://twitter.com/habibivc/status/2025574668267040938",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-02-22T22:10:07.901Z",
       "expiresAt": "2026-03-01T22:10:07.902Z",
       "source": "timeline_monitor",
@@ -1086,7 +99,7 @@
         "views": 928
       },
       "url": "https://twitter.com/habibivc/status/2025565415682809971",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-02-22T22:10:09.879Z",
       "expiresAt": "2026-03-01T22:10:09.879Z",
       "source": "timeline_monitor",
@@ -1107,7 +120,7 @@
         "views": 507
       },
       "url": "https://twitter.com/habibivc/status/2025557381472510292",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-02-22T22:10:11.889Z",
       "expiresAt": "2026-03-01T22:10:11.889Z",
       "source": "timeline_monitor",
@@ -1128,7 +141,7 @@
         "views": 548
       },
       "url": "https://twitter.com/habibivc/status/2025458391187902677",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-02-22T22:10:13.865Z",
       "expiresAt": "2026-03-01T22:10:13.865Z",
       "source": "timeline_monitor",
@@ -1149,7 +162,7 @@
         "views": 1297
       },
       "url": "https://twitter.com/habibivc/status/2025451443600199859",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-02-22T22:10:15.901Z",
       "expiresAt": "2026-03-01T22:10:15.901Z",
       "source": "timeline_monitor",
@@ -1170,7 +183,7 @@
         "views": 26
       },
       "url": "https://twitter.com/habibivc/status/2025336621185339787",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-02-22T22:10:17.869Z",
       "expiresAt": "2026-03-01T22:10:17.869Z",
       "source": "timeline_monitor",
@@ -1191,7 +204,7 @@
         "views": 535
       },
       "url": "https://twitter.com/habibivc/status/2025309797612999143",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-02-22T22:10:19.891Z",
       "expiresAt": "2026-03-01T22:10:19.891Z",
       "source": "timeline_monitor",
@@ -1212,7 +225,7 @@
         "views": 363
       },
       "url": "https://twitter.com/habibivc/status/2025173956370526313",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-02-22T22:10:21.878Z",
       "expiresAt": "2026-03-01T22:10:21.878Z",
       "source": "timeline_monitor",
@@ -1233,7 +246,7 @@
         "views": 7763
       },
       "url": "https://twitter.com/Bitcoinhabebe/status/2025587682861084749",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-02-22T22:10:23.876Z",
       "expiresAt": "2026-03-01T22:10:23.876Z",
       "source": "timeline_monitor",
@@ -1254,7 +267,7 @@
         "views": 6631
       },
       "url": "https://twitter.com/Bitcoinhabebe/status/2025572227475701925",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-02-22T22:10:25.906Z",
       "expiresAt": "2026-03-01T22:10:25.906Z",
       "source": "timeline_monitor",
@@ -1275,7 +288,7 @@
         "views": 6364
       },
       "url": "https://twitter.com/Bitcoinhabebe/status/2025525662522429722",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-02-22T22:10:27.904Z",
       "expiresAt": "2026-03-01T22:10:27.904Z",
       "source": "timeline_monitor",
