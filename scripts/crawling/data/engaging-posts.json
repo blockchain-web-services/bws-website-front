@@ -629,13 +629,1021 @@
       "expiresAt": "2026-03-02T07:40:07.943Z",
       "source": "timeline_monitor",
       "contentCategory": "error"
+    },
+    {
+      "id": "2025971597337846130",
+      "text": "@Nebraskangooner @SliceApp Great place to be. A community for people that want learn and take trading seriously, not the non stop rage bait and distracting AI slop that has made X difficult to be on.",
+      "author": {
+        "id": "4441279246",
+        "username": "IncomeSharks"
+      },
+      "public_metrics": {
+        "likes": 14,
+        "retweets": 0,
+        "replies": 2,
+        "quotes": 0,
+        "views": 2557
+      },
+      "url": "https://twitter.com/IncomeSharks/status/2025971597337846130",
+      "processed": false,
+      "addedAt": "2026-02-23T18:08:28.286Z",
+      "expiresAt": "2026-03-02T18:08:28.286Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2025971008524673416",
+      "text": "@SatoshiFlipper Holding lots of hedges and some shorts which gives me cash whenever that relief rally starts. That way I don't need to pray for it to start, I wait for it to start then jump back in.",
+      "author": {
+        "id": "4441279246",
+        "username": "IncomeSharks"
+      },
+      "public_metrics": {
+        "likes": 35,
+        "retweets": 0,
+        "replies": 3,
+        "quotes": 0,
+        "views": 3701
+      },
+      "url": "https://twitter.com/IncomeSharks/status/2025971008524673416",
+      "processed": false,
+      "addedAt": "2026-02-23T18:08:30.256Z",
+      "expiresAt": "2026-03-02T18:08:30.256Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2025958237103964580",
+      "text": "@FenoXBT He crashes out on every post. Then goes and has meetings then will later post that it's been figured out.",
+      "author": {
+        "id": "4441279246",
+        "username": "IncomeSharks"
+      },
+      "public_metrics": {
+        "likes": 51,
+        "retweets": 2,
+        "replies": 11,
+        "quotes": 0,
+        "views": 4443
+      },
+      "url": "https://twitter.com/IncomeSharks/status/2025958237103964580",
+      "processed": false,
+      "addedAt": "2026-02-23T18:08:32.232Z",
+      "expiresAt": "2026-03-02T18:08:32.232Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2025957216017379728",
+      "text": "@Kalshi And he did this all without shorting. Just buy low, hold, and take profits high and then wait to get back in.",
+      "author": {
+        "id": "4441279246",
+        "username": "IncomeSharks"
+      },
+      "public_metrics": {
+        "likes": 90,
+        "retweets": 0,
+        "replies": 3,
+        "quotes": 0,
+        "views": 6834
+      },
+      "url": "https://twitter.com/IncomeSharks/status/2025957216017379728",
+      "processed": false,
+      "addedAt": "2026-02-23T18:08:34.228Z",
+      "expiresAt": "2026-03-02T18:08:34.228Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2025956761476436355",
+      "text": "@SatoshiFlipper @DonWedge X encourages accounts to steal content now...",
+      "author": {
+        "id": "4441279246",
+        "username": "IncomeSharks"
+      },
+      "public_metrics": {
+        "likes": 6,
+        "retweets": 1,
+        "replies": 1,
+        "quotes": 0,
+        "views": 650
+      },
+      "url": "https://twitter.com/IncomeSharks/status/2025956761476436355",
+      "processed": false,
+      "addedAt": "2026-02-23T18:08:36.245Z",
+      "expiresAt": "2026-03-02T18:08:36.245Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2025956162676592882",
+      "text": "@zachxbt Does it rhyme with Dump.done?",
+      "author": {
+        "id": "4441279246",
+        "username": "IncomeSharks"
+      },
+      "public_metrics": {
+        "likes": 103,
+        "retweets": 0,
+        "replies": 12,
+        "quotes": 0,
+        "views": 10902
+      },
+      "url": "https://twitter.com/IncomeSharks/status/2025956162676592882",
+      "processed": false,
+      "addedAt": "2026-02-23T18:08:38.247Z",
+      "expiresAt": "2026-03-02T18:08:38.247Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2025794126621598029",
+      "text": "@scottmelker You can close positions early, target inefficient price swings, wait for mispriced odds, and you are trading against others and not a house. 99% gamble on it like it's a casino, but you can actually trade with an edge and outperform. It's like if casinos had no house advantage",
+      "author": {
+        "id": "4441279246",
+        "username": "IncomeSharks"
+      },
+      "public_metrics": {
+        "likes": 62,
+        "retweets": 0,
+        "replies": 3,
+        "quotes": 0,
+        "views": 8944
+      },
+      "url": "https://twitter.com/IncomeSharks/status/2025794126621598029",
+      "processed": false,
+      "addedAt": "2026-02-23T18:08:40.224Z",
+      "expiresAt": "2026-03-02T18:08:40.224Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2025793198464082295",
+      "text": "@Nebraskangooner And on X you'll see the gamblers post winning screenshots at the peaks and never update when it's all gone. https://t.co/qNbj1HulLX",
+      "author": {
+        "id": "4441279246",
+        "username": "IncomeSharks"
+      },
+      "public_metrics": {
+        "likes": 69,
+        "retweets": 1,
+        "replies": 8,
+        "quotes": 0,
+        "views": 8099
+      },
+      "url": "https://twitter.com/IncomeSharks/status/2025793198464082295",
+      "processed": false,
+      "addedAt": "2026-02-23T18:08:42.313Z",
+      "expiresAt": "2026-03-02T18:08:42.313Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2025714565531758797",
+      "text": "@DotComParker Wish the algo pushed these actual small traders more. Not all the engament farming clowns that intentionally lie and post rage bait so they can make their $500 a month revenue providing zero value.",
+      "author": {
+        "id": "4441279246",
+        "username": "IncomeSharks"
+      },
+      "public_metrics": {
+        "likes": 266,
+        "retweets": 4,
+        "replies": 19,
+        "quotes": 0,
+        "views": 18277
+      },
+      "url": "https://twitter.com/IncomeSharks/status/2025714565531758797",
+      "processed": false,
+      "addedAt": "2026-02-23T18:08:44.243Z",
+      "expiresAt": "2026-03-02T18:08:44.243Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2025387307197673874",
+      "text": "@Tradermayne @OrderBookShow Keep it going, love the show",
+      "author": {
+        "id": "4441279246",
+        "username": "IncomeSharks"
+      },
+      "public_metrics": {
+        "likes": 16,
+        "retweets": 1,
+        "replies": 2,
+        "quotes": 0,
+        "views": 7679
+      },
+      "url": "https://twitter.com/IncomeSharks/status/2025387307197673874",
+      "processed": false,
+      "addedAt": "2026-02-23T18:08:46.297Z",
+      "expiresAt": "2026-03-02T18:08:46.297Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2025985121640128848",
+      "text": "in the past you had fairly reliable alt/btc rotations where you could comfortably buy altcoins at really low prices and then flip to btc after they have gigantic runs. those days of predictability are much harder now. nobody knows when alts run and which alts actually outperform",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "likes": 33,
+        "retweets": 1,
+        "replies": 6,
+        "quotes": 0,
+        "views": 2448
+      },
+      "url": "https://twitter.com/AltcoinSherpa/status/2025985121640128848",
+      "processed": false,
+      "addedAt": "2026-02-23T18:09:01.374Z",
+      "expiresAt": "2026-03-02T18:09:01.374Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2025979470058840465",
+      "text": "I avoided cexes because it's hard to tell what's going on internally but those are also obvious candidates. it's just harder to track onchain in these situations imo. but the potential companies here are prob just any top cex: \n\nBybit\nBinance\nCoinbase\nRobinhood https://t.co/stlveKpQR2",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "likes": 18,
+        "retweets": 1,
+        "replies": 4,
+        "quotes": 0,
+        "views": 3640
+      },
+      "url": "https://twitter.com/AltcoinSherpa/status/2025979470058840465",
+      "processed": false,
+      "addedAt": "2026-02-23T18:09:03.369Z",
+      "expiresAt": "2026-03-02T18:09:03.369Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2025977302232773029",
+      "text": "selling it all bc of a Citrini article",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "likes": 47,
+        "retweets": 0,
+        "replies": 6,
+        "quotes": 0,
+        "views": 4278
+      },
+      "url": "https://twitter.com/AltcoinSherpa/status/2025977302232773029",
+      "processed": false,
+      "addedAt": "2026-02-23T18:09:05.268Z",
+      "expiresAt": "2026-03-02T18:09:05.268Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2025936250507583758",
+      "text": "$BTC good first reaction from that low but let's see what the US open brings. Honestly not super excited to bid right now and would rather just buy it higher if we're talking about actively trading. Accumulating in this area is still a fine plan though imo https://t.co/WVrb7mLru6",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "likes": 68,
+        "retweets": 4,
+        "replies": 9,
+        "quotes": 0,
+        "views": 5131
+      },
+      "url": "https://twitter.com/AltcoinSherpa/status/2025936250507583758",
+      "processed": false,
+      "addedAt": "2026-02-23T18:09:07.190Z",
+      "expiresAt": "2026-03-02T18:09:07.190Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2025935914464137665",
+      "text": "imo its 1 of these companies:\n\nhype\npump\nena\nmoonshot\nterminal like axiom\nWLFI\npolymarket https://t.co/Gqxp5L3x6I",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "likes": 233,
+        "retweets": 4,
+        "replies": 83,
+        "quotes": 1,
+        "views": 53998
+      },
+      "url": "https://twitter.com/AltcoinSherpa/status/2025935914464137665",
+      "processed": false,
+      "addedAt": "2026-02-23T18:09:09.216Z",
+      "expiresAt": "2026-03-02T18:09:09.216Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2025933747292377552",
+      "text": "Honestly looking a bit bleak on $HYPE the last week. The recent hype run up had a lot of big catalysts: big funds buying, metals trading strongly, big selling stopped from that whale, etc. But entire market is bleeding down and hyperliquid is no exception. Still the best project https://t.co/NCvVVb99UU https://t.co/rk6JBAcbUw",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "likes": 80,
+        "retweets": 6,
+        "replies": 10,
+        "quotes": 0,
+        "views": 12510
+      },
+      "url": "https://twitter.com/AltcoinSherpa/status/2025933747292377552",
+      "processed": false,
+      "addedAt": "2026-02-23T18:09:11.201Z",
+      "expiresAt": "2026-03-02T18:09:11.201Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2025905683506274592",
+      "text": "@Pickle_cRypto ive stayed away from this ever since Monad insiders buttfcked me badly. no point in competing in these markets w. 0 edge",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "likes": 14,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 1491
+      },
+      "url": "https://twitter.com/AltcoinSherpa/status/2025905683506274592",
+      "processed": false,
+      "addedAt": "2026-02-23T18:09:13.210Z",
+      "expiresAt": "2026-03-02T18:09:13.210Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2025903882283466760",
+      "text": "crap, only bought half size for $PIPPIN with the expectation that I'd get a chance to buy more on a shakeout but I think I'm going to end up just top blasting more. I think they're sized on perps given that down move recently. Still, nice moves https://t.co/OsTPzNZtdg",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "likes": 29,
+        "retweets": 4,
+        "replies": 21,
+        "quotes": 2,
+        "views": 7636
+      },
+      "url": "https://twitter.com/AltcoinSherpa/status/2025903882283466760",
+      "processed": false,
+      "addedAt": "2026-02-23T18:09:15.224Z",
+      "expiresAt": "2026-03-02T18:09:15.224Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2025899939562131467",
+      "text": "GM have a great Monday today! Let's crush this week https://t.co/Lxie6zRCTG",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "likes": 34,
+        "retweets": 1,
+        "replies": 21,
+        "quotes": 2,
+        "views": 2904
+      },
+      "url": "https://twitter.com/AltcoinSherpa/status/2025899939562131467",
+      "processed": false,
+      "addedAt": "2026-02-23T18:09:17.318Z",
+      "expiresAt": "2026-03-02T18:09:17.318Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2024775779129704516",
+      "text": "@RigbyDEV @hotpot_dao Haven’t played since 2022",
+      "author": {
+        "id": "2259434528",
+        "username": "cobie"
+      },
+      "public_metrics": {
+        "likes": 8,
+        "retweets": 0,
+        "replies": 8,
+        "quotes": 0,
+        "views": 1898
+      },
+      "url": "https://twitter.com/cobie/status/2024775779129704516",
+      "processed": false,
+      "addedAt": "2026-02-23T18:09:30.900Z",
+      "expiresAt": "2026-03-02T18:09:30.900Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2024775526569660820",
+      "text": "@hotpot_dao Hard road? https://t.co/0C4boj6GvQ",
+      "author": {
+        "id": "2259434528",
+        "username": "cobie"
+      },
+      "public_metrics": {
+        "likes": 221,
+        "retweets": 2,
+        "replies": 13,
+        "quotes": 1,
+        "views": 10502
+      },
+      "url": "https://twitter.com/cobie/status/2024775526569660820",
+      "processed": false,
+      "addedAt": "2026-02-23T18:09:32.845Z",
+      "expiresAt": "2026-03-02T18:09:32.845Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2024674193573310975",
+      "text": "Oh?",
+      "author": {
+        "id": "2259434528",
+        "username": "cobie"
+      },
+      "public_metrics": {
+        "likes": 208,
+        "retweets": 15,
+        "replies": 64,
+        "quotes": 5,
+        "views": 18430
+      },
+      "url": "https://twitter.com/cobie/status/2024674193573310975",
+      "processed": false,
+      "addedAt": "2026-02-23T18:09:34.931Z",
+      "expiresAt": "2026-03-02T18:09:34.931Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2024631091223560421",
+      "text": "@Fibonathicc @Thomadsen @RangNFA @Lamar0985056592 Nope https://t.co/hFxZzS18fz",
+      "author": {
+        "id": "2259434528",
+        "username": "cobie"
+      },
+      "public_metrics": {
+        "likes": 31,
+        "retweets": 2,
+        "replies": 30,
+        "quotes": 3,
+        "views": 4175
+      },
+      "url": "https://twitter.com/cobie/status/2024631091223560421",
+      "processed": false,
+      "addedAt": "2026-02-23T18:09:36.890Z",
+      "expiresAt": "2026-03-02T18:09:36.890Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2024630351805464895",
+      "text": "@gorillapanics @Thomadsen @RangNFA @Lamar0985056592 Eh I think nobody with a brain really cares",
+      "author": {
+        "id": "2259434528",
+        "username": "cobie"
+      },
+      "public_metrics": {
+        "likes": 19,
+        "retweets": 0,
+        "replies": 19,
+        "quotes": 0,
+        "views": 1796
+      },
+      "url": "https://twitter.com/cobie/status/2024630351805464895",
+      "processed": false,
+      "addedAt": "2026-02-23T18:09:38.859Z",
+      "expiresAt": "2026-03-02T18:09:38.859Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2024630273497817247",
+      "text": "@PoorGoat_ @Thomadsen @RangNFA @Lamar0985056592 No, please see a neuroscientist asap",
+      "author": {
+        "id": "2259434528",
+        "username": "cobie"
+      },
+      "public_metrics": {
+        "likes": 26,
+        "retweets": 2,
+        "replies": 18,
+        "quotes": 1,
+        "views": 2219
+      },
+      "url": "https://twitter.com/cobie/status/2024630273497817247",
+      "processed": false,
+      "addedAt": "2026-02-23T18:09:40.922Z",
+      "expiresAt": "2026-03-02T18:09:40.922Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2024629993498624326",
+      "text": "@johnnyb0y111 @Fibonathicc @RangNFA @Lamar0985056592 @a1lon9 No",
+      "author": {
+        "id": "2259434528",
+        "username": "cobie"
+      },
+      "public_metrics": {
+        "likes": 8,
+        "retweets": 0,
+        "replies": 15,
+        "quotes": 0,
+        "views": 1327
+      },
+      "url": "https://twitter.com/cobie/status/2024629993498624326",
+      "processed": false,
+      "addedAt": "2026-02-23T18:09:42.851Z",
+      "expiresAt": "2026-03-02T18:09:42.851Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2024629900334727347",
+      "text": "@Thomadsen @RangNFA @Lamar0985056592 I have no idea, I don’t use pumpfun or care really",
+      "author": {
+        "id": "2259434528",
+        "username": "cobie"
+      },
+      "public_metrics": {
+        "likes": 18,
+        "retweets": 1,
+        "replies": 13,
+        "quotes": 0,
+        "views": 2091
+      },
+      "url": "https://twitter.com/cobie/status/2024629900334727347",
+      "processed": false,
+      "addedAt": "2026-02-23T18:09:44.856Z",
+      "expiresAt": "2026-03-02T18:09:44.856Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2024628655654109689",
+      "text": "@Thomadsen @RangNFA @Lamar0985056592 Not lying. Pumpfun confirmed it: https://t.co/0DZ2vlbRAC",
+      "author": {
+        "id": "2259434528",
+        "username": "cobie"
+      },
+      "public_metrics": {
+        "likes": 14,
+        "retweets": 1,
+        "replies": 17,
+        "quotes": 0,
+        "views": 2512
+      },
+      "url": "https://twitter.com/cobie/status/2024628655654109689",
+      "processed": false,
+      "addedAt": "2026-02-23T18:09:46.910Z",
+      "expiresAt": "2026-03-02T18:09:46.910Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2025602916560637993",
+      "text": "@DearDiaryMeme Sir. I literally have bull posted the US team. And cheered them on all game",
+      "author": {
+        "id": "1138993163706753029",
+        "username": "Pentosh1"
+      },
+      "public_metrics": {
+        "likes": 13,
+        "retweets": 0,
+        "replies": 4,
+        "quotes": 0,
+        "views": 1770
+      },
+      "url": "https://twitter.com/Pentosh1/status/2025602916560637993",
+      "processed": false,
+      "addedAt": "2026-02-23T18:09:49.008Z",
+      "expiresAt": "2026-03-02T18:09:49.008Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2025602396001317372",
+      "text": "Canada is the better team. I’ll say that much. They played an incredible game \n\nUS goaltending just too good. Congrats to both teams. https://t.co/27HS9GztzS",
+      "author": {
+        "id": "1138993163706753029",
+        "username": "Pentosh1"
+      },
+      "public_metrics": {
+        "likes": 317,
+        "retweets": 2,
+        "replies": 76,
+        "quotes": 2,
+        "views": 58439
+      },
+      "url": "https://twitter.com/Pentosh1/status/2025602396001317372",
+      "processed": false,
+      "addedAt": "2026-02-23T18:09:50.887Z",
+      "expiresAt": "2026-03-02T18:09:50.887Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2025601762455871923",
+      "text": "Hockey was the only gold medal that mattered",
+      "author": {
+        "id": "1138993163706753029",
+        "username": "Pentosh1"
+      },
+      "public_metrics": {
+        "likes": 133,
+        "retweets": 1,
+        "replies": 15,
+        "quotes": 1,
+        "views": 21307
+      },
+      "url": "https://twitter.com/Pentosh1/status/2025601762455871923",
+      "processed": false,
+      "addedAt": "2026-02-23T18:09:52.867Z",
+      "expiresAt": "2026-03-02T18:09:52.867Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2025601535888044295",
+      "text": "Hughes mouth is so fucked. Bro played 2 minutes after losing multiple teeth with a stick to the face",
+      "author": {
+        "id": "1138993163706753029",
+        "username": "Pentosh1"
+      },
+      "public_metrics": {
+        "likes": 93,
+        "retweets": 1,
+        "replies": 12,
+        "quotes": 0,
+        "views": 24834
+      },
+      "url": "https://twitter.com/Pentosh1/status/2025601535888044295",
+      "processed": false,
+      "addedAt": "2026-02-23T18:09:54.861Z",
+      "expiresAt": "2026-03-02T18:09:54.861Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2025600708263727442",
+      "text": "@Jimi_Humble Salty little bastard lmao \n\nWe def outplayed the first.",
+      "author": {
+        "id": "1138993163706753029",
+        "username": "Pentosh1"
+      },
+      "public_metrics": {
+        "likes": 19,
+        "retweets": 0,
+        "replies": 3,
+        "quotes": 0,
+        "views": 1537
+      },
+      "url": "https://twitter.com/Pentosh1/status/2025600708263727442",
+      "processed": false,
+      "addedAt": "2026-02-23T18:09:57.074Z",
+      "expiresAt": "2026-03-02T18:09:57.075Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2025600342402986232",
+      "text": "@twofourlol But we won sir. We got dominated in the back half yea. But our defense played well enough to get us to ot.",
+      "author": {
+        "id": "1138993163706753029",
+        "username": "Pentosh1"
+      },
+      "public_metrics": {
+        "likes": 6,
+        "retweets": 0,
+        "replies": 3,
+        "quotes": 0,
+        "views": 1239
+      },
+      "url": "https://twitter.com/Pentosh1/status/2025600342402986232",
+      "processed": false,
+      "addedAt": "2026-02-23T18:09:58.883Z",
+      "expiresAt": "2026-03-02T18:09:58.883Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2025599896472928641",
+      "text": "Canada has become the 51st state of the United States with that win\n\n🦅 🇺🇸",
+      "author": {
+        "id": "1138993163706753029",
+        "username": "Pentosh1"
+      },
+      "public_metrics": {
+        "likes": 352,
+        "retweets": 7,
+        "replies": 58,
+        "quotes": 5,
+        "views": 94206
+      },
+      "url": "https://twitter.com/Pentosh1/status/2025599896472928641",
+      "processed": false,
+      "addedAt": "2026-02-23T18:10:00.873Z",
+      "expiresAt": "2026-03-02T18:10:00.873Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2025593680736792686",
+      "text": "@GrandmasterDeFi @gh0xtcat No they spoke on this. Only from the Ukraine. Certain areas they don’t allow",
+      "author": {
+        "id": "1138993163706753029",
+        "username": "Pentosh1"
+      },
+      "public_metrics": {
+        "likes": 9,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 810
+      },
+      "url": "https://twitter.com/Pentosh1/status/2025593680736792686",
+      "processed": false,
+      "addedAt": "2026-02-23T18:10:02.876Z",
+      "expiresAt": "2026-03-02T18:10:02.876Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2025585958209380563",
+      "text": "@PREDICTOR_101 ask grok fren",
+      "author": {
+        "id": "1138993163706753029",
+        "username": "Pentosh1"
+      },
+      "public_metrics": {
+        "likes": 15,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 3194
+      },
+      "url": "https://twitter.com/Pentosh1/status/2025585958209380563",
+      "processed": false,
+      "addedAt": "2026-02-23T18:10:04.862Z",
+      "expiresAt": "2026-03-02T18:10:04.862Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2025585821084951032",
+      "text": "@gh0xtcat no, its a play on why banning guns doesnt work. But also one has a huge immigration problem, and the other doesnt allow it",
+      "author": {
+        "id": "1138993163706753029",
+        "username": "Pentosh1"
+      },
+      "public_metrics": {
+        "likes": 52,
+        "retweets": 0,
+        "replies": 5,
+        "quotes": 0,
+        "views": 3054
+      },
+      "url": "https://twitter.com/Pentosh1/status/2025585821084951032",
+      "processed": false,
+      "addedAt": "2026-02-23T18:10:06.870Z",
+      "expiresAt": "2026-03-02T18:10:06.870Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "1868409198846804078",
+      "text": "Today I interviewed Kirk David Phillips CPA\nCBP about the IRS Safe Harbour process and the actions US citizens with #crypto assets must take in the remaining 2 weeks of the year to avoid an accounting and tax mess. \n\nAct before December 31st 2024\n\nhttps://t.co/UaDX9O43yu",
+      "author": {
+        "id": "1469101279",
+        "username": "aantonop"
+      },
+      "public_metrics": {
+        "likes": 1543,
+        "retweets": 567,
+        "replies": 0,
+        "quotes": 32,
+        "views": 218181
+      },
+      "url": "https://twitter.com/aantonop/status/1868409198846804078",
+      "processed": false,
+      "addedAt": "2026-02-23T18:10:08.884Z",
+      "expiresAt": "2026-03-02T18:10:08.884Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "1780377650625945683",
+      "text": "Despite the clickbait headlines, the halving is unlikely to result in a Bitcoin Death Spiral - here's why https://t.co/dipIQU6xNq",
+      "author": {
+        "id": "1469101279",
+        "username": "aantonop"
+      },
+      "public_metrics": {
+        "likes": 1872,
+        "retweets": 668,
+        "replies": 0,
+        "quotes": 16,
+        "views": 202762
+      },
+      "url": "https://twitter.com/aantonop/status/1780377650625945683",
+      "processed": false,
+      "addedAt": "2026-02-23T18:10:10.862Z",
+      "expiresAt": "2026-03-02T18:10:10.862Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "1780278921227010076",
+      "text": "ICYMI             https://t.co/cB5i0ozYqC   \n#BitcoinHalving2024 #Bitcoin #HalvingBitcoin \n(yes, our team made the audio a bit too fast, but hey, maybe you'll learn how to reduce playback speed on youtube, if you've never done that before 😉)",
+      "author": {
+        "id": "1469101279",
+        "username": "aantonop"
+      },
+      "public_metrics": {
+        "likes": 1453,
+        "retweets": 490,
+        "replies": 0,
+        "quotes": 6,
+        "views": 155589
+      },
+      "url": "https://twitter.com/aantonop/status/1780278921227010076",
+      "processed": false,
+      "addedAt": "2026-02-23T18:10:12.864Z",
+      "expiresAt": "2026-03-02T18:10:12.864Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "1780015259346202833",
+      "text": "My latest video: Bitcoin Halving 2024. What to expect, myth busting, and more. https://t.co/cB5i0ozYqC",
+      "author": {
+        "id": "1469101279",
+        "username": "aantonop"
+      },
+      "public_metrics": {
+        "likes": 1967,
+        "retweets": 623,
+        "replies": 0,
+        "quotes": 21,
+        "views": 173000
+      },
+      "url": "https://twitter.com/aantonop/status/1780015259346202833",
+      "processed": false,
+      "addedAt": "2026-02-23T18:10:14.950Z",
+      "expiresAt": "2026-03-02T18:10:14.950Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "1763321484859027665",
+      "text": "Videos to Learn How Bitcoin and Open Blockchains Might Change Our Lives (no ads): (1) A crowd fav about #Bitcoin📷  &amp; why it matters (20 min) https://t.co/tKhI90AkX1 1,000,000+ views: Intro to Bitcoin and Open Blockchains: https://t.co/uhflldL4ze\n📷",
+      "author": {
+        "id": "1469101279",
+        "username": "aantonop"
+      },
+      "public_metrics": {
+        "likes": 1545,
+        "retweets": 597,
+        "replies": 0,
+        "quotes": 5,
+        "views": 121400
+      },
+      "url": "https://twitter.com/aantonop/status/1763321484859027665",
+      "processed": false,
+      "addedAt": "2026-02-23T18:10:16.970Z",
+      "expiresAt": "2026-03-02T18:10:16.970Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "1763255504476774742",
+      "text": "FREE resources to learn about #bitcoin https://t.co/xEYtcKP7mY",
+      "author": {
+        "id": "1469101279",
+        "username": "aantonop"
+      },
+      "public_metrics": {
+        "likes": 277,
+        "retweets": 98,
+        "replies": 0,
+        "quotes": 10,
+        "views": 68623
+      },
+      "url": "https://twitter.com/aantonop/status/1763255504476774742",
+      "processed": false,
+      "addedAt": "2026-02-23T18:10:18.875Z",
+      "expiresAt": "2026-03-02T18:10:18.875Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "1763204181802840480",
+      "text": "Reminder to everyone new: you can find a FREE Introduction to #bitcoin workshop in English and Spanish on my website. Welcome! https://t.co/WaolfcqeLv",
+      "author": {
+        "id": "1469101279",
+        "username": "aantonop"
+      },
+      "public_metrics": {
+        "likes": 346,
+        "retweets": 101,
+        "replies": 0,
+        "quotes": 6,
+        "views": 73867
+      },
+      "url": "https://twitter.com/aantonop/status/1763204181802840480",
+      "processed": false,
+      "addedAt": "2026-02-23T18:10:20.888Z",
+      "expiresAt": "2026-03-02T18:10:20.888Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "1763024925642604676",
+      "text": "My latest video: Buying Bitcoin Using Dollar Cost Averaging &amp; Avoiding Dust UTXO - Self Custody Series - Feb 2024 #bitcoin #UTXO #selfcustody \nhttps://t.co/VgzcHPTIUv",
+      "author": {
+        "id": "1469101279",
+        "username": "aantonop"
+      },
+      "public_metrics": {
+        "likes": 390,
+        "retweets": 99,
+        "replies": 0,
+        "quotes": 2,
+        "views": 84321
+      },
+      "url": "https://twitter.com/aantonop/status/1763024925642604676",
+      "processed": false,
+      "addedAt": "2026-02-23T18:10:22.884Z",
+      "expiresAt": "2026-03-02T18:10:22.884Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "1762988232969490689",
+      "text": "Are ETFs better than Self Custody? Watch this 1 min video to hear my answer. \nhttps://t.co/aZyYV0PB0q",
+      "author": {
+        "id": "1469101279",
+        "username": "aantonop"
+      },
+      "public_metrics": {
+        "likes": 443,
+        "retweets": 143,
+        "replies": 0,
+        "quotes": 26,
+        "views": 107242
+      },
+      "url": "https://twitter.com/aantonop/status/1762988232969490689",
+      "processed": false,
+      "addedAt": "2026-02-23T18:10:24.897Z",
+      "expiresAt": "2026-03-02T18:10:24.897Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "1752790565178245159",
+      "text": "Last chance to save on the Path to Self Custody Bundle. Includes a step-by-step hardware wallet demo. 14 day money back guarantee. Learn more https://t.co/7r8BbAwRWQ https://t.co/KikM28fnNX",
+      "author": {
+        "id": "1469101279",
+        "username": "aantonop"
+      },
+      "public_metrics": {
+        "likes": 110,
+        "retweets": 76,
+        "replies": 0,
+        "quotes": 2,
+        "views": 87170
+      },
+      "url": "https://twitter.com/aantonop/status/1752790565178245159",
+      "processed": false,
+      "addedAt": "2026-02-23T18:10:26.931Z",
+      "expiresAt": "2026-03-02T18:10:26.931Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
     }
   ],
   "metadata": {
-    "lastUpdated": "2026-02-23T07:41:12.031Z",
-    "totalPosts": 70,
+    "lastUpdated": "2026-02-23T18:11:31.103Z",
+    "totalPosts": 78,
     "bySource": {
-      "timeline_monitor": 70,
+      "timeline_monitor": 78,
       "search_discovery": 0
     }
   },
