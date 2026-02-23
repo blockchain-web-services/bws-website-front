@@ -1209,7 +1209,10 @@
     "2025173956370526313",
     "2025587682861084749",
     "2025572227475701925",
-    "2025525662522429722"
+    "2025525662522429722",
+    "2025742984055033887",
+    "2025741607954244018",
+    "2025739271869538414"
   ],
   "productRotation": {
     "priorityProducts": [
@@ -1224,16 +1227,16 @@
       "BWS IPFS",
       "NFT.zK"
     ],
-    "priorityIndex": 4,
+    "priorityIndex": 7,
     "otherIndex": 4,
-    "replyCount": 756,
-    "lastProductUsed": "ESG Credits",
+    "replyCount": 759,
+    "lastProductUsed": "BWS IPFS",
     "positioningPhraseIndex": 0
   },
   "metadata": {
-    "lastCheck": "2026-02-23T06:51:12.761Z",
+    "lastCheck": "2026-02-23T09:50:19.666Z",
     "totalReplied": 5,
-    "totalSkipped": 1203,
+    "totalSkipped": 1206,
     "lastUpdateBy": "kol-system"
   }
 }
