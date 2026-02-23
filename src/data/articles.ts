@@ -19,6 +19,20 @@ export interface ArticleMetadata {
 
 export const articles: ArticleMetadata[] = [
 {
+  slug: 'blockchain-badges-2026-02-23',
+  product: 'Blockchain Badges',
+  title: 'Blockchain Badges: Cryptographic Verification for Digital Credentials',
+  subtitle: 'Traditional credential verification requires contacting issuers—a process that creates delays and opens the door to fraud. Blockchain Badges eliminates these vulnerabilities by storing digital credentials on-chain with cryptographic verification, enabling instant authentication of certificates, training completions, and memberships without ever contacting the issuer.',
+  publishDate: '2026-02-23T10:17:37.831Z',
+  tweetId: '',
+  featuredImage: {
+    src: '/assets/images/docs/blockchain-badges/blockchain-badges-0.png',
+    alt: 'Cover',
+    loading: 'eager'
+  },
+  seoDescription: 'Discover how Blockchain Badges uses cryptographic verification to store credentials on-chain, enabling instant authentication of certificates without contacting issuers.'
+},
+{
   slug: 'x-bot-2026-02-22',
   product: 'X Bot',
   title: 'X Bot: Track Real KOL Performance and Community Engagement Across Platforms',
