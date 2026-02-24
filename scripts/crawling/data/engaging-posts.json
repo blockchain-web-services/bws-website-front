@@ -36,7 +36,7 @@
         "views": 2035
       },
       "url": "https://twitter.com/IncomeSharks/status/2026031565235741028",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-02-24T18:20:49.345Z",
       "expiresAt": "2026-03-03T18:20:49.345Z",
       "source": "timeline_monitor",
@@ -57,7 +57,7 @@
         "views": 11844
       },
       "url": "https://twitter.com/IncomeSharks/status/2026031363737243774",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-02-24T18:20:51.407Z",
       "expiresAt": "2026-03-03T18:20:51.407Z",
       "source": "timeline_monitor",
@@ -78,7 +78,7 @@
         "views": 5943
       },
       "url": "https://twitter.com/IncomeSharks/status/2026030588298514575",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-02-24T18:20:53.341Z",
       "expiresAt": "2026-03-03T18:20:53.341Z",
       "source": "timeline_monitor",
@@ -99,7 +99,7 @@
         "views": 84326
       },
       "url": "https://twitter.com/IncomeSharks/status/2026028058155819473",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-02-24T18:20:55.367Z",
       "expiresAt": "2026-03-03T18:20:55.367Z",
       "source": "timeline_monitor",
@@ -141,7 +141,7 @@
         "views": 46168
       },
       "url": "https://twitter.com/cobie/status/2026044549986976129",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-02-24T18:21:11.692Z",
       "expiresAt": "2026-03-03T18:21:11.692Z",
       "source": "timeline_monitor",
@@ -162,7 +162,7 @@
         "views": 3184
       },
       "url": "https://twitter.com/cobie/status/2026043678280520093",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-02-24T18:21:13.738Z",
       "expiresAt": "2026-03-03T18:21:13.738Z",
       "source": "timeline_monitor",
@@ -183,7 +183,7 @@
         "views": 35461
       },
       "url": "https://twitter.com/cobie/status/2026038645333901331",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-02-24T18:21:15.687Z",
       "expiresAt": "2026-03-03T18:21:15.687Z",
       "source": "timeline_monitor",
@@ -435,7 +435,7 @@
         "views": 1963
       },
       "url": "https://twitter.com/Pentosh1/status/2025602916560637993",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-02-24T18:21:51.822Z",
       "expiresAt": "2026-03-03T18:21:51.822Z",
       "source": "timeline_monitor",
@@ -456,7 +456,7 @@
         "views": 62594
       },
       "url": "https://twitter.com/Pentosh1/status/2025602396001317372",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-02-24T18:21:53.825Z",
       "expiresAt": "2026-03-03T18:21:53.825Z",
       "source": "timeline_monitor",
@@ -477,7 +477,7 @@
         "views": 23317
       },
       "url": "https://twitter.com/Pentosh1/status/2025601762455871923",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-02-24T18:21:55.822Z",
       "expiresAt": "2026-03-03T18:21:55.822Z",
       "source": "timeline_monitor",
@@ -498,7 +498,7 @@
         "views": 27031
       },
       "url": "https://twitter.com/Pentosh1/status/2025601535888044295",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-02-24T18:21:57.819Z",
       "expiresAt": "2026-03-03T18:21:57.819Z",
       "source": "timeline_monitor",
@@ -519,7 +519,7 @@
         "views": 1629
       },
       "url": "https://twitter.com/Pentosh1/status/2025600708263727442",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-02-24T18:21:59.828Z",
       "expiresAt": "2026-03-03T18:21:59.828Z",
       "source": "timeline_monitor",
@@ -540,7 +540,7 @@
         "views": 1288
       },
       "url": "https://twitter.com/Pentosh1/status/2025600342402986232",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-02-24T18:22:01.920Z",
       "expiresAt": "2026-03-03T18:22:01.920Z",
       "source": "timeline_monitor",
@@ -561,7 +561,7 @@
         "views": 100575
       },
       "url": "https://twitter.com/Pentosh1/status/2025599896472928641",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-02-24T18:22:03.817Z",
       "expiresAt": "2026-03-03T18:22:03.817Z",
       "source": "timeline_monitor",
@@ -582,7 +582,7 @@
         "views": 858
       },
       "url": "https://twitter.com/Pentosh1/status/2025593680736792686",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-02-24T18:22:05.905Z",
       "expiresAt": "2026-03-03T18:22:05.905Z",
       "source": "timeline_monitor",
@@ -603,7 +603,7 @@
         "views": 3309
       },
       "url": "https://twitter.com/Pentosh1/status/2025585958209380563",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-02-24T18:22:07.843Z",
       "expiresAt": "2026-03-03T18:22:07.843Z",
       "source": "timeline_monitor",
