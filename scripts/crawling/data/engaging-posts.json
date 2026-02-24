@@ -566,13 +566,832 @@
       "expiresAt": "2026-03-03T07:36:50.913Z",
       "source": "timeline_monitor",
       "contentCategory": "error"
+    },
+    {
+      "id": "2026164868601274512",
+      "text": "@TrendSpider @zerohedge Big tobacco agrees https://t.co/24wJarW5xb",
+      "author": {
+        "id": "4441279246",
+        "username": "IncomeSharks"
+      },
+      "public_metrics": {
+        "likes": 16,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 1656
+      },
+      "url": "https://twitter.com/IncomeSharks/status/2026164868601274512",
+      "processed": false,
+      "addedAt": "2026-02-24T18:20:47.466Z",
+      "expiresAt": "2026-03-03T18:20:47.466Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2026031565235741028",
+      "text": "@Crypt0L0g1c You could flip a coin to take trades and be more profitable with good risk management than having no plan, being a good trader, and letting a few big losses liquidate you.",
+      "author": {
+        "id": "4441279246",
+        "username": "IncomeSharks"
+      },
+      "public_metrics": {
+        "likes": 14,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 2035
+      },
+      "url": "https://twitter.com/IncomeSharks/status/2026031565235741028",
+      "processed": false,
+      "addedAt": "2026-02-24T18:20:49.345Z",
+      "expiresAt": "2026-03-03T18:20:49.345Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2026031363737243774",
+      "text": "@Daractenus He's incredible at getting everyone to talk about him everyday. Which is annoying for a president to be focused on but people need to stop taking all the bait he puts out there.",
+      "author": {
+        "id": "4441279246",
+        "username": "IncomeSharks"
+      },
+      "public_metrics": {
+        "likes": 78,
+        "retweets": 0,
+        "replies": 17,
+        "quotes": 0,
+        "views": 11844
+      },
+      "url": "https://twitter.com/IncomeSharks/status/2026031363737243774",
+      "processed": false,
+      "addedAt": "2026-02-24T18:20:51.407Z",
+      "expiresAt": "2026-03-03T18:20:51.407Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2026030588298514575",
+      "text": "@CredibleCrypto Love it, will start using this as a visual to explain it better.",
+      "author": {
+        "id": "4441279246",
+        "username": "IncomeSharks"
+      },
+      "public_metrics": {
+        "likes": 44,
+        "retweets": 0,
+        "replies": 2,
+        "quotes": 0,
+        "views": 5943
+      },
+      "url": "https://twitter.com/IncomeSharks/status/2026030588298514575",
+      "processed": false,
+      "addedAt": "2026-02-24T18:20:53.341Z",
+      "expiresAt": "2026-03-03T18:20:53.341Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2026028058155819473",
+      "text": "Your win rate isn't the reason you are losing money, it's your risk management. Position size and risk are never talked about enough on X.\n\nA 1:2 Risk to reward strategy is profitable with a 33% win rate\n\nA 1:3 Risk to reward strategy is profitable with a 26% win rate",
+      "author": {
+        "id": "4441279246",
+        "username": "IncomeSharks"
+      },
+      "public_metrics": {
+        "likes": 746,
+        "retweets": 45,
+        "replies": 47,
+        "quotes": 3,
+        "views": 84326
+      },
+      "url": "https://twitter.com/IncomeSharks/status/2026028058155819473",
+      "processed": false,
+      "addedAt": "2026-02-24T18:20:55.367Z",
+      "expiresAt": "2026-03-03T18:20:55.367Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2026027342657917075",
+      "text": "@Intel_degen Not sure you've looked at the markets, the markets are in deep red. Position size matters and those above 5 to 10% are near a 66% win rate which is insane for a current 1.7 RR. I started this as crypto went into a bear market and stocks have bled. Only 1.5% loss YTD is great. https://t.co/Yt1Ge7UW2H",
+      "author": {
+        "id": "4441279246",
+        "username": "IncomeSharks"
+      },
+      "public_metrics": {
+        "likes": 7,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 759
+      },
+      "url": "https://twitter.com/IncomeSharks/status/2026027342657917075",
+      "processed": false,
+      "addedAt": "2026-02-24T18:20:57.362Z",
+      "expiresAt": "2026-03-03T18:20:57.362Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2026044549986976129",
+      "text": "@spacexbt “One of crypto’s most profitable businesses” qualifier seems to exclude Polymarket who are not profitable as I understand it",
+      "author": {
+        "id": "2259434528",
+        "username": "cobie"
+      },
+      "public_metrics": {
+        "likes": 768,
+        "retweets": 5,
+        "replies": 61,
+        "quotes": 3,
+        "views": 46168
+      },
+      "url": "https://twitter.com/cobie/status/2026044549986976129",
+      "processed": false,
+      "addedAt": "2026-02-24T18:21:11.692Z",
+      "expiresAt": "2026-03-03T18:21:11.692Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2026043678280520093",
+      "text": "@piliponful @serpinxbt It can’t be “one of the most profitable” companies if it makes no money, so obviously can be excluded from the voting options",
+      "author": {
+        "id": "2259434528",
+        "username": "cobie"
+      },
+      "public_metrics": {
+        "likes": 31,
+        "retweets": 0,
+        "replies": 9,
+        "quotes": 1,
+        "views": 3184
+      },
+      "url": "https://twitter.com/cobie/status/2026043678280520093",
+      "processed": false,
+      "addedAt": "2026-02-24T18:21:13.738Z",
+      "expiresAt": "2026-03-03T18:21:13.738Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2026038645333901331",
+      "text": "@serpinxbt Does polymarket make any money? I thought they didn’t",
+      "author": {
+        "id": "2259434528",
+        "username": "cobie"
+      },
+      "public_metrics": {
+        "likes": 243,
+        "retweets": 1,
+        "replies": 40,
+        "quotes": 2,
+        "views": 35461
+      },
+      "url": "https://twitter.com/cobie/status/2026038645333901331",
+      "processed": false,
+      "addedAt": "2026-02-24T18:21:15.687Z",
+      "expiresAt": "2026-03-03T18:21:15.687Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2026333806068678839",
+      "text": "high fdv, low float? I've seen this game before... https://t.co/hAShVtiSnB",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "likes": 19,
+        "retweets": 0,
+        "replies": 4,
+        "quotes": 0,
+        "views": 3632
+      },
+      "url": "https://twitter.com/AltcoinSherpa/status/2026333806068678839",
+      "processed": false,
+      "addedAt": "2026-02-24T18:21:29.855Z",
+      "expiresAt": "2026-03-03T18:21:29.855Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2026332911784345674",
+      "text": "@intocryptoverse yes, 99.9% of them are worth $0",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "likes": 11,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 1563
+      },
+      "url": "https://twitter.com/AltcoinSherpa/status/2026332911784345674",
+      "processed": false,
+      "addedAt": "2026-02-24T18:21:31.802Z",
+      "expiresAt": "2026-03-03T18:21:31.802Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2026330457722200172",
+      "text": "'I'm just going to log off and then buy the bottom when it comes'\n\n-trader who's missed every single bottom in his career",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "likes": 88,
+        "retweets": 2,
+        "replies": 8,
+        "quotes": 0,
+        "views": 4115
+      },
+      "url": "https://twitter.com/AltcoinSherpa/status/2026330457722200172",
+      "processed": false,
+      "addedAt": "2026-02-24T18:21:33.804Z",
+      "expiresAt": "2026-03-03T18:21:33.804Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2026314617211732089",
+      "text": "the sad part is that it really doesn't matter how strong the fundamentals are in a coin rn. onchain, cex coin, low cap, big cap....there just aren't any buyers. even if your coin is incredible tech w. everything else solid (team/unlocks/pmf/etc), there's no volume anywhere",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "likes": 129,
+        "retweets": 5,
+        "replies": 29,
+        "quotes": 2,
+        "views": 23268
+      },
+      "url": "https://twitter.com/AltcoinSherpa/status/2026314617211732089",
+      "processed": false,
+      "addedAt": "2026-02-24T18:21:35.810Z",
+      "expiresAt": "2026-03-03T18:21:35.810Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2026311170643120544",
+      "text": "can't wait for altcoin prices to move +20% and make us think 'we're so back', only to go -50% lower in the next 1 month ....\n\n(bottom I hope)",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "likes": 88,
+        "retweets": 1,
+        "replies": 7,
+        "quotes": 0,
+        "views": 5193
+      },
+      "url": "https://twitter.com/AltcoinSherpa/status/2026311170643120544",
+      "processed": false,
+      "addedAt": "2026-02-24T18:21:37.809Z",
+      "expiresAt": "2026-03-03T18:21:37.809Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2026296026164851026",
+      "text": "@Dalio777 I suppose if macro completely dies like Citrini/everyone else assumes, then yes, it could get ugly and that's a possibility. but i still do not believe we're going to 40k",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "likes": 5,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 575
+      },
+      "url": "https://twitter.com/AltcoinSherpa/status/2026296026164851026",
+      "processed": false,
+      "addedAt": "2026-02-24T18:21:39.816Z",
+      "expiresAt": "2026-03-03T18:21:39.816Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2026295531610218686",
+      "text": "$BTC: I still think this area is the bottom, this is not going to be like 2022. Why? Because in 2025 we consolidated for 8 months. This will provide a solid foundation for the next leg.\n\nIn 2021 we never had this. Price rocketed too fast and strongly. No support on the way down https://t.co/z3SOxzRN6V",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "likes": 222,
+        "retweets": 22,
+        "replies": 34,
+        "quotes": 1,
+        "views": 12550
+      },
+      "url": "https://twitter.com/AltcoinSherpa/status/2026295531610218686",
+      "processed": false,
+      "addedAt": "2026-02-24T18:21:41.807Z",
+      "expiresAt": "2026-03-03T18:21:41.807Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2026267342825456016",
+      "text": "$ESP when big VC project tokens do this type of thing I feel like you can't ever really criticize it from this point onward. Yes, it's high fdv, yes it'll probably retrace heavily....but at least it gave you, the retail trader, a clean 2x from TGE. Is this going to continue? https://t.co/ehGygtNEl9",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "likes": 65,
+        "retweets": 14,
+        "replies": 14,
+        "quotes": 0,
+        "views": 3421
+      },
+      "url": "https://twitter.com/AltcoinSherpa/status/2026267342825456016",
+      "processed": false,
+      "addedAt": "2026-02-24T18:21:43.816Z",
+      "expiresAt": "2026-03-03T18:21:43.816Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2026266757191573934",
+      "text": "@barneyxbt prepare to get attacked",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "likes": 10,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 862
+      },
+      "url": "https://twitter.com/AltcoinSherpa/status/2026266757191573934",
+      "processed": false,
+      "addedAt": "2026-02-24T18:21:45.814Z",
+      "expiresAt": "2026-03-03T18:21:45.814Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2026265558266556573",
+      "text": "Sold $PIPPIN an hour ago, didn't near catch the wick at all and should have had better execution by setting some limit orders but will wait and watch. if onchain twap turns on again, i'm going to buy. decent trade but could have been better had i caught that wick https://t.co/Sk187m1boS https://t.co/gewqw79Cvv",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "likes": 23,
+        "retweets": 1,
+        "replies": 12,
+        "quotes": 0,
+        "views": 5047
+      },
+      "url": "https://twitter.com/AltcoinSherpa/status/2026265558266556573",
+      "processed": false,
+      "addedAt": "2026-02-24T18:21:47.916Z",
+      "expiresAt": "2026-03-03T18:21:47.916Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2026055266811228321",
+      "text": "@MoMohler @inversebrah",
+      "author": {
+        "id": "1138993163706753029",
+        "username": "Pentosh1"
+      },
+      "public_metrics": {
+        "likes": 9,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 5188
+      },
+      "url": "https://twitter.com/Pentosh1/status/2026055266811228321",
+      "processed": false,
+      "addedAt": "2026-02-24T18:21:49.873Z",
+      "expiresAt": "2026-03-03T18:21:49.873Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2025602916560637993",
+      "text": "@DearDiaryMeme Sir. I literally have bull posted the US team. And cheered them on all game",
+      "author": {
+        "id": "1138993163706753029",
+        "username": "Pentosh1"
+      },
+      "public_metrics": {
+        "likes": 13,
+        "retweets": 0,
+        "replies": 5,
+        "quotes": 0,
+        "views": 1963
+      },
+      "url": "https://twitter.com/Pentosh1/status/2025602916560637993",
+      "processed": false,
+      "addedAt": "2026-02-24T18:21:51.822Z",
+      "expiresAt": "2026-03-03T18:21:51.822Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2025602396001317372",
+      "text": "Canada is the better team. I’ll say that much. They played an incredible game \n\nUS goaltending just too good. Congrats to both teams. https://t.co/27HS9GztzS",
+      "author": {
+        "id": "1138993163706753029",
+        "username": "Pentosh1"
+      },
+      "public_metrics": {
+        "likes": 329,
+        "retweets": 2,
+        "replies": 80,
+        "quotes": 2,
+        "views": 62594
+      },
+      "url": "https://twitter.com/Pentosh1/status/2025602396001317372",
+      "processed": false,
+      "addedAt": "2026-02-24T18:21:53.825Z",
+      "expiresAt": "2026-03-03T18:21:53.825Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2025601762455871923",
+      "text": "Hockey was the only gold medal that mattered",
+      "author": {
+        "id": "1138993163706753029",
+        "username": "Pentosh1"
+      },
+      "public_metrics": {
+        "likes": 140,
+        "retweets": 2,
+        "replies": 15,
+        "quotes": 1,
+        "views": 23317
+      },
+      "url": "https://twitter.com/Pentosh1/status/2025601762455871923",
+      "processed": false,
+      "addedAt": "2026-02-24T18:21:55.822Z",
+      "expiresAt": "2026-03-03T18:21:55.822Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2025601535888044295",
+      "text": "Hughes mouth is so fucked. Bro played 2 minutes after losing multiple teeth with a stick to the face",
+      "author": {
+        "id": "1138993163706753029",
+        "username": "Pentosh1"
+      },
+      "public_metrics": {
+        "likes": 98,
+        "retweets": 2,
+        "replies": 12,
+        "quotes": 0,
+        "views": 27031
+      },
+      "url": "https://twitter.com/Pentosh1/status/2025601535888044295",
+      "processed": false,
+      "addedAt": "2026-02-24T18:21:57.819Z",
+      "expiresAt": "2026-03-03T18:21:57.819Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2025600708263727442",
+      "text": "@Jimi_Humble Salty little bastard lmao \n\nWe def outplayed the first.",
+      "author": {
+        "id": "1138993163706753029",
+        "username": "Pentosh1"
+      },
+      "public_metrics": {
+        "likes": 20,
+        "retweets": 0,
+        "replies": 3,
+        "quotes": 0,
+        "views": 1629
+      },
+      "url": "https://twitter.com/Pentosh1/status/2025600708263727442",
+      "processed": false,
+      "addedAt": "2026-02-24T18:21:59.828Z",
+      "expiresAt": "2026-03-03T18:21:59.828Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2025600342402986232",
+      "text": "@twofourlol But we won sir. We got dominated in the back half yea. But our defense played well enough to get us to ot.",
+      "author": {
+        "id": "1138993163706753029",
+        "username": "Pentosh1"
+      },
+      "public_metrics": {
+        "likes": 7,
+        "retweets": 0,
+        "replies": 3,
+        "quotes": 0,
+        "views": 1288
+      },
+      "url": "https://twitter.com/Pentosh1/status/2025600342402986232",
+      "processed": false,
+      "addedAt": "2026-02-24T18:22:01.920Z",
+      "expiresAt": "2026-03-03T18:22:01.920Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2025599896472928641",
+      "text": "Canada has become the 51st state of the United States with that win\n\n🦅 🇺🇸",
+      "author": {
+        "id": "1138993163706753029",
+        "username": "Pentosh1"
+      },
+      "public_metrics": {
+        "likes": 364,
+        "retweets": 8,
+        "replies": 61,
+        "quotes": 5,
+        "views": 100575
+      },
+      "url": "https://twitter.com/Pentosh1/status/2025599896472928641",
+      "processed": false,
+      "addedAt": "2026-02-24T18:22:03.817Z",
+      "expiresAt": "2026-03-03T18:22:03.817Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2025593680736792686",
+      "text": "@GrandmasterDeFi @gh0xtcat No they spoke on this. Only from the Ukraine. Certain areas they don’t allow",
+      "author": {
+        "id": "1138993163706753029",
+        "username": "Pentosh1"
+      },
+      "public_metrics": {
+        "likes": 10,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 858
+      },
+      "url": "https://twitter.com/Pentosh1/status/2025593680736792686",
+      "processed": false,
+      "addedAt": "2026-02-24T18:22:05.905Z",
+      "expiresAt": "2026-03-03T18:22:05.905Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2025585958209380563",
+      "text": "@PREDICTOR_101 ask grok fren",
+      "author": {
+        "id": "1138993163706753029",
+        "username": "Pentosh1"
+      },
+      "public_metrics": {
+        "likes": 15,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 3309
+      },
+      "url": "https://twitter.com/Pentosh1/status/2025585958209380563",
+      "processed": false,
+      "addedAt": "2026-02-24T18:22:07.843Z",
+      "expiresAt": "2026-03-03T18:22:07.843Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2025063370022432851",
+      "text": "@DavidESmitty Otc opioids is the only way",
+      "author": {
+        "id": "crawlee_search_senpai_gideon",
+        "username": "Senpai_Gideon"
+      },
+      "public_metrics": {
+        "likes": 6,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 218
+      },
+      "url": "https://twitter.com/Senpai_Gideon/status/2025063370022432851",
+      "processed": false,
+      "addedAt": "2026-02-24T18:22:09.825Z",
+      "expiresAt": "2026-03-03T18:22:09.825Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2023801219106697258",
+      "text": "I just became a medical influencer?\n\nSeriously though countless things would improve if we just allowed pharmacies to sell any pharmaceutical, without prescription. https://t.co/b9DuGysArO",
+      "author": {
+        "id": "crawlee_search_senpai_gideon",
+        "username": "Senpai_Gideon"
+      },
+      "public_metrics": {
+        "likes": 16,
+        "retweets": 0,
+        "replies": 5,
+        "quotes": 0,
+        "views": 801
+      },
+      "url": "https://twitter.com/Senpai_Gideon/status/2023801219106697258",
+      "processed": false,
+      "addedAt": "2026-02-24T18:22:11.895Z",
+      "expiresAt": "2026-03-03T18:22:11.895Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2023529608046694841",
+      "text": "It worries me that the smartest ai is run by effective altruism types",
+      "author": {
+        "id": "crawlee_search_senpai_gideon",
+        "username": "Senpai_Gideon"
+      },
+      "public_metrics": {
+        "likes": 14,
+        "retweets": 0,
+        "replies": 5,
+        "quotes": 0,
+        "views": 560
+      },
+      "url": "https://twitter.com/Senpai_Gideon/status/2023529608046694841",
+      "processed": false,
+      "addedAt": "2026-02-24T18:22:13.831Z",
+      "expiresAt": "2026-03-03T18:22:13.831Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2022666775025140093",
+      "text": "@CMerandi The United States should allow the purchase of any drug at pharmacies without prescription.  Problem solved.",
+      "author": {
+        "id": "crawlee_search_senpai_gideon",
+        "username": "Senpai_Gideon"
+      },
+      "public_metrics": {
+        "likes": 25,
+        "retweets": 1,
+        "replies": 2,
+        "quotes": 3,
+        "views": 2590
+      },
+      "url": "https://twitter.com/Senpai_Gideon/status/2022666775025140093",
+      "processed": false,
+      "addedAt": "2026-02-24T18:22:15.832Z",
+      "expiresAt": "2026-03-03T18:22:15.832Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2022121823165698214",
+      "text": "Massie for president",
+      "author": {
+        "id": "crawlee_search_senpai_gideon",
+        "username": "Senpai_Gideon"
+      },
+      "public_metrics": {
+        "likes": 10,
+        "retweets": 0,
+        "replies": 5,
+        "quotes": 0,
+        "views": 429
+      },
+      "url": "https://twitter.com/Senpai_Gideon/status/2022121823165698214",
+      "processed": false,
+      "addedAt": "2026-02-24T18:22:17.851Z",
+      "expiresAt": "2026-03-03T18:22:17.851Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2021712684593696962",
+      "text": "@noegrets3 @Simon_Ingari Yeah that one's a hard no",
+      "author": {
+        "id": "crawlee_search_senpai_gideon",
+        "username": "Senpai_Gideon"
+      },
+      "public_metrics": {
+        "likes": 5,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 667
+      },
+      "url": "https://twitter.com/Senpai_Gideon/status/2021712684593696962",
+      "processed": false,
+      "addedAt": "2026-02-24T18:22:19.867Z",
+      "expiresAt": "2026-03-03T18:22:19.867Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2021662230807543950",
+      "text": "@noegrets3 Retweeted because it's a very good question and they are all British",
+      "author": {
+        "id": "crawlee_search_senpai_gideon",
+        "username": "Senpai_Gideon"
+      },
+      "public_metrics": {
+        "likes": 5,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 147
+      },
+      "url": "https://twitter.com/Senpai_Gideon/status/2021662230807543950",
+      "processed": false,
+      "addedAt": "2026-02-24T18:22:21.854Z",
+      "expiresAt": "2026-03-03T18:22:21.854Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2021579908015693983",
+      "text": "Hey @Jason what inference setup does Ultron use?  Full cost anthropic API tokens or something else?\n\nWhy?\n\nThanks!",
+      "author": {
+        "id": "crawlee_search_senpai_gideon",
+        "username": "Senpai_Gideon"
+      },
+      "public_metrics": {
+        "likes": 5,
+        "retweets": 0,
+        "replies": 3,
+        "quotes": 0,
+        "views": 568
+      },
+      "url": "https://twitter.com/Senpai_Gideon/status/2021579908015693983",
+      "processed": false,
+      "addedAt": "2026-02-24T18:22:23.844Z",
+      "expiresAt": "2026-03-03T18:22:23.844Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2021573193626964312",
+      "text": "@bittybitbit86 That went out the window the moment people couldn't withdraw their assets. Otherwise fine but people couldn't withdraw and so it doesn't matter what he says about it never being bankrupt because people couldn't withdraw and so I respectfully disagree with you here",
+      "author": {
+        "id": "crawlee_search_senpai_gideon",
+        "username": "Senpai_Gideon"
+      },
+      "public_metrics": {
+        "likes": 7,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 288
+      },
+      "url": "https://twitter.com/Senpai_Gideon/status/2021573193626964312",
+      "processed": false,
+      "addedAt": "2026-02-24T18:22:25.953Z",
+      "expiresAt": "2026-03-03T18:22:25.953Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2021561357238501662",
+      "text": "@bittybitbit86 Cage sbf",
+      "author": {
+        "id": "crawlee_search_senpai_gideon",
+        "username": "Senpai_Gideon"
+      },
+      "public_metrics": {
+        "likes": 7,
+        "retweets": 0,
+        "replies": 2,
+        "quotes": 0,
+        "views": 154
+      },
+      "url": "https://twitter.com/Senpai_Gideon/status/2021561357238501662",
+      "processed": false,
+      "addedAt": "2026-02-24T18:22:27.833Z",
+      "expiresAt": "2026-03-03T18:22:27.833Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
     }
   ],
   "metadata": {
-    "lastUpdated": "2026-02-24T07:37:55.050Z",
-    "totalPosts": 73,
+    "lastUpdated": "2026-02-24T18:23:31.980Z",
+    "totalPosts": 66,
     "bySource": {
-      "timeline_monitor": 73,
+      "timeline_monitor": 66,
       "search_discovery": 0
     }
   },
