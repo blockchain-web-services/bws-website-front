@@ -965,13 +965,580 @@
       "expiresAt": "2026-03-02T22:27:53.802Z",
       "source": "timeline_monitor",
       "contentCategory": "error"
+    },
+    {
+      "id": "2026169955407020110",
+      "text": "@OrderBookShow Love the show, can't wait to tell my kids one day I got mentioned in The Order Book. Huge honor",
+      "author": {
+        "id": "4441279246",
+        "username": "IncomeSharks"
+      },
+      "public_metrics": {
+        "likes": 6,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 848
+      },
+      "url": "https://twitter.com/IncomeSharks/status/2026169955407020110",
+      "processed": false,
+      "addedAt": "2026-02-24T07:35:35.759Z",
+      "expiresAt": "2026-03-03T07:35:35.759Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2026165435901923446",
+      "text": "@AstroCryptoGuru Lines up with mining stocks",
+      "author": {
+        "id": "4441279246",
+        "username": "IncomeSharks"
+      },
+      "public_metrics": {
+        "likes": 8,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 2135
+      },
+      "url": "https://twitter.com/IncomeSharks/status/2026165435901923446",
+      "processed": false,
+      "addedAt": "2026-02-24T07:35:37.695Z",
+      "expiresAt": "2026-03-03T07:35:37.695Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2026145654570160297",
+      "text": "@Jake__Wujastyk Every bottom has low sentiment but low sentiment on its own doesn't create a bottom.",
+      "author": {
+        "id": "4441279246",
+        "username": "IncomeSharks"
+      },
+      "public_metrics": {
+        "likes": 78,
+        "retweets": 2,
+        "replies": 3,
+        "quotes": 1,
+        "views": 5343
+      },
+      "url": "https://twitter.com/IncomeSharks/status/2026145654570160297",
+      "processed": false,
+      "addedAt": "2026-02-24T07:35:39.711Z",
+      "expiresAt": "2026-03-03T07:35:39.711Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2026142000547078421",
+      "text": "@pepemoonboy That first few weeks of 2026 though was fun lol",
+      "author": {
+        "id": "4441279246",
+        "username": "IncomeSharks"
+      },
+      "public_metrics": {
+        "likes": 13,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 2597
+      },
+      "url": "https://twitter.com/IncomeSharks/status/2026142000547078421",
+      "processed": false,
+      "addedAt": "2026-02-24T07:35:41.729Z",
+      "expiresAt": "2026-03-03T07:35:41.729Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2026194467682705745",
+      "text": "@knight_XBT @hoodiemfer Yes they were ?",
+      "author": {
+        "id": "2259434528",
+        "username": "cobie"
+      },
+      "public_metrics": {
+        "likes": 6,
+        "retweets": 0,
+        "replies": 2,
+        "quotes": 0,
+        "views": 250
+      },
+      "url": "https://twitter.com/cobie/status/2026194467682705745",
+      "processed": false,
+      "addedAt": "2026-02-24T07:35:55.355Z",
+      "expiresAt": "2026-03-03T07:35:55.355Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2026094478113599878",
+      "text": "@Divine_J_ @CryptopepperP @spacexbt You mean to insider trade PUMP token?",
+      "author": {
+        "id": "2259434528",
+        "username": "cobie"
+      },
+      "public_metrics": {
+        "likes": 14,
+        "retweets": 0,
+        "replies": 15,
+        "quotes": 2,
+        "views": 2172
+      },
+      "url": "https://twitter.com/cobie/status/2026094478113599878",
+      "processed": false,
+      "addedAt": "2026-02-24T07:35:57.347Z",
+      "expiresAt": "2026-03-03T07:35:57.347Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2026091696451191136",
+      "text": "@CryptopepperP @spacexbt What would be the insider info that Pumpfun employees could exploit to insider trade?",
+      "author": {
+        "id": "2259434528",
+        "username": "cobie"
+      },
+      "public_metrics": {
+        "likes": 14,
+        "retweets": 0,
+        "replies": 5,
+        "quotes": 0,
+        "views": 2111
+      },
+      "url": "https://twitter.com/cobie/status/2026091696451191136",
+      "processed": false,
+      "addedAt": "2026-02-24T07:35:59.366Z",
+      "expiresAt": "2026-03-03T07:35:59.366Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2026090879379779906",
+      "text": "@GuigsLuke @spacexbt They don’t charge fees",
+      "author": {
+        "id": "2259434528",
+        "username": "cobie"
+      },
+      "public_metrics": {
+        "likes": 5,
+        "retweets": 0,
+        "replies": 3,
+        "quotes": 0,
+        "views": 1301
+      },
+      "url": "https://twitter.com/cobie/status/2026090879379779906",
+      "processed": false,
+      "addedAt": "2026-02-24T07:36:01.349Z",
+      "expiresAt": "2026-03-03T07:36:01.349Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2026090740556747188",
+      "text": "@OnlyLJC @spacexbt Venture funding ?",
+      "author": {
+        "id": "2259434528",
+        "username": "cobie"
+      },
+      "public_metrics": {
+        "likes": 13,
+        "retweets": 0,
+        "replies": 3,
+        "quotes": 0,
+        "views": 1445
+      },
+      "url": "https://twitter.com/cobie/status/2026090740556747188",
+      "processed": false,
+      "addedAt": "2026-02-24T07:36:03.339Z",
+      "expiresAt": "2026-03-03T07:36:03.339Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2024775779129704516",
+      "text": "@RigbyDEV @hotpot_dao Haven’t played since 2022",
+      "author": {
+        "id": "2259434528",
+        "username": "cobie"
+      },
+      "public_metrics": {
+        "likes": 9,
+        "retweets": 0,
+        "replies": 8,
+        "quotes": 0,
+        "views": 2205
+      },
+      "url": "https://twitter.com/cobie/status/2024775779129704516",
+      "processed": false,
+      "addedAt": "2026-02-24T07:36:05.330Z",
+      "expiresAt": "2026-03-03T07:36:05.330Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2024775526569660820",
+      "text": "@hotpot_dao Hard road? https://t.co/0C4boj6GvQ",
+      "author": {
+        "id": "2259434528",
+        "username": "cobie"
+      },
+      "public_metrics": {
+        "likes": 222,
+        "retweets": 2,
+        "replies": 13,
+        "quotes": 1,
+        "views": 10560
+      },
+      "url": "https://twitter.com/cobie/status/2024775526569660820",
+      "processed": false,
+      "addedAt": "2026-02-24T07:36:07.337Z",
+      "expiresAt": "2026-03-03T07:36:07.337Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2026143695553151090",
+      "text": "get it over with bitcoin and just nuke already https://t.co/JsW4yMfnh2",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "likes": 41,
+        "retweets": 2,
+        "replies": 6,
+        "quotes": 0,
+        "views": 2941
+      },
+      "url": "https://twitter.com/AltcoinSherpa/status/2026143695553151090",
+      "processed": false,
+      "addedAt": "2026-02-24T07:36:20.919Z",
+      "expiresAt": "2026-03-03T07:36:20.919Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2026139376846045494",
+      "text": "Yes, its likely we trade under the 200W EMA for a bit similar to 2022 but that's ok. I think 60-70k is still a solid region https://t.co/ry7acJYWG6",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "likes": 38,
+        "retweets": 1,
+        "replies": 2,
+        "quotes": 0,
+        "views": 3485
+      },
+      "url": "https://twitter.com/AltcoinSherpa/status/2026139376846045494",
+      "processed": false,
+      "addedAt": "2026-02-24T07:36:22.865Z",
+      "expiresAt": "2026-03-03T07:36:22.865Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2026139072368951544",
+      "text": "$BTC I still think we should bid 60k overall. it's still a decent region on both high and lower time frames. It's probably my next level of interest https://t.co/YPjlCAJu6T",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "likes": 72,
+        "retweets": 3,
+        "replies": 10,
+        "quotes": 0,
+        "views": 5396
+      },
+      "url": "https://twitter.com/AltcoinSherpa/status/2026139072368951544",
+      "processed": false,
+      "addedAt": "2026-02-24T07:36:24.876Z",
+      "expiresAt": "2026-03-03T07:36:24.876Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2026019827572174932",
+      "text": "@coinmamba yeah same response lol...ppl didnt like that speculation",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "likes": 5,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 1245
+      },
+      "url": "https://twitter.com/AltcoinSherpa/status/2026019827572174932",
+      "processed": false,
+      "addedAt": "2026-02-24T07:36:26.895Z",
+      "expiresAt": "2026-03-03T07:36:26.895Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2026180932818846116",
+      "text": "🚨 BREAKING: Strategy announced that it purchased 592 $Bitcoin last week at an average price of $67,286, with a total investment of approximately $39.8 million.\n\n⚠️ This is not investment advice.\n\n#Bitcoin #BTC #Crypto #Blockchain",
+      "author": {
+        "id": "crawlee_search_crypto_theboss",
+        "username": "Crypto_TheBoss"
+      },
+      "public_metrics": {
+        "likes": 4,
+        "retweets": 4,
+        "replies": 1,
+        "quotes": 0,
+        "views": 6446
+      },
+      "url": "https://twitter.com/Crypto_TheBoss/status/2026180932818846116",
+      "processed": false,
+      "addedAt": "2026-02-24T07:36:28.892Z",
+      "expiresAt": "2026-03-03T07:36:28.892Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2026180845564801162",
+      "text": "🚨 BREAKING: Bitmine announced that it purchased a total of 51,162 $ETH last week, valued at approximately $95 million.\n\nWith this latest acquisition, the company’s total holdings have increased to 4.42 million #ETH , representing an estimated value of around $8.6 billion.\n\n⚠️",
+      "author": {
+        "id": "crawlee_search_crypto_theboss",
+        "username": "Crypto_TheBoss"
+      },
+      "public_metrics": {
+        "likes": 3,
+        "retweets": 2,
+        "replies": 0,
+        "quotes": 0,
+        "views": 8880
+      },
+      "url": "https://twitter.com/Crypto_TheBoss/status/2026180845564801162",
+      "processed": false,
+      "addedAt": "2026-02-24T07:36:30.887Z",
+      "expiresAt": "2026-03-03T07:36:30.887Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2025673836231000537",
+      "text": "🔷️ 🦅 $WLFI  ( @worldlibertyfi) has tested the resistance zone for the second time and, once again, failed to break above it. Repeated tests typically weaken a resistance level; therefore, a confirmed breakout could open the path toward the next yellow-marked resistance zones https://t.co/EaeuJ3xq79",
+      "author": {
+        "id": "crawlee_search_crypto_theboss",
+        "username": "Crypto_TheBoss"
+      },
+      "public_metrics": {
+        "likes": 127,
+        "retweets": 14,
+        "replies": 12,
+        "quotes": 0,
+        "views": 21428
+      },
+      "url": "https://twitter.com/Crypto_TheBoss/status/2025673836231000537",
+      "processed": false,
+      "addedAt": "2026-02-24T07:36:33.082Z",
+      "expiresAt": "2026-03-03T07:36:33.082Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2025672635548352617",
+      "text": "🔷️ $Silver experienced nearly a 50% decline after its all-time high. Following that correction, price recovered and climbed approximately 32%, revisiting the $85 area.\n\n✅️ From a Fibonacci perspective, the blue lines represent potential support levels, while the yellow lines https://t.co/bBxewgEwxd",
+      "author": {
+        "id": "crawlee_search_crypto_theboss",
+        "username": "Crypto_TheBoss"
+      },
+      "public_metrics": {
+        "likes": 118,
+        "retweets": 14,
+        "replies": 14,
+        "quotes": 0,
+        "views": 27107
+      },
+      "url": "https://twitter.com/Crypto_TheBoss/status/2025672635548352617",
+      "processed": false,
+      "addedAt": "2026-02-24T07:36:34.937Z",
+      "expiresAt": "2026-03-03T07:36:34.937Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2025671400057418042",
+      "text": "🌎 It’s a busy week ahead across both macro and crypto markets:\n\n🇨🇳 Monday, February 23 – China’s Lunar New Year holiday officially ends. The reopening of Chinese markets will be monitored in terms of liquidity and risk appetite.\n\n✨ Monday, February 23 – Alchemy Chain ( $ACH )",
+      "author": {
+        "id": "crawlee_search_crypto_theboss",
+        "username": "Crypto_TheBoss"
+      },
+      "public_metrics": {
+        "likes": 116,
+        "retweets": 14,
+        "replies": 12,
+        "quotes": 0,
+        "views": 41138
+      },
+      "url": "https://twitter.com/Crypto_TheBoss/status/2025671400057418042",
+      "processed": false,
+      "addedAt": "2026-02-24T07:36:36.881Z",
+      "expiresAt": "2026-03-03T07:36:36.881Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2025670143578096094",
+      "text": "‼️ According to current open interest data, if $BTC reaches the $90,000 level, more than $13 billion in short positions are expected to face liquidation.\n\nSuch large liquidation clusters can significantly increase short-term volatility and may accelerate price movements due to https://t.co/y1bp8KeeOJ",
+      "author": {
+        "id": "crawlee_search_crypto_theboss",
+        "username": "Crypto_TheBoss"
+      },
+      "public_metrics": {
+        "likes": 126,
+        "retweets": 13,
+        "replies": 11,
+        "quotes": 0,
+        "views": 27590
+      },
+      "url": "https://twitter.com/Crypto_TheBoss/status/2025670143578096094",
+      "processed": false,
+      "addedAt": "2026-02-24T07:36:38.876Z",
+      "expiresAt": "2026-03-03T07:36:38.876Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2025213060302942699",
+      "text": "🔷️ 🦅 The #USD1 campaign on $Binance has been officially extended. During the new period, from February 20 to March 20 (UTC), a total of 235 million $WLFI ( @worldlibertyfi) is planned to be distributed to users holding USD1.\n\n🦅 While appreciation was expressed to participants https://t.co/y98ATJqOBv",
+      "author": {
+        "id": "crawlee_search_crypto_theboss",
+        "username": "Crypto_TheBoss"
+      },
+      "public_metrics": {
+        "likes": 112,
+        "retweets": 3,
+        "replies": 11,
+        "quotes": 0,
+        "views": 39366
+      },
+      "url": "https://twitter.com/Crypto_TheBoss/status/2025213060302942699",
+      "processed": false,
+      "addedAt": "2026-02-24T07:36:41.036Z",
+      "expiresAt": "2026-03-03T07:36:41.036Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2025211015772738019",
+      "text": "🔷️ Builders keep building. 🛠️\n\n✅️ It has been announced that #WLFI ( @worldlibertyfi ) Co-Founder @zakfolkman will be visiting Stanford University for a special guest lecture.\n\n✅️ Space is limited, and those who wish to attend are required to complete the registration https://t.co/AS75EXMHVR",
+      "author": {
+        "id": "crawlee_search_crypto_theboss",
+        "username": "Crypto_TheBoss"
+      },
+      "public_metrics": {
+        "likes": 104,
+        "retweets": 4,
+        "replies": 11,
+        "quotes": 0,
+        "views": 53313
+      },
+      "url": "https://twitter.com/Crypto_TheBoss/status/2025211015772738019",
+      "processed": false,
+      "addedAt": "2026-02-24T07:36:42.887Z",
+      "expiresAt": "2026-03-03T07:36:42.887Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2025208653137993865",
+      "text": "✨ Bitmine purchased an additional 17,722 $ETH , valued at approximately \n$34.74 million.\n\n⚠️ This is not investment advice.\n\n#ETH #Ethereum #Crypto #Blockchain",
+      "author": {
+        "id": "crawlee_search_crypto_theboss",
+        "username": "Crypto_TheBoss"
+      },
+      "public_metrics": {
+        "likes": 106,
+        "retweets": 4,
+        "replies": 13,
+        "quotes": 1,
+        "views": 29314
+      },
+      "url": "https://twitter.com/Crypto_TheBoss/status/2025208653137993865",
+      "processed": false,
+      "addedAt": "2026-02-24T07:36:44.886Z",
+      "expiresAt": "2026-03-03T07:36:44.886Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2025208561765068983",
+      "text": "🔷️ According to current open position data, if $BTC reaches the $73,000 level, more than $4.5 billion in short positions are expected to face liquidation.\n\n✍️ Such liquidation clusters can increase short-term volatility and potentially accelerate price movements due to forced",
+      "author": {
+        "id": "crawlee_search_crypto_theboss",
+        "username": "Crypto_TheBoss"
+      },
+      "public_metrics": {
+        "likes": 104,
+        "retweets": 4,
+        "replies": 14,
+        "quotes": 0,
+        "views": 19237
+      },
+      "url": "https://twitter.com/Crypto_TheBoss/status/2025208561765068983",
+      "processed": false,
+      "addedAt": "2026-02-24T07:36:46.897Z",
+      "expiresAt": "2026-03-03T07:36:46.897Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2026075406668042314",
+      "text": "One thing that's important to note here - while the industry always finds a way to resurrect itself... it rarely is the same names that find ways to win.\n\nNarratives shift.\n\nI've definitely been trapped by the narrative that \"xyz moved last time, so it'll definitely find a way to https://t.co/8DfaKUvIFy",
+      "author": {
+        "id": "906234475604037637",
+        "username": "CryptoKaleo"
+      },
+      "public_metrics": {
+        "likes": 39,
+        "retweets": 3,
+        "replies": 15,
+        "quotes": 0,
+        "views": 13565
+      },
+      "url": "https://twitter.com/CryptoKaleo/status/2026075406668042314",
+      "processed": false,
+      "addedAt": "2026-02-24T07:36:48.890Z",
+      "expiresAt": "2026-03-03T07:36:48.890Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2026074455965888862",
+      "text": "All it'll take for the crypto industry to erupt again is a viral instance of Clawdbot agents operating agent to agent, natively creating real tools and products on chain without human intermediaries.\n\nAgents can't open their own bank accounts, and even though they might be able",
+      "author": {
+        "id": "906234475604037637",
+        "username": "CryptoKaleo"
+      },
+      "public_metrics": {
+        "likes": 153,
+        "retweets": 17,
+        "replies": 45,
+        "quotes": 3,
+        "views": 14939
+      },
+      "url": "https://twitter.com/CryptoKaleo/status/2026074455965888862",
+      "processed": false,
+      "addedAt": "2026-02-24T07:36:50.913Z",
+      "expiresAt": "2026-03-03T07:36:50.913Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
     }
   ],
   "metadata": {
-    "lastUpdated": "2026-02-23T22:28:57.978Z",
-    "totalPosts": 87,
+    "lastUpdated": "2026-02-24T07:37:55.050Z",
+    "totalPosts": 73,
     "bySource": {
-      "timeline_monitor": 87,
+      "timeline_monitor": 73,
       "search_discovery": 0
     }
   },
