@@ -15,7 +15,7 @@
         "views": 155589
       },
       "url": "https://twitter.com/aantonop/status/1780278921227010076",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-02-23T18:10:12.864Z",
       "expiresAt": "2026-03-02T18:10:12.864Z",
       "source": "timeline_monitor",
@@ -36,7 +36,7 @@
         "views": 173000
       },
       "url": "https://twitter.com/aantonop/status/1780015259346202833",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-02-23T18:10:14.950Z",
       "expiresAt": "2026-03-02T18:10:14.950Z",
       "source": "timeline_monitor",
@@ -57,7 +57,7 @@
         "views": 121400
       },
       "url": "https://twitter.com/aantonop/status/1763321484859027665",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-02-23T18:10:16.970Z",
       "expiresAt": "2026-03-02T18:10:16.970Z",
       "source": "timeline_monitor",
@@ -78,7 +78,7 @@
         "views": 68623
       },
       "url": "https://twitter.com/aantonop/status/1763255504476774742",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-02-23T18:10:18.875Z",
       "expiresAt": "2026-03-02T18:10:18.875Z",
       "source": "timeline_monitor",
@@ -99,7 +99,7 @@
         "views": 84321
       },
       "url": "https://twitter.com/aantonop/status/1763024925642604676",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-02-23T18:10:22.884Z",
       "expiresAt": "2026-03-02T18:10:22.884Z",
       "source": "timeline_monitor",
@@ -120,7 +120,7 @@
         "views": 107242
       },
       "url": "https://twitter.com/aantonop/status/1762988232969490689",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-02-23T18:10:24.897Z",
       "expiresAt": "2026-03-02T18:10:24.897Z",
       "source": "timeline_monitor",
@@ -141,7 +141,7 @@
         "views": 87170
       },
       "url": "https://twitter.com/aantonop/status/1752790565178245159",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-02-23T18:10:26.931Z",
       "expiresAt": "2026-03-02T18:10:26.931Z",
       "source": "timeline_monitor",
@@ -986,10 +986,10 @@
       "BWS IPFS",
       "Blockchain Save"
     ],
-    "currentIndex": 5,
-    "lastProductUsed": "Blockchain Badges",
+    "currentIndex": 7,
+    "lastProductUsed": "BWS IPFS",
     "positioningPhraseIndex": 0,
-    "replyCount": 325
+    "replyCount": 327
   },
   "_removedStale": false
 }
