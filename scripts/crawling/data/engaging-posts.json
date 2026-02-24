@@ -818,13 +818,601 @@
       "expiresAt": "2026-03-03T18:22:27.833Z",
       "source": "timeline_monitor",
       "contentCategory": "error"
+    },
+    {
+      "id": "2026194467682705745",
+      "text": "@knight_XBT @hoodiemfer Yes they were ?",
+      "author": {
+        "id": "2259434528",
+        "username": "cobie"
+      },
+      "public_metrics": {
+        "likes": 11,
+        "retweets": 0,
+        "replies": 4,
+        "quotes": 0,
+        "views": 1340
+      },
+      "url": "https://twitter.com/cobie/status/2026194467682705745",
+      "processed": false,
+      "addedAt": "2026-02-24T22:13:50.963Z",
+      "expiresAt": "2026-03-03T22:13:50.963Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2026094478113599878",
+      "text": "@Divine_J_ @CryptopepperP @spacexbt You mean to insider trade PUMP token?",
+      "author": {
+        "id": "2259434528",
+        "username": "cobie"
+      },
+      "public_metrics": {
+        "likes": 17,
+        "retweets": 0,
+        "replies": 15,
+        "quotes": 3,
+        "views": 2952
+      },
+      "url": "https://twitter.com/cobie/status/2026094478113599878",
+      "processed": false,
+      "addedAt": "2026-02-24T22:13:52.826Z",
+      "expiresAt": "2026-03-03T22:13:52.826Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2026091696451191136",
+      "text": "@CryptopepperP @spacexbt What would be the insider info that Pumpfun employees could exploit to insider trade?",
+      "author": {
+        "id": "2259434528",
+        "username": "cobie"
+      },
+      "public_metrics": {
+        "likes": 17,
+        "retweets": 0,
+        "replies": 5,
+        "quotes": 0,
+        "views": 2707
+      },
+      "url": "https://twitter.com/cobie/status/2026091696451191136",
+      "processed": false,
+      "addedAt": "2026-02-24T22:13:54.871Z",
+      "expiresAt": "2026-03-03T22:13:54.871Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2026090879379779906",
+      "text": "@GuigsLuke @spacexbt They don’t charge fees",
+      "author": {
+        "id": "2259434528",
+        "username": "cobie"
+      },
+      "public_metrics": {
+        "likes": 5,
+        "retweets": 0,
+        "replies": 3,
+        "quotes": 1,
+        "views": 1835
+      },
+      "url": "https://twitter.com/cobie/status/2026090879379779906",
+      "processed": false,
+      "addedAt": "2026-02-24T22:13:56.852Z",
+      "expiresAt": "2026-03-03T22:13:56.852Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2026090740556747188",
+      "text": "@OnlyLJC @spacexbt Venture funding ?",
+      "author": {
+        "id": "2259434528",
+        "username": "cobie"
+      },
+      "public_metrics": {
+        "likes": 17,
+        "retweets": 0,
+        "replies": 3,
+        "quotes": 0,
+        "views": 2038
+      },
+      "url": "https://twitter.com/cobie/status/2026090740556747188",
+      "processed": false,
+      "addedAt": "2026-02-24T22:13:58.869Z",
+      "expiresAt": "2026-03-03T22:13:58.869Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2024775779129704516",
+      "text": "@RigbyDEV @hotpot_dao Haven’t played since 2022",
+      "author": {
+        "id": "2259434528",
+        "username": "cobie"
+      },
+      "public_metrics": {
+        "likes": 9,
+        "retweets": 0,
+        "replies": 8,
+        "quotes": 0,
+        "views": 2298
+      },
+      "url": "https://twitter.com/cobie/status/2024775779129704516",
+      "processed": false,
+      "addedAt": "2026-02-24T22:14:00.838Z",
+      "expiresAt": "2026-03-03T22:14:00.838Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2024775526569660820",
+      "text": "@hotpot_dao Hard road? https://t.co/0C4boj6GvQ",
+      "author": {
+        "id": "2259434528",
+        "username": "cobie"
+      },
+      "public_metrics": {
+        "likes": 222,
+        "retweets": 2,
+        "replies": 13,
+        "quotes": 1,
+        "views": 10578
+      },
+      "url": "https://twitter.com/cobie/status/2024775526569660820",
+      "processed": false,
+      "addedAt": "2026-02-24T22:14:02.864Z",
+      "expiresAt": "2026-03-03T22:14:02.864Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2026403751695925331",
+      "text": "$PYPL - Finally a bullish OBV spike up. Good for a mean revision or a local bottom if there's institutional buying or a catalyst/headline that's coming. https://t.co/sC2r6Gcfp6",
+      "author": {
+        "id": "4441279246",
+        "username": "IncomeSharks"
+      },
+      "public_metrics": {
+        "likes": 96,
+        "retweets": 4,
+        "replies": 31,
+        "quotes": 1,
+        "views": 11206
+      },
+      "url": "https://twitter.com/IncomeSharks/status/2026403751695925331",
+      "processed": false,
+      "addedAt": "2026-02-24T22:14:16.531Z",
+      "expiresAt": "2026-03-03T22:14:16.531Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2026373055715619174",
+      "text": "@SliceApp @Nebraskangooner A serious platform for serious traders. No AI slop, people that want to be there, and being able to have thoughtful discussions that are productive is refreshing. Awesome to see @Nebraskangooner join",
+      "author": {
+        "id": "4441279246",
+        "username": "IncomeSharks"
+      },
+      "public_metrics": {
+        "likes": 10,
+        "retweets": 1,
+        "replies": 1,
+        "quotes": 0,
+        "views": 1419
+      },
+      "url": "https://twitter.com/IncomeSharks/status/2026373055715619174",
+      "processed": false,
+      "addedAt": "2026-02-24T22:14:18.487Z",
+      "expiresAt": "2026-03-03T22:14:18.487Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2026372353903702238",
+      "text": "The algos aren't broken, we are unfortunately addicted to anger and rage (look at politics). The easiest model to getting more clicks is: Enragement = Engagement. It's a vicious cycle and it's why social media and the news is so destructive to mental health.",
+      "author": {
+        "id": "4441279246",
+        "username": "IncomeSharks"
+      },
+      "public_metrics": {
+        "likes": 227,
+        "retweets": 9,
+        "replies": 25,
+        "quotes": 1,
+        "views": 16101
+      },
+      "url": "https://twitter.com/IncomeSharks/status/2026372353903702238",
+      "processed": false,
+      "addedAt": "2026-02-24T22:14:20.492Z",
+      "expiresAt": "2026-03-03T22:14:20.492Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2026370410900763066",
+      "text": "@daniel_koss @joecarlsonshow Warren Buffet never shorted and was always bullish long term.",
+      "author": {
+        "id": "4441279246",
+        "username": "IncomeSharks"
+      },
+      "public_metrics": {
+        "likes": 5,
+        "retweets": 0,
+        "replies": 2,
+        "quotes": 0,
+        "views": 536
+      },
+      "url": "https://twitter.com/IncomeSharks/status/2026370410900763066",
+      "processed": false,
+      "addedAt": "2026-02-24T22:14:22.492Z",
+      "expiresAt": "2026-03-03T22:14:22.492Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2026169955407020110",
+      "text": "@OrderBookShow Love the show, can't wait to tell my kids one day I got mentioned in The Order Book. Huge honor",
+      "author": {
+        "id": "4441279246",
+        "username": "IncomeSharks"
+      },
+      "public_metrics": {
+        "likes": 33,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 3616
+      },
+      "url": "https://twitter.com/IncomeSharks/status/2026169955407020110",
+      "processed": false,
+      "addedAt": "2026-02-24T22:14:24.612Z",
+      "expiresAt": "2026-03-03T22:14:24.612Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2026165435901923446",
+      "text": "@AstroCryptoGuru Lines up with mining stocks",
+      "author": {
+        "id": "4441279246",
+        "username": "IncomeSharks"
+      },
+      "public_metrics": {
+        "likes": 33,
+        "retweets": 0,
+        "replies": 3,
+        "quotes": 0,
+        "views": 7994
+      },
+      "url": "https://twitter.com/IncomeSharks/status/2026165435901923446",
+      "processed": false,
+      "addedAt": "2026-02-24T22:14:26.498Z",
+      "expiresAt": "2026-03-03T22:14:26.498Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2026145654570160297",
+      "text": "@Jake__Wujastyk Every bottom has low sentiment but low sentiment on its own doesn't create a bottom.",
+      "author": {
+        "id": "4441279246",
+        "username": "IncomeSharks"
+      },
+      "public_metrics": {
+        "likes": 140,
+        "retweets": 3,
+        "replies": 5,
+        "quotes": 1,
+        "views": 11596
+      },
+      "url": "https://twitter.com/IncomeSharks/status/2026145654570160297",
+      "processed": false,
+      "addedAt": "2026-02-24T22:14:28.533Z",
+      "expiresAt": "2026-03-03T22:14:28.533Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2026142000547078421",
+      "text": "@pepemoonboy That first few weeks of 2026 though was fun lol",
+      "author": {
+        "id": "4441279246",
+        "username": "IncomeSharks"
+      },
+      "public_metrics": {
+        "likes": 33,
+        "retweets": 0,
+        "replies": 2,
+        "quotes": 0,
+        "views": 6043
+      },
+      "url": "https://twitter.com/IncomeSharks/status/2026142000547078421",
+      "processed": false,
+      "addedAt": "2026-02-24T22:14:30.555Z",
+      "expiresAt": "2026-03-03T22:14:30.555Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2026384574922563690",
+      "text": "It's funny that once someone hits a certain net worth their answer to the endgame is land, crops, guns, metals, and a doomsday bunker in the mountains",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "likes": 39,
+        "retweets": 1,
+        "replies": 8,
+        "quotes": 0,
+        "views": 3155
+      },
+      "url": "https://twitter.com/AltcoinSherpa/status/2026384574922563690",
+      "processed": false,
+      "addedAt": "2026-02-24T22:14:44.308Z",
+      "expiresAt": "2026-03-03T22:14:44.308Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2026379769143578658",
+      "text": "$STABLE is 1 of the cabal coins that looks like it can either just die or keep grinding higher. Given it's cabal, I'm leading towards the former. It's just always so hard to buy charts like these https://t.co/7yZw7WzAoi",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "likes": 15,
+        "retweets": 0,
+        "replies": 5,
+        "quotes": 0,
+        "views": 2870
+      },
+      "url": "https://twitter.com/AltcoinSherpa/status/2026379769143578658",
+      "processed": false,
+      "addedAt": "2026-02-24T22:14:46.343Z",
+      "expiresAt": "2026-03-03T22:14:46.343Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2026379338405269596",
+      "text": "Altcoins are going to bounce back eventually. I'm not saying they're going back to ATH but it won't take much for them to do 2x in short order; January 1st proved that. $PENGU is 1 of my bags I'm holding and it still hits a few sectors. Not a quick trade at all and slower one but https://t.co/mhX0bivYzQ",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "likes": 81,
+        "retweets": 10,
+        "replies": 17,
+        "quotes": 1,
+        "views": 6408
+      },
+      "url": "https://twitter.com/AltcoinSherpa/status/2026379338405269596",
+      "processed": false,
+      "addedAt": "2026-02-24T22:14:48.260Z",
+      "expiresAt": "2026-03-03T22:14:48.260Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2026302130210972125",
+      "text": "Max pain is up from here.\n\nJust a matter of time.",
+      "author": {
+        "id": "988796804446769153",
+        "username": "CryptoCapo_"
+      },
+      "public_metrics": {
+        "likes": 1816,
+        "retweets": 82,
+        "replies": 8,
+        "quotes": 123,
+        "views": 281839
+      },
+      "url": "https://twitter.com/CryptoCapo_/status/2026302130210972125",
+      "processed": false,
+      "addedAt": "2026-02-24T22:14:53.162Z",
+      "expiresAt": "2026-03-03T22:14:53.162Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2026298336068714868",
+      "text": "@CryptoYoddha Everything is aligning for this to be an important local bottom. We just need confirmations, that initial move that triggers the domino effect.",
+      "author": {
+        "id": "988796804446769153",
+        "username": "CryptoCapo_"
+      },
+      "public_metrics": {
+        "likes": 39,
+        "retweets": 1,
+        "replies": 1,
+        "quotes": 1,
+        "views": 3625
+      },
+      "url": "https://twitter.com/CryptoCapo_/status/2026298336068714868",
+      "processed": false,
+      "addedAt": "2026-02-24T22:14:55.141Z",
+      "expiresAt": "2026-03-03T22:14:55.141Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2026234393757434013",
+      "text": "@Hawk_Finance Yeah of course I'm not using it as a sole signal (I never do), but it's great for confluence.",
+      "author": {
+        "id": "988796804446769153",
+        "username": "CryptoCapo_"
+      },
+      "public_metrics": {
+        "likes": 40,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 9252
+      },
+      "url": "https://twitter.com/CryptoCapo_/status/2026234393757434013",
+      "processed": false,
+      "addedAt": "2026-02-24T22:14:57.130Z",
+      "expiresAt": "2026-03-03T22:14:57.130Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2026230875730407733",
+      "text": "10D RSI reaching oversold zone.\n\nThis is literally the first time in the history of #Bitcoin https://t.co/9v4Y7Akn3k",
+      "author": {
+        "id": "988796804446769153",
+        "username": "CryptoCapo_"
+      },
+      "public_metrics": {
+        "likes": 1371,
+        "retweets": 123,
+        "replies": 4,
+        "quotes": 28,
+        "views": 136598
+      },
+      "url": "https://twitter.com/CryptoCapo_/status/2026230875730407733",
+      "processed": false,
+      "addedAt": "2026-02-24T22:14:59.115Z",
+      "expiresAt": "2026-03-03T22:14:59.115Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2026212693535862965",
+      "text": "@follis_ Excited to read it 🤝",
+      "author": {
+        "id": "988796804446769153",
+        "username": "CryptoCapo_"
+      },
+      "public_metrics": {
+        "likes": 11,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 2056
+      },
+      "url": "https://twitter.com/CryptoCapo_/status/2026212693535862965",
+      "processed": false,
+      "addedAt": "2026-02-24T22:15:01.120Z",
+      "expiresAt": "2026-03-03T22:15:01.120Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2025968446907834638",
+      "text": "@mark_cullen Thanks, it took me a while.",
+      "author": {
+        "id": "988796804446769153",
+        "username": "CryptoCapo_"
+      },
+      "public_metrics": {
+        "likes": 35,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 5811
+      },
+      "url": "https://twitter.com/CryptoCapo_/status/2025968446907834638",
+      "processed": false,
+      "addedAt": "2026-02-24T22:15:03.239Z",
+      "expiresAt": "2026-03-03T22:15:03.239Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2025955574928625703",
+      "text": "https://t.co/oPGjjdJeuy",
+      "author": {
+        "id": "988796804446769153",
+        "username": "CryptoCapo_"
+      },
+      "public_metrics": {
+        "likes": 790,
+        "retweets": 90,
+        "replies": 4,
+        "quotes": 12,
+        "views": 86481
+      },
+      "url": "https://twitter.com/CryptoCapo_/status/2025955574928625703",
+      "processed": false,
+      "addedAt": "2026-02-24T22:15:05.145Z",
+      "expiresAt": "2026-03-03T22:15:05.145Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2024445456701440451",
+      "text": "@mark_cullen I honestly think this bear market will be longer than others, and different. Different because some alts might be reaching cycle bottoms, while BTC has probably reached a cycle top.",
+      "author": {
+        "id": "988796804446769153",
+        "username": "CryptoCapo_"
+      },
+      "public_metrics": {
+        "likes": 85,
+        "retweets": 4,
+        "replies": 0,
+        "quotes": 1,
+        "views": 12153
+      },
+      "url": "https://twitter.com/CryptoCapo_/status/2024445456701440451",
+      "processed": false,
+      "addedAt": "2026-02-24T22:15:07.125Z",
+      "expiresAt": "2026-03-03T22:15:07.125Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2024440472253444328",
+      "text": "I understand current market conditions aren't great for everyone, but we try to make the best out of it.\n\nBased on my analysis, and as said before, I'm bullish. A local bottom should be forming here, and with all the liquidity building up above, a strong short squeeze is likely.",
+      "author": {
+        "id": "988796804446769153",
+        "username": "CryptoCapo_"
+      },
+      "public_metrics": {
+        "likes": 1380,
+        "retweets": 72,
+        "replies": 4,
+        "quotes": 46,
+        "views": 172365
+      },
+      "url": "https://twitter.com/CryptoCapo_/status/2024440472253444328",
+      "processed": false,
+      "addedAt": "2026-02-24T22:15:09.133Z",
+      "expiresAt": "2026-03-03T22:15:09.133Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2019726750062936160",
+      "text": "The algos have switched.\n\nshortsqueeze.exe https://t.co/hi0972olyA",
+      "author": {
+        "id": "988796804446769153",
+        "username": "CryptoCapo_"
+      },
+      "public_metrics": {
+        "likes": 160,
+        "retweets": 13,
+        "replies": 1,
+        "quotes": 5,
+        "views": 67727
+      },
+      "url": "https://twitter.com/CryptoCapo_/status/2019726750062936160",
+      "processed": false,
+      "addedAt": "2026-02-24T22:15:11.130Z",
+      "expiresAt": "2026-03-03T22:15:11.130Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
     }
   ],
   "metadata": {
-    "lastUpdated": "2026-02-24T18:23:31.980Z",
-    "totalPosts": 66,
+    "lastUpdated": "2026-02-24T22:16:15.307Z",
+    "totalPosts": 67,
     "bySource": {
-      "timeline_monitor": 66,
+      "timeline_monitor": 67,
       "search_discovery": 0
     }
   },
