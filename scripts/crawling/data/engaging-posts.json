@@ -204,7 +204,7 @@
         "views": 2205
       },
       "url": "https://twitter.com/cobie/status/2024775779129704516",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-02-24T07:36:05.330Z",
       "expiresAt": "2026-03-03T07:36:05.330Z",
       "source": "timeline_monitor",
@@ -225,7 +225,7 @@
         "views": 10560
       },
       "url": "https://twitter.com/cobie/status/2024775526569660820",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-02-24T07:36:07.337Z",
       "expiresAt": "2026-03-03T07:36:07.337Z",
       "source": "timeline_monitor",
