@@ -1,7 +1,21 @@
 {
-  "lastUpdated": "2026-02-24T10:16:16.210Z",
-  "totalArticles": 19,
+  "lastUpdated": "2026-02-25T10:17:29.334Z",
+  "totalArticles": 20,
   "articles": [
+    {
+      "slug": "fan-game-cube-2026-02-25",
+      "product": "Fan Game Cube",
+      "title": "Fan Game Cube: NFT Stadium Zones with Real-Time Match Rewards",
+      "subtitle": "Sports fan engagement has long lacked true digital ownership and interactive rewards. Fan Game Cube changes this by tokenizing stadium fields into NFT coordinate zones, enabling fans to own specific field locations and receive automated rewards whenever match events occur at their coordinates across multiple sports.",
+      "publishDate": "2026-02-25T10:17:18.370Z",
+      "tweetId": "",
+      "featuredImage": {
+        "src": "/assets/images/docs/fan-game-cube/fan-game-cube-0.png",
+        "alt": "Product screenshot",
+        "loading": "eager"
+      },
+      "seoDescription": "Learn how Fan Game Cube tokenizes stadium fields into NFT zones, enabling fans to own coordinates and earn real-time rewards from match events."
+    },
     {
       "slug": "esg-credits-2026-02-24",
       "product": "ESG Credits",
