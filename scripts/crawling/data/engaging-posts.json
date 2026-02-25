@@ -582,7 +582,7 @@
         "views": 1449
       },
       "url": "https://twitter.com/cobie/status/2026194467682705745",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-02-25T07:36:15.639Z",
       "expiresAt": "2026-03-04T07:36:15.639Z",
       "source": "timeline_monitor",
@@ -603,7 +603,7 @@
         "views": 47983
       },
       "url": "https://twitter.com/cobie/status/2026044549986976129",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-02-25T07:36:17.564Z",
       "expiresAt": "2026-03-04T07:36:17.564Z",
       "source": "timeline_monitor",
@@ -624,7 +624,7 @@
         "views": 3302
       },
       "url": "https://twitter.com/cobie/status/2026043678280520093",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-02-25T07:36:19.593Z",
       "expiresAt": "2026-03-04T07:36:19.593Z",
       "source": "timeline_monitor",
@@ -645,7 +645,7 @@
         "views": 37463
       },
       "url": "https://twitter.com/cobie/status/2026038645333901331",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-02-25T07:36:21.616Z",
       "expiresAt": "2026-03-04T07:36:21.616Z",
       "source": "timeline_monitor",
@@ -666,7 +666,7 @@
         "views": 1085
       },
       "url": "https://twitter.com/IncomeSharks/status/2026545242217001455",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-02-25T07:36:35.433Z",
       "expiresAt": "2026-03-04T07:36:35.433Z",
       "source": "timeline_monitor",
@@ -687,7 +687,7 @@
         "views": 1140
       },
       "url": "https://twitter.com/IncomeSharks/status/2026521812306375007",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-02-25T07:36:37.390Z",
       "expiresAt": "2026-03-04T07:36:37.390Z",
       "source": "timeline_monitor",
@@ -708,7 +708,7 @@
         "views": 439
       },
       "url": "https://twitter.com/IncomeSharks/status/2026518147109630423",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-02-25T07:36:39.386Z",
       "expiresAt": "2026-03-04T07:36:39.386Z",
       "source": "timeline_monitor",
@@ -729,7 +729,7 @@
         "views": 1555
       },
       "url": "https://twitter.com/IncomeSharks/status/2026515085179703328",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-02-25T07:36:41.390Z",
       "expiresAt": "2026-03-04T07:36:41.390Z",
       "source": "timeline_monitor",
@@ -750,7 +750,7 @@
         "views": 282
       },
       "url": "https://twitter.com/IncomeSharks/status/2026514306179940837",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-02-25T07:36:43.398Z",
       "expiresAt": "2026-03-04T07:36:43.398Z",
       "source": "timeline_monitor",
@@ -771,7 +771,7 @@
         "views": 22682
       },
       "url": "https://twitter.com/IncomeSharks/status/2026514006643728506",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-02-25T07:36:45.390Z",
       "expiresAt": "2026-03-04T07:36:45.390Z",
       "source": "timeline_monitor",
@@ -792,7 +792,7 @@
         "views": 1870
       },
       "url": "https://twitter.com/IncomeSharks/status/2026502837887451143",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-02-25T07:36:47.425Z",
       "expiresAt": "2026-03-04T07:36:47.425Z",
       "source": "timeline_monitor",
@@ -813,7 +813,7 @@
         "views": 3270
       },
       "url": "https://twitter.com/IncomeSharks/status/2026502614586998921",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-02-25T07:36:49.402Z",
       "expiresAt": "2026-03-04T07:36:49.402Z",
       "source": "timeline_monitor",
@@ -834,7 +834,7 @@
         "views": 872
       },
       "url": "https://twitter.com/IncomeSharks/status/2026502186948301107",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-02-25T07:36:51.421Z",
       "expiresAt": "2026-03-04T07:36:51.421Z",
       "source": "timeline_monitor",
