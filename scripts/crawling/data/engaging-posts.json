@@ -1,594 +1,6 @@
 {
   "posts": [
     {
-      "id": "2026425017018507337",
-      "text": "@barneytheboi The average US citizen retires with a median of 200k to 400k. And the average person only has 40k saved up. A few million invested is enough to retire and by the time you get older that's probably 5 to 10 million anyways.",
-      "author": {
-        "id": "4441279246",
-        "username": "IncomeSharks"
-      },
-      "public_metrics": {
-        "likes": 138,
-        "retweets": 0,
-        "replies": 8,
-        "quotes": 0,
-        "views": 16523
-      },
-      "url": "https://twitter.com/IncomeSharks/status/2026425017018507337",
-      "processed": true,
-      "addedAt": "2026-02-25T07:36:53.451Z",
-      "expiresAt": "2026-03-04T07:36:53.451Z",
-      "source": "timeline_monitor",
-      "contentCategory": "error"
-    },
-    {
-      "id": "2026481279445696558",
-      "text": "'it could be the bottom for Bitcoin!!' https://t.co/DpNHLnvKMT",
-      "author": {
-        "id": "1068237257977544704",
-        "username": "AltcoinSherpa"
-      },
-      "public_metrics": {
-        "likes": 71,
-        "retweets": 6,
-        "replies": 18,
-        "quotes": 0,
-        "views": 5406
-      },
-      "url": "https://twitter.com/AltcoinSherpa/status/2026481279445696558",
-      "processed": true,
-      "addedAt": "2026-02-25T07:37:06.994Z",
-      "expiresAt": "2026-03-04T07:37:06.994Z",
-      "source": "timeline_monitor",
-      "contentCategory": "error"
-    },
-    {
-      "id": "2026472566697726388",
-      "text": "CT on any green day https://t.co/2ed57T3U3p",
-      "author": {
-        "id": "1068237257977544704",
-        "username": "AltcoinSherpa"
-      },
-      "public_metrics": {
-        "likes": 30,
-        "retweets": 1,
-        "replies": 7,
-        "quotes": 0,
-        "views": 2734
-      },
-      "url": "https://twitter.com/AltcoinSherpa/status/2026472566697726388",
-      "processed": true,
-      "addedAt": "2026-02-25T07:37:09.047Z",
-      "expiresAt": "2026-03-04T07:37:09.047Z",
-      "source": "timeline_monitor",
-      "contentCategory": "error"
-    },
-    {
-      "id": "2026469886571024640",
-      "text": "https://t.co/N1biREH5mJ https://t.co/sWVIsbY1xS",
-      "author": {
-        "id": "1068237257977544704",
-        "username": "AltcoinSherpa"
-      },
-      "public_metrics": {
-        "likes": 11,
-        "retweets": 1,
-        "replies": 4,
-        "quotes": 0,
-        "views": 4104
-      },
-      "url": "https://twitter.com/AltcoinSherpa/status/2026469886571024640",
-      "processed": true,
-      "addedAt": "2026-02-25T07:37:11.016Z",
-      "expiresAt": "2026-03-04T07:37:11.016Z",
-      "source": "timeline_monitor",
-      "contentCategory": "error"
-    },
-    {
-      "id": "2026457730102223297",
-      "text": "$BTC:  We are here https://t.co/eObvEcKbcB",
-      "author": {
-        "id": "1068237257977544704",
-        "username": "AltcoinSherpa"
-      },
-      "public_metrics": {
-        "likes": 77,
-        "retweets": 3,
-        "replies": 13,
-        "quotes": 0,
-        "views": 5659
-      },
-      "url": "https://twitter.com/AltcoinSherpa/status/2026457730102223297",
-      "processed": true,
-      "addedAt": "2026-02-25T07:37:12.992Z",
-      "expiresAt": "2026-03-04T07:37:12.992Z",
-      "source": "timeline_monitor",
-      "contentCategory": "error"
-    },
-    {
-      "id": "2026456912082940103",
-      "text": "@ColdBloodShill maybe its recency bias but i feel like I still had more hope in 2022",
-      "author": {
-        "id": "1068237257977544704",
-        "username": "AltcoinSherpa"
-      },
-      "public_metrics": {
-        "likes": 6,
-        "retweets": 0,
-        "replies": 3,
-        "quotes": 0,
-        "views": 1497
-      },
-      "url": "https://twitter.com/AltcoinSherpa/status/2026456912082940103",
-      "processed": true,
-      "addedAt": "2026-02-25T07:37:15.034Z",
-      "expiresAt": "2026-03-04T07:37:15.034Z",
-      "source": "timeline_monitor",
-      "contentCategory": "error"
-    },
-    {
-      "id": "2026450285506203891",
-      "text": "if you ever think that altcoins are going to ever come back, you can either try to DCA in and get them at great prices OR, if actively trading, just buy them on the way up when trending. pros and cons to both strategies",
-      "author": {
-        "id": "1068237257977544704",
-        "username": "AltcoinSherpa"
-      },
-      "public_metrics": {
-        "likes": 24,
-        "retweets": 0,
-        "replies": 10,
-        "quotes": 0,
-        "views": 3062
-      },
-      "url": "https://twitter.com/AltcoinSherpa/status/2026450285506203891",
-      "processed": true,
-      "addedAt": "2026-02-25T07:37:17.036Z",
-      "expiresAt": "2026-03-04T07:37:17.036Z",
-      "source": "timeline_monitor",
-      "contentCategory": "error"
-    },
-    {
-      "id": "2026333806068678839",
-      "text": "high fdv, low float? I've seen this game before... https://t.co/hAShVtiSnB",
-      "author": {
-        "id": "1068237257977544704",
-        "username": "AltcoinSherpa"
-      },
-      "public_metrics": {
-        "likes": 24,
-        "retweets": 0,
-        "replies": 5,
-        "quotes": 0,
-        "views": 6218
-      },
-      "url": "https://twitter.com/AltcoinSherpa/status/2026333806068678839",
-      "processed": true,
-      "addedAt": "2026-02-25T07:37:18.995Z",
-      "expiresAt": "2026-03-04T07:37:18.995Z",
-      "source": "timeline_monitor",
-      "contentCategory": "error"
-    },
-    {
-      "id": "2026350643120570469",
-      "text": "🦅 The World Liberty team announced that there was a coordinated attempt to spread fear, uncertainty, and doubt (FUD) by trying to destabilize USD1’s peg.\nThere has recently been a noticeable increase in negative narratives globally targeting both $WLFI and $USD1. According to https://t.co/4aZcGedubc",
-      "author": {
-        "id": "crawlee_search_crypto_theboss",
-        "username": "Crypto_TheBoss"
-      },
-      "public_metrics": {
-        "likes": 68,
-        "retweets": 6,
-        "replies": 11,
-        "quotes": 0,
-        "views": 7331
-      },
-      "url": "https://twitter.com/Crypto_TheBoss/status/2026350643120570469",
-      "processed": true,
-      "addedAt": "2026-02-25T07:37:21.043Z",
-      "expiresAt": "2026-03-04T07:37:21.043Z",
-      "source": "timeline_monitor",
-      "contentCategory": "error"
-    },
-    {
-      "id": "2026180932818846116",
-      "text": "🚨 BREAKING: Strategy announced that it purchased 592 $Bitcoin last week at an average price of $67,286, with a total investment of approximately $39.8 million.\n\n⚠️ This is not investment advice.\n\n#Bitcoin #BTC #Crypto #Blockchain",
-      "author": {
-        "id": "crawlee_search_crypto_theboss",
-        "username": "Crypto_TheBoss"
-      },
-      "public_metrics": {
-        "likes": 116,
-        "retweets": 9,
-        "replies": 10,
-        "quotes": 0,
-        "views": 19732
-      },
-      "url": "https://twitter.com/Crypto_TheBoss/status/2026180932818846116",
-      "processed": true,
-      "addedAt": "2026-02-25T07:37:23.005Z",
-      "expiresAt": "2026-03-04T07:37:23.005Z",
-      "source": "timeline_monitor",
-      "contentCategory": "error"
-    },
-    {
-      "id": "2026180845564801162",
-      "text": "🚨 BREAKING: Bitmine announced that it purchased a total of 51,162 $ETH last week, valued at approximately $95 million.\n\nWith this latest acquisition, the company’s total holdings have increased to 4.42 million #ETH , representing an estimated value of around $8.6 billion.\n\n⚠️",
-      "author": {
-        "id": "crawlee_search_crypto_theboss",
-        "username": "Crypto_TheBoss"
-      },
-      "public_metrics": {
-        "likes": 111,
-        "retweets": 9,
-        "replies": 10,
-        "quotes": 0,
-        "views": 24711
-      },
-      "url": "https://twitter.com/Crypto_TheBoss/status/2026180845564801162",
-      "processed": true,
-      "addedAt": "2026-02-25T07:37:24.994Z",
-      "expiresAt": "2026-03-04T07:37:24.994Z",
-      "source": "timeline_monitor",
-      "contentCategory": "error"
-    },
-    {
-      "id": "2025673836231000537",
-      "text": "🔷️ 🦅 $WLFI  ( @worldlibertyfi) has tested the resistance zone for the second time and, once again, failed to break above it. Repeated tests typically weaken a resistance level; therefore, a confirmed breakout could open the path toward the next yellow-marked resistance zones https://t.co/EaeuJ3xq79",
-      "author": {
-        "id": "crawlee_search_crypto_theboss",
-        "username": "Crypto_TheBoss"
-      },
-      "public_metrics": {
-        "likes": 121,
-        "retweets": 13,
-        "replies": 12,
-        "quotes": 0,
-        "views": 21803
-      },
-      "url": "https://twitter.com/Crypto_TheBoss/status/2025673836231000537",
-      "processed": true,
-      "addedAt": "2026-02-25T07:37:26.997Z",
-      "expiresAt": "2026-03-04T07:37:26.997Z",
-      "source": "timeline_monitor",
-      "contentCategory": "error"
-    },
-    {
-      "id": "2025672635548352617",
-      "text": "🔷️ $Silver experienced nearly a 50% decline after its all-time high. Following that correction, price recovered and climbed approximately 32%, revisiting the $85 area.\n\n✅️ From a Fibonacci perspective, the blue lines represent potential support levels, while the yellow lines https://t.co/bBxewgEwxd",
-      "author": {
-        "id": "crawlee_search_crypto_theboss",
-        "username": "Crypto_TheBoss"
-      },
-      "public_metrics": {
-        "likes": 114,
-        "retweets": 13,
-        "replies": 15,
-        "quotes": 0,
-        "views": 27379
-      },
-      "url": "https://twitter.com/Crypto_TheBoss/status/2025672635548352617",
-      "processed": true,
-      "addedAt": "2026-02-25T07:37:29.000Z",
-      "expiresAt": "2026-03-04T07:37:29.000Z",
-      "source": "timeline_monitor",
-      "contentCategory": "error"
-    },
-    {
-      "id": "2025671400057418042",
-      "text": "🌎 It’s a busy week ahead across both macro and crypto markets:\n\n🇨🇳 Monday, February 23 – China’s Lunar New Year holiday officially ends. The reopening of Chinese markets will be monitored in terms of liquidity and risk appetite.\n\n✨ Monday, February 23 – Alchemy Chain ( $ACH )",
-      "author": {
-        "id": "crawlee_search_crypto_theboss",
-        "username": "Crypto_TheBoss"
-      },
-      "public_metrics": {
-        "likes": 113,
-        "retweets": 13,
-        "replies": 12,
-        "quotes": 0,
-        "views": 41155
-      },
-      "url": "https://twitter.com/Crypto_TheBoss/status/2025671400057418042",
-      "processed": true,
-      "addedAt": "2026-02-25T07:37:31.063Z",
-      "expiresAt": "2026-03-04T07:37:31.063Z",
-      "source": "timeline_monitor",
-      "contentCategory": "error"
-    },
-    {
-      "id": "2025670143578096094",
-      "text": "‼️ According to current open interest data, if $BTC reaches the $90,000 level, more than $13 billion in short positions are expected to face liquidation.\n\nSuch large liquidation clusters can significantly increase short-term volatility and may accelerate price movements due to https://t.co/y1bp8KeeOJ",
-      "author": {
-        "id": "crawlee_search_crypto_theboss",
-        "username": "Crypto_TheBoss"
-      },
-      "public_metrics": {
-        "likes": 120,
-        "retweets": 12,
-        "replies": 11,
-        "quotes": 0,
-        "views": 27656
-      },
-      "url": "https://twitter.com/Crypto_TheBoss/status/2025670143578096094",
-      "processed": true,
-      "addedAt": "2026-02-25T07:37:33.045Z",
-      "expiresAt": "2026-03-04T07:37:33.045Z",
-      "source": "timeline_monitor",
-      "contentCategory": "error"
-    },
-    {
-      "id": "2025213060302942699",
-      "text": "🔷️ 🦅 The #USD1 campaign on $Binance has been officially extended. During the new period, from February 20 to March 20 (UTC), a total of 235 million $WLFI ( @worldlibertyfi) is planned to be distributed to users holding USD1.\n\n🦅 While appreciation was expressed to participants https://t.co/y98ATJqOBv",
-      "author": {
-        "id": "crawlee_search_crypto_theboss",
-        "username": "Crypto_TheBoss"
-      },
-      "public_metrics": {
-        "likes": 104,
-        "retweets": 2,
-        "replies": 11,
-        "quotes": 0,
-        "views": 39369
-      },
-      "url": "https://twitter.com/Crypto_TheBoss/status/2025213060302942699",
-      "processed": true,
-      "addedAt": "2026-02-25T07:37:35.001Z",
-      "expiresAt": "2026-03-04T07:37:35.001Z",
-      "source": "timeline_monitor",
-      "contentCategory": "error"
-    },
-    {
-      "id": "2025211015772738019",
-      "text": "🔷️ Builders keep building. 🛠️\n\n✅️ It has been announced that #WLFI ( @worldlibertyfi ) Co-Founder @zakfolkman will be visiting Stanford University for a special guest lecture.\n\n✅️ Space is limited, and those who wish to attend are required to complete the registration https://t.co/AS75EXMHVR",
-      "author": {
-        "id": "crawlee_search_crypto_theboss",
-        "username": "Crypto_TheBoss"
-      },
-      "public_metrics": {
-        "likes": 96,
-        "retweets": 3,
-        "replies": 11,
-        "quotes": 0,
-        "views": 53317
-      },
-      "url": "https://twitter.com/Crypto_TheBoss/status/2025211015772738019",
-      "processed": true,
-      "addedAt": "2026-02-25T07:37:37.029Z",
-      "expiresAt": "2026-03-04T07:37:37.029Z",
-      "source": "timeline_monitor",
-      "contentCategory": "error"
-    },
-    {
-      "id": "2025208653137993865",
-      "text": "✨ Bitmine purchased an additional 17,722 $ETH , valued at approximately \n$34.74 million.\n\n⚠️ This is not investment advice.\n\n#ETH #Ethereum #Crypto #Blockchain",
-      "author": {
-        "id": "crawlee_search_crypto_theboss",
-        "username": "Crypto_TheBoss"
-      },
-      "public_metrics": {
-        "likes": 98,
-        "retweets": 3,
-        "replies": 13,
-        "quotes": 1,
-        "views": 29317
-      },
-      "url": "https://twitter.com/Crypto_TheBoss/status/2025208653137993865",
-      "processed": true,
-      "addedAt": "2026-02-25T07:37:39.010Z",
-      "expiresAt": "2026-03-04T07:37:39.010Z",
-      "source": "timeline_monitor",
-      "contentCategory": "error"
-    },
-    {
-      "id": "2026553499501105536",
-      "text": "SHORT-TERM HOLDERS UNREALISED LOSSES HAVE REACHED ALL-TIME HIGHS. https://t.co/DbvRoftrbm",
-      "author": {
-        "id": "1353384573435056128",
-        "username": "CryptoRover"
-      },
-      "public_metrics": {
-        "likes": 105,
-        "retweets": 10,
-        "replies": 73,
-        "quotes": 3,
-        "views": 4166
-      },
-      "url": "https://twitter.com/CryptoRover/status/2026553499501105536",
-      "processed": true,
-      "addedAt": "2026-02-25T07:37:41.040Z",
-      "expiresAt": "2026-03-04T07:37:41.040Z",
-      "source": "timeline_monitor",
-      "contentCategory": "error"
-    },
-    {
-      "id": "2026519069927821768",
-      "text": "#BITCOIN HISTORY REPEATS...\n\nWatch NOW:👇\nhttps://t.co/RPVZxDqJPv https://t.co/rhcqVx5KWZ",
-      "author": {
-        "id": "1353384573435056128",
-        "username": "CryptoRover"
-      },
-      "public_metrics": {
-        "likes": 80,
-        "retweets": 11,
-        "replies": 26,
-        "quotes": 0,
-        "views": 20007
-      },
-      "url": "https://twitter.com/CryptoRover/status/2026519069927821768",
-      "processed": true,
-      "addedAt": "2026-02-25T07:37:42.997Z",
-      "expiresAt": "2026-03-04T07:37:42.997Z",
-      "source": "timeline_monitor",
-      "contentCategory": "error"
-    },
-    {
-      "id": "2026510729541713924",
-      "text": "SHOCKING: 🇺🇸 Democrats REFUSED to stand when Trump said that the duty of the American government was to protect American citizens, NOT illegal aliens. https://t.co/GCAjPSjSEC",
-      "author": {
-        "id": "1353384573435056128",
-        "username": "CryptoRover"
-      },
-      "public_metrics": {
-        "likes": 278,
-        "retweets": 25,
-        "replies": 37,
-        "quotes": 1,
-        "views": 44570
-      },
-      "url": "https://twitter.com/CryptoRover/status/2026510729541713924",
-      "processed": true,
-      "addedAt": "2026-02-25T07:37:45.089Z",
-      "expiresAt": "2026-03-04T07:37:45.089Z",
-      "source": "timeline_monitor",
-      "contentCategory": "error"
-    },
-    {
-      "id": "2026510357142134979",
-      "text": "🇺🇸 Trump to Democrats: \"these people are crazy. I'm telling you. They're crazy.\" https://t.co/M7FH7ojIG0",
-      "author": {
-        "id": "1353384573435056128",
-        "username": "CryptoRover"
-      },
-      "public_metrics": {
-        "likes": 188,
-        "retweets": 20,
-        "replies": 32,
-        "quotes": 2,
-        "views": 35384
-      },
-      "url": "https://twitter.com/CryptoRover/status/2026510357142134979",
-      "processed": true,
-      "addedAt": "2026-02-25T07:37:47.026Z",
-      "expiresAt": "2026-03-04T07:37:47.026Z",
-      "source": "timeline_monitor",
-      "contentCategory": "error"
-    },
-    {
-      "id": "2026510184181543139",
-      "text": "🐳 Whales are accumulating $ETH... https://t.co/91zdPbKpJA",
-      "author": {
-        "id": "1353384573435056128",
-        "username": "CryptoRover"
-      },
-      "public_metrics": {
-        "likes": 201,
-        "retweets": 27,
-        "replies": 63,
-        "quotes": 2,
-        "views": 38349
-      },
-      "url": "https://twitter.com/CryptoRover/status/2026510184181543139",
-      "processed": true,
-      "addedAt": "2026-02-25T07:37:49.010Z",
-      "expiresAt": "2026-03-04T07:37:49.010Z",
-      "source": "timeline_monitor",
-      "contentCategory": "error"
-    },
-    {
-      "id": "2026499178923180293",
-      "text": "🇺🇸 PRESIDENT TRUMP: \n\n“PASS THE STOP INSIDER TRADING ACT WITHOUT DELAY” https://t.co/JlI6IaJKK8",
-      "author": {
-        "id": "1353384573435056128",
-        "username": "CryptoRover"
-      },
-      "public_metrics": {
-        "likes": 357,
-        "retweets": 37,
-        "replies": 46,
-        "quotes": 2,
-        "views": 53194
-      },
-      "url": "https://twitter.com/CryptoRover/status/2026499178923180293",
-      "processed": true,
-      "addedAt": "2026-02-25T07:37:51.123Z",
-      "expiresAt": "2026-03-04T07:37:51.123Z",
-      "source": "timeline_monitor",
-      "contentCategory": "error"
-    },
-    {
-      "id": "2026488819181052403",
-      "text": "💥BREAKING: \n\n🇺🇸 President Trump says everyone's portfolios are \"GAINING.\"   \n\n\"Everybody is up, way up.\"\n\nWhat about crypto investors? https://t.co/uyLQbGPeFO",
-      "author": {
-        "id": "1353384573435056128",
-        "username": "CryptoRover"
-      },
-      "public_metrics": {
-        "likes": 379,
-        "retweets": 56,
-        "replies": 89,
-        "quotes": 9,
-        "views": 64676
-      },
-      "url": "https://twitter.com/CryptoRover/status/2026488819181052403",
-      "processed": true,
-      "addedAt": "2026-02-25T07:37:53.009Z",
-      "expiresAt": "2026-03-04T07:37:53.010Z",
-      "source": "timeline_monitor",
-      "contentCategory": "error"
-    },
-    {
-      "id": "2026484997322842563",
-      "text": "🇺🇸 PRESIDENT TRUMP:  \n\n\"We are winning so much, that we really don't know what to do about it.''\n\n''People are asking me, please, please, please Mr. President, we are winning too much, we can't take it anymore.\" https://t.co/ITZReS17Pv",
-      "author": {
-        "id": "1353384573435056128",
-        "username": "CryptoRover"
-      },
-      "public_metrics": {
-        "likes": 542,
-        "retweets": 58,
-        "replies": 120,
-        "quotes": 17,
-        "views": 87718
-      },
-      "url": "https://twitter.com/CryptoRover/status/2026484997322842563",
-      "processed": true,
-      "addedAt": "2026-02-25T07:37:55.024Z",
-      "expiresAt": "2026-03-04T07:37:55.024Z",
-      "source": "timeline_monitor",
-      "contentCategory": "error"
-    },
-    {
-      "id": "2026484699716108393",
-      "text": "💥BREAKING: \n\n🇺🇸 President Trump stated that global investment commitments have reached $18 trillion. https://t.co/Glf2MZ3mE8",
-      "author": {
-        "id": "1353384573435056128",
-        "username": "CryptoRover"
-      },
-      "public_metrics": {
-        "likes": 318,
-        "retweets": 33,
-        "replies": 66,
-        "quotes": 4,
-        "views": 54757
-      },
-      "url": "https://twitter.com/CryptoRover/status/2026484699716108393",
-      "processed": true,
-      "addedAt": "2026-02-25T07:37:57.018Z",
-      "expiresAt": "2026-03-04T07:37:57.018Z",
-      "source": "timeline_monitor",
-      "contentCategory": "error"
-    },
-    {
-      "id": "2026478129582121138",
-      "text": "💥BREAKING:\n\n🇺🇸 President Trump's state of the Union address to begin any moment now. https://t.co/DiGa19a4k2",
-      "author": {
-        "id": "1353384573435056128",
-        "username": "CryptoRover"
-      },
-      "public_metrics": {
-        "likes": 353,
-        "retweets": 36,
-        "replies": 110,
-        "quotes": 4,
-        "views": 67239
-      },
-      "url": "https://twitter.com/CryptoRover/status/2026478129582121138",
-      "processed": true,
-      "addedAt": "2026-02-25T07:37:59.013Z",
-      "expiresAt": "2026-03-04T07:37:59.013Z",
-      "source": "timeline_monitor",
-      "contentCategory": "error"
-    },
-    {
       "id": "2026194467682705745",
       "text": "@knight_XBT @hoodiemfer Yes they were ?",
       "author": {
@@ -813,7 +225,7 @@
         "views": 1390
       },
       "url": "https://twitter.com/AltcoinSherpa/status/2026713382645051658",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-02-25T18:14:19.317Z",
       "expiresAt": "2026-03-04T18:14:19.317Z",
       "source": "timeline_monitor",
@@ -834,7 +246,7 @@
         "views": 870
       },
       "url": "https://twitter.com/AltcoinSherpa/status/2026683756182901222",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-02-25T18:14:21.294Z",
       "expiresAt": "2026-03-04T18:14:21.294Z",
       "source": "timeline_monitor",
@@ -855,7 +267,7 @@
         "views": 2772
       },
       "url": "https://twitter.com/AltcoinSherpa/status/2026682302361739746",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-02-25T18:14:23.290Z",
       "expiresAt": "2026-03-04T18:14:23.290Z",
       "source": "timeline_monitor",
@@ -876,7 +288,7 @@
         "views": 2515
       },
       "url": "https://twitter.com/AltcoinSherpa/status/2026681687032082681",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-02-25T18:14:25.321Z",
       "expiresAt": "2026-03-04T18:14:25.321Z",
       "source": "timeline_monitor",
@@ -897,7 +309,7 @@
         "views": 6043
       },
       "url": "https://twitter.com/AltcoinSherpa/status/2026672534268076250",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-02-25T18:14:27.306Z",
       "expiresAt": "2026-03-04T18:14:27.306Z",
       "source": "timeline_monitor",
@@ -918,7 +330,7 @@
         "views": 4619
       },
       "url": "https://twitter.com/AltcoinSherpa/status/2026662106905325766",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-02-25T18:14:29.310Z",
       "expiresAt": "2026-03-04T18:14:29.310Z",
       "source": "timeline_monitor",
@@ -939,7 +351,7 @@
         "views": 258
       },
       "url": "https://twitter.com/AltcoinSherpa/status/2026659833823289675",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-02-25T18:14:31.282Z",
       "expiresAt": "2026-03-04T18:14:31.282Z",
       "source": "timeline_monitor",
@@ -960,7 +372,7 @@
         "views": 6206
       },
       "url": "https://twitter.com/AltcoinSherpa/status/2026659356696052187",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-02-25T18:14:33.349Z",
       "expiresAt": "2026-03-04T18:14:33.349Z",
       "source": "timeline_monitor",
@@ -981,7 +393,7 @@
         "views": 4519
       },
       "url": "https://twitter.com/AltcoinSherpa/status/2026658265849843780",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-02-25T18:14:35.318Z",
       "expiresAt": "2026-03-04T18:14:35.318Z",
       "source": "timeline_monitor",
@@ -1002,7 +414,7 @@
         "views": 1224
       },
       "url": "https://twitter.com/AltcoinSherpa/status/2026650053390090319",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-02-25T18:14:37.299Z",
       "expiresAt": "2026-03-04T18:14:37.299Z",
       "source": "timeline_monitor",
@@ -1023,7 +435,7 @@
         "views": 2087
       },
       "url": "https://twitter.com/IncomeSharks/status/2026689809562087615",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-02-25T18:14:51.270Z",
       "expiresAt": "2026-03-04T18:14:51.270Z",
       "source": "timeline_monitor",
@@ -1044,7 +456,7 @@
         "views": 4342
       },
       "url": "https://twitter.com/IncomeSharks/status/2026689622437396557",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-02-25T18:14:53.213Z",
       "expiresAt": "2026-03-04T18:14:53.213Z",
       "source": "timeline_monitor",
@@ -1065,7 +477,7 @@
         "views": 30108
       },
       "url": "https://twitter.com/IncomeSharks/status/2026675127044469064",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-02-25T18:14:55.225Z",
       "expiresAt": "2026-03-04T18:14:55.225Z",
       "source": "timeline_monitor",
@@ -1086,7 +498,7 @@
         "views": 2157
       },
       "url": "https://twitter.com/IncomeSharks/status/2026671903222743518",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-02-25T18:14:57.254Z",
       "expiresAt": "2026-03-04T18:14:57.254Z",
       "source": "timeline_monitor",
@@ -1107,7 +519,7 @@
         "views": 2359
       },
       "url": "https://twitter.com/IncomeSharks/status/2026671473646260312",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-02-25T18:14:59.223Z",
       "expiresAt": "2026-03-04T18:14:59.224Z",
       "source": "timeline_monitor",
@@ -1128,7 +540,7 @@
         "views": 8846
       },
       "url": "https://twitter.com/IncomeSharks/status/2026545242217001455",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-02-25T18:15:01.229Z",
       "expiresAt": "2026-03-04T18:15:01.229Z",
       "source": "timeline_monitor",
@@ -1149,7 +561,7 @@
         "views": 550
       },
       "url": "https://twitter.com/IncomeSharks/status/2026535545418166396",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-02-25T18:15:03.223Z",
       "expiresAt": "2026-03-04T18:15:03.223Z",
       "source": "timeline_monitor",
@@ -1170,7 +582,7 @@
         "views": 2817
       },
       "url": "https://twitter.com/IncomeSharks/status/2026529422623518925",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-02-25T18:15:05.249Z",
       "expiresAt": "2026-03-04T18:15:05.249Z",
       "source": "timeline_monitor",
@@ -1191,7 +603,7 @@
         "views": 2695
       },
       "url": "https://twitter.com/IncomeSharks/status/2026521812306375007",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-02-25T18:15:07.374Z",
       "expiresAt": "2026-03-04T18:15:07.374Z",
       "source": "timeline_monitor",
@@ -1212,7 +624,7 @@
         "views": 810
       },
       "url": "https://twitter.com/IncomeSharks/status/2026518147109630423",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-02-25T18:15:09.230Z",
       "expiresAt": "2026-03-04T18:15:09.230Z",
       "source": "timeline_monitor",
@@ -1233,7 +645,7 @@
         "views": 1401
       },
       "url": "https://twitter.com/CryptoWendyO/status/2026703746017722748",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-02-25T18:15:11.231Z",
       "expiresAt": "2026-03-04T18:15:11.231Z",
       "source": "timeline_monitor",
@@ -1254,7 +666,7 @@
         "views": 2426
       },
       "url": "https://twitter.com/CryptoWendyO/status/2026683100244357183",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-02-25T18:15:13.222Z",
       "expiresAt": "2026-03-04T18:15:13.222Z",
       "source": "timeline_monitor",
@@ -1275,7 +687,7 @@
         "views": 3321
       },
       "url": "https://twitter.com/CryptoWendyO/status/2026673762557366745",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-02-25T18:15:15.252Z",
       "expiresAt": "2026-03-04T18:15:15.252Z",
       "source": "timeline_monitor",
@@ -1296,7 +708,7 @@
         "views": 2533
       },
       "url": "https://twitter.com/CryptoWendyO/status/2026643699132670058",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-02-25T18:15:17.276Z",
       "expiresAt": "2026-03-04T18:15:17.276Z",
       "source": "timeline_monitor",
@@ -1317,7 +729,7 @@
         "views": 3164
       },
       "url": "https://twitter.com/CryptoWendyO/status/2026519725489140044",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-02-25T18:15:19.299Z",
       "expiresAt": "2026-03-04T18:15:19.299Z",
       "source": "timeline_monitor",
@@ -1338,7 +750,7 @@
         "views": 14474
       },
       "url": "https://twitter.com/CryptoWendyO/status/2026501854616760805",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-02-25T18:15:21.390Z",
       "expiresAt": "2026-03-04T18:15:21.390Z",
       "source": "timeline_monitor",
@@ -1359,7 +771,7 @@
         "views": 211
       },
       "url": "https://twitter.com/CryptoWendyO/status/2026470395797438866",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-02-25T18:15:23.253Z",
       "expiresAt": "2026-03-04T18:15:23.253Z",
       "source": "timeline_monitor",
@@ -1380,7 +792,7 @@
         "views": 14072
       },
       "url": "https://twitter.com/CryptoWendyO/status/2026469090408501526",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-02-25T18:15:25.231Z",
       "expiresAt": "2026-03-04T18:15:25.231Z",
       "source": "timeline_monitor",
@@ -1401,7 +813,7 @@
         "views": 26764
       },
       "url": "https://twitter.com/CryptoWendyO/status/2026422620816904556",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-02-25T18:15:27.272Z",
       "expiresAt": "2026-03-04T18:15:27.272Z",
       "source": "timeline_monitor",
@@ -1422,7 +834,7 @@
         "views": 501
       },
       "url": "https://twitter.com/CryptoWendyO/status/2026419034921873569",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-02-25T18:15:29.282Z",
       "expiresAt": "2026-03-04T18:15:29.282Z",
       "source": "timeline_monitor",
@@ -1443,7 +855,7 @@
         "views": 4448
       },
       "url": "https://twitter.com/WuBlockchain/status/2026681819546943824",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-02-25T18:15:31.299Z",
       "expiresAt": "2026-03-04T18:15:31.299Z",
       "source": "timeline_monitor",
@@ -1464,7 +876,7 @@
         "views": 4554
       },
       "url": "https://twitter.com/WuBlockchain/status/2026660730024382800",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-02-25T18:15:33.250Z",
       "expiresAt": "2026-03-04T18:15:33.250Z",
       "source": "timeline_monitor",
@@ -1485,7 +897,7 @@
         "views": 2865
       },
       "url": "https://twitter.com/WuBlockchain/status/2026657606559846517",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-02-25T18:15:35.330Z",
       "expiresAt": "2026-03-04T18:15:35.330Z",
       "source": "timeline_monitor",
@@ -1506,7 +918,7 @@
         "views": 5076
       },
       "url": "https://twitter.com/WuBlockchain/status/2026648697023447073",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-02-25T18:15:37.250Z",
       "expiresAt": "2026-03-04T18:15:37.250Z",
       "source": "timeline_monitor",
@@ -1527,7 +939,7 @@
         "views": 6790
       },
       "url": "https://twitter.com/WuBlockchain/status/2026639817522737599",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-02-25T18:15:39.292Z",
       "expiresAt": "2026-03-04T18:15:39.292Z",
       "source": "timeline_monitor",
@@ -1548,7 +960,7 @@
         "views": 9894
       },
       "url": "https://twitter.com/WuBlockchain/status/2026631261079445699",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-02-25T18:15:41.239Z",
       "expiresAt": "2026-03-04T18:15:41.239Z",
       "source": "timeline_monitor",
@@ -1569,7 +981,7 @@
         "views": 26184
       },
       "url": "https://twitter.com/WuBlockchain/status/2026626141394542897",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-02-25T18:15:43.284Z",
       "expiresAt": "2026-03-04T18:15:43.284Z",
       "source": "timeline_monitor",
@@ -1590,7 +1002,7 @@
         "views": 7975
       },
       "url": "https://twitter.com/WuBlockchain/status/2026604440350806091",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-02-25T18:15:45.254Z",
       "expiresAt": "2026-03-04T18:15:45.254Z",
       "source": "timeline_monitor",
@@ -1611,7 +1023,7 @@
         "views": 18694
       },
       "url": "https://twitter.com/WuBlockchain/status/2026575352340812129",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-02-25T18:15:47.326Z",
       "expiresAt": "2026-03-04T18:15:47.326Z",
       "source": "timeline_monitor",
@@ -1632,7 +1044,7 @@
         "views": 6178
       },
       "url": "https://twitter.com/WuBlockchain/status/2026549215321796687",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-02-25T18:15:49.292Z",
       "expiresAt": "2026-03-04T18:15:49.292Z",
       "source": "timeline_monitor",
