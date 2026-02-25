@@ -566,13 +566,874 @@
       "expiresAt": "2026-03-03T22:15:11.130Z",
       "source": "timeline_monitor",
       "contentCategory": "error"
+    },
+    {
+      "id": "2026194467682705745",
+      "text": "@knight_XBT @hoodiemfer Yes they were ?",
+      "author": {
+        "id": "2259434528",
+        "username": "cobie"
+      },
+      "public_metrics": {
+        "likes": 12,
+        "retweets": 0,
+        "replies": 4,
+        "quotes": 0,
+        "views": 1449
+      },
+      "url": "https://twitter.com/cobie/status/2026194467682705745",
+      "processed": false,
+      "addedAt": "2026-02-25T07:36:15.639Z",
+      "expiresAt": "2026-03-04T07:36:15.639Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2026044549986976129",
+      "text": "@spacexbt “One of crypto’s most profitable businesses” qualifier seems to exclude Polymarket who are not profitable as I understand it",
+      "author": {
+        "id": "2259434528",
+        "username": "cobie"
+      },
+      "public_metrics": {
+        "likes": 776,
+        "retweets": 5,
+        "replies": 63,
+        "quotes": 3,
+        "views": 47983
+      },
+      "url": "https://twitter.com/cobie/status/2026044549986976129",
+      "processed": false,
+      "addedAt": "2026-02-25T07:36:17.564Z",
+      "expiresAt": "2026-03-04T07:36:17.564Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2026043678280520093",
+      "text": "@piliponful @serpinxbt It can’t be “one of the most profitable” companies if it makes no money, so obviously can be excluded from the voting options",
+      "author": {
+        "id": "2259434528",
+        "username": "cobie"
+      },
+      "public_metrics": {
+        "likes": 31,
+        "retweets": 0,
+        "replies": 9,
+        "quotes": 1,
+        "views": 3302
+      },
+      "url": "https://twitter.com/cobie/status/2026043678280520093",
+      "processed": false,
+      "addedAt": "2026-02-25T07:36:19.593Z",
+      "expiresAt": "2026-03-04T07:36:19.593Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2026038645333901331",
+      "text": "@serpinxbt Does polymarket make any money? I thought they didn’t",
+      "author": {
+        "id": "2259434528",
+        "username": "cobie"
+      },
+      "public_metrics": {
+        "likes": 247,
+        "retweets": 1,
+        "replies": 42,
+        "quotes": 2,
+        "views": 37463
+      },
+      "url": "https://twitter.com/cobie/status/2026038645333901331",
+      "processed": false,
+      "addedAt": "2026-02-25T07:36:21.616Z",
+      "expiresAt": "2026-03-04T07:36:21.616Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2026545242217001455",
+      "text": "@SRxTrades How most people trade them absolutely. If you stick to a 5 minute or less trade and wait all day for 1 to 2 opportunities it's a high win rate with minimal downside. Your position size is your risk. I scalp with $5k selling within 1 to 2 minutes on momentum for 1 to 2k",
+      "author": {
+        "id": "4441279246",
+        "username": "IncomeSharks"
+      },
+      "public_metrics": {
+        "likes": 8,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 1085
+      },
+      "url": "https://twitter.com/IncomeSharks/status/2026545242217001455",
+      "processed": false,
+      "addedAt": "2026-02-25T07:36:35.433Z",
+      "expiresAt": "2026-03-04T07:36:35.433Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2026521812306375007",
+      "text": "@TonySeverinoCMT X is becoming a rage baiting toxic cesspool of engagement farmers. A matter of time until Slice takes all the talent and people who take trading seriously.",
+      "author": {
+        "id": "4441279246",
+        "username": "IncomeSharks"
+      },
+      "public_metrics": {
+        "likes": 12,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 1140
+      },
+      "url": "https://twitter.com/IncomeSharks/status/2026521812306375007",
+      "processed": false,
+      "addedAt": "2026-02-25T07:36:37.390Z",
+      "expiresAt": "2026-03-04T07:36:37.390Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2026518147109630423",
+      "text": "@pepemoonboy I would add we also have a declining population now so it's a good things jobs are being replaced. I don't think someone should have to work in a factory  for example. I think we could get to 3 day work weeks and cut time spent working. Humans still have to type in prompts",
+      "author": {
+        "id": "4441279246",
+        "username": "IncomeSharks"
+      },
+      "public_metrics": {
+        "likes": 6,
+        "retweets": 0,
+        "replies": 2,
+        "quotes": 0,
+        "views": 439
+      },
+      "url": "https://twitter.com/IncomeSharks/status/2026518147109630423",
+      "processed": false,
+      "addedAt": "2026-02-25T07:36:39.386Z",
+      "expiresAt": "2026-03-04T07:36:39.386Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2026515085179703328",
+      "text": "@pepemoonboy I see AI as a tool, not a replacement. Just like the internet helped create jobs, down the road AI will create more jobs. We need it with an aging population of workers that are retiring, and with a young generation that doesn't want to work.",
+      "author": {
+        "id": "4441279246",
+        "username": "IncomeSharks"
+      },
+      "public_metrics": {
+        "likes": 18,
+        "retweets": 1,
+        "replies": 4,
+        "quotes": 0,
+        "views": 1555
+      },
+      "url": "https://twitter.com/IncomeSharks/status/2026515085179703328",
+      "processed": false,
+      "addedAt": "2026-02-25T07:36:41.390Z",
+      "expiresAt": "2026-03-04T07:36:41.390Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2026514306179940837",
+      "text": "@haris_rasheed 1:2 = Risk $1 to make $2. If you have a $100k account you can do a $10k position size with a 10% stop loss and 20% target and if it hits you make $2k (2%), if you get stopped you lose $1k (1%).",
+      "author": {
+        "id": "4441279246",
+        "username": "IncomeSharks"
+      },
+      "public_metrics": {
+        "likes": 6,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 282
+      },
+      "url": "https://twitter.com/IncomeSharks/status/2026514306179940837",
+      "processed": false,
+      "addedAt": "2026-02-25T07:36:43.398Z",
+      "expiresAt": "2026-03-04T07:36:43.398Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2026514006643728506",
+      "text": "$BTC - Pretty much just following the squiggles. We probably get a green month in March but nothing wild. https://t.co/nZIG1hMTKe",
+      "author": {
+        "id": "4441279246",
+        "username": "IncomeSharks"
+      },
+      "public_metrics": {
+        "likes": 386,
+        "retweets": 30,
+        "replies": 56,
+        "quotes": 1,
+        "views": 22682
+      },
+      "url": "https://twitter.com/IncomeSharks/status/2026514006643728506",
+      "processed": false,
+      "addedAt": "2026-02-25T07:36:45.390Z",
+      "expiresAt": "2026-03-04T07:36:45.390Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2026502837887451143",
+      "text": "@PeterSchiff @saylor So why do you accept Bitcoin on your website while selling Gold?",
+      "author": {
+        "id": "4441279246",
+        "username": "IncomeSharks"
+      },
+      "public_metrics": {
+        "likes": 44,
+        "retweets": 0,
+        "replies": 4,
+        "quotes": 0,
+        "views": 1870
+      },
+      "url": "https://twitter.com/IncomeSharks/status/2026502837887451143",
+      "processed": false,
+      "addedAt": "2026-02-25T07:36:47.425Z",
+      "expiresAt": "2026-03-04T07:36:47.425Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2026502614586998921",
+      "text": "@Nebraskangooner @TrueCrypto28 I totally get it if you pick a serious brand name but I'm gonna be disappointed if there's not a dad joke about nuts involved lol",
+      "author": {
+        "id": "4441279246",
+        "username": "IncomeSharks"
+      },
+      "public_metrics": {
+        "likes": 15,
+        "retweets": 0,
+        "replies": 3,
+        "quotes": 0,
+        "views": 3270
+      },
+      "url": "https://twitter.com/IncomeSharks/status/2026502614586998921",
+      "processed": false,
+      "addedAt": "2026-02-25T07:36:49.402Z",
+      "expiresAt": "2026-03-04T07:36:49.402Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2026502186948301107",
+      "text": "@OrderBookShow Spot on",
+      "author": {
+        "id": "4441279246",
+        "username": "IncomeSharks"
+      },
+      "public_metrics": {
+        "likes": 5,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 872
+      },
+      "url": "https://twitter.com/IncomeSharks/status/2026502186948301107",
+      "processed": false,
+      "addedAt": "2026-02-25T07:36:51.421Z",
+      "expiresAt": "2026-03-04T07:36:51.421Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2026425017018507337",
+      "text": "@barneytheboi The average US citizen retires with a median of 200k to 400k. And the average person only has 40k saved up. A few million invested is enough to retire and by the time you get older that's probably 5 to 10 million anyways.",
+      "author": {
+        "id": "4441279246",
+        "username": "IncomeSharks"
+      },
+      "public_metrics": {
+        "likes": 138,
+        "retweets": 0,
+        "replies": 8,
+        "quotes": 0,
+        "views": 16523
+      },
+      "url": "https://twitter.com/IncomeSharks/status/2026425017018507337",
+      "processed": false,
+      "addedAt": "2026-02-25T07:36:53.451Z",
+      "expiresAt": "2026-03-04T07:36:53.451Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2026481279445696558",
+      "text": "'it could be the bottom for Bitcoin!!' https://t.co/DpNHLnvKMT",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "likes": 71,
+        "retweets": 6,
+        "replies": 18,
+        "quotes": 0,
+        "views": 5406
+      },
+      "url": "https://twitter.com/AltcoinSherpa/status/2026481279445696558",
+      "processed": false,
+      "addedAt": "2026-02-25T07:37:06.994Z",
+      "expiresAt": "2026-03-04T07:37:06.994Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2026472566697726388",
+      "text": "CT on any green day https://t.co/2ed57T3U3p",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "likes": 30,
+        "retweets": 1,
+        "replies": 7,
+        "quotes": 0,
+        "views": 2734
+      },
+      "url": "https://twitter.com/AltcoinSherpa/status/2026472566697726388",
+      "processed": false,
+      "addedAt": "2026-02-25T07:37:09.047Z",
+      "expiresAt": "2026-03-04T07:37:09.047Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2026469886571024640",
+      "text": "https://t.co/N1biREH5mJ https://t.co/sWVIsbY1xS",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "likes": 11,
+        "retweets": 1,
+        "replies": 4,
+        "quotes": 0,
+        "views": 4104
+      },
+      "url": "https://twitter.com/AltcoinSherpa/status/2026469886571024640",
+      "processed": false,
+      "addedAt": "2026-02-25T07:37:11.016Z",
+      "expiresAt": "2026-03-04T07:37:11.016Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2026457730102223297",
+      "text": "$BTC:  We are here https://t.co/eObvEcKbcB",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "likes": 77,
+        "retweets": 3,
+        "replies": 13,
+        "quotes": 0,
+        "views": 5659
+      },
+      "url": "https://twitter.com/AltcoinSherpa/status/2026457730102223297",
+      "processed": false,
+      "addedAt": "2026-02-25T07:37:12.992Z",
+      "expiresAt": "2026-03-04T07:37:12.992Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2026456912082940103",
+      "text": "@ColdBloodShill maybe its recency bias but i feel like I still had more hope in 2022",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "likes": 6,
+        "retweets": 0,
+        "replies": 3,
+        "quotes": 0,
+        "views": 1497
+      },
+      "url": "https://twitter.com/AltcoinSherpa/status/2026456912082940103",
+      "processed": false,
+      "addedAt": "2026-02-25T07:37:15.034Z",
+      "expiresAt": "2026-03-04T07:37:15.034Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2026450285506203891",
+      "text": "if you ever think that altcoins are going to ever come back, you can either try to DCA in and get them at great prices OR, if actively trading, just buy them on the way up when trending. pros and cons to both strategies",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "likes": 24,
+        "retweets": 0,
+        "replies": 10,
+        "quotes": 0,
+        "views": 3062
+      },
+      "url": "https://twitter.com/AltcoinSherpa/status/2026450285506203891",
+      "processed": false,
+      "addedAt": "2026-02-25T07:37:17.036Z",
+      "expiresAt": "2026-03-04T07:37:17.036Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2026333806068678839",
+      "text": "high fdv, low float? I've seen this game before... https://t.co/hAShVtiSnB",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "likes": 24,
+        "retweets": 0,
+        "replies": 5,
+        "quotes": 0,
+        "views": 6218
+      },
+      "url": "https://twitter.com/AltcoinSherpa/status/2026333806068678839",
+      "processed": false,
+      "addedAt": "2026-02-25T07:37:18.995Z",
+      "expiresAt": "2026-03-04T07:37:18.995Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2026350643120570469",
+      "text": "🦅 The World Liberty team announced that there was a coordinated attempt to spread fear, uncertainty, and doubt (FUD) by trying to destabilize USD1’s peg.\nThere has recently been a noticeable increase in negative narratives globally targeting both $WLFI and $USD1. According to https://t.co/4aZcGedubc",
+      "author": {
+        "id": "crawlee_search_crypto_theboss",
+        "username": "Crypto_TheBoss"
+      },
+      "public_metrics": {
+        "likes": 68,
+        "retweets": 6,
+        "replies": 11,
+        "quotes": 0,
+        "views": 7331
+      },
+      "url": "https://twitter.com/Crypto_TheBoss/status/2026350643120570469",
+      "processed": false,
+      "addedAt": "2026-02-25T07:37:21.043Z",
+      "expiresAt": "2026-03-04T07:37:21.043Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2026180932818846116",
+      "text": "🚨 BREAKING: Strategy announced that it purchased 592 $Bitcoin last week at an average price of $67,286, with a total investment of approximately $39.8 million.\n\n⚠️ This is not investment advice.\n\n#Bitcoin #BTC #Crypto #Blockchain",
+      "author": {
+        "id": "crawlee_search_crypto_theboss",
+        "username": "Crypto_TheBoss"
+      },
+      "public_metrics": {
+        "likes": 116,
+        "retweets": 9,
+        "replies": 10,
+        "quotes": 0,
+        "views": 19732
+      },
+      "url": "https://twitter.com/Crypto_TheBoss/status/2026180932818846116",
+      "processed": false,
+      "addedAt": "2026-02-25T07:37:23.005Z",
+      "expiresAt": "2026-03-04T07:37:23.005Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2026180845564801162",
+      "text": "🚨 BREAKING: Bitmine announced that it purchased a total of 51,162 $ETH last week, valued at approximately $95 million.\n\nWith this latest acquisition, the company’s total holdings have increased to 4.42 million #ETH , representing an estimated value of around $8.6 billion.\n\n⚠️",
+      "author": {
+        "id": "crawlee_search_crypto_theboss",
+        "username": "Crypto_TheBoss"
+      },
+      "public_metrics": {
+        "likes": 111,
+        "retweets": 9,
+        "replies": 10,
+        "quotes": 0,
+        "views": 24711
+      },
+      "url": "https://twitter.com/Crypto_TheBoss/status/2026180845564801162",
+      "processed": false,
+      "addedAt": "2026-02-25T07:37:24.994Z",
+      "expiresAt": "2026-03-04T07:37:24.994Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2025673836231000537",
+      "text": "🔷️ 🦅 $WLFI  ( @worldlibertyfi) has tested the resistance zone for the second time and, once again, failed to break above it. Repeated tests typically weaken a resistance level; therefore, a confirmed breakout could open the path toward the next yellow-marked resistance zones https://t.co/EaeuJ3xq79",
+      "author": {
+        "id": "crawlee_search_crypto_theboss",
+        "username": "Crypto_TheBoss"
+      },
+      "public_metrics": {
+        "likes": 121,
+        "retweets": 13,
+        "replies": 12,
+        "quotes": 0,
+        "views": 21803
+      },
+      "url": "https://twitter.com/Crypto_TheBoss/status/2025673836231000537",
+      "processed": false,
+      "addedAt": "2026-02-25T07:37:26.997Z",
+      "expiresAt": "2026-03-04T07:37:26.997Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2025672635548352617",
+      "text": "🔷️ $Silver experienced nearly a 50% decline after its all-time high. Following that correction, price recovered and climbed approximately 32%, revisiting the $85 area.\n\n✅️ From a Fibonacci perspective, the blue lines represent potential support levels, while the yellow lines https://t.co/bBxewgEwxd",
+      "author": {
+        "id": "crawlee_search_crypto_theboss",
+        "username": "Crypto_TheBoss"
+      },
+      "public_metrics": {
+        "likes": 114,
+        "retweets": 13,
+        "replies": 15,
+        "quotes": 0,
+        "views": 27379
+      },
+      "url": "https://twitter.com/Crypto_TheBoss/status/2025672635548352617",
+      "processed": false,
+      "addedAt": "2026-02-25T07:37:29.000Z",
+      "expiresAt": "2026-03-04T07:37:29.000Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2025671400057418042",
+      "text": "🌎 It’s a busy week ahead across both macro and crypto markets:\n\n🇨🇳 Monday, February 23 – China’s Lunar New Year holiday officially ends. The reopening of Chinese markets will be monitored in terms of liquidity and risk appetite.\n\n✨ Monday, February 23 – Alchemy Chain ( $ACH )",
+      "author": {
+        "id": "crawlee_search_crypto_theboss",
+        "username": "Crypto_TheBoss"
+      },
+      "public_metrics": {
+        "likes": 113,
+        "retweets": 13,
+        "replies": 12,
+        "quotes": 0,
+        "views": 41155
+      },
+      "url": "https://twitter.com/Crypto_TheBoss/status/2025671400057418042",
+      "processed": false,
+      "addedAt": "2026-02-25T07:37:31.063Z",
+      "expiresAt": "2026-03-04T07:37:31.063Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2025670143578096094",
+      "text": "‼️ According to current open interest data, if $BTC reaches the $90,000 level, more than $13 billion in short positions are expected to face liquidation.\n\nSuch large liquidation clusters can significantly increase short-term volatility and may accelerate price movements due to https://t.co/y1bp8KeeOJ",
+      "author": {
+        "id": "crawlee_search_crypto_theboss",
+        "username": "Crypto_TheBoss"
+      },
+      "public_metrics": {
+        "likes": 120,
+        "retweets": 12,
+        "replies": 11,
+        "quotes": 0,
+        "views": 27656
+      },
+      "url": "https://twitter.com/Crypto_TheBoss/status/2025670143578096094",
+      "processed": false,
+      "addedAt": "2026-02-25T07:37:33.045Z",
+      "expiresAt": "2026-03-04T07:37:33.045Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2025213060302942699",
+      "text": "🔷️ 🦅 The #USD1 campaign on $Binance has been officially extended. During the new period, from February 20 to March 20 (UTC), a total of 235 million $WLFI ( @worldlibertyfi) is planned to be distributed to users holding USD1.\n\n🦅 While appreciation was expressed to participants https://t.co/y98ATJqOBv",
+      "author": {
+        "id": "crawlee_search_crypto_theboss",
+        "username": "Crypto_TheBoss"
+      },
+      "public_metrics": {
+        "likes": 104,
+        "retweets": 2,
+        "replies": 11,
+        "quotes": 0,
+        "views": 39369
+      },
+      "url": "https://twitter.com/Crypto_TheBoss/status/2025213060302942699",
+      "processed": false,
+      "addedAt": "2026-02-25T07:37:35.001Z",
+      "expiresAt": "2026-03-04T07:37:35.001Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2025211015772738019",
+      "text": "🔷️ Builders keep building. 🛠️\n\n✅️ It has been announced that #WLFI ( @worldlibertyfi ) Co-Founder @zakfolkman will be visiting Stanford University for a special guest lecture.\n\n✅️ Space is limited, and those who wish to attend are required to complete the registration https://t.co/AS75EXMHVR",
+      "author": {
+        "id": "crawlee_search_crypto_theboss",
+        "username": "Crypto_TheBoss"
+      },
+      "public_metrics": {
+        "likes": 96,
+        "retweets": 3,
+        "replies": 11,
+        "quotes": 0,
+        "views": 53317
+      },
+      "url": "https://twitter.com/Crypto_TheBoss/status/2025211015772738019",
+      "processed": false,
+      "addedAt": "2026-02-25T07:37:37.029Z",
+      "expiresAt": "2026-03-04T07:37:37.029Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2025208653137993865",
+      "text": "✨ Bitmine purchased an additional 17,722 $ETH , valued at approximately \n$34.74 million.\n\n⚠️ This is not investment advice.\n\n#ETH #Ethereum #Crypto #Blockchain",
+      "author": {
+        "id": "crawlee_search_crypto_theboss",
+        "username": "Crypto_TheBoss"
+      },
+      "public_metrics": {
+        "likes": 98,
+        "retweets": 3,
+        "replies": 13,
+        "quotes": 1,
+        "views": 29317
+      },
+      "url": "https://twitter.com/Crypto_TheBoss/status/2025208653137993865",
+      "processed": false,
+      "addedAt": "2026-02-25T07:37:39.010Z",
+      "expiresAt": "2026-03-04T07:37:39.010Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2026553499501105536",
+      "text": "SHORT-TERM HOLDERS UNREALISED LOSSES HAVE REACHED ALL-TIME HIGHS. https://t.co/DbvRoftrbm",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "likes": 105,
+        "retweets": 10,
+        "replies": 73,
+        "quotes": 3,
+        "views": 4166
+      },
+      "url": "https://twitter.com/CryptoRover/status/2026553499501105536",
+      "processed": false,
+      "addedAt": "2026-02-25T07:37:41.040Z",
+      "expiresAt": "2026-03-04T07:37:41.040Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2026519069927821768",
+      "text": "#BITCOIN HISTORY REPEATS...\n\nWatch NOW:👇\nhttps://t.co/RPVZxDqJPv https://t.co/rhcqVx5KWZ",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "likes": 80,
+        "retweets": 11,
+        "replies": 26,
+        "quotes": 0,
+        "views": 20007
+      },
+      "url": "https://twitter.com/CryptoRover/status/2026519069927821768",
+      "processed": false,
+      "addedAt": "2026-02-25T07:37:42.997Z",
+      "expiresAt": "2026-03-04T07:37:42.997Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2026510729541713924",
+      "text": "SHOCKING: 🇺🇸 Democrats REFUSED to stand when Trump said that the duty of the American government was to protect American citizens, NOT illegal aliens. https://t.co/GCAjPSjSEC",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "likes": 278,
+        "retweets": 25,
+        "replies": 37,
+        "quotes": 1,
+        "views": 44570
+      },
+      "url": "https://twitter.com/CryptoRover/status/2026510729541713924",
+      "processed": false,
+      "addedAt": "2026-02-25T07:37:45.089Z",
+      "expiresAt": "2026-03-04T07:37:45.089Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2026510357142134979",
+      "text": "🇺🇸 Trump to Democrats: \"these people are crazy. I'm telling you. They're crazy.\" https://t.co/M7FH7ojIG0",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "likes": 188,
+        "retweets": 20,
+        "replies": 32,
+        "quotes": 2,
+        "views": 35384
+      },
+      "url": "https://twitter.com/CryptoRover/status/2026510357142134979",
+      "processed": false,
+      "addedAt": "2026-02-25T07:37:47.026Z",
+      "expiresAt": "2026-03-04T07:37:47.026Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2026510184181543139",
+      "text": "🐳 Whales are accumulating $ETH... https://t.co/91zdPbKpJA",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "likes": 201,
+        "retweets": 27,
+        "replies": 63,
+        "quotes": 2,
+        "views": 38349
+      },
+      "url": "https://twitter.com/CryptoRover/status/2026510184181543139",
+      "processed": false,
+      "addedAt": "2026-02-25T07:37:49.010Z",
+      "expiresAt": "2026-03-04T07:37:49.010Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2026499178923180293",
+      "text": "🇺🇸 PRESIDENT TRUMP: \n\n“PASS THE STOP INSIDER TRADING ACT WITHOUT DELAY” https://t.co/JlI6IaJKK8",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "likes": 357,
+        "retweets": 37,
+        "replies": 46,
+        "quotes": 2,
+        "views": 53194
+      },
+      "url": "https://twitter.com/CryptoRover/status/2026499178923180293",
+      "processed": false,
+      "addedAt": "2026-02-25T07:37:51.123Z",
+      "expiresAt": "2026-03-04T07:37:51.123Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2026488819181052403",
+      "text": "💥BREAKING: \n\n🇺🇸 President Trump says everyone's portfolios are \"GAINING.\"   \n\n\"Everybody is up, way up.\"\n\nWhat about crypto investors? https://t.co/uyLQbGPeFO",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "likes": 379,
+        "retweets": 56,
+        "replies": 89,
+        "quotes": 9,
+        "views": 64676
+      },
+      "url": "https://twitter.com/CryptoRover/status/2026488819181052403",
+      "processed": false,
+      "addedAt": "2026-02-25T07:37:53.009Z",
+      "expiresAt": "2026-03-04T07:37:53.010Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2026484997322842563",
+      "text": "🇺🇸 PRESIDENT TRUMP:  \n\n\"We are winning so much, that we really don't know what to do about it.''\n\n''People are asking me, please, please, please Mr. President, we are winning too much, we can't take it anymore.\" https://t.co/ITZReS17Pv",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "likes": 542,
+        "retweets": 58,
+        "replies": 120,
+        "quotes": 17,
+        "views": 87718
+      },
+      "url": "https://twitter.com/CryptoRover/status/2026484997322842563",
+      "processed": false,
+      "addedAt": "2026-02-25T07:37:55.024Z",
+      "expiresAt": "2026-03-04T07:37:55.024Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2026484699716108393",
+      "text": "💥BREAKING: \n\n🇺🇸 President Trump stated that global investment commitments have reached $18 trillion. https://t.co/Glf2MZ3mE8",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "likes": 318,
+        "retweets": 33,
+        "replies": 66,
+        "quotes": 4,
+        "views": 54757
+      },
+      "url": "https://twitter.com/CryptoRover/status/2026484699716108393",
+      "processed": false,
+      "addedAt": "2026-02-25T07:37:57.018Z",
+      "expiresAt": "2026-03-04T07:37:57.018Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2026478129582121138",
+      "text": "💥BREAKING:\n\n🇺🇸 President Trump's state of the Union address to begin any moment now. https://t.co/DiGa19a4k2",
+      "author": {
+        "id": "1353384573435056128",
+        "username": "CryptoRover"
+      },
+      "public_metrics": {
+        "likes": 353,
+        "retweets": 36,
+        "replies": 110,
+        "quotes": 4,
+        "views": 67239
+      },
+      "url": "https://twitter.com/CryptoRover/status/2026478129582121138",
+      "processed": false,
+      "addedAt": "2026-02-25T07:37:59.013Z",
+      "expiresAt": "2026-03-04T07:37:59.013Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
     }
   ],
   "metadata": {
-    "lastUpdated": "2026-02-24T22:16:15.307Z",
-    "totalPosts": 67,
+    "lastUpdated": "2026-02-25T07:39:03.161Z",
+    "totalPosts": 68,
     "bySource": {
-      "timeline_monitor": 67,
+      "timeline_monitor": 68,
       "search_discovery": 0
     }
   },
