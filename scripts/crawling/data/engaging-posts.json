@@ -1049,13 +1049,580 @@
       "expiresAt": "2026-03-04T18:15:49.292Z",
       "source": "timeline_monitor",
       "contentCategory": "error"
+    },
+    {
+      "id": "2026770232921272783",
+      "text": "$BTC - Squiggles holding up nicely. Getting a bounce right around the squiggle low. Next move if it plays out will take us to about $72k. https://t.co/qxzhgjik1o",
+      "author": {
+        "id": "4441279246",
+        "username": "IncomeSharks"
+      },
+      "public_metrics": {
+        "likes": 305,
+        "retweets": 7,
+        "replies": 35,
+        "quotes": 0,
+        "views": 16597
+      },
+      "url": "https://twitter.com/IncomeSharks/status/2026770232921272783",
+      "processed": false,
+      "addedAt": "2026-02-25T22:12:42.213Z",
+      "expiresAt": "2026-03-04T22:12:42.213Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2026769554450629022",
+      "text": "$CRCL - Trade up 30%. Went down a big rabbit hole on Slice about stable coins and treasuries. This is what's going to hopefully help fuel a crypto rally. https://t.co/xlrcnqTggx",
+      "author": {
+        "id": "4441279246",
+        "username": "IncomeSharks"
+      },
+      "public_metrics": {
+        "likes": 153,
+        "retweets": 7,
+        "replies": 23,
+        "quotes": 1,
+        "views": 11628
+      },
+      "url": "https://twitter.com/IncomeSharks/status/2026769554450629022",
+      "processed": false,
+      "addedAt": "2026-02-25T22:12:44.170Z",
+      "expiresAt": "2026-03-04T22:12:44.170Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2026766060993561051",
+      "text": "Like an adult toying with a child. Men overestimate their fighting abilities by several x and I suspect that most people have probably 20 or less punch attempts (not even those that connect) before they gas in a street fight. Highly recommend you do some sort of martial art https://t.co/gXF2pNeyHW",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "likes": 20,
+        "retweets": 0,
+        "replies": 5,
+        "quotes": 0,
+        "views": 4722
+      },
+      "url": "https://twitter.com/AltcoinSherpa/status/2026766060993561051",
+      "processed": false,
+      "addedAt": "2026-02-25T22:13:12.894Z",
+      "expiresAt": "2026-03-04T22:13:12.894Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2026760645761171791",
+      "text": "$PENGU: Many altcoins can easily double or go much higher under the right conditions. I have a bag of PENGU and it's 1 of the better alts today and I think that memes in general are a sector you should focus on. https://t.co/R3G6aGUll1",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "likes": 74,
+        "retweets": 5,
+        "replies": 13,
+        "quotes": 0,
+        "views": 3682
+      },
+      "url": "https://twitter.com/AltcoinSherpa/status/2026760645761171791",
+      "processed": false,
+      "addedAt": "2026-02-25T22:13:14.945Z",
+      "expiresAt": "2026-03-04T22:13:14.945Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2026756373791359440",
+      "text": "@ThinkingBitmex yeah that's the risk for a lot of ppl: early but chances this is just a fakeout and we go lower or later w. more confirmation but not as much upside. I just know that every rally has been fcked lately",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "likes": 10,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 469
+      },
+      "url": "https://twitter.com/AltcoinSherpa/status/2026756373791359440",
+      "processed": false,
+      "addedAt": "2026-02-25T22:13:16.880Z",
+      "expiresAt": "2026-03-04T22:13:16.880Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2026754193214615971",
+      "text": "If you're sidelined or in cash, don't worry. Every rally the last several months has gotten beaten down and there hasn't been much of a sustained trend for the bulls in a long time. If this is the start of a move, you'll have plenty of time to hop on the train.",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "likes": 101,
+        "retweets": 3,
+        "replies": 12,
+        "quotes": 0,
+        "views": 5297
+      },
+      "url": "https://twitter.com/AltcoinSherpa/status/2026754193214615971",
+      "processed": false,
+      "addedAt": "2026-02-25T22:13:18.953Z",
+      "expiresAt": "2026-03-04T22:13:18.953Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2026751082236424464",
+      "text": "If this is a true reversal, I think you probably go with memes. Memes led the way on Jan 1st and also the last true market wide reversal back in March/April 2025. \n\nOther trade ideas would be more institutional coins related to stablecoins. UNI, AAVE (maybe not rn), XPL, ETH.",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "likes": 85,
+        "retweets": 3,
+        "replies": 21,
+        "quotes": 1,
+        "views": 4898
+      },
+      "url": "https://twitter.com/AltcoinSherpa/status/2026751082236424464",
+      "processed": false,
+      "addedAt": "2026-02-25T22:13:21.292Z",
+      "expiresAt": "2026-03-04T22:13:21.292Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2026649166034649176",
+      "text": "\"So FTX was solvent. Who cares?\"\n\nJurors. My jury cared.\n\nWhy else would prosecutors make insolvency their headline?\n\nWhy else would they get all evidence of solvency banned from trial?\n\nFTX always had more assets than debts.\n\nBut the gov't painted a backdrop of FTX underwater https://t.co/AQ5trWwcnl https://t.co/vcS66vOaMH",
+      "author": {
+        "id": "1110877798820777986",
+        "username": "SBF_FTX"
+      },
+      "public_metrics": {
+        "likes": 522,
+        "retweets": 82,
+        "replies": 499,
+        "quotes": 36,
+        "views": 175095
+      },
+      "url": "https://twitter.com/SBF_FTX/status/2026649166034649176",
+      "processed": false,
+      "addedAt": "2026-02-25T22:13:22.909Z",
+      "expiresAt": "2026-03-04T22:13:22.909Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2026646974766666235",
+      "text": "The CLARITY Act will be a huge milestone for crypto and a huge achievement for @realDonaldTrump.\n\nI was championing a similar bill to get crypto out of Gensler's hands when Gensler helped Biden's DOJ put me behind bars. https://t.co/6Iwawkzx2P https://t.co/JpFkcYbNge",
+      "author": {
+        "id": "1110877798820777986",
+        "username": "SBF_FTX"
+      },
+      "public_metrics": {
+        "likes": 758,
+        "retweets": 81,
+        "replies": 587,
+        "quotes": 60,
+        "views": 323705
+      },
+      "url": "https://twitter.com/SBF_FTX/status/2026646974766666235",
+      "processed": false,
+      "addedAt": "2026-02-25T22:13:24.890Z",
+      "expiresAt": "2026-03-04T22:13:24.890Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2025934079372259516",
+      "text": "@Chefofmemes shamone",
+      "author": {
+        "id": "1110877798820777986",
+        "username": "SBF_FTX"
+      },
+      "public_metrics": {
+        "likes": 25,
+        "retweets": 0,
+        "replies": 12,
+        "quotes": 1,
+        "views": 4234
+      },
+      "url": "https://twitter.com/SBF_FTX/status/2025934079372259516",
+      "processed": false,
+      "addedAt": "2026-02-25T22:13:26.883Z",
+      "expiresAt": "2026-03-04T22:13:26.883Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2025928255597838530",
+      "text": "\"The most Gold Medals ever won by Team USA at the Olympics!\"\n\nhttps://t.co/cHAXtOfvMa https://t.co/GKsNJ2DTbQ",
+      "author": {
+        "id": "1110877798820777986",
+        "username": "SBF_FTX"
+      },
+      "public_metrics": {
+        "likes": 290,
+        "retweets": 37,
+        "replies": 190,
+        "quotes": 19,
+        "views": 86765
+      },
+      "url": "https://twitter.com/SBF_FTX/status/2025928255597838530",
+      "processed": false,
+      "addedAt": "2026-02-25T22:13:28.885Z",
+      "expiresAt": "2026-03-04T22:13:28.885Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2025924153182663003",
+      "text": "Pharma gouges Americans on Rx.\n\nTrumpRx is how you start to stop that.\n\nIt's a huge step in the right direction; now insurance companies need to get on board so that Americans don't have to choose between fair prices and insurance coverage.\n\nhttps://t.co/jpmwnlfWsz",
+      "author": {
+        "id": "1110877798820777986",
+        "username": "SBF_FTX"
+      },
+      "public_metrics": {
+        "likes": 302,
+        "retweets": 58,
+        "replies": 384,
+        "quotes": 57,
+        "views": 123469
+      },
+      "url": "https://twitter.com/SBF_FTX/status/2025924153182663003",
+      "processed": false,
+      "addedAt": "2026-02-25T22:13:30.966Z",
+      "expiresAt": "2026-03-04T22:13:30.966Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2024992484921668032",
+      "text": "\"FTX is the shadiest bankruptcy I have ever witnessed.\" — @MrPurple_DJ\n\nMr. Purple has been documenting the work of the bankruptcy lawyers for 3+ years.\n\nHe's super responsive to people who want to know details. https://t.co/RTOhrN17S3 https://t.co/bmpslsddjF",
+      "author": {
+        "id": "1110877798820777986",
+        "username": "SBF_FTX"
+      },
+      "public_metrics": {
+        "likes": 263,
+        "retweets": 58,
+        "replies": 121,
+        "quotes": 10,
+        "views": 96054
+      },
+      "url": "https://twitter.com/SBF_FTX/status/2024992484921668032",
+      "processed": false,
+      "addedAt": "2026-02-25T22:13:32.889Z",
+      "expiresAt": "2026-03-04T22:13:32.889Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2024840973960806628",
+      "text": "At least, if there were polycules/orgies, I wasn't invited.",
+      "author": {
+        "id": "1110877798820777986",
+        "username": "SBF_FTX"
+      },
+      "public_metrics": {
+        "likes": 115,
+        "retweets": 10,
+        "replies": 48,
+        "quotes": 14,
+        "views": 27187
+      },
+      "url": "https://twitter.com/SBF_FTX/status/2024840973960806628",
+      "processed": false,
+      "addedAt": "2026-02-25T22:13:34.923Z",
+      "expiresAt": "2026-03-04T22:13:34.923Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2024839454620369266",
+      "text": "10) Myth: Something about campaign contributions and Ukraine and Dems and lizard people\n\nTruth: The only things private were my contributions to Republicans https://t.co/aUy7yWJAYh",
+      "author": {
+        "id": "1110877798820777986",
+        "username": "SBF_FTX"
+      },
+      "public_metrics": {
+        "likes": 87,
+        "retweets": 17,
+        "replies": 42,
+        "quotes": 3,
+        "views": 24926
+      },
+      "url": "https://twitter.com/SBF_FTX/status/2024839454620369266",
+      "processed": false,
+      "addedAt": "2026-02-25T22:13:36.880Z",
+      "expiresAt": "2026-03-04T22:13:36.880Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2024839440095379619",
+      "text": "9) Myth: After Biden's SEC throttled crypto &amp; Biden's DOJ railroaded me, I remained center-left\n\nTruth: By late 2022, I was a Republican &amp; giving more to the Right than the Left https://t.co/5kWLoiL1MQ",
+      "author": {
+        "id": "1110877798820777986",
+        "username": "SBF_FTX"
+      },
+      "public_metrics": {
+        "likes": 77,
+        "retweets": 20,
+        "replies": 17,
+        "quotes": 3,
+        "views": 30071
+      },
+      "url": "https://twitter.com/SBF_FTX/status/2024839440095379619",
+      "processed": false,
+      "addedAt": "2026-02-25T22:13:38.992Z",
+      "expiresAt": "2026-03-04T22:13:38.992Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2024839433896251822",
+      "text": "8) Myth: Kaplan revoked my bail for trying to intimidate witnesses\n\nTruth: Kaplan revoked my bail for exercising my 1st Amendment rights &amp; for trying to help the Debtors\n\nThe ‘incidents’:\n\n- I referenced messages from Caroline to a reporter who apparently already knew about them. https://t.co/s8A5Qlkbl2",
+      "author": {
+        "id": "1110877798820777986",
+        "username": "SBF_FTX"
+      },
+      "public_metrics": {
+        "likes": 71,
+        "retweets": 21,
+        "replies": 7,
+        "quotes": 0,
+        "views": 19892
+      },
+      "url": "https://twitter.com/SBF_FTX/status/2024839433896251822",
+      "processed": false,
+      "addedAt": "2026-02-25T22:13:40.923Z",
+      "expiresAt": "2026-03-04T22:13:40.923Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2026763160162607487",
+      "text": "BITCOIN DEMAND JUST FLIPPED GREEN AFTER 3 MONTHS OF BLEEDING RED\n\nAfter endless red bars showing net outflows and distribution pressure, the 30-day Apparent Demand has finally crossed into positive territory -- the first time since late November.\n\nThis CryptoQuant metric strips https://t.co/Ai0JRYFDcx",
+      "author": {
+        "id": "877357064724520961",
+        "username": "CryptosR_Us"
+      },
+      "public_metrics": {
+        "likes": 63,
+        "retweets": 13,
+        "replies": 10,
+        "quotes": 0,
+        "views": 2936
+      },
+      "url": "https://twitter.com/CryptosR_Us/status/2026763160162607487",
+      "processed": false,
+      "addedAt": "2026-02-25T22:13:43.014Z",
+      "expiresAt": "2026-03-04T22:13:43.014Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2026737466628096335",
+      "text": "$BTC RECLAIMS $69K -- ALTCOINS FOLLOW THE LEAD 🚀 \n\nBitcoin just snapped its losing streak, surging nearly 8% today to reclaim ~$69K+ in a classic relief rally.\n\nAlts are stealing the show too: \n🎯 $ETH ripping ~12%+ back toward $2,000+  \n🎯 $SOL, $DOGE, $ADA, $LINK, and others https://t.co/6RXQC63r8R",
+      "author": {
+        "id": "877357064724520961",
+        "username": "CryptosR_Us"
+      },
+      "public_metrics": {
+        "likes": 88,
+        "retweets": 22,
+        "replies": 17,
+        "quotes": 0,
+        "views": 4174
+      },
+      "url": "https://twitter.com/CryptosR_Us/status/2026737466628096335",
+      "processed": false,
+      "addedAt": "2026-02-25T22:13:44.894Z",
+      "expiresAt": "2026-03-04T22:13:44.894Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2026718603005894684",
+      "text": "THIS MARKET WILL HUMBLE YOU FAST -- AI IS THE REASON. \n\nBlackRock’s Rick Rieder says humility is an effective tool.\n\nBecause with AI accelerating, you don’t just reassess a stock… you reassess entire industries. And once that happens, even “safe” mega caps can shrink a lot https://t.co/mgMLOZcSyy",
+      "author": {
+        "id": "877357064724520961",
+        "username": "CryptosR_Us"
+      },
+      "public_metrics": {
+        "likes": 40,
+        "retweets": 4,
+        "replies": 8,
+        "quotes": 0,
+        "views": 8457
+      },
+      "url": "https://twitter.com/CryptosR_Us/status/2026718603005894684",
+      "processed": false,
+      "addedAt": "2026-02-25T22:13:46.898Z",
+      "expiresAt": "2026-03-04T22:13:46.898Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2026713049932112038",
+      "text": "THE QCIM TEAM AT $BTQ JUST GOT A LOT STRONGER 💪\n\nSenior hires from Apple, PsiQuantum, Meta, Samsung, SandboxAQ, Texas Instruments, and Tokyo Electron.\n\nThe combined experience spans ASIC design, FPGA systems, PQC, and advanced-node tapeouts.\n\nThis is the kind of depth that helps https://t.co/jGi0XxVaDQ",
+      "author": {
+        "id": "877357064724520961",
+        "username": "CryptosR_Us"
+      },
+      "public_metrics": {
+        "likes": 28,
+        "retweets": 3,
+        "replies": 8,
+        "quotes": 0,
+        "views": 3932
+      },
+      "url": "https://twitter.com/CryptosR_Us/status/2026713049932112038",
+      "processed": false,
+      "addedAt": "2026-02-25T22:13:49.004Z",
+      "expiresAt": "2026-03-04T22:13:49.004Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2026687381085048989",
+      "text": "🚨 MICHAEL SAYLOR: $BTC SET TO OUTPERFORM $SPX \n\nAt Strategy World 2026 in Las Vegas, Michael Saylor emphasized long-term capital preservation over short-term market noise, highlighting Bitcoin’s potential compared with traditional benchmarks like the S&amp;P 500.\n\nKey points from https://t.co/sNBipZQxhb https://t.co/5ZseKixzfb",
+      "author": {
+        "id": "877357064724520961",
+        "username": "CryptosR_Us"
+      },
+      "public_metrics": {
+        "likes": 63,
+        "retweets": 11,
+        "replies": 12,
+        "quotes": 1,
+        "views": 9468
+      },
+      "url": "https://twitter.com/CryptosR_Us/status/2026687381085048989",
+      "processed": false,
+      "addedAt": "2026-02-25T22:13:50.894Z",
+      "expiresAt": "2026-03-04T22:13:50.894Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2026669764836217068",
+      "text": "🚨 JANE STREET LAWSUIT SPARKS “DIGIT 10” THEORY IN CRYPTO MARKETS   \n\nThe recent legal filing against Jane Street for alleged market manipulation in crypto and options has traders buzzing. Observers note that the daily 10 AM liquidity dumps paused immediately after the lawsuit https://t.co/udGW2S8Aik https://t.co/GctCPDeYmv",
+      "author": {
+        "id": "877357064724520961",
+        "username": "CryptosR_Us"
+      },
+      "public_metrics": {
+        "likes": 716,
+        "retweets": 154,
+        "replies": 55,
+        "quotes": 16,
+        "views": 83893
+      },
+      "url": "https://twitter.com/CryptosR_Us/status/2026669764836217068",
+      "processed": false,
+      "addedAt": "2026-02-25T22:13:52.897Z",
+      "expiresAt": "2026-03-04T22:13:52.897Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2026640858536190272",
+      "text": "🚨 STRIVE CEO: DIGITAL CREDIT IS A $30B OPPORTUNITY \n\nAt StrategyWorld 2026, Matt Cole, CEO of Strive Asset Management $ASST, called digital credit the firm’s next major frontier - describing it as an “iPhone moment” as digital assets converge with traditional credit markets. https://t.co/KiPa0y8Xv0",
+      "author": {
+        "id": "877357064724520961",
+        "username": "CryptosR_Us"
+      },
+      "public_metrics": {
+        "likes": 36,
+        "retweets": 9,
+        "replies": 8,
+        "quotes": 0,
+        "views": 5331
+      },
+      "url": "https://twitter.com/CryptosR_Us/status/2026640858536190272",
+      "processed": false,
+      "addedAt": "2026-02-25T22:13:54.902Z",
+      "expiresAt": "2026-03-04T22:13:54.902Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2026614412207927597",
+      "text": "🚨 U.S. TREASURY JUST BOUGHT BACK $2 BILLION DEBT 🇺🇸 \n\nThe United States Department of the Treasury’s recent $2 billion debt buyback is part of ongoing liquidity support and cash management - a form of “stealth QE” designed to support market liquidity. https://t.co/zrsZR2it1c",
+      "author": {
+        "id": "877357064724520961",
+        "username": "CryptosR_Us"
+      },
+      "public_metrics": {
+        "likes": 95,
+        "retweets": 24,
+        "replies": 26,
+        "quotes": 3,
+        "views": 6021
+      },
+      "url": "https://twitter.com/CryptosR_Us/status/2026614412207927597",
+      "processed": false,
+      "addedAt": "2026-02-25T22:13:56.899Z",
+      "expiresAt": "2026-03-04T22:13:56.899Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2026586732821401666",
+      "text": "🇺🇸  U.S. INFLATION DIVERGES BETWEEN OFFICIAL AND REAL-TIME DATA \n\nWhile some independent trackers report inflation near 1%, official U.S. government data shows headline inflation still above the Fed’s 2% target. As of February 2026, the CPI stood at 2.4% YoY, and the Fed’s https://t.co/lTsCDxJ7Qb",
+      "author": {
+        "id": "877357064724520961",
+        "username": "CryptosR_Us"
+      },
+      "public_metrics": {
+        "likes": 59,
+        "retweets": 12,
+        "replies": 17,
+        "quotes": 0,
+        "views": 5249
+      },
+      "url": "https://twitter.com/CryptosR_Us/status/2026586732821401666",
+      "processed": false,
+      "addedAt": "2026-02-25T22:13:58.896Z",
+      "expiresAt": "2026-03-04T22:13:58.896Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2026579181912330683",
+      "text": "🚨 COINBASE EXPANDS INTO STOCK TRADING \n\nCoinbase is officially moving beyond crypto, launching access to 8,000+ U.S. stocks and ETFs - putting it in direct competition with Robinhood and Fidelity Investments. \n\nKey highlights:\n• 24/5 stock trading\n• Buy with USD or USDC\n• https://t.co/wSfHRwslnW",
+      "author": {
+        "id": "877357064724520961",
+        "username": "CryptosR_Us"
+      },
+      "public_metrics": {
+        "likes": 137,
+        "retweets": 26,
+        "replies": 34,
+        "quotes": 1,
+        "views": 6787
+      },
+      "url": "https://twitter.com/CryptosR_Us/status/2026579181912330683",
+      "processed": false,
+      "addedAt": "2026-02-25T22:14:00.887Z",
+      "expiresAt": "2026-03-04T22:14:00.887Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
     }
   ],
   "metadata": {
-    "lastUpdated": "2026-02-25T18:16:53.470Z",
-    "totalPosts": 78,
+    "lastUpdated": "2026-02-25T22:15:05.044Z",
+    "totalPosts": 77,
     "bySource": {
-      "timeline_monitor": 78,
+      "timeline_monitor": 77,
       "search_discovery": 0
     }
   },
