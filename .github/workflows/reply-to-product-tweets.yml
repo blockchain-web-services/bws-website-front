@@ -1,8 +1,9 @@
 name: Reply to Product Tweets
 
 on:
-  schedule:
-    - cron: '0 10,14,16 * * *'  # 3x daily: 10 AM, 2 PM, 4 PM UTC
+  # TEMPORARILY DISABLED
+  # schedule:
+  #   - cron: '0 10,14,16 * * *'  # 3x daily: 10 AM, 2 PM, 4 PM UTC
   workflow_dispatch:
 
 permissions:

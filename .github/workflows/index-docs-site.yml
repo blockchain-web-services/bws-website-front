@@ -1,9 +1,10 @@
 name: Index Documentation Site
 
 on:
-  schedule:
-    # Run daily at 3:00 AM UTC
-    - cron: '0 3 * * *'
+  # TEMPORARILY DISABLED
+  # schedule:
+  #   # Run daily at 3:00 AM UTC
+  #   - cron: '0 3 * * *'
 
   # Allow manual trigger
   workflow_dispatch:

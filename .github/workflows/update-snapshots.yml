@@ -9,9 +9,10 @@ on:
       - 'public/**'
       - 'tests/visual/snapshots.spec.js'
   workflow_dispatch:  # Allow manual trigger
-  schedule:
-    # Run weekly on Sundays at 2 AM UTC to keep snapshots fresh
-    - cron: '0 2 * * 0'
+  # TEMPORARILY DISABLED
+  # schedule:
+  #   # Run weekly on Sundays at 2 AM UTC to keep snapshots fresh
+  #   - cron: '0 2 * * 0'
 
 permissions:
   contents: write

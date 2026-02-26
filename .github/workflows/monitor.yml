@@ -1,9 +1,10 @@
 name: Production Monitoring
 
 on:
-  schedule:
-    # Run every 6 hours
-    - cron: '0 */6 * * *'
+  # TEMPORARILY DISABLED
+  # schedule:
+  #   # Run every 6 hours
+  #   - cron: '0 */6 * * *'
   workflow_dispatch:
 
 permissions:

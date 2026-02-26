@@ -1,15 +1,16 @@
 name: KOL Reply Cycle
 
 on:
-  schedule:
-    - cron: '15 2 * * *'    # 02:15 UTC - Late night (varies from monitor)
-    - cron: '0 5 * * *'     # 05:00 UTC - Early morning (NEW)
-    - cron: '30 7 * * *'    # 07:30 UTC - Morning
-    - cron: '15 10 * * *'   # 10:15 UTC - Mid-morning (NEW)
-    - cron: '45 11 * * *'   # 11:45 UTC - Midday
-    - cron: '20 15 * * *'   # 15:20 UTC - Afternoon
-    - cron: '50 19 * * *'   # 19:50 UTC - Evening
-    - cron: '10 23 * * *'   # 23:10 UTC - Late night
+  # TEMPORARILY DISABLED
+  # schedule:
+  #   - cron: '15 2 * * *'    # 02:15 UTC - Late night (varies from monitor)
+  #   - cron: '0 5 * * *'     # 05:00 UTC - Early morning (NEW)
+  #   - cron: '30 7 * * *'    # 07:30 UTC - Morning
+  #   - cron: '15 10 * * *'   # 10:15 UTC - Mid-morning (NEW)
+  #   - cron: '45 11 * * *'   # 11:45 UTC - Midday
+  #   - cron: '20 15 * * *'   # 15:20 UTC - Afternoon
+  #   - cron: '50 19 * * *'   # 19:50 UTC - Evening
+  #   - cron: '10 23 * * *'   # 23:10 UTC - Late night
   workflow_dispatch:
 
 permissions:

@@ -1,8 +1,9 @@
 name: KOL Discovery - Search Based
 
 on:
-  schedule:
-    - cron: '30 6 * * 1,3,5'  # Mon/Wed/Fri at 6:30 AM UTC
+  # TEMPORARILY DISABLED
+  # schedule:
+  #   - cron: '30 6 * * 1,3,5'  # Mon/Wed/Fri at 6:30 AM UTC
   workflow_dispatch:
 
 permissions:

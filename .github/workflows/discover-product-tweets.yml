@@ -1,8 +1,9 @@
 name: Discover Product Tweets
 
 on:
-  schedule:
-    - cron: '0 8 * * *'  # Daily at 8:00 AM UTC
+  # TEMPORARILY DISABLED
+  # schedule:
+  #   - cron: '0 8 * * *'  # Daily at 8:00 AM UTC
   workflow_dispatch:
     inputs:
       product:

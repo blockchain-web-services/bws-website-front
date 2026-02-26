@@ -1,8 +1,9 @@
 name: Daily KOL Discovery
 
 on:
-  schedule:
-    - cron: '0 6 * * 2,4,6'  # Run Tue/Thu/Sat at 6 AM UTC (Option B schedule)
+  # TEMPORARILY DISABLED
+  # schedule:
+  #   - cron: '0 6 * * 2,4,6'  # Run Tue/Thu/Sat at 6 AM UTC (Option B schedule)
   workflow_dispatch:  # Allow manual trigger
 
 permissions:

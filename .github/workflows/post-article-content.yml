@@ -7,9 +7,9 @@ on:
     types:
       - completed
 
-  # Run weekly on Sunday at 20:00 UTC to check if it's time to post
-  schedule:
-    - cron: '0 20 * * 0'
+  # TEMPORARILY DISABLED - Run weekly on Sunday at 20:00 UTC to check if it's time to post
+  # schedule:
+  #   - cron: '0 20 * * 0'
 
   # Allow manual trigger
   workflow_dispatch:

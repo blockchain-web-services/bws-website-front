@@ -1,8 +1,9 @@
 name: Fetch Success Stories
 
 on:
-  schedule:
-    - cron: '0 11 * * *'  # Daily at 11:00 AM UTC (1 hour after articles at 10:00 AM)
+  # TEMPORARILY DISABLED
+  # schedule:
+  #   - cron: '0 11 * * *'  # Daily at 11:00 AM UTC (1 hour after articles at 10:00 AM)
   workflow_dispatch:
 
 permissions:

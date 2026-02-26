@@ -1,8 +1,9 @@
 name: Weekly X Post
 
 on:
-  schedule:
-    - cron: '0 14 */2 * *'  # Every 2 days at 14:00 UTC (10am ET / 9am CT)
+  # TEMPORARILY DISABLED
+  # schedule:
+  #   - cron: '0 14 */2 * *'  # Every 2 days at 14:00 UTC (10am ET / 9am CT)
   workflow_dispatch:
     inputs:
       dry_run:

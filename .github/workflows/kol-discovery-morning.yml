@@ -1,8 +1,9 @@
 name: KOL Discovery - Morning
 
 on:
-  schedule:
-    - cron: '9 9 * * 1,3,5'  # Mon/Wed/Fri at 09:09 UTC (Option B schedule)
+  # TEMPORARILY DISABLED
+  # schedule:
+  #   - cron: '9 9 * * 1,3,5'  # Mon/Wed/Fri at 09:09 UTC (Option B schedule)
   workflow_dispatch:
 
 permissions:

@@ -1,8 +1,9 @@
 name: Fetch Twitter Partnerships
 
 on:
-  schedule:
-    - cron: '0 9 * * *'  # Daily at 9:00 AM UTC
+  # TEMPORARILY DISABLED
+  # schedule:
+  #   - cron: '0 9 * * *'  # Daily at 9:00 AM UTC
   workflow_dispatch:
 
 permissions:

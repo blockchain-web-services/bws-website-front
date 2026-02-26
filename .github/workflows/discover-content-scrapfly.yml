@@ -1,8 +1,9 @@
 name: Content Discovery - Crawlee
 
 on:
-  schedule:
-    - cron: '0 0,6,12,18 * * *'  # 4x daily: midnight, 6 AM, noon, 6 PM UTC
+  # TEMPORARILY DISABLED
+  # schedule:
+  #   - cron: '0 0,6,12,18 * * *'  # 4x daily: midnight, 6 AM, noon, 6 PM UTC
   workflow_dispatch:
 
 permissions:

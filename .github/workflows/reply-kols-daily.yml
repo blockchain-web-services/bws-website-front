@@ -1,8 +1,9 @@
 name: KOL Reply (6x Daily)
 
 on:
-  schedule:
-    - cron: '30 0,4,6,9,12,18 * * *'  # 6x daily: distributed throughout the day
+  # TEMPORARILY DISABLED
+  # schedule:
+  #   - cron: '30 0,4,6,9,12,18 * * *'  # 6x daily: distributed throughout the day
   workflow_dispatch:  # Allow manual trigger
 
 permissions:
