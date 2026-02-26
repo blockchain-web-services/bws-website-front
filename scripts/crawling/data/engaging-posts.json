@@ -566,13 +566,958 @@
       "expiresAt": "2026-03-04T22:14:00.887Z",
       "source": "timeline_monitor",
       "contentCategory": "error"
+    },
+    {
+      "id": "2026194467682705745",
+      "text": "@knight_XBT @hoodiemfer Yes they were ?",
+      "author": {
+        "id": "2259434528",
+        "username": "cobie"
+      },
+      "public_metrics": {
+        "likes": 15,
+        "retweets": 0,
+        "replies": 4,
+        "quotes": 0,
+        "views": 1645
+      },
+      "url": "https://twitter.com/cobie/status/2026194467682705745",
+      "processed": false,
+      "addedAt": "2026-02-26T07:35:38.923Z",
+      "expiresAt": "2026-03-05T07:35:38.923Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2026094478113599878",
+      "text": "@Divine_J_ @CryptopepperP @spacexbt You mean to insider trade PUMP token?",
+      "author": {
+        "id": "2259434528",
+        "username": "cobie"
+      },
+      "public_metrics": {
+        "likes": 17,
+        "retweets": 0,
+        "replies": 14,
+        "quotes": 4,
+        "views": 3820
+      },
+      "url": "https://twitter.com/cobie/status/2026094478113599878",
+      "processed": false,
+      "addedAt": "2026-02-26T07:35:40.799Z",
+      "expiresAt": "2026-03-05T07:35:40.799Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2026091696451191136",
+      "text": "@CryptopepperP @spacexbt What would be the insider info that Pumpfun employees could exploit to insider trade?",
+      "author": {
+        "id": "2259434528",
+        "username": "cobie"
+      },
+      "public_metrics": {
+        "likes": 17,
+        "retweets": 0,
+        "replies": 5,
+        "quotes": 1,
+        "views": 2965
+      },
+      "url": "https://twitter.com/cobie/status/2026091696451191136",
+      "processed": false,
+      "addedAt": "2026-02-26T07:35:42.812Z",
+      "expiresAt": "2026-03-05T07:35:42.812Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2026090879379779906",
+      "text": "@GuigsLuke @spacexbt They don’t charge fees",
+      "author": {
+        "id": "2259434528",
+        "username": "cobie"
+      },
+      "public_metrics": {
+        "likes": 5,
+        "retweets": 0,
+        "replies": 3,
+        "quotes": 1,
+        "views": 2056
+      },
+      "url": "https://twitter.com/cobie/status/2026090879379779906",
+      "processed": false,
+      "addedAt": "2026-02-26T07:35:44.808Z",
+      "expiresAt": "2026-03-05T07:35:44.808Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2026090740556747188",
+      "text": "@OnlyLJC @spacexbt Venture funding ?",
+      "author": {
+        "id": "2259434528",
+        "username": "cobie"
+      },
+      "public_metrics": {
+        "likes": 17,
+        "retweets": 0,
+        "replies": 3,
+        "quotes": 0,
+        "views": 2258
+      },
+      "url": "https://twitter.com/cobie/status/2026090740556747188",
+      "processed": false,
+      "addedAt": "2026-02-26T07:35:46.823Z",
+      "expiresAt": "2026-03-05T07:35:46.823Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2026044549986976129",
+      "text": "@spacexbt “One of crypto’s most profitable businesses” qualifier seems to exclude Polymarket who are not profitable as I understand it",
+      "author": {
+        "id": "2259434528",
+        "username": "cobie"
+      },
+      "public_metrics": {
+        "likes": 781,
+        "retweets": 5,
+        "replies": 64,
+        "quotes": 4,
+        "views": 49725
+      },
+      "url": "https://twitter.com/cobie/status/2026044549986976129",
+      "processed": false,
+      "addedAt": "2026-02-26T07:35:48.954Z",
+      "expiresAt": "2026-03-05T07:35:48.954Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2026043678280520093",
+      "text": "@piliponful @serpinxbt It can’t be “one of the most profitable” companies if it makes no money, so obviously can be excluded from the voting options",
+      "author": {
+        "id": "2259434528",
+        "username": "cobie"
+      },
+      "public_metrics": {
+        "likes": 31,
+        "retweets": 0,
+        "replies": 9,
+        "quotes": 1,
+        "views": 3385
+      },
+      "url": "https://twitter.com/cobie/status/2026043678280520093",
+      "processed": false,
+      "addedAt": "2026-02-26T07:35:50.836Z",
+      "expiresAt": "2026-03-05T07:35:50.836Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2026038645333901331",
+      "text": "@serpinxbt Does polymarket make any money? I thought they didn’t",
+      "author": {
+        "id": "2259434528",
+        "username": "cobie"
+      },
+      "public_metrics": {
+        "likes": 252,
+        "retweets": 1,
+        "replies": 43,
+        "quotes": 3,
+        "views": 38375
+      },
+      "url": "https://twitter.com/cobie/status/2026038645333901331",
+      "processed": false,
+      "addedAt": "2026-02-26T07:35:52.856Z",
+      "expiresAt": "2026-03-05T07:35:52.856Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2024775779129704516",
+      "text": "@RigbyDEV @hotpot_dao Haven’t played since 2022",
+      "author": {
+        "id": "2259434528",
+        "username": "cobie"
+      },
+      "public_metrics": {
+        "likes": 9,
+        "retweets": 0,
+        "replies": 8,
+        "quotes": 0,
+        "views": 2376
+      },
+      "url": "https://twitter.com/cobie/status/2024775779129704516",
+      "processed": false,
+      "addedAt": "2026-02-26T07:35:54.809Z",
+      "expiresAt": "2026-03-05T07:35:54.809Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2024775526569660820",
+      "text": "@hotpot_dao Hard road? https://t.co/0C4boj6GvQ",
+      "author": {
+        "id": "2259434528",
+        "username": "cobie"
+      },
+      "public_metrics": {
+        "likes": 222,
+        "retweets": 2,
+        "replies": 13,
+        "quotes": 1,
+        "views": 10599
+      },
+      "url": "https://twitter.com/cobie/status/2024775526569660820",
+      "processed": false,
+      "addedAt": "2026-02-26T07:35:56.834Z",
+      "expiresAt": "2026-03-05T07:35:56.834Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2026849853738041558",
+      "text": "@Nebraskangooner Right at the level of the breakout, could be a nice move coming soon. Especially if crypto can finish the week up. https://t.co/Iak3uIW4Mp",
+      "author": {
+        "id": "4441279246",
+        "username": "IncomeSharks"
+      },
+      "public_metrics": {
+        "likes": 101,
+        "retweets": 5,
+        "replies": 5,
+        "quotes": 0,
+        "views": 6032
+      },
+      "url": "https://twitter.com/IncomeSharks/status/2026849853738041558",
+      "processed": false,
+      "addedAt": "2026-02-26T07:36:10.526Z",
+      "expiresAt": "2026-03-05T07:36:10.526Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2026849305009729637",
+      "text": "$MSTR - If we start flipping these Supertrend lines from red to green on the crypto majors and crypto stock plays it could lead to a pretty good March/April. https://t.co/nKid8XfKov",
+      "author": {
+        "id": "4441279246",
+        "username": "IncomeSharks"
+      },
+      "public_metrics": {
+        "likes": 431,
+        "retweets": 30,
+        "replies": 43,
+        "quotes": 1,
+        "views": 21421
+      },
+      "url": "https://twitter.com/IncomeSharks/status/2026849305009729637",
+      "processed": false,
+      "addedAt": "2026-02-26T07:36:12.479Z",
+      "expiresAt": "2026-03-05T07:36:12.479Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2026841933902131616",
+      "text": "@hamptonism \"We need someone to blame and go to jail when we get sued or charged criminally. Ideally you are not smart and value a high salary enough to not question what you are doing\"",
+      "author": {
+        "id": "4441279246",
+        "username": "IncomeSharks"
+      },
+      "public_metrics": {
+        "likes": 135,
+        "retweets": 0,
+        "replies": 3,
+        "quotes": 0,
+        "views": 4859
+      },
+      "url": "https://twitter.com/IncomeSharks/status/2026841933902131616",
+      "processed": false,
+      "addedAt": "2026-02-26T07:36:14.485Z",
+      "expiresAt": "2026-03-05T07:36:14.485Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2026818325612040466",
+      "text": "@DeItaone How about their own nuclear reactors?",
+      "author": {
+        "id": "4441279246",
+        "username": "IncomeSharks"
+      },
+      "public_metrics": {
+        "likes": 26,
+        "retweets": 1,
+        "replies": 7,
+        "quotes": 0,
+        "views": 6038
+      },
+      "url": "https://twitter.com/IncomeSharks/status/2026818325612040466",
+      "processed": false,
+      "addedAt": "2026-02-26T07:36:16.472Z",
+      "expiresAt": "2026-03-05T07:36:16.472Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2026813138692354263",
+      "text": "@HedgeFundTips @EnriqueJLores PayPal had a terrible CEO who was anti crypto and controlled what you could or couldn't spend your money on.",
+      "author": {
+        "id": "4441279246",
+        "username": "IncomeSharks"
+      },
+      "public_metrics": {
+        "likes": 13,
+        "retweets": 0,
+        "replies": 3,
+        "quotes": 0,
+        "views": 2432
+      },
+      "url": "https://twitter.com/IncomeSharks/status/2026813138692354263",
+      "processed": false,
+      "addedAt": "2026-02-26T07:36:18.500Z",
+      "expiresAt": "2026-03-05T07:36:18.500Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2026812318370390215",
+      "text": "@RetroCoast Toyota makes a 10k truck. Almost zero safety features so not allowed to be purchased in the US. Half of the cars value comes from complying to all the regulations. https://t.co/eYUqMpys2q",
+      "author": {
+        "id": "4441279246",
+        "username": "IncomeSharks"
+      },
+      "public_metrics": {
+        "likes": 175,
+        "retweets": 1,
+        "replies": 21,
+        "quotes": 0,
+        "views": 17823
+      },
+      "url": "https://twitter.com/IncomeSharks/status/2026812318370390215",
+      "processed": false,
+      "addedAt": "2026-02-26T07:36:20.545Z",
+      "expiresAt": "2026-03-05T07:36:20.545Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2026811318318281114",
+      "text": "@bryan_johnson I'm finding myself using it less and less. I like the interactions but there's just too much slop, rage, and negativity. Our brains were probably never designed to see so much and process so much doom and gloom.",
+      "author": {
+        "id": "4441279246",
+        "username": "IncomeSharks"
+      },
+      "public_metrics": {
+        "likes": 50,
+        "retweets": 1,
+        "replies": 4,
+        "quotes": 0,
+        "views": 3699
+      },
+      "url": "https://twitter.com/IncomeSharks/status/2026811318318281114",
+      "processed": false,
+      "addedAt": "2026-02-26T07:36:22.486Z",
+      "expiresAt": "2026-03-05T07:36:22.486Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2026810221327532250",
+      "text": "@KillaXBT It can't bring back loved ones or slow time.",
+      "author": {
+        "id": "4441279246",
+        "username": "IncomeSharks"
+      },
+      "public_metrics": {
+        "likes": 36,
+        "retweets": 0,
+        "replies": 9,
+        "quotes": 0,
+        "views": 3525
+      },
+      "url": "https://twitter.com/IncomeSharks/status/2026810221327532250",
+      "processed": false,
+      "addedAt": "2026-02-26T07:36:24.486Z",
+      "expiresAt": "2026-03-05T07:36:24.486Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2026808797570937130",
+      "text": "@TheBTCTherapist Let's start the squeeze",
+      "author": {
+        "id": "4441279246",
+        "username": "IncomeSharks"
+      },
+      "public_metrics": {
+        "likes": 59,
+        "retweets": 1,
+        "replies": 1,
+        "quotes": 1,
+        "views": 3121
+      },
+      "url": "https://twitter.com/IncomeSharks/status/2026808797570937130",
+      "processed": false,
+      "addedAt": "2026-02-26T07:36:26.512Z",
+      "expiresAt": "2026-03-05T07:36:26.512Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2026808767862681700",
+      "text": "@Bluntz_Capital This is a narrative we could all get behind.",
+      "author": {
+        "id": "4441279246",
+        "username": "IncomeSharks"
+      },
+      "public_metrics": {
+        "likes": 101,
+        "retweets": 0,
+        "replies": 4,
+        "quotes": 0,
+        "views": 5587
+      },
+      "url": "https://twitter.com/IncomeSharks/status/2026808767862681700",
+      "processed": false,
+      "addedAt": "2026-02-26T07:36:28.638Z",
+      "expiresAt": "2026-03-05T07:36:28.638Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2026837747936190859",
+      "text": "cmon lets have another green day tomorrow. good night https://t.co/DLCVob0ghp",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "likes": 65,
+        "retweets": 0,
+        "replies": 15,
+        "quotes": 0,
+        "views": 3949
+      },
+      "url": "https://twitter.com/AltcoinSherpa/status/2026837747936190859",
+      "processed": false,
+      "addedAt": "2026-02-26T07:36:42.452Z",
+      "expiresAt": "2026-03-05T07:36:42.452Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2026799485280452661",
+      "text": "Today was a great crypto day\n\nPrices UP (most important)\n\nJane Street\n\n$ARC insiders getting fcked\n\nLighter wicking to 47k\n\nAAVE fud\n\nmore of this please",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "likes": 61,
+        "retweets": 1,
+        "replies": 8,
+        "quotes": 0,
+        "views": 4710
+      },
+      "url": "https://twitter.com/AltcoinSherpa/status/2026799485280452661",
+      "processed": false,
+      "addedAt": "2026-02-26T07:36:44.421Z",
+      "expiresAt": "2026-03-05T07:36:44.421Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2026787500837007701",
+      "text": "Jane Street is the reason why I'm  - 90% down",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "likes": 461,
+        "retweets": 17,
+        "replies": 26,
+        "quotes": 2,
+        "views": 12567
+      },
+      "url": "https://twitter.com/AltcoinSherpa/status/2026787500837007701",
+      "processed": false,
+      "addedAt": "2026-02-26T07:36:46.437Z",
+      "expiresAt": "2026-03-05T07:36:46.437Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2026786151344828664",
+      "text": "@dgt10011 Can you explain for us crypto retards? Ty",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "likes": 47,
+        "retweets": 0,
+        "replies": 8,
+        "quotes": 0,
+        "views": 11316
+      },
+      "url": "https://twitter.com/AltcoinSherpa/status/2026786151344828664",
+      "processed": false,
+      "addedAt": "2026-02-26T07:36:48.410Z",
+      "expiresAt": "2026-03-05T07:36:48.410Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2026713382645051658",
+      "text": "Betting Florida vs. Texas for College hoops, let's see how well UF does. They won last year with a pretty mediocre squad (relatively). Haven't followed them as much this year but will watch tonight. https://t.co/Y8slwU5Xi5",
+      "author": {
+        "id": "1068237257977544704",
+        "username": "AltcoinSherpa"
+      },
+      "public_metrics": {
+        "likes": 12,
+        "retweets": 0,
+        "replies": 5,
+        "quotes": 0,
+        "views": 2829
+      },
+      "url": "https://twitter.com/AltcoinSherpa/status/2026713382645051658",
+      "processed": false,
+      "addedAt": "2026-02-26T07:36:50.469Z",
+      "expiresAt": "2026-03-05T07:36:50.469Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2026810643244871866",
+      "text": "All my homies and I hate Jane Street.",
+      "author": {
+        "id": "906234475604037637",
+        "username": "CryptoKaleo"
+      },
+      "public_metrics": {
+        "likes": 690,
+        "retweets": 22,
+        "replies": 49,
+        "quotes": 3,
+        "views": 16625
+      },
+      "url": "https://twitter.com/CryptoKaleo/status/2026810643244871866",
+      "processed": false,
+      "addedAt": "2026-02-26T07:36:52.617Z",
+      "expiresAt": "2026-03-05T07:36:52.617Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2026786703768207387",
+      "text": "The sad part is the people who need to read this the most don’t have the attention span to do it. https://t.co/O5YJd46oja",
+      "author": {
+        "id": "906234475604037637",
+        "username": "CryptoKaleo"
+      },
+      "public_metrics": {
+        "likes": 390,
+        "retweets": 23,
+        "replies": 35,
+        "quotes": 1,
+        "views": 64523
+      },
+      "url": "https://twitter.com/CryptoKaleo/status/2026786703768207387",
+      "processed": false,
+      "addedAt": "2026-02-26T07:36:54.422Z",
+      "expiresAt": "2026-03-05T07:36:54.422Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2026746963501142402",
+      "text": "BE MORE BULLISH. https://t.co/3tX8JB7xh6",
+      "author": {
+        "id": "906234475604037637",
+        "username": "CryptoKaleo"
+      },
+      "public_metrics": {
+        "likes": 393,
+        "retweets": 10,
+        "replies": 54,
+        "quotes": 0,
+        "views": 21844
+      },
+      "url": "https://twitter.com/CryptoKaleo/status/2026746963501142402",
+      "processed": false,
+      "addedAt": "2026-02-26T07:36:56.418Z",
+      "expiresAt": "2026-03-05T07:36:56.418Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2026739062044835874",
+      "text": "Would be funny if the Citrini AI doomer article marked the pico bottom of the bear market.",
+      "author": {
+        "id": "906234475604037637",
+        "username": "CryptoKaleo"
+      },
+      "public_metrics": {
+        "likes": 119,
+        "retweets": 0,
+        "replies": 15,
+        "quotes": 1,
+        "views": 10953
+      },
+      "url": "https://twitter.com/CryptoKaleo/status/2026739062044835874",
+      "processed": false,
+      "addedAt": "2026-02-26T07:36:58.483Z",
+      "expiresAt": "2026-03-05T07:36:58.483Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2026736530711097518",
+      "text": "Still have a lot of work left to do but slowly but surely getting there.\n\nBest part about the recent drop is my knees and ankles feel 10x better than they did at 200 lbs.\n\nWorst part is the crypto market has gone down in direct correlation with my weight. https://t.co/Otyz0uQRti",
+      "author": {
+        "id": "906234475604037637",
+        "username": "CryptoKaleo"
+      },
+      "public_metrics": {
+        "likes": 20,
+        "retweets": 0,
+        "replies": 7,
+        "quotes": 0,
+        "views": 5222
+      },
+      "url": "https://twitter.com/CryptoKaleo/status/2026736530711097518",
+      "processed": false,
+      "addedAt": "2026-02-26T07:37:00.433Z",
+      "expiresAt": "2026-03-05T07:37:00.433Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2026735980523479495",
+      "text": "I just weighed in under 190 lbs for the first time since 2017.\n\nDown nearly 40 lbs from the peak of the 2021 bull market.\n\nFeels good man. https://t.co/7l09Pae3lP",
+      "author": {
+        "id": "906234475604037637",
+        "username": "CryptoKaleo"
+      },
+      "public_metrics": {
+        "likes": 404,
+        "retweets": 0,
+        "replies": 94,
+        "quotes": 0,
+        "views": 22051
+      },
+      "url": "https://twitter.com/CryptoKaleo/status/2026735980523479495",
+      "processed": false,
+      "addedAt": "2026-02-26T07:37:02.407Z",
+      "expiresAt": "2026-03-05T07:37:02.407Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2026734901567873416",
+      "text": "$PENGU under a penny is free",
+      "author": {
+        "id": "906234475604037637",
+        "username": "CryptoKaleo"
+      },
+      "public_metrics": {
+        "likes": 296,
+        "retweets": 19,
+        "replies": 35,
+        "quotes": 2,
+        "views": 14433
+      },
+      "url": "https://twitter.com/CryptoKaleo/status/2026734901567873416",
+      "processed": false,
+      "addedAt": "2026-02-26T07:37:04.566Z",
+      "expiresAt": "2026-03-05T07:37:04.566Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2026732881138139461",
+      "text": "#Bitcoin / $BTC\n\nJust getting started fellas https://t.co/8hmj9KqBfb https://t.co/HB0s09TcYK",
+      "author": {
+        "id": "906234475604037637",
+        "username": "CryptoKaleo"
+      },
+      "public_metrics": {
+        "likes": 311,
+        "retweets": 21,
+        "replies": 58,
+        "quotes": 0,
+        "views": 26723
+      },
+      "url": "https://twitter.com/CryptoKaleo/status/2026732881138139461",
+      "processed": false,
+      "addedAt": "2026-02-26T07:37:06.457Z",
+      "expiresAt": "2026-03-05T07:37:06.457Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2026673848557375601",
+      "text": "TWO THOUSAND UNITED STATES DOLLARS FOR ONE ETHEREUM",
+      "author": {
+        "id": "906234475604037637",
+        "username": "CryptoKaleo"
+      },
+      "public_metrics": {
+        "likes": 246,
+        "retweets": 11,
+        "replies": 37,
+        "quotes": 0,
+        "views": 14933
+      },
+      "url": "https://twitter.com/CryptoKaleo/status/2026673848557375601",
+      "processed": false,
+      "addedAt": "2026-02-26T07:37:08.428Z",
+      "expiresAt": "2026-03-05T07:37:08.428Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2026672800216317977",
+      "text": "We’re going so much higher.",
+      "author": {
+        "id": "906234475604037637",
+        "username": "CryptoKaleo"
+      },
+      "public_metrics": {
+        "likes": 404,
+        "retweets": 17,
+        "replies": 59,
+        "quotes": 0,
+        "views": 11317
+      },
+      "url": "https://twitter.com/CryptoKaleo/status/2026672800216317977",
+      "processed": false,
+      "addedAt": "2026-02-26T07:37:10.443Z",
+      "expiresAt": "2026-03-05T07:37:10.443Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2026815747540865338",
+      "text": "$ALLO\n$ORCA \n\nBOUGHT!",
+      "author": {
+        "id": "crawlee_search_nihilusbtc",
+        "username": "NihilusBTC"
+      },
+      "public_metrics": {
+        "likes": 37,
+        "retweets": 12,
+        "replies": 13,
+        "quotes": 0,
+        "views": 1859
+      },
+      "url": "https://twitter.com/NihilusBTC/status/2026815747540865338",
+      "processed": false,
+      "addedAt": "2026-02-26T07:37:12.426Z",
+      "expiresAt": "2026-03-05T07:37:12.426Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2026807753826607503",
+      "text": "$LPT longed last time @ 2.40\n\n$BTC longed @ 67.8k",
+      "author": {
+        "id": "crawlee_search_nihilusbtc",
+        "username": "NihilusBTC"
+      },
+      "public_metrics": {
+        "likes": 59,
+        "retweets": 17,
+        "replies": 15,
+        "quotes": 0,
+        "views": 3176
+      },
+      "url": "https://twitter.com/NihilusBTC/status/2026807753826607503",
+      "processed": false,
+      "addedAt": "2026-02-26T07:37:14.436Z",
+      "expiresAt": "2026-03-05T07:37:14.436Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2026802551983620138",
+      "text": "$ORCA | Retest done!🚀 https://t.co/eKryfiprTD",
+      "author": {
+        "id": "crawlee_search_nihilusbtc",
+        "username": "NihilusBTC"
+      },
+      "public_metrics": {
+        "likes": 47,
+        "retweets": 17,
+        "replies": 17,
+        "quotes": 0,
+        "views": 2153
+      },
+      "url": "https://twitter.com/NihilusBTC/status/2026802551983620138",
+      "processed": false,
+      "addedAt": "2026-02-26T07:37:16.435Z",
+      "expiresAt": "2026-03-05T07:37:16.435Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2026799763241210151",
+      "text": "$LPT long @ 2.435\n\nTP: 4",
+      "author": {
+        "id": "crawlee_search_nihilusbtc",
+        "username": "NihilusBTC"
+      },
+      "public_metrics": {
+        "likes": 33,
+        "retweets": 15,
+        "replies": 13,
+        "quotes": 0,
+        "views": 1764
+      },
+      "url": "https://twitter.com/NihilusBTC/status/2026799763241210151",
+      "processed": false,
+      "addedAt": "2026-02-26T07:37:18.462Z",
+      "expiresAt": "2026-03-05T07:37:18.462Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2026793661606838333",
+      "text": "AI tokens for EXTREME god candles.\n\nWhich one you choose?\n\n$ALLO\n$LPT\n$AIXBT\n$SHELL https://t.co/Z5N4jWQmGs",
+      "author": {
+        "id": "crawlee_search_nihilusbtc",
+        "username": "NihilusBTC"
+      },
+      "public_metrics": {
+        "likes": 42,
+        "retweets": 21,
+        "replies": 22,
+        "quotes": 0,
+        "views": 2413
+      },
+      "url": "https://twitter.com/NihilusBTC/status/2026793661606838333",
+      "processed": false,
+      "addedAt": "2026-02-26T07:37:20.433Z",
+      "expiresAt": "2026-03-05T07:37:20.433Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2026790398241186063",
+      "text": "$ALLO buy @ 0.1165\n\nTp: 0.20",
+      "author": {
+        "id": "crawlee_search_nihilusbtc",
+        "username": "NihilusBTC"
+      },
+      "public_metrics": {
+        "likes": 40,
+        "retweets": 20,
+        "replies": 19,
+        "quotes": 0,
+        "views": 2092
+      },
+      "url": "https://twitter.com/NihilusBTC/status/2026790398241186063",
+      "processed": false,
+      "addedAt": "2026-02-26T07:37:22.428Z",
+      "expiresAt": "2026-03-05T07:37:22.428Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2026768148939014321",
+      "text": "$LPT | Keep buying until 2.50 for scam pump. https://t.co/KXNPBXfCGF",
+      "author": {
+        "id": "crawlee_search_nihilusbtc",
+        "username": "NihilusBTC"
+      },
+      "public_metrics": {
+        "likes": 51,
+        "retweets": 20,
+        "replies": 17,
+        "quotes": 0,
+        "views": 2679
+      },
+      "url": "https://twitter.com/NihilusBTC/status/2026768148939014321",
+      "processed": false,
+      "addedAt": "2026-02-26T07:37:24.446Z",
+      "expiresAt": "2026-03-05T07:37:24.446Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2026767720411271460",
+      "text": "$ALLO | AI. https://t.co/pAdSnAk47x",
+      "author": {
+        "id": "crawlee_search_nihilusbtc",
+        "username": "NihilusBTC"
+      },
+      "public_metrics": {
+        "likes": 44,
+        "retweets": 18,
+        "replies": 16,
+        "quotes": 0,
+        "views": 1959
+      },
+      "url": "https://twitter.com/NihilusBTC/status/2026767720411271460",
+      "processed": false,
+      "addedAt": "2026-02-26T07:37:26.608Z",
+      "expiresAt": "2026-03-05T07:37:26.608Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2026767361638871403",
+      "text": "$ORCA | Long Setup\n\nReclaim\nBreakout https://t.co/MGMyK63jPU",
+      "author": {
+        "id": "crawlee_search_nihilusbtc",
+        "username": "NihilusBTC"
+      },
+      "public_metrics": {
+        "likes": 43,
+        "retweets": 20,
+        "replies": 16,
+        "quotes": 1,
+        "views": 1995
+      },
+      "url": "https://twitter.com/NihilusBTC/status/2026767361638871403",
+      "processed": false,
+      "addedAt": "2026-02-26T07:37:28.464Z",
+      "expiresAt": "2026-03-05T07:37:28.464Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
+    },
+    {
+      "id": "2026762776845111582",
+      "text": "$LPT | Huge long time. https://t.co/YJgRcaC9J5",
+      "author": {
+        "id": "crawlee_search_nihilusbtc",
+        "username": "NihilusBTC"
+      },
+      "public_metrics": {
+        "likes": 47,
+        "retweets": 18,
+        "replies": 20,
+        "quotes": 0,
+        "views": 1928
+      },
+      "url": "https://twitter.com/NihilusBTC/status/2026762776845111582",
+      "processed": false,
+      "addedAt": "2026-02-26T07:37:30.437Z",
+      "expiresAt": "2026-03-05T07:37:30.437Z",
+      "source": "timeline_monitor",
+      "contentCategory": "error"
     }
   ],
   "metadata": {
-    "lastUpdated": "2026-02-25T22:15:05.044Z",
-    "totalPosts": 77,
+    "lastUpdated": "2026-02-26T07:38:34.634Z",
+    "totalPosts": 72,
     "bySource": {
-      "timeline_monitor": 77,
+      "timeline_monitor": 72,
       "search_discovery": 0
     }
   },
