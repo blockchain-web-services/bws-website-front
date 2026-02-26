@@ -582,7 +582,7 @@
         "views": 1645
       },
       "url": "https://twitter.com/cobie/status/2026194467682705745",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-02-26T07:35:38.923Z",
       "expiresAt": "2026-03-05T07:35:38.923Z",
       "source": "timeline_monitor",
@@ -603,7 +603,7 @@
         "views": 3820
       },
       "url": "https://twitter.com/cobie/status/2026094478113599878",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-02-26T07:35:40.799Z",
       "expiresAt": "2026-03-05T07:35:40.799Z",
       "source": "timeline_monitor",
@@ -624,7 +624,7 @@
         "views": 2965
       },
       "url": "https://twitter.com/cobie/status/2026091696451191136",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-02-26T07:35:42.812Z",
       "expiresAt": "2026-03-05T07:35:42.812Z",
       "source": "timeline_monitor",
@@ -645,7 +645,7 @@
         "views": 2056
       },
       "url": "https://twitter.com/cobie/status/2026090879379779906",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-02-26T07:35:44.808Z",
       "expiresAt": "2026-03-05T07:35:44.808Z",
       "source": "timeline_monitor",
@@ -666,7 +666,7 @@
         "views": 2258
       },
       "url": "https://twitter.com/cobie/status/2026090740556747188",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-02-26T07:35:46.823Z",
       "expiresAt": "2026-03-05T07:35:46.823Z",
       "source": "timeline_monitor",
@@ -687,7 +687,7 @@
         "views": 49725
       },
       "url": "https://twitter.com/cobie/status/2026044549986976129",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-02-26T07:35:48.954Z",
       "expiresAt": "2026-03-05T07:35:48.954Z",
       "source": "timeline_monitor",
@@ -708,7 +708,7 @@
         "views": 3385
       },
       "url": "https://twitter.com/cobie/status/2026043678280520093",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-02-26T07:35:50.836Z",
       "expiresAt": "2026-03-05T07:35:50.836Z",
       "source": "timeline_monitor",
@@ -729,7 +729,7 @@
         "views": 38375
       },
       "url": "https://twitter.com/cobie/status/2026038645333901331",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-02-26T07:35:52.856Z",
       "expiresAt": "2026-03-05T07:35:52.856Z",
       "source": "timeline_monitor",
@@ -750,7 +750,7 @@
         "views": 2376
       },
       "url": "https://twitter.com/cobie/status/2024775779129704516",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-02-26T07:35:54.809Z",
       "expiresAt": "2026-03-05T07:35:54.809Z",
       "source": "timeline_monitor",
@@ -771,7 +771,7 @@
         "views": 10599
       },
       "url": "https://twitter.com/cobie/status/2024775526569660820",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-02-26T07:35:56.834Z",
       "expiresAt": "2026-03-05T07:35:56.834Z",
       "source": "timeline_monitor",
@@ -792,7 +792,7 @@
         "views": 6032
       },
       "url": "https://twitter.com/IncomeSharks/status/2026849853738041558",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-02-26T07:36:10.526Z",
       "expiresAt": "2026-03-05T07:36:10.526Z",
       "source": "timeline_monitor",
@@ -813,7 +813,7 @@
         "views": 21421
       },
       "url": "https://twitter.com/IncomeSharks/status/2026849305009729637",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-02-26T07:36:12.479Z",
       "expiresAt": "2026-03-05T07:36:12.479Z",
       "source": "timeline_monitor",
@@ -834,7 +834,7 @@
         "views": 4859
       },
       "url": "https://twitter.com/IncomeSharks/status/2026841933902131616",
-      "processed": false,
+      "processed": true,
       "addedAt": "2026-02-26T07:36:14.485Z",
       "expiresAt": "2026-03-05T07:36:14.485Z",
       "source": "timeline_monitor",
@@ -1532,10 +1532,10 @@
       "BWS IPFS",
       "Blockchain Save"
     ],
-    "currentIndex": 1,
-    "lastProductUsed": "X Bot",
+    "currentIndex": 2,
+    "lastProductUsed": "Fan Game Cube",
     "positioningPhraseIndex": 0,
-    "replyCount": 329
+    "replyCount": 330
   },
   "_removedStale": false
 }
