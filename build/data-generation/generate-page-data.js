@@ -266,20 +266,10 @@ function generateFeatures(solutionName) {
       { title: 'NFT Creation', description: 'Mint unique digital assets' },
       { title: 'Secure Trading', description: 'Trade without revealing identity' }
     ],
-    'nft-gamecube': [
-      { title: 'Gaming NFTs', description: 'Create in-game digital assets' },
-      { title: 'Cross-game Compatibility', description: 'Use NFTs across multiple games' },
-      { title: 'Player Ownership', description: 'True ownership of game items' }
-    ],
     'blockchain-badges': [
       { title: 'Digital Credentials', description: 'Issue verifiable digital badges' },
       { title: 'Tamper-proof', description: 'Badges cannot be forged' },
       { title: 'Portable', description: 'Use badges across platforms' }
-    ],
-    'esg-credits': [
-      { title: 'Carbon Credits', description: 'Track and trade carbon offsets' },
-      { title: 'Transparency', description: 'Full visibility into ESG metrics' },
-      { title: 'Compliance', description: 'Meet regulatory requirements' }
     ],
     'telegram-xbot': [
       { title: 'Bot Integration', description: 'Easy Telegram bot setup' },

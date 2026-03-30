@@ -6,9 +6,7 @@ const marketplacePages = [
   { file: 'blockchain-badges.astro', componentSnake: 'marketplaceblockchainbadgesMainContent', componentPascal: 'MarketplaceBlockchainBadgesMainContent' },
   { file: 'database-immutable.astro', componentSnake: 'marketplacedatabaseimmutableMainContent', componentPascal: 'MarketplaceDatabaseImmutableMainContent' },
   { file: 'database-mutable.astro', componentSnake: 'marketplacedatabasemutableMainContent', componentPascal: 'MarketplaceDatabaseMutableMainContent' },
-  { file: 'esg-credits.astro', componentSnake: 'marketplaceesgcreditsMainContent', componentPascal: 'MarketplaceEsgCreditsMainContent' },
   { file: 'ipfs-upload.astro', componentSnake: 'marketplaceipfsuploadMainContent', componentPascal: 'MarketplaceIpfsUploadMainContent' },
-  { file: 'nft-gamecube.astro', componentSnake: 'marketplacenftgamecubeMainContent', componentPascal: 'MarketplaceNftGamecubeMainContent' },
   { file: 'nft-zeroknwoledge.astro', componentSnake: 'marketplacenftzeroknwoledgeMainContent', componentPascal: 'MarketplaceNftZeroknwoledgeMainContent' },
   { file: 'telegram-xbot.astro', componentSnake: 'marketplacetelegramxbotMainContent', componentPascal: 'MarketplaceTelegramXbotMainContent' }
 ];

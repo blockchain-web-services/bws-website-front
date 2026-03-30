@@ -406,8 +406,8 @@ function validateThread(threadData, product, template) {
 
   // Check product isolation (no other BWS product mentions)
   const otherProducts = [
-    'X Bot', 'Fan Game Cube', 'Blockchain Hash', 'NFT.zK',
-    'Blockchain Badges', 'ESG Credits', 'BWS IPFS', 'Blockchain Save'
+    'X Bot', 'Blockchain Hash', 'NFT.zK',
+    'Blockchain Badges', 'BWS IPFS', 'Blockchain Save'
   ].filter(p => p !== product);
 
   const fullThreadText = threadData.tweets.map(t => t.text).join(' ');

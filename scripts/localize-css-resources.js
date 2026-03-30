@@ -80,7 +80,6 @@ const resourceMappings = {
 
   // PNG images
   'https://cdn.prod.website-files.com/6474d385cfec71cb21a92251/647cad568a1b4d74146937ae_discord.png': '/assets/images/icons/discord.png',
-  'https://cdn.prod.website-files.com/6474d385cfec71cb21a92251/64fb03f88a1dc66527219967_ESG.Credits.png': '/assets/images/logos/esg-credits.png',
   'https://cdn.prod.website-files.com/6474d385cfec71cb21a92251/6710d8dcebc9d36937f10eac_BWS-Logo-Background-Violet.png': '/assets/images/logos/bws-logo-violet.png',
   'https://cdn.prod.website-files.com/6474d385cfec71cb21a92251/6710d995db577767928230a0_BWS-Logo-Background-Violet-Flying.png': '/assets/images/logos/bws-logo-violet-flying.png'
 };

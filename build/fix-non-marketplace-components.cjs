@@ -21,7 +21,6 @@ const nonMarketplacePages = [
 
   // Articles pages
   { file: 'discover-the-power-of-blockchain-bwss-data-management-solutions.astro', dir: 'src/pages/articles', componentSnake: 'articlesdiscoverthepowerofblockchainbwssdatamanagementsolutionsMainContent', componentPascal: 'ArticlesDiscoverThePowerOfBlockchainBwssDataManagementSolutionsMainContent' },
-  { file: 'embrace-sustainability-with-esg-credits-bws-solution.astro', dir: 'src/pages/articles', componentSnake: 'articlesembracesustainabilitywithesgcreditsbwssolutionMainContent', componentPascal: 'ArticlesEmbraceSustainabilityWithEsgCreditsBwsSolutionMainContent' },
   { file: 'investment-impact-reporting-unlocking-a-sustainable-future.astro', dir: 'src/pages/articles', componentSnake: 'articlesinvestmentimpactreportingunlockingasustainablefutureMainContent', componentPascal: 'ArticlesInvestmentImpactReportingUnlockingASustainableFutureMainContent' }
 ];
 

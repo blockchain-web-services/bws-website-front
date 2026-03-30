@@ -52,29 +52,6 @@ const PRODUCT_CONFIG = {
       '/assets/images/marketplace/fallback/blockchain-badges/02-issuers-list.png'
     ]
   },
-  'ESG Credits': {
-    url: '/marketplace/esg-credits.html',
-    slug: 'esg-credits',
-    fallbackImages: [
-      '/assets/images/marketplace/fallback/esg-credits/01-report.png'
-    ]
-  },
-  'Fan Game Cube': {
-    url: '/marketplace/nft-gamecube.html',
-    slug: 'fan-game-cube',
-    fallbackImages: [
-      '/assets/images/marketplace/fallback/fan-game-cube/01-football-cubes-selection.png',
-      '/assets/images/marketplace/fallback/fan-game-cube/02-welcome-message.png'
-    ]
-  },
-  'NFT Game Cube': {
-    url: '/marketplace/nft-gamecube.html',
-    slug: 'fan-game-cube',
-    fallbackImages: [
-      '/assets/images/marketplace/fallback/fan-game-cube/01-football-cubes-selection.png',
-      '/assets/images/marketplace/fallback/fan-game-cube/02-welcome-message.png'
-    ]
-  }
 };
 
 // Ensure directories exist
@@ -613,8 +590,6 @@ async function generateStoriesFromTweets(tweets, includes) {
 Classify by product:
 - X Bot (also called Telegram XBot)
 - Blockchain Badges
-- ESG Credits
-- Fan Game Cube (also called NFT Game Cube)
 
 For EACH product with success story tweets, create ONE success story:
 

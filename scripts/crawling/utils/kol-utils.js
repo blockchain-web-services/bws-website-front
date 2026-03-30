@@ -48,8 +48,6 @@ export function loadBWSProducts() {
       // Focus on Marketplace Solutions and key Platform APIs
       const relevantProducts = [
         'Blockchain Badges',
-        'ESG Credits',
-        'Fan Game Cube',
         'X Bot',
         'NFT.zK',
         'Blockchain Hash',
@@ -240,8 +238,8 @@ export function loadProcessedPosts() {
     repliedTweetIds: [],
     skippedTweetIds: [],
     productRotation: {
-      priorityProducts: ['X Bot', 'Fan Game Cube'],
-      otherProducts: ['Blockchain Badges', 'ESG Credits', 'Blockchain Hash', 'Blockchain Save', 'BWS IPFS', 'NFT.zK'],
+      priorityProducts: ['X Bot'],
+      otherProducts: ['Blockchain Badges', 'Blockchain Hash', 'Blockchain Save', 'BWS IPFS', 'NFT.zK'],
       priorityIndex: 0,
       otherIndex: 0,
       replyCount: 0
@@ -276,8 +274,8 @@ export function loadProcessedPosts() {
       repliedTweetIds,
       skippedTweetIds,
       productRotation: {
-        priorityProducts: ['X Bot', 'Fan Game Cube'],
-        otherProducts: ['Blockchain Badges', 'ESG Credits', 'Blockchain Hash', 'Blockchain Save', 'BWS IPFS', 'NFT.zK'],
+        priorityProducts: ['X Bot'],
+        otherProducts: ['Blockchain Badges', 'Blockchain Hash', 'Blockchain Save', 'BWS IPFS', 'NFT.zK'],
         priorityIndex: 0,
         otherIndex: 0,
         replyCount: 0
@@ -294,8 +292,8 @@ export function loadProcessedPosts() {
   // Ensure productRotation exists
   if (!data.productRotation) {
     data.productRotation = {
-      priorityProducts: ['X Bot', 'Fan Game Cube'],
-      otherProducts: ['Blockchain Badges', 'ESG Credits', 'Blockchain Hash', 'Blockchain Save', 'BWS IPFS', 'NFT.zK'],
+      priorityProducts: ['X Bot'],
+      otherProducts: ['Blockchain Badges', 'Blockchain Hash', 'Blockchain Save', 'BWS IPFS', 'NFT.zK'],
       priorityIndex: 0,
       otherIndex: 0,
       replyCount: 0
@@ -614,11 +612,6 @@ export function getNextFeaturedProducts(processedPosts, bwsProducts, config) {
     }
 
     selectedProductNames.push(productName);
-
-    // Add special note for Fan Game Cube about iGaming (conditional based on probability)
-    if (productName === 'Fan Game Cube' && Math.random() < specialNoteProbability) {
-      specialNotes = '**IMPORTANT**: Fan Game Cube is expanding into the iGaming domain. Mention this future direction when relevant.';
-    }
 
     // Move to next product
     currentIndex = (currentIndex + 1) % allProducts.length;

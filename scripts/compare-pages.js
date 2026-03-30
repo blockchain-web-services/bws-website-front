@@ -4,7 +4,6 @@ const path = require('path');
 const livePages = [
   '/',
   '/articles/discover-the-power-of-blockchain-bwss-data-management-solutions',
-  '/articles/embrace-sustainability-with-esg-credits-bws-solution',
   '/articles/investment-impact-reporting-unlocking-a-sustainable-future',
   '/contact-us',
   '/industry-content/content-creation',
@@ -17,9 +16,7 @@ const livePages = [
   '/marketplace/blockchain-badges',
   '/marketplace/database-immutable',
   '/marketplace/database-mutable',
-  '/marketplace/esg-credits',
   '/marketplace/ipfs-upload',
-  '/marketplace/nft-gamecube',
   '/marketplace/nft-zeroknwoledge',
   '/marketplace/telegram-xbot',
   '/privacy-policy',

@@ -88,7 +88,6 @@ const pagesToFix = [
   { file: 'industry-content/retail.html', component: 'industrycontentretailMainContent.astro' },
   { file: 'industry-content/supply-chain.html', component: 'industrycontentsupplychainMainContent.astro' },
   { file: 'articles/discover-the-power-of-blockchain-bwss-data-management-solutions.html', component: 'articlesdiscoverthepowerofblockchainbwssdatamanagementsolutionsMainContent.astro' },
-  { file: 'articles/embrace-sustainability-with-esg-credits-bws-solution.html', component: 'articlesembracesustainabilitywithesgcreditsbwssolutionMainContent.astro' },
   { file: 'articles/investment-impact-reporting-unlocking-a-sustainable-future.html', component: 'articlesinvestmentimpactreportingunlockingasustainablefutureMainContent.astro' }
 ];
 

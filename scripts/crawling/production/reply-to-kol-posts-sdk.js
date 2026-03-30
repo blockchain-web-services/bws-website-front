@@ -451,11 +451,9 @@ async function replyToKolPosts() {
     engagingPostsData.productRotation = {
       allProducts: [
         'X Bot',
-        'Fan Game Cube',
         'Blockchain Hash',
         'NFT.zK',
         'Blockchain Badges',
-        'ESG Credits',
         'BWS IPFS',
         'Blockchain Save'
       ],

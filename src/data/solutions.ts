@@ -17,7 +17,7 @@ export interface Solution {
   image: SolutionImage;
   url: string;
   networks: SolutionNetwork[];
-  category: string; // For filtering: Database, NFT, Credentials, ESG, Socials
+  category: string; // For filtering: Database, NFT, Credentials, Socials
 }
 
 export const solutions: Solution[] = [
@@ -83,20 +83,6 @@ export const solutions: Solution[] = [
     category: 'NFT'
   },
   {
-    title: 'Fan Game Cube',
-    author: 'BWS',
-    description: 'Engage your fans and get a new revenue stream for your Sports Club by combining NFTs and Machine Learning.',
-    image: {
-      src: '/assets/images/6474d385cfec71cb21a9229a/66842c0750c2f76ef6ee8a4a_raibow-colors.jpg',
-      alt: 'Fan Game Cube solution - Engage fans and create revenue with NFTs and Machine Learning'
-    },
-    url: '/marketplace/nft-gamecube.html',
-    networks: [
-      { name: 'Matchain', color: 'hsla(20, 100.00%, 54.02%, 1.00)' }
-    ],
-    category: 'NFT'
-  },
-  {
     title: 'Blockchain Badges',
     author: 'BWS',
     description: 'Blockchain Badges elevate your credentialing system with secure, immutable digital recognition on the blockchain.',
@@ -110,21 +96,6 @@ export const solutions: Solution[] = [
       { name: 'Matchain', color: 'hsla(20, 100.00%, 54.02%, 1.00)' }
     ],
     category: 'Credentials'
-  },
-  {
-    title: 'ESG Credits',
-    author: 'BWS',
-    description: 'Assists financial institutions and system integrators in delivering environmental impact reporting to their digital channels.',
-    image: {
-      src: '/assets/images/6474d385cfec71cb21a9229a/65061a656980df26769cd4ee_ESG-Credits_400x300.jpg',
-      alt: 'ESG Credits solution - Environmental impact reporting for financial institutions'
-    },
-    url: '/marketplace/esg-credits.html',
-    networks: [
-      { name: 'Ethereum', color: 'hsla(230.43478260869568, 100.00%, 72.94%, 1.00)' },
-      { name: 'Polygon', color: '#af89ee' }
-    ],
-    category: 'ESG'
   },
   {
     title: 'Telegram XBot',

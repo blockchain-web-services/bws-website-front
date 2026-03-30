@@ -26,17 +26,13 @@ const pages = [
   { name: 'blockchain-badges', path: '/marketplace/blockchain-badges', category: 'marketplace' },
   { name: 'database-immutable', path: '/marketplace/database-immutable', category: 'marketplace' },
   { name: 'database-mutable', path: '/marketplace/database-mutable', category: 'marketplace' },
-  { name: 'esg-credits', path: '/marketplace/esg-credits', category: 'marketplace' },
   { name: 'ipfs-upload', path: '/marketplace/ipfs-upload', category: 'marketplace' },
-  { name: 'nft-gamecube', path: '/marketplace/nft-gamecube', category: 'marketplace' },
   { name: 'nft-zeroknowledge', path: '/marketplace/nft-zeroknwoledge', category: 'marketplace' },
   { name: 'telegram-xbot', path: '/marketplace/telegram-xbot', category: 'marketplace' },
 
   // Article pages
   { name: 'article-x-bot', path: '/articles/x-bot-2025-10-20', category: 'articles' },
   { name: 'article-blockchain-badges', path: '/articles/blockchain-badges-2025-10-20', category: 'articles' },
-  { name: 'article-esg-credits', path: '/articles/esg-credits-2025-10-20', category: 'articles' },
-  { name: 'article-fan-game-cube', path: '/articles/fan-game-cube-2025-10-20', category: 'articles' },
 ];
 
 // Define viewports to test

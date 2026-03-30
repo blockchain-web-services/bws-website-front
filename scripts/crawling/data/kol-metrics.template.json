@@ -16,16 +16,6 @@
           "mentions": 12,
           "avgEngagement": 18.5,
           "topKol": "kol_username"
-        },
-        "ESG Credits": {
-          "mentions": 8,
-          "avgEngagement": 12.1,
-          "topKol": "kol_username"
-        },
-        "Fan Game Cube": {
-          "mentions": 5,
-          "avgEngagement": 10.8,
-          "topKol": "kol_username"
         }
       },
       "topEngagingKols": [
@@ -33,7 +23,10 @@
           "username": "kol1",
           "replies": 3,
           "avgEngagement": 25.5,
-          "topics": ["DeFi", "NFTs"]
+          "topics": [
+            "DeFi",
+            "NFTs"
+          ]
         }
       ],
       "spamIndicators": {

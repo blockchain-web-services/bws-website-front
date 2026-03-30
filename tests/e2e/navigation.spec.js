@@ -262,9 +262,7 @@ test.describe('Navigation Tests', () => {
       'database-immutable',
       'database-mutable',
       'blockchain-badges',
-      'esg-credits',
       'ipfs-upload',
-      'nft-gamecube',
       'nft-zeroknwoledge',
       'telegram-xbot'
     ];

@@ -81,12 +81,6 @@ const FALLBACK_PATHS = [
   '/marketplace-solutions/bws.blockchain.badges',
   '/marketplace-solutions/bws.blockchain.badges/badges-user-interface',
 
-  // Marketplace Solutions - ESG Credits
-  '/marketplace-solutions/bws.esg.credits',
-
-  // Marketplace Solutions - NFT Game Cube
-  '/marketplace-solutions/bws.nft.gamecube',
-
   // Telegram Bots
   '/telegram-bots/x-bot'
 ];
@@ -496,8 +490,6 @@ For each page below, generate:
 1. **Product Name**: Which BWS product this page documents. Choose from:
    - "X Bot" (Telegram bot for community management)
    - "Blockchain Badges" (Digital credentials on blockchain)
-   - "ESG Credits" (Environmental impact reporting)
-   - "Fan Game Cube" (NFT-based fan engagement)
    - "BWS IPFS" (IPFS file upload service)
    - "Blockchain Save" (Immutable blockchain data storage)
    - "Blockchain Hash" (Mutable blockchain data storage)

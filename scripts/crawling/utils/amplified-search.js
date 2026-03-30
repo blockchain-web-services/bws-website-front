@@ -183,20 +183,10 @@ export async function runAmplifiedTweetSearch(bwsProducts, config, processedPost
 
   // Product-specific search queries
   const productQueries = {
-    'Fan Game Cube': [
-      'sports fan engagement -is:retweet lang:en min_faves:5',
-      'sports NFT gamification -is:retweet lang:en min_faves:5',
-      'fan rewards platform -is:retweet lang:en min_faves:5'
-    ],
     'Blockchain Badges': [
       'digital credentials blockchain -is:retweet lang:en min_faves:5',
       'verifiable certificates NFT -is:retweet lang:en min_faves:5',
       'educational credentials -is:retweet lang:en min_faves:5'
-    ],
-    'ESG Credits': [
-      'ESG reporting blockchain -is:retweet lang:en min_faves:5',
-      'environmental impact tracking -is:retweet lang:en min_faves:5',
-      'sustainability blockchain -is:retweet lang:en min_faves:5'
     ],
     'Blockchain Hash': [
       'blockchain API developers -is:retweet lang:en min_faves:5',

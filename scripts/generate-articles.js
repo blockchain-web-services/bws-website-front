@@ -25,7 +25,7 @@ const MAX_TWEETS_TO_FETCH = 50;
 const PROCESSED_TWEETS_PATH = path.join(__dirname, 'data', 'processed-article-tweets.json');
 
 // Product rotation order (1 article per day, rotating through products)
-const PRODUCT_ROTATION = ['X Bot', 'Blockchain Badges', 'ESG Credits', 'Fan Game Cube'];
+const PRODUCT_ROTATION = ['X Bot', 'Blockchain Badges'];
 const ARTICLES_FILE_PATH = path.join(__dirname, '..', 'src', 'data', 'articles.ts');
 const ARTICLES_METADATA_PATH = path.join(__dirname, 'data', 'articles-metadata.json'); // JSON source of truth
 const ARTICLE_IMAGES_DIR = path.join(__dirname, '..', 'public', 'assets', 'images', 'articles');
@@ -59,32 +59,6 @@ const PRODUCT_CONFIG = {
       '/assets/images/marketplace/fallback/blockchain-badges/02-issuers-list.png'
     ]
   },
-  'ESG Credits': {
-    url: '/marketplace/esg-credits.html',
-    slug: 'esg-credits',
-    buttonText: 'Learn More',
-    fallbackImages: [
-      '/assets/images/marketplace/fallback/esg-credits/01-report.png'
-    ]
-  },
-  'Fan Game Cube': {
-    url: '/marketplace/nft-gamecube.html',
-    slug: 'fan-game-cube',
-    buttonText: 'View Details',
-    fallbackImages: [
-      '/assets/images/marketplace/fallback/fan-game-cube/01-football-cubes-selection.png',
-      '/assets/images/marketplace/fallback/fan-game-cube/02-welcome-message.png'
-    ]
-  },
-  'NFT Game Cube': {
-    url: '/marketplace/nft-gamecube.html',
-    slug: 'fan-game-cube',
-    buttonText: 'View Details',
-    fallbackImages: [
-      '/assets/images/marketplace/fallback/fan-game-cube/01-football-cubes-selection.png',
-      '/assets/images/marketplace/fallback/fan-game-cube/02-welcome-message.png'
-    ]
-  }
 };
 
 // Ensure directories exist
@@ -269,8 +243,6 @@ async function generateArticleContent(tweets, includes) {
 Product Categories (DO NOT include IPFS):
 - X Bot (also called Telegram XBot)
 - Blockchain Badges
-- ESG Credits
-- Fan Game Cube (also called NFT Game Cube)
 
 For EACH product category that has relevant tweets, create ONE comprehensive article by:
 
@@ -584,8 +556,8 @@ CRITICAL REQUIREMENTS:
 - If you cannot fit a complete thought in 60 chars, use a simpler verb/object combination
 - Format: "${productName} [verb] [object/description]."
 - Examples of good captions:
-  * "Fan Game Cube transforms digital fan engagement through NFT."
-  * "ESG Credits validates green asset performance via blockchain."
+  * "X Bot streamlines community analytics via blockchain tools."
+  * "Blockchain Badges verifies credentials on the blockchain."
 
 Output only the caption sentence, nothing else.`
       }]

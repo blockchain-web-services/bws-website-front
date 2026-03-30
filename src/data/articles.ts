@@ -33,34 +33,6 @@ export const articles: ArticleMetadata[] = [
   seoDescription: 'X Bot delivers automated KOL tracking and community analytics for crypto projects. Real-time engagement monitoring, bot detection, and daily performance reports via X API.'
 },
 {
-  slug: 'fan-game-cube-2026-02-25',
-  product: 'Fan Game Cube',
-  title: 'Fan Game Cube: NFT Stadium Zones with Real-Time Match Rewards',
-  subtitle: 'Sports fan engagement has long lacked true digital ownership and interactive rewards. Fan Game Cube changes this by tokenizing stadium fields into NFT coordinate zones, enabling fans to own specific field locations and receive automated rewards whenever match events occur at their coordinates across multiple sports.',
-  publishDate: '2026-02-25T10:17:18.370Z',
-  tweetId: '',
-  featuredImage: {
-    src: '/assets/images/docs/fan-game-cube/fan-game-cube-0.png',
-    alt: 'Product screenshot',
-    loading: 'eager'
-  },
-  seoDescription: 'Learn how Fan Game Cube tokenizes stadium fields into NFT zones, enabling fans to own coordinates and earn real-time rewards from match events.'
-},
-{
-  slug: 'esg-credits-2026-02-24',
-  product: 'ESG Credits',
-  title: 'ESG Credits: Blockchain-Verified Environmental Impact Tracking for Finance',
-  subtitle: 'Financial institutions face mounting pressure to verify environmental impact claims while preventing double-counting in sustainability reporting. ESG Credits solves these challenges through blockchain-verified tracking, delivering ICMA framework compliance and immutable audit trails accessible via REST API.',
-  publishDate: '2026-02-24T10:16:05.667Z',
-  tweetId: '',
-  featuredImage: {
-    src: '/assets/images/articles/esg-credits-1771928176070.jpg',
-    alt: 'ESG Credits - ESG Credits: Blockchain-Verified Environmental Impact Tracking for Finance',
-    loading: 'eager'
-  },
-  seoDescription: 'ESG Credits provides blockchain-verified environmental impact tracking for financial institutions with ICMA compliance and immutable audit trails via REST API.'
-},
-{
   slug: 'blockchain-badges-2026-02-23',
   product: 'Blockchain Badges',
   title: 'Blockchain Badges: Cryptographic Verification for Digital Credentials',
@@ -87,34 +59,6 @@ export const articles: ArticleMetadata[] = [
     loading: 'eager'
   },
   seoDescription: 'X Bot tracks KOL performance and community engagement across X and Telegram. Filter bot farms, monitor authentic influence metrics, and automate reporting.'
-},
-{
-  slug: 'fan-game-cube-2026-02-21',
-  product: 'Fan Game Cube',
-  title: 'Fan Game Cube: NFT Stadium Zone Ownership with Real-Time Match Event Rewards',
-  subtitle: 'Sports clubs are searching for new digital revenue streams and deeper fan engagement. Fan Game Cube answers this need by tokenizing stadium fields into NFT coordinate zones, enabling fans to own specific field locations and receive automated rewards whenever match events occur at their coordinates across multiple sports.',
-  publishDate: '2026-02-21T10:04:29.200Z',
-  tweetId: '',
-  featuredImage: {
-    src: '/assets/images/docs/fan-game-cube/fan-game-cube-0.png',
-    alt: 'Product screenshot',
-    loading: 'eager'
-  },
-  seoDescription: 'Fan Game Cube enables sports clubs to tokenize stadium fields as NFT zones, rewarding fans with automated points when match events occur at their owned coordinates.'
-},
-{
-  slug: 'esg-credits-2026-01-27',
-  product: 'ESG Credits',
-  title: 'ESG Credits: Blockchain-Verified Sustainability Reporting and Compliance',
-  subtitle: 'Financial institutions face mounting pressure for transparent ESG reporting and verifiable impact measurement. ESG Credits transforms this challenge with blockchain-verified environmental impact tracking and ICMA framework compliance, delivering immutable audit trails that bring unprecedented credibility to sustainability reporting for green investments.',
-  publishDate: '2026-01-27T10:04:55.417Z',
-  tweetId: '',
-  featuredImage: {
-    src: '/assets/images/articles/esg-credits-1769508310325.jpg',
-    alt: 'ESG Credits - ESG Credits: Blockchain-Verified Sustainability Reporting and Compliance',
-    loading: 'eager'
-  },
-  seoDescription: 'Learn how ESG Credits provides blockchain-verified environmental impact tracking and ICMA-compliant sustainability reporting for financial institutions.'
 },
 {
   slug: 'blockchain-badges-2026-01-26',
@@ -145,34 +89,6 @@ export const articles: ArticleMetadata[] = [
   seoDescription: 'X Bot tracks crypto community mentions across X and Telegram with automated KOL analytics, bot detection, and real-time engagement dashboards using official APIs.'
 },
 {
-  slug: 'fan-game-cube-2026-01-24',
-  product: 'Fan Game Cube',
-  title: 'Fan Game Cube: NFT Coordinate Zones That Reward Fans During Live Matches',
-  subtitle: 'Sports clubs are searching for revenue streams beyond traditional ticket sales and merchandise. Fan Game Cube offers a solution by tokenizing stadium fields into NFT coordinate zones, allowing fans to own specific locations and earn automated rewards whenever match events occur at their coordinates.',
-  publishDate: '2026-01-24T10:02:57.618Z',
-  tweetId: '',
-  featuredImage: {
-    src: '/assets/images/docs/fan-game-cube/fan-game-cube-0.png',
-    alt: 'Product screenshot',
-    loading: 'eager'
-  },
-  seoDescription: 'Fan Game Cube creates NFT field coordinate zones for sports fans, delivering automated rewards when live match events occur at owned locations.'
-},
-{
-  slug: 'esg-credits-2026-01-23',
-  product: 'ESG Credits',
-  title: 'ESG Credits: Blockchain Environmental Impact Tracking for Financial Institutions',
-  subtitle: 'Financial institutions need transparent environmental impact reporting for green investments. ESG Credits provides blockchain-verified sustainability tracking with ICMA framework compliance, preventing double-counting of environmental credits while delivering immutable audit trails through REST API integration.',
-  publishDate: '2026-01-23T10:03:31.732Z',
-  tweetId: '',
-  featuredImage: {
-    src: '/assets/images/marketplace/fallback/esg-credits/01-report.png',
-    alt: 'ESG Credits solution',
-    loading: 'eager'
-  },
-  seoDescription: 'ESG Credits provides blockchain environmental impact tracking with ICMA compliance. Prevent double-counting, create immutable audit trails, and integrate sustainability reporting via REST API.'
-},
-{
   slug: 'blockchain-badges-2026-01-22',
   product: 'Blockchain Badges',
   title: 'Blockchain Badges: Tamper-Proof Digital Credentials with Instant Verification',
@@ -201,34 +117,6 @@ export const articles: ArticleMetadata[] = [
   seoDescription: 'Learn how X Bot helps crypto projects automate community management, track authentic KOL performance, filter bot farms, and generate daily engagement reports across X and Telegram.'
 },
 {
-  slug: 'fan-game-cube-2025-12-28',
-  product: 'Fan Game Cube',
-  title: 'Fan Game Cube: NFT Stadium Tokenization with Real-Time Match Event Rewards',
-  subtitle: 'Sports clubs struggle to monetize fan engagement beyond traditional merchandise and tickets. Fan Game Cube transforms this dynamic by tokenizing stadium fields into NFT coordinate zones, enabling fans to own specific field locations and receive automated rewards when match events occur at their coordinates.',
-  publishDate: '2025-12-28T10:03:39.089Z',
-  tweetId: '',
-  featuredImage: {
-    src: '/assets/images/docs/fan-game-cube/fan-game-cube-0.png',
-    alt: 'Product screenshot',
-    loading: 'eager'
-  },
-  seoDescription: 'Fan Game Cube tokenizes stadium fields into NFT coordinates where fans earn rewards from real match events, creating new sports engagement revenue streams.'
-},
-{
-  slug: 'esg-credits-2025-12-27',
-  product: 'ESG Credits',
-  title: 'ESG Credits: ICMA-Compliant Environmental Impact Tracking via Blockchain',
-  subtitle: 'Financial institutions face mounting pressure to provide verifiable environmental impact data while preventing greenwashing. ESG Credits delivers blockchain-verified sustainability reporting with ICMA framework compliance through REST API, enabling regulatory-grade environmental tracking with immutable audit trails that stand up to scrutiny.',
-  publishDate: '2025-12-27T10:03:38.507Z',
-  tweetId: '',
-  featuredImage: {
-    src: '/assets/images/articles/esg-credits-1766829829334.jpg',
-    alt: 'ESG Credits - ESG Credits: ICMA-Compliant Environmental Impact Tracking via Blockchain',
-    loading: 'eager'
-  },
-  seoDescription: 'ESG Credits delivers blockchain-verified environmental reporting with ICMA compliance through REST API for financial institutions tracking sustainability.'
-},
-{
   slug: 'blockchain-badges-2025-12-26',
   product: 'Blockchain Badges',
   title: 'Blockchain Badges: Issue Tamper-Proof Digital Credentials at Scale',
@@ -255,48 +143,6 @@ export const articles: ArticleMetadata[] = [
     loading: 'eager'
   },
   seoDescription: 'X Bot automates crypto community management with official X API integration, bot detection, KOL tracking, and daily Telegram reports for multi-platform analytics.'
-},
-{
-  slug: 'fan-game-cube-2025-12-24',
-  product: 'Fan Game Cube',
-  title: 'Fan Game Cube: Tokenized Stadium Sections Creating New Sports Revenue Streams',
-  subtitle: 'Sports clubs leave massive revenue opportunities untapped because traditional fan engagement stops at merchandise and tickets. Fan Game Cube changes this by tokenizing stadium fields into NFT coordinate zones, allowing fans to own specific locations and earn rewards when real match events occur at their coordinates.',
-  publishDate: '2025-12-24T10:03:29.692Z',
-  tweetId: '',
-  featuredImage: {
-    src: '/assets/images/docs/fan-game-cube/fan-game-cube-0.png',
-    alt: 'Product screenshot',
-    loading: 'eager'
-  },
-  seoDescription: 'Fan Game Cube enables fans to own tokenized stadium sections as NFTs earning rewards from real match events. Multi-sport platform creating new revenue streams for clubs.'
-},
-{
-  slug: 'esg-credits-2025-12-23',
-  product: 'ESG Credits',
-  title: 'ESG Credits: Blockchain-Verified Environmental Impact Reporting for Financial Institutions',
-  subtitle: 'Financial institutions face mounting pressure to prove environmental claims while navigating complex regulatory frameworks and multi-currency portfolios. ESG Credits delivers blockchain-verified environmental impact reporting with ICMA framework compliance through REST API, enabling banks to provide auditable sustainability metrics with immutable tracking and regulatory-grade transparency.',
-  publishDate: '2025-12-23T10:03:59.595Z',
-  tweetId: '',
-  featuredImage: {
-    src: '/assets/images/marketplace/fallback/esg-credits/01-report.png',
-    alt: 'ESG Credits solution',
-    loading: 'eager'
-  },
-  seoDescription: 'ESG Credits provides blockchain-verified environmental reporting with ICMA compliance for financial institutions requiring regulatory sustainability tracking.'
-},
-{
-  slug: 'fan-game-cube-2025-12-16',
-  product: 'Fan Game Cube',
-  title: 'Fan Game Cube: Tokenize Sports Fields into Interactive NFT Zones',
-  subtitle: 'Sports clubs face a persistent challenge: monetizing fan engagement beyond traditional merchandise and tickets. Fan Game Cube offers a breakthrough solution by tokenizing stadium fields into NFT zones, where fans own specific coordinates and earn points as real-time match events unfold at their locations—creating entirely new revenue streams.',
-  publishDate: '2025-12-16T10:36:57.300Z',
-  tweetId: '',
-  featuredImage: {
-    src: '/assets/images/docs/fan-game-cube/fan-game-cube-0.png',
-    alt: 'Product screenshot',
-    loading: 'eager'
-  },
-  seoDescription: 'Fan Game Cube tokenizes sports fields into interactive NFT zones where fans earn rewards from real-time match events at their owned coordinates.'
 },
 {
   slug: 'blockchain-badges-2025-12-12',

@@ -35,25 +35,13 @@ const pages = [
     title: 'NFT.zK',
     navTitle: 'NFT.zK'
   },
-  { 
-    url: '/marketplace/nft-gamecube',
-    file: 'marketplace/nft-gamecube.html',
-    title: 'Fan Game Cube',
-    navTitle: 'Fan Game Cube'
-  },
-  { 
+  {
     url: '/marketplace/blockchain-badges',
     file: 'marketplace/blockchain-badges.html',
     title: 'Blockchain Badges',
     navTitle: 'Blockchain Badges'
   },
-  { 
-    url: '/marketplace/esg-credits',
-    file: 'marketplace/esg-credits.html',
-    title: 'ESG Credits',
-    navTitle: 'ESG Credits'
-  },
-  { 
+  {
     url: '/marketplace/telegram-xbot',
     file: 'marketplace/telegram-xbot.html',
     title: 'Telegram XBot',

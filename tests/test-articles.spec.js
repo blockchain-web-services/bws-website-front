@@ -16,12 +16,6 @@ const articleMetadata = {
   'blockchain-badges': {
     title: 'Blockchain Badges'
   },
-  'esg-credits': {
-    title: 'ESG Credits'
-  },
-  'fan-game-cube': {
-    title: 'Fan Game Cube'
-  },
   'x-bot': {
     title: 'X Bot'
   }

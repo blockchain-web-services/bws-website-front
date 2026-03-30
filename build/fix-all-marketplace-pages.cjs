@@ -6,9 +6,7 @@ const marketplacePageMap = {
   'database-immutable.astro': 'marketplacedatabaseimmutableMainContent',
   'database-mutable.astro': 'marketplacedatabasemutableMainContent',
   'blockchain-badges.astro': 'marketplaceblockchainbadgesMainContent',
-  'esg-credits.astro': 'marketplaceesgcreditsMainContent',
   'ipfs-upload.astro': 'marketplaceipfsuploadMainContent',
-  'nft-gamecube.astro': 'marketplacenftgamecubeMainContent',
   'nft-zeroknwoledge.astro': 'marketplacenftzeroknwoledgeMainContent',
   'telegram-xbot.astro': 'marketplacetelegramxbotMainContent'
 };

@@ -4,7 +4,6 @@ const path = require('path');
 // List of all marketplace pages and their component names
 const marketplacePages = [
   { file: 'database-immutable.astro', componentSnake: 'marketplacedatabaseimmutableMainContent', componentPascal: 'MarketplaceDatabaseImmutableMainContent' },
-  { file: 'nft-gamecube.astro', componentSnake: 'marketplacenftgamecubeMainContent', componentPascal: 'MarketplaceNftGamecubeMainContent' },
   { file: 'supply-chain-transparency-product.astro', componentSnake: 'marketplacesupplychaintransparencyproductMainContent', componentPascal: 'MarketplaceSupplyChainTransparencyProductMainContent' },
   { file: 'third-party-risk-manager.astro', componentSnake: 'marketplacethirdpartyriskmanagerMainContent', componentPascal: 'MarketplaceThirdPartyRiskManagerMainContent' },
   { file: 'transparency-one.astro', componentSnake: 'marketplacetransparencyoneMainContent', componentPascal: 'MarketplaceTransparencyOneMainContent' },

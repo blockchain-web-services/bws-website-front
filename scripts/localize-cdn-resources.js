@@ -66,7 +66,6 @@ const cdnMappings = {
   'https://cdn.prod.website-files.com/6474d385cfec71cb21a9229a/6505dc980dbf1ad68ea4e1f0_Financial-Services_320x400_Layered.jpg': '/assets/images/industry/financial-services.jpg',
   'https://cdn.prod.website-files.com/6474d385cfec71cb21a9229a/6505db28e3925660b50a55ff_Content-Creation_320x400_Layered.jpg': '/assets/images/industry/content-creation.jpg',
   'https://cdn.prod.website-files.com/6474d385cfec71cb21a9229a/6505dfa0e3925660b50e279e_Retail_320x400_Layered.jpg': '/assets/images/industry/retail.jpg',
-  'https://cdn.prod.website-files.com/6474d385cfec71cb21a9229a/6505d9933660c5523d5f93eb_ESG-CREDITS_320x400_Layered.jpg': '/assets/images/industry/esg-credits.jpg',
   'https://cdn.prod.website-files.com/6474d385cfec71cb21a9229a/6505dde3f53261fa63529ee9_Legal-320x400.jpg': '/assets/images/industry/legal.jpg',
   'https://cdn.prod.website-files.com/6474d385cfec71cb21a9229a/6505e0f259aeff2f47db9530_Supply-Chain_320x400_layered.jpg': '/assets/images/industry/supply-chain.jpg',
 

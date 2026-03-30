@@ -7,7 +7,6 @@ const SITE_DIR = path.join(__dirname, '..', '_site');
 const knownPages = [
   '/about',
   '/articles/discover-the-power-of-blockchain-bwss-data-management-solutions',
-  '/articles/embrace-sustainability-with-esg-credits-bws-solution',
   '/articles/investment-impact-reporting-unlocking-a-sustainable-future',
   '/contact-us',
   '/industries',
@@ -21,9 +20,7 @@ const knownPages = [
   '/marketplace/blockchain-badges',
   '/marketplace/database-immutable',
   '/marketplace/database-mutable',
-  '/marketplace/esg-credits',
   '/marketplace/ipfs-upload',
-  '/marketplace/nft-gamecube',
   '/marketplace/nft-zeroknwoledge',
   '/marketplace/telegram-xbot',
   '/privacy-policy',

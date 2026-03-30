@@ -23,9 +23,7 @@ test.describe('Find All Broken Images', () => {
       '/marketplace/database-mutable.html',
       '/marketplace/ipfs-upload.html',
       '/marketplace/nft-zeroknwoledge.html',
-      '/marketplace/nft-gamecube.html',
       '/marketplace/blockchain-badges.html',
-      '/marketplace/esg-credits.html',
       '/marketplace/telegram-xbot.html',
       // Industry pages
       '/industry-content/financial-services.html',
@@ -36,7 +34,6 @@ test.describe('Find All Broken Images', () => {
       '/industry-content/supply-chain.html',
       // Article pages
       '/articles/discover-the-power-of-blockchain-bwss-data-management-solutions.html',
-      '/articles/embrace-sustainability-with-esg-credits-bws-solution.html',
       '/articles/investment-impact-reporting-unlocking-a-sustainable-future.html'
     ];
 

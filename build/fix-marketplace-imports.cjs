@@ -6,9 +6,7 @@ const marketplacePages = [
   'database-immutable.astro',
   'database-mutable.astro',
   'blockchain-badges.astro',
-  'esg-credits.astro',
   'ipfs-upload.astro',
-  'nft-gamecube.astro',
   'nft-zeroknwoledge.astro',
   'telegram-xbot.astro'
 ];

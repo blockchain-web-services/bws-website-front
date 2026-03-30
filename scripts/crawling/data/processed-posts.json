@@ -1455,25 +1455,6 @@
     "2026767361638871403",
     "2026762776845111582"
   ],
-  "productRotation": {
-    "priorityProducts": [
-      "X Bot",
-      "Fan Game Cube"
-    ],
-    "otherProducts": [
-      "Blockchain Badges",
-      "ESG Credits",
-      "Blockchain Hash",
-      "Blockchain Save",
-      "BWS IPFS",
-      "NFT.zK"
-    ],
-    "priorityIndex": 0,
-    "otherIndex": 4,
-    "replyCount": 1000,
-    "lastProductUsed": "NFT.zK",
-    "positioningPhraseIndex": 0
-  },
   "metadata": {
     "lastCheck": "2026-02-26T12:49:48.823Z",
     "totalReplied": 5,

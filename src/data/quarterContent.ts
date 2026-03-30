@@ -47,18 +47,6 @@ export const quarterContents: QuarterContents = {
     titleCssClass: 'text-roadmap-title-2025-q1',
     sections: [
       {
-        title: 'Fan Game Cube',
-        paragraphs: [
-          'Launching innovative platform that tokenizes sports fields into tradeable digital cubes, enabling real-time fan engagement where cube owners earn points and rewards based on in-game actions in their field sections.'
-        ]
-      },
-      {
-        title: 'ESG Credits',
-        paragraphs: [
-          'Launching trusted blockchain platform for financial institutions to track and report environmental impact transparently.'
-        ]
-      },
-      {
         title: 'Blockchain Badges Success Stories',
         paragraphs: [
           'Showcase early customer success stories highlighting real-world use cases, testimonials, and impact metrics from educational and event sectors.'
@@ -106,18 +94,6 @@ export const quarterContents: QuarterContents = {
           'Evolve into an AI-agentic company with intelligent agents streamlining product development workflows and driving sales through automated lead qualification and personalized customer engagement'
         ]
       },
-      {
-        title: 'Premier League Partnership',
-        paragraphs: [
-          'First Premier League club partnership implementing tokenized fan zones and blockchain-based fan engagement.'
-        ]
-      },
-      {
-        title: 'French Club Partnership',
-        paragraphs: [
-          'Major French football club partnership bringing Fan Game Cube to top-tier European competition. Joint venture with Matchain delivers user-friendly blockchain infrastructure making Web3 accessible to millions of sports fans.'
-        ]
-      }
     ]
   },
   '2025-4': {
@@ -137,12 +113,6 @@ export const quarterContents: QuarterContents = {
         title: 'iGaming Platform Alpha',
         paragraphs: [
           'Deploy Maincard.io-powered platform in regulated EMEA & North America markets'
-        ]
-      },
-      {
-        title: 'Sportsbook Integration',
-        paragraphs: [
-          'Fan Game Cube sportsbook edition tailored for betting partnership requirements with licensed operators.'
         ]
       },
       {
@@ -169,7 +139,7 @@ export const quarterContents: QuarterContents = {
       {
         title: 'Global Expansion of BWS Marketplace Solutions',
         paragraphs: [
-          'Strategic expansion of marketing and sales efforts to reach broader global audiences for our proven marketplace solutions including Fan Game Cube, ESG Credits, Crypto AI, Blockchain Badges, and X Bot, demonstrating BWS as a platform enabling mass market adoption of blockchain technology across multiple industries and regions.'
+          'Strategic expansion of marketing and sales efforts to reach broader global audiences for our proven marketplace solutions including Crypto AI, Blockchain Badges, and X Bot, demonstrating BWS as a platform enabling mass market adoption of blockchain technology across multiple industries and regions.'
         ]
       },
       {

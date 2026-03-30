@@ -37,9 +37,7 @@
       "databaseImmutable": "/marketplace/database-immutable",
       "databaseMutable": "/marketplace/database-mutable",
       "blockchainBadges": "/marketplace/blockchain-badges",
-      "esgCredits": "/marketplace/esg-credits",
       "ipfsUpload": "/marketplace/ipfs-upload",
-      "nftGamecube": "/marketplace/nft-gamecube",
       "nftZeroknowledge": "/marketplace/nft-zeroknwoledge",
       "telegramXbot": "/marketplace/telegram-xbot"
     }

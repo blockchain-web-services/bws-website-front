@@ -835,9 +835,9 @@ Platform: "$BWS operates a Blockchain Solutions Marketplace - multiple products 
 
 @BWSCommunity #microcap #altcoins https://www.bws.ninja"
 
-Product-Specific: "$BWS Fan Game Cube: fans own digital field sections as NFTs, earn rewards during live games. Real utility for sports clubs.
+Product-Specific: "$BWS Blockchain Badges: verifiable digital credentials on blockchain, trusted by institutions worldwide. Real utility for education and compliance.
 
-@BWSCommunity #sports #GameFi https://docs.bws.ninja/marketplace-solutions/bws.nft.gamecube"
+@BWSCommunity #credentials #blockchain https://docs.bws.ninja/marketplace-solutions/bws.blockchain.badges"
 
 JSON response:
 {

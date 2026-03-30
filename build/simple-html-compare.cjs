@@ -125,9 +125,7 @@ const pages = [
   'marketplace/blockchain-badges.html',
   'marketplace/database-immutable.html',
   'marketplace/database-mutable.html',
-  'marketplace/esg-credits.html',
   'marketplace/ipfs-upload.html',
-  'marketplace/nft-gamecube.html',
   'marketplace/nft-zeroknwoledge.html',
   'marketplace/telegram-xbot.html',
   'industry-content/content-creation.html',
@@ -137,7 +135,6 @@ const pages = [
   'industry-content/retail.html',
   'industry-content/supply-chain.html',
   'articles/discover-the-power-of-blockchain-bwss-data-management-solutions.html',
-  'articles/embrace-sustainability-with-esg-credits-bws-solution.html',
   'articles/investment-impact-reporting-unlocking-a-sustainable-future.html'
 ];
 

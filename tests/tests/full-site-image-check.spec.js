@@ -25,13 +25,10 @@ const PAGES = [
   '/marketplace/database-mutable',
   '/marketplace/ipfs-upload',
   '/marketplace/nft-zeroknwoledge',
-  '/marketplace/nft-gamecube',
   '/marketplace/blockchain-badges',
-  '/marketplace/esg-credits',
   '/marketplace/telegram-xbot',
   // Article pages
   '/articles/discover-the-power-of-blockchain-bwss-data-management-solutions',
-  '/articles/embrace-sustainability-with-esg-credits-bws-solution',
   '/articles/investment-impact-reporting-unlocking-a-sustainable-future'
 ];
 

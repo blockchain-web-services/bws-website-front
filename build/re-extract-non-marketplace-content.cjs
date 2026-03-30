@@ -127,10 +127,6 @@ const articlePages = [
     component: 'articlesdiscoverthepowerofblockchainbwssdatamanagementsolutionsMainContent.astro'
   },
   {
-    file: 'articles/embrace-sustainability-with-esg-credits-bws-solution.html',
-    component: 'articlesembracesustainabilitywithesgcreditsbwssolutionMainContent.astro'
-  },
-  {
     file: 'articles/investment-impact-reporting-unlocking-a-sustainable-future.html',
     component: 'articlesinvestmentimpactreportingunlockingasustainablefutureMainContent.astro'
   }

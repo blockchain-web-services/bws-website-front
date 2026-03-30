@@ -78,7 +78,6 @@ const pagesToFix = [
   'industry-content/retail.html',
   'industry-content/supply-chain.html',
   'articles/discover-the-power-of-blockchain-bwss-data-management-solutions.html',
-  'articles/embrace-sustainability-with-esg-credits-bws-solution.html',
   'articles/investment-impact-reporting-unlocking-a-sustainable-future.html'
 ];
 

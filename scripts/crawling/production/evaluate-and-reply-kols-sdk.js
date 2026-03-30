@@ -531,7 +531,7 @@ async function evaluateAndReply() {
           evaluation,
           featured.positioningPhrase,  // Dynamic positioning phrase
           recentReplies,  // Recent replies for diversity
-          featured.specialNotes  // Pass special notes (e.g., Fan Game Cube iGaming)
+          featured.specialNotes  // Pass special notes for product context
         );
 
         console.log(`      💬 Reply: "${replyGeneration.replyText}"`);
