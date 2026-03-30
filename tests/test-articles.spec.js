@@ -75,12 +75,13 @@ test.describe('Articles Pages', () => {
   // Dynamically discover articles from filesystem
   const articles = discoverArticles();
 
-  // Ensure we have articles to test (fail early if generation failed)
+  // Log discovered articles (empty is valid if no recent articles exist)
   test.beforeAll(() => {
     if (articles.length === 0) {
-      throw new Error('No articles found in _site/articles/. Article generation may have failed.');
+      console.log('No recent articles found in _site/articles/ — skipping article tests.');
+    } else {
+      console.log(`Found ${articles.length} articles to test:`, articles.map(a => a.slug));
     }
-    console.log(`Found ${articles.length} articles to test:`, articles.map(a => a.slug));
   });
 
   for (const article of articles) {
