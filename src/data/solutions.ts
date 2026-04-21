@@ -24,10 +24,10 @@ export const solutions: Solution[] = [
   {
     title: 'Blockchain Save',
     author: 'BWS',
-    description: 'Easily and affordably store data on the blockchain while receiving a Certificate of Trust for enhanced transparency.',
+    description: 'Easily and affordably store data with tamper-proof integrity and a Certificate of Trust for enhanced transparency.',
     image: {
       src: '/assets/images/6474d385cfec71cb21a9229a/65061f550fd7be777e64f36f_Save_400x300.jpg',
-      alt: 'Blockchain Save solution - Store data on blockchain with Certificate of Trust'
+      alt: 'Blockchain Save — store data with tamper-proof integrity and a Certificate of Trust'
     },
     url: '/marketplace/database-immutable.html',
     networks: [
@@ -39,10 +39,10 @@ export const solutions: Solution[] = [
   {
     title: 'Blockchain Hash',
     author: 'BWS',
-    description: 'A single API call to save data to the blockchain without passing your wallet or managing the transaction fees.',
+    description: 'A single API call to anchor data immutably — no wallets, no gas fees to manage.',
     image: {
       src: '/assets/images/6474d385cfec71cb21a9229a/65061ebf5608b7584d9def34_Hash_400x300.jpg',
-      alt: 'Blockchain Hash solution - Save data to blockchain with single API call'
+      alt: 'Blockchain Hash — anchor data immutably with a single API call'
     },
     url: '/marketplace/database-mutable.html',
     networks: [
@@ -85,10 +85,10 @@ export const solutions: Solution[] = [
   {
     title: 'Blockchain Badges',
     author: 'BWS',
-    description: 'Blockchain Badges elevate your credentialing system with secure, immutable digital recognition on the blockchain.',
+    description: 'Blockchain Badges elevate your credentialing system with secure, immutable, instantly verifiable digital recognition.',
     image: {
       src: '/assets/images/6474d385cfec71cb21a9229a/65061830bf101fe685a48e2f_NFT-Marketplace_400x300.jpg',
-      alt: 'Blockchain Badges solution - Secure digital recognition on blockchain'
+      alt: 'Blockchain Badges — secure, verifiable digital recognition'
     },
     url: '/marketplace/blockchain-badges.html',
     networks: [
