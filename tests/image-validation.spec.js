@@ -17,15 +17,9 @@ const __dirname = path.dirname(__filename);
 const siteDir = path.join(__dirname, '..', '_site');
 
 // Critical images to test
+// NOTE: Tokenomics image removed — replaced with inline SVG donut chart
 // NOTE: Partner logos (PROOF, AssureDefi, BFG) removed as they're no longer displayed in news cards
-const criticalImages = [
-  {
-    name: 'Tokenomics Image',
-    url: '/assets/images/6474d385cfec71cb21a92251/6707fd987c3a05d42e1e908e_Tokenomics%20Allocation-letters-black.png',
-    selector: 'img.image-token-allocation', // Target visible main content image, not dropdown
-    expectedClass: 'image-token-allocation'
-  }
-];
+const criticalImages = [];
 
 test.describe('Image Files and CSS Validation', () => {
   test('Check image files exist in build directory', async () => {

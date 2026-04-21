@@ -29,15 +29,12 @@ test.describe('Image Visual Tests', () => {
     expect(bfgDimensions.width).toBeLessThanOrEqual(150);
   });
 
-  test('Tokenomics image loads and displays correctly', async ({ page }) => {
+  test('Tokenomics donut chart renders', async ({ page }) => {
     await homePage.scrollToTokenomics();
-    const isVisible = await homePage.isTokenomicsImageVisible();
-    expect(isVisible).toBeTruthy();
-
-    const dimensions = await homePage.getTokenomicsImageDimensions();
-    expect(dimensions.naturalWidth).toBeGreaterThan(0);
-    expect(dimensions.naturalHeight).toBeGreaterThan(0);
-    expect(dimensions.displayWidth).toBeGreaterThan(0);
+    const chart = page.locator('.token-allocation-svg').first();
+    await expect(chart).toBeVisible();
+    const legendItems = page.locator('.token-allocation-legend li');
+    expect(await legendItems.count()).toBe(6);
   });
 
 
