@@ -61,17 +61,22 @@ import { solutions } from '../data/solutions';
     100%     { opacity: 1; font-weight: 900; }
   }
 
-  /* Center the single hero CTA — zero out the 24px right margin that exists
-     for the default two-button layout so the lone button sits truly centered.
-     !important to win over duplicated Webflow rules in styles.css. */
-  .hero-cta-centered {
-    justify-content: center !important;
+  /* Single hero CTA — clean container with no legacy two-button baggage.
+     The wrapper is a full-width block with the button auto-margined to the
+     centre, so no Webflow ._2-button rules can interfere. */
+  .hero-cta-single {
+    display: block;
+    width: 100%;
     text-align: center;
+    margin-top: 28px;
   }
 
-  .hero-cta-centered .button-primary._2-buttons {
-    margin-right: 0 !important;
-    margin-left: 0 !important;
+  .hero-cta-single .hero-single-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto !important;
+    margin-right: auto !important;
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -341,8 +346,8 @@ import { solutions } from '../data/solutions';
           Our consolidated AI workflow turns validated market demand into production-ready solutions — fast. Every
           solution carries a blockchain dimension that deepens trust, ownership, and verifiability — built in from day
           one when it's core to the value, or layered in as it matures.
-        </div><div class="_2-button-wrapper hero-cta-centered">
-          <a href="#how-we-build" class="button-primary _2-buttons w-button">How We Build</a>
+        </div><div class="hero-cta-single">
+          <a href="#how-we-build" class="button-primary w-button hero-single-cta">How We Build</a>
         </div>
       </div>
     </div>
