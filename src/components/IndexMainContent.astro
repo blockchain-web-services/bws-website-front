@@ -7,129 +7,83 @@ import { solutions } from '../data/solutions';
 ---
 
 <style is:global>
-  /* Hero subtitle animation —
-     Stage 1 (0–4s):   pure opacity crossfade "Blockchain" ↔ "Beyond".
-                       The crossfade container stays sized to "Blockchain" (the
-                       longer word) so "Web Services" does NOT move during the swap.
-     Stage 2 (4.5–7s): the old word collapses width, tails/gaps collapse → "BWS". */
-  .word-crossfade {
+  /* Hero subtitle animation — three stacked state divs with opacity crossfades:
+       state-1  "Blockchain Web Services"
+       state-2  "Beyond Web Services"
+       state-3  "BWS"  (ends extra-bold)
+     All three share the same grid cell so they stack on top of each other.
+     The grid cell sizes to max-content of the widest state, so surrounding
+     layout (hero paragraph below) does not shift during the transitions. */
+  .subtitle-stack {
     display: inline-grid;
     grid-template-columns: max-content;
-    white-space: nowrap;
     vertical-align: baseline;
+    white-space: nowrap;
   }
 
-  .word-crossfade .word {
+  .subtitle-stack .state {
     grid-row: 1;
     grid-column: 1;
-    display: inline-block;
-    overflow: hidden;
-    vertical-align: top;
-    max-width: 15ch;
+    white-space: nowrap;
+    text-align: center;
   }
 
-  .word-crossfade .word-a {
+  .subtitle-stack .state-1 {
     opacity: 1;
-    animation:
-      word-a-fade 4s cubic-bezier(0.22, 0.61, 0.36, 1) forwards,
-      word-a-collapse 2.5s cubic-bezier(0.22, 0.61, 0.36, 1) 4.5s forwards;
+    animation: subtitle-state-1 7s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
   }
 
-  .word-crossfade .word-b {
+  .subtitle-stack .state-2 {
     opacity: 0;
-    animation: word-b-fade 4s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+    animation: subtitle-state-2 7s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
   }
 
-  @keyframes word-a-fade {
-    0%, 80%  { opacity: 1; }
-    100%     { opacity: 0; }
+  .subtitle-stack .state-3 {
+    opacity: 0;
+    font-weight: 400;
+    animation: subtitle-state-3 7s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
   }
 
-  @keyframes word-a-collapse {
-    0%, 25%  { max-width: 15ch; }
-    100%     { max-width: 0;   }
+  @keyframes subtitle-state-1 {
+    0%, 28%   { opacity: 1; }
+    38%, 100% { opacity: 0; }
   }
 
-  @keyframes word-b-fade {
-    0%, 80%  { opacity: 0; }
-    100%     { opacity: 1; }
+  @keyframes subtitle-state-2 {
+    0%, 28%   { opacity: 0; }
+    38%, 62%  { opacity: 1; }
+    72%, 100% { opacity: 0; }
   }
 
-  /* Stage 2: tails + inter-word spaces collapse after a short hold */
-  .subtitle .tail {
-    display: inline-block;
-    overflow: hidden;
-    max-width: 15ch;
-    opacity: 1;
-    vertical-align: top;
-    animation: tail-collapse 2.5s cubic-bezier(0.22, 0.61, 0.36, 1) 4.5s forwards;
-  }
-
-  .subtitle .gap {
-    display: inline-block;
-    overflow: hidden;
-    white-space: pre;
-    max-width: 0.35em;
-    vertical-align: top;
-    animation: gap-collapse 2.5s cubic-bezier(0.22, 0.61, 0.36, 1) 4.5s forwards;
-  }
-
-  @keyframes tail-collapse {
-    0%, 20%  { max-width: 15ch; opacity: 1; }
-    50%      { max-width: 15ch; opacity: 0; }
-    100%     { max-width: 0;    opacity: 0; }
-  }
-
-  @keyframes gap-collapse {
-    0%, 30%  { max-width: 0.35em; }
-    100%     { max-width: 0; }
-  }
-
-  /* Stage 3: after the "BWS" collapse finishes at ~7s, only the font-weight bumps to extra bold.
-     No size, scale, or letter-spacing change during the animation. */
-  .subtitle .bws-letter {
-    animation: bws-embolden 0.5s ease-out 7s forwards;
-  }
-
-  @keyframes bws-embolden {
-    from { font-weight: 400; }
-    to   { font-weight: 900; }
+  @keyframes subtitle-state-3 {
+    0%, 72%  { opacity: 0; font-weight: 400; }
+    82%      { opacity: 1; font-weight: 400; }
+    100%     { opacity: 1; font-weight: 900; }
   }
 
   /* Center the single hero CTA — zero out the 24px right margin that exists
-     for the default two-button layout so the lone button sits truly centered */
+     for the default two-button layout so the lone button sits truly centered.
+     !important to win over duplicated Webflow rules in styles.css. */
   .hero-cta-centered {
-    justify-content: center;
+    justify-content: center !important;
     text-align: center;
   }
 
   .hero-cta-centered .button-primary._2-buttons {
-    margin-right: 0;
+    margin-right: 0 !important;
+    margin-left: 0 !important;
   }
 
   @media (prefers-reduced-motion: reduce) {
-    .word-crossfade .word-a {
+    .subtitle-stack .state-1,
+    .subtitle-stack .state-2 {
       animation: none;
-      max-width: 0;
       opacity: 0;
       display: none;
     }
-    .word-crossfade .word-b {
+    .subtitle-stack .state-3 {
       animation: none;
-      max-width: 15ch;
       opacity: 1;
-    }
-    .subtitle .tail {
-      animation: none;
-      max-width: 0;
-      opacity: 0;
-    }
-    .subtitle .gap {
-      animation: none;
-      max-width: 0;
-    }
-    .subtitle .bws-letter {
-      animation: none;
       font-weight: 900;
     }
   }
@@ -376,7 +330,11 @@ import { solutions } from '../data/solutions';
     <div class="landing-page-hero-wrapper">
       <div class="limit-content hero-top-content">
         <h1 class="title hero-title">A Growing Marketplace</h1><h2 class="subtitle" aria-label="BWS">
-          <span class="word-crossfade"><span class="word word-a">Blockchain</span><span class="word word-b"><span class="bws-letter">B</span><span class="tail">eyond</span></span></span><span class="gap">&nbsp;</span><span class="bws-letter">W</span><span class="tail">eb</span><span class="gap">&nbsp;</span><span class="bws-letter">S</span><span class="tail">ervices</span>
+          <span class="subtitle-stack">
+            <span class="state state-1">Blockchain Web Services</span>
+            <span class="state state-2">Beyond Web Services</span>
+            <span class="state state-3">BWS</span>
+          </span>
         </h2><div
           class="paragraph hero-paragraph container-medium-790px"
         >
