@@ -107,9 +107,9 @@ export const quarterContents: QuarterContents = {
     titleCssClass: 'text-roadmap-title',
     sections: [
       {
-        title: 'Global Expansion of BWS Marketplace Solutions',
+        title: 'Global Expansion',
         paragraphs: [
-          'Strategic expansion of marketing and sales efforts to reach broader global audiences for our proven marketplace solutions including Blockchain Badges and X Bot, demonstrating BWS as a platform enabling mass market adoption of blockchain technology across multiple industries and regions.'
+          'Scale the BWS solutions factory into a repeatable, quarterly cadence. Every shipped solution sharpens the AI-native build workflow; every workflow gain speeds the next launch. Strategic expansion of marketing and sales efforts takes this compounding engine into broader markets and regions, with the factory — not any single product — as the durable asset.'
         ]
       }
     ]
