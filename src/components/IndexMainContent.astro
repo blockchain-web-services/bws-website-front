@@ -8,7 +8,7 @@ import { solutions } from '../data/solutions';
 
 <style is:global>
   /* Hero subtitle animation —
-     Stage 1 (0–4s):   "Blockchain Web Services" → "Beyond Web Services"
+     Stage 1 (0–4s):   "BWS" → "Beyond Web Services"
      Stage 2 (4.5–7s): collapse tails & spaces → "BWS" */
   .word-crossfade {
     display: inline-block;
@@ -77,6 +77,25 @@ import { solutions } from '../data/solutions';
     100%     { max-width: 0; }
   }
 
+  /* Stage 3: B, W, S letters embolden + scale up as the final transformation settles */
+  .subtitle .bws-letter {
+    display: inline-block;
+    font-weight: inherit;
+    transform-origin: center;
+    animation: bws-embolden 2.5s cubic-bezier(0.22, 0.61, 0.36, 1) 4.5s forwards;
+  }
+
+  @keyframes bws-embolden {
+    0%, 40%  { font-weight: 400; transform: scale(1);    letter-spacing: 0; }
+    100%     { font-weight: 900; transform: scale(1.08); letter-spacing: 0.02em; }
+  }
+
+  /* Center the single hero CTA */
+  .hero-cta-centered {
+    justify-content: center;
+    text-align: center;
+  }
+
   @media (prefers-reduced-motion: reduce) {
     .word-crossfade .word-a {
       animation: none;
@@ -96,6 +115,12 @@ import { solutions } from '../data/solutions';
     .subtitle .gap {
       animation: none;
       max-width: 0;
+    }
+    .subtitle .bws-letter {
+      animation: none;
+      font-weight: 900;
+      transform: scale(1.08);
+      letter-spacing: 0.02em;
     }
   }
 
@@ -215,16 +240,16 @@ import { solutions } from '../data/solutions';
   <div class="landing-page-content w-container">
     <div class="landing-page-hero-wrapper">
       <div class="limit-content hero-top-content">
-        <h1 class="title hero-title">A Growing Marketplace</h1><h2 class="subtitle" aria-label="Blockchain Web Services">
-          <span class="word-crossfade"><span class="word word-a">Blockchain</span><span class="word word-b">B<span class="tail">eyond</span></span></span><span class="gap">&nbsp;</span>W<span class="tail">eb</span><span class="gap">&nbsp;</span>S<span class="tail">ervices</span>
+        <h1 class="title hero-title">A Growing Marketplace</h1><h2 class="subtitle" aria-label="BWS">
+          <span class="word-crossfade"><span class="word word-a">Blockchain</span><span class="word word-b"><span class="bws-letter">B</span><span class="tail">eyond</span></span></span><span class="gap">&nbsp;</span><span class="bws-letter">W</span><span class="tail">eb</span><span class="gap">&nbsp;</span><span class="bws-letter">S</span><span class="tail">ervices</span>
         </h2><div
           class="paragraph hero-paragraph container-medium-790px"
         >
           Our consolidated AI workflow turns validated market demand into production-ready solutions — fast. Every
           solution carries a blockchain dimension that deepens trust, ownership, and verifiability — built in from day
           one when it's core to the value, or layered in as it matures.
-        </div><div class="_2-button-wrapper">
-          <a href="#solutions" class="button-primary _2-buttons w-button">Browse Marketplace</a>
+        </div><div class="_2-button-wrapper hero-cta-centered">
+          <a href="#how-we-build" class="button-primary _2-buttons w-button">How We Build</a>
         </div>
       </div>
     </div>
@@ -695,7 +720,7 @@ import { solutions } from '../data/solutions';
 <div id="roadmap" class="narrow-section relative section-blockchain-radically-simple">
   <div class="landing-page-content w-container">
     <h2 class="heading-landing-page-content">ROADMAP</h2><h3 class="sub-heading-landing-page-content flex-block-19">
-      Bringing Blockchain Web Services vision to life.
+      Bringing BWS vision to life.
     </h3>
 
     <!-- LAUNCH Card (Full-width) -->

@@ -239,7 +239,7 @@ class TestErrorCollector {
 
 ### 📋 Project Context
 
-**Project:** BWS Website - Static site for Blockchain Web Services
+**Project:** BWS Website - Static site for BWS
 **Tech Stack:** Astro SSG, GitHub Pages, Playwright Testing
 **Production URL:** https://www.bws.ninja
 **Build Output:** \`_site/\` directory

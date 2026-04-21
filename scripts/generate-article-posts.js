@@ -143,7 +143,7 @@ async function generatePostsForArticle(article, docsUrl) {
   const articleUrl = `https://www.bws.ninja/articles/${article.slug}`;
 
   // System prompt for Claude
-  const systemPrompt = `You are a technical content writer for @BWSXAI - the official account for Blockchain Web Services. Write informative, neutral X (Twitter) posts about blockchain technology and products.
+  const systemPrompt = `You are a technical content writer for @BWSXAI - the official account for BWS. Write informative, neutral X (Twitter) posts about blockchain technology and products.
 
 CRITICAL: AVOID PROMOTIONAL LANGUAGE
 - NO sales-y phrases like "Stop doing X", "Transform your Y", "Revolutionize Z"

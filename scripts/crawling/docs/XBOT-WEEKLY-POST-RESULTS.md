@@ -68,7 +68,7 @@ $BWS @BWSCommunity #XBot
    - Followers: 64.1k (▼50)
    - Posting about: @abubakarbbg9, @amazing813765, @cryptonik999
 
-3. **@bwscommunity** (Blockchain Web Services)
+3. **@bwscommunity** (BWS)
    - Score: 1,175
    - Rank: Climber
    - Followers: 1.6k (▲5)

@@ -82,7 +82,7 @@ export const successStories: SuccessStory[] = [
 {
   product: 'Blockchain Badges',
   title: 'Flostate Blockchain Badge Partnership',
-  description: 'Flostate, a leading South African organization, partners with Blockchain Web Services to transform customer experience using blockchain badges. Key capabilities include:<ul><li>Verifiable digital credentials with blockchain certification</li><li>Seamless issuance and management of tamper-proof badges</li><li>Cross-platform achievement recognition and verification</li></ul>This partnership enables Flostate to deliver transparent, immutable credential validation for their customers.',
+  description: 'Flostate, a leading South African organization, partners with BWS to transform customer experience using blockchain badges. Key capabilities include:<ul><li>Verifiable digital credentials with blockchain certification</li><li>Seamless issuance and management of tamper-proof badges</li><li>Cross-platform achievement recognition and verification</li></ul>This partnership enables Flostate to deliver transparent, immutable credential validation for their customers.',
   image: {
     src: '/assets/images/success-stories/blockchain-badges-1881416481377861689.jpg',
     alt: 'Blockchain Badges - Flostate Blockchain Badge Partnership',

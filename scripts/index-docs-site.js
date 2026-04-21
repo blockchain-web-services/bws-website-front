@@ -481,7 +481,7 @@ async function generatePageSummaries(pages) {
     const batch = pages.slice(i, i + BATCH_SIZE);
     console.log(`   Processing batch ${Math.floor(i / BATCH_SIZE) + 1}/${Math.ceil(pages.length / BATCH_SIZE)} (${batch.length} pages)...`);
 
-    const prompt = `You are analyzing documentation pages from docs.bws.ninja (Blockchain Web Services API documentation).
+    const prompt = `You are analyzing documentation pages from docs.bws.ninja (BWS API documentation).
 
 NOTE: You now have access to FULL page content (up to 10,000 characters per page, increased from previous 2,000 limit). Use this comprehensive information to provide detailed, accurate analysis.
 

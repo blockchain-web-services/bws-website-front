@@ -28,8 +28,8 @@ import Footer from '../../components/Footer.astro';
 import Scripts from '../../components/Scripts.astro';
 import ${pascalCaseName} from '../../components/${componentName}.astro';
 
-const pageTitle = 'Blockchain Web Services - ${pageFile.replace('.astro', '').replace(/-/g, ' ')}';
-const pageDescription = 'Blockchain Web Services - Enterprise blockchain solutions';
+const pageTitle = 'BWS - ${pageFile.replace('.astro', '').replace(/-/g, ' ')}';
+const pageDescription = 'BWS - Enterprise blockchain solutions';
 ---
 
 <BaseLayout title={pageTitle} description={pageDescription}>

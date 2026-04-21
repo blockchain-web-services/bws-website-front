@@ -79,8 +79,8 @@ function extractComponents(html, pageName) {
   const titleMatch = headContent.match(/<title>([^<]*)<\/title>/);
   const descMatch = headContent.match(/<meta[^>]*name="description"[^>]*content="([^"]*)"[^>]*>/);
 
-  const title = titleMatch ? titleMatch[1].replace(/\s+/g, ' ').trim() : 'Blockchain Web Services';
-  const description = descMatch ? descMatch[1].replace(/\s+/g, ' ').trim() : 'Blockchain Web Services - Enterprise blockchain solutions';
+  const title = titleMatch ? titleMatch[1].replace(/\s+/g, ' ').trim() : 'BWS';
+  const description = descMatch ? descMatch[1].replace(/\s+/g, ' ').trim() : 'BWS - Enterprise blockchain solutions';
 
   return {
     title,

@@ -206,7 +206,7 @@ fs.writeFileSync(
 
 // Helper functions
 function generateDescription(title) {
-  return `Learn more about ${title} - Blockchain Web Services solution for modern businesses.`;
+  return `Learn more about ${title} - BWS solution for modern businesses.`;
 }
 
 function generateBreadcrumbs(url) {

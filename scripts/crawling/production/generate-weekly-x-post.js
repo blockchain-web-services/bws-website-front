@@ -401,7 +401,7 @@ async function generateXPost(productsData) {
   // Get primary docs URL (from first/main product)
   const primaryDocsUrl = productsData[0]?.productUrl || 'https://docs.bws.ninja/';
 
-  const prompt = `You are creating a weekly development update post for X (Twitter) about BWS (Blockchain Web Services) production deployments.
+  const prompt = `You are creating a weekly development update post for X (Twitter) about BWS production deployments.
 
 DEPLOYMENT SUMMARY:
 - Products updated: ${productsData.length}
@@ -504,7 +504,7 @@ X Bot is an AI-powered Telegram analytics platform providing accurate X (Twitter
 [BWS Documentation]
 Our documentation platform received extensive updates to help developers better understand and integrate BWS solutions. We added comprehensive API reference guides, improved setup instructions for all BWS products, and created detailed integration examples for common use cases. The documentation now includes troubleshooting guides and best practices for production deployments.
 
-BWS Documentation provides complete technical guides, API references, and integration examples for all Blockchain Web Services products and platform APIs.
+BWS Documentation provides complete technical guides, API references, and integration examples for all BWS products and platform APIs.
 
 📚 https://docs.bws.ninja/
 
