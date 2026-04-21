@@ -18,24 +18,32 @@ import { solutions } from '../data/solutions';
   }
 
   .token-allocation-svg {
-    width: 260px;
-    max-width: 80%;
+    width: 360px;
+    max-width: 90%;
     height: auto;
     display: block;
   }
 
   .token-chart-supply-label {
-    font-size: 13px;
-    font-weight: 500;
+    font-size: 14px;
+    font-weight: 600;
     fill: var(--neutral-600, #66666e);
-    letter-spacing: 0.04em;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
   }
 
   .token-chart-supply-value {
-    font-size: 22px;
-    font-weight: 700;
+    font-size: 32px;
+    font-weight: 800;
     fill: var(--neutral-800, #1a1b1e);
+    letter-spacing: -0.01em;
+  }
+
+  .token-chart-supply-unit {
+    font-size: 14px;
+    font-weight: 600;
+    fill: var(--neutral-600, #66666e);
+    letter-spacing: 0.08em;
   }
 
   .token-allocation-legend {
@@ -78,7 +86,7 @@ import { solutions } from '../data/solutions';
 
   @media screen and (max-width: 767px) {
     .token-allocation-svg {
-      width: 220px;
+      width: 300px;
     }
     .token-allocation-legend li {
       font-size: 13px;
@@ -479,8 +487,9 @@ import { solutions } from '../data/solutions';
                 <circle cx="110" cy="110" r="80" fill="none" stroke="#10b981" stroke-width="48" stroke-dasharray="25.13 502.65" stroke-dashoffset="-467.47"></circle>
                 <circle cx="110" cy="110" r="80" fill="none" stroke="#94a3b8" stroke-width="48" stroke-dasharray="10.05 502.65" stroke-dashoffset="-492.60"></circle>
               </g>
-              <text x="110" y="104" text-anchor="middle" class="token-chart-supply-label">Total Supply</text>
-              <text x="110" y="128" text-anchor="middle" class="token-chart-supply-value">100M $BWS</text>
+              <text x="110" y="95" text-anchor="middle" class="token-chart-supply-label">Total Supply</text>
+              <text x="110" y="128" text-anchor="middle" class="token-chart-supply-value">100M</text>
+              <text x="110" y="148" text-anchor="middle" class="token-chart-supply-unit">$BWS</text>
             </svg>
             <ul class="token-allocation-legend">
               <li><span class="legend-swatch" style="background:#758bff"></span><span class="legend-label">Circulating Supply</span><span class="legend-pct">70%</span></li>
