@@ -17,12 +17,24 @@ import { solutions } from '../data/solutions';
     padding: 16px 0;
   }
 
+  /* Right column of the tokenomics split holds the donut — force it to 40% of the section */
+  #tokenomics .split-horizontal > .flex-block-6.token-allocation {
+    flex: 0 0 40%;
+    max-width: 40%;
+  }
+
   .token-allocation-svg {
     width: 100%;
-    max-width: 460px;
-    min-width: 320px;
+    max-width: 100%;
     height: auto;
     display: block;
+  }
+
+  @media screen and (max-width: 991px) {
+    #tokenomics .split-horizontal > .flex-block-6.token-allocation {
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
   }
 
   .token-chart-supply-label {
@@ -509,27 +521,7 @@ import { solutions } from '../data/solutions';
           >
         </div>
       </div>
-    </div><div class="w-layout-hflex flex-block-taxes">
-      <div class="w-layout-blockcontainer icon-list-container w-container"><div class="text-block-35"><i class="fa-solid fa-scale-balanced"></i></div></div><div
-        class="w-layout-vflex"
-      >
-        <div class="text-block-33">Dynamic Utility Taxes</div><div>
-          Implementing a dynamic tax structure for $BWS ensures a balanced and sustainable ecosystem. Capped at a
-          maximum of 5% for both buy and sell operations, our model adjusts based on market cap fluctuations: <span
-            class="text-span-15"
-            >when the market cap is low, buy taxes decrease to encourage entry while sell taxes increase to deter early
-            exits</span
-          >, fostering stability. <span class="text-span-16"
-            >As the market cap grows, buy taxes rise while sell taxes decrease, rewarding long-term holders and
-            supporting organic price growth</span
-          >. This strategy aligns with best practices in tokenomics by maintaining liquidity, reducing volatility, and
-          incentivizing sustainable market participation. This dynamic tax model rewards early adopters and long-term
-          holders—<span class="text-span-17"
-            >the sooner you get in and the later you exit, the more profitable your investment becomes</span
-          >.
-        </div>
-      </div>
-    </div>
+    
   </div>
 </div>
 
