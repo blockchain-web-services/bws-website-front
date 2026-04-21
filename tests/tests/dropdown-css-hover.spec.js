@@ -10,7 +10,7 @@ test.describe('Dropdown CSS Hover', () => {
     // Test each dropdown menu
     const dropdownMenus = [
       { name: 'Solutions', selector: '.nav-link-dropdown:has-text("Solutions")' },
-      { name: 'Developers', selector: '.nav-link-dropdown:has-text("Developers")' },
+      { name: 'Build With Us', selector: '.nav-link-dropdown:has-text("Build With Us")' },
       { name: 'Resources', selector: '.nav-link-dropdown:has-text("Resources")' },
       { name: 'Company', selector: '.nav-link-dropdown:has-text("Company")' }
     ];

@@ -8,6 +8,86 @@ import { successStories } from '../data/successStories';
 import { solutions } from '../data/solutions';
 ---
 
+<style is:global>
+  /* Token allocation donut chart + legend */
+  .token-allocation-chart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    width: 100%;
+    padding: 16px 0;
+  }
+
+  .token-allocation-svg {
+    width: 260px;
+    max-width: 80%;
+    height: auto;
+    display: block;
+  }
+
+  .token-chart-supply-label {
+    font-size: 13px;
+    font-weight: 500;
+    fill: var(--neutral-600, #66666e);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .token-chart-supply-value {
+    font-size: 22px;
+    font-weight: 700;
+    fill: var(--neutral-800, #1a1b1e);
+  }
+
+  .token-allocation-legend {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    max-width: 320px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .token-allocation-legend li {
+    display: grid;
+    grid-template-columns: 16px 1fr auto;
+    align-items: center;
+    gap: 12px;
+    font-size: 14px;
+    line-height: 1.4;
+    color: var(--neutral-700, #3b3f44);
+  }
+
+  .legend-swatch {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    border-radius: 3px;
+  }
+
+  .legend-label {
+    font-weight: 500;
+  }
+
+  .legend-pct {
+    font-weight: 700;
+    color: var(--neutral-800, #1a1b1e);
+    font-variant-numeric: tabular-nums;
+  }
+
+  @media screen and (max-width: 767px) {
+    .token-allocation-svg {
+      width: 220px;
+    }
+    .token-allocation-legend li {
+      font-size: 13px;
+    }
+  }
+</style>
+
 <!-- ============================================ -->
 <!-- HERO SECTION -->
 <!-- ============================================ -->
@@ -426,7 +506,7 @@ import { solutions } from '../data/solutions';
         <div class="w-layout-vflex flex-block-8">
           <div class="w-layout-hflex flex-block-7">
             <div class="w-layout-blockcontainer icon-list-container w-container">
-              <div class="text-block-35"></div>
+              <div class="text-block-35"><i class="fa-solid fa-gears"></i></div>
             </div><div class="w-layout-vflex">
               <div class="text-block-33">Fiat for Customers, $BWS Under the Hood</div><div>
                 Customers pay in fiat through standard billing — no wallets, no tokens, no volatility. Every
@@ -437,7 +517,7 @@ import { solutions } from '../data/solutions';
             </div>
           </div><div class="w-layout-hflex flex-block-7">
             <div class="w-layout-blockcontainer icon-list-container w-container">
-              <div class="text-block-35"></div>
+              <div class="text-block-35"><i class="fa-solid fa-fire"></i></div>
             </div><div class="w-layout-vflex">
               <div class="text-block-33">Revenue Buyback &amp; Burn</div><div>
                 A fixed share of gross platform revenue is used to <span class="text-span-3">automatically buy $BWS on
@@ -447,7 +527,7 @@ import { solutions } from '../data/solutions';
             </div>
           </div><div class="w-layout-hflex flex-block-7">
             <div class="w-layout-blockcontainer icon-list-container w-container">
-              <div class="text-block-35"></div>
+              <div class="text-block-35"><i class="fa-solid fa-gem"></i></div>
             </div><div class="w-layout-vflex">
               <div class="text-block-33">Stake for Benefits</div><div>
                 Customers and partners who stake $BWS unlock <span class="text-span-4">fee discounts, higher rate
@@ -457,7 +537,7 @@ import { solutions } from '../data/solutions';
             </div>
           </div><div class="w-layout-hflex flex-block-7">
             <div class="w-layout-blockcontainer icon-list-container w-container">
-              <div class="text-block-35"></div>
+              <div class="text-block-35"><i class="fa-solid fa-rocket"></i></div>
             </div><div class="w-layout-vflex">
               <div class="text-block-33">Product Development Funding</div><div>
                 A portion of the TOKEN TOTAL SUPPLY is allocated to <span
@@ -469,12 +549,28 @@ import { solutions } from '../data/solutions';
         </div>
       </div><div class="w-layout-vflex flex-block-6 token-allocation">
         <div class="w-layout-blockcontainer token-allocation-image w-container">
-          <img
-            src="/assets/images/6474d385cfec71cb21a92251/6707fd987c3a05d42e1e908e_Tokenomics-Allocation-letters-black.png"
-            loading="lazy"
-            alt="$BWS Token Allocation"
-            class="image-token-allocation"
-          />
+          <div class="token-allocation-chart" role="img" aria-label="$BWS token allocation: Circulating Supply 70%, Product Development 10%, Team Tokens 8%, Marketing 5%, Partnerships and Airdrops 5%, Liquidity and Reserves 2%">
+            <svg viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg" class="token-allocation-svg">
+              <g transform="rotate(-90 110 110)">
+                <circle cx="110" cy="110" r="80" fill="none" stroke="#758bff" stroke-width="48" stroke-dasharray="351.86 502.65" stroke-dashoffset="0"></circle>
+                <circle cx="110" cy="110" r="80" fill="none" stroke="#c41841" stroke-width="48" stroke-dasharray="50.27 502.65" stroke-dashoffset="-351.86"></circle>
+                <circle cx="110" cy="110" r="80" fill="none" stroke="#7b52ab" stroke-width="48" stroke-dasharray="40.21 502.65" stroke-dashoffset="-402.13"></circle>
+                <circle cx="110" cy="110" r="80" fill="none" stroke="#f59e0b" stroke-width="48" stroke-dasharray="25.13 502.65" stroke-dashoffset="-442.34"></circle>
+                <circle cx="110" cy="110" r="80" fill="none" stroke="#10b981" stroke-width="48" stroke-dasharray="25.13 502.65" stroke-dashoffset="-467.47"></circle>
+                <circle cx="110" cy="110" r="80" fill="none" stroke="#94a3b8" stroke-width="48" stroke-dasharray="10.05 502.65" stroke-dashoffset="-492.60"></circle>
+              </g>
+              <text x="110" y="104" text-anchor="middle" class="token-chart-supply-label">Total Supply</text>
+              <text x="110" y="128" text-anchor="middle" class="token-chart-supply-value">100M $BWS</text>
+            </svg>
+            <ul class="token-allocation-legend">
+              <li><span class="legend-swatch" style="background:#758bff"></span><span class="legend-label">Circulating Supply</span><span class="legend-pct">70%</span></li>
+              <li><span class="legend-swatch" style="background:#c41841"></span><span class="legend-label">Product Development</span><span class="legend-pct">10%</span></li>
+              <li><span class="legend-swatch" style="background:#7b52ab"></span><span class="legend-label">Team Tokens</span><span class="legend-pct">8%</span></li>
+              <li><span class="legend-swatch" style="background:#f59e0b"></span><span class="legend-label">Marketing</span><span class="legend-pct">5%</span></li>
+              <li><span class="legend-swatch" style="background:#10b981"></span><span class="legend-label">Partnerships &amp; Airdrops</span><span class="legend-pct">5%</span></li>
+              <li><span class="legend-swatch" style="background:#94a3b8"></span><span class="legend-label">Liquidity &amp; Reserves</span><span class="legend-pct">2%</span></li>
+            </ul>
+          </div>
         </div><div class="w-layout-hflex flex-block-18">
           <a href="/white-paper.html" class="button-secondary white-paper button-grants w-button">White Paper</a><a
             href="https://docs.bws.ninja"
