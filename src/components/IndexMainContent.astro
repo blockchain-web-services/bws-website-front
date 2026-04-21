@@ -77,17 +77,15 @@ import { solutions } from '../data/solutions';
     100%     { max-width: 0; }
   }
 
-  /* Stage 3: B, W, S letters embolden + scale up as the final transformation settles */
+  /* Stage 3: after the "BWS" collapse finishes at ~7s, only the font-weight bumps to extra bold.
+     No size, scale, or letter-spacing change during the animation. */
   .subtitle .bws-letter {
-    display: inline-block;
-    font-weight: inherit;
-    transform-origin: center;
-    animation: bws-embolden 2.5s cubic-bezier(0.22, 0.61, 0.36, 1) 4.5s forwards;
+    animation: bws-embolden 0.5s ease-out 7s forwards;
   }
 
   @keyframes bws-embolden {
-    0%, 40%  { font-weight: 400; transform: scale(1);    letter-spacing: 0; }
-    100%     { font-weight: 900; transform: scale(1.08); letter-spacing: 0.02em; }
+    from { font-weight: 400; }
+    to   { font-weight: 900; }
   }
 
   /* Center the single hero CTA */
@@ -119,8 +117,6 @@ import { solutions } from '../data/solutions';
     .subtitle .bws-letter {
       animation: none;
       font-weight: 900;
-      transform: scale(1.08);
-      letter-spacing: 0.02em;
     }
   }
 
