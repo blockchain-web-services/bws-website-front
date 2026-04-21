@@ -44,6 +44,35 @@ import { solutions } from '../data/solutions';
     100%      { max-width: 15ch; opacity: 1; }
   }
 
+  /* Stage 2: after "Beyond Web Services" settles, tails and gaps collapse so the subtitle becomes "BWS" */
+  .subtitle .tail {
+    display: inline-block;
+    overflow: hidden;
+    max-width: 15ch;
+    opacity: 1;
+    vertical-align: top;
+    animation: tail-collapse 1.5s ease-in-out 5s forwards;
+  }
+
+  .subtitle .gap {
+    display: inline-block;
+    overflow: hidden;
+    max-width: 1ch;
+    vertical-align: top;
+    animation: gap-collapse 1.5s ease-in-out 5s forwards;
+  }
+
+  @keyframes tail-collapse {
+    0%   { max-width: 15ch; opacity: 1; }
+    40%  { max-width: 15ch; opacity: 0; }
+    100% { max-width: 0;    opacity: 0; }
+  }
+
+  @keyframes gap-collapse {
+    0%   { max-width: 1ch; }
+    100% { max-width: 0;   }
+  }
+
   @media (prefers-reduced-motion: reduce) {
     .word-crossfade .word-a {
       animation: none;
@@ -54,6 +83,15 @@ import { solutions } from '../data/solutions';
       animation: none;
       max-width: 15ch;
       opacity: 1;
+    }
+    .subtitle .tail {
+      animation: none;
+      max-width: 0;
+      opacity: 0;
+    }
+    .subtitle .gap {
+      animation: none;
+      max-width: 0;
     }
   }
 
@@ -173,8 +211,8 @@ import { solutions } from '../data/solutions';
   <div class="landing-page-content w-container">
     <div class="landing-page-hero-wrapper">
       <div class="limit-content hero-top-content">
-        <h1 class="title hero-title">A Growing Marketplace</h1><h2 class="subtitle">
-          <span class="word-crossfade"><span class="word word-a">Blockchain</span><span class="word word-b">Beyond</span></span> Web Services
+        <h1 class="title hero-title">A Growing Marketplace</h1><h2 class="subtitle" aria-label="Blockchain Web Services">
+          <span class="word-crossfade"><span class="word word-a">Blockchain</span><span class="word word-b">B<span class="tail">eyond</span></span></span><span class="gap"> </span>W<span class="tail">eb</span><span class="gap"> </span>S<span class="tail">ervices</span>
         </h2><a href="/white-paper.html" class="button-secondary white-paper w-button">White Paper</a><div
           class="paragraph hero-paragraph container-medium-790px"
         >
