@@ -26,7 +26,7 @@ export const quarterContents: QuarterContents = {
       {
         title: 'Concept Validation',
         paragraphs: [
-          'Core infrastructure launched with Platform APIs featuring <a href="/marketplace/database-immutable.html">immutable database</a>, <a href="/marketplace/ipfs-upload.html">IPFS upload</a>, and <a href="/marketplace/database-mutable.html">mutable storage</a> solutions enabling developers to integrate blockchain technology through simple API calls.',
+          'Core infrastructure launched with Platform APIs featuring <a href="/marketplace/database-immutable.html">immutable database</a>, <a href="/marketplace/ipfs-upload.html">IPFS.NINJA</a>, and <a href="/marketplace/database-mutable.html">mutable storage</a> solutions enabling developers to integrate decentralized technology through simple API calls.',
           'Won Nordea Bank Hackathon, recognized for innovative blockchain solutions in financial services using <a href="https://docs.bws.ninja/solutions/bws.blockchain.save" target="_blank" rel="noopener noreferrer">BWS.Blockchain.Save</a> API to save ESG figures into blockchain with a single API call.'
         ]
       },
@@ -34,7 +34,7 @@ export const quarterContents: QuarterContents = {
         title: 'Platform Architecture',
         paragraphs: [
           '<a href="https://blockchainbadges.com/" target="_blank" rel="noopener noreferrer">Blockchain Badges</a> became our first marketplace solution validating individual achievements by leveraging blockchain technology for secure and immutable digital certification.',
-          '$BWS Token Launch established the platform pillar for growth through API fees and developer community involvement, bringing token utility across all platform services with multi-chain support.'
+          '$BWS Token Launch established the platform pillar for growth through API fees funding ongoing product development, bringing token utility across all platform services with multi-chain support.'
         ]
       }
     ]
@@ -67,18 +67,6 @@ export const quarterContents: QuarterContents = {
           'Progressive transition from FIAT to $BWS tokenomics across marketplace solutions, where scaling usage drives organic token demand creating sustainable buy pressure benefiting early holders and supporting long-term chart growth.'
         ]
       },
-      {
-        title: 'X Bot Launch',
-        paragraphs: [
-          'Community engagement tool helping crypto projects and Telegram groups monitor and boost their X presence through gamified leaderboards, delivering data-driven insights into member engagement patterns.'
-        ]
-      },
-      {
-        title: 'Market Awareness',
-        paragraphs: [
-          'Launch comprehensive marketing campaigns across multiple channels to drive platform awareness and user acquisition.'
-        ]
-      }
     ]
   },
   '2025-3': {
@@ -104,21 +92,9 @@ export const quarterContents: QuarterContents = {
     titleCssClass: 'text-roadmap-title-4th',
     sections: [
       {
-        title: 'BWS Market Maker',
+        title: 'AI-Native Build Workflow',
         paragraphs: [
-          'Launch of in-house automated market making infrastructure ensuring token liquidity and price stability.'
-        ]
-      },
-      {
-        title: 'iGaming Platform Alpha',
-        paragraphs: [
-          'Deploy Maincard.io-powered platform in regulated EMEA & North America markets'
-        ]
-      },
-      {
-        title: 'New AI Blockchain Solution',
-        paragraphs: [
-          'Develop white-paper and architecture for proprietary AI model tailored to new BWS Marketplace solution in the crypto space.'
+          'Consolidated the full product lifecycle — discovery, design, engineering, QA, and marketplace ship — into a single AI-native pipeline operated in-house. This becomes the compounding moat behind every future BWS solution: each shipped solution sharpens the workflow, and each workflow gain speeds the next launch.'
         ]
       }
 
@@ -131,21 +107,9 @@ export const quarterContents: QuarterContents = {
     titleCssClass: 'text-roadmap-title',
     sections: [
       {
-        title: 'New AI Marketplace Solution',
-        paragraphs: [
-          'Leverage BWS Crypto AI for actionable token intelligence, driving the strategic launch of an ERC-7621 BWS Marketplace Solution.'
-        ]
-      },
-      {
         title: 'Global Expansion of BWS Marketplace Solutions',
         paragraphs: [
-          'Strategic expansion of marketing and sales efforts to reach broader global audiences for our proven marketplace solutions including Crypto AI, Blockchain Badges, and X Bot, demonstrating BWS as a platform enabling mass market adoption of blockchain technology across multiple industries and regions.'
-        ]
-      },
-      {
-        title: 'BWS Developer Grants',
-        paragraphs: [
-          'Comprehensive revamp of the developer grant program to accelerate growth and fulfill Blockchain Web Services mission. Enhanced funding structure and support systems drive in-crescendo expansion of solutions on our proven marketplace, empowering developers worldwide to build the next generation of blockchain innovations.'
+          'Strategic expansion of marketing and sales efforts to reach broader global audiences for our proven marketplace solutions including Blockchain Badges and X Bot, demonstrating BWS as a platform enabling mass market adoption of blockchain technology across multiple industries and regions.'
         ]
       }
     ]

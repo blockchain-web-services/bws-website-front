@@ -13,21 +13,27 @@
             </div>
             <div class="split-content integration-details">
               <div class="integration-title-wrapper">
-                <h1 class="title h2-size integration-name">IPFS Upload</h1>
+                <h1 class="title h2-size integration-name">IPFS.NINJA</h1>
               </div>
               <p class="paragraph integration-about-excerpt">
-                Effortlessly upload images and JSON files to the IPFS network and use our IPFS gateway for reliable
-                access.
+                The simplest IPFS pinning service and upload API. Pin any file, serve it through your own dedicated
+                gateway, and scale from a free tier to production with signed upload tokens and analytics.
               </p>
               <div class="split-button-solution">
                 <div class="split-first-buttons-solution">
                   <div class="solution-links">
                     <a
                       target="_blank"
-                      href="https://docs.bws.ninja/solutions/bws.ipfs.upload"
+                      href="https://ipfs.ninja/docs/api-reference"
                       class="button-primary small flex w-inline-block"
                       ><div class="text-block-24">API Docs</div>
                       &nbsp;<i class="fa-solid fa-arrow-up-right-from-square"></i></a
+                    ><a
+                      href="https://ipfs.ninja"
+                      target="_blank"
+                      class="button-primary small flex landing-page-link-button w-inline-block"
+                      ><div class="text-block-24">Solution Website</div>
+                      &nbsp;<i class="fa-solid fa-arrow-right"></i></a
                     >
                   </div>
                 </div>
@@ -65,56 +71,64 @@
               <div data-w-tab="Description" class="integration-tab w-tab-pane w--tab-active">
                 <div class="rich-text w-richtext">
                   <p>
-                    BWS.IPFS.Upload revolutionizes the process of uploading content to the IPFS network, making it
-                    highly accessible even for those without in-depth blockchain knowledge. This solution is expertly
-                    designed for the easy uploading of images and JSON files, democratizing the use of IPFS for a
-                    broader range of users.
+                    IPFS.NINJA is the simplest way to pin files to IPFS and serve them reliably. A single REST API
+                    handles uploads of any file type — JSON, images, PDFs, videos, HTML — and a dedicated gateway
+                    serves your pinned content over HTTPS at your own subdomain. Built for teams who want the
+                    durability of decentralized storage without running infrastructure.
                   </p>
                   <h3><strong>Features</strong></h3>
                   <ul role="list">
                     <li>
-                      <strong>Simplified Content Uploading</strong><br />With BWS.IPFS.Upload, you can effortlessly
-                      upload web browsing content like images and JSON files to the IPFS network, bypassing the
-                      complexities typically associated with blockchain technologies.
+                      <strong>Simple Upload API</strong><br />One REST endpoint accepts any file type. JSON is sent
+                      natively; binary formats are base64-encoded. Pin new uploads or pin existing CIDs from the
+                      network with a single call — useful for NFT metadata, mirroring, and archival.
                     </li>
                     <li>
-                      <strong>Optimized File Size</strong>
-                      <br />The service supports file sizes up to 5MB, catering to efficient web content management and
-                      ensuring speedy uploads without sacrificing quality.
+                      <strong>Dedicated Gateways</strong><br />Every account gets its own gateway subdomain (e.g.
+                      <em>your-slug.gw.ipfs.ninja</em>) to serve pinned content over HTTPS. Configure access modes,
+                      token authentication, IP whitelisting, and origin restrictions per gateway.
                     </li>
                     <li>
-                      <strong>NFT, Images and PDF File Support</strong><br />The platform currently accepts JSON,
-                      images, and PDF files, providing versatility in the types of content you can upload while
-                      maintaining a safe IPFS environment.
+                      <strong>Signed Upload Tokens</strong><br />Time-limited credentials you can safely expose in
+                      client-side code (browsers, mobile apps) without revealing your API key. Issue from your
+                      backend, let the client upload directly to IPFS.
                     </li>
                     <li>
-                      <strong>BWS Gateway Integration</strong><br />Use ipfs.bws.ninja as your gateway to IPFS,
-                      seamlessly accessing and sharing your uploaded content.
+                      <strong>Analytics &amp; Controls</strong><br />Track usage, pinned file counts, gateway traffic,
+                      and API key activity. Manage multiple API keys and multiple gateways from a single account.
+                    </li>
+                    <li>
+                      <strong>Pin Any Existing CID</strong><br />Already have content on IPFS? Pin any valid CID with
+                      a single POST — ideal for securing NFT metadata, mirroring dApp content, or building a
+                      long-term archive.
+                    </li>
+                    <li>
+                      <strong>Free Tier, No Credit Card</strong><br />Start on the Dharma plan with 1 GB storage,
+                      500 files, 1 API key, and 1 dedicated gateway. Upgrade only when you outgrow it.
                     </li>
                   </ul>
-                  <h3><strong>Benefits</strong></h3>
+                  <h3><strong>Use Cases</strong></h3>
                   <ul role="list">
                     <li>
-                      <strong>Enhanced Web Content Distribution</strong><br />By utilizing the decentralized nature of
-                      IPFS, BWS.IPFS.Upload offers a more resilient and efficient way to distribute our customers
-                      content.
+                      <strong>NFT Metadata &amp; Media</strong><br />Pin ERC-721/1155 metadata JSON and associated
+                      media with guaranteed availability behind your own branded gateway.
                     </li>
                     <li>
-                      <strong>Easy Integration</strong><br />The user-friendly API makes integration into existing
-                      systems straightforward, requiring minimal technical effort.
+                      <strong>dApp Content Hosting</strong><br />Serve frontend assets, documents, and media from a
+                      dedicated gateway with HTTPS and access controls.
                     </li>
                     <li>
-                      <strong>Increased Content Reach</strong><br />Leverage the power of IPFS to make your content more
-                      accessible and reliably available across the globe.
+                      <strong>User-Generated Uploads</strong><br />Let end users upload directly from the browser
+                      using signed tokens — without routing uploads through your own servers.
                     </li>
                     <li>
-                      <strong>Secure and Reliable</strong><br />Benefit from the inherent security and durability of
-                      blockchain technology, ensuring that your content remains safe and perpetually accessible.
+                      <strong>Archival &amp; Mirroring</strong><br />Pin existing CIDs for long-term availability and
+                      redundancy across the IPFS network.
                     </li>
                   </ul>
                   <p>
-                    Use BWS.IPFS.Upload to simplify your content distribution on the web, tapping into the revolutionary
-                    potential of IPFS with ease and reliability.
+                    IPFS.NINJA removes the usual friction of IPFS hosting — no self-hosted nodes, no DevOps, no
+                    guesswork on availability. Pin, serve, and scale.
                   </p>
                 </div>
               </div>
@@ -144,9 +158,9 @@
             <div class="coming-soon w-condition-invisible"><div class="text-block-13">Coming Soon</div></div>
             <a
               target="_blank"
-              href="https://docs.bws.ninja/solutions/bws.ipfs.upload"
+              href="https://ipfs.ninja/docs/overview"
               class="button-primary small flex w-inline-block"
-              ><div>IPFS Upload API Docs</div>
+              ><div>IPFS.NINJA API Docs</div>
               &nbsp;<i class="fa-solid fa-arrow-up-right-from-square"></i></a
             >
           </div>

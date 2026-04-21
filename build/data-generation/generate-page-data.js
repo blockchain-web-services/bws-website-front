@@ -130,8 +130,8 @@ templates.forEach(page => {
       
     case 'homepage':
       pageData.hero = {
-        title: 'Cutting-Edge Blockchain Solutions',
-        subtitle: 'A Blockchain Solutions Marketplace for innovative and easy-to-use blockchain solutions',
+        title: 'Solutions Built Fast, Built Right',
+        subtitle: 'Our consolidated AI workflow turns validated market demand into production-ready solutions — fast.',
         ctaPrimary: {
           text: 'Get Started',
           href: '#solutions'
