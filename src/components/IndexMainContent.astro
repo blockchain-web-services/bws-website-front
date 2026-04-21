@@ -7,7 +7,9 @@ import { solutions } from '../data/solutions';
 ---
 
 <style is:global>
-  /* Hero subtitle: "Blockchain" collapses and "Beyond" expands in — plays once, ends on "Beyond Web Services" with no extra gap */
+  /* Hero subtitle animation —
+     Stage 1 (0–4s):   "Blockchain Web Services" → "Beyond Web Services"
+     Stage 2 (4.5–7s): collapse tails & spaces → "BWS" */
   .word-crossfade {
     display: inline-block;
     white-space: nowrap;
@@ -18,59 +20,61 @@ import { solutions } from '../data/solutions';
     display: inline-block;
     overflow: hidden;
     vertical-align: top;
+    transition: max-width 0.9s cubic-bezier(0.22, 0.61, 0.36, 1), opacity 0.5s ease;
   }
 
   .word-crossfade .word-a {
     max-width: 15ch;
     opacity: 1;
-    animation: word-fade-out 4.5s ease-in-out forwards;
+    animation: word-fade-out 4s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
   }
 
   .word-crossfade .word-b {
     max-width: 0;
     opacity: 0;
-    animation: word-fade-in 4.5s ease-in-out forwards;
+    animation: word-fade-in 4s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
   }
 
   @keyframes word-fade-out {
-    0%, 40%   { max-width: 15ch; opacity: 1; }
-    55%       { max-width: 15ch; opacity: 0; }
-    70%, 100% { max-width: 0;    opacity: 0; }
+    0%, 50%   { max-width: 15ch; opacity: 1; }
+    70%       { max-width: 15ch; opacity: 0; }
+    85%, 100% { max-width: 0;    opacity: 0; }
   }
 
   @keyframes word-fade-in {
-    0%, 55%   { max-width: 0;    opacity: 0; }
-    70%       { max-width: 15ch; opacity: 0; }
+    0%, 70%   { max-width: 0;    opacity: 0; }
+    85%       { max-width: 15ch; opacity: 0; }
     100%      { max-width: 15ch; opacity: 1; }
   }
 
-  /* Stage 2: after "Beyond Web Services" settles, tails and gaps collapse so the subtitle becomes "BWS" */
+  /* Stage 2: tails + inter-word spaces collapse after a short hold */
   .subtitle .tail {
     display: inline-block;
     overflow: hidden;
     max-width: 15ch;
     opacity: 1;
     vertical-align: top;
-    animation: tail-collapse 1.5s ease-in-out 5s forwards;
+    animation: tail-collapse 2.5s cubic-bezier(0.22, 0.61, 0.36, 1) 4.5s forwards;
   }
 
   .subtitle .gap {
     display: inline-block;
     overflow: hidden;
-    max-width: 1ch;
+    white-space: pre;
+    max-width: 0.35em;
     vertical-align: top;
-    animation: gap-collapse 1.5s ease-in-out 5s forwards;
+    animation: gap-collapse 2.5s cubic-bezier(0.22, 0.61, 0.36, 1) 4.5s forwards;
   }
 
   @keyframes tail-collapse {
-    0%   { max-width: 15ch; opacity: 1; }
-    40%  { max-width: 15ch; opacity: 0; }
-    100% { max-width: 0;    opacity: 0; }
+    0%, 20%  { max-width: 15ch; opacity: 1; }
+    50%      { max-width: 15ch; opacity: 0; }
+    100%     { max-width: 0;    opacity: 0; }
   }
 
   @keyframes gap-collapse {
-    0%   { max-width: 1ch; }
-    100% { max-width: 0;   }
+    0%, 30%  { max-width: 0.35em; }
+    100%     { max-width: 0; }
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -212,17 +216,15 @@ import { solutions } from '../data/solutions';
     <div class="landing-page-hero-wrapper">
       <div class="limit-content hero-top-content">
         <h1 class="title hero-title">A Growing Marketplace</h1><h2 class="subtitle" aria-label="Blockchain Web Services">
-          <span class="word-crossfade"><span class="word word-a">Blockchain</span><span class="word word-b">B<span class="tail">eyond</span></span></span><span class="gap"> </span>W<span class="tail">eb</span><span class="gap"> </span>S<span class="tail">ervices</span>
-        </h2><a href="/white-paper.html" class="button-secondary white-paper w-button">White Paper</a><div
+          <span class="word-crossfade"><span class="word word-a">Blockchain</span><span class="word word-b">B<span class="tail">eyond</span></span></span><span class="gap">&nbsp;</span>W<span class="tail">eb</span><span class="gap">&nbsp;</span>S<span class="tail">ervices</span>
+        </h2><div
           class="paragraph hero-paragraph container-medium-790px"
         >
           Our consolidated AI workflow turns validated market demand into production-ready solutions — fast. Every
           solution carries a blockchain dimension that deepens trust, ownership, and verifiability — built in from day
           one when it's core to the value, or layered in as it matures.
         </div><div class="_2-button-wrapper">
-          <a href="#roadmap" class="button-primary _2-buttons w-button"
-            >Roadmap</a
-          ><a href="#solutions" class="button-secondary w-button">Browse Marketplace</a>
+          <a href="#solutions" class="button-primary _2-buttons w-button">Browse Marketplace</a>
         </div>
       </div>
     </div>
