@@ -203,6 +203,131 @@ import { solutions } from '../data/solutions';
     justify-content: flex-start;
   }
 
+  /* AI Disruption — symbolic pivot banner between roadmap H1 and H2 */
+  .ai-disruption-row {
+    padding: 32px 0;
+  }
+
+  .ai-disruption {
+    display: grid;
+    grid-template-columns: 130px 1fr;
+    gap: 32px;
+    align-items: center;
+    width: 100%;
+    padding: 44px 48px;
+    border-radius: 22px;
+    background: linear-gradient(135deg, rgba(196, 24, 65, 0.08) 0%, rgba(117, 139, 255, 0.10) 100%);
+    border: 1px solid rgba(196, 24, 65, 0.22);
+    box-shadow: 0 12px 36px rgba(17, 17, 17, 0.06);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .ai-disruption::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--rose, #c41841) 0%, #758bff 100%);
+  }
+
+  .ai-disruption-pulse {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+  }
+
+  .ai-disruption-pulse i {
+    font-size: 44px;
+    color: var(--rose, #c41841);
+    z-index: 2;
+    filter: drop-shadow(0 4px 10px rgba(196, 24, 65, 0.25));
+  }
+
+  .ai-pulse-ring {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    border: 2px solid var(--rose, #c41841);
+    opacity: 0.35;
+    animation: ai-pulse 2.6s ease-in-out infinite;
+  }
+
+  .ai-pulse-core {
+    position: absolute;
+    inset: 14px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(196, 24, 65, 0.18) 0%, transparent 70%);
+    animation: ai-pulse-core 2.6s ease-in-out infinite;
+  }
+
+  @keyframes ai-pulse {
+    0%, 100% { transform: scale(1);    opacity: 0.35; }
+    50%      { transform: scale(1.18); opacity: 0.08; }
+  }
+
+  @keyframes ai-pulse-core {
+    0%, 100% { transform: scale(1);    opacity: 1; }
+    50%      { transform: scale(0.9);  opacity: 0.8; }
+  }
+
+  .ai-disruption-eyebrow {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--rose, #c41841);
+    margin-bottom: 10px;
+  }
+
+  .ai-disruption-title {
+    font-size: 34px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: var(--neutral-800, #1a1b1e);
+    margin: 0 0 14px;
+    line-height: 1.1;
+  }
+
+  .ai-disruption-body {
+    font-size: 16px;
+    line-height: 1.65;
+    color: var(--neutral-700, #3b3f44);
+    max-width: 840px;
+    margin: 0;
+  }
+
+  .ai-disruption-body strong {
+    color: var(--neutral-800, #1a1b1e);
+    font-weight: 700;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .ai-pulse-ring,
+    .ai-pulse-core {
+      animation: none;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .ai-disruption {
+      grid-template-columns: 1fr;
+      gap: 20px;
+      padding: 32px 24px;
+      text-align: center;
+    }
+    .ai-disruption-pulse { width: 96px; height: 96px; }
+    .ai-disruption-pulse i { font-size: 36px; }
+    .ai-disruption-title { font-size: 26px; }
+    .ai-disruption-body { font-size: 15px; }
+  }
+
   .legend-swatch {
     display: inline-block;
     width: 14px;
@@ -741,6 +866,27 @@ import { solutions } from '../data/solutions';
       </div><div class="w-layout-vflex flex-roadmap-column">
         <div class="w-layout-blockcontainer container-head-roadmap-25-2nd w-container" data-quarter="2" data-year="2025">
           <!-- Content injected dynamically from /src/data/quarterContent.ts -->
+        </div>
+      </div>
+    </div>
+
+    <!-- AI Disruption — the mid-2025 strategic pivot between H1 and H2 -->
+    <div class="split-horizontal section-roadmap ai-disruption-row">
+      <div class="ai-disruption" role="group" aria-labelledby="ai-disruption-title">
+        <div class="ai-disruption-pulse" aria-hidden="true">
+          <span class="ai-pulse-ring"></span>
+          <span class="ai-pulse-core"></span>
+          <i class="fa-solid fa-bolt"></i>
+        </div>
+        <div class="ai-disruption-copy">
+          <div class="ai-disruption-eyebrow">The Pivot — Mid 2025</div>
+          <h3 id="ai-disruption-title" class="ai-disruption-title">AI Disruption</h3>
+          <p class="ai-disruption-body">
+            <strong>AI changed everything — not as a feature, as a company.</strong> The cost of shipping production
+            software collapsed. The speed of market demand outgrew quarterly planning. BWS rebuilt the company
+            around a consolidated AI-native build workflow — becoming today's solutions factory: AI-native in how
+            it builds, blockchain-capable in what it ships.
+          </p>
         </div>
       </div>
     </div>
