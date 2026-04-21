@@ -1,8 +1,6 @@
 ---
 // Main content from index.html
-import MarketplaceAnnouncementCarousel from './home/MarketplaceAnnouncementCarousel.astro';
 import SolutionCard from './home/SolutionCard.astro';
-import { successStories } from '../data/successStories';
 import { solutions } from '../data/solutions';
 ---
 
@@ -383,17 +381,6 @@ import { solutions } from '../data/solutions';
     style="opacity:0;-webkit-transform:translate3d(0, 20px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 20px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 20px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 20px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)"
     class="landing-page-content w-container"
   >
-    <div class="top-content latest-articles-top-content">
-      <div class="split-horizontal">
-        <div class="solution-filter-titles">
-          <h3 class="filter-subtitle">
-            Solutions easy to use and integrate with.
-          </h3>
-        </div><div class="collection-list-wrapper-3 w-dyn-list"></div>
-      </div>
-    </div>
-    <!-- Success Stories Carousel -->
-    <MarketplaceAnnouncementCarousel stories={successStories} />
     <div class="solutions-list mix-solutions">
       <div class="w-dyn-list">
         <div
