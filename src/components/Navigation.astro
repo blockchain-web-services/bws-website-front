@@ -1,15 +1,11 @@
 ---
 // Navigation component from Webflow
 import { articles } from '../data/articles';
-import { newsItems } from '../data/news';
 
 // Show auto-generated articles only (newest first, limit to 10)
 const allArticles = [...articles]
   .sort((a, b) => new Date(b.publishDate).getTime() - new Date(a.publishDate).getTime())
   .slice(0, 10);
-
-// Show latest 4 news items (newest first)
-const latestNews = newsItems.slice(0, 4);
 ---
 
 <style is:global>
@@ -590,27 +586,6 @@ const latestNews = newsItems.slice(0, 4);
                               >
                             </li>
                           </ul>
-                        </div><div class="top-menu-dropdown-second-content-wrapper">
-                          <div class="top-menu-dropdown-second-content-vertical">
-                            <div class="top-menu-dropdown-second-content-title">
-                              <div class="top-menu-articles-title">BWS News</div>
-                            </div><div class="collection-list-wrapper-8 w-dyn-list">
-                              <div role="list" class="w-dyn-items">
-                                {latestNews.map((news) => (
-                                  <div role="listitem" class="top-menu-articles-collection-item w-dyn-item">
-                                    <a
-                                      href={news.buttons[0].href}
-                                      target={news.buttons[0].target || '_blank'}
-                                      class="top-menu-article-link"
-                                    >
-                                      <div class="top-menu-article-title">{news.title}</div>
-                                      <div class="top-menu-article-description" set:html={news.description}></div>
-                                    </a>
-                                  </div>
-                                ))}
-                              </div>
-                            </div>
-                          </div>
                         </div>
                       </div>
                     </nav>

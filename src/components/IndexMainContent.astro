@@ -1,9 +1,7 @@
 ---
 // Main content from index.html
-import NewsCarousel from './home/NewsCarousel.astro';
 import MarketplaceAnnouncementCarousel from './home/MarketplaceAnnouncementCarousel.astro';
 import SolutionCard from './home/SolutionCard.astro';
-import { newsItems } from '../data/news';
 import { successStories } from '../data/successStories';
 import { solutions } from '../data/solutions';
 ---
@@ -110,83 +108,6 @@ import { solutions } from '../data/solutions';
         </div>
       </div>
     </div>
-  </div>
-</div>
-
-<!-- ============================================ -->
-<!-- NEWS SECTION (Carousel) -->
-<!-- ============================================ -->
-<div class="narrow-section relative section-token-launch">
-  <div class="landing-page-content w-container">
-    <NewsCarousel news={newsItems} />
-    <!--<div class="w-layout-hflex flex-block-announcements">
-      <div class="w-layout-hflex announcement-box">
-        <div class="w-layout-blockcontainer container-image-announcement w-container"></div><div
-          class="w-layout-vflex flex-block-10"
-        >
-          <div class="announcement-title">$BWS Token Launch Success!</div><div class="announcement-text">
-            We are thrilled to announce $BWS Token launch has been an incredible success - and we want to thank you all!<br
-            />
-          </div><div class="announcement-logos-title">In Partnership With</div><div
-            class="w-layout-vflex announcement-logos"
-          >
-            <div class="w-layout-hflex announcement-flex-logos">
-              <a href="#" target="_blank" class="w-inline-block"
-                ><img
-                  src="/assets/images/6474d385cfec71cb21a92251/670f82f9b05322735f72cbcc_PROOF-logo-lightBG.png"
-                  loading="lazy"
-                  alt="BWS is partnering with PROOF for TOKEN LAUNCH."
-                  class="image-proof"
-                /></a
-              ><a href="https://assuredefi.com/projects/blockchain-web-services/" target="_blank" class="w-inline-block"
-                ><img
-                  src="/assets/images/6474d385cfec71cb21a92251/6707f1c5c0856eff6c22300e_AssureDefi.png"
-                  loading="lazy"
-                  alt="BWS is partnering with Assure Defi for confident $BWS TOKEN LAUNCH"
-                  class="image-assure"
-                /></a
-              >
-            </div>
-          </div><div class="w-layout-hflex announcement-buttons">
-            <a
-              href="https://app.uniswap.org/#/swap?outputCurrency=0xaade1d6701173bd924c9de2d56a00ef4e3d9de4d&chain=mainnet"
-              target="_blank"
-              class="button-primary button-small w-button">BUY</a
-            ><a href="#tokenomics" class="button-secondary button-small w-button">Tokenomics</a>
-          </div>
-        </div>
-      </div><div class="w-layout-hflex announcement-box">
-        <div class="w-layout-blockcontainer container-image-announcement-bfg w-container"></div><div
-          class="w-layout-vflex flex-block-10"
-        >
-          <div class="announcement-title">BFG Invests in BWS</div><div class="announcement-text">
-            Blockchain Founders Group accelerates BWS to simplify the development of blockchain projects. <br />
-          </div><div class="announcement-logos-title">Blockchain Founders Group</div><div
-            class="w-layout-vflex announcement-logos"
-          >
-            <div class="w-layout-hflex announcement-flex-logos">
-              <a
-                href="https://blockchain-founders.io/news/blockchain-founders-group-accelerates-bws-to-simplify-the-development-of-blockchain-projects"
-                target="_blank"
-                class="w-inline-block"
-                ><img
-                  src="/assets/images/6474d385cfec71cb21a92251/64e738258afae2bb6f4d56bf_logo-blockchain-founders-group-background-transparent-large.svg"
-                  loading="lazy"
-                  alt="Blockchain Founders Group"
-                  class="image-bfg"
-                /></a
-              >
-            </div>
-          </div><div class="w-layout-hflex announcement-buttons">
-            <a
-              href="https://blockchain-founders.io/news/blockchain-founders-group-accelerates-bws-to-simplify-the-development-of-blockchain-projects"
-              target="_blank"
-              class="button-secondary button-small w-button">Announcement<span class="button-arrow"></span></a
-            ><a href="#roadmap" class="button-secondary button-small w-button">ROADMAP</a>
-          </div>
-        </div>
-      </div>
-    </div>-->
   </div>
 </div>
 
@@ -580,7 +501,7 @@ import { solutions } from '../data/solutions';
         </div>
       </div>
     </div><div class="w-layout-hflex flex-block-taxes">
-      <div class="w-layout-blockcontainer icon-list-container w-container"><div class="text-block-35"></div></div><div
+      <div class="w-layout-blockcontainer icon-list-container w-container"><div class="text-block-35"><i class="fa-solid fa-scale-balanced"></i></div></div><div
         class="w-layout-vflex"
       >
         <div class="text-block-33">Dynamic Utility Taxes</div><div>
