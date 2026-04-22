@@ -52,12 +52,12 @@ export const solutions: Solution[] = [
     category: 'Database'
   },
   {
-    title: 'IPFS.NINJA',
+    title: 'IPFS.ninja',
     author: 'BWS',
     description: 'The simplest IPFS pinning service and upload API. Pin any file, serve it through your own dedicated gateway, and scale from a free tier to production with signed upload tokens and analytics.',
     image: {
       src: '/assets/images/6474d385cfec71cb21a9229a/655b1a1220eb4c16ccfcab4b_BWS.IPFS.Upload_400x300.jpg',
-      alt: 'IPFS.NINJA — simple IPFS pinning service, upload API, and dedicated gateways'
+      alt: 'IPFS.ninja — simple IPFS pinning service, upload API, and dedicated gateways'
     },
     url: '/marketplace/ipfs-upload.html',
     networks: [

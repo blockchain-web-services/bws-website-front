@@ -26,7 +26,7 @@ export const quarterContents: QuarterContents = {
       {
         title: 'Concept Validation',
         paragraphs: [
-          'Core infrastructure launched with Platform APIs featuring <a href="/marketplace/database-immutable.html">immutable database</a>, <a href="/marketplace/ipfs-upload.html">IPFS.NINJA</a>, and <a href="/marketplace/database-mutable.html">mutable storage</a> solutions enabling developers to integrate decentralized technology through simple API calls.',
+          'Core infrastructure launched with Platform APIs featuring <a href="/marketplace/database-immutable.html">immutable database</a>, <a href="/marketplace/ipfs-upload.html">IPFS.ninja</a>, and <a href="/marketplace/database-mutable.html">mutable storage</a> solutions enabling developers to integrate decentralized technology through simple API calls.',
           'Won Nordea Bank Hackathon, recognized for innovative blockchain solutions in financial services using <a href="https://docs.bws.ninja/solutions/bws.blockchain.save" target="_blank" rel="noopener noreferrer">BWS.Blockchain.Save</a> API to save ESG figures into blockchain with a single API call.'
         ]
       },
