@@ -73,13 +73,18 @@ import { solutions } from '../data/solutions';
 
   /* Hero section — extra top breathing room above the headline */
   .section.hero-section.home {
-    padding-top: 160px !important;
+    padding-top: 200px !important;
   }
 
   @media (max-width: 767px) {
     .section.hero-section.home {
-      padding-top: 130px !important;
+      padding-top: 150px !important;
     }
+  }
+
+  /* Hide the decorative background "blobs" everywhere on the homepage */
+  .bg-blobs-wrapper {
+    display: none !important;
   }
 
   /* Hero paragraph — now a single sentence, so give it more visual weight */
