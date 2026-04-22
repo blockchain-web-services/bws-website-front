@@ -83,12 +83,12 @@ export const solutions: Solution[] = [
     category: 'NFT'
   },
   {
-    title: 'Blockchain Badges',
+    title: 'Badges.ninja',
     author: 'BWS',
-    description: 'Blockchain Badges elevate your credentialing system with secure, immutable, instantly verifiable digital recognition.',
+    description: 'Digital badges with blockchain verification. Visual designer, REST API, bulk awarding, and optional on-chain anchoring — Open Badge v2.0 compliant with a free tier.',
     image: {
       src: '/assets/images/6474d385cfec71cb21a9229a/65061830bf101fe685a48e2f_NFT-Marketplace_400x300.jpg',
-      alt: 'Blockchain Badges — secure, verifiable digital recognition'
+      alt: 'Badges.ninja — digital badges with blockchain verification'
     },
     url: '/marketplace/blockchain-badges.html',
     networks: [

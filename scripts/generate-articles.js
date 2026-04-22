@@ -25,7 +25,7 @@ const MAX_TWEETS_TO_FETCH = 50;
 const PROCESSED_TWEETS_PATH = path.join(__dirname, 'data', 'processed-article-tweets.json');
 
 // Product rotation order (1 article per day, rotating through products)
-const PRODUCT_ROTATION = ['X Bot', 'Blockchain Badges', 'IPFS'];
+const PRODUCT_ROTATION = ['X Bot', 'Badges.ninja', 'IPFS'];
 const ARTICLES_FILE_PATH = path.join(__dirname, '..', 'src', 'data', 'articles.ts');
 const ARTICLES_METADATA_PATH = path.join(__dirname, 'data', 'articles-metadata.json'); // JSON source of truth
 const ARTICLE_IMAGES_DIR = path.join(__dirname, '..', 'public', 'assets', 'images', 'articles');
@@ -50,9 +50,18 @@ const PRODUCT_CONFIG = {
       '/assets/images/marketplace/fallback/x-bot/01-analytics.png'
     ]
   },
+  'Badges.ninja': {
+    url: '/marketplace/blockchain-badges.html',
+    slug: 'badges',
+    buttonText: 'Learn More',
+    fallbackImages: [
+      '/assets/images/marketplace/fallback/blockchain-badges/01-badges-ui.png',
+      '/assets/images/marketplace/fallback/blockchain-badges/02-issuers-list.png'
+    ]
+  },
   'Blockchain Badges': {
     url: '/marketplace/blockchain-badges.html',
-    slug: 'blockchain-badges',
+    slug: 'badges',
     buttonText: 'Learn More',
     fallbackImages: [
       '/assets/images/marketplace/fallback/blockchain-badges/01-badges-ui.png',
@@ -258,7 +267,7 @@ async function generateArticleContent(tweets, includes) {
 
 Product Categories:
 - X Bot (also called Telegram XBot)
-- Blockchain Badges
+- Badges.ninja (previously called Blockchain Badges) — digital badges with blockchain verification, visual designer, REST API, bulk awarding, and Open Badge v2.0 compliance
 - IPFS (also called IPFS.ninja) — the BWS IPFS pinning service and upload API with dedicated gateways, signed upload tokens, and an S3-compatible endpoint at s3.ipfs.ninja
 
 For EACH product category that has relevant tweets, create ONE comprehensive article by:
