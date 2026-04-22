@@ -70,9 +70,23 @@ const allArticles = [...articles]
 
   /* News dropdown — 2-column article grid */
   .news-dropdown {
-    width: 720px !important;
+    width: 640px !important;
     max-width: 90vw !important;
     padding: 20px !important;
+  }
+
+  /* Center the News dropdown panel under the News label instead of
+     Webflow's default left-shifted anchoring, now that the menu is
+     right-aligned. */
+  .nav-link-dropdown .dropdown-menu.dropdown-menu-2-columns {
+    margin-left: 0 !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+  }
+
+  .nav-link-dropdown .dropdown-menu.dropdown-menu-2-columns.w--open {
+    margin-left: 0 !important;
+    width: auto !important;
   }
 
   .news-articles-grid {
