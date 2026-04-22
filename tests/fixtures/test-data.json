@@ -50,7 +50,7 @@
     "mobileSmall": { "width": 320, "height": 568 }
   },
   "expectedContent": {
-    "heroTitle": "Blockchain Web Services",
+    "heroTitle": "BWS",
     "partnerLogos": ["PROOF", "AssureDefi", "BFG"],
     "navigationItems": ["Solutions", "About", "Industries", "Resources", "Contact"],
     "footerLinks": ["Privacy Policy", "Legal Notice"]

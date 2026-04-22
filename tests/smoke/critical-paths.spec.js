@@ -94,9 +94,9 @@ test.describe('Critical Path Smoke Tests', () => {
     await expect(page.locator('.title').first()).toBeVisible();
     await expect(page.locator('.nav-menu')).toBeVisible();
 
-    // Check for specific content
+    // Check for specific content — white paper H1 is now "BWS" after the rename
     const heading = await page.locator('h1.hero-title').textContent();
-    expect(heading).toContain('Blockchain Web Services');
+    expect(heading).toContain('BWS');
 
     // Verify white paper sections exist (use unique IDs to avoid TOC duplicates)
     await expect(page.locator('#abstract')).toBeVisible();
