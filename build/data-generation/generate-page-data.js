@@ -130,7 +130,7 @@ templates.forEach(page => {
       
     case 'homepage':
       pageData.hero = {
-        title: 'A Growing Marketplace',
+        title: 'Demand Becomes Product',
         subtitle: 'Our consolidated AI workflow turns validated market demand into production-ready solutions — fast.',
         ctaPrimary: {
           text: 'Get Started',
