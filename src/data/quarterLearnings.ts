@@ -9,17 +9,6 @@ export interface QuarterLearnings {
 }
 
 export const quarterLearnings: QuarterLearnings = {
-  '2025-2': {
-    achieved: [
-      'Launched the X Bot solution, targeting the crypto market segment.',
-      'Blockchain Badges continues to grow its base of key early customers and adopters.'
-    ],
-    missed: [
-    ],
-    lessons: [
-      'Scaling will require an AI Agent–driven model capable of supporting marketplace-level growth (dev and sales).'
-    ]
-  },
   '2025-3': {
     achieved: [],
     missed: [],
