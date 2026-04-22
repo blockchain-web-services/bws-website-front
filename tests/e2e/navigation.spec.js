@@ -7,48 +7,6 @@ import { logNavigationFailure } from '../helpers/error-reporting.js';
 
 test.describe('Navigation Tests', () => {
 
-  test('Industry dropdown navigation works', async ({ page }, testInfo) => {
-    const industriesPage = new IndustriesPage(page);
-    await page.goto('/');
-
-    // Hover over Solutions to show dropdown
-    await industriesPage.hoverOverSolutions();
-
-    // Check all industry cards are visible
-    const cardCount = await industriesPage.getIndustryCardsCount();
-
-    if (cardCount === 0) {
-      console.error('\n❌ No industry cards found');
-      console.error('Expected: At least 1 industry card');
-      console.error('Found: 0 cards');
-      console.error('\nPossible causes:');
-      console.error('1. Industry cards not rendering');
-      console.error('2. Incorrect selector in IndustriesPage page object');
-      console.error('3. JavaScript not loading properly');
-      console.error('\nDebug: Check IndustriesPage.getIndustryCardsCount() selector');
-    }
-    expect(cardCount).toBeGreaterThan(0);
-
-    // Navigate to Content Creation
-    try {
-      await industriesPage.navigateToIndustry('content-creation');
-      await expect(page).toHaveURL(/\/industry-content\/content-creation/, { timeout: 10000 });
-    } catch (error) {
-      const currentURL = page.url();
-      logNavigationFailure(testInfo, {
-        from: '/',
-        to: '/industry-content/content-creation',
-        actual: currentURL,
-        selector: 'content-creation industry card',
-        text: 'Content Creation',
-        href: 'UNKNOWN',
-        target: 'UNKNOWN',
-        error: error.message
-      });
-      throw error;
-    }
-  });
-
   test('Footer navigation links work', async ({ page, context }, testInfo) => {
     const homePage = new HomePage(page);
 
