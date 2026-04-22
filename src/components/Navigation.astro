@@ -432,125 +432,22 @@ const allArticles = [...articles]
                     </nav>
                   </div><div data-hover="true" data-delay="100" class="nav-link-dropdown w-dropdown">
                     <div class="nav-link w-dropdown-toggle">
-                      <div class="nav-link-dropdown-text split-horizontal">Build With Us</div>
-                    </div><nav class="dropdown-menu dropdown-menu-2-columns w-dropdown-list">
+                      <div class="nav-link-dropdown-text">News</div>
+                    </div><nav class="dropdown-menu w-dropdown-list">
                       <div class="dropdown-menu-wrapper top-menu-small">
                         <div class="top-menu-dropdown-content-wrapper">
-                          <ul role="list" class="top-menu-dropdown-list w-list-unstyled">
-                            <li class="menu-list-item">
-                              <a
-                                href="https://docs.bws.ninja/quick-start"
-                                target="_blank"
-                                class="small-top-menu-item w-inline-block"
-                                ><div class="top-menu-icon-wrapper"><div class="top-menu-icon"></div></div><div
-                                  class="top-menu-option-text-wrapper"
-                                >
-                                  <div class="menu-option-tittle">Quick Start</div><div class="menu-option-text">
-                                    Integrate a BWS solution in minutes.
-                                  </div>
-                                </div></a
-                              >
-                            </li><li class="menu-list-item">
-                              <a
-                                href="https://docs.bws.ninja/"
-                                target="_blank"
-                                class="small-top-menu-item w-inline-block"
-                                ><div class="top-menu-icon-wrapper"><div class="top-menu-icon"></div></div><div
-                                  class="top-menu-option-text-wrapper"
-                                >
-                                  <div class="menu-option-tittle">API Reference</div><div class="menu-option-text">
-                                    Clean APIs for every marketplace solution.
-                                  </div>
-                                </div></a
-                              >
-                            </li><li class="menu-list-item-bottom">
-                              <a href="/#solutions" class="small-top-menu-item w-inline-block"
-                                ><div class="top-menu-icon-wrapper"><div class="top-menu-icon"></div></div><div
-                                  class="top-menu-option-text-wrapper"
-                                >
-                                  <div class="menu-option-tittle">Solutions</div><div class="menu-option-text">
-                                    Browse the BWS marketplace.
-                                  </div>
-                                </div></a
-                              >
-                            </li>
-                          </ul>
-                        </div><div class="top-menu-dropdown-second-content-wrapper">
-                          <div class="top-menu-dropdown-second-content">
-                            <div class="top-menu-dropdown-second-content-title">
-                              <div class="top-menu-engage-title">Building with BWS?</div><div
-                                class="top-menu-engage-text"
-                              >
-                                Integrate our solutions into your product through a single clean API surface.
-                              </div><a
-                                href="https://docs.bws.ninja/"
-                                target="_blank"
-                                class="top-menu-join-community-wrapper w-inline-block"
-                                ><div class="top-menu-option-text-wrapper">
-                                  <div class="community-menu-option-tittle">Start Integrating</div><div
-                                    class="community-menu-option-text"
+                          <div class="collection-list-wrapper-8 w-dyn-list">
+                            <div role="list" class="w-dyn-items">
+                              {allArticles.map((article) => (
+                                <div role="listitem" class="top-menu-articles-collection-item w-dyn-item">
+                                  <a
+                                    href={`/articles/${article.slug}.html`}
+                                    class="top-menu-article-link"
                                   >
-                                    Go to the developer docs.
-                                  </div>
-                                </div><div class="top-menu-join-community-icon"></div></a
-                              >
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </nav>
-                  </div><div data-hover="true" data-delay="100" class="nav-link-dropdown w-dropdown">
-                    <div class="nav-link w-dropdown-toggle">
-                      <div class="nav-link-dropdown-text">Resources</div>
-                    </div><nav class="dropdown-menu w-dropdown-list">
-                      <div class="dropdown-menu-wrapper top-menu-small split-vertical bottom-gradient">
-                        <div class="top-menu-dropdown-content-wrapper">
-                          <ul role="list" class="top-menu-dropdown-list w-list-unstyled">
-                            <li class="menu-list-item">
-                              <a
-                                href="https://docs.bws.ninja/"
-                                target="_blank"
-                                class="small-top-menu-item w-inline-block"
-                                ><div class="top-menu-icon-wrapper"><div class="top-menu-icon"></div></div><div
-                                  class="top-menu-option-text-wrapper"
-                                >
-                                  <div class="menu-option-tittle">Documentation</div><div class="menu-option-text">
-                                    Learn how to use the platform.
-                                  </div>
-                                </div></a
-                              >
-                            </li><li class="menu-list-item-bottom">
-                              <a
-                                href="https://www.linkedin.com/company/blockchain-web-services"
-                                target="_blank"
-                                class="small-top-menu-item-bottom w-inline-block"
-                                ><div class="top-menu-icon-wrapper"><div class="top-menu-icon"></div></div><div
-                                  class="top-menu-option-text-wrapper"
-                                >
-                                  <div class="menu-option-tittle">BWS News</div><div class="menu-option-text">
-                                    Get the latest news.
-                                  </div>
-                                </div></a
-                              >
-                            </li>
-                          </ul>
-                        </div><div class="top-menu-dropdown-second-content-wrapper">
-                          <div class="top-menu-dropdown-second-content-vertical">
-                            <div class="top-menu-dropdown-second-content-title">
-                              <div class="top-menu-articles-title">Developer Guides</div>
-                            </div><div class="collection-list-wrapper-8 w-dyn-list">
-                              <div role="list" class="w-dyn-items">
-                                {allArticles.map((article) => (
-                                  <div role="listitem" class="top-menu-articles-collection-item w-dyn-item">
-                                    <a
-                                      href={`/articles/${article.slug}.html`}
-                                      class="top-menu-article-link"
-                                    >
-                                      {article.title}
-                                    </a>
-                                  </div>
-                                ))}
-                              </div>
+                                    {article.title}
+                                  </a>
+                                </div>
+                              ))}
                             </div>
                           </div>
                         </div>
