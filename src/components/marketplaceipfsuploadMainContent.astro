@@ -71,10 +71,11 @@
               <div data-w-tab="Description" class="integration-tab w-tab-pane w--tab-active">
                 <div class="rich-text w-richtext">
                   <p>
-                    IPFS.ninja is the simplest way to pin files to IPFS and serve them reliably. A single REST API
-                    handles uploads of any file type — JSON, images, PDFs, videos, HTML — and a dedicated gateway
+                    IPFS.ninja is the simplest way to pin files to IPFS and serve them reliably. A single REST API —
+                    and a fully S3-compatible endpoint — handle uploads of any file type, and a dedicated gateway
                     serves your pinned content over HTTPS at your own subdomain. Built for teams who want the
-                    durability of decentralized storage without running infrastructure.
+                    durability of decentralized storage without running infrastructure, with the same tooling they
+                    already use for S3.
                   </p>
                   <h3><strong>Features</strong></h3>
                   <ul role="list">
@@ -82,6 +83,14 @@
                       <strong>Simple Upload API</strong><br />One REST endpoint accepts any file type. JSON is sent
                       natively; binary formats are base64-encoded. Pin new uploads or pin existing CIDs from the
                       network with a single call — useful for NFT metadata, mirroring, and archival.
+                    </li>
+                    <li>
+                      <strong>S3-Compatible API</strong><br />Point the AWS SDK (<em>@aws-sdk/client-s3</em>,
+                      <em>boto3</em>, or any S3-compatible client) at <em>https://s3.ipfs.ninja</em> and use the
+                      same code you use for Amazon S3. Supported operations: <em>PutObject</em>, <em>GetObject</em>,
+                      <em>HeadObject</em>, <em>DeleteObject</em>, <em>ListObjectsV2</em>, plus bucket lifecycle and
+                      multipart upload up to 5&nbsp;GB. Credentials derive directly from your IPFS.ninja API key —
+                      no separate SigV4 setup, no migration required.
                     </li>
                     <li>
                       <strong>Dedicated Gateways</strong><br />Every account gets its own gateway subdomain (e.g.
@@ -120,6 +129,11 @@
                     <li>
                       <strong>User-Generated Uploads</strong><br />Let end users upload directly from the browser
                       using signed tokens — without routing uploads through your own servers.
+                    </li>
+                    <li>
+                      <strong>Drop-In Replacement for S3</strong><br />Re-point an existing S3 integration at
+                      <em>s3.ipfs.ninja</em> to move uploads onto IPFS without rewriting your application code.
+                      Every object pinned becomes content-addressable and servable through your dedicated gateway.
                     </li>
                     <li>
                       <strong>Archival &amp; Mirroring</strong><br />Pin existing CIDs for long-term availability and
