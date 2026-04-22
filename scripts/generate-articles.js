@@ -25,7 +25,7 @@ const MAX_TWEETS_TO_FETCH = 50;
 const PROCESSED_TWEETS_PATH = path.join(__dirname, 'data', 'processed-article-tweets.json');
 
 // Product rotation order (1 article per day, rotating through products)
-const PRODUCT_ROTATION = ['X Bot', 'Blockchain Badges'];
+const PRODUCT_ROTATION = ['X Bot', 'Blockchain Badges', 'IPFS'];
 const ARTICLES_FILE_PATH = path.join(__dirname, '..', 'src', 'data', 'articles.ts');
 const ARTICLES_METADATA_PATH = path.join(__dirname, 'data', 'articles-metadata.json'); // JSON source of truth
 const ARTICLE_IMAGES_DIR = path.join(__dirname, '..', 'public', 'assets', 'images', 'articles');
@@ -57,6 +57,22 @@ const PRODUCT_CONFIG = {
     fallbackImages: [
       '/assets/images/marketplace/fallback/blockchain-badges/01-badges-ui.png',
       '/assets/images/marketplace/fallback/blockchain-badges/02-issuers-list.png'
+    ]
+  },
+  'IPFS': {
+    url: '/marketplace/ipfs-upload.html',
+    slug: 'ipfs',
+    buttonText: 'Learn More',
+    fallbackImages: [
+      '/assets/images/marketplace/fallback/ipfs/01-ipfs-overview.jpg'
+    ]
+  },
+  'IPFS.ninja': {
+    url: '/marketplace/ipfs-upload.html',
+    slug: 'ipfs',
+    buttonText: 'Learn More',
+    fallbackImages: [
+      '/assets/images/marketplace/fallback/ipfs/01-ipfs-overview.jpg'
     ]
   },
 };
@@ -240,9 +256,10 @@ async function generateArticleContent(tweets, includes) {
 
   const prompt = `Analyze these ${tweets.length} tweets from @BWSCommunity and generate FULL ARTICLE CONTENT for each product category.
 
-Product Categories (DO NOT include IPFS):
+Product Categories:
 - X Bot (also called Telegram XBot)
 - Blockchain Badges
+- IPFS (also called IPFS.ninja) — the BWS IPFS pinning service and upload API with dedicated gateways, signed upload tokens, and an S3-compatible endpoint at s3.ipfs.ninja
 
 For EACH product category that has relevant tweets, create ONE comprehensive article by:
 
@@ -352,7 +369,6 @@ IMPORTANT IMAGE PLACEMENT:
 
 IMPORTANT:
 - Only include products that are actually mentioned in the tweets
-- DO NOT include IPFS
 - Generate comprehensive, professional content based ONLY on information from the tweets
 - Each section should have substantive detail
 - Must include ONE advantages section per article
