@@ -42,6 +42,13 @@ const allArticles = [...articles]
     -webkit-text-stroke-color: var(--neutral-800) !important;
   }
 
+  /* Company dropdown — the last item (Contact Us) uses .small-top-menu-item-bottom
+     which Webflow styles with padding-bottom: 0, leaving the dropdown flush with
+     no breathing room. Restore 20px bottom padding to match the other items. */
+  .small-top-menu-item-bottom {
+    padding-bottom: 20px !important;
+  }
+
   /* Top menu — right-aligned, nav items sit tight against the "Get started" button */
   @media screen and (min-width: 992px) {
     .split-content.header-center {
