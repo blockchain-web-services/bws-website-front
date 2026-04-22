@@ -42,6 +42,32 @@ const allArticles = [...articles]
     -webkit-text-stroke-color: var(--neutral-800) !important;
   }
 
+  /* Top menu — right-aligned, nav items sit tight against the "Get started" button */
+  @media screen and (min-width: 992px) {
+    .split-content.header-center {
+      justify-content: flex-end !important;
+      width: 100% !important;
+    }
+
+    .split-content.header-left {
+      justify-content: flex-start !important;
+    }
+
+    .nav-menu {
+      justify-content: flex-end !important;
+      gap: 0 !important;
+      width: auto !important;
+    }
+
+    .nav-menu .nav-link-dropdown {
+      margin: 0 !important;
+    }
+
+    .nav-menu .nav-link.w-dropdown-toggle {
+      padding: 10px 6px !important;
+    }
+  }
+
   /* News dropdown — 2-column article grid */
   .news-dropdown {
     width: 720px !important;
