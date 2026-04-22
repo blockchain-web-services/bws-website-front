@@ -71,6 +71,20 @@ import { solutions } from '../data/solutions';
     82%, 100% { opacity: 1; }
   }
 
+  /* Hero paragraph — now a single sentence, so give it more visual weight */
+  .paragraph.hero-paragraph {
+    font-size: 24px !important;
+    line-height: 1.4 !important;
+    font-weight: 400;
+  }
+
+  @media (max-width: 767px) {
+    .paragraph.hero-paragraph {
+      font-size: 19px !important;
+      line-height: 1.45 !important;
+    }
+  }
+
   /* Single hero CTA — clean container with no legacy two-button baggage.
      The wrapper is a full-width block with the button auto-margined to the
      centre, so no Webflow ._2-button rules can interfere. */
