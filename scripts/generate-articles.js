@@ -113,15 +113,6 @@ function loadDocsIndex() {
 }
 
 /**
- * Find primary docs URL for a product
- */
-function findDocsUrl(productName, docsIndex) {
-  const urls = docsIndex.productMapping[productName] || [];
-  // Return primary URL (first one, usually the main product page)
-  return urls.length > 0 ? urls[0] : 'https://docs.bws.ninja/';
-}
-
-/**
  * Find website marketplace URL for a product
  */
 function findWebsiteUrl(productName) {
@@ -307,26 +298,22 @@ For EACH product category that has relevant tweets, create ONE comprehensive art
 
    IMPORTANT: Content should be professional, detailed, and substantive. Use concrete examples and benefits. Keep paragraphs short and scannable.
 
-4. **INLINE LINKS** (MINIMUM 2 per article - CRITICAL):
-   You MUST include at least 2 inline hyperlinks naturally within the article text:
+4. **INLINE LINK** (REQUIRED - exactly one):
+   You MUST include exactly one inline hyperlink naturally within the article text, pointing to the
+   product's marketplace page on bws.ninja:
 
-   - **Link 1 (Docs)**: In first or second section, link the product name or a key feature to the docs page
-     Format: <a href="{{DOCS_URL}}" target="_blank" rel="noopener noreferrer">product/feature name</a>
+   Format: <a href="{{WEBSITE_URL}}" target="_blank" rel="noopener noreferrer">call to action text</a>
 
-   - **Link 2 (Website)**: In a later section, link a call-to-action phrase to the marketplace page
-     Format: <a href="{{WEBSITE_URL}}" target="_blank" rel="noopener noreferrer">call to action text</a>
-
-   Example placements:
-   - "Check out <a href=\"{{DOCS_URL}}\" target=\"_blank\" rel=\"noopener noreferrer\">X Bot documentation</a> for detailed setup instructions."
+   Example placement:
    - "Learn more about <a href=\"{{WEBSITE_URL}}\" target=\"_blank\" rel=\"noopener noreferrer\">how Blockchain Badges works</a> for your organization."
 
    CRITICAL RULES:
-   - Links MUST flow naturally within sentences
-   - Use EXACTLY these placeholders: {{DOCS_URL}} and {{WEBSITE_URL}}
-   - DO NOT repeat the same placeholder multiple times - use BOTH {{DOCS_URL}} and {{WEBSITE_URL}} to provide variety
-   - Each link should point to a different destination (docs vs website marketplace)
-   - I will replace placeholders with actual URLs after generation
-   - Do NOT use real URLs - ONLY use the placeholders
+   - The link MUST flow naturally within a sentence
+   - Use EXACTLY the placeholder {{WEBSITE_URL}}
+   - Use it exactly once
+   - I will replace the placeholder with the actual URL after generation
+   - Do NOT use real URLs - ONLY use the placeholder
+   - Do NOT include any link to docs, documentation pages, or external developer documentation
 
 5. **Success Story Summary**: Short carousel description (30-45 words)
    - Concise value proposition for homepage carousel
@@ -648,7 +635,7 @@ function getImageSizeConstraint(imagePath) {
 /**
  * Generate article content component with image integration
  */
-async function generateContentComponent(slug, articleData, images, publishDate, docsUrl, anthropic) {
+async function generateContentComponent(slug, articleData, images, publishDate, anthropic) {
   let sectionsHTML = '';
   let imageIndex = 0;
   let titleImageHTML = ''; // For image-after-title placement
@@ -803,13 +790,9 @@ ${titleImageHTML}  <div class="container-medium">
 ${sectionsHTML}
       </div>
 
-      <!-- Call-to-Action Buttons -->
+      <!-- Call-to-Action -->
       <div class="w-layout-hflex flex-block-9" style="margin-top: 3rem; row-gap: 5px;">
-        <a target="_blank" href="${docsUrl}" class="button-primary small flex w-inline-block">
-          <div class="text-block-24">API&nbsp;Docs</div>&nbsp;
-          <i class="fa-solid fa-arrow-up-right-from-square"></i>
-        </a>
-        <a href="/contact-us.html" class="button-secondary _2-buttons w-button">
+        <a href="/contact-us.html" class="button-primary _2-buttons w-button">
           Contact Us
         </a>
       </div>
@@ -994,18 +977,15 @@ async function processArticles(articleDataList, tweets, includes) {
     const slug = generateSlug(articleData.product, publishDate);
     const componentName = sanitizeComponentName(slug);
 
-    // Get URLs for this product
-    const docsUrl = findDocsUrl(articleData.product, docsIndex);
+    // Get URL for this product (marketplace page on bws.ninja)
     const websiteUrl = findWebsiteUrl(articleData.product);
 
-    console.log(`   🔗 Docs URL: ${docsUrl}`);
     console.log(`   🔗 Website URL: ${websiteUrl}`);
 
     // Replace URL placeholders in all section content
     articleData.sections = articleData.sections.map(section => ({
       ...section,
       content: section.content
-        .replace(/\{\{DOCS_URL\}\}/g, docsUrl)
         .replace(/\{\{WEBSITE_URL\}\}/g, websiteUrl)
     }));
 
@@ -1110,7 +1090,7 @@ async function processArticles(articleDataList, tweets, includes) {
     }
 
     // Generate content component
-    const contentComponent = await generateContentComponent(slug, articleData, images, publishDate, docsUrl, anthropic);
+    const contentComponent = await generateContentComponent(slug, articleData, images, publishDate, anthropic);
     const contentPath = path.join(ARTICLE_COMPONENTS_DIR, `${componentName}MainContent.astro`);
     fs.writeFileSync(contentPath, contentComponent);
     console.log(`   ✅ Generated content component: ${componentName}MainContent.astro`);

@@ -212,6 +212,198 @@ import { solutions } from '../data/solutions';
     justify-content: flex-start;
   }
 
+  /* Tokenomics intro — live-ticker status strip + editorial statement spread */
+  .tokenomics-intro {
+    width: 100%;
+    margin: 16px 0 48px;
+    color: var(--neutral-700, #3b3f44);
+  }
+
+  .tokenomics-ticker {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 18px 28px;
+    padding: 14px 4px 16px;
+    border-top: 1px solid rgba(17, 17, 17, 0.12);
+    border-bottom: 1px solid rgba(17, 17, 17, 0.12);
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--neutral-700, #3b3f44);
+    text-align: center;
+  }
+
+  .tokenomics-ticker-live {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--rose, #c41841);
+  }
+
+  .tokenomics-ticker-live::before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--rose, #c41841);
+    box-shadow: 0 0 0 0 rgba(196, 24, 65, 0.5);
+    animation: tokenomics-pulse 2s ease-out infinite;
+  }
+
+  @keyframes tokenomics-pulse {
+    0% { box-shadow: 0 0 0 0 rgba(196, 24, 65, 0.55); }
+    70% { box-shadow: 0 0 0 10px rgba(196, 24, 65, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(196, 24, 65, 0); }
+  }
+
+  .tokenomics-ticker-item {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 8px;
+  }
+
+  .tokenomics-ticker-label {
+    color: var(--neutral-600, #66666e);
+    opacity: 0.75;
+  }
+
+  .tokenomics-ticker-value {
+    color: var(--neutral-900, #111);
+  }
+
+  .tokenomics-spread {
+    display: grid;
+    grid-template-columns: minmax(260px, 2fr) 3fr;
+    gap: 56px;
+    align-items: start;
+    padding: 44px 4px 8px;
+  }
+
+  .tokenomics-statement {
+    margin: 0;
+    padding: 40px 0 0;
+    background: none;
+    border: 0;
+    border-left: 0;
+    border-radius: 0;
+    box-shadow: none;
+    text-align: left;
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 2px;
+  }
+
+  .tokenomics-statement .ts-rejected {
+    position: relative;
+    display: inline-block;
+    font-size: 36px;
+    line-height: 1.05;
+    font-weight: 700;
+    letter-spacing: -0.015em;
+    color: var(--neutral-500, #8a8a92);
+    padding: 2px 6px 2px 2px;
+  }
+
+  .tokenomics-statement .ts-rejected::after {
+    content: "";
+    position: absolute;
+    left: -2px;
+    right: -4px;
+    top: 56%;
+    height: 5px;
+    background: var(--rose, #c41841);
+    transform: rotate(-3deg);
+    border-radius: 3px;
+    opacity: 0.92;
+    pointer-events: none;
+  }
+
+  .tokenomics-statement .ts-affirmed {
+    display: inline-block;
+    font-size: 60px;
+    line-height: 1.0;
+    font-weight: 900;
+    letter-spacing: -0.03em;
+    color: var(--neutral-900, #111);
+    margin-top: 6px;
+  }
+
+  .tokenomics-statement .ts-affirmed-mark {
+    background: linear-gradient(90deg, var(--rose, #c41841) 0%, #758bff 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .tokenomics-statement .ts-cite {
+    margin-top: 22px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--neutral-600, #66666e);
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  }
+
+  .tokenomics-body p {
+    font-size: 16px;
+    line-height: 1.72;
+    margin: 0 0 14px;
+  }
+
+  .tokenomics-body p:last-child {
+    margin-bottom: 0;
+  }
+
+  .tokenomics-body strong {
+    color: var(--neutral-900, #111);
+    font-weight: 600;
+  }
+
+  .tokenomics-body em {
+    font-style: italic;
+    color: var(--neutral-900, #111);
+  }
+
+  @media (max-width: 900px) {
+    .tokenomics-intro {
+      margin: 8px 0 32px;
+    }
+    .tokenomics-ticker {
+      gap: 10px 20px;
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      padding: 12px 4px 12px;
+    }
+    .tokenomics-spread {
+      grid-template-columns: 1fr;
+      gap: 26px;
+      padding: 28px 4px 4px;
+    }
+    .tokenomics-statement .ts-rejected {
+      font-size: 26px;
+    }
+    .tokenomics-statement .ts-affirmed {
+      font-size: 42px;
+    }
+    .tokenomics-statement .ts-rejected::after {
+      height: 4px;
+    }
+    .tokenomics-body p {
+      font-size: 15px;
+      line-height: 1.65;
+    }
+  }
+
   /* AI Disruption — symbolic pivot banner between roadmap H1 and H2 */
   .ai-disruption-row {
     padding: 32px 0;
@@ -755,7 +947,40 @@ import { solutions } from '../data/solutions';
   <div class="landing-page-content w-container">
     <h2 class="heading-landing-page-content">$BWS Tokenomics</h2><h3 class="sub-heading-landing-page-content">
       The economic engine that powers the marketplace.
-    </h3><div class="split-horizontal section-tokenomics">
+    </h3>
+    <div class="tokenomics-intro">
+      <div class="tokenomics-ticker" role="group" aria-label="$BWS token status">
+        <span class="tokenomics-ticker-live">Live</span>
+        <span class="tokenomics-ticker-item"><span class="tokenomics-ticker-label">Chain</span><span class="tokenomics-ticker-value">Ethereum</span></span>
+        <span class="tokenomics-ticker-item"><span class="tokenomics-ticker-label">Pair</span><span class="tokenomics-ticker-value">Uniswap V2</span></span>
+        <span class="tokenomics-ticker-item"><span class="tokenomics-ticker-label">Launched</span><span class="tokenomics-ticker-value">Q4 2024</span></span>
+        <span class="tokenomics-ticker-item"><span class="tokenomics-ticker-label">Phase</span><span class="tokenomics-ticker-value">Reactivation</span></span>
+        <span class="tokenomics-ticker-item"><span class="tokenomics-ticker-label">Reporting</span><span class="tokenomics-ticker-value">On-chain, after the fact</span></span>
+      </div>
+      <div class="tokenomics-spread">
+        <blockquote class="tokenomics-statement">
+          <span class="ts-rejected" aria-label="Not promises">Promises.</span>
+          <span class="ts-affirmed"><span class="ts-affirmed-mark">Mechanics.</span></span>
+          <span class="ts-cite">— The $BWS operating principle</span>
+        </blockquote>
+        <div class="tokenomics-body">
+          <p>
+            $BWS launched on Ethereum in late 2024 and trades as an ERC-20 pair on Uniswap. During the
+            company&#x27;s pivot from a blockchain-first marketplace to an AI-native solutions factory, market
+            activity around the token quieted while product, positioning, and the build workflow were rebuilt
+            end-to-end. <strong>That rebuild is now shipping</strong>, and the token moves with it.
+          </p>
+          <p>
+            The model below describes the <em>mechanics</em> that drive $BWS value — <strong>fiat-in /
+            $BWS-settled usage, programmatic buybacks and burns, and staking benefits</strong> — not a promise of
+            specific amounts, ratios, or timing. Execution is deliberately discretionary so markets can&#x27;t
+            front-run it. What we <em>do</em> commit to is on-chain transparency: every buyback and burn is
+            observable on-chain after it happens, and headline totals are reported on an ongoing basis.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="split-horizontal section-tokenomics">
       <div class="w-layout-vflex flex-block-20">
         <div class="w-layout-vflex flex-block-8">
           <div class="w-layout-hflex flex-block-7">
@@ -774,9 +999,11 @@ import { solutions } from '../data/solutions';
               <div class="text-block-35"><i class="fa-solid fa-fire"></i></div>
             </div><div class="w-layout-vflex">
               <div class="text-block-33">Revenue Buyback &amp; Burn</div><div>
-                A fixed share of gross platform revenue is used to <span class="text-span-3">automatically buy $BWS on
-                the open market and burn it</span>. The more the marketplace ships and the more customers consume, the
-                scarcer $BWS becomes — tying token value directly to platform growth.
+                A recurring share of platform revenue is routed to <span class="text-span-3">buy $BWS on the open
+                market and burn it</span>. Buybacks execute programmatically on a discretionary cadence designed to
+                resist gaming, and every buy and burn is observable on-chain. The more the marketplace ships and
+                the more customers consume, the scarcer $BWS becomes — tying token value directly to platform
+                growth.
               </div>
             </div>
           </div><div class="w-layout-hflex flex-block-7">
@@ -802,11 +1029,7 @@ import { solutions } from '../data/solutions';
           </div>
         </div>
         <div class="w-layout-hflex flex-block-18 tokenomics-buttons-left">
-          <a href="/white-paper.html" class="button-secondary white-paper button-grants w-button">White Paper</a><a
-            href="https://docs.bws.ninja"
-            target="_blank"
-            class="button-primary _2-buttons w-button">Learn More<span class="button-arrow"></span></a
-          >
+          <a href="/white-paper.html" class="button-primary _2-buttons w-button">Read the White Paper<span class="button-arrow"></span></a>
         </div>
       </div><div class="w-layout-vflex flex-block-6 token-allocation">
         <div class="w-layout-blockcontainer token-allocation-image w-container">

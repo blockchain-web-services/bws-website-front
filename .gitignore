@@ -49,3 +49,6 @@ test/docker-compose.worktree.yml
 # Ignore worktree directories (worktrees are in .trees/)
 .trees/
 scripts/crawling/data/docs-cache/
+
+# Internal strategy documents — never commit or publish
+TOKEN_RECOVERY_PLAN.md

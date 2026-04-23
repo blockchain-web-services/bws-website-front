@@ -168,19 +168,6 @@
               the same five stages, and every improvement to any stage compounds across every future solution.
             </p>
 
-            <div class="white-paper-figure">
-              <img
-                src="/assets/images/white-paper/figure1.png"
-                alt="Figure 1. The BWS AI-Powered Build Workflow — a consolidated pipeline from market signal to shipped solution"
-                loading="lazy"
-              />
-              <p class="figure-caption">
-                <em
-                  >Figure 1. The BWS AI-Powered Build Workflow — a consolidated pipeline from market signal to shipped
-                  solution.</em>
-              </p>
-            </div>
-
             <h3 class="title h4-size">1. Signal</h3>
             <p>
               The workflow starts where market demand becomes visible: customer conversations, partner integrations,
@@ -213,17 +200,6 @@
               documentation, usage dashboards, and the billing wiring that connects solution usage to the $BWS token
               economy.
             </p>
-
-            <div class="white-paper-figure">
-              <img
-                src="/assets/images/white-paper/figure2.png"
-                alt="Figure 2. A unified API surface across every BWS solution — integrate once, consume many"
-                loading="lazy"
-              />
-              <p class="figure-caption">
-                <em>Figure 2. A unified API surface across every BWS solution — integrate once, consume many.</em>
-              </p>
-            </div>
 
             <h3 class="title h4-size">5. Optimize</h3>
             <p>
@@ -313,6 +289,17 @@
               choose to participate in the token economy.
             </p>
 
+            <p>
+              <strong>A note on the current phase.</strong> $BWS launched on Ethereum in late 2024 and trades as an
+              ERC-20 pair on Uniswap. While BWS rebuilt itself around an AI-native build workflow, trading activity
+              quieted and pool depth eroded. The token model described below is being activated in phases as the
+              factory returns to continuous shipping — first a period of price rediscovery and liquidity rebuild,
+              then a period of sustained revenue-driven deflation. For that reason, this paper describes the
+              <em>mechanics</em> of the model rather than a fixed schedule or fixed share of revenue. The specific
+              parameters — cadence, size, and timing of buyback transactions — are executed discretionarily to resist
+              gaming; aggregate outcomes are reported after the fact, on-chain and in periodic summaries.
+            </p>
+
             <h3 class="title h4-size">V.1 Fiat UX with $BWS Settling the Blockchain Layer</h3>
             <p>
               Customers pay in fiat. BWS invoices in USD, EUR, and the standard stable denominations through
@@ -339,40 +326,62 @@
 
             <h3 class="title h4-size">V.2 Revenue Buyback and Burn</h3>
             <p>
-              A fixed share of gross platform revenue — targeted at <strong>25&ndash;40% of net revenue</strong>, to
-              be ratified through governance — is used by the BWS treasury to buy $BWS on the open market and
-              permanently burn it. The purchase is automated, scheduled (daily or weekly), executed via vetted
-              market-making infrastructure, and recorded on-chain.
+              A recurring share of platform revenue is routed by the BWS treasury to buy $BWS on the open market and
+              permanently burn the acquired tokens. The mechanism is funded by real platform earnings — not by new
+              issuance, not by a token sale — so the program is structurally self-limiting and structurally aligned
+              with business performance.
             </p>
 
             <p>
-              The mechanism is intentionally simple and intentionally transparent:
+              Execution is <strong>programmatic and discretionary</strong>: buys are placed automatically by a
+              dedicated on-chain engine, but their exact cadence, size, and timing vary within internally governed
+              envelopes rather than following a public schedule. This is deliberate. Illiquid markets reward
+              predictability with front-running, and a token in its early rerate phase cannot afford to telegraph
+              every move it makes. BWS therefore commits to the <em>principle</em> (revenue in, buyback out, burn
+              permanent) and to <em>aggregate transparency</em> (periodic, audited reports of totals), while keeping
+              tactical parameters internal.
+            </p>
+
+            <p>
+              The mechanism has four durable properties:
             </p>
             <ul>
               <li>
-                <strong>Deterministic allocation.</strong> A published percentage of revenue is committed to the
-                buyback program. The treasury does not discretionarily time the market — it executes on schedule.
+                <strong>Revenue-funded.</strong> Buybacks are sourced from platform revenue, not from treasury
+                issuance or external capital. The engine cannot run meaningfully without real customer consumption
+                — which is the point.
               </li>
               <li>
                 <strong>Open-market execution.</strong> Tokens are acquired through existing liquidity venues. No
-                OTC, no private deals, no insider priority.
+                OTC, no private deals with insiders, no preferential routing.
               </li>
               <li>
                 <strong>Permanent burn.</strong> Acquired tokens are sent to a verifiable burn address. Each cycle
-                reduces circulating supply monotonically.
+                reduces circulating supply monotonically. The burn address is published; the burn trail is
+                independently auditable on-chain.
               </li>
               <li>
-                <strong>Public dashboard.</strong> Every buyback and burn transaction is published on a live
-                dashboard alongside the corresponding revenue period, so the coupling between platform growth and
-                token scarcity is visible in real time.
+                <strong>Aggregate public reporting.</strong> BWS publishes periodic summaries of total revenue
+                routed to buybacks, total $BWS bought, and total $BWS burned. Individual-trade detail is not
+                published in real time.
               </li>
             </ul>
 
             <p>
               This follows the pattern proven at scale in 2025 by projects like Hyperliquid, Sky (formerly Maker),
               dYdX, and MEXC&#x27;s MX 2.0 model: platform revenue &rarr; on-market buy &rarr; burn &rarr; scarcity.
-              It is the single strongest mechanism available for coupling token value to business performance without
-              relying on speculation.
+              It is the single strongest mechanism available for coupling token value to business performance
+              without relying on speculation.
+            </p>
+
+            <p>
+              <strong>Phased activation.</strong> Because $BWS is re-emerging from a pivot-driven quiet period with
+              thin pool depth, the engine operates in distinct phases. An <em>early phase</em> prioritizes liquidity
+              quality and orderly price rediscovery, with relatively smaller and more conservative execution
+              envelopes. A <em>sustained phase</em> — reached once depth, volume, and recurring revenue all pass
+              internal thresholds — shifts the engine&#x27;s emphasis toward steady, ongoing deflation. The
+              transition between phases is condition-driven, not date-driven, and is announced after it has
+              completed, not in advance.
             </p>
 
             <p>
@@ -390,13 +399,14 @@
             </p>
 
             <p>
-              Planned staking benefits (tier thresholds to be finalized before launch):
+              Planned staking benefits (illustrative — specific tier thresholds, discount ladders, and activation
+              dates are set closer to launch and published alongside the staking program itself):
             </p>
             <ul>
               <li>
-                <strong>Fee discounts.</strong> Staking at configured tiers reduces API and solution fees by a
-                graduated percentage — for example, a base discount starting around <strong>10%</strong> and scaling
-                up toward <strong>25%</strong> for enterprise-scale stakers.
+                <strong>Fee discounts.</strong> Staking at configured tiers reduces API and solution fees on a
+                graduated ladder, with the effective discount growing at higher stake sizes and longer lock
+                durations.
               </li>
               <li>
                 <strong>Higher rate limits.</strong> Stakers receive elevated throughput ceilings for API-heavy
@@ -446,14 +456,28 @@
               access, and sustainability:
             </p>
 
-            <div class="white-paper-figure">
-              <img
-                src="/assets/images/6474d385cfec71cb21a92251/6707fd987c3a05d42e1e908e_Tokenomics-Allocation-letters-black.png"
-                alt="$BWS Token Allocation"
-                loading="lazy"
-                class="image-token-allocation"
-              />
-              <p class="figure-caption"><em>Allocation of Tokens</em></p>
+            <div class="wp-token-allocation" role="img" aria-label="$BWS token allocation: Circulating Supply 70%, Product Development 10%, Team Tokens 8%, Marketing 5%, Partnerships and Airdrops 5%, Liquidity and Reserves 2%">
+              <svg viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg" class="wp-token-svg">
+                <g transform="rotate(-90 110 110)">
+                  <circle cx="110" cy="110" r="80" fill="none" stroke="#758bff" stroke-width="48" stroke-dasharray="351.86 502.65" stroke-dashoffset="0"></circle>
+                  <circle cx="110" cy="110" r="80" fill="none" stroke="#c41841" stroke-width="48" stroke-dasharray="50.27 502.65" stroke-dashoffset="-351.86"></circle>
+                  <circle cx="110" cy="110" r="80" fill="none" stroke="#7b52ab" stroke-width="48" stroke-dasharray="40.21 502.65" stroke-dashoffset="-402.13"></circle>
+                  <circle cx="110" cy="110" r="80" fill="none" stroke="#f59e0b" stroke-width="48" stroke-dasharray="25.13 502.65" stroke-dashoffset="-442.34"></circle>
+                  <circle cx="110" cy="110" r="80" fill="none" stroke="#10b981" stroke-width="48" stroke-dasharray="25.13 502.65" stroke-dashoffset="-467.47"></circle>
+                  <circle cx="110" cy="110" r="80" fill="none" stroke="#94a3b8" stroke-width="48" stroke-dasharray="10.05 502.65" stroke-dashoffset="-492.60"></circle>
+                </g>
+                <text x="110" y="92" text-anchor="middle" class="wp-token-label">Total Supply</text>
+                <text x="110" y="126" text-anchor="middle" class="wp-token-value">100M</text>
+                <text x="110" y="146" text-anchor="middle" class="wp-token-unit">$BWS</text>
+              </svg>
+              <ul class="wp-token-legend">
+                <li><span class="wp-legend-swatch" style="background:#758bff"></span><span class="wp-legend-label">Circulating Supply</span><span class="wp-legend-pct">70%</span></li>
+                <li><span class="wp-legend-swatch" style="background:#c41841"></span><span class="wp-legend-label">Product Development</span><span class="wp-legend-pct">10%</span></li>
+                <li><span class="wp-legend-swatch" style="background:#7b52ab"></span><span class="wp-legend-label">Team Tokens</span><span class="wp-legend-pct">8%</span></li>
+                <li><span class="wp-legend-swatch" style="background:#f59e0b"></span><span class="wp-legend-label">Marketing</span><span class="wp-legend-pct">5%</span></li>
+                <li><span class="wp-legend-swatch" style="background:#10b981"></span><span class="wp-legend-label">Partnerships &amp; Airdrops</span><span class="wp-legend-pct">5%</span></li>
+                <li><span class="wp-legend-swatch" style="background:#94a3b8"></span><span class="wp-legend-label">Liquidity &amp; Reserves</span><span class="wp-legend-pct">2%</span></li>
+              </ul>
             </div>
 
             <div class="allocation-item">
@@ -892,22 +916,10 @@
     transform: translateY(-4px);
   }
 
-  .white-paper-figure img:not(.image-token-allocation) {
-    max-width: 800px; /* Default for architecture diagrams */
+  .white-paper-figure img {
+    max-width: 800px;
     width: 100%;
     height: auto;
-    border: 1px solid var(--neutral-300, #e5ecf5);
-    border-radius: 12px;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
-    transition: box-shadow 0.3s ease;
-  }
-
-  /* Tokenomics image - keep natural size with constraints */
-  .image-token-allocation {
-    width: auto !important;
-    height: auto;
-    display: inline-block !important; /* Allow text-align: center to work */
-    margin: 0 auto; /* Fallback for block display */
     border: 1px solid var(--neutral-300, #e5ecf5);
     border-radius: 12px;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
@@ -918,26 +930,86 @@
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
   }
 
-  /* Specific image sizing based on content type */
-  .white-paper-figure img[src*="figure2"],
-  .white-paper-figure img[src*="figure3"] {
-    max-width: 600px; /* Code examples */
+  /* Token allocation donut + legend (mirrors homepage) */
+  .wp-token-allocation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 28px;
+    width: 100%;
+    max-width: 720px;
+    margin: 32px auto;
+    padding: 8px 0;
   }
 
-  .white-paper-figure img[src*="figure4"] {
-    max-width: 800px; /* Platform diagram */
+  .wp-token-svg {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+    display: block;
   }
 
-  .white-paper-figure img[src*="figure5"],
-  .white-paper-figure img[src*="figure6"] {
-    max-width: 700px; /* Sports visualizations */
+  .wp-token-label {
+    font-size: 10px;
+    font-weight: 600;
+    fill: var(--neutral-600, #66666e);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
   }
 
-  /* Tokenomics allocation image - 60% width on large screens */
-  @media screen and (min-width: 992px) {
-    .image-token-allocation {
-      max-width: 60% !important;
-      width: auto !important; /* Override the 100% width from .white-paper-figure img */
+  .wp-token-value {
+    font-size: 34px;
+    font-weight: 800;
+    fill: var(--neutral-800, #1a1b1e);
+    letter-spacing: -0.02em;
+  }
+
+  .wp-token-unit {
+    font-size: 13px;
+    font-weight: 700;
+    fill: var(--neutral-700, #3b3f44);
+    letter-spacing: 0.04em;
+  }
+
+  .wp-token-legend {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px 28px;
+  }
+
+  .wp-token-legend li {
+    display: grid;
+    grid-template-columns: 14px 1fr auto;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    line-height: 1.4;
+    color: var(--neutral-700, #3b3f44);
+  }
+
+  .wp-legend-swatch {
+    width: 14px;
+    height: 14px;
+    border-radius: 3px;
+    display: block;
+  }
+
+  .wp-legend-pct {
+    font-weight: 700;
+    color: var(--neutral-800, #1a1b1e);
+  }
+
+  @media screen and (max-width: 640px) {
+    .wp-token-legend {
+      grid-template-columns: 1fr;
+      gap: 8px;
+    }
+    .wp-token-svg {
+      max-width: 260px;
     }
   }
 
@@ -1091,14 +1163,9 @@
       margin: 40px 0;
     }
 
-    .white-paper-figure img:not(.image-token-allocation) {
-      max-width: 100% !important; /* Override specific sizes */
+    .white-paper-figure img {
+      max-width: 100%;
       border-radius: 8px;
-    }
-
-    /* Keep tokenomics image smaller on mobile too */
-    .image-token-allocation {
-      max-width: 60% !important;
     }
 
     .figure-caption {
