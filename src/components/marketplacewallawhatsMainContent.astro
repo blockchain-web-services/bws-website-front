@@ -1,0 +1,202 @@
+---
+// Main content for marketplace/wallawhats page
+---
+
+<div class="container-medium container-solution">
+  <div class="solution-page-card">
+    <div class="solution-page-content-wrapper">
+      <div class="integration-content-copy">
+        <div class="top-content integration-card-top-content">
+          <div class="split-solution-header">
+            <div class="image-wrapper integration-icon-wrapper">
+              <div class="wallawhats-icon-badge" role="img" aria-label="WallaWhats">
+                <i class="fa-solid fa-dove" aria-hidden="true"></i>
+              </div>
+            </div>
+            <div class="split-content integration-details">
+              <div class="integration-title-wrapper">
+                <h1 class="title h2-size integration-name">WallaWhats</h1>
+              </div>
+              <p class="paragraph integration-about-excerpt">
+                WallaWhats turns any X/Twitter account into a WhatsApp feed. Pick the handles you want to follow, verify
+                your WhatsApp number, and new posts arrive as WhatsApp messages — typically in under ten seconds. No app
+                install, no extra dashboard to check, no missed drops.
+              </p>
+              <div class="split-button-solution">
+                <div class="split-first-buttons-solution">
+                  <div class="solution-links">
+                    <a
+                      href="https://wallawhats.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="button-primary small flex landing-page-link-button w-inline-block"
+                      ><div class="text-block-24">Open WallaWhats</div>
+                      &nbsp;<i class="fa-solid fa-arrow-right"></i></a
+                    >
+                  </div>
+                </div>
+                <div class="collection-list-wrapper w-dyn-list" style="margin-left: auto;">
+                  <div class="empty-state-3 w-dyn-empty"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="split-content integration-card-content">
+          <div
+            data-duration-in="300"
+            data-duration-out="100"
+            data-current="Description"
+            data-easing="ease"
+            class="integration-tabs w-tabs"
+          >
+            <div class="integration-tabs-menu w-tab-menu">
+              <a data-w-tab="Description" class="integration-tab-link w-inline-block w-tab-link w--current"
+                ><div>Description</div></a
+              ><a data-w-tab="Integration" class="integration-tab-link last w-inline-block w-tab-link"
+                ><div>Integration</div></a
+              >
+            </div>
+            <div class="integrations-tabs-content w-tab-content">
+              <div data-w-tab="Description" class="integration-tab w-tab-pane w--tab-active">
+                <div class="rich-text w-richtext">
+                  <p>
+                    <strong>WallaWhats</strong> is the simplest way to get real-time WhatsApp alerts when the X (Twitter)
+                    accounts you care about publish a new post. Pick the handles, verify your WhatsApp number, and
+                    tweets reach your phone as WhatsApp messages — typically within seconds of being posted. It works on
+                    iOS and Android with your existing WhatsApp account, and exposes a REST API so you can plug alerts
+                    into your own applications and workflows.
+                  </p>
+                  <h4><strong>Features</strong></h4>
+                  <h5><strong>Real-Time Delivery</strong></h5>
+                  <p>Tweets from monitored accounts reach WhatsApp within seconds of going live on X/Twitter.</p>
+                  <h5><strong>Multi-Account Monitoring</strong></h5>
+                  <p>Follow any public X/Twitter handle. Add or remove accounts at any time from a single dashboard.</p>
+                  <h5><strong>No App Required</strong></h5>
+                  <p>
+                    Uses the WhatsApp number you already have, on iOS or Android. Nothing to install, nothing new to
+                    learn.
+                  </p>
+                  <h5><strong>Delivery Status History</strong></h5>
+                  <p>
+                    Every alert is logged with full delivery status — queued, sent, delivered, read, or failed — so you
+                    always know what reached which number.
+                  </p>
+                  <h5><strong>REST API</strong></h5>
+                  <p>
+                    Manage monitored accounts, configure alerts, and pull notification history directly from your own
+                    backend.
+                  </p>
+                  <h4><strong>Benefits</strong></h4>
+                  <h5><strong>Never Miss a Drop</strong></h5>
+                  <p>
+                    Creator announcements, sponsor partnerships, and product reveals surface where you actually see
+                    them — not buried in a timeline.
+                  </p>
+                  <h5><strong>Trade and React Faster</strong></h5>
+                  <p>
+                    Market-moving posts from traders or analysts hit your phone the moment they&#x27;re published, so
+                    you never lose ground to latency.
+                  </p>
+                  <h5><strong>Protect Your Brand</strong></h5>
+                  <p>
+                    Monitor competitors and mentions without needing a social-listening team on standby. One tool,
+                    one channel, one alert stream.
+                  </p>
+                  <h5><strong>One Channel for Signal</strong></h5>
+                  <p>
+                    Instead of a noisy timeline, WhatsApp becomes a filtered feed of only the accounts that matter to
+                    you.
+                  </p>
+                  <p>‍</p>
+                  <p>
+                    Start monitoring for free at <a
+                      href="https://wallawhats.com"
+                      target="_blank"
+                      rel="noopener noreferrer">wallawhats.com</a
+                    >. Verify your WhatsApp number, pick a handle, and your next tweet becomes a WhatsApp message.
+                  </p>
+                  <p>‍</p>
+                </div>
+              </div>
+              <div data-w-tab="Integration" class="integration-tab w-tab-pane">
+                <div class="rich-text w-richtext">
+                  <h4><strong>REST API</strong></h4>
+                  <p>
+                    WallaWhats exposes a REST API at <code>api.wallawhats.com</code>, secured by an
+                    <code>x-api-key</code> header. You can manage monitored accounts, register and verify phone numbers,
+                    pull notification history, and rotate keys — all from your own application. Rate limits are
+                    generous (20 req/sec per key, with bursting) and the API uses cursor-based pagination so you can
+                    stream full histories without paging offsets.
+                  </p>
+                  <h4><strong>Common integration patterns</strong></h4>
+                  <ul role="list">
+                    <li>Route WallaWhats alerts into a trading desk, a content pipeline, or an on-call rotation.</li>
+                    <li>Centralize brand mentions across a team by subscribing one phone to the shared handles.</li>
+                    <li>
+                      Trigger downstream workflows (webhooks, analytics writes, internal bots) when specific accounts
+                      post.
+                    </li>
+                  </ul>
+                  <p>
+                    Full reference: <a
+                      href="https://wallawhats.com/docs/api-reference"
+                      target="_blank"
+                      rel="noopener noreferrer">wallawhats.com/docs/api-reference</a
+                    >.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="inline integration-card">
+            <a
+              href="https://wallawhats.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="button-primary small flex w-inline-block"
+              ><div>Get Started Free</div>
+              &nbsp;<i class="fa-solid fa-arrow-up-right-from-square"></i></a
+            >
+            <a
+              href="/contact-us.html?solution=wallawhats"
+              class="button-secondary small flex w-inline-block"
+              ><div>Contact Sales</div></a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style is:global>
+  .wallawhats-icon-badge {
+    width: 110px;
+    height: 110px;
+    border-radius: 22px;
+    background: linear-gradient(135deg, #25D366 0%, #1a1b1e 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 26px rgba(17, 17, 17, 0.12);
+  }
+
+  .wallawhats-icon-badge > i {
+    color: #ffffff;
+    font-size: 52px;
+    line-height: 1;
+    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.25));
+  }
+
+  @media screen and (max-width: 767px) {
+    .wallawhats-icon-badge {
+      width: 88px;
+      height: 88px;
+      border-radius: 18px;
+    }
+    .wallawhats-icon-badge > i {
+      font-size: 40px;
+    }
+  }
+</style>

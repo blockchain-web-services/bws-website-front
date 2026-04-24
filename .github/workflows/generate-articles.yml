@@ -1,9 +1,8 @@
 name: Generate Articles from X Posts
 
 on:
-  # TEMPORARILY DISABLED
-  # schedule:
-  #   - cron: '0 10 * * *'  # Daily at 10:00 AM UTC (1 hour after partnerships fetch)
+  schedule:
+    - cron: '0 10 * * *'  # Daily at 10:00 AM UTC (1 hour after partnerships fetch)
   workflow_dispatch:
 
 permissions:

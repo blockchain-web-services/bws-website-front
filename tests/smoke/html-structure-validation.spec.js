@@ -21,6 +21,7 @@ test.describe('HTML Structure Validation', () => {
     { path: '/marketplace/nft-zeroknwoledge.html', name: 'NFT Zero Knowledge' },
     { path: '/marketplace/blockchain-badges.html', name: 'Blockchain Badges' },
     { path: '/marketplace/telegram-xbot.html', name: 'Telegram XBot' },
+    { path: '/marketplace/wallawhats.html', name: 'WallaWhats' },
     { path: '/industry-content/financial-services.html', name: 'Financial Services' },
     { path: '/industry-content/content-creation.html', name: 'Content Creation' },
     { path: '/industry-content/retail.html', name: 'Retail' },

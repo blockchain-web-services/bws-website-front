@@ -25,7 +25,7 @@ const MAX_TWEETS_TO_FETCH = 50;
 const PROCESSED_TWEETS_PATH = path.join(__dirname, 'data', 'processed-article-tweets.json');
 
 // Product rotation order (1 article per day, rotating through products)
-const PRODUCT_ROTATION = ['X Bot', 'Badges.ninja', 'IPFS'];
+const PRODUCT_ROTATION = ['WallaWhats', 'X Bot', 'Badges.ninja', 'IPFS'];
 const ARTICLES_FILE_PATH = path.join(__dirname, '..', 'src', 'data', 'articles.ts');
 const ARTICLES_METADATA_PATH = path.join(__dirname, 'data', 'articles-metadata.json'); // JSON source of truth
 const ARTICLE_IMAGES_DIR = path.join(__dirname, '..', 'public', 'assets', 'images', 'articles');
@@ -82,6 +82,15 @@ const PRODUCT_CONFIG = {
     buttonText: 'Learn More',
     fallbackImages: [
       '/assets/images/marketplace/fallback/ipfs/01-ipfs-overview.jpg'
+    ]
+  },
+  'WallaWhats': {
+    url: '/marketplace/wallawhats.html',
+    slug: 'wallawhats',
+    buttonText: 'Open WallaWhats',
+    // Reusing the X Bot analytics fallback until dedicated WallaWhats artwork ships.
+    fallbackImages: [
+      '/assets/images/marketplace/fallback/x-bot/01-analytics.png'
     ]
   },
 };
@@ -260,6 +269,7 @@ Product Categories:
 - X Bot (also called Telegram XBot)
 - Badges.ninja (previously called Blockchain Badges) — digital badges with blockchain verification, visual designer, REST API, bulk awarding, and Open Badge v2.0 compliance
 - IPFS (also called IPFS.ninja) — the BWS IPFS pinning service and upload API with dedicated gateways, signed upload tokens, and an S3-compatible endpoint at s3.ipfs.ninja
+- WallaWhats — real-time WhatsApp alerts when selected X/Twitter accounts post. Monitor any public handle, receive tweets as WhatsApp messages within seconds, no app install required. REST API at api.wallawhats.com for managing monitored accounts, phone verification, subscriptions, and notification history. Angles: creator drops, market-moving posts, brand/competitor monitoring, building alert pipelines on the API.
 
 For EACH product category that has relevant tweets, create ONE comprehensive article by:
 

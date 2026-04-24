@@ -10,17 +10,40 @@ export interface SolutionImage {
   srcset?: string;
 }
 
+export interface SolutionGraphic {
+  icon: string;                  // Font Awesome class, e.g. "fa-solid fa-dove"
+  gradient: [string, string];    // Two hex colors for a linear gradient (135deg)
+  iconColor?: string;            // Defaults to #fff
+  pattern?: 'dots' | 'mesh';     // Optional abstract overlay; default 'dots'
+  alt: string;                   // Accessible description of the card graphic
+}
+
 export interface Solution {
   title: string;
   author: string;
   description: string;
-  image: SolutionImage;
+  image?: SolutionImage;         // Raster image (original variant)
+  graphic?: SolutionGraphic;     // CSS-only icon + gradient variant
   url: string;
   networks: SolutionNetwork[];
   category: string; // For filtering: Database, NFT, Credentials, Socials
 }
 
 export const solutions: Solution[] = [
+  {
+    title: 'WallaWhats',
+    author: 'wallawhats.com',
+    description: 'WhatsApp alerts when your favorite X accounts post. Monitor any account in real time — tweets land in WhatsApp within seconds. Built on a simple REST API so you can plug it straight into your own workflows.',
+    graphic: {
+      icon: 'fa-solid fa-dove',
+      gradient: ['#25D366', '#1a1b1e'],
+      pattern: 'dots',
+      alt: 'WallaWhats — real-time WhatsApp alerts for X/Twitter posts'
+    },
+    url: '/marketplace/wallawhats.html',
+    networks: [],
+    category: 'Socials'
+  },
   {
     title: 'Blockchain Save',
     author: 'BWS',

@@ -1,0 +1,20 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Navigation from "../../components/Navigation.astro";
+import Footer from "../../components/Footer.astro";
+import Scripts from "../../components/Scripts.astro";
+import MarketplacewallawhatsMainContent from "../../components/marketplacewallawhatsMainContent.astro";
+
+const pageTitle = "WallaWhats — Real-time WhatsApp alerts for X/Twitter posts";
+const pageDescription = "Monitor any X/Twitter account and get instant WhatsApp notifications when they post. Real-time alerts, REST API, no app install required.";
+---
+
+<BaseLayout title={pageTitle} description={pageDescription}>
+  <Navigation />
+  <MarketplacewallawhatsMainContent />
+  <Footer />
+
+  <Fragment slot="scripts">
+    <Scripts />
+  </Fragment>
+</BaseLayout>
