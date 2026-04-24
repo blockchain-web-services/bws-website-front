@@ -33,11 +33,9 @@ export const solutions: Solution[] = [
   {
     title: 'WallaWhats',
     author: 'wallawhats.com',
-    description: 'WhatsApp alerts when your favorite X accounts post. Monitor any account in real time — tweets land in WhatsApp within seconds. Built on a simple REST API so you can plug it straight into your own workflows.',
-    graphic: {
-      icon: 'fa-solid fa-dove',
-      gradient: ['#25D366', '#1a1b1e'],
-      pattern: 'dots',
+    description: 'Real-time WhatsApp alerts when your favorite X/Twitter accounts post — no app required.',
+    image: {
+      src: '/assets/images/marketplace/wallawhats/hero-card.png',
       alt: 'WallaWhats — real-time WhatsApp alerts for X/Twitter posts'
     },
     url: '/marketplace/wallawhats.html',
