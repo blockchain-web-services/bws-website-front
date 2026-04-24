@@ -43,6 +43,35 @@ export const solutions: Solution[] = [
     category: 'Socials'
   },
   {
+    title: 'Badges.ninja',
+    author: 'BWS',
+    description: 'Digital badges with blockchain verification. Visual designer, REST API, bulk awarding, and optional on-chain anchoring — Open Badge v2.0 compliant with a free tier.',
+    image: {
+      src: '/assets/images/marketplace/badges/hero-card.png',
+      alt: 'Badges.ninja — digital badges with blockchain verification'
+    },
+    url: '/marketplace/blockchain-badges.html',
+    networks: [
+      { name: 'Polygon', color: '#af89ee' },
+      { name: 'Matchain', color: 'hsla(20, 100.00%, 54.02%, 1.00)' }
+    ],
+    category: 'Credentials'
+  },
+  {
+    title: 'IPFS.ninja',
+    author: 'BWS',
+    description: 'The simplest IPFS pinning service and upload API. Pin any file, serve it through your own dedicated gateway, and scale from a free tier to production with signed upload tokens and analytics.',
+    image: {
+      src: '/assets/images/marketplace/ipfs/hero-card.png',
+      alt: 'IPFS.ninja — simple IPFS pinning service, upload API, and dedicated gateways'
+    },
+    url: '/marketplace/ipfs-upload.html',
+    networks: [
+      { name: 'IPFS', color: 'hsla(314, 90.64%, 38.40%, 1.00)' }
+    ],
+    category: 'NFT'
+  },
+  {
     title: 'Blockchain Save',
     author: 'BWS',
     description: 'Easily and affordably store data with tamper-proof integrity and a Certificate of Trust for enhanced transparency.',
@@ -73,20 +102,6 @@ export const solutions: Solution[] = [
     category: 'Database'
   },
   {
-    title: 'IPFS.ninja',
-    author: 'BWS',
-    description: 'The simplest IPFS pinning service and upload API. Pin any file, serve it through your own dedicated gateway, and scale from a free tier to production with signed upload tokens and analytics.',
-    image: {
-      src: '/assets/images/6474d385cfec71cb21a9229a/655b1a1220eb4c16ccfcab4b_BWS.IPFS.Upload_400x300.jpg',
-      alt: 'IPFS.ninja — simple IPFS pinning service, upload API, and dedicated gateways'
-    },
-    url: '/marketplace/ipfs-upload.html',
-    networks: [
-      { name: 'IPFS', color: 'hsla(314, 90.64%, 38.40%, 1.00)' }
-    ],
-    category: 'NFT'
-  },
-  {
     title: 'NFT.zK',
     author: 'BWS',
     description: 'A straightforward API enabling artists, companies, and individuals to create NFTs effortlessly, without Web3 knowledge.',
@@ -102,21 +117,6 @@ export const solutions: Solution[] = [
       { name: 'Matchain', color: 'hsla(20, 100.00%, 54.02%, 1.00)' }
     ],
     category: 'NFT'
-  },
-  {
-    title: 'Badges.ninja',
-    author: 'BWS',
-    description: 'Digital badges with blockchain verification. Visual designer, REST API, bulk awarding, and optional on-chain anchoring — Open Badge v2.0 compliant with a free tier.',
-    image: {
-      src: '/assets/images/6474d385cfec71cb21a9229a/65061830bf101fe685a48e2f_NFT-Marketplace_400x300.jpg',
-      alt: 'Badges.ninja — digital badges with blockchain verification'
-    },
-    url: '/marketplace/blockchain-badges.html',
-    networks: [
-      { name: 'Polygon', color: '#af89ee' },
-      { name: 'Matchain', color: 'hsla(20, 100.00%, 54.02%, 1.00)' }
-    ],
-    category: 'Credentials'
   },
   {
     title: 'Telegram XBot',
