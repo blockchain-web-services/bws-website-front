@@ -818,9 +818,9 @@
     },
     {
       "file": "_site/index.html",
-      "originalSize": 67461,
-      "newSize": 92035,
-      "sizeDiff": 24574,
+      "originalSize": 67309,
+      "newSize": 91793,
+      "sizeDiff": 24484,
       "prettyPrinted": true,
       "errors": []
     },
@@ -980,10 +980,10 @@
       "errors": []
     },
     {
-      "file": "_site/assets/index.CuyIllEM.css",
-      "originalSize": 8837,
-      "newSize": 10879,
-      "sizeDiff": 2042,
+      "file": "_site/assets/index.C3cQCx_a.css",
+      "originalSize": 8699,
+      "newSize": 10713,
+      "sizeDiff": 2014,
       "prettyPrinted": true,
       "skippedMinified": false,
       "errors": []

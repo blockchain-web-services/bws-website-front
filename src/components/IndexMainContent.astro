@@ -211,19 +211,11 @@ import { solutions } from '../data/solutions';
     grid-column-gap: 40px;
   }
 
-  /* Tokenomics CTA buttons moved to the left column, aligned to the start */
+  /* Tokenomics CTA — Buy button + inline destination caption */
   .tokenomics-buttons-left {
     margin-top: 24px;
     justify-content: flex-start;
-    align-items: flex-start;
-  }
-
-  /* Buy $BWS primary CTA — button on top, small destination caption below */
-  .tokenomics-cta-buy {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 6px;
+    align-items: center;
   }
 
   .tokenomics-cta-caption {
@@ -233,11 +225,6 @@ import { solutions } from '../data/solutions';
     letter-spacing: 0.14em;
     text-transform: uppercase;
     color: #66666e;
-  }
-
-  /* Read the White Paper — secondary; align top edge with the primary button */
-  .tokenomics-secondary-cta {
-    align-self: flex-start;
   }
 
   /* Tokenomics intro — live-ticker status strip + editorial statement spread */
@@ -1012,15 +999,12 @@ import { solutions } from '../data/solutions';
           </div>
         </div>
         <div class="w-layout-hflex flex-block-18 tokenomics-buttons-left">
-          <div class="tokenomics-cta-buy">
-            <a
-              href="https://app.uniswap.org/swap?outputCurrency=0xaade1d6701173bd924c9de2d56a00ef4e3d9de4d&chain=mainnet"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="button-primary _2-buttons w-button">Buy $BWS on Uniswap<span class="button-arrow"></span></a>
-            <span class="tokenomics-cta-caption">via Uniswap V2 · Ethereum mainnet</span>
-          </div>
-          <a href="/white-paper.html" class="button-secondary w-button tokenomics-secondary-cta">Read the White Paper</a>
+          <a
+            href="https://app.uniswap.org/swap?outputCurrency=0xaade1d6701173bd924c9de2d56a00ef4e3d9de4d&chain=mainnet"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="button-primary _2-buttons w-button">Buy $BWS on Uniswap<span class="button-arrow"></span></a>
+          <span class="tokenomics-cta-caption">via Uniswap V2 · Ethereum mainnet</span>
         </div>
       </div><div class="w-layout-vflex flex-block-6 token-allocation">
         <div class="w-layout-blockcontainer token-allocation-image w-container">
