@@ -36,6 +36,9 @@ dist/
 .vscode/
 .idea/
 
+# Claude Code runtime state (scheduler locks, etc.)
+.claude/
+
 # Worktree-specific files (added by bws-ai-coding-template)
 .env.worktree
 .worktree-info.json
