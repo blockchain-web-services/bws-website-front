@@ -1,20 +1,21 @@
 ---
-import BaseLayout from "../../layouts/BaseLayout.astro";
-import Navigation from "../../components/Navigation.astro";
-import Footer from "../../components/Footer.astro";
-import Scripts from "../../components/Scripts.astro";
-import MarketplacedatabaseimmutableMainContent from "../../components/marketplacedatabaseimmutableMainContent.astro";
-
-const pageTitle = "BWS - database immutable";
-const pageDescription = "BWS — Enterprise solutions built for real market demand, powered by an AI-native workflow.";
+// Permanent redirect: Blockchain Save was merged into Blockchain Database.
+const target = "/marketplace/blockchain-database.html";
 ---
 
-<BaseLayout title={pageTitle} description={pageDescription}>
-  <Navigation />
-  <MarketplacedatabaseimmutableMainContent />
-  <Footer />
-
-  <Fragment slot="scripts">
-    <Scripts />
-  </Fragment>
-</BaseLayout>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Blockchain Database (formerly Blockchain Save) - BWS</title>
+    <meta name="robots" content="noindex" />
+    <link rel="canonical" href={`https://www.bws.ninja${target}`} />
+    <meta http-equiv="refresh" content={`0; url=${target}`} />
+    <script is:inline define:vars={{ target }}>
+      window.location.replace(target);
+    </script>
+  </head>
+  <body>
+    <p>This solution has moved. <a href={target}>Continue to Blockchain Database →</a></p>
+  </body>
+</html>

@@ -1,23 +1,24 @@
 ---
-// Main content for marketplace/database-mutable page
+// Main content for marketplace/blockchain-database page
 ---
 
 <div class="container-medium container-solution">
-  <div data-w-id="f767e2a0-46ff-2d44-6883-00c52a7ba243" class="solution-page-card">
+  <div class="solution-page-card">
     <div class="solution-page-content-wrapper">
       <div class="integration-content-copy">
-        <div data-w-id="edef65f5-6c98-6418-3d7d-79fc52c06e34" class="top-content integration-card-top-content">
+        <div class="top-content integration-card-top-content">
           <div class="split-solution-header">
             <div class="image-wrapper integration-icon-wrapper">
-              <div class="solution-template-icon"></div>
+              <div class="solution-template-icon"></div>
             </div>
             <div class="split-content integration-details">
               <div class="integration-title-wrapper">
-                <h1 class="title h2-size integration-name">Blockchain Hash</h1>
+                <h1 class="title h2-size integration-name">Blockchain Database</h1>
               </div>
               <p class="paragraph integration-about-excerpt">
-                A single API call to save data to the blockchain without passing your wallet or managing the transaction
-                fees.
+                A single API to use the blockchain as your data layer — write immutable records with a Certificate of
+                Trust, or use it as a queryable, updateable hash table. No wallets, no gas fees, no infrastructure to
+                run.
               </p>
               <div class="split-button-solution">
                 <div class="collection-list-wrapper w-dyn-list" style="margin-left: auto;">
@@ -38,7 +39,7 @@
             </div>
           </div>
         </div>
-        <div data-w-id="a285c0bb-3c46-d972-6118-2632165bf94d" class="split-content integration-card-content">
+        <div class="split-content integration-card-content">
           <div
             data-duration-in="300"
             data-duration-out="100"
@@ -59,58 +60,66 @@
               <div data-w-tab="Description" class="integration-tab w-tab-pane w--tab-active">
                 <div class="rich-text w-richtext">
                   <p>
-                    <strong>BWS.Blockchain.Hash</strong> simplifies saving data into the blockchain by abstracting blockchain
-                    infrastructure complexities for you to use the blockchain as a regular hash database.
-                  </p>
-                  <p>
-                    This solution is designed to easily save data without having to deal with blockchain infrastructure
-                    complexities. A solution for individuals and companies that want to bring blockchain trust but
-                    don&#x27;t want to handle time-consuming and expensive learning curves.
+                    <strong>Blockchain Database</strong> turns the blockchain into a drop-in data layer for your
+                    application. A single REST API lets you anchor full records immutably with a Certificate of Trust,
+                    or use the chain as a trusted hash table — read, write, and update keyed values with the same
+                    durability guarantees a public ledger gives you. Wallets, gas, and chain selection are handled
+                    behind the scenes.
                   </p>
                   <h3><strong>Features</strong></h3>
                   <ul role="list">
                     <li>
-                      <strong>Simplified Data Storage</strong><br />Storing data on the blockchain has never been
-                      easier. Just send a single API request specifying the blockchain and data you wish to save, and
-                      you&#x27;re set.
+                      <strong>Single Write API</strong><br />Send a single REST request specifying the network and
+                      payload. The same endpoint anchors immutable records or upserts hash-table entries — pick the
+                      mode per call.
                     </li>
                     <li>
-                      <strong>Seamless Wallet Management<br />‍</strong>BWS takes care of wallet management for
-                      blockchain transactions behind the scenes, delivering a smooth user experience without the
-                      complications.
+                      <strong>Hash-Table Mode</strong><br />Use the blockchain as a queryable, updateable key/value
+                      store. Anchor your customers&#x27; most important records on-chain and update them as state
+                      evolves, without losing the audit trail of every prior version.
                     </li>
                     <li>
-                      <strong>Automated Fee Management<br />‍</strong>Forget about puzzling over network or
-                      &#x27;gas&#x27; fees; our API handles fee calculations and payments, so you can focus on your
-                      data.
+                      <strong>Certificate of Trust</strong><br />Every immutable write produces a verifiable
+                      certificate that proves what was stored, when, and by whom — ready to share with auditors,
+                      regulators, or end customers.
                     </li>
                     <li>
-                      <strong>Data Immutability</strong><br />Once stored, your data is unchangeable, and we provide a
-                      Certificate of Trust that adds an extra layer of transparency.
+                      <strong>Data Retrieval</strong><br />Fetch any stored record on demand — by transaction, by key,
+                      or by version — so your data is always accessible when you need it.
                     </li>
                     <li>
-                      <strong>Data Retrieval.</strong><br /><strong>‍</strong>This solution provides functionality to
-                      retrieve your stored data, ensuring that your data is always accessible when you need it.
+                      <strong>Seamless Wallet Management</strong><br />BWS handles wallet provisioning and signing for
+                      every chain operation behind the scenes — your application never touches a private key.
                     </li>
                     <li>
-                      <strong>Use the blockchain as a Trusted Hash Table</strong>.<br />Use it as a regular database
-                      hash table, for example, to save and update your customer’s most important key data into the
-                      Blockchain.
+                      <strong>Automated Fee Management</strong><br />No gas accounting, no native-token reserves to
+                      maintain. Our API calculates and pays network fees automatically and bills them transparently.
+                    </li>
+                    <li>
+                      <strong>Multi-Chain by Default</strong><br />Deploy the same call to Polygon or Matchain by
+                      changing a single parameter — pick the network that fits your cost, latency, and trust profile.
                     </li>
                   </ul>
                   <h3><strong>Benefits</strong></h3>
                   <ul role="list">
                     <li>
-                      <strong>Quick and Easy Integration<br /></strong>This solution makes the blockchain accessible to
-                      companies and developers regardless of their level of maturity.
+                      <strong>Two Modes, One API</strong><br />Immutable anchoring and hash-table storage are exposed
+                      through the same surface — start with one, add the other when your use case grows, no
+                      re-integration required.
                     </li>
                     <li>
-                      <strong>Boost Trust and Transparency</strong><br />Leveraging public blockchains can elevate your
-                      organization&#x27;s credibility, fostering greater trust and transparency.
+                      <strong>Quick and Easy Integration</strong><br />Designed so any developer can ship a
+                      blockchain-backed feature without prior Web3 experience.
+                    </li>
+                    <li>
+                      <strong>Boost Trust and Transparency</strong><br />Anchoring data on a public chain gives
+                      customers, partners, and regulators independently verifiable proof of what your system did and
+                      when.
                     </li>
                   </ul>
                   <p>
-                    Use the blockchain to bring an extra layer of trust and transparency to your daily data workflows.
+                    Use the blockchain as the data layer behind your most trust-sensitive workflows — from
+                    record-keeping and certification to live customer-facing state.
                   </p>
                 </div>
               </div>
@@ -137,9 +146,6 @@
             </div>
           </div>
           <div class="inline integration-card">
-            <a href="/contact-us.html" class="contact-sales button-primary w-inline-block w-condition-invisible"
-              ><div>Contact Sales</div></a
-            >
             <div class="coming-soon w-condition-invisible"><div class="text-block-13">Coming Soon</div></div>
           </div>
         </div>

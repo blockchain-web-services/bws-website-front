@@ -34,8 +34,7 @@
       "supplyChain": "/industry-content/supply-chain"
     },
     "marketplacePages": {
-      "databaseImmutable": "/marketplace/database-immutable",
-      "databaseMutable": "/marketplace/database-mutable",
+      "blockchainDatabase": "/marketplace/blockchain-database",
       "blockchainBadges": "/marketplace/blockchain-badges",
       "ipfsUpload": "/marketplace/ipfs-upload",
       "nftZeroknowledge": "/marketplace/nft-zeroknwoledge",

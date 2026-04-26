@@ -24,8 +24,7 @@ const pages = [
 
   // Marketplace pages
   { name: 'blockchain-badges', path: '/marketplace/blockchain-badges', category: 'marketplace' },
-  { name: 'database-immutable', path: '/marketplace/database-immutable', category: 'marketplace' },
-  { name: 'database-mutable', path: '/marketplace/database-mutable', category: 'marketplace' },
+  { name: 'blockchain-database', path: '/marketplace/blockchain-database', category: 'marketplace' },
   { name: 'ipfs-upload', path: '/marketplace/ipfs-upload', category: 'marketplace' },
   { name: 'nft-zeroknowledge', path: '/marketplace/nft-zeroknwoledge', category: 'marketplace' },
   { name: 'telegram-xbot', path: '/marketplace/telegram-xbot', category: 'marketplace' },

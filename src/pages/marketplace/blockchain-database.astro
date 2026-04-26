@@ -1,0 +1,20 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Navigation from "../../components/Navigation.astro";
+import Footer from "../../components/Footer.astro";
+import Scripts from "../../components/Scripts.astro";
+import MarketplaceBlockchainDatabaseMainContent from "../../components/marketplaceblockchaindatabaseMainContent.astro";
+
+const pageTitle = "BWS - Blockchain Database";
+const pageDescription = "Blockchain Database — a single API to anchor immutable records with a Certificate of Trust, or use the blockchain as a queryable hash table. No wallets, no gas fees.";
+---
+
+<BaseLayout title={pageTitle} description={pageDescription}>
+  <Navigation />
+  <MarketplaceBlockchainDatabaseMainContent />
+  <Footer />
+
+  <Fragment slot="scripts">
+    <Scripts />
+  </Fragment>
+</BaseLayout>

@@ -246,15 +246,10 @@ function formatIndustryName(slug) {
 
 function generateFeatures(solutionName) {
   const features = {
-    'database-immutable': [
-      { title: 'Immutable Storage', description: 'Data cannot be altered once written' },
-      { title: 'Blockchain Security', description: 'Cryptographically secured on blockchain' },
-      { title: 'Audit Trail', description: 'Complete history of all transactions' }
-    ],
-    'database-mutable': [
-      { title: 'Flexible Updates', description: 'Update data while maintaining history' },
-      { title: 'Version Control', description: 'Track all changes over time' },
-      { title: 'Smart Contracts', description: 'Automated data management rules' }
+    'blockchain-database': [
+      { title: 'Immutable Records', description: 'Anchor data on-chain with a Certificate of Trust' },
+      { title: 'Hash-Table Mode', description: 'Use the blockchain as a queryable, updateable key/value store' },
+      { title: 'Single API', description: 'Two storage modes exposed through one REST surface' }
     ],
     'ipfs-upload': [
       { title: 'Distributed Storage', description: 'Files stored across IPFS network' },

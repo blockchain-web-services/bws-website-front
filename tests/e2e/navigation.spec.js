@@ -217,12 +217,12 @@ test.describe('Navigation Tests', () => {
 
   test('All marketplace products are accessible', async ({ page }) => {
     const marketplaceProducts = [
-      'database-immutable',
-      'database-mutable',
+      'blockchain-database',
       'blockchain-badges',
       'ipfs-upload',
       'nft-zeroknwoledge',
-      'telegram-xbot'
+      'telegram-xbot',
+      'wallawhats'
     ];
 
     for (const product of marketplaceProducts) {
