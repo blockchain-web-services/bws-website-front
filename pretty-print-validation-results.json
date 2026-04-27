@@ -818,9 +818,9 @@
     },
     {
       "file": "_site/index.html",
-      "originalSize": 65603,
-      "newSize": 88969,
-      "sizeDiff": 23366,
+      "originalSize": 65568,
+      "newSize": 88882,
+      "sizeDiff": 23314,
       "prettyPrinted": true,
       "errors": []
     },
@@ -898,9 +898,9 @@
     },
     {
       "file": "_site/marketplace/blockchain-database.html",
-      "originalSize": 42108,
-      "newSize": 56547,
-      "sizeDiff": 14439,
+      "originalSize": 42073,
+      "newSize": 56476,
+      "sizeDiff": 14403,
       "prettyPrinted": true,
       "errors": []
     },
