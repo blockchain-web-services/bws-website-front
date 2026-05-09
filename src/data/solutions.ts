@@ -108,8 +108,8 @@ export const solutions: Solution[] = [
     author: 'BWS',
     description: 'A Telegram bot that helps community groups boost engagement on X (formerly Twitter).',
     image: {
-      src: '/assets/images/6474d385cfec71cb21a9229a/6806a0111f7e6589d65385a6_Telegram-X-Bot.png',
-      alt: 'Telegram XBot solution - Boost community engagement on X (Twitter)'
+      src: '/assets/images/marketplace/telegram-xbot/hero-card.png',
+      alt: 'Telegram XBot — track KOL performance and prove ROI on X (Twitter)'
     },
     url: '/marketplace/telegram-xbot.html',
     networks: [],
