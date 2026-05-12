@@ -16,6 +16,7 @@ test.describe('HTML Structure Validation', () => {
     { path: '/industries.html', name: 'Industries' },
     { path: '/resources.html', name: 'Resources' },
     { path: '/marketplace/blockchain-database.html', name: 'Blockchain Database' },
+    { path: '/marketplace/openagile.html', name: 'OpenAgile.AI' },
     { path: '/marketplace/ipfs-upload.html', name: 'IPFS Upload' },
     { path: '/marketplace/nft-zeroknwoledge.html', name: 'NFT Zero Knowledge' },
     { path: '/marketplace/blockchain-badges.html', name: 'Blockchain Badges' },

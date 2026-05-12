@@ -26,10 +26,26 @@ export interface Solution {
   graphic?: SolutionGraphic;     // CSS-only icon + gradient variant
   url: string;
   networks: SolutionNetwork[];
-  category: string; // For filtering: Database, NFT, Credentials, Socials
+  category: string; // For filtering: Database, NFT, Credentials, Socials, Methodology
+  featured?: boolean;            // Renders as a full-width pillar above the standard grid
+  licensePills?: string[];       // Optional license-track badges (e.g. "Free for Solos", "Licensed for Business")
 }
 
 export const solutions: Solution[] = [
+  {
+    title: 'OpenAgile.AI',
+    author: 'BWS · Open Source',
+    description: 'Engineering Discipline for AI-Assisted Development. Specs before prompts, validation before generation, traceability by default. Free for solos, licensed for business.',
+    image: {
+      src: '/assets/images/marketplace/openagile/hero-card.png',
+      alt: 'OpenAgile.AI — engineering discipline for AI-assisted development'
+    },
+    url: '/marketplace/openagile.html',
+    networks: [],
+    category: 'Methodology',
+    featured: true,
+    licensePills: ['Free for Solos', 'Licensed for Business']
+  },
   {
     title: 'WallaWhats',
     author: 'wallawhats.com',

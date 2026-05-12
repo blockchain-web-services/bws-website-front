@@ -217,6 +217,7 @@ test.describe('Navigation Tests', () => {
 
   test('All marketplace products are accessible', async ({ page }) => {
     const marketplaceProducts = [
+      'openagile',
       'blockchain-database',
       'blockchain-badges',
       'ipfs-upload',

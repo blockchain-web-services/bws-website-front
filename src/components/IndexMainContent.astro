@@ -211,6 +211,172 @@ import { solutions } from '../data/solutions';
     grid-column-gap: 40px;
   }
 
+  /* ============================================================ */
+  /* Featured pillar — OpenAgile.AI                                */
+  /* ============================================================ */
+  .solutions-pillar {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+    gap: 40px;
+    align-items: stretch;
+    padding: 28px;
+    margin-bottom: 36px;
+    background: linear-gradient(135deg, var(--neutral-200, #f5f9ff) 0%, #ffffff 70%);
+    border: 1px solid rgba(17, 17, 17, 0.08);
+    border-radius: 18px;
+    box-shadow: 0 8px 32px -16px rgba(17, 17, 17, 0.18);
+    text-decoration: none !important;
+    color: inherit;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  }
+
+  .solutions-pillar:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 16px 40px -16px rgba(17, 17, 17, 0.22);
+    border-color: rgba(196, 24, 65, 0.3);
+  }
+
+  .solutions-pillar-media {
+    border-radius: 12px;
+    overflow: hidden;
+    background: #0e0e16;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .solutions-pillar-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .solutions-pillar-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 16px;
+    padding: 8px 4px;
+  }
+
+  .solutions-pillar-eyebrow {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--rose, #c41841);
+  }
+
+  .solutions-pillar-title-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin: 0;
+  }
+
+  .solutions-pillar-title {
+    font-size: 32px;
+    font-weight: 800;
+    line-height: 1.1;
+    color: var(--neutral-800, #1a1b1e);
+    margin: 0;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .solutions-pillar-icon {
+    color: var(--rose, #c41841);
+    font-size: 28px;
+  }
+
+  .solutions-pillar-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .solutions-pillar-pill {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 12px;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--neutral-800, #1a1b1e);
+    background: rgba(196, 24, 65, 0.08);
+    border: 1px solid rgba(196, 24, 65, 0.35);
+    border-radius: 999px;
+  }
+
+  .solutions-pillar-headline {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.3;
+    color: var(--neutral-800, #1a1b1e);
+    margin: 0;
+  }
+
+  .solutions-pillar-sub {
+    font-size: 15px;
+    line-height: 1.55;
+    color: var(--neutral-700, #3b3f44);
+    margin: 0;
+  }
+
+  .solutions-pillar-bullets {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 8px;
+  }
+
+  .solutions-pillar-bullets li {
+    position: relative;
+    padding-left: 18px;
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--neutral-700, #3b3f44);
+  }
+
+  .solutions-pillar-bullets li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--rose, #c41841);
+  }
+
+  .solutions-pillar-cta {
+    margin-top: 8px;
+  }
+
+  @media (max-width: 991px) {
+    .solutions-pillar {
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+    .solutions-pillar-media {
+      max-height: 360px;
+    }
+    .solutions-pillar-title {
+      font-size: 26px;
+    }
+    .solutions-pillar-headline {
+      font-size: 18px;
+    }
+  }
+
   /* Tokenomics CTA — Buy button + inline destination caption */
   .tokenomics-buttons-left {
     margin-top: 24px;
@@ -621,6 +787,42 @@ import { solutions } from '../data/solutions';
     style="opacity:0;-webkit-transform:translate3d(0, 20px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 20px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 20px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 20px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)"
     class="landing-page-content w-container"
   >
+    <!-- Featured pillar — OpenAgile.AI -->
+    <a href="/marketplace/openagile.html" class="solutions-pillar" aria-label="OpenAgile.AI — Engineering Discipline for AI-Assisted Development">
+      <div class="solutions-pillar-media">
+        <img
+          src="/assets/images/marketplace/openagile/hero-card.png"
+          alt="OpenAgile.AI — engineering discipline for AI-assisted development"
+          loading="lazy"
+        />
+      </div>
+      <div class="solutions-pillar-content">
+        <div class="solutions-pillar-eyebrow">OUR METHOD</div>
+        <div class="solutions-pillar-title-row">
+          <h3 class="solutions-pillar-title">
+            <i class="fa-solid fa-brain solutions-pillar-icon" aria-hidden="true"></i>OpenAgile.AI
+          </h3>
+          <div class="solutions-pillar-pills" role="group" aria-label="Licensing tracks">
+            <span class="solutions-pillar-pill">Free for Solos</span>
+            <span class="solutions-pillar-pill">Licensed for Business</span>
+          </div>
+        </div>
+        <p class="solutions-pillar-headline">Engineering Discipline for AI-Assisted Development.</p>
+        <p class="solutions-pillar-sub">
+          Fast to Generate. Impossible to Maintain — unless you have specs, validation, and traceability built in.
+          OpenAgile.AI sits above any coding agent and enforces all three.
+        </p>
+        <ul class="solutions-pillar-bullets">
+          <li><strong>Specs before prompts</strong> — projects → epics → stories → tasks, scoped per file.</li>
+          <li><strong>342-check validation pre-generation</strong> — caught at planning, where it&#x27;s cheapest.</li>
+          <li><strong>Bidirectional traceability</strong> — code ↔ acceptance criteria ↔ epic, audit-ready by design.</li>
+        </ul>
+        <div class="solutions-pillar-cta">
+          <span class="button-primary _2-buttons w-button">Explore OpenAgile.AI<span class="button-arrow"></span></span>
+        </div>
+      </div>
+    </a>
+
     <div class="solutions-list mix-solutions">
       <div class="w-dyn-list">
         <div

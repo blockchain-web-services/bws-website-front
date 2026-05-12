@@ -35,6 +35,7 @@
     },
     "marketplacePages": {
       "blockchainDatabase": "/marketplace/blockchain-database",
+      "openAgile": "/marketplace/openagile",
       "blockchainBadges": "/marketplace/blockchain-badges",
       "ipfsUpload": "/marketplace/ipfs-upload",
       "nftZeroknowledge": "/marketplace/nft-zeroknwoledge",
