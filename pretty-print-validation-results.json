@@ -818,8 +818,8 @@
     },
     {
       "file": "_site/index.html",
-      "originalSize": 67887,
-      "newSize": 92349,
+      "originalSize": 67892,
+      "newSize": 92354,
       "sizeDiff": 24462,
       "prettyPrinted": true,
       "errors": []
@@ -996,9 +996,9 @@
       "errors": []
     },
     {
-      "file": "_site/assets/index.B9D0bbUF.css",
-      "originalSize": 11810,
-      "newSize": 14412,
+      "file": "_site/assets/index.DnidBodM.css",
+      "originalSize": 11815,
+      "newSize": 14417,
       "sizeDiff": 2602,
       "prettyPrinted": true,
       "skippedMinified": false,

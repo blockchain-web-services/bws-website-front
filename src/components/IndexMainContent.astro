@@ -217,9 +217,9 @@ import { solutions } from '../data/solutions';
   .solutions-pillar {
     display: grid;
     grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
-    gap: 40px;
+    gap: 0;
     align-items: stretch;
-    padding: 28px;
+    padding: 0;
     margin-bottom: 36px;
     background: linear-gradient(135deg, var(--neutral-200, #f5f9ff) 0%, #ffffff 70%);
     border: 1px solid rgba(17, 17, 17, 0.08);
@@ -227,6 +227,7 @@ import { solutions } from '../data/solutions';
     box-shadow: 0 8px 32px -16px rgba(17, 17, 17, 0.18);
     text-decoration: none !important;
     color: inherit;
+    overflow: hidden; /* clip the flush-left image to the pillar's rounded corners */
     transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
   }
 
@@ -237,12 +238,11 @@ import { solutions } from '../data/solutions';
   }
 
   .solutions-pillar-media {
-    border-radius: 12px;
-    overflow: hidden;
+    border-radius: 0; /* flush against the pillar; left corners follow the pillar's radius via overflow:hidden, right edge is a straight cut */
     background: #0e0e16;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: stretch;
+    justify-content: stretch;
   }
 
   .solutions-pillar-media img {
@@ -257,7 +257,7 @@ import { solutions } from '../data/solutions';
     flex-direction: column;
     justify-content: center;
     gap: 16px;
-    padding: 8px 4px;
+    padding: 28px 28px 28px 40px;
   }
 
   .solutions-pillar-eyebrow {
@@ -814,7 +814,7 @@ import { solutions } from '../data/solutions';
         />
       </div>
       <div class="solutions-pillar-content">
-        <div class="solutions-pillar-eyebrow">OUR METHOD</div>
+        <div class="solutions-pillar-eyebrow">NEW TOOL LAUNCH</div>
         <div class="solutions-pillar-title-row">
           <h3 class="solutions-pillar-title">
             <i class="fa-solid fa-brain solutions-pillar-icon" aria-hidden="true"></i>OpenAgile.AI
