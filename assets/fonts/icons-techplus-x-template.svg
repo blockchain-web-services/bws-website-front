@@ -1,0 +1,16 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg">
+<metadata>Copyright (C) 2021 by original authors @ fontello.com</metadata>
+<defs>
+<font id="icons_techplus_x_template" horiz-adv-x="1000" >
+<font-face font-family="icons_techplus_x_template" font-weight="400" font-stretch="normal" units-per-em="1000" ascent="850" descent="-150" />
+<missing-glyph horiz-adv-x="1000" />
+<glyph glyph-name="dropdown-arrow" unicode="&#xe807;" d="M508 136c-23 0-34 10-56 20l-332 297c-33 30-33 69 0 89 33 20 78 30 100 0l288-248 276 248c33 30 78 30 100 0 22-30 33-69 0-89l-332-297c-11-10-22-20-44-20z" horiz-adv-x="1000" />
+
+<glyph glyph-name="arrow-left" unicode="&#xe808;" d="M550-143c14 0 36 7 50 22 21 28 21 64-7 92l-350 315h821c36 0 65 28 65 64s-29 64-65 64h-821l350 315c14 14 21 35 21 50 0 14-7 28-14 42-21 29-64 29-93 8l-471-429c0 0 0 0 0 0-7-7-15-14-15-21 0 0 0 0 0-8 0 0 0 0 0 0 0 0 0 0 0 0 0-7 0-14-7-14 0 0 0-7 0-7l0 0c0 0 0 0 0 0 0 0 0-7 0-7 0-7 0-14 7-14 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0-8 0-7 8-14 15-14l0 0c0 0 0 0 0 0 0 0 0 0 0 0l471-428c14-15 29-22 43-22z" horiz-adv-x="1143" />
+
+<glyph glyph-name="arrow-right" unicode="&#xe809;" d="M593-143c-14 0-36 7-50 22-22 28-22 64 7 92l350 315h-821c-36 0-65 28-65 64s29 64 65 64h821l-350 315c-14 14-21 35-21 50 0 14 7 28 14 42 21 29 64 29 93 8l471-429c0 0 0 0 0 0 7-7 7-14 14-14 0 0 0 0 0-7 0 0 0 0 0 0 0 0 0 0 0 0 0-8 0-15 8-15 0 0 0-7 0-7l0 0c0 0 0 0 0 0 0 0 0-7 0-7 0-7 0-14-8-14 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0-7 0-8-7-15-14-15l0 0c0 0 0 0 0 0 0 0 0 0 0 0l-471-428c-15-22-29-29-43-29z" horiz-adv-x="1143" />
+</font>
+</defs>
+</svg>
