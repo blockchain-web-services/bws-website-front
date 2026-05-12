@@ -361,6 +361,23 @@ import { solutions } from '../data/solutions';
     margin-top: 8px;
   }
 
+  /* Pillar CTA — restore the standard primary-button inversion on hover.
+     The site-wide WCAG override at styles.css:38040 forces `color: #fff !important`
+     on `body .button-primary._2-buttons:hover`, which collapses the text into the
+     white hover background. Re-invert it here for the pillar's CTA only. */
+  body .solutions-pillar:hover .button-primary._2-buttons,
+  body .solutions-pillar .button-primary._2-buttons:hover,
+  body .solutions-pillar:focus-within .button-primary._2-buttons {
+    background-color: var(--neutral-100, #ffffff) !important;
+    color: var(--rose, #c41841) !important;
+    border-color: var(--rose, #c41841) !important;
+  }
+
+  body .solutions-pillar:hover .button-primary._2-buttons .button-arrow,
+  body .solutions-pillar .button-primary._2-buttons:hover .button-arrow {
+    color: var(--rose, #c41841) !important;
+  }
+
   @media (max-width: 991px) {
     .solutions-pillar {
       grid-template-columns: 1fr;
