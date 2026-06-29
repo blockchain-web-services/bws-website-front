@@ -1,0 +1,20 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Navigation from "../../components/Navigation.astro";
+import Footer from "../../components/Footer.astro";
+import Scripts from "../../components/Scripts.astro";
+import MarketplacezellboxMainContent from "../../components/marketplacezellboxMainContent.astro";
+
+const pageTitle = "Zellbox — WhatsApp Business + Google Calendar CRM for appointment-driven SMBs";
+const pageDescription = "Zellbox unifies WhatsApp Business, Gmail, and Google Calendar into one CRM. Automated WhatsApp reminders, two-way calendar sync, and a shared inbox for appointment-driven businesses. Start free, no card required.";
+---
+
+<BaseLayout title={pageTitle} description={pageDescription}>
+  <Navigation />
+  <MarketplacezellboxMainContent />
+  <Footer />
+
+  <Fragment slot="scripts">
+    <Scripts />
+  </Fragment>
+</BaseLayout>

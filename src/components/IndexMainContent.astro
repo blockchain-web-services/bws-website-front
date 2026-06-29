@@ -269,6 +269,35 @@ import { solutions } from '../data/solutions';
     color: var(--rose, #c41841);
   }
 
+  /* "New" launch badge on a standard solution card */
+  .home-solution-card-image {
+    position: relative;
+  }
+
+  .solution-card-new-badge {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    z-index: 2;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 12px;
+    line-height: 1;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    /* offset trailing letter-spacing so the glyphs sit centered in the pill */
+    text-indent: 0.14em;
+    text-transform: uppercase;
+    color: #fff;
+    background: var(--rose, #c41841);
+    padding: 8px 13px;
+    border-radius: 8px;
+    box-shadow: 0 4px 14px rgba(196, 24, 65, 0.45);
+    pointer-events: none;
+  }
+
   .solutions-pillar-title-row {
     display: flex;
     flex-wrap: wrap;
@@ -849,11 +878,40 @@ import { solutions } from '../data/solutions';
           class="_3-column-grid solutions-post-cards-grid w-dyn-items"
         >
           <div role="listitem" class="markeplace-collection-item w-dyn-item">
+            <a href="/marketplace/zellbox.html" class="home-solution-card w-inline-block"
+              ><div class="w-embed"><span class="filter-solution-x filter-solution-CRM"></span></div><div
+                class="solution-card-wrapper"
+              >
+                <div class="home-solution-card-image">
+                  <span class="solution-card-new-badge">New</span>
+                  <img
+                    src="/assets/images/marketplace/zellbox/hero-card.png"
+                    alt="Zellbox — WhatsApp Business + Google Calendar CRM for appointment-driven SMBs"
+                    class="image solution-card-image"
+                  />
+                </div><div class="solution-card-content-wrapper">
+                  <div class="solution-card-2-column-title">
+                    <div class="solution-card-icon-wrapper"><div class="solution-card-icon"><i class="fa-solid fa-otter"></i></div></div><div
+                      class="solution-card-title-wrapper"
+                    >
+                      <h3 class="solution-card-title">Zellbox</h3><div class="solution-card-author">zellbox.com</div>
+                    </div>
+                  </div><div class="solution-card-text">
+                    <h3 class="title h4-size blog-card-summary">
+                      CRM for appointment-driven SMBs — bookings, customers, and automated WhatsApp reminders in one inbox.
+                    </h3>
+                  </div><div class="solution-card-read-more-text">Read more<span class="button-arrow"></span></div>
+                </div>
+              </div></a
+            >
+          </div>
+          <div role="listitem" class="markeplace-collection-item w-dyn-item">
             <a href="/marketplace/wallawhats.html" class="home-solution-card w-inline-block"
               ><div class="w-embed"><span class="filter-solution-x filter-solution-Socials"></span></div><div
                 class="solution-card-wrapper"
               >
                 <div class="home-solution-card-image">
+                  <span class="solution-card-new-badge">New</span>
                   <img
                     src="/assets/images/marketplace/wallawhats/hero-card.png"
                     alt="WallaWhats — real-time WhatsApp alerts for X/Twitter posts"

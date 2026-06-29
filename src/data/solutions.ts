@@ -47,6 +47,18 @@ export const solutions: Solution[] = [
     licensePills: ['Free for Solos', 'Licensed for Business']
   },
   {
+    title: 'Zellbox',
+    author: 'zellbox.com',
+    description: 'The CRM for appointment-driven SMBs — manage customers, bookings, and automated WhatsApp reminders from one shared inbox and calendar. Start free, no card required.',
+    image: {
+      src: '/assets/images/marketplace/zellbox/hero-card.png',
+      alt: 'Zellbox — WhatsApp Business + Google Calendar CRM for appointment-driven SMBs'
+    },
+    url: '/marketplace/zellbox.html',
+    networks: [],
+    category: 'CRM'
+  },
+  {
     title: 'WallaWhats',
     author: 'wallawhats.com',
     description: 'Real-time WhatsApp alerts when your favorite X/Twitter accounts post — no app required.',
