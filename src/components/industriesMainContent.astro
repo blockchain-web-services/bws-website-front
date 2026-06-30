@@ -1,11 +1,127 @@
 ---
-// Main content for industries page
+// Industries hub — links every industry-content page (previously orphaned).
+const industries = [
+  {
+    name: "Financial Services",
+    path: "/industry-content/financial-services.html",
+    icon: "fa-building-columns",
+    blurb: "Immutable transaction records, verifiable credentials, and compliance-ready data anchoring.",
+  },
+  {
+    name: "Legal",
+    path: "/industry-content/legal.html",
+    icon: "fa-scale-balanced",
+    blurb: "Immutable record-keeping, document notarization, and verifiable credentials with full audit trails.",
+  },
+  {
+    name: "Supply Chain",
+    path: "/industry-content/supply-chain.html",
+    icon: "fa-truck-fast",
+    blurb: "End-to-end traceability, immutable provenance, and verifiable certificates of trust.",
+  },
+  {
+    name: "Retail",
+    path: "/industry-content/retail.html",
+    icon: "fa-bag-shopping",
+    blurb: "Supply-chain provenance, digital credentials, and customer engagement that builds trust.",
+  },
+  {
+    name: "ESG",
+    path: "/industry-content/esg.html",
+    icon: "fa-leaf",
+    blurb: "Transparent sustainability reporting, verifiable impact data, and audit-ready governance.",
+  },
+  {
+    name: "Content Creation",
+    path: "/industry-content/content-creation.html",
+    icon: "fa-palette",
+    blurb: "Content provenance, NFT minting, and audience analytics for creators.",
+  },
+];
 ---
 
-<main class="main-content">
-  <div class="container">
-    <div class="content-wrapper">
-      <div class="content-area"></div>
+<main class="container-medium container-solution">
+  <div class="solution-page-card">
+    <h1 class="title h2-size">Industries</h1>
+    <p class="paragraph" style="max-width:680px;">
+      How BWS applies its AI-native, blockchain-ready product workflow across the sectors where trust, traceability,
+      and verifiable records matter most.
+    </p>
+    <div class="industries-grid">
+      {
+        industries.map((ind) => (
+          <a href={ind.path} class="industries-card">
+            <div class="industries-card-icon">
+              <i class={`fa-solid ${ind.icon}`} aria-hidden="true" />
+            </div>
+            <h2 class="industries-card-title">{ind.name}</h2>
+            <p class="industries-card-blurb">{ind.blurb}</p>
+            <span class="industries-card-readmore">
+              Explore<i class="fa-solid fa-arrow-right" aria-hidden="true" />
+            </span>
+          </a>
+        ))
+      }
     </div>
   </div>
 </main>
+
+<style is:global>
+  .industries-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 18px;
+    margin-top: 28px;
+  }
+  .industries-card {
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+    border: 1px solid rgba(17, 17, 26, 0.08);
+    border-radius: 14px;
+    background: #fff;
+    text-decoration: none;
+    color: inherit;
+    transition:
+      transform 0.18s ease,
+      box-shadow 0.18s ease,
+      border-color 0.18s ease;
+  }
+  .industries-card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(196, 24, 65, 0.35);
+    box-shadow: 0 10px 28px rgba(17, 17, 26, 0.1);
+  }
+  .industries-card-icon {
+    width: 44px;
+    height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 11px;
+    background: rgba(196, 24, 65, 0.08);
+    color: var(--rose, #c41841);
+    font-size: 18px;
+    margin-bottom: 16px;
+  }
+  .industries-card-title {
+    margin: 0 0 10px;
+    font-size: 18px;
+    font-weight: 700;
+  }
+  .industries-card-blurb {
+    margin: 0 0 16px;
+    font-size: 14px;
+    line-height: 1.5;
+    color: rgba(17, 17, 26, 0.7);
+  }
+  .industries-card-readmore {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    margin-top: auto;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--rose, #c41841);
+  }
+</style>
