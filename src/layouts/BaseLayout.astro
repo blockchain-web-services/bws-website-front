@@ -7,6 +7,7 @@ export interface Props {
   description?: string;
   image?: string;
   canonical?: string;
+  noindex?: boolean;
 }
 
 const {
@@ -14,6 +15,7 @@ const {
   description = "Our consolidated AI workflow turns validated market demand into production-ready solutions — fast. Every solution carries a blockchain dimension, delivered when it meaningfully deepens the customer outcome.",
   image = "/assets/images/6474d385cfec71cb21a92251/6731e7a5d7e59b65fb1282e6_BWS%20Cover_landing_1200x630.jpg",
   canonical,
+  noindex = false,
 } = Astro.props;
 
 const siteOrigin = Astro.site ?? new URL("https://www.bws.ninja");
@@ -58,7 +60,7 @@ const orgJsonLd = {
     <meta charset="utf-8" />
     <title>{title}</title>
     <meta content={description} name="description" />
-    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="robots" content={noindex ? "noindex, follow" : "index, follow, max-image-preview:large"} />
     <meta content={title} property="og:title" />
     <meta content={description} property="og:description" />
     <meta content={absoluteImage} property="og:image" />

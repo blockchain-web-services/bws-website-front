@@ -1,0 +1,33 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Navigation from "../components/Navigation.astro";
+import Footer from "../components/Footer.astro";
+import Scripts from "../components/Scripts.astro";
+
+const pageTitle = "Page Not Found (404) | BWS";
+const pageDescription = "The page you were looking for could not be found. Explore the BWS marketplace or head back to the homepage.";
+---
+
+<BaseLayout title={pageTitle} description={pageDescription} noindex={true}>
+  <Navigation />
+  <main class="container-medium container-solution">
+    <div class="solution-page-card" style="text-align:center;">
+      <p style="font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;letter-spacing:0.22em;text-transform:uppercase;color:var(--rose,#c41841);font-size:13px;margin:0 0 12px;">
+        Error 404
+      </p>
+      <h1 class="title h2-size">This page wandered off.</h1>
+      <p class="paragraph" style="max-width:560px;margin:16px auto 28px;">
+        The page you were looking for doesn’t exist or has moved. Try the marketplace, or head back home.
+      </p>
+      <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+        <a href="/" class="button-primary small flex w-inline-block"><div>Back to Home</div></a>
+        <a href="/#solutions" class="button-secondary small flex w-inline-block"><div>Browse Marketplace</div></a>
+      </div>
+    </div>
+  </main>
+  <Footer />
+
+  <Fragment slot="scripts">
+    <Scripts />
+  </Fragment>
+</BaseLayout>

@@ -6,8 +6,16 @@ export default defineConfig({
   // Canonical production URL — required for sitemap and absolute URLs
   site: 'https://www.bws.ninja',
 
-  // Generate sitemap-index.xml + sitemap-0.xml at build time
-  integrations: [sitemap()],
+  // Generate sitemap-index.xml + sitemap-0.xml at build time.
+  // Exclude noindex redirect stubs and the 404 page.
+  integrations: [
+    sitemap({
+      filter: (page) =>
+        !page.includes('/marketplace/database-immutable') &&
+        !page.includes('/marketplace/database-mutable') &&
+        !page.includes('/404'),
+    }),
+  ],
 
   // Keep existing file structure
   outDir: './_site',

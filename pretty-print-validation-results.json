@@ -1,6 +1,14 @@
 {
   "html": [
     {
+      "file": "_site/404.html",
+      "originalSize": 39058,
+      "newSize": 52359,
+      "sizeDiff": 13301,
+      "prettyPrinted": true,
+      "errors": []
+    },
+    {
       "file": "_site/about.html",
       "originalSize": 31863,
       "newSize": 42904,
@@ -810,8 +818,8 @@
     },
     {
       "file": "_site/contact-us.html",
-      "originalSize": 40958,
-      "newSize": 55113,
+      "originalSize": 41084,
+      "newSize": 55239,
       "sizeDiff": 14155,
       "prettyPrinted": true,
       "errors": []
@@ -826,64 +834,64 @@
     },
     {
       "file": "_site/industries.html",
-      "originalSize": 31708,
-      "newSize": 42701,
-      "sizeDiff": 10993,
+      "originalSize": 32083,
+      "newSize": 43124,
+      "sizeDiff": 11041,
       "prettyPrinted": true,
       "errors": []
     },
     {
       "file": "_site/industry-content/content-creation.html",
-      "originalSize": 44519,
-      "newSize": 59121,
+      "originalSize": 44777,
+      "newSize": 59379,
       "sizeDiff": 14602,
       "prettyPrinted": true,
       "errors": []
     },
     {
       "file": "_site/industry-content/esg.html",
-      "originalSize": 44124,
-      "newSize": 58801,
+      "originalSize": 44376,
+      "newSize": 59053,
       "sizeDiff": 14677,
       "prettyPrinted": true,
       "errors": []
     },
     {
       "file": "_site/industry-content/financial-services.html",
-      "originalSize": 44538,
-      "newSize": 59132,
+      "originalSize": 44724,
+      "newSize": 59318,
       "sizeDiff": 14594,
       "prettyPrinted": true,
       "errors": []
     },
     {
       "file": "_site/industry-content/legal.html",
-      "originalSize": 44671,
-      "newSize": 59349,
+      "originalSize": 44923,
+      "newSize": 59601,
       "sizeDiff": 14678,
       "prettyPrinted": true,
       "errors": []
     },
     {
       "file": "_site/industry-content/retail.html",
-      "originalSize": 44333,
-      "newSize": 58977,
+      "originalSize": 44597,
+      "newSize": 59241,
       "sizeDiff": 14644,
       "prettyPrinted": true,
       "errors": []
     },
     {
       "file": "_site/industry-content/supply-chain.html",
-      "originalSize": 44933,
-      "newSize": 59607,
+      "originalSize": 45104,
+      "newSize": 59778,
       "sizeDiff": 14674,
       "prettyPrinted": true,
       "errors": []
     },
     {
       "file": "_site/legal-notice.html",
-      "originalSize": 44594,
-      "newSize": 59945,
+      "originalSize": 44597,
+      "newSize": 59948,
       "sizeDiff": 15351,
       "prettyPrinted": true,
       "errors": []
@@ -898,9 +906,9 @@
     },
     {
       "file": "_site/marketplace/blockchain-database.html",
-      "originalSize": 44466,
-      "newSize": 60282,
-      "sizeDiff": 15816,
+      "originalSize": 44646,
+      "newSize": 60494,
+      "sizeDiff": 15848,
       "prettyPrinted": true,
       "errors": []
     },
@@ -930,8 +938,8 @@
     },
     {
       "file": "_site/marketplace/nft-zeroknwoledge.html",
-      "originalSize": 44565,
-      "newSize": 60455,
+      "originalSize": 44895,
+      "newSize": 60785,
       "sizeDiff": 15890,
       "prettyPrinted": true,
       "errors": []
@@ -946,8 +954,8 @@
     },
     {
       "file": "_site/marketplace/telegram-xbot.html",
-      "originalSize": 42750,
-      "newSize": 57614,
+      "originalSize": 43107,
+      "newSize": 57971,
       "sizeDiff": 14864,
       "prettyPrinted": true,
       "errors": []
@@ -970,17 +978,17 @@
     },
     {
       "file": "_site/privacy-policy.html",
-      "originalSize": 46354,
-      "newSize": 61778,
+      "originalSize": 46348,
+      "newSize": 61772,
       "sizeDiff": 15424,
       "prettyPrinted": true,
       "errors": []
     },
     {
       "file": "_site/resources.html",
-      "originalSize": 31736,
-      "newSize": 42729,
-      "sizeDiff": 10993,
+      "originalSize": 32117,
+      "newSize": 43158,
+      "sizeDiff": 11041,
       "prettyPrinted": true,
       "errors": []
     },
@@ -1052,9 +1060,9 @@
     }
   ],
   "summary": {
-    "totalHtml": 124,
+    "totalHtml": 125,
     "totalCss": 6,
-    "htmlPrettyPrinted": 124,
+    "htmlPrettyPrinted": 125,
     "cssPrettyPrinted": 5,
     "htmlErrors": 0,
     "cssErrors": 1
