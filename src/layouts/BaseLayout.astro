@@ -5,12 +5,45 @@ import { quarterContents } from '../data/quarterContent';
 export interface Props {
   title?: string;
   description?: string;
+  image?: string;
+  canonical?: string;
 }
 
 const {
   title = "Demand Becomes Product",
   description = "Our consolidated AI workflow turns validated market demand into production-ready solutions — fast. Every solution carries a blockchain dimension, delivered when it meaningfully deepens the customer outcome.",
+  image = "/assets/images/6474d385cfec71cb21a92251/6731e7a5d7e59b65fb1282e6_BWS%20Cover_landing_1200x630.jpg",
+  canonical,
 } = Astro.props;
+
+const siteOrigin = Astro.site ?? new URL("https://www.bws.ninja");
+// Per-page canonical, normalized to the extensionless form used by the sitemap.
+const canonicalPath = Astro.url.pathname.replace(/\.html$/, "").replace(/\/index$/, "/");
+const canonicalURL = canonical ?? new URL(canonicalPath || "/", siteOrigin).href;
+// Open Graph / Twitter images must be absolute URLs.
+const absoluteImage = new URL(image, siteOrigin).href;
+
+const orgJsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": `${siteOrigin.origin}/#organization`,
+      name: "BWS — Blockchain Web Services",
+      url: siteOrigin.origin + "/",
+      logo: new URL("/assets/images/logo-void.svg", siteOrigin).href,
+      description:
+        "BWS turns validated market demand into production-ready software products, each with an optional blockchain dimension.",
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${siteOrigin.origin}/#website`,
+      name: "BWS — Blockchain Web Services",
+      url: siteOrigin.origin + "/",
+      publisher: { "@id": `${siteOrigin.origin}/#organization` },
+    },
+  ],
+};
 ---
 
 <!doctype html>
@@ -25,21 +58,22 @@ const {
     <meta charset="utf-8" />
     <title>{title}</title>
     <meta content={description} name="description" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
     <meta content={title} property="og:title" />
     <meta content={description} property="og:description" />
-    <meta
-      content="/assets/images/6474d385cfec71cb21a92251/6731e7a5d7e59b65fb1282e6_BWS%20Cover_landing_1200x630.jpg"
-      property="og:image"
-    />
+    <meta content={absoluteImage} property="og:image" />
+    <meta content={canonicalURL} property="og:url" />
+    <meta content="BWS — Blockchain Web Services" property="og:site_name" />
+    <meta content="en_US" property="og:locale" />
     <meta content={title} property="twitter:title" />
     <meta content={description} property="twitter:description" />
-    <meta
-      content="/assets/images/6474d385cfec71cb21a92251/6731e7a5d7e59b65fb1282e6_BWS%20Cover_landing_1200x630.jpg"
-      property="twitter:image"
-    />
+    <meta content={absoluteImage} property="twitter:image" />
     <meta property="og:type" content="website" />
     <meta content="summary_large_image" name="twitter:card" />
     <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <!-- Preconnect to third-party origins used in <head> -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin="anonymous" />
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin="anonymous" />
     <!-- Critical CSS for test stability - MUST load before external CSS -->
     <!-- is:global prevents Astro from adding scoping attributes -->
     <style is:global>
@@ -147,7 +181,8 @@ const {
       rel="apple-touch-icon"
       sizes="180x180"
     />
-    <link href="https://www.bws.ninja" rel="canonical" />
+    <link href={canonicalURL} rel="canonical" />
+    <script type="application/ld+json" set:html={JSON.stringify(orgJsonLd)} is:inline />
     <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-TKTH70X52B"></script>
     <script type="text/javascript">
       window.dataLayer = window.dataLayer || [];
