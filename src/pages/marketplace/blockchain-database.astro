@@ -4,6 +4,7 @@ import Navigation from "../../components/Navigation.astro";
 import Footer from "../../components/Footer.astro";
 import Scripts from "../../components/Scripts.astro";
 import MarketplaceBlockchainDatabaseMainContent from "../../components/marketplaceblockchaindatabaseMainContent.astro";
+import ProductSchema from "../../components/ProductSchema.astro";
 
 const pageTitle = "Blockchain Database — Immutable Records & Queryable Hash Tables via One API | BWS";
 const pageDescription = "Blockchain Database — a single API to anchor immutable records with a Certificate of Trust, or use the blockchain as a queryable hash table. No wallets, no gas fees.";
@@ -12,6 +13,7 @@ const pageDescription = "Blockchain Database — a single API to anchor immutabl
 <BaseLayout title={pageTitle} description={pageDescription}>
   <Navigation />
   <MarketplaceBlockchainDatabaseMainContent />
+  <ProductSchema name="Blockchain Database" description={pageDescription} path="/marketplace/blockchain-database.html" category="DeveloperApplication" />
   <Footer />
 
   <Fragment slot="scripts">

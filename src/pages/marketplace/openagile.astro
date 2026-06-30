@@ -4,6 +4,7 @@ import Navigation from "../../components/Navigation.astro";
 import Footer from "../../components/Footer.astro";
 import Scripts from "../../components/Scripts.astro";
 import MarketplaceOpenAgileMainContent from "../../components/marketplaceopenagileMainContent.astro";
+import ProductSchema from "../../components/ProductSchema.astro";
 
 const pageTitle = "OpenAgile.AI — Engineering Discipline for AI-Assisted Development";
 const pageDescription = "OpenAgile.AI is the engineering process layer for AI-assisted development. Specs before prompts, 342-check validation before generation, bidirectional traceability by default. Free for solos, licensed for business.";
@@ -12,6 +13,7 @@ const pageDescription = "OpenAgile.AI is the engineering process layer for AI-as
 <BaseLayout title={pageTitle} description={pageDescription}>
   <Navigation />
   <MarketplaceOpenAgileMainContent />
+  <ProductSchema name="OpenAgile.AI" description={pageDescription} path="/marketplace/openagile.html" category="DeveloperApplication" />
   <Footer />
 
   <Fragment slot="scripts">

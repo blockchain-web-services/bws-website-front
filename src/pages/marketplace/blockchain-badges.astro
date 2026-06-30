@@ -4,6 +4,7 @@ import Navigation from "../../components/Navigation.astro";
 import Footer from "../../components/Footer.astro";
 import Scripts from "../../components/Scripts.astro";
 import MarketplaceblockchainbadgesMainContent from "../../components/marketplaceblockchainbadgesMainContent.astro";
+import ProductSchema from "../../components/ProductSchema.astro";
 
 const pageTitle = "Badges.ninja — Digital Badges with Blockchain Verification | BWS";
 const pageDescription = "Create, issue, and verify digital badges with a visual designer, REST API, bulk awarding, and optional on-chain anchoring. Open Badge v2.0 compliant. Free tier available.";
@@ -12,6 +13,7 @@ const pageDescription = "Create, issue, and verify digital badges with a visual 
 <BaseLayout title={pageTitle} description={pageDescription}>
   <Navigation />
   <MarketplaceblockchainbadgesMainContent />
+  <ProductSchema name="Badges.ninja" description={pageDescription} path="/marketplace/blockchain-badges.html" externalUrl="https://badges.ninja" />
   <Footer />
 
   <Fragment slot="scripts">
