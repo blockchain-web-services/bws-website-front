@@ -1,5 +1,125 @@
 ---
 // Main content for marketplace/zellbox page
+
+// Curated entries from the Zellbox blog (zellbox.com/blog). Summaries are
+// written here (not copied from source) to avoid duplicate content, and link
+// out with descriptive anchor text for topical relevance. Dates are omitted
+// deliberately — the source feed does not expose reliable publish dates.
+const blogBase = "https://zellbox.com/blog";
+const blogPosts = [
+  {
+    slug: "checklist-gdpr-hipaa-clinics",
+    title: "GDPR + HIPAA checklist for clinics: 12 audit points",
+    summary:
+      "A 12-point compliance checklist private clinics can use to keep WhatsApp reminders audit-ready for GDPR and HIPAA.",
+    tags: ["GDPR", "HIPAA", "Clinics"],
+  },
+  {
+    slug: "spa-booking-conversion-whatsapp",
+    title: "Spa + wellness: turning WhatsApp inquiries into booked treatments",
+    summary:
+      "Why spa and wellness inquiries convert far better over WhatsApp than by phone — and how to capture them.",
+    tags: ["Spa", "Wellness", "Conversion"],
+  },
+  {
+    slug: "aesthetic-clinic-precare-postcare-whatsapp",
+    title: "Pre-care + post-care WhatsApp flows for aesthetic clinics",
+    summary:
+      "Structured pre-care and post-care WhatsApp touch points that improve outcomes and recall for aesthetic clinics.",
+    tags: ["Aesthetics", "Patient flows"],
+  },
+  {
+    slug: "veterinary-vaccination-recall-whatsapp",
+    title: "Annual vaccination + quarterly antiparasitic recall on WhatsApp",
+    summary:
+      "Running parallel vaccination and antiparasitic recall calendars for veterinary practices over WhatsApp.",
+    tags: ["Veterinary", "Recall"],
+  },
+  {
+    slug: "mental-health-confidential-whatsapp-flows",
+    title: "Confidential WhatsApp flows for psychology + mental-health practices",
+    summary:
+      "Confidential reminder flows that cut no-shows while protecting patient privacy in mental-health practices.",
+    tags: ["Mental health", "Confidentiality"],
+  },
+  {
+    slug: "physiotherapy-bono-cancellation-policy",
+    title: "The 24h cancellation policy that protects a physio's bono economics",
+    summary:
+      "How a clear 24-hour cancellation policy protects margins on multi-session physiotherapy packages.",
+    tags: ["Physiotherapy", "Cancellations"],
+  },
+  {
+    slug: "beauty-salon-recall-stylist-handoff",
+    title: "Beauty salon: stylist-aware customer recall (who cuts what, when)",
+    summary:
+      "Stylist-aware customer recall for beauty salons — remembering who cuts what, and when it's due again.",
+    tags: ["Beauty salon", "Recall"],
+  },
+  {
+    slug: "fitness-studio-class-pack-renewal",
+    title: "Fitness studios: WhatsApp campaigns that renew the class pack on time",
+    summary:
+      "A session-7 WhatsApp nudge that lifts class-pack renewals for fitness, yoga, and CrossFit studios.",
+    tags: ["Fitness", "Class packs"],
+  },
+  {
+    slug: "barber-shop-walkin-vs-booking",
+    title: "Walk-ins vs WhatsApp booking — the math for a 4-chair barber shop",
+    summary:
+      "The economics of walk-ins versus WhatsApp booking, worked through for a four-chair barber shop.",
+    tags: ["Barber", "Booking"],
+  },
+];
+
+const pricingTiers = [
+  { name: "Starter", price: "0", desc: "50 customers, 50 appointments/month" },
+  { name: "Pro", price: "29", desc: "500 customers, 1,000 appointments/month" },
+  { name: "Business", price: "99", desc: "5,000 customers, 10,000 appointments/month" },
+  { name: "Enterprise", price: "299", desc: "50,000 customers, 100,000 appointments/month" },
+];
+
+// JSON-LD: SoftwareApplication (pricing retained as structured data even
+// though the visible Pricing tab is gone), the blog ItemList, and breadcrumbs.
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      name: "Zellbox",
+      applicationCategory: "BusinessApplication",
+      operatingSystem: "Web",
+      url: "https://zellbox.com",
+      description:
+        "Zellbox is a CRM for appointment-driven SMBs that unifies WhatsApp Business, Gmail, and Google Calendar — automated WhatsApp reminders, two-way calendar sync, and a shared inbox.",
+      offers: pricingTiers.map((t) => ({
+        "@type": "Offer",
+        name: `${t.name} plan`,
+        price: t.price,
+        priceCurrency: "USD",
+        description: t.desc,
+      })),
+    },
+    {
+      "@type": "ItemList",
+      name: "Zellbox guides for appointment-driven businesses",
+      itemListElement: blogPosts.map((p, i) => ({
+        "@type": "ListItem",
+        position: i + 1,
+        url: `${blogBase}/${p.slug}`,
+        name: p.title,
+      })),
+    },
+    {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: "https://www.bws.ninja/" },
+        { "@type": "ListItem", position: 2, name: "Marketplace", item: "https://www.bws.ninja/#solutions" },
+        { "@type": "ListItem", position: 3, name: "Zellbox", item: "https://www.bws.ninja/marketplace/zellbox.html" },
+      ],
+    },
+  ],
+};
 ---
 
 <div class="container-medium container-solution">
@@ -51,8 +171,8 @@
             <div class="integration-tabs-menu w-tab-menu">
               <a data-w-tab="Description" class="integration-tab-link w-inline-block w-tab-link w--current"
                 ><div>Description</div></a
-              ><a data-w-tab="Pricing" class="integration-tab-link last w-inline-block w-tab-link"
-                ><div>Pricing</div></a
+              ><a data-w-tab="Resources" class="integration-tab-link last w-inline-block w-tab-link"
+                ><div>Resources</div></a
               >
             </div>
             <div class="integrations-tabs-content w-tab-content">
@@ -115,24 +235,40 @@
                   </p>
                 </div>
               </div>
-              <div data-w-tab="Pricing" class="integration-tab w-tab-pane">
+              <div data-w-tab="Resources" class="integration-tab w-tab-pane">
                 <div class="rich-text w-richtext">
-                  <h4><strong>Plans</strong></h4>
-                  <ul role="list">
-                    <li><strong>Starter — Free</strong><br />50 customers and 50 appointments per month. No credit card.</li>
-                    <li><strong>Pro — $29/mo</strong><br />500 customers and 1,000 appointments per month.</li>
-                    <li><strong>Business — $99/mo</strong><br />5,000 customers and 10,000 appointments per month.</li>
-                    <li>
-                      <strong>Enterprise — $299/mo</strong><br />50,000 customers and 100,000 appointments per month.
-                    </li>
-                  </ul>
                   <p>
-                    WhatsApp conversation costs are billed separately by Meta. See current plans and limits at <a
-                      href="https://zellbox.com"
+                    Practical guides from the <a
+                      href="https://zellbox.com/blog"
                       target="_blank"
-                      rel="noopener noreferrer">zellbox.com</a
-                    >.
+                      rel="noopener">Zellbox blog</a
+                    > on cutting no-shows and booking more appointments over WhatsApp — written for clinics, salons,
+                    veterinary and physiotherapy practices, spas, fitness studios, and other appointment-driven
+                    businesses.
                   </p>
+                </div>
+                <div class="zellbox-blog-grid">
+                  {
+                    blogPosts.map((post) => (
+                      <a
+                        href={`${blogBase}/${post.slug}`}
+                        target="_blank"
+                        rel="noopener"
+                        class="zellbox-blog-card"
+                      >
+                        <h4 class="zellbox-blog-card-title">{post.title}</h4>
+                        <p class="zellbox-blog-card-summary">{post.summary}</p>
+                        <div class="zellbox-blog-card-tags">
+                          {post.tags.map((tag) => (
+                            <span class="zellbox-blog-tag">{tag}</span>
+                          ))}
+                        </div>
+                        <span class="zellbox-blog-card-readmore">
+                          Read on zellbox.com<i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true" />
+                        </span>
+                      </a>
+                    ))
+                  }
                 </div>
               </div>
             </div>
@@ -152,3 +288,76 @@
     </div>
   </div>
 </div>
+
+<script type="application/ld+json" set:html={JSON.stringify(jsonLd)} is:inline />
+
+<style is:global>
+  .zellbox-blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 16px;
+    margin-top: 18px;
+  }
+
+  .zellbox-blog-card {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    border: 1px solid rgba(17, 17, 26, 0.08);
+    border-radius: 14px;
+    background: #fff;
+    text-decoration: none;
+    color: inherit;
+    transition:
+      transform 0.18s ease,
+      box-shadow 0.18s ease,
+      border-color 0.18s ease;
+  }
+
+  .zellbox-blog-card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(196, 24, 65, 0.35);
+    box-shadow: 0 10px 28px rgba(17, 17, 26, 0.1);
+  }
+
+  .zellbox-blog-card-title {
+    margin: 0 0 8px;
+    font-size: 16px;
+    line-height: 1.35;
+    font-weight: 700;
+  }
+
+  .zellbox-blog-card-summary {
+    margin: 0 0 14px;
+    font-size: 14px;
+    line-height: 1.5;
+    color: rgba(17, 17, 26, 0.7);
+  }
+
+  .zellbox-blog-card-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: auto;
+    margin-bottom: 12px;
+  }
+
+  .zellbox-blog-tag {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    color: var(--rose, #c41841);
+    background: rgba(196, 24, 65, 0.08);
+    padding: 3px 9px;
+    border-radius: 999px;
+  }
+
+  .zellbox-blog-card-readmore {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--rose, #c41841);
+  }
+</style>

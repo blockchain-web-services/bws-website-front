@@ -1,7 +1,14 @@
 import { defineConfig } from 'astro/config';
+import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
+  // Canonical production URL — required for sitemap and absolute URLs
+  site: 'https://www.bws.ninja',
+
+  // Generate sitemap-index.xml + sitemap-0.xml at build time
+  integrations: [sitemap()],
+
   // Keep existing file structure
   outDir: './_site',
 
