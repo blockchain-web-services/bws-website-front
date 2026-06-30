@@ -1,12 +1,20 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Navigation from "../components/Navigation.astro";
+import Footer from "../components/Footer.astro";
+import Scripts from "../components/Scripts.astro";
 import AboutMainContent from "../components/aboutMainContent.astro";
 
-const pageTitle = "About - BWS";
-const pageDescription = "Learn about BWS and our mission to build market-demand-first solutions through a consolidated AI-native workflow.";
+const pageTitle = "About BWS — Demand Becomes Product";
+const pageDescription = "BWS turns validated market demand into production-ready software products through a consolidated, AI-native workflow — with a blockchain dimension when it deepens the outcome.";
 ---
 
 <BaseLayout title={pageTitle} description={pageDescription}>
-  <Navigation /><AboutMainContent />
+  <Navigation />
+  <AboutMainContent />
+  <Footer />
+
+  <Fragment slot="scripts">
+    <Scripts />
+  </Fragment>
 </BaseLayout>
