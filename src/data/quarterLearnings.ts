@@ -20,12 +20,12 @@ export const quarterLearnings: QuarterLearnings = {
     achieved: [
       'Consolidated the full product lifecycle — discovery, design, engineering, QA, and marketplace ship — into a single AI-native build workflow operated in-house.',
       'Shifted the marketplace model: every new solution is now built, owned, and operated internally, removing reliance on external developer pipelines.',
-      'Opened the solution scope beyond blockchain-native products to include market-demand-first solutions, each architected to carry a blockchain dimension when it deepens the customer outcome.'
+      'Opened the solution scope to market-demand-first products, each selected and architected around the outcome it delivers for the customer.'
     ],
     missed: [],
     lessons: [
       'The defensible advantage is the workflow, not any individual solution — every shipped solution that sharpens the pipeline compounds the next launch.',
-      'Framing blockchain as an added-value dimension (rather than a gate) expands the addressable market without weakening the positioning for blockchain-native customers.'
+      'Leading with the customer outcome rather than the underlying technology expands the addressable market without weakening the positioning for technical buyers.'
     ]
   }
   // Additional quarters will be added as they become past quarters
