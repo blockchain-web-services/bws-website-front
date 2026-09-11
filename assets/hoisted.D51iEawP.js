@@ -1,0 +1,1 @@
+import"https://www.googletagmanager.com/gtag/js?id=G-TKTH70X52B";(function(e,n,r,t,g){e[t]=e[t]||[],e[t].push({"gtm.start":new Date().getTime(),event:"gtm.js"});var m=n.getElementsByTagName(r)[0],a=n.createElement(r),o="";a.async=!0,a.src="https://www.googletagmanager.com/gtm.js?id="+g+o,m.parentNode.insertBefore(a,m)})(window,document,"script","dataLayer","GTM-PVB2TL4X");
