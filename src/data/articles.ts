@@ -64,7 +64,7 @@ export const articles: ArticleMetadata[] = [
   slug: 'badges-2026-01-26',
   product: 'Badges.ninja',
   title: 'Badges.ninja: Tamper-Proof Digital Credentials with Instant Verification',
-  subtitle: 'Credential fraud undermines trust in professional certifications and academic achievements. Badges.ninja solves this critical problem by storing digital credentials as tamper-proof records with cryptographic verification, enabling organizations to issue tamper-proof certificates that can be instantly verified without ever contacting the original issuers.',
+  subtitle: 'Credential fraud undermines trust in professional certifications and academic achievements. Badges.ninja solves this critical problem by issuing credentials as tamper-proof records at permanent verification URLs, so certificates can be checked instantly without ever contacting the original issuer.',
   publishDate: '2026-01-26T10:04:40.851Z',
   tweetId: '',
   featuredImage: {
@@ -72,7 +72,7 @@ export const articles: ArticleMetadata[] = [
     alt: 'Cover',
     loading: 'eager'
   },
-  seoDescription: 'Badges.ninja provides tamper-proof digital credentials with instant tamper-proof verification, eliminating credential fraud for organizations.'
+  seoDescription: 'Badges.ninja provides tamper-proof digital credentials with instant independent verification, eliminating credential fraud for organizations.'
 },
 {
   slug: 'x-bot-2026-01-25',
@@ -100,7 +100,7 @@ export const articles: ArticleMetadata[] = [
     alt: 'Cover',
     loading: 'eager'
   },
-  seoDescription: 'Badges.ninja provides tamper-proof digital credentials with tamper-proof verification. Institutions issue certificates with instant verification, preventing fraud at scale.'
+  seoDescription: 'Badges.ninja provides tamper-proof digital credentials anyone can check. Institutions issue certificates with instant verification, preventing fraud at scale.'
 },
 {
   slug: 'x-bot-2026-01-21',
@@ -128,7 +128,7 @@ export const articles: ArticleMetadata[] = [
     alt: 'Cover',
     loading: 'eager'
   },
-  seoDescription: 'Badges.ninja creates tamper-proof digital credentials with tamper-proof verification. Educational institutions issue verifiable certificates at scale.'
+  seoDescription: 'Badges.ninja creates tamper-proof digital credentials anyone can check. Educational institutions issue verifiable certificates at scale.'
 },
 {
   slug: 'x-bot-2025-12-25',
@@ -147,8 +147,8 @@ export const articles: ArticleMetadata[] = [
 {
   slug: 'badges-2025-12-12',
   product: 'Badges.ninja',
-  title: 'Badges.ninja: Issue Tamper-Proof Digital Credentials with Tamper-Proof Verification',
-  subtitle: 'Traditional credential verification traps organizations in a cycle of repetitive processes, document uploads, and manual verification calls that waste time and create security vulnerabilities. Badges.ninja breaks this cycle by issuing tamper-proof digital credentials with immutable verifiable credentials proof—enabling instant verification by anyone, anywhere, without the friction.',
+  title: 'Badges.ninja: Issue Digital Credentials Anyone Can Verify',
+  subtitle: 'Traditional credential verification traps organizations in a cycle of repetitive processes, document uploads, and manual verification calls that waste time and create security vulnerabilities. Badges.ninja breaks this cycle by issuing tamper-proof digital credentials with permanent proof of issuance—enabling instant verification by anyone, anywhere, without the friction.',
   publishDate: '2025-12-12T10:04:02.390Z',
   tweetId: '',
   featuredImage: {
@@ -156,6 +156,6 @@ export const articles: ArticleMetadata[] = [
     alt: 'Cover',
     loading: 'eager'
   },
-  seoDescription: 'Badges.ninja creates verifiable digital credentials with immutable verifiable credentials proof for universities and organizations, eliminating repetitive verification.'
+  seoDescription: 'Badges.ninja creates verifiable digital credentials with permanent proof of issuance for universities and organizations, eliminating repetitive verification.'
 }
 ];
