@@ -35,8 +35,8 @@ export const articles: ArticleMetadata[] = [
 {
   slug: 'badges-2026-02-23',
   product: 'Badges.ninja',
-  title: 'Badges.ninja: Cryptographic Verification for Digital Credentials',
-  subtitle: 'Traditional credential verification requires contacting issuers—a process that creates delays and opens the door to fraud. Badges.ninja eliminates these vulnerabilities by storing digital credentials as tamper-proof records with cryptographic verification, enabling instant authentication of certificates, training completions, and memberships without ever contacting the issuer.',
+  title: 'Badges.ninja: Independent Verification for Digital Credentials',
+  subtitle: 'Traditional credential verification requires contacting issuers—a process that creates delays and opens the door to fraud. Badges.ninja eliminates these vulnerabilities by storing digital credentials as tamper-proof records with independent verification, enabling instant authentication of certificates, training completions, and memberships without ever contacting the issuer.',
   publishDate: '2026-02-23T10:17:37.831Z',
   tweetId: '',
   featuredImage: {
@@ -44,7 +44,7 @@ export const articles: ArticleMetadata[] = [
     alt: 'Cover',
     loading: 'eager'
   },
-  seoDescription: 'Discover how Badges.ninja uses cryptographic verification to store credentials as tamper-proof records, enabling instant authentication of certificates without contacting issuers.'
+  seoDescription: 'Discover how Badges.ninja uses independent verification to store credentials as tamper-proof records, enabling instant authentication of certificates without contacting issuers.'
 },
 {
   slug: 'x-bot-2026-02-22',
@@ -92,7 +92,7 @@ export const articles: ArticleMetadata[] = [
   slug: 'badges-2026-01-22',
   product: 'Badges.ninja',
   title: 'Badges.ninja: Tamper-Proof Digital Credentials with Instant Verification',
-  subtitle: 'Credential fraud costs institutions billions annually while manual verification consumes significant resources. Badges.ninja provides cryptographically verified digital credentials stored tamper-proof, enabling instant verification without contacting issuers while preventing credential tampering and fraud.',
+  subtitle: 'Credential fraud costs institutions billions annually while manual verification consumes significant resources. Badges.ninja provides independently verified digital credentials stored tamper-proof, enabling instant verification without contacting issuers while preventing credential tampering and fraud.',
   publishDate: '2026-01-22T10:05:17.592Z',
   tweetId: '',
   featuredImage: {
