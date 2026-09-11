@@ -26,7 +26,7 @@ export interface Solution {
   graphic?: SolutionGraphic;     // CSS-only icon + gradient variant
   url: string;
   networks: SolutionNetwork[];
-  category: string; // For filtering: Database, NFT, Credentials, Socials, Methodology
+  category: string; // For filtering: Methodology, CRM, Socials, Credentials
   featured?: boolean;            // Renders as a full-width pillar above the standard grid
   licensePills?: string[];       // Optional license-track badges (e.g. "Free for Solos", "Licensed for Business")
 }
@@ -84,52 +84,6 @@ export const solutions: Solution[] = [
       { name: 'Matchain', color: 'hsla(20, 100.00%, 54.02%, 1.00)' }
     ],
     category: 'Credentials'
-  },
-  {
-    title: 'IPFS.ninja',
-    author: 'BWS',
-    description: 'The simplest IPFS pinning service and upload API. Pin any file, serve it through your own dedicated gateway, and scale from a free tier to production with signed upload tokens and analytics.',
-    image: {
-      src: '/assets/images/marketplace/ipfs/hero-card.png',
-      alt: 'IPFS.ninja — simple IPFS pinning service, upload API, and dedicated gateways'
-    },
-    url: '/marketplace/ipfs-upload.html',
-    networks: [
-      { name: 'IPFS', color: 'hsla(314, 90.64%, 38.40%, 1.00)' }
-    ],
-    category: 'NFT'
-  },
-  {
-    title: 'Blockchain Database',
-    author: 'BWS',
-    description: 'A single API to use the blockchain as your data layer — immutable records with a Certificate of Trust, or queryable hash tables. No wallets, no gas fees.',
-    image: {
-      src: '/assets/images/6474d385cfec71cb21a9229a/65061f550fd7be777e64f36f_Save_400x300.jpg',
-      alt: 'Blockchain Database — anchor immutable records or use the blockchain as a queryable hash table'
-    },
-    url: '/marketplace/blockchain-database.html',
-    networks: [
-      { name: 'Polygon', color: '#af89ee' },
-      { name: 'Matchain', color: 'hsla(20, 100.00%, 54.02%, 1.00)' }
-    ],
-    category: 'Database'
-  },
-  {
-    title: 'NFT.zK',
-    author: 'BWS',
-    description: 'A straightforward API enabling artists, companies, and individuals to create NFTs effortlessly, without Web3 knowledge.',
-    image: {
-      src: '/assets/images/6474d385cfec71cb21a9229a/65061646ead0751dc83790e1_NFT_1200x628.jpg',
-      alt: 'NFT.zK solution - Create NFTs effortlessly without Web3 knowledge',
-      sizes: '(max-width: 767px) 100vw, (max-width: 991px) 95vw, 939.9851684570312px',
-      srcset: '/assets/images/6474d385cfec71cb21a9229a/65061646ead0751dc83790e1_NFT_1200x628-p-500.jpg 500w, /assets/images/6474d385cfec71cb21a9229a/65061646ead0751dc83790e1_NFT_1200x628-p-800.jpg 800w, /assets/images/6474d385cfec71cb21a9229a/65061646ead0751dc83790e1_NFT_1200x628-p-1080.jpg 1080w, /assets/images/6474d385cfec71cb21a9229a/65061646ead0751dc83790e1_NFT_1200x628.jpg 1200w'
-    },
-    url: '/marketplace/nft-zeroknwoledge.html',
-    networks: [
-      { name: 'Polygon', color: '#af89ee' },
-      { name: 'Matchain', color: 'hsla(20, 100.00%, 54.02%, 1.00)' }
-    ],
-    category: 'NFT'
   },
   {
     title: 'Telegram XBot',

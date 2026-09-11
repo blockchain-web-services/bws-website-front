@@ -3,17 +3,29 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import Navigation from "../../components/Navigation.astro";
 import Footer from "../../components/Footer.astro";
 import Scripts from "../../components/Scripts.astro";
-import MarketplaceipfsuploadMainContent from "../../components/marketplaceipfsuploadMainContent.astro";
-import ProductSchema from "../../components/ProductSchema.astro";
+import RetiredSolution from "../../components/RetiredSolution.astro";
 
-const pageTitle = "IPFS.ninja - The simplest IPFS pinning service and upload API | BWS";
-const pageDescription = "Pin files to IPFS in seconds. Simple REST API for JSON, images, PDFs, and any file type. Dedicated gateways, signed upload tokens, analytics. Free tier available.";
+const pageTitle = "IPFS.ninja has moved | BWS";
+const pageDescription =
+  "IPFS.ninja is no longer listed in the BWS marketplace. The pinning service and upload API continue at ipfs.ninja.";
 ---
 
-<BaseLayout title={pageTitle} description={pageDescription}>
+<BaseLayout title={pageTitle} description={pageDescription} noindex={true}>
   <Navigation />
-  <MarketplaceipfsuploadMainContent />
-  <ProductSchema name="IPFS.ninja" description={pageDescription} path="/marketplace/ipfs-upload.html" externalUrl="https://ipfs.ninja" />
+  <RetiredSolution
+    name="IPFS.ninja"
+    eyebrow="Moved"
+    headline="IPFS.ninja is now a standalone product."
+  >
+    <p>
+      It is no longer listed in the BWS marketplace, but the pinning service, upload API, and dedicated gateways are
+      still running — with their own documentation and free tier.
+    </p>
+    <Fragment slot="actions">
+      <a href="https://ipfs.ninja" class="button-primary small flex w-inline-block"><div>Go to IPFS.ninja</div></a>
+      <a href="/#solutions" class="button-secondary small flex w-inline-block"><div>Browse Marketplace</div></a>
+    </Fragment>
+  </RetiredSolution>
   <Footer />
 
   <Fragment slot="scripts">

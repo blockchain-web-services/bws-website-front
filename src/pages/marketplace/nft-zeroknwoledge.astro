@@ -3,17 +3,22 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import Navigation from "../../components/Navigation.astro";
 import Footer from "../../components/Footer.astro";
 import Scripts from "../../components/Scripts.astro";
-import MarketplacenftzeroknwoledgeMainContent from "../../components/marketplacenftzeroknwoledgeMainContent.astro";
-import ProductSchema from "../../components/ProductSchema.astro";
+import RetiredSolution from "../../components/RetiredSolution.astro";
 
-const pageTitle = "NFT.zK — Mint NFTs via API with Zero-Knowledge Proofs | BWS";
-const pageDescription = "NFT.zK is a simple REST API to mint NFTs without Web3 expertise — privacy-preserving zero-knowledge proofs, no wallets or gas to manage. Mint from your own backend.";
+const pageTitle = "NFT.zK (retired) | BWS";
+const pageDescription =
+  "NFT.zK has been retired and is no longer available. Explore the current BWS marketplace.";
 ---
 
-<BaseLayout title={pageTitle} description={pageDescription}>
+<BaseLayout title={pageTitle} description={pageDescription} noindex={true}>
   <Navigation />
-  <MarketplacenftzeroknwoledgeMainContent />
-  <ProductSchema name="NFT.zK" description={pageDescription} path="/marketplace/nft-zeroknwoledge.html" category="DeveloperApplication" />
+  <RetiredSolution name="NFT.zK">
+    <p>
+      The API for creating and transferring NFTs without Web3 expertise is no longer available, and we are no longer
+      onboarding new users.
+    </p>
+    <p>If you were building on it, get in touch and we will help you find the right path forward.</p>
+  </RetiredSolution>
   <Footer />
 
   <Fragment slot="scripts">

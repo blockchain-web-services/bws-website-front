@@ -34,12 +34,16 @@
       "supplyChain": "/industry-content/supply-chain"
     },
     "marketplacePages": {
-      "blockchainDatabase": "/marketplace/blockchain-database",
       "openAgile": "/marketplace/openagile",
       "blockchainBadges": "/marketplace/blockchain-badges",
+      "telegramXbot": "/marketplace/telegram-xbot"
+    },
+    "retiredPages": {
+      "blockchainDatabase": "/marketplace/blockchain-database",
       "ipfsUpload": "/marketplace/ipfs-upload",
       "nftZeroknowledge": "/marketplace/nft-zeroknwoledge",
-      "telegramXbot": "/marketplace/telegram-xbot"
+      "databaseImmutable": "/marketplace/database-immutable",
+      "databaseMutable": "/marketplace/database-mutable"
     }
   },
   "viewports": {

@@ -1,21 +1,27 @@
 ---
-// Permanent redirect: Blockchain Hash was merged into Blockchain Database.
-const target = "/marketplace/blockchain-database.html";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Navigation from "../../components/Navigation.astro";
+import Footer from "../../components/Footer.astro";
+import Scripts from "../../components/Scripts.astro";
+import RetiredSolution from "../../components/RetiredSolution.astro";
+
+const pageTitle = "Blockchain Hash (retired) | BWS";
+const pageDescription =
+  "Blockchain Hash was merged into Blockchain Database, which has since been retired. Explore the current BWS marketplace.";
 ---
 
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Blockchain Database (formerly Blockchain Hash) - BWS</title>
-    <meta name="robots" content="noindex" />
-    <link rel="canonical" href={`https://www.bws.ninja${target}`} />
-    <meta http-equiv="refresh" content={`0; url=${target}`} />
-    <script is:inline define:vars={{ target }}>
-      window.location.replace(target);
-    </script>
-  </head>
-  <body>
-    <p>This solution has moved. <a href={target}>Continue to Blockchain Database →</a></p>
-  </body>
-</html>
+<BaseLayout title={pageTitle} description={pageDescription} noindex={true}>
+  <Navigation />
+  <RetiredSolution name="Blockchain Hash" headline="Blockchain Hash has been retired.">
+    <p>
+      This solution was merged into Blockchain Database, which has since been retired. Using the blockchain as a
+      queryable, updateable hash table is no longer available.
+    </p>
+    <p>If you were building on it, get in touch and we will help you find the right path forward.</p>
+  </RetiredSolution>
+  <Footer />
+
+  <Fragment slot="scripts">
+    <Scripts />
+  </Fragment>
+</BaseLayout>

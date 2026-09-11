@@ -25,7 +25,7 @@ const MAX_TWEETS_TO_FETCH = 50;
 const PROCESSED_TWEETS_PATH = path.join(__dirname, 'data', 'processed-article-tweets.json');
 
 // Product rotation order (1 article per day, rotating through products)
-const PRODUCT_ROTATION = ['OpenAgile.AI', 'WallaWhats', 'X Bot', 'Badges.ninja', 'IPFS'];
+const PRODUCT_ROTATION = ['OpenAgile.AI', 'WallaWhats', 'X Bot', 'Badges.ninja'];
 const ARTICLES_FILE_PATH = path.join(__dirname, '..', 'src', 'data', 'articles.ts');
 const ARTICLES_METADATA_PATH = path.join(__dirname, 'data', 'articles-metadata.json'); // JSON source of truth
 const ARTICLE_IMAGES_DIR = path.join(__dirname, '..', 'public', 'assets', 'images', 'articles');
@@ -66,22 +66,6 @@ const PRODUCT_CONFIG = {
     fallbackImages: [
       '/assets/images/marketplace/fallback/blockchain-badges/01-badges-ui.png',
       '/assets/images/marketplace/fallback/blockchain-badges/02-issuers-list.png'
-    ]
-  },
-  'IPFS': {
-    url: '/marketplace/ipfs-upload.html',
-    slug: 'ipfs',
-    buttonText: 'Learn More',
-    fallbackImages: [
-      '/assets/images/marketplace/fallback/ipfs/01-ipfs-overview.jpg'
-    ]
-  },
-  'IPFS.ninja': {
-    url: '/marketplace/ipfs-upload.html',
-    slug: 'ipfs',
-    buttonText: 'Learn More',
-    fallbackImages: [
-      '/assets/images/marketplace/fallback/ipfs/01-ipfs-overview.jpg'
     ]
   },
   'WallaWhats': {
@@ -277,7 +261,6 @@ async function generateArticleContent(tweets, includes) {
 Product Categories:
 - X Bot (also called Telegram XBot)
 - Badges.ninja (previously called Blockchain Badges) — digital badges with blockchain verification, visual designer, REST API, bulk awarding, and Open Badge v2.0 compliance
-- IPFS (also called IPFS.ninja) — the BWS IPFS pinning service and upload API with dedicated gateways, signed upload tokens, and an S3-compatible endpoint at s3.ipfs.ninja
 - WallaWhats — real-time WhatsApp alerts when selected X/Twitter accounts post. Monitor any public handle, receive tweets as WhatsApp messages within seconds, no app install required. REST API at api.wallawhats.com for managing monitored accounts, phone verification, subscriptions, and notification history. Angles: creator drops, market-moving posts, brand/competitor monitoring, building alert pipelines on the API.
 - OpenAgile.AI — engineering-discipline layer that sits above any coding agent (Claude, Gemini, OpenAI, local models). Decomposes projects into hierarchical specs (project → epic → story → task), validates plans before code is generated via 342 micro-checks, and enforces bidirectional traceability from code back to acceptance criteria. Free for solos under PolyForm Noncommercial; commercial license from BWS for businesses. Angles: AI-native engineering discipline, audit-ready for SOC 2 / ISO 27001 / EU AI Act, parallel task execution via isolated git worktrees, the Agile Vibe Coding Manifesto as guiding methodology.
 

@@ -3,17 +3,22 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import Navigation from "../../components/Navigation.astro";
 import Footer from "../../components/Footer.astro";
 import Scripts from "../../components/Scripts.astro";
-import MarketplaceBlockchainDatabaseMainContent from "../../components/marketplaceblockchaindatabaseMainContent.astro";
-import ProductSchema from "../../components/ProductSchema.astro";
+import RetiredSolution from "../../components/RetiredSolution.astro";
 
-const pageTitle = "Blockchain Database — Immutable Records & Queryable Hash Tables via One API | BWS";
-const pageDescription = "Blockchain Database — a single API to anchor immutable records with a Certificate of Trust, or use the blockchain as a queryable hash table. No wallets, no gas fees.";
+const pageTitle = "Blockchain Database (retired) | BWS";
+const pageDescription =
+  "Blockchain Database has been retired and is no longer available. Explore the current BWS marketplace.";
 ---
 
-<BaseLayout title={pageTitle} description={pageDescription}>
+<BaseLayout title={pageTitle} description={pageDescription} noindex={true}>
   <Navigation />
-  <MarketplaceBlockchainDatabaseMainContent />
-  <ProductSchema name="Blockchain Database" description={pageDescription} path="/marketplace/blockchain-database.html" category="DeveloperApplication" />
+  <RetiredSolution name="Blockchain Database">
+    <p>
+      The API that anchored immutable records with a Certificate of Trust and stored queryable hash-table entries is no
+      longer available, and we are no longer onboarding new users.
+    </p>
+    <p>If you were building on it, get in touch and we will help you find the right path forward.</p>
+  </RetiredSolution>
   <Footer />
 
   <Fragment slot="scripts">
