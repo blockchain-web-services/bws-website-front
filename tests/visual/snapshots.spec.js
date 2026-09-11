@@ -8,19 +8,11 @@ const pages = [
   { name: 'index', path: '/', category: 'main' },
   { name: 'about', path: '/about', category: 'main' },
   { name: 'contact-us', path: '/contact-us', category: 'main' },
-  { name: 'industries', path: '/industries', category: 'main' },
   { name: 'resources', path: '/resources', category: 'main' },
   { name: 'white-paper', path: '/white-paper', category: 'main' },
   { name: 'legal-notice', path: '/legal-notice', category: 'main' },
   { name: 'privacy-policy', path: '/privacy-policy', category: 'main' },
 
-  // Industry content pages
-  { name: 'content-creation', path: '/industry-content/content-creation', category: 'industry-content' },
-  { name: 'esg', path: '/industry-content/esg', category: 'industry-content' },
-  { name: 'financial-services', path: '/industry-content/financial-services', category: 'industry-content' },
-  { name: 'legal', path: '/industry-content/legal', category: 'industry-content' },
-  { name: 'retail', path: '/industry-content/retail', category: 'industry-content' },
-  { name: 'supply-chain', path: '/industry-content/supply-chain', category: 'industry-content' },
 
   // Marketplace pages
   { name: 'blockchain-badges', path: '/marketplace/blockchain-badges', category: 'marketplace' },

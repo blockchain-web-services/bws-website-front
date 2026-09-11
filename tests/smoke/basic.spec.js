@@ -20,13 +20,6 @@ test.describe('Basic Smoke Tests', () => {
     await expect(page.locator('h1')).toBeVisible();
   });
 
-  test('Industries page loads successfully', async ({ page }) => {
-    const response = await page.goto('/industries.html');
-    expect(response?.status()).toBeLessThan(400);
-    // Page loads but may not have h1 content yet
-    await expect(page.locator('body')).toBeVisible();
-  });
-
   test('White Paper page loads successfully', async ({ page }) => {
     const response = await page.goto('/white-paper.html');
     expect(response?.status()).toBeLessThan(400);

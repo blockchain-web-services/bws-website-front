@@ -13,18 +13,11 @@ test.describe('HTML Structure Validation', () => {
     { path: '/contact-us.html', name: 'Contact Us' },
     { path: '/legal-notice.html', name: 'Legal Notice' },
     { path: '/privacy-policy.html', name: 'Privacy Policy' },
-    { path: '/industries.html', name: 'Industries' },
     { path: '/resources.html', name: 'Resources' },
     { path: '/marketplace/openagile.html', name: 'OpenAgile.AI' },
     { path: '/marketplace/blockchain-badges.html', name: 'Blockchain Badges' },
     { path: '/marketplace/telegram-xbot.html', name: 'Telegram XBot' },
     { path: '/marketplace/wallawhats.html', name: 'WallaWhats' },
-    { path: '/industry-content/financial-services.html', name: 'Financial Services' },
-    { path: '/industry-content/content-creation.html', name: 'Content Creation' },
-    { path: '/industry-content/retail.html', name: 'Retail' },
-    { path: '/industry-content/esg.html', name: 'ESG' },
-    { path: '/industry-content/legal.html', name: 'Legal' },
-    { path: '/industry-content/supply-chain.html', name: 'Supply Chain' },
   ];
 
   pagesToTest.forEach(({ path, name }) => {
@@ -105,7 +98,6 @@ test.describe('HTML Structure Validation', () => {
       '/contact-us.html',
       '/legal-notice.html',
       '/about.html',
-      '/industries.html'
     ];
 
     for (const path of criticalPages) {

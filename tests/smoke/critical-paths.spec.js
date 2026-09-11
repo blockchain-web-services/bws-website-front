@@ -31,7 +31,6 @@ test.describe('Critical Path Smoke Tests', () => {
     const criticalPages = [
       { path: '/', checkContent: true },
       { path: '/about.html', checkContent: false }, // Page exists but may be empty
-      { path: '/industries.html', checkContent: false }, // Page exists but may be empty
       { path: '/resources.html', checkContent: false }, // Page exists but may be empty
       { path: '/contact-us.html', checkContent: true }
     ];

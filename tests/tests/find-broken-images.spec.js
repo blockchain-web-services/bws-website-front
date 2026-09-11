@@ -13,7 +13,6 @@ test.describe('Find All Broken Images', () => {
     const pages = [
       '/',
       '/about.html',
-      '/industries.html',
       '/resources.html',
       '/contact-us.html',
       '/legal-notice.html',
@@ -25,13 +24,6 @@ test.describe('Find All Broken Images', () => {
       '/marketplace/nft-zeroknwoledge.html',
       '/marketplace/blockchain-badges.html',
       '/marketplace/telegram-xbot.html',
-      // Industry pages
-      '/industry-content/financial-services.html',
-      '/industry-content/content-creation.html',
-      '/industry-content/retail.html',
-      '/industry-content/esg.html',
-      '/industry-content/legal.html',
-      '/industry-content/supply-chain.html',
       // Article pages
       '/articles/discover-the-power-of-blockchain-bwss-data-management-solutions.html',
       '/articles/investment-impact-reporting-unlocking-a-sustainable-future.html'
