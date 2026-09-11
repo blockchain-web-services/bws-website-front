@@ -217,21 +217,31 @@ Manual checks against `npm run preview`:
 
 Recorded here for traceability. **Not actionable in this repository.**
 
-### `docs.bws.ninja`
-- `quick-start.md` — the entire onboarding tutorial is built on `BWS.Blockchain.Hash`
-  (6 occurrences). Needs a rewrite against a surviving solution or the docs site loses its
-  getting-started path.
-- `api-how-tos/main-api-methods/call-api-method.md` — `call` example uses `BWS.Blockchain.Save`.
-- `api-how-tos/main-api-methods/fetch-api-method.md` — `fetch` response example is `BWS.NFT.zK`.
-- `platform-fees/README.md:34-39` — worked fee example is "100 NFTs via BWS.NFT.zK + IPFS Ninja".
-- `SUMMARY.md` — removing Save/Hash/NFT.zK **empties the entire PLATFORM APIs section**.
-  Only X Bot (marketplace) and Badges (product-docs) survive. Needs a nav restructure.
-- `README.md:18` — landing card table lists Save / Hash / NFT.zk.
-- `certificate-of-trust.md` — claims "Every BWS Solution provides a Certificate of Trust";
-  written when Save was the flagship. Verify still true.
-- Delete `solutions/bws.blockchain.{save,hash}/`, `solutions/bws.nft.zk/`, 4 `product-docs/`
-  dirs, matching `media-assets/blurbs/` + `snapshots/` entries. Rebuild `site/`, regen sitemap.
-- Add a pointer to `ipfs.ninja/docs` where BWS.IPFS.Upload docs used to be.
+### `docs.bws.ninja` — **RESOLVED 2026-09-11, no longer applicable**
+
+The entire documentation site was retired rather than edited page by page
+(`7080a80` in that repo, a separate session). `deploy-docs.yml` now publishes a static
+stub whose `index.html` and `404.html` send every path to `https://www.bws.ninja/` via
+canonical + meta refresh + `location.replace`; the weekly `update-product-media` cron is
+disabled. Verified in production: the root returns 200 with a canonical to www.bws.ninja,
+and deep links funnel through the 404 stub.
+
+That obsoletes everything this section previously listed — the `quick-start.md` tutorial
+built on `BWS.Blockchain.Hash`, the emptied PLATFORM APIs nav, the `call`/`fetch` API
+examples, the platform-fees worked example, the `README.md` card table, and
+`certificate-of-trust.md`. The source markdown for all of it still sits in that repo, but
+nothing serves it.
+
+> One caveat worth knowing: GitHub Pages cannot issue a 301 from a static repo, so deep
+> links return **HTTP 404** with a meta-refresh body. Browsers follow it; crawlers see a
+> 404 rather than a redirect. That is inherent to the hosting choice, not a defect in the
+> stub.
+
+**Consequence for this repository:** the docs crawlers here targeted a site that no longer
+serves content, so `scripts/index-docs-site.js`, `scripts/discover-docs-pages.js`, their
+two data files, and their two workflows were deleted, along with the now-unreachable
+docs-image branch in `generate-articles.js`. Article images now fall back to tweet images
+and then to `fallbackImages`.
 
 ### `bws-nodes-ipfs` — gateway dependency
 `ipfs.bws.ninja` (CloudFront `E3M6BVCACQKLZR`) currently serves **live badge images** and
