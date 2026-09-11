@@ -41,26 +41,6 @@ const FALLBACK_PATHS = [
   '/certificate-of-trust',
   '/media-assets',
 
-  // Platform APIs - BWS.IPFS.Upload
-  '/solutions/bws.ipfs.upload',
-  '/solutions/bws.ipfs.upload/solution-overview',
-  '/solutions/bws.ipfs.upload/operations',
-
-  // Platform APIs - BWS.Blockchain.Save
-  '/solutions/bws.blockchain.save',
-  '/solutions/bws.blockchain.save/solution-overview',
-  '/solutions/bws.blockchain.save/operations',
-
-  // Platform APIs - BWS.Blockchain.Hash
-  '/solutions/bws.blockchain.hash',
-  '/solutions/bws.blockchain.hash/solution-overview',
-  '/solutions/bws.blockchain.hash/operations',
-
-  // Platform APIs - BWS.NFT.zK
-  '/solutions/bws.nft.zk',
-  '/solutions/bws.nft.zk/solution-overview',
-  '/solutions/bws.nft.zk/operations',
-  '/solutions/bws.nft.zk/nft-attributes-traits',
 
   // API How-Tos
   '/api-how-tos/api-endpoint',
@@ -75,7 +55,6 @@ const FALLBACK_PATHS = [
   // Media Assets
   '/media-assets/bws-logo',
   '/media-assets/snapshots',
-  '/media-assets/snapshots/bws.ipfs.upload',
 
   // Marketplace Solutions - Blockchain Badges
   '/marketplace-solutions/bws.blockchain.badges',

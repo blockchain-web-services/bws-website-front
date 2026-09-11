@@ -15,8 +15,6 @@ const CRITICAL_IMAGES = [
   // Tokenomics image
   '/assets/images/6474d385cfec71cb21a92251/6707fd987c3a05d42e1e908e_Tokenomics%20Allocation-letters-black.png',
 
-  // NFT image
-  '/assets/images/6474d385cfec71cb21a9229a/65061646ead0751dc83790e1_NFT_1200x628.jpg',
 ];
 
 test.describe('Asset Verification Tests', () => {
