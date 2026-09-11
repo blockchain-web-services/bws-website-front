@@ -45,40 +45,6 @@ test.describe('Image Visibility Tests', () => {
     }
   });
 
-  test('Check Tokenomics image is visible and loads correctly', async ({ page }) => {
-    await page.goto('/');
-    await page.waitForLoadState('networkidle');
-
-    // Scroll to tokenomics section
-    await page.locator('#tokenomics').scrollIntoViewIfNeeded();
-    await page.waitForTimeout(1000);
-
-    console.log('Testing Tokenomics image visibility...');
-
-    const tokenomicsImg = page.locator('img[src*="Tokenomics"]').first();
-
-    const exists = await tokenomicsImg.count() > 0;
-    console.log(`Tokenomics image element exists: ${exists}`);
-
-    if (exists) {
-      const visible = await tokenomicsImg.isVisible();
-      console.log(`Tokenomics image is visible: ${visible}`);
-
-      const naturalWidth = await tokenomicsImg.evaluate((img) => img.naturalWidth);
-      const naturalHeight = await tokenomicsImg.evaluate((img) => img.naturalHeight);
-      console.log(`Tokenomics image dimensions: ${naturalWidth}x${naturalHeight}`);
-
-      const actualSrc = await tokenomicsImg.getAttribute('src');
-      console.log(`Tokenomics actual src: ${actualSrc}`);
-
-      const response = await page.request.get(actualSrc);
-      console.log(`Tokenomics image HTTP status: ${response.status()}`);
-
-      expect(naturalWidth).toBeGreaterThan(0);
-      expect(visible).toBe(true);
-    }
-  });
-
   test('Check BFG image is visible and loads correctly', async ({ page }) => {
     await page.goto('/');
     await page.waitForLoadState('networkidle');
@@ -116,7 +82,6 @@ test.describe('Image Visibility Tests', () => {
       '/assets/images/6474d385cfec71cb21a92251/670f82f9b05322735f72cbcc_PROOF-logo-lightBG.png',
       '/assets/images/6474d385cfec71cb21a92251/6707f1c5c0856eff6c22300e_AssureDefi.png',
       '/assets/images/6474d385cfec71cb21a92251/64e738258afae2bb6f4d56bf_logo-blockchain-founders-group-background-transparent-large.svg',
-      '/assets/images/6474d385cfec71cb21a92251/6707fd987c3a05d42e1e908e_Tokenomics%20Allocation-letters-black.png'
     ];
 
     console.log('Testing critical image HTTP responses...');
@@ -146,12 +111,6 @@ test.describe('Image Visibility Tests', () => {
     await partnerSection.screenshot({ path: 'test-results/partner-logos.png' });
     console.log('Partner logos screenshot saved to test-results/partner-logos.png');
 
-    // Scroll to tokenomics and screenshot
-    await page.locator('#tokenomics').scrollIntoViewIfNeeded();
-    await page.waitForTimeout(1000);
-    const tokenomicsSection = page.locator('.token-allocation-image');
-    await tokenomicsSection.screenshot({ path: 'test-results/tokenomics.png' });
-    console.log('Tokenomics screenshot saved to test-results/tokenomics.png');
 
   });
 });

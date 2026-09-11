@@ -12,8 +12,6 @@ const CRITICAL_IMAGES = [
   '/assets/images/6474d385cfec71cb21a92251/6707f1c5c0856eff6c22300e_AssureDefi.png',
   '/assets/images/6474d385cfec71cb21a92251/64e738258afae2bb6f4d56bf_logo-blockchain-founders-group-background-transparent-large.svg',
 
-  // Tokenomics image
-  '/assets/images/6474d385cfec71cb21a92251/6707fd987c3a05d42e1e908e_Tokenomics%20Allocation-letters-black.png',
 
 ];
 
@@ -37,26 +35,6 @@ test.describe('Asset Verification Tests', () => {
       } else {
         console.log(`✅ AssureDefi image size OK: ${boundingBox?.height}px height`);
       }
-    }
-  });
-
-  test('Tokenomics image test', async ({ page }) => {
-    await page.goto('/');
-    await page.waitForLoadState('networkidle');
-
-    await page.locator('#tokenomics').scrollIntoViewIfNeeded();
-    await page.waitForTimeout(1000);
-
-    const tokenomicsImg = page.locator('img[src*="Tokenomics"]');
-    const count = await tokenomicsImg.count();
-    console.log(`Found ${count} Tokenomics images`);
-
-    if (count > 0) {
-      const img = tokenomicsImg.first();
-      await expect(img).toBeVisible();
-      console.log('✅ Tokenomics image is visible');
-    } else {
-      console.error('❌ No Tokenomics images found in DOM');
     }
   });
 

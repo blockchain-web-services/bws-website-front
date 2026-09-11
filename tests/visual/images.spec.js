@@ -29,15 +29,6 @@ test.describe('Image Visual Tests', () => {
     expect(bfgDimensions.width).toBeLessThanOrEqual(150);
   });
 
-  test('Tokenomics donut chart renders', async ({ page }) => {
-    await homePage.scrollToTokenomics();
-    const chart = page.locator('.token-allocation-svg').first();
-    await expect(chart).toBeVisible();
-    const legendItems = page.locator('.token-allocation-legend li');
-    expect(await legendItems.count()).toBe(6);
-  });
-
-
   test('No 404 errors for images', async ({ page }) => {
     const errors = await homePage.check404Errors();
     await page.reload();

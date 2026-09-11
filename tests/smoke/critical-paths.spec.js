@@ -86,23 +86,6 @@ test.describe('Critical Path Smoke Tests', () => {
     await expect(contactContent).toBeVisible();
   });
 
-  test('White Paper page has required content', async ({ page }) => {
-    await page.goto('/white-paper.html');
-
-    // Check critical elements
-    await expect(page.locator('.title').first()).toBeVisible();
-    await expect(page.locator('.nav-menu')).toBeVisible();
-
-    // Check for specific content — white paper H1 is now "BWS" after the rename
-    const heading = await page.locator('h1.hero-title').textContent();
-    expect(heading).toContain('BWS');
-
-    // Verify white paper sections exist (use unique IDs to avoid TOC duplicates)
-    await expect(page.locator('#abstract')).toBeVisible();
-    await expect(page.locator('#introduction')).toBeVisible();
-    await expect(page.locator('#tokenomics')).toBeVisible();
-  });
-
   test('Images load without 404 errors', async ({ page }) => {
     const brokenImages = [];
 

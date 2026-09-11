@@ -7,11 +7,9 @@ import { BasePage } from './BasePage.js';
 export class HomePage extends BasePage {
   heroSection;
   partnerLogosSection;
-  tokenomicsSection;
   proofLogo;
   assureDefiLogo;
   bfgLogo;
-  tokenomicsImage;
   ctaButton;
   videoSection;
   featuresSection;
@@ -28,10 +26,6 @@ export class HomePage extends BasePage {
     this.proofLogo = page.locator('img[src*="PROOF-logo"]').first();
     this.assureDefiLogo = page.locator('img[src*="AssureDefi"]').first();
     this.bfgLogo = page.locator('img[src*="blockchain-founders-group"]').first();
-
-    // Tokenomics
-    this.tokenomicsSection = page.locator('#tokenomics');
-    this.tokenomicsImage = page.locator('img[src*="Tokenomics"]').first();
 
     // Other sections
     this.videoSection = page.locator('.hero-column-image');
@@ -69,33 +63,8 @@ export class HomePage extends BasePage {
     return await this.partnerLogosSection.locator('img').count();
   }
 
-  /**
-   * Scroll to tokenomics section
-   */
-  async scrollToTokenomics() {
-    await this.tokenomicsSection.scrollIntoViewIfNeeded();
-    await this.page.waitForTimeout(1000); // Wait for scroll animation
-  }
 
-  /**
-   * Check if tokenomics image is visible
-   */
-  async isTokenomicsImageVisible() {
-    await this.scrollToTokenomics();
-    return await this.tokenomicsImage.isVisible();
-  }
 
-  /**
-   * Get tokenomics image dimensions
-   */
-  async getTokenomicsImageDimensions() {
-    return await this.tokenomicsImage.evaluate((img) => ({
-      naturalWidth: img.naturalWidth,
-      naturalHeight: img.naturalHeight,
-      displayWidth: img.clientWidth,
-      displayHeight: img.clientHeight
-    }));
-  }
 
   /**
    * Check AssureDefi logo dimensions

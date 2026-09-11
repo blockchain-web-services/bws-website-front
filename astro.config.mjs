@@ -20,6 +20,7 @@ export default defineConfig({
         // Removed industry overviews — tombstoned + noindex.
         !page.includes('/industries') &&
         !page.includes('/industry-content/') &&
+        !page.includes('/white-paper') &&
         !page.includes('/404'),
     }),
   ],

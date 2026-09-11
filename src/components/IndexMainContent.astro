@@ -52,8 +52,7 @@ import { solutions } from '../data/solutions';
   @media (max-width: 767px) {
     .state-3-logo {
       height: 2em;
-    }
-  }
+    }}
 
   @keyframes subtitle-state-1 {
     0%, 28%   { opacity: 1; }
@@ -79,8 +78,7 @@ import { solutions } from '../data/solutions';
   @media (max-width: 767px) {
     .section.hero-section.home {
       padding-top: 150px !important;
-    }
-  }
+    }}
 
   /* Hide the decorative background "blobs" everywhere on the homepage */
   .bg-blobs-wrapper {
@@ -98,8 +96,7 @@ import { solutions } from '../data/solutions';
     .paragraph.hero-paragraph {
       font-size: 19px !important;
       line-height: 1.45 !important;
-    }
-  }
+    }}
 
   /* Single hero CTA — clean container with no legacy two-button baggage.
      The wrapper is a full-width block with the button auto-margined to the
@@ -130,81 +127,7 @@ import { solutions } from '../data/solutions';
       animation: none;
       opacity: 1;
       font-weight: 900;
-    }
-  }
-
-  /* Token allocation donut chart + legend */
-  .token-allocation-chart {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 24px;
-    width: 100%;
-    padding: 16px 0;
-  }
-
-  /* Right column of the tokenomics split holds the donut — force it to 40% of the section */
-  #tokenomics .split-horizontal > .flex-block-6.token-allocation {
-    flex: 0 0 40%;
-    max-width: 40%;
-  }
-
-  .token-allocation-svg {
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-    display: block;
-  }
-
-  @media screen and (max-width: 991px) {
-    #tokenomics .split-horizontal > .flex-block-6.token-allocation {
-      flex: 0 0 100%;
-      max-width: 100%;
-    }
-  }
-
-  .token-chart-supply-label {
-    font-size: 10px;
-    font-weight: 600;
-    fill: var(--neutral-600, #66666e);
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-  }
-
-  .token-chart-supply-value {
-    font-size: 34px;
-    font-weight: 800;
-    fill: var(--neutral-800, #1a1b1e);
-    letter-spacing: -0.02em;
-  }
-
-  .token-chart-supply-unit {
-    font-size: 13px;
-    font-weight: 700;
-    fill: var(--neutral-700, #3b3f44);
-    letter-spacing: 0.04em;
-  }
-
-  .token-allocation-legend {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    max-width: 100%;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px 24px;
-  }
-
-  .token-allocation-legend li {
-    display: grid;
-    grid-template-columns: 14px 1fr auto;
-    align-items: center;
-    gap: 10px;
-    font-size: 13px;
-    line-height: 1.4;
-    color: var(--neutral-700, #3b3f44);
-  }
+    }}
 
   /* How We Build — tighten the gap between the two columns (default is 74px) */
   #how-we-build .split-horizontal.section-grants {
@@ -420,215 +343,7 @@ import { solutions } from '../data/solutions';
     }
     .solutions-pillar-headline {
       font-size: 18px;
-    }
-  }
-
-  /* Tokenomics CTA — Buy button + inline destination caption */
-  .tokenomics-buttons-left {
-    margin-top: 24px;
-    justify-content: flex-start;
-    align-items: center;
-  }
-
-  .tokenomics-cta-caption {
-    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: #66666e;
-  }
-
-  /* Tokenomics intro — live-ticker status strip + editorial statement spread */
-  .tokenomics-intro {
-    width: 100%;
-    margin: 16px 0 48px;
-    color: var(--neutral-700, #3b3f44);
-  }
-
-  .tokenomics-ticker {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    gap: 18px 28px;
-    padding: 14px 4px 16px;
-    border-top: 1px solid rgba(17, 17, 17, 0.12);
-    border-bottom: 1px solid rgba(17, 17, 17, 0.12);
-    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--neutral-700, #3b3f44);
-    text-align: center;
-  }
-
-  .tokenomics-ticker-live {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    color: var(--rose, #c41841);
-  }
-
-  .tokenomics-ticker-live::before {
-    content: "";
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: var(--rose, #c41841);
-    box-shadow: 0 0 0 0 rgba(196, 24, 65, 0.5);
-    animation: tokenomics-pulse 2s ease-out infinite;
-  }
-
-  @keyframes tokenomics-pulse {
-    0% { box-shadow: 0 0 0 0 rgba(196, 24, 65, 0.55); }
-    70% { box-shadow: 0 0 0 10px rgba(196, 24, 65, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(196, 24, 65, 0); }
-  }
-
-  .tokenomics-ticker-item {
-    display: inline-flex;
-    align-items: baseline;
-    gap: 8px;
-  }
-
-  .tokenomics-ticker-label {
-    color: var(--neutral-600, #66666e);
-  }
-
-  .tokenomics-ticker-value {
-    color: var(--neutral-900, #111);
-  }
-
-  .tokenomics-spread {
-    display: grid;
-    grid-template-columns: minmax(260px, 2fr) 3fr;
-    gap: 56px;
-    align-items: start;
-    padding: 44px 4px 8px;
-  }
-
-  .tokenomics-statement {
-    margin: 0;
-    padding: 40px 0 0;
-    background: none;
-    border: 0;
-    border-left: 0;
-    border-radius: 0;
-    box-shadow: none;
-    text-align: left;
-    font-size: inherit;
-    font-weight: inherit;
-    line-height: inherit;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 2px;
-  }
-
-  .tokenomics-statement .ts-rejected {
-    position: relative;
-    display: inline-block;
-    font-size: 36px;
-    line-height: 1.05;
-    font-weight: 700;
-    letter-spacing: -0.015em;
-    color: var(--neutral-600, #66666e);
-    padding: 2px 6px 2px 2px;
-  }
-
-  .tokenomics-statement .ts-rejected::after {
-    content: "";
-    position: absolute;
-    left: -2px;
-    right: -4px;
-    top: 56%;
-    height: 5px;
-    background: var(--rose, #c41841);
-    transform: rotate(-3deg);
-    border-radius: 3px;
-    opacity: 0.92;
-    pointer-events: none;
-  }
-
-  .tokenomics-statement .ts-affirmed {
-    display: inline-block;
-    font-size: 60px;
-    line-height: 1.0;
-    font-weight: 900;
-    letter-spacing: -0.03em;
-    color: var(--neutral-900, #111);
-    margin-top: 6px;
-  }
-
-  .tokenomics-statement .ts-affirmed-mark {
-    background: linear-gradient(90deg, var(--rose, #c41841) 0%, #758bff 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-
-  .tokenomics-statement .ts-cite {
-    margin-top: 22px;
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--neutral-600, #66666e);
-    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-  }
-
-  .tokenomics-body p {
-    font-size: 16px;
-    line-height: 1.72;
-    margin: 0 0 14px;
-  }
-
-  .tokenomics-body p:last-child {
-    margin-bottom: 0;
-  }
-
-  .tokenomics-body strong {
-    color: var(--neutral-900, #111);
-    font-weight: 600;
-  }
-
-  .tokenomics-body em {
-    font-style: italic;
-    color: var(--neutral-900, #111);
-  }
-
-  @media (max-width: 900px) {
-    .tokenomics-intro {
-      margin: 8px 0 32px;
-    }
-    .tokenomics-ticker {
-      gap: 10px 20px;
-      font-size: 10px;
-      letter-spacing: 0.14em;
-      padding: 12px 4px 12px;
-    }
-    .tokenomics-spread {
-      grid-template-columns: 1fr;
-      gap: 26px;
-      padding: 28px 4px 4px;
-    }
-    .tokenomics-statement .ts-rejected {
-      font-size: 26px;
-    }
-    .tokenomics-statement .ts-affirmed {
-      font-size: 42px;
-    }
-    .tokenomics-statement .ts-rejected::after {
-      height: 4px;
-    }
-    .tokenomics-body p {
-      font-size: 15px;
-      line-height: 1.65;
-    }
-  }
+    }}
 
   /* AI Disruption — symbolic pivot banner between roadmap H1 and H2 */
   .ai-disruption-row {
@@ -739,8 +454,7 @@ import { solutions } from '../data/solutions';
     .ai-pulse-ring,
     .ai-pulse-core {
       animation: none;
-    }
-  }
+    }}
 
   @media (max-width: 767px) {
     .ai-disruption {
@@ -752,8 +466,7 @@ import { solutions } from '../data/solutions';
     .ai-disruption-pulse { width: 96px; height: 96px; }
     .ai-disruption-pulse i { font-size: 36px; }
     .ai-disruption-title { font-size: 26px; }
-    .ai-disruption-body { font-size: 15px; }
-  }
+    .ai-disruption-body { font-size: 15px; }}
 
   .legend-swatch {
     display: inline-block;
@@ -770,18 +483,6 @@ import { solutions } from '../data/solutions';
     font-weight: 700;
     color: var(--neutral-800, #1a1b1e);
     font-variant-numeric: tabular-nums;
-  }
-
-  @media screen and (max-width: 767px) {
-    .token-allocation-svg {
-      width: 300px;
-    }
-    .token-allocation-legend {
-      grid-template-columns: 1fr;
-    }
-    .token-allocation-legend li {
-      font-size: 13px;
-    }
   }
 </style>
 
@@ -1033,10 +734,6 @@ import { solutions } from '../data/solutions';
             delivered in days, not quarters, without trading code review for shipping speed, skipping tests to hit a
             deadline, or handing a customer a prototype dressed up as a product.
           </div>
-        </div><div class="w-layout-hflex flex-block-9">
-          <a href="/white-paper.html" class="button-primary _2-buttons w-button"
-            >Read the White Paper<span class="button-arrow"></span></a
-          >
         </div>
       </div><div class="w-layout-vflex flex-block-21">
         <div class="w-layout-vflex flex-block-8 grants-details">
@@ -1076,133 +773,6 @@ import { solutions } from '../data/solutions';
         </div>
       </div>
     </div>
-  </div>
-</div>
-
-<!-- ============================================ -->
-<!-- TOKENOMICS SECTION -->
-<!-- ============================================ -->
-<div id="tokenomics" class="narrow-section relative section-tokenomics">
-  <div class="landing-page-content w-container">
-    <h2 class="heading-landing-page-content">$BWS Tokenomics</h2><h3 class="sub-heading-landing-page-content">
-      The economic engine that powers the marketplace.
-    </h3>
-    <div class="tokenomics-intro">
-      <div class="tokenomics-ticker" role="group" aria-label="$BWS token status">
-        <span class="tokenomics-ticker-live">Live</span>
-        <span class="tokenomics-ticker-item"><span class="tokenomics-ticker-label">Chain</span><span class="tokenomics-ticker-value">Ethereum</span></span>
-        <span class="tokenomics-ticker-item"><span class="tokenomics-ticker-label">Pair</span><span class="tokenomics-ticker-value">Uniswap V2</span></span>
-        <span class="tokenomics-ticker-item"><span class="tokenomics-ticker-label">Launched</span><span class="tokenomics-ticker-value">Q4 2024</span></span>
-        <span class="tokenomics-ticker-item"><span class="tokenomics-ticker-label">Phase</span><span class="tokenomics-ticker-value">Reactivation</span></span>
-        <span class="tokenomics-ticker-item"><span class="tokenomics-ticker-label">Reporting</span><span class="tokenomics-ticker-value">On-chain, after the fact</span></span>
-      </div>
-      <div class="tokenomics-spread">
-        <blockquote class="tokenomics-statement">
-          <span class="ts-rejected" aria-label="Not promises">Promises.</span>
-          <span class="ts-affirmed"><span class="ts-affirmed-mark">Mechanics.</span></span>
-          <span class="ts-cite">The $BWS operating principle</span>
-        </blockquote>
-        <div class="tokenomics-body">
-          <p>
-            $BWS launched on Ethereum in late 2024 and trades as an ERC-20 pair on Uniswap. During the
-            company&#x27;s pivot from a blockchain-first marketplace to an AI-native solutions factory, market
-            activity around the token quieted while product, positioning, and the build workflow were rebuilt
-            end-to-end. <strong>That rebuild is now shipping</strong>, and the token moves with it.
-          </p>
-          <p>
-            The model below describes the <em>mechanics</em> that drive $BWS value — <strong>fiat-in /
-            $BWS-settled usage, programmatic buybacks and burns, and staking benefits</strong> — not a promise of
-            specific amounts, ratios, or timing. Execution is deliberately discretionary so markets can&#x27;t
-            front-run it. What we <em>do</em> commit to is on-chain transparency: every buyback and burn is
-            observable on-chain after it happens, and headline totals are reported on an ongoing basis.
-          </p>
-        </div>
-      </div>
-    </div>
-    <div class="split-horizontal section-tokenomics">
-      <div class="w-layout-vflex flex-block-20">
-        <div class="w-layout-vflex flex-block-8">
-          <div class="w-layout-hflex flex-block-7">
-            <div class="w-layout-blockcontainer icon-list-container w-container">
-              <div class="text-block-35"><i class="fa-solid fa-gears"></i></div>
-            </div><div class="w-layout-vflex">
-              <div class="text-block-33">Fiat for Customers, $BWS Under the Hood</div><div>
-                Customers pay in fiat through standard billing — no wallets, no tokens, no volatility. Every
-                blockchain-layer operation a solution performs (pinning, minting, certification, on-chain writes) is
-                <span class="text-span-2">settled internally in $BWS</span>, so platform usage creates real on-chain
-                token demand with zero friction at the customer edge.
-              </div>
-            </div>
-          </div><div class="w-layout-hflex flex-block-7">
-            <div class="w-layout-blockcontainer icon-list-container w-container">
-              <div class="text-block-35"><i class="fa-solid fa-fire"></i></div>
-            </div><div class="w-layout-vflex">
-              <div class="text-block-33">Revenue Buyback &amp; Burn</div><div>
-                A recurring share of platform revenue is routed to <span class="text-span-3">buy $BWS on the open
-                market and burn it</span>. Buybacks execute programmatically on a discretionary cadence designed to
-                resist gaming, and every buy and burn is observable on-chain. The more the marketplace ships and
-                the more customers consume, the scarcer $BWS becomes — tying token value directly to platform
-                growth.
-              </div>
-            </div>
-          </div><div class="w-layout-hflex flex-block-7">
-            <div class="w-layout-blockcontainer icon-list-container w-container">
-              <div class="text-block-35"><i class="fa-solid fa-gem"></i></div>
-            </div><div class="w-layout-vflex">
-              <div class="text-block-33">Stake for Benefits</div><div>
-                Customers and partners who stake $BWS unlock <span class="text-span-4">fee discounts, higher rate
-                limits, and priority access to new solutions</span>. Optional and additive — crypto-native customers
-                gain leverage, everyone else keeps fiat-only UX.
-              </div>
-            </div>
-          </div><div class="w-layout-hflex flex-block-7">
-            <div class="w-layout-blockcontainer icon-list-container w-container">
-              <div class="text-block-35"><i class="fa-solid fa-rocket"></i></div>
-            </div><div class="w-layout-vflex">
-              <div class="text-block-33">Product Development Funding</div><div>
-                A portion of the TOKEN TOTAL SUPPLY is allocated to <span
-                  class="text-span-5">Product Development, funding the internal AI-driven workflow that designs, builds, and ships new marketplace solutions</span
-                >.
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="w-layout-hflex flex-block-18 tokenomics-buttons-left">
-          <a
-            href="https://app.uniswap.org/swap?outputCurrency=0xaade1d6701173bd924c9de2d56a00ef4e3d9de4d&chain=mainnet"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="button-primary _2-buttons w-button">Buy $BWS on Uniswap<span class="button-arrow"></span></a>
-          <span class="tokenomics-cta-caption">via Uniswap V2 · Ethereum mainnet</span>
-        </div>
-      </div><div class="w-layout-vflex flex-block-6 token-allocation">
-        <div class="w-layout-blockcontainer token-allocation-image w-container">
-          <div class="token-allocation-chart" role="img" aria-label="$BWS token allocation: Circulating Supply 70%, Product Development 10%, Team Tokens 8%, Marketing 5%, Partnerships and Airdrops 5%, Liquidity and Reserves 2%">
-            <svg viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg" class="token-allocation-svg">
-              <g transform="rotate(-90 110 110)">
-                <circle cx="110" cy="110" r="80" fill="none" stroke="#758bff" stroke-width="48" stroke-dasharray="351.86 502.65" stroke-dashoffset="0"></circle>
-                <circle cx="110" cy="110" r="80" fill="none" stroke="#c41841" stroke-width="48" stroke-dasharray="50.27 502.65" stroke-dashoffset="-351.86"></circle>
-                <circle cx="110" cy="110" r="80" fill="none" stroke="#7b52ab" stroke-width="48" stroke-dasharray="40.21 502.65" stroke-dashoffset="-402.13"></circle>
-                <circle cx="110" cy="110" r="80" fill="none" stroke="#f59e0b" stroke-width="48" stroke-dasharray="25.13 502.65" stroke-dashoffset="-442.34"></circle>
-                <circle cx="110" cy="110" r="80" fill="none" stroke="#10b981" stroke-width="48" stroke-dasharray="25.13 502.65" stroke-dashoffset="-467.47"></circle>
-                <circle cx="110" cy="110" r="80" fill="none" stroke="#94a3b8" stroke-width="48" stroke-dasharray="10.05 502.65" stroke-dashoffset="-492.60"></circle>
-              </g>
-              <text x="110" y="92" text-anchor="middle" class="token-chart-supply-label">Total Supply</text>
-              <text x="110" y="126" text-anchor="middle" class="token-chart-supply-value">100M</text>
-              <text x="110" y="146" text-anchor="middle" class="token-chart-supply-unit">$BWS</text>
-            </svg>
-            <ul class="token-allocation-legend">
-              <li><span class="legend-swatch" style="background:#758bff"></span><span class="legend-label">Circulating Supply</span><span class="legend-pct">70%</span></li>
-              <li><span class="legend-swatch" style="background:#c41841"></span><span class="legend-label">Product Development</span><span class="legend-pct">10%</span></li>
-              <li><span class="legend-swatch" style="background:#7b52ab"></span><span class="legend-label">Team Tokens</span><span class="legend-pct">8%</span></li>
-              <li><span class="legend-swatch" style="background:#f59e0b"></span><span class="legend-label">Marketing</span><span class="legend-pct">5%</span></li>
-              <li><span class="legend-swatch" style="background:#10b981"></span><span class="legend-label">Partnerships &amp; Airdrops</span><span class="legend-pct">5%</span></li>
-              <li><span class="legend-swatch" style="background:#94a3b8"></span><span class="legend-label">Liquidity &amp; Reserves</span><span class="legend-pct">2%</span></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    
   </div>
 </div>
 

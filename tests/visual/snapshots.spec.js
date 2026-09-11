@@ -9,7 +9,6 @@ const pages = [
   { name: 'about', path: '/about', category: 'main' },
   { name: 'contact-us', path: '/contact-us', category: 'main' },
   { name: 'resources', path: '/resources', category: 'main' },
-  { name: 'white-paper', path: '/white-paper', category: 'main' },
   { name: 'legal-notice', path: '/legal-notice', category: 'main' },
   { name: 'privacy-policy', path: '/privacy-policy', category: 'main' },
 

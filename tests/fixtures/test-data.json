@@ -43,7 +43,8 @@
       "financialServices": "/industry-content/financial-services",
       "legal": "/industry-content/legal",
       "retail": "/industry-content/retail",
-      "supplyChain": "/industry-content/supply-chain"
+      "supplyChain": "/industry-content/supply-chain",
+      "whitePaper": "/white-paper"
     }
   },
   "viewports": {
