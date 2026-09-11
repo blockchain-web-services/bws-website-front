@@ -11,8 +11,12 @@ export default defineConfig({
   integrations: [
     sitemap({
       filter: (page) =>
+        // Retired solutions — tombstoned + noindex. See PRODUCT_DEPRECATION_PLAN.md.
         !page.includes('/marketplace/database-immutable') &&
         !page.includes('/marketplace/database-mutable') &&
+        !page.includes('/marketplace/blockchain-database') &&
+        !page.includes('/marketplace/nft-zeroknwoledge') &&
+        !page.includes('/marketplace/ipfs-upload') &&
         !page.includes('/404'),
     }),
   ],

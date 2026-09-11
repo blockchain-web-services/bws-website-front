@@ -1,0 +1,32 @@
+---
+// Shared tombstone body for retired marketplace solutions.
+// Pages using this must set noindex on BaseLayout and be excluded from the
+// sitemap in astro.config.mjs. See PRODUCT_DEPRECATION_PLAN.md.
+export interface Props {
+  name: string;
+  eyebrow?: string;
+  headline?: string;
+}
+
+const { name, eyebrow = "Retired Solution", headline } = Astro.props;
+---
+
+<main class="container-medium container-solution">
+  <div class="solution-page-card" style="text-align:center;">
+    <p
+      style="font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;letter-spacing:0.22em;text-transform:uppercase;color:var(--rose,#c41841);font-size:13px;margin:0 0 12px;"
+    >
+      {eyebrow}
+    </p>
+    <h1 class="title h2-size">{headline ?? `${name} has been retired.`}</h1>
+    <div class="paragraph" style="max-width:560px;margin:16px auto 28px;">
+      <slot />
+    </div>
+    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+      <slot name="actions">
+        <a href="/#solutions" class="button-primary small flex w-inline-block"><div>Browse Marketplace</div></a>
+        <a href="/contact-us.html" class="button-secondary small flex w-inline-block"><div>Contact Us</div></a>
+      </slot>
+    </div>
+  </div>
+</main>
