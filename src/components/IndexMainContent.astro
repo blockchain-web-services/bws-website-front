@@ -5,11 +5,10 @@ import { solutions } from '../data/solutions';
 ---
 
 <style is:global>
-  /* Hero subtitle animation — three stacked state divs with opacity crossfades:
-       state-1  "Blockchain Web Services"
+  /* Hero subtitle animation — two stacked state divs with opacity crossfades:
        state-2  "Beyond Web Services"
        state-3  "BWS"  (ends extra-bold)
-     All three share the same grid cell so they stack on top of each other.
+     Both share the same grid cell so they stack on top of each other.
      The grid cell sizes to max-content of the widest state, so surrounding
      layout (hero paragraph below) does not shift during the transitions. */
   .subtitle-stack {
@@ -24,11 +23,6 @@ import { solutions } from '../data/solutions';
     grid-column: 1;
     white-space: nowrap;
     text-align: center;
-  }
-
-  .subtitle-stack .state-1 {
-    opacity: 1;
-    animation: subtitle-state-1 7s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
   }
 
   .subtitle-stack .state-2 {
@@ -54,20 +48,14 @@ import { solutions } from '../data/solutions';
       height: 2em;
     }}
 
-  @keyframes subtitle-state-1 {
-    0%, 28%   { opacity: 1; }
-    38%, 100% { opacity: 0; }
-  }
-
   @keyframes subtitle-state-2 {
-    0%, 28%   { opacity: 0; }
-    38%, 62%  { opacity: 1; }
-    72%, 100% { opacity: 0; }
+    0%, 58%   { opacity: 1; }
+    68%, 100% { opacity: 0; }
   }
 
   @keyframes subtitle-state-3 {
-    0%, 72%   { opacity: 0; }
-    82%, 100% { opacity: 1; }
+    0%, 68%   { opacity: 0; }
+    78%, 100% { opacity: 1; }
   }
 
   /* Hero section — extra top breathing room above the headline */
@@ -495,7 +483,6 @@ import { solutions } from '../data/solutions';
       <div class="limit-content hero-top-content">
         <h1 class="title hero-title">Demand Becomes Product</h1><h2 class="subtitle" aria-label="BWS">
           <span class="subtitle-stack">
-            <span class="state state-1">Blockchain Web Services</span>
             <span class="state state-2">Beyond Web Services</span>
             <span class="state state-3"><img src="/assets/images/logo-large.svg" alt="BWS" class="state-3-logo" /></span>
           </span>
@@ -634,14 +621,14 @@ import { solutions } from '../data/solutions';
               </div></a
             >
           </div><div role="listitem" class="markeplace-collection-item w-dyn-item">
-            <a href="/marketplace/blockchain-badges.html" class="home-solution-card w-inline-block"
+            <a href="/marketplace/badges.html" class="home-solution-card w-inline-block"
               ><div class="w-embed"><span class="filter-solution-x filter-solution-Credentials"></span></div><div
                 class="solution-card-wrapper"
               >
                 <div class="home-solution-card-image">
                   <img
                     src="/assets/images/marketplace/badges/hero-card.png"
-                    alt="Badges.ninja — digital badges with blockchain verification"
+                    alt="Badges.ninja — digital badges with tamper-proof verification"
                     class="image solution-card-image"
                   />
                 </div><div class="solution-card-content-wrapper">
@@ -653,7 +640,7 @@ import { solutions } from '../data/solutions';
                     </div>
                   </div><div class="solution-card-text">
                     <h3 class="title h4-size blog-card-summary">
-                      Digital badges with blockchain verification — visual designer, REST API, and
+                      Digital badges people can trust — visual designer, REST API, and
                       Open Badge v2.0 compliance.
                     </h3>
                   </div><div class="solution-card-read-more-text">Read more<span class="button-arrow"></span></div>

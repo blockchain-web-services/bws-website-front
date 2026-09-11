@@ -21,6 +21,8 @@ const formatDate = (d) => {
 };
 
 const articles = Object.entries(rawArticles)
+  // Redirect stubs for renamed slugs have no pageTitle — keep them out of the index.
+  .filter(([, src]) => /const pageTitle\s*=/.test(src))
   .map(([path, src]) => {
     const slug = path.split("/").pop().replace(/\.astro$/, "");
     const dateMatch = slug.match(/(\d{4}-\d{2}-\d{2})$/);
