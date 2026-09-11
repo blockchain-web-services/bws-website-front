@@ -1,8 +1,29 @@
 # Product Deprecation Plan — IPFS, Blockchain Database, NFT.zK
 
-**Status:** Planned, not yet executed
+**Status:** Phases 0-4 executed 2026-09-11 on branch `deprecate/ipfs-database-nftzk` (not yet merged)
 **Created:** 2026-09-11
 **Repository scope:** `bws-website-front` **only**
+
+> **Execution notes.** All in-repo work is done and verified: build 125/125 HTML valid,
+> 57 passed / 2 skipped across smoke, e2e navigation, and asset suites, comprehensive
+> asset check reporting no 404s. `public/assets/images` went from 99MB to 65MB.
+>
+> Deviations from the plan as written, all deliberate:
+> - Tombstones were built on `BaseLayout` + `Navigation` + `Footer` via a new shared
+>   `src/components/RetiredSolution.astro`, rather than the bare-HTML shape of the old
+>   redirect stubs. Those stubs were never meant to be seen; a tombstone is.
+> - Added `tests/smoke/retired-solutions.spec.js` (7 tests) to lock in the contract:
+>   each tombstone returns < 400, sets noindex, explains itself in its h1; no live
+>   surface links to one; none appear in the sitemap. This was not in the original plan.
+> - Phase 4 also removed the NFT hero image from the "critical images" list in
+>   `tests/assets.spec.js` and `tests/image-visibility.spec.js`, which still asserted it.
+> - No visual baselines existed for the removed pages, so none needed deleting.
+>
+> Still open: **§6 handoff** (docs.bws.ninja, gateway repoint) and the two questions in
+> §8. Four dead Webflow-migration scripts (`compare-pages.js`, `fix-internal-links.js`,
+> `download-full-site.js`, `download-exact-copy.js`, `localize-cdn-resources.js`) still
+> name retired pages; none are wired into `package.json` or any workflow, so they were
+> left alone.
 
 ---
 
@@ -234,3 +255,13 @@ breaks permanently. **Must be resolved before any IPFS infrastructure shutdown.*
 Each phase is a single commit on a feature branch merged with `--no-ff`. Revert the merge
 commit to restore. Tombstone pages are additive; the deleted assets in Phase 4 are
 recoverable from git history.
+
+---
+
+## 8. Open Questions
+
+1. **Does `ipfs.bws.ninja` survive?** Badges (a surviving product) still describes IPFS
+   pinning at `src/components/marketplaceblockchainbadgesMainContent.astro:110,140`, and
+   that copy stays accurate only while the gateway resolves. See §6.
+2. **What replaces the emptied PLATFORM APIs section** in the docs nav? Owned by
+   docs.bws.ninja.
