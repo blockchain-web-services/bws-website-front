@@ -260,8 +260,66 @@ recoverable from git history.
 
 ## 8. Open Questions
 
-1. **Does `ipfs.bws.ninja` survive?** Badges (a surviving product) still describes IPFS
-   pinning at `src/components/marketplaceblockchainbadgesMainContent.astro:110,140`, and
-   that copy stays accurate only while the gateway resolves. See §6.
+1. **Does `ipfs.bws.ninja` survive?** It serves live badge images and all existing NFT.zK
+   token metadata. Since ipfs.ninja continues standalone this is a repoint, not a re-host,
+   but it must happen before any IPFS shutdown or every already-issued badge image breaks.
+   See §6. *(The Badges page no longer mentions IPFS — see §9 — so the risk is now purely
+   operational rather than a copy inaccuracy.)*
 2. **What replaces the emptied PLATFORM APIs section** in the docs nav? Owned by
    docs.bws.ninja.
+3. **Rename the Telegram channel.** The footer links to `t.me/BlockchainWebServices` on
+   every page. The URL cannot change until the channel itself is renamed; that is an
+   action outside this repository. Once done it is a one-line edit in `Footer.astro`.
+4. **Should "crypto" and "DeFi" go from the X Bot articles?** ~237 and ~163 occurrences.
+   Both name the market X Bot serves and the partners integrating it, rather than claiming
+   BWS uses blockchain, so they were left in place.
+5. **Should the Blockchain Database tombstones keep the product name?** They read
+   "Blockchain Database has been retired"; renaming it there would leave visitors arriving
+   from old links unable to tell they are in the right place.
+
+
+---
+
+## 9. Follow-on Cleanups
+
+Separate from the three-product deprecation, but sharing its tombstone and redirect
+patterns. All in this repository only.
+
+### Removed
+| What | Disposition |
+|---|---|
+| Industry overviews (hub + 6 sector pages) | Tombstoned, noindex, out of sitemap |
+| `$BWS Tokenomics` section on the landing page | Deleted, with its CSS and 7 orphaned PNGs |
+| White paper | Tombstoned at `/white-paper` |
+| Footer links: IPFS, DexTools, Industries, White Paper | Deleted |
+
+### Renamed
+| From | To | Old URL |
+|---|---|---|
+| `Blockchain Web Services` | `Beyond Web Services` | n/a — schema, og:site_name, hero |
+| `/marketplace/blockchain-badges` | `/marketplace/badges` | redirect stub |
+| `/articles/blockchain-badges-*` (50) | `/articles/badges-*` | 50 redirect stubs |
+| `docs/blockchain-badges/` images | `docs/badges/` | n/a |
+
+Badges.ninja no longer claims blockchain verification, on-chain anchoring, or IPFS image
+storage; it is described as tamper-proof verification — a cryptographic hash plus a
+permanent verification URL — with durable image storage. Two orphaned legacy article
+components were deleted, and the `section-blockchain-radically-simple` CSS class was
+renamed in both the component and `public/styles.css`. The privacy policy
+was reworded off its "blockchain company" framing with the AML and KYC commitments intact;
+**it still deserves a legal read.**
+
+### Tombstone and redirect inventory
+Twelve tombstones (5 retired products, 7 industry pages, plus `/white-paper`) and 51
+redirect stubs (50 article slugs, 1 product URL). All are noindex and excluded from the
+sitemap in `astro.config.mjs`. `tests/smoke/retired-solutions.spec.js` enforces the
+contract: under 400, noindex, self-explanatory h1, unlinked from any live page, absent
+from the sitemap.
+
+### Gotchas worth remembering
+- Several files in this repo are **CRLF** (`scripts/generate-articles.js`, most specs
+  under `tests/e2e` and `tests/tests`). Check line endings before scripted edits or the
+  diff swallows the whole file.
+- `resourcesMainContent.astro` globs every page under `src/pages/articles` and falls back
+  to the slug for a title, so any redirect stub added there shows up in the article index
+  as a raw slug. It now skips pages with no `pageTitle`.

@@ -914,8 +914,8 @@
     },
     {
       "file": "_site/articles/x-bot-2025-11-05.html",
-      "originalSize": 46557,
-      "newSize": 59817,
+      "originalSize": 46551,
+      "newSize": 59811,
       "sizeDiff": 13260,
       "prettyPrinted": true,
       "errors": []
@@ -954,16 +954,16 @@
     },
     {
       "file": "_site/articles/x-bot-2025-11-10.html",
-      "originalSize": 47071,
-      "newSize": 60377,
+      "originalSize": 47070,
+      "newSize": 60376,
       "sizeDiff": 13306,
       "prettyPrinted": true,
       "errors": []
     },
     {
       "file": "_site/articles/x-bot-2025-11-11.html",
-      "originalSize": 46101,
-      "newSize": 59137,
+      "originalSize": 46102,
+      "newSize": 59138,
       "sizeDiff": 13036,
       "prettyPrinted": true,
       "errors": []
@@ -1042,8 +1042,8 @@
     },
     {
       "file": "_site/articles/x-bot-2025-11-22.html",
-      "originalSize": 46073,
-      "newSize": 59185,
+      "originalSize": 46074,
+      "newSize": 59186,
       "sizeDiff": 13112,
       "prettyPrinted": true,
       "errors": []
@@ -1226,8 +1226,8 @@
     },
     {
       "file": "_site/index.html",
-      "originalSize": 55355,
-      "newSize": 73015,
+      "originalSize": 55333,
+      "newSize": 72993,
       "sizeDiff": 17660,
       "prettyPrinted": true,
       "errors": []
@@ -1298,8 +1298,8 @@
     },
     {
       "file": "_site/marketplace/badges.html",
-      "originalSize": 45530,
-      "newSize": 60923,
+      "originalSize": 45486,
+      "newSize": 60879,
       "sizeDiff": 15393,
       "prettyPrinted": true,
       "errors": []
@@ -1439,9 +1439,9 @@
     },
     {
       "file": "_site/styles.css",
-      "originalSize": 750040,
-      "newSize": 710515,
-      "sizeDiff": -39525,
+      "originalSize": 710150,
+      "newSize": 710427,
+      "sizeDiff": 277,
       "prettyPrinted": true,
       "skippedMinified": false,
       "errors": []
