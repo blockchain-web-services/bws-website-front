@@ -35,6 +35,15 @@
       "nftZeroknowledge": "/marketplace/nft-zeroknwoledge",
       "databaseImmutable": "/marketplace/database-immutable",
       "databaseMutable": "/marketplace/database-mutable"
+    },
+    "removedPages": {
+      "industries": "/industries",
+      "contentCreation": "/industry-content/content-creation",
+      "esg": "/industry-content/esg",
+      "financialServices": "/industry-content/financial-services",
+      "legal": "/industry-content/legal",
+      "retail": "/industry-content/retail",
+      "supplyChain": "/industry-content/supply-chain"
     }
   },
   "viewports": {

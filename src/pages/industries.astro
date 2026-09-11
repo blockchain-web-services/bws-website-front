@@ -1,0 +1,30 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Navigation from "../components/Navigation.astro";
+import Footer from "../components/Footer.astro";
+import Scripts from "../components/Scripts.astro";
+import RetiredSolution from "../components/RetiredSolution.astro";
+
+const pageTitle = "Industries (removed) | BWS";
+const pageDescription =
+  "BWS no longer publishes industry overviews. Explore the current marketplace instead.";
+---
+
+<BaseLayout title={pageTitle} description={pageDescription} noindex={true}>
+  <Navigation />
+  <RetiredSolution
+    name="Industries"
+    eyebrow="Page Removed"
+    headline="Our industry overviews have been removed."
+  >
+    <p>
+      We no longer publish sector overviews. What we build is easier to judge from the products themselves — each one
+      solves a specific, observed problem rather than a vertical in the abstract.
+    </p>
+  </RetiredSolution>
+  <Footer />
+
+  <Fragment slot="scripts">
+    <Scripts />
+  </Fragment>
+</BaseLayout>

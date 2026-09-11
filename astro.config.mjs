@@ -17,6 +17,9 @@ export default defineConfig({
         !page.includes('/marketplace/blockchain-database') &&
         !page.includes('/marketplace/nft-zeroknwoledge') &&
         !page.includes('/marketplace/ipfs-upload') &&
+        // Removed industry overviews — tombstoned + noindex.
+        !page.includes('/industries') &&
+        !page.includes('/industry-content/') &&
         !page.includes('/404'),
     }),
   ],

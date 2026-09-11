@@ -833,6 +833,62 @@
       "errors": []
     },
     {
+      "file": "_site/industries.html",
+      "originalSize": 37160,
+      "newSize": 48627,
+      "sizeDiff": 11467,
+      "prettyPrinted": true,
+      "errors": []
+    },
+    {
+      "file": "_site/industry-content/content-creation.html",
+      "originalSize": 37335,
+      "newSize": 48802,
+      "sizeDiff": 11467,
+      "prettyPrinted": true,
+      "errors": []
+    },
+    {
+      "file": "_site/industry-content/esg.html",
+      "originalSize": 37218,
+      "newSize": 48685,
+      "sizeDiff": 11467,
+      "prettyPrinted": true,
+      "errors": []
+    },
+    {
+      "file": "_site/industry-content/financial-services.html",
+      "originalSize": 37353,
+      "newSize": 48820,
+      "sizeDiff": 11467,
+      "prettyPrinted": true,
+      "errors": []
+    },
+    {
+      "file": "_site/industry-content/legal.html",
+      "originalSize": 37236,
+      "newSize": 48703,
+      "sizeDiff": 11467,
+      "prettyPrinted": true,
+      "errors": []
+    },
+    {
+      "file": "_site/industry-content/retail.html",
+      "originalSize": 37245,
+      "newSize": 48712,
+      "sizeDiff": 11467,
+      "prettyPrinted": true,
+      "errors": []
+    },
+    {
+      "file": "_site/industry-content/supply-chain.html",
+      "originalSize": 37299,
+      "newSize": 48766,
+      "sizeDiff": 11467,
+      "prettyPrinted": true,
+      "errors": []
+    },
+    {
       "file": "_site/legal-notice.html",
       "originalSize": 42607,
       "newSize": 56100,
@@ -1004,9 +1060,9 @@
     }
   ],
   "summary": {
-    "totalHtml": 118,
+    "totalHtml": 125,
     "totalCss": 6,
-    "htmlPrettyPrinted": 118,
+    "htmlPrettyPrinted": 125,
     "cssPrettyPrinted": 5,
     "htmlErrors": 0,
     "cssErrors": 1
