@@ -197,58 +197,6 @@ test.describe('Image Visibility on Index Page', () => {
     console.log('BFG Logo:', dimensions, styles);
   });
 
-  test('Tokenomics Image visibility', async ({ page }, testInfo) => {
-    // Scroll to tokenomics section to trigger visibility
-    await page.locator('#tokenomics').scrollIntoViewIfNeeded();
-    await page.waitForTimeout(1000);
-
-    // Target the visible main content image, not any dropdown/menu versions
-    const tokenImg = page.locator('img.image-token-allocation').first();
-
-    // Check if image exists
-    const count = await tokenImg.count();
-    if (count > 0) {
-      await expect(tokenImg).toBeVisible({ timeout: 10000 });
-
-      const dimensions = await tokenImg.evaluate((img) => ({
-        naturalWidth: img.naturalWidth,
-        naturalHeight: img.naturalHeight,
-        displayWidth: img.clientWidth,
-        displayHeight: img.clientHeight
-      }));
-
-      if (dimensions.naturalWidth === 0) {
-        logImageLoadFailure(testInfo, 'Tokenomics Image', {
-          url: '/assets/images/.../Tokenomics%20Allocation-letters-black.png',
-          selector: 'img[src*="Tokenomics"]',
-          count: 1,
-          naturalWidth: dimensions.naturalWidth,
-          naturalHeight: dimensions.naturalHeight,
-          src: await tokenImg.getAttribute('src'),
-          status: 'Failed to load'
-        });
-      }
-      expect(dimensions.naturalWidth).toBeGreaterThan(0);
-      expect(dimensions.displayWidth).toBeGreaterThan(0);
-
-      const styles = await tokenImg.evaluate((img) => {
-        const computed = window.getComputedStyle(img);
-        return {
-          display: computed.display,
-          visibility: computed.visibility,
-          opacity: computed.opacity
-        };
-      });
-
-      expect(styles.visibility).toBe('visible');
-      expect(parseFloat(styles.opacity)).toBeGreaterThan(0);
-
-      console.log('Tokenomics Image:', dimensions, styles);
-    } else {
-      console.warn('⚠️ Tokenomics Image not found on page - this is optional');
-    }
-  });
-
   test('Check for CSS conflicts', async ({ page }) => {
     // Get all images and check for CSS conflicts
     const images = page.locator('img');

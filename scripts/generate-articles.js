@@ -51,21 +51,12 @@ const PRODUCT_CONFIG = {
     ]
   },
   'Badges.ninja': {
-    url: '/marketplace/blockchain-badges.html',
+    url: '/marketplace/badges.html',
     slug: 'badges',
     buttonText: 'Learn More',
     fallbackImages: [
-      '/assets/images/marketplace/fallback/blockchain-badges/01-badges-ui.png',
-      '/assets/images/marketplace/fallback/blockchain-badges/02-issuers-list.png'
-    ]
-  },
-  'Blockchain Badges': {
-    url: '/marketplace/blockchain-badges.html',
-    slug: 'badges',
-    buttonText: 'Learn More',
-    fallbackImages: [
-      '/assets/images/marketplace/fallback/blockchain-badges/01-badges-ui.png',
-      '/assets/images/marketplace/fallback/blockchain-badges/02-issuers-list.png'
+      '/assets/images/marketplace/fallback/badges/01-badges-ui.png',
+      '/assets/images/marketplace/fallback/badges/02-issuers-list.png'
     ]
   },
   'WallaWhats': {
@@ -260,7 +251,7 @@ async function generateArticleContent(tweets, includes) {
 
 Product Categories:
 - X Bot (also called Telegram XBot)
-- Badges.ninja (previously called Blockchain Badges) — digital badges with blockchain verification, visual designer, REST API, bulk awarding, and Open Badge v2.0 compliance
+- Badges.ninja — digital badges people can trust: visual designer, REST API, bulk awarding, tamper-proof verification, and Open Badge v2.0 compliance
 - WallaWhats — real-time WhatsApp alerts when selected X/Twitter accounts post. Monitor any public handle, receive tweets as WhatsApp messages within seconds, no app install required. REST API at api.wallawhats.com for managing monitored accounts, phone verification, subscriptions, and notification history. Angles: creator drops, market-moving posts, brand/competitor monitoring, building alert pipelines on the API.
 - OpenAgile.AI — engineering-discipline layer that sits above any coding agent (Claude, Gemini, OpenAI, local models). Decomposes projects into hierarchical specs (project → epic → story → task), validates plans before code is generated via 342 micro-checks, and enforces bidirectional traceability from code back to acceptance criteria. Free for solos under PolyForm Noncommercial; commercial license from BWS for businesses. Angles: AI-native engineering discipline, audit-ready for SOC 2 / ISO 27001 / EU AI Act, parallel task execution via isolated git worktrees, the Agile Vibe Coding Manifesto as guiding methodology.
 
@@ -308,7 +299,7 @@ For EACH product category that has relevant tweets, create ONE comprehensive art
    Format: <a href="{{WEBSITE_URL}}" target="_blank" rel="noopener noreferrer">call to action text</a>
 
    Example placement:
-   - "Learn more about <a href=\"{{WEBSITE_URL}}\" target=\"_blank\" rel=\"noopener noreferrer\">how Blockchain Badges works</a> for your organization."
+   - "Learn more about <a href=\"{{WEBSITE_URL}}\" target=\"_blank\" rel=\"noopener noreferrer\">how Badges.ninja works</a> for your organization."
 
    CRITICAL RULES:
    - The link MUST flow naturally within a sentence
@@ -533,7 +524,9 @@ Output ONLY the refined JSON in the exact same structure:
 function generateSlug(product, publishDate) {
   const date = new Date(publishDate);
   const dateStr = date.toISOString().split('T')[0]; // YYYY-MM-DD
-  const productSlug = product.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+  // Prefer the configured slug so product renames don't change URL shape.
+  const productSlug =
+    PRODUCT_CONFIG[product]?.slug ?? product.toLowerCase().replace(/[^a-z0-9]+/g, '-');
   return `${productSlug}-${dateStr}`;
 }
 
@@ -571,8 +564,8 @@ CRITICAL REQUIREMENTS:
 - If you cannot fit a complete thought in 60 chars, use a simpler verb/object combination
 - Format: "${productName} [verb] [object/description]."
 - Examples of good captions:
-  * "X Bot streamlines community analytics via blockchain tools."
-  * "Blockchain Badges verifies credentials on the blockchain."
+  * "X Bot streamlines community analytics via automated tracking."
+  * "Badges.ninja verifies credentials with a tamper-proof hash."
 
 Output only the caption sentence, nothing else.`
       }]

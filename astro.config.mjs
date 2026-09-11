@@ -20,6 +20,10 @@ export default defineConfig({
         // Removed industry overviews — tombstoned + noindex.
         !page.includes('/industries') &&
         !page.includes('/industry-content/') &&
+        !page.includes('/white-paper') &&
+        // Legacy slugs kept as redirect stubs after the Badges.ninja rename.
+        !page.includes('/marketplace/blockchain-badges') &&
+        !page.includes('/articles/blockchain-badges-') &&
         !page.includes('/404'),
     }),
   ],

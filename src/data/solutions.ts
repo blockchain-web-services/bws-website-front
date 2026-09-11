@@ -73,12 +73,12 @@ export const solutions: Solution[] = [
   {
     title: 'Badges.ninja',
     author: 'BWS',
-    description: 'Digital badges with blockchain verification. Visual designer, REST API, bulk awarding, and optional on-chain anchoring — Open Badge v2.0 compliant with a free tier.',
+    description: 'Digital badges people can trust. Visual designer, REST API, bulk awarding, and tamper-proof verification — Open Badge v2.0 compliant with a free tier.',
     image: {
       src: '/assets/images/marketplace/badges/hero-card.png',
-      alt: 'Badges.ninja — digital badges with blockchain verification'
+      alt: 'Badges.ninja — digital badges with tamper-proof verification'
     },
-    url: '/marketplace/blockchain-badges.html',
+    url: '/marketplace/badges.html',
     networks: [
       { name: 'Polygon', color: '#af89ee' },
       { name: 'Matchain', color: 'hsla(20, 100.00%, 54.02%, 1.00)' }

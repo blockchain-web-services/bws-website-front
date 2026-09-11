@@ -1,0 +1,22 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Navigation from "../../components/Navigation.astro";
+import Footer from "../../components/Footer.astro";
+import Scripts from "../../components/Scripts.astro";
+import MarketplacebadgesMainContent from "../../components/marketplacebadgesMainContent.astro";
+import ProductSchema from "../../components/ProductSchema.astro";
+
+const pageTitle = "Badges.ninja — Digital Badges with Tamper-Proof Verification | BWS";
+const pageDescription = "Create, issue, and verify digital badges with a visual designer, REST API, and bulk awarding. Open Badge v2.0 compliant, with tamper-proof verification and a free tier.";
+---
+
+<BaseLayout title={pageTitle} description={pageDescription}>
+  <Navigation />
+  <MarketplacebadgesMainContent />
+  <ProductSchema name="Badges.ninja" description={pageDescription} path="/marketplace/badges.html" externalUrl="https://badges.ninja" />
+  <Footer />
+
+  <Fragment slot="scripts">
+    <Scripts />
+  </Fragment>
+</BaseLayout>

@@ -1,18 +1,28 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Navigation from "../components/Navigation.astro";
-import WhitePaperMainContent from "../components/WhitePaperMainContent.astro";
 import Footer from "../components/Footer.astro";
 import Scripts from "../components/Scripts.astro";
+import RetiredSolution from "../components/RetiredSolution.astro";
 
-const pageTitle = "White Paper - BWS";
+const pageTitle = "White Paper (removed) | BWS";
 const pageDescription =
-  "Read the BWS white paper: From idea to marketplace, powered by AI. Our thesis on market-demand-first solution selection, the AI-native build workflow, and blockchain as added value.";
+  "The BWS white paper has been removed. Explore the current BWS marketplace instead.";
 ---
 
-<BaseLayout title={pageTitle} description={pageDescription}>
+<BaseLayout title={pageTitle} description={pageDescription} noindex={true}>
   <Navigation />
-  <WhitePaperMainContent />
+  <RetiredSolution
+    name="White Paper"
+    eyebrow="Page Removed"
+    headline="The BWS white paper has been removed."
+  >
+    <p>
+      It described a token-centred model that no longer reflects how BWS operates. Rather than leave an outdated
+      document standing, we have taken it down.
+    </p>
+    <p>What we build is easier to judge from the products themselves.</p>
+  </RetiredSolution>
   <Footer />
 
   <Fragment slot="scripts">
