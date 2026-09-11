@@ -92,53 +92,11 @@ if (!fs.existsSync(dataDir)) {
 }
 
 /**
- * Load docs index for intelligent URL mapping
- */
-function loadDocsIndex() {
-  try {
-    const indexPath = path.join(__dirname, 'data', 'docs-index.json');
-    const data = fs.readFileSync(indexPath, 'utf-8');
-    return JSON.parse(data);
-  } catch (error) {
-    console.log('   ℹ️  Docs index not found, using fallback URLs');
-    return { productMapping: {} };
-  }
-}
-
-/**
  * Find website marketplace URL for a product
  */
 function findWebsiteUrl(productName) {
   const config = PRODUCT_CONFIG[productName];
   return config ? config.url : '/marketplace';
-}
-
-/**
- * Find documentation images for a product
- * Returns array of images from docs pages matching the product
- */
-function findDocsImages(productName, docsIndex) {
-  if (!docsIndex || !docsIndex.pages) {
-    return [];
-  }
-
-  // Find all pages for this product
-  const productPages = docsIndex.pages.filter(page => page.product === productName);
-
-  // Collect all images from these pages
-  const allImages = [];
-  productPages.forEach(page => {
-    if (page.images && Array.isArray(page.images) && page.images.length > 0) {
-      page.images.forEach(image => {
-        allImages.push({
-          ...image,
-          sourcePage: page.title || page.url
-        });
-      });
-    }
-  });
-
-  return allImages;
 }
 
 /**
@@ -950,7 +908,6 @@ const pageDescription = "${articleData.seoDescription.replace(/"/g, '\\"')}";
  * Process article generation
  */
 async function processArticles(articleDataList, tweets, includes) {
-  const docsIndex = loadDocsIndex();
   const articles = [];
 
   // Initialize Anthropic client for caption generation
@@ -989,20 +946,10 @@ async function processArticles(articleDataList, tweets, includes) {
     articleData = await refineArticleFlow(articleData);
 
     // Download images - MAXIMUM ONE image per article
-    // PRIORITY ORDER: 1) Docs images, 2) Tweet images, 3) Fallback images
+    // PRIORITY ORDER: 1) Tweet images, 2) Fallback images
     const images = [];
 
-    // PRIORITY 1: Check for documentation images first (official product screenshots)
-    const docsImages = findDocsImages(articleData.product, docsIndex);
-    if (docsImages.length > 0) {
-      console.log(`   📚 Using docs image (${docsImages.length} available from ${new Set(docsImages.map(i => i.sourcePage)).size} pages)`);
-      images.push({
-        src: docsImages[0].localPath,
-        alt: docsImages[0].alt || `${articleData.product} product interface`
-      });
-    }
-
-    // PRIORITY 2: If no docs images, try tweet image selected by Claude
+    // PRIORITY 1: Tweet image selected by Claude
     if (images.length === 0) {
       // Handle both new single value format (imageTweetId) and legacy array format (imageTweetIds)
       const tweetId = articleData.imageTweetId ||
