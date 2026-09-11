@@ -3,14 +3,25 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import Navigation from "../../components/Navigation.astro";
 import Footer from "../../components/Footer.astro";
 import Scripts from "../../components/Scripts.astro";
-import IndustryContentEsgMainContent from "../../components/industrycontentesgMainContent.astro";
+import RetiredSolution from "../../components/RetiredSolution.astro";
 
-const pageTitle = "ESG — Environmental, Social & Governance Solutions | BWS";
-const pageDescription = "Blockchain-backed ESG solutions from BWS — transparent sustainability reporting, verifiable carbon and impact data, and audit-ready governance records.";
+const pageTitle = "ESG industry overview (removed) | BWS";
+const pageDescription =
+  "The ESG industry overview has been removed. Explore the current BWS marketplace instead.";
 ---
 
-<BaseLayout title={pageTitle} description={pageDescription}>
-  <Navigation /><IndustryContentEsgMainContent />
+<BaseLayout title={pageTitle} description={pageDescription} noindex={true}>
+  <Navigation />
+  <RetiredSolution
+    name="ESG"
+    eyebrow="Page Removed"
+    headline="Our ESG overview has been removed."
+  >
+    <p>
+      We no longer publish sector overviews. What we build is easier to judge from the products themselves — each one
+      solves a specific, observed problem rather than a vertical in the abstract.
+    </p>
+  </RetiredSolution>
   <Footer />
 
   <Fragment slot="scripts">

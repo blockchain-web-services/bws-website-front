@@ -3,14 +3,25 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import Navigation from "../../components/Navigation.astro";
 import Footer from "../../components/Footer.astro";
 import Scripts from "../../components/Scripts.astro";
-import IndustryContentLegalMainContent from "../../components/industrycontentlegalMainContent.astro";
+import RetiredSolution from "../../components/RetiredSolution.astro";
 
-const pageTitle = "Legal — Blockchain Solutions for Law & Compliance | BWS";
-const pageDescription = "BWS solutions for the legal sector — immutable record-keeping, document notarization, and verifiable credentials with full audit trails.";
+const pageTitle = "Legal industry overview (removed) | BWS";
+const pageDescription =
+  "The Legal industry overview has been removed. Explore the current BWS marketplace instead.";
 ---
 
-<BaseLayout title={pageTitle} description={pageDescription}>
-  <Navigation /><IndustryContentLegalMainContent />
+<BaseLayout title={pageTitle} description={pageDescription} noindex={true}>
+  <Navigation />
+  <RetiredSolution
+    name="Legal"
+    eyebrow="Page Removed"
+    headline="Our Legal overview has been removed."
+  >
+    <p>
+      We no longer publish sector overviews. What we build is easier to judge from the products themselves — each one
+      solves a specific, observed problem rather than a vertical in the abstract.
+    </p>
+  </RetiredSolution>
   <Footer />
 
   <Fragment slot="scripts">

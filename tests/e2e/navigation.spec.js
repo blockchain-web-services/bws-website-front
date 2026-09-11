@@ -1,7 +1,6 @@
 import { test, expect } from '@playwright/test';
 import { HomePage } from '../page-objects/HomePage.js';
 import { AboutPage } from '../page-objects/AboutPage.js';
-import { IndustriesPage } from '../page-objects/IndustriesPage.js';
 import { MarketplacePage } from '../page-objects/MarketplacePage.js';
 import { logNavigationFailure } from '../helpers/error-reporting.js';
 

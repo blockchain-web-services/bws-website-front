@@ -9,17 +9,9 @@ const PAGES = [
   '/',
   '/about',
   '/contact-us',
-  '/industries',
   '/resources',
   '/legal-notice',
   '/privacy-policy',
-  // Industry content pages
-  '/industry-content/financial-services',
-  '/industry-content/content-creation',
-  '/industry-content/retail',
-  '/industry-content/esg',
-  '/industry-content/legal',
-  '/industry-content/supply-chain',
   // Marketplace pages
   '/marketplace/database-immutable',
   '/marketplace/database-mutable',

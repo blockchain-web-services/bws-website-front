@@ -110,51 +110,6 @@ test.describe('Image Visibility Tests', () => {
     }
   });
 
-  test('Industry cards have visible background images and text', async ({ page }) => {
-    await page.goto('/');
-    await page.waitForLoadState('networkidle');
-
-    console.log('Testing Industry cards visibility...');
-
-    // Hover over Solutions menu to show industry cards
-    await page.locator('text=Solutions').first().hover();
-    await page.waitForTimeout(1000);
-
-    const industryCards = page.locator('.top-menu-industry-card');
-    const cardCount = await industryCards.count();
-    console.log(`Found ${cardCount} industry cards`);
-
-    for (let i = 0; i < cardCount; i++) {
-      const card = industryCards.nth(i);
-      const visible = await card.isVisible();
-      console.log(`Industry card ${i + 1} is visible: ${visible}`);
-
-      if (visible) {
-        // Check background image style
-        const bgStyle = await card.getAttribute('style');
-        const hasBackgroundImage = bgStyle && bgStyle.includes('background-image');
-        console.log(`Industry card ${i + 1} has background-image: ${hasBackgroundImage}`);
-
-        // Check if text is visible
-        const titleElement = card.locator('.industries-top-menu-option-tittle');
-        const titleVisible = await titleElement.isVisible();
-        const titleText = await titleElement.textContent();
-        console.log(`Industry card ${i + 1} title visible: ${titleVisible}, text: "${titleText}"`);
-
-        if (hasBackgroundImage) {
-          // Extract the URL from background-image style
-          const match = bgStyle.match(/background-image:\s*url\("?([^"]*)"?\)/);
-          if (match) {
-            const imageUrl = match[1];
-            console.log(`Industry card ${i + 1} image URL: ${imageUrl}`);
-
-            const response = await page.request.get(imageUrl);
-            console.log(`Industry card ${i + 1} image HTTP status: ${response.status()}`);
-          }
-        }
-      }
-    }
-  });
 
   test('Check all critical image HTTP responses', async ({ page }) => {
     const criticalImages = [
@@ -198,11 +153,5 @@ test.describe('Image Visibility Tests', () => {
     await tokenomicsSection.screenshot({ path: 'test-results/tokenomics.png' });
     console.log('Tokenomics screenshot saved to test-results/tokenomics.png');
 
-    // Screenshot industry cards
-    await page.locator('text=Solutions').first().hover();
-    await page.waitForTimeout(1000);
-    const industrySection = page.locator('.industries-top-menu-collections-list');
-    await industrySection.screenshot({ path: 'test-results/industry-cards.png' });
-    console.log('Industry cards screenshot saved to test-results/industry-cards.png');
   });
 });

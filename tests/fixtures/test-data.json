@@ -19,19 +19,10 @@
     "pages": {
       "home": "/",
       "about": "/about",
-      "industries": "/industries",
       "resources": "/resources",
       "contact": "/contact-us",
       "privacy": "/privacy-policy",
       "legal": "/legal-notice"
-    },
-    "industryPages": {
-      "contentCreation": "/industry-content/content-creation",
-      "esg": "/industry-content/esg",
-      "financial": "/industry-content/financial-services",
-      "legal": "/industry-content/legal",
-      "retail": "/industry-content/retail",
-      "supplyChain": "/industry-content/supply-chain"
     },
     "marketplacePages": {
       "openAgile": "/marketplace/openagile",
@@ -44,6 +35,15 @@
       "nftZeroknowledge": "/marketplace/nft-zeroknwoledge",
       "databaseImmutable": "/marketplace/database-immutable",
       "databaseMutable": "/marketplace/database-mutable"
+    },
+    "removedPages": {
+      "industries": "/industries",
+      "contentCreation": "/industry-content/content-creation",
+      "esg": "/industry-content/esg",
+      "financialServices": "/industry-content/financial-services",
+      "legal": "/industry-content/legal",
+      "retail": "/industry-content/retail",
+      "supplyChain": "/industry-content/supply-chain"
     }
   },
   "viewports": {
